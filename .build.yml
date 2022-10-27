@@ -43,7 +43,6 @@ requires:
 before_scripts:
   - ./html-cppcheck
   - ./install-from-git https://github.com/mate-desktop/mate-common master
-  - ./install-from-git https://github.com/wmww/gtk-layer-shell master meson
 
 build_scripts:
   - ./before-build
