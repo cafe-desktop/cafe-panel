@@ -1,0 +1,19 @@
+[Applet Factory]
+Id=FishAppletFactory
+InProcess=@IN_PROCESS@
+Location=@LOCATION@
+Name=Wanda Factory
+Description=From Whence That Stupid Fish Came
+
+[FishApplet]
+Name=Fish
+Description=Display a swimming fish or another animated creature
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon=mate-panel-fish
+MateComponentId=OAFIID:MATE_FishApplet;
+Platforms=X11;Wayland;
+X-MATE-Bugzilla-Bugzilla=MATE
+X-MATE-Bugzilla-Product=mate-panel
+X-MATE-Bugzilla-Component=fish
+X-MATE-Bugzilla-Version=@VERSION@
+X-MATE-Bugzilla-OtherBinaries=fish-applet-2

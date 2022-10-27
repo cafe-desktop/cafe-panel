@@ -1,0 +1,20 @@
+[Applet Factory]
+Id=ClockAppletFactory
+InProcess=@IN_PROCESS@
+Location=@LOCATION@
+Name=Clock Applet Factory
+Description=Factory for clock applet
+
+[ClockApplet]
+Name=Clock
+Description=Get the current time and date
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon=mate-panel-clock
+MateComponentId=OAFIID:MATE_ClockApplet;
+Platforms=X11;Wayland;
+X-MATE-Bugzilla-Bugzilla=MATE
+X-MATE-Bugzilla-Product=mate-panel
+X-MATE-Bugzilla-Component=clock
+X-MATE-Bugzilla-Version=@VERSION@
+X-MATE-Bugzilla-OtherBinaries=clock-applet
+
