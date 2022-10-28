@@ -1,15 +1,15 @@
 #ifndef __PANEL_SCHEMAS_H__
 #define __PANEL_SCHEMAS_H__
 
-#define PANEL_RESOURCE_PATH "/org/mate/panel/"
-#define PANEL_GENERAL_PATH "/org/mate/panel/general/"
+#define PANEL_RESOURCE_PATH "/org/cafe/panel/"
+#define PANEL_GENERAL_PATH "/org/cafe/panel/general/"
 
-#define PANEL_TOPLEVEL_PATH           "/org/mate/panel/toplevels/"
+#define PANEL_TOPLEVEL_PATH           "/org/cafe/panel/toplevels/"
 #define PANEL_TOPLEVEL_DEFAULT_PREFIX "toplevel"
-#define PANEL_OBJECT_PATH             "/org/mate/panel/objects/"
+#define PANEL_OBJECT_PATH             "/org/cafe/panel/objects/"
 #define PANEL_OBJECT_DEFAULT_PREFIX   "object"
 
-#define PANEL_SCHEMA                  "org.mate.panel"
+#define PANEL_SCHEMA                  "org.cafe.panel"
 #define PANEL_DEFAULT_LAYOUT          "default-layout"
 #define PANEL_TOPLEVEL_ID_LIST_KEY    "toplevel-id-list"
 #define PANEL_OBJECT_ID_LIST_KEY      "object-id-list"
@@ -17,7 +17,7 @@
 #define PANEL_DISABLE_FORCE_QUIT_KEY  "disable-force-quit"
 #define PANEL_DISABLED_APPLETS_KEY    "disabled-applets"
 
-#define PANEL_TOPLEVEL_SCHEMA                "org.mate.panel.toplevel"
+#define PANEL_TOPLEVEL_SCHEMA                "org.cafe.panel.toplevel"
 #define PANEL_TOPLEVEL_NAME_KEY              "name"
 #define PANEL_TOPLEVEL_SCREEN_KEY            "screen"
 #define PANEL_TOPLEVEL_MONITOR_KEY           "monitor"
@@ -39,10 +39,10 @@
 #define PANEL_TOPLEVEL_AUTO_HIDE_SIZE_KEY    "auto-hide-size"
 #define PANEL_TOPLEVEL_ANIMATION_SPEED_KEY   "animation-speed"
 
-#define PANEL_TOPLEVEL_BACKGROUND_SCHEMA       "org.mate.panel.toplevel.background"
+#define PANEL_TOPLEVEL_BACKGROUND_SCHEMA       "org.cafe.panel.toplevel.background"
 #define PANEL_TOPLEVEL_BACKGROUND_SCHEMA_CHILD "background"
 
-#define PANEL_OBJECT_SCHEMA                  "org.mate.panel.object"
+#define PANEL_OBJECT_SCHEMA                  "org.cafe.panel.object"
 #define PANEL_OBJECT_TYPE_KEY                "object-type"
 #define PANEL_OBJECT_TOPLEVEL_ID_KEY         "toplevel-id"
 #define PANEL_OBJECT_POSITION_KEY            "position"
@@ -59,7 +59,7 @@
 #define PANEL_OBJECT_LAUNCHER_LOCATION_KEY    "launcher-location"
 #define PANEL_OBJECT_ACTION_TYPE_KEY          "action-type"
 
-#define PANEL_MENU_BAR_SCHEMA                 "org.mate.panel.menubar"
+#define PANEL_MENU_BAR_SCHEMA                 "org.cafe.panel.menubar"
 #define PANEL_MENU_BAR_SHOW_APPLICATIONS_KEY  "show-applications"
 #define PANEL_MENU_BAR_SHOW_PLACES_KEY        "show-places"
 #define PANEL_MENU_BAR_SHOW_DESKTOP_KEY       "show-desktop"
@@ -69,25 +69,25 @@
 
 /* external schemas */
 
-#define CAJA_DESKTOP_SCHEMA                   "org.mate.caja.desktop"
+#define CAJA_DESKTOP_SCHEMA                   "org.cafe.caja.desktop"
 #define CAJA_DESKTOP_HOME_ICON_NAME_KEY       "home-icon-name"
 #define CAJA_DESKTOP_COMPUTER_ICON_NAME_KEY   "computer-icon-name"
 
-#define CAJA_PREFS_SCHEMA                     "org.mate.caja.preferences"
+#define CAJA_PREFS_SCHEMA                     "org.cafe.caja.preferences"
 #define CAJA_PREFS_DESKTOP_IS_HOME_DIR_KEY    "desktop-is-home-dir"
 
-#define MATE_SESSION_SCHEMA                   "org.mate.session"
+#define MATE_SESSION_SCHEMA                   "org.cafe.session"
 #define MATE_SESSION_LOGOUT_PROMPT_KEY        "logout-prompt"
 
-#define LOCKDOWN_SCHEMA                       "org.mate.lockdown"
+#define LOCKDOWN_SCHEMA                       "org.cafe.lockdown"
 #define LOCKDOWN_DISABLE_COMMAND_LINE_KEY     "disable-command-line"
 #define LOCKDOWN_DISABLE_LOCK_SCREEN_KEY      "disable-lock-screen"
 #define LOCKDOWN_DISABLE_LOG_OUT_KEY          "disable-log-out"
 
-#define MARCO_SCHEMA                          "org.mate.Marco.general"
+#define MARCO_SCHEMA                          "org.cafe.Marco.general"
 #define MARCO_MOUSE_BUTTON_MODIFIER_KEY       "mouse-button-modifier"
 
-#define MARCO_KEYBINDINGS_SCHEMA             "org.mate.Marco.window-keybindings"
+#define MARCO_KEYBINDINGS_SCHEMA             "org.cafe.Marco.window-keybindings"
 #define MARCO_ACTIVATE_WINDOW_MENU_KEY       "activate-window-menu"
 #define MARCO_TOGGLE_MAXIMIZED_KEY           "toggle-maximized"
 #define MARCO_MAXIMIZE_KEY                   "maximize"

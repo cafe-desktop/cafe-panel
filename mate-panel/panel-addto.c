@@ -28,7 +28,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
-#include <matemenu-tree.h>
+#include <cafemenu-tree.h>
 
 #include <libpanel-util/panel-glib.h>
 #include <libpanel-util/panel-show.h>
@@ -370,7 +370,7 @@ panel_addto_setup_applet_drag (GtkTreeView *tree_view,
 			       const char  *iid)
 {
 	static GtkTargetEntry target[] = {
-		{ "application/x-mate-panel-applet-iid", 0, 0 }
+		{ "application/x-cafe-panel-applet-iid", 0, 0 }
 	};
 
 	panel_addto_setup_drag (tree_view, target, iid);
@@ -381,7 +381,7 @@ panel_addto_setup_internal_applet_drag (GtkTreeView *tree_view,
 					const char  *applet_type)
 {
 	static GtkTargetEntry target[] = {
-		{ "application/x-mate-panel-applet-internal", 0, 0 }
+		{ "application/x-cafe-panel-applet-internal", 0, 0 }
 	};
 
 	panel_addto_setup_drag (tree_view, target, applet_type);
@@ -392,7 +392,7 @@ panel_addto_query_applets (GSList *list)
 {
 	GList *applet_list, *l;
 
-	applet_list = mate_panel_applets_manager_get_applets ();
+	applet_list = cafe_panel_applets_manager_get_applets ();
 
 	for (l = applet_list; l; l = g_list_next (l)) {
 		MatePanelAppletInfo *info;
@@ -402,10 +402,10 @@ panel_addto_query_applets (GSList *list)
 
 		info = (MatePanelAppletInfo *)l->data;
 
-		iid = mate_panel_applet_info_get_iid (info);
-		name = mate_panel_applet_info_get_name (info);
-		description = mate_panel_applet_info_get_description (info);
-		icon = mate_panel_applet_info_get_icon (info);
+		iid = cafe_panel_applet_info_get_iid (info);
+		name = cafe_panel_applet_info_get_name (info);
+		description = cafe_panel_applet_info_get_description (info);
+		icon = cafe_panel_applet_info_get_icon (info);
 
 		if (!name || panel_lockdown_is_applet_disabled (iid)) {
 			continue;
@@ -414,14 +414,14 @@ panel_addto_query_applets (GSList *list)
 		enabled = TRUE;
 #ifdef HAVE_X11
 		if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()) &&
-		    !mate_panel_applet_info_get_x11_supported (info)) {
+		    !cafe_panel_applet_info_get_x11_supported (info)) {
 			enabled = FALSE;
 			description = _("Not compatible with X11");
 		}
 #endif
 #ifdef HAVE_WAYLAND
 		if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()) &&
-		    !mate_panel_applet_info_get_wayland_supported (info)) {
+		    !cafe_panel_applet_info_get_wayland_supported (info)) {
 			enabled = FALSE;
 			description = _("Not compatible with Wayland");
 		}
@@ -556,14 +556,14 @@ panel_addto_prepend_directory (GSList             **parent_list,
 	GIcon              *gicon;
 
 	data = g_new0 (PanelAddtoAppList, 1);
-	gicon = matemenu_tree_directory_get_icon (directory);
+	gicon = cafemenu_tree_directory_get_icon (directory);
 
 	data->item_info.type          = PANEL_ADDTO_MENU;
-	data->item_info.name          = g_strdup (matemenu_tree_directory_get_name (directory));
-	data->item_info.description   = g_strdup (matemenu_tree_directory_get_comment (directory));
+	data->item_info.name          = g_strdup (cafemenu_tree_directory_get_name (directory));
+	data->item_info.description   = g_strdup (cafemenu_tree_directory_get_comment (directory));
 	data->item_info.icon          = gicon ? g_icon_to_string(gicon) : g_strdup(PANEL_ICON_UNKNOWN);
 	data->item_info.menu_filename = g_strdup (filename);
-	data->item_info.menu_path     = matemenu_tree_directory_make_path (directory, NULL);
+	data->item_info.menu_path     = cafemenu_tree_directory_make_path (directory, NULL);
 	data->item_info.enabled       = TRUE;
 	data->item_info.static_data   = FALSE;
 
@@ -589,7 +589,7 @@ panel_addto_prepend_entry (GSList         **parent_list,
 	GDesktopAppInfo    *ginfo;
 	GIcon              *gicon;
 
-	ginfo = matemenu_tree_entry_get_app_info (entry);
+	ginfo = cafemenu_tree_entry_get_app_info (entry);
 	gicon = g_app_info_get_icon(G_APP_INFO(ginfo));
 
 	data = g_new0 (PanelAddtoAppList, 1);
@@ -598,7 +598,7 @@ panel_addto_prepend_entry (GSList         **parent_list,
 	data->item_info.name          = g_strdup (g_app_info_get_display_name(G_APP_INFO(ginfo)));
 	data->item_info.description   = g_strdup (g_app_info_get_description(G_APP_INFO(ginfo)));
 	data->item_info.icon          = gicon ? g_icon_to_string(gicon) : g_strdup(PANEL_ICON_UNKNOWN);
-	data->item_info.launcher_path = g_strdup (matemenu_tree_entry_get_desktop_file_path (entry));
+	data->item_info.launcher_path = g_strdup (cafemenu_tree_entry_get_desktop_file_path (entry));
 	data->item_info.enabled       = TRUE;
 	data->item_info.static_data   = FALSE;
 
@@ -612,21 +612,21 @@ panel_addto_prepend_alias (GSList         **parent_list,
 {
 	gpointer item;
 
-	switch (matemenu_tree_alias_get_aliased_item_type (alias)) {
+	switch (cafemenu_tree_alias_get_aliased_item_type (alias)) {
 	case MATEMENU_TREE_ITEM_DIRECTORY:
-		item = matemenu_tree_alias_get_directory(alias);
+		item = cafemenu_tree_alias_get_directory(alias);
 		panel_addto_prepend_directory (parent_list,
 				item,
 				filename);
-		matemenu_tree_item_unref (item);
+		cafemenu_tree_item_unref (item);
 		break;
 
 	case MATEMENU_TREE_ITEM_ENTRY:
-		item = matemenu_tree_alias_get_aliased_entry(alias);
+		item = cafemenu_tree_alias_get_aliased_entry(alias);
 		panel_addto_prepend_entry (parent_list,
 				item,
 				filename);
-		matemenu_tree_item_unref (item);
+		cafemenu_tree_item_unref (item);
 		break;
 
 	default:
@@ -640,33 +640,33 @@ panel_addto_make_application_list (GSList             **parent_list,
 				   const char          *filename)
 {
 	MateMenuTreeIter *iter;
-	iter = matemenu_tree_directory_iter (directory);
+	iter = cafemenu_tree_directory_iter (directory);
 	MateMenuTreeItemType type;
-	while ((type = matemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
+	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
 		gpointer item;
 		switch (type) {
 		case MATEMENU_TREE_ITEM_DIRECTORY:
-			item = matemenu_tree_iter_get_directory(iter);
+			item = cafemenu_tree_iter_get_directory(iter);
 			panel_addto_prepend_directory (parent_list, item, filename);
-			matemenu_tree_item_unref (item);
+			cafemenu_tree_item_unref (item);
 			break;
 
 		case MATEMENU_TREE_ITEM_ENTRY:
-			item = matemenu_tree_iter_get_entry (iter);
+			item = cafemenu_tree_iter_get_entry (iter);
 			panel_addto_prepend_entry (parent_list, item, filename);
-			matemenu_tree_item_unref (item);
+			cafemenu_tree_item_unref (item);
 			break;
 
 		case MATEMENU_TREE_ITEM_ALIAS:
-			item = matemenu_tree_iter_get_alias(iter);
+			item = cafemenu_tree_iter_get_alias(iter);
 			panel_addto_prepend_alias (parent_list, item, filename);
-			matemenu_tree_item_unref (item);
+			cafemenu_tree_item_unref (item);
 			break;
 		default:
 			break;
 		}
 	}
-	matemenu_tree_iter_unref (iter);
+	cafemenu_tree_iter_unref (iter);
 
 	*parent_list = g_slist_reverse (*parent_list);
 }
@@ -721,31 +721,31 @@ static void panel_addto_make_application_model(PanelAddtoDialog* dialog)
 				    G_TYPE_STRING,
 				    G_TYPE_BOOLEAN);
 
-	tree = matemenu_tree_new ("mate-applications.menu", MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
-	if (! matemenu_tree_load_sync (tree, &error)) {
+	tree = cafemenu_tree_new ("cafe-applications.menu", MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
+	if (! cafemenu_tree_load_sync (tree, &error)) {
 		g_warning("Applications menu tree loading got error:%s\n", error->message);
 		g_error_free(error);
 		g_clear_object(&tree);
 	}
 
-	if ((root = matemenu_tree_get_root_directory (tree)) != NULL )
+	if ((root = cafemenu_tree_get_root_directory (tree)) != NULL )
 	{
-		panel_addto_make_application_list(&dialog->application_list, root, "mate-applications.menu");
+		panel_addto_make_application_list(&dialog->application_list, root, "cafe-applications.menu");
 		panel_addto_populate_application_model(store, NULL, dialog->application_list);
 
-		matemenu_tree_item_unref(root);
+		cafemenu_tree_item_unref(root);
 	}
 
 	g_clear_object(&tree);
 
-	tree = matemenu_tree_new ("mate-settings.menu", MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
-	if (! matemenu_tree_load_sync (tree, &error)) {
+	tree = cafemenu_tree_new ("cafe-settings.menu", MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
+	if (! cafemenu_tree_load_sync (tree, &error)) {
 		g_warning("Settings menu tree loading got error:%s\n", error->message);
 		g_error_free(error);
 		g_clear_object(&tree);
 	}
 
-	if ((root = matemenu_tree_get_root_directory(tree)))
+	if ((root = cafemenu_tree_get_root_directory(tree)))
 	{
 		GtkTreeIter iter;
 
@@ -758,10 +758,10 @@ static void panel_addto_make_application_model(PanelAddtoDialog* dialog)
 				    COLUMN_ENABLED, TRUE,
 				    -1);
 
-		panel_addto_make_application_list(&dialog->settings_list, root, "mate-settings.menu");
+		panel_addto_make_application_list(&dialog->settings_list, root, "cafe-settings.menu");
 		panel_addto_populate_application_model(store, NULL, dialog->settings_list);
 
-		matemenu_tree_item_unref(root);
+		cafemenu_tree_item_unref(root);
 	}
 
 	g_object_unref(tree);
@@ -779,7 +779,7 @@ panel_addto_add_item (PanelAddtoDialog   *dialog,
 
 	switch (item_info->type) {
 	case PANEL_ADDTO_APPLET:
-		mate_panel_applet_frame_create (dialog->panel_widget->toplevel,
+		cafe_panel_applet_frame_create (dialog->panel_widget->toplevel,
 					   dialog->insertion_position,
 					   item_info->iid);
 		break;
@@ -838,7 +838,7 @@ panel_addto_dialog_response (GtkWidget *widget_dialog,
 	switch (response_id) {
 	case GTK_RESPONSE_HELP:
 		panel_show_help (gtk_window_get_screen (GTK_WINDOW (dialog->addto_dialog)),
-				 "mate-user-guide", "gospanel-15", NULL);
+				 "cafe-user-guide", "gospanel-15", NULL);
 		break;
 
 	case PANEL_ADDTO_RESPONSE_ADD:

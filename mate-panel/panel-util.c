@@ -31,8 +31,8 @@
 #include <gdk/gdkx.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
-#include <libmate-desktop/mate-desktop-utils.h>
-#include <libmate-desktop/mate-gsettings.h>
+#include <libcafe-desktop/cafe-desktop-utils.h>
+#include <libcafe-desktop/cafe-gsettings.h>
 
 #include <libpanel-util/panel-error.h>
 #include <libpanel-util/panel-glib.h>
@@ -84,7 +84,7 @@ panel_find_applet_index (GtkWidget *widget)
 	GSList *applet_list, *l;
 	int     i;
 
-	applet_list = mate_panel_applet_list_applets ();
+	applet_list = cafe_panel_applet_list_applets ();
 
 	for (i = 0, l = applet_list; l; i++, l = l->next) {
 		AppletInfo *info = l->data;
@@ -380,7 +380,7 @@ static char* panel_lock_screen_action_get_command(const char* action)
 	char* command = NULL;
 	gboolean use_gscreensaver = FALSE;
 
-	if (panel_is_program_in_path("mate-screensaver-command") && panel_is_program_in_path("mate-screensaver-preferences"))
+	if (panel_is_program_in_path("cafe-screensaver-command") && panel_is_program_in_path("cafe-screensaver-preferences"))
 	{
 		use_gscreensaver = TRUE;
 	}
@@ -393,7 +393,7 @@ static char* panel_lock_screen_action_get_command(const char* action)
 	{
 		if (use_gscreensaver)
 		{
-			command = g_strdup ("mate-screensaver-preferences");
+			command = g_strdup ("cafe-screensaver-preferences");
 		}
 		else if (panel_is_program_in_path ("xscreensaver-demo"))
 		{
@@ -406,7 +406,7 @@ static char* panel_lock_screen_action_get_command(const char* action)
 	}
 	else if (strcmp (action, "activate") == 0 || strcmp(action, "lock") == 0)
 	{
-		/* Neither mate-screensaver or xscreensaver allow root
+		/* Neither cafe-screensaver or xscreensaver allow root
 		 * to lock the screen */
 		if (geteuid () == 0)
 		{
@@ -416,7 +416,7 @@ static char* panel_lock_screen_action_get_command(const char* action)
 		{
 			if (use_gscreensaver)
 			{
-				command = g_strdup_printf("mate-screensaver-command --%s", action);
+				command = g_strdup_printf("cafe-screensaver-command --%s", action);
 			}
 			else
 			{
@@ -469,7 +469,7 @@ void panel_lock_screen_action(GdkScreen* screen, const char* action)
 		return;
 	}
 
-	if (!mate_gdk_spawn_command_line_on_screen(screen, command, &error))
+	if (!cafe_gdk_spawn_command_line_on_screen(screen, command, &error))
 	{
 		char* primary = g_strdup_printf(_("Could not execute '%s'"), command);
 		panel_error_dialog (NULL, screen, "cannot_exec_screensaver", TRUE, primary, error->message);
@@ -488,7 +488,7 @@ void panel_lock_screen(GdkScreen* screen)
 
 static char* panel_launcher_get_personal_path(void)
 {
-		return g_build_filename(g_get_user_config_dir(), "mate", "panel2.d", "default", "launchers", NULL);
+		return g_build_filename(g_get_user_config_dir(), "cafe", "panel2.d", "default", "launchers", NULL);
 }
 
 gboolean
@@ -865,7 +865,7 @@ panel_util_get_file_display_for_common_files (GFile *file)
 
 		g_object_unref (compare);
 
-		if (mate_gsettings_schema_exists (CAJA_DESKTOP_SCHEMA)) {
+		if (cafe_gsettings_schema_exists (CAJA_DESKTOP_SCHEMA)) {
 			caja_desktop_settings = g_settings_new (CAJA_DESKTOP_SCHEMA);
 			caja_home_icon_name = g_settings_get_string (caja_desktop_settings,
 														 CAJA_DESKTOP_HOME_ICON_NAME_KEY);
@@ -1135,7 +1135,7 @@ panel_util_get_icon_for_uri (const char *text_uri)
 	 *  + override burn: URI icon
 	 *  + check if the URI is a mount
 	 *  + override trash: URI icon for subfolders
-	 *  + check for application/x-mate-saved-search mime type and override
+	 *  + check for application/x-cafe-saved-search mime type and override
 	 *    icon of the GFile
 	 *  + use icon of the GFile
 	 */

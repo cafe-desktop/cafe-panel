@@ -53,13 +53,13 @@
 #define PANEL_RESPONSE_DONT_RELOAD  1
 #define PANEL_RESPONSE_RELOAD       2
 
-static void mate_panel_applet_frame_activating_free (MatePanelAppletFrameActivating *frame_act);
+static void cafe_panel_applet_frame_activating_free (MatePanelAppletFrameActivating *frame_act);
 
-static void mate_panel_applet_frame_loading_failed  (const char  *iid,
+static void cafe_panel_applet_frame_loading_failed  (const char  *iid,
 					        PanelWidget *panel,
 					        const char  *id);
 
-static void mate_panel_applet_frame_load            (const gchar *iid,
+static void cafe_panel_applet_frame_load            (const gchar *iid,
 						PanelWidget *panel,
 						gboolean     locked,
 						int          position,
@@ -77,7 +77,7 @@ struct _MatePanelAppletFrameActivating {
 /* MatePanelAppletFrame implementation */
 
 #define HANDLE_SIZE 10
-#define MATE_PANEL_APPLET_PREFS_PATH "/org/mate/panel/objects/%s/prefs/"
+#define MATE_PANEL_APPLET_PREFS_PATH "/org/cafe/panel/objects/%s/prefs/"
 
 struct _MatePanelAppletFramePrivate {
 	PanelWidget     *panel;
@@ -93,10 +93,10 @@ struct _MatePanelAppletFramePrivate {
 	guint            has_handle : 1;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (MatePanelAppletFrame, mate_panel_applet_frame, GTK_TYPE_EVENT_BOX)
+G_DEFINE_TYPE_WITH_PRIVATE (MatePanelAppletFrame, cafe_panel_applet_frame, GTK_TYPE_EVENT_BOX)
 
 static gboolean
-mate_panel_applet_frame_draw (GtkWidget *widget,
+cafe_panel_applet_frame_draw (GtkWidget *widget,
                          cairo_t   *cr)
 {
 	MatePanelAppletFrame *frame = MATE_PANEL_APPLET_FRAME (widget);
@@ -104,8 +104,8 @@ mate_panel_applet_frame_draw (GtkWidget *widget,
 	GtkStateFlags     state;
 	PanelBackground  *background;
 
-	if (GTK_WIDGET_CLASS (mate_panel_applet_frame_parent_class)->draw)
-		GTK_WIDGET_CLASS (mate_panel_applet_frame_parent_class)->draw (widget, cr);
+	if (GTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->draw)
+		GTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->draw (widget, cr);
 
 	if (!frame->priv->has_handle)
 		return FALSE;
@@ -160,7 +160,7 @@ mate_panel_applet_frame_draw (GtkWidget *widget,
 }
 
 static void
-mate_panel_applet_frame_update_background_size (MatePanelAppletFrame *frame,
+cafe_panel_applet_frame_update_background_size (MatePanelAppletFrame *frame,
 					   GtkAllocation    *old_allocation,
 					   GtkAllocation    *new_allocation)
 {
@@ -177,11 +177,11 @@ mate_panel_applet_frame_update_background_size (MatePanelAppletFrame *frame,
 	   (background->type == PANEL_BACK_COLOR && !background->has_alpha))
 		return;
 
-	mate_panel_applet_frame_change_background (frame, background->type);
+	cafe_panel_applet_frame_change_background (frame, background->type);
 }
 
 static void
-mate_panel_applet_frame_get_preferred_width(GtkWidget *widget, gint *minimal_width, gint *natural_width)
+cafe_panel_applet_frame_get_preferred_width(GtkWidget *widget, gint *minimal_width, gint *natural_width)
 {
 	MatePanelAppletFrame *frame;
 	GtkBin           *bin;
@@ -192,7 +192,7 @@ mate_panel_applet_frame_get_preferred_width(GtkWidget *widget, gint *minimal_wid
 	bin = GTK_BIN (widget);
 
 	if (!frame->priv->has_handle) {
-		GTK_WIDGET_CLASS (mate_panel_applet_frame_parent_class)->get_preferred_width (widget, minimal_width, natural_width);
+		GTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->get_preferred_width (widget, minimal_width, natural_width);
 		return;
 	}
 
@@ -220,7 +220,7 @@ mate_panel_applet_frame_get_preferred_width(GtkWidget *widget, gint *minimal_wid
 }
 
 static void
-mate_panel_applet_frame_get_preferred_height(GtkWidget *widget, gint *minimal_height, gint *natural_height)
+cafe_panel_applet_frame_get_preferred_height(GtkWidget *widget, gint *minimal_height, gint *natural_height)
 {
 	MatePanelAppletFrame *frame;
 	GtkBin           *bin;
@@ -231,7 +231,7 @@ mate_panel_applet_frame_get_preferred_height(GtkWidget *widget, gint *minimal_he
 	bin = GTK_BIN (widget);
 
 	if (!frame->priv->has_handle) {
-		GTK_WIDGET_CLASS (mate_panel_applet_frame_parent_class)->get_preferred_height (widget, minimal_height, natural_height);
+		GTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->get_preferred_height (widget, minimal_height, natural_height);
 		return;
 	}
 
@@ -259,7 +259,7 @@ mate_panel_applet_frame_get_preferred_height(GtkWidget *widget, gint *minimal_he
 }
 
 static void
-mate_panel_applet_frame_size_allocate (GtkWidget     *widget,
+cafe_panel_applet_frame_size_allocate (GtkWidget     *widget,
 				  GtkAllocation *allocation)
 {
 	MatePanelAppletFrame *frame;
@@ -281,8 +281,8 @@ mate_panel_applet_frame_size_allocate (GtkWidget     *widget,
 	bin = GTK_BIN (widget);
 
 	if (!frame->priv->has_handle) {
-		GTK_WIDGET_CLASS (mate_panel_applet_frame_parent_class)->size_allocate (widget,  allocation);
-		mate_panel_applet_frame_update_background_size (frame, &old_allocation, allocation);
+		GTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->size_allocate (widget,  allocation);
+		cafe_panel_applet_frame_update_background_size (frame, &old_allocation, allocation);
 		return;
 	}
 
@@ -356,7 +356,7 @@ mate_panel_applet_frame_size_allocate (GtkWidget     *widget,
 
 	frame->priv->child_allocation = new_allocation;
 
-	mate_panel_applet_frame_update_background_size (frame,
+	cafe_panel_applet_frame_update_background_size (frame,
 						   &old_allocation,
 						   allocation);
 }
@@ -375,7 +375,7 @@ button_event_in_rect (GdkEventButton *event,
 }
 
 static gboolean
-mate_panel_applet_frame_button_changed (GtkWidget      *widget,
+cafe_panel_applet_frame_button_changed (GtkWidget      *widget,
 					GdkEventButton *event)
 {
 	MatePanelAppletFrame *frame;
@@ -430,41 +430,41 @@ mate_panel_applet_frame_button_changed (GtkWidget      *widget,
 }
 
 static void
-mate_panel_applet_frame_finalize (GObject *object)
+cafe_panel_applet_frame_finalize (GObject *object)
 {
 	MatePanelAppletFrame *frame = MATE_PANEL_APPLET_FRAME (object);
 
-	mate_panel_applets_manager_factory_deactivate (frame->priv->iid);
+	cafe_panel_applets_manager_factory_deactivate (frame->priv->iid);
 
-	panel_lockdown_notify_remove (G_CALLBACK (mate_panel_applet_frame_sync_menu_state),
+	panel_lockdown_notify_remove (G_CALLBACK (cafe_panel_applet_frame_sync_menu_state),
 				      frame);
 
 	g_free (frame->priv->iid);
 	frame->priv->iid = NULL;
 
-	G_OBJECT_CLASS (mate_panel_applet_frame_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cafe_panel_applet_frame_parent_class)->finalize (object);
 }
 
 static void
-mate_panel_applet_frame_class_init (MatePanelAppletFrameClass *klass)
+cafe_panel_applet_frame_class_init (MatePanelAppletFrameClass *klass)
 {
 	GObjectClass   *gobject_class = (GObjectClass *) klass;
 	GtkWidgetClass *widget_class = (GtkWidgetClass *) klass;
 
-	gobject_class->finalize = mate_panel_applet_frame_finalize;
+	gobject_class->finalize = cafe_panel_applet_frame_finalize;
 
-	widget_class->draw                 = mate_panel_applet_frame_draw;
-	widget_class->get_preferred_width  = mate_panel_applet_frame_get_preferred_width;
-	widget_class->get_preferred_height = mate_panel_applet_frame_get_preferred_height;
-	widget_class->size_allocate        = mate_panel_applet_frame_size_allocate;
-	widget_class->button_press_event   = mate_panel_applet_frame_button_changed;
-	widget_class->button_release_event = mate_panel_applet_frame_button_changed;
+	widget_class->draw                 = cafe_panel_applet_frame_draw;
+	widget_class->get_preferred_width  = cafe_panel_applet_frame_get_preferred_width;
+	widget_class->get_preferred_height = cafe_panel_applet_frame_get_preferred_height;
+	widget_class->size_allocate        = cafe_panel_applet_frame_size_allocate;
+	widget_class->button_press_event   = cafe_panel_applet_frame_button_changed;
+	widget_class->button_release_event = cafe_panel_applet_frame_button_changed;
 }
 
 static void
-mate_panel_applet_frame_init (MatePanelAppletFrame *frame)
+cafe_panel_applet_frame_init (MatePanelAppletFrame *frame)
 {
-	frame->priv = mate_panel_applet_frame_get_instance_private (frame);
+	frame->priv = cafe_panel_applet_frame_get_instance_private (frame);
 
 	frame->priv->panel       = NULL;
 	frame->priv->orientation = PANEL_ORIENTATION_TOP;
@@ -473,13 +473,13 @@ mate_panel_applet_frame_init (MatePanelAppletFrame *frame)
 }
 
 static void
-mate_panel_applet_frame_init_properties (MatePanelAppletFrame *frame)
+cafe_panel_applet_frame_init_properties (MatePanelAppletFrame *frame)
 {
 	MATE_PANEL_APPLET_FRAME_GET_CLASS (frame)->init_properties (frame);
 }
 
 void
-mate_panel_applet_frame_sync_menu_state (MatePanelAppletFrame *frame)
+cafe_panel_applet_frame_sync_menu_state (MatePanelAppletFrame *frame)
 {
 	PanelWidget *panel_widget;
 	gboolean     locked_down;
@@ -490,9 +490,9 @@ mate_panel_applet_frame_sync_menu_state (MatePanelAppletFrame *frame)
 
 	panel_widget = PANEL_WIDGET (gtk_widget_get_parent (GTK_WIDGET (frame)));
 
-	movable = mate_panel_applet_can_freely_move (frame->priv->applet_info);
+	movable = cafe_panel_applet_can_freely_move (frame->priv->applet_info);
 	removable = panel_profile_id_lists_are_writable ();
-	lockable = mate_panel_applet_lockable (frame->priv->applet_info);
+	lockable = cafe_panel_applet_lockable (frame->priv->applet_info);
 
 	locked = panel_widget_get_applet_locked (panel_widget, GTK_WIDGET (frame));
 	locked_down = panel_lockdown_get_locked_down ();
@@ -501,7 +501,7 @@ mate_panel_applet_frame_sync_menu_state (MatePanelAppletFrame *frame)
 }
 
 void
-mate_panel_applet_frame_change_orientation (MatePanelAppletFrame *frame,
+cafe_panel_applet_frame_change_orientation (MatePanelAppletFrame *frame,
 				       PanelOrientation  orientation)
 {
 	if (orientation == frame->priv->orientation)
@@ -512,14 +512,14 @@ mate_panel_applet_frame_change_orientation (MatePanelAppletFrame *frame,
 }
 
 void
-mate_panel_applet_frame_change_size (MatePanelAppletFrame *frame,
+cafe_panel_applet_frame_change_size (MatePanelAppletFrame *frame,
 				guint             size)
 {
 	MATE_PANEL_APPLET_FRAME_GET_CLASS (frame)->change_size (frame, size);
 }
 
 void
-mate_panel_applet_frame_change_background (MatePanelAppletFrame    *frame,
+cafe_panel_applet_frame_change_background (MatePanelAppletFrame    *frame,
 				      PanelBackgroundType  type)
 {
 	GtkWidget *parent;
@@ -540,7 +540,7 @@ mate_panel_applet_frame_change_background (MatePanelAppletFrame    *frame,
 }
 
 void
-mate_panel_applet_frame_set_panel (MatePanelAppletFrame *frame,
+cafe_panel_applet_frame_set_panel (MatePanelAppletFrame *frame,
 			      PanelWidget      *panel)
 {
 	g_return_if_fail (PANEL_IS_APPLET_FRAME (frame));
@@ -550,7 +550,7 @@ mate_panel_applet_frame_set_panel (MatePanelAppletFrame *frame,
 }
 
 void
-_mate_panel_applet_frame_set_iid (MatePanelAppletFrame *frame,
+_cafe_panel_applet_frame_set_iid (MatePanelAppletFrame *frame,
 			     const gchar      *iid)
 {
 	if (frame->priv->iid)
@@ -559,7 +559,7 @@ _mate_panel_applet_frame_set_iid (MatePanelAppletFrame *frame,
 }
 
 void
-_mate_panel_applet_frame_activated (MatePanelAppletFrame           *frame,
+_cafe_panel_applet_frame_activated (MatePanelAppletFrame           *frame,
 			       MatePanelAppletFrameActivating *frame_act,
 			       GError                     *error)
 {
@@ -572,10 +572,10 @@ _mate_panel_applet_frame_activated (MatePanelAppletFrame           *frame,
 			   frame->priv->iid, error->message);
 		g_error_free (error);
 
-		mate_panel_applet_frame_loading_failed (frame->priv->iid,
+		cafe_panel_applet_frame_loading_failed (frame->priv->iid,
 						   frame_act->panel,
 						   frame_act->id);
-		mate_panel_applet_frame_activating_free (frame_act);
+		cafe_panel_applet_frame_activating_free (frame_act);
 		gtk_widget_destroy (GTK_WIDGET (frame));
 
 		return;
@@ -584,7 +584,7 @@ _mate_panel_applet_frame_activated (MatePanelAppletFrame           *frame,
 	frame->priv->panel = frame_act->panel;
 	gtk_widget_show_all (GTK_WIDGET (frame));
 
-	info = mate_panel_applet_register (GTK_WIDGET (frame), GTK_WIDGET (frame),
+	info = cafe_panel_applet_register (GTK_WIDGET (frame), GTK_WIDGET (frame),
 				      NULL, frame->priv->panel,
 				      frame_act->locked, frame_act->position,
 				      frame_act->exactpos, PANEL_OBJECT_APPLET,
@@ -594,18 +594,18 @@ _mate_panel_applet_frame_activated (MatePanelAppletFrame           *frame,
 	panel_widget_set_applet_size_constrained (frame->priv->panel,
 						  GTK_WIDGET (frame), TRUE);
 
-	mate_panel_applet_frame_sync_menu_state (frame);
-	mate_panel_applet_frame_init_properties (frame);
+	cafe_panel_applet_frame_sync_menu_state (frame);
+	cafe_panel_applet_frame_init_properties (frame);
 
-	panel_lockdown_notify_add (G_CALLBACK (mate_panel_applet_frame_sync_menu_state),
+	panel_lockdown_notify_add (G_CALLBACK (cafe_panel_applet_frame_sync_menu_state),
 				   frame);
 
-	mate_panel_applet_stop_loading (frame_act->id);
-	mate_panel_applet_frame_activating_free (frame_act);
+	cafe_panel_applet_stop_loading (frame_act->id);
+	cafe_panel_applet_frame_activating_free (frame_act);
 }
 
 void
-_mate_panel_applet_frame_update_flags (MatePanelAppletFrame *frame,
+_cafe_panel_applet_frame_update_flags (MatePanelAppletFrame *frame,
 				  gboolean          major,
 				  gboolean          minor,
 				  gboolean          has_handle)
@@ -624,12 +624,12 @@ _mate_panel_applet_frame_update_flags (MatePanelAppletFrame *frame,
 		PanelBackground *background;
 
 		background = &frame->priv->panel->toplevel->background;
-		mate_panel_applet_frame_change_background (frame, background->type);
+		cafe_panel_applet_frame_change_background (frame, background->type);
 	}
 }
 
 void
-_mate_panel_applet_frame_update_size_hints (MatePanelAppletFrame *frame,
+_cafe_panel_applet_frame_update_size_hints (MatePanelAppletFrame *frame,
 				       gint             *size_hints,
 				       guint             n_elements)
 {
@@ -649,7 +649,7 @@ _mate_panel_applet_frame_update_size_hints (MatePanelAppletFrame *frame,
 }
 
 char *
-_mate_panel_applet_frame_get_background_string (MatePanelAppletFrame    *frame,
+_cafe_panel_applet_frame_get_background_string (MatePanelAppletFrame    *frame,
 					   PanelWidget         *panel,
 					   PanelBackgroundType  type)
 {
@@ -684,7 +684,7 @@ _mate_panel_applet_frame_get_background_string (MatePanelAppletFrame    *frame,
 }
 
 static void
-mate_panel_applet_frame_reload_response (GtkWidget        *dialog,
+cafe_panel_applet_frame_reload_response (GtkWidget        *dialog,
 				    int               response,
 				    MatePanelAppletFrame *frame)
 {
@@ -712,12 +712,12 @@ mate_panel_applet_frame_reload_response (GtkWidget        *dialog,
 
 		if (info) {
 			id = g_strdup (info->id);
-			position  = mate_panel_applet_get_position (info);
+			position  = cafe_panel_applet_get_position (info);
 			locked = panel_widget_get_applet_locked (panel, info->widget);
-			mate_panel_applet_clean (info);
+			cafe_panel_applet_clean (info);
 		}
 
-		mate_panel_applet_frame_load (iid, panel, locked,
+		cafe_panel_applet_frame_load (iid, panel, locked,
 					 position, TRUE, id);
 
 		g_free (iid);
@@ -736,7 +736,7 @@ mate_panel_applet_frame_reload_response (GtkWidget        *dialog,
 }
 
 void
-_mate_panel_applet_frame_applet_broken (MatePanelAppletFrame *frame)
+_cafe_panel_applet_frame_applet_broken (MatePanelAppletFrame *frame)
 {
 	GtkWidget  *dialog;
 	GdkScreen  *screen;
@@ -753,8 +753,8 @@ _mate_panel_applet_frame_applet_broken (MatePanelAppletFrame *frame)
 	if (frame->priv->iid) {
 		MatePanelAppletInfo *info;
 
-		info = (MatePanelAppletInfo *)mate_panel_applets_manager_get_applet_info (frame->priv->iid);
-		applet_name = mate_panel_applet_info_get_name (info);
+		info = (MatePanelAppletInfo *)cafe_panel_applets_manager_get_applet_info (frame->priv->iid);
+		applet_name = cafe_panel_applet_info_get_name (info);
 	}
 
 	if (applet_name)
@@ -791,7 +791,7 @@ _mate_panel_applet_frame_applet_broken (MatePanelAppletFrame *frame)
 	gtk_window_set_screen (GTK_WINDOW (dialog), screen);
 
 	g_signal_connect (dialog, "response",
-			  G_CALLBACK (mate_panel_applet_frame_reload_response),
+			  G_CALLBACK (cafe_panel_applet_frame_reload_response),
 			  g_object_ref (frame));
 
 	panel_widget_register_open_dialog (frame->priv->panel, dialog);
@@ -815,7 +815,7 @@ _mate_panel_applet_frame_applet_broken (MatePanelAppletFrame *frame)
 }
 
 void
-_mate_panel_applet_frame_applet_remove (MatePanelAppletFrame *frame)
+_cafe_panel_applet_frame_applet_remove (MatePanelAppletFrame *frame)
 {
 	AppletInfo *info;
 
@@ -829,7 +829,7 @@ _mate_panel_applet_frame_applet_remove (MatePanelAppletFrame *frame)
 }
 
 void
-_mate_panel_applet_frame_applet_move (MatePanelAppletFrame *frame)
+_cafe_panel_applet_frame_applet_move (MatePanelAppletFrame *frame)
 {
 	GtkWidget *widget = GTK_WIDGET (frame);
 	GtkWidget *parent = gtk_widget_get_parent (widget);
@@ -844,7 +844,7 @@ _mate_panel_applet_frame_applet_move (MatePanelAppletFrame *frame)
 }
 
 void
-_mate_panel_applet_frame_applet_lock (MatePanelAppletFrame *frame,
+_cafe_panel_applet_frame_applet_lock (MatePanelAppletFrame *frame,
 				 gboolean          locked)
 {
 	PanelWidget *panel_widget = PANEL_WIDGET (gtk_widget_get_parent (GTK_WIDGET (frame)));
@@ -852,7 +852,7 @@ _mate_panel_applet_frame_applet_lock (MatePanelAppletFrame *frame,
 	if (panel_widget_get_applet_locked (panel_widget, GTK_WIDGET (frame)) == locked)
 		return;
 
-	mate_panel_applet_toggle_locked (frame->priv->applet_info);
+	cafe_panel_applet_toggle_locked (frame->priv->applet_info);
 }
 
 /* Generic methods */
@@ -865,7 +865,7 @@ enum {
 };
 
 static void
-mate_panel_applet_frame_activating_free (MatePanelAppletFrameActivating *frame_act)
+cafe_panel_applet_frame_activating_free (MatePanelAppletFrameActivating *frame_act)
 {
 	g_free (frame_act->id);
 	g_slice_free (MatePanelAppletFrameActivating, frame_act);
@@ -878,37 +878,37 @@ panel_applet_frame_activating_get_screen (MatePanelAppletFrameActivating *frame_
 }
 
 PanelOrientation
-mate_panel_applet_frame_activating_get_orientation(MatePanelAppletFrameActivating *frame_act)
+cafe_panel_applet_frame_activating_get_orientation(MatePanelAppletFrameActivating *frame_act)
 {
 	return panel_widget_get_applet_orientation(frame_act->panel);
 }
 
 guint32
-mate_panel_applet_frame_activating_get_size (MatePanelAppletFrameActivating *frame_act)
+cafe_panel_applet_frame_activating_get_size (MatePanelAppletFrameActivating *frame_act)
 {
 	return frame_act->panel->sz;
 }
 
 gboolean
-mate_panel_applet_frame_activating_get_locked (MatePanelAppletFrameActivating *frame_act)
+cafe_panel_applet_frame_activating_get_locked (MatePanelAppletFrameActivating *frame_act)
 {
 	return frame_act->locked;
 }
 
 gboolean
-mate_panel_applet_frame_activating_get_locked_down (MatePanelAppletFrameActivating *frame_act)
+cafe_panel_applet_frame_activating_get_locked_down (MatePanelAppletFrameActivating *frame_act)
 {
 	return panel_lockdown_get_locked_down ();
 }
 
 gchar *
-mate_panel_applet_frame_activating_get_conf_path (MatePanelAppletFrameActivating *frame_act)
+cafe_panel_applet_frame_activating_get_conf_path (MatePanelAppletFrameActivating *frame_act)
 {
 	return g_strdup_printf (MATE_PANEL_APPLET_PREFS_PATH, frame_act->id);
 }
 
 static void
-mate_panel_applet_frame_loading_failed_response (GtkWidget *dialog,
+cafe_panel_applet_frame_loading_failed_response (GtkWidget *dialog,
 					    guint      response,
 					    char      *id)
 {
@@ -934,7 +934,7 @@ mate_panel_applet_frame_loading_failed_response (GtkWidget *dialog,
 }
 
 static void
-mate_panel_applet_frame_loading_failed (const char  *iid,
+cafe_panel_applet_frame_loading_failed (const char  *iid,
 				   PanelWidget *panel,
 				   const char  *id)
 {
@@ -979,7 +979,7 @@ mate_panel_applet_frame_loading_failed (const char  *iid,
 			       gtk_window_get_screen (GTK_WINDOW (panel->toplevel)));
 
 	g_signal_connect (dialog, "response",
-			  G_CALLBACK (mate_panel_applet_frame_loading_failed_response),
+			  G_CALLBACK (cafe_panel_applet_frame_loading_failed_response),
 			  g_strdup (id));
 
 	panel_widget_register_open_dialog (panel, dialog);
@@ -991,11 +991,11 @@ mate_panel_applet_frame_loading_failed (const char  *iid,
 
 	/* Note: this call will free the memory for id, so the variable should
 	 * not get accessed afterwards. */
-	mate_panel_applet_stop_loading (id);
+	cafe_panel_applet_stop_loading (id);
 }
 
 static void
-mate_panel_applet_frame_load (const gchar *iid,
+cafe_panel_applet_frame_load (const gchar *iid,
 			 PanelWidget *panel,
 			 gboolean     locked,
 			 int          position,
@@ -1010,12 +1010,12 @@ mate_panel_applet_frame_load (const gchar *iid,
 
 	if (g_slist_find_custom (no_reload_applets, id,
 				 (GCompareFunc) strcmp)) {
-		mate_panel_applet_stop_loading (id);
+		cafe_panel_applet_stop_loading (id);
 		return;
 	}
 
 	if (panel_lockdown_is_applet_disabled (iid)) {
-		mate_panel_applet_stop_loading (id);
+		cafe_panel_applet_stop_loading (id);
 		return;
 	}
 
@@ -1026,14 +1026,14 @@ mate_panel_applet_frame_load (const gchar *iid,
 	frame_act->exactpos = exactpos;
 	frame_act->id       = g_strdup (id);
 
-	if (!mate_panel_applets_manager_load_applet (iid, frame_act)) {
-		mate_panel_applet_frame_loading_failed (iid, panel, id);
-		mate_panel_applet_frame_activating_free (frame_act);
+	if (!cafe_panel_applets_manager_load_applet (iid, frame_act)) {
+		cafe_panel_applet_frame_loading_failed (iid, panel, id);
+		cafe_panel_applet_frame_activating_free (frame_act);
 	}
 }
 
 void
-mate_panel_applet_frame_load_from_gsettings (PanelWidget *panel_widget,
+cafe_panel_applet_frame_load_from_gsettings (PanelWidget *panel_widget,
 				    gboolean     locked,
 				    int          position,
 				    const char  *id)
@@ -1052,18 +1052,18 @@ mate_panel_applet_frame_load_from_gsettings (PanelWidget *panel_widget,
 	g_free (path);
 
 	if (!applet_iid) {
-		mate_panel_applet_stop_loading (id);
+		cafe_panel_applet_stop_loading (id);
 		return;
 	}
 
-	mate_panel_applet_frame_load (applet_iid, panel_widget,
+	cafe_panel_applet_frame_load (applet_iid, panel_widget,
 				 locked, position, TRUE, id);
 
 	g_free (applet_iid);
 }
 
 void
-mate_panel_applet_frame_create (PanelToplevel *toplevel,
+cafe_panel_applet_frame_create (PanelToplevel *toplevel,
 			   int            position,
 			   const char    *iid)
 {

@@ -188,7 +188,7 @@ drag_data_received_cb (GtkWidget        *widget,
 	if (is_using_x11 () && panel_global_config_get_enable_animations ()) {
 		cairo_surface_t *surface;
 		surface = button_widget_get_surface (BUTTON_WIDGET (widget));
-		xstuff_zoom_animate (widget,
+		xstuff_zoom_anicafe (widget,
 				     surface,
 				     button_widget_get_orientation (BUTTON_WIDGET (widget)),
 				     NULL);
@@ -409,7 +409,7 @@ clicked_cb (Launcher  *launcher,
 	if (is_using_x11 () && panel_global_config_get_enable_animations ()) {
 		cairo_surface_t *surface;
 		surface = button_widget_get_surface (BUTTON_WIDGET (widget));
-		xstuff_zoom_animate (widget,
+		xstuff_zoom_anicafe (widget,
 				     surface,
 				     button_widget_get_orientation (BUTTON_WIDGET (widget)),
 				     NULL);
@@ -563,7 +563,7 @@ setup_actions (Launcher *launcher)
 		const gchar *action = *ptr;
 		gchar *callback = g_strdup_printf("launch-action_%s", action);
 		gchar *action_name = g_desktop_app_info_get_action_name (app_info, action);
-		mate_panel_applet_add_callback (launcher->info,
+		cafe_panel_applet_add_callback (launcher->info,
 						callback,
 						NULL,
 						action_name,
@@ -586,9 +586,9 @@ setup_button (Launcher *launcher)
 
 	g_return_if_fail (launcher != NULL);
 
-	mate_panel_applet_clear_user_menu (launcher->info);
+	cafe_panel_applet_clear_user_menu (launcher->info);
 
-	mate_panel_applet_add_callback (launcher->info,
+	cafe_panel_applet_add_callback (launcher->info,
 					"launch",
 					"system-run",
 					_("_Launch"),
@@ -596,7 +596,7 @@ setup_button (Launcher *launcher)
 
 	setup_actions (launcher);
 
-	mate_panel_applet_add_callback (launcher->info,
+	cafe_panel_applet_add_callback (launcher->info,
 					"properties",
 					"document-properties",
 					_("_Properties"),
@@ -868,7 +868,7 @@ load_launcher_applet (const char       *location,
 	if (!launcher)
 		return NULL;
 
-	launcher->info = mate_panel_applet_register (launcher->button, launcher,
+	launcher->info = cafe_panel_applet_register (launcher->button, launcher,
 						free_launcher,
 						panel, locked, pos, exactpos,
 						PANEL_OBJECT_LAUNCHER, id);
@@ -924,7 +924,7 @@ launcher_load_from_gsettings (PanelWidget *panel_widget,
 		if (!g_settings_is_writable (settings, PANEL_OBJECT_LAUNCHER_LOCATION_KEY)) {
 			AppletUserMenu *menu;
 
-			menu = mate_panel_applet_get_callback (launcher->info->user_menu,
+			menu = cafe_panel_applet_get_callback (launcher->info->user_menu,
 							  "properties");
 			if (menu != NULL)
 				menu->sensitive = FALSE;
@@ -1143,7 +1143,7 @@ find_launcher (const char *path)
 
 	g_return_val_if_fail (path != NULL, NULL);
 
-	for (l = mate_panel_applet_list_applets (); l; l = l->next) {
+	for (l = cafe_panel_applet_list_applets (); l; l = l->next) {
 		AppletInfo *info = l->data;
 		Launcher *launcher;
 

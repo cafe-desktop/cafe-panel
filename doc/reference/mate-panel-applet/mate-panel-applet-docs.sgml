@@ -1,10 +1,10 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
     "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
-<!ENTITY MatePanelApplet SYSTEM "xml/mate-panel-applet.xml">
+<!ENTITY MatePanelApplet SYSTEM "xml/cafe-panel-applet.xml">
 ]>
 
-<book id="libmate-panel-applet">
+<book id="libcafe-panel-applet">
   <bookinfo>
     <title>Panel Applet Library Reference Manual</title>
     <authorgroup>
@@ -55,7 +55,7 @@ just about the simplest applet you could write.
       <programlisting>
 #include &lt;string.h&gt;
 
-#include &lt;mate-panel-applet.h&gt;
+#include &lt;cafe-panel-applet.h&gt;
 #include &lt;gtk/gtklabel.h&gt;
 
 static gboolean
@@ -90,7 +90,7 @@ control. You define a factory using MATE_PANEL_APPLET_MATECOMPONENT_FACTORY(),
 passing it a factory function like hello_applet_fill().
       </para>
 
-      <para>libmate-panel-applet automatically creates a #MatePanelApplet object
+      <para>libcafe-panel-applet automatically creates a #MatePanelApplet object
 for you, passing this to your factory method. Here, you should fill
 the applet with your widgets just like a #GtkBin. For example, if you
 were writing a cdplayer applet you would create a #GtkHBox, pack the
@@ -102,8 +102,8 @@ hbox with the cdplayer buttons and in turn add the hbox to the applet.
     <sect1 id="server-files">
       <title>MateComponent Activation .server Files For Applets</title>
 
-      <para>Since an applet is a matecomponent component, you must write
-a .server file so that the matecomponent activation daemon is aware that
+      <para>Since an applet is a cafecomponent component, you must write
+a .server file so that the cafecomponent activation daemon is aware that
 your component exists and how to activate it. Copy and paste is
 your friend here ...
       </para>
@@ -111,7 +111,7 @@ your friend here ...
       <programlisting>
 &lt;oaf_info&gt;
 &lt;oaf_server iid="OAFIID:My_HelloApplet_Factory" type="exe"
-            location="test-matecomponent-applet"&gt;
+            location="test-cafecomponent-applet"&gt;
 
         &lt;oaf_attribute name="repo_ids" type="stringv"&gt;
                 &lt;item value="IDL:MateComponent/GenericFactory:1.0"/&gt;
@@ -131,13 +131,13 @@ your friend here ...
         &lt;/oaf_attribute&gt;
         &lt;oaf_attribute name="name" type="string" value="Hello World Applet"/&gt;
         &lt;oaf_attribute name="description" type="string" value="My first applet for the MATE2 panel"/&gt;
-        &lt;oaf_attribute name="panel:icon" type="string" value="mate-applets.png"/&gt;
+        &lt;oaf_attribute name="panel:icon" type="string" value="cafe-applets.png"/&gt;
 &lt;/oaf_server&gt;
 &lt;/oaf_info&gt;
       </programlisting>
 
       <para>Probably the most important thing to note here is that, unlike
-.server files for other matecomponent components, applet .server files contain
+.server files for other cafecomponent components, applet .server files contain
 a special attribute called 'panel:icon'. This is used by the panel to display
 an entry for the applet in the 'Add to Panel' dialog.
       </para>
@@ -175,8 +175,8 @@ an entry for the applet in the 'Add to Panel' dialog.
       <para>In MATE 1.x the applet interface lived in a header called
 <filename>applet-widget.h</filename>. The interface was based on GOAD,
 the MATE 1.x object activation framework. A new interface was
-designed for MATE 2.x using the power of matecomponent UI embedding and the
-new object activation framework, matecomponent-activation. The interface is
+designed for MATE 2.x using the power of cafecomponent UI embedding and the
+new object activation framework, cafecomponent-activation. The interface is
 intended to be easy to use, cruft free, but semantically similar to
 the old API in order to make porting relatively painless.</para>
 
@@ -184,7 +184,7 @@ the old API in order to make porting relatively painless.</para>
       <title>Applet Activation</title>
 
 	<para>The first thing to change when porting to the new API is
-the header. Include <filename>mate-panel-applet.h</filename> instead of
+the header. Include <filename>cafe-panel-applet.h</filename> instead of
 <filename>applet-widget.h</filename>.</para>
 
 	<para>Next you need to change how the applet is activated.
@@ -192,12 +192,12 @@ Browsing through old applet's code, its obvious that this was done in
 various ways in the past. The best advice is to hunt out the calls to
 applet_widget_init, applet_widget_new and applet_widget_add.
 applet_widget_new and applet_widget_add are now effectively merged
-into one call mate_panel_applet_new, to which the top-level widget of the
+into one call cafe_panel_applet_new, to which the top-level widget of the
 applet should be passed. applet_widget_init is not neccessary anymore.
 So the new code should look something like this</para>
 
       <programlisting>
-#include &lt;mate-panel-applet.h&gt;
+#include &lt;cafe-panel-applet.h&gt;
 
 static MateComponentObject *
 blah_applet_new ()
@@ -209,12 +209,12 @@ blah_applet_new ()
 	 * goes here. So effectively delete calls to
 	 * applet_widget_init and applet_widget_new
 	 * and the replace applet_widget_add with a call
-	 * to mate_panel_applet_new.
+	 * to cafe_panel_applet_new.
 	 */
 
-        applet = mate_panel_applet_new (label);
+        applet = cafe_panel_applet_new (label);
 
-        return MATECOMPONENT_OBJECT (mate_panel_applet_get_control (applet));
+        return MATECOMPONENT_OBJECT (cafe_panel_applet_get_control (applet));
 }
 
 static MateComponentObject *
@@ -248,7 +248,7 @@ applet to be out of process or in process.</para>
       <title>Activation files</title>
 
 	<para>The next thing to do may be to port from a
-<filename>.gnorba</filename> file to a matecomponent-activation
+<filename>.gnorba</filename> file to a cafecomponent-activation
 <filename>.server</filename> file. You no longer need a .desktop file
 for applets. A <filename>.gnorba</filename> looks something like this
 :</para>
@@ -319,7 +319,7 @@ written.</para></listitem>
 This is basically a list of callbacks to be call when a certain menu
 item is clicked in the popup.</para></listitem>
 	<listitem><para>The menu is registered using a call to
-mate_panel_applet_setup_menu.</para></listitem>
+cafe_panel_applet_setup_menu.</para></listitem>
 	</itemizedlist>
 
 	<para>The xml description should look something like this
@@ -333,13 +333,13 @@ static const char fish_menu_xml [] =
         "   &lt;menuitem name=\"Help Item\" verb=\"BlahHelp\" _label=\"Help\"\n"
         "             pixtype=\"stock\" pixname=\"gtk-help\"/&gt;\n"
         "   &lt;menuitem name=\"About Item\" verb=\"BlahAbout\" _label=\"About ...\"\n"
-        "             pixtype=\"stock\" pixname=\"mate-stock-about\"/&gt;\n"
+        "             pixtype=\"stock\" pixname=\"cafe-stock-about\"/&gt;\n"
         "&lt;/popup&gt;\n";
 	</programlisting>
 
 	<para>This could also be in a seperate
 <filename>.xml</filename> file and loaded with
-mate_panel_applet_setup_menu_from_file. The description of the verbs should
+cafe_panel_applet_setup_menu_from_file. The description of the verbs should
 look something like :</para>
 
 	<programlisting>
@@ -355,13 +355,13 @@ static const MateComponentUIVerb fish_menu_verbs [] = {
 	<para>This is just a list of callbacks invoked when the menu
 items are clicked. There are other macros you may use other than
 MATECOMPONENT_UI_VERB - see
-<filename>matecomponent-ui-component.h</filename>.</para>
+<filename>cafecomponent-ui-component.h</filename>.</para>
 
 	<para>To actually register the menu you just do something like
 :</para>
 
 	<programlisting>
-	mate_panel_applet_setup_menu (MATE_PANEL_APPLET (blah->applet),
+	cafe_panel_applet_setup_menu (MATE_PANEL_APPLET (blah->applet),
                                  blah_menu_xml,
                                  blah_menu_verbs,
                                  blah);
@@ -374,7 +374,7 @@ to the callbacks.</para>
 
   </chapter>
 
-  <chapter id="mate-panel-applet">
+  <chapter id="cafe-panel-applet">
     <title>The Panel Applet Library</title>
 
     &MatePanelApplet;

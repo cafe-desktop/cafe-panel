@@ -120,7 +120,7 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 	 *
 	 * Here we need to identify the output names, so that we can put the
 	 * built-in LCD in a laptop *before* all other outputs.  This is so
-	 * that mate-panel will normally prefer to appear on the "native"
+	 * that cafe-panel will normally prefer to appear on the "native"
 	 * display rather than on an external monitor.
 	 *
 	 * To get the output names and geometries, we will not use

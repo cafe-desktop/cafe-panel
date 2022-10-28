@@ -1,5 +1,5 @@
 /*
- * mate-panel-applet-factory.h: panel applet writing API.
+ * cafe-panel-applet-factory.h: panel applet writing API.
  *
  * Copyright (C) 2010 Carlos Garcia Campos <carlosgc@gnome.org>
  *
@@ -24,13 +24,13 @@
 
 #include <glib-object.h>
 
-#include "mate-panel-applet.h"
+#include "cafe-panel-applet.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#define PANEL_TYPE_APPLET_FACTORY            (mate_panel_applet_factory_get_type ())
+#define PANEL_TYPE_APPLET_FACTORY            (cafe_panel_applet_factory_get_type ())
 #define MATE_PANEL_APPLET_FACTORY(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLET_FACTORY, MatePanelAppletFactory))
 #define MATE_PANEL_APPLET_FACTORY_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), PANEL_TYPE_APPLET_FACTORY, MatePanelAppletFactoryClass))
 #define PANEL_IS_APPLET_FACTORY(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), PANEL_TYPE_APPLET_FACTORY))
@@ -38,13 +38,13 @@ extern "C" {
 typedef struct _MatePanelAppletFactory        MatePanelAppletFactory;
 typedef struct _MatePanelAppletFactoryClass   MatePanelAppletFactoryClass;
 
-GType               mate_panel_applet_factory_get_type         (void) G_GNUC_CONST;
-MatePanelAppletFactory *mate_panel_applet_factory_new              (const gchar        *applet_id,
+GType               cafe_panel_applet_factory_get_type         (void) G_GNUC_CONST;
+MatePanelAppletFactory *cafe_panel_applet_factory_new              (const gchar        *applet_id,
 								gboolean            out_of_process,
 							   GType               applet_type,
 							   GClosure           *closure);
-gboolean            mate_panel_applet_factory_register_service (MatePanelAppletFactory *factory);
-GtkWidget          *mate_panel_applet_factory_get_applet_widget (const gchar        *id,
+gboolean            cafe_panel_applet_factory_register_service (MatePanelAppletFactory *factory);
+GtkWidget          *cafe_panel_applet_factory_get_applet_widget (const gchar        *id,
                                                             guint               uid);
 #ifdef __cplusplus
 }

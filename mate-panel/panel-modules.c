@@ -25,7 +25,7 @@
 #include <config.h>
 #include <gio/gio.h>
 
-#include <libmate-panel-applet-private/panel-applets-manager-dbus.h>
+#include <libcafe-panel-applet-private/panel-applets-manager-dbus.h>
 
 #include "panel-applets-manager.h"
 #include "panel-modules.h"
@@ -79,6 +79,6 @@ panel_modules_ensure_loaded (void)
 			g_strfreev (paths);
 		}
 
-		mate_panel_applets_manager_dbus_get_type ();
+		cafe_panel_applets_manager_dbus_get_type ();
 	}
 }

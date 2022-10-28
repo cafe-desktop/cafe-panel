@@ -1,7 +1,7 @@
 SUBDIRS =			\
 	po				\
-	mate-panel		\
-	libmate-panel-applet		\
+	cafe-panel		\
+	libcafe-panel-applet		\
 	applets			\
 	doc			\
 	help			\

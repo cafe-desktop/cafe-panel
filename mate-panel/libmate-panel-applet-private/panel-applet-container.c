@@ -75,25 +75,25 @@ static const AppletPropertyInfo applet_properties [] = {
 	{ "locked-down", "LockedDown" }
 };
 
-#define MATE_PANEL_APPLET_BUS_NAME            "org.mate.panel.applet.%s"
-#define MATE_PANEL_APPLET_FACTORY_INTERFACE   "org.mate.panel.applet.AppletFactory"
-#define MATE_PANEL_APPLET_FACTORY_OBJECT_PATH "/org/mate/panel/applet/%s"
-#define MATE_PANEL_APPLET_INTERFACE           "org.mate.panel.applet.Applet"
+#define MATE_PANEL_APPLET_BUS_NAME            "org.cafe.panel.applet.%s"
+#define MATE_PANEL_APPLET_FACTORY_INTERFACE   "org.cafe.panel.applet.AppletFactory"
+#define MATE_PANEL_APPLET_FACTORY_OBJECT_PATH "/org/cafe/panel/applet/%s"
+#define MATE_PANEL_APPLET_INTERFACE           "org.cafe.panel.applet.Applet"
 
 #ifdef HAVE_X11
-static gboolean mate_panel_applet_container_plug_removed (MatePanelAppletContainer *container);
+static gboolean cafe_panel_applet_container_plug_removed (MatePanelAppletContainer *container);
 #endif
 
-G_DEFINE_TYPE_WITH_PRIVATE (MatePanelAppletContainer, mate_panel_applet_container, GTK_TYPE_EVENT_BOX);
+G_DEFINE_TYPE_WITH_PRIVATE (MatePanelAppletContainer, cafe_panel_applet_container, GTK_TYPE_EVENT_BOX);
 
-GQuark mate_panel_applet_container_error_quark (void)
+GQuark cafe_panel_applet_container_error_quark (void)
 {
-	return g_quark_from_static_string ("mate-panel-applet-container-error-quark");
+	return g_quark_from_static_string ("cafe-panel-applet-container-error-quark");
 }
 
-static void mate_panel_applet_container_init(MatePanelAppletContainer* container)
+static void cafe_panel_applet_container_init(MatePanelAppletContainer* container)
 {
-	container->priv = mate_panel_applet_container_get_instance_private (container);
+	container->priv = cafe_panel_applet_container_get_instance_private (container);
 
 	container->priv->pending_ops = g_hash_table_new_full (g_direct_hash,
 							      g_direct_equal,
@@ -111,7 +111,7 @@ panel_applet_container_setup (MatePanelAppletContainer *container)
 
 			g_signal_connect_swapped (container->priv->socket,
 						"plug-removed",
-						G_CALLBACK (mate_panel_applet_container_plug_removed),
+						G_CALLBACK (cafe_panel_applet_container_plug_removed),
 						container);
 
 			gtk_container_add (GTK_CONTAINER (container), container->priv->socket);
@@ -125,14 +125,14 @@ panel_applet_container_setup (MatePanelAppletContainer *container)
 	} else {
 		GtkWidget *applet;
 
-		applet = mate_panel_applets_manager_get_applet_widget (container->priv->iid, container->priv->uid);
+		applet = cafe_panel_applets_manager_get_applet_widget (container->priv->iid, container->priv->uid);
 
 		gtk_container_add (GTK_CONTAINER (container), applet);
 	}
  }
 
 static void
-mate_panel_applet_container_cancel_pending_operations (MatePanelAppletContainer *container)
+cafe_panel_applet_container_cancel_pending_operations (MatePanelAppletContainer *container)
 {
 	GList *keys, *l;
 
@@ -150,12 +150,12 @@ mate_panel_applet_container_cancel_pending_operations (MatePanelAppletContainer 
 }
 
 static void
-mate_panel_applet_container_dispose (GObject *object)
+cafe_panel_applet_container_dispose (GObject *object)
 {
 	MatePanelAppletContainer *container = MATE_PANEL_APPLET_CONTAINER (object);
 
 	if (container->priv->pending_ops) {
-		mate_panel_applet_container_cancel_pending_operations (container);
+		cafe_panel_applet_container_cancel_pending_operations (container);
 		g_hash_table_destroy (container->priv->pending_ops);
 		container->priv->pending_ops = NULL;
 	}
@@ -180,15 +180,15 @@ mate_panel_applet_container_dispose (GObject *object)
 		container->priv->applet_proxy = NULL;
 	}
 
-	G_OBJECT_CLASS (mate_panel_applet_container_parent_class)->dispose (object);
+	G_OBJECT_CLASS (cafe_panel_applet_container_parent_class)->dispose (object);
 }
 
 static void
-mate_panel_applet_container_class_init (MatePanelAppletContainerClass *klass)
+cafe_panel_applet_container_class_init (MatePanelAppletContainerClass *klass)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
-	gobject_class->dispose = mate_panel_applet_container_dispose;
+	gobject_class->dispose = cafe_panel_applet_container_dispose;
 
 	signals[APPLET_BROKEN] =
 		g_signal_new ("applet-broken",
@@ -245,7 +245,7 @@ mate_panel_applet_container_class_init (MatePanelAppletContainerClass *klass)
 }
 
 static const AppletPropertyInfo *
-mate_panel_applet_container_child_property_get_info (const gchar *property_name)
+cafe_panel_applet_container_child_property_get_info (const gchar *property_name)
 {
 	gint i;
 
@@ -260,7 +260,7 @@ mate_panel_applet_container_child_property_get_info (const gchar *property_name)
 }
 
 GtkWidget *
-mate_panel_applet_container_new (void)
+cafe_panel_applet_container_new (void)
 {
 	GtkWidget *container;
 
@@ -271,14 +271,14 @@ mate_panel_applet_container_new (void)
 
 #ifdef HAVE_X11
 static gboolean
-mate_panel_applet_container_plug_removed (MatePanelAppletContainer *container)
+cafe_panel_applet_container_plug_removed (MatePanelAppletContainer *container)
 {
 	g_return_val_if_fail (GDK_IS_X11_DISPLAY (gtk_widget_get_display (GTK_WIDGET (container))), FALSE);
 
 	if (!container->priv->applet_proxy)
 		return FALSE;
 
-	mate_panel_applet_container_cancel_pending_operations (container);
+	cafe_panel_applet_container_cancel_pending_operations (container);
 
 	if (container->priv->name_watcher_id > 0) {
 		g_bus_unwatch_name (container->priv->name_watcher_id);
@@ -298,7 +298,7 @@ mate_panel_applet_container_plug_removed (MatePanelAppletContainer *container)
 #endif // HAVE_X11
 
 static void
-mate_panel_applet_container_child_signal (GDBusProxy           *proxy,
+cafe_panel_applet_container_child_signal (GDBusProxy           *proxy,
 				     gchar                *sender_name,
 				     gchar                *signal_name,
 				     GVariant             *parameters,
@@ -371,7 +371,7 @@ on_proxy_appeared (GObject      *source_object,
 
 	container->priv->applet_proxy = proxy;
 	g_signal_connect (container->priv->applet_proxy, "g-signal",
-			  G_CALLBACK (mate_panel_applet_container_child_signal),
+			  G_CALLBACK (cafe_panel_applet_container_child_signal),
 			  container);
 	g_dbus_connection_signal_subscribe (g_dbus_proxy_get_connection (proxy),
 					    g_dbus_proxy_get_name (proxy),
@@ -491,7 +491,7 @@ on_factory_appeared (GDBusConnection   *connection,
 }
 
 static void
-mate_panel_applet_container_get_applet (MatePanelAppletContainer *container,
+cafe_panel_applet_container_get_applet (MatePanelAppletContainer *container,
 				   GdkScreen            *screen,
 				   const gchar          *iid,
 				   GVariant             *props,
@@ -509,7 +509,7 @@ mate_panel_applet_container_get_applet (MatePanelAppletContainer *container,
 	result = g_simple_async_result_new (G_OBJECT (container),
 					    callback,
 					    user_data,
-					    mate_panel_applet_container_get_applet);
+					    cafe_panel_applet_container_get_applet);
 
 	applet_id = g_strrstr (iid, "::");
 	if (!applet_id) {
@@ -559,7 +559,7 @@ mate_panel_applet_container_get_applet (MatePanelAppletContainer *container,
 }
 
 void
-mate_panel_applet_container_add (MatePanelAppletContainer *container,
+cafe_panel_applet_container_add (MatePanelAppletContainer *container,
 			    GdkScreen            *screen,
 			    const gchar          *iid,
 			    GCancellable         *cancellable,
@@ -570,20 +570,20 @@ mate_panel_applet_container_add (MatePanelAppletContainer *container,
 	g_return_if_fail (PANEL_IS_APPLET_CONTAINER (container));
 	g_return_if_fail (iid != NULL);
 
-	mate_panel_applet_container_cancel_pending_operations (container);
+	cafe_panel_applet_container_cancel_pending_operations (container);
 
-	mate_panel_applet_container_get_applet (container, screen, iid, properties,
+	cafe_panel_applet_container_get_applet (container, screen, iid, properties,
 					   cancellable, callback, user_data);
 }
 
 gboolean
-mate_panel_applet_container_add_finish (MatePanelAppletContainer *container,
+cafe_panel_applet_container_add_finish (MatePanelAppletContainer *container,
 				   GAsyncResult         *result,
 				   GError              **error)
 {
 	GSimpleAsyncResult *simple = G_SIMPLE_ASYNC_RESULT (result);
 
-	g_warn_if_fail (g_simple_async_result_get_source_tag (simple) == mate_panel_applet_container_get_applet);
+	g_warn_if_fail (g_simple_async_result_get_source_tag (simple) == cafe_panel_applet_container_get_applet);
 
 	return !g_simple_async_result_propagate_error (simple, error);
 }
@@ -620,7 +620,7 @@ set_applet_property_cb (GObject      *source_object,
 }
 
 gconstpointer
-mate_panel_applet_container_child_set (MatePanelAppletContainer *container,
+cafe_panel_applet_container_child_set (MatePanelAppletContainer *container,
 				  const gchar          *property_name,
 				  const GVariant       *value,
 				  GCancellable         *cancellable,
@@ -634,7 +634,7 @@ mate_panel_applet_container_child_set (MatePanelAppletContainer *container,
 	if (!proxy)
 		return NULL;
 
-	info = mate_panel_applet_container_child_property_get_info (property_name);
+	info = cafe_panel_applet_container_child_property_get_info (property_name);
 	if (!info) {
 		g_simple_async_report_error_in_idle (G_OBJECT (container),
 						     callback, user_data,
@@ -648,7 +648,7 @@ mate_panel_applet_container_child_set (MatePanelAppletContainer *container,
 	result = g_simple_async_result_new (G_OBJECT (container),
 					    callback,
 					    user_data,
-					    mate_panel_applet_container_child_set);
+					    cafe_panel_applet_container_child_set);
 
 	if (cancellable)
 		g_object_ref (cancellable);
@@ -675,13 +675,13 @@ mate_panel_applet_container_child_set (MatePanelAppletContainer *container,
 }
 
 gboolean
-mate_panel_applet_container_child_set_finish (MatePanelAppletContainer *container,
+cafe_panel_applet_container_child_set_finish (MatePanelAppletContainer *container,
 					 GAsyncResult         *result,
 					 GError              **error)
 {
 	GSimpleAsyncResult *simple = G_SIMPLE_ASYNC_RESULT (result);
 
-	g_warn_if_fail (g_simple_async_result_get_source_tag (simple) == mate_panel_applet_container_child_set);
+	g_warn_if_fail (g_simple_async_result_get_source_tag (simple) == cafe_panel_applet_container_child_set);
 
 	return !g_simple_async_result_propagate_error (simple, error);
 }
@@ -724,7 +724,7 @@ get_applet_property_cb (GObject      *source_object,
 }
 
 gconstpointer
-mate_panel_applet_container_child_get (MatePanelAppletContainer *container,
+cafe_panel_applet_container_child_get (MatePanelAppletContainer *container,
 				  const gchar          *property_name,
 				  GCancellable         *cancellable,
 				  GAsyncReadyCallback   callback,
@@ -737,7 +737,7 @@ mate_panel_applet_container_child_get (MatePanelAppletContainer *container,
 	if (!proxy)
 		return NULL;
 
-	info = mate_panel_applet_container_child_property_get_info (property_name);
+	info = cafe_panel_applet_container_child_property_get_info (property_name);
 	if (!info) {
 		g_simple_async_report_error_in_idle (G_OBJECT (container),
 						     callback, user_data,
@@ -751,7 +751,7 @@ mate_panel_applet_container_child_get (MatePanelAppletContainer *container,
 	result = g_simple_async_result_new (G_OBJECT (container),
 					    callback,
 					    user_data,
-					    mate_panel_applet_container_child_get);
+					    cafe_panel_applet_container_child_get);
 	if (cancellable)
 		g_object_ref (cancellable);
 	else
@@ -776,13 +776,13 @@ mate_panel_applet_container_child_get (MatePanelAppletContainer *container,
 }
 
 GVariant *
-mate_panel_applet_container_child_get_finish (MatePanelAppletContainer *container,
+cafe_panel_applet_container_child_get_finish (MatePanelAppletContainer *container,
 					 GAsyncResult         *result,
 					 GError              **error)
 {
 	GSimpleAsyncResult *simple = G_SIMPLE_ASYNC_RESULT (result);
 
-	g_warn_if_fail (g_simple_async_result_get_source_tag (simple) == mate_panel_applet_container_child_get);
+	g_warn_if_fail (g_simple_async_result_get_source_tag (simple) == cafe_panel_applet_container_child_get);
 
 	if (g_simple_async_result_propagate_error (simple, error))
 		return NULL;
@@ -813,7 +813,7 @@ child_popup_menu_cb (GObject      *source_object,
 }
 
 void
-mate_panel_applet_container_child_popup_menu (MatePanelAppletContainer *container,
+cafe_panel_applet_container_child_popup_menu (MatePanelAppletContainer *container,
 					 guint                 button,
 					 guint32               timestamp,
 					 GCancellable         *cancellable,
@@ -829,7 +829,7 @@ mate_panel_applet_container_child_popup_menu (MatePanelAppletContainer *containe
 	result = g_simple_async_result_new (G_OBJECT (container),
 					    callback,
 					    user_data,
-					    mate_panel_applet_container_child_popup_menu);
+					    cafe_panel_applet_container_child_popup_menu);
 
 	g_dbus_connection_call (g_dbus_proxy_get_connection (proxy),
 				g_dbus_proxy_get_name (proxy),
@@ -845,19 +845,19 @@ mate_panel_applet_container_child_popup_menu (MatePanelAppletContainer *containe
 }
 
 gboolean
-mate_panel_applet_container_child_popup_menu_finish (MatePanelAppletContainer *container,
+cafe_panel_applet_container_child_popup_menu_finish (MatePanelAppletContainer *container,
 						GAsyncResult         *result,
 						GError              **error)
 {
 	GSimpleAsyncResult *simple = G_SIMPLE_ASYNC_RESULT (result);
 
-	g_warn_if_fail (g_simple_async_result_get_source_tag (simple) == mate_panel_applet_container_child_popup_menu);
+	g_warn_if_fail (g_simple_async_result_get_source_tag (simple) == cafe_panel_applet_container_child_popup_menu);
 
 	return !g_simple_async_result_propagate_error (simple, error);
 }
 
 void
-mate_panel_applet_container_cancel_operation (MatePanelAppletContainer *container,
+cafe_panel_applet_container_cancel_operation (MatePanelAppletContainer *container,
                                               gconstpointer             operation)
 {
 	gpointer value = g_hash_table_lookup (container->priv->pending_ops, operation);

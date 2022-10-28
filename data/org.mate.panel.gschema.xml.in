@@ -1,5 +1,5 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-  <schema id="org.mate.panel" path="/org/mate/panel/general/">
+  <schema id="org.cafe.panel" path="/org/cafe/panel/general/">
     <key name="default-layout" type="s">
       <default>'default'</default>
       <summary>Default panel layout</summary>
@@ -20,17 +20,17 @@
       <summary>Enable autocompletion in "Run Application" dialog</summary>
       <description>If true, autocompletion in the "Run Application" dialog is made available.</description>
     </key>
-    <key name="history-mate-run" type="as">
+    <key name="history-cafe-run" type="as">
       <default>[]</default>
       <summary>History for "Run Application" dialog</summary>
       <description>This is the list of commands used in "Run Application" dialog. The commands are sorted descendingly by recency (e.g., most recent command comes first).</description>
     </key>
-    <key name="history-max-size-mate-run" type="u">
+    <key name="history-max-size-cafe-run" type="u">
       <default>10</default>
       <summary>Maximum history size for "Run Application" dialog</summary>
       <description>Controls the maximum size of the history of the "Run Application" dialog. A value of 0 will disable the history.</description>
     </key>
-    <key name="history-reverse-mate-run" type="b">
+    <key name="history-reverse-cafe-run" type="b">
       <default>false</default>
       <summary>Reverse the history of the "Run Application" dialog</summary>
       <description>Displays the history in reverse. Provides a consistent view for terminal users as the up key will select the most recent entry.</description>

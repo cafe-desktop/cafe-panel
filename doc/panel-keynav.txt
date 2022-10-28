@@ -41,7 +41,7 @@ the GtkPlug is in a different process, the event has not passed to the
 MatePanelAppletFrame.
 
 The implementation for "moving_focus_out_of_applet" sets a flag 
-moving_focus_out so that the function mate_panel_applet_focus() which is 
+moving_focus_out so that the function cafe_panel_applet_focus() which is 
 MatePanelApplet's default signal handler for focus signal will not attempt to
 move the focus within the applet if this flag is set.
 
@@ -64,7 +64,7 @@ We need a mechanism that will make visible which panel has focus. We also
 need to do this without impacting current behaviour.
 
 We set the state of a PanelWidget to GTK_STATE_SELECTED whan focus is in a
-PanelWidget. We provide a default panel rc file mate-panelrc, which is 
+PanelWidget. We provide a default panel rc file cafe-panelrc, which is 
 installed in $(datadir). This rc file sets the default default color for
 SELECTED for any widget which is a descended from a PanelWidget or
 MatePanelApplet to be the same as the NORMAL colour. 

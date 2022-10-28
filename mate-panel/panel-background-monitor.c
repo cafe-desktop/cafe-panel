@@ -39,7 +39,7 @@
 #include <X11/Xatom.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
-#include <libmate-desktop/mate-bg.h>
+#include <libcafe-desktop/cafe-bg.h>
 
 #include "panel-background-monitor.h"
 #include "panel-util.h"
@@ -316,7 +316,7 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 	monitor->display_grabbed = TRUE;
 
 	if (!monitor->surface)
-		monitor->surface = mate_bg_get_surface_from_root (monitor->screen);
+		monitor->surface = cafe_bg_get_surface_from_root (monitor->screen);
 
 	if (!monitor->surface)
 	{

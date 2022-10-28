@@ -29,8 +29,8 @@
 
 #include <string.h>
 
-#include <mate-panel-applet.h>
-#include <mate-panel-applet-gsettings.h>
+#include <cafe-panel-applet.h>
+#include <cafe-panel-applet-gsettings.h>
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
@@ -43,7 +43,7 @@
 # include "libstatus-notifier-watcher/gf-status-notifier-watcher.h"
 #endif
 
-#define NOTIFICATION_AREA_ICON "mate-panel-notification-area"
+#define NOTIFICATION_AREA_ICON "cafe-panel-notification-area"
 
 typedef struct
 {
@@ -84,7 +84,7 @@ static GfStatusNotifierWatcher *
 sn_watcher_service_ref (void)
 {
   GSettings *settings;
-  settings = g_settings_new ("org.mate.panel");
+  settings = g_settings_new ("org.cafe.panel");
 
   if (g_settings_get_boolean (settings, "enable-sni-support") == TRUE)
     {
@@ -140,7 +140,7 @@ gsettings_changed_min_icon_size (GSettings    *settings,
 static void
 setup_gsettings (NaTrayApplet *applet)
 {
-  applet->priv->settings = mate_panel_applet_settings_new (MATE_PANEL_APPLET (applet), NA_TRAY_SCHEMA);
+  applet->priv->settings = cafe_panel_applet_settings_new (MATE_PANEL_APPLET (applet), NA_TRAY_SCHEMA);
   g_signal_connect (applet->priv->settings, "changed::" KEY_MIN_ICON_SIZE, G_CALLBACK (gsettings_changed_min_icon_size), applet);
 }
 
@@ -220,7 +220,7 @@ static void help_cb(GtkAction* action, NaTrayApplet* applet)
 {
 	GError* error = NULL;
 	char* uri;
-	#define NA_HELP_DOC "mate-user-guide"
+	#define NA_HELP_DOC "cafe-user-guide"
 
 	uri = g_strdup_printf("help:%s/%s", NA_HELP_DOC, "panels-notification-area");
 	gtk_show_uri_on_window (NULL, uri, gtk_get_current_event_time (), &error);
@@ -313,7 +313,7 @@ na_tray_applet_realize (GtkWidget *widget)
   action_group = gtk_action_group_new("NA Applet Menu Actions");
   gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
   gtk_action_group_add_actions(action_group, menu_actions, G_N_ELEMENTS(menu_actions), applet);
-  mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (applet),
+  cafe_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (applet),
                                               NA_RESOURCE_PATH "notification-area-menu.xml",
                                               action_group);
   g_object_unref(action_group);
@@ -475,7 +475,7 @@ na_tray_applet_init (NaTrayApplet *applet)
   applet->priv->sn_watcher = sn_watcher_service_ref ();
 #endif
 
-  orient = mate_panel_applet_get_orient (MATE_PANEL_APPLET (applet));
+  orient = cafe_panel_applet_get_orient (MATE_PANEL_APPLET (applet));
   applet->priv->grid = na_grid_new (get_gtk_orientation_from_applet_orient (orient));
 
   gtk_container_add (GTK_CONTAINER (applet), GTK_WIDGET (applet->priv->grid));
@@ -484,7 +484,7 @@ na_tray_applet_init (NaTrayApplet *applet)
   atko = gtk_widget_get_accessible (GTK_WIDGET (applet));
   atk_object_set_name (atko, _("Panel Notification Area"));
 
-  mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet),
+  cafe_panel_applet_set_flags (MATE_PANEL_APPLET (applet),
                           MATE_PANEL_APPLET_HAS_HANDLE|MATE_PANEL_APPLET_EXPAND_MINOR);
 }
 

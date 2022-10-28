@@ -72,7 +72,7 @@ orientation_change (AppletInfo  *info,
 
 	switch (info->type) {
 	case PANEL_OBJECT_APPLET:
-		mate_panel_applet_frame_change_orientation (
+		cafe_panel_applet_frame_change_orientation (
 				MATE_PANEL_APPLET_FRAME (info->widget), orientation);
 		break;
 	case PANEL_OBJECT_MENU:
@@ -132,7 +132,7 @@ size_change (AppletInfo  *info,
 	     PanelWidget *panel)
 {
 	if (info->type == PANEL_OBJECT_APPLET)
-		mate_panel_applet_frame_change_size (
+		cafe_panel_applet_frame_change_size (
 			MATE_PANEL_APPLET_FRAME (info->widget), panel->sz);
 }
 
@@ -159,7 +159,7 @@ back_change (AppletInfo  *info,
 {
 	switch (info->type) {
 	case PANEL_OBJECT_APPLET:
-		mate_panel_applet_frame_change_background (
+		cafe_panel_applet_frame_change_background (
 		MATE_PANEL_APPLET_FRAME (info->widget), panel->toplevel->background.type);
 		break;
 	case PANEL_OBJECT_MENU_BAR:
@@ -198,7 +198,7 @@ panel_back_change (GtkWidget *widget, gpointer data)
 }
 
 static void
-mate_panel_applet_added(GtkWidget *widget, GtkWidget *applet, gpointer data)
+cafe_panel_applet_added(GtkWidget *widget, GtkWidget *applet, gpointer data)
 {
 	AppletInfo    *info;
 
@@ -210,7 +210,7 @@ mate_panel_applet_added(GtkWidget *widget, GtkWidget *applet, gpointer data)
 }
 
 static void
-mate_panel_applet_removed(GtkWidget *widget, GtkWidget *applet, gpointer data)
+cafe_panel_applet_removed(GtkWidget *widget, GtkWidget *applet, gpointer data)
 {
 	PanelToplevel *toplevel;
 	AppletInfo    *info;
@@ -290,7 +290,7 @@ panel_destroy (PanelToplevel *toplevel,
 }
 
 static void
-mate_panel_applet_move(PanelWidget *panel, GtkWidget *widget, gpointer data)
+cafe_panel_applet_move(PanelWidget *panel, GtkWidget *widget, gpointer data)
 {
 	AppletInfo *info;
 
@@ -298,7 +298,7 @@ mate_panel_applet_move(PanelWidget *panel, GtkWidget *widget, gpointer data)
 
 	g_return_if_fail (info);
 
-	mate_panel_applet_save_position (info, info->id, FALSE);
+	cafe_panel_applet_save_position (info, info->id, FALSE);
 }
 
 static GtkWidget *
@@ -581,7 +581,7 @@ drop_caja_desktop_uri (PanelWidget *panel,
 	basename = uri + strlen ("x-caja-desktop:///");
 
 	if (strncmp (basename, "trash", strlen ("trash")) == 0)
-		mate_panel_applet_frame_create (panel->toplevel, pos,
+		cafe_panel_applet_frame_create (panel->toplevel, pos,
 					   "OAFIID:MATE_Panel_TrashApplet");
 	else if (strncmp (basename, "home", strlen ("home")) == 0)
 		panel_launcher_create_with_id (id, pos,
@@ -662,7 +662,7 @@ drop_urilist (PanelWidget *panel,
 				if (!set_background_image_from_uri (panel->toplevel, uri))
 					success = FALSE;
 			} else if (mime &&
-				   (!strcmp (mime, "application/x-mate-app-info") ||
+				   (!strcmp (mime, "application/x-cafe-app-info") ||
 				    !strcmp (mime, "application/x-desktop") ||
 				    !strcmp (mime, "application/x-kde-app-info"))) {
 				if (panel_profile_id_lists_are_writable ())
@@ -740,11 +740,11 @@ move_applet (PanelWidget *panel, int pos, int applet_index)
 	AppletInfo *info;
 	GtkWidget  *parent;
 
-	applet_list = mate_panel_applet_list_applets ();
+	applet_list = cafe_panel_applet_list_applets ();
 
 	info = g_slist_nth_data (applet_list, applet_index);
 
-	if ( ! mate_panel_applet_can_freely_move (info))
+	if ( ! cafe_panel_applet_can_freely_move (info))
 		return FALSE;
 
 	if (pos < 0)
@@ -858,7 +858,7 @@ drop_internal_applet (PanelWidget *panel, int pos, const char *applet_type,
 		AppletInfo *info;
 		GSList     *applet_list;
 
-		applet_list = mate_panel_applet_list_applets ();
+		applet_list = cafe_panel_applet_list_applets ();
 
 		info = g_slist_nth_data (applet_list, applet_index);
 
@@ -878,12 +878,12 @@ get_target_list (void)
 		{ "x-url/ftp",                           0, TARGET_NETSCAPE_URL },
 		{ "_NETSCAPE_URL",                       0, TARGET_NETSCAPE_URL },
 		{ "application/x-panel-directory",       0, TARGET_DIRECTORY },
-		{ "application/x-mate-panel-applet-iid",      0, TARGET_APPLET },
-		{ "application/x-mate-panel-applet-internal", 0, TARGET_APPLET_INTERNAL },
+		{ "application/x-cafe-panel-applet-iid",      0, TARGET_APPLET },
+		{ "application/x-cafe-panel-applet-internal", 0, TARGET_APPLET_INTERNAL },
 		{ "application/x-panel-icon-internal",   0, TARGET_ICON_INTERNAL },
 		{ "application/x-color",                 0, TARGET_COLOR },
 		{ "property/bgimage",                    0, TARGET_BGIMAGE },
-		{ "x-special/mate-reset-background",    0, TARGET_BACKGROUND_RESET },
+		{ "x-special/cafe-reset-background",    0, TARGET_BACKGROUND_RESET },
 	};
 	static GtkTargetList *target_list = NULL;
 
@@ -1116,7 +1116,7 @@ panel_receive_dnd_data (PanelWidget      *panel,
 			return;
 		}
 		if (panel_profile_id_lists_are_writable ()) {
-			mate_panel_applet_frame_create (panel->toplevel, pos, (char *) data);
+			cafe_panel_applet_frame_create (panel->toplevel, pos, (char *) data);
 			success = TRUE;
 		} else {
 			success = FALSE;
@@ -1165,7 +1165,7 @@ drag_data_recieved_cb (GtkWidget	*widget,
 	pos = panel_widget_get_cursorloc (panel_widget);
 
 	/*
-	 * -1 passed to mate_panel_applet_register will turn on
+	 * -1 passed to cafe_panel_applet_register will turn on
 	 * the insert_at_pos flag for panel_widget_add_full,
 	 * which will not place it after the first applet.
 	 */
@@ -1183,15 +1183,15 @@ panel_widget_setup(PanelWidget *panel)
 {
 	g_signal_connect (G_OBJECT(panel),
 			  "applet_added",
-			  G_CALLBACK(mate_panel_applet_added),
+			  G_CALLBACK(cafe_panel_applet_added),
 			  NULL);
 	g_signal_connect (G_OBJECT(panel),
 			  "applet_removed",
-			  G_CALLBACK(mate_panel_applet_removed),
+			  G_CALLBACK(cafe_panel_applet_removed),
 			  NULL);
 	g_signal_connect (G_OBJECT(panel),
 			  "applet_move",
-			  G_CALLBACK(mate_panel_applet_move),
+			  G_CALLBACK(cafe_panel_applet_move),
 			  NULL);
 	g_signal_connect (G_OBJECT (panel),
 			  "back_change",

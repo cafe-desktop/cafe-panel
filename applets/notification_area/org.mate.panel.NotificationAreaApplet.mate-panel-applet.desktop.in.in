@@ -9,11 +9,11 @@ Description=Factory for notification area
 Name=Notification Area
 Description=Area where notification icons appear
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-Icon=mate-panel-notification-area
+Icon=cafe-panel-notification-area
 MateComponentId=OAFIID:MATE_NotificationAreaApplet;OAFIID:MATE_SystemTrayApplet;
 Platforms=X11;
 X-MATE-Bugzilla-Bugzilla=MATE
-X-MATE-Bugzilla-Product=mate-panel
+X-MATE-Bugzilla-Product=cafe-panel
 X-MATE-Bugzilla-Component=notification area
 X-MATE-Bugzilla-Version=@VERSION@
 X-MATE-Bugzilla-OtherBinaries=notification-area-applet

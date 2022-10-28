@@ -25,7 +25,7 @@
 #define _SHOWDESKTOP_H_
 
 #include <glib.h>
-#include <mate-panel-applet.h>
+#include <cafe-panel-applet.h>
 
 #ifdef __cplusplus
 extern "C" {

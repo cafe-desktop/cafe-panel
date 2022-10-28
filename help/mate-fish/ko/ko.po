@@ -4,7 +4,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
-# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # HanSol Park <totron114@gmail.com>, 2020
 # 
 msgid ""
@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2020-01-12 18:05+0100\n"
 "PO-Revision-Date: 2020-02-15 14:34+0000\n"
 "Last-Translator: HanSol Park <totron114@gmail.com>, 2020\n"
-"Language-Team: Korean (https://www.transifex.com/mate/teams/13566/ko/)\n"
+"Language-Team: Korean (https://www.transifex.com/cafe/teams/13566/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Yoo Duk Nam https://launchpad.net/~yoo2001818\n"
 "onlyeriko https://launchpad.net/~onlyeriko\n"
 "Seong-ho Cho <darkcircle.0426@gmail.com>\n"
-"MATE Desktop Environment Team <https://www.transifex.com/mate/teams/13566/ko/>"
+"MATE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/>"
 
 #. (itstool) path: articleinfo/title
 #: C/index.docbook:24
@@ -265,14 +265,14 @@ msgstr "피드백"
 #: C/index.docbook:173
 msgid ""
 "To report a bug or make a suggestion regarding the Fish applet or this "
-"manual, follow the directions in the <ulink url=\"help:mate-user-"
+"manual, follow the directions in the <ulink url=\"help:cafe-user-"
 "guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
 
 #. (itstool) path: abstract/para
 #: C/index.docbook:179
 msgid ""
-"The Fish applet displays an animated image in the panel and gives you your "
+"The Fish applet displays an anicafed image in the panel and gives you your "
 "fortune when clicked."
 msgstr ""
 
@@ -314,7 +314,7 @@ msgstr ""
 #. (itstool) path: sect1/para
 #: C/index.docbook:205
 msgid ""
-"The <application>Fish</application> applet displays an animated fish in the "
+"The <application>Fish</application> applet displays an anicafed fish in the "
 "panel. You can customize the fish's name and the program that is run when "
 "the fish is clicked in the panel. By default, the program that is run when "
 "the fish is clicked is <application>Fortune</application>, which displays a "

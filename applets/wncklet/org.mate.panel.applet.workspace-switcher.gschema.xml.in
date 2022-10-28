@@ -1,5 +1,5 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-  <schema id="org.mate.panel.applet.workspace-switcher">
+  <schema id="org.cafe.panel.applet.workspace-switcher">
     <key name="display-workspace-names" type="b">
       <default>false</default>
       <summary>Display workspace names</summary>

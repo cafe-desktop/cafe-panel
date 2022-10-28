@@ -1,5 +1,5 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-  <schema id="org.mate.panel.applet.window-list-previews">
+  <schema id="org.cafe.panel.applet.window-list-previews">
     <key name="show-window-thumbnails" type="b">
       <default>true</default>
       <summary>Display window thumbnails on hover</summary>

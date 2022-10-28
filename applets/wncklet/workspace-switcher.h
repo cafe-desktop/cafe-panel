@@ -10,7 +10,7 @@
 #define __WORKSPACE_SWITCHER_APPLET_H__
 
 #include <glib.h>
-#include <mate-panel-applet.h>
+#include <cafe-panel-applet.h>
 
 #ifdef __cplusplus
 extern "C" {

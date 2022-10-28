@@ -173,7 +173,7 @@ ensure_icon_settings (void)
 	if (icon_settings != NULL)
 	return;
 
-	icon_settings = g_settings_new ("org.mate.interface");
+	icon_settings = g_settings_new ("org.cafe.interface");
 
 	panel_cleanup_register (panel_cleanup_unref_and_nullify,
 					&icon_settings);
@@ -199,7 +199,7 @@ panel_image_menu_item_new_from_icon (const gchar *icon_name,
 	GtkWidget *menuitem = gtk_menu_item_new ();
 
 	context = gtk_widget_get_style_context (GTK_WIDGET(icon_box));
-	gtk_style_context_add_class(context,"mate-panel-menu-icon-box");
+	gtk_style_context_add_class(context,"cafe-panel-menu-icon-box");
 
 	gtk_container_add (GTK_CONTAINER (icon_box), icon);
 	gtk_container_add (GTK_CONTAINER (box), icon_box);
@@ -237,7 +237,7 @@ panel_image_menu_item_new_from_gicon (GIcon       *gicon,
 	GtkWidget *menuitem = gtk_menu_item_new ();
 
 	context = gtk_widget_get_style_context (GTK_WIDGET(icon_box));
-	gtk_style_context_add_class(context,"mate-panel-menu-icon-box");
+	gtk_style_context_add_class(context,"cafe-panel-menu-icon-box");
 
 	gtk_container_add (GTK_CONTAINER (icon_box), icon);
 	gtk_container_add (GTK_CONTAINER (box), icon_box);

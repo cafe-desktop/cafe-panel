@@ -30,7 +30,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
-#include <libmate-desktop/mate-gsettings.h>
+#include <libcafe-desktop/cafe-gsettings.h>
 
 #include "panel-schemas.h"
 #include "panel-profile.h"
@@ -196,7 +196,7 @@ panel_bindings_initialise (void)
 	if (initialised)
 		return;
 
-	if (!mate_gsettings_schema_exists (MARCO_SCHEMA)) {
+	if (!cafe_gsettings_schema_exists (MARCO_SCHEMA)) {
 		initialised = TRUE;
 		return;
 	}

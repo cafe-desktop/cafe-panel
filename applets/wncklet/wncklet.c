@@ -30,7 +30,7 @@
 #endif
 
 #include <string.h>
-#include <mate-panel-applet.h>
+#include <cafe-panel-applet.h>
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>

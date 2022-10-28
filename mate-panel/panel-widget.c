@@ -60,7 +60,7 @@ static guint panel_widget_signals [LAST_SIGNAL] = {0};
 /*define for some debug output*/
 #undef PANEL_WIDGET_DEBUG
 
-static gboolean mate_panel_applet_in_drag = FALSE;
+static gboolean cafe_panel_applet_in_drag = FALSE;
 static GtkWidget *saved_focus_widget = NULL;
 
 static void panel_widget_get_preferred_size (GtkWidget	  *widget,
@@ -1736,7 +1736,7 @@ panel_widget_applet_drag_start_no_grab (PanelWidget *panel,
 	   configuration */
 	info = g_object_get_data (G_OBJECT (applet), "applet_info");
 	if (info != NULL &&
-	    ! mate_panel_applet_can_freely_move (info))
+	    ! cafe_panel_applet_can_freely_move (info))
 		return FALSE;
 
 	if (moving_timeout != 0) {
@@ -1759,7 +1759,7 @@ panel_widget_applet_drag_start_no_grab (PanelWidget *panel,
 
 	add_all_move_bindings (panel);
 
-	mate_panel_applet_in_drag = TRUE;
+	cafe_panel_applet_in_drag = TRUE;
 
 	return TRUE;
 }
@@ -1775,7 +1775,7 @@ panel_widget_applet_drag_end_no_grab (PanelWidget *panel)
 	g_message("Ending drag\n");
 #endif
 	panel->currently_dragged_applet = NULL;
-	mate_panel_applet_in_drag = FALSE;
+	cafe_panel_applet_in_drag = FALSE;
 
 	remove_all_move_bindings (panel);
 	if (moving_timeout != 0) {
@@ -2279,7 +2279,7 @@ panel_widget_applet_key_press_event (GtkWidget   *widget,
 
 	panel = PANEL_WIDGET (parent);
 
-	if (!mate_panel_applet_in_drag)
+	if (!cafe_panel_applet_in_drag)
 		return FALSE;
 
 	return gtk_bindings_activate (G_OBJECT (panel),
@@ -2300,13 +2300,13 @@ panel_sub_event_handler(GtkWidget *widget, GdkEvent *event, gpointer data)
 		case GDK_MOTION_NOTIFY: {
 			GdkEventButton *bevent = (GdkEventButton *)event;
 
-			if (bevent->button != 1 || mate_panel_applet_in_drag)
+			if (bevent->button != 1 || cafe_panel_applet_in_drag)
 				return gtk_widget_event (data, event);
 
 			}
 			break;
 		case GDK_KEY_PRESS:
-			if (mate_panel_applet_in_drag)
+			if (cafe_panel_applet_in_drag)
 				return gtk_widget_event(data, event);
 			break;
 		default:
@@ -2586,12 +2586,12 @@ panel_widget_reparent (PanelWidget *old_panel,
 	/* Do not touch until GTK+4
 	 * or until we figure out how to properly
 	 * reimplement gtk_widget_reparent.
-	 * https://github.com/mate-desktop/mate-panel/issues/504
+	 * https://github.com/cafe-desktop/cafe-panel/issues/504
 	 */
 	gtk_widget_reparent (applet, GTK_WIDGET (new_panel));
 
 	if (info && info->type == PANEL_OBJECT_APPLET)
-		mate_panel_applet_frame_set_panel (MATE_PANEL_APPLET_FRAME (ad->applet), new_panel);
+		cafe_panel_applet_frame_set_panel (MATE_PANEL_APPLET_FRAME (ad->applet), new_panel);
 
 	if (gtk_widget_get_can_focus (GTK_WIDGET (new_panel)))
 		gtk_widget_set_can_focus (GTK_WIDGET (new_panel), FALSE);
@@ -2937,9 +2937,9 @@ panel_widget_toggle_applet_locked (PanelWidget *panel,
 }
 
 gboolean
-mate_panel_applet_is_in_drag (void)
+cafe_panel_applet_is_in_drag (void)
 {
-	return mate_panel_applet_in_drag;
+	return cafe_panel_applet_in_drag;
 }
 
 void

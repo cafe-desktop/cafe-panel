@@ -395,7 +395,7 @@ gboolean show_desktop_applet_fill(MatePanelApplet* applet)
 	AtkObject* atk_obj;
 	GtkCssProvider *provider;
 
-	mate_panel_applet_set_flags(applet, MATE_PANEL_APPLET_EXPAND_MINOR);
+	cafe_panel_applet_set_flags(applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 
 	sdd = g_new0(ShowDesktopData, 1);
 
@@ -403,7 +403,7 @@ gboolean show_desktop_applet_fill(MatePanelApplet* applet)
 
 	sdd->image = gtk_image_new();
 
-	switch (mate_panel_applet_get_orient(applet))
+	switch (cafe_panel_applet_get_orient(applet))
 	{
 		case MATE_PANEL_APPLET_ORIENT_LEFT:
 		case MATE_PANEL_APPLET_ORIENT_RIGHT:
@@ -416,7 +416,7 @@ gboolean show_desktop_applet_fill(MatePanelApplet* applet)
 			break;
 	}
 
-	sdd->size = mate_panel_applet_get_size(MATE_PANEL_APPLET(sdd->applet));
+	sdd->size = cafe_panel_applet_get_size(MATE_PANEL_APPLET(sdd->applet));
 
 	g_signal_connect(G_OBJECT(sdd->applet), "realize", G_CALLBACK(show_desktop_applet_realized), sdd);
 
@@ -454,12 +454,12 @@ gboolean show_desktop_applet_fill(MatePanelApplet* applet)
 	   initial oriantation, and we get that during the _add call */
 	g_signal_connect(G_OBJECT (sdd->applet), "change_orient", G_CALLBACK (applet_change_orient), sdd);
 
-	mate_panel_applet_set_background_widget(MATE_PANEL_APPLET (sdd->applet), GTK_WIDGET(sdd->applet));
+	cafe_panel_applet_set_background_widget(MATE_PANEL_APPLET (sdd->applet), GTK_WIDGET(sdd->applet));
 
 	action_group = gtk_action_group_new("ShowDesktop Applet Actions");
 	gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions(action_group, show_desktop_menu_actions, G_N_ELEMENTS (show_desktop_menu_actions), sdd);
-	mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (sdd->applet),
+	cafe_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (sdd->applet),
 	                                            WNCKLET_RESOURCE_PATH "showdesktop-menu.xml",
 	                                            action_group);
 	g_object_unref(action_group);
@@ -478,7 +478,7 @@ gboolean show_desktop_applet_fill(MatePanelApplet* applet)
 
 static void display_help_dialog(GtkAction* action, ShowDesktopData* sdd)
 {
-	wncklet_display_help(sdd->applet, "mate-user-guide", "gospanel-564", SHOW_DESKTOP_ICON);
+	wncklet_display_help(sdd->applet, "cafe-user-guide", "gospanel-564", SHOW_DESKTOP_ICON);
 }
 
 static void display_about_dialog(GtkAction* action, ShowDesktopData* sdd)
@@ -508,7 +508,7 @@ static void display_about_dialog(GtkAction* action, ShowDesktopData* sdd)
 		"logo-icon-name", SHOW_DESKTOP_ICON,
 		"translator-credits", _("translator-credits"),
 		"version", VERSION,
-		"website", "http://www.mate-desktop.org/",
+		"website", "http://www.cafe-desktop.org/",
 		NULL);
 }
 

@@ -1,5 +1,5 @@
 /*
- * mate-panel-applet-factory.c: panel applet writing API.
+ * cafe-panel-applet-factory.c: panel applet writing API.
  *
  * Copyright (C) 2010 Carlos Garcia Campos <carlosgc@gnome.org>
  *
@@ -21,10 +21,10 @@
 
 #include <config.h>
 
-#include "mate-panel-applet.h"
+#include "cafe-panel-applet.h"
 #include "panel-applet-private.h"
 
-#include "mate-panel-applet-factory.h"
+#include "cafe-panel-applet-factory.h"
 
 #ifdef HAVE_X11
 #include <gdk/gdkx.h>
@@ -51,15 +51,15 @@ struct _MatePanelAppletFactoryClass {
 	GObjectClass base_class;
 };
 
-#define MATE_PANEL_APPLET_FACTORY_OBJECT_PATH  "/org/mate/panel/applet/%s"
-#define MATE_PANEL_APPLET_FACTORY_SERVICE_NAME "org.mate.panel.applet.%s"
+#define MATE_PANEL_APPLET_FACTORY_OBJECT_PATH  "/org/cafe/panel/applet/%s"
+#define MATE_PANEL_APPLET_FACTORY_SERVICE_NAME "org.cafe.panel.applet.%s"
 
-G_DEFINE_TYPE (MatePanelAppletFactory, mate_panel_applet_factory, G_TYPE_OBJECT)
+G_DEFINE_TYPE (MatePanelAppletFactory, cafe_panel_applet_factory, G_TYPE_OBJECT)
 
 static GHashTable *factories = NULL;
 
 static void
-mate_panel_applet_factory_finalize (GObject *object)
+cafe_panel_applet_factory_finalize (GObject *object)
 {
 	MatePanelAppletFactory *factory = MATE_PANEL_APPLET_FACTORY (object);
 
@@ -95,26 +95,26 @@ mate_panel_applet_factory_finalize (GObject *object)
 		factory->closure = NULL;
 	}
 
-	G_OBJECT_CLASS (mate_panel_applet_factory_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cafe_panel_applet_factory_parent_class)->finalize (object);
 }
 
 static void
-mate_panel_applet_factory_init (MatePanelAppletFactory *factory)
+cafe_panel_applet_factory_init (MatePanelAppletFactory *factory)
 {
 	factory->applets = g_hash_table_new (NULL, NULL);
 	factory->next_uid = 1;
 }
 
 static void
-mate_panel_applet_factory_class_init (MatePanelAppletFactoryClass *klass)
+cafe_panel_applet_factory_class_init (MatePanelAppletFactoryClass *klass)
 {
 	GObjectClass *g_object_class = G_OBJECT_CLASS (klass);
 
-	g_object_class->finalize = mate_panel_applet_factory_finalize;
+	g_object_class->finalize = cafe_panel_applet_factory_finalize;
 }
 
 static void
-mate_panel_applet_factory_applet_removed (MatePanelAppletFactory *factory,
+cafe_panel_applet_factory_applet_removed (MatePanelAppletFactory *factory,
 				     GObject            *applet)
 {
 	guint uid;
@@ -129,7 +129,7 @@ mate_panel_applet_factory_applet_removed (MatePanelAppletFactory *factory,
 }
 
 MatePanelAppletFactory *
-mate_panel_applet_factory_new (const gchar *factory_id,
+cafe_panel_applet_factory_new (const gchar *factory_id,
 				gboolean     out_of_process,
 			  GType        applet_type,
 			  GClosure    *closure)
@@ -188,7 +188,7 @@ set_applet_constructor_properties (GObject  *applet,
 
 
 static void
-mate_panel_applet_factory_get_applet (MatePanelAppletFactory    *factory,
+cafe_panel_applet_factory_get_applet (MatePanelAppletFactory    *factory,
 				 GDBusConnection       *connection,
 				 GVariant              *parameters,
 				 GDBusMethodInvocation *invocation)
@@ -211,7 +211,7 @@ mate_panel_applet_factory_get_applet (MatePanelAppletFactory    *factory,
 			       "closure", factory->closure,
 			       NULL);
 	factory->n_applets++;
-	g_object_weak_ref (applet, (GWeakNotify) mate_panel_applet_factory_applet_removed, factory);
+	g_object_weak_ref (applet, (GWeakNotify) cafe_panel_applet_factory_applet_removed, factory);
 
 	set_applet_constructor_properties (applet, props);
 	g_variant_unref (props);
@@ -223,7 +223,7 @@ mate_panel_applet_factory_get_applet (MatePanelAppletFactory    *factory,
 		screen = screen_num != -1 ?
 			gdk_display_get_default_screen (gdk_display_get_default ()) :
 			gdk_screen_get_default ();
-		xid = mate_panel_applet_get_xid (MATE_PANEL_APPLET (applet), screen);
+		xid = cafe_panel_applet_get_xid (MATE_PANEL_APPLET (applet), screen);
 	} else
 #endif
 	{ // Not using X11
@@ -231,7 +231,7 @@ mate_panel_applet_factory_get_applet (MatePanelAppletFactory    *factory,
 	}
 
 	uid = factory->next_uid++;
-	object_path = mate_panel_applet_get_object_path (MATE_PANEL_APPLET (applet));
+	object_path = cafe_panel_applet_get_object_path (MATE_PANEL_APPLET (applet));
 	g_hash_table_insert (factory->applets, GUINT_TO_POINTER (uid), applet);
 	g_object_set_data (applet, "uid", GUINT_TO_POINTER (uid));
 
@@ -257,13 +257,13 @@ method_call_cb (GDBusConnection       *connection,
 	MatePanelAppletFactory *factory = MATE_PANEL_APPLET_FACTORY (user_data);
 
 	if (g_strcmp0 (method_name, "GetApplet") == 0) {
-		mate_panel_applet_factory_get_applet (factory, connection, parameters, invocation);
+		cafe_panel_applet_factory_get_applet (factory, connection, parameters, invocation);
 	}
 }
 
 static const gchar introspection_xml[] =
 	"<node>"
-	    "<interface name='org.mate.panel.applet.AppletFactory'>"
+	    "<interface name='org.cafe.panel.applet.AppletFactory'>"
 	      "<method name='GetApplet'>"
 	        "<arg name='applet_id' type='s' direction='in'/>"
 	        "<arg name='screen' type='i' direction='in'/>"
@@ -319,7 +319,7 @@ on_name_lost (GDBusConnection    *connection,
 }
 
 gboolean
-mate_panel_applet_factory_register_service (MatePanelAppletFactory *factory)
+cafe_panel_applet_factory_register_service (MatePanelAppletFactory *factory)
 {
 	gchar *service_name;
 
@@ -340,7 +340,7 @@ mate_panel_applet_factory_register_service (MatePanelAppletFactory *factory)
 }
 
 GtkWidget *
-mate_panel_applet_factory_get_applet_widget (const gchar *id,
+cafe_panel_applet_factory_get_applet_widget (const gchar *id,
                                         guint        uid)
 {
 	MatePanelAppletFactory *factory;

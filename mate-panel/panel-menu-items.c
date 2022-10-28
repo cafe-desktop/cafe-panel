@@ -39,7 +39,7 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <libmate-desktop/mate-gsettings.h>
+#include <libcafe-desktop/cafe-gsettings.h>
 
 #include <libpanel-util/panel-error.h>
 #include <libpanel-util/panel-glib.h>
@@ -1109,9 +1109,9 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 
 	add_menu_separator (places_menu);
 
-	if (panel_is_program_in_path ("mate-search-tool"))
+	if (panel_is_program_in_path ("cafe-search-tool"))
 		panel_menu_items_append_from_desktop (places_menu,
-						      "mate-search-tool.desktop",
+						      "cafe-search-tool.desktop",
 						      NULL,
 						      FALSE);
 	else
@@ -1146,7 +1146,7 @@ panel_place_menu_item_recreate_menu (GtkWidget *widget)
 		place_item->priv->menu = panel_place_menu_item_create_menu (place_item);
 		gtk_menu_item_set_submenu (GTK_MENU_ITEM (place_item),
 					   place_item->priv->menu);
-		mate_panel_applet_menu_set_recurse (GTK_MENU (place_item->priv->menu),
+		cafe_panel_applet_menu_set_recurse (GTK_MENU (place_item->priv->menu),
 					       "menu_panel",
 					       place_item->priv->panel);
 	}
@@ -1217,9 +1217,9 @@ panel_desktop_menu_item_append_menu (GtkWidget *menu,
 	if (add_separator)
 		add_menu_separator (menu);
 
-	panel_menu_items_append_from_desktop (menu, "mate-user-guide.desktop", NULL, FALSE);
+	panel_menu_items_append_from_desktop (menu, "cafe-user-guide.desktop", NULL, FALSE);
 
-	panel_menu_items_append_from_desktop (menu, "mate-about.desktop", NULL, FALSE);
+	panel_menu_items_append_from_desktop (menu, "cafe-about.desktop", NULL, FALSE);
 
 	if (parent->priv->append_lock_logout)
 		panel_menu_items_append_lock_logout (menu);
@@ -1230,7 +1230,7 @@ panel_desktop_menu_item_create_menu (PanelDesktopMenuItem *desktop_item)
 {
 	GtkWidget *desktop_menu;
 
-	desktop_menu = create_applications_menu ("mate-settings.menu", NULL, FALSE);
+	desktop_menu = create_applications_menu ("cafe-settings.menu", NULL, FALSE);
 
 	g_object_set_data (G_OBJECT (desktop_menu),
 			   "panel-menu-append-callback",
@@ -1250,7 +1250,7 @@ panel_desktop_menu_item_recreate_menu (PanelDesktopMenuItem *desktop_item)
 		desktop_item->priv->menu = panel_desktop_menu_item_create_menu (desktop_item);
 		gtk_menu_item_set_submenu (GTK_MENU_ITEM (desktop_item),
 					   desktop_item->priv->menu);
-		mate_panel_applet_menu_set_recurse (GTK_MENU (desktop_item->priv->menu),
+		cafe_panel_applet_menu_set_recurse (GTK_MENU (desktop_item->priv->menu),
 					       "menu_panel",
 					       desktop_item->priv->panel);
 	}
@@ -1351,7 +1351,7 @@ panel_place_menu_item_init (PanelPlaceMenuItem *menuitem)
 
 	menuitem->priv = panel_place_menu_item_get_instance_private (menuitem);
 
-	if (mate_gsettings_schema_exists (CAJA_DESKTOP_SCHEMA)) {
+	if (cafe_gsettings_schema_exists (CAJA_DESKTOP_SCHEMA)) {
 		menuitem->priv->caja_desktop_settings = g_settings_new (CAJA_DESKTOP_SCHEMA);
 		g_signal_connect (menuitem->priv->caja_desktop_settings,
 				  "changed::" CAJA_DESKTOP_HOME_ICON_NAME_KEY,
@@ -1365,7 +1365,7 @@ panel_place_menu_item_init (PanelPlaceMenuItem *menuitem)
 	else
 		menuitem->priv->caja_desktop_settings = NULL;
 
-	if (mate_gsettings_schema_exists (CAJA_PREFS_SCHEMA)) {
+	if (cafe_gsettings_schema_exists (CAJA_PREFS_SCHEMA)) {
 		menuitem->priv->caja_prefs_settings = g_settings_new (CAJA_PREFS_SCHEMA);
 		g_signal_connect (menuitem->priv->caja_prefs_settings,
 				  "changed::" CAJA_PREFS_DESKTOP_IS_HOME_DIR_KEY,
@@ -1539,7 +1539,7 @@ panel_place_menu_item_set_panel (GtkWidget   *item,
 	place_item = PANEL_PLACE_MENU_ITEM (item);
 
 	place_item->priv->panel = panel;
-	mate_panel_applet_menu_set_recurse (GTK_MENU (place_item->priv->menu),
+	cafe_panel_applet_menu_set_recurse (GTK_MENU (place_item->priv->menu),
 				       "menu_panel", panel);
 }
 
@@ -1552,7 +1552,7 @@ panel_desktop_menu_item_set_panel (GtkWidget   *item,
 	desktop_item = PANEL_DESKTOP_MENU_ITEM (item);
 
 	desktop_item->priv->panel = panel;
-	mate_panel_applet_menu_set_recurse (GTK_MENU (desktop_item->priv->menu),
+	cafe_panel_applet_menu_set_recurse (GTK_MENU (desktop_item->priv->menu),
 				       "menu_panel", panel);
 }
 

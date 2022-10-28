@@ -43,8 +43,8 @@ in /apps/panel/default-profiles, like this:
  /apps/panel/default-profiles/medium/
  /apps/panel/default-profiles/large/
 
-These are delivered in a serialized fashion in mate-core, and the (to
-be written by hp) mateconf deserialization app is used to install
+These are delivered in a serialized fashion in cafe-core, and the (to
+be written by hp) cafeconf deserialization app is used to install
 them at make install/package install time. Then the sysadmin can
 change these as he sees fit. I can imagine a "make current profile be
 default" button somewhere.
@@ -149,23 +149,23 @@ values for the applet settings. Thus we have to hardcode the settings
 in the applet.
 
 So the way to read prefs changes slightly. You have to try reading,
-and if there is no data in mateconf, use the default value. The way to
-use this is to call mateconf_client_get(), which return NULL if the value
+and if there is no data in cafeconf, use the default value. The way to
+use this is to call cafeconf_client_get(), which return NULL if the value
 is unset and has no default (this means it will automagically work
 whenever we implement dynamic prefix schemas).
 
-We should probably wrap the mateconf calls in some utility functions like
+We should probably wrap the cafeconf calls in some utility functions like
 this: 
 
 gint
-applet_mateconf_get_int_with_default (SomeAppletType *applet,
+applet_cafeconf_get_int_with_default (SomeAppletType *applet,
 		  		   const gchar* key,
                                    gint default,
                                    GError** err)
 {
   GError* error = NULL;
   MateConfValue* val;
-  MateConfClient *client = panel_mateconf_get_client ();
+  MateConfClient *client = panel_cafeconf_get_client ();
   gchar *full_key; 
 
   g_return_val_if_fail(err == NULL || *err == NULL, 0);
@@ -181,11 +181,11 @@ applet_mateconf_get_int_with_default (SomeAppletType *applet,
       g_assert(error == NULL);
       
       if (check_type(key, val, MATECONF_VALUE_INT, &error))
-        retval = mateconf_value_get_int(val);
+        retval = cafeconf_value_get_int(val);
       else
         handle_error(client, error, err);
 
-      mateconf_value_free(val);
+      cafeconf_value_free(val);
 
       return retval;
     }
@@ -197,7 +197,7 @@ And the applet would use this like this
 
 #define TOOLTIP_TIMEOUT_DEFAULT 100 /* msec */
 
- timeout = applet_mateconf_get_int_with_default ("tooltip_timeout", TOOLTIP_TIMEOUT_DEFAULT, NULL);
+ timeout = applet_cafeconf_get_int_with_default ("tooltip_timeout", TOOLTIP_TIMEOUT_DEFAULT, NULL);
 
 It is important that we have actual defines for the defaults, so as to
 not repeat the problems we had previously, with different defaults in

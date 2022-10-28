@@ -45,7 +45,7 @@ struct _MatePanelAppletsManagerDBusPrivate
 };
 
 G_DEFINE_TYPE_WITH_CODE (MatePanelAppletsManagerDBus,
-			 mate_panel_applets_manager_dbus,
+			 cafe_panel_applets_manager_dbus,
 			 PANEL_TYPE_APPLETS_MANAGER,
 			 G_ADD_PRIVATE(MatePanelAppletsManagerDBus)
 			 g_io_extension_point_implement (MATE_PANEL_APPLETS_MANAGER_EXTENSION_POINT_NAME,
@@ -73,10 +73,10 @@ typedef struct _MatePanelAppletFactoryInfo {
 } MatePanelAppletFactoryInfo;
 
 #define MATE_PANEL_APPLET_FACTORY_GROUP "Applet Factory"
-#define MATE_PANEL_APPLETS_EXTENSION    ".mate-panel-applet"
+#define MATE_PANEL_APPLETS_EXTENSION    ".cafe-panel-applet"
 
 static void
-mate_panel_applet_factory_info_free (MatePanelAppletFactoryInfo *info)
+cafe_panel_applet_factory_info_free (MatePanelAppletFactoryInfo *info)
 {
 	if (!info)
 		return;
@@ -84,7 +84,7 @@ mate_panel_applet_factory_info_free (MatePanelAppletFactoryInfo *info)
 	g_free (info->id);
 	g_free (info->location);
 	g_list_foreach (info->applet_list,
-			(GFunc) mate_panel_applet_info_free,
+			(GFunc) cafe_panel_applet_info_free,
 			NULL);
 	g_list_free (info->applet_list);
 	info->applet_list = NULL;
@@ -94,7 +94,7 @@ mate_panel_applet_factory_info_free (MatePanelAppletFactoryInfo *info)
 }
 
 static MatePanelAppletInfo *
-_mate_panel_applets_manager_get_applet_info (GKeyFile    *applet_file,
+_cafe_panel_applets_manager_get_applet_info (GKeyFile    *applet_file,
 					const gchar *group,
 					const gchar *factory_id)
 {
@@ -143,7 +143,7 @@ _mate_panel_applets_manager_get_applet_info (GKeyFile    *applet_file,
 		}
 	}
 
-	info = mate_panel_applet_info_new (iid, name, comment, icon, (const char **) old_ids,
+	info = cafe_panel_applet_info_new (iid, name, comment, icon, (const char **) old_ids,
 					   x11_supported, wayland_supported);
 
 	g_free (iid);
@@ -157,7 +157,7 @@ _mate_panel_applets_manager_get_applet_info (GKeyFile    *applet_file,
 }
 
 static MatePanelAppletFactoryInfo *
-mate_panel_applets_manager_get_applet_factory_info_from_file (const gchar *filename)
+cafe_panel_applets_manager_get_applet_factory_info_from_file (const gchar *filename)
 {
 	MatePanelAppletFactoryInfo *info;
 	GKeyFile               *applet_file;
@@ -182,7 +182,7 @@ mate_panel_applets_manager_get_applet_factory_info_from_file (const gchar *filen
 	if (!info->id) {
 		g_warning ("Bad panel applet file %s: Could not find 'Id' in group '%s'",
 			   filename, MATE_PANEL_APPLET_FACTORY_GROUP);
-		mate_panel_applet_factory_info_free (info);
+		cafe_panel_applet_factory_info_free (info);
 		g_key_file_free (applet_file);
 
 		return NULL;
@@ -196,7 +196,7 @@ mate_panel_applets_manager_get_applet_factory_info_from_file (const gchar *filen
 		if (!info->location) {
 			g_warning ("Bad panel applet file %s: In-process applet without 'Location'",
 				   filename);
-			mate_panel_applet_factory_info_free (info);
+			cafe_panel_applet_factory_info_free (info);
 			g_key_file_free (applet_file);
 
 			return NULL;
@@ -222,9 +222,9 @@ mate_panel_applets_manager_get_applet_factory_info_from_file (const gchar *filen
 		if (g_strcmp0 (groups[i], MATE_PANEL_APPLET_FACTORY_GROUP) == 0)
 			continue;
 
-		ainfo = _mate_panel_applets_manager_get_applet_info (applet_file,
+		ainfo = _cafe_panel_applets_manager_get_applet_info (applet_file,
 								groups[i], info->id);
-		if (mate_panel_applet_info_get_old_ids (ainfo) != NULL)
+		if (cafe_panel_applet_info_get_old_ids (ainfo) != NULL)
 			info->has_old_ids = TRUE;
 
 		info->applet_list = g_list_prepend (info->applet_list, ainfo);
@@ -234,7 +234,7 @@ mate_panel_applets_manager_get_applet_factory_info_from_file (const gchar *filen
 	g_key_file_free (applet_file);
 
 	if (!info->applet_list) {
-		mate_panel_applet_factory_info_free (info);
+		cafe_panel_applet_factory_info_free (info);
 		return NULL;
 	}
 
@@ -244,7 +244,7 @@ mate_panel_applets_manager_get_applet_factory_info_from_file (const gchar *filen
 }
 
 static GSList *
-mate_panel_applets_manager_get_applets_dirs (void)
+cafe_panel_applets_manager_get_applets_dirs (void)
 {
 	const gchar *dir = NULL;
 	gchar      **paths;
@@ -290,7 +290,7 @@ applets_directory_changed (GFileMonitor     *monitor,
 			return;
 		}
 
-		info = mate_panel_applets_manager_get_applet_factory_info_from_file (filename);
+		info = cafe_panel_applets_manager_get_applet_factory_info_from_file (filename);
 		g_free (filename);
 
 		if (!info)
@@ -311,13 +311,13 @@ applets_directory_changed (GFileMonitor     *monitor,
 			return;
 		}
 
-		dirs = mate_panel_applets_manager_get_applets_dirs ();
+		dirs = cafe_panel_applets_manager_get_applets_dirs ();
 
 		for (d = dirs; d; d = g_slist_next (d)) {
 			gchar *path = (gchar *) d->data;
 
 			if (g_strcmp0 (path, old_info->srcdir) == 0) {
-				mate_panel_applet_factory_info_free (info);
+				cafe_panel_applet_factory_info_free (info);
 				break;
 			} else if (g_strcmp0 (path, info->srcdir) == 0) {
 				g_hash_table_replace (manager->priv->applet_factories, g_strdup (info->id), info);
@@ -336,14 +336,14 @@ applets_directory_changed (GFileMonitor     *monitor,
 }
 
 static void
-mate_panel_applets_manager_dbus_load_applet_infos (MatePanelAppletsManagerDBus *manager)
+cafe_panel_applets_manager_dbus_load_applet_infos (MatePanelAppletsManagerDBus *manager)
 {
 	GSList      *dirs, *d;
 	GDir        *dir;
 	const gchar *dirent;
 	GError      *error = NULL;
 
-	dirs = mate_panel_applets_manager_get_applets_dirs ();
+	dirs = cafe_panel_applets_manager_get_applets_dirs ();
 	for (d = dirs; d; d = g_slist_next (d)) {
 		GFileMonitor *monitor;
 		GFile        *dir_file;
@@ -379,14 +379,14 @@ mate_panel_applets_manager_dbus_load_applet_infos (MatePanelAppletsManagerDBus *
 				continue;
 
 			file = g_build_filename (path, dirent, NULL);
-			info = mate_panel_applets_manager_get_applet_factory_info_from_file (file);
+			info = cafe_panel_applets_manager_get_applet_factory_info_from_file (file);
 			g_free (file);
 
 			if (!info)
 				continue;
 
 			if (g_hash_table_lookup (manager->priv->applet_factories, info->id)) {
-				mate_panel_applet_factory_info_free (info);
+				cafe_panel_applet_factory_info_free (info);
 				continue;
 			}
 
@@ -401,7 +401,7 @@ mate_panel_applets_manager_dbus_load_applet_infos (MatePanelAppletsManagerDBus *
 }
 
 static GList *
-mate_panel_applets_manager_dbus_get_applets (MatePanelAppletsManager *manager)
+cafe_panel_applets_manager_dbus_get_applets (MatePanelAppletsManager *manager)
 {
 	MatePanelAppletsManagerDBus *dbus_manager = MATE_PANEL_APPLETS_MANAGER_DBUS (manager);
 
@@ -442,7 +442,7 @@ get_applet_factory_info (MatePanelAppletsManager *manager,
 }
 
 static gboolean
-mate_panel_applets_manager_dbus_factory_activate (MatePanelAppletsManager *manager,
+cafe_panel_applets_manager_dbus_factory_activate (MatePanelAppletsManager *manager,
 					     const gchar         *iid)
 {
 	MatePanelAppletFactoryInfo *info;
@@ -458,14 +458,14 @@ mate_panel_applets_manager_dbus_factory_activate (MatePanelAppletsManager *manag
 	g_return_val_if_fail (applet_info, FALSE);
 #ifdef HAVE_X11
 	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()) &&
-		!mate_panel_applet_info_get_x11_supported (applet_info)) {
+		!cafe_panel_applet_info_get_x11_supported (applet_info)) {
 		g_warning ("Failed to load %p, because it does not support X11", iid);
 		return FALSE;
 	}
 #endif
 #ifdef HAVE_WAYLAND
 	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()) &&
-		!mate_panel_applet_info_get_wayland_supported (applet_info)) {
+		!cafe_panel_applet_info_get_wayland_supported (applet_info)) {
 		g_warning ("Failed to load %p, because it does not support Wayland", iid);
 		return FALSE;
 	}
@@ -495,7 +495,7 @@ mate_panel_applets_manager_dbus_factory_activate (MatePanelAppletsManager *manag
 		return FALSE;
 	}
 
-	if (!g_module_symbol (info->module, "_mate_panel_applet_shlib_factory", (gpointer *) &activate_applet)) {
+	if (!g_module_symbol (info->module, "_cafe_panel_applet_shlib_factory", (gpointer *) &activate_applet)) {
 		/* FIXME: use a GError? */
 		g_warning ("Failed to load applet %s: %s\n",
 			   iid, g_module_error ());
@@ -505,7 +505,7 @@ mate_panel_applets_manager_dbus_factory_activate (MatePanelAppletsManager *manag
 		return FALSE;
 	}
 
-	if (!g_module_symbol (info->module, "mate_panel_applet_get_applet_widget", (gpointer *) &get_applet_widget)) {
+	if (!g_module_symbol (info->module, "cafe_panel_applet_get_applet_widget", (gpointer *) &get_applet_widget)) {
 		/* FIXME: use a GError? */
 		g_warning ("Failed to load applet %s: %s", iid, g_module_error ());
 		g_module_close (info->module);
@@ -532,7 +532,7 @@ mate_panel_applets_manager_dbus_factory_activate (MatePanelAppletsManager *manag
 }
 
 static gboolean
-mate_panel_applets_manager_dbus_factory_deactivate (MatePanelAppletsManager *manager,
+cafe_panel_applets_manager_dbus_factory_deactivate (MatePanelAppletsManager *manager,
 					       const gchar         *iid)
 {
 	MatePanelAppletFactoryInfo *info;
@@ -562,7 +562,7 @@ mate_panel_applets_manager_dbus_factory_deactivate (MatePanelAppletsManager *man
 }
 
 static MatePanelAppletInfo *
-mate_panel_applets_manager_dbus_get_applet_info (MatePanelAppletsManager *manager,
+cafe_panel_applets_manager_dbus_get_applet_info (MatePanelAppletsManager *manager,
 					    const gchar         *iid)
 {
 	MatePanelAppletFactoryInfo *info;
@@ -575,7 +575,7 @@ mate_panel_applets_manager_dbus_get_applet_info (MatePanelAppletsManager *manage
 	for (l = info->applet_list; l; l = g_list_next (l)) {
 		MatePanelAppletInfo *ainfo = (MatePanelAppletInfo *) l->data;
 
-		if (g_strcmp0 (mate_panel_applet_info_get_iid (ainfo), iid) == 0)
+		if (g_strcmp0 (cafe_panel_applet_info_get_iid (ainfo), iid) == 0)
 			return ainfo;
 	}
 
@@ -583,7 +583,7 @@ mate_panel_applets_manager_dbus_get_applet_info (MatePanelAppletsManager *manage
 }
 
 static MatePanelAppletInfo *
-mate_panel_applets_manager_dbus_get_applet_info_from_old_id (MatePanelAppletsManager *manager,
+cafe_panel_applets_manager_dbus_get_applet_info_from_old_id (MatePanelAppletsManager *manager,
 							const gchar         *iid)
 {
 	MatePanelAppletsManagerDBus *dbus_manager = MATE_PANEL_APPLETS_MANAGER_DBUS (manager);
@@ -607,7 +607,7 @@ mate_panel_applets_manager_dbus_get_applet_info_from_old_id (MatePanelAppletsMan
 
 			ainfo = (MatePanelAppletInfo *) l->data;
 
-			old_ids = mate_panel_applet_info_get_old_ids (ainfo);
+			old_ids = cafe_panel_applet_info_get_old_ids (ainfo);
 
 			if (old_ids == NULL)
 				continue;
@@ -624,15 +624,15 @@ mate_panel_applets_manager_dbus_get_applet_info_from_old_id (MatePanelAppletsMan
 }
 
 static gboolean
-mate_panel_applets_manager_dbus_load_applet (MatePanelAppletsManager         *manager,
+cafe_panel_applets_manager_dbus_load_applet (MatePanelAppletsManager         *manager,
 					const gchar                 *iid,
 					MatePanelAppletFrameActivating  *frame_act)
 {
-	return mate_panel_applet_frame_dbus_load (iid, frame_act);
+	return cafe_panel_applet_frame_dbus_load (iid, frame_act);
 }
 
 static GtkWidget *
-mate_panel_applets_manager_dbus_get_applet_widget (MatePanelAppletsManager *manager,
+cafe_panel_applets_manager_dbus_get_applet_widget (MatePanelAppletsManager *manager,
                                               const gchar         *iid,
                                               guint                uid)
 {
@@ -646,7 +646,7 @@ mate_panel_applets_manager_dbus_get_applet_widget (MatePanelAppletsManager *mana
 }
 
 static void
-mate_panel_applets_manager_dbus_finalize (GObject *object)
+cafe_panel_applets_manager_dbus_finalize (GObject *object)
 {
 	MatePanelAppletsManagerDBus *manager = MATE_PANEL_APPLETS_MANAGER_DBUS (object);
 
@@ -661,35 +661,35 @@ mate_panel_applets_manager_dbus_finalize (GObject *object)
 		manager->priv->applet_factories = NULL;
 	}
 
-	G_OBJECT_CLASS (mate_panel_applets_manager_dbus_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cafe_panel_applets_manager_dbus_parent_class)->finalize (object);
 }
 
 static void
-mate_panel_applets_manager_dbus_init (MatePanelAppletsManagerDBus *manager)
+cafe_panel_applets_manager_dbus_init (MatePanelAppletsManagerDBus *manager)
 {
-	manager->priv = mate_panel_applets_manager_dbus_get_instance_private (manager);
+	manager->priv = cafe_panel_applets_manager_dbus_get_instance_private (manager);
 
 	manager->priv->applet_factories = g_hash_table_new_full (g_str_hash,
 								 g_str_equal,
 								 (GDestroyNotify) g_free,
-								 (GDestroyNotify) mate_panel_applet_factory_info_free);
+								 (GDestroyNotify) cafe_panel_applet_factory_info_free);
 
-	mate_panel_applets_manager_dbus_load_applet_infos (manager);
+	cafe_panel_applets_manager_dbus_load_applet_infos (manager);
 }
 
 static void
-mate_panel_applets_manager_dbus_class_init (MatePanelAppletsManagerDBusClass *class)
+cafe_panel_applets_manager_dbus_class_init (MatePanelAppletsManagerDBusClass *class)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (class);
 	MatePanelAppletsManagerClass *manager_class = MATE_PANEL_APPLETS_MANAGER_CLASS (class);
 
-	gobject_class->finalize = mate_panel_applets_manager_dbus_finalize;
+	gobject_class->finalize = cafe_panel_applets_manager_dbus_finalize;
 
-	manager_class->get_applets = mate_panel_applets_manager_dbus_get_applets;
-	manager_class->factory_activate = mate_panel_applets_manager_dbus_factory_activate;
-	manager_class->factory_deactivate = mate_panel_applets_manager_dbus_factory_deactivate;
-	manager_class->get_applet_info = mate_panel_applets_manager_dbus_get_applet_info;
-	manager_class->get_applet_info_from_old_id = mate_panel_applets_manager_dbus_get_applet_info_from_old_id;
-	manager_class->load_applet = mate_panel_applets_manager_dbus_load_applet;
-	manager_class->get_applet_widget = mate_panel_applets_manager_dbus_get_applet_widget;
+	manager_class->get_applets = cafe_panel_applets_manager_dbus_get_applets;
+	manager_class->factory_activate = cafe_panel_applets_manager_dbus_factory_activate;
+	manager_class->factory_deactivate = cafe_panel_applets_manager_dbus_factory_deactivate;
+	manager_class->get_applet_info = cafe_panel_applets_manager_dbus_get_applet_info;
+	manager_class->get_applet_info_from_old_id = cafe_panel_applets_manager_dbus_get_applet_info_from_old_id;
+	manager_class->load_applet = cafe_panel_applets_manager_dbus_load_applet;
+	manager_class->get_applet_widget = cafe_panel_applets_manager_dbus_get_applet_widget;
 }

@@ -1,5 +1,5 @@
 /*
- * mate-panel-applet-gsettings.h: panel applet preferences handling.
+ * cafe-panel-applet-gsettings.h: panel applet preferences handling.
  *
  * Copyright (C) 2012 Stefano Karapetsas
  *
@@ -28,17 +28,17 @@
 #include <glib.h>
 #include <gio/gio.h>
 
-#include <mate-panel-applet.h>
+#include <cafe-panel-applet.h>
 
-#define PANEL_OBJECT_PREFS_PATH "/org/mate/panel/objects/%s/prefs"
+#define PANEL_OBJECT_PREFS_PATH "/org/cafe/panel/objects/%s/prefs"
 
 G_BEGIN_DECLS
 
-GSettings* mate_panel_applet_settings_new (MatePanelApplet *applet, gchar *schema);
-GList*     mate_panel_applet_settings_get_glist (GSettings *settings, gchar *key);
-void       mate_panel_applet_settings_set_glist (GSettings *settings, gchar *key, GList *list);
-GSList*    mate_panel_applet_settings_get_gslist (GSettings *settings, gchar *key);
-void       mate_panel_applet_settings_set_gslist (GSettings *settings, gchar *key, GSList *list);
+GSettings* cafe_panel_applet_settings_new (MatePanelApplet *applet, gchar *schema);
+GList*     cafe_panel_applet_settings_get_glist (GSettings *settings, gchar *key);
+void       cafe_panel_applet_settings_set_glist (GSettings *settings, gchar *key, GList *list);
+GSList*    cafe_panel_applet_settings_get_gslist (GSettings *settings, gchar *key);
+void       cafe_panel_applet_settings_set_gslist (GSettings *settings, gchar *key, GSList *list);
 
 G_END_DECLS
 

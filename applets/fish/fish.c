@@ -39,18 +39,18 @@
 #include <gdk/gdkkeysyms.h>
 #include <gio/gio.h>
 
-#include <mate-panel-applet.h>
-#include <mate-panel-applet-gsettings.h>
+#include <cafe-panel-applet.h>
+#include <cafe-panel-applet-gsettings.h>
 
 #define FISH_APPLET(o) \
 	(G_TYPE_CHECK_INSTANCE_CAST((o), fish_applet_get_type(), FishApplet))
 #define FISH_IS_APPLET(o) \
 	(G_TYPE_CHECK_INSTANCE_TYPE((o), FISH_TYPE_APPLET))
 
-#define FISH_ICON "mate-panel-fish"
-#define FISH_RESOURCE_PATH "/org/mate/panel/applet/fish/"
+#define FISH_ICON "cafe-panel-fish"
+#define FISH_RESOURCE_PATH "/org/cafe/panel/applet/fish/"
 
-#define FISH_SCHEMA      "org.mate.panel.applet.fish"
+#define FISH_SCHEMA      "org.cafe.panel.applet.fish"
 #define FISH_NAME_KEY    "name"
 #define FISH_IMAGE_KEY   "image"
 #define FISH_COMMAND_KEY "command"
@@ -58,7 +58,7 @@
 #define FISH_SPEED_KEY   "speed"
 #define FISH_ROTATE_KEY  "rotate"
 
-#define LOCKDOWN_SCHEMA                       "org.mate.lockdown"
+#define LOCKDOWN_SCHEMA                       "org.cafe.lockdown"
 #define LOCKDOWN_DISABLE_COMMAND_LINE_KEY     "disable-command-line"
 
 typedef struct {
@@ -148,7 +148,7 @@ static void show_help(FishApplet* fish, const char* link_id)
 {
 	GError *error = NULL;
 	char   *uri;
-#define FISH_HELP_DOC "mate-fish"
+#define FISH_HELP_DOC "cafe-fish"
 
 	if (link_id)
 		uri = g_strdup_printf ("help:%s/%s", FISH_HELP_DOC, link_id);
@@ -566,7 +566,7 @@ static void display_about_dialog(GtkAction* action, FishApplet* fish)
 		"logo-icon-name", FISH_ICON,
 		"translator-credits", _("translator-credits"),
 		"version", VERSION, // "3.4.7.4ac19"
-		"website", "http://mate-desktop.org/",
+		"website", "http://cafe-desktop.org/",
 		NULL);
 
 	g_free(descr);
@@ -1274,7 +1274,7 @@ static void setup_gsettings(FishApplet* fish)
 {
 	MatePanelApplet *applet = (MatePanelApplet *) fish;
 
-	fish->settings = mate_panel_applet_settings_new (applet, FISH_SCHEMA);
+	fish->settings = cafe_panel_applet_settings_new (applet, FISH_SCHEMA);
 	fish->lockdown_settings = g_settings_new (LOCKDOWN_SCHEMA);
 
 	g_signal_connect (fish->settings,
@@ -1707,7 +1707,7 @@ static gboolean fish_applet_fill(FishApplet* fish)
 	MatePanelApplet* applet = (MatePanelApplet*) fish;
 	GtkActionGroup* action_group;
 
-	fish->orientation = mate_panel_applet_get_orient (applet);
+	fish->orientation = cafe_panel_applet_get_orient (applet);
 
 	setup_gsettings (fish);
 
@@ -1740,11 +1740,11 @@ static gboolean fish_applet_fill(FishApplet* fish)
 				      fish_menu_verbs,
 				      G_N_ELEMENTS (fish_menu_verbs),
 				      fish);
-	mate_panel_applet_setup_menu_from_resource (applet,
+	cafe_panel_applet_setup_menu_from_resource (applet,
 	                                            FISH_RESOURCE_PATH "fish-menu.xml",
 	                                            action_group);
 
-	if (mate_panel_applet_get_locked_down (applet)) {
+	if (cafe_panel_applet_get_locked_down (applet)) {
 		GtkAction *action;
 
 		action = gtk_action_group_get_action (action_group, "FishPreferences");
@@ -1884,9 +1884,9 @@ static void fish_applet_instance_init(FishApplet* fish, FishAppletClass* klass)
 
 	fish->april_fools = FALSE;
 
-	mate_panel_applet_set_flags (MATE_PANEL_APPLET (fish), MATE_PANEL_APPLET_EXPAND_MINOR);
+	cafe_panel_applet_set_flags (MATE_PANEL_APPLET (fish), MATE_PANEL_APPLET_EXPAND_MINOR);
 
-	mate_panel_applet_set_background_widget(MATE_PANEL_APPLET(fish), GTK_WIDGET(fish));
+	cafe_panel_applet_set_background_widget(MATE_PANEL_APPLET(fish), GTK_WIDGET(fish));
 }
 
 static void fish_applet_class_init(FishAppletClass* klass)

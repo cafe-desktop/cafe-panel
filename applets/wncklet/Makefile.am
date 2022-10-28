@@ -3,8 +3,8 @@ AM_CPPFLAGS =							\
 	$(WNCKLET_CFLAGS)					\
 	-I$(top_builddir)					\
 	-I$(top_builddir)/applets/wncklet			\
-	-I$(top_srcdir)/libmate-panel-applet				\
-	-I$(top_builddir)/libmate-panel-applet			\
+	-I$(top_srcdir)/libcafe-panel-applet				\
+	-I$(top_builddir)/libcafe-panel-applet			\
 	-DMATELOCALEDIR=\""$(datadir)/locale"\"	\
 	$(DISABLE_DEPRECATED_CFLAGS)
 
@@ -24,7 +24,7 @@ WNCKLET_SOURCES = \
 	$(BUILT_SOURCES)
 
 WNCKLET_LDADD =						\
-	../../libmate-panel-applet/libmate-panel-applet-4.la	\
+	../../libcafe-panel-applet/libcafe-panel-applet-4.la	\
 	$(WNCKLET_LIBS)					\
 	$(LIBMATE_PANEL_APPLET_LIBS)
 
@@ -48,9 +48,9 @@ wnck_applet_LDADD = $(WNCKLET_LDADD)
 wnck_applet_CFLAGS = $(AM_CFLAGS)
 endif
 
-appletdir       = $(datadir)/mate-panel/applets
-applet_in_files = org.mate.panel.Wncklet.mate-panel-applet.desktop.in
-applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
+appletdir       = $(datadir)/cafe-panel/applets
+applet_in_files = org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in
+applet_DATA     = $(applet_in_files:.cafe-panel-applet.desktop.in=.cafe-panel-applet)
 
 $(applet_in_files): $(applet_in_files).in Makefile
 	$(AM_V_GEN)sed \
@@ -64,10 +64,10 @@ $(applet_DATA): $(applet_in_files)
 
 if !WNCKLET_INPROCESS
 servicedir       = $(datadir)/dbus-1/services
-service_in_files = org.mate.panel.applet.WnckletFactory.service.in
+service_in_files = org.cafe.panel.applet.WnckletFactory.service.in
 service_DATA     = $(service_in_files:.service.in=.service)
 
-org.mate.panel.applet.WnckletFactory.service: $(service_in_files)
+org.cafe.panel.applet.WnckletFactory.service: $(service_in_files)
 	$(AM_V_GEN)sed \
 		-e "s|\@LOCATION\@|$(APPLET_LOCATION)|" \
 		$< > $@
@@ -93,20 +93,20 @@ BUILT_SOURCES = 		\
 
 if HAVE_WINDOW_PREVIEWS
 wncklet_gschemas_in = \
-	org.mate.panel.applet.window-list.gschema.xml.in \
-	org.mate.panel.applet.window-list-previews.gschema.xml.in \
-	org.mate.panel.applet.workspace-switcher.gschema.xml.in
+	org.cafe.panel.applet.window-list.gschema.xml.in \
+	org.cafe.panel.applet.window-list-previews.gschema.xml.in \
+	org.cafe.panel.applet.workspace-switcher.gschema.xml.in
 else
 wncklet_gschemas_in = \
-	org.mate.panel.applet.window-list.gschema.xml.in \
-	org.mate.panel.applet.workspace-switcher.gschema.xml.in
+	org.cafe.panel.applet.window-list.gschema.xml.in \
+	org.cafe.panel.applet.workspace-switcher.gschema.xml.in
 endif
 gsettings_SCHEMAS = $(wncklet_gschemas_in:.xml.in=.xml)
 
 @GSETTINGS_RULES@
 
 EXTRA_DIST = \
-	org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in \
+	org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in \
 	$(service_in_files) \
 	$(wncklet_gschemas_in) \
 	$(ui_FILES) \

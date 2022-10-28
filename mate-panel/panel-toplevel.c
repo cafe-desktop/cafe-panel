@@ -168,7 +168,7 @@ struct _PanelToplevelPrivate {
 	gint			n_autohide_disablers;
 
 	guint                   auto_hide : 1;
-	guint                   animate : 1;
+	guint                   anicafe : 1;
 	guint                   buttons_enabled : 1;
 	guint                   arrows_enabled : 1;
 
@@ -267,7 +267,7 @@ update_style_classes (PanelToplevel *toplevel)
 	/*ensure the panel BG can always be themed*/
 	/*Without this gtk3.19/20 cannot set the BG color and resetting the bg to system is not immediately applied*/
 	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
-	gtk_style_context_add_class(context,"mate-panel-menu-bar");
+	gtk_style_context_add_class(context,"cafe-panel-menu-bar");
 
 	gtk_style_context_remove_class (context, GTK_STYLE_CLASS_HORIZONTAL);
 	gtk_style_context_remove_class (context, GTK_STYLE_CLASS_VERTICAL);
@@ -1293,7 +1293,7 @@ static void panel_toplevel_update_hide_buttons_size (GtkWidget *button, int pane
 	 * and then adding the custom css, then adding this updated css to a css_provider
 	 * with the gtk_css_provider_load_from_data () also works,
 	 * however some themes can't be easily converted to strings, beacuse of the binary data
-	 * they contain. This causes a delay of minutes in loading the mate-panel,
+	 * they contain. This causes a delay of minutes in loading the cafe-panel,
 	 * and so this approach is not viable. */
 	if (panel_size < 30) {
 		gtk_css_provider_load_from_data (css_provider, ".panel-button {min-height: 13px; min-width: 13px; padding: 0px;}", -1, NULL);
@@ -1838,7 +1838,7 @@ panel_toplevel_update_auto_hide_position (PanelToplevel *toplevel,
 	height = toplevel->priv->original_height;
 	snap_tolerance = toplevel->priv->snap_tolerance;
 
-	/* For the initial animation, we animate from outside the screen, and
+	/* For the initial animation, we anicafe from outside the screen, and
 	 * so we don't want the toplevel to be visible at all. But when the
 	 * request is for the end position, then we give the real result (it's
 	 * useful for struts) */
@@ -2928,13 +2928,13 @@ panel_toplevel_move_resize_window (PanelToplevel *toplevel,
 	if (resize || move) {
 		for (list = toplevel->priv->panel_widget->applet_list; list != NULL; list = g_list_next (list)) {
 			AppletData *ad = list->data;
-			id = mate_panel_applet_get_id_by_widget (ad->applet);
+			id = cafe_panel_applet_get_id_by_widget (ad->applet);
 
 			if (!id)
 				return;
 
 			AppletInfo *info;
-			info = mate_panel_applet_get_by_id (id);
+			info = cafe_panel_applet_get_by_id (id);
 
 			stick = g_settings_get_boolean (info->settings, PANEL_OBJECT_PANEL_RIGHT_STICK_KEY);
 
@@ -3749,7 +3749,7 @@ panel_toplevel_hide (PanelToplevel    *toplevel,
 		panel_toplevel_update_hide_buttons (toplevel);
 	}
 
-	if (toplevel->priv->animate && gtk_widget_get_realized (GTK_WIDGET (toplevel))) {
+	if (toplevel->priv->anicafe && gtk_widget_get_realized (GTK_WIDGET (toplevel))) {
 		panel_toplevel_start_animation (toplevel);
 	}
 
@@ -3802,7 +3802,7 @@ panel_toplevel_unhide (PanelToplevel *toplevel)
 	if (toplevel->priv->attach_toplevel)
 		panel_toplevel_push_autohide_disabler (toplevel->priv->attach_toplevel);
 
-	if (toplevel->priv->animate && gtk_widget_get_realized (GTK_WIDGET (toplevel))) {
+	if (toplevel->priv->anicafe && gtk_widget_get_realized (GTK_WIDGET (toplevel))) {
 		panel_toplevel_start_animation (toplevel);
 	}
 
@@ -3814,7 +3814,7 @@ panel_toplevel_unhide (PanelToplevel *toplevel)
 
 	gtk_widget_queue_resize (GTK_WIDGET (toplevel));
 
-	if (!toplevel->priv->animate)
+	if (!toplevel->priv->anicafe)
 		g_signal_emit (toplevel, toplevel_signals [UNHIDE_SIGNAL], 0);
 }
 
@@ -3831,7 +3831,7 @@ panel_toplevel_auto_unhide_timeout_handler (PanelToplevel *toplevel)
 	if (toplevel->priv->animating)
 		return TRUE;
 
-	if (!toplevel->priv->animate)
+	if (!toplevel->priv->anicafe)
 		toplevel->priv->initial_animation_done = TRUE;
 
 	/* initial animation for auto-hidden panels: we need to unhide and hide
@@ -4134,7 +4134,7 @@ panel_toplevel_set_property (GObject      *object,
 		panel_toplevel_set_auto_hide_size (toplevel, g_value_get_int (value));
 		break;
 	case PROP_ANIMATE:
-		panel_toplevel_set_animate (toplevel, g_value_get_boolean (value));
+		panel_toplevel_set_anicafe (toplevel, g_value_get_boolean (value));
 		break;
 	case PROP_ANIMATION_SPEED:
 		panel_toplevel_set_animation_speed (toplevel, g_value_get_enum (value));
@@ -4213,7 +4213,7 @@ panel_toplevel_get_property (GObject    *object,
 		g_value_set_int (value, toplevel->priv->auto_hide_size);
 		break;
 	case PROP_ANIMATE:
-		g_value_set_boolean (value, toplevel->priv->animate);
+		g_value_set_boolean (value, toplevel->priv->anicafe);
 		break;
 	case PROP_ANIMATION_SPEED:
 		g_value_set_enum (value, toplevel->priv->animation_speed);
@@ -4497,8 +4497,8 @@ panel_toplevel_class_init (PanelToplevelClass *klass)
 		gobject_class,
 		PROP_ANIMATE,
 		g_param_spec_boolean (
-			"animate",
-			"Animate",
+			"anicafe",
+			"Anicafe",
 			"Enable hiding/showing animations",
 			TRUE,
 			G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
@@ -4509,7 +4509,7 @@ panel_toplevel_class_init (PanelToplevelClass *klass)
 		g_param_spec_enum (
 			"animation-speed",
 			"Animation Speed",
-			"The speed at which to animate panel hiding/showing",
+			"The speed at which to anicafe panel hiding/showing",
 			PANEL_TYPE_ANIMATION_SPEED,
 			PANEL_ANIMATION_MEDIUM,
 			G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
@@ -5126,7 +5126,7 @@ panel_toplevel_set_auto_hide_size (PanelToplevel *toplevel,
 
 	if (toplevel->priv->state == PANEL_STATE_AUTO_HIDDEN) {
 		if (panel_toplevel_update_struts (toplevel, FALSE)) {
-			if (toplevel->priv->animate) {
+			if (toplevel->priv->anicafe) {
 				panel_toplevel_unhide (toplevel);
 				panel_toplevel_hide (toplevel, TRUE, -1);
 			} else
@@ -5419,27 +5419,27 @@ panel_toplevel_get_unhide_delay (PanelToplevel *toplevel)
 }
 
 void
-panel_toplevel_set_animate (PanelToplevel *toplevel,
-			    gboolean       animate)
+panel_toplevel_set_anicafe (PanelToplevel *toplevel,
+			    gboolean       anicafe)
 {
 	g_return_if_fail (PANEL_IS_TOPLEVEL (toplevel));
 
-	animate = animate != FALSE;
+	anicafe = anicafe != FALSE;
 
-	if (toplevel->priv->animate == animate)
+	if (toplevel->priv->anicafe == anicafe)
 		return;
 
-	toplevel->priv->animate = animate;
+	toplevel->priv->anicafe = anicafe;
 
-	g_object_notify (G_OBJECT (toplevel), "animate");
+	g_object_notify (G_OBJECT (toplevel), "anicafe");
 }
 
 gboolean
-panel_toplevel_get_animate (PanelToplevel *toplevel)
+panel_toplevel_get_anicafe (PanelToplevel *toplevel)
 {
 	g_return_val_if_fail (PANEL_IS_TOPLEVEL (toplevel), FALSE);
 
-	return toplevel->priv->animate;
+	return toplevel->priv->anicafe;
 }
 
 void

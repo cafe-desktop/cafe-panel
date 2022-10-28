@@ -3,7 +3,7 @@
 # Carlos Moreira, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
-# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # Rui <xymarior@yandex.com>, 2020
 # Manuela Silva <manuelarodsilva@gmail.com>, 2020
 # José Vieira <jvieira33@sapo.pt>, 2020
@@ -15,7 +15,7 @@ msgstr ""
 "POT-Creation-Date: 2020-01-12 18:05+0100\n"
 "PO-Revision-Date: 2020-02-15 14:33+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>, 2020\n"
-"Language-Team: Portuguese (https://www.transifex.com/mate/teams/13566/pt/)\n"
+"Language-Team: Portuguese (https://www.transifex.com/cafe/teams/13566/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -350,11 +350,11 @@ msgstr "Opinião"
 #: C/index.docbook:201
 msgid ""
 "To report a bug or make a suggestion regarding the Clock applet or this "
-"manual, follow the directions in the <ulink url=\"help:mate-user-"
+"manual, follow the directions in the <ulink url=\"help:cafe-user-"
 "guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
 "Para reportar um erro ou fazer uma sugestão sobre a mini-aplicação Relógio "
-"ou deste manual, siga as indicações na <ulink url=\"help:mate-user-"
+"ou deste manual, siga as indicações na <ulink url=\"help:cafe-user-"
 "guide/feedback\" type=\"help\">Página de Opiniões do MATE</ulink>."
 
 #. (itstool) path: abstract/para
@@ -818,12 +818,12 @@ msgstr ""
 #: C/index.docbook:484
 msgid ""
 "Press the <guibutton>Set System Time</guibutton> button, then the "
-"<application>mate-polkit</application> dialog prompts for the administration"
+"<application>cafe-polkit</application> dialog prompts for the administration"
 " password. Enter the administration password and press the "
 "<guibutton>Authenticate</guibutton> button."
 msgstr ""
 "Prima o botão <guibutton>Definir Hora do Sistema</guibutton> e então a "
-"janela <application>mate-polkit</application> pede a senha de administração."
+"janela <application>cafe-polkit</application> pede a senha de administração."
 " Introduza a senha de administração e prima o botão "
 "<guibutton>Autenticar</guibutton>."
 

@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
-# This file is distributed under the same license as the mate-panel package.
+# This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -9,12 +9,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-panel 1.23.2\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-panel/issues\n"
+"Project-Id-Version: cafe-panel 1.23.2\n"
+"Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
 "POT-Creation-Date: 2020-01-12 18:05+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
-"Language-Team: Icelandic (https://www.transifex.com/mate/teams/13566/is/)\n"
+"Language-Team: Icelandic (https://www.transifex.com/cafe/teams/13566/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -166,12 +166,12 @@ msgstr "_Stillingar"
 #: applets/notification_area/main.c:295 applets/wncklet/showdesktop.c:241
 #: applets/wncklet/window-list.c:365 applets/wncklet/window-list.ui:35
 #: applets/wncklet/window-menu.c:98 applets/wncklet/workspace-switcher.c:397
-#: applets/wncklet/workspace-switcher.ui:46 mate-panel/drawer.c:562
-#: mate-panel/panel-action-button.c:753 mate-panel/panel-addto.c:1308
-#: mate-panel/panel-context-menu.c:318 mate-panel/panel-ditem-editor.c:648
-#: mate-panel/panel-menu-bar.c:351 mate-panel/panel-menu-button.c:700
-#: mate-panel/panel-properties-dialog.ui:78
-#: mate-panel/panel-properties-dialog.ui:724 mate-panel/panel-run-dialog.ui:39
+#: applets/wncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
+#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
+#: cafe-panel/panel-properties-dialog.ui:78
+#: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_Hjálp"
 
@@ -211,7 +211,7 @@ msgid "City Time Zone"
 msgstr "Tímasvæði borgar"
 
 #: applets/clock/clock.c:3389
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:10
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "Klukka"
 
@@ -233,7 +233,7 @@ msgstr ""
 #: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
 #: applets/wncklet/window-list.c:831 applets/wncklet/window-menu.c:88
 #: applets/wncklet/workspace-switcher.c:644
-#: mate-panel/panel-context-menu.c:124
+#: cafe-panel/panel-context-menu.c:124
 msgid "translator-credits"
 msgstr ""
 "Samúel Jón Gunnarsson <sammi@techattack.nu>, 2003\n"
@@ -245,10 +245,10 @@ msgid "Time & Date"
 msgstr "Tími og dagsetning"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: mate-panel/libpanel-util/panel-gtk.c:136
-#: mate-panel/panel-context-menu.c:213 mate-panel/panel-ditem-editor.c:664
-#: mate-panel/panel-force-quit.c:240 mate-panel/panel-recent.c:154
-#: mate-panel/panel-run-dialog.ui:55 mate-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-gtk.c:136
+#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
+#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
+#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "_Hætta við"
 
@@ -275,10 +275,10 @@ msgstr "Tíma_stillingar"
 #: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/wncklet/window-list.ui:51 applets/wncklet/workspace-switcher.ui:62
-#: mate-panel/panel-addto.c:1319 mate-panel/panel-ditem-editor.c:660
-#: mate-panel/panel-properties-dialog.ui:94
-#: mate-panel/panel-properties-dialog.ui:740
-#: mate-panel/panel-test-applets.ui:52
+#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-properties-dialog.ui:94
+#: cafe-panel/panel-properties-dialog.ui:740
+#: cafe-panel/panel-test-applets.ui:52
 msgid "_Close"
 msgstr "_Loka"
 
@@ -319,11 +319,11 @@ msgid "Show _temperature"
 msgstr "Sýna_hitastig"
 
 #: applets/clock/clock.ui:568 applets/fish/fish.ui:102
-#: mate-panel/panel-properties-dialog.ui:384
+#: cafe-panel/panel-properties-dialog.ui:384
 msgid "General"
 msgstr "Almennt"
 
-#: applets/clock/clock.ui:620 mate-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
 msgid "_Add"
 msgstr "_Bæta við"
 
@@ -375,8 +375,8 @@ msgstr "Norður"
 msgid "South"
 msgstr "Suður"
 
-#: applets/clock/clock.ui:939 mate-panel/libpanel-util/panel-gtk.c:140
-#: mate-panel/panel-applet-frame.c:960 mate-panel/panel-ditem-editor.c:668
+#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-gtk.c:140
+#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr ""
 
@@ -478,7 +478,7 @@ msgstr "Sólarupprás: %s / Sólsetur: %s"
 
 #: applets/clock/clock-utils.c:94 applets/fish/fish.c:170
 #: applets/notification_area/main.c:238 applets/wncklet/wncklet.c:75
-#: mate-panel/libpanel-util/panel-show.c:234
+#: cafe-panel/libpanel-util/panel-show.c:234
 #, c-format
 msgid "Could not display help document '%s'"
 msgstr "Gat ekki birt hjálparskjalið ‚%s‘"
@@ -488,11 +488,11 @@ msgstr "Gat ekki birt hjálparskjalið ‚%s‘"
 msgid "Error displaying help document"
 msgstr "Villa við birtingu hjálparskjals"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:29
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:29
 msgid "Hour format"
 msgstr "Klukkustunda snið"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:30
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
 "This key specifies the hour format used by the clock applet. Possible values"
 " are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
@@ -512,11 +512,11 @@ msgstr ""
 "1. 1970. Ef stillt er á \"sérsnið\" sýnir klukkan tímann samkvæmt því "
 "tímasniði sem er skilgreint með sérs_niðslyklinum."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:34
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:34
 msgid "Custom format of the clock"
 msgstr "Sérsnið klukku"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:35
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:35
 msgid ""
 "This key specifies the format used by the clock applet when the format key "
 "is set to \"custom\". You can use conversion specifiers understood by "
@@ -529,104 +529,104 @@ msgstr ""
 "forsniði. Skoðaðu strftime() leiðbeiningarnar til þess að fá meiri "
 "upplýsingar."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:39
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:39
 msgid "Show time with seconds"
 msgstr "Sýna sekúndur í tíma"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:40
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:40
 msgid "If true, display seconds in time."
 msgstr "Ef þetta er valið eru sekúndur sýndar."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:44
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:44
 msgid "Show date in clock"
 msgstr "Sýna dagsetningu í klukku"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:45
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:45
 msgid "If true, display date in the clock, in addition to time."
 msgstr "Ef þetta er valið er dagsetning sýnd með klukku, auk tímans."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:49
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:49
 msgid "Show date in tooltip"
 msgstr "Sýna dagsetningu sem ábendingu"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:50
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:50
 msgid "If true, show date in a tooltip when the pointer is over the clock."
 msgstr ""
 "Ef þetta er valið er dagsetning sýnd sem ábending þegar vísirinn er yfir "
 "klukkunni."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:54
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:54
 msgid "Show weather in clock"
 msgstr "Birta veður í klukku"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:55
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:55
 msgid "If true, display a weather icon."
 msgstr "Ef satt, þá verður veðurteikn birt."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:59
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:59
 msgid "Show temperature in clock"
 msgstr "Birta hitastig í klukku"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:60
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:60
 msgid "If true, show the temperature next to the weather icon."
 msgstr "Ef satt, þá verður hitastig sýnt við hlið veðurteikns."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:64
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:64
 msgid "Show week numbers in calendar"
 msgstr "Sýna vikunúmer í dagatali"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:65
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:65
 msgid "If true, show week numbers in the calendar."
 msgstr "Ef þetta er valið er vikunúmer sýnt í dagatali."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:69
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:69
 msgid "Expand list of locations"
 msgstr "Víkka lista af staðsetningum"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:70
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:70
 msgid "If true, expand the list of locations in the calendar window."
 msgstr "Ef satt, þá verður listi af staðsetningum í dagatalsglugga víkkaður."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:74
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:74
 msgid "List of locations"
 msgstr "Listi yfir staðsetningar"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:75
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:75
 msgid "A list of locations to display in the calendar window."
 msgstr "Listi yfir staðsetningar til að birta í dagatalsglugga"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:79
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:79
 msgid "Temperature unit"
 msgstr "Eining fyrir hitastig"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:80
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:80
 msgid "The unit to use when showing temperatures."
 msgstr "Mælieiningin sem verður notuð til að sýna hitastig."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:84
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:84
 msgid "Speed unit"
 msgstr "Eining fyrir hraða"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:85
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:85
 msgid "The unit to use when showing wind speed."
 msgstr "Mælieiningin sem verður notuð til að sýna vindhraða."
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:6
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Clock Applet Factory"
 msgstr "Smíði klukkuforritlinga"
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:7
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for clock applet"
 msgstr "Verksmiðja fyrir klukkusmáforrit"
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:11
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:11
 msgid "Get the current time and date"
 msgstr "Ná í núverandi tíma og dagsettningu"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-clock"
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-clock"
 msgstr ""
 
 #: applets/fish/fish.c:266
@@ -668,7 +668,7 @@ msgid "(with minor help from George)"
 msgstr "(með minniháttar hjálp frá George)"
 
 #: applets/fish/fish.c:558
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:10
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Fish"
 msgstr "Fiskur"
 
@@ -768,8 +768,8 @@ msgstr "Sk_ipun til að keyra þegar smellt er á:"
 msgid "Animation"
 msgstr "Hreyfimynd"
 
-#: applets/fish/fish.ui:266 mate-panel/panel-properties-dialog.ui:482
-#: mate-panel/panel-properties-dialog.ui:635
+#: applets/fish/fish.ui:266 cafe-panel/panel-properties-dialog.ui:482
+#: cafe-panel/panel-properties-dialog.ui:635
 msgid "    "
 msgstr "    "
 
@@ -801,11 +801,11 @@ msgstr "sekúndur"
 msgid "_Rotate on vertical panels"
 msgstr "_Snúa á lóðréttri stiku"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:5
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:5
 msgid "The fish's name"
 msgstr "Nafn fisksins"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:6
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:6
 msgid ""
 "A fish without a name is a pretty dull fish. Bring your fish to life by "
 "naming him."
@@ -813,11 +813,11 @@ msgstr ""
 "Fiskur með engu nafni er frekar daufur fiskur. Lífgaðu upp á hann með því að"
 " gefa honum nafn."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:10
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:10
 msgid "The fish's animation pixmap"
 msgstr "Hreyfimynd fisksins"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:11
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:11
 msgid ""
 "This key specifies the filename of the pixmap which will be used for the "
 "animation displayed in the fish applet relative to the pixmap directory."
@@ -825,11 +825,11 @@ msgstr ""
 "Þessi lykill tilgreinir skrárnafn myndarinnar sem verður notuð fyrir "
 "hreyfimyndina sem birt er í fiskaforritinu með tilliti til myndamöppunar."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:15
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:15
 msgid "Command to execute on click"
 msgstr "Skipun til að keyra þegar smellt er"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:16
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:16
 msgid ""
 "This key specifies the command that will be tried to execute when the fish "
 "is clicked."
@@ -837,56 +837,56 @@ msgstr ""
 "Þessi lykill tilgreinir skipunina sem verður reynt að framkvæma þegar smellt"
 " er á fiskinn"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:20
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:20
 msgid "Frames in fish's animation"
 msgstr "Rammar í hreyfimynd fisksins"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:21
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
 "This key specifies the number of frames that will be displayed in the fish's"
 " animation."
 msgstr ""
 "Þessi lykill tilgreinir fjölda ramma sem verða birtir í hreyfimynd fisksins."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:25
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
 msgid "Pause per frame"
 msgstr "Hlé í hverjum ramma"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:26
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:26
 msgid "This key specifies the number of seconds each frame will be displayed."
 msgstr "Þessi lykill tilgreinir fjölda sekúndna sem hver rammi verður birtur."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:30
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:30
 msgid "Rotate on vertical panels"
 msgstr "Snúa á lóðréttum stikum"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:31
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:31
 msgid ""
 "If true, the fish's animation will be displayed rotated on vertical panels."
 msgstr ""
 "Ef þetta er valið er hreyfing fiskins sýnd sem sem snúningur á lóðréttum "
 "stikum."
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:6
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Wanda Factory"
 msgstr "Wanda smiðja"
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:7
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:7
 msgid "From Whence That Stupid Fish Came"
 msgstr "Hvaðan sá heimski fiskur kom"
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:11
-msgid "Display a swimming fish or another animated creature"
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
+msgid "Display a swimming fish or another anicafed creature"
 msgstr "Sýna syndandi fisk eða annað dýr að hreyfast"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-fish"
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-fish"
 msgstr ""
 
 #: applets/notification_area/main.c:276
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:10
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Notification Area"
 msgstr "Tilkynningasvæði"
 
@@ -919,41 +919,41 @@ msgid "26"
 msgstr ""
 
 #: applets/notification_area/notification-area-preferences-dialog.ui:139
-#: mate-panel/panel-properties-dialog.ui:221
+#: cafe-panel/panel-properties-dialog.ui:221
 msgid "pixels"
 msgstr "mynddílar"
 
-#: applets/notification_area/org.mate.panel.applet.notification-area.gschema.xml.in:5
+#: applets/notification_area/org.cafe.panel.applet.notification-area.gschema.xml.in:5
 msgid "Minimum icon size"
 msgstr ""
 
-#: applets/notification_area/org.mate.panel.applet.notification-area.gschema.xml.in:6
+#: applets/notification_area/org.cafe.panel.applet.notification-area.gschema.xml.in:6
 msgid "The minimum size an icon can have."
 msgstr ""
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:6
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Notification Area Factory"
 msgstr "Tilkynningasvæðis smiðja"
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:7
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for notification area"
 msgstr "Verksmiðja fyrir tilkynningasvæði"
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:11
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:11
 msgid "Area where notification icons appear"
 msgstr "Svæðið þar sem tilkynningatáknmyndir birtast"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-notification-area"
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-notification-area"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:10
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "Sýna glugga frá öllum vinnusvæðum"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:11
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
 "If true, the window list will show windows from all workspaces. Otherwise it"
 " will only display windows from the current workspace."
@@ -961,11 +961,11 @@ msgstr ""
 "Ef valið, mun gluggalistinn sýna glugga frá öllum vinnusvæðum. Annars verða "
 "aðeins birtir gluggar frá núverandi vinnusvæði."
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:15
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
 msgid "When to group windows"
 msgstr "Hvenær safna skal gluggum saman"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:16
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:16
 msgid ""
 "Decides when to group windows from the same application on the window list. "
 "Possible values are \"never\", \"auto\" and \"always\"."
@@ -973,11 +973,11 @@ msgstr ""
 "Tilgreinir hvenær safna eigi saman gluggum sama forrits í gluggalistanum. "
 "Möguleg gildi eru „aldrei‟, „sjálfvirkt‟ og „alltaf‟."
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:20
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
 msgid "Move windows to current workspace when unminimized"
 msgstr "Flytja glugga á núverandi vinnusvæði þegar hann er þaninn"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:21
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:21
 msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
@@ -985,11 +985,11 @@ msgstr ""
 "Ef valið, mun gluggi verða fluttur á núverandi vinnusvæði þegar hann er "
 "þaninn. Annars er skipt yfir vinnusvæði gluggans."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:5
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
 msgid "Display workspace names"
 msgstr "Birta heiti vinnusvæða"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:6
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:6
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
@@ -999,11 +999,11 @@ msgstr ""
 "Annars munu þau birta gluggana í vinnusvæðinu. Þessi stilling virkar "
 "einungis ef gluggastjórinn er Marco."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:10
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"
 msgstr "Sýna öll vinnusvæði"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:11
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:11
 msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
@@ -1011,11 +1011,11 @@ msgstr ""
 "Ef valið mun vinnusvæðaskiptirinn sýna öll vinnusvæði. Annars mun hann "
 "aðeins sýna núverandi vinnusvæði"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:15
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
 msgstr "Raðir í vinnusvæðaskiptara"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:16
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
 "vertical layout) the workspace switcher shows the workspaces in. This key is"
@@ -1025,80 +1025,80 @@ msgstr ""
 "(fyrir lóðrétt snið) vinnusvæðaskiptarinn sýnir vinnusvæðin á. Þetta skiptir"
 " aðeins máli ef valið er að sýna öll vinnusvæðin."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:20
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
 msgstr "Tengja enda við skrun"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:21
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:21
 msgid ""
 "If true, the workspace switcher will allow wrap-around, which means "
 "switching from the first to the last workspace and vice versa via scrolling."
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:6
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Window Navigation Applet Factory"
 msgstr "Gluggameðhöndlunar forritlings smiðja"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:7
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for the window navigation related applets"
 msgstr "Smiðja fyrir gluggameðhöndlunar tengda forritlinga"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:10
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:10
 #: applets/wncklet/window-menu.c:76 applets/wncklet/window-menu.c:227
 msgid "Window Selector"
 msgstr "Glugga val"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:11
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:11
 msgid "Switch between open windows using a menu"
 msgstr "Skipta á milli opinna glugga með valmynd"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-window-menu"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-window-menu"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:23
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:23
 #: applets/wncklet/workspace-switcher.c:634
 msgid "Workspace Switcher"
 msgstr "Vinnusvæðaflettir"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:24
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:24
 msgid "Switch between workspaces"
 msgstr "Skipta á milli vinnusvæði"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:26
-msgid "mate-panel-workspace-switcher"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:26
+msgid "cafe-panel-workspace-switcher"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:36
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:36
 #: applets/wncklet/window-list.c:821
 msgid "Window List"
 msgstr "Glugga listi"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:37
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "Skipta á milli opinna glugga með hnöppum"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:39
-msgid "mate-panel-window-list"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:39
+msgid "cafe-panel-window-list"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:49
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
 msgstr "Birta skjáborð"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:50
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "Fela forritaglugga og sýna skjáborðið"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:52
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:52
 msgid "user-desktop"
 msgstr ""
 
@@ -1316,19 +1316,19 @@ msgstr ""
 msgid "Workspaces"
 msgstr "Vinnusvæði"
 
-#: data/org.mate.panel.gschema.xml.in:5
+#: data/org.cafe.panel.gschema.xml.in:5
 msgid "Default panel layout"
 msgstr "Sjálfgefin framsetning skjástiku"
 
-#: data/org.mate.panel.gschema.xml.in:6
+#: data/org.cafe.panel.gschema.xml.in:6
 msgid "The default panels layout to use when panels are created or resetted."
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:10
+#: data/org.cafe.panel.gschema.xml.in:10
 msgid "Enable program list in \"Run Application\" dialog"
 msgstr "Virkja forritalista í „Keyra forrit‟ svarglugganum"
 
-#: data/org.mate.panel.gschema.xml.in:11
+#: data/org.cafe.panel.gschema.xml.in:11
 msgid ""
 "If true, the \"Known Applications\" listing in the \"Run Application\" "
 "dialog is made available. Whether or not the listing is expanded when the "
@@ -1338,11 +1338,11 @@ msgstr ""
 "svarglugganum þegar sá gluggi er opnaður. Hvort listinn er opnaður þegar "
 "gluggin er opnaður veltur á sýna_forrita_lista lyklinum."
 
-#: data/org.mate.panel.gschema.xml.in:15
+#: data/org.cafe.panel.gschema.xml.in:15
 msgid "Expand program list in \"Run Application\" dialog"
 msgstr "Opna forritalista í „Keyra forrit‟ svarglugganum"
 
-#: data/org.mate.panel.gschema.xml.in:16
+#: data/org.cafe.panel.gschema.xml.in:16
 msgid ""
 "If true, the \"Known Applications\" listing in the \"Run Application\" "
 "dialog is expanded when the dialog is opened. This key is only relevant if "
@@ -1352,53 +1352,53 @@ msgstr ""
 "þegar sá gluggi er opnaður. Þessi lykill er því aðeins virkur að "
 "virkja_forrita_lista lykillin hafi verið valinn."
 
-#: data/org.mate.panel.gschema.xml.in:20
+#: data/org.cafe.panel.gschema.xml.in:20
 msgid "Enable autocompletion in \"Run Application\" dialog"
 msgstr "Virkja sjálfvirka fyllingu  „Keyra forrit‟ svarglugganum"
 
-#: data/org.mate.panel.gschema.xml.in:21
+#: data/org.cafe.panel.gschema.xml.in:21
 msgid ""
 "If true, autocompletion in the \"Run Application\" dialog is made available."
 msgstr ""
 "Ef valið, er sjálfvirk fylling gerð aðgengileg í „Keyra forrit‟ "
 "svarglugganum."
 
-#: data/org.mate.panel.gschema.xml.in:25
+#: data/org.cafe.panel.gschema.xml.in:25
 msgid "History for \"Run Application\" dialog"
 msgstr "Ferill fyrir „Keyra forrit‟ samskiptagluggann"
 
-#: data/org.mate.panel.gschema.xml.in:26
+#: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
 "commands are sorted descendingly by recency (e.g., most recent command comes"
 " first)."
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:30
+#: data/org.cafe.panel.gschema.xml.in:30
 msgid "Maximum history size for \"Run Application\" dialog"
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:31
+#: data/org.cafe.panel.gschema.xml.in:31
 msgid ""
 "Controls the maximum size of the history of the \"Run Application\" dialog. "
 "A value of 0 will disable the history."
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:35
+#: data/org.cafe.panel.gschema.xml.in:35
 msgid "Reverse the history of the \"Run Application\" dialog"
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:36
+#: data/org.cafe.panel.gschema.xml.in:36
 msgid ""
 "Displays the history in reverse. Provides a consistent view for terminal "
 "users as the up key will select the most recent entry."
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:40
+#: data/org.cafe.panel.gschema.xml.in:40
 msgid "Panel ID list"
 msgstr "Listi yfir gluggakenni"
 
-#: data/org.mate.panel.gschema.xml.in:41
+#: data/org.cafe.panel.gschema.xml.in:41
 msgid ""
 "A list of panel IDs. Each ID identifies an individual toplevel panel. The "
 "settings for each of these panels are stored in /apps/panel/toplevels/$(id)."
@@ -1407,11 +1407,11 @@ msgstr ""
 "Uppsetningin fyrir hverja af þessum stikum er geymd í "
 "/apps/panel/toplevels/$(id)."
 
-#: data/org.mate.panel.gschema.xml.in:45
+#: data/org.cafe.panel.gschema.xml.in:45
 msgid "Panel object ID list"
 msgstr "Listi yfir stikuhlutakenni"
 
-#: data/org.mate.panel.gschema.xml.in:46
+#: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
 "A list of panel object IDs. Each ID identifies an individual panel object "
 "(e.g. a launcher, action button or menu button/bar). The settings for each "
@@ -1421,35 +1421,35 @@ msgstr ""
 " ræsi, aðgerðahnapp, eða valmyndarhnapp/slá). Uppsetningin fyrir hvern af "
 "þessum hlutum er geymd í /apps/panel/objects/$(id)."
 
-#: data/org.mate.panel.gschema.xml.in:50
+#: data/org.cafe.panel.gschema.xml.in:50
 msgid "Enable tooltips"
 msgstr "Virkja ábendingar"
 
-#: data/org.mate.panel.gschema.xml.in:51
+#: data/org.cafe.panel.gschema.xml.in:51
 msgid "If true, tooltips are shown for objects in panels."
 msgstr "Ef valið verða ábendingar sýndar fyrir hluti á stikum."
 
-#: data/org.mate.panel.gschema.xml.in:55
-#: data/org.mate.panel.toplevel.gschema.xml.in:70
+#: data/org.cafe.panel.gschema.xml.in:55
+#: data/org.cafe.panel.toplevel.gschema.xml.in:70
 msgid "Enable animations"
 msgstr "Virkja hreyfingar"
 
-#: data/org.mate.panel.gschema.xml.in:59
+#: data/org.cafe.panel.gschema.xml.in:59
 msgid "Autoclose drawer"
 msgstr "Loka skúffu sjálfkrafa"
 
-#: data/org.mate.panel.gschema.xml.in:60
+#: data/org.cafe.panel.gschema.xml.in:60
 msgid ""
 "If true, a drawer will automatically be closed when the user clicks a "
 "launcher in it."
 msgstr ""
 "Ef valið, þá lokast skúffa sjálfkrafa þegar notandi smellir á ræsi í henni."
 
-#: data/org.mate.panel.gschema.xml.in:64
+#: data/org.cafe.panel.gschema.xml.in:64
 msgid "Confirm panel removal"
 msgstr "Staðfesta að fjarlægja stiku"
 
-#: data/org.mate.panel.gschema.xml.in:65
+#: data/org.cafe.panel.gschema.xml.in:65
 msgid ""
 "If true, a dialog is shown asking for confirmation if the user wants to "
 "remove a panel."
@@ -1457,22 +1457,22 @@ msgstr ""
 "Ef valið, er svargluggi birtur til að fá staðfestingu á að notandi vil eyða "
 "stiku."
 
-#: data/org.mate.panel.gschema.xml.in:69
+#: data/org.cafe.panel.gschema.xml.in:69
 msgid "Highlight launchers on mouseover"
 msgstr "Auðkenna ræsa við músyfir"
 
-#: data/org.mate.panel.gschema.xml.in:70
+#: data/org.cafe.panel.gschema.xml.in:70
 msgid ""
 "If true, a launcher is highlighted when the user moves the pointer over it."
 msgstr ""
 "Ef valið, er ræsirinn auðkenndur þegar notandi setur músarbendilinn yfir "
 "hann."
 
-#: data/org.mate.panel.gschema.xml.in:74
+#: data/org.cafe.panel.gschema.xml.in:74
 msgid "Complete panel lockdown"
 msgstr "Algjör stikulæsing"
 
-#: data/org.mate.panel.gschema.xml.in:75
+#: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
 "panel. Individual applets may need to be locked down separately however. The"
@@ -1482,11 +1482,11 @@ msgstr ""
 "Vera kann að nauðsunlegt verið að læsa einstökum forrit sérstaklega. "
 "Endurræsa þarf stikuna svo þetta taki gildi."
 
-#: data/org.mate.panel.gschema.xml.in:79
+#: data/org.cafe.panel.gschema.xml.in:79
 msgid "Applet IIDs to disable from loading"
 msgstr "Forritakenni sem á hindra í að hlaðast"
 
-#: data/org.mate.panel.gschema.xml.in:80
+#: data/org.cafe.panel.gschema.xml.in:80
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
@@ -1498,11 +1498,11 @@ msgstr ""
 "að hindra mini-commander forritið bætið ,OAFIID:MATE_MiniCommanderApple' við"
 " listan. Endurræsa þarf stikuna til þess að virkja þetta."
 
-#: data/org.mate.panel.gschema.xml.in:84
+#: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
 msgstr "Gera lokunarþvingun óvirka"
 
-#: data/org.mate.panel.gschema.xml.in:85
+#: data/org.cafe.panel.gschema.xml.in:85
 msgid ""
 "If true, the panel will not allow a user to force an application to quit by "
 "removing access to the force quit button."
@@ -1510,105 +1510,105 @@ msgstr ""
 "Ef valið, mun stikan ekki leyfa notandanum að þvinga forrit til að hætta með"
 " þvi að fjarlægja aðgang að þvinga til að hætta hnappnum"
 
-#: data/org.mate.panel.gschema.xml.in:89
+#: data/org.cafe.panel.gschema.xml.in:89
 msgid "Enable SNI support"
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:90
+#: data/org.cafe.panel.gschema.xml.in:90
 msgid "If true, the panel provides support for SNI."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:15
+#: data/org.cafe.panel.menubar.gschema.xml.in:15
 msgid "Show applications menu"
 msgstr "Birta forritavalmynd"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:16
+#: data/org.cafe.panel.menubar.gschema.xml.in:16
 msgid "If true, show applications item in menu bar."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:20
+#: data/org.cafe.panel.menubar.gschema.xml.in:20
 msgid "Show places menu"
 msgstr "Birta staðavalmynd"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:21
+#: data/org.cafe.panel.menubar.gschema.xml.in:21
 msgid "If true, show places item in menu bar."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:25
+#: data/org.cafe.panel.menubar.gschema.xml.in:25
 msgid "Show desktop menu"
 msgstr "Birta skjáborðsvalmynd"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:26
+#: data/org.cafe.panel.menubar.gschema.xml.in:26
 msgid "If true, show desktop item in menu bar."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:30
+#: data/org.cafe.panel.menubar.gschema.xml.in:30
 msgid "Show icon"
 msgstr "Birta táknmynd"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:31
+#: data/org.cafe.panel.menubar.gschema.xml.in:31
 msgid "If true, show icon in menu bar."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:35
+#: data/org.cafe.panel.menubar.gschema.xml.in:35
 msgid "Icon to show in menu bar"
 msgstr "Táknmynd sem á að birta í valmyndasstiku"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:36
+#: data/org.cafe.panel.menubar.gschema.xml.in:36
 msgid "Set the theme icon name to use in menu bar."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:40
+#: data/org.cafe.panel.menubar.gschema.xml.in:40
 msgid "Menu bar icon size"
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:41
+#: data/org.cafe.panel.menubar.gschema.xml.in:41
 msgid ""
 "Set the size of an icon used in menu bar. The panel must be restarted for "
 "this to take effect."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:45
+#: data/org.cafe.panel.menubar.gschema.xml.in:45
 msgid "Menu items icon size"
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:46
+#: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
 "Set the size of icons used in the menu. The panel must be restarted for this"
 " to take effect."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:50
+#: data/org.cafe.panel.menubar.gschema.xml.in:50
 msgid "Threshold of menu items before submenu is created"
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:51
+#: data/org.cafe.panel.menubar.gschema.xml.in:51
 msgid ""
 "Maximum number of menu items (i.e. bookmarks) that are displayed without "
 "being put in a submenu."
 msgstr ""
 
-#: data/org.mate.panel.object.gschema.xml.in:5
+#: data/org.cafe.panel.object.gschema.xml.in:5
 msgid "Panel object type"
 msgstr "Tegund stikuhlutar"
 
-#: data/org.mate.panel.object.gschema.xml.in:6
+#: data/org.cafe.panel.object.gschema.xml.in:6
 msgid "The type of this panel object."
 msgstr "Tegund þessa stikuhlutar."
 
-#: data/org.mate.panel.object.gschema.xml.in:10
+#: data/org.cafe.panel.object.gschema.xml.in:10
 msgid "Toplevel panel containing object"
 msgstr "Efstastigs stika sem inniheldur hlut"
 
-#: data/org.mate.panel.object.gschema.xml.in:11
+#: data/org.cafe.panel.object.gschema.xml.in:11
 msgid "The identifier of the toplevel panel which contains this object."
 msgstr "Kennimerki efstastigs stikunnar sem inniheldur þessa hluti."
 
-#: data/org.mate.panel.object.gschema.xml.in:15
+#: data/org.cafe.panel.object.gschema.xml.in:15
 msgid "Object's position on the panel"
 msgstr "Staðsetning hlutar á stikunni"
 
-#: data/org.mate.panel.object.gschema.xml.in:16
+#: data/org.cafe.panel.object.gschema.xml.in:16
 msgid ""
 "The position of this panel object. The position is specified by the number "
 "of pixels from the left (or top if vertical) panel edge."
@@ -1616,11 +1616,11 @@ msgstr ""
 "Staðsetning þessa stikuhlutar. Staðsetningin er tilgreind með fjölda díla "
 "frá vinstri brún stiku (eða toppnum ef hún er lóðrétt)"
 
-#: data/org.mate.panel.object.gschema.xml.in:20
+#: data/org.cafe.panel.object.gschema.xml.in:20
 msgid "Interpret position relative to bottom/right edge"
 msgstr "Gefa staðsetningu með botn eða hægri brún sem viðmiðun"
 
-#: data/org.mate.panel.object.gschema.xml.in:21
+#: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
 "If true, the position of the object is interpreted relative to the right (or"
 " bottom if vertical) edge of the panel."
@@ -1628,11 +1628,11 @@ msgstr ""
 "Ef valið, er staðsetning hlutar gefin með hægri brún stikunnar (eða botn ef "
 "hún er lóðrétt) sem viðmiðun."
 
-#: data/org.mate.panel.object.gschema.xml.in:25
+#: data/org.cafe.panel.object.gschema.xml.in:25
 msgid "Lock the object to the panel"
 msgstr "Læsa hlut við stiku"
 
-#: data/org.mate.panel.object.gschema.xml.in:26
+#: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
 "If true, the user may not move the applet without first unlocking the object"
 " using the \"Unlock\" menuitem."
@@ -1640,23 +1640,23 @@ msgstr ""
 "Ef valið, getur notandinn ekki fært foritling án þess að aflæsa hlutnum "
 "fyrst með því að nota „Aflæsa‟ valkostinn í valmyndinni."
 
-#: data/org.mate.panel.object.gschema.xml.in:30
+#: data/org.cafe.panel.object.gschema.xml.in:30
 msgid "Applet IID"
 msgstr "Auðkenni (IID) smáforrits"
 
-#: data/org.mate.panel.object.gschema.xml.in:31
+#: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
 "The implementation ID of the applet - e.g. "
 "\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"matecomponent-"
+"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
 "applet\")."
 msgstr ""
 
-#: data/org.mate.panel.object.gschema.xml.in:35
+#: data/org.cafe.panel.object.gschema.xml.in:35
 msgid "Panel attached to drawer"
 msgstr "Stika tengd skúffu"
 
-#: data/org.mate.panel.object.gschema.xml.in:36
+#: data/org.cafe.panel.object.gschema.xml.in:36
 msgid ""
 "The identifier of the panel attached to this drawer. This key is only "
 "relevant if the object_type key is \"drawer-object\"."
@@ -1664,11 +1664,11 @@ msgstr ""
 "Kennimerki stikunnar sem er tengd þessarri skúffu. Þessi lykill er því "
 "aðeins virkur að hlutar_tegund sé „skúffuhlutur‟"
 
-#: data/org.mate.panel.object.gschema.xml.in:40
+#: data/org.cafe.panel.object.gschema.xml.in:40
 msgid "Tooltip displayed for drawer or menu"
 msgstr "Ábending birt fyrir skúffu eða valmynd"
 
-#: data/org.mate.panel.object.gschema.xml.in:41
+#: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
 "only relevant if the object_type key is \"drawer-object\" or \"menu-"
@@ -1678,11 +1678,11 @@ msgstr ""
 "Þessi lykill skiptir því aðeins máli að hlutar_tegund sé „skúffu-hlutur‟ eða"
 " „valmyndar-hlutur‟."
 
-#: data/org.mate.panel.object.gschema.xml.in:45
+#: data/org.cafe.panel.object.gschema.xml.in:45
 msgid "Use custom icon for object's button"
 msgstr "Sérsniðin táknmynd fyrir hlutathnapp"
 
-#: data/org.mate.panel.object.gschema.xml.in:46
+#: data/org.cafe.panel.object.gschema.xml.in:46
 msgid ""
 "If true, the custom_icon key is used as a custom icon for the button. If "
 "false, the custom_icon key is ignored. This key is only relevant if the "
@@ -1693,11 +1693,11 @@ msgstr ""
 "sésniðina_táknmynd. Þessi lykill er því aðeins virkur að tegund_hlutar sé "
 "„valmyndar hlutur‟ eða „skúffu hlutur‟."
 
-#: data/org.mate.panel.object.gschema.xml.in:50
+#: data/org.cafe.panel.object.gschema.xml.in:50
 msgid "Icon used for object's button"
 msgstr "Táknmynd fyrir hnapp hlutar"
 
-#: data/org.mate.panel.object.gschema.xml.in:51
+#: data/org.cafe.panel.object.gschema.xml.in:51
 msgid ""
 "The location of the image file used as the icon for the object's button. "
 "This key is only relevant if the object_type key is \"drawer-object\" or "
@@ -1707,11 +1707,11 @@ msgstr ""
 " lykill er því aðeins virkur að hlutar_tegund sé „skúffuhlutur‟ eða "
 "„valmyndarhlutur‟ og nota_sérsniðna_táknmynd sé valið."
 
-#: data/org.mate.panel.object.gschema.xml.in:55
+#: data/org.cafe.panel.object.gschema.xml.in:55
 msgid "Use custom path for menu contents"
 msgstr "Sésrniðin slóð fyrir innihald valmyndar"
 
-#: data/org.mate.panel.object.gschema.xml.in:56
+#: data/org.cafe.panel.object.gschema.xml.in:56
 msgid ""
 "If true, the menu_path key is used as the path from which the menu contents "
 "should be constructed. If false, the menu_path key is ignored. This key is "
@@ -1721,11 +1721,11 @@ msgstr ""
 "innihald valmyndar verður byggt upp. Ef ekki er horft fram hjá lyklinum. "
 "Þessi lykill er því aðeins virkur að tegund_hlutar sé „valmyndar hlutur‟."
 
-#: data/org.mate.panel.object.gschema.xml.in:60
+#: data/org.cafe.panel.object.gschema.xml.in:60
 msgid "Menu content path"
 msgstr "Slóð á innihald valmyndar"
 
-#: data/org.mate.panel.object.gschema.xml.in:61
+#: data/org.cafe.panel.object.gschema.xml.in:61
 msgid ""
 "The path from which the menu contents is contructed. This key is only "
 "relevant if the use_menu_path key is true and the object_type key is \"menu-"
@@ -1735,21 +1735,21 @@ msgstr ""
 " virkur að nota_valmyndar_slóð sé valinn og hlutar_tegund sé "
 "„valmyndarhlutur‟."
 
-#: data/org.mate.panel.object.gschema.xml.in:65
+#: data/org.cafe.panel.object.gschema.xml.in:65
 msgid "Draw arrow in menu button"
 msgstr "Teikna ör í valmyndahnappi"
 
-#: data/org.mate.panel.object.gschema.xml.in:66
+#: data/org.cafe.panel.object.gschema.xml.in:66
 msgid ""
 "If true, an arrow is drawn over the menu button icon. If false, menu button "
 "has only the icon."
 msgstr ""
 
-#: data/org.mate.panel.object.gschema.xml.in:70
+#: data/org.cafe.panel.object.gschema.xml.in:70
 msgid "Launcher location"
 msgstr "Staðsetning ræsis"
 
-#: data/org.mate.panel.object.gschema.xml.in:71
+#: data/org.cafe.panel.object.gschema.xml.in:71
 msgid ""
 "The location of the .desktop file describing the launcher. This key is only "
 "relevant if the object_type key is \"launcher-object\"."
@@ -1757,11 +1757,11 @@ msgstr ""
 "Staðsetning .desktop skrárinnar sem lýsir ræsinum. Þessi lykill er því "
 "aðeins virkur að hlutar_tegund sé „ræsishlutur‟."
 
-#: data/org.mate.panel.object.gschema.xml.in:75
+#: data/org.cafe.panel.object.gschema.xml.in:75
 msgid "Action button type"
 msgstr "Aðgerðarhnappstegund"
 
-#: data/org.mate.panel.object.gschema.xml.in:76
+#: data/org.cafe.panel.object.gschema.xml.in:76
 msgid ""
 "The action type this button represents. Possible values are \"lock\", "
 "\"logout\", \"run\", \"search\" and \"screenshot\". This key is only "
@@ -1771,11 +1771,11 @@ msgstr ""
 " „útskrá‟, „keyra‟, „leita‟ og „skjámyndargrip‟. Þessi lykill er því aðeins "
 "virkur að hlutar_tegund sé „a'gerðarforritlingur‟"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:5
+#: data/org.cafe.panel.toplevel.gschema.xml.in:5
 msgid "Name to identify panel"
 msgstr "Heiti til að auðkenna stiku"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:6
+#: data/org.cafe.panel.toplevel.gschema.xml.in:6
 msgid ""
 "This is a human readable name which you can use to identify a panel. Its "
 "main purpose is to serve as the panel's window title which is useful when "
@@ -1785,11 +1785,11 @@ msgstr ""
 " þjóna sem gluggatitill stikunnar sem getur verið þægilegt þegar flakkað er "
 "milli stika."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:10
+#: data/org.cafe.panel.toplevel.gschema.xml.in:10
 msgid "X screen where the panel is displayed"
 msgstr "X skjá sem stikan er birt á"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:11
+#: data/org.cafe.panel.toplevel.gschema.xml.in:11
 msgid ""
 "With a multi-screen setup, you may have panels on each individual screen. "
 "This key identifies the current screen the panel is displayed on."
@@ -1797,11 +1797,11 @@ msgstr ""
 "Þegar margir skjáir eru tengdir getur verið að þú hafir stikur á mismunandi "
 "skjám. Þessi lykill auðkennir núverandi skjá sem stikan er birt á."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:15
+#: data/org.cafe.panel.toplevel.gschema.xml.in:15
 msgid "Xinerama monitor where the panel is displayed"
 msgstr "Xinerama skjár sem stikan er birt á"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:16
+#: data/org.cafe.panel.toplevel.gschema.xml.in:16
 msgid ""
 "In a Xinerama setup, you may have panels on each individual monitor. This "
 "key identifies the current monitor the panel is displayed on."
@@ -1809,11 +1809,11 @@ msgstr ""
 "Í Xinerama uppsetningu getur verið að þú hafir stiku á sitthvorum skjánum. "
 "Þessi lykill auðkennir núverandi skjá sem stikan birtist á."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:20
+#: data/org.cafe.panel.toplevel.gschema.xml.in:20
 msgid "Expand to occupy entire screen width"
 msgstr "Þenja til að fylla alla breidd skjásins"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:21
+#: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
 "vertical panel). In this mode the panel can only be placed at a screen edge."
@@ -1825,11 +1825,11 @@ msgstr ""
 "verður stikan aðeins nægilega stór til að þar sé pláss fyrir alla "
 "forritlinga, ræsa og hnappa stikunnar."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:25
+#: data/org.cafe.panel.toplevel.gschema.xml.in:25
 msgid "Panel orientation"
 msgstr "Snúningur stiku"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:26
+#: data/org.cafe.panel.toplevel.gschema.xml.in:26
 msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
@@ -1848,11 +1848,11 @@ msgstr ""
 "að birta valmyndina fyrir neðan stikuna en á stiku sem er „neðst‟ ættu "
 "valmyndir að birtast fyrir ofan stikuna."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:30
+#: data/org.cafe.panel.toplevel.gschema.xml.in:30
 msgid "Panel size"
 msgstr "Stærð stiku"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:31
+#: data/org.cafe.panel.toplevel.gschema.xml.in:31
 msgid ""
 "The height (width for a vertical panel) of the panel. The panel will "
 "determine at runtime a minimum size based on the font size and other "
@@ -1863,11 +1863,11 @@ msgstr ""
 "lágmarkstærð byggða á leturstærð og öðrum vísbreytum. Hámarksstærð er "
 "fastsett sem fjórðungur af hæð skjásins (eða breidd)"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:35
+#: data/org.cafe.panel.toplevel.gschema.xml.in:35
 msgid "X co-ordinate of panel"
 msgstr "X-hnit stiku"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:36
+#: data/org.cafe.panel.toplevel.gschema.xml.in:36
 msgid ""
 "The location of the panel along the x-axis. This key is only relevant in un-"
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
@@ -1877,11 +1877,11 @@ msgstr ""
 "ham. Í þöndum ham er horft fram hjá þessum lykli og stikan er sett á þá brún"
 " sem tilgreind er með snúningslyklinum."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:40
+#: data/org.cafe.panel.toplevel.gschema.xml.in:40
 msgid "Y co-ordinate of panel"
 msgstr "Y-hnit stiku"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:41
+#: data/org.cafe.panel.toplevel.gschema.xml.in:41
 msgid ""
 "The location of the panel along the y-axis. This key is only relevant in un-"
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
@@ -1891,11 +1891,11 @@ msgstr ""
 "ham. Í þöndum ham er horft fram hjá þessum lykli og stikan er sett á þá brún"
 " sem tilgreind er með snúningslyklinum."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:45
+#: data/org.cafe.panel.toplevel.gschema.xml.in:45
 msgid "X co-ordinate of panel, starting from the right of the screen"
 msgstr "X hnit skjástikunnar, sem byrjar frá hægri hlið skjásins"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:46
+#: data/org.cafe.panel.toplevel.gschema.xml.in:46
 msgid ""
 "The location of the panel along the x-axis, starting from the right of the "
 "screen. If set to -1, the value is ignored and the value of the x key is "
@@ -1911,11 +1911,11 @@ msgstr ""
 "hunsaður og skjástikan er staðsett á skjájaðri sem er tilgreindur með "
 "áttunarlykli."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:50
+#: data/org.cafe.panel.toplevel.gschema.xml.in:50
 msgid "Y co-ordinate of panel, starting from the bottom of the screen"
 msgstr "Y hnit skjástikunnar, sem byrjar frá botni skjásins"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:51
+#: data/org.cafe.panel.toplevel.gschema.xml.in:51
 msgid ""
 "The location of the panel along the y-axis, starting from the bottom of the "
 "screen. If set to -1, the value is ignored and the value of the y key is "
@@ -1931,11 +1931,11 @@ msgstr ""
 "hunsaður og skjástikan er staðsett á skjájaðri sem er tilgreindur með "
 "áttunarlykli."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:55
+#: data/org.cafe.panel.toplevel.gschema.xml.in:55
 msgid "Center panel on x-axis"
 msgstr "Miðja stiku á x-ás"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:56
+#: data/org.cafe.panel.toplevel.gschema.xml.in:56
 msgid ""
 "If true, the x and x_right keys are ignored and the panel is placed at the "
 "center of the x-axis of the screen. If the panel is resized it will remain "
@@ -1947,11 +1947,11 @@ msgstr ""
 "stöðu - þ.e. skjástikan mun stækka á báða vegu. Ef ekki satt, þá mun x og "
 "x_hægri lyklarnir tilgreina staðsetningu skjástikunnar."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:60
+#: data/org.cafe.panel.toplevel.gschema.xml.in:60
 msgid "Center panel on y-axis"
 msgstr "Miðja stiku á y-ás"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:61
+#: data/org.cafe.panel.toplevel.gschema.xml.in:61
 msgid ""
 "If true, the y and y_bottom keys are ignored and the panel is placed at the "
 "center of the y-axis of the screen. If the panel is resized it will remain "
@@ -1963,11 +1963,11 @@ msgstr ""
 "stöðu - þ.e. skjástikan mun stækka á báða vegu. Ef ekki satt, þá mun y og "
 "y_botn lyklarnir tilgreina staðsetningu skjástikunnar."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:65
+#: data/org.cafe.panel.toplevel.gschema.xml.in:65
 msgid "Automatically hide panel into corner"
 msgstr "Fela stiku sjálfkrafa inní horn"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:66
+#: data/org.cafe.panel.toplevel.gschema.xml.in:66
 msgid ""
 "If true, the panel is automatically hidden into a corner of the screen when "
 "the pointer leaves the panel area. Moving the pointer to that corner again "
@@ -1977,19 +1977,19 @@ msgstr ""
 "fer að stikusvæðinu. Hægt er að láta stikuna birtast aftur með því að færa "
 "músarbendilinn í hornið sem stikan er falin."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:71
+#: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
-"If true, hiding and un-hiding of this panel will be animated rather than "
+"If true, hiding and un-hiding of this panel will be anicafed rather than "
 "happening instantly."
 msgstr ""
 "Ef valið, veður það sýnt sem hreyfimynd þegar stikan er falin og sótt úr "
 "felum í stað þess að það gerist í einu vetfangi."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:75
+#: data/org.cafe.panel.toplevel.gschema.xml.in:75
 msgid "Enable hide buttons"
 msgstr "Virkja felutakka"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:76
+#: data/org.cafe.panel.toplevel.gschema.xml.in:76
 msgid ""
 "If true, buttons will be placed on each side of the panel which may be used "
 "to move the panel to edge of the screen, leaving only a button showing."
@@ -1998,11 +1998,11 @@ msgstr ""
 "flytja stikuna út að brún skjásins þannig að einungis verði hnappur "
 "sjánlegur."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:80
+#: data/org.cafe.panel.toplevel.gschema.xml.in:80
 msgid "Enable arrows on hide buttons"
 msgstr "Nota örvar á felutökkum"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:81
+#: data/org.cafe.panel.toplevel.gschema.xml.in:81
 msgid ""
 "If true, arrows will be placed on the hide buttons. This key is only "
 "relevant if the enable_buttons key is true."
@@ -2010,11 +2010,11 @@ msgstr ""
 "Ef valið, eru settar örvar í feluhnappana. Þessi lykil skiptir því aðeins "
 "máli að virkja_hnappa lykillin sé valinn"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:85
+#: data/org.cafe.panel.toplevel.gschema.xml.in:85
 msgid "Panel autohide delay"
 msgstr "Bið eftir stika sé falin sjálfvirkt"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:86
+#: data/org.cafe.panel.toplevel.gschema.xml.in:86
 msgid ""
 "Specifies the number of milliseconds delay after the pointer leaves the "
 "panel area before the panel is automatically hidden. This key is only "
@@ -2024,11 +2024,11 @@ msgstr ""
 "stikusvæðinu þar til stikan er falin sjálfvirkt. Þessi lykill skiptir því "
 "aðeins máli að fela_sjálfvirkt lykillin sé valinn."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:90
+#: data/org.cafe.panel.toplevel.gschema.xml.in:90
 msgid "Panel autounhide delay"
 msgstr "Bið eftir að stikan komi sjálfvirkt úr felum"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:91
+#: data/org.cafe.panel.toplevel.gschema.xml.in:91
 msgid ""
 "Specifies the number of milliseconds delay after the pointer enters the "
 "panel area before the panel is automatically re-shown. This key is only "
@@ -2038,11 +2038,11 @@ msgstr ""
 "stikusvæðið þar til stikan birtist sjálfvirkt. Þessi lykill skiptir því "
 "aðeins máli að fela_sjálfvirkt lykillin sé valinn."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:95
+#: data/org.cafe.panel.toplevel.gschema.xml.in:95
 msgid "Visible pixels when hidden"
 msgstr "Sjáanlegir dílar þegar falin"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:96
+#: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
 "hidden into a corner. This key is only relevant if the auto_hide key is "
@@ -2052,11 +2052,11 @@ msgstr ""
 "sjálfvirkt í horninu. Þessi lykill skiptir því aðeins máli að "
 "fela_sjálfvirkt lykillin sé valinn."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:100
+#: data/org.cafe.panel.toplevel.gschema.xml.in:100
 msgid "Animation speed"
 msgstr "Hraði hreyfimynda"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:101
+#: data/org.cafe.panel.toplevel.gschema.xml.in:101
 msgid ""
 "The speed in which panel animations should occur. Possible values are "
 "\"slow\", \"medium\" and \"fast\". This key is only relevant if the "
@@ -2066,11 +2066,11 @@ msgstr ""
 "„hægt‟, „meðal‟ og „hratt‟. Þessi lykill skiptir því aðeins máli að "
 "virkja_hreyfimyndir lykillinn sé valinn."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:108
+#: data/org.cafe.panel.toplevel.gschema.xml.in:108
 msgid "Background type"
 msgstr "Bakgrunnstegund"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:109
+#: data/org.cafe.panel.toplevel.gschema.xml.in:109
 msgid ""
 "Which type of background should be used for this panel. Possible values are "
 "\"none\" - the default GTK+ widget background will be used, \"color\" - the "
@@ -2082,19 +2082,19 @@ msgstr ""
 "litalykillinn verður notaður sem bakgrunnslitur eða \"mynd\" - tiltekna "
 "myndin í myndalyklinum verður notuð sem bakgrunnur."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:113
+#: data/org.cafe.panel.toplevel.gschema.xml.in:113
 msgid "Background color"
 msgstr "Bakgrunnslitur"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:114
+#: data/org.cafe.panel.toplevel.gschema.xml.in:114
 msgid "Specifies the background color for the panel in #RGB format."
 msgstr "Tilgreinir bakgrunnslit stikunnar á #RGB sniði"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:118
+#: data/org.cafe.panel.toplevel.gschema.xml.in:118
 msgid "Background color opacity"
 msgstr "Gegnsæi bakgrunnslitar"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:119
+#: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
 "completely opaque (a value of less than 65535), the color will be composited"
@@ -2104,11 +2104,11 @@ msgstr ""
 "ógagnsær (gildi lægra en 65535) verður liturinn samsettur ofaná "
 "bakgrunnsmyndina."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:123
+#: data/org.cafe.panel.toplevel.gschema.xml.in:123
 msgid "Background image"
 msgstr "Bakgrunnsmynd"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:124
+#: data/org.cafe.panel.toplevel.gschema.xml.in:124
 msgid ""
 "Specifies the file to be used for the background image. If the image "
 "contains an alpha channel it will be composited onto the desktop background "
@@ -2117,11 +2117,11 @@ msgstr ""
 "Tilgreinir hvaða skrá verður notuð fyrir bakgrunnsmynd. Ef myndin inniheldur"
 " alfarás verður hún sett saman við bakgrunnsmyndina."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:128
+#: data/org.cafe.panel.toplevel.gschema.xml.in:128
 msgid "Fit image to panel"
 msgstr "Laga mynd að stiku"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:129
+#: data/org.cafe.panel.toplevel.gschema.xml.in:129
 msgid ""
 "If true, the image will be scaled (retaining the aspect ratio of the image) "
 "to the panel height (if horizontal)."
@@ -2129,11 +2129,11 @@ msgstr ""
 "Ef valið, verður myndin sköluð (sniðhlutfallinu haldið) til að passa við hæð"
 " stikunnar (ef lárétt)"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:133
+#: data/org.cafe.panel.toplevel.gschema.xml.in:133
 msgid "Stretch image to panel"
 msgstr "Teygja mynd á stiku"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:134
+#: data/org.cafe.panel.toplevel.gschema.xml.in:134
 msgid ""
 "If true, the image will be scaled to the panel dimensions. The aspect ratio "
 "of the image will not be maintained."
@@ -2141,172 +2141,172 @@ msgstr ""
 "Ef valiðm verður myndin sköluð til að passa við stærð stikunar. "
 "Sniðhlutfalli myndarinnar verður ekki haldið."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:138
+#: data/org.cafe.panel.toplevel.gschema.xml.in:138
 msgid "Rotate image on vertical panels"
 msgstr "Snúa myndum á lóðréttum stikum"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:139
+#: data/org.cafe.panel.toplevel.gschema.xml.in:139
 msgid ""
 "If true, the background image will be rotated when the panel is oriented "
 "vertically."
 msgstr ""
 "Ef valið, verður bakgrunnsmyndinni snúið ef stikunni er snúið lóðrétt."
 
-#: mate-panel/libegg/eggdesktopfile.c:168
+#: cafe-panel/libegg/eggdesktopfile.c:168
 msgid "File is not a valid .desktop file"
 msgstr "Skrá er ekki gild .desktop skrá"
 
-#: mate-panel/libegg/eggdesktopfile.c:191
+#: cafe-panel/libegg/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Óþekkt desktop skráarútgáfa ‚%s‘"
 
-#: mate-panel/libegg/eggdesktopfile.c:963
+#: cafe-panel/libegg/eggdesktopfile.c:963
 #, c-format
 msgid "Starting %s"
 msgstr "Ræsi %s"
 
-#: mate-panel/libegg/eggdesktopfile.c:1105
+#: cafe-panel/libegg/eggdesktopfile.c:1105
 msgid "Application does not accept documents on command line"
 msgstr "Hugbúnaður tekur ekki á móti skrám á skipanalínunni"
 
-#: mate-panel/libegg/eggdesktopfile.c:1173
+#: cafe-panel/libegg/eggdesktopfile.c:1173
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Þessi valmöguleiki er ekki þekktur: %d"
 
-#: mate-panel/libegg/eggdesktopfile.c:1390
+#: cafe-panel/libegg/eggdesktopfile.c:1390
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Get ekki látið veffang ganga til ‚Type=Link‘"
 
-#: mate-panel/libegg/eggdesktopfile.c:1411
+#: cafe-panel/libegg/eggdesktopfile.c:1411
 msgid "Not a launchable item"
 msgstr "Þetta er ekki ræsanlegur íhlutur"
 
-#: mate-panel/libegg/eggsmclient.c:222
+#: cafe-panel/libegg/eggsmclient.c:222
 msgid "Disable connection to session manager"
 msgstr "Afvirkja tengingu við setustjóra"
 
-#: mate-panel/libegg/eggsmclient.c:225
+#: cafe-panel/libegg/eggsmclient.c:225
 msgid "Specify file containing saved configuration"
 msgstr "Veldu skrá sem inniheldur vistaðar stillingar"
 
-#: mate-panel/libegg/eggsmclient.c:225
+#: cafe-panel/libegg/eggsmclient.c:225
 msgid "FILE"
 msgstr "SKRÁ"
 
-#: mate-panel/libegg/eggsmclient.c:228
+#: cafe-panel/libegg/eggsmclient.c:228
 msgid "Specify session management ID"
 msgstr "Tilgreindu setustjórnunarkenni"
 
-#: mate-panel/libegg/eggsmclient.c:228
+#: cafe-panel/libegg/eggsmclient.c:228
 msgid "ID"
 msgstr "Auðkenni"
 
-#: mate-panel/libegg/eggsmclient.c:249
+#: cafe-panel/libegg/eggsmclient.c:249
 msgid "Session management options:"
 msgstr "Valkostir við að sjá um setu:"
 
-#: mate-panel/libegg/eggsmclient.c:250
+#: cafe-panel/libegg/eggsmclient.c:250
 msgid "Show session management options"
 msgstr "Sýna valkosti setustýringar"
 
-#: mate-panel/libpanel-util/panel-gtk.c:138
+#: cafe-panel/libpanel-util/panel-gtk.c:138
 msgid "_Open"
 msgstr "_Opna"
 
-#: mate-panel/libpanel-util/panel-error.c:76
-#: mate-panel/panel-applet-frame.c:798 mate-panel/panel-applet-frame.c:986
+#: cafe-panel/libpanel-util/panel-error.c:76
+#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
 msgid "Error"
 msgstr "Villa"
 
-#: mate-panel/libpanel-util/panel-icon-chooser.c:374
+#: cafe-panel/libpanel-util/panel-icon-chooser.c:374
 msgid "Choose an icon"
 msgstr "Veldu táknmynd"
 
-#: mate-panel/libpanel-util/panel-launch.c:45
+#: cafe-panel/libpanel-util/panel-launch.c:45
 #, c-format
 msgid "Could not launch '%s'"
 msgstr "Gat ekki keyrt '%s'"
 
-#: mate-panel/libpanel-util/panel-launch.c:48 mate-panel/launcher.c:162
+#: cafe-panel/libpanel-util/panel-launch.c:48 cafe-panel/launcher.c:162
 msgid "Could not launch application"
 msgstr "Gat ekki ræst forrit"
 
-#: mate-panel/libpanel-util/panel-show.c:44
+#: cafe-panel/libpanel-util/panel-show.c:44
 #, c-format
 msgid "Could not open location '%s'"
 msgstr "Gat ekki opnað slóð '%s'"
 
-#: mate-panel/libpanel-util/panel-show.c:158
+#: cafe-panel/libpanel-util/panel-show.c:158
 msgid "No application to handle search folders is installed."
 msgstr "Það er ekkert forrit uppsett fyrir leit í möppum."
 
-#: mate-panel/applet.c:468
+#: cafe-panel/applet.c:468
 msgid "???"
 msgstr "???"
 
-#: mate-panel/applet.c:548 libmate-panel-applet/mate-panel-applet.c:139
+#: cafe-panel/applet.c:548 libcafe-panel-applet/cafe-panel-applet.c:139
 msgid "_Remove From Panel"
 msgstr "_Fjarlægja af stiku"
 
-#: mate-panel/applet.c:556 libmate-panel-applet/mate-panel-applet.c:142
+#: cafe-panel/applet.c:556 libcafe-panel-applet/cafe-panel-applet.c:142
 msgid "_Move"
 msgstr "_Flytja"
 
-#: mate-panel/applet.c:574 libmate-panel-applet/mate-panel-applet.c:148
+#: cafe-panel/applet.c:574 libcafe-panel-applet/cafe-panel-applet.c:148
 msgid "Loc_k To Panel"
 msgstr "Læ_sa við stiku"
 
-#: mate-panel/applet.c:1313
+#: cafe-panel/applet.c:1313
 msgid "Cannot find an empty spot"
 msgstr "Get ekki fundið laust svæði"
 
-#: mate-panel/drawer.c:443 mate-panel/panel-addto.c:189
-#: mate-panel/panel-toplevel.c:1650
+#: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
+#: cafe-panel/panel-toplevel.c:1650
 msgid "Drawer"
 msgstr "Skúffa"
 
-#: mate-panel/drawer.c:550
+#: cafe-panel/drawer.c:550
 msgid "_Add to Drawer..."
 msgstr "_Bæta í skúffu..."
 
-#: mate-panel/drawer.c:556 mate-panel/launcher.c:602
-#: mate-panel/panel-action-button.c:194 mate-panel/panel-context-menu.c:246
+#: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
 msgid "_Properties"
 msgstr "_Eiginleikar"
 
-#: mate-panel/mate-desktop-item-edit.c:27
+#: cafe-panel/cafe-desktop-item-edit.c:27
 msgid "Create new file in the given directory"
 msgstr "Búa til nýja skrá í gefinni möppu"
 
-#: mate-panel/mate-desktop-item-edit.c:28
+#: cafe-panel/cafe-desktop-item-edit.c:28
 msgid "[FILE...]"
 msgstr "[SKRÁ...]"
 
-#: mate-panel/mate-desktop-item-edit.c:106
+#: cafe-panel/cafe-desktop-item-edit.c:106
 msgid "- Edit .desktop files"
 msgstr "- Breyta .desktop skrám"
 
-#: mate-panel/mate-desktop-item-edit.c:144
-#: mate-panel/mate-desktop-item-edit.c:198 mate-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:144
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
 msgid "Create Launcher"
 msgstr "Búa til ræsi"
 
-#: mate-panel/mate-desktop-item-edit.c:169
-#: mate-panel/mate-desktop-item-edit.c:192
+#: cafe-panel/cafe-desktop-item-edit.c:169
+#: cafe-panel/cafe-desktop-item-edit.c:192
 msgid "Directory Properties"
 msgstr "Eiginleikar möppu"
 
-#: mate-panel/mate-desktop-item-edit.c:175 mate-panel/launcher.c:817
+#: cafe-panel/cafe-desktop-item-edit.c:175 cafe-panel/launcher.c:817
 msgid "Launcher Properties"
 msgstr "Eiginleikar ræsis"
 
-#: mate-panel/mate-panel.desktop.in:4 mate-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
 msgid "Panel"
 msgstr "Skjástika"
 
-#: mate-panel/mate-panel.desktop.in:5
+#: cafe-panel/cafe-panel.desktop.in:5
 msgid ""
 "Launch other applications and provide various utilities to manage windows, "
 "show the time, etc."
@@ -2316,240 +2316,240 @@ msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: mate-panel/mate-panel.desktop.in:7
-msgid "mate-panel"
+#: cafe-panel/cafe-panel.desktop.in:7
+msgid "cafe-panel"
 msgstr ""
 
-#: mate-panel/launcher.c:120
+#: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
 msgstr "Gat ekki sýnt þetta veffang"
 
-#: mate-panel/launcher.c:121
+#: cafe-panel/launcher.c:121
 msgid "No URL was specified."
 msgstr "Ekkert veffang var gefið."
 
-#: mate-panel/launcher.c:217
+#: cafe-panel/launcher.c:217
 msgid "Could not use dropped item"
 msgstr "Gat ekki notað slepptan hlut"
 
-#: mate-panel/launcher.c:451
+#: cafe-panel/launcher.c:451
 msgid "No URI provided for panel launcher desktop file\n"
 msgstr "Ekkert URI var gefið fyrir skjáborðskrá stikuræsis\n"
 
-#: mate-panel/launcher.c:490
+#: cafe-panel/launcher.c:490
 #, c-format
 msgid "Unable to open desktop file %s for panel launcher%s%s\n"
 msgstr "Gat ekki opnað skjáborðsskrá %s fyrir stikuræsis %s%s\n"
 
-#: mate-panel/launcher.c:594
+#: cafe-panel/launcher.c:594
 msgid "_Launch"
 msgstr "_Ræsa"
 
-#: mate-panel/launcher.c:910
+#: cafe-panel/launcher.c:910
 #, c-format
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "Lykill %s er ekki stilltur, get ekki keyrt upp ræsara\n"
 
-#: mate-panel/launcher.c:1042 mate-panel/panel-ditem-editor.c:1326
-#: mate-panel/panel-ditem-editor.c:1360 mate-panel/panel-ditem-editor.c:1391
+#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Get ekki vistað ræsara"
 
-#: mate-panel/main.c:54
+#: cafe-panel/main.c:54
 msgid "Replace a currently running panel"
 msgstr "Skipta út stiku sem er í gangi"
 
-#: mate-panel/main.c:56
+#: cafe-panel/main.c:56
 msgid "Reset the panel configuration to default"
 msgstr "Endursetja stikustillingar á sjálfgefið"
 
-#: mate-panel/main.c:58
+#: cafe-panel/main.c:58
 msgid "Execute the run dialog"
 msgstr "Keyra forritakeyrsluglugga"
 
-#: mate-panel/main.c:60
+#: cafe-panel/main.c:60
 msgid "Set the default panel layout"
 msgstr "Setja sjálfgefna framsetningu skjástiku"
 
-#: mate-panel/menu.c:502
+#: cafe-panel/menu.c:502
 msgid "Add this launcher to _panel"
 msgstr "Bæta þessum ræsi við _stikuna"
 
-#: mate-panel/menu.c:509
+#: cafe-panel/menu.c:509
 msgid "Add this launcher to _desktop"
 msgstr "Bæta þessum ræsi við s_kjáborðið"
 
-#: mate-panel/menu.c:521
+#: cafe-panel/menu.c:521
 msgid "_Entire menu"
 msgstr "Ö_ll valmyndinn"
 
-#: mate-panel/menu.c:526
+#: cafe-panel/menu.c:526
 msgid "Add this as _drawer to panel"
 msgstr "Bæta þessu  við sem s_kúffu á stikunni"
 
-#: mate-panel/menu.c:533
+#: cafe-panel/menu.c:533
 msgid "Add this as _menu to panel"
 msgstr "Bæta þessu við sem _valmynd á stikunni"
 
-#: mate-panel/panel-action-button.c:182
+#: cafe-panel/panel-action-button.c:182
 msgid "_Activate Screensaver"
 msgstr "_Virkja skjáhvílu"
 
-#: mate-panel/panel-action-button.c:188
+#: cafe-panel/panel-action-button.c:188
 msgid "_Lock Screen"
 msgstr "_Læsa skjá"
 
-#: mate-panel/panel-action-button.c:332
+#: cafe-panel/panel-action-button.c:332
 msgid "Could not connect to server"
 msgstr "Gat ekki tengst við þjón"
 
-#: mate-panel/panel-action-button.c:363
+#: cafe-panel/panel-action-button.c:363
 msgid "Lock Screen"
 msgstr "Læsa skjá"
 
-#: mate-panel/panel-action-button.c:364
+#: cafe-panel/panel-action-button.c:364
 msgid "Protect your computer from unauthorized use"
 msgstr "Verja tölvuna þína frá óheimiluðum aðgangi"
 
-#: mate-panel/panel-action-button.c:378
+#: cafe-panel/panel-action-button.c:378
 msgid "Log Out..."
 msgstr "Útskrá..."
 
-#: mate-panel/panel-action-button.c:379
+#: cafe-panel/panel-action-button.c:379
 msgid "Log out of this session to log in as a different user"
 msgstr "Útská sig úr setunni til að skrá sig inn sem annan notanda"
 
-#: mate-panel/panel-action-button.c:388
+#: cafe-panel/panel-action-button.c:388
 msgid "Run Application..."
 msgstr "Keyra forrit..."
 
-#: mate-panel/panel-action-button.c:389
+#: cafe-panel/panel-action-button.c:389
 msgid "Run an application by typing a command or choosing from a list"
 msgstr "Ræsa forrit með því að slá inn skipun eða velja úr lista"
 
-#: mate-panel/panel-action-button.c:398
+#: cafe-panel/panel-action-button.c:398
 msgid "Search for Files..."
 msgstr "Leita að skrám..."
 
-#: mate-panel/panel-action-button.c:399
+#: cafe-panel/panel-action-button.c:399
 msgid "Locate documents and folders on this computer by name or content"
 msgstr "Staðsetja skrár og möppur á þessari tölvu eftir nafni eða innihaldi"
 
-#: mate-panel/panel-action-button.c:407 mate-panel/panel-force-quit.c:250
+#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
 msgid "Force Quit"
 msgstr "Þvinga til að hætta"
 
-#: mate-panel/panel-action-button.c:408
+#: cafe-panel/panel-action-button.c:408
 msgid "Force a misbehaving application to quit"
 msgstr "Þvinga forrit sem haga sér ekki vel til að hætta"
 
-#: mate-panel/panel-action-button.c:417
+#: cafe-panel/panel-action-button.c:417
 msgid "Connect to Server..."
 msgstr "Tengjast við þjón..."
 
-#: mate-panel/panel-action-button.c:418
+#: cafe-panel/panel-action-button.c:418
 msgid "Connect to a remote computer or shared disk"
 msgstr "Tengjast fjarlægri tölvu eða sameiginlegum disk"
 
-#: mate-panel/panel-action-button.c:426
+#: cafe-panel/panel-action-button.c:426
 msgid "Shut Down..."
 msgstr "Slökkva..."
 
-#: mate-panel/panel-action-button.c:427
+#: cafe-panel/panel-action-button.c:427
 msgid "Shut down the computer"
 msgstr "Slökkva á tölvunni"
 
-#: mate-panel/panel-addto.c:125
+#: cafe-panel/panel-addto.c:125
 msgid "Custom Application Launcher"
 msgstr "Sérsniðinn forritaræsari"
 
-#: mate-panel/panel-addto.c:126
+#: cafe-panel/panel-addto.c:126
 msgid "Create a new launcher"
 msgstr "Búa til nýjan ræsi"
 
-#: mate-panel/panel-addto.c:137
+#: cafe-panel/panel-addto.c:137
 msgid "Application Launcher..."
 msgstr "Forritaræsari..."
 
-#: mate-panel/panel-addto.c:138
+#: cafe-panel/panel-addto.c:138
 msgid "Copy a launcher from the applications menu"
 msgstr "Afrita ræsi úr forritavalmynd"
 
-#: mate-panel/panel-addto.c:153
+#: cafe-panel/panel-addto.c:153
 msgid "Compact Menu"
 msgstr ""
 
-#: mate-panel/panel-addto.c:154
+#: cafe-panel/panel-addto.c:154
 msgid "A compact menu"
 msgstr ""
 
-#: mate-panel/panel-addto.c:165
+#: cafe-panel/panel-addto.c:165
 msgid "Classic Menu"
 msgstr ""
 
-#: mate-panel/panel-addto.c:166
+#: cafe-panel/panel-addto.c:166
 msgid "The classic Applications, Places and System menu bar"
 msgstr ""
 
-#: mate-panel/panel-addto.c:177
+#: cafe-panel/panel-addto.c:177
 msgid "Separator"
 msgstr "Aðgreinir"
 
-#: mate-panel/panel-addto.c:178
+#: cafe-panel/panel-addto.c:178
 msgid "A separator to organize the panel items"
 msgstr "Skilrúm til að skipuleggja hluti á stiku"
 
-#: mate-panel/panel-addto.c:190
+#: cafe-panel/panel-addto.c:190
 msgid "A pop out drawer to store other items in"
 msgstr "Útdraganleg skúffa til að geyma aðra hluti í"
 
-#: mate-panel/panel-addto.c:274
+#: cafe-panel/panel-addto.c:274
 msgid "(empty)"
 msgstr "(tómt)"
 
-#: mate-panel/panel-addto.c:419
+#: cafe-panel/panel-addto.c:419
 msgid "Not compatible with X11"
 msgstr ""
 
-#: mate-panel/panel-addto.c:426
+#: cafe-panel/panel-addto.c:426
 msgid "Not compatible with Wayland"
 msgstr ""
 
-#: mate-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1053
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "Finna _hlut til þess að bæta við \"%s\":"
 
-#: mate-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1057
 msgid "Add to Drawer"
 msgstr "Bæta í skúffu"
 
-#: mate-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1059
 msgid "Find an _item to add to the drawer:"
 msgstr "Finna _hlut til þess að bæta við skúffu:"
 
-#: mate-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1061
 msgid "Add to Panel"
 msgstr "Bæta við stiku"
 
-#: mate-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1063
 msgid "Find an _item to add to the panel:"
 msgstr "Finna _hlut til þess að bæta við skjástiku:"
 
-#: mate-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1311
 msgid "_Back"
 msgstr "Til_baka"
 
-#: mate-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:759
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "\"%s\" hefur hætt óvænt"
 
-#: mate-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:761
 msgid "Panel object has quit unexpectedly"
 msgstr "Stikuhlutur hefur hætt óvænt"
 
-#: mate-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:768
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
@@ -2557,47 +2557,47 @@ msgstr ""
 "Ef þú endurhleður stikuhlut, verður honum sjálfkrafa bætt við aftur á "
 "stikuna."
 
-#: mate-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:775
 msgid "D_elete"
 msgstr "_Eyða"
 
-#: mate-panel/panel-applet-frame.c:776 mate-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
 msgid "_Don't Reload"
 msgstr "_Ekki endurhlaða"
 
-#: mate-panel/panel-applet-frame.c:777 mate-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
 msgid "_Reload"
 msgstr "Endu_rhlaða"
 
-#: mate-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:948
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "Þessi stika hefur rekist á vandamál við að hlaða \"%s\"."
 
-#: mate-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:963
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Viltu eyða forritlingnum frá stillingunum þínum?"
 
-#: mate-panel/panel-applet-frame.c:970 mate-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "_Eyða"
 
-#: mate-panel/panel-context-menu.c:91
+#: cafe-panel/panel-context-menu.c:91
 msgid "And many, many others…"
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:114
+#: cafe-panel/panel-context-menu.c:114
 msgid "The MATE Panel"
 msgstr "MATE stikan"
 
-#: mate-panel/panel-context-menu.c:116
+#: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
 "Copyright © 2011-2020 MATE developers"
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:119
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
@@ -2605,132 +2605,132 @@ msgstr ""
 "Þetta forrit sér um að ræsa annan hugbúnað auk þess sem það inniheldur "
 "gagnleg áhöld."
 
-#: mate-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:123
 msgid "About the MATE Panel"
 msgstr "Um MATE stikuna"
 
-#: mate-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
 msgstr "Gat ekki eytt þessari stiku"
 
-#: mate-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:155
 msgid "You must always have at least one panel."
 msgstr "Þú verður alltaf að hafa í það eina stiku."
 
-#: mate-panel/panel-context-menu.c:199
+#: cafe-panel/panel-context-menu.c:199
 msgid "Reset this panel?"
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:200
+#: cafe-panel/panel-context-menu.c:200
 msgid ""
 "When a panel is reset, all \n"
 "custom settings are lost."
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:214 mate-panel/panel-context-menu.c:256
+#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
 msgid "_Reset Panel"
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:236
 msgid "_Add to Panel…"
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:263
 msgid "_Delete This Panel"
 msgstr "_Eyða þessari stiku"
 
-#: mate-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:276
 msgid "_New Panel"
 msgstr "_Ný stika"
 
-#: mate-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:325
 msgid "A_bout Panels"
 msgstr "_Um stikur"
 
-#: mate-panel/panel-ditem-editor.c:115
+#: cafe-panel/panel-ditem-editor.c:115
 msgid "Application"
 msgstr "Forrit"
 
-#: mate-panel/panel-ditem-editor.c:117
+#: cafe-panel/panel-ditem-editor.c:117
 msgid "Application in Terminal"
 msgstr "Forrit í útstöð"
 
-#: mate-panel/panel-ditem-editor.c:119
+#: cafe-panel/panel-ditem-editor.c:119
 msgid "Location"
 msgstr "Staðsetning"
 
-#: mate-panel/panel-ditem-editor.c:602
+#: cafe-panel/panel-ditem-editor.c:602
 msgid "_Type:"
 msgstr "_Gerð:"
 
-#: mate-panel/panel-ditem-editor.c:609
+#: cafe-panel/panel-ditem-editor.c:609
 msgid "_Name:"
 msgstr "_Nafn:"
 
-#: mate-panel/panel-ditem-editor.c:634
+#: cafe-panel/panel-ditem-editor.c:634
 msgid "_Browse..."
 msgstr "_Flakka..."
 
-#: mate-panel/panel-ditem-editor.c:641
+#: cafe-panel/panel-ditem-editor.c:641
 msgid "Co_mment:"
 msgstr "A_thugasemd:"
 
-#: mate-panel/panel-ditem-editor.c:652
+#: cafe-panel/panel-ditem-editor.c:652
 msgid "_Revert"
 msgstr "Endur_lesa"
 
-#: mate-panel/panel-ditem-editor.c:978
+#: cafe-panel/panel-ditem-editor.c:978
 msgid "Choose an application..."
 msgstr "Veldu forrit..."
 
-#: mate-panel/panel-ditem-editor.c:982
+#: cafe-panel/panel-ditem-editor.c:982
 msgid "Choose a file..."
 msgstr "Veldu skrá..."
 
-#: mate-panel/panel-ditem-editor.c:1146 mate-panel/panel-ditem-editor.c:1155
+#: cafe-panel/panel-ditem-editor.c:1146 cafe-panel/panel-ditem-editor.c:1155
 msgid "Comm_and:"
 msgstr "_Skipun:"
 
-#: mate-panel/panel-ditem-editor.c:1164
+#: cafe-panel/panel-ditem-editor.c:1164
 msgid "_Location:"
 msgstr "_Staðsetning:"
 
-#: mate-panel/panel-ditem-editor.c:1327
+#: cafe-panel/panel-ditem-editor.c:1327
 msgid "The name of the launcher is not set."
 msgstr "Nafn ræsarans er ekki tilgreint."
 
-#: mate-panel/panel-ditem-editor.c:1331
+#: cafe-panel/panel-ditem-editor.c:1331
 msgid "Could not save directory properties"
 msgstr "Ekki var hægt að vista eigindi möppu"
 
-#: mate-panel/panel-ditem-editor.c:1332
+#: cafe-panel/panel-ditem-editor.c:1332
 msgid "The name of the directory is not set."
 msgstr "Heiti möppu hefur ekki verið valið"
 
-#: mate-panel/panel-ditem-editor.c:1348
+#: cafe-panel/panel-ditem-editor.c:1348
 msgid "The command of the launcher is not set."
 msgstr "Ræsinum hefur ekki verið gefin skipun"
 
-#: mate-panel/panel-ditem-editor.c:1351
+#: cafe-panel/panel-ditem-editor.c:1351
 msgid "The location of the launcher is not set."
 msgstr "Staðsetning ræsarans er ekki tilgreind."
 
-#: mate-panel/panel-ditem-editor.c:1428
+#: cafe-panel/panel-ditem-editor.c:1428
 msgid "Could not display help document"
 msgstr "Gat ekki birt hjálparskjal"
 
-#: mate-panel/panel-force-quit.c:86
+#: cafe-panel/panel-force-quit.c:86
 msgid ""
 "Click on a window to force the application to quit. To cancel press <ESC>."
 msgstr ""
 "Smelltu á gluggan til að þvinga forritið til að hætta. Þú getur hætt við með"
 " því að ýta á <ESC>."
 
-#: mate-panel/panel-force-quit.c:232
+#: cafe-panel/panel-force-quit.c:232
 msgid "Force this application to exit?"
 msgstr "Neyða þetta forrit til að hætta?"
 
-#: mate-panel/panel-force-quit.c:235
+#: cafe-panel/panel-force-quit.c:235
 msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."
@@ -2738,271 +2738,271 @@ msgstr ""
 "Ef þú neyðir forrit til að hætta þá geta tapast allar nýlegar óvistaðar "
 "breytingar á þeim skjölum sem það var að vinna með."
 
-#: mate-panel/panel-menu-bar.c:97
+#: cafe-panel/panel-menu-bar.c:97
 msgid "Browse and run installed applications"
 msgstr "Skoða og keyra uppsett forrit"
 
-#: mate-panel/panel-menu-bar.c:98
+#: cafe-panel/panel-menu-bar.c:98
 msgid "Access documents, folders and network places"
 msgstr "Nálgast sköl, möppur og netstaði"
 
-#: mate-panel/panel-menu-bar.c:99
+#: cafe-panel/panel-menu-bar.c:99
 msgid "Change desktop appearance and behavior, get help, or log out"
 msgstr "Breyta útliti umhverfisins og hegðun, nálgast hjálp eða afskrá sig"
 
-#: mate-panel/panel-menu-bar.c:166
+#: cafe-panel/panel-menu-bar.c:166
 msgid "Applications"
 msgstr "Forrit"
 
-#: mate-panel/panel-menu-bar.c:356 mate-panel/panel-menu-button.c:706
+#: cafe-panel/panel-menu-bar.c:356 cafe-panel/panel-menu-button.c:706
 msgid "_Edit Menus"
 msgstr "_Breyta valmyndum"
 
-#: mate-panel/panel-menu-button.c:1129
+#: cafe-panel/panel-menu-button.c:1129
 msgid "Main Menu"
 msgstr "Aðalvalmynd"
 
-#: mate-panel/panel-menu-items.c:467
+#: cafe-panel/panel-menu-items.c:467
 msgid "Bookmarks"
 msgstr "Bókamerki"
 
 #. Translators: %s is a URI
-#: mate-panel/panel-menu-items.c:490 mate-panel/panel.c:553
+#: cafe-panel/panel-menu-items.c:490 cafe-panel/panel.c:553
 #, c-format
 msgid "Open '%s'"
 msgstr "Opna '%s'"
 
-#: mate-panel/panel-menu-items.c:561
+#: cafe-panel/panel-menu-items.c:561
 #, c-format
 msgid "Unable to scan %s for media changes"
 msgstr "Gat ekki skannað %s eftir breytingum á miðlum"
 
-#: mate-panel/panel-menu-items.c:604
+#: cafe-panel/panel-menu-items.c:604
 #, c-format
 msgid "Rescan %s"
 msgstr "Endurskanna %s"
 
-#: mate-panel/panel-menu-items.c:641
+#: cafe-panel/panel-menu-items.c:641
 #, c-format
 msgid "Unable to mount %s"
 msgstr "Ófær um að festa %s"
 
-#: mate-panel/panel-menu-items.c:704
+#: cafe-panel/panel-menu-items.c:704
 #, c-format
 msgid "Mount %s"
 msgstr "Festa %s"
 
-#: mate-panel/panel-menu-items.c:912
+#: cafe-panel/panel-menu-items.c:912
 msgid "Removable Media"
 msgstr "Fjarlæganlegir miðlar"
 
-#: mate-panel/panel-menu-items.c:999
+#: cafe-panel/panel-menu-items.c:999
 msgid "Network Places"
 msgstr "Netstaðir"
 
-#: mate-panel/panel-menu-items.c:1038
+#: cafe-panel/panel-menu-items.c:1038
 msgid "Open your personal folder"
 msgstr "Opna einkamöppuna þína"
 
 #. Translators: Desktop is used here as in
 #. * "Desktop Folder" (this is not the Desktop
 #. * environment).
-#: mate-panel/panel-menu-items.c:1057
+#: cafe-panel/panel-menu-items.c:1057
 msgctxt "Desktop Folder"
 msgid "Desktop"
 msgstr "Skjáborð"
 
-#: mate-panel/panel-menu-items.c:1058
+#: cafe-panel/panel-menu-items.c:1058
 msgid "Open the contents of your desktop in a folder"
 msgstr "Opna innihald skjáborðsins í möppu"
 
-#: mate-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1074
 msgid "Computer"
 msgstr "Tölva"
 
-#: mate-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1079
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
 msgstr ""
 "Flakka um alla staðværa og fjartengda diska (og möppur) sem aðgengilegir eru"
 " frá þessari tölvu"
 
-#: mate-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1092
 msgid "Network"
 msgstr "Netkerfi"
 
-#: mate-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1093
 msgid "Browse bookmarked and local network locations"
 msgstr "Flakka um bókamerktar og staðværar nettengingar"
 
-#: mate-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1487
 msgid "Places"
 msgstr "Staðir"
 
-#: mate-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1515
 msgid "System"
 msgstr "Kerfið"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: mate-panel/panel-menu-items.c:1600
+#: cafe-panel/panel-menu-items.c:1600
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: mate-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1612
 #, c-format
 msgid "Log Out %s..."
 msgstr "Útskrá %s..."
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: mate-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1616
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr "Útskrá %s úr þessari setu og skrá sig inn sem annan notenda"
 
-#: mate-panel/panel-properties-dialog.c:119 mate-panel/panel-test-applets.c:58
+#: cafe-panel/panel-properties-dialog.c:119 cafe-panel/panel-test-applets.c:58
 msgctxt "Orientation"
 msgid "Top"
 msgstr "Efst"
 
-#: mate-panel/panel-properties-dialog.c:120 mate-panel/panel-test-applets.c:59
+#: cafe-panel/panel-properties-dialog.c:120 cafe-panel/panel-test-applets.c:59
 msgctxt "Orientation"
 msgid "Bottom"
 msgstr "Neðst"
 
-#: mate-panel/panel-properties-dialog.c:121 mate-panel/panel-test-applets.c:60
+#: cafe-panel/panel-properties-dialog.c:121 cafe-panel/panel-test-applets.c:60
 msgctxt "Orientation"
 msgid "Left"
 msgstr "Til vinstri"
 
-#: mate-panel/panel-properties-dialog.c:122 mate-panel/panel-test-applets.c:61
+#: cafe-panel/panel-properties-dialog.c:122 cafe-panel/panel-test-applets.c:61
 msgctxt "Orientation"
 msgid "Right"
 msgstr "Til hægri"
 
-#: mate-panel/panel-properties-dialog.c:818
+#: cafe-panel/panel-properties-dialog.c:818
 msgid "Drawer Properties"
 msgstr "Eigindi skúffu"
 
-#: mate-panel/panel-properties-dialog.ui:62
+#: cafe-panel/panel-properties-dialog.ui:62
 msgid "Panel Properties"
 msgstr "Eiginleikar stiku"
 
-#: mate-panel/panel-properties-dialog.ui:148
-#: mate-panel/panel-properties-dialog.ui:416
+#: cafe-panel/panel-properties-dialog.ui:148
+#: cafe-panel/panel-properties-dialog.ui:416
 msgid "Some of these properties are locked down"
 msgstr "Sumir eiginleikarnir er læstir"
 
-#: mate-panel/panel-properties-dialog.ui:189
+#: cafe-panel/panel-properties-dialog.ui:189
 msgid "_Icon:"
 msgstr "Táknm_ynd:"
 
-#: mate-panel/panel-properties-dialog.ui:249
-#: mate-panel/panel-test-applets.ui:116
+#: cafe-panel/panel-properties-dialog.ui:249
+#: cafe-panel/panel-test-applets.ui:116
 msgid "_Orientation:"
 msgstr "_Snúningur:"
 
-#: mate-panel/panel-properties-dialog.ui:263
-#: mate-panel/panel-test-applets.ui:86
+#: cafe-panel/panel-properties-dialog.ui:263
+#: cafe-panel/panel-test-applets.ui:86
 msgid "_Size:"
 msgstr "_Stærð:"
 
-#: mate-panel/panel-properties-dialog.ui:281
+#: cafe-panel/panel-properties-dialog.ui:281
 msgid "E_xpand"
 msgstr "Þ_enja"
 
-#: mate-panel/panel-properties-dialog.ui:296
+#: cafe-panel/panel-properties-dialog.ui:296
 msgid "_Autohide"
 msgstr "_Fela sjálfvirkt"
 
-#: mate-panel/panel-properties-dialog.ui:317
+#: cafe-panel/panel-properties-dialog.ui:317
 msgid "Show hide _buttons"
 msgstr "Sýna _feluhnappa"
 
-#: mate-panel/panel-properties-dialog.ui:348
+#: cafe-panel/panel-properties-dialog.ui:348
 msgid "Arro_ws on hide buttons"
 msgstr "Ör_var á feluhnöppum"
 
-#: mate-panel/panel-properties-dialog.ui:433
+#: cafe-panel/panel-properties-dialog.ui:433
 msgid "_None (use system theme)"
 msgstr "E_kkert (nota kerfis þema)"
 
-#: mate-panel/panel-properties-dialog.ui:453
+#: cafe-panel/panel-properties-dialog.ui:453
 msgid "Solid c_olor"
 msgstr "Heill l_itur"
 
-#: mate-panel/panel-properties-dialog.ui:501
+#: cafe-panel/panel-properties-dialog.ui:501
 msgid "Pick a color"
 msgstr "Veldu lit"
 
-#: mate-panel/panel-properties-dialog.ui:531
+#: cafe-panel/panel-properties-dialog.ui:531
 msgid "<small>Transparent</small>"
 msgstr "<small>Gegnsæ</small>"
 
-#: mate-panel/panel-properties-dialog.ui:553
+#: cafe-panel/panel-properties-dialog.ui:553
 msgid "Co_lor:"
 msgstr "L_itur:"
 
-#: mate-panel/panel-properties-dialog.ui:566
+#: cafe-panel/panel-properties-dialog.ui:566
 msgid "S_tyle:"
 msgstr "S_tíll:"
 
-#: mate-panel/panel-properties-dialog.ui:580
+#: cafe-panel/panel-properties-dialog.ui:580
 msgid "<small>Opaque</small>"
 msgstr "<small>Matt</small>"
 
-#: mate-panel/panel-properties-dialog.ui:613
+#: cafe-panel/panel-properties-dialog.ui:613
 msgid "Background _image:"
 msgstr "Bakgrunns _mynd:"
 
-#: mate-panel/panel-properties-dialog.ui:647
+#: cafe-panel/panel-properties-dialog.ui:647
 msgid "Select background"
 msgstr "Veldu bakgrunn"
 
-#: mate-panel/panel-properties-dialog.ui:678
+#: cafe-panel/panel-properties-dialog.ui:678
 msgid "Background"
 msgstr "Bakgrunnur"
 
-#: mate-panel/panel-properties-dialog.ui:710
+#: cafe-panel/panel-properties-dialog.ui:710
 msgid "Image Background Details"
 msgstr "Myndar bakgrunns upplýsingar"
 
-#: mate-panel/panel-properties-dialog.ui:780
+#: cafe-panel/panel-properties-dialog.ui:780
 msgid "_Tile"
 msgstr "_Flísaleggja"
 
-#: mate-panel/panel-properties-dialog.ui:795
+#: cafe-panel/panel-properties-dialog.ui:795
 msgid "_Scale"
 msgstr "_Kvarða"
 
-#: mate-panel/panel-properties-dialog.ui:811
+#: cafe-panel/panel-properties-dialog.ui:811
 msgid "St_retch"
 msgstr "T_eygja"
 
-#: mate-panel/panel-properties-dialog.ui:834
+#: cafe-panel/panel-properties-dialog.ui:834
 msgid "Rotate image when panel is _vertical"
 msgstr "Snúa mynd þegar stikan er ló_ðrétt"
 
-#: mate-panel/panel-recent.c:78 mate-panel/panel-recent.c:88
+#: cafe-panel/panel-recent.c:78 cafe-panel/panel-recent.c:88
 #, c-format
 msgid "Could not open recently used document \"%s\""
 msgstr "Gat ekki opnað nýlega notað skjal \"%s\""
 
-#: mate-panel/panel-recent.c:90
+#: cafe-panel/panel-recent.c:90
 #, c-format
 msgid "An unknown error occurred while trying to open \"%s\"."
 msgstr "Óþekkt villa kom upp þegar reynt var að opna \"%s\"."
 
-#: mate-panel/panel-recent.c:147
+#: cafe-panel/panel-recent.c:147
 msgid "Clear the Recent Documents list?"
 msgstr "Hreinsa lista nýlegra skjala?"
 
-#: mate-panel/panel-recent.c:149
+#: cafe-panel/panel-recent.c:149
 msgid ""
 "If you clear the Recent Documents list, you clear the following:\n"
 "• All items from the Places → Recent Documents menu item.\n"
@@ -3012,61 +3012,61 @@ msgstr ""
 "• Alla hluti úr Staðir → Nýleg skjöl valmyndaratriðinu.\n"
 "• Alla hluti úr listanum yfir nýleg skjöl í öllum forritum."
 
-#: mate-panel/panel-recent.c:164
+#: cafe-panel/panel-recent.c:164
 msgid "Clear Recent Documents"
 msgstr "Hreinsa nýleg skjöl"
 
-#: mate-panel/panel-recent.c:199
+#: cafe-panel/panel-recent.c:199
 msgid "Recent Documents"
 msgstr "Nýleg skjöl"
 
-#: mate-panel/panel-recent.c:238
+#: cafe-panel/panel-recent.c:238
 msgid "Clear Recent Documents..."
 msgstr "Hreinsa lista yfir nýleg skjöl..."
 
-#: mate-panel/panel-recent.c:240
+#: cafe-panel/panel-recent.c:240
 msgid "Clear all items from the recent documents list"
 msgstr "Hreinsa alla hluta úr lista nýlegara skjala"
 
-#: mate-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:423
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "Gat ekki keyrt skipun '%s'"
 
-#: mate-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:464
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "Gat ekki breytt '%s' frá UTF-8"
 
-#: mate-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1257
 msgid "Choose a file to append to the command..."
 msgstr "Veldu skrá til að bæta við skipunina..."
 
-#: mate-panel/panel-run-dialog.c:1639 mate-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Veldu forrit til að sjá lýsinguna á því"
 
-#: mate-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1677
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "Mun keyra skipun '%s'"
 
-#: mate-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1710
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
 "URI listi sem fellur niður í keyra glugganum er af röngu sniði (%d) eða "
 "lengd (%d)\n"
 
-#: mate-panel/panel-run-dialog.ui:23
+#: cafe-panel/panel-run-dialog.ui:23
 msgid "Run Application"
 msgstr "Keyra forrit"
 
-#: mate-panel/panel-run-dialog.ui:71 mate-panel/panel-stock-icons.c:97
+#: cafe-panel/panel-run-dialog.ui:71 cafe-panel/panel-stock-icons.c:97
 msgid "_Run"
 msgstr "_Keyra"
 
-#: mate-panel/panel-run-dialog.ui:81
+#: cafe-panel/panel-run-dialog.ui:81
 msgid ""
 "Click this button to run the selected application or the command in the "
 "command entry field."
@@ -3074,27 +3074,27 @@ msgstr ""
 "Smelltu á þennan hnapp til að keyra valið forrit eða skipun í "
 "skipunarreitnum."
 
-#: mate-panel/panel-run-dialog.ui:125
+#: cafe-panel/panel-run-dialog.ui:125
 msgid "Command icon"
 msgstr "Skipanatáknmynd"
 
-#: mate-panel/panel-run-dialog.ui:126
+#: cafe-panel/panel-run-dialog.ui:126
 msgid "The icon of the command to be run."
 msgstr "Táknmynd skipunarinar sem á að keyra."
 
-#: mate-panel/panel-run-dialog.ui:170
+#: cafe-panel/panel-run-dialog.ui:170
 msgid "Run in _terminal"
 msgstr "Keyra á _skjáhermi"
 
-#: mate-panel/panel-run-dialog.ui:178
+#: cafe-panel/panel-run-dialog.ui:178
 msgid "Select this box to run the command in a terminal window."
 msgstr "Veldu þennan valkost ef þú vilt keyra skipunina í skjáhermi."
 
-#: mate-panel/panel-run-dialog.ui:190
+#: cafe-panel/panel-run-dialog.ui:190
 msgid "Run with _file..."
 msgstr "Keyra með _skrá..."
 
-#: mate-panel/panel-run-dialog.ui:197
+#: cafe-panel/panel-run-dialog.ui:197
 msgid ""
 "Click this button to browse for a file whose name to append to the command "
 "string."
@@ -3102,146 +3102,146 @@ msgstr ""
 "Smelltu á þennan hnapp til að vafra eftir skrá til að bæta við "
 "skipunarstrenginn."
 
-#: mate-panel/panel-run-dialog.ui:256
+#: cafe-panel/panel-run-dialog.ui:256
 msgid "List of known applications"
 msgstr "Listi yfir þekkt forrit"
 
-#: mate-panel/panel-run-dialog.ui:290
+#: cafe-panel/panel-run-dialog.ui:290
 msgid "Show list of known _applications"
 msgstr "Sýna lista yfir þekkt _forrit"
 
-#: mate-panel/panel-stock-icons.c:98
+#: cafe-panel/panel-stock-icons.c:98
 msgid "_Force quit"
 msgstr "_Þvinga til að hætta"
 
-#: mate-panel/panel-stock-icons.c:99
+#: cafe-panel/panel-stock-icons.c:99
 msgid "C_lear"
 msgstr "Hr_einsa"
 
-#: mate-panel/panel-stock-icons.c:100
+#: cafe-panel/panel-stock-icons.c:100
 msgid "D_on't Delete"
 msgstr "Ekk_i eyða"
 
-#: mate-panel/panel-test-applets.c:39
+#: cafe-panel/panel-test-applets.c:39
 msgid "Specify an applet IID to load"
 msgstr "Tilgreinið forritlingskenni til að hlaða"
 
-#: mate-panel/panel-test-applets.c:40
+#: cafe-panel/panel-test-applets.c:40
 msgid ""
 "Specify a gsettings path in which the applet preferences should be stored"
 msgstr ""
 
-#: mate-panel/panel-test-applets.c:41
+#: cafe-panel/panel-test-applets.c:41
 msgid "Specify the initial size of the applet (xx-small, medium, large etc.)"
 msgstr "Tilgreinið upphafsstærð forritlings (mm-lítið, meðal, stórt o.s.frv.)"
 
-#: mate-panel/panel-test-applets.c:42
+#: cafe-panel/panel-test-applets.c:42
 msgid ""
 "Specify the initial orientation of the applet (top, bottom, left or right)"
 msgstr "Tilgreinið upphfssnúning forritlings (efst, neðst, vinstri eða hægri)"
 
-#: mate-panel/panel-test-applets.c:66
+#: cafe-panel/panel-test-applets.c:66
 msgctxt "Size"
 msgid "XX Small"
 msgstr "Rosalega lítið"
 
-#: mate-panel/panel-test-applets.c:67
+#: cafe-panel/panel-test-applets.c:67
 msgctxt "Size"
 msgid "X Small"
 msgstr "Mjög lítið"
 
-#: mate-panel/panel-test-applets.c:68
+#: cafe-panel/panel-test-applets.c:68
 msgctxt "Size"
 msgid "Small"
 msgstr "Lítil"
 
-#: mate-panel/panel-test-applets.c:69
+#: cafe-panel/panel-test-applets.c:69
 msgctxt "Size"
 msgid "Medium"
 msgstr "Miðlungs"
 
-#: mate-panel/panel-test-applets.c:70
+#: cafe-panel/panel-test-applets.c:70
 msgctxt "Size"
 msgid "Large"
 msgstr "Stór"
 
-#: mate-panel/panel-test-applets.c:71
+#: cafe-panel/panel-test-applets.c:71
 msgctxt "Size"
 msgid "X Large"
 msgstr "Mjög stórt"
 
-#: mate-panel/panel-test-applets.c:72
+#: cafe-panel/panel-test-applets.c:72
 msgctxt "Size"
 msgid "XX Large"
 msgstr "Rosalega stórt"
 
-#: mate-panel/panel-test-applets.c:130
+#: cafe-panel/panel-test-applets.c:130
 #, c-format
 msgid "Failed to load applet %s"
 msgstr "Tókst ekki að ræsa forritling %s"
 
 #. This is an utility to easily test various applets
-#: mate-panel/panel-test-applets.ui:18
+#: cafe-panel/panel-test-applets.ui:18
 msgid "Test applet utility"
 msgstr "Hjálparforrit til að prófa forritlinga"
 
-#: mate-panel/panel-test-applets.ui:35
+#: cafe-panel/panel-test-applets.ui:35
 msgid "_Execute"
 msgstr ""
 
-#: mate-panel/panel-test-applets.ui:101
+#: cafe-panel/panel-test-applets.ui:101
 msgid "_Applet:"
 msgstr "_Forritlingur"
 
-#: mate-panel/panel-test-applets.ui:131
+#: cafe-panel/panel-test-applets.ui:131
 msgid "_Prefs Path:"
 msgstr "_Kjörstillingamappa:"
 
-#: mate-panel/panel-toplevel.c:1209
+#: cafe-panel/panel-toplevel.c:1209
 msgid "Hide Panel"
 msgstr "Fela stiku"
 
-#: mate-panel/panel-toplevel.c:1656 mate-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
 msgid "Top Panel"
 msgstr ""
 
-#: mate-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1658
 msgid "Bottom Panel"
 msgstr ""
 
-#: mate-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1660
 msgid "Left Panel"
 msgstr ""
 
-#: mate-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1662
 msgid "Right Panel"
 msgstr ""
 
-#: mate-panel/panel-util.c:350
+#: cafe-panel/panel-util.c:350
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Táknmynd ,%s' fannst ekki"
 
-#: mate-panel/panel-util.c:474
+#: cafe-panel/panel-util.c:474
 #, c-format
 msgid "Could not execute '%s'"
 msgstr "Gat ekki keyrt '%s'"
 
-#: mate-panel/panel-util.c:702
+#: cafe-panel/panel-util.c:702
 msgid "file"
 msgstr "skrá"
 
-#: mate-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:875
 msgid "Home Folder"
 msgstr "Heimamappa"
 
 #. Translators: this is the same string as the one found in
 #. * caja
-#: mate-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr "Skráarkerfi"
 
-#: mate-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1060
 msgid "Search"
 msgstr "Leita"
 
@@ -3249,31 +3249,31 @@ msgstr "Leita"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: mate-panel/panel-util.c:1106
+#: cafe-panel/panel-util.c:1106
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: mate-panel/panel.c:486
+#: cafe-panel/panel.c:486
 #, c-format
 msgid "Open URL: %s"
 msgstr "Opna veffang: %s"
 
-#: mate-panel/panel.c:1336
+#: cafe-panel/panel.c:1336
 msgid "Delete this drawer?"
 msgstr "Eyða þessari skúffu?"
 
-#: mate-panel/panel.c:1337
+#: cafe-panel/panel.c:1337
 msgid ""
 "When a drawer is deleted, the drawer and its\n"
 "settings are lost."
 msgstr "Þegar skúffu er eytt, þá tapast skúffan og stillingar hennar."
 
-#: mate-panel/panel.c:1340
+#: cafe-panel/panel.c:1340
 msgid "Delete this panel?"
 msgstr "Eyða þessari stiku?"
 
-#: mate-panel/panel.c:1341
+#: cafe-panel/panel.c:1341
 msgid ""
 "When a panel is deleted, the panel and its\n"
 "settings are lost."
@@ -3281,24 +3281,24 @@ msgstr ""
 "Þegar stiku er eytt, þá tapast stikan\n"
 "og stillingar hennar."
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:5
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:5
 msgid "Test DBus Applet Factory"
 msgstr ""
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:6
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:6
 msgid "Factory for Test DBus Applet"
 msgstr ""
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:9
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:9
 msgid "Test DBus Applet"
 msgstr ""
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:10
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
 msgid "A simple applet for testing the MATE panel"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:12
-msgid "mate-gegl"
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
+msgid "cafe-gegl"
 msgstr ""

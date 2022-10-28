@@ -10,7 +10,7 @@
 <!--
       (Do not remove this comment block.)
   Maintained by the MATE Documentation Project
-  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
+  http://wiki.cafe-desktop.org/dev-doc:doc-team-guide
   Template version: 2.0 beta
   Template last modified Feb 11, 2002
 
@@ -198,7 +198,7 @@
 		</releaseinfo>
 	 <legalnotice>
 		<title>Feedback</title>
-		<para> To report a bug or make a suggestion regarding the &applet; applet or this manual, follow the directions in the <ulink url="help:mate-user-guide/feedback" type="help">MATE Feedback Page</ulink>. </para>
+		<para> To report a bug or make a suggestion regarding the &applet; applet or this manual, follow the directions in the <ulink url="help:cafe-user-guide/feedback" type="help">MATE Feedback Page</ulink>. </para>
 
 	 </legalnotice>
 	 <abstract role="description">
@@ -481,7 +481,7 @@ The <application>&applet;</application> applet displays the date and time, and w
             </para>
         </listitem>
         <listitem>
-            <para>Press the <guibutton>Set System Time</guibutton> button, then the <application>mate-polkit</application> dialog prompts for the administration password. Enter the administration password and press the <guibutton>Authenticate</guibutton> button.
+            <para>Press the <guibutton>Set System Time</guibutton> button, then the <application>cafe-polkit</application> dialog prompts for the administration password. Enter the administration password and press the <guibutton>Authenticate</guibutton> button.
             </para>
         </listitem>
     </orderedlist>

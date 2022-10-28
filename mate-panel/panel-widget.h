@@ -33,9 +33,9 @@ extern "C" {
 
 #define PANEL_MINIMUM_WIDTH 12
 
-#define MATE_PANEL_APPLET_ASSOC_PANEL_KEY "mate_panel_applet_assoc_panel_key"
-#define MATE_PANEL_APPLET_FORBIDDEN_PANELS "mate_panel_applet_forbidden_panels"
-#define MATE_PANEL_APPLET_DATA "mate_panel_applet_data"
+#define MATE_PANEL_APPLET_ASSOC_PANEL_KEY "cafe_panel_applet_assoc_panel_key"
+#define MATE_PANEL_APPLET_FORBIDDEN_PANELS "cafe_panel_applet_forbidden_panels"
+#define MATE_PANEL_APPLET_DATA "cafe_panel_applet_data"
 
 #ifndef TYPEDEF_PANEL_WIDGET
 typedef struct _PanelWidget		PanelWidget;
@@ -170,7 +170,7 @@ int		panel_widget_reparent		(PanelWidget *old_panel,
 #define PW_DRAG_OFF_CENTER -2
 
 /*drag*/
-gboolean        mate_panel_applet_is_in_drag         (void);
+gboolean        cafe_panel_applet_is_in_drag         (void);
 void		panel_widget_applet_drag_start	(PanelWidget *panel,
 						 GtkWidget   *applet,
 						 int          drag_off,

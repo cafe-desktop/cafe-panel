@@ -2,8 +2,8 @@ AM_CPPFLAGS = \
 	$(LIBMATE_PANEL_APPLET_CFLAGS) \
 	$(FISH_CFLAGS) \
 	-I$(srcdir) \
-	-I$(srcdir)/../../libmate-panel-applet \
-	-I$(top_builddir)/libmate-panel-applet \
+	-I$(srcdir)/../../libcafe-panel-applet \
+	-I$(top_builddir)/libcafe-panel-applet \
 	-DMATELOCALEDIR=\""$(datadir)/locale"\" \
 	-DFISH_ICONDIR=\""$(fishbitmapsdir)"\" \
 	$(DISABLE_DEPRECATED_CFLAGS)
@@ -15,7 +15,7 @@ FISH_SOURCES = \
 	$(BUILT_SOURCES)
 
 FISH_LDADD = \
-	../../libmate-panel-applet/libmate-panel-applet-4.la \
+	../../libcafe-panel-applet/libcafe-panel-applet-4.la \
 	$(FISH_LIBS) \
 	$(LIBMATE_PANEL_APPLET_LIBS)
 
@@ -39,9 +39,9 @@ fish_applet_LDADD = $(FISH_LDADD)
 fish_applet_CFLAGS = $(AM_CFLAGS)
 endif
 
-appletdir       = $(datadir)/mate-panel/applets
-applet_in_files = org.mate.panel.FishApplet.mate-panel-applet.desktop.in
-applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
+appletdir       = $(datadir)/cafe-panel/applets
+applet_in_files = org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in
+applet_DATA     = $(applet_in_files:.cafe-panel-applet.desktop.in=.cafe-panel-applet)
 
 $(applet_in_files): $(applet_in_files).in Makefile
 	$(AM_V_GEN)sed \
@@ -55,16 +55,16 @@ $(applet_DATA): $(applet_in_files)
 
 if !FISH_INPROCESS
 servicedir       = $(datadir)/dbus-1/services
-service_in_files = org.mate.panel.applet.FishAppletFactory.service.in
+service_in_files = org.cafe.panel.applet.FishAppletFactory.service.in
 service_DATA     = $(service_in_files:.service.in=.service)
 
-org.mate.panel.applet.FishAppletFactory.service: $(service_in_files)
+org.cafe.panel.applet.FishAppletFactory.service: $(service_in_files)
 	$(AM_V_GEN)sed \
 		-e "s|\@LOCATION\@|$(APPLET_LOCATION)|" \
 		$< > $@
 endif
 
-fishbitmapsdir = $(datadir)/mate-panel/fish
+fishbitmapsdir = $(datadir)/cafe-panel/fish
 fishbitmaps_DATA = \
 	wanda.png \
 	fishanim.png \
@@ -86,14 +86,14 @@ BUILT_SOURCES = 		\
 	fish-resources.c	\
 	fish-resources.h
 
-fish_gschemas_in = org.mate.panel.applet.fish.gschema.xml.in
+fish_gschemas_in = org.cafe.panel.applet.fish.gschema.xml.in
 gsettings_SCHEMAS = $(fish_gschemas_in:.xml.in=.xml)
 @GSETTINGS_RULES@
 
 EXTRA_DIST = \
 	wanda.svg \
 	$(fishbitmaps_DATA) \
-	org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in \
+	org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in \
 	$(service_in_files) \
 	$(ui_FILES)	\
 	fish.gresource.xml \

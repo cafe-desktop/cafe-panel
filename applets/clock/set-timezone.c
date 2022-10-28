@@ -32,7 +32,7 @@
 
 #include "set-timezone.h"
 
-#define DATETIME_DBUS_NAME "org.mate.SettingsDaemon.DateTimeMechanism"
+#define DATETIME_DBUS_NAME "org.cafe.SettingsDaemon.DateTimeMechanism"
 #define DATETIME_DBUS_PATH "/"
 
 static GDBusProxy *

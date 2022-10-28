@@ -52,7 +52,7 @@ static gboolean run_dialog = FALSE;
 
 static const GOptionEntry options[] = {
   { "replace", 0, 0, G_OPTION_ARG_NONE, &replace, N_("Replace a currently running panel"), NULL },
-  /* this feature was request in #mate irc channel */
+  /* this feature was request in #cafe irc channel */
   { "reset", 0, 0, G_OPTION_ARG_NONE, &reset, N_("Reset the panel configuration to default"), NULL },
   /* open run dialog */
   { "run-dialog", 0, 0, G_OPTION_ARG_NONE, &run_dialog, N_("Execute the run dialog"), NULL },
@@ -67,7 +67,7 @@ parsing_error_cb (GtkCssProvider *provider,
                   GError         *error,
                   gpointer        user_data)
 {
-    g_warning ("Can't parse mate-panel's CSS custom description: %s\n", error->message);
+    g_warning ("Can't parse cafe-panel's CSS custom description: %s\n", error->message);
 }
 
 int
@@ -90,9 +90,9 @@ main (int argc, char **argv)
 	/* We will register explicitly when we're ready -- see panel-session.c */
 	egg_sm_client_set_mode (EGG_SM_CLIENT_MODE_DISABLED);
 
-	g_set_prgname ("mate-panel");
+	g_set_prgname ("cafe-panel");
 
-	desktopfile = panel_g_lookup_in_applications_dirs ("mate-panel.desktop");
+	desktopfile = panel_g_lookup_in_applications_dirs ("cafe-panel.desktop");
 	if (desktopfile) {
 		egg_set_desktop_file (desktopfile);
 		g_free (desktopfile);
@@ -214,7 +214,7 @@ main (int argc, char **argv)
 	screen = gdk_screen_get_default ();
 	css = gtk_css_provider_new ();
 	provider = GTK_STYLE_PROVIDER (css);
-	resource = "/org/mate/panel/theme/mate-panel.css";
+	resource = "/org/cafe/panel/theme/cafe-panel.css";
 	priority = GTK_STYLE_PROVIDER_PRIORITY_FALLBACK;
 
 	g_signal_connect (provider, "parsing-error", G_CALLBACK (parsing_error_cb), NULL);

@@ -127,7 +127,7 @@ panel_global_config_load (void)
 	gchar **keys;
 	gint i;
 
-	panel_global_settings = g_settings_new ("org.mate.panel");
+	panel_global_settings = g_settings_new ("org.cafe.panel");
 
 	g_object_get (panel_global_settings, "settings-schema", &schema, NULL);
 	keys = g_settings_schema_list_keys (schema);

@@ -1,17 +1,17 @@
-Hacking on mate-panel
+Hacking on cafe-panel
 ======================
 
  + The development occurs in git:
 
-     https://github.com/mate-desktop/mate-panel
+     https://github.com/cafe-desktop/cafe-panel
 
    For information on how to access MATE git please read:
 
-     http://wiki.mate-desktop.org
+     http://wiki.cafe-desktop.org
 
  + Please send patches as bug reports in MATE Bugzilla:
 
-     https://github.com/mate-desktop/mate-panel/issues
+     https://github.com/cafe-desktop/cafe-panel/issues
 
  + Please try and send a patch against a recent version of this package.
    Patches (pull requests) against git master are most preferable.

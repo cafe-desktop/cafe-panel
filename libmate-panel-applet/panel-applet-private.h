@@ -21,16 +21,16 @@
 #ifndef PANEL_APPLET_PRIVATE_H
 #define PANEL_APPLET_RPIVATE_H
 
-#include "mate-panel-applet.h"
+#include "cafe-panel-applet.h"
 
 G_BEGIN_DECLS
 
 // Returns 0 when not on X11
-guint32      mate_panel_applet_get_xid           (MatePanelApplet *applet,
+guint32      cafe_panel_applet_get_xid           (MatePanelApplet *applet,
                                              GdkScreen   *screen);
-const gchar *mate_panel_applet_get_object_path   (MatePanelApplet *applet);
+const gchar *cafe_panel_applet_get_object_path   (MatePanelApplet *applet);
 
-GtkWidget   *mate_panel_applet_get_applet_widget (const gchar *factory_id,
+GtkWidget   *cafe_panel_applet_get_applet_widget (const gchar *factory_id,
                                               guint        uid);
 
 G_END_DECLS

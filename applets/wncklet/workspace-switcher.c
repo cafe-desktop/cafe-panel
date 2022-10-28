@@ -14,8 +14,8 @@
 
 #include <string.h>
 
-#include <mate-panel-applet.h>
-#include <mate-panel-applet-gsettings.h>
+#include <cafe-panel-applet.h>
+#include <cafe-panel-applet-gsettings.h>
 
 #include <stdlib.h>
 
@@ -25,7 +25,7 @@
 #include <libwnck/libwnck.h>
 #include <gio/gio.h>
 
-#include <libmate-desktop/mate-gsettings.h>
+#include <libcafe-desktop/cafe-gsettings.h>
 
 #include "workspace-switcher.h"
 
@@ -35,15 +35,15 @@
 #define MAX_REASONABLE_ROWS 16
 #define DEFAULT_ROWS 1
 
-#define WORKSPACE_SWITCHER_SCHEMA "org.mate.panel.applet.workspace-switcher"
+#define WORKSPACE_SWITCHER_SCHEMA "org.cafe.panel.applet.workspace-switcher"
 
 #define NEVER_SENSITIVE "never_sensitive"
-#define MARCO_GENERAL_SCHEMA "org.mate.Marco.general"
+#define MARCO_GENERAL_SCHEMA "org.cafe.Marco.general"
 #define NUM_WORKSPACES "num-workspaces"
-#define MARCO_WORKSPACES_SCHEMA "org.mate.Marco.workspace-names"
+#define MARCO_WORKSPACES_SCHEMA "org.cafe.Marco.workspace-names"
 #define WORKSPACE_NAME "name-1"
 
-#define WORKSPACE_SWITCHER_ICON "mate-panel-workspace-switcher"
+#define WORKSPACE_SWITCHER_ICON "cafe-panel-workspace-switcher"
 
 typedef enum {
 	PAGER_WM_MARCO,
@@ -496,7 +496,7 @@ static void wrap_workspaces_changed(GSettings* settings, gchar* key, PagerData* 
 
 static void setup_gsettings(PagerData* pager)
 {
-	pager->settings = mate_panel_applet_settings_new (MATE_PANEL_APPLET (pager->applet), WORKSPACE_SWITCHER_SCHEMA);
+	pager->settings = cafe_panel_applet_settings_new (MATE_PANEL_APPLET (pager->applet), WORKSPACE_SWITCHER_SCHEMA);
 
 	g_signal_connect (pager->settings,
 					  "changed::num-rows",
@@ -527,7 +527,7 @@ gboolean workspace_switcher_applet_fill(MatePanelApplet* applet)
 
 	pager->applet = GTK_WIDGET(applet);
 
-	mate_panel_applet_set_flags(MATE_PANEL_APPLET(pager->applet), MATE_PANEL_APPLET_EXPAND_MINOR);
+	cafe_panel_applet_set_flags(MATE_PANEL_APPLET(pager->applet), MATE_PANEL_APPLET_EXPAND_MINOR);
 
 	setup_gsettings(pager);
 
@@ -550,7 +550,7 @@ gboolean workspace_switcher_applet_fill(MatePanelApplet* applet)
 
 	pager->display_all = g_settings_get_boolean(pager->settings, "display-all-workspaces");
 
-	switch (mate_panel_applet_get_orient(applet))
+	switch (cafe_panel_applet_get_orient(applet))
 	{
 		case MATE_PANEL_APPLET_ORIENT_LEFT:
 		case MATE_PANEL_APPLET_ORIENT_RIGHT:
@@ -590,16 +590,16 @@ gboolean workspace_switcher_applet_fill(MatePanelApplet* applet)
 	gtk_widget_show(pager->pager);
 	gtk_widget_show(pager->applet);
 
-	mate_panel_applet_set_background_widget(MATE_PANEL_APPLET(pager->applet), GTK_WIDGET(pager->applet));
+	cafe_panel_applet_set_background_widget(MATE_PANEL_APPLET(pager->applet), GTK_WIDGET(pager->applet));
 
 	action_group = gtk_action_group_new("WorkspaceSwitcher Applet Actions");
 	gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions(action_group, pager_menu_actions, G_N_ELEMENTS(pager_menu_actions), pager);
-	mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (pager->applet),
+	cafe_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (pager->applet),
 	                                            WNCKLET_RESOURCE_PATH "workspace-switcher-menu.xml",
 	                                            action_group);
 
-	if (mate_panel_applet_get_locked_down(MATE_PANEL_APPLET(pager->applet)))
+	if (cafe_panel_applet_get_locked_down(MATE_PANEL_APPLET(pager->applet)))
 	{
 		GtkAction *action;
 
@@ -615,7 +615,7 @@ gboolean workspace_switcher_applet_fill(MatePanelApplet* applet)
 
 static void display_help_dialog(GtkAction* action, PagerData* pager)
 {
-	wncklet_display_help(pager->applet, "mate-user-guide", "overview-workspaces", WORKSPACE_SWITCHER_ICON);
+	wncklet_display_help(pager->applet, "cafe-user-guide", "overview-workspaces", WORKSPACE_SWITCHER_ICON);
 }
 
 static void display_about_dialog(GtkAction* action, PagerData* pager)
@@ -647,7 +647,7 @@ static void display_about_dialog(GtkAction* action, PagerData* pager)
 		"logo-icon-name", WORKSPACE_SWITCHER_ICON,
 		"translator-credits", _("translator-credits"),
 		"version", VERSION,
-		"website", "http://www.mate-desktop.org/",
+		"website", "http://www.cafe-desktop.org/",
 		NULL);
 }
 
@@ -787,7 +787,7 @@ static gboolean delete_event(GtkWidget* widget, gpointer data)
 static void response_cb(GtkWidget* widget, int id, PagerData* pager)
 {
 	if (id == GTK_RESPONSE_HELP)
-		wncklet_display_help(widget, "mate-user-guide", "overview-workspaces", WORKSPACE_SWITCHER_ICON);
+		wncklet_display_help(widget, "cafe-user-guide", "overview-workspaces", WORKSPACE_SWITCHER_ICON);
 	else
 		gtk_widget_destroy(widget);
 }
@@ -859,9 +859,9 @@ static void setup_dialog(GtkBuilder* builder, PagerData* pager)
 	GSettings *marco_general_settings = NULL;
 	GSettings *marco_workspaces_settings = NULL;
 
-	if (mate_gsettings_schema_exists(MARCO_GENERAL_SCHEMA))
+	if (cafe_gsettings_schema_exists(MARCO_GENERAL_SCHEMA))
 		marco_general_settings = g_settings_new (MARCO_GENERAL_SCHEMA);
-	if (mate_gsettings_schema_exists(MARCO_WORKSPACES_SCHEMA))
+	if (cafe_gsettings_schema_exists(MARCO_WORKSPACES_SCHEMA))
 		marco_workspaces_settings = g_settings_new (MARCO_WORKSPACES_SCHEMA);
 
 	pager->workspaces_frame = WID("workspaces_frame");

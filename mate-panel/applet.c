@@ -47,13 +47,13 @@ static void applet_menu_show (GtkWidget *w, AppletInfo *info);
 static void applet_menu_deactivate (GtkWidget *w, AppletInfo *info);
 
 static inline PanelWidget *
-mate_panel_applet_get_panel_widget (AppletInfo *info)
+cafe_panel_applet_get_panel_widget (AppletInfo *info)
 {
 	return PANEL_WIDGET (gtk_widget_get_parent (info->widget));
 }
 
 static void
-mate_panel_applet_set_dnd_enabled (AppletInfo *info,
+cafe_panel_applet_set_dnd_enabled (AppletInfo *info,
 			      gboolean    dnd_enabled)
 {
 	switch (info->type) {
@@ -84,17 +84,17 @@ mate_panel_applet_set_dnd_enabled (AppletInfo *info,
 }
 
 gboolean
-mate_panel_applet_toggle_locked (AppletInfo *info)
+cafe_panel_applet_toggle_locked (AppletInfo *info)
 {
 	PanelWidget *panel_widget;
 	gboolean     locked;
 
-	panel_widget = mate_panel_applet_get_panel_widget (info);
+	panel_widget = cafe_panel_applet_get_panel_widget (info);
 
 	locked = panel_widget_toggle_applet_locked (panel_widget, info->widget);
 
-	mate_panel_applet_save_position (info, info->id, TRUE);
-	mate_panel_applet_set_dnd_enabled (info, !locked);
+	cafe_panel_applet_save_position (info, info->id, TRUE);
+	cafe_panel_applet_set_dnd_enabled (info, !locked);
 
 	return locked;
 }
@@ -107,12 +107,12 @@ checkbox_status (GtkCheckMenuItem *menuitem,
 }
 
 static void
-mate_panel_applet_lock (GtkMenuItem *menuitem,
+cafe_panel_applet_lock (GtkMenuItem *menuitem,
 			AppletInfo  *info)
 {
 	gboolean locked;
 
-	locked = mate_panel_applet_toggle_locked (info);
+	locked = cafe_panel_applet_toggle_locked (info);
 
 	gtk_check_menu_item_set_active (checkbox_id, locked);
 
@@ -142,10 +142,10 @@ move_applet_callback (GtkWidget *widget, AppletInfo *info)
 }
 
 /* permanently remove an applet - all non-permanent
- * cleanups should go in mate_panel_applet_destroy()
+ * cleanups should go in cafe_panel_applet_destroy()
  */
 void
-mate_panel_applet_clean (AppletInfo *info)
+cafe_panel_applet_clean (AppletInfo *info)
 {
 	g_return_if_fail (info != NULL);
 
@@ -161,7 +161,7 @@ mate_panel_applet_clean (AppletInfo *info)
 }
 
 static void
-mate_panel_applet_recreate_menu (AppletInfo	*info)
+cafe_panel_applet_recreate_menu (AppletInfo	*info)
 {
 	GList *l;
 
@@ -179,11 +179,11 @@ mate_panel_applet_recreate_menu (AppletInfo	*info)
 	g_signal_handlers_disconnect_by_func (info->menu, G_CALLBACK (applet_menu_deactivate), info);
 
 	g_object_unref (info->menu);
-	info->menu = mate_panel_applet_create_menu (info);
+	info->menu = cafe_panel_applet_create_menu (info);
 }
 
 static void
-mate_panel_applet_locked_change_notify (GSettings *settings,
+cafe_panel_applet_locked_change_notify (GSettings *settings,
 									    gchar *key,
 									    GtkWidget   *applet)
 {
@@ -202,19 +202,19 @@ mate_panel_applet_locked_change_notify (GSettings *settings,
 
 	locked = g_settings_get_boolean (settings, key);
 
-	panel_widget = mate_panel_applet_get_panel_widget (info);
+	panel_widget = cafe_panel_applet_get_panel_widget (info);
 	applet_locked = panel_widget_get_applet_locked (panel_widget,
 							info->widget);
 
 	if ((locked && applet_locked) || !(locked || applet_locked))
 		return;
 
-	mate_panel_applet_toggle_locked (info);
+	cafe_panel_applet_toggle_locked (info);
 
 	if (info->type == PANEL_OBJECT_APPLET)
-		mate_panel_applet_frame_sync_menu_state (MATE_PANEL_APPLET_FRAME (info->widget));
+		cafe_panel_applet_frame_sync_menu_state (MATE_PANEL_APPLET_FRAME (info->widget));
 	else
-		mate_panel_applet_recreate_menu (info);
+		cafe_panel_applet_recreate_menu (info);
 }
 
 static void
@@ -233,7 +233,7 @@ applet_user_menu_get_screen (AppletUserMenu *menu)
 {
 	PanelWidget *panel_widget;
 
-	panel_widget = mate_panel_applet_get_panel_widget (menu->info);
+	panel_widget = cafe_panel_applet_get_panel_widget (menu->info);
 
 	return gtk_window_get_screen (GTK_WINDOW (panel_widget->toplevel));
 }
@@ -272,7 +272,7 @@ applet_callback_callback (GtkWidget      *widget,
 			panel_properties_dialog_present (drawer->toplevel);
 		} else if (strcmp (menu->name, "help") == 0) {
 			panel_show_help (screen,
-					 "mate-user-guide", "gospanel-18", NULL);
+					 "cafe-user-guide", "gospanel-18", NULL);
 		}
 		break;
 	case PANEL_OBJECT_MENU:
@@ -307,7 +307,7 @@ applet_menu_show (GtkWidget *w,
 {
 	PanelWidget *panel_widget;
 
-	panel_widget = mate_panel_applet_get_panel_widget (info);
+	panel_widget = cafe_panel_applet_get_panel_widget (info);
 
 	panel_toplevel_push_autohide_disabler (panel_widget->toplevel);
 }
@@ -319,13 +319,13 @@ applet_menu_deactivate (GtkWidget *w,
 {
 	PanelWidget *panel_widget;
 
-	panel_widget = mate_panel_applet_get_panel_widget (info);
+	panel_widget = cafe_panel_applet_get_panel_widget (info);
 
 	panel_toplevel_pop_autohide_disabler (panel_widget->toplevel);
 }
 
 AppletUserMenu *
-mate_panel_applet_get_callback (GList      *user_menu,
+cafe_panel_applet_get_callback (GList      *user_menu,
 			   const char *name)
 {
 	GList *l;
@@ -341,7 +341,7 @@ mate_panel_applet_get_callback (GList      *user_menu,
 }
 
 void
-mate_panel_applet_add_callback (AppletInfo          *info,
+cafe_panel_applet_add_callback (AppletInfo          *info,
 			   const char          *callback_name,
 			   const char          *icon_name,
 			   const char          *menuitem_text,
@@ -350,7 +350,7 @@ mate_panel_applet_add_callback (AppletInfo          *info,
 	AppletUserMenu *menu;
 
 	g_return_if_fail (info != NULL);
-	g_return_if_fail (mate_panel_applet_get_callback (info->user_menu,
+	g_return_if_fail (cafe_panel_applet_get_callback (info->user_menu,
 						     callback_name) == NULL);
 
 	menu                  = g_new0 (AppletUserMenu, 1);
@@ -365,11 +365,11 @@ mate_panel_applet_add_callback (AppletInfo          *info,
 
 	info->user_menu = g_list_append (info->user_menu, menu);
 
-	mate_panel_applet_recreate_menu (info);
+	cafe_panel_applet_recreate_menu (info);
 }
 
 void
-mate_panel_applet_clear_user_menu (AppletInfo *info)
+cafe_panel_applet_clear_user_menu (AppletInfo *info)
 {
 	GList *l;
 
@@ -458,7 +458,7 @@ add_to_submenus (AppletInfo *info,
 	p++;
 
 	t = g_strconcat (path, n, "/", NULL);
-	s_menu = mate_panel_applet_get_callback (user_menu, t);
+	s_menu = cafe_panel_applet_get_callback (user_menu, t);
 	/*the user did not give us this sub menu, whoops, will create an empty
 	  one then*/
 	if (s_menu == NULL) {
@@ -493,7 +493,7 @@ add_to_submenus (AppletInfo *info,
 }
 
 GtkWidget *
-mate_panel_applet_create_menu (AppletInfo *info)
+cafe_panel_applet_create_menu (AppletInfo *info)
 {
 	GtkWidget   *menu;
 	GtkWidget   *menuitem;
@@ -501,7 +501,7 @@ mate_panel_applet_create_menu (AppletInfo *info)
 	PanelWidget *panel_widget;
 	gboolean     added_anything = FALSE;
 
-	panel_widget = mate_panel_applet_get_panel_widget (info);
+	panel_widget = cafe_panel_applet_get_panel_widget (info);
 
 	menu = g_object_ref_sink (gtk_menu_new ());
 
@@ -533,8 +533,8 @@ mate_panel_applet_create_menu (AppletInfo *info)
 		gboolean   movable;
 		gboolean   removable;
 
-		lockable = mate_panel_applet_lockable (info);
-		movable = mate_panel_applet_can_freely_move (info);
+		lockable = cafe_panel_applet_lockable (info);
+		movable = cafe_panel_applet_can_freely_move (info);
 		removable = panel_profile_id_lists_are_writable ();
 
 		locked = panel_widget_get_applet_locked (panel_widget, info->widget);
@@ -582,7 +582,7 @@ mate_panel_applet_create_menu (AppletInfo *info)
 		menuitem = panel_check_menu_item_new (menuitem);
 
 		g_signal_connect (menuitem, "activate",
-				  G_CALLBACK (mate_panel_applet_lock), info);
+				  G_CALLBACK (cafe_panel_applet_lock), info);
 
 		gtk_widget_show (menuitem);
 
@@ -607,13 +607,13 @@ mate_panel_applet_create_menu (AppletInfo *info)
 	GtkStyleContext *context;
 	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
 	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
-	gtk_style_context_add_class(context,"mate-panel-menu-bar");
+	gtk_style_context_add_class(context,"cafe-panel-menu-bar");
 
 	return menu;
 }
 
 void
-mate_panel_applet_menu_set_recurse (GtkMenu     *menu,
+cafe_panel_applet_menu_set_recurse (GtkMenu     *menu,
 			       const gchar *key,
 			       gpointer     data)
 {
@@ -628,7 +628,7 @@ mate_panel_applet_menu_set_recurse (GtkMenu     *menu,
 		GtkWidget *submenu = gtk_menu_item_get_submenu (GTK_MENU_ITEM (l->data));
 
 		if (submenu)
-			mate_panel_applet_menu_set_recurse (
+			cafe_panel_applet_menu_set_recurse (
 				GTK_MENU (submenu), key, data);
 	}
 
@@ -643,15 +643,15 @@ applet_show_menu (AppletInfo     *info,
 
 	g_return_if_fail (info != NULL);
 
-	panel_widget = mate_panel_applet_get_panel_widget (info);
+	panel_widget = cafe_panel_applet_get_panel_widget (info);
 
 	if (info->menu == NULL)
-		info->menu = mate_panel_applet_create_menu (info);
+		info->menu = cafe_panel_applet_create_menu (info);
 
 	if (info->menu == NULL)
 		return;
 
-	mate_panel_applet_menu_set_recurse (GTK_MENU (info->menu),
+	cafe_panel_applet_menu_set_recurse (GTK_MENU (info->menu),
 				       "menu_panel",
 				       panel_widget);
 
@@ -669,7 +669,7 @@ applet_do_popup_menu (GtkWidget      *widget,
 		      GdkEventButton *event,
 		      AppletInfo     *info)
 {
-	if (mate_panel_applet_is_in_drag ())
+	if (cafe_panel_applet_is_in_drag ())
 		return FALSE;
 
 	if (info->type == PANEL_OBJECT_APPLET)
@@ -700,11 +700,11 @@ applet_button_press (GtkWidget      *widget,
 	gboolean     applet_locked;
 	PanelWidget *panel_widget;
 
-	panel_widget = mate_panel_applet_get_panel_widget (info);
+	panel_widget = cafe_panel_applet_get_panel_widget (info);
 	applet_locked = panel_widget_get_applet_locked (panel_widget,
 							info->widget);
 
-	if (!applet_locked) mate_panel_applet_set_dnd_enabled (info, TRUE);
+	if (!applet_locked) cafe_panel_applet_set_dnd_enabled (info, TRUE);
 
 	if (event->button == 3)
 		return applet_do_popup_menu (widget, event, info);
@@ -713,7 +713,7 @@ applet_button_press (GtkWidget      *widget,
 }
 
 static void
-mate_panel_applet_destroy (GtkWidget  *widget,
+cafe_panel_applet_destroy (GtkWidget  *widget,
 		      AppletInfo *info)
 {
 	g_return_if_fail (info != NULL);
@@ -748,7 +748,7 @@ mate_panel_applet_destroy (GtkWidget  *widget,
 	}
 
 	if (info->type != PANEL_OBJECT_APPLET)
-		panel_lockdown_notify_remove (G_CALLBACK (mate_panel_applet_recreate_menu),
+		panel_lockdown_notify_remove (G_CALLBACK (cafe_panel_applet_recreate_menu),
 					      info);
 
 	if (info->menu) {
@@ -762,7 +762,7 @@ mate_panel_applet_destroy (GtkWidget  *widget,
 		info->data_destroy (info->data);
 	info->data = NULL;
 
-	mate_panel_applet_clear_user_menu (info);
+	cafe_panel_applet_clear_user_menu (info);
 
 	g_free (info->id);
 	info->id = NULL;
@@ -780,15 +780,15 @@ typedef struct {
 } MatePanelAppletToLoad;
 
 /* Each time those lists get both empty,
- * mate_panel_applet_queue_initial_unhide_toplevels() should be called */
-static GSList  *mate_panel_applets_to_load = NULL;
-static GSList  *mate_panel_applets_loading = NULL;
+ * cafe_panel_applet_queue_initial_unhide_toplevels() should be called */
+static GSList  *cafe_panel_applets_to_load = NULL;
+static GSList  *cafe_panel_applets_loading = NULL;
 /* We have a timeout to always unhide toplevels after a delay, in case of some
  * blocking applet */
 #define         UNHIDE_TOPLEVELS_TIMEOUT_SECONDS 5
-static guint    mate_panel_applet_unhide_toplevels_timeout = 0;
+static guint    cafe_panel_applet_unhide_toplevels_timeout = 0;
 
-static gboolean mate_panel_applet_have_load_idle = FALSE;
+static gboolean cafe_panel_applet_have_load_idle = FALSE;
 
 static void
 free_applet_to_load (MatePanelAppletToLoad *applet)
@@ -803,15 +803,15 @@ free_applet_to_load (MatePanelAppletToLoad *applet)
 }
 
 gboolean
-mate_panel_applet_on_load_queue (const char *id)
+cafe_panel_applet_on_load_queue (const char *id)
 {
 	GSList *li;
-	for (li = mate_panel_applets_to_load; li != NULL; li = li->next) {
+	for (li = cafe_panel_applets_to_load; li != NULL; li = li->next) {
 		MatePanelAppletToLoad *applet = li->data;
 		if (strcmp (applet->id, id) == 0)
 			return TRUE;
 	}
-	for (li = mate_panel_applets_loading; li != NULL; li = li->next) {
+	for (li = cafe_panel_applets_loading; li != NULL; li = li->next) {
 		MatePanelAppletToLoad *applet = li->data;
 		if (strcmp (applet->id, id) == 0)
 			return TRUE;
@@ -821,13 +821,13 @@ mate_panel_applet_on_load_queue (const char *id)
 
 /* This doesn't do anything if the initial unhide already happened */
 static gboolean
-mate_panel_applet_queue_initial_unhide_toplevels (gpointer user_data)
+cafe_panel_applet_queue_initial_unhide_toplevels (gpointer user_data)
 {
 	GSList *l;
 
-	if (mate_panel_applet_unhide_toplevels_timeout != 0) {
-		g_source_remove (mate_panel_applet_unhide_toplevels_timeout);
-		mate_panel_applet_unhide_toplevels_timeout = 0;
+	if (cafe_panel_applet_unhide_toplevels_timeout != 0) {
+		g_source_remove (cafe_panel_applet_unhide_toplevels_timeout);
+		cafe_panel_applet_unhide_toplevels_timeout = 0;
 	}
 
 	for (l = panel_toplevel_list_toplevels (); l != NULL; l = l->next)
@@ -837,12 +837,12 @@ mate_panel_applet_queue_initial_unhide_toplevels (gpointer user_data)
 }
 
 void
-mate_panel_applet_stop_loading (const char *id)
+cafe_panel_applet_stop_loading (const char *id)
 {
 	MatePanelAppletToLoad *applet;
 	GSList *l;
 
-	for (l = mate_panel_applets_loading; l; l = l->next) {
+	for (l = cafe_panel_applets_loading; l; l = l->next) {
 		applet = l->data;
 
 		if (strcmp (applet->id, id) == 0)
@@ -852,16 +852,16 @@ mate_panel_applet_stop_loading (const char *id)
 	/* this can happen if we reload an applet after it crashed,
 	 * for example */
 	if (l != NULL) {
-		mate_panel_applets_loading = g_slist_delete_link (mate_panel_applets_loading, l);
+		cafe_panel_applets_loading = g_slist_delete_link (cafe_panel_applets_loading, l);
 		free_applet_to_load (applet);
 	}
 
-	if (mate_panel_applets_loading == NULL && mate_panel_applets_to_load == NULL)
-		mate_panel_applet_queue_initial_unhide_toplevels (NULL);
+	if (cafe_panel_applets_loading == NULL && cafe_panel_applets_to_load == NULL)
+		cafe_panel_applet_queue_initial_unhide_toplevels (NULL);
 }
 
 static gboolean
-mate_panel_applet_load_idle_handler (gpointer dummy)
+cafe_panel_applet_load_idle_handler (gpointer dummy)
 {
 	PanelObjectType    applet_type;
 	MatePanelAppletToLoad *applet = NULL;
@@ -869,12 +869,12 @@ mate_panel_applet_load_idle_handler (gpointer dummy)
 	PanelWidget       *panel_widget;
 	GSList            *l;
 
-	if (!mate_panel_applets_to_load) {
-		mate_panel_applet_have_load_idle = FALSE;
+	if (!cafe_panel_applets_to_load) {
+		cafe_panel_applet_have_load_idle = FALSE;
 		return FALSE;
 	}
 
-	for (l = mate_panel_applets_to_load; l; l = l->next) {
+	for (l = cafe_panel_applets_to_load; l; l = l->next) {
 		applet = l->data;
 
 		toplevel = panel_profile_get_toplevel_by_id (applet->toplevel_id);
@@ -884,22 +884,22 @@ mate_panel_applet_load_idle_handler (gpointer dummy)
 
 	if (!l) {
 		/* All the remaining applets don't have a panel */
-		for (l = mate_panel_applets_to_load; l; l = l->next)
+		for (l = cafe_panel_applets_to_load; l; l = l->next)
 			free_applet_to_load (l->data);
-		g_slist_free (mate_panel_applets_to_load);
-		mate_panel_applets_to_load = NULL;
-		mate_panel_applet_have_load_idle = FALSE;
+		g_slist_free (cafe_panel_applets_to_load);
+		cafe_panel_applets_to_load = NULL;
+		cafe_panel_applet_have_load_idle = FALSE;
 
-		if (mate_panel_applets_loading == NULL) {
+		if (cafe_panel_applets_loading == NULL) {
 			/* unhide any potential initially hidden toplevel */
-			mate_panel_applet_queue_initial_unhide_toplevels (NULL);
+			cafe_panel_applet_queue_initial_unhide_toplevels (NULL);
 		}
 
 		return FALSE;
 	}
 
-	mate_panel_applets_to_load = g_slist_delete_link (mate_panel_applets_to_load, l);
-	mate_panel_applets_loading = g_slist_append (mate_panel_applets_loading, applet);
+	cafe_panel_applets_to_load = g_slist_delete_link (cafe_panel_applets_to_load, l);
+	cafe_panel_applets_loading = g_slist_append (cafe_panel_applets_loading, applet);
 
 	panel_widget = panel_toplevel_get_panel_widget (toplevel);
 
@@ -911,8 +911,8 @@ mate_panel_applet_load_idle_handler (gpointer dummy)
 	}
 
 	/* We load applets asynchronously, so we specifically don't call
-	 * mate_panel_applet_stop_loading() for this type. However, in case of
-	 * failure during the load, we might call mate_panel_applet_stop_loading()
+	 * cafe_panel_applet_stop_loading() for this type. However, in case of
+	 * failure during the load, we might call cafe_panel_applet_stop_loading()
 	 * synchronously, which will make us lose the content of the applet
 	 * variable. So we save the type to be sure we always ignore the
 	 * applets. */
@@ -920,7 +920,7 @@ mate_panel_applet_load_idle_handler (gpointer dummy)
 
 	switch (applet_type) {
 	case PANEL_OBJECT_APPLET:
-		mate_panel_applet_frame_load_from_gsettings (
+		cafe_panel_applet_frame_load_from_gsettings (
 					panel_widget,
 					applet->locked,
 					applet->position,
@@ -974,13 +974,13 @@ mate_panel_applet_load_idle_handler (gpointer dummy)
 
 	/* Only the real applets will do a late stop_loading */
 	if (applet_type != PANEL_OBJECT_APPLET)
-		mate_panel_applet_stop_loading (applet->id);
+		cafe_panel_applet_stop_loading (applet->id);
 
 	return TRUE;
 }
 
 void
-mate_panel_applet_queue_applet_to_load (const char      *id,
+cafe_panel_applet_queue_applet_to_load (const char      *id,
 				   PanelObjectType  type,
 				   const char      *toplevel_id,
 				   int              position,
@@ -1003,11 +1003,11 @@ mate_panel_applet_queue_applet_to_load (const char      *id,
 	applet->right_stick = right_stick != FALSE;
 	applet->locked      = locked != FALSE;
 
-	mate_panel_applets_to_load = g_slist_prepend (mate_panel_applets_to_load, applet);
+	cafe_panel_applets_to_load = g_slist_prepend (cafe_panel_applets_to_load, applet);
 }
 
 static int
-mate_panel_applet_compare (const MatePanelAppletToLoad *a,
+cafe_panel_applet_compare (const MatePanelAppletToLoad *a,
 		      const MatePanelAppletToLoad *b)
 {
 	int c;
@@ -1021,48 +1021,48 @@ mate_panel_applet_compare (const MatePanelAppletToLoad *a,
 }
 
 void
-mate_panel_applet_load_queued_applets (gboolean initial_load)
+cafe_panel_applet_load_queued_applets (gboolean initial_load)
 {
-	if (!mate_panel_applets_to_load) {
-		mate_panel_applet_queue_initial_unhide_toplevels (NULL);
+	if (!cafe_panel_applets_to_load) {
+		cafe_panel_applet_queue_initial_unhide_toplevels (NULL);
 		return;
 	}
 
-	if (mate_panel_applets_to_load && mate_panel_applet_unhide_toplevels_timeout == 0) {
+	if (cafe_panel_applets_to_load && cafe_panel_applet_unhide_toplevels_timeout == 0) {
 		/* Install a timeout to make sure we don't block the
 		 * unhiding because of an applet that doesn't load */
-		mate_panel_applet_unhide_toplevels_timeout =
+		cafe_panel_applet_unhide_toplevels_timeout =
 			g_timeout_add_seconds (UNHIDE_TOPLEVELS_TIMEOUT_SECONDS,
-					       mate_panel_applet_queue_initial_unhide_toplevels,
+					       cafe_panel_applet_queue_initial_unhide_toplevels,
 					       NULL);
 	}
 
-	mate_panel_applets_to_load = g_slist_sort (mate_panel_applets_to_load,
-					      (GCompareFunc) mate_panel_applet_compare);
+	cafe_panel_applets_to_load = g_slist_sort (cafe_panel_applets_to_load,
+					      (GCompareFunc) cafe_panel_applet_compare);
 
-	if ( ! mate_panel_applet_have_load_idle) {
+	if ( ! cafe_panel_applet_have_load_idle) {
 		/* on panel startup, we don't care about redraws of the
 		 * toplevels since they are hidden, so we give a higher
 		 * priority to loading of applets */
 		if (initial_load)
 			g_idle_add_full (G_PRIORITY_HIGH_IDLE,
-					 mate_panel_applet_load_idle_handler,
+					 cafe_panel_applet_load_idle_handler,
 					 NULL, NULL);
 		else
-			g_idle_add (mate_panel_applet_load_idle_handler, NULL);
+			g_idle_add (cafe_panel_applet_load_idle_handler, NULL);
 
-		mate_panel_applet_have_load_idle = TRUE;
+		cafe_panel_applet_have_load_idle = TRUE;
 	}
 }
 
-static const char* mate_panel_applet_get_toplevel_id(AppletInfo* applet)
+static const char* cafe_panel_applet_get_toplevel_id(AppletInfo* applet)
 {
 	PanelWidget* panel_widget;
 
 	g_return_val_if_fail(applet != NULL, NULL);
 	g_return_val_if_fail(GTK_IS_WIDGET(applet->widget), NULL);
 
-	panel_widget = mate_panel_applet_get_panel_widget(applet);
+	panel_widget = cafe_panel_applet_get_panel_widget(applet);
 
 	if (!panel_widget)
 	{
@@ -1073,7 +1073,7 @@ static const char* mate_panel_applet_get_toplevel_id(AppletInfo* applet)
 }
 
 static gboolean
-mate_panel_applet_position_save_timeout (gpointer dummy)
+cafe_panel_applet_position_save_timeout (gpointer dummy)
 {
 	GSList *l;
 
@@ -1082,7 +1082,7 @@ mate_panel_applet_position_save_timeout (gpointer dummy)
 	for (l = queued_position_saves; l; l = l->next) {
 		AppletInfo *info = l->data;
 
-		mate_panel_applet_save_position (info, info->id, TRUE);
+		cafe_panel_applet_save_position (info, info->id, TRUE);
 	}
 
 	g_slist_free (queued_position_saves);
@@ -1092,7 +1092,7 @@ mate_panel_applet_position_save_timeout (gpointer dummy)
 }
 
 void
-mate_panel_applet_save_position (AppletInfo *applet_info,
+cafe_panel_applet_save_position (AppletInfo *applet_info,
 			    const char *id,
 			    gboolean    immediate)
 {
@@ -1109,7 +1109,7 @@ mate_panel_applet_save_position (AppletInfo *applet_info,
 		if (!queued_position_source)
 			queued_position_source =
 				g_timeout_add_seconds (1,
-						       (GSourceFunc) mate_panel_applet_position_save_timeout,
+						       (GSourceFunc) cafe_panel_applet_position_save_timeout,
 						       NULL);
 
 		if (!g_slist_find (queued_position_saves, applet_info))
@@ -1119,10 +1119,10 @@ mate_panel_applet_save_position (AppletInfo *applet_info,
 		return;
 	}
 
-	if (!(toplevel_id = mate_panel_applet_get_toplevel_id (applet_info)))
+	if (!(toplevel_id = cafe_panel_applet_get_toplevel_id (applet_info)))
 		return;
 
-	panel_widget = mate_panel_applet_get_panel_widget (applet_info);
+	panel_widget = cafe_panel_applet_get_panel_widget (applet_info);
 
 	/* FIXME: Instead of getting keys, comparing and setting, there
 	   should be a dirty flag */
@@ -1153,7 +1153,7 @@ mate_panel_applet_save_position (AppletInfo *applet_info,
 	    (g_settings_get_boolean (applet_info->settings, PANEL_OBJECT_PANEL_RIGHT_STICK_KEY) ? 1 : 0) != right_stick)
 		g_settings_set_boolean (applet_info->settings, PANEL_OBJECT_PANEL_RIGHT_STICK_KEY, right_stick);
 
-	position = mate_panel_applet_get_position (applet_info);
+	position = cafe_panel_applet_get_position (applet_info);
 	if (right_stick && !panel_widget->packed)
 		position = panel_widget->size - position;
 
@@ -1163,7 +1163,7 @@ mate_panel_applet_save_position (AppletInfo *applet_info,
 }
 
 const char *
-mate_panel_applet_get_id (AppletInfo *info)
+cafe_panel_applet_get_id (AppletInfo *info)
 {
 	if (!info)
 		return NULL;
@@ -1172,7 +1172,7 @@ mate_panel_applet_get_id (AppletInfo *info)
 }
 
 const char *
-mate_panel_applet_get_id_by_widget (GtkWidget *applet_widget)
+cafe_panel_applet_get_id_by_widget (GtkWidget *applet_widget)
 {
 	GSList *l;
 
@@ -1190,7 +1190,7 @@ mate_panel_applet_get_id_by_widget (GtkWidget *applet_widget)
 }
 
 AppletInfo *
-mate_panel_applet_get_by_id (const char *id)
+cafe_panel_applet_get_by_id (const char *id)
 {
 	GSList *l;
 
@@ -1205,13 +1205,13 @@ mate_panel_applet_get_by_id (const char *id)
 }
 
 GSList *
-mate_panel_applet_list_applets (void)
+cafe_panel_applet_list_applets (void)
 {
 	return registered_applets;
 }
 
 AppletInfo *
-mate_panel_applet_get_by_type (PanelObjectType object_type, GdkScreen *screen)
+cafe_panel_applet_get_by_type (PanelObjectType object_type, GdkScreen *screen)
 {
 	GSList *l;
 
@@ -1231,7 +1231,7 @@ mate_panel_applet_get_by_type (PanelObjectType object_type, GdkScreen *screen)
 }
 
 AppletInfo *
-mate_panel_applet_register (GtkWidget       *applet,
+cafe_panel_applet_register (GtkWidget       *applet,
 		       gpointer         data,
 		       GDestroyNotify   data_destroy,
 		       PanelWidget     *panel,
@@ -1270,13 +1270,13 @@ mate_panel_applet_register (GtkWidget       *applet,
 	g_object_set_data (G_OBJECT (applet), "applet_info", info);
 
 	if (type != PANEL_OBJECT_APPLET)
-		panel_lockdown_notify_add (G_CALLBACK (mate_panel_applet_recreate_menu),
+		panel_lockdown_notify_add (G_CALLBACK (cafe_panel_applet_recreate_menu),
 					   info);
 
 	locked_changed = g_strdup_printf ("changed::%s", PANEL_OBJECT_LOCKED_KEY);
 	g_signal_connect (info->settings,
 					  locked_changed,
-					  G_CALLBACK (mate_panel_applet_locked_change_notify),
+					  G_CALLBACK (cafe_panel_applet_locked_change_notify),
 					  G_OBJECT (applet));
 	g_free (locked_changed);
 
@@ -1328,10 +1328,10 @@ mate_panel_applet_register (GtkWidget       *applet,
 	}
 
 	g_signal_connect (applet, "destroy",
-			  G_CALLBACK (mate_panel_applet_destroy),
+			  G_CALLBACK (cafe_panel_applet_destroy),
 			  info);
 
-	mate_panel_applet_set_dnd_enabled (info, !locked);
+	cafe_panel_applet_set_dnd_enabled (info, !locked);
 
 	gtk_widget_show_all (applet);
 
@@ -1348,7 +1348,7 @@ mate_panel_applet_register (GtkWidget       *applet,
 }
 
 int
-mate_panel_applet_get_position (AppletInfo *applet)
+cafe_panel_applet_get_position (AppletInfo *applet)
 {
 	AppletData *applet_data;
 
@@ -1361,7 +1361,7 @@ mate_panel_applet_get_position (AppletInfo *applet)
 }
 
 gboolean
-mate_panel_applet_can_freely_move (AppletInfo *applet)
+cafe_panel_applet_can_freely_move (AppletInfo *applet)
 {
 	if (panel_lockdown_get_locked_down ())
 		return FALSE;
@@ -1379,7 +1379,7 @@ mate_panel_applet_can_freely_move (AppletInfo *applet)
 }
 
 gboolean
-mate_panel_applet_lockable (AppletInfo *applet)
+cafe_panel_applet_lockable (AppletInfo *applet)
 {
 	if (panel_lockdown_get_locked_down ())
 		return FALSE;

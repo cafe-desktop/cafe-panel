@@ -31,7 +31,7 @@ extern "C" {
 
 typedef struct _MatePanelAppletInfo MatePanelAppletInfo;
 
-MatePanelAppletInfo *mate_panel_applet_info_new (const gchar  *iid,
+MatePanelAppletInfo *cafe_panel_applet_info_new (const gchar  *iid,
 						 const gchar  *name,
 						 const gchar  *comment,
 						 const gchar  *icon,
@@ -39,15 +39,15 @@ MatePanelAppletInfo *mate_panel_applet_info_new (const gchar  *iid,
 						 gboolean      x11_supported,
 						 gboolean      wayland_supported);
 
-void             mate_panel_applet_info_free                            (MatePanelAppletInfo *info);
+void             cafe_panel_applet_info_free                            (MatePanelAppletInfo *info);
 
-const gchar     *mate_panel_applet_info_get_iid                         (MatePanelAppletInfo *info);
-const gchar     *mate_panel_applet_info_get_name                        (MatePanelAppletInfo *info);
-const gchar     *mate_panel_applet_info_get_description                 (MatePanelAppletInfo *info);
-const gchar     *mate_panel_applet_info_get_icon                        (MatePanelAppletInfo *info);
-const gchar * const *mate_panel_applet_info_get_old_ids                 (MatePanelAppletInfo *info);
-gboolean         mate_panel_applet_info_get_x11_supported               (MatePanelAppletInfo *info);
-gboolean         mate_panel_applet_info_get_wayland_supported           (MatePanelAppletInfo *info);
+const gchar     *cafe_panel_applet_info_get_iid                         (MatePanelAppletInfo *info);
+const gchar     *cafe_panel_applet_info_get_name                        (MatePanelAppletInfo *info);
+const gchar     *cafe_panel_applet_info_get_description                 (MatePanelAppletInfo *info);
+const gchar     *cafe_panel_applet_info_get_icon                        (MatePanelAppletInfo *info);
+const gchar * const *cafe_panel_applet_info_get_old_ids                 (MatePanelAppletInfo *info);
+gboolean         cafe_panel_applet_info_get_x11_supported               (MatePanelAppletInfo *info);
+gboolean         cafe_panel_applet_info_get_wayland_supported           (MatePanelAppletInfo *info);
 
 #ifdef __cplusplus
 }

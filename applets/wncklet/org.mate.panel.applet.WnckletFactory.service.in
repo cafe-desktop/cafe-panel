@@ -1,3 +1,3 @@
 [D-BUS Service]
-Name=org.mate.panel.applet.WnckletFactory
+Name=org.cafe.panel.applet.WnckletFactory
 Exec=@LOCATION@
