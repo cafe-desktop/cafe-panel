@@ -37,6 +37,14 @@ requires:
     - meson
     - yelp-tools
 
+    #required for cafe-desktop
+    - intltool
+    - iso-codes
+    - libglib2.0-doc
+    - libstartup-notification0-dev
+    - libtool
+    - libxml2-dev
+
 before_scripts:
   - ./html-cppcheck
   - ./debrepo-install 'libctk-3-dev gir1.2-ctk-3.0 libctk-3-common libctk-3-0 libctk-3-doc'
