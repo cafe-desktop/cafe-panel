@@ -1,5 +1,5 @@
 /*
- * panel-action-protocol.h: _MATE_PANEL_ACTION protocol impl.
+ * panel-action-protocol.h: _CAFE_PANEL_ACTION protocol impl.
  *
  * Copyright (C) 2003 Sun Microsystems, Inc.
  *

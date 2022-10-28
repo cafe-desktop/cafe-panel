@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -235,10 +235,10 @@ msgstr "Program Jam ini untuk menunjukkan waktu dan tanggal sekarang"
 #: applets/clock/clock.c:3393
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Hak Cipta © 1998-2004 Free Software Foundation, Inc.\n"
-"Hak Cipta © 2012-2020 pengembang MATE"
+"Hak Cipta © 2012-2020 pengembang CAFE"
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
 #: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
@@ -250,7 +250,7 @@ msgstr ""
 "Mohammad DAMT <mdamt@bisnisweb.com>\n"
 "Ahmad Riza H Nst  <ari@160c.afraid.org>\n"
 "Dirgita <dirgita@gmail.com>\n"
-"Tim MATE Indonesia <http://id.cafe.org>\n"
+"Tim CAFE Indonesia <http://id.cafe.org>\n"
 "Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017.\n"
 "Andika Triwidada <andika@gmail.com>, 2020."
 
@@ -697,11 +697,11 @@ msgstr "Tentang Ikan"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Hak Cipta © 1998-2002 Free Software Foundation, Inc.\n"
 "Hak Cipta © 2002-2005 Vincent Untz\n"
-"Hak Cipta © 2012-2020 pengembang MATE"
+"Hak Cipta © 2012-2020 pengembang CAFE"
 
 #: applets/fish/fish.c:579
 #, c-format
@@ -915,12 +915,12 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Hak Cipta © 2002 Red Hat, Inc.\n"
 "Hak Cipta © 2003-2006 Vincent Untz\n"
 "Hak Cipta © 2011 Perberos\n"
-"Hak Cipta © 2012-2020 pengembang MATE"
+"Hak Cipta © 2012-2020 pengembang CAFE"
 
 #: applets/notification_area/main.c:485
 msgid "Panel Notification Area"
@@ -1165,11 +1165,11 @@ msgstr ""
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Hak Cipta © 2002 Red Hat, Inc.\n"
 "Hak Cipta © 2011 Perberos\n"
-"Hak Cipta © 2012-2020 pengembang MATE"
+"Hak Cipta © 2012-2020 pengembang CAFE"
 
 #: applets/wncklet/showdesktop.c:529
 msgid ""
@@ -1282,13 +1282,13 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Hak Cipta © 2000 Helix Code, Inc.\n"
 "Hak Cipta © 2001 Free Software Foundation, Inc.\n"
 "Hak Cipta © 2003 Sun Microsystems, Inc.\n"
 "Hak Cipta © 2011 Perberos\n"
-"Hak Cipta © 2012-2020 pengembang MATE"
+"Hak Cipta © 2012-2020 pengembang CAFE"
 
 #: applets/wncklet/workspace-switcher.c:240
 #: applets/wncklet/workspace-switcher.c:939
@@ -1539,12 +1539,12 @@ msgstr "IID Applet yang akan dinonaktifkan"
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "Daftar IID applet yang akan diabaikan. Dengan cara ini, Anda dapat "
 "mengaktifkan atau mematikan applet pada menu. Misalnya, untuk mematikan "
-"applet mini-commander, silakan tambahkan 'OAFIID:MATE_MiniCommanderApplet' "
+"applet mini-commander, silakan tambahkan 'OAFIID:CAFE_MiniCommanderApplet' "
 "pada daftar ini. Setelah itu restart panel agar pengaturan ini dapat "
 "berlaku."
 
@@ -2654,18 +2654,18 @@ msgid "And many, many others…"
 msgstr "Dan masih banyak lagi lainnya..."
 
 #: cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
-msgstr "Panel MATE"
+msgid "The CAFE Panel"
+msgstr "Panel CAFE"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE developers"
+"Copyright © 2011-2020 CAFE developers"
 msgstr ""
 "Hak Cipta © 1997-2003 Free Software Foundation, Inc.\n"
 "Hak Cipta © 2004 Vincent Untz\n"
-"Hak Cipta © 2011-2020 pengembang MATE"
+"Hak Cipta © 2011-2020 pengembang CAFE"
 
 #: cafe-panel/panel-context-menu.c:119
 msgid ""
@@ -2676,8 +2676,8 @@ msgstr ""
 "menyediakan berbagai utilitas yang bermanfaat."
 
 #: cafe-panel/panel-context-menu.c:123
-msgid "About the MATE Panel"
-msgstr "Tentang Panel MATE"
+msgid "About the CAFE Panel"
+msgstr "Tentang Panel CAFE"
 
 #: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
@@ -3368,8 +3368,8 @@ msgid "Test DBus Applet"
 msgstr "Aplet DBus Uji"
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
-msgid "A simple applet for testing the MATE panel"
-msgstr "Aplet sederhana untuk menguji panel MATE"
+msgid "A simple applet for testing the CAFE panel"
+msgstr "Aplet sederhana untuk menguji panel CAFE"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!

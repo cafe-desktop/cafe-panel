@@ -1,10 +1,10 @@
 AM_CPPFLAGS = \
-	$(LIBMATE_PANEL_APPLET_CFLAGS) \
+	$(LIBCAFE_PANEL_APPLET_CFLAGS) \
 	$(FISH_CFLAGS) \
 	-I$(srcdir) \
 	-I$(srcdir)/../../libcafe-panel-applet \
 	-I$(top_builddir)/libcafe-panel-applet \
-	-DMATELOCALEDIR=\""$(datadir)/locale"\" \
+	-DCAFELOCALEDIR=\""$(datadir)/locale"\" \
 	-DFISH_ICONDIR=\""$(fishbitmapsdir)"\" \
 	$(DISABLE_DEPRECATED_CFLAGS)
 
@@ -17,7 +17,7 @@ FISH_SOURCES = \
 FISH_LDADD = \
 	../../libcafe-panel-applet/libcafe-panel-applet-4.la \
 	$(FISH_LIBS) \
-	$(LIBMATE_PANEL_APPLET_LIBS)
+	$(LIBCAFE_PANEL_APPLET_LIBS)
 
 if FISH_INPROCESS
 APPLET_IN_PROCESS = true

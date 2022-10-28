@@ -219,12 +219,12 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 
 	switch (orient)
 	{
-		case MATE_PANEL_APPLET_ORIENT_LEFT:
-		case MATE_PANEL_APPLET_ORIENT_RIGHT:
+		case CAFE_PANEL_APPLET_ORIENT_LEFT:
+		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
 			new_orient = GTK_ORIENTATION_VERTICAL;
 			break;
-		case MATE_PANEL_APPLET_ORIENT_UP:
-		case MATE_PANEL_APPLET_ORIENT_DOWN:
+		case CAFE_PANEL_APPLET_ORIENT_UP:
+		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		default:
 			new_orient = GTK_ORIENTATION_HORIZONTAL;
 			break;
@@ -496,7 +496,7 @@ static void wrap_workspaces_changed(GSettings* settings, gchar* key, PagerData* 
 
 static void setup_gsettings(PagerData* pager)
 {
-	pager->settings = cafe_panel_applet_settings_new (MATE_PANEL_APPLET (pager->applet), WORKSPACE_SWITCHER_SCHEMA);
+	pager->settings = cafe_panel_applet_settings_new (CAFE_PANEL_APPLET (pager->applet), WORKSPACE_SWITCHER_SCHEMA);
 
 	g_signal_connect (pager->settings,
 					  "changed::num-rows",
@@ -527,7 +527,7 @@ gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 
 	pager->applet = GTK_WIDGET(applet);
 
-	cafe_panel_applet_set_flags(MATE_PANEL_APPLET(pager->applet), MATE_PANEL_APPLET_EXPAND_MINOR);
+	cafe_panel_applet_set_flags(CAFE_PANEL_APPLET(pager->applet), CAFE_PANEL_APPLET_EXPAND_MINOR);
 
 	setup_gsettings(pager);
 
@@ -552,12 +552,12 @@ gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 
 	switch (cafe_panel_applet_get_orient(applet))
 	{
-		case MATE_PANEL_APPLET_ORIENT_LEFT:
-		case MATE_PANEL_APPLET_ORIENT_RIGHT:
+		case CAFE_PANEL_APPLET_ORIENT_LEFT:
+		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
 			pager->orientation = GTK_ORIENTATION_VERTICAL;
 			break;
-		case MATE_PANEL_APPLET_ORIENT_UP:
-		case MATE_PANEL_APPLET_ORIENT_DOWN:
+		case CAFE_PANEL_APPLET_ORIENT_UP:
+		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		default:
 			pager->orientation = GTK_ORIENTATION_HORIZONTAL;
 			break;
@@ -590,16 +590,16 @@ gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 	gtk_widget_show(pager->pager);
 	gtk_widget_show(pager->applet);
 
-	cafe_panel_applet_set_background_widget(MATE_PANEL_APPLET(pager->applet), GTK_WIDGET(pager->applet));
+	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET(pager->applet), GTK_WIDGET(pager->applet));
 
 	action_group = gtk_action_group_new("WorkspaceSwitcher Applet Actions");
 	gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions(action_group, pager_menu_actions, G_N_ELEMENTS(pager_menu_actions), pager);
-	cafe_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (pager->applet),
+	cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (pager->applet),
 	                                            WNCKLET_RESOURCE_PATH "workspace-switcher-menu.xml",
 	                                            action_group);
 
-	if (cafe_panel_applet_get_locked_down(MATE_PANEL_APPLET(pager->applet)))
+	if (cafe_panel_applet_get_locked_down(CAFE_PANEL_APPLET(pager->applet)))
 	{
 		GtkAction *action;
 
@@ -641,7 +641,7 @@ static void display_about_dialog(GtkAction* action, PagerData* pager)
 		"comments", _("The Workspace Switcher shows you a small version of your workspaces that lets you manage your windows."),
 		"copyright", _("Copyright \xc2\xa9 2002 Red Hat, Inc.\n"
                                "Copyright \xc2\xa9 2011 Perberos\n"
-                               "Copyright \xc2\xa9 2012-2020 MATE developers"),
+                               "Copyright \xc2\xa9 2012-2020 CAFE developers"),
 		"documenters", documenters,
 		"icon-name", WORKSPACE_SWITCHER_ICON,
 		"logo-icon-name", WORKSPACE_SWITCHER_ICON,

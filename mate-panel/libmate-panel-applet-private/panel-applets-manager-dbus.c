@@ -48,7 +48,7 @@ G_DEFINE_TYPE_WITH_CODE (CafePanelAppletsManagerDBus,
 			 cafe_panel_applets_manager_dbus,
 			 PANEL_TYPE_APPLETS_MANAGER,
 			 G_ADD_PRIVATE(CafePanelAppletsManagerDBus)
-			 g_io_extension_point_implement (MATE_PANEL_APPLETS_MANAGER_EXTENSION_POINT_NAME,
+			 g_io_extension_point_implement (CAFE_PANEL_APPLETS_MANAGER_EXTENSION_POINT_NAME,
 							 g_define_type_id,
 							 "dbus",
 							 10))
@@ -72,8 +72,8 @@ typedef struct _CafePanelAppletFactoryInfo {
 	gboolean            has_old_ids;
 } CafePanelAppletFactoryInfo;
 
-#define MATE_PANEL_APPLET_FACTORY_GROUP "Applet Factory"
-#define MATE_PANEL_APPLETS_EXTENSION    ".cafe-panel-applet"
+#define CAFE_PANEL_APPLET_FACTORY_GROUP "Applet Factory"
+#define CAFE_PANEL_APPLETS_EXTENSION    ".cafe-panel-applet"
 
 static void
 cafe_panel_applet_factory_info_free (CafePanelAppletFactoryInfo *info)
@@ -178,20 +178,20 @@ cafe_panel_applets_manager_get_applet_factory_info_from_file (const gchar *filen
 	}
 
 	info = g_slice_new0 (CafePanelAppletFactoryInfo);
-	info->id = g_key_file_get_string (applet_file, MATE_PANEL_APPLET_FACTORY_GROUP, "Id", NULL);
+	info->id = g_key_file_get_string (applet_file, CAFE_PANEL_APPLET_FACTORY_GROUP, "Id", NULL);
 	if (!info->id) {
 		g_warning ("Bad panel applet file %s: Could not find 'Id' in group '%s'",
-			   filename, MATE_PANEL_APPLET_FACTORY_GROUP);
+			   filename, CAFE_PANEL_APPLET_FACTORY_GROUP);
 		cafe_panel_applet_factory_info_free (info);
 		g_key_file_free (applet_file);
 
 		return NULL;
 	}
 
-	info->in_process = g_key_file_get_boolean (applet_file, MATE_PANEL_APPLET_FACTORY_GROUP,
+	info->in_process = g_key_file_get_boolean (applet_file, CAFE_PANEL_APPLET_FACTORY_GROUP,
 						   "InProcess", NULL);
 	if (info->in_process) {
-		info->location = g_key_file_get_string (applet_file, MATE_PANEL_APPLET_FACTORY_GROUP,
+		info->location = g_key_file_get_string (applet_file, CAFE_PANEL_APPLET_FACTORY_GROUP,
 							"Location", NULL);
 		if (!info->location) {
 			g_warning ("Bad panel applet file %s: In-process applet without 'Location'",
@@ -201,7 +201,7 @@ cafe_panel_applets_manager_get_applet_factory_info_from_file (const gchar *filen
 
 			return NULL;
 		}
-		lib_prefix = g_getenv ("MATE_PANEL_APPLET_LIB_PREFIX");
+		lib_prefix = g_getenv ("CAFE_PANEL_APPLET_LIB_PREFIX");
 		if (lib_prefix && g_strcmp0 (lib_prefix, "") != 0) {
 			char *location;
 			int location_len = strlen (lib_prefix) + strlen (info->location) + 1;
@@ -219,7 +219,7 @@ cafe_panel_applets_manager_get_applet_factory_info_from_file (const gchar *filen
 	for (i = 0; i < n_groups; i++) {
 		CafePanelAppletInfo *ainfo;
 
-		if (g_strcmp0 (groups[i], MATE_PANEL_APPLET_FACTORY_GROUP) == 0)
+		if (g_strcmp0 (groups[i], CAFE_PANEL_APPLET_FACTORY_GROUP) == 0)
 			continue;
 
 		ainfo = _cafe_panel_applets_manager_get_applet_info (applet_file,
@@ -251,9 +251,9 @@ cafe_panel_applets_manager_get_applets_dirs (void)
 	guint        i;
 	GSList      *retval = NULL;
 
-	dir = g_getenv ("MATE_PANEL_APPLETS_DIR");
+	dir = g_getenv ("CAFE_PANEL_APPLETS_DIR");
 	if (!dir || g_strcmp0 (dir, "") == 0) {
-		return g_slist_prepend (NULL, g_strdup (MATE_PANEL_APPLETS_DIR));
+		return g_slist_prepend (NULL, g_strdup (CAFE_PANEL_APPLETS_DIR));
 	}
 
 	paths = g_strsplit (dir, ":", 0);
@@ -274,7 +274,7 @@ applets_directory_changed (GFileMonitor     *monitor,
 			   GFileMonitorEvent event_type,
 			   gpointer          user_data)
 {
-	CafePanelAppletsManagerDBus *manager = MATE_PANEL_APPLETS_MANAGER_DBUS (user_data);
+	CafePanelAppletsManagerDBus *manager = CAFE_PANEL_APPLETS_MANAGER_DBUS (user_data);
 
 	switch (event_type) {
 	case G_FILE_MONITOR_EVENT_CHANGED:
@@ -285,7 +285,7 @@ applets_directory_changed (GFileMonitor     *monitor,
 		GSList                 *dirs, *d;
 
 		filename = g_file_get_path (file);
-		if (!g_str_has_suffix (filename, MATE_PANEL_APPLETS_EXTENSION)) {
+		if (!g_str_has_suffix (filename, CAFE_PANEL_APPLETS_EXTENSION)) {
 			g_free (filename);
 			return;
 		}
@@ -375,7 +375,7 @@ cafe_panel_applets_manager_dbus_load_applet_infos (CafePanelAppletsManagerDBus *
 			CafePanelAppletFactoryInfo *info;
 			gchar                  *file;
 
-			if (!g_str_has_suffix (dirent, MATE_PANEL_APPLETS_EXTENSION))
+			if (!g_str_has_suffix (dirent, CAFE_PANEL_APPLETS_EXTENSION))
 				continue;
 
 			file = g_build_filename (path, dirent, NULL);
@@ -403,7 +403,7 @@ cafe_panel_applets_manager_dbus_load_applet_infos (CafePanelAppletsManagerDBus *
 static GList *
 cafe_panel_applets_manager_dbus_get_applets (CafePanelAppletsManager *manager)
 {
-	CafePanelAppletsManagerDBus *dbus_manager = MATE_PANEL_APPLETS_MANAGER_DBUS (manager);
+	CafePanelAppletsManagerDBus *dbus_manager = CAFE_PANEL_APPLETS_MANAGER_DBUS (manager);
 
 	GHashTableIter iter;
 	gpointer       key, value;
@@ -424,7 +424,7 @@ static CafePanelAppletFactoryInfo *
 get_applet_factory_info (CafePanelAppletsManager *manager,
 			 const gchar         *iid)
 {
-	CafePanelAppletsManagerDBus *dbus_manager = MATE_PANEL_APPLETS_MANAGER_DBUS (manager);
+	CafePanelAppletsManagerDBus *dbus_manager = CAFE_PANEL_APPLETS_MANAGER_DBUS (manager);
 
 	CafePanelAppletFactoryInfo *info;
 	const gchar            *sp;
@@ -454,7 +454,7 @@ cafe_panel_applets_manager_dbus_factory_activate (CafePanelAppletsManager *manag
 	if (!info)
 		return FALSE;
 
-	applet_info = MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_info (manager, iid);
+	applet_info = CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_info (manager, iid);
 	g_return_val_if_fail (applet_info, FALSE);
 #ifdef HAVE_X11
 	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()) &&
@@ -586,7 +586,7 @@ static CafePanelAppletInfo *
 cafe_panel_applets_manager_dbus_get_applet_info_from_old_id (CafePanelAppletsManager *manager,
 							const gchar         *iid)
 {
-	CafePanelAppletsManagerDBus *dbus_manager = MATE_PANEL_APPLETS_MANAGER_DBUS (manager);
+	CafePanelAppletsManagerDBus *dbus_manager = CAFE_PANEL_APPLETS_MANAGER_DBUS (manager);
 
 	GHashTableIter iter;
 	gpointer       key, value;
@@ -648,7 +648,7 @@ cafe_panel_applets_manager_dbus_get_applet_widget (CafePanelAppletsManager *mana
 static void
 cafe_panel_applets_manager_dbus_finalize (GObject *object)
 {
-	CafePanelAppletsManagerDBus *manager = MATE_PANEL_APPLETS_MANAGER_DBUS (object);
+	CafePanelAppletsManagerDBus *manager = CAFE_PANEL_APPLETS_MANAGER_DBUS (object);
 
 	if (manager->priv->monitors) {
 		g_list_foreach (manager->priv->monitors, (GFunc) g_object_unref, NULL);
@@ -681,7 +681,7 @@ static void
 cafe_panel_applets_manager_dbus_class_init (CafePanelAppletsManagerDBusClass *class)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (class);
-	CafePanelAppletsManagerClass *manager_class = MATE_PANEL_APPLETS_MANAGER_CLASS (class);
+	CafePanelAppletsManagerClass *manager_class = CAFE_PANEL_APPLETS_MANAGER_CLASS (class);
 
 	gobject_class->finalize = cafe_panel_applets_manager_dbus_finalize;
 

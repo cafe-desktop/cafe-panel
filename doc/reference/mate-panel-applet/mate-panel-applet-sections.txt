@@ -4,10 +4,10 @@
 <FILE>cafe-panel-applet</FILE>
 CafePanelApplet
 CafePanelAppletOrient
-MATE_PANEL_APPLET_ORIENT_UP
-MATE_PANEL_APPLET_ORIENT_DOWN
-MATE_PANEL_APPLET_ORIENT_LEFT
-MATE_PANEL_APPLET_ORIENT_RIGHT
+CAFE_PANEL_APPLET_ORIENT_UP
+CAFE_PANEL_APPLET_ORIENT_DOWN
+CAFE_PANEL_APPLET_ORIENT_LEFT
+CAFE_PANEL_APPLET_ORIENT_RIGHT
 CafePanelAppletBackgroundType
 CafePanelAppletFlags
 CafePanelAppletFactoryCallback
@@ -26,13 +26,13 @@ cafe_panel_applet_setup_menu_from_file
 cafe_panel_applet_factory_main
 cafe_panel_applet_shlib_factory
 <SUBSECTION Standard>
-MATE_PANEL_APPLET
+CAFE_PANEL_APPLET
 PANEL_IS_APPLET
 PANEL_TYPE_APPLET
 cafe_panel_applet_get_type
-MATE_PANEL_APPLET_CLASS
+CAFE_PANEL_APPLET_CLASS
 PANEL_IS_APPLET_CLASS
-MATE_PANEL_APPLET_GET_CLASS
+CAFE_PANEL_APPLET_GET_CLASS
 <SUBSECTION Private>
 CafePanelAppletClass
 CafePanelAppletPrivate

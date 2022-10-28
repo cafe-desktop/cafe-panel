@@ -76,8 +76,8 @@
 #define CAJA_PREFS_SCHEMA                     "org.cafe.caja.preferences"
 #define CAJA_PREFS_DESKTOP_IS_HOME_DIR_KEY    "desktop-is-home-dir"
 
-#define MATE_SESSION_SCHEMA                   "org.cafe.session"
-#define MATE_SESSION_LOGOUT_PROMPT_KEY        "logout-prompt"
+#define CAFE_SESSION_SCHEMA                   "org.cafe.session"
+#define CAFE_SESSION_LOGOUT_PROMPT_KEY        "logout-prompt"
 
 #define LOCKDOWN_SCHEMA                       "org.cafe.lockdown"
 #define LOCKDOWN_DISABLE_COMMAND_LINE_KEY     "disable-command-line"

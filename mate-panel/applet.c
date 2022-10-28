@@ -212,7 +212,7 @@ cafe_panel_applet_locked_change_notify (GSettings *settings,
 	cafe_panel_applet_toggle_locked (info);
 
 	if (info->type == PANEL_OBJECT_APPLET)
-		cafe_panel_applet_frame_sync_menu_state (MATE_PANEL_APPLET_FRAME (info->widget));
+		cafe_panel_applet_frame_sync_menu_state (CAFE_PANEL_APPLET_FRAME (info->widget));
 	else
 		cafe_panel_applet_recreate_menu (info);
 }
@@ -1287,14 +1287,14 @@ cafe_panel_applet_register (GtkWidget       *applet,
 		assoc_panel = panel_toplevel_get_panel_widget (drawer->toplevel);
 
 		g_object_set_data (G_OBJECT (applet),
-				   MATE_PANEL_APPLET_ASSOC_PANEL_KEY, assoc_panel);
+				   CAFE_PANEL_APPLET_ASSOC_PANEL_KEY, assoc_panel);
 		assoc_panel->master_widget = applet;
 		g_object_add_weak_pointer (
 			G_OBJECT (applet), (gpointer *) &assoc_panel->master_widget);
 	}
 
 	g_object_set_data (G_OBJECT (applet),
-			   MATE_PANEL_APPLET_FORBIDDEN_PANELS, NULL);
+			   CAFE_PANEL_APPLET_FORBIDDEN_PANELS, NULL);
 
 	registered_applets = g_slist_append (registered_applets, info);
 
@@ -1355,7 +1355,7 @@ cafe_panel_applet_get_position (AppletInfo *applet)
 	g_return_val_if_fail (applet != NULL, 0);
 	g_return_val_if_fail (G_IS_OBJECT (applet->widget), 0);
 
-	applet_data = g_object_get_data (G_OBJECT (applet->widget), MATE_PANEL_APPLET_DATA);
+	applet_data = g_object_get_data (G_OBJECT (applet->widget), CAFE_PANEL_APPLET_DATA);
 
 	return applet_data->pos;
 }

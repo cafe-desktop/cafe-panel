@@ -10,10 +10,10 @@ Name=Notification Area
 Description=Area where notification icons appear
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=cafe-panel-notification-area
-CafeComponentId=OAFIID:MATE_NotificationAreaApplet;OAFIID:MATE_SystemTrayApplet;
+CafeComponentId=OAFIID:CAFE_NotificationAreaApplet;OAFIID:CAFE_SystemTrayApplet;
 Platforms=X11;
-X-MATE-Bugzilla-Bugzilla=MATE
-X-MATE-Bugzilla-Product=cafe-panel
-X-MATE-Bugzilla-Component=notification area
-X-MATE-Bugzilla-Version=@VERSION@
-X-MATE-Bugzilla-OtherBinaries=notification-area-applet
+X-CAFE-Bugzilla-Bugzilla=CAFE
+X-CAFE-Bugzilla-Product=cafe-panel
+X-CAFE-Bugzilla-Component=notification area
+X-CAFE-Bugzilla-Version=@VERSION@
+X-CAFE-Bugzilla-OtherBinaries=notification-area-applet

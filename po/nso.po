@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -225,7 +225,7 @@ msgstr "Sešupa-nako se bontšha nako le letšatši-kgwedi tša gona bjale"
 #: applets/clock/clock.c:3393
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
@@ -670,7 +670,7 @@ msgstr ""
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/fish/fish.c:579
@@ -887,7 +887,7 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/notification_area/main.c:485
@@ -1128,7 +1128,7 @@ msgstr ""
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/wncklet/showdesktop.c:529
@@ -1237,7 +1237,7 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/wncklet/workspace-switcher.c:240
@@ -1477,14 +1477,14 @@ msgstr "Boitsebišo bja tirišo ya khomphuthara bja go palediša go laiša"
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "Lelokelelo la Boitsebišo bja tirišo ya khomphuthara leo panele e tla le "
 "hlokomologago. Ka tsela ye o ka palediša ditirišo tše dingwe tša "
 "khomphuthara gore di laiše goba di bonagale lelokelelong la dikagare. Ka "
 "mohlala gore o palediše taelo e nyenyane ya tirišo ya khomphuthara oketša "
-"'OAFIID:MATE_MiniCommanderApplet' lelokelelong. Panele e swanetše go thongwa"
+"'OAFIID:CAFE_MiniCommanderApplet' lelokelelong. Panele e swanetše go thongwa"
 " ka leswa gore se se direge."
 
 #: data/org.cafe.panel.gschema.xml.in:84
@@ -2578,14 +2578,14 @@ msgid "And many, many others…"
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
-msgstr "Panele ya MATE"
+msgid "The CAFE Panel"
+msgstr "Panele ya CAFE"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE developers"
+"Copyright © 2011-2020 CAFE developers"
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:119
@@ -2595,7 +2595,7 @@ msgid ""
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:123
-msgid "About the MATE Panel"
+msgid "About the CAFE Panel"
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:154
@@ -3278,7 +3278,7 @@ msgid "Test DBus Applet"
 msgstr ""
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
-msgid "A simple applet for testing the MATE panel"
+msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon

@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
 /*
- * clock.c: the MATE clock applet
+ * clock.c: the CAFE clock applet
  *
  * Copyright (C) 1997-2003 Free Software Foundation, Inc.
  *
@@ -397,8 +397,8 @@ calculate_minimum_height (GtkWidget        *widget,
 
         gtk_style_context_get_padding (style_context, state, &padding);
 
-        if (orientation == MATE_PANEL_APPLET_ORIENT_UP
-            || orientation == MATE_PANEL_APPLET_ORIENT_DOWN) {
+        if (orientation == CAFE_PANEL_APPLET_ORIENT_UP
+            || orientation == CAFE_PANEL_APPLET_ORIENT_DOWN) {
                 thickness = padding.top + padding.bottom;
         } else {
                 thickness = padding.left + padding.right;
@@ -841,10 +841,10 @@ create_calendar (ClockData *cd)
         GtkWidget *window;
         char      *prefs_path;
 
-        prefs_path = cafe_panel_applet_get_preferences_path (MATE_PANEL_APPLET (cd->applet));
+        prefs_path = cafe_panel_applet_get_preferences_path (CAFE_PANEL_APPLET (cd->applet));
         window = calendar_window_new (&cd->current_time,
                                       prefs_path,
-                                      cd->orient == MATE_PANEL_APPLET_ORIENT_UP);
+                                      cd->orient == CAFE_PANEL_APPLET_ORIENT_UP);
         g_free (prefs_path);
 
         calendar_window_set_show_weeks (CALENDAR_WINDOW (window),
@@ -933,7 +933,7 @@ position_calendar_popup (ClockData *cd)
          * I expected.
          */
         switch (cd->orient) {
-        case MATE_PANEL_APPLET_ORIENT_RIGHT:
+        case CAFE_PANEL_APPLET_ORIENT_RIGHT:
                 x += button_w;
                 if ((y + h) > monitor.y + monitor.height)
                         y -= (y + h) - (monitor.y + monitor.height);
@@ -944,7 +944,7 @@ position_calendar_popup (ClockData *cd)
                         gravity = GDK_GRAVITY_NORTH_WEST;
 
                 break;
-        case MATE_PANEL_APPLET_ORIENT_LEFT:
+        case CAFE_PANEL_APPLET_ORIENT_LEFT:
                 x -= w;
                 if ((y + h) > monitor.y + monitor.height)
                         y -= (y + h) - (monitor.y + monitor.height);
@@ -955,7 +955,7 @@ position_calendar_popup (ClockData *cd)
                         gravity = GDK_GRAVITY_NORTH_EAST;
 
                 break;
-        case MATE_PANEL_APPLET_ORIENT_DOWN:
+        case CAFE_PANEL_APPLET_ORIENT_DOWN:
                 y += button_h;
                 if ((x + w) > monitor.x + monitor.width)
                         x -= (x + w) - (monitor.x + monitor.width);
@@ -963,7 +963,7 @@ position_calendar_popup (ClockData *cd)
                 gravity = GDK_GRAVITY_NORTH_WEST;
 
                 break;
-        case MATE_PANEL_APPLET_ORIENT_UP:
+        case CAFE_PANEL_APPLET_ORIENT_UP:
                 y -= h;
                 if ((x + w) > monitor.x + monitor.width)
                         x -= (x + w) - (monitor.x + monitor.width);
@@ -1445,14 +1445,14 @@ create_clock_widget (ClockData *cd)
 
         cd->props = NULL;
         cd->orient = -1;
-        cd->size = cafe_panel_applet_get_size (MATE_PANEL_APPLET (cd->applet));
+        cd->size = cafe_panel_applet_get_size (CAFE_PANEL_APPLET (cd->applet));
 
         update_panel_weather (cd);
 
         /* Refresh the clock so that it paints its first state */
         refresh_clock_timeout (cd);
-        applet_change_orient (MATE_PANEL_APPLET (cd->applet),
-                              cafe_panel_applet_get_orient (MATE_PANEL_APPLET (cd->applet)),
+        applet_change_orient (CAFE_PANEL_APPLET (cd->applet),
+                              cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (cd->applet)),
                               cd);
 }
 
@@ -1469,10 +1469,10 @@ update_orient (ClockData *cd)
         min_width = calculate_minimum_width (cd->panel_button, text);
         gtk_widget_get_allocation (cd->panel_button, &allocation);
 
-        if (cd->orient == MATE_PANEL_APPLET_ORIENT_LEFT &&
+        if (cd->orient == CAFE_PANEL_APPLET_ORIENT_LEFT &&
             min_width > allocation.width)
                 new_angle = 270;
-        else if (cd->orient == MATE_PANEL_APPLET_ORIENT_RIGHT &&
+        else if (cd->orient == CAFE_PANEL_APPLET_ORIENT_RIGHT &&
                  min_width > allocation.width)
                 new_angle = 90;
         else
@@ -1500,16 +1500,16 @@ applet_change_orient (CafePanelApplet       *applet,
         cd->orient = orient;
 
         switch (cd->orient) {
-        case MATE_PANEL_APPLET_ORIENT_RIGHT:
+        case CAFE_PANEL_APPLET_ORIENT_RIGHT:
                 o = GTK_ORIENTATION_VERTICAL;
                 break;
-        case MATE_PANEL_APPLET_ORIENT_LEFT:
+        case CAFE_PANEL_APPLET_ORIENT_LEFT:
                 o = GTK_ORIENTATION_VERTICAL;
                 break;
-        case MATE_PANEL_APPLET_ORIENT_DOWN:
+        case CAFE_PANEL_APPLET_ORIENT_DOWN:
                 o = GTK_ORIENTATION_HORIZONTAL;
                 break;
-        case MATE_PANEL_APPLET_ORIENT_UP:
+        case CAFE_PANEL_APPLET_ORIENT_UP:
                 o = GTK_ORIENTATION_HORIZONTAL;
                 break;
         default:
@@ -1540,8 +1540,8 @@ panel_button_change_pixel_size (GtkWidget     *widget,
         cd->old_allocation.width  = allocation->width;
         cd->old_allocation.height = allocation->height;
 
-        if (cd->orient == MATE_PANEL_APPLET_ORIENT_LEFT ||
-            cd->orient == MATE_PANEL_APPLET_ORIENT_RIGHT)
+        if (cd->orient == CAFE_PANEL_APPLET_ORIENT_LEFT ||
+            cd->orient == CAFE_PANEL_APPLET_ORIENT_RIGHT)
                 new_size = allocation->width;
         else
                 new_size = allocation->height;
@@ -2016,7 +2016,7 @@ weather_icon_updated_cb (CafePanelApplet *applet,
 
         theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (cd->applet)));
 
-        icon_size = cafe_panel_applet_get_size (MATE_PANEL_APPLET (cd->applet));
+        icon_size = cafe_panel_applet_get_size (CAFE_PANEL_APPLET (cd->applet));
         icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (cd->applet));
         /*Iterate through the icon sizes so they can be kept sharp*/
         if (icon_size < 22)
@@ -2063,7 +2063,7 @@ location_weather_updated_cb (ClockLocation *location,
 
         theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (cd->applet)));
 
-        icon_size = cafe_panel_applet_get_size (MATE_PANEL_APPLET (cd->applet));
+        icon_size = cafe_panel_applet_get_size (CAFE_PANEL_APPLET (cd->applet));
         icon_scale = gtk_widget_get_scale_factor (GTK_WIDGET (cd->applet));
 
         /*Iterate through the icon sizes so they can be kept sharp*/
@@ -2384,7 +2384,7 @@ show_week_changed (GSettings    *settings,
 static void
 setup_gsettings (ClockData *cd)
 {
-        cd->settings = cafe_panel_applet_settings_new (MATE_PANEL_APPLET (cd->applet), CLOCK_SCHEMA);
+        cd->settings = cafe_panel_applet_settings_new (CAFE_PANEL_APPLET (cd->applet), CLOCK_SCHEMA);
 
         /* hack to allow users to set custom format in dconf-editor */
         gint format;
@@ -2476,7 +2476,7 @@ fill_clock_applet (CafePanelApplet *applet)
         GtkActionGroup *action_group;
         GtkAction      *action;
 
-        cafe_panel_applet_set_flags (applet, MATE_PANEL_APPLET_EXPAND_MINOR);
+        cafe_panel_applet_set_flags (applet, CAFE_PANEL_APPLET_EXPAND_MINOR);
 
         cd = g_new0 (ClockData, 1);
         cd->fixed_width = -1;
@@ -2512,7 +2512,7 @@ fill_clock_applet (CafePanelApplet *applet)
                           G_CALLBACK (panel_button_change_pixel_size),
                           cd);
 
-        cafe_panel_applet_set_background_widget (MATE_PANEL_APPLET (cd->applet),
+        cafe_panel_applet_set_background_widget (CAFE_PANEL_APPLET (cd->applet),
                                             GTK_WIDGET (cd->applet));
 
         action_group = gtk_action_group_new ("ClockApplet Menu Actions");
@@ -2521,11 +2521,11 @@ fill_clock_applet (CafePanelApplet *applet)
                                       clock_menu_actions,
                                       G_N_ELEMENTS (clock_menu_actions),
                                       cd);
-        cafe_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (cd->applet),
+        cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (cd->applet),
                                                     CLOCK_RESOURCE_PATH "clock-menu.xml",
                                                     action_group);
 
-        if (cafe_panel_applet_get_locked_down (MATE_PANEL_APPLET (cd->applet))) {
+        if (cafe_panel_applet_get_locked_down (CAFE_PANEL_APPLET (cd->applet))) {
                 action = gtk_action_group_get_action (action_group, "ClockPreferences");
                 gtk_action_set_visible (action, FALSE);
 
@@ -2754,7 +2754,7 @@ location_update_ok_sensitivity (ClockData *cd)
 static void
 location_changed (GObject *object, GParamSpec *param, ClockData *cd)
 {
-        CafeWeatherLocationEntry *entry = MATEWEATHER_LOCATION_ENTRY (object);
+        CafeWeatherLocationEntry *entry = CAFEWEATHER_LOCATION_ENTRY (object);
         CafeWeatherLocation *gloc;
         CafeWeatherTimezone *zone;
         gboolean latlon_valid;
@@ -3230,7 +3230,7 @@ ensure_prefs_window_is_created (ClockData *cd)
         world = cafeweather_location_new_world (FALSE);
 
         location_box = _clock_get_widget (cd, "edit-location-name-box");
-        cd->location_entry = MATEWEATHER_LOCATION_ENTRY (cafeweather_location_entry_new (world));
+        cd->location_entry = CAFEWEATHER_LOCATION_ENTRY (cafeweather_location_entry_new (world));
         gtk_widget_show (GTK_WIDGET (cd->location_entry));
         gtk_container_add (GTK_CONTAINER (location_box), GTK_WIDGET (cd->location_entry));
         gtk_label_set_mnemonic_widget (GTK_LABEL (location_name_label),
@@ -3242,7 +3242,7 @@ ensure_prefs_window_is_created (ClockData *cd)
                           G_CALLBACK (location_name_changed), cd);
 
         zone_box = _clock_get_widget (cd, "edit-location-timezone-box");
-        cd->zone_combo = MATEWEATHER_TIMEZONE_MENU (cafeweather_timezone_menu_new (world));
+        cd->zone_combo = CAFEWEATHER_TIMEZONE_MENU (cafeweather_timezone_menu_new (world));
         gtk_widget_show (GTK_WIDGET (cd->zone_combo));
         gtk_container_add (GTK_CONTAINER (zone_box), GTK_WIDGET (cd->zone_combo));
         gtk_label_set_mnemonic_widget (GTK_LABEL (timezone_label),
@@ -3390,7 +3390,7 @@ static void display_about_dialog(GtkAction* action, ClockData* cd)
                 "authors", authors,
                 "comments", _("The Clock displays the current time and date"),
                 "copyright", _("Copyright \xc2\xa9 1998-2004 Free Software Foundation, Inc.\n"
-                               "Copyright \xc2\xa9 2012-2020 MATE developers"),
+                               "Copyright \xc2\xa9 2012-2020 CAFE developers"),
                 "documenters", documenters,
                 "logo-icon-name", CLOCK_ICON,
                 "translator-credits", _("translator-credits"),
@@ -3413,13 +3413,13 @@ clock_factory (CafePanelApplet *applet,
 }
 
 #ifdef CLOCK_INPROCESS
-MATE_PANEL_APPLET_IN_PROCESS_FACTORY ("ClockAppletFactory",
+CAFE_PANEL_APPLET_IN_PROCESS_FACTORY ("ClockAppletFactory",
                                  PANEL_TYPE_APPLET,
                                  "ClockApplet",
                                  clock_factory,
                                  NULL)
 #else
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("ClockAppletFactory",
+CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY ("ClockAppletFactory",
                                   PANEL_TYPE_APPLET,
                                   "ClockApplet",
                                   clock_factory,

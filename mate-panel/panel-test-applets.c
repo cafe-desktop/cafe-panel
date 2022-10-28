@@ -118,7 +118,7 @@ applet_activated_cb (GObject      *source_object,
 {
 	GError *error = NULL;
 
-	if (!cafe_panel_applet_container_add_finish (MATE_PANEL_APPLET_CONTAINER (source_object),
+	if (!cafe_panel_applet_container_add_finish (CAFE_PANEL_APPLET_CONTAINER (source_object),
 						res, &error)) {
 		GtkWidget *dialog;
 
@@ -166,7 +166,7 @@ load_applet_into_window (const char *title,
 			       "size", g_variant_new_uint32 (size));
 	g_variant_builder_add (&builder, "{sv}",
 			       "orient", g_variant_new_uint32 (orientation));
-	cafe_panel_applet_container_add (MATE_PANEL_APPLET_CONTAINER (container),
+	cafe_panel_applet_container_add (CAFE_PANEL_APPLET_CONTAINER (container),
 				    gtk_widget_get_screen (applet_window),
 				    title, NULL,
 				    (GAsyncReadyCallback)applet_activated_cb,
@@ -281,7 +281,7 @@ setup_options (void)
 				 GTK_TREE_MODEL (model));
 
 	manager = g_object_new (PANEL_TYPE_APPLETS_MANAGER_DBUS, NULL);
-	applet_list = MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applets (manager);
+	applet_list = CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applets (manager);
 	for (l = applet_list, i = 1; l; l = g_list_next (l), i++) {
 		CafePanelAppletInfo *info = (CafePanelAppletInfo *)l->data;
 
@@ -338,7 +338,7 @@ main (int argc, char **argv)
 	char       *applets_dir;
 	GError     *error;
 
-	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
+	bindtextdomain (GETTEXT_PACKAGE, CAFELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
@@ -358,8 +358,8 @@ main (int argc, char **argv)
 	panel_modules_ensure_loaded ();
 
 	if (g_file_test ("../libcafe-panel-applet", G_FILE_TEST_IS_DIR)) {
-		applets_dir = g_strdup_printf ("%s:../libcafe-panel-applet", MATE_PANEL_APPLETS_DIR);
-		g_setenv ("MATE_PANEL_APPLETS_DIR", applets_dir, FALSE);
+		applets_dir = g_strdup_printf ("%s:../libcafe-panel-applet", CAFE_PANEL_APPLETS_DIR);
+		g_setenv ("CAFE_PANEL_APPLETS_DIR", applets_dir, FALSE);
 		g_free (applets_dir);
 	}
 

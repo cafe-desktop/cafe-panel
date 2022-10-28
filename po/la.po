@@ -12,7 +12,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: CAFE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-25 19:36+0100\n"
 "PO-Revision-Date: 2018-03-11 19:58+0000\n"
@@ -1283,7 +1283,7 @@ msgstr ""
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 
@@ -2168,7 +2168,7 @@ msgid "Main Menu"
 msgstr ""
 
 #: ../cafe-panel/panel-addto.c:145
-msgid "The main MATE menu"
+msgid "The main CAFE menu"
 msgstr ""
 
 #: ../cafe-panel/panel-addto.c:155
@@ -2269,7 +2269,7 @@ msgid "And many, many others…"
 msgstr ""
 
 #: ../cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
+msgid "The CAFE Panel"
 msgstr ""
 
 #: ../cafe-panel/panel-context-menu.c:118
@@ -2279,7 +2279,7 @@ msgid ""
 msgstr ""
 
 #: ../cafe-panel/panel-context-menu.c:122
-msgid "About the MATE Panel"
+msgid "About the CAFE Panel"
 msgstr ""
 
 #: ../cafe-panel/panel-context-menu.c:153

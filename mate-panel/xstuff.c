@@ -1,5 +1,5 @@
 /*
- * MATE panel x stuff
+ * CAFE panel x stuff
  *
  * Copyright (C) 2000, 2001 Eazel, Inc.
  *               2002 Sun Microsystems Inc.

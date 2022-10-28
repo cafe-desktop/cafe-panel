@@ -28,8 +28,8 @@
     <abstract>
       <para>
 This manual documents the interfaces of the panel applet
-library for MATE 2.x and a short guide to porting applets from
-the MATE 1.x interfaces.
+library for CAFE 2.x and a short guide to porting applets from
+the CAFE 1.x interfaces.
       </para>
     </abstract>
 
@@ -77,7 +77,7 @@ hello_applet_fill (CafePanelApplet *applet,
 }
 
 
-MATE_PANEL_APPLET_MATECOMPONENT_FACTORY ("OAFIID:My_HelloApplet_Factory",
+CAFE_PANEL_APPLET_CAFECOMPONENT_FACTORY ("OAFIID:My_HelloApplet_Factory",
                              PANEL_TYPE_APPLET,
                              "TheHelloWorldApplet",
                              "0",
@@ -86,7 +86,7 @@ MATE_PANEL_APPLET_MATECOMPONENT_FACTORY ("OAFIID:My_HelloApplet_Factory",
       </programlisting>
 
       <para>The code here is very similar to writing a normal CafeComponent
-control. You define a factory using MATE_PANEL_APPLET_MATECOMPONENT_FACTORY(),
+control. You define a factory using CAFE_PANEL_APPLET_CAFECOMPONENT_FACTORY(),
 passing it a factory function like hello_applet_fill().
       </para>
 
@@ -125,12 +125,12 @@ your friend here ...
             location="OAFIID:My_HelloApplet_Factory"&gt;
 
         &lt;oaf_attribute name="repo_ids" type="stringv"&gt;
-                &lt;item value="IDL:MATE/Vertigo/CafePanelAppletShell:1.0"/&gt;
+                &lt;item value="IDL:CAFE/Vertigo/CafePanelAppletShell:1.0"/&gt;
                 &lt;item value="IDL:CafeComponent/Control:1.0"/&gt;
                 &lt;item value="IDL:CafeComponent/Unknown:1.0"/&gt;
         &lt;/oaf_attribute&gt;
         &lt;oaf_attribute name="name" type="string" value="Hello World Applet"/&gt;
-        &lt;oaf_attribute name="description" type="string" value="My first applet for the MATE2 panel"/&gt;
+        &lt;oaf_attribute name="description" type="string" value="My first applet for the CAFE2 panel"/&gt;
         &lt;oaf_attribute name="panel:icon" type="string" value="cafe-applets.png"/&gt;
 &lt;/oaf_server&gt;
 &lt;/oaf_info&gt;
@@ -170,12 +170,12 @@ an entry for the applet in the 'Add to Panel' dialog.
   </chapter>
 
   <chapter id="applet-porting">
-    <title>Porting Applets from the MATE 1.x interfaces</title>
+    <title>Porting Applets from the CAFE 1.x interfaces</title>
 
-      <para>In MATE 1.x the applet interface lived in a header called
+      <para>In CAFE 1.x the applet interface lived in a header called
 <filename>applet-widget.h</filename>. The interface was based on GOAD,
-the MATE 1.x object activation framework. A new interface was
-designed for MATE 2.x using the power of cafecomponent UI embedding and the
+the CAFE 1.x object activation framework. A new interface was
+designed for CAFE 2.x using the power of cafecomponent UI embedding and the
 new object activation framework, cafecomponent-activation. The interface is
 intended to be easy to use, cruft free, but semantically similar to
 the old API in order to make porting relatively painless.</para>
@@ -214,7 +214,7 @@ blah_applet_new ()
 
         applet = cafe_panel_applet_new (label);
 
-        return MATECOMPONENT_OBJECT (cafe_panel_applet_get_control (applet));
+        return CAFECOMPONENT_OBJECT (cafe_panel_applet_get_control (applet));
 }
 
 static CafeComponentObject *
@@ -231,15 +231,15 @@ blah_applet_factory (CafeComponentGenericFactory *this,
 }
 
 
-MATE_PANEL_APPLET_MATECOMPONENT_FACTORY ("OAFIID:BlahApplet_Factory",
+CAFE_PANEL_APPLET_CAFECOMPONENT_FACTORY ("OAFIID:BlahApplet_Factory",
                              "Blah",
                              "0",
                              blah_applet_factory,
                              NULL)
       </programlisting>
 
-	<para>You should use MATE_PANEL_APPLET_MATECOMPONENT_FACTORY or
-MATE_PANEL_APPLET_MATECOMPONENT_SHLIB_FACTORY depending on whether you want the
+	<para>You should use CAFE_PANEL_APPLET_CAFECOMPONENT_FACTORY or
+CAFE_PANEL_APPLET_CAFECOMPONENT_SHLIB_FACTORY depending on whether you want the
 applet to be out of process or in process.</para>
 
       </simplesect>
@@ -256,7 +256,7 @@ for applets. A <filename>.gnorba</filename> looks something like this
 	<programlisting>
 [blah]
 type=exe
-repo_id=IDL:MATE/Applet:1.0
+repo_id=IDL:CAFE/Applet:1.0
 description=Blah
 location_info=blah-de-blah
 	</programlisting>
@@ -285,7 +285,7 @@ this :</para>
             location="OAFIID:BlahApplet_Factory"&gt;
 
         &lt;oaf_attribute name="repo_ids" type="stringv"&gt;
-                &lt;item value="IDL:MATE/CafePanelAppletShell:1.0"/&gt;
+                &lt;item value="IDL:CAFE/CafePanelAppletShell:1.0"/&gt;
                 &lt;item value="IDL:CafeComponent/Control:1.0"/&gt;
                 &lt;item value="IDL:CafeComponent/Unknown:1.0"/&gt;
         &lt;/oaf_attribute&gt;
@@ -308,9 +308,9 @@ that should be displayed in the "Add to Panel" dialog.</para>
       <title>Context Menu</title>
 
 	<para>Most applets also place extra menu items into it context
-menu. It might be a good idea to port this next. In MATE 1.x this was
+menu. It might be a good idea to port this next. In CAFE 1.x this was
 done using the applet_widget_register_stock_callback API call. In
-MATE 2.x 3 things must be done</para>
+CAFE 2.x 3 things must be done</para>
 
 	<itemizedlist>
 	<listitem><para>An xml desription of the popup menu must be
@@ -344,24 +344,24 @@ look something like :</para>
 
 	<programlisting>
 static const CafeComponentUIVerb fish_menu_verbs [] = {
-        MATECOMPONENT_UI_VERB ("BlahProperties", display_properties_dialog),
-        MATECOMPONENT_UI_VERB ("BlahHelp",       display_help_dialog),
-        MATECOMPONENT_UI_VERB ("BlahAbout",      display_about_dialog),
+        CAFECOMPONENT_UI_VERB ("BlahProperties", display_properties_dialog),
+        CAFECOMPONENT_UI_VERB ("BlahHelp",       display_help_dialog),
+        CAFECOMPONENT_UI_VERB ("BlahAbout",      display_about_dialog),
 
-        MATECOMPONENT_UI_VERB_END
+        CAFECOMPONENT_UI_VERB_END
 };
 	</programlisting>
 
 	<para>This is just a list of callbacks invoked when the menu
 items are clicked. There are other macros you may use other than
-MATECOMPONENT_UI_VERB - see
+CAFECOMPONENT_UI_VERB - see
 <filename>cafecomponent-ui-component.h</filename>.</para>
 
 	<para>To actually register the menu you just do something like
 :</para>
 
 	<programlisting>
-	cafe_panel_applet_setup_menu (MATE_PANEL_APPLET (blah->applet),
+	cafe_panel_applet_setup_menu (CAFE_PANEL_APPLET (blah->applet),
                                  blah_menu_xml,
                                  blah_menu_verbs,
                                  blah);

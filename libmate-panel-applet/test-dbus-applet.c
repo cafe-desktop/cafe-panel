@@ -150,10 +150,10 @@ test_applet_fill (TestApplet *applet)
 	gtk_widget_show_all (GTK_WIDGET (applet));
 
 	test_applet_handle_size_change (applet,
-					cafe_panel_applet_get_size (MATE_PANEL_APPLET (applet)),
+					cafe_panel_applet_get_size (CAFE_PANEL_APPLET (applet)),
 					NULL);
 	test_applet_handle_orient_change (applet,
-					  cafe_panel_applet_get_orient (MATE_PANEL_APPLET (applet)),
+					  cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (applet)),
 					  NULL);
 
 	action_group = gtk_action_group_new ("TestAppletActions");
@@ -162,14 +162,14 @@ test_applet_fill (TestApplet *applet)
 				      G_N_ELEMENTS (test_applet_menu_actions),
 				      applet);
 
-	cafe_panel_applet_setup_menu (MATE_PANEL_APPLET (applet),
+	cafe_panel_applet_setup_menu (CAFE_PANEL_APPLET (applet),
 				 test_applet_menu_xml,
 				 action_group);
 	g_object_unref (action_group);
 
 	gtk_widget_set_tooltip_text (GTK_WIDGET (applet), "Hello Tip");
 
-	cafe_panel_applet_set_flags (MATE_PANEL_APPLET (applet), MATE_PANEL_APPLET_HAS_HANDLE);
+	cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (applet), CAFE_PANEL_APPLET_HAS_HANDLE);
 
 	g_signal_connect (G_OBJECT (applet),
 			  "change_orient",
@@ -203,9 +203,9 @@ test_applet_factory (TestApplet  *applet,
 }
 
 
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("TestAppletFactory",
+CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY ("TestAppletFactory",
 				  test_applet_get_type (),
-				  "A Test Applet for the MATE-3.0 Panel",
+				  "A Test Applet for the CAFE-3.0 Panel",
 				  (CafePanelAppletFactoryCallback) test_applet_factory,
 				  NULL)
 

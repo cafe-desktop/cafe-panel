@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -242,10 +242,10 @@ msgstr "L'Horloge affiche l'heure et la date actuelle"
 #: applets/clock/clock.c:3393
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 Les développeurs de MATE"
+"Copyright © 2012-2020 Les développeurs de CAFE"
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
 #: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
@@ -254,7 +254,7 @@ msgstr ""
 #: cafe-panel/panel-context-menu.c:124
 msgid "translator-credits"
 msgstr ""
-"Contributeurs au projet MATE :\n"
+"Contributeurs au projet CAFE :\n"
 "Voir https://www.transifex.com/cafe/teams/13566/fr/\n"
 "\n"
 "Contributeurs au projet GNOME :\n"
@@ -714,11 +714,11 @@ msgstr "À propos de Fish"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 Les développeurs de MATE"
+"Copyright © 2012-2020 Les développeurs de CAFE"
 
 #: applets/fish/fish.c:579
 #, c-format
@@ -937,12 +937,12 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 Les développeurs de MATE"
+"Copyright © 2012-2020 Les développeurs de CAFE"
 
 #: applets/notification_area/main.c:485
 msgid "Panel Notification Area"
@@ -1190,11 +1190,11 @@ msgstr ""
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 Les développeurs de MATE"
+"Copyright © 2012-2020 Les développeurs de CAFE"
 
 #: applets/wncklet/showdesktop.c:529
 msgid ""
@@ -1309,13 +1309,13 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 2000 Helix Code, Inc.\n"
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 Les développeurs de MATE"
+"Copyright © 2012-2020 Les développeurs de CAFE"
 
 #: applets/wncklet/workspace-switcher.c:240
 #: applets/wncklet/workspace-switcher.c:939
@@ -1576,13 +1576,13 @@ msgstr "IIDs d'applets à ne pas charger"
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "Une liste d'IIDs d'applets que le tableau de bord ignorera. De cette façon "
 "vous pouvez éviter certaines applets d'être chargées ou affichées dans le "
 "menu. Par exemple pour désactiver l'applet mini-commander, ajoutez à cette "
-"liste « OAFIID:MATE_MiniCommanderApplet ». Le tableau de bord doit être "
+"liste « OAFIID:CAFE_MiniCommanderApplet ». Le tableau de bord doit être "
 "redémarré pour que cela prenne effet."
 
 #: data/org.cafe.panel.gschema.xml.in:84
@@ -2716,18 +2716,18 @@ msgid "And many, many others…"
 msgstr "Et beaucoup, beaucoup d'autres…"
 
 #: cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
-msgstr "Le tableau de bord MATE"
+msgid "The CAFE Panel"
+msgstr "Le tableau de bord CAFE"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE developers"
+"Copyright © 2011-2020 CAFE developers"
 msgstr ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 Les développeurs de MATE"
+"Copyright © 2011-2020 Les développeurs de CAFE"
 
 #: cafe-panel/panel-context-menu.c:119
 msgid ""
@@ -2738,8 +2738,8 @@ msgstr ""
 "des utilitaires bien pratiques."
 
 #: cafe-panel/panel-context-menu.c:123
-msgid "About the MATE Panel"
-msgstr "À propos du tableau de bord MATE"
+msgid "About the CAFE Panel"
+msgstr "À propos du tableau de bord CAFE"
 
 #: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
@@ -3442,8 +3442,8 @@ msgid "Test DBus Applet"
 msgstr "Applet Test DBus"
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
-msgid "A simple applet for testing the MATE panel"
-msgstr "Une applet simple pour tester le panel MATE"
+msgid "A simple applet for testing the CAFE panel"
+msgstr "Une applet simple pour tester le panel CAFE"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!

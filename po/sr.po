@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -227,7 +227,7 @@ msgstr "Часовник приказује текуће време и дату�
 #: applets/clock/clock.c:3393
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Ауторска права © 1998–2004 Фондација слободног софтвера, Доо.\n"
 "Ауторска права © 2012–2020 Програмери Мејта"
@@ -682,7 +682,7 @@ msgstr "О Рибици"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Ауторска права © 1998–2002 Фондација слободног софтвера, Доо.\n"
 "Ауторска права © 2002–2005 Винсент Унц\n"
@@ -901,7 +901,7 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Ауторска права © 2002 Ред Хет, Доо.\n"
 "Ауторска права © 2003-2006 Винсент Унц\n"
@@ -1148,7 +1148,7 @@ msgstr ""
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Ауторска права © 2002 Ред Хет, Доо.\n"
 "Ауторска права © 2011 Перберос\n"
@@ -1264,7 +1264,7 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Ауторска права © 2000 Хеликс Код, Доо.\n"
 "Ауторска права © 2001 Фондација слободног софтвера, Доо.\n"
@@ -1519,13 +1519,13 @@ msgstr "ИИБ-ови програмчета за искључивање учи�
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "Списак ИИБ-ова програмчића које ће панел занемаривати. На овај начин можете "
 "да спречите учитавање или приказивање у изборнику неких програмчића. На "
 "пример, да искључите програмче мали-наредник, додајте "
-"„OAFIID:MATE_MiniCommanderApplet“ у овај списак. Панел мора бити поново "
+"„OAFIID:CAFE_MiniCommanderApplet“ у овај списак. Панел мора бити поново "
 "покренут да би ово ступило на снагу."
 
 #: data/org.cafe.panel.gschema.xml.in:84
@@ -2634,14 +2634,14 @@ msgid "And many, many others…"
 msgstr "И многи, многи други…"
 
 #: cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
+msgid "The CAFE Panel"
 msgstr "Мејтов панел"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE developers"
+"Copyright © 2011-2020 CAFE developers"
 msgstr ""
 "Ауторска права © 1997–2003 Фондација слободног софтвера, Доо.\n"
 "Ауторска права © 2004 Винсент Унц\n"
@@ -2656,7 +2656,7 @@ msgstr ""
 "алатке."
 
 #: cafe-panel/panel-context-menu.c:123
-msgid "About the MATE Panel"
+msgid "About the CAFE Panel"
 msgstr "О Мејтовом панелу"
 
 #: cafe-panel/panel-context-menu.c:154
@@ -3351,7 +3351,7 @@ msgid "Test DBus Applet"
 msgstr "Испробај програмче Дсабирнице"
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
-msgid "A simple applet for testing the MATE panel"
+msgid "A simple applet for testing the CAFE panel"
 msgstr "Једноставно програмче за испробавање Мејтовог панела"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon

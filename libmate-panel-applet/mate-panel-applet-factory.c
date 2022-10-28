@@ -51,8 +51,8 @@ struct _CafePanelAppletFactoryClass {
 	GObjectClass base_class;
 };
 
-#define MATE_PANEL_APPLET_FACTORY_OBJECT_PATH  "/org/cafe/panel/applet/%s"
-#define MATE_PANEL_APPLET_FACTORY_SERVICE_NAME "org.cafe.panel.applet.%s"
+#define CAFE_PANEL_APPLET_FACTORY_OBJECT_PATH  "/org/cafe/panel/applet/%s"
+#define CAFE_PANEL_APPLET_FACTORY_SERVICE_NAME "org.cafe.panel.applet.%s"
 
 G_DEFINE_TYPE (CafePanelAppletFactory, cafe_panel_applet_factory, G_TYPE_OBJECT)
 
@@ -61,7 +61,7 @@ static GHashTable *factories = NULL;
 static void
 cafe_panel_applet_factory_finalize (GObject *object)
 {
-	CafePanelAppletFactory *factory = MATE_PANEL_APPLET_FACTORY (object);
+	CafePanelAppletFactory *factory = CAFE_PANEL_APPLET_FACTORY (object);
 
 	if (factory->registration_id) {
 		g_dbus_connection_unregister_object (factory->connection, factory->registration_id);
@@ -136,7 +136,7 @@ cafe_panel_applet_factory_new (const gchar *factory_id,
 {
 	CafePanelAppletFactory *factory;
 
-	factory = MATE_PANEL_APPLET_FACTORY (g_object_new (PANEL_TYPE_APPLET_FACTORY, NULL));
+	factory = CAFE_PANEL_APPLET_FACTORY (g_object_new (PANEL_TYPE_APPLET_FACTORY, NULL));
 	factory->factory_id = g_strdup (factory_id);
 	factory->out_of_process = out_of_process;
 	factory->applet_type = applet_type;
@@ -223,7 +223,7 @@ cafe_panel_applet_factory_get_applet (CafePanelAppletFactory    *factory,
 		screen = screen_num != -1 ?
 			gdk_display_get_default_screen (gdk_display_get_default ()) :
 			gdk_screen_get_default ();
-		xid = cafe_panel_applet_get_xid (MATE_PANEL_APPLET (applet), screen);
+		xid = cafe_panel_applet_get_xid (CAFE_PANEL_APPLET (applet), screen);
 	} else
 #endif
 	{ // Not using X11
@@ -231,7 +231,7 @@ cafe_panel_applet_factory_get_applet (CafePanelAppletFactory    *factory,
 	}
 
 	uid = factory->next_uid++;
-	object_path = cafe_panel_applet_get_object_path (MATE_PANEL_APPLET (applet));
+	object_path = cafe_panel_applet_get_object_path (CAFE_PANEL_APPLET (applet));
 	g_hash_table_insert (factory->applets, GUINT_TO_POINTER (uid), applet);
 	g_object_set_data (applet, "uid", GUINT_TO_POINTER (uid));
 
@@ -254,7 +254,7 @@ method_call_cb (GDBusConnection       *connection,
 		GDBusMethodInvocation *invocation,
 		gpointer               user_data)
 {
-	CafePanelAppletFactory *factory = MATE_PANEL_APPLET_FACTORY (user_data);
+	CafePanelAppletFactory *factory = CAFE_PANEL_APPLET_FACTORY (user_data);
 
 	if (g_strcmp0 (method_name, "GetApplet") == 0) {
 		cafe_panel_applet_factory_get_applet (factory, connection, parameters, invocation);
@@ -294,7 +294,7 @@ on_bus_acquired (GDBusConnection    *connection,
 
 	if (!introspection_data)
 		introspection_data = g_dbus_node_info_new_for_xml (introspection_xml, NULL);
-	object_path = g_strdup_printf (MATE_PANEL_APPLET_FACTORY_OBJECT_PATH, factory->factory_id);
+	object_path = g_strdup_printf (CAFE_PANEL_APPLET_FACTORY_OBJECT_PATH, factory->factory_id);
 	factory->connection = connection;
 	factory->registration_id = g_dbus_connection_register_object (connection,
 					   object_path,
@@ -326,7 +326,7 @@ cafe_panel_applet_factory_register_service (CafePanelAppletFactory *factory)
 	if (!factory)
 		return FALSE;
 
-	service_name = g_strdup_printf (MATE_PANEL_APPLET_FACTORY_SERVICE_NAME, factory->factory_id);
+	service_name = g_strdup_printf (CAFE_PANEL_APPLET_FACTORY_SERVICE_NAME, factory->factory_id);
 	factory->owner_id = g_bus_own_name (G_BUS_TYPE_SESSION,
 			service_name,
 			G_BUS_NAME_OWNER_FLAGS_NONE,

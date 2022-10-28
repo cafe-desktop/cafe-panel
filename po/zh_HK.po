@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -228,7 +228,7 @@ msgstr "時鐘程式可顯示目前的時間及日期"
 #: applets/clock/clock.c:3393
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
@@ -666,13 +666,13 @@ msgstr ""
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/fish/fish.c:579
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
-msgstr "MATE 小魚 %s ─ 當代聖人"
+msgstr "CAFE 小魚 %s ─ 當代聖人"
 
 #: applets/fish/fish.c:645
 msgid "Unable to locate the command to execute"
@@ -681,7 +681,7 @@ msgstr "找不到要執行的指令"
 #: applets/fish/fish.c:689
 #, no-c-format
 msgid "%s the Fish Says:"
-msgstr "MATE 小魚 %s 說："
+msgstr "CAFE 小魚 %s 說："
 
 #: applets/fish/fish.c:752
 #, c-format
@@ -736,7 +736,7 @@ msgstr "看看今天是甚麼日子！"
 #: applets/fish/fish.c:1635
 #, c-format
 msgid "%s the Fish, the fortune teller"
-msgstr "MATE 小魚 %s ─ 預言家"
+msgstr "CAFE 小魚 %s ─ 預言家"
 
 #: applets/fish/fish.ui:32
 msgid "Fish Preferences"
@@ -876,7 +876,7 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/notification_area/main.c:485
@@ -1102,7 +1102,7 @@ msgstr "本按鈕可以隱藏所有視窗並顯示桌面。"
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/wncklet/showdesktop.c:529
@@ -1209,7 +1209,7 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/wncklet/workspace-switcher.c:240
@@ -1431,11 +1431,11 @@ msgstr "不被載入的面板程式 IID"
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "這裏列出了面板會忽略不理的面板程式 IID。你可以在此設定不載入或不在選單中顯示的面板程式。例如，要停用 mini-commander "
-"面板程式，只需在此清單加入 'OAFIID:MATE_MiniCommanderApplet' 即可。任何更改在面板重新啟動後才會生效。"
+"面板程式，只需在此清單加入 'OAFIID:CAFE_MiniCommanderApplet' 即可。任何更改在面板重新啟動後才會生效。"
 
 #: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
@@ -2440,14 +2440,14 @@ msgid "And many, many others…"
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
-msgstr "MATE 面板"
+msgid "The CAFE Panel"
+msgstr "CAFE 面板"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE developers"
+"Copyright © 2011-2020 CAFE developers"
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:119
@@ -2457,8 +2457,8 @@ msgid ""
 msgstr "本程式負責啟動其它程式並提供好用的公用程式。"
 
 #: cafe-panel/panel-context-menu.c:123
-msgid "About the MATE Panel"
-msgstr "關於 MATE 面板"
+msgid "About the CAFE Panel"
+msgstr "關於 CAFE 面板"
 
 #: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
@@ -3131,7 +3131,7 @@ msgid "Test DBus Applet"
 msgstr ""
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
-msgid "A simple applet for testing the MATE panel"
+msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon

@@ -1,21 +1,21 @@
 [main]
 host = https://www.transifex.com
  
-[MATE.1-24--cafe-panel]
+[CAFE.1-24--cafe-panel]
 file_filter = po/<lang>.po
 source_file = cafe-panel.pot
 source_lang = en
 type = PO
 minimum_perc = 2
 
-[MATE.1-24--cafe-clock-user-guide]
+[CAFE.1-24--cafe-clock-user-guide]
 file_filter = help/cafe-clock/<lang>/<lang>.po
 source_file = cafe-clock.pot
 source_lang = en
 type = PO
 minimum_perc = 2
 
-[MATE.1-24--cafe-fish-user-guide]
+[CAFE.1-24--cafe-fish-user-guide]
 file_filter = help/cafe-fish/<lang>/<lang>.po
 source_file = cafe-fish.pot
 source_lang = en

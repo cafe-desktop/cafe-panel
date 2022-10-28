@@ -73,7 +73,7 @@ orientation_change (AppletInfo  *info,
 	switch (info->type) {
 	case PANEL_OBJECT_APPLET:
 		cafe_panel_applet_frame_change_orientation (
-				MATE_PANEL_APPLET_FRAME (info->widget), orientation);
+				CAFE_PANEL_APPLET_FRAME (info->widget), orientation);
 		break;
 	case PANEL_OBJECT_MENU:
 	case PANEL_OBJECT_LAUNCHER:
@@ -133,7 +133,7 @@ size_change (AppletInfo  *info,
 {
 	if (info->type == PANEL_OBJECT_APPLET)
 		cafe_panel_applet_frame_change_size (
-			MATE_PANEL_APPLET_FRAME (info->widget), panel->sz);
+			CAFE_PANEL_APPLET_FRAME (info->widget), panel->sz);
 }
 
 static void
@@ -160,7 +160,7 @@ back_change (AppletInfo  *info,
 	switch (info->type) {
 	case PANEL_OBJECT_APPLET:
 		cafe_panel_applet_frame_change_background (
-		MATE_PANEL_APPLET_FRAME (info->widget), panel->toplevel->background.type);
+		CAFE_PANEL_APPLET_FRAME (info->widget), panel->toplevel->background.type);
 		break;
 	case PANEL_OBJECT_MENU_BAR:
 		panel_menu_bar_change_background (PANEL_MENU_BAR (info->widget));
@@ -582,7 +582,7 @@ drop_caja_desktop_uri (PanelWidget *panel,
 
 	if (strncmp (basename, "trash", strlen ("trash")) == 0)
 		cafe_panel_applet_frame_create (panel->toplevel, pos,
-					   "OAFIID:MATE_Panel_TrashApplet");
+					   "OAFIID:CAFE_Panel_TrashApplet");
 	else if (strncmp (basename, "home", strlen ("home")) == 0)
 		panel_launcher_create_with_id (id, pos,
 					       "caja-home.desktop");
@@ -758,7 +758,7 @@ move_applet (PanelWidget *panel, int pos, int applet_index)
 	    PANEL_IS_WIDGET (parent)) {
 		GSList *forb;
 		forb = g_object_get_data (G_OBJECT (info->widget),
-					  MATE_PANEL_APPLET_FORBIDDEN_PANELS);
+					  CAFE_PANEL_APPLET_FORBIDDEN_PANELS);
 		if ( ! g_slist_find (forb, panel))
 			panel_widget_reparent (PANEL_WIDGET (parent),
 					       panel,
@@ -979,7 +979,7 @@ panel_check_drop_forbidden (PanelWidget    *panel,
 			GSList *forb;
 
 			forb = g_object_get_data (G_OBJECT (source_widget),
-						  MATE_PANEL_APPLET_FORBIDDEN_PANELS);
+						  CAFE_PANEL_APPLET_FORBIDDEN_PANELS);
 
 			if (g_slist_find (forb, panel))
 				return FALSE;

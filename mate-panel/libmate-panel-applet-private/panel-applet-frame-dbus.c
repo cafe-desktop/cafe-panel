@@ -142,7 +142,7 @@ cafe_panel_applet_frame_dbus_get_size_hints_cb (CafePanelAppletContainer *contai
 static void
 cafe_panel_applet_frame_dbus_init_properties (CafePanelAppletFrame *frame)
 {
-	CafePanelAppletFrameDBus *dbus_frame = MATE_PANEL_APPLET_FRAME_DBUS (frame);
+	CafePanelAppletFrameDBus *dbus_frame = CAFE_PANEL_APPLET_FRAME_DBUS (frame);
 
 	cafe_panel_applet_container_child_get (dbus_frame->priv->container, "flags", NULL,
 					  (GAsyncReadyCallback) cafe_panel_applet_frame_dbus_get_flags_cb,
@@ -160,7 +160,7 @@ cafe_panel_applet_frame_dbus_sync_menu_state (CafePanelAppletFrame *frame,
 					 gboolean          locked,
 					 gboolean          locked_down)
 {
-	CafePanelAppletFrameDBus *dbus_frame = MATE_PANEL_APPLET_FRAME_DBUS (frame);
+	CafePanelAppletFrameDBus *dbus_frame = CAFE_PANEL_APPLET_FRAME_DBUS (frame);
 
 	cafe_panel_applet_container_child_set (dbus_frame->priv->container,
 					  "locked", g_variant_new_boolean (lockable && locked),
@@ -175,7 +175,7 @@ cafe_panel_applet_frame_dbus_popup_menu (CafePanelAppletFrame *frame,
 				    guint             button,
 				    guint32           timestamp)
 {
-	CafePanelAppletFrameDBus *dbus_frame = MATE_PANEL_APPLET_FRAME_DBUS (frame);
+	CafePanelAppletFrameDBus *dbus_frame = CAFE_PANEL_APPLET_FRAME_DBUS (frame);
 
 	cafe_panel_applet_container_child_popup_menu (dbus_frame->priv->container,
 						 button, timestamp,
@@ -203,7 +203,7 @@ static void
 cafe_panel_applet_frame_dbus_change_orientation (CafePanelAppletFrame *frame,
 					    PanelOrientation  orientation)
 {
-	CafePanelAppletFrameDBus *dbus_frame = MATE_PANEL_APPLET_FRAME_DBUS (frame);
+	CafePanelAppletFrameDBus *dbus_frame = CAFE_PANEL_APPLET_FRAME_DBUS (frame);
 
 	cafe_panel_applet_container_child_set (dbus_frame->priv->container,
 					  "orient",
@@ -217,7 +217,7 @@ static void
 cafe_panel_applet_frame_dbus_change_size (CafePanelAppletFrame *frame,
 				     guint             size)
 {
-	CafePanelAppletFrameDBus *dbus_frame = MATE_PANEL_APPLET_FRAME_DBUS (frame);
+	CafePanelAppletFrameDBus *dbus_frame = CAFE_PANEL_APPLET_FRAME_DBUS (frame);
 
 	cafe_panel_applet_container_child_set (dbus_frame->priv->container,
 					  "size", g_variant_new_uint32 (size),
@@ -229,8 +229,8 @@ container_child_background_set (GObject      *source_object,
 				GAsyncResult *res,
 				gpointer      user_data)
 {
-	CafePanelAppletContainer *container = MATE_PANEL_APPLET_CONTAINER (source_object);
-	CafePanelAppletFrameDBus *frame = MATE_PANEL_APPLET_FRAME_DBUS (user_data);
+	CafePanelAppletContainer *container = CAFE_PANEL_APPLET_CONTAINER (source_object);
+	CafePanelAppletFrameDBus *frame = CAFE_PANEL_APPLET_FRAME_DBUS (user_data);
 
 	cafe_panel_applet_container_child_set_finish (container, res, NULL);
 
@@ -241,7 +241,7 @@ static void
 cafe_panel_applet_frame_dbus_change_background (CafePanelAppletFrame    *frame,
 					   PanelBackgroundType  type)
 {
-	CafePanelAppletFrameDBus *dbus_frame = MATE_PANEL_APPLET_FRAME_DBUS (frame);
+	CafePanelAppletFrameDBus *dbus_frame = CAFE_PANEL_APPLET_FRAME_DBUS (frame);
 	CafePanelAppletFrameDBusPrivate *priv = dbus_frame->priv;
 	char *bg_str;
 
@@ -323,7 +323,7 @@ cafe_panel_applet_frame_dbus_applet_lock (CafePanelAppletContainer *container,
 static void
 cafe_panel_applet_frame_dbus_finalize (GObject *object)
 {
-	CafePanelAppletFrameDBus *frame = MATE_PANEL_APPLET_FRAME_DBUS (object);
+	CafePanelAppletFrameDBus *frame = CAFE_PANEL_APPLET_FRAME_DBUS (object);
 
 	frame->priv->bg_operation = NULL;
 
@@ -340,7 +340,7 @@ cafe_panel_applet_frame_dbus_init (CafePanelAppletFrameDBus *frame)
 	container = cafe_panel_applet_container_new ();
 	gtk_widget_show (container);
 	gtk_container_add (GTK_CONTAINER (frame), container);
-	frame->priv->container = MATE_PANEL_APPLET_CONTAINER (container);
+	frame->priv->container = CAFE_PANEL_APPLET_CONTAINER (container);
 	frame->priv->bg_operation = NULL;
 
 	g_signal_connect (container, "child-property-changed::flags",
@@ -367,7 +367,7 @@ static void
 cafe_panel_applet_frame_dbus_class_init (CafePanelAppletFrameDBusClass *class)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (class);
-	CafePanelAppletFrameClass *frame_class = MATE_PANEL_APPLET_FRAME_CLASS (class);
+	CafePanelAppletFrameClass *frame_class = CAFE_PANEL_APPLET_FRAME_CLASS (class);
 
 	gobject_class->finalize = cafe_panel_applet_frame_dbus_finalize;
 
@@ -418,7 +418,7 @@ cafe_panel_applet_frame_dbus_load (const gchar                 *iid,
 		return FALSE;
 
 	dbus_frame = g_object_new (PANEL_TYPE_APPLET_FRAME_DBUS, NULL);
-	frame = MATE_PANEL_APPLET_FRAME (dbus_frame);
+	frame = CAFE_PANEL_APPLET_FRAME (dbus_frame);
 	_cafe_panel_applet_frame_set_iid (frame, iid);
 
 	screen = panel_applet_frame_activating_get_screen (frame_act);

@@ -11,7 +11,7 @@ AM_CPPFLAGS =							\
 	-I$(top_builddir)/cafe-panel/libcafe-panel-applets-private	\
 	-I$(top_builddir)/cafe-panel/libpanel-util		\
 	-DDATADIR=\""$(datadir)"\"				\
-	-DMATE_PANEL_APPLETS_DIR=\"$(appletsdir)\"			\
+	-DCAFE_PANEL_APPLETS_DIR=\"$(appletsdir)\"			\
 	$(DISABLE_DEPRECATED_CFLAGS)
 
 AM_CFLAGS = $(WARN_CFLAGS)

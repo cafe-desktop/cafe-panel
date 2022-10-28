@@ -77,7 +77,7 @@ struct _CafePanelAppletFrameActivating {
 /* CafePanelAppletFrame implementation */
 
 #define HANDLE_SIZE 10
-#define MATE_PANEL_APPLET_PREFS_PATH "/org/cafe/panel/objects/%s/prefs/"
+#define CAFE_PANEL_APPLET_PREFS_PATH "/org/cafe/panel/objects/%s/prefs/"
 
 struct _CafePanelAppletFramePrivate {
 	PanelWidget     *panel;
@@ -99,7 +99,7 @@ static gboolean
 cafe_panel_applet_frame_draw (GtkWidget *widget,
                          cairo_t   *cr)
 {
-	CafePanelAppletFrame *frame = MATE_PANEL_APPLET_FRAME (widget);
+	CafePanelAppletFrame *frame = CAFE_PANEL_APPLET_FRAME (widget);
 	GtkStyleContext *context;
 	GtkStateFlags     state;
 	PanelBackground  *background;
@@ -188,7 +188,7 @@ cafe_panel_applet_frame_get_preferred_width(GtkWidget *widget, gint *minimal_wid
 	GtkWidget        *child;
 	guint             border_width;
 
-	frame = MATE_PANEL_APPLET_FRAME (widget);
+	frame = CAFE_PANEL_APPLET_FRAME (widget);
 	bin = GTK_BIN (widget);
 
 	if (!frame->priv->has_handle) {
@@ -227,7 +227,7 @@ cafe_panel_applet_frame_get_preferred_height(GtkWidget *widget, gint *minimal_he
 	GtkWidget        *child;
 	guint             border_width;
 
-	frame = MATE_PANEL_APPLET_FRAME (widget);
+	frame = CAFE_PANEL_APPLET_FRAME (widget);
 	bin = GTK_BIN (widget);
 
 	if (!frame->priv->has_handle) {
@@ -277,7 +277,7 @@ cafe_panel_applet_frame_size_allocate (GtkWidget     *widget,
 	old_allocation.width  = widget_allocation.width;
 	old_allocation.height = widget_allocation.height;
 
-	frame = MATE_PANEL_APPLET_FRAME (widget);
+	frame = CAFE_PANEL_APPLET_FRAME (widget);
 	bin = GTK_BIN (widget);
 
 	if (!frame->priv->has_handle) {
@@ -383,7 +383,7 @@ cafe_panel_applet_frame_button_changed (GtkWidget      *widget,
 	GdkDisplay *display;
 	GdkSeat *seat;
 
-	frame = MATE_PANEL_APPLET_FRAME (widget);
+	frame = CAFE_PANEL_APPLET_FRAME (widget);
 
 	if (!frame->priv->has_handle)
 		return handled;
@@ -414,7 +414,7 @@ cafe_panel_applet_frame_button_changed (GtkWidget      *widget,
 			seat = gdk_display_get_default_seat (display);
 			gdk_seat_ungrab (seat);
 
-			MATE_PANEL_APPLET_FRAME_GET_CLASS (frame)->popup_menu (frame,
+			CAFE_PANEL_APPLET_FRAME_GET_CLASS (frame)->popup_menu (frame,
 									  event->button,
 									  event->time);
 
@@ -432,7 +432,7 @@ cafe_panel_applet_frame_button_changed (GtkWidget      *widget,
 static void
 cafe_panel_applet_frame_finalize (GObject *object)
 {
-	CafePanelAppletFrame *frame = MATE_PANEL_APPLET_FRAME (object);
+	CafePanelAppletFrame *frame = CAFE_PANEL_APPLET_FRAME (object);
 
 	cafe_panel_applets_manager_factory_deactivate (frame->priv->iid);
 
@@ -475,7 +475,7 @@ cafe_panel_applet_frame_init (CafePanelAppletFrame *frame)
 static void
 cafe_panel_applet_frame_init_properties (CafePanelAppletFrame *frame)
 {
-	MATE_PANEL_APPLET_FRAME_GET_CLASS (frame)->init_properties (frame);
+	CAFE_PANEL_APPLET_FRAME_GET_CLASS (frame)->init_properties (frame);
 }
 
 void
@@ -497,7 +497,7 @@ cafe_panel_applet_frame_sync_menu_state (CafePanelAppletFrame *frame)
 	locked = panel_widget_get_applet_locked (panel_widget, GTK_WIDGET (frame));
 	locked_down = panel_lockdown_get_locked_down ();
 
-	MATE_PANEL_APPLET_FRAME_GET_CLASS (frame)->sync_menu_state (frame, movable, removable, lockable, locked, locked_down);
+	CAFE_PANEL_APPLET_FRAME_GET_CLASS (frame)->sync_menu_state (frame, movable, removable, lockable, locked, locked_down);
 }
 
 void
@@ -508,14 +508,14 @@ cafe_panel_applet_frame_change_orientation (CafePanelAppletFrame *frame,
 		return;
 
 	frame->priv->orientation = orientation;
-	MATE_PANEL_APPLET_FRAME_GET_CLASS (frame)->change_orientation (frame, orientation);
+	CAFE_PANEL_APPLET_FRAME_GET_CLASS (frame)->change_orientation (frame, orientation);
 }
 
 void
 cafe_panel_applet_frame_change_size (CafePanelAppletFrame *frame,
 				guint             size)
 {
-	MATE_PANEL_APPLET_FRAME_GET_CLASS (frame)->change_size (frame, size);
+	CAFE_PANEL_APPLET_FRAME_GET_CLASS (frame)->change_size (frame, size);
 }
 
 void
@@ -536,7 +536,7 @@ cafe_panel_applet_frame_change_background (CafePanelAppletFrame    *frame,
 		panel_background_apply_css (background, GTK_WIDGET (frame));
 	}
 
-	MATE_PANEL_APPLET_FRAME_GET_CLASS (frame)->change_background (frame, type);
+	CAFE_PANEL_APPLET_FRAME_GET_CLASS (frame)->change_background (frame, type);
 }
 
 void
@@ -904,7 +904,7 @@ cafe_panel_applet_frame_activating_get_locked_down (CafePanelAppletFrameActivati
 gchar *
 cafe_panel_applet_frame_activating_get_conf_path (CafePanelAppletFrameActivating *frame_act)
 {
-	return g_strdup_printf (MATE_PANEL_APPLET_PREFS_PATH, frame_act->id);
+	return g_strdup_printf (CAFE_PANEL_APPLET_PREFS_PATH, frame_act->id);
 }
 
 static void

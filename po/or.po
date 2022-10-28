@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -225,7 +225,7 @@ msgstr "ଘଣ୍ଟା ସାମ୍ପ୍ରତିକ ସମୟ ଓ ତାର�
 #: applets/clock/clock.c:3393
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
@@ -673,7 +673,7 @@ msgstr ""
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/fish/fish.c:579
@@ -888,7 +888,7 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/notification_area/main.c:485
@@ -1127,7 +1127,7 @@ msgstr "ଏହି ଚାବି ସବୁ ୱିଣ୍ଡୋ ଲୁଚାଇ ଆ�
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/wncklet/showdesktop.c:529
@@ -1239,7 +1239,7 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
 #: applets/wncklet/workspace-switcher.c:240
@@ -1476,13 +1476,13 @@ msgstr "ଧାରଣ ହେବାରୁ ନିଷେଧ ଆପ୍ଲେଟର �
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "ଆପ୍ଲେଟ୍ ପରିଚୟର ତାଲିକା, ଯାହାକୁ ଫଳକ ଅଗ୍ରାହ୍ଯ କରିବ. ଏହିପରି ଆପଣ କିଛି ଆପ୍ଲେଟକୁ "
 "ଧାରଣ ହେବା ବା ତାଲିକାରେ ପ୍ରଦର୍ଶିତ ହେବାରୁ ମନା କରିପାରିବେ. ଉଦାହରଣ ସ୍ବରୂପ, "
 "ମିନି-କମାଣ୍ଡର୍ ଆପ୍ଲେଟକୁ ନିଷ୍କ୍ରିୟ କରିବା ପାଇଁ "
-"'OAFIID:MATE_MiniCommanderApplet' ଏହି ତାଲିକାରେ ୟୋଗ କରନ୍ତୁ. ଏହାର ପ୍ରଭାବ ହେବା "
+"'OAFIID:CAFE_MiniCommanderApplet' ଏହି ତାଲିକାରେ ୟୋଗ କରନ୍ତୁ. ଏହାର ପ୍ରଭାବ ହେବା "
 "ପାଇଁ ଫଳକକୁ ପୁନଃପ୍ରାରମ୍ଭ କରିବା ଆବଶ୍ଯକ."
 
 #: data/org.cafe.panel.gschema.xml.in:84
@@ -2556,14 +2556,14 @@ msgid "And many, many others…"
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
-msgstr "MATE ଫଳକ"
+msgid "The CAFE Panel"
+msgstr "CAFE ଫଳକ"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE developers"
+"Copyright © 2011-2020 CAFE developers"
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:119
@@ -2575,8 +2575,8 @@ msgstr ""
 "ଉପଯୋଗୀତା ପ୍ରଦାନ କରିଥାଏ."
 
 #: cafe-panel/panel-context-menu.c:123
-msgid "About the MATE Panel"
-msgstr "MATE ଫଳକ ବିଷୟରେ"
+msgid "About the CAFE Panel"
+msgstr "CAFE ଫଳକ ବିଷୟରେ"
 
 #: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
@@ -3267,7 +3267,7 @@ msgid "Test DBus Applet"
 msgstr ""
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
-msgid "A simple applet for testing the MATE panel"
+msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon

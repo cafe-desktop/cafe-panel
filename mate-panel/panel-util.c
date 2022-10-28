@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*-
  *
- * MATE panel utils
+ * CAFE panel utils
  * (C) 1997, 1998, 1999, 2000 The Free Software Foundation
  * Copyright 2000 Helix Code, Inc.
  * Copyright 2000,2001 Eazel, Inc.
@@ -30,7 +30,7 @@
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gdk/gdkx.h>
 
-#define MATE_DESKTOP_USE_UNSTABLE_API
+#define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-utils.h>
 #include <libcafe-desktop/cafe-gsettings.h>
 

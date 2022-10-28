@@ -33,9 +33,9 @@ extern "C" {
 
 #define PANEL_MINIMUM_WIDTH 12
 
-#define MATE_PANEL_APPLET_ASSOC_PANEL_KEY "cafe_panel_applet_assoc_panel_key"
-#define MATE_PANEL_APPLET_FORBIDDEN_PANELS "cafe_panel_applet_forbidden_panels"
-#define MATE_PANEL_APPLET_DATA "cafe_panel_applet_data"
+#define CAFE_PANEL_APPLET_ASSOC_PANEL_KEY "cafe_panel_applet_assoc_panel_key"
+#define CAFE_PANEL_APPLET_FORBIDDEN_PANELS "cafe_panel_applet_forbidden_panels"
+#define CAFE_PANEL_APPLET_DATA "cafe_panel_applet_data"
 
 #ifndef TYPEDEF_PANEL_WIDGET
 typedef struct _PanelWidget		PanelWidget;

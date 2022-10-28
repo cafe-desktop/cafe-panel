@@ -42,7 +42,7 @@
 #include <gdk/gdkkeysyms.h>
 #include <cafemenu-tree.h>
 
-#define MATE_DESKTOP_USE_UNSTABLE_API
+#define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-utils.h>
 
 #include <libpanel-util/panel-error.h>
@@ -793,11 +793,11 @@ get_all_applications_from_alias (CafeMenuTreeAlias *alias,
 {
 	gpointer item;
 	switch (cafemenu_tree_alias_get_aliased_item_type (alias)) {
-		case MATEMENU_TREE_ITEM_ENTRY:
+		case CAFEMENU_TREE_ITEM_ENTRY:
 			item = cafemenu_tree_alias_get_aliased_entry (alias);
 			list = g_slist_append (list, (CafeMenuTreeEntry*) item);
 			break;
-		case MATEMENU_TREE_ITEM_DIRECTORY:
+		case CAFEMENU_TREE_ITEM_DIRECTORY:
 			item = cafemenu_tree_alias_get_aliased_directory (alias);
 			list = get_all_applications_from_dir ((CafeMenuTreeDirectory*) item, list);
 			cafemenu_tree_item_unref(item);
@@ -816,21 +816,21 @@ get_all_applications_from_dir (CafeMenuTreeDirectory *directory,
 	CafeMenuTreeItemType type;
 
 	iter = cafemenu_tree_directory_iter (directory);
-	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
+	while ((type = cafemenu_tree_iter_next (iter)) != CAFEMENU_TREE_ITEM_INVALID) {
 		gpointer item;
 		switch (type) {
-			case MATEMENU_TREE_ITEM_ENTRY:
+			case CAFEMENU_TREE_ITEM_ENTRY:
 				item = cafemenu_tree_iter_get_entry (iter);
 				list = g_slist_append (list, (CafeMenuTreeEntry*) item);
 				break;
 
-			case MATEMENU_TREE_ITEM_DIRECTORY:
+			case CAFEMENU_TREE_ITEM_DIRECTORY:
 				item = cafemenu_tree_iter_get_directory (iter);
 				list = get_all_applications_from_dir ((CafeMenuTreeDirectory*)item, list);
 				cafemenu_tree_item_unref(item);
 				break;
 
-			case MATEMENU_TREE_ITEM_ALIAS:
+			case CAFEMENU_TREE_ITEM_ALIAS:
 				item = cafemenu_tree_iter_get_alias (iter);
 				list = get_all_applications_from_alias ((CafeMenuTreeAlias *)item, list);
 				cafemenu_tree_item_unref(item);
@@ -851,7 +851,7 @@ static GSList* get_all_applications(void)
 	GError        *error = NULL;
 	GSList* retval;
 
-	tree = cafemenu_tree_new ("cafe-applications.menu", MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
+	tree = cafemenu_tree_new ("cafe-applications.menu", CAFEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
 	if (!cafemenu_tree_load_sync (tree, &error)) {
 		g_printerr ("Failed to load tree: %s\n", error->message);
 		g_error_free(error);

@@ -180,7 +180,7 @@ applet_cafeconf_get_int_with_default (SomeAppletType *applet,
 
       g_assert(error == NULL);
       
-      if (check_type(key, val, MATECONF_VALUE_INT, &error))
+      if (check_type(key, val, CAFECONF_VALUE_INT, &error))
         retval = cafeconf_value_get_int(val);
       else
         handle_error(client, error, err);

@@ -2,9 +2,9 @@ lib_LTLIBRARIES = libcafe-panel-applet-4.la
 noinst_PROGRAMS = test-dbus-applet
 
 AM_CPPFLAGS =							\
-	$(LIBMATE_PANEL_APPLET_CFLAGS)				\
+	$(LIBCAFE_PANEL_APPLET_CFLAGS)				\
 	-I$(top_builddir)/libcafe-panel-applet			\
-	-DMATELOCALEDIR=\""$(datadir)/locale"\"	\
+	-DCAFELOCALEDIR=\""$(datadir)/locale"\"	\
 	$(DISABLE_DEPRECATED_CFLAGS)
 
 AM_CFLAGS = $(WARN_CFLAGS)
@@ -32,15 +32,15 @@ libcafe_panel_applet_4_la_SOURCES +=	\
 endif
 
 libcafe_panel_applet_4_la_LIBADD  = \
-	$(LIBMATE_PANEL_APPLET_LIBS) \
+	$(LIBCAFE_PANEL_APPLET_LIBS) \
 	$(X_LIBS)
 
 libcafe_panel_applet_4_la_LDFLAGS = \
-	-version-info $(LIB_MATE_PANEL_APPLET_LT_VERSION)	\
+	-version-info $(LIB_CAFE_PANEL_APPLET_LT_VERSION)	\
 	-no-undefined
 
 test_dbus_applet_LDADD =	\
-	$(LIBMATE_PANEL_APPLET_LIBS)	\
+	$(LIBCAFE_PANEL_APPLET_LIBS)	\
 	libcafe-panel-applet-4.la
 
 $(libcafe_panel_applet_4_la_OBJECTS) $(test_dbus_applet_OBJECTS): $(BUILT_SOURCES)
@@ -72,11 +72,11 @@ cafe-panel-applet-enums.c: @REBUILD@ $(cafe_panel_applet_enum_headers)
 
 cafe-panel-applet-enums.h: @REBUILD@ $(cafe_panel_applet_enum_headers)
 	$(AM_V_GEN)glib-mkenums \
-			--fhead "#ifndef __MATE_PANEL_APPLET_ENUMS_H__\n" \
-			--fhead "#define __MATE_PANEL_APPLET_ENUMS_H__\n\n" \
+			--fhead "#ifndef __CAFE_PANEL_APPLET_ENUMS_H__\n" \
+			--fhead "#define __CAFE_PANEL_APPLET_ENUMS_H__\n\n" \
 			--fhead "#ifdef __cplusplus\nextern \"C\" {\n#endif\n\n" \
 			--ftail "#ifdef __cplusplus\n}\n#endif\n\n" \
-			--ftail "#endif /* __MATE_PANEL_APPLET_ENUMS_H__ */\n" \
+			--ftail "#endif /* __CAFE_PANEL_APPLET_ENUMS_H__ */\n" \
 			--fprod "\n/* --- @filename@ --- */" \
 			--eprod "#define PANEL_TYPE_@ENUMNAME@ @enum_name@_get_type()\n" \
 			--eprod "GType @enum_name@_get_type (void);\n" \

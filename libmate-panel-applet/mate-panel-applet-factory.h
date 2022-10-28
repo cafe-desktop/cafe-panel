@@ -19,8 +19,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef MATE_PANEL_APPLET_FACTORY_H
-#define MATE_PANEL_APPLET_FACTORY_H
+#ifndef CAFE_PANEL_APPLET_FACTORY_H
+#define CAFE_PANEL_APPLET_FACTORY_H
 
 #include <glib-object.h>
 
@@ -31,8 +31,8 @@ extern "C" {
 #endif
 
 #define PANEL_TYPE_APPLET_FACTORY            (cafe_panel_applet_factory_get_type ())
-#define MATE_PANEL_APPLET_FACTORY(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLET_FACTORY, CafePanelAppletFactory))
-#define MATE_PANEL_APPLET_FACTORY_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), PANEL_TYPE_APPLET_FACTORY, CafePanelAppletFactoryClass))
+#define CAFE_PANEL_APPLET_FACTORY(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLET_FACTORY, CafePanelAppletFactory))
+#define CAFE_PANEL_APPLET_FACTORY_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), PANEL_TYPE_APPLET_FACTORY, CafePanelAppletFactoryClass))
 #define PANEL_IS_APPLET_FACTORY(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), PANEL_TYPE_APPLET_FACTORY))
 
 typedef struct _CafePanelAppletFactory        CafePanelAppletFactory;
@@ -50,4 +50,4 @@ GtkWidget          *cafe_panel_applet_factory_get_applet_widget (const gchar    
 }
 #endif
 
-#endif /* MATE_PANEL_APPLET_FACTORY_H */
+#endif /* CAFE_PANEL_APPLET_FACTORY_H */

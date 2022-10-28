@@ -75,10 +75,10 @@ static const AppletPropertyInfo applet_properties [] = {
 	{ "locked-down", "LockedDown" }
 };
 
-#define MATE_PANEL_APPLET_BUS_NAME            "org.cafe.panel.applet.%s"
-#define MATE_PANEL_APPLET_FACTORY_INTERFACE   "org.cafe.panel.applet.AppletFactory"
-#define MATE_PANEL_APPLET_FACTORY_OBJECT_PATH "/org/cafe/panel/applet/%s"
-#define MATE_PANEL_APPLET_INTERFACE           "org.cafe.panel.applet.Applet"
+#define CAFE_PANEL_APPLET_BUS_NAME            "org.cafe.panel.applet.%s"
+#define CAFE_PANEL_APPLET_FACTORY_INTERFACE   "org.cafe.panel.applet.AppletFactory"
+#define CAFE_PANEL_APPLET_FACTORY_OBJECT_PATH "/org/cafe/panel/applet/%s"
+#define CAFE_PANEL_APPLET_INTERFACE           "org.cafe.panel.applet.Applet"
 
 #ifdef HAVE_X11
 static gboolean cafe_panel_applet_container_plug_removed (CafePanelAppletContainer *container);
@@ -152,7 +152,7 @@ cafe_panel_applet_container_cancel_pending_operations (CafePanelAppletContainer 
 static void
 cafe_panel_applet_container_dispose (GObject *object)
 {
-	CafePanelAppletContainer *container = MATE_PANEL_APPLET_CONTAINER (object);
+	CafePanelAppletContainer *container = CAFE_PANEL_APPLET_CONTAINER (object);
 
 	if (container->priv->pending_ops) {
 		cafe_panel_applet_container_cancel_pending_operations (container);
@@ -367,7 +367,7 @@ on_proxy_appeared (GObject      *source_object,
 		return;
 	}
 
-	container = MATE_PANEL_APPLET_CONTAINER (g_async_result_get_source_object (G_ASYNC_RESULT (result)));
+	container = CAFE_PANEL_APPLET_CONTAINER (g_async_result_get_source_object (G_ASYNC_RESULT (result)));
 
 	container->priv->applet_proxy = proxy;
 	g_signal_connect (container->priv->applet_proxy, "g-signal",
@@ -378,7 +378,7 @@ on_proxy_appeared (GObject      *source_object,
 					    "org.freedesktop.DBus.Properties",
 					    "PropertiesChanged",
 					    g_dbus_proxy_get_object_path (proxy),
-					    MATE_PANEL_APPLET_INTERFACE,
+					    CAFE_PANEL_APPLET_INTERFACE,
 					    G_DBUS_SIGNAL_FLAGS_NONE,
 					    (GDBusSignalCallback) on_property_changed,
 					    container, NULL);
@@ -422,7 +422,7 @@ get_applet_cb (GObject      *source_object,
 		return;
 	}
 
-	container = MATE_PANEL_APPLET_CONTAINER (g_async_result_get_source_object (G_ASYNC_RESULT (result)));
+	container = CAFE_PANEL_APPLET_CONTAINER (g_async_result_get_source_object (G_ASYNC_RESULT (result)));
 	g_variant_get (retvals,
 	               "(&obuu)",
 	               &applet_path,
@@ -435,7 +435,7 @@ get_applet_cb (GObject      *source_object,
 			  NULL,
 			  container->priv->bus_name,
 			  applet_path,
-			  MATE_PANEL_APPLET_INTERFACE,
+			  CAFE_PANEL_APPLET_INTERFACE,
 			  NULL,
 			  (GAsyncReadyCallback) on_proxy_appeared,
 			  result);
@@ -472,13 +472,13 @@ on_factory_appeared (GDBusConnection   *connection,
 	CafePanelAppletContainer *container;
 	gchar                *object_path;
 
-	container = MATE_PANEL_APPLET_CONTAINER (g_async_result_get_source_object (G_ASYNC_RESULT (data->result)));
+	container = CAFE_PANEL_APPLET_CONTAINER (g_async_result_get_source_object (G_ASYNC_RESULT (data->result)));
 	container->priv->bus_name = g_strdup (name_owner);
-	object_path = g_strdup_printf (MATE_PANEL_APPLET_FACTORY_OBJECT_PATH, data->factory_id);
+	object_path = g_strdup_printf (CAFE_PANEL_APPLET_FACTORY_OBJECT_PATH, data->factory_id);
 	g_dbus_connection_call (connection,
 				name_owner,
 				object_path,
-				MATE_PANEL_APPLET_FACTORY_INTERFACE,
+				CAFE_PANEL_APPLET_FACTORY_INTERFACE,
 				"GetApplet",
 				data->parameters,
 				G_VARIANT_TYPE ("(obuu)"),
@@ -514,8 +514,8 @@ cafe_panel_applet_container_get_applet (CafePanelAppletContainer *container,
 	applet_id = g_strrstr (iid, "::");
 	if (!applet_id) {
 		g_simple_async_result_set_error (result,
-						 MATE_PANEL_APPLET_CONTAINER_ERROR,
-						 MATE_PANEL_APPLET_CONTAINER_INVALID_APPLET,
+						 CAFE_PANEL_APPLET_CONTAINER_ERROR,
+						 CAFE_PANEL_APPLET_CONTAINER_INVALID_APPLET,
 						 "Invalid applet iid: %s", iid);
 		g_simple_async_result_complete (result);
 		g_object_unref (result);
@@ -543,7 +543,7 @@ cafe_panel_applet_container_get_applet (CafePanelAppletContainer *container,
 	data->parameters = g_variant_new ("(si*)", applet_id, screen_number, props);
 	data->cancellable = cancellable ? g_object_ref (cancellable) : NULL;
 
-	bus_name = g_strdup_printf (MATE_PANEL_APPLET_BUS_NAME, factory_id);
+	bus_name = g_strdup_printf (CAFE_PANEL_APPLET_BUS_NAME, factory_id);
 
 	container->priv->iid = g_strdup (iid);
 	container->priv->name_watcher_id =
@@ -610,7 +610,7 @@ set_applet_property_cb (GObject      *source_object,
 		g_variant_unref (retvals);
 	}
 
-	container = MATE_PANEL_APPLET_CONTAINER (g_async_result_get_source_object (G_ASYNC_RESULT (result)));
+	container = CAFE_PANEL_APPLET_CONTAINER (g_async_result_get_source_object (G_ASYNC_RESULT (result)));
 	g_hash_table_remove (container->priv->pending_ops, result);
 	g_simple_async_result_complete (result);
 	g_object_unref (result);
@@ -638,8 +638,8 @@ cafe_panel_applet_container_child_set (CafePanelAppletContainer *container,
 	if (!info) {
 		g_simple_async_report_error_in_idle (G_OBJECT (container),
 						     callback, user_data,
-						     MATE_PANEL_APPLET_CONTAINER_ERROR,
-						     MATE_PANEL_APPLET_CONTAINER_INVALID_CHILD_PROPERTY,
+						     CAFE_PANEL_APPLET_CONTAINER_ERROR,
+						     CAFE_PANEL_APPLET_CONTAINER_INVALID_CHILD_PROPERTY,
 						     "%s: Applet has no child property named `%s'",
 						     G_STRLOC, property_name);
 		return NULL;
@@ -714,7 +714,7 @@ get_applet_property_cb (GObject      *source_object,
 		g_variant_unref (retvals);
 	}
 
-	container = MATE_PANEL_APPLET_CONTAINER (g_async_result_get_source_object (G_ASYNC_RESULT (result)));
+	container = CAFE_PANEL_APPLET_CONTAINER (g_async_result_get_source_object (G_ASYNC_RESULT (result)));
 	g_hash_table_remove (container->priv->pending_ops, result);
 	g_simple_async_result_complete (result);
 	g_object_unref (result);
@@ -741,8 +741,8 @@ cafe_panel_applet_container_child_get (CafePanelAppletContainer *container,
 	if (!info) {
 		g_simple_async_report_error_in_idle (G_OBJECT (container),
 						     callback, user_data,
-						     MATE_PANEL_APPLET_CONTAINER_ERROR,
-						     MATE_PANEL_APPLET_CONTAINER_INVALID_CHILD_PROPERTY,
+						     CAFE_PANEL_APPLET_CONTAINER_ERROR,
+						     CAFE_PANEL_APPLET_CONTAINER_INVALID_CHILD_PROPERTY,
 						     "%s: Applet has no child property named `%s'",
 						     G_STRLOC, property_name);
 		return NULL;
@@ -834,7 +834,7 @@ cafe_panel_applet_container_child_popup_menu (CafePanelAppletContainer *containe
 	g_dbus_connection_call (g_dbus_proxy_get_connection (proxy),
 				g_dbus_proxy_get_name (proxy),
 				g_dbus_proxy_get_object_path (proxy),
-				MATE_PANEL_APPLET_INTERFACE,
+				CAFE_PANEL_APPLET_INTERFACE,
 				"PopupMenu",
 				g_variant_new ("(uu)", button, timestamp),
 				NULL,

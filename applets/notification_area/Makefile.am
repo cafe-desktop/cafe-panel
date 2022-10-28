@@ -8,11 +8,11 @@ noinst_PROGRAMS = testtray
 
 AM_CPPFLAGS =							\
 	$(NOTIFICATION_AREA_CFLAGS)				\
-	$(LIBMATE_PANEL_APPLET_CFLAGS)				\
+	$(LIBCAFE_PANEL_APPLET_CFLAGS)				\
 	-I$(srcdir)						\
 	-I$(srcdir)/../../libcafe-panel-applet			\
 	-I$(top_builddir)/libcafe-panel-applet			\
-	-DMATELOCALEDIR=\""$(datadir)/locale"\"		\
+	-DCAFELOCALEDIR=\""$(datadir)/locale"\"		\
 	-DG_LOG_DOMAIN=\""notification-area-applet"\"		\
 	-DPROVIDE_WATCHER_SERVICE=1				\
 	$(DISABLE_DEPRECATED_CFLAGS)
@@ -41,7 +41,7 @@ NOTIFICATION_AREA_LDADD =				\
 	../../libcafe-panel-applet/libcafe-panel-applet-4.la	\
 	libtray.la \
 	$(NOTIFICATION_AREA_LIBS)			\
-	$(LIBMATE_PANEL_APPLET_LIBS)
+	$(LIBCAFE_PANEL_APPLET_LIBS)
 
 
 testtray_SOURCES = testtray.c

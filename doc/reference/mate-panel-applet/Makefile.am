@@ -28,7 +28,7 @@ CFILE_GLOB=$(top_srcdir)/libcafe-panel-applet/*.c
 
 # Header files to ignore when scanning.
 IGNORE_HFILES =					\
-	MATE_Panel.h				\
+	CAFE_Panel.h				\
 	cafe-panel-applet-enums.h			\
 	cafe-panel-applet-marshal.h			\
 	cafe-panel-applet-private.h			\

@@ -561,7 +561,7 @@ static void display_about_dialog(GtkAction* action, FishApplet* fish)
 		"comments", descr,
 		"copyright", _("Copyright \xc2\xa9 1998-2002 Free Software Foundation, Inc.\n"
 		               "Copyright \xc2\xa9 2002-2005 Vincent Untz\n"
-		               "Copyright \xc2\xa9 2012-2020 MATE developers"),
+		               "Copyright \xc2\xa9 2012-2020 CAFE developers"),
 		"documenters", documenters,
 		"logo-icon-name", FISH_ICON,
 		"translator-credits", _("translator-credits"),
@@ -1248,8 +1248,8 @@ static void rotate_changed_notify(GSettings* settings, gchar* key, FishApplet* f
 		return;
 	fish->rotate = value;
 
-	if (fish->orientation == MATE_PANEL_APPLET_ORIENT_LEFT ||
-	    fish->orientation == MATE_PANEL_APPLET_ORIENT_RIGHT)
+	if (fish->orientation == CAFE_PANEL_APPLET_ORIENT_LEFT ||
+	    fish->orientation == CAFE_PANEL_APPLET_ORIENT_RIGHT)
 		update_pixmap (fish);
 
 	if (fish->rotate_toggle &&
@@ -1371,8 +1371,8 @@ static void update_pixmap(FishApplet* fish)
 		return;
 
 	if (fish->rotate &&
-	    (fish->orientation == MATE_PANEL_APPLET_ORIENT_LEFT ||
-	     fish->orientation == MATE_PANEL_APPLET_ORIENT_RIGHT))
+	    (fish->orientation == CAFE_PANEL_APPLET_ORIENT_LEFT ||
+	     fish->orientation == CAFE_PANEL_APPLET_ORIENT_RIGHT))
 		rotate = TRUE;
 
 	pixbuf_width  = gdk_pixbuf_get_width  (fish->pixbuf);
@@ -1380,8 +1380,8 @@ static void update_pixmap(FishApplet* fish)
 
 	prev_requisition = fish->requisition;
 
-	if (fish->orientation == MATE_PANEL_APPLET_ORIENT_UP ||
-	    fish->orientation == MATE_PANEL_APPLET_ORIENT_DOWN) {
+	if (fish->orientation == CAFE_PANEL_APPLET_ORIENT_UP ||
+	    fish->orientation == CAFE_PANEL_APPLET_ORIENT_DOWN) {
 		height = allocation.height;
 		width  = pixbuf_width * ((gdouble) height / pixbuf_height);
 		fish->requisition.width = width / fish->n_frames;
@@ -1442,7 +1442,7 @@ static void update_pixmap(FishApplet* fish)
 	}
 
 	if (rotate) {
-		if (fish->orientation == MATE_PANEL_APPLET_ORIENT_RIGHT) {
+		if (fish->orientation == CAFE_PANEL_APPLET_ORIENT_RIGHT) {
 			cairo_matrix_translate (&matrix, pixbuf_width - 1, 0);
 			cairo_matrix_rotate (&matrix, M_PI * 0.5);
 		} else {
@@ -1486,9 +1486,9 @@ static gboolean fish_applet_draw(GtkWidget* widget, cairo_t *cr, FishApplet* fis
 	src_y = 0;
 
 	if (fish->rotate) {
-		if (fish->orientation == MATE_PANEL_APPLET_ORIENT_RIGHT)
+		if (fish->orientation == CAFE_PANEL_APPLET_ORIENT_RIGHT)
 			src_y += ((height * (fish->n_frames - 1 - fish->current_frame)) / fish->n_frames);
-		else if (fish->orientation == MATE_PANEL_APPLET_ORIENT_LEFT)
+		else if (fish->orientation == CAFE_PANEL_APPLET_ORIENT_LEFT)
 			src_y += ((height * fish->current_frame) / fish->n_frames);
 		else
 			src_x += ((width * fish->current_frame) / fish->n_frames);
@@ -1844,7 +1844,7 @@ static void fish_applet_instance_init(FishApplet* fish, FishAppletClass* klass)
 	fish->speed    = 0.0;
 	fish->rotate   = FALSE;
 
-	fish->orientation = MATE_PANEL_APPLET_ORIENT_UP;
+	fish->orientation = CAFE_PANEL_APPLET_ORIENT_UP;
 
 	fish->frame         = NULL;
 	fish->drawing_area  = NULL;
@@ -1884,9 +1884,9 @@ static void fish_applet_instance_init(FishApplet* fish, FishAppletClass* klass)
 
 	fish->april_fools = FALSE;
 
-	cafe_panel_applet_set_flags (MATE_PANEL_APPLET (fish), MATE_PANEL_APPLET_EXPAND_MINOR);
+	cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (fish), CAFE_PANEL_APPLET_EXPAND_MINOR);
 
-	cafe_panel_applet_set_background_widget(MATE_PANEL_APPLET(fish), GTK_WIDGET(fish));
+	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET(fish), GTK_WIDGET(fish));
 }
 
 static void fish_applet_class_init(FishAppletClass* klass)
@@ -1927,7 +1927,7 @@ static GType fish_applet_get_type(void)
 }
 
 #ifdef FISH_INPROCESS
-	MATE_PANEL_APPLET_IN_PROCESS_FACTORY("FishAppletFactory", fish_applet_get_type(), "That-stupid-fish", fishy_factory, NULL)
+	CAFE_PANEL_APPLET_IN_PROCESS_FACTORY("FishAppletFactory", fish_applet_get_type(), "That-stupid-fish", fishy_factory, NULL)
 #else
-	MATE_PANEL_APPLET_OUT_PROCESS_FACTORY("FishAppletFactory", fish_applet_get_type(), "That-stupid-fish", fishy_factory, NULL)
+	CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY("FishAppletFactory", fish_applet_get_type(), "That-stupid-fish", fishy_factory, NULL)
 #endif

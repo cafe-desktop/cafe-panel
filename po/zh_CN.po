@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -240,10 +240,10 @@ msgstr "时钟显示当前时间和日期"
 #: applets/clock/clock.c:3393
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "版权所有 © 1998-2004 自由软件基金会\n"
-"版权所有 © 2012-2020 MATE 开发者"
+"版权所有 © 2012-2020 CAFE 开发者"
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
 #: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
@@ -690,11 +690,11 @@ msgstr "关于小鱼"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "版权所有 © 1998-2002 自由软件基金会\n"
 "版权所有 © 2002-2005 Vincent Untz\n"
-"版权所有 © 2012-2020 MATE 开发者"
+"版权所有 © 2012-2020 CAFE 开发者"
 
 #: applets/fish/fish.c:579
 #, c-format
@@ -903,12 +903,12 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "版权所有 © 2002 Red Hat, Inc.\n"
 "版权所有 © 2003-2006 Vincent Untz\n"
 "版权所有 © 2011 Perberos\n"
-"版权所有 © 2012-2020 MATE 开发者"
+"版权所有 © 2012-2020 CAFE 开发者"
 
 #: applets/notification_area/main.c:485
 msgid "Panel Notification Area"
@@ -1130,11 +1130,11 @@ msgstr "这个按钮让您隐藏所有的窗口并显示桌面。"
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "版权所有 © 2002 Red Hat, Inc.\n"
 "版权所有 © 2011 Perberos\n"
-"版权所有 © 2012-2020 MATE 开发者"
+"版权所有 © 2012-2020 CAFE 开发者"
 
 #: applets/wncklet/showdesktop.c:529
 msgid ""
@@ -1240,13 +1240,13 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "版权所有 © 2000 Helix Code, Inc.\n"
 "版权所有 © 2001 自由软件基金会\n"
 "版权所有 © 2003 Sun Microsystems, Inc.\n"
 "版权所有 © 2011 Perberos\n"
-"版权所有 © 2012-2020 MATE 开发者"
+"版权所有 © 2012-2020 CAFE 开发者"
 
 #: applets/wncklet/workspace-switcher.c:240
 #: applets/wncklet/workspace-switcher.c:939
@@ -1468,11 +1468,11 @@ msgstr "禁止载入的小程序的 IID"
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "列出了面板将忽略的小程序 IID。这样，您就可以禁止载入特定的小程序，或者不将这些小程序显示在菜单中。例如，要禁用 mini-commander "
-"小程序，只需在此列表中添加“OAFIID:MATE_MiniCommanderApplet”。要让此设置生效，必须重新启动面板。"
+"小程序，只需在此列表中添加“OAFIID:CAFE_MiniCommanderApplet”。要让此设置生效，必须重新启动面板。"
 
 #: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
@@ -2465,18 +2465,18 @@ msgid "And many, many others…"
 msgstr "以及很多其他的…"
 
 #: cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
-msgstr "MATE 面板程序"
+msgid "The CAFE Panel"
+msgstr "CAFE 面板程序"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE developers"
+"Copyright © 2011-2020 CAFE developers"
 msgstr ""
 "版权所有 © 1997-2003 自由软件基金会\n"
 "版权所有 © 2004 Vincent Untz\n"
-"版权所有 © 2011-2020 MATE 开发者"
+"版权所有 © 2011-2020 CAFE 开发者"
 
 #: cafe-panel/panel-context-menu.c:119
 msgid ""
@@ -2485,8 +2485,8 @@ msgid ""
 msgstr "本程序负责启动其它应用程序并提供有用的工具。"
 
 #: cafe-panel/panel-context-menu.c:123
-msgid "About the MATE Panel"
-msgstr "关于 MATE 面板"
+msgid "About the CAFE Panel"
+msgstr "关于 CAFE 面板"
 
 #: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
@@ -3164,8 +3164,8 @@ msgid "Test DBus Applet"
 msgstr "测试 DBus 小程序"
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
-msgid "A simple applet for testing the MATE panel"
-msgstr "一个测试 MATE 面板的简单小程序"
+msgid "A simple applet for testing the CAFE panel"
+msgstr "一个测试 CAFE 面板的简单小程序"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!

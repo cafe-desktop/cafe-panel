@@ -28,7 +28,7 @@
   * panel-applet-frame: Fix leaking bg_pattern
   * fix release tarballs on travis CI failed
   * build: silent build warnings for distcheck
-  * use default MATE_COMPILE_WARNINGS level
+  * use default CAFE_COMPILE_WARNINGS level
   * Add larger icon sizes
   * Clean scalable svg files
   * button-widget: Fix memory leak
@@ -62,7 +62,7 @@
   * Fetch clock formats using LC_TIME (as opposed to LANGUAGE)
   * Change the panel menu descriptions to better identify them
   * Load layouts from absolute paths
-  * Set compiler debug flags using MATE_DEBUG_CHECK
+  * Set compiler debug flags using CAFE_DEBUG_CHECK
   * sn-item: avoid 'g_type_class_add_private'
   * notification_area/main: avoid 'g_type_class_add_private'
   * na-tray: avoid 'g_type_class_add_private'
@@ -113,7 +113,7 @@
   * Load and store what platforms applets support
   * panel-addto support disabling applets
   * Panel addto Wayland support
-  * Add MATE_PANEL_APPLET_LIB_PREFIX environment variable
+  * Add CAFE_PANEL_APPLET_LIB_PREFIX environment variable
   * Switch out wayland protocols for gtk-layer-shell dependency
   * Update FSF address
   * revert menu-bar: transfer focus correctly on alt-F1
@@ -296,7 +296,7 @@
   * panel-test-applets.ui: avoid deprecated:
   * window-list.ui: avoid GtkVBox and GtkButton:use-stock
   * workspace-switcher.ui: avoid deprecated GtkButton:use-stock
-  * Theme: show applet handles on non-MATE themes
+  * Theme: show applet handles on non-CAFE themes
   * panel-properties-dialog.ui: avoid GtkButton:use-stock and GtkImage:stock
   * fish.ui: avoid deprecated:
   * clock.ui: avoid deprecated:

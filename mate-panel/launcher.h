@@ -1,5 +1,5 @@
 /*
- * MATE panel launcher module.
+ * CAFE panel launcher module.
  * (C) 1997 The Free Software Foundation
  *
  * Authors: Miguel de Icaza

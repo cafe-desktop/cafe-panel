@@ -152,8 +152,8 @@ static const GtkToggleActionEntry menu_toggle_entries[] = {
 
 G_DEFINE_TYPE_WITH_PRIVATE (CafePanelApplet, cafe_panel_applet, GTK_TYPE_EVENT_BOX)
 
-#define MATE_PANEL_APPLET_INTERFACE   "org.cafe.panel.applet.Applet"
-#define MATE_PANEL_APPLET_OBJECT_PATH "/org/cafe/panel/applet/%s/%d"
+#define CAFE_PANEL_APPLET_INTERFACE   "org.cafe.panel.applet.Applet"
+#define CAFE_PANEL_APPLET_OBJECT_PATH "/org/cafe/panel/applet/%s/%d"
 
 char *
 cafe_panel_applet_get_preferences_path (CafePanelApplet *applet)
@@ -187,7 +187,7 @@ cafe_panel_applet_set_preferences_path (CafePanelApplet *applet,
 CafePanelAppletFlags
 cafe_panel_applet_get_flags (CafePanelApplet *applet)
 {
-	g_return_val_if_fail (PANEL_IS_APPLET (applet), MATE_PANEL_APPLET_FLAGS_NONE);
+	g_return_val_if_fail (PANEL_IS_APPLET (applet), CAFE_PANEL_APPLET_FLAGS_NONE);
 
 	return applet->priv->flags;
 }
@@ -222,7 +222,7 @@ cafe_panel_applet_set_flags (CafePanelApplet      *applet,
 					       "org.freedesktop.DBus.Properties",
 					       "PropertiesChanged",
 					       g_variant_new ("(sa{sv}as)",
-							      MATE_PANEL_APPLET_INTERFACE,
+							      CAFE_PANEL_APPLET_INTERFACE,
 							      &builder,
 							      &invalidated_builder),
 					       &error);
@@ -319,7 +319,7 @@ cafe_panel_applet_set_size_hints (CafePanelApplet *applet,
 					       "org.freedesktop.DBus.Properties",
 					       "PropertiesChanged",
 					       g_variant_new ("(sa{sv}as)",
-							      MATE_PANEL_APPLET_INTERFACE,
+							      CAFE_PANEL_APPLET_INTERFACE,
 							      &builder,
 							      &invalidated_builder),
 					       &error);
@@ -417,7 +417,7 @@ cafe_panel_applet_set_locked (CafePanelApplet *applet,
 		g_dbus_connection_emit_signal (applet->priv->connection,
 					       NULL,
 					       applet->priv->object_path,
-					       MATE_PANEL_APPLET_INTERFACE,
+					       CAFE_PANEL_APPLET_INTERFACE,
 					       locked ? "Lock" : "Unlock",
 					       NULL, &error);
 		if (error) {
@@ -634,7 +634,7 @@ cafe_panel_applet_menu_cmd_remove (GtkAction   *action,
 	g_dbus_connection_emit_signal (applet->priv->connection,
 				       NULL,
 				       applet->priv->object_path,
-				       MATE_PANEL_APPLET_INTERFACE,
+				       CAFE_PANEL_APPLET_INTERFACE,
 				       "RemoveFromPanel",
 				       NULL, &error);
 	if (error) {
@@ -656,7 +656,7 @@ cafe_panel_applet_menu_cmd_move (GtkAction   *action,
 	g_dbus_connection_emit_signal (applet->priv->connection,
 				       NULL,
 				       applet->priv->object_path,
-				       MATE_PANEL_APPLET_INTERFACE,
+				       CAFE_PANEL_APPLET_INTERFACE,
 				       "Move",
 				       NULL, &error);
 	if (error) {
@@ -767,7 +767,7 @@ cafe_panel_applet_setup_menu_from_resource (CafePanelApplet    *applet,
 static void
 cafe_panel_applet_finalize (GObject *object)
 {
-	CafePanelApplet *applet = MATE_PANEL_APPLET (object);
+	CafePanelApplet *applet = CAFE_PANEL_APPLET (object);
 
 	if (applet->priv->connection) {
 		if (applet->priv->object_id)
@@ -859,16 +859,16 @@ cafe_panel_applet_menu_popup (CafePanelApplet *applet,
 	GdkGravity widget_anchor = GDK_GRAVITY_NORTH_WEST;
 	GdkGravity menu_anchor = GDK_GRAVITY_NORTH_WEST;
 	switch (applet->priv->orient) {
-	case MATE_PANEL_APPLET_ORIENT_UP:
+	case CAFE_PANEL_APPLET_ORIENT_UP:
 		menu_anchor = GDK_GRAVITY_SOUTH_WEST;
 		break;
-	case MATE_PANEL_APPLET_ORIENT_DOWN:
+	case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		widget_anchor = GDK_GRAVITY_SOUTH_WEST;
 		break;
-	case MATE_PANEL_APPLET_ORIENT_LEFT:
+	case CAFE_PANEL_APPLET_ORIENT_LEFT:
 		menu_anchor = GDK_GRAVITY_NORTH_EAST;
 		break;
-	case MATE_PANEL_APPLET_ORIENT_RIGHT:
+	case CAFE_PANEL_APPLET_ORIENT_RIGHT:
 		widget_anchor = GDK_GRAVITY_NORTH_EAST;
 		break;
 	}
@@ -975,7 +975,7 @@ static gboolean
 cafe_panel_applet_button_press (GtkWidget      *widget,
 			   GdkEventButton *event)
 {
-	CafePanelApplet *applet = MATE_PANEL_APPLET (widget);
+	CafePanelApplet *applet = CAFE_PANEL_APPLET (widget);
 
 	if (!container_has_focusable_child (GTK_CONTAINER (applet))) {
 		if (!gtk_widget_has_focus (widget)) {
@@ -997,7 +997,7 @@ static gboolean
 cafe_panel_applet_button_release (GtkWidget      *widget,
 			     GdkEventButton *event)
 {
-	CafePanelApplet *applet = MATE_PANEL_APPLET (widget);
+	CafePanelApplet *applet = CAFE_PANEL_APPLET (widget);
 
 	return cafe_panel_applet_button_event (applet, event);
 }
@@ -1010,7 +1010,7 @@ cafe_panel_applet_key_press_event (GtkWidget   *widget,
 			      GdkEventKey *event)
 {
     if (event->keyval == GDK_KEY_Menu) {
-        cafe_panel_applet_menu_popup (MATE_PANEL_APPLET (widget), (GdkEvent *) event);
+        cafe_panel_applet_menu_popup (CAFE_PANEL_APPLET (widget), (GdkEvent *) event);
         return TRUE;
     }
     else
@@ -1027,7 +1027,7 @@ cafe_panel_applet_get_preferred_width (GtkWidget *widget,
 										natural_width);
 
 #if !GTK_CHECK_VERSION (3, 23, 0)
-	CafePanelApplet *applet = MATE_PANEL_APPLET (widget);
+	CafePanelApplet *applet = CAFE_PANEL_APPLET (widget);
 	if (applet->priv->out_of_process) {
 		/* Out-of-process applets end up scaled up doubly with GTK 3.22.
 		 * For these builds divide by the scale factor to ensure
@@ -1051,7 +1051,7 @@ cafe_panel_applet_get_preferred_height (GtkWidget *widget,
 										natural_height);
 
 #if !GTK_CHECK_VERSION (3, 23, 0)
-	CafePanelApplet *applet = MATE_PANEL_APPLET (widget);
+	CafePanelApplet *applet = CAFE_PANEL_APPLET (widget);
 	if (applet->priv->out_of_process) {
 		gint scale;
 		/* Out-of-process applets end up scaled up doubly with GTK 3.22.
@@ -1116,7 +1116,7 @@ cafe_panel_applet_size_allocate (GtkWidget     *widget,
 			gtk_widget_size_allocate (child, &child_allocation);
 	}
 
-	applet = MATE_PANEL_APPLET (widget);
+	applet = CAFE_PANEL_APPLET (widget);
 
 	if (applet->priv->previous_height != allocation->height ||
 	    applet->priv->previous_width  != allocation->width) {
@@ -1171,7 +1171,7 @@ cafe_panel_applet_focus (GtkWidget        *widget,
 
 	g_return_val_if_fail (PANEL_IS_APPLET (widget), FALSE);
 
-	applet = MATE_PANEL_APPLET (widget);
+	applet = CAFE_PANEL_APPLET (widget);
 	if (applet->priv->moving_focus_out) {
 		/*
 		 * Applet will retain focus if there is nothing else on the
@@ -1491,8 +1491,8 @@ cafe_panel_applet_realize (GtkWidget *widget)
 {
 	GTK_WIDGET_CLASS (cafe_panel_applet_parent_class)->realize (widget);
 
-	if (MATE_PANEL_APPLET (widget)->priv->background)
-		cafe_panel_applet_handle_background (MATE_PANEL_APPLET (widget));
+	if (CAFE_PANEL_APPLET (widget)->priv->background)
+		cafe_panel_applet_handle_background (CAFE_PANEL_APPLET (widget));
 }
 
 static void
@@ -1554,8 +1554,8 @@ cafe_panel_applet_change_background(CafePanelApplet *applet,
 
 	if (applet->priv->out_of_process){
 		context = gtk_widget_get_style_context (GTK_WIDGET(applet->priv->plug));
-		if (applet->priv->orient == MATE_PANEL_APPLET_ORIENT_UP ||
-			applet->priv->orient == MATE_PANEL_APPLET_ORIENT_DOWN){
+		if (applet->priv->orient == CAFE_PANEL_APPLET_ORIENT_UP ||
+			applet->priv->orient == CAFE_PANEL_APPLET_ORIENT_DOWN){
 			gtk_style_context_add_class(context,"horizontal");
 		}
 		else {
@@ -1570,7 +1570,7 @@ cafe_panel_applet_get_property (GObject    *object,
 			   GValue     *value,
 			   GParamSpec *pspec)
 {
-	CafePanelApplet *applet = MATE_PANEL_APPLET (object);
+	CafePanelApplet *applet = CAFE_PANEL_APPLET (object);
 
 	switch (prop_id) {
 	case PROP_OUT_OF_PROCESS:
@@ -1631,7 +1631,7 @@ cafe_panel_applet_set_property (GObject      *object,
 			   const GValue *value,
 			   GParamSpec   *pspec)
 {
-	CafePanelApplet *applet = MATE_PANEL_APPLET (object);
+	CafePanelApplet *applet = CAFE_PANEL_APPLET (object);
 
 	switch (prop_id) {
 	case PROP_OUT_OF_PROCESS:
@@ -1790,8 +1790,8 @@ cafe_panel_applet_init (CafePanelApplet *applet)
 {
 	applet->priv = cafe_panel_applet_get_instance_private (applet);
 
-	applet->priv->flags  = MATE_PANEL_APPLET_FLAGS_NONE;
-	applet->priv->orient = MATE_PANEL_APPLET_ORIENT_UP;
+	applet->priv->flags  = CAFE_PANEL_APPLET_FLAGS_NONE;
+	applet->priv->orient = CAFE_PANEL_APPLET_ORIENT_UP;
 	applet->priv->size   = 24;
 
 	applet->priv->panel_action_group = gtk_action_group_new ("PanelActions");
@@ -1827,7 +1827,7 @@ cafe_panel_applet_constructor (GType                  type,
 	object = G_OBJECT_CLASS (cafe_panel_applet_parent_class)->constructor (type,
 	                                                                  n_construct_properties,
 	                                                                  construct_properties);
-	applet = MATE_PANEL_APPLET (object);
+	applet = CAFE_PANEL_APPLET (object);
 
 	if (!applet->priv->out_of_process)
 		return object;
@@ -1864,7 +1864,7 @@ cafe_panel_applet_constructor (GType                  type,
 static void
 cafe_panel_applet_constructed (GObject* object)
 {
-	CafePanelApplet* applet = MATE_PANEL_APPLET(object);
+	CafePanelApplet* applet = CAFE_PANEL_APPLET(object);
 
 	/* Rename the class to have compatibility with all GTK2 themes
 	 * https://github.com/perberos/Cafe-Desktop-Environment/issues/27
@@ -1944,9 +1944,9 @@ cafe_panel_applet_class_init (CafePanelAppletClass *klass)
 					 g_param_spec_uint ("orient",
 							    "Orient",
 							    "Panel Applet Orientation",
-							    MATE_PANEL_APPLET_ORIENT_FIRST,
-							    MATE_PANEL_APPLET_ORIENT_LAST,
-							    MATE_PANEL_APPLET_ORIENT_UP,
+							    CAFE_PANEL_APPLET_ORIENT_FIRST,
+							    CAFE_PANEL_APPLET_ORIENT_LAST,
+							    CAFE_PANEL_APPLET_ORIENT_UP,
 							    G_PARAM_READWRITE));
 	g_object_class_install_property (gobject_class,
 					 PROP_SIZE,
@@ -1967,9 +1967,9 @@ cafe_panel_applet_class_init (CafePanelAppletClass *klass)
 					 g_param_spec_uint ("flags",
 							    "Flags",
 							    "Panel Applet flags",
-							    MATE_PANEL_APPLET_FLAGS_NONE,
-							    MATE_PANEL_APPLET_FLAGS_ALL,
-							    MATE_PANEL_APPLET_FLAGS_NONE,
+							    CAFE_PANEL_APPLET_FLAGS_NONE,
+							    CAFE_PANEL_APPLET_FLAGS_ALL,
+							    CAFE_PANEL_APPLET_FLAGS_NONE,
 							    G_PARAM_READWRITE));
 	g_object_class_install_property (gobject_class,
 					 PROP_SIZE_HINTS,
@@ -2027,7 +2027,7 @@ cafe_panel_applet_class_init (CafePanelAppletClass *klass)
                               cafe_panel_applet_marshal_VOID__ENUM_BOXED_OBJECT,
                               G_TYPE_NONE,
 			      3,
-			      PANEL_TYPE_MATE_PANEL_APPLET_BACKGROUND_TYPE,
+			      PANEL_TYPE_CAFE_PANEL_APPLET_BACKGROUND_TYPE,
 			      GDK_TYPE_RGBA,
 			      CAIRO_GOBJECT_TYPE_PATTERN);
 
@@ -2093,7 +2093,7 @@ method_call_cb (GDBusConnection       *connection,
 		GDBusMethodInvocation *invocation,
 		gpointer               user_data)
 {
-	CafePanelApplet *applet = MATE_PANEL_APPLET (user_data);
+	CafePanelApplet *applet = CAFE_PANEL_APPLET (user_data);
 	GdkEvent *event;
 
 	if (g_strcmp0 (method_name, "PopupMenu") == 0) {
@@ -2119,7 +2119,7 @@ get_property_cb (GDBusConnection *connection,
 		 GError         **error,
 		 gpointer         user_data)
 {
-	CafePanelApplet *applet = MATE_PANEL_APPLET (user_data);
+	CafePanelApplet *applet = CAFE_PANEL_APPLET (user_data);
 	GVariant    *retval = NULL;
 
 	if (g_strcmp0 (property_name, "PrefsPath") == 0) {
@@ -2163,7 +2163,7 @@ set_property_cb (GDBusConnection *connection,
 		 GError         **error,
 		 gpointer         user_data)
 {
-	CafePanelApplet *applet = MATE_PANEL_APPLET (user_data);
+	CafePanelApplet *applet = CAFE_PANEL_APPLET (user_data);
 
 	if (g_strcmp0 (property_name, "PrefsPath") == 0) {
 		cafe_panel_applet_set_preferences_path (applet, g_variant_get_string (value, NULL));
@@ -2229,7 +2229,7 @@ cafe_panel_applet_register_object (CafePanelApplet *applet)
 	if (!introspection_data)
 		introspection_data = g_dbus_node_info_new_for_xml (introspection_xml, NULL);
 
-	applet->priv->object_path = g_strdup_printf (MATE_PANEL_APPLET_OBJECT_PATH, applet->priv->id, id++);
+	applet->priv->object_path = g_strdup_printf (CAFE_PANEL_APPLET_OBJECT_PATH, applet->priv->id, id++);
 	applet->priv->object_id =
 		g_dbus_connection_register_object (applet->priv->connection,
 						   applet->priv->object_path,
@@ -2275,7 +2275,7 @@ _x_error_handler (Display *display, XErrorEvent *error)
 }
 
 /*
- * To do graphical embedding in the X window system, MATE Panel
+ * To do graphical embedding in the X window system, CAFE Panel
  * uses the classic foreign-window-reparenting trick. The
  * GtkPlug/GtkSocket widgets are used for this purpose. However,
  * serious robustness problems arise if the GtkSocket end of the
@@ -2286,7 +2286,7 @@ _x_error_handler (Display *display, XErrorEvent *error)
  * GtkSocket was destroyed (a common state of affairs), an X error
  * will kill your application.
  *
- * To solve this latter problem, MATE Panel sets up its own X error
+ * To solve this latter problem, CAFE Panel sets up its own X error
  * handler which ignores certain X errors that might have been
  * caused by such a scenario. Other X errors get passed to gdk_x_error
  * normally.
@@ -2449,7 +2449,7 @@ cafe_panel_applet_get_applet_widget (const gchar *factory_id,
 		return NULL;
 	}
 
-	cafe_panel_applet_setup (MATE_PANEL_APPLET (widget));
+	cafe_panel_applet_setup (CAFE_PANEL_APPLET (widget));
 
 	return widget;
 }

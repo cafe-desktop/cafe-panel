@@ -63,7 +63,7 @@ panel_context_menu_show_about_dialog (GtkWidget *menuitem)
 {
 	static GtkWidget *about = NULL;
 	char             *authors [] = {
-		/* MATE */
+		/* CAFE */
 		"Perberos <perberos@gmail.com>",
 		"Stefano Karapetsas <stefano@karapetsas.com>",
 		"Steve Zesch <stevezesch2@gmail.com>",
@@ -111,16 +111,16 @@ panel_context_menu_show_about_dialog (GtkWidget *menuitem)
 
 	about = gtk_about_dialog_new ();
 	g_object_set (about,
-		      "program-name",  _("The MATE Panel"),
+		      "program-name",  _("The CAFE Panel"),
 		      "version", VERSION,
 		      "copyright", _("Copyright \xc2\xa9 1997-2003 Free Software Foundation, Inc.\n"
 		                     "Copyright \xc2\xa9 2004 Vincent Untz\n"
-		                     "Copyright \xc2\xa9 2011-2020 MATE developers"),
+		                     "Copyright \xc2\xa9 2011-2020 CAFE developers"),
 		      "comments", _("This program is responsible for launching other "
 				    "applications and provides useful utilities."),
 		      "authors", authors,
 		      "documenters", documenters,
-		      "title", _("About the MATE Panel"),
+		      "title", _("About the CAFE Panel"),
 		      "translator-credits", _("translator-credits"),
 		      "logo-icon-name", PANEL_ICON_PANEL,
 		      NULL);

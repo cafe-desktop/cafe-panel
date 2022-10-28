@@ -1,5 +1,5 @@
 /*
- * MATE panel drawer module.
+ * CAFE panel drawer module.
  *
  * List static function prototypes separate
  * to prevent errors when compiling panel.c

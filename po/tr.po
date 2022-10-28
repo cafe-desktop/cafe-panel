@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -235,10 +235,10 @@ msgstr "Saat uygulamacığı şu anki zamanı ve tarihi gösterir"
 #: applets/clock/clock.c:3393
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Telif Hakkı © 1998-2004 Free Software Foundation, Inc.\n"
-"Telif Hakkı © 2012-2020 MATE geliştiricileri"
+"Telif Hakkı © 2012-2020 CAFE geliştiricileri"
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
 #: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
@@ -252,7 +252,7 @@ msgstr ""
 "Görkem Çetin <gorkem@gelecek.com.tr>, 2002/2003.\n"
 "Barış Çicek <baris@teamforce.name.tr>, 2004, 2008, 2009.\n"
 "Muhammet Kara <muhammet.k@gmail.com>, 2011.\n"
-"MATE projesine katkıda bulunanlar:\n"
+"CAFE projesine katkıda bulunanlar:\n"
 "hsngrms <dead-bodies-everywhere@hotmail.com>, 2012\n"
 "mauron, 2012, 2013, 2014, 2015, 2016, 2017, 2018\n"
 "Atilla Öntaş <tarakbumba@gmail.com>, 2014\n"
@@ -696,11 +696,11 @@ msgstr "Balık Hakkında"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Telif Hakkı © 1998-2002 Free Software Foundation, Inc.\n"
 "Telif Hakkı © 2002-2005 Vincent Untz\n"
-"Telif Hakkı © 2012-2020 MATE geliştiricileri"
+"Telif Hakkı © 2012-2020 CAFE geliştiricileri"
 
 #: applets/fish/fish.c:579
 #, c-format
@@ -916,12 +916,12 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Telif Hakkı © 2002 Red Hat, Inc.\n"
 "Telif Hakkı © 2003-2006 Vincent Untz\n"
 "Telif Hakkı © 2011 Perberos\n"
-"Telif Hakkı © 2012-2020 MATE geliştiricileri"
+"Telif Hakkı © 2012-2020 CAFE geliştiricileri"
 
 #: applets/notification_area/main.c:485
 msgid "Panel Notification Area"
@@ -1162,11 +1162,11 @@ msgstr "Bu düğme bütün pencereleri gizleyip masaüstünü görmenizi sağlar
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Telif Hakkı © 2002 Red Hat, Inc.\n"
 "Telif Hakkı © 2011 Perberos\n"
-"Telif Hakkı © 2012-2020 MATE geliştiricileri"
+"Telif Hakkı © 2012-2020 CAFE geliştiricileri"
 
 #: applets/wncklet/showdesktop.c:529
 msgid ""
@@ -1278,13 +1278,13 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Telif Hakkı © 2000 Helix Code, Inc.\n"
 "Telif Hakkı © 2001 Free Software Foundation, Inc.\n"
 "Telif Hakkı © 2003 Sun Microsystems, Inc.\n"
 "Telif Hakkı © 2011 Perberos\n"
-"Telif Hakkı © 2012-2020 MATE geliştiricileri"
+"Telif Hakkı © 2012-2020 CAFE geliştiricileri"
 
 #: applets/wncklet/workspace-switcher.c:240
 #: applets/wncklet/workspace-switcher.c:939
@@ -1533,13 +1533,13 @@ msgstr "Yüklenmesi engellenecek uygulamacık IIDleri"
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "Panelin yoksayacağı uygulamacık IIDlerinin listesi. Bu sayede belirli "
 "uygulamacıkların menü içinde görüntülenmemesini veya yüklenmemesini "
 "sağlayabilirsiniz. Örnek olarak mini-commander uygulamacığını devre dışı "
-"bırakmak için 'OAFIID:MATE_MiniCommanderApplet'i bu listeye ekleyin. Bunun "
+"bırakmak için 'OAFIID:CAFE_MiniCommanderApplet'i bu listeye ekleyin. Bunun "
 "etkili olması için paneli yeniden başlatmanız gerekiyor."
 
 #: data/org.cafe.panel.gschema.xml.in:84
@@ -2641,18 +2641,18 @@ msgid "And many, many others…"
 msgstr "Daha daha niceleri…"
 
 #: cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
-msgstr "MATE Paneli"
+msgid "The CAFE Panel"
+msgstr "CAFE Paneli"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE developers"
+"Copyright © 2011-2020 CAFE developers"
 msgstr ""
 "Telif Hakkı © 1997-2003 Free Software Foundation, Inc.\n"
 "Telif Hakkı © 2004 Vincent Untz\n"
-"Telif Hakkı © 2011-2020 MATE geliştiricileri"
+"Telif Hakkı © 2011-2020 CAFE geliştiricileri"
 
 #: cafe-panel/panel-context-menu.c:119
 msgid ""
@@ -2663,8 +2663,8 @@ msgstr ""
 "sorumludur."
 
 #: cafe-panel/panel-context-menu.c:123
-msgid "About the MATE Panel"
-msgstr "MATE Paneli Hakkında"
+msgid "About the CAFE Panel"
+msgstr "CAFE Paneli Hakkında"
 
 #: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
@@ -3358,8 +3358,8 @@ msgid "Test DBus Applet"
 msgstr "DBus Testi Uygulamacığı"
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
-msgid "A simple applet for testing the MATE panel"
-msgstr "MATE panel testi için basit bir uygulamacık"
+msgid "A simple applet for testing the CAFE panel"
+msgstr "CAFE panel testi için basit bir uygulamacık"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
