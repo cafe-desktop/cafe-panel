@@ -1,13 +1,13 @@
-mate-panel
+cafe-panel
 ===========
 
-mate-panel contains the MATE panel, the libmate-panel-applet library and
+cafe-panel contains the MATE panel, the libcafe-panel-applet library and
 several applets:
 
   + the MATE panel is the area on your desktop from which you can run
     applications and applets, and perform other tasks.
 
-  + the libmate-panel-applet library allows to develop small applications
+  + the libcafe-panel-applet library allows to develop small applications
     which may be embedded in the panel. These are called applets.
     Documentation for the API is available with gtk-doc.
 
@@ -17,15 +17,15 @@ several applets:
 
 You may download updates to the package from:
 
-   http://pub.mate-desktop.org/releases/
+   http://pub.cafe-desktop.org/releases/
 
-mate-panel is a fork of gnome-panel.
+cafe-panel is a fork of gnome-panel.
 
 Installation
 ============
 
 See the file 'INSTALL'. If you are not using a released version of
-mate-panel (for example, if you checked out the code from git), you
+cafe-panel (for example, if you checked out the code from git), you
 first need to run './autogen.sh'.
 
 Build dependencies
@@ -33,16 +33,16 @@ Build dependencies
 
 On Ubuntu MATE 18.04 (daily 2018-01-30)
 build-essential
-mate-common
+cafe-common
 libglib2.0-dev
 yelp-tools
 gobject-introspection
 libgtk-3-dev
-libmate-desktop-dev
-libmate-menu-dev
+libcafe-desktop-dev
+libcafe-menu-dev
 libwnck-3-dev
 librsvg2-dev
-libmateweather-dev
+libcafeweather-dev
 
 For work-in-progress Wayland support
 gtk-layer-shell (https://github.com/wmww/gtk-layer-shell)
@@ -52,7 +52,7 @@ How to report bugs
 
 Bugs should be reported to the MATE bug tracking system:
 
-   https://github.com/mate-desktop/mate-panel/issues
+   https://github.com/cafe-desktop/cafe-panel/issues
 
 You will need to create an account for yourself.
 

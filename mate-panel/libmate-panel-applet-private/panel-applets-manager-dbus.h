@@ -29,7 +29,7 @@
 extern "C" {
 #endif
 
-#define PANEL_TYPE_APPLETS_MANAGER_DBUS			(mate_panel_applets_manager_dbus_get_type ())
+#define PANEL_TYPE_APPLETS_MANAGER_DBUS			(cafe_panel_applets_manager_dbus_get_type ())
 #define MATE_PANEL_APPLETS_MANAGER_DBUS(obj)			(G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLETS_MANAGER_DBUS, MatePanelAppletsManagerDBus))
 #define MATE_PANEL_APPLETS_MANAGER_DBUS_CLASS(klass)		(G_TYPE_CHECK_CLASS_CAST ((klass), PANEL_TYPE_APPLETS_MANAGER_DBUS, MatePanelAppletsManagerDBusClass))
 #define PANEL_IS_APPLETS_MANAGER_DBUS(obj)		(G_TYPE_CHECK_INSTANCE_TYPE ((obj), PANEL_TYPE_APPLETS_MANAGER_DBUS))
@@ -51,7 +51,7 @@ struct _MatePanelAppletsManagerDBus {
 	MatePanelAppletsManagerDBusPrivate *priv;
 };
 
-GType mate_panel_applets_manager_dbus_get_type (void);
+GType cafe_panel_applets_manager_dbus_get_type (void);
 
 #ifdef __cplusplus
 }

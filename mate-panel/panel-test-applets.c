@@ -15,10 +15,10 @@
 #include <gio/gio.h>
 
 #include <libpanel-util/panel-cleanup.h>
-#include <libmate-desktop/mate-dconf.h>
+#include <libcafe-desktop/cafe-dconf.h>
 
-#include <libmate-panel-applet-private/panel-applet-container.h>
-#include <libmate-panel-applet-private/panel-applets-manager-dbus.h>
+#include <libcafe-panel-applet-private/panel-applet-container.h>
+#include <libcafe-panel-applet-private/panel-applets-manager-dbus.h>
 
 #include "panel-modules.h"
 
@@ -118,7 +118,7 @@ applet_activated_cb (GObject      *source_object,
 {
 	GError *error = NULL;
 
-	if (!mate_panel_applet_container_add_finish (MATE_PANEL_APPLET_CONTAINER (source_object),
+	if (!cafe_panel_applet_container_add_finish (MATE_PANEL_APPLET_CONTAINER (source_object),
 						res, &error)) {
 		GtkWidget *dialog;
 
@@ -147,7 +147,7 @@ load_applet_into_window (const char *title,
 	GtkWidget       *applet_window;
 	GVariantBuilder  builder;
 
-	container = mate_panel_applet_container_new ();
+	container = cafe_panel_applet_container_new ();
 
 	applet_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 	//FIXME: we could set the window icon with the applet icon
@@ -166,7 +166,7 @@ load_applet_into_window (const char *title,
 			       "size", g_variant_new_uint32 (size));
 	g_variant_builder_add (&builder, "{sv}",
 			       "orient", g_variant_new_uint32 (orientation));
-	mate_panel_applet_container_add (MATE_PANEL_APPLET_CONTAINER (container),
+	cafe_panel_applet_container_add (MATE_PANEL_APPLET_CONTAINER (container),
 				    gtk_widget_get_screen (applet_window),
 				    title, NULL,
 				    (GAsyncReadyCallback)applet_activated_cb,
@@ -287,8 +287,8 @@ setup_options (void)
 
 		gtk_list_store_append (model, &iter);
 		gtk_list_store_set (model, &iter,
-				    COLUMN_TEXT, g_strdup (mate_panel_applet_info_get_name (info)),
-				    COLUMN_ITEM, g_strdup (mate_panel_applet_info_get_iid (info)),
+				    COLUMN_TEXT, g_strdup (cafe_panel_applet_info_get_name (info)),
+				    COLUMN_ITEM, g_strdup (cafe_panel_applet_info_get_iid (info)),
 				    -1);
 	}
 	g_list_free (applet_list);
@@ -310,9 +310,9 @@ setup_options (void)
 	for (i = 0; !unique_key_found; i++)
 	{
 		g_free (unique_key);
-		unique_key = g_strdup_printf ("mate-panel-test-applet-%d", i);
+		unique_key = g_strdup_printf ("cafe-panel-test-applet-%d", i);
 		unique_key_found = TRUE;
-		dconf_paths = mate_dconf_list_subdirs ("/tmp/", TRUE);
+		dconf_paths = cafe_dconf_list_subdirs ("/tmp/", TRUE);
 		for (j = 0; dconf_paths[j] != NULL; j++)
 		{
 			if (g_strcmp0(unique_key, dconf_paths[j]) == 0) {
@@ -357,8 +357,8 @@ main (int argc, char **argv)
 
 	panel_modules_ensure_loaded ();
 
-	if (g_file_test ("../libmate-panel-applet", G_FILE_TEST_IS_DIR)) {
-		applets_dir = g_strdup_printf ("%s:../libmate-panel-applet", MATE_PANEL_APPLETS_DIR);
+	if (g_file_test ("../libcafe-panel-applet", G_FILE_TEST_IS_DIR)) {
+		applets_dir = g_strdup_printf ("%s:../libcafe-panel-applet", MATE_PANEL_APPLETS_DIR);
 		g_setenv ("MATE_PANEL_APPLETS_DIR", applets_dir, FALSE);
 		g_free (applets_dir);
 	}
@@ -373,7 +373,7 @@ main (int argc, char **argv)
 
 	builder = gtk_builder_new ();
 	gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
-	gtk_builder_add_from_resource (builder, "/org/mate/panel/test/panel-test-applets.ui", NULL);
+	gtk_builder_add_from_resource (builder, "/org/cafe/panel/test/panel-test-applets.ui", NULL);
 
 	gtk_builder_connect_signals (builder, NULL);
 

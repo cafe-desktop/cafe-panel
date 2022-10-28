@@ -237,7 +237,7 @@ panel_separator_load_from_gsettings (PanelWidget *panel,
 
 	separator = g_object_new (PANEL_TYPE_SEPARATOR, NULL);
 
-	separator->priv->info = mate_panel_applet_register (GTK_WIDGET (separator),
+	separator->priv->info = cafe_panel_applet_register (GTK_WIDGET (separator),
 						       NULL, NULL,
 						       panel, locked, position,
 						       TRUE,

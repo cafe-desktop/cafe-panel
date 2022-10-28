@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
-# This file is distributed under the same license as the mate-panel package.
+# This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -21,12 +21,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-panel 1.23.2\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-panel/issues\n"
+"Project-Id-Version: cafe-panel 1.23.2\n"
+"Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
 "POT-Creation-Date: 2020-01-12 18:05+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Alexandros Kapetanios <alexandros@gnugr.org>, 2020\n"
-"Language-Team: Greek (https://www.transifex.com/mate/teams/13566/el/)\n"
+"Language-Team: Greek (https://www.transifex.com/cafe/teams/13566/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -178,12 +178,12 @@ msgstr "_Προτιμήσεις"
 #: applets/notification_area/main.c:295 applets/wncklet/showdesktop.c:241
 #: applets/wncklet/window-list.c:365 applets/wncklet/window-list.ui:35
 #: applets/wncklet/window-menu.c:98 applets/wncklet/workspace-switcher.c:397
-#: applets/wncklet/workspace-switcher.ui:46 mate-panel/drawer.c:562
-#: mate-panel/panel-action-button.c:753 mate-panel/panel-addto.c:1308
-#: mate-panel/panel-context-menu.c:318 mate-panel/panel-ditem-editor.c:648
-#: mate-panel/panel-menu-bar.c:351 mate-panel/panel-menu-button.c:700
-#: mate-panel/panel-properties-dialog.ui:78
-#: mate-panel/panel-properties-dialog.ui:724 mate-panel/panel-run-dialog.ui:39
+#: applets/wncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
+#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
+#: cafe-panel/panel-properties-dialog.ui:78
+#: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_Βοήθεια"
 
@@ -223,7 +223,7 @@ msgid "City Time Zone"
 msgstr "Ζώνη αλλαγής ώρας πόλης"
 
 #: applets/clock/clock.c:3389
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:10
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "Ρολόι"
 
@@ -247,23 +247,23 @@ msgstr ""
 #: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
 #: applets/wncklet/window-list.c:831 applets/wncklet/window-menu.c:88
 #: applets/wncklet/workspace-switcher.c:644
-#: mate-panel/panel-context-menu.c:124
+#: cafe-panel/panel-context-menu.c:124
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα MATE\n"
 " Αλέξανδρος Μουχτσής <alexandros@gnugr.org>\n"
 "\n"
-"Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://www.mate.gr/"
+"Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://www.cafe.gr/"
 
 #: applets/clock/clock.ui:31
 msgid "Time & Date"
 msgstr "Ώρα & Ημερομηνία"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: mate-panel/libpanel-util/panel-gtk.c:136
-#: mate-panel/panel-context-menu.c:213 mate-panel/panel-ditem-editor.c:664
-#: mate-panel/panel-force-quit.c:240 mate-panel/panel-recent.c:154
-#: mate-panel/panel-run-dialog.ui:55 mate-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-gtk.c:136
+#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
+#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
+#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "Α_κύρωση"
 
@@ -290,10 +290,10 @@ msgstr "_Ρυθμίσεις ώρας"
 #: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/wncklet/window-list.ui:51 applets/wncklet/workspace-switcher.ui:62
-#: mate-panel/panel-addto.c:1319 mate-panel/panel-ditem-editor.c:660
-#: mate-panel/panel-properties-dialog.ui:94
-#: mate-panel/panel-properties-dialog.ui:740
-#: mate-panel/panel-test-applets.ui:52
+#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-properties-dialog.ui:94
+#: cafe-panel/panel-properties-dialog.ui:740
+#: cafe-panel/panel-test-applets.ui:52
 msgid "_Close"
 msgstr "_Κλείσιμο"
 
@@ -334,11 +334,11 @@ msgid "Show _temperature"
 msgstr "Προβολή _θερμοκρασίας"
 
 #: applets/clock/clock.ui:568 applets/fish/fish.ui:102
-#: mate-panel/panel-properties-dialog.ui:384
+#: cafe-panel/panel-properties-dialog.ui:384
 msgid "General"
 msgstr "Γενικά"
 
-#: applets/clock/clock.ui:620 mate-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
 msgid "_Add"
 msgstr "Προσ_θήκη"
 
@@ -390,8 +390,8 @@ msgstr "Βόρειος"
 msgid "South"
 msgstr "Νότιος"
 
-#: applets/clock/clock.ui:939 mate-panel/libpanel-util/panel-gtk.c:140
-#: mate-panel/panel-applet-frame.c:960 mate-panel/panel-ditem-editor.c:668
+#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-gtk.c:140
+#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "_OK"
 
@@ -494,7 +494,7 @@ msgstr "Ανατολή ηλίου: %s / Δύση ηλίου: %s"
 
 #: applets/clock/clock-utils.c:94 applets/fish/fish.c:170
 #: applets/notification_area/main.c:238 applets/wncklet/wncklet.c:75
-#: mate-panel/libpanel-util/panel-show.c:234
+#: cafe-panel/libpanel-util/panel-show.c:234
 #, c-format
 msgid "Could not display help document '%s'"
 msgstr "Δεν είναι δυνατή η προβολή του αρχείου βοήθειας '%s'"
@@ -504,11 +504,11 @@ msgstr "Δεν είναι δυνατή η προβολή του αρχείου �
 msgid "Error displaying help document"
 msgstr "Σφάλμα στην προβολή του αρχείου βοήθειας"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:29
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:29
 msgid "Hour format"
 msgstr "Τύπος ώρας"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:30
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
 "This key specifies the hour format used by the clock applet. Possible values"
 " are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
@@ -529,11 +529,11 @@ msgstr ""
 "\"custom\", το ρολόι θα εμφανίζει την ώρα σύμφωνα με την μορφή που έχει "
 "καθοριστεί στο κλειδί custom_format."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:34
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:34
 msgid "Custom format of the clock"
 msgstr "Προσαρμοσμένη μορφή του ρολογιού"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:35
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:35
 msgid ""
 "This key specifies the format used by the clock applet when the format key "
 "is set to \"custom\". You can use conversion specifiers understood by "
@@ -546,106 +546,106 @@ msgstr ""
 "το strftime() για να λάβετε μια συγκεκριμένη μορφή. Δείτε το εγχειρίδιο του "
 "strftime() για περισσότερες πληροφορίες."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:39
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:39
 msgid "Show time with seconds"
 msgstr "Εμφάνιση ώρας με δευτερόλεπτα"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:40
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:40
 msgid "If true, display seconds in time."
 msgstr "Αν αληθές, εμφάνιση δευτερολέπτων στην ώρα."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:44
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:44
 msgid "Show date in clock"
 msgstr "Εμφάνιση ημερομηνίας στο ρολόι"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:45
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:45
 msgid "If true, display date in the clock, in addition to time."
 msgstr "Αν αληθές, εμφανίζει εκτός από την ώρα και την ημερομηνία στο ρολόι."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:49
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:49
 msgid "Show date in tooltip"
 msgstr "Εμφάνιση ημερομηνίας στη συμβουλή οθόνης"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:50
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:50
 msgid "If true, show date in a tooltip when the pointer is over the clock."
 msgstr ""
 "Αν αληθές, προβάλλει την ώρα σαν συμβουλή όταν περνάει το ποντίκι πάνω από "
 "το ρολόι."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:54
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:54
 msgid "Show weather in clock"
 msgstr "Εμφάνιση καιρού στο ρολόι"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:55
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:55
 msgid "If true, display a weather icon."
 msgstr "Αν αληθές, εμφάνιση του εικονιδίου καιρού."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:59
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:59
 msgid "Show temperature in clock"
 msgstr "Εμφάνιση θερμοκρασίας στο ρολόι"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:60
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:60
 msgid "If true, show the temperature next to the weather icon."
 msgstr ""
 "Αν αληθές, εμφάνιση της θερμοκρασίας δίπλα από το εικονίδιο του καιρού."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:64
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:64
 msgid "Show week numbers in calendar"
 msgstr "Εμφάνιση αριθμού εβδομάδων στο ημερολόγιο"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:65
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:65
 msgid "If true, show week numbers in the calendar."
 msgstr "Αν αληθές, εμφάνιση αριθμών εβδομάδας στο ημερολόγιο."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:69
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:69
 msgid "Expand list of locations"
 msgstr "Ανάπτυξη της λίστας τοποθεσιών"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:70
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:70
 msgid "If true, expand the list of locations in the calendar window."
 msgstr ""
 "Αν αληθές, ανάπτυξη της λίστας των τοποθεσιών στο παράθυρο του ημερολογίου."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:74
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:74
 msgid "List of locations"
 msgstr "Λίστα τοποθεσιών"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:75
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:75
 msgid "A list of locations to display in the calendar window."
 msgstr "Μια λίστα από τοποθεσίες για εμφάνιση στο παράθυρο του ημερολογίου."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:79
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:79
 msgid "Temperature unit"
 msgstr "Μονάδα θερμοκρασίας"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:80
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:80
 msgid "The unit to use when showing temperatures."
 msgstr "Η μονάδα μέτρησης στην προβολή των θερμοκρασιών."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:84
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:84
 msgid "Speed unit"
 msgstr "Μονάδα ταχύτητας"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:85
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:85
 msgid "The unit to use when showing wind speed."
 msgstr "Η μονάδα μέτρησης στην προβολή ταχύτητας ανέμου."
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:6
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Clock Applet Factory"
 msgstr "Εργοστάσιο μικροεφαρμογής ρολογιού"
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:7
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for clock applet"
 msgstr "Εργοστάσιο για τη μικροεφαρμογή ρολογιού"
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:11
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:11
 msgid "Get the current time and date"
 msgstr "Λήψη τρέχουσας ώρας και ημερομηνίας"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-clock"
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-clock"
 msgstr ""
 
 #: applets/fish/fish.c:266
@@ -687,7 +687,7 @@ msgid "(with minor help from George)"
 msgstr "(με λίγη βοήθεια από το George)"
 
 #: applets/fish/fish.c:558
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:10
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Fish"
 msgstr "Ψάρι"
 
@@ -787,8 +787,8 @@ msgstr "Εν_τολή προς εκτέλεση στα κλικ:"
 msgid "Animation"
 msgstr "Κινούμενες εικόνες"
 
-#: applets/fish/fish.ui:266 mate-panel/panel-properties-dialog.ui:482
-#: mate-panel/panel-properties-dialog.ui:635
+#: applets/fish/fish.ui:266 cafe-panel/panel-properties-dialog.ui:482
+#: cafe-panel/panel-properties-dialog.ui:635
 msgid "    "
 msgstr " "
 
@@ -820,11 +820,11 @@ msgstr "δευτερόλεπτα"
 msgid "_Rotate on vertical panels"
 msgstr "_Περιστροφή στους κατακόρυφους πίνακες εφαρμογών"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:5
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:5
 msgid "The fish's name"
 msgstr "Το όνομα του ψαριού"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:6
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:6
 msgid ""
 "A fish without a name is a pretty dull fish. Bring your fish to life by "
 "naming him."
@@ -832,11 +832,11 @@ msgstr ""
 "Ένα ψάρι χωρίς όνομα είναι ένα χαζό ψάρι. Δώστε ζωή στο ψάρι σας βαπτίζοντας"
 " το."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:10
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:10
 msgid "The fish's animation pixmap"
 msgstr "Η κινούμενη εικόνα pixmap του ψαριού"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:11
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:11
 msgid ""
 "This key specifies the filename of the pixmap which will be used for the "
 "animation displayed in the fish applet relative to the pixmap directory."
@@ -844,68 +844,68 @@ msgstr ""
 "Αυτό το κλειδί καθορίζει το όνομα αρχείου της εικόνας που θα χρησιμοποιηθεί "
 "για το κινούμενο σχέδιο της μικροεφαρμογής του ψαριού."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:15
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:15
 msgid "Command to execute on click"
 msgstr "Εντολή προς εκτέλεση στο κλικ"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:16
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:16
 msgid ""
 "This key specifies the command that will be tried to execute when the fish "
 "is clicked."
 msgstr ""
 "Αυτό το κλειδί καθορίζει την εντολή προς εκτέλεση όταν το ψάρι πατηθεί."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:20
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:20
 msgid "Frames in fish's animation"
 msgstr "Ο αριθμός των καρέ στην κίνηση του ψαριού"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:21
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
 "This key specifies the number of frames that will be displayed in the fish's"
 " animation."
 msgstr "Αυτό το κλειδί καθορίζει τον αριθμό των καρέ στην κίνηση του ψαριού."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:25
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
 msgid "Pause per frame"
 msgstr "Παύση ανά καρέ"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:26
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:26
 msgid "This key specifies the number of seconds each frame will be displayed."
 msgstr ""
 "Αυτό το κλειδί καθορίζει τον αριθμό των δευτερολέπτων που θα προβάλλεται το "
 "κάθε καρέ."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:30
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:30
 msgid "Rotate on vertical panels"
 msgstr "Περιστροφή στους κάθετους πίνακες εφαρμογών"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:31
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:31
 msgid ""
 "If true, the fish's animation will be displayed rotated on vertical panels."
 msgstr ""
 "Αν αληθές, η εικόνα παρασκηνίου θα περιστρέφεται αν ο πίνακας εφαρμογών "
 "προσανατολίζεται κάθετα."
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:6
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Wanda Factory"
 msgstr "Εργοστάσιο Wanda"
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:7
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:7
 msgid "From Whence That Stupid Fish Came"
 msgstr "Από που κρατά η σκούφια αυτού του ηλίθιου ψαριού"
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:11
-msgid "Display a swimming fish or another animated creature"
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
+msgid "Display a swimming fish or another anicafed creature"
 msgstr "Εμφανίζει ένα ψάρι που κολυμπάει ή κάποιο άλλο κινούμενο πλάσμα"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-fish"
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-fish"
 msgstr ""
 
 #: applets/notification_area/main.c:276
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:10
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Notification Area"
 msgstr "Περιοχή ειδοποίησης"
 
@@ -938,41 +938,41 @@ msgid "26"
 msgstr ""
 
 #: applets/notification_area/notification-area-preferences-dialog.ui:139
-#: mate-panel/panel-properties-dialog.ui:221
+#: cafe-panel/panel-properties-dialog.ui:221
 msgid "pixels"
 msgstr "pixels"
 
-#: applets/notification_area/org.mate.panel.applet.notification-area.gschema.xml.in:5
+#: applets/notification_area/org.cafe.panel.applet.notification-area.gschema.xml.in:5
 msgid "Minimum icon size"
 msgstr ""
 
-#: applets/notification_area/org.mate.panel.applet.notification-area.gschema.xml.in:6
+#: applets/notification_area/org.cafe.panel.applet.notification-area.gschema.xml.in:6
 msgid "The minimum size an icon can have."
 msgstr ""
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:6
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Notification Area Factory"
 msgstr "Εργοστάσιο περιοχής ειδοποίησης"
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:7
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for notification area"
 msgstr "Εργοστάσιο για την περιοχή ειδοποίησης"
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:11
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:11
 msgid "Area where notification icons appear"
 msgstr "Περιοχή όπου θα εμφανίζονται εικονίδια ειδοποίησης"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-notification-area"
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-notification-area"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:10
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "Να εμφανίζονται τα παράθυρα από όλους τους χώρους εργασίας"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:11
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
 "If true, the window list will show windows from all workspaces. Otherwise it"
 " will only display windows from the current workspace."
@@ -980,11 +980,11 @@ msgstr ""
 "Αν αληθές, η λίστα εργασιών θα προβάλλει τα παράθυρα από όλους τους χώρους "
 "εργασίας, αλλιώς θα εμφανίζει μόνο τα παράθυρα του τρέχοντος χώρου εργασίας."
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:15
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
 msgid "When to group windows"
 msgstr "Πότε θα ομαδοποιούνται τα παράθυρα"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:16
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:16
 msgid ""
 "Decides when to group windows from the same application on the window list. "
 "Possible values are \"never\", \"auto\" and \"always\"."
@@ -992,12 +992,12 @@ msgstr ""
 "Αποφασίζει αν θα ομαδοποιούνται παράθυρα από την ίδια εφαρμογή στη λίστα "
 "παραθύρων. Έγκυρες τιμές είναι \"never\", \"auto\" και \"always\"."
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:20
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
 msgid "Move windows to current workspace when unminimized"
 msgstr ""
 "Μετακίνηση παραθύρων στην τρέχουσα περιοχή εργασίας κατά την επαναφορά τους"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:21
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:21
 msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
@@ -1005,11 +1005,11 @@ msgstr ""
 "Αν αληθές, κατά την επαναφορά παραθύρου, θα το εμφανίζει στον τρέχοντα χώρο "
 "εργασίας. Αλλιώς, αλλαγή στο χώρο εργασίας του παραθύρου."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:5
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
 msgid "Display workspace names"
 msgstr "Εμφάνιση ονομάτων χώρων εργασίας"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:6
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:6
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
@@ -1018,11 +1018,11 @@ msgstr ""
 "Αν αληθές, οι χώροι εργασίας στην εφαρμογή εναλλαγής χώρων εργασίας θα "
 "εμφανίζουν τα ονόματά τους, αλλιώς θα εμφανίζουν τα περιεχόμενα του χώρου."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:10
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"
 msgstr "Προβολή όλων των χώρων εργασίας"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:11
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:11
 msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
@@ -1030,11 +1030,11 @@ msgstr ""
 "Αν αληθές, η εφαρμογή εναλλαγής χώρων εργασίας θα εμφανίζει όλους τους "
 "χώρους εργασίας, αλλιώς θα εμφανίζει μόνο τον τρέχοντα χώρο."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:15
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
 msgstr "Γραμμές στην εφαρμογή εναλλαγής χώρων εργασίας"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:16
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
 "vertical layout) the workspace switcher shows the workspaces in. This key is"
@@ -1045,11 +1045,11 @@ msgstr ""
 "εφαρμογή εναλλαγής χώρων εργασίας τους χώρους. Το κλειδί έχει χρησιμότητα "
 "μόνο αν το κλειδί display_all_workspaces είναι αληθές."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:20
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
 msgstr "Κυκλική επαναφορά κατά την κύλιση με το ποντίκι"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:21
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:21
 msgid ""
 "If true, the workspace switcher will allow wrap-around, which means "
 "switching from the first to the last workspace and vice versa via scrolling."
@@ -1059,72 +1059,72 @@ msgstr ""
 " πρώτη στην τελευταία και αντίθετα χρησιμοποιώντας την κύλιση του ποντικιού."
 "  "
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:6
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Window Navigation Applet Factory"
 msgstr "Εργοστάσιο μικροεφαρμογής περιήγησης παραθύρου"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:7
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for the window navigation related applets"
 msgstr ""
 "Εργοστάσιο για τη δημιουργία μικροεφαρμογών σχετικά με την πλοήγηση "
 "παραθύρων"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:10
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:10
 #: applets/wncklet/window-menu.c:76 applets/wncklet/window-menu.c:227
 msgid "Window Selector"
 msgstr "Επιλογέας παραθύρων"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:11
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:11
 msgid "Switch between open windows using a menu"
 msgstr "Εναλλαγή μεταξύ ανοικτών παραθύρων με τη χρήση μενού"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-window-menu"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-window-menu"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:23
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:23
 #: applets/wncklet/workspace-switcher.c:634
 msgid "Workspace Switcher"
 msgstr "Εναλλαγή χώρων εργασίας"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:24
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:24
 msgid "Switch between workspaces"
 msgstr "Εναλλαγή μεταξύ χώρων εργασίας"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:26
-msgid "mate-panel-workspace-switcher"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:26
+msgid "cafe-panel-workspace-switcher"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:36
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:36
 #: applets/wncklet/window-list.c:821
 msgid "Window List"
 msgstr "Λίστα παραθύρων"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:37
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "Εναλλαγή μεταξύ ανοικτών παραθύρων με τη χρήση κουμπιών"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:39
-msgid "mate-panel-window-list"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:39
+msgid "cafe-panel-window-list"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:49
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
 msgstr "Εμφάνιση Επιφάνειας Εργασίας"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:50
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "Απόκρυψη των παραθύρων και εμφάνιση της επιφάνειας εργασίας"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:52
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:52
 msgid "user-desktop"
 msgstr ""
 
@@ -1346,21 +1346,21 @@ msgstr ""
 msgid "Workspaces"
 msgstr "Χώροι εργασίας"
 
-#: data/org.mate.panel.gschema.xml.in:5
+#: data/org.cafe.panel.gschema.xml.in:5
 msgid "Default panel layout"
 msgstr "Προεπιλεγμένη διάταξη πινάκων"
 
-#: data/org.mate.panel.gschema.xml.in:6
+#: data/org.cafe.panel.gschema.xml.in:6
 msgid "The default panels layout to use when panels are created or resetted."
 msgstr ""
 "Η προεπιλεγμένη διάταξη για να χρησιμοποιήσετε όταν δημιουργηθούν ή "
 "επαναφερθούν τα πάνελ."
 
-#: data/org.mate.panel.gschema.xml.in:10
+#: data/org.cafe.panel.gschema.xml.in:10
 msgid "Enable program list in \"Run Application\" dialog"
 msgstr "Ενεργοποίηση της λίστας προγραμμάτων στο διάλογο \"Εκτέλεση εφαρμογής\""
 
-#: data/org.mate.panel.gschema.xml.in:11
+#: data/org.cafe.panel.gschema.xml.in:11
 msgid ""
 "If true, the \"Known Applications\" listing in the \"Run Application\" "
 "dialog is made available. Whether or not the listing is expanded when the "
@@ -1370,11 +1370,11 @@ msgstr ""
 "\"Εκτέλεση προγράμματος\". Το αν θα αναπτύσσεται ή όχι η λίστα όταν "
 "εμφανίζεται ο διάλογος, εξαρτάται από τη ρύθμιση show_program_list."
 
-#: data/org.mate.panel.gschema.xml.in:15
+#: data/org.cafe.panel.gschema.xml.in:15
 msgid "Expand program list in \"Run Application\" dialog"
 msgstr "Ανάπτυξη της λίστας προγραμμάτων στο διάλογο \"Εκτέλεση εφαρμογής\""
 
-#: data/org.mate.panel.gschema.xml.in:16
+#: data/org.cafe.panel.gschema.xml.in:16
 msgid ""
 "If true, the \"Known Applications\" listing in the \"Run Application\" "
 "dialog is expanded when the dialog is opened. This key is only relevant if "
@@ -1384,22 +1384,22 @@ msgstr ""
 " προγράμματος\" όταν αυτός ανοίγει. Αυτή η ρύθμιση έχει νόημα μόνο αν το "
 "κλειδί enable_program_list είναι αληθές."
 
-#: data/org.mate.panel.gschema.xml.in:20
+#: data/org.cafe.panel.gschema.xml.in:20
 msgid "Enable autocompletion in \"Run Application\" dialog"
 msgstr "Ενεργοποίηση της λίστας προγραμμάτων στο διάλογο \"Εκτέλεση εφαρμογής\""
 
-#: data/org.mate.panel.gschema.xml.in:21
+#: data/org.cafe.panel.gschema.xml.in:21
 msgid ""
 "If true, autocompletion in the \"Run Application\" dialog is made available."
 msgstr ""
 "Αν αληθές, θα είναι διαθέσιμη η αυτόματη συμπλήρωση στο διάλογο \"Εκτέλεση "
 "εφαρμογής\"."
 
-#: data/org.mate.panel.gschema.xml.in:25
+#: data/org.cafe.panel.gschema.xml.in:25
 msgid "History for \"Run Application\" dialog"
 msgstr "Ιστορικό για το διάλογο \"Εκτέλεση Εφαρμογής\""
 
-#: data/org.mate.panel.gschema.xml.in:26
+#: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
 "commands are sorted descendingly by recency (e.g., most recent command comes"
@@ -1409,11 +1409,11 @@ msgstr ""
 "\"Εκτέλεση εφαρμογής\". Οι εντολές ταξινομούνται κατά φθίνουσα σειρά από την"
 " πρόσφατη (π.χ., η πιο πρόσφατη εντολή έρχεται πρώτη)."
 
-#: data/org.mate.panel.gschema.xml.in:30
+#: data/org.cafe.panel.gschema.xml.in:30
 msgid "Maximum history size for \"Run Application\" dialog"
 msgstr "Μέγιστο μέγεθος ιστορικού για το παράθυρο διαλόγου \"Εκτέλεση εφαρμογής\""
 
-#: data/org.mate.panel.gschema.xml.in:31
+#: data/org.cafe.panel.gschema.xml.in:31
 msgid ""
 "Controls the maximum size of the history of the \"Run Application\" dialog. "
 "A value of 0 will disable the history."
@@ -1421,11 +1421,11 @@ msgstr ""
 "Ελέγχει το μέγιστο μέγεθος του ιστορικού του παραθύρου διαλόγου \"Εκτέλεση "
 "εφαρμογής\". Μια τιμή 0 θα απενεργοποιήσει το ιστορικό."
 
-#: data/org.mate.panel.gschema.xml.in:35
+#: data/org.cafe.panel.gschema.xml.in:35
 msgid "Reverse the history of the \"Run Application\" dialog"
 msgstr "Αντιστρέψτε το ιστορικό του παραθύρου διαλόγου \"Εκτέλεση εφαρμογής\""
 
-#: data/org.mate.panel.gschema.xml.in:36
+#: data/org.cafe.panel.gschema.xml.in:36
 msgid ""
 "Displays the history in reverse. Provides a consistent view for terminal "
 "users as the up key will select the most recent entry."
@@ -1434,11 +1434,11 @@ msgstr ""
 "χρήστες τερματικών, καθώς το πλήκτρο επάνω θα επιλέξει την πιο πρόσφατη "
 "καταχώρηση."
 
-#: data/org.mate.panel.gschema.xml.in:40
+#: data/org.cafe.panel.gschema.xml.in:40
 msgid "Panel ID list"
 msgstr "Λίστα ταυτότητας πίνακα εφαρμογών"
 
-#: data/org.mate.panel.gschema.xml.in:41
+#: data/org.cafe.panel.gschema.xml.in:41
 msgid ""
 "A list of panel IDs. Each ID identifies an individual toplevel panel. The "
 "settings for each of these panels are stored in /apps/panel/toplevels/$(id)."
@@ -1447,11 +1447,11 @@ msgstr ""
 " εφαρμογών. Οι ρυθμίσεις για κάθε έναν από αυτούς τους πίνακες εφαρμογών "
 "αποθηκεύονται στο /apps/panel/toplevels/$(id)."
 
-#: data/org.mate.panel.gschema.xml.in:45
+#: data/org.cafe.panel.gschema.xml.in:45
 msgid "Panel object ID list"
 msgstr "Μια λίστα IDs αντικειμένων πίνακα εφαρμογών"
 
-#: data/org.mate.panel.gschema.xml.in:46
+#: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
 "A list of panel object IDs. Each ID identifies an individual panel object "
 "(e.g. a launcher, action button or menu button/bar). The settings for each "
@@ -1462,26 +1462,26 @@ msgstr ""
 " ή κουμπί μενού). Οι ρυθμίσεις για κάθε από αυτά τα αντικείμενα "
 "αποθηκεύονται στο /apps/panel/objects/$(id)."
 
-#: data/org.mate.panel.gschema.xml.in:50
+#: data/org.cafe.panel.gschema.xml.in:50
 msgid "Enable tooltips"
 msgstr "Ενεργοποίηση συμβουλών οθόνης"
 
-#: data/org.mate.panel.gschema.xml.in:51
+#: data/org.cafe.panel.gschema.xml.in:51
 msgid "If true, tooltips are shown for objects in panels."
 msgstr ""
 "Αν αληθές, οι συμβουλές οθόνης εμφανίζονται για τα αντικείμενα στους πίνακες"
 " εφαρμογών."
 
-#: data/org.mate.panel.gschema.xml.in:55
-#: data/org.mate.panel.toplevel.gschema.xml.in:70
+#: data/org.cafe.panel.gschema.xml.in:55
+#: data/org.cafe.panel.toplevel.gschema.xml.in:70
 msgid "Enable animations"
 msgstr "Ενεργοποίηση κινούμενων εικόνων"
 
-#: data/org.mate.panel.gschema.xml.in:59
+#: data/org.cafe.panel.gschema.xml.in:59
 msgid "Autoclose drawer"
 msgstr "Αυτόματο κλείσιμο συρταριού"
 
-#: data/org.mate.panel.gschema.xml.in:60
+#: data/org.cafe.panel.gschema.xml.in:60
 msgid ""
 "If true, a drawer will automatically be closed when the user clicks a "
 "launcher in it."
@@ -1489,11 +1489,11 @@ msgstr ""
 "Αν αληθές, το συρτάρι θα κλείνει αυτόματα όταν ο χρήστης κάνει κλικ σε έναν "
 "εκκινητή που βρίσκεται στο συρτάρι."
 
-#: data/org.mate.panel.gschema.xml.in:64
+#: data/org.cafe.panel.gschema.xml.in:64
 msgid "Confirm panel removal"
 msgstr "Επιβεβαίωση αφαίρεσης πίνακα εφαρμογών"
 
-#: data/org.mate.panel.gschema.xml.in:65
+#: data/org.cafe.panel.gschema.xml.in:65
 msgid ""
 "If true, a dialog is shown asking for confirmation if the user wants to "
 "remove a panel."
@@ -1501,22 +1501,22 @@ msgstr ""
 "Αν αληθές, εμφανίζεται ένας διάλογος που ζητά την επιβεβαίωση αν ο χρήστης "
 "θέλει να αφαιρέσει τον πίνακα εφαρμογών."
 
-#: data/org.mate.panel.gschema.xml.in:69
+#: data/org.cafe.panel.gschema.xml.in:69
 msgid "Highlight launchers on mouseover"
 msgstr "Επισήμανση εκκινητών με το πέρασμα του ποντικιού"
 
-#: data/org.mate.panel.gschema.xml.in:70
+#: data/org.cafe.panel.gschema.xml.in:70
 msgid ""
 "If true, a launcher is highlighted when the user moves the pointer over it."
 msgstr ""
 "Αν αληθές, θα επισημαίνεται ο εκκινητής όταν ο χρήστης μετακινεί το ποντίκι "
 "από πάνω του."
 
-#: data/org.mate.panel.gschema.xml.in:74
+#: data/org.cafe.panel.gschema.xml.in:74
 msgid "Complete panel lockdown"
 msgstr "Ολοκληρωτικό κλείδωμα πίνακα εφαρμογών"
 
-#: data/org.mate.panel.gschema.xml.in:75
+#: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
 "panel. Individual applets may need to be locked down separately however. The"
@@ -1526,11 +1526,11 @@ msgstr ""
 "ξεχωριστές μικροεφαρμογές θα πρέπει να κλειδωθούν ξεχωριστά. Ο πίνακας "
 "εφαρμογών θα πρέπει να επανεκκινήσει για να εφαρμοστούν οι αλλαγές."
 
-#: data/org.mate.panel.gschema.xml.in:79
+#: data/org.cafe.panel.gschema.xml.in:79
 msgid "Applet IIDs to disable from loading"
 msgstr "IIDs μικροεφαρμογών για απενεργοποίηση από τη φόρτωση"
 
-#: data/org.mate.panel.gschema.xml.in:80
+#: data/org.cafe.panel.gschema.xml.in:80
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
@@ -1544,11 +1544,11 @@ msgstr ""
 "'OAFIID:MATE_MiniCommanderApplet'. Ο πίνακας εφαρμογών θα πρέπει να "
 "επανεκκινήσει για να εφαρμοστούν οι αλλαγές."
 
-#: data/org.mate.panel.gschema.xml.in:84
+#: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
 msgstr "Απενεργοποίηση Εξαναγκασμού εξόδου"
 
-#: data/org.mate.panel.gschema.xml.in:85
+#: data/org.cafe.panel.gschema.xml.in:85
 msgid ""
 "If true, the panel will not allow a user to force an application to quit by "
 "removing access to the force quit button."
@@ -1557,63 +1557,63 @@ msgstr ""
 " μια εφαρμογή σε έξοδο, με το να αρνείται την πρόσβαση στο κουμπί "
 "εξαναγκασμού εξόδου."
 
-#: data/org.mate.panel.gschema.xml.in:89
+#: data/org.cafe.panel.gschema.xml.in:89
 msgid "Enable SNI support"
 msgstr "Ενεργοποίηση υποστήριξης SNI"
 
-#: data/org.mate.panel.gschema.xml.in:90
+#: data/org.cafe.panel.gschema.xml.in:90
 msgid "If true, the panel provides support for SNI."
 msgstr "Εάν είναι αληθές, ο πίνακας παρέχει υποστήριξη για SNI."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:15
+#: data/org.cafe.panel.menubar.gschema.xml.in:15
 msgid "Show applications menu"
 msgstr "Εμφάνιση μενού εφαρμογών"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:16
+#: data/org.cafe.panel.menubar.gschema.xml.in:16
 msgid "If true, show applications item in menu bar."
 msgstr "Αν είναι αληθές, εμφάνισε στοιχεία εφαρμογών στη μπάρα του μενού."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:20
+#: data/org.cafe.panel.menubar.gschema.xml.in:20
 msgid "Show places menu"
 msgstr "Εμφάνιση μενού τοποθεσιών"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:21
+#: data/org.cafe.panel.menubar.gschema.xml.in:21
 msgid "If true, show places item in menu bar."
 msgstr "Αν είναι αληθές, εμφάνισε στοιχεία χώρου στη μπάρα του μενού."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:25
+#: data/org.cafe.panel.menubar.gschema.xml.in:25
 msgid "Show desktop menu"
 msgstr "Εμφάνιση μενού επιφάνειας εργασίας"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:26
+#: data/org.cafe.panel.menubar.gschema.xml.in:26
 msgid "If true, show desktop item in menu bar."
 msgstr ""
 "Αν είναι αληθές, εμφάνισε στοιχείο της επιφάνειας εργασίας στη μπάρα του "
 "μενού."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:30
+#: data/org.cafe.panel.menubar.gschema.xml.in:30
 msgid "Show icon"
 msgstr "Εμφάνιση εικονιδίου"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:31
+#: data/org.cafe.panel.menubar.gschema.xml.in:31
 msgid "If true, show icon in menu bar."
 msgstr "Αν είναι αληθές, εμφάνισε εικονίδιο στη μπάρα του μενού."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:35
+#: data/org.cafe.panel.menubar.gschema.xml.in:35
 msgid "Icon to show in menu bar"
 msgstr "Εικονίδιο που θα εμφανίζεται στην γραμμή μενού"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:36
+#: data/org.cafe.panel.menubar.gschema.xml.in:36
 msgid "Set the theme icon name to use in menu bar."
 msgstr ""
 "Ορίστε το όνομα του θέματος του εικονιδίου για να χρησιμοποιήσετε την μπάρα "
 "του μενού."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:40
+#: data/org.cafe.panel.menubar.gschema.xml.in:40
 msgid "Menu bar icon size"
 msgstr "Μέγεθος εικονιδίου γραμμής μενού"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:41
+#: data/org.cafe.panel.menubar.gschema.xml.in:41
 msgid ""
 "Set the size of an icon used in menu bar. The panel must be restarted for "
 "this to take effect."
@@ -1621,11 +1621,11 @@ msgstr ""
 "Ορίστε το μέγεθος του εικονιδίου που χρησιμοποιείτε στη μπάρα του μενού. "
 "Πρέπει να γίνει επανεκκίνηση στο πάνελ για να ισχύσει αυτό."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:45
+#: data/org.cafe.panel.menubar.gschema.xml.in:45
 msgid "Menu items icon size"
 msgstr "Μέγεθος εικονιδίων των αντικειμένων του μενού"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:46
+#: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
 "Set the size of icons used in the menu. The panel must be restarted for this"
 " to take effect."
@@ -1633,11 +1633,11 @@ msgstr ""
 "Ορίστε το μέγεθος του εικονιδίου που χρησιμοποιείτε στο μενού. Πρέπει να "
 "γίνει επανεκκίνηση στο πάνελ για να ισχύσει αυτό."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:50
+#: data/org.cafe.panel.menubar.gschema.xml.in:50
 msgid "Threshold of menu items before submenu is created"
 msgstr "Όριο αντικειμένων μενού μετά το οποίο δημιουργείται υπομενού "
 
-#: data/org.mate.panel.menubar.gschema.xml.in:51
+#: data/org.cafe.panel.menubar.gschema.xml.in:51
 msgid ""
 "Maximum number of menu items (i.e. bookmarks) that are displayed without "
 "being put in a submenu."
@@ -1645,29 +1645,29 @@ msgstr ""
 "Μέγιστος αριθμός αντικειμένων μενού (π.χ. σελιδοδείκτες) που εμφανίζονται "
 "χωρίς να τοποθετηθούν σε υπομενού"
 
-#: data/org.mate.panel.object.gschema.xml.in:5
+#: data/org.cafe.panel.object.gschema.xml.in:5
 msgid "Panel object type"
 msgstr "Τύπος αντικειμένου πίνακα εφαρμογών"
 
-#: data/org.mate.panel.object.gschema.xml.in:6
+#: data/org.cafe.panel.object.gschema.xml.in:6
 msgid "The type of this panel object."
 msgstr "Ο τύπος του αντικειμένου του πίνακα."
 
-#: data/org.mate.panel.object.gschema.xml.in:10
+#: data/org.cafe.panel.object.gschema.xml.in:10
 msgid "Toplevel panel containing object"
 msgstr "Πίνακας εφαρμογών υψηλού επιπέδου που περιέχει το αντικείμενο"
 
-#: data/org.mate.panel.object.gschema.xml.in:11
+#: data/org.cafe.panel.object.gschema.xml.in:11
 msgid "The identifier of the toplevel panel which contains this object."
 msgstr ""
 "Το αναγνωριστικό του πίνακα εφαρμογών άνω επιπέδου που περιέχει το "
 "αντικείμενο."
 
-#: data/org.mate.panel.object.gschema.xml.in:15
+#: data/org.cafe.panel.object.gschema.xml.in:15
 msgid "Object's position on the panel"
 msgstr "Η θέση του αντικειμένου στον πίνακα εφαρμογών"
 
-#: data/org.mate.panel.object.gschema.xml.in:16
+#: data/org.cafe.panel.object.gschema.xml.in:16
 msgid ""
 "The position of this panel object. The position is specified by the number "
 "of pixels from the left (or top if vertical) panel edge."
@@ -1676,11 +1676,11 @@ msgstr ""
 "αριθμό των εικονοστοιχείων από την αριστερή γωνία πίνακα εφαρμογών (ή την "
 "επάνω αν είναι κάθετο)."
 
-#: data/org.mate.panel.object.gschema.xml.in:20
+#: data/org.cafe.panel.object.gschema.xml.in:20
 msgid "Interpret position relative to bottom/right edge"
 msgstr "Μετάφραση θέσης σε σχέση με την κάτω/δεξιά γωνία"
 
-#: data/org.mate.panel.object.gschema.xml.in:21
+#: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
 "If true, the position of the object is interpreted relative to the right (or"
 " bottom if vertical) edge of the panel."
@@ -1688,11 +1688,11 @@ msgstr ""
 "Αν αληθές, η θέση του αντικειμένου μεταφράζεται σε σχέση με τη δεξιά (ή την "
 "κάτω αν είναι κάθετο) γωνία του πίνακα εφαρμογών."
 
-#: data/org.mate.panel.object.gschema.xml.in:25
+#: data/org.cafe.panel.object.gschema.xml.in:25
 msgid "Lock the object to the panel"
 msgstr "Κλείδωμα αντικειμένου στον πίνακα εφαρμογών"
 
-#: data/org.mate.panel.object.gschema.xml.in:26
+#: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
 "If true, the user may not move the applet without first unlocking the object"
 " using the \"Unlock\" menuitem."
@@ -1701,27 +1701,27 @@ msgstr ""
 "ξεκλειδώσει πρώτα τα αντικείμενο χρησιμοποιώντας το αντικείμενο μενού "
 "\"Ξεκλείδωμα\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:30
+#: data/org.cafe.panel.object.gschema.xml.in:30
 msgid "Applet IID"
 msgstr "Applet IID"
 
-#: data/org.mate.panel.object.gschema.xml.in:31
+#: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
 "The implementation ID of the applet - e.g. "
 "\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"matecomponent-"
+"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
 "applet\")."
 msgstr ""
 "Η ταυτότητα υλοποίησης της μικροεφαρμογής - π.χ. "
 "\"ClockAppletFactory::ClockApplet\". Αυτό το κλειδί είναι σχετικό μόνο εάν "
 "το κλειδί object_type είναι \"external-applet\" (ή το παρωχημένο "
-"\"matecomponent-applet\")."
+"\"cafecomponent-applet\")."
 
-#: data/org.mate.panel.object.gschema.xml.in:35
+#: data/org.cafe.panel.object.gschema.xml.in:35
 msgid "Panel attached to drawer"
 msgstr "Ο πίνακας εφαρμογών που έχει συνδεθεί σε αυτό το συρτάρι"
 
-#: data/org.mate.panel.object.gschema.xml.in:36
+#: data/org.cafe.panel.object.gschema.xml.in:36
 msgid ""
 "The identifier of the panel attached to this drawer. This key is only "
 "relevant if the object_type key is \"drawer-object\"."
@@ -1730,11 +1730,11 @@ msgstr ""
 " το κλειδί έχει χρησιμότητα μόνο αν το κλειδί object_type είναι \"drawer-"
 "object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:40
+#: data/org.cafe.panel.object.gschema.xml.in:40
 msgid "Tooltip displayed for drawer or menu"
 msgstr "Η συμβουλή οθόνης που εμφανίζεται για το συρτάρι ή το μενού"
 
-#: data/org.mate.panel.object.gschema.xml.in:41
+#: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
 "only relevant if the object_type key is \"drawer-object\" or \"menu-"
@@ -1744,11 +1744,11 @@ msgstr ""
 " το κλειδί έχει σημασία μόνο αν το object_type key είναι \"drawer-object\" ή"
 " \"menu-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:45
+#: data/org.cafe.panel.object.gschema.xml.in:45
 msgid "Use custom icon for object's button"
 msgstr "Χρήση προσαρμοσμένου εικονιδίου για το κουμπί αντικειμένου"
 
-#: data/org.mate.panel.object.gschema.xml.in:46
+#: data/org.cafe.panel.object.gschema.xml.in:46
 msgid ""
 "If true, the custom_icon key is used as a custom icon for the button. If "
 "false, the custom_icon key is ignored. This key is only relevant if the "
@@ -1759,11 +1759,11 @@ msgstr ""
 "χρησιμότητα μόνο αν το κλειδί object_type είναι \"menu-object\" ή \"drawer-"
 "object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:50
+#: data/org.cafe.panel.object.gschema.xml.in:50
 msgid "Icon used for object's button"
 msgstr "Το εικονίδιο που χρησιμοποιείται για το κουμπί αντικειμένου"
 
-#: data/org.mate.panel.object.gschema.xml.in:51
+#: data/org.cafe.panel.object.gschema.xml.in:51
 msgid ""
 "The location of the image file used as the icon for the object's button. "
 "This key is only relevant if the object_type key is \"drawer-object\" or "
@@ -1774,11 +1774,11 @@ msgstr ""
 "object_type είναι \"drawer-object\" ή \"menu-object\" και το κλειδί "
 "use_custom_icon είναι αληθές."
 
-#: data/org.mate.panel.object.gschema.xml.in:55
+#: data/org.cafe.panel.object.gschema.xml.in:55
 msgid "Use custom path for menu contents"
 msgstr "Χρήση προσαρμοσμένης διαδρομής για τα περιεχόμενα του μενού"
 
-#: data/org.mate.panel.object.gschema.xml.in:56
+#: data/org.cafe.panel.object.gschema.xml.in:56
 msgid ""
 "If true, the menu_path key is used as the path from which the menu contents "
 "should be constructed. If false, the menu_path key is ignored. This key is "
@@ -1789,11 +1789,11 @@ msgstr ""
 "θα αγνοηθεί. Το κλειδί έχει χρησιμότητα μόνο όταν το κλειδί object_type "
 "είναι \"menu-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:60
+#: data/org.cafe.panel.object.gschema.xml.in:60
 msgid "Menu content path"
 msgstr "Διαδρομή περιεχομένου μενού"
 
-#: data/org.mate.panel.object.gschema.xml.in:61
+#: data/org.cafe.panel.object.gschema.xml.in:61
 msgid ""
 "The path from which the menu contents is contructed. This key is only "
 "relevant if the use_menu_path key is true and the object_type key is \"menu-"
@@ -1803,11 +1803,11 @@ msgstr ""
 "κλειδί έχει χρησιμότητα μόνο αν το κλειδί use_menu_path είναι αληθές και το "
 "κλειδί object_type είναι \"menu-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:65
+#: data/org.cafe.panel.object.gschema.xml.in:65
 msgid "Draw arrow in menu button"
 msgstr "Ζωγράφισμα βέλους στο κουμπί του καταλόγου εφαρμογών"
 
-#: data/org.mate.panel.object.gschema.xml.in:66
+#: data/org.cafe.panel.object.gschema.xml.in:66
 msgid ""
 "If true, an arrow is drawn over the menu button icon. If false, menu button "
 "has only the icon."
@@ -1816,11 +1816,11 @@ msgstr ""
 "στο κουμπί του καταλόγου εφαρμογών. αν ρυθμιστεί σε \"λανθασμένο\", το "
 "κουμπί του καταλόγου εφαρμογών θα έχει πάνω του μόνο το εικονίδιο."
 
-#: data/org.mate.panel.object.gschema.xml.in:70
+#: data/org.cafe.panel.object.gschema.xml.in:70
 msgid "Launcher location"
 msgstr "Τοποθεσία εκκινητή"
 
-#: data/org.mate.panel.object.gschema.xml.in:71
+#: data/org.cafe.panel.object.gschema.xml.in:71
 msgid ""
 "The location of the .desktop file describing the launcher. This key is only "
 "relevant if the object_type key is \"launcher-object\"."
@@ -1828,11 +1828,11 @@ msgstr ""
 "Η τοποθεσία του αρχείου .desktop που περιγράφει τον εκκινητή. Αυτό το κλειδί"
 " έχει χρησιμότητα μόνο αν το κλειδί object_type είναι \"launcher-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:75
+#: data/org.cafe.panel.object.gschema.xml.in:75
 msgid "Action button type"
 msgstr "Τύπος ενέργειας κουμπιού"
 
-#: data/org.mate.panel.object.gschema.xml.in:76
+#: data/org.cafe.panel.object.gschema.xml.in:76
 msgid ""
 "The action type this button represents. Possible values are \"lock\", "
 "\"logout\", \"run\", \"search\" and \"screenshot\". This key is only "
@@ -1842,11 +1842,11 @@ msgstr ""
 "\"lock\", \"logout\", \"run\", \"search\" και \"screenshot\". Αυτό το κλειδί"
 " έχει χρησιμότητα μόνο αν το κλειδί object_type είναι \"action-applet\"."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:5
+#: data/org.cafe.panel.toplevel.gschema.xml.in:5
 msgid "Name to identify panel"
 msgstr "Ένα όνομα με το οποίο θα αναγνωρίζεται αυτός ο πίνακας εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:6
+#: data/org.cafe.panel.toplevel.gschema.xml.in:6
 msgid ""
 "This is a human readable name which you can use to identify a panel. Its "
 "main purpose is to serve as the panel's window title which is useful when "
@@ -1857,11 +1857,11 @@ msgstr ""
 "τον τίτλο του παραθύρου ο οποίος είναι χρήσιμος για την περιήγηση μεταξύ "
 "πινάκων εφαρμογών."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:10
+#: data/org.cafe.panel.toplevel.gschema.xml.in:10
 msgid "X screen where the panel is displayed"
 msgstr "Οθόνη X στην οποία εμφανίζεται ο πίνακας εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:11
+#: data/org.cafe.panel.toplevel.gschema.xml.in:11
 msgid ""
 "With a multi-screen setup, you may have panels on each individual screen. "
 "This key identifies the current screen the panel is displayed on."
@@ -1870,11 +1870,11 @@ msgstr ""
 " ξεχωριστή οθόνη. Αυτό το κλειδί αναπαριστά την τρέχουσα οθόνη στην οποία "
 "προβάλλεται ο πίνακας εφαρμογών."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:15
+#: data/org.cafe.panel.toplevel.gschema.xml.in:15
 msgid "Xinerama monitor where the panel is displayed"
 msgstr "Η οθόνη Xinerama στην οποία εμφανίζεται ο πίνακας εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:16
+#: data/org.cafe.panel.toplevel.gschema.xml.in:16
 msgid ""
 "In a Xinerama setup, you may have panels on each individual monitor. This "
 "key identifies the current monitor the panel is displayed on."
@@ -1883,11 +1883,11 @@ msgstr ""
 "ξεχωριστή οθόνη. Αυτό το κλειδί καθορίζει την τρέχουσα οθόνη στην οποία "
 "εμφανίζεται ο πίνακας εφαρμογών."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:20
+#: data/org.cafe.panel.toplevel.gschema.xml.in:20
 msgid "Expand to occupy entire screen width"
 msgstr "Ανάπτυξη ώστε να καταληφθεί όλο το πλάτος της οθόνης"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:21
+#: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
 "vertical panel). In this mode the panel can only be placed at a screen edge."
@@ -1900,11 +1900,11 @@ msgstr ""
 "ψευδές, ο πίνακας εφαρμογών θα είναι τόσο μεγάλο όσο χρειάζεται για να "
 "φιλοξενήσει τους εκκινητές και κουμπιά του πίνακα εφαρμογών."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:25
+#: data/org.cafe.panel.toplevel.gschema.xml.in:25
 msgid "Panel orientation"
 msgstr "Προσανατολισμός πίνακα εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:26
+#: data/org.cafe.panel.toplevel.gschema.xml.in:26
 msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
@@ -1925,11 +1925,11 @@ msgstr ""
 "μενού θα αναδύει το μενού του προς τα κάτω, ενώ σε ένα \"bottom\" πίνακα "
 "εφαρμογών το μενού θα αναδύεται προς τα πάνω."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:30
+#: data/org.cafe.panel.toplevel.gschema.xml.in:30
 msgid "Panel size"
 msgstr "Μέγεθος πίνακα εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:31
+#: data/org.cafe.panel.toplevel.gschema.xml.in:31
 msgid ""
 "The height (width for a vertical panel) of the panel. The panel will "
 "determine at runtime a minimum size based on the font size and other "
@@ -1941,11 +1941,11 @@ msgstr ""
 "γραμματοσειράς και άλλα χαρακτηριστικά. Το μέγιστο μέγεθος είναι καθορισμένο"
 " στο ένα τέταρτο του ύψους της οθόνης (ή του πλάτους)."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:35
+#: data/org.cafe.panel.toplevel.gschema.xml.in:35
 msgid "X co-ordinate of panel"
 msgstr "Συντεταγμένη X του πίνακα εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:36
+#: data/org.cafe.panel.toplevel.gschema.xml.in:36
 msgid ""
 "The location of the panel along the x-axis. This key is only relevant in un-"
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
@@ -1956,11 +1956,11 @@ msgstr ""
 "αγνοείται και ο πίνακας εφαρμογών τοποθετείται στη γωνία της οθόνης που "
 "καθορίζεται από το κλειδί προσανατολισμού."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:40
+#: data/org.cafe.panel.toplevel.gschema.xml.in:40
 msgid "Y co-ordinate of panel"
 msgstr "Συντεταγμένη Y του πίνακα εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:41
+#: data/org.cafe.panel.toplevel.gschema.xml.in:41
 msgid ""
 "The location of the panel along the y-axis. This key is only relevant in un-"
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
@@ -1971,12 +1971,12 @@ msgstr ""
 "αγνοείται και ο πίνακας εφαρμογών τοποθετείται στη γωνία της οθόνης που "
 "καθορίζεται από το κλειδί προσανατολισμού."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:45
+#: data/org.cafe.panel.toplevel.gschema.xml.in:45
 msgid "X co-ordinate of panel, starting from the right of the screen"
 msgstr ""
 "Συντεταγμένη X του πίνακα εφαρμογών, ξεκινώντας από τα δεξιά της οθόνης"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:46
+#: data/org.cafe.panel.toplevel.gschema.xml.in:46
 msgid ""
 "The location of the panel along the x-axis, starting from the right of the "
 "screen. If set to -1, the value is ignored and the value of the x key is "
@@ -1993,12 +1993,12 @@ msgstr ""
 "πίνακας εφαρμογών τοποθετείται στη γωνία της οθόνης που καθορίζεται από το "
 "κλειδί προσανατολισμού."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:50
+#: data/org.cafe.panel.toplevel.gschema.xml.in:50
 msgid "Y co-ordinate of panel, starting from the bottom of the screen"
 msgstr ""
 "Συντεταγμένη Υ του πίνακα εφαρμογών, ξεκινώντας από το κάτω μέρος της οθόνης"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:51
+#: data/org.cafe.panel.toplevel.gschema.xml.in:51
 msgid ""
 "The location of the panel along the y-axis, starting from the bottom of the "
 "screen. If set to -1, the value is ignored and the value of the y key is "
@@ -2015,11 +2015,11 @@ msgstr ""
 "πίνακας εφαρμογών τοποθετείται στη γωνία της οθόνης που καθορίζεται από το "
 "κλειδί προσανατολισμού."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:55
+#: data/org.cafe.panel.toplevel.gschema.xml.in:55
 msgid "Center panel on x-axis"
 msgstr "Κεντράρισμα του πίνακα εφαρμογών στον άξονα x"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:56
+#: data/org.cafe.panel.toplevel.gschema.xml.in:56
 msgid ""
 "If true, the x and x_right keys are ignored and the panel is placed at the "
 "center of the x-axis of the screen. If the panel is resized it will remain "
@@ -2032,11 +2032,11 @@ msgstr ""
 "μεγαλώσει και από τις δυο πλευρές. Αν ψευδές, τα κλειδιά x και x_right "
 "καθορίζουν την τοποθεσία του πίνακα εφαρμογών."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:60
+#: data/org.cafe.panel.toplevel.gschema.xml.in:60
 msgid "Center panel on y-axis"
 msgstr "Κεντράρισμα του πίνακα εφαρμογών στον άξονα y"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:61
+#: data/org.cafe.panel.toplevel.gschema.xml.in:61
 msgid ""
 "If true, the y and y_bottom keys are ignored and the panel is placed at the "
 "center of the y-axis of the screen. If the panel is resized it will remain "
@@ -2049,11 +2049,11 @@ msgstr ""
 "μεγαλώσει και από τις δυο πλευρές. Αν ψευδές, τα κλειδιά y και y_bottom "
 "καθορίζουν την τοποθεσία του πίνακα εφαρμογών."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:65
+#: data/org.cafe.panel.toplevel.gschema.xml.in:65
 msgid "Automatically hide panel into corner"
 msgstr "Αυτόματη απόκρυψη του πίνακα εφαρμογών στη γωνία"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:66
+#: data/org.cafe.panel.toplevel.gschema.xml.in:66
 msgid ""
 "If true, the panel is automatically hidden into a corner of the screen when "
 "the pointer leaves the panel area. Moving the pointer to that corner again "
@@ -2064,19 +2064,19 @@ msgstr ""
 "του δρομέα σε αυτή τη γωνία ξανά θα προκαλέσει την επανεμφάνιση του πίνακα "
 "εφαρμογών."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:71
+#: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
-"If true, hiding and un-hiding of this panel will be animated rather than "
+"If true, hiding and un-hiding of this panel will be anicafed rather than "
 "happening instantly."
 msgstr ""
 "Αν αληθές, η απόκρυψη και η επανεμφάνιση αυτού του πίνακα εφαρμογών θα "
 "κινείται σταδιακά αντί να φαίνεται ακαριαία."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:75
+#: data/org.cafe.panel.toplevel.gschema.xml.in:75
 msgid "Enable hide buttons"
 msgstr "Ενεργοποίηση κουμπιών απόκρυψης"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:76
+#: data/org.cafe.panel.toplevel.gschema.xml.in:76
 msgid ""
 "If true, buttons will be placed on each side of the panel which may be used "
 "to move the panel to edge of the screen, leaving only a button showing."
@@ -2085,11 +2085,11 @@ msgstr ""
 "μπορεί να χρησιμοποιηθούν για τη μετακίνηση του πίνακα εφαρμογών στην άκρη "
 "της οθόνης, αφήνοντας μόνο ένα κουμπί ορατό."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:80
+#: data/org.cafe.panel.toplevel.gschema.xml.in:80
 msgid "Enable arrows on hide buttons"
 msgstr "Ενεργοποίηση βελών στα κουμπιά απόκρυψης"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:81
+#: data/org.cafe.panel.toplevel.gschema.xml.in:81
 msgid ""
 "If true, arrows will be placed on the hide buttons. This key is only "
 "relevant if the enable_buttons key is true."
@@ -2097,11 +2097,11 @@ msgstr ""
 "Αν αληθές, θα τοποθετηθούν βέλη στα κουμπιά απόκρυψης. Αυτή η προτίμηση έχει"
 " νόημα αν το κλειδί enable_buttons είναι αληθές."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:85
+#: data/org.cafe.panel.toplevel.gschema.xml.in:85
 msgid "Panel autohide delay"
 msgstr "Καθυστέρηση αυτόματης απόκρυψης πίνακα εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:86
+#: data/org.cafe.panel.toplevel.gschema.xml.in:86
 msgid ""
 "Specifies the number of milliseconds delay after the pointer leaves the "
 "panel area before the panel is automatically hidden. This key is only "
@@ -2112,11 +2112,11 @@ msgstr ""
 "εφαρμογών. Το κλειδί έχει χρησιμότητα μόνο αν είναι αληθές το κλειδί "
 "auto_hide."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:90
+#: data/org.cafe.panel.toplevel.gschema.xml.in:90
 msgid "Panel autounhide delay"
 msgstr "Καθυστέρηση επανεμφάνισης πίνακα εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:91
+#: data/org.cafe.panel.toplevel.gschema.xml.in:91
 msgid ""
 "Specifies the number of milliseconds delay after the pointer enters the "
 "panel area before the panel is automatically re-shown. This key is only "
@@ -2126,11 +2126,11 @@ msgstr ""
 "δευτερολέπτου μετά την είσοδο του δρομέα στην περιοχή του πίνακα εφαρμογών. "
 "Το κλειδί έχει χρησιμότητα μόνο αν είναι αληθές το κλειδί auto_hide."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:95
+#: data/org.cafe.panel.toplevel.gschema.xml.in:95
 msgid "Visible pixels when hidden"
 msgstr "Αριθμός ορατών εικονοστοιχείων σε έναν κρυφό πίνακα εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:96
+#: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
 "hidden into a corner. This key is only relevant if the auto_hide key is "
@@ -2140,11 +2140,11 @@ msgstr ""
 "εφαρμογών έχει αποκρυφθεί αυτόματα στη γωνία. Το κλειδί έχει χρησιμότητα "
 "μόνο αν είναι αληθές το κλειδί auto_hide."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:100
+#: data/org.cafe.panel.toplevel.gschema.xml.in:100
 msgid "Animation speed"
 msgstr "Ταχύτητα κινούμενων εικόνων"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:101
+#: data/org.cafe.panel.toplevel.gschema.xml.in:101
 msgid ""
 "The speed in which panel animations should occur. Possible values are "
 "\"slow\", \"medium\" and \"fast\". This key is only relevant if the "
@@ -2155,11 +2155,11 @@ msgstr ""
 " Αυτό το κλειδί έχει σημασία μόνο αν είναι αληθές το κλειδί "
 "enable_animations."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:108
+#: data/org.cafe.panel.toplevel.gschema.xml.in:108
 msgid "Background type"
 msgstr "Τύπος παρασκηνίου"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:109
+#: data/org.cafe.panel.toplevel.gschema.xml.in:109
 msgid ""
 "Which type of background should be used for this panel. Possible values are "
 "\"none\" - the default GTK+ widget background will be used, \"color\" - the "
@@ -2172,19 +2172,19 @@ msgstr ""
 " χρώματος ως χρώμα παρασκηνίου ή «image» (εικόνα) - η εικόνα που καθορίζεται"
 " από το κλειδί εικόνας θα χρησιμοποιείται ως παρασκήνιο."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:113
+#: data/org.cafe.panel.toplevel.gschema.xml.in:113
 msgid "Background color"
 msgstr "Χρώμα παρασκηνίου"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:114
+#: data/org.cafe.panel.toplevel.gschema.xml.in:114
 msgid "Specifies the background color for the panel in #RGB format."
 msgstr "Καθορίζει το χρώμα παρασκηνίου του πίνακα εφαρμογών σε μορφή #RGB."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:118
+#: data/org.cafe.panel.toplevel.gschema.xml.in:118
 msgid "Background color opacity"
 msgstr "Διαφάνεια χρώματος παρασκηνίου"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:119
+#: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
 "completely opaque (a value of less than 65535), the color will be composited"
@@ -2194,11 +2194,11 @@ msgstr ""
 "είναι εντελώς αδιαφανές (μια τιμή μικρότερη από 65535), τότε το χρώμα θα "
 "είναι σύνθετο στην εικόνα παρασκηνίου."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:123
+#: data/org.cafe.panel.toplevel.gschema.xml.in:123
 msgid "Background image"
 msgstr "Εικόνα παρασκηνίου"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:124
+#: data/org.cafe.panel.toplevel.gschema.xml.in:124
 msgid ""
 "Specifies the file to be used for the background image. If the image "
 "contains an alpha channel it will be composited onto the desktop background "
@@ -2207,11 +2207,11 @@ msgstr ""
 "Καθορίζει το αρχείο που θα χρησιμοποιηθεί για την εικόνα παρασκηνίου. Αν η "
 "εικόνα περιέχει ένα κανάλι άλφα, θα γίνει σύνθεση στην εικόνα παρασκηνίου."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:128
+#: data/org.cafe.panel.toplevel.gschema.xml.in:128
 msgid "Fit image to panel"
 msgstr "Σμίκρυνση εικόνας να χωράει στον πίνακα εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:129
+#: data/org.cafe.panel.toplevel.gschema.xml.in:129
 msgid ""
 "If true, the image will be scaled (retaining the aspect ratio of the image) "
 "to the panel height (if horizontal)."
@@ -2219,11 +2219,11 @@ msgstr ""
 "Αν αληθές, η εικόνα θα προσαρμόζεται (διατηρώντας το συντελεστή της εικόνας)"
 " στο ύψος του πίνακα εφαρμογών (αν οριζόντια)."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:133
+#: data/org.cafe.panel.toplevel.gschema.xml.in:133
 msgid "Stretch image to panel"
 msgstr "Τέντωμα εικόνας στον πίνακα εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:134
+#: data/org.cafe.panel.toplevel.gschema.xml.in:134
 msgid ""
 "If true, the image will be scaled to the panel dimensions. The aspect ratio "
 "of the image will not be maintained."
@@ -2231,11 +2231,11 @@ msgstr ""
 "Αν αληθές, η εικόνα θα προσαρμοστεί στις διαστάσεις του πίνακα εφαρμογών. Ο "
 "συντελεστής διαστάσεων της εικόνας θα αλλοιωθεί."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:138
+#: data/org.cafe.panel.toplevel.gschema.xml.in:138
 msgid "Rotate image on vertical panels"
 msgstr "Περιστροφή της εικόνας στους κάθετους πίνακες εφαρμογών"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:139
+#: data/org.cafe.panel.toplevel.gschema.xml.in:139
 msgid ""
 "If true, the background image will be rotated when the panel is oriented "
 "vertically."
@@ -2243,163 +2243,163 @@ msgstr ""
 "Αν αληθές, η εικόνα παρασκηνίου θα περιστρέφεται αν ο πίνακας εφαρμογών "
 "προσανατολίζεται κάθετα."
 
-#: mate-panel/libegg/eggdesktopfile.c:168
+#: cafe-panel/libegg/eggdesktopfile.c:168
 msgid "File is not a valid .desktop file"
 msgstr "Το αρχείο δεν είναι έγκυρο αρχείο .desktop"
 
-#: mate-panel/libegg/eggdesktopfile.c:191
+#: cafe-panel/libegg/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Μη αναγνωρίσιμη έκδοση αρχείου desktop '%s'"
 
-#: mate-panel/libegg/eggdesktopfile.c:963
+#: cafe-panel/libegg/eggdesktopfile.c:963
 #, c-format
 msgid "Starting %s"
 msgstr "Εκκίνηση %s"
 
-#: mate-panel/libegg/eggdesktopfile.c:1105
+#: cafe-panel/libegg/eggdesktopfile.c:1105
 msgid "Application does not accept documents on command line"
 msgstr "Η εφαρμογή δεν δέχεται έγγραφα από τη γραμμή εντολών"
 
-#: mate-panel/libegg/eggdesktopfile.c:1173
+#: cafe-panel/libegg/eggdesktopfile.c:1173
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Μη αναγνωρίσιμη επιλογή εκκίνησης: %d"
 
-#: mate-panel/libegg/eggdesktopfile.c:1390
+#: cafe-panel/libegg/eggdesktopfile.c:1390
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 "Δεν επιτρέπεται το πέρασμα διευθύνσεων (URI) εγγράφων σε εγγραφές της "
 "επιφάνειας εργασίας τύπου 'Type=Link'"
 
-#: mate-panel/libegg/eggdesktopfile.c:1411
+#: cafe-panel/libegg/eggdesktopfile.c:1411
 msgid "Not a launchable item"
 msgstr "Μη εκκινήσιμο αντικείμενο"
 
-#: mate-panel/libegg/eggsmclient.c:222
+#: cafe-panel/libegg/eggsmclient.c:222
 msgid "Disable connection to session manager"
 msgstr "Απενεργοποίηση σύνδεσης με τον διαχειριστή συνεδρίας"
 
-#: mate-panel/libegg/eggsmclient.c:225
+#: cafe-panel/libegg/eggsmclient.c:225
 msgid "Specify file containing saved configuration"
 msgstr "Καθορισμός του αρχείου που περιέχει τις αποθηκευμένες ρυθμίσεις"
 
-#: mate-panel/libegg/eggsmclient.c:225
+#: cafe-panel/libegg/eggsmclient.c:225
 msgid "FILE"
 msgstr "ΑΡΧΕΙΟ"
 
-#: mate-panel/libegg/eggsmclient.c:228
+#: cafe-panel/libegg/eggsmclient.c:228
 msgid "Specify session management ID"
 msgstr "Καθορισμός ID διαχείρισης συνεδρίας"
 
-#: mate-panel/libegg/eggsmclient.c:228
+#: cafe-panel/libegg/eggsmclient.c:228
 msgid "ID"
 msgstr "ID"
 
-#: mate-panel/libegg/eggsmclient.c:249
+#: cafe-panel/libegg/eggsmclient.c:249
 msgid "Session management options:"
 msgstr "Επιλογές διαχείρισης συνεδρίας"
 
-#: mate-panel/libegg/eggsmclient.c:250
+#: cafe-panel/libegg/eggsmclient.c:250
 msgid "Show session management options"
 msgstr "Εμφάνιση επιλογών διαχείρισης συνεδρίας"
 
-#: mate-panel/libpanel-util/panel-gtk.c:138
+#: cafe-panel/libpanel-util/panel-gtk.c:138
 msgid "_Open"
 msgstr "Ά_νοιγμα"
 
-#: mate-panel/libpanel-util/panel-error.c:76
-#: mate-panel/panel-applet-frame.c:798 mate-panel/panel-applet-frame.c:986
+#: cafe-panel/libpanel-util/panel-error.c:76
+#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: mate-panel/libpanel-util/panel-icon-chooser.c:374
+#: cafe-panel/libpanel-util/panel-icon-chooser.c:374
 msgid "Choose an icon"
 msgstr "Επιλογή εικονιδίου"
 
-#: mate-panel/libpanel-util/panel-launch.c:45
+#: cafe-panel/libpanel-util/panel-launch.c:45
 #, c-format
 msgid "Could not launch '%s'"
 msgstr "Αδύνατη η εκκίνηση του '%s'"
 
-#: mate-panel/libpanel-util/panel-launch.c:48 mate-panel/launcher.c:162
+#: cafe-panel/libpanel-util/panel-launch.c:48 cafe-panel/launcher.c:162
 msgid "Could not launch application"
 msgstr "Αδύνατη η εκκίνηση της εφαρμογής"
 
-#: mate-panel/libpanel-util/panel-show.c:44
+#: cafe-panel/libpanel-util/panel-show.c:44
 #, c-format
 msgid "Could not open location '%s'"
 msgstr "Αδυναμία ανοίγματος τοποθεσίας '%s'"
 
-#: mate-panel/libpanel-util/panel-show.c:158
+#: cafe-panel/libpanel-util/panel-show.c:158
 msgid "No application to handle search folders is installed."
 msgstr "Δεν έχει εγκατασταθεί εφαρμογή για χρήση φακέλων αναζήτησης."
 
-#: mate-panel/applet.c:468
+#: cafe-panel/applet.c:468
 msgid "???"
 msgstr ";;;"
 
-#: mate-panel/applet.c:548 libmate-panel-applet/mate-panel-applet.c:139
+#: cafe-panel/applet.c:548 libcafe-panel-applet/cafe-panel-applet.c:139
 msgid "_Remove From Panel"
 msgstr "_Αφαίρεση από τον πίνακα εφαρμογών"
 
-#: mate-panel/applet.c:556 libmate-panel-applet/mate-panel-applet.c:142
+#: cafe-panel/applet.c:556 libcafe-panel-applet/cafe-panel-applet.c:142
 msgid "_Move"
 msgstr "_Μετακίνηση"
 
-#: mate-panel/applet.c:574 libmate-panel-applet/mate-panel-applet.c:148
+#: cafe-panel/applet.c:574 libcafe-panel-applet/cafe-panel-applet.c:148
 msgid "Loc_k To Panel"
 msgstr "Κ_λείδωμα στον πίνακα εφαρμογών"
 
-#: mate-panel/applet.c:1313
+#: cafe-panel/applet.c:1313
 msgid "Cannot find an empty spot"
 msgstr "Δε βρέθηκε ελεύθερη τοποθεσία"
 
-#: mate-panel/drawer.c:443 mate-panel/panel-addto.c:189
-#: mate-panel/panel-toplevel.c:1650
+#: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
+#: cafe-panel/panel-toplevel.c:1650
 msgid "Drawer"
 msgstr "Συρτάρι"
 
-#: mate-panel/drawer.c:550
+#: cafe-panel/drawer.c:550
 msgid "_Add to Drawer..."
 msgstr "_Προσθήκη στο συρτάρι..."
 
-#: mate-panel/drawer.c:556 mate-panel/launcher.c:602
-#: mate-panel/panel-action-button.c:194 mate-panel/panel-context-menu.c:246
+#: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
 msgid "_Properties"
 msgstr "_Προτιμήσεις"
 
-#: mate-panel/mate-desktop-item-edit.c:27
+#: cafe-panel/cafe-desktop-item-edit.c:27
 msgid "Create new file in the given directory"
 msgstr "Δημιουργία ενός νέου αρχείο στον καθορισμένο κατάλογο"
 
-#: mate-panel/mate-desktop-item-edit.c:28
+#: cafe-panel/cafe-desktop-item-edit.c:28
 msgid "[FILE...]"
 msgstr "[ΑΡΧΕΙΟ...]"
 
-#: mate-panel/mate-desktop-item-edit.c:106
+#: cafe-panel/cafe-desktop-item-edit.c:106
 msgid "- Edit .desktop files"
 msgstr "- Επεξεργασία αρχείων .desktop"
 
-#: mate-panel/mate-desktop-item-edit.c:144
-#: mate-panel/mate-desktop-item-edit.c:198 mate-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:144
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
 msgid "Create Launcher"
 msgstr "Δημιουργία εκκινητή"
 
-#: mate-panel/mate-desktop-item-edit.c:169
-#: mate-panel/mate-desktop-item-edit.c:192
+#: cafe-panel/cafe-desktop-item-edit.c:169
+#: cafe-panel/cafe-desktop-item-edit.c:192
 msgid "Directory Properties"
 msgstr "Ιδιότητες καταλόγου"
 
-#: mate-panel/mate-desktop-item-edit.c:175 mate-panel/launcher.c:817
+#: cafe-panel/cafe-desktop-item-edit.c:175 cafe-panel/launcher.c:817
 msgid "Launcher Properties"
 msgstr "Ιδιότητες εκκινητή"
 
-#: mate-panel/mate-panel.desktop.in:4 mate-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
 msgid "Panel"
 msgstr "Πίνακας"
 
-#: mate-panel/mate-panel.desktop.in:5
+#: cafe-panel/cafe-panel.desktop.in:5
 msgid ""
 "Launch other applications and provide various utilities to manage windows, "
 "show the time, etc."
@@ -2409,249 +2409,249 @@ msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: mate-panel/mate-panel.desktop.in:7
-msgid "mate-panel"
+#: cafe-panel/cafe-panel.desktop.in:7
+msgid "cafe-panel"
 msgstr ""
 
-#: mate-panel/launcher.c:120
+#: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
 msgstr "Αδυναμία εμφάνισης αυτού του URL"
 
-#: mate-panel/launcher.c:121
+#: cafe-panel/launcher.c:121
 msgid "No URL was specified."
 msgstr "Δεν έχει ορισθεί URL."
 
-#: mate-panel/launcher.c:217
+#: cafe-panel/launcher.c:217
 msgid "Could not use dropped item"
 msgstr "Αδυναμία χρήσης αντικειμένου"
 
-#: mate-panel/launcher.c:451
+#: cafe-panel/launcher.c:451
 msgid "No URI provided for panel launcher desktop file\n"
 msgstr ""
 "Δεν έχει ορισθεί URI για το αρχείο επιφάνειας εργασίας του εκκινητή πίνακα "
 "εφαρμογών\n"
 
-#: mate-panel/launcher.c:490
+#: cafe-panel/launcher.c:490
 #, c-format
 msgid "Unable to open desktop file %s for panel launcher%s%s\n"
 msgstr ""
 "Αδυναμία ανοίγματος αρχείου επιφάνειας εργασίας %s για τον εκκινητή μενού "
 "%s%s\n"
 
-#: mate-panel/launcher.c:594
+#: cafe-panel/launcher.c:594
 msgid "_Launch"
 msgstr "Ε_κκίνηση"
 
-#: mate-panel/launcher.c:910
+#: cafe-panel/launcher.c:910
 #, c-format
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "Το πλήκτρο %s δεν έχει ορισθεί, αδυναμία φόρτωσης εκκινητή\n"
 
-#: mate-panel/launcher.c:1042 mate-panel/panel-ditem-editor.c:1326
-#: mate-panel/panel-ditem-editor.c:1360 mate-panel/panel-ditem-editor.c:1391
+#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Αδυναμία αποθήκευσης εκκινητή"
 
-#: mate-panel/main.c:54
+#: cafe-panel/main.c:54
 msgid "Replace a currently running panel"
 msgstr "Αντικατάσταση ενός πίνακα εφαρμογών που εκτελείται"
 
-#: mate-panel/main.c:56
+#: cafe-panel/main.c:56
 msgid "Reset the panel configuration to default"
 msgstr "Επαναφορά ρυθμίσεων πλαισίου στις προεπιλογές"
 
-#: mate-panel/main.c:58
+#: cafe-panel/main.c:58
 msgid "Execute the run dialog"
 msgstr "Εκκίνηση διαλόγου εκτέλεσης"
 
-#: mate-panel/main.c:60
+#: cafe-panel/main.c:60
 msgid "Set the default panel layout"
 msgstr "Ορισμός της προεπιλεγμένης διάταξης πάνελ"
 
-#: mate-panel/menu.c:502
+#: cafe-panel/menu.c:502
 msgid "Add this launcher to _panel"
 msgstr "Προσθήκη του εκκινητή στον _πίνακα εφαρμογών"
 
-#: mate-panel/menu.c:509
+#: cafe-panel/menu.c:509
 msgid "Add this launcher to _desktop"
 msgstr "Προσθήκη του εκκινητή στην _επιφάνεια εργασίας"
 
-#: mate-panel/menu.c:521
+#: cafe-panel/menu.c:521
 msgid "_Entire menu"
 msgstr "_Ολόκληρο το μενού"
 
-#: mate-panel/menu.c:526
+#: cafe-panel/menu.c:526
 msgid "Add this as _drawer to panel"
 msgstr "Προσθήκη του παρόντος ως _συρτάρι στον πίνακα εφαρμογών"
 
-#: mate-panel/menu.c:533
+#: cafe-panel/menu.c:533
 msgid "Add this as _menu to panel"
 msgstr "Προσθήκη του παρόντος ως _μενού στον πίνακα εφαρμογών"
 
-#: mate-panel/panel-action-button.c:182
+#: cafe-panel/panel-action-button.c:182
 msgid "_Activate Screensaver"
 msgstr "_Ενεργοποίηση προφύλαξης οθόνης"
 
-#: mate-panel/panel-action-button.c:188
+#: cafe-panel/panel-action-button.c:188
 msgid "_Lock Screen"
 msgstr "_Κλείδωμα οθόνης"
 
-#: mate-panel/panel-action-button.c:332
+#: cafe-panel/panel-action-button.c:332
 msgid "Could not connect to server"
 msgstr "Αδυναμία σύνδεσης στον εξυπηρετητή"
 
-#: mate-panel/panel-action-button.c:363
+#: cafe-panel/panel-action-button.c:363
 msgid "Lock Screen"
 msgstr "Κλείδωμα οθόνης"
 
-#: mate-panel/panel-action-button.c:364
+#: cafe-panel/panel-action-button.c:364
 msgid "Protect your computer from unauthorized use"
 msgstr "Προστασία του υπολογιστή από μη εξουσιοδοτημένη χρήση"
 
-#: mate-panel/panel-action-button.c:378
+#: cafe-panel/panel-action-button.c:378
 msgid "Log Out..."
 msgstr "Αποσύνδεση..."
 
-#: mate-panel/panel-action-button.c:379
+#: cafe-panel/panel-action-button.c:379
 msgid "Log out of this session to log in as a different user"
 msgstr ""
 "Αποσυνδεθείτε από αυτή τη συνεδρία για να συνδεθείτε ως διαφορετικός χρήστης"
 
-#: mate-panel/panel-action-button.c:388
+#: cafe-panel/panel-action-button.c:388
 msgid "Run Application..."
 msgstr "Εκτέλεση Εφαρμογής..."
 
-#: mate-panel/panel-action-button.c:389
+#: cafe-panel/panel-action-button.c:389
 msgid "Run an application by typing a command or choosing from a list"
 msgstr ""
 "Εκτελεί ένα πρόγραμμα με την εισαγωγή εντολής ή μέσω της επιλογής του από "
 "λίστα"
 
-#: mate-panel/panel-action-button.c:398
+#: cafe-panel/panel-action-button.c:398
 msgid "Search for Files..."
 msgstr "Αναζήτηση για αρχεία..."
 
-#: mate-panel/panel-action-button.c:399
+#: cafe-panel/panel-action-button.c:399
 msgid "Locate documents and folders on this computer by name or content"
 msgstr ""
 "Εντοπισμός εγγράφων και φακέλων σε αυτό τον υπολογιστή με βάση το όνομα ή το"
 " περιεχόμενο"
 
-#: mate-panel/panel-action-button.c:407 mate-panel/panel-force-quit.c:250
+#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
 msgid "Force Quit"
 msgstr "Εξαναγκασμός εξόδου"
 
-#: mate-panel/panel-action-button.c:408
+#: cafe-panel/panel-action-button.c:408
 msgid "Force a misbehaving application to quit"
 msgstr "Εξαναγκασμός σε έξοδο μιας εφαρμογής με κακή συμπεριφορά"
 
-#: mate-panel/panel-action-button.c:417
+#: cafe-panel/panel-action-button.c:417
 msgid "Connect to Server..."
 msgstr "Σύνδεση στον εξυπηρετητή..."
 
-#: mate-panel/panel-action-button.c:418
+#: cafe-panel/panel-action-button.c:418
 msgid "Connect to a remote computer or shared disk"
 msgstr "Σύνδεση σε ένα απομακρυσμένο υπολογιστή ή σε ένα κοινόχρηστο δίσκο"
 
-#: mate-panel/panel-action-button.c:426
+#: cafe-panel/panel-action-button.c:426
 msgid "Shut Down..."
 msgstr "Κλείσιμο..."
 
-#: mate-panel/panel-action-button.c:427
+#: cafe-panel/panel-action-button.c:427
 msgid "Shut down the computer"
 msgstr "Κλείσιμο του υπολογιστή"
 
-#: mate-panel/panel-addto.c:125
+#: cafe-panel/panel-addto.c:125
 msgid "Custom Application Launcher"
 msgstr "Εκκινητής προσαρμοσμένης εφαρμογής"
 
-#: mate-panel/panel-addto.c:126
+#: cafe-panel/panel-addto.c:126
 msgid "Create a new launcher"
 msgstr "Δημιουργία ενός νέου εκκινητή"
 
-#: mate-panel/panel-addto.c:137
+#: cafe-panel/panel-addto.c:137
 msgid "Application Launcher..."
 msgstr "Εκκινητής εφαρμογής..."
 
-#: mate-panel/panel-addto.c:138
+#: cafe-panel/panel-addto.c:138
 msgid "Copy a launcher from the applications menu"
 msgstr "Αντιγραφή ενός εκκινητή από το μενού των εφαρμογών"
 
-#: mate-panel/panel-addto.c:153
+#: cafe-panel/panel-addto.c:153
 msgid "Compact Menu"
 msgstr ""
 
-#: mate-panel/panel-addto.c:154
+#: cafe-panel/panel-addto.c:154
 msgid "A compact menu"
 msgstr ""
 
-#: mate-panel/panel-addto.c:165
+#: cafe-panel/panel-addto.c:165
 msgid "Classic Menu"
 msgstr ""
 
-#: mate-panel/panel-addto.c:166
+#: cafe-panel/panel-addto.c:166
 msgid "The classic Applications, Places and System menu bar"
 msgstr ""
 
-#: mate-panel/panel-addto.c:177
+#: cafe-panel/panel-addto.c:177
 msgid "Separator"
 msgstr "Διαχωριστικό"
 
-#: mate-panel/panel-addto.c:178
+#: cafe-panel/panel-addto.c:178
 msgid "A separator to organize the panel items"
 msgstr "Ένα διαχωριστικό, για την οργάνωση αντικειμένων του πίνακα εφαρμογών"
 
-#: mate-panel/panel-addto.c:190
+#: cafe-panel/panel-addto.c:190
 msgid "A pop out drawer to store other items in"
 msgstr "Ένα αναδυόμενο συρτάρι για να αποθηκεύονται αντικείμενα σε αυτό"
 
-#: mate-panel/panel-addto.c:274
+#: cafe-panel/panel-addto.c:274
 msgid "(empty)"
 msgstr "(κενό)"
 
-#: mate-panel/panel-addto.c:419
+#: cafe-panel/panel-addto.c:419
 msgid "Not compatible with X11"
 msgstr ""
 
-#: mate-panel/panel-addto.c:426
+#: cafe-panel/panel-addto.c:426
 msgid "Not compatible with Wayland"
 msgstr ""
 
-#: mate-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1053
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "Βρείτε ένα αντ_ικείμενο για προσθήκη στο \"%s\":"
 
-#: mate-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1057
 msgid "Add to Drawer"
 msgstr "Προσθήκη στο συρτάρι"
 
-#: mate-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1059
 msgid "Find an _item to add to the drawer:"
 msgstr "Βρείτε ένα αντ_ικείμενο για προσθήκη στο συρτάρι:"
 
-#: mate-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1061
 msgid "Add to Panel"
 msgstr "Προσθήκη στον πίνακα εφαρμογών"
 
-#: mate-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1063
 msgid "Find an _item to add to the panel:"
 msgstr "Βρείτε ένα αντ_ικείμενο για προσθήκη στον πίνακα εφαρμογών:"
 
-#: mate-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1311
 msgid "_Back"
 msgstr "_Πίσω"
 
-#: mate-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:759
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "Το \"%s\" τερματίστηκε απρόσμενα"
 
-#: mate-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:761
 msgid "Panel object has quit unexpectedly"
 msgstr "Το αντικειμένου πίνακα εφαρμογών τερματίστηκε απρόσμενα"
 
-#: mate-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:768
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
@@ -2659,47 +2659,47 @@ msgstr ""
 "Αν φορτώσετε ξανά ένα αντικείμενο πίνακα εφαρμογών, θα προστεθεί αυτόματα "
 "πίσω στο πίνακα εφαρμογών."
 
-#: mate-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:775
 msgid "D_elete"
 msgstr "Διά_γραφει"
 
-#: mate-panel/panel-applet-frame.c:776 mate-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
 msgid "_Don't Reload"
 msgstr "Να _μη γίνει επαναφόρτωση"
 
-#: mate-panel/panel-applet-frame.c:777 mate-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
 msgid "_Reload"
 msgstr "_Επαναφόρτωση"
 
-#: mate-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:948
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "Ο πίνακας εφαρμογών αντιμετώπισε ένα πρόβλημα κατά τη φόρτωση του \"%s\"."
 
-#: mate-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:963
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Θέλετε να αφαιρέσετε τη μικροεφαρμογή από τη ρύθμιση σας;"
 
-#: mate-panel/panel-applet-frame.c:970 mate-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "_Διαγραφή"
 
-#: mate-panel/panel-context-menu.c:91
+#: cafe-panel/panel-context-menu.c:91
 msgid "And many, many others…"
 msgstr "Και πολλοί, πολλοί άλλοι..."
 
-#: mate-panel/panel-context-menu.c:114
+#: cafe-panel/panel-context-menu.c:114
 msgid "The MATE Panel"
 msgstr "Ο πίνακας εφαρμογών του MATE"
 
-#: mate-panel/panel-context-menu.c:116
+#: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
 "Copyright © 2011-2020 MATE developers"
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:119
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
@@ -2707,23 +2707,23 @@ msgstr ""
 "Το παρόν πρόγραμμα είναι υπεύθυνο για την εκκίνηση άλλων εφαρμογών και "
 "παρέχει χρήσιμα εργαλεία."
 
-#: mate-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:123
 msgid "About the MATE Panel"
 msgstr "Περί του πίνακα εφαρμογών του MATE"
 
-#: mate-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
 msgstr "Αποτυχία διαγραφής αυτού του πίνακα εφαρμογών"
 
-#: mate-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:155
 msgid "You must always have at least one panel."
 msgstr "Θα πρέπει να υπάρχει τουλάχιστον ένας πίνακας εφαρμογών."
 
-#: mate-panel/panel-context-menu.c:199
+#: cafe-panel/panel-context-menu.c:199
 msgid "Reset this panel?"
 msgstr "Επαναφορά πλαισίου;"
 
-#: mate-panel/panel-context-menu.c:200
+#: cafe-panel/panel-context-menu.c:200
 msgid ""
 "When a panel is reset, all \n"
 "custom settings are lost."
@@ -2731,110 +2731,110 @@ msgstr ""
 "Όταν επαναφέρεται ένας πίνακας, όλα\n"
 "οι προσαρμοσμένες ρυθμίσεις χάνονται."
 
-#: mate-panel/panel-context-menu.c:214 mate-panel/panel-context-menu.c:256
+#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
 msgid "_Reset Panel"
 msgstr "_Πίνακας Επαναφοράς"
 
-#: mate-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:236
 msgid "_Add to Panel…"
 msgstr "_Προσθήκη στον Πίνακα Εφαρμογών..."
 
-#: mate-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:263
 msgid "_Delete This Panel"
 msgstr "_Αφαίρεση αυτού του πίνακα εφαρμογών"
 
-#: mate-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:276
 msgid "_New Panel"
 msgstr "_Νέος πίνακας εφαρμογών"
 
-#: mate-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:325
 msgid "A_bout Panels"
 msgstr "_Περί πίνακα εφαρμογών"
 
-#: mate-panel/panel-ditem-editor.c:115
+#: cafe-panel/panel-ditem-editor.c:115
 msgid "Application"
 msgstr "Εφαρμογή"
 
-#: mate-panel/panel-ditem-editor.c:117
+#: cafe-panel/panel-ditem-editor.c:117
 msgid "Application in Terminal"
 msgstr "Εφαρμογή σε τερματικό"
 
-#: mate-panel/panel-ditem-editor.c:119
+#: cafe-panel/panel-ditem-editor.c:119
 msgid "Location"
 msgstr "Τοποθεσία"
 
-#: mate-panel/panel-ditem-editor.c:602
+#: cafe-panel/panel-ditem-editor.c:602
 msgid "_Type:"
 msgstr "_Τύπος:"
 
-#: mate-panel/panel-ditem-editor.c:609
+#: cafe-panel/panel-ditem-editor.c:609
 msgid "_Name:"
 msgstr "Ό_νομα:"
 
-#: mate-panel/panel-ditem-editor.c:634
+#: cafe-panel/panel-ditem-editor.c:634
 msgid "_Browse..."
 msgstr "_Περιήγηση..."
 
-#: mate-panel/panel-ditem-editor.c:641
+#: cafe-panel/panel-ditem-editor.c:641
 msgid "Co_mment:"
 msgstr "_Σχόλιο:"
 
-#: mate-panel/panel-ditem-editor.c:652
+#: cafe-panel/panel-ditem-editor.c:652
 msgid "_Revert"
 msgstr "Επανα_φορά"
 
-#: mate-panel/panel-ditem-editor.c:978
+#: cafe-panel/panel-ditem-editor.c:978
 msgid "Choose an application..."
 msgstr "Επιλογή μιας εφαρμογής..."
 
-#: mate-panel/panel-ditem-editor.c:982
+#: cafe-panel/panel-ditem-editor.c:982
 msgid "Choose a file..."
 msgstr "Επιλογή ενός αρχείου..."
 
-#: mate-panel/panel-ditem-editor.c:1146 mate-panel/panel-ditem-editor.c:1155
+#: cafe-panel/panel-ditem-editor.c:1146 cafe-panel/panel-ditem-editor.c:1155
 msgid "Comm_and:"
 msgstr "_Εντολή:"
 
-#: mate-panel/panel-ditem-editor.c:1164
+#: cafe-panel/panel-ditem-editor.c:1164
 msgid "_Location:"
 msgstr "_Τοποθεσία:"
 
-#: mate-panel/panel-ditem-editor.c:1327
+#: cafe-panel/panel-ditem-editor.c:1327
 msgid "The name of the launcher is not set."
 msgstr "Το όνομα του εκκινητή δεν έχει ορισθεί."
 
-#: mate-panel/panel-ditem-editor.c:1331
+#: cafe-panel/panel-ditem-editor.c:1331
 msgid "Could not save directory properties"
 msgstr "Αδυναμία αποθήκευσης ιδιοτήτων καταλόγου"
 
-#: mate-panel/panel-ditem-editor.c:1332
+#: cafe-panel/panel-ditem-editor.c:1332
 msgid "The name of the directory is not set."
 msgstr "Το όνομα του καταλόγου δεν έχει ορισθεί."
 
-#: mate-panel/panel-ditem-editor.c:1348
+#: cafe-panel/panel-ditem-editor.c:1348
 msgid "The command of the launcher is not set."
 msgstr "Η εντολή του εκκινητή δεν έχει ορισθεί."
 
-#: mate-panel/panel-ditem-editor.c:1351
+#: cafe-panel/panel-ditem-editor.c:1351
 msgid "The location of the launcher is not set."
 msgstr "Η τοποθεσία του εκκινητή δεν έχει ορισθεί."
 
-#: mate-panel/panel-ditem-editor.c:1428
+#: cafe-panel/panel-ditem-editor.c:1428
 msgid "Could not display help document"
 msgstr "Δεν είναι δυνατή η προβολή του αρχείου βοήθειας"
 
-#: mate-panel/panel-force-quit.c:86
+#: cafe-panel/panel-force-quit.c:86
 msgid ""
 "Click on a window to force the application to quit. To cancel press <ESC>."
 msgstr ""
 "Κλικ σε ένα παράθυρο για να εξαναγκάσετε την εφαρμογή σε έξοδο. Για ακύρωση "
 "πατήστε <ESC>."
 
-#: mate-panel/panel-force-quit.c:232
+#: cafe-panel/panel-force-quit.c:232
 msgid "Force this application to exit?"
 msgstr "Εξαναγκασμός σε έξοδο αυτής της εφαρμογής;"
 
-#: mate-panel/panel-force-quit.c:235
+#: cafe-panel/panel-force-quit.c:235
 msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."
@@ -2842,274 +2842,274 @@ msgstr ""
 "Αν επιλέξετε τον εξαναγκασμό τερματισμού της εφαρμογής, οποιαδήποτε ανοικτά"
 "  έγγραφα πιθανόν θα χαθούν."
 
-#: mate-panel/panel-menu-bar.c:97
+#: cafe-panel/panel-menu-bar.c:97
 msgid "Browse and run installed applications"
 msgstr "Εύρεση και εκτέλεση εγκατεστημένων εφαρμογών"
 
-#: mate-panel/panel-menu-bar.c:98
+#: cafe-panel/panel-menu-bar.c:98
 msgid "Access documents, folders and network places"
 msgstr "Πρόσβαση σε έγγραφα, φακέλους και τοποθεσίες δικτύου"
 
-#: mate-panel/panel-menu-bar.c:99
+#: cafe-panel/panel-menu-bar.c:99
 msgid "Change desktop appearance and behavior, get help, or log out"
 msgstr ""
 "Αλλαγή της εμφάνισης και της συμπεριφοράς της επιφάνειας εργασίας, λήψη "
 "βοήθειας, ή αποσύνδεση"
 
-#: mate-panel/panel-menu-bar.c:166
+#: cafe-panel/panel-menu-bar.c:166
 msgid "Applications"
 msgstr "Εφαρμογές"
 
-#: mate-panel/panel-menu-bar.c:356 mate-panel/panel-menu-button.c:706
+#: cafe-panel/panel-menu-bar.c:356 cafe-panel/panel-menu-button.c:706
 msgid "_Edit Menus"
 msgstr "Επε_ξεργασία μενού"
 
-#: mate-panel/panel-menu-button.c:1129
+#: cafe-panel/panel-menu-button.c:1129
 msgid "Main Menu"
 msgstr "Κυρίως μενού"
 
-#: mate-panel/panel-menu-items.c:467
+#: cafe-panel/panel-menu-items.c:467
 msgid "Bookmarks"
 msgstr "Σελιδοδείκτες"
 
 #. Translators: %s is a URI
-#: mate-panel/panel-menu-items.c:490 mate-panel/panel.c:553
+#: cafe-panel/panel-menu-items.c:490 cafe-panel/panel.c:553
 #, c-format
 msgid "Open '%s'"
 msgstr "Άνοιγμα '%s'"
 
-#: mate-panel/panel-menu-items.c:561
+#: cafe-panel/panel-menu-items.c:561
 #, c-format
 msgid "Unable to scan %s for media changes"
 msgstr "Αδυναμία σάρωσης %s για αλλαγές μέσων"
 
-#: mate-panel/panel-menu-items.c:604
+#: cafe-panel/panel-menu-items.c:604
 #, c-format
 msgid "Rescan %s"
 msgstr "Σάρωση ξανά %s"
 
-#: mate-panel/panel-menu-items.c:641
+#: cafe-panel/panel-menu-items.c:641
 #, c-format
 msgid "Unable to mount %s"
 msgstr "Αδυναμία προσάρτησης %s"
 
-#: mate-panel/panel-menu-items.c:704
+#: cafe-panel/panel-menu-items.c:704
 #, c-format
 msgid "Mount %s"
 msgstr "Προσάρτηση %s"
 
-#: mate-panel/panel-menu-items.c:912
+#: cafe-panel/panel-menu-items.c:912
 msgid "Removable Media"
 msgstr "Αφαιρούμενα μέσα"
 
-#: mate-panel/panel-menu-items.c:999
+#: cafe-panel/panel-menu-items.c:999
 msgid "Network Places"
 msgstr "Τοποθεσίες δικτύου"
 
-#: mate-panel/panel-menu-items.c:1038
+#: cafe-panel/panel-menu-items.c:1038
 msgid "Open your personal folder"
 msgstr "Άνοιγμα του προσωπικού σας φακέλου"
 
 #. Translators: Desktop is used here as in
 #. * "Desktop Folder" (this is not the Desktop
 #. * environment).
-#: mate-panel/panel-menu-items.c:1057
+#: cafe-panel/panel-menu-items.c:1057
 msgctxt "Desktop Folder"
 msgid "Desktop"
 msgstr "Επιφάνεια εργασίας"
 
-#: mate-panel/panel-menu-items.c:1058
+#: cafe-panel/panel-menu-items.c:1058
 msgid "Open the contents of your desktop in a folder"
 msgstr "Άνοιγμα των περιεχομένων της επιφάνειας εργασίας σας σε ένα φάκελο"
 
-#: mate-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1074
 msgid "Computer"
 msgstr "Υπολογιστής"
 
-#: mate-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1079
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
 msgstr ""
 "Περιήγηση σε όλους τους τοπικούς ή απομακρυσμένους δίσκους και φακέλους "
 "στους οποίους έχει πρόσβαση ο υπολογιστής"
 
-#: mate-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1092
 msgid "Network"
 msgstr "Δίκτυο"
 
-#: mate-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1093
 msgid "Browse bookmarked and local network locations"
 msgstr "Περιήγηση στους σελιδοδείκτες και το τοπικό δίκτυο"
 
-#: mate-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1487
 msgid "Places"
 msgstr "Τοποθεσίες"
 
-#: mate-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1515
 msgid "System"
 msgstr "Σύστημα"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: mate-panel/panel-menu-items.c:1600
+#: cafe-panel/panel-menu-items.c:1600
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: mate-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1612
 #, c-format
 msgid "Log Out %s..."
 msgstr "Αποσύνδεση %s..."
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: mate-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1616
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr ""
 "Αποσύνδεση %s από αυτή τη συνεδρία για σύνδεση ως διαφορετικός χρήστης"
 
-#: mate-panel/panel-properties-dialog.c:119 mate-panel/panel-test-applets.c:58
+#: cafe-panel/panel-properties-dialog.c:119 cafe-panel/panel-test-applets.c:58
 msgctxt "Orientation"
 msgid "Top"
 msgstr "Κορυφή"
 
-#: mate-panel/panel-properties-dialog.c:120 mate-panel/panel-test-applets.c:59
+#: cafe-panel/panel-properties-dialog.c:120 cafe-panel/panel-test-applets.c:59
 msgctxt "Orientation"
 msgid "Bottom"
 msgstr "Κάτω"
 
-#: mate-panel/panel-properties-dialog.c:121 mate-panel/panel-test-applets.c:60
+#: cafe-panel/panel-properties-dialog.c:121 cafe-panel/panel-test-applets.c:60
 msgctxt "Orientation"
 msgid "Left"
 msgstr "Αριστερά"
 
-#: mate-panel/panel-properties-dialog.c:122 mate-panel/panel-test-applets.c:61
+#: cafe-panel/panel-properties-dialog.c:122 cafe-panel/panel-test-applets.c:61
 msgctxt "Orientation"
 msgid "Right"
 msgstr "Δεξιά"
 
-#: mate-panel/panel-properties-dialog.c:818
+#: cafe-panel/panel-properties-dialog.c:818
 msgid "Drawer Properties"
 msgstr "Ιδιότητες συρταριού"
 
-#: mate-panel/panel-properties-dialog.ui:62
+#: cafe-panel/panel-properties-dialog.ui:62
 msgid "Panel Properties"
 msgstr "Ιδιότητες πίνακα εφαρμογών"
 
-#: mate-panel/panel-properties-dialog.ui:148
-#: mate-panel/panel-properties-dialog.ui:416
+#: cafe-panel/panel-properties-dialog.ui:148
+#: cafe-panel/panel-properties-dialog.ui:416
 msgid "Some of these properties are locked down"
 msgstr "Μερικές από αυτές τις ιδιότητες είναι κλειδωμένες"
 
-#: mate-panel/panel-properties-dialog.ui:189
+#: cafe-panel/panel-properties-dialog.ui:189
 msgid "_Icon:"
 msgstr "_Εικονίδιο:"
 
-#: mate-panel/panel-properties-dialog.ui:249
-#: mate-panel/panel-test-applets.ui:116
+#: cafe-panel/panel-properties-dialog.ui:249
+#: cafe-panel/panel-test-applets.ui:116
 msgid "_Orientation:"
 msgstr "Προσανατο_λισμός:"
 
-#: mate-panel/panel-properties-dialog.ui:263
-#: mate-panel/panel-test-applets.ui:86
+#: cafe-panel/panel-properties-dialog.ui:263
+#: cafe-panel/panel-test-applets.ui:86
 msgid "_Size:"
 msgstr "Μέ_γεθος:"
 
-#: mate-panel/panel-properties-dialog.ui:281
+#: cafe-panel/panel-properties-dialog.ui:281
 msgid "E_xpand"
 msgstr "Ανάπτυ_ξη"
 
-#: mate-panel/panel-properties-dialog.ui:296
+#: cafe-panel/panel-properties-dialog.ui:296
 msgid "_Autohide"
 msgstr "_Αυτόματη απόκρυψη"
 
-#: mate-panel/panel-properties-dialog.ui:317
+#: cafe-panel/panel-properties-dialog.ui:317
 msgid "Show hide _buttons"
 msgstr "Εμφάνιση _κουμπιών απόκρυψης"
 
-#: mate-panel/panel-properties-dialog.ui:348
+#: cafe-panel/panel-properties-dialog.ui:348
 msgid "Arro_ws on hide buttons"
 msgstr "Εμφάνιση βέ_λων στο κουμπί απόκρυψης"
 
-#: mate-panel/panel-properties-dialog.ui:433
+#: cafe-panel/panel-properties-dialog.ui:433
 msgid "_None (use system theme)"
 msgstr "Κα_νένα (χρήση θέματος συστήματος)"
 
-#: mate-panel/panel-properties-dialog.ui:453
+#: cafe-panel/panel-properties-dialog.ui:453
 msgid "Solid c_olor"
 msgstr "Συμπαγές _χρώμα"
 
-#: mate-panel/panel-properties-dialog.ui:501
+#: cafe-panel/panel-properties-dialog.ui:501
 msgid "Pick a color"
 msgstr "Επιλογή χρώματος"
 
-#: mate-panel/panel-properties-dialog.ui:531
+#: cafe-panel/panel-properties-dialog.ui:531
 msgid "<small>Transparent</small>"
 msgstr "<small>Διαφανές</small>"
 
-#: mate-panel/panel-properties-dialog.ui:553
+#: cafe-panel/panel-properties-dialog.ui:553
 msgid "Co_lor:"
 msgstr "Χ_ρώμα:"
 
-#: mate-panel/panel-properties-dialog.ui:566
+#: cafe-panel/panel-properties-dialog.ui:566
 msgid "S_tyle:"
 msgstr "Σ_τυλ:"
 
-#: mate-panel/panel-properties-dialog.ui:580
+#: cafe-panel/panel-properties-dialog.ui:580
 msgid "<small>Opaque</small>"
 msgstr "<small>Ημιδιαφανές</small>"
 
-#: mate-panel/panel-properties-dialog.ui:613
+#: cafe-panel/panel-properties-dialog.ui:613
 msgid "Background _image:"
 msgstr "Ει_κόνα παρασκηνίου:"
 
-#: mate-panel/panel-properties-dialog.ui:647
+#: cafe-panel/panel-properties-dialog.ui:647
 msgid "Select background"
 msgstr "Επιλογή παρασκηνίου"
 
-#: mate-panel/panel-properties-dialog.ui:678
+#: cafe-panel/panel-properties-dialog.ui:678
 msgid "Background"
 msgstr "Παρασκήνιο"
 
-#: mate-panel/panel-properties-dialog.ui:710
+#: cafe-panel/panel-properties-dialog.ui:710
 msgid "Image Background Details"
 msgstr "Λεπτομέρειες εικόνας παρασκηνίου"
 
-#: mate-panel/panel-properties-dialog.ui:780
+#: cafe-panel/panel-properties-dialog.ui:780
 msgid "_Tile"
 msgstr "Πλακίδ_ιο"
 
-#: mate-panel/panel-properties-dialog.ui:795
+#: cafe-panel/panel-properties-dialog.ui:795
 msgid "_Scale"
 msgstr "Κλί_μακα"
 
-#: mate-panel/panel-properties-dialog.ui:811
+#: cafe-panel/panel-properties-dialog.ui:811
 msgid "St_retch"
 msgstr "Τέ_ντωμα"
 
-#: mate-panel/panel-properties-dialog.ui:834
+#: cafe-panel/panel-properties-dialog.ui:834
 msgid "Rotate image when panel is _vertical"
 msgstr "Περιστροφή εικόνας για _κάθετους πίνακες εφαρμογών"
 
-#: mate-panel/panel-recent.c:78 mate-panel/panel-recent.c:88
+#: cafe-panel/panel-recent.c:78 cafe-panel/panel-recent.c:88
 #, c-format
 msgid "Could not open recently used document \"%s\""
 msgstr "Δεν είναι δυνατό το άνοιγμα του πρόσφατου αρχείου \"%s\""
 
-#: mate-panel/panel-recent.c:90
+#: cafe-panel/panel-recent.c:90
 #, c-format
 msgid "An unknown error occurred while trying to open \"%s\"."
 msgstr "Συνέβη ένα άγνωστο σφάλμα κατά την προσπάθεια ανοίγματος του \"%s\"."
 
-#: mate-panel/panel-recent.c:147
+#: cafe-panel/panel-recent.c:147
 msgid "Clear the Recent Documents list?"
 msgstr "Εκκαθάριση της λίστας πρόσφατων εγγράφων;"
 
-#: mate-panel/panel-recent.c:149
+#: cafe-panel/panel-recent.c:149
 msgid ""
 "If you clear the Recent Documents list, you clear the following:\n"
 "• All items from the Places → Recent Documents menu item.\n"
@@ -3119,60 +3119,60 @@ msgstr ""
 "• Όλα τα αντικείμενα από το μενού Τοποθεσίες → Πρόσφατα Έγγραφα.\n"
 "• Όλα τα αντικείμενα από τη λίστα πρόσφατων εγγράφων σε όλες τις εφαρμογές."
 
-#: mate-panel/panel-recent.c:164
+#: cafe-panel/panel-recent.c:164
 msgid "Clear Recent Documents"
 msgstr "Εκκαθάριση πρόσφατων εγγράφων"
 
-#: mate-panel/panel-recent.c:199
+#: cafe-panel/panel-recent.c:199
 msgid "Recent Documents"
 msgstr "Πρόσφατα έγγραφα"
 
-#: mate-panel/panel-recent.c:238
+#: cafe-panel/panel-recent.c:238
 msgid "Clear Recent Documents..."
 msgstr "Εκκαθάριση πρόσφατων εγγράφων..."
 
-#: mate-panel/panel-recent.c:240
+#: cafe-panel/panel-recent.c:240
 msgid "Clear all items from the recent documents list"
 msgstr "Εκκαθάριση όλων των αντικειμένων από τη λίστα προσφάτων εγγράφων"
 
-#: mate-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:423
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "Αδύνατη η εκτέλεση της εντολής '%s'"
 
-#: mate-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:464
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "Αδυναμία μετατροπής '%s' από UTF-8"
 
-#: mate-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1257
 msgid "Choose a file to append to the command..."
 msgstr "Επιλέξτε ένα αρχείο για συσχέτιση με την εντολή..."
 
-#: mate-panel/panel-run-dialog.c:1639 mate-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Επιλογή μιας εφαρμογής για την προβολή της περιγραφής της."
 
-#: mate-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1677
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "Θα εκτελεστεί η εντολή: '%s'"
 
-#: mate-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1710
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
 "Η λίστα URI στο διάλογο εκτέλεσης έχει εσφαλμένη μορφή (%d) ή μάκρος (%d)\n"
 
-#: mate-panel/panel-run-dialog.ui:23
+#: cafe-panel/panel-run-dialog.ui:23
 msgid "Run Application"
 msgstr "Εκτέλεση εφαρμογής"
 
-#: mate-panel/panel-run-dialog.ui:71 mate-panel/panel-stock-icons.c:97
+#: cafe-panel/panel-run-dialog.ui:71 cafe-panel/panel-stock-icons.c:97
 msgid "_Run"
 msgstr "_Εκτέλεση"
 
-#: mate-panel/panel-run-dialog.ui:81
+#: cafe-panel/panel-run-dialog.ui:81
 msgid ""
 "Click this button to run the selected application or the command in the "
 "command entry field."
@@ -3180,29 +3180,29 @@ msgstr ""
 "Πατήστε αυτό το κουμπί για να εκτελέσετε την επιλεγμένη εφαρμογή ή την "
 "εντολή στο πεδίο καταχώρησης εντολής."
 
-#: mate-panel/panel-run-dialog.ui:125
+#: cafe-panel/panel-run-dialog.ui:125
 msgid "Command icon"
 msgstr "Εικονίδιο εντολής"
 
-#: mate-panel/panel-run-dialog.ui:126
+#: cafe-panel/panel-run-dialog.ui:126
 msgid "The icon of the command to be run."
 msgstr "Το εικονίδιο της εντολής για εκτέλεση."
 
-#: mate-panel/panel-run-dialog.ui:170
+#: cafe-panel/panel-run-dialog.ui:170
 msgid "Run in _terminal"
 msgstr "Εκτέλεση σε τερματι_κό"
 
-#: mate-panel/panel-run-dialog.ui:178
+#: cafe-panel/panel-run-dialog.ui:178
 msgid "Select this box to run the command in a terminal window."
 msgstr ""
 "Επιλογή αυτού του κουτιού για εκτέλεση της εντολής σε ένα παράθυρο "
 "τερματικού."
 
-#: mate-panel/panel-run-dialog.ui:190
+#: cafe-panel/panel-run-dialog.ui:190
 msgid "Run with _file..."
 msgstr "Εκτέλεση με αρ_χείο..."
 
-#: mate-panel/panel-run-dialog.ui:197
+#: cafe-panel/panel-run-dialog.ui:197
 msgid ""
 "Click this button to browse for a file whose name to append to the command "
 "string."
@@ -3210,152 +3210,152 @@ msgstr ""
 "Πατήστε αυτό το κουμπί για την αναζήτηση για το αρχείο του οποίου το όνομα "
 "θα συσχετισθεί στο αλφαριθμητικό της εντολής."
 
-#: mate-panel/panel-run-dialog.ui:256
+#: cafe-panel/panel-run-dialog.ui:256
 msgid "List of known applications"
 msgstr "Λίστα γνωστών εφαρμογών"
 
-#: mate-panel/panel-run-dialog.ui:290
+#: cafe-panel/panel-run-dialog.ui:290
 msgid "Show list of known _applications"
 msgstr "Εμφάνιση λίστας γνωστών ε_φαρμογών"
 
-#: mate-panel/panel-stock-icons.c:98
+#: cafe-panel/panel-stock-icons.c:98
 msgid "_Force quit"
 msgstr "_Βίαιο κλείσιμο"
 
-#: mate-panel/panel-stock-icons.c:99
+#: cafe-panel/panel-stock-icons.c:99
 msgid "C_lear"
 msgstr "Ε_κκαθάριση"
 
-#: mate-panel/panel-stock-icons.c:100
+#: cafe-panel/panel-stock-icons.c:100
 msgid "D_on't Delete"
 msgstr "Να _μη γίνει διαγραφή"
 
-#: mate-panel/panel-test-applets.c:39
+#: cafe-panel/panel-test-applets.c:39
 msgid "Specify an applet IID to load"
 msgstr "Καθορίστε ένα applet IID προς φόρτωση"
 
-#: mate-panel/panel-test-applets.c:40
+#: cafe-panel/panel-test-applets.c:40
 msgid ""
 "Specify a gsettings path in which the applet preferences should be stored"
 msgstr ""
 "Καθορίστε μια τοποθεσία gsettings στην οποία θα αποθηκεύονται οι προτιμήσεις"
 " της μικροεφαρμογής"
 
-#: mate-panel/panel-test-applets.c:41
+#: cafe-panel/panel-test-applets.c:41
 msgid "Specify the initial size of the applet (xx-small, medium, large etc.)"
 msgstr ""
 "Καθορίστε το αρχικό μέγεθος της μικροεφαρμογής (xx-μικρό, μεσαίο, μεγάλο "
 "κτλ.)"
 
-#: mate-panel/panel-test-applets.c:42
+#: cafe-panel/panel-test-applets.c:42
 msgid ""
 "Specify the initial orientation of the applet (top, bottom, left or right)"
 msgstr ""
 "Καθορίστε τον αρχικό προσανατολισμό της μικροεφαρμογής (πάνω, κάτω, αριστερά"
 " ή δεξιά)"
 
-#: mate-panel/panel-test-applets.c:66
+#: cafe-panel/panel-test-applets.c:66
 msgctxt "Size"
 msgid "XX Small"
 msgstr "Πάρα πολύ μικρό"
 
-#: mate-panel/panel-test-applets.c:67
+#: cafe-panel/panel-test-applets.c:67
 msgctxt "Size"
 msgid "X Small"
 msgstr "Πολύ μικρό"
 
-#: mate-panel/panel-test-applets.c:68
+#: cafe-panel/panel-test-applets.c:68
 msgctxt "Size"
 msgid "Small"
 msgstr "Μικρά"
 
-#: mate-panel/panel-test-applets.c:69
+#: cafe-panel/panel-test-applets.c:69
 msgctxt "Size"
 msgid "Medium"
 msgstr "Μέτριο"
 
-#: mate-panel/panel-test-applets.c:70
+#: cafe-panel/panel-test-applets.c:70
 msgctxt "Size"
 msgid "Large"
 msgstr "Μεγάλα"
 
-#: mate-panel/panel-test-applets.c:71
+#: cafe-panel/panel-test-applets.c:71
 msgctxt "Size"
 msgid "X Large"
 msgstr "Πολύ μεγάλο"
 
-#: mate-panel/panel-test-applets.c:72
+#: cafe-panel/panel-test-applets.c:72
 msgctxt "Size"
 msgid "XX Large"
 msgstr "Πάρα πολύ μεγάλο"
 
-#: mate-panel/panel-test-applets.c:130
+#: cafe-panel/panel-test-applets.c:130
 #, c-format
 msgid "Failed to load applet %s"
 msgstr "Αποτυχία φόρτωσης μικροεφαρμογής %s"
 
 #. This is an utility to easily test various applets
-#: mate-panel/panel-test-applets.ui:18
+#: cafe-panel/panel-test-applets.ui:18
 msgid "Test applet utility"
 msgstr "Δοκιμή μικροεφαρμογής"
 
-#: mate-panel/panel-test-applets.ui:35
+#: cafe-panel/panel-test-applets.ui:35
 msgid "_Execute"
 msgstr ""
 
-#: mate-panel/panel-test-applets.ui:101
+#: cafe-panel/panel-test-applets.ui:101
 msgid "_Applet:"
 msgstr "Μικροε_φαρμογή:"
 
-#: mate-panel/panel-test-applets.ui:131
+#: cafe-panel/panel-test-applets.ui:131
 msgid "_Prefs Path:"
 msgstr "_Διαδρομή Προτιμήσεων:"
 
-#: mate-panel/panel-toplevel.c:1209
+#: cafe-panel/panel-toplevel.c:1209
 msgid "Hide Panel"
 msgstr "Απόκρυψη πίνακα εφαρμογών"
 
-#: mate-panel/panel-toplevel.c:1656 mate-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
 msgid "Top Panel"
 msgstr "Άνω Πίνακας εφαρμογών"
 
-#: mate-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1658
 msgid "Bottom Panel"
 msgstr "Κάτω Πίνακας εφαρμογών"
 
-#: mate-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1660
 msgid "Left Panel"
 msgstr "Αριστερός Πίνακας εφαρμογών"
 
-#: mate-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1662
 msgid "Right Panel"
 msgstr "Δεξιός Πίνακας εφαρμογών"
 
-#: mate-panel/panel-util.c:350
+#: cafe-panel/panel-util.c:350
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Το εικονίδιο '%s'  δεν βρέθηκε "
 
-#: mate-panel/panel-util.c:474
+#: cafe-panel/panel-util.c:474
 #, c-format
 msgid "Could not execute '%s'"
 msgstr "Αδύνατη η εκτέλεση του '%s'"
 
-#: mate-panel/panel-util.c:702
+#: cafe-panel/panel-util.c:702
 msgid "file"
 msgstr "αρχείο"
 
-#: mate-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:875
 msgid "Home Folder"
 msgstr "Προσωπικός φάκελος"
 
 #. Translators: this is the same string as the one found in
 #. * caja
-#: mate-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr "Σύστημα αρχείων"
 
-#: mate-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1060
 msgid "Search"
 msgstr "Αναζήτηση"
 
@@ -3363,21 +3363,21 @@ msgstr "Αναζήτηση"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: mate-panel/panel-util.c:1106
+#: cafe-panel/panel-util.c:1106
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: mate-panel/panel.c:486
+#: cafe-panel/panel.c:486
 #, c-format
 msgid "Open URL: %s"
 msgstr "Άνοιγμα URL: %s"
 
-#: mate-panel/panel.c:1336
+#: cafe-panel/panel.c:1336
 msgid "Delete this drawer?"
 msgstr "Αφαίρεση αυτού του συρταριού;"
 
-#: mate-panel/panel.c:1337
+#: cafe-panel/panel.c:1337
 msgid ""
 "When a drawer is deleted, the drawer and its\n"
 "settings are lost."
@@ -3385,11 +3385,11 @@ msgstr ""
 "Όταν ένα συρτάρι αφαιρείται, οι ρυθμίσεις του\n"
 "και το συρτάρι χάνονται."
 
-#: mate-panel/panel.c:1340
+#: cafe-panel/panel.c:1340
 msgid "Delete this panel?"
 msgstr "Αφαίρεση αυτού του πίνακα εφαρμογών;"
 
-#: mate-panel/panel.c:1341
+#: cafe-panel/panel.c:1341
 msgid ""
 "When a panel is deleted, the panel and its\n"
 "settings are lost."
@@ -3397,24 +3397,24 @@ msgstr ""
 "Όταν ένας ο πίνακας εφαρμογών αφαιρείται, ο πίνακας εφαρμογών και οι\n"
 "ρυθμίσεις του χάνονται."
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:5
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:5
 msgid "Test DBus Applet Factory"
 msgstr ""
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:6
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:6
 msgid "Factory for Test DBus Applet"
 msgstr ""
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:9
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:9
 msgid "Test DBus Applet"
 msgstr ""
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:10
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
 msgid "A simple applet for testing the MATE panel"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:12
-msgid "mate-gegl"
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
+msgid "cafe-gegl"
 msgstr ""

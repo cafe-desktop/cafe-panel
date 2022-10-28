@@ -4,15 +4,15 @@
 # ToMáš Marný, 2020
 # LiberteCzech <liberte.czech@gmail.com>, 2020
 # Lucas Lommer <drom@kdyne.net>, 2020
-# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-01-12 18:05+0100\n"
 "PO-Revision-Date: 2020-02-15 14:34+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2020\n"
-"Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
+"Last-Translator: Wolfgang Ulbrich <cafe@raveit.de>, 2020\n"
+"Language-Team: Czech (https://www.transifex.com/cafe/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -303,17 +303,17 @@ msgstr "Ohlasy"
 #: C/index.docbook:173
 msgid ""
 "To report a bug or make a suggestion regarding the Fish applet or this "
-"manual, follow the directions in the <ulink url=\"help:mate-user-"
+"manual, follow the directions in the <ulink url=\"help:cafe-user-"
 "guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
 "Chcete-li nahlásit chybu nebo učinit návrh týkající se appletu Ryba nebo "
-"této příručky, postupujte podle pokynů na <ulink url=\"help:mate-user-"
+"této příručky, postupujte podle pokynů na <ulink url=\"help:cafe-user-"
 "guide/feedback\" type=\"help\">stránce ohlasů na MATE</ulink>."
 
 #. (itstool) path: abstract/para
 #: C/index.docbook:179
 msgid ""
-"The Fish applet displays an animated image in the panel and gives you your "
+"The Fish applet displays an anicafed image in the panel and gives you your "
 "fortune when clicked."
 msgstr ""
 "Applet Ryba zobrazuje animovaný obrázek na panelu a po klepnutí vám zobrazí "
@@ -360,7 +360,7 @@ msgstr ""
 #. (itstool) path: sect1/para
 #: C/index.docbook:205
 msgid ""
-"The <application>Fish</application> applet displays an animated fish in the "
+"The <application>Fish</application> applet displays an anicafed fish in the "
 "panel. You can customize the fish's name and the program that is run when "
 "the fish is clicked in the panel. By default, the program that is run when "
 "the fish is clicked is <application>Fortune</application>, which displays a "

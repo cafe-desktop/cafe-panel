@@ -527,7 +527,7 @@ load_drawer_applet (char          *toplevel_id,
 
     panel_widget = panel_toplevel_get_panel_widget (parent_toplevel);
 
-    drawer->info = mate_panel_applet_register (drawer->button, drawer,
+    drawer->info = cafe_panel_applet_register (drawer->button, drawer,
                                           (GDestroyNotify) g_free,
                                           panel_widget,
                                           locked, pos, exactpos,
@@ -544,19 +544,19 @@ load_drawer_applet (char          *toplevel_id,
     panel_widget_set_applet_expandable (panel_widget, GTK_WIDGET (drawer->button), FALSE, TRUE);
     panel_widget_set_applet_size_constrained (panel_widget, GTK_WIDGET (drawer->button), TRUE);
 
-    mate_panel_applet_add_callback (drawer->info,
+    cafe_panel_applet_add_callback (drawer->info,
                                "add",
                                "list-add",
                                _("_Add to Drawer..."),
                                drawer_changes_enabled);
 
-    mate_panel_applet_add_callback (drawer->info,
+    cafe_panel_applet_add_callback (drawer->info,
                                "properties",
                                "document-properties",
                                _("_Properties"),
                                drawer_changes_enabled);
 
-    mate_panel_applet_add_callback (drawer->info,
+    cafe_panel_applet_add_callback (drawer->info,
                                "help",
                                "help-browser",
                                _("_Help"),
@@ -707,7 +707,7 @@ panel_drawer_set_dnd_enabled (Drawer   *drawer,
 {
     if (dnd_enabled) {
         static GtkTargetEntry dnd_targets[] = {
-            { "application/x-mate-panel-applet-internal", 0, 0 }
+            { "application/x-cafe-panel-applet-internal", 0, 0 }
         };
 
         gtk_widget_set_has_window (drawer->button, TRUE);

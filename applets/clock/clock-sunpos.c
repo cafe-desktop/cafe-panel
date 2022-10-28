@@ -68,7 +68,7 @@ solve_keplers_equation (gdouble e,
 {
   gdouble d, E;
 
-  /* start with an initial estimate */
+  /* start with an initial esticafe */
   E = M;
 
   d = E - e * sin (E) - M;

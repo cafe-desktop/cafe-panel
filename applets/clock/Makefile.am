@@ -39,13 +39,13 @@ CLOCK_CPPFLAGS =						\
 	$(AM_CPPFLAGS)						\
 	$(LIBMATE_PANEL_APPLET_CFLAGS)				\
 	$(CLOCK_CFLAGS)						\
-	-I$(srcdir)/../../libmate-panel-applet			\
-	-I$(top_builddir)/libmate-panel-applet			\
+	-I$(srcdir)/../../libcafe-panel-applet			\
+	-I$(top_builddir)/libcafe-panel-applet			\
 	-DMATELOCALEDIR=\""$(datadir)/locale"\"	\
 	-DMATEWEATHER_I_KNOW_THIS_IS_UNSTABLE
 
 CLOCK_LDADD =						\
-	../../libmate-panel-applet/libmate-panel-applet-4.la	\
+	../../libcafe-panel-applet/libcafe-panel-applet-4.la	\
 	$(CLOCK_LIBS)					\
 	$(LIBMATE_PANEL_APPLET_LIBS)				\
 	libsystem-timezone.la				\
@@ -124,9 +124,9 @@ BUILT_SOURCES =					\
 	clock-typebuiltins.c			\
 	clock-typebuiltins.h
 
-appletdir       = $(datadir)/mate-panel/applets
-applet_in_files = org.mate.panel.ClockApplet.mate-panel-applet.desktop.in
-applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
+appletdir       = $(datadir)/cafe-panel/applets
+applet_in_files = org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in
+applet_DATA     = $(applet_in_files:.cafe-panel-applet.desktop.in=.cafe-panel-applet)
 
 $(applet_in_files): $(applet_in_files).in Makefile
 	$(AM_V_GEN)sed \
@@ -140,10 +140,10 @@ $(applet_DATA): $(applet_in_files)
 
 if !CLOCK_INPROCESS
 servicedir       = $(datadir)/dbus-1/services
-service_in_files = org.mate.panel.applet.ClockAppletFactory.service.in
+service_in_files = org.cafe.panel.applet.ClockAppletFactory.service.in
 service_DATA     = $(service_in_files:.service.in=.service)
 
-org.mate.panel.applet.ClockAppletFactory.service: $(service_in_files)
+org.cafe.panel.applet.ClockAppletFactory.service: $(service_in_files)
 	$(AM_V_GEN)sed \
 		-e "s|\@LOCATION\@|$(APPLET_LOCATION)|" \
 		$< > $@
@@ -159,13 +159,13 @@ clock-resources.c: clock.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourc
 clock-resources.h: clock.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/clock.gresource.xml)
 	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name clock $<
 
-clock_gschemas_in = org.mate.panel.applet.clock.gschema.xml.in
+clock_gschemas_in = org.cafe.panel.applet.clock.gschema.xml.in
 gsettings_SCHEMAS = $(clock_gschemas_in:.xml.in=.xml)
 
 @GSETTINGS_RULES@
 
 EXTRA_DIST =						\
-	org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in	\
+	org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in	\
 	$(clock_gschemas_in)				\
 	$(ui_FILES)					\
 	clock.gresource.xml				\

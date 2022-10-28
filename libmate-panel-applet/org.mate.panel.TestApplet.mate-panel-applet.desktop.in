@@ -8,4 +8,4 @@ Description=Factory for Test DBus Applet
 Name=Test DBus Applet
 Description=A simple applet for testing the MATE panel
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-Icon=mate-gegl
+Icon=cafe-gegl

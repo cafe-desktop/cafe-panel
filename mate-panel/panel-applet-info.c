@@ -37,7 +37,7 @@ struct _MatePanelAppletInfo {
 };
 
 MatePanelAppletInfo *
-mate_panel_applet_info_new (const gchar  *iid,
+cafe_panel_applet_info_new (const gchar  *iid,
 			    const gchar  *name,
 			    const gchar  *comment,
 			    const gchar  *icon,
@@ -76,7 +76,7 @@ mate_panel_applet_info_new (const gchar  *iid,
 }
 
 void
-mate_panel_applet_info_free (MatePanelAppletInfo *info)
+cafe_panel_applet_info_free (MatePanelAppletInfo *info)
 {
 	if (!info)
 		return;
@@ -91,43 +91,43 @@ mate_panel_applet_info_free (MatePanelAppletInfo *info)
 }
 
 const gchar *
-mate_panel_applet_info_get_iid (MatePanelAppletInfo *info)
+cafe_panel_applet_info_get_iid (MatePanelAppletInfo *info)
 {
 	return info->iid;
 }
 
 const gchar *
-mate_panel_applet_info_get_name (MatePanelAppletInfo *info)
+cafe_panel_applet_info_get_name (MatePanelAppletInfo *info)
 {
 	return info->name;
 }
 
 const gchar *
-mate_panel_applet_info_get_description (MatePanelAppletInfo *info)
+cafe_panel_applet_info_get_description (MatePanelAppletInfo *info)
 {
 	return info->comment;
 }
 
 const gchar *
-mate_panel_applet_info_get_icon (MatePanelAppletInfo *info)
+cafe_panel_applet_info_get_icon (MatePanelAppletInfo *info)
 {
 	return info->icon;
 }
 
 const gchar * const *
-mate_panel_applet_info_get_old_ids (MatePanelAppletInfo *info)
+cafe_panel_applet_info_get_old_ids (MatePanelAppletInfo *info)
 {
 	return (const gchar * const *) info->old_ids;
 }
 
 gboolean
-mate_panel_applet_info_get_x11_supported (MatePanelAppletInfo *info)
+cafe_panel_applet_info_get_x11_supported (MatePanelAppletInfo *info)
 {
 	return info->x11_supported;
 }
 
 gboolean
-mate_panel_applet_info_get_wayland_supported (MatePanelAppletInfo *info)
+cafe_panel_applet_info_get_wayland_supported (MatePanelAppletInfo *info)
 {
 	return info->wayland_supported;
 }

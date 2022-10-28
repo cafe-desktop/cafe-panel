@@ -155,9 +155,9 @@ void                 panel_toplevel_set_unhide_delay       (PanelToplevel       
 							    int                  unhide_delay);
 int                  panel_toplevel_get_unhide_delay       (PanelToplevel       *toplevel);
 
-void                 panel_toplevel_set_animate            (PanelToplevel       *toplevel,
-							    gboolean             animate);
-gboolean             panel_toplevel_get_animate            (PanelToplevel       *toplevel);
+void                 panel_toplevel_set_anicafe            (PanelToplevel       *toplevel,
+							    gboolean             anicafe);
+gboolean             panel_toplevel_get_anicafe            (PanelToplevel       *toplevel);
 void                 panel_toplevel_set_animation_speed    (PanelToplevel       *toplevel,
 							    PanelAnimationSpeed  animation_speed);
 PanelAnimationSpeed  panel_toplevel_get_animation_speed    (PanelToplevel       *toplevel);

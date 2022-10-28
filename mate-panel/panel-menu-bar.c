@@ -160,7 +160,7 @@ static void panel_menu_bar_init(PanelMenuBar* menubar)
 
 	menubar->priv->settings = g_settings_new (PANEL_MENU_BAR_SCHEMA);
 
-	menubar->priv->applications_menu = create_applications_menu("mate-applications.menu", NULL, TRUE);
+	menubar->priv->applications_menu = create_applications_menu("cafe-applications.menu", NULL, TRUE);
 
 	menubar->priv->applications_item = panel_image_menu_item_new();
 	gtk_menu_item_set_label(GTK_MENU_ITEM(menubar->priv->applications_item), _("Applications"));
@@ -234,7 +234,7 @@ static void panel_menu_bar_parent_set(GtkWidget* widget, GtkWidget* previous_par
 
 	if (menubar->priv->applications_menu)
 	{
-		mate_panel_applet_menu_set_recurse(GTK_MENU(menubar->priv->applications_menu), "menu_panel", menubar->priv->panel);
+		cafe_panel_applet_menu_set_recurse(GTK_MENU(menubar->priv->applications_menu), "menu_panel", menubar->priv->panel);
 	}
 
 	if (menubar->priv->places_item)
@@ -337,7 +337,7 @@ static void panel_menu_bar_load(PanelWidget* panel, gboolean locked, int positio
 
 	menubar = g_object_new(PANEL_TYPE_MENU_BAR, NULL);
 
-	menubar->priv->info = mate_panel_applet_register(GTK_WIDGET(menubar), NULL, NULL, panel, locked, position, exactpos, PANEL_OBJECT_MENU_BAR, id);
+	menubar->priv->info = cafe_panel_applet_register(GTK_WIDGET(menubar), NULL, NULL, panel, locked, position, exactpos, PANEL_OBJECT_MENU_BAR, id);
 
 	if (!menubar->priv->info)
 	{
@@ -348,12 +348,12 @@ static void panel_menu_bar_load(PanelWidget* panel, gboolean locked, int positio
 	settings = gtk_settings_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (panel)));
 	g_object_set (settings, "gtk-shell-shows-app-menu", FALSE, "gtk-shell-shows-menubar", FALSE, NULL);
 
-	mate_panel_applet_add_callback(menubar->priv->info, "help", "help-browser", _("_Help"), NULL);
+	cafe_panel_applet_add_callback(menubar->priv->info, "help", "help-browser", _("_Help"), NULL);
 
 	/* Menu editors */
 	if (!panel_lockdown_get_locked_down () && (panel_is_program_in_path("mozo") || panel_is_program_in_path("menulibre")))
 	{
-		mate_panel_applet_add_callback (menubar->priv->info, "edit", "document-properties", _("_Edit Menus"), NULL);
+		cafe_panel_applet_add_callback (menubar->priv->info, "edit", "document-properties", _("_Edit Menus"), NULL);
 	}
 
 	g_signal_connect_after(menubar, "focus-in-event", G_CALLBACK(gtk_widget_queue_draw), menubar);
@@ -391,7 +391,7 @@ void panel_menu_bar_invoke_menu(PanelMenuBar* menubar, const char* callback_name
 
 	if (!strcmp(callback_name, "help"))
 	{
-		panel_show_help(screen, "mate-user-guide", "menubar", NULL);
+		panel_show_help(screen, "cafe-user-guide", "menubar", NULL);
 
 	}
 	else if (!strcmp(callback_name, "edit"))

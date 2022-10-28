@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
-# This file is distributed under the same license as the mate-panel package.
+# This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -11,12 +11,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-panel 1.23.2\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-panel/issues\n"
+"Project-Id-Version: cafe-panel 1.23.2\n"
+"Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
 "POT-Creation-Date: 2020-01-12 18:05+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
-"Language-Team: Malay (https://www.transifex.com/mate/teams/13566/ms/)\n"
+"Language-Team: Malay (https://www.transifex.com/cafe/teams/13566/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -168,12 +168,12 @@ msgstr "_Keutamaan"
 #: applets/notification_area/main.c:295 applets/wncklet/showdesktop.c:241
 #: applets/wncklet/window-list.c:365 applets/wncklet/window-list.ui:35
 #: applets/wncklet/window-menu.c:98 applets/wncklet/workspace-switcher.c:397
-#: applets/wncklet/workspace-switcher.ui:46 mate-panel/drawer.c:562
-#: mate-panel/panel-action-button.c:753 mate-panel/panel-addto.c:1308
-#: mate-panel/panel-context-menu.c:318 mate-panel/panel-ditem-editor.c:648
-#: mate-panel/panel-menu-bar.c:351 mate-panel/panel-menu-button.c:700
-#: mate-panel/panel-properties-dialog.ui:78
-#: mate-panel/panel-properties-dialog.ui:724 mate-panel/panel-run-dialog.ui:39
+#: applets/wncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
+#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
+#: cafe-panel/panel-properties-dialog.ui:78
+#: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_Bantuan"
 
@@ -213,7 +213,7 @@ msgid "City Time Zone"
 msgstr "Zon Waktu Bandar"
 
 #: applets/clock/clock.c:3389
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:10
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "Jam"
 
@@ -237,7 +237,7 @@ msgstr ""
 #: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
 #: applets/wncklet/window-list.c:831 applets/wncklet/window-menu.c:88
 #: applets/wncklet/workspace-switcher.c:644
-#: mate-panel/panel-context-menu.c:124
+#: cafe-panel/panel-context-menu.c:124
 msgid "translator-credits"
 msgstr "Abuyop"
 
@@ -246,10 +246,10 @@ msgid "Time & Date"
 msgstr "Masa & Tarikh"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: mate-panel/libpanel-util/panel-gtk.c:136
-#: mate-panel/panel-context-menu.c:213 mate-panel/panel-ditem-editor.c:664
-#: mate-panel/panel-force-quit.c:240 mate-panel/panel-recent.c:154
-#: mate-panel/panel-run-dialog.ui:55 mate-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-gtk.c:136
+#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
+#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
+#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "_Batal"
 
@@ -276,10 +276,10 @@ msgstr "Tetapan Ma_sa"
 #: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/wncklet/window-list.ui:51 applets/wncklet/workspace-switcher.ui:62
-#: mate-panel/panel-addto.c:1319 mate-panel/panel-ditem-editor.c:660
-#: mate-panel/panel-properties-dialog.ui:94
-#: mate-panel/panel-properties-dialog.ui:740
-#: mate-panel/panel-test-applets.ui:52
+#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-properties-dialog.ui:94
+#: cafe-panel/panel-properties-dialog.ui:740
+#: cafe-panel/panel-test-applets.ui:52
 msgid "_Close"
 msgstr "_Tutup"
 
@@ -320,11 +320,11 @@ msgid "Show _temperature"
 msgstr "Papar s_uhu"
 
 #: applets/clock/clock.ui:568 applets/fish/fish.ui:102
-#: mate-panel/panel-properties-dialog.ui:384
+#: cafe-panel/panel-properties-dialog.ui:384
 msgid "General"
 msgstr "Am"
 
-#: applets/clock/clock.ui:620 mate-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
 msgid "_Add"
 msgstr "_Tambah"
 
@@ -376,8 +376,8 @@ msgstr "Utara"
 msgid "South"
 msgstr "Selatan"
 
-#: applets/clock/clock.ui:939 mate-panel/libpanel-util/panel-gtk.c:140
-#: mate-panel/panel-applet-frame.c:960 mate-panel/panel-ditem-editor.c:668
+#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-gtk.c:140
+#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "_OK"
 
@@ -480,7 +480,7 @@ msgstr "Matahari terbit: %s / Matahari terbenam: %s"
 
 #: applets/clock/clock-utils.c:94 applets/fish/fish.c:170
 #: applets/notification_area/main.c:238 applets/wncklet/wncklet.c:75
-#: mate-panel/libpanel-util/panel-show.c:234
+#: cafe-panel/libpanel-util/panel-show.c:234
 #, c-format
 msgid "Could not display help document '%s'"
 msgstr "Tidak dapat paparkan dokumen bantuan '%s'"
@@ -490,11 +490,11 @@ msgstr "Tidak dapat paparkan dokumen bantuan '%s'"
 msgid "Error displaying help document"
 msgstr "Ralat memaparkan dokumen bantuan"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:29
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:29
 msgid "Hour format"
 msgstr "Format Jam"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:30
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
 "This key specifies the hour format used by the clock applet. Possible values"
 " are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
@@ -515,11 +515,11 @@ msgstr ""
 "memaparkan masa bergantung kepada format yang ditentukan kunci "
 "custom_format."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:34
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:34
 msgid "Custom format of the clock"
 msgstr "Format suai jam"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:35
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:35
 msgid ""
 "This key specifies the format used by the clock applet when the format key "
 "is set to \"custom\". You can use conversion specifiers understood by "
@@ -531,103 +531,103 @@ msgstr ""
 "oleh strftime() untuk mendapatkan format spesifik. Lihat manual strftime() "
 "untuk maklumat lanjut."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:39
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:39
 msgid "Show time with seconds"
 msgstr "Papar masa dengan saat"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:40
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:40
 msgid "If true, display seconds in time."
 msgstr "Jika benar, Papar saat pada masa."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:44
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:44
 msgid "Show date in clock"
 msgstr "Tunjuk tarikh pada jam"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:45
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:45
 msgid "If true, display date in the clock, in addition to time."
 msgstr "Jika benar, papar tarikh pada Jam, sebagai tambahan kepada masa."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:49
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:49
 msgid "Show date in tooltip"
 msgstr "Tunjuk tarikh pada tip alat"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:50
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:50
 msgid "If true, show date in a tooltip when the pointer is over the clock."
 msgstr "Jika benar, tunjuk tarikh pada tip alat bila tetikus di atas Jam."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:54
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:54
 msgid "Show weather in clock"
 msgstr "Tunjuk cuaca pada jam"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:55
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:55
 msgid "If true, display a weather icon."
 msgstr "Jika benar, papar ikon cuaca."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:59
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:59
 msgid "Show temperature in clock"
 msgstr "Tunjuk suhu pada jam"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:60
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:60
 msgid "If true, show the temperature next to the weather icon."
 msgstr "Jika benar, tunjuk suhu bersebelahan dengan ikon cuaca."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:64
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:64
 msgid "Show week numbers in calendar"
 msgstr "Tunjuk nombor minggu pada kalendar"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:65
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:65
 msgid "If true, show week numbers in the calendar."
 msgstr "Jika benar, tunjuk nombor minggu dalam kalendar."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:69
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:69
 msgid "Expand list of locations"
 msgstr "Kembang senarai lokasi"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:70
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:70
 msgid "If true, expand the list of locations in the calendar window."
 msgstr "Jika benar, kembang senarai lokasi dalam tingkap kalendar."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:74
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:74
 msgid "List of locations"
 msgstr "Senarai lokasi"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:75
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:75
 msgid "A list of locations to display in the calendar window."
 msgstr "Senarai lokasi untuk dipaparkan dalam tingkap kalendar."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:79
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:79
 msgid "Temperature unit"
 msgstr "Unit suhu"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:80
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:80
 msgid "The unit to use when showing temperatures."
 msgstr "Unit untuk diguna bila tunjukkan suhu."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:84
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:84
 msgid "Speed unit"
 msgstr "Unit kelajuan"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:85
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:85
 msgid "The unit to use when showing wind speed."
 msgstr "Unit untuk diguna bila tunjukkan kelajuan angin."
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:6
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Clock Applet Factory"
 msgstr "Kilang Aplet Jam"
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:7
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for clock applet"
 msgstr "Kilang untuk aplet jam"
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:11
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:11
 msgid "Get the current time and date"
 msgstr "Dapatkan masa dan tarikh semasa"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-clock"
-msgstr "mate-panel-clock"
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-clock"
+msgstr "cafe-panel-clock"
 
 #: applets/fish/fish.c:266
 #, c-format
@@ -668,7 +668,7 @@ msgid "(with minor help from George)"
 msgstr "(dengan sedikit bantuan George)"
 
 #: applets/fish/fish.c:558
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:10
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Fish"
 msgstr "Ikan"
 
@@ -771,8 +771,8 @@ msgstr "_Perintah dilakukan bila diklik:"
 msgid "Animation"
 msgstr "Animasi"
 
-#: applets/fish/fish.ui:266 mate-panel/panel-properties-dialog.ui:482
-#: mate-panel/panel-properties-dialog.ui:635
+#: applets/fish/fish.ui:266 cafe-panel/panel-properties-dialog.ui:482
+#: cafe-panel/panel-properties-dialog.ui:635
 msgid "    "
 msgstr "    "
 
@@ -804,11 +804,11 @@ msgstr "saat"
 msgid "_Rotate on vertical panels"
 msgstr "P_utar pada panel menegak"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:5
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:5
 msgid "The fish's name"
 msgstr "Nama ikan"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:6
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:6
 msgid ""
 "A fish without a name is a pretty dull fish. Bring your fish to life by "
 "naming him."
@@ -816,11 +816,11 @@ msgstr ""
 "Ikan tanpa nama adalah ikan yang membosankan. Berikan erti kehidupan padanya"
 " dengan menamakannya."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:10
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:10
 msgid "The fish's animation pixmap"
 msgstr "Peta pix animasi ikan"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:11
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:11
 msgid ""
 "This key specifies the filename of the pixmap which will be used for the "
 "animation displayed in the fish applet relative to the pixmap directory."
@@ -828,22 +828,22 @@ msgstr ""
 "Kunci ini menyatakan nama fail bagi peta pix yang akan digunakan bagi "
 "animasi yang dipaparkan pada plat ikan relatif ke direktori peta pix."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:15
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:15
 msgid "Command to execute on click"
 msgstr "Perintah untuk dilakukan bila diklik"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:16
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:16
 msgid ""
 "This key specifies the command that will be tried to execute when the fish "
 "is clicked."
 msgstr ""
 "Kunci ini menyatakan perintah yang akan cuba dilakukan bila ikan di klik."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:20
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:20
 msgid "Frames in fish's animation"
 msgstr "Bingkai pada animasi ikan"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:21
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
 "This key specifies the number of frames that will be displayed in the fish's"
 " animation."
@@ -851,44 +851,44 @@ msgstr ""
 "Kunci ini menyatakan bilangan bingkai yang akan dipaparkan pada animasi "
 "ikan."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:25
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
 msgid "Pause per frame"
 msgstr "Jeda per bingkai"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:26
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:26
 msgid "This key specifies the number of seconds each frame will be displayed."
 msgstr ""
 "Kunci ini menyatakan bilangan saat setiap bingkai yang akan dipaparkan."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:30
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:30
 msgid "Rotate on vertical panels"
 msgstr "Putar pada panel menegak"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:31
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:31
 msgid ""
 "If true, the fish's animation will be displayed rotated on vertical panels."
 msgstr "Jika benar, animasi ikan akan dipaparkan diputar pada panel menegak"
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:6
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Wanda Factory"
 msgstr "Kilang Wanda"
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:7
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:7
 msgid "From Whence That Stupid Fish Came"
 msgstr "Merupakan Permainan Ikan Bodoh"
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:11
-msgid "Display a swimming fish or another animated creature"
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
+msgid "Display a swimming fish or another anicafed creature"
 msgstr "Papar ikan yang sedang berenang atau lain-lain makhluk beranimasi"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-fish"
-msgstr "mate-panel-fish"
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-fish"
+msgstr "cafe-panel-fish"
 
 #: applets/notification_area/main.c:276
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:10
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Notification Area"
 msgstr "Kawasan Pemberitahuan"
 
@@ -925,41 +925,41 @@ msgid "26"
 msgstr "26"
 
 #: applets/notification_area/notification-area-preferences-dialog.ui:139
-#: mate-panel/panel-properties-dialog.ui:221
+#: cafe-panel/panel-properties-dialog.ui:221
 msgid "pixels"
 msgstr "piksel"
 
-#: applets/notification_area/org.mate.panel.applet.notification-area.gschema.xml.in:5
+#: applets/notification_area/org.cafe.panel.applet.notification-area.gschema.xml.in:5
 msgid "Minimum icon size"
 msgstr "Saiz ikon minimum"
 
-#: applets/notification_area/org.mate.panel.applet.notification-area.gschema.xml.in:6
+#: applets/notification_area/org.cafe.panel.applet.notification-area.gschema.xml.in:6
 msgid "The minimum size an icon can have."
 msgstr "Saiz minimum sesebuah ikon."
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:6
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Notification Area Factory"
 msgstr "Kilang Kawasan Pemberitahuan"
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:7
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for notification area"
 msgstr "Kilang untuk kawasan pemberitahuan"
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:11
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:11
 msgid "Area where notification icons appear"
 msgstr "Kawasan dimana ikon pemberitahuan muncul"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-notification-area"
-msgstr "mate-panel-notification-area"
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-notification-area"
+msgstr "cafe-panel-notification-area"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:10
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "Tunjuk tetingkap dari semua ruang kerja"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:11
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
 "If true, the window list will show windows from all workspaces. Otherwise it"
 " will only display windows from the current workspace."
@@ -967,11 +967,11 @@ msgstr ""
 "Jika ia benar, senarai tetingkap akan memapar tetingkap dari semua "
 "ruangkerja. Sebaliknya ia akan memapar tetingkap dari ruang kerja semasa ."
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:15
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
 msgid "When to group windows"
 msgstr "Bila mengumpul tetingkap"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:16
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:16
 msgid ""
 "Decides when to group windows from the same application on the window list. "
 "Possible values are \"never\", \"auto\" and \"always\"."
@@ -980,11 +980,11 @@ msgstr ""
 "tetingkap. Nilai yang sah adalah \"tidak sekali\", \"auto\" dan "
 "\"sentiasa\"."
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:20
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
 msgid "Move windows to current workspace when unminimized"
 msgstr "Alih tetingkap ke ruang kerja semasa bila nyahminimum"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:21
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:21
 msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
@@ -992,11 +992,11 @@ msgstr ""
 "Jika benar, bila nyahminimum tetingkap, membawanya ke ruang kerja semasa. "
 "Sebaliknya, bertukar ke ruang kerja bagi tetingkap."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:5
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
 msgid "Display workspace names"
 msgstr "Papar nama ruang kerja"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:6
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:6
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
@@ -1006,11 +1006,11 @@ msgstr ""
 "ruang kerja. Sebaliknya akan memapar tetingkap pada ruang kerja. Tetapan ini"
 " hanya berkesan bila pengurus tetingkap adalah Marco."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:10
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"
 msgstr "Papar semua ruang kerja"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:11
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:11
 msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
@@ -1018,11 +1018,11 @@ msgstr ""
 "Jika ia benar, penukar ruang kerja akan tunjukkan semua ruang kerja. "
 "Sebaliknya ia akan hanya tunjukkan ruang kerja semasa."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:15
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
 msgstr "Baris dalam penukar ruang kerja"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:16
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
 "vertical layout) the workspace switcher shows the workspaces in. This key is"
@@ -1033,11 +1033,11 @@ msgstr ""
 "kerja di dalamnya. Kunci ini berkaitan jika kunci display_all_workspaces "
 "adalah benar."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:20
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
 msgstr "Lilit disekeliling bila menatal"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:21
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:21
 msgid ""
 "If true, the workspace switcher will allow wrap-around, which means "
 "switching from the first to the last workspace and vice versa via scrolling."
@@ -1046,70 +1046,70 @@ msgstr ""
 "penukaran dari ruang kerja pertama ke terakhir dan sebaliknya melalui "
 "penatalan."
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:6
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Window Navigation Applet Factory"
 msgstr "Kilang Aplet Navigasi Tetingkap"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:7
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for the window navigation related applets"
 msgstr "Kilang untuk aplet berkaitan dengan navigasi tetingkap"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:10
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:10
 #: applets/wncklet/window-menu.c:76 applets/wncklet/window-menu.c:227
 msgid "Window Selector"
 msgstr "Pemilih Tetingkap"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:11
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:11
 msgid "Switch between open windows using a menu"
 msgstr "Tukar diantara tetingkap terbuka menggunakan menu"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-window-menu"
-msgstr "mate-panel-window-menu"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-window-menu"
+msgstr "cafe-panel-window-menu"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:23
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:23
 #: applets/wncklet/workspace-switcher.c:634
 msgid "Workspace Switcher"
 msgstr "Penukar Ruang Kerja"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:24
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:24
 msgid "Switch between workspaces"
 msgstr "Tukar diantara ruang kerja"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:26
-msgid "mate-panel-workspace-switcher"
-msgstr "mate-panel-workspace-switcher"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:26
+msgid "cafe-panel-workspace-switcher"
+msgstr "cafe-panel-workspace-switcher"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:36
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:36
 #: applets/wncklet/window-list.c:821
 msgid "Window List"
 msgstr "Senarai Tetingkap"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:37
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "Tukar diantara tetingkap terbuka menggunakan butang"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:39
-msgid "mate-panel-window-list"
-msgstr "mate-panel-window-list"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:39
+msgid "cafe-panel-window-list"
+msgstr "cafe-panel-window-list"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:49
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
 msgstr "Tunjuk Desktop"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:50
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "Sembunyi tetingkap aplikasi dan tunjuk dekstop"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:52
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:52
 msgid "user-desktop"
 msgstr "user-desktop"
 
@@ -1336,20 +1336,20 @@ msgstr "Benarkan ruang kerja di_lilit disekeliling penukar"
 msgid "Workspaces"
 msgstr "Ruang kerja"
 
-#: data/org.mate.panel.gschema.xml.in:5
+#: data/org.cafe.panel.gschema.xml.in:5
 msgid "Default panel layout"
 msgstr "Bentangan panel lalai"
 
-#: data/org.mate.panel.gschema.xml.in:6
+#: data/org.cafe.panel.gschema.xml.in:6
 msgid "The default panels layout to use when panels are created or resetted."
 msgstr ""
 "Bentangan panel lali digunakan bila panel dicipta atau ditetap semula."
 
-#: data/org.mate.panel.gschema.xml.in:10
+#: data/org.cafe.panel.gschema.xml.in:10
 msgid "Enable program list in \"Run Application\" dialog"
 msgstr "Benarkan senarai program pada dialog \"Jalankan Aplikasi\""
 
-#: data/org.mate.panel.gschema.xml.in:11
+#: data/org.cafe.panel.gschema.xml.in:11
 msgid ""
 "If true, the \"Known Applications\" listing in the \"Run Application\" "
 "dialog is made available. Whether or not the listing is expanded when the "
@@ -1359,11 +1359,11 @@ msgstr ""
 "akan tersedia. Sama ada senarai dikembangkan atau tidak bila dialog "
 "ditunjukkan dikawal oleh kekunci show_program_list ."
 
-#: data/org.mate.panel.gschema.xml.in:15
+#: data/org.cafe.panel.gschema.xml.in:15
 msgid "Expand program list in \"Run Application\" dialog"
 msgstr "Kembangkan senarai program pada dialog \"Jalankan Aplikasi\""
 
-#: data/org.mate.panel.gschema.xml.in:16
+#: data/org.cafe.panel.gschema.xml.in:16
 msgid ""
 "If true, the \"Known Applications\" listing in the \"Run Application\" "
 "dialog is expanded when the dialog is opened. This key is only relevant if "
@@ -1373,22 +1373,22 @@ msgstr ""
 "dikembangkan bila dialog dibuka. Kunci ini hanya releven bila  kunci "
 "enable_program_list adalah benar."
 
-#: data/org.mate.panel.gschema.xml.in:20
+#: data/org.cafe.panel.gschema.xml.in:20
 msgid "Enable autocompletion in \"Run Application\" dialog"
 msgstr "Benarkan pelengkapan sendiri dalam dialog \"Jalankan Aplikasi\""
 
-#: data/org.mate.panel.gschema.xml.in:21
+#: data/org.cafe.panel.gschema.xml.in:21
 msgid ""
 "If true, autocompletion in the \"Run Application\" dialog is made available."
 msgstr ""
 "Jika benar, pelengkapan sendiri dalam dialog \"Jalankan Applikasi\" telah "
 "disediakan."
 
-#: data/org.mate.panel.gschema.xml.in:25
+#: data/org.cafe.panel.gschema.xml.in:25
 msgid "History for \"Run Application\" dialog"
 msgstr "Sejarah untuk dialog \"Jalan Aplikasi\""
 
-#: data/org.mate.panel.gschema.xml.in:26
+#: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
 "commands are sorted descendingly by recency (e.g., most recent command comes"
@@ -1398,11 +1398,11 @@ msgstr ""
 "Perintah diisih secara menurun mengikut kekinian (iaitu perintah paling "
 "terkini muncul dahulu)."
 
-#: data/org.mate.panel.gschema.xml.in:30
+#: data/org.cafe.panel.gschema.xml.in:30
 msgid "Maximum history size for \"Run Application\" dialog"
 msgstr "Saiz sejarah maksimum untuk dialog \"Jalan Aplikasi\""
 
-#: data/org.mate.panel.gschema.xml.in:31
+#: data/org.cafe.panel.gschema.xml.in:31
 msgid ""
 "Controls the maximum size of the history of the \"Run Application\" dialog. "
 "A value of 0 will disable the history."
@@ -1410,11 +1410,11 @@ msgstr ""
 "Kawal saiz maksimum sejarah bagi dialog \"Jalan Aplikasi\". Satu nilai 0 "
 "akan lumpuhkan sejarah."
 
-#: data/org.mate.panel.gschema.xml.in:35
+#: data/org.cafe.panel.gschema.xml.in:35
 msgid "Reverse the history of the \"Run Application\" dialog"
 msgstr "Songsangkan sejarah bagi dialog \"Jalan Aplikasi\""
 
-#: data/org.mate.panel.gschema.xml.in:36
+#: data/org.cafe.panel.gschema.xml.in:36
 msgid ""
 "Displays the history in reverse. Provides a consistent view for terminal "
 "users as the up key will select the most recent entry."
@@ -1422,11 +1422,11 @@ msgstr ""
 "Papar sejarah secara songsang. Menyediakan satu paparan konsisten bagi "
 "pengguna terminal apabila kekunci up akan memilih masukan paling terkini."
 
-#: data/org.mate.panel.gschema.xml.in:40
+#: data/org.cafe.panel.gschema.xml.in:40
 msgid "Panel ID list"
 msgstr "Senarai ID panel"
 
-#: data/org.mate.panel.gschema.xml.in:41
+#: data/org.cafe.panel.gschema.xml.in:41
 msgid ""
 "A list of panel IDs. Each ID identifies an individual toplevel panel. The "
 "settings for each of these panels are stored in /apps/panel/toplevels/$(id)."
@@ -1434,11 +1434,11 @@ msgstr ""
 "Senarai ID panel. Setiap ID mengenalpasti panel aras atas secara individu. "
 "Tetapan bagi setiap panel ini akan disimpan di /apps/panel/toplevels/$(id)."
 
-#: data/org.mate.panel.gschema.xml.in:45
+#: data/org.cafe.panel.gschema.xml.in:45
 msgid "Panel object ID list"
 msgstr "Senarai ID objek panel"
 
-#: data/org.mate.panel.gschema.xml.in:46
+#: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
 "A list of panel object IDs. Each ID identifies an individual panel object "
 "(e.g. a launcher, action button or menu button/bar). The settings for each "
@@ -1448,24 +1448,24 @@ msgstr ""
 "pelancar, butang tindakan atau palang/butang menu). Tetapan bagi setiap "
 "panel ini akan disimpan di /apps/panel/objects/$(id)."
 
-#: data/org.mate.panel.gschema.xml.in:50
+#: data/org.cafe.panel.gschema.xml.in:50
 msgid "Enable tooltips"
 msgstr "Benarkan tip alat"
 
-#: data/org.mate.panel.gschema.xml.in:51
+#: data/org.cafe.panel.gschema.xml.in:51
 msgid "If true, tooltips are shown for objects in panels."
 msgstr "Jika benar, tip alat akan ditunjukkan bagi objek pada panel."
 
-#: data/org.mate.panel.gschema.xml.in:55
-#: data/org.mate.panel.toplevel.gschema.xml.in:70
+#: data/org.cafe.panel.gschema.xml.in:55
+#: data/org.cafe.panel.toplevel.gschema.xml.in:70
 msgid "Enable animations"
 msgstr "Benarkan animasi"
 
-#: data/org.mate.panel.gschema.xml.in:59
+#: data/org.cafe.panel.gschema.xml.in:59
 msgid "Autoclose drawer"
 msgstr "Laci tutup-sendiri"
 
-#: data/org.mate.panel.gschema.xml.in:60
+#: data/org.cafe.panel.gschema.xml.in:60
 msgid ""
 "If true, a drawer will automatically be closed when the user clicks a "
 "launcher in it."
@@ -1473,11 +1473,11 @@ msgstr ""
 "Jika benar, laci akan ditutup secara automatik bila pengguna mengklik "
 "pelancar padanya."
 
-#: data/org.mate.panel.gschema.xml.in:64
+#: data/org.cafe.panel.gschema.xml.in:64
 msgid "Confirm panel removal"
 msgstr "Sahkan pembuangan panel"
 
-#: data/org.mate.panel.gschema.xml.in:65
+#: data/org.cafe.panel.gschema.xml.in:65
 msgid ""
 "If true, a dialog is shown asking for confirmation if the user wants to "
 "remove a panel."
@@ -1485,21 +1485,21 @@ msgstr ""
 "Jika benar, dialog yg ditunjukkan menanya pengesahan jika pengguna ingin "
 "membuang panel."
 
-#: data/org.mate.panel.gschema.xml.in:69
+#: data/org.cafe.panel.gschema.xml.in:69
 msgid "Highlight launchers on mouseover"
 msgstr "Sorot pelancar bila penuding tetikus diatas"
 
-#: data/org.mate.panel.gschema.xml.in:70
+#: data/org.cafe.panel.gschema.xml.in:70
 msgid ""
 "If true, a launcher is highlighted when the user moves the pointer over it."
 msgstr ""
 "Jika benar, pelancar akan disorot bila pegguna gerak penuding di atasnya."
 
-#: data/org.mate.panel.gschema.xml.in:74
+#: data/org.cafe.panel.gschema.xml.in:74
 msgid "Complete panel lockdown"
 msgstr "Penguncian panel lengkap"
 
-#: data/org.mate.panel.gschema.xml.in:75
+#: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
 "panel. Individual applets may need to be locked down separately however. The"
@@ -1509,11 +1509,11 @@ msgstr ""
 "panel. Aplet individu mungkin perlu dikunci secara berasingan. Panel mesti "
 "dimulakan semula untuk mendapat kesan daripada ini."
 
-#: data/org.mate.panel.gschema.xml.in:79
+#: data/org.cafe.panel.gschema.xml.in:79
 msgid "Applet IIDs to disable from loading"
 msgstr "IID aplet untuk dilumpuhkan dari dimuatkan"
 
-#: data/org.mate.panel.gschema.xml.in:80
+#: data/org.cafe.panel.gschema.xml.in:80
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
@@ -1526,11 +1526,11 @@ msgstr ""
 "'OAFIID:MATE_MiniCommanderApplet' pada senarai ini. Panel mesti dimulakan "
 "semula supaya berkesan."
 
-#: data/org.mate.panel.gschema.xml.in:84
+#: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
 msgstr "Lumpuhkan Paksa Keluar"
 
-#: data/org.mate.panel.gschema.xml.in:85
+#: data/org.cafe.panel.gschema.xml.in:85
 msgid ""
 "If true, the panel will not allow a user to force an application to quit by "
 "removing access to the force quit button."
@@ -1538,59 +1538,59 @@ msgstr ""
 "Jika benar, panel tidak akan benarkan pengguna untuk memaksa aplikasi untuk "
 "keluar dengan membuang capaian ke butang paksa keluar."
 
-#: data/org.mate.panel.gschema.xml.in:89
+#: data/org.cafe.panel.gschema.xml.in:89
 msgid "Enable SNI support"
 msgstr "Benarkan sokongan SNI"
 
-#: data/org.mate.panel.gschema.xml.in:90
+#: data/org.cafe.panel.gschema.xml.in:90
 msgid "If true, the panel provides support for SNI."
 msgstr "Jika benar, panel menyediakan sokongan untuk SNI."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:15
+#: data/org.cafe.panel.menubar.gschema.xml.in:15
 msgid "Show applications menu"
 msgstr "Tunjuk menu aplikasi"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:16
+#: data/org.cafe.panel.menubar.gschema.xml.in:16
 msgid "If true, show applications item in menu bar."
 msgstr "Jika benar, tunjuk item aplikasi dalam palang menu."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:20
+#: data/org.cafe.panel.menubar.gschema.xml.in:20
 msgid "Show places menu"
 msgstr "Tunjuk menu tempat"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:21
+#: data/org.cafe.panel.menubar.gschema.xml.in:21
 msgid "If true, show places item in menu bar."
 msgstr "Jika benar, tunjuk item tempat dalam palang menu."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:25
+#: data/org.cafe.panel.menubar.gschema.xml.in:25
 msgid "Show desktop menu"
 msgstr "Tunjuk menu desktop"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:26
+#: data/org.cafe.panel.menubar.gschema.xml.in:26
 msgid "If true, show desktop item in menu bar."
 msgstr "Jika benar, tunjuk item desktop dalam palang menu."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:30
+#: data/org.cafe.panel.menubar.gschema.xml.in:30
 msgid "Show icon"
 msgstr "Tunjuk ikon"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:31
+#: data/org.cafe.panel.menubar.gschema.xml.in:31
 msgid "If true, show icon in menu bar."
 msgstr "Jika benar, tunjuk ikon dalam palang menu."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:35
+#: data/org.cafe.panel.menubar.gschema.xml.in:35
 msgid "Icon to show in menu bar"
 msgstr "Ikon yang ditunjukkan dalam palang menu"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:36
+#: data/org.cafe.panel.menubar.gschema.xml.in:36
 msgid "Set the theme icon name to use in menu bar."
 msgstr "Tetapkan nama ikon tema yang digunakan dalam palang menu."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:40
+#: data/org.cafe.panel.menubar.gschema.xml.in:40
 msgid "Menu bar icon size"
 msgstr "Saiz ikon palang menu"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:41
+#: data/org.cafe.panel.menubar.gschema.xml.in:41
 msgid ""
 "Set the size of an icon used in menu bar. The panel must be restarted for "
 "this to take effect."
@@ -1598,11 +1598,11 @@ msgstr ""
 "Tetapkan saiz ikon yang digunakan dalam palang menu. Panel mestilah "
 "dimulakan semula supaya berkesan."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:45
+#: data/org.cafe.panel.menubar.gschema.xml.in:45
 msgid "Menu items icon size"
 msgstr "Saiz ikon item menu"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:46
+#: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
 "Set the size of icons used in the menu. The panel must be restarted for this"
 " to take effect."
@@ -1610,11 +1610,11 @@ msgstr ""
 "Tetapkan saiz ikon yang digunakan dalam menu. Panel mestilah dimulakan "
 "semula supaya berkesan."
 
-#: data/org.mate.panel.menubar.gschema.xml.in:50
+#: data/org.cafe.panel.menubar.gschema.xml.in:50
 msgid "Threshold of menu items before submenu is created"
 msgstr "Ambang item menu sebelum submenu dicipta"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:51
+#: data/org.cafe.panel.menubar.gschema.xml.in:51
 msgid ""
 "Maximum number of menu items (i.e. bookmarks) that are displayed without "
 "being put in a submenu."
@@ -1622,27 +1622,27 @@ msgstr ""
 "Bilangan maksimum item menu (iaitu tanda buku) yang dipapar tanpa dimasukkan"
 " dalam submenu."
 
-#: data/org.mate.panel.object.gschema.xml.in:5
+#: data/org.cafe.panel.object.gschema.xml.in:5
 msgid "Panel object type"
 msgstr "Jenis objek panel"
 
-#: data/org.mate.panel.object.gschema.xml.in:6
+#: data/org.cafe.panel.object.gschema.xml.in:6
 msgid "The type of this panel object."
 msgstr "Jenis bagi objek panel ini."
 
-#: data/org.mate.panel.object.gschema.xml.in:10
+#: data/org.cafe.panel.object.gschema.xml.in:10
 msgid "Toplevel panel containing object"
 msgstr "Panel aras atas mengandungi objek"
 
-#: data/org.mate.panel.object.gschema.xml.in:11
+#: data/org.cafe.panel.object.gschema.xml.in:11
 msgid "The identifier of the toplevel panel which contains this object."
 msgstr "Penerang bagi panel aras atas yang mengandungi objek ini."
 
-#: data/org.mate.panel.object.gschema.xml.in:15
+#: data/org.cafe.panel.object.gschema.xml.in:15
 msgid "Object's position on the panel"
 msgstr "Kedudukan objek pada panel"
 
-#: data/org.mate.panel.object.gschema.xml.in:16
+#: data/org.cafe.panel.object.gschema.xml.in:16
 msgid ""
 "The position of this panel object. The position is specified by the number "
 "of pixels from the left (or top if vertical) panel edge."
@@ -1650,11 +1650,11 @@ msgstr ""
 "Kedudukan bagi objek panel ini. Kedudukan dinyatakan oleh bilangan piksel "
 "dari kiri (atau atas jika mengufuk) pinggir panel."
 
-#: data/org.mate.panel.object.gschema.xml.in:20
+#: data/org.cafe.panel.object.gschema.xml.in:20
 msgid "Interpret position relative to bottom/right edge"
 msgstr "Tafsir kedudukan relatif kepada pinggir bawah/kanan"
 
-#: data/org.mate.panel.object.gschema.xml.in:21
+#: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
 "If true, the position of the object is interpreted relative to the right (or"
 " bottom if vertical) edge of the panel."
@@ -1662,11 +1662,11 @@ msgstr ""
 "Jika benar, kedudukan bagi objek ditafsirkan relatif pada kanan (atau bawah "
 "jika menegak) pinggir bagi panel."
 
-#: data/org.mate.panel.object.gschema.xml.in:25
+#: data/org.cafe.panel.object.gschema.xml.in:25
 msgid "Lock the object to the panel"
 msgstr "Kunci objek ke panel"
 
-#: data/org.mate.panel.object.gschema.xml.in:26
+#: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
 "If true, the user may not move the applet without first unlocking the object"
 " using the \"Unlock\" menuitem."
@@ -1674,26 +1674,26 @@ msgstr ""
 "Jika benar, pengguna tidak boleh memindahkan aplet tanpa nyahkunci objek "
 "menggunakan item menu \"Nyahkunci\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:30
+#: data/org.cafe.panel.object.gschema.xml.in:30
 msgid "Applet IID"
 msgstr "ID Applet"
 
-#: data/org.mate.panel.object.gschema.xml.in:31
+#: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
 "The implementation ID of the applet - e.g. "
 "\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"matecomponent-"
+"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
 "applet\")."
 msgstr ""
 "ID perlaksanaan aplet - cth. \"ClockAppletFactory::ClockApplet\". Kunci ini "
 "hanya berkaitan jika kunci object_type ialah \"external-applet\" (atau "
-"\"matecomponent-applet\" yang telah lapuk)."
+"\"cafecomponent-applet\" yang telah lapuk)."
 
-#: data/org.mate.panel.object.gschema.xml.in:35
+#: data/org.cafe.panel.object.gschema.xml.in:35
 msgid "Panel attached to drawer"
 msgstr "Panel dilampirkan pada laci"
 
-#: data/org.mate.panel.object.gschema.xml.in:36
+#: data/org.cafe.panel.object.gschema.xml.in:36
 msgid ""
 "The identifier of the panel attached to this drawer. This key is only "
 "relevant if the object_type key is \"drawer-object\"."
@@ -1701,11 +1701,11 @@ msgstr ""
 "Penerang bagi panel dilampirkan pada laci ini. kunci ini hanya relevan jika "
 "object_type adalah \"drawer-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:40
+#: data/org.cafe.panel.object.gschema.xml.in:40
 msgid "Tooltip displayed for drawer or menu"
 msgstr "Tip alat dipaparkan untuk laci atau menu"
 
-#: data/org.mate.panel.object.gschema.xml.in:41
+#: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
 "only relevant if the object_type key is \"drawer-object\" or \"menu-"
@@ -1715,11 +1715,11 @@ msgstr ""
 " relevan jika kunci object_type adalah \"drawer-object\" atau \"menu-"
 "object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:45
+#: data/org.cafe.panel.object.gschema.xml.in:45
 msgid "Use custom icon for object's button"
 msgstr "Guna ikon suai bagi butang objek"
 
-#: data/org.mate.panel.object.gschema.xml.in:46
+#: data/org.cafe.panel.object.gschema.xml.in:46
 msgid ""
 "If true, the custom_icon key is used as a custom icon for the button. If "
 "false, the custom_icon key is ignored. This key is only relevant if the "
@@ -1729,11 +1729,11 @@ msgstr ""
 "palsu, kunci custom_icon key diabaikan. Kunci ini hanya relevan jika  kunci "
 "object_type adalah \"menu-object\" atau \"drawer-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:50
+#: data/org.cafe.panel.object.gschema.xml.in:50
 msgid "Icon used for object's button"
 msgstr "Ikon digunakan oleh butang objek"
 
-#: data/org.mate.panel.object.gschema.xml.in:51
+#: data/org.cafe.panel.object.gschema.xml.in:51
 msgid ""
 "The location of the image file used as the icon for the object's button. "
 "This key is only relevant if the object_type key is \"drawer-object\" or "
@@ -1743,11 +1743,11 @@ msgstr ""
 "hanya relevan jika kunci object_type adalah \"drawer-object\" atau \"menu-"
 "object\" dan kunci the use_custom_icon adalah benar."
 
-#: data/org.mate.panel.object.gschema.xml.in:55
+#: data/org.cafe.panel.object.gschema.xml.in:55
 msgid "Use custom path for menu contents"
 msgstr "Guna laluan suai bagi kandungan menu"
 
-#: data/org.mate.panel.object.gschema.xml.in:56
+#: data/org.cafe.panel.object.gschema.xml.in:56
 msgid ""
 "If true, the menu_path key is used as the path from which the menu contents "
 "should be constructed. If false, the menu_path key is ignored. This key is "
@@ -1757,11 +1757,11 @@ msgstr ""
 "menu akan dibina. Jike palsu, menu_path diabaikan. Tetapan ini hanya relevan"
 " jika kunci object_type adalah \"menu-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:60
+#: data/org.cafe.panel.object.gschema.xml.in:60
 msgid "Menu content path"
 msgstr "Laluan kandungan menu"
 
-#: data/org.mate.panel.object.gschema.xml.in:61
+#: data/org.cafe.panel.object.gschema.xml.in:61
 msgid ""
 "The path from which the menu contents is contructed. This key is only "
 "relevant if the use_menu_path key is true and the object_type key is \"menu-"
@@ -1770,11 +1770,11 @@ msgstr ""
 "Laluan yang mana kandungan menu akan dibina. Kunci ini hanya relevan jika  "
 "use_menu_path adalah benar dan object_type adalah \"menu-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:65
+#: data/org.cafe.panel.object.gschema.xml.in:65
 msgid "Draw arrow in menu button"
 msgstr "Lukis anak panah dalam butang menu"
 
-#: data/org.mate.panel.object.gschema.xml.in:66
+#: data/org.cafe.panel.object.gschema.xml.in:66
 msgid ""
 "If true, an arrow is drawn over the menu button icon. If false, menu button "
 "has only the icon."
@@ -1782,11 +1782,11 @@ msgstr ""
 "Jika benar, anak panah dilukis atas ikon butang menu. Jika palsu, butang "
 "menu hanya mempunyai ikon."
 
-#: data/org.mate.panel.object.gschema.xml.in:70
+#: data/org.cafe.panel.object.gschema.xml.in:70
 msgid "Launcher location"
 msgstr "Lokasi pelancar"
 
-#: data/org.mate.panel.object.gschema.xml.in:71
+#: data/org.cafe.panel.object.gschema.xml.in:71
 msgid ""
 "The location of the .desktop file describing the launcher. This key is only "
 "relevant if the object_type key is \"launcher-object\"."
@@ -1794,11 +1794,11 @@ msgstr ""
 "Lokasi bagi fail .desktop menerangkan pelancar. Kunci ini hanya relevan jika"
 " object_type adalah \"launcher-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:75
+#: data/org.cafe.panel.object.gschema.xml.in:75
 msgid "Action button type"
 msgstr "Jenis butang tindakan"
 
-#: data/org.mate.panel.object.gschema.xml.in:76
+#: data/org.cafe.panel.object.gschema.xml.in:76
 msgid ""
 "The action type this button represents. Possible values are \"lock\", "
 "\"logout\", \"run\", \"search\" and \"screenshot\". This key is only "
@@ -1808,11 +1808,11 @@ msgstr ""
 "\"logout\", \"run\", \"search\" dan \"screenshot\". Kunci ini hanya relevan "
 "jika  object_type adalah \"action-applet\"."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:5
+#: data/org.cafe.panel.toplevel.gschema.xml.in:5
 msgid "Name to identify panel"
 msgstr "Nama untuk mengenalpasti panel"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:6
+#: data/org.cafe.panel.toplevel.gschema.xml.in:6
 msgid ""
 "This is a human readable name which you can use to identify a panel. Its "
 "main purpose is to serve as the panel's window title which is useful when "
@@ -1822,11 +1822,11 @@ msgstr ""
 "panel. Tujuan utama ia adalah untuk bertindak sebagai  tajuk tetingkap panel"
 " yang berguna bila menavigasi antara panel."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:10
+#: data/org.cafe.panel.toplevel.gschema.xml.in:10
 msgid "X screen where the panel is displayed"
 msgstr "Skrin X yang mana panel dipaparkan"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:11
+#: data/org.cafe.panel.toplevel.gschema.xml.in:11
 msgid ""
 "With a multi-screen setup, you may have panels on each individual screen. "
 "This key identifies the current screen the panel is displayed on."
@@ -1835,11 +1835,11 @@ msgstr ""
 "secara individu. Kunci ini mengenalpasti skrin semasa yang mana panel "
 "dipaparkan."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:15
+#: data/org.cafe.panel.toplevel.gschema.xml.in:15
 msgid "Xinerama monitor where the panel is displayed"
 msgstr "Monitor Xinerama yang mana panel dipaparkan"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:16
+#: data/org.cafe.panel.toplevel.gschema.xml.in:16
 msgid ""
 "In a Xinerama setup, you may have panels on each individual monitor. This "
 "key identifies the current monitor the panel is displayed on."
@@ -1847,11 +1847,11 @@ msgstr ""
 "Pada persediaan Xinerama, anda boleh mempunyai panel pada setiap monitor. "
 "Kunci ini mengenalpasti monitor semasa panel dipaparkan"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:20
+#: data/org.cafe.panel.toplevel.gschema.xml.in:20
 msgid "Expand to occupy entire screen width"
 msgstr "Kembangkan untuk menduduki seluruh lebar panel"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:21
+#: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
 "vertical panel). In this mode the panel can only be placed at a screen edge."
@@ -1863,11 +1863,11 @@ msgstr ""
 " salah, panel hanya boleh dibesarkan cukup untuk menempatkan aplet, pelancar"
 " dan butang pada panel."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:25
+#: data/org.cafe.panel.toplevel.gschema.xml.in:25
 msgid "Panel orientation"
 msgstr "Orientasi panel"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:26
+#: data/org.cafe.panel.toplevel.gschema.xml.in:26
 msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
@@ -1887,11 +1887,11 @@ msgstr ""
 "butang menu akan timbulkan menunya dibawah panel, sedangkan pada panel "
 "\"bawah\" menu akan ditimbulkan ke atas panel."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:30
+#: data/org.cafe.panel.toplevel.gschema.xml.in:30
 msgid "Panel size"
 msgstr "Saiz panel"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:31
+#: data/org.cafe.panel.toplevel.gschema.xml.in:31
 msgid ""
 "The height (width for a vertical panel) of the panel. The panel will "
 "determine at runtime a minimum size based on the font size and other "
@@ -1902,11 +1902,11 @@ msgstr ""
 "minimum berdasarkan saiz fon dan penunjuk lain. Saiz maksimum adalah tetap "
 "pada suku dari tinggi (atau lebar) skrin."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:35
+#: data/org.cafe.panel.toplevel.gschema.xml.in:35
 msgid "X co-ordinate of panel"
 msgstr "Koordinat X panel"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:36
+#: data/org.cafe.panel.toplevel.gschema.xml.in:36
 msgid ""
 "The location of the panel along the x-axis. This key is only relevant in un-"
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
@@ -1916,11 +1916,11 @@ msgstr ""
 "nyah-kembang. Pada mod terkembang kunci ini diabaikan dan panel diletakkan "
 "pada pinggir skrin dinyatakan oleh kunci orientasi."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:40
+#: data/org.cafe.panel.toplevel.gschema.xml.in:40
 msgid "Y co-ordinate of panel"
 msgstr "Koordinat Y panel"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:41
+#: data/org.cafe.panel.toplevel.gschema.xml.in:41
 msgid ""
 "The location of the panel along the y-axis. This key is only relevant in un-"
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
@@ -1930,11 +1930,11 @@ msgstr ""
 "nyah-kembang. Pada mod terkembang kunci ini diabaikan dan panel diletakkan "
 "pada pinggir skrin dinyatakan oleh kunci orientasi."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:45
+#: data/org.cafe.panel.toplevel.gschema.xml.in:45
 msgid "X co-ordinate of panel, starting from the right of the screen"
 msgstr "Koordinat X panel, bermula dari kanan skrin"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:46
+#: data/org.cafe.panel.toplevel.gschema.xml.in:46
 msgid ""
 "The location of the panel along the x-axis, starting from the right of the "
 "screen. If set to -1, the value is ignored and the value of the x key is "
@@ -1949,11 +1949,11 @@ msgstr ""
 "dalam mod tidak dikembangkan. Dalam mod dikembangkan, kunci ini diabaikan "
 "dan panel diletakkan pada bucu skrin yang ditentukan oleh kunci orientasi."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:50
+#: data/org.cafe.panel.toplevel.gschema.xml.in:50
 msgid "Y co-ordinate of panel, starting from the bottom of the screen"
 msgstr "Koordinat Y panel, bermula dari dasar skrin"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:51
+#: data/org.cafe.panel.toplevel.gschema.xml.in:51
 msgid ""
 "The location of the panel along the y-axis, starting from the bottom of the "
 "screen. If set to -1, the value is ignored and the value of the y key is "
@@ -1968,11 +1968,11 @@ msgstr ""
 "tidak dikembangkan. Dalam mod dikembangkan, kunci ini diabaikan dan panel "
 "diletakkan pada sudut skrin ditentukan oleh kunci tentu arah."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:55
+#: data/org.cafe.panel.toplevel.gschema.xml.in:55
 msgid "Center panel on x-axis"
 msgstr "Ketengahkan panel pada paksi-x"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:56
+#: data/org.cafe.panel.toplevel.gschema.xml.in:56
 msgid ""
 "If true, the x and x_right keys are ignored and the panel is placed at the "
 "center of the x-axis of the screen. If the panel is resized it will remain "
@@ -1984,11 +1984,11 @@ msgstr ""
 " - cth. panel membesar pada kedua-dua sisi. Jika salah, kunci x dan x_kanan "
 "tentukan lokasi panel."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:60
+#: data/org.cafe.panel.toplevel.gschema.xml.in:60
 msgid "Center panel on y-axis"
 msgstr "Ketengahkan panel pada paksi-y"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:61
+#: data/org.cafe.panel.toplevel.gschema.xml.in:61
 msgid ""
 "If true, the y and y_bottom keys are ignored and the panel is placed at the "
 "center of the y-axis of the screen. If the panel is resized it will remain "
@@ -2000,11 +2000,11 @@ msgstr ""
 "kedudukannya - cth. panel akan membesar pada kedua-dua sisi. Jika salah, "
 "kekunci y dan y_bawah tentukan lokasi panel."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:65
+#: data/org.cafe.panel.toplevel.gschema.xml.in:65
 msgid "Automatically hide panel into corner"
 msgstr "Sembunyikan panel secara automatik ke sudut"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:66
+#: data/org.cafe.panel.toplevel.gschema.xml.in:66
 msgid ""
 "If true, the panel is automatically hidden into a corner of the screen when "
 "the pointer leaves the panel area. Moving the pointer to that corner again "
@@ -2014,19 +2014,19 @@ msgstr ""
 "penuding tetikus meninggalkan kawasan panel. Menggerakkan penuding tetikus "
 "ke sudut itu akan menyebabkan panel tersebut muncul semula."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:71
+#: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
-"If true, hiding and un-hiding of this panel will be animated rather than "
+"If true, hiding and un-hiding of this panel will be anicafed rather than "
 "happening instantly."
 msgstr ""
 "Jika benar, sembunyi dan nyahsembunyi panel akan dianimasikan selain dari "
 "berlaku serta merta."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:75
+#: data/org.cafe.panel.toplevel.gschema.xml.in:75
 msgid "Enable hide buttons"
 msgstr "Benarkan butang sembunyi"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:76
+#: data/org.cafe.panel.toplevel.gschema.xml.in:76
 msgid ""
 "If true, buttons will be placed on each side of the panel which may be used "
 "to move the panel to edge of the screen, leaving only a button showing."
@@ -2035,11 +2035,11 @@ msgstr ""
 "digunakan untuk menggerakkan panel ke pinggir skrin, hanya meninggalkan  "
 "satu butang dipaparkan."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:80
+#: data/org.cafe.panel.toplevel.gschema.xml.in:80
 msgid "Enable arrows on hide buttons"
 msgstr "Benarkan anak panah pada butang sembunyi"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:81
+#: data/org.cafe.panel.toplevel.gschema.xml.in:81
 msgid ""
 "If true, arrows will be placed on the hide buttons. This key is only "
 "relevant if the enable_buttons key is true."
@@ -2047,11 +2047,11 @@ msgstr ""
 "Jika benar, anak panah akan diletakkan pada butang sembunyi. kunci ini hanya"
 " bermakna bila enable_buttons adalah benar."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:85
+#: data/org.cafe.panel.toplevel.gschema.xml.in:85
 msgid "Panel autohide delay"
 msgstr "Lengahan sembunyi-sendiri panel"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:86
+#: data/org.cafe.panel.toplevel.gschema.xml.in:86
 msgid ""
 "Specifies the number of milliseconds delay after the pointer leaves the "
 "panel area before the panel is automatically hidden. This key is only "
@@ -2061,11 +2061,11 @@ msgstr ""
 "panel sebelum panel automatik disembunyikan. Kunci ini hanya releven jika "
 "kunci auto_hide adalah benar."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:90
+#: data/org.cafe.panel.toplevel.gschema.xml.in:90
 msgid "Panel autounhide delay"
 msgstr "Lengahan nyahsembunyi-sendiri panel"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:91
+#: data/org.cafe.panel.toplevel.gschema.xml.in:91
 msgid ""
 "Specifies the number of milliseconds delay after the pointer enters the "
 "panel area before the panel is automatically re-shown. This key is only "
@@ -2075,11 +2075,11 @@ msgstr ""
 " sebelum panel automatik dipaparkan. Kunci ini hanya releven jika kunci "
 "auto_hide adalah benar."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:95
+#: data/org.cafe.panel.toplevel.gschema.xml.in:95
 msgid "Visible pixels when hidden"
 msgstr "Piksel kelihatan bila tersembunyi"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:96
+#: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
 "hidden into a corner. This key is only relevant if the auto_hide key is "
@@ -2089,11 +2089,11 @@ msgstr ""
 "automatik ke sudut. Kunci ini hanya relevan jika kunci auto_hide adalah "
 "benar."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:100
+#: data/org.cafe.panel.toplevel.gschema.xml.in:100
 msgid "Animation speed"
 msgstr "Kelajuan animasi"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:101
+#: data/org.cafe.panel.toplevel.gschema.xml.in:101
 msgid ""
 "The speed in which panel animations should occur. Possible values are "
 "\"slow\", \"medium\" and \"fast\". This key is only relevant if the "
@@ -2103,11 +2103,11 @@ msgstr ""
 "\"fast\". Kekunci ini hanya relevan jika kunci enable_animations adalah "
 "benar."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:108
+#: data/org.cafe.panel.toplevel.gschema.xml.in:108
 msgid "Background type"
 msgstr "Jenis latar belakang"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:109
+#: data/org.cafe.panel.toplevel.gschema.xml.in:109
 msgid ""
 "Which type of background should be used for this panel. Possible values are "
 "\"none\" - the default GTK+ widget background will be used, \"color\" - the "
@@ -2120,19 +2120,19 @@ msgstr ""
 "belakang atau \"image\" - imej yang dinyatakan oleh kunci imej akan "
 "digunakan sebagai latar belakang."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:113
+#: data/org.cafe.panel.toplevel.gschema.xml.in:113
 msgid "Background color"
 msgstr "Warna latar belakang"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:114
+#: data/org.cafe.panel.toplevel.gschema.xml.in:114
 msgid "Specifies the background color for the panel in #RGB format."
 msgstr "Nyatakan warna latar belakang bagi panel dalam format #RGB."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:118
+#: data/org.cafe.panel.toplevel.gschema.xml.in:118
 msgid "Background color opacity"
 msgstr "Kelegapan warna latar belakang"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:119
+#: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
 "completely opaque (a value of less than 65535), the color will be composited"
@@ -2142,11 +2142,11 @@ msgstr ""
 "sepenuhnya (nilai yang kurang dari 65535), warna akan gabungkan ke atas imej"
 " latar belakang desktop"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:123
+#: data/org.cafe.panel.toplevel.gschema.xml.in:123
 msgid "Background image"
 msgstr "Imej latar belakang"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:124
+#: data/org.cafe.panel.toplevel.gschema.xml.in:124
 msgid ""
 "Specifies the file to be used for the background image. If the image "
 "contains an alpha channel it will be composited onto the desktop background "
@@ -2156,11 +2156,11 @@ msgstr ""
 "mengandungi saluran alfa, ia akan dikompositkan ke imej latar belakang "
 "desktop."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:128
+#: data/org.cafe.panel.toplevel.gschema.xml.in:128
 msgid "Fit image to panel"
 msgstr "Suai muatkan imej ke panel"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:129
+#: data/org.cafe.panel.toplevel.gschema.xml.in:129
 msgid ""
 "If true, the image will be scaled (retaining the aspect ratio of the image) "
 "to the panel height (if horizontal)."
@@ -2168,11 +2168,11 @@ msgstr ""
 "Jika benar, imej akan diskalakan (kekal nisbah bidang imej) ke tinggi panel "
 "(jika mengufuk)."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:133
+#: data/org.cafe.panel.toplevel.gschema.xml.in:133
 msgid "Stretch image to panel"
 msgstr "Regang imej ke panel"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:134
+#: data/org.cafe.panel.toplevel.gschema.xml.in:134
 msgid ""
 "If true, the image will be scaled to the panel dimensions. The aspect ratio "
 "of the image will not be maintained."
@@ -2180,11 +2180,11 @@ msgstr ""
 "Jika benar, imej akan diskalakan kepada dimensi panel. nisbah bidang imej "
 "tidak akan dikekalkan."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:138
+#: data/org.cafe.panel.toplevel.gschema.xml.in:138
 msgid "Rotate image on vertical panels"
 msgstr "Putar imej pada panel menegak"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:139
+#: data/org.cafe.panel.toplevel.gschema.xml.in:139
 msgid ""
 "If true, the background image will be rotated when the panel is oriented "
 "vertically."
@@ -2192,161 +2192,161 @@ msgstr ""
 "Jika benar, imej latar belakang akan diputar bila panel diorientasi secara "
 "menegak."
 
-#: mate-panel/libegg/eggdesktopfile.c:168
+#: cafe-panel/libegg/eggdesktopfile.c:168
 msgid "File is not a valid .desktop file"
 msgstr "Fail bukanlah fail .desktop yang sah"
 
-#: mate-panel/libegg/eggdesktopfile.c:191
+#: cafe-panel/libegg/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Versi fail desktop '%s' tidak dikenali"
 
-#: mate-panel/libegg/eggdesktopfile.c:963
+#: cafe-panel/libegg/eggdesktopfile.c:963
 #, c-format
 msgid "Starting %s"
 msgstr "Memulakan %s"
 
-#: mate-panel/libegg/eggdesktopfile.c:1105
+#: cafe-panel/libegg/eggdesktopfile.c:1105
 msgid "Application does not accept documents on command line"
 msgstr "Aplikasi tidak terima dokument pada baris perintah"
 
-#: mate-panel/libegg/eggdesktopfile.c:1173
+#: cafe-panel/libegg/eggdesktopfile.c:1173
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Pilihan lancar tidak dikenalpasti: %d"
 
-#: mate-panel/libegg/eggdesktopfile.c:1390
+#: cafe-panel/libegg/eggdesktopfile.c:1390
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Tidak dapat luluskan URI dokumen ke masukan desktop 'Type=Link'"
 
-#: mate-panel/libegg/eggdesktopfile.c:1411
+#: cafe-panel/libegg/eggdesktopfile.c:1411
 msgid "Not a launchable item"
 msgstr "Bukan item boleh lancar"
 
-#: mate-panel/libegg/eggsmclient.c:222
+#: cafe-panel/libegg/eggsmclient.c:222
 msgid "Disable connection to session manager"
 msgstr "Lumpuhkan sambungan dengan pengurus sesi"
 
-#: mate-panel/libegg/eggsmclient.c:225
+#: cafe-panel/libegg/eggsmclient.c:225
 msgid "Specify file containing saved configuration"
 msgstr "Nyatakan fail mengandungi konfigurasi tersimpan"
 
-#: mate-panel/libegg/eggsmclient.c:225
+#: cafe-panel/libegg/eggsmclient.c:225
 msgid "FILE"
 msgstr "FAIL"
 
-#: mate-panel/libegg/eggsmclient.c:228
+#: cafe-panel/libegg/eggsmclient.c:228
 msgid "Specify session management ID"
 msgstr "Nyatakan ID pengurusan sesi"
 
-#: mate-panel/libegg/eggsmclient.c:228
+#: cafe-panel/libegg/eggsmclient.c:228
 msgid "ID"
 msgstr "ID"
 
-#: mate-panel/libegg/eggsmclient.c:249
+#: cafe-panel/libegg/eggsmclient.c:249
 msgid "Session management options:"
 msgstr "Pilihan pengurusan sesi:"
 
-#: mate-panel/libegg/eggsmclient.c:250
+#: cafe-panel/libegg/eggsmclient.c:250
 msgid "Show session management options"
 msgstr "Tunjuk pilihan pengurusan sesi"
 
-#: mate-panel/libpanel-util/panel-gtk.c:138
+#: cafe-panel/libpanel-util/panel-gtk.c:138
 msgid "_Open"
 msgstr "_Buka"
 
-#: mate-panel/libpanel-util/panel-error.c:76
-#: mate-panel/panel-applet-frame.c:798 mate-panel/panel-applet-frame.c:986
+#: cafe-panel/libpanel-util/panel-error.c:76
+#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
 msgid "Error"
 msgstr "Ralat"
 
-#: mate-panel/libpanel-util/panel-icon-chooser.c:374
+#: cafe-panel/libpanel-util/panel-icon-chooser.c:374
 msgid "Choose an icon"
 msgstr "Pilih icon"
 
-#: mate-panel/libpanel-util/panel-launch.c:45
+#: cafe-panel/libpanel-util/panel-launch.c:45
 #, c-format
 msgid "Could not launch '%s'"
 msgstr "Tidak dapat lancarkan '%s'"
 
-#: mate-panel/libpanel-util/panel-launch.c:48 mate-panel/launcher.c:162
+#: cafe-panel/libpanel-util/panel-launch.c:48 cafe-panel/launcher.c:162
 msgid "Could not launch application"
 msgstr "Tidak dapat lancarkan aplikasi"
 
-#: mate-panel/libpanel-util/panel-show.c:44
+#: cafe-panel/libpanel-util/panel-show.c:44
 #, c-format
 msgid "Could not open location '%s'"
 msgstr "Tidak dapat buka lokasi '%s'"
 
-#: mate-panel/libpanel-util/panel-show.c:158
+#: cafe-panel/libpanel-util/panel-show.c:158
 msgid "No application to handle search folders is installed."
 msgstr "Tiada aplikasi untuk tangani folder gelintar yang dipasang."
 
-#: mate-panel/applet.c:468
+#: cafe-panel/applet.c:468
 msgid "???"
 msgstr "???"
 
-#: mate-panel/applet.c:548 libmate-panel-applet/mate-panel-applet.c:139
+#: cafe-panel/applet.c:548 libcafe-panel-applet/cafe-panel-applet.c:139
 msgid "_Remove From Panel"
 msgstr "Buang Da_ri Panel"
 
-#: mate-panel/applet.c:556 libmate-panel-applet/mate-panel-applet.c:142
+#: cafe-panel/applet.c:556 libcafe-panel-applet/cafe-panel-applet.c:142
 msgid "_Move"
 msgstr "_Alih"
 
-#: mate-panel/applet.c:574 libmate-panel-applet/mate-panel-applet.c:148
+#: cafe-panel/applet.c:574 libcafe-panel-applet/cafe-panel-applet.c:148
 msgid "Loc_k To Panel"
 msgstr "_Kunci ke Panel"
 
-#: mate-panel/applet.c:1313
+#: cafe-panel/applet.c:1313
 msgid "Cannot find an empty spot"
 msgstr "Tidak dapat cari tempat kosong"
 
-#: mate-panel/drawer.c:443 mate-panel/panel-addto.c:189
-#: mate-panel/panel-toplevel.c:1650
+#: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
+#: cafe-panel/panel-toplevel.c:1650
 msgid "Drawer"
 msgstr "Laci"
 
-#: mate-panel/drawer.c:550
+#: cafe-panel/drawer.c:550
 msgid "_Add to Drawer..."
 msgstr "T_ambah ke Laci..."
 
-#: mate-panel/drawer.c:556 mate-panel/launcher.c:602
-#: mate-panel/panel-action-button.c:194 mate-panel/panel-context-menu.c:246
+#: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
 msgid "_Properties"
 msgstr "Si_fat"
 
-#: mate-panel/mate-desktop-item-edit.c:27
+#: cafe-panel/cafe-desktop-item-edit.c:27
 msgid "Create new file in the given directory"
 msgstr "Cipta fail baru pada direktori diberi"
 
-#: mate-panel/mate-desktop-item-edit.c:28
+#: cafe-panel/cafe-desktop-item-edit.c:28
 msgid "[FILE...]"
 msgstr "[FAIL...]"
 
-#: mate-panel/mate-desktop-item-edit.c:106
+#: cafe-panel/cafe-desktop-item-edit.c:106
 msgid "- Edit .desktop files"
 msgstr "- Sunting fail .desktop"
 
-#: mate-panel/mate-desktop-item-edit.c:144
-#: mate-panel/mate-desktop-item-edit.c:198 mate-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:144
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
 msgid "Create Launcher"
 msgstr "Cipta Pelancar"
 
-#: mate-panel/mate-desktop-item-edit.c:169
-#: mate-panel/mate-desktop-item-edit.c:192
+#: cafe-panel/cafe-desktop-item-edit.c:169
+#: cafe-panel/cafe-desktop-item-edit.c:192
 msgid "Directory Properties"
 msgstr "Sifat Direktori"
 
-#: mate-panel/mate-desktop-item-edit.c:175 mate-panel/launcher.c:817
+#: cafe-panel/cafe-desktop-item-edit.c:175 cafe-panel/launcher.c:817
 msgid "Launcher Properties"
 msgstr "Sifat Pelancar"
 
-#: mate-panel/mate-panel.desktop.in:4 mate-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
 msgid "Panel"
 msgstr "Panel"
 
-#: mate-panel/mate-panel.desktop.in:5
+#: cafe-panel/cafe-panel.desktop.in:5
 msgid ""
 "Launch other applications and provide various utilities to manage windows, "
 "show the time, etc."
@@ -2356,243 +2356,243 @@ msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: mate-panel/mate-panel.desktop.in:7
-msgid "mate-panel"
-msgstr "mate-panel"
+#: cafe-panel/cafe-panel.desktop.in:7
+msgid "cafe-panel"
+msgstr "cafe-panel"
 
-#: mate-panel/launcher.c:120
+#: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
 msgstr "Tidak dapat tunjuk URL ini"
 
-#: mate-panel/launcher.c:121
+#: cafe-panel/launcher.c:121
 msgid "No URL was specified."
 msgstr "Tiada URL dinyatakan"
 
-#: mate-panel/launcher.c:217
+#: cafe-panel/launcher.c:217
 msgid "Could not use dropped item"
 msgstr "Tidak dapat guna item yang dijatuhkan"
 
-#: mate-panel/launcher.c:451
+#: cafe-panel/launcher.c:451
 msgid "No URI provided for panel launcher desktop file\n"
 msgstr "Tiada URI dibekalkan untuk fail desktop pelancar panel\n"
 
-#: mate-panel/launcher.c:490
+#: cafe-panel/launcher.c:490
 #, c-format
 msgid "Unable to open desktop file %s for panel launcher%s%s\n"
 msgstr "Tidak dapat buka fail desktop %s bagi pelancar%s%s panel\n"
 
-#: mate-panel/launcher.c:594
+#: cafe-panel/launcher.c:594
 msgid "_Launch"
 msgstr "_Lancar"
 
-#: mate-panel/launcher.c:910
+#: cafe-panel/launcher.c:910
 #, c-format
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "Kunci %s tidak ditetapkan, tidak dapat muatkan pelancar\n"
 
-#: mate-panel/launcher.c:1042 mate-panel/panel-ditem-editor.c:1326
-#: mate-panel/panel-ditem-editor.c:1360 mate-panel/panel-ditem-editor.c:1391
+#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Tidak dapat simpan pelancar"
 
-#: mate-panel/main.c:54
+#: cafe-panel/main.c:54
 msgid "Replace a currently running panel"
 msgstr "Gantikan panel yang masih berjalan"
 
-#: mate-panel/main.c:56
+#: cafe-panel/main.c:56
 msgid "Reset the panel configuration to default"
 msgstr "Set semula konfigurasi panel ke lalai"
 
-#: mate-panel/main.c:58
+#: cafe-panel/main.c:58
 msgid "Execute the run dialog"
 msgstr "Lakukan dialog jalan"
 
-#: mate-panel/main.c:60
+#: cafe-panel/main.c:60
 msgid "Set the default panel layout"
 msgstr "Tetapkan bentangan panel lalai"
 
-#: mate-panel/menu.c:502
+#: cafe-panel/menu.c:502
 msgid "Add this launcher to _panel"
 msgstr "Tambah pelancar ini pada _panel"
 
-#: mate-panel/menu.c:509
+#: cafe-panel/menu.c:509
 msgid "Add this launcher to _desktop"
 msgstr "Tambah pelancar ini ke _desktop"
 
-#: mate-panel/menu.c:521
+#: cafe-panel/menu.c:521
 msgid "_Entire menu"
 msgstr "S_eluruh menu"
 
-#: mate-panel/menu.c:526
+#: cafe-panel/menu.c:526
 msgid "Add this as _drawer to panel"
 msgstr "Tambah ini sebagai laci pa_da panel"
 
-#: mate-panel/menu.c:533
+#: cafe-panel/menu.c:533
 msgid "Add this as _menu to panel"
 msgstr "Tambah ini sebagai _menu pada panel"
 
-#: mate-panel/panel-action-button.c:182
+#: cafe-panel/panel-action-button.c:182
 msgid "_Activate Screensaver"
 msgstr "_Aktifkan Penyelamat Skrin"
 
-#: mate-panel/panel-action-button.c:188
+#: cafe-panel/panel-action-button.c:188
 msgid "_Lock Screen"
 msgstr "Kun_ci Skrin"
 
-#: mate-panel/panel-action-button.c:332
+#: cafe-panel/panel-action-button.c:332
 msgid "Could not connect to server"
 msgstr "Tidak dapat sambung ke pelayan"
 
-#: mate-panel/panel-action-button.c:363
+#: cafe-panel/panel-action-button.c:363
 msgid "Lock Screen"
 msgstr "Kunci Skrin"
 
-#: mate-panel/panel-action-button.c:364
+#: cafe-panel/panel-action-button.c:364
 msgid "Protect your computer from unauthorized use"
 msgstr "Lindungi komputer anda daripada penggunaan yang tidak diingini"
 
-#: mate-panel/panel-action-button.c:378
+#: cafe-panel/panel-action-button.c:378
 msgid "Log Out..."
 msgstr "Daftar Keluar..."
 
-#: mate-panel/panel-action-button.c:379
+#: cafe-panel/panel-action-button.c:379
 msgid "Log out of this session to log in as a different user"
 msgstr ""
 "Daftar keluar dari sesi ini untuk mendaftar masuk sebagai pengguna lain"
 
-#: mate-panel/panel-action-button.c:388
+#: cafe-panel/panel-action-button.c:388
 msgid "Run Application..."
 msgstr "Jalankan Aplikasi..."
 
-#: mate-panel/panel-action-button.c:389
+#: cafe-panel/panel-action-button.c:389
 msgid "Run an application by typing a command or choosing from a list"
 msgstr ""
 "Jalankan sebagai aplikasi dengan menaip perintah atau memilih dari senarai"
 
-#: mate-panel/panel-action-button.c:398
+#: cafe-panel/panel-action-button.c:398
 msgid "Search for Files..."
 msgstr "Gelintar Fail..."
 
-#: mate-panel/panel-action-button.c:399
+#: cafe-panel/panel-action-button.c:399
 msgid "Locate documents and folders on this computer by name or content"
 msgstr ""
 "Cari dokumen dan folder pada komputer ini berdasarkan nama atau kandungan"
 
-#: mate-panel/panel-action-button.c:407 mate-panel/panel-force-quit.c:250
+#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
 msgid "Force Quit"
 msgstr "Paksa Keluar"
 
-#: mate-panel/panel-action-button.c:408
+#: cafe-panel/panel-action-button.c:408
 msgid "Force a misbehaving application to quit"
 msgstr "Paksa aplikasi yang berkelakuan ganjil untuk keluar"
 
-#: mate-panel/panel-action-button.c:417
+#: cafe-panel/panel-action-button.c:417
 msgid "Connect to Server..."
 msgstr "Sambung ke Pelayan..."
 
-#: mate-panel/panel-action-button.c:418
+#: cafe-panel/panel-action-button.c:418
 msgid "Connect to a remote computer or shared disk"
 msgstr "Sambung ke komputer jauh atau cakera terkongsi"
 
-#: mate-panel/panel-action-button.c:426
+#: cafe-panel/panel-action-button.c:426
 msgid "Shut Down..."
 msgstr "Matikan..."
 
-#: mate-panel/panel-action-button.c:427
+#: cafe-panel/panel-action-button.c:427
 msgid "Shut down the computer"
 msgstr "Matikan komputer"
 
-#: mate-panel/panel-addto.c:125
+#: cafe-panel/panel-addto.c:125
 msgid "Custom Application Launcher"
 msgstr "Pelancar Aplikasi Suai"
 
-#: mate-panel/panel-addto.c:126
+#: cafe-panel/panel-addto.c:126
 msgid "Create a new launcher"
 msgstr "Cipta pelancar baru"
 
-#: mate-panel/panel-addto.c:137
+#: cafe-panel/panel-addto.c:137
 msgid "Application Launcher..."
 msgstr "Pelancar Aplikasi..."
 
-#: mate-panel/panel-addto.c:138
+#: cafe-panel/panel-addto.c:138
 msgid "Copy a launcher from the applications menu"
 msgstr "Salin pelancar dari menu aplikasi"
 
-#: mate-panel/panel-addto.c:153
+#: cafe-panel/panel-addto.c:153
 msgid "Compact Menu"
 msgstr "Menu Padat"
 
-#: mate-panel/panel-addto.c:154
+#: cafe-panel/panel-addto.c:154
 msgid "A compact menu"
 msgstr "Sebuah menu yang padat"
 
-#: mate-panel/panel-addto.c:165
+#: cafe-panel/panel-addto.c:165
 msgid "Classic Menu"
 msgstr "Menu Klasik"
 
-#: mate-panel/panel-addto.c:166
+#: cafe-panel/panel-addto.c:166
 msgid "The classic Applications, Places and System menu bar"
 msgstr "Palang menu Aplikasi, Tempat dan Sistem yang klasik"
 
-#: mate-panel/panel-addto.c:177
+#: cafe-panel/panel-addto.c:177
 msgid "Separator"
 msgstr "Pemisah"
 
-#: mate-panel/panel-addto.c:178
+#: cafe-panel/panel-addto.c:178
 msgid "A separator to organize the panel items"
 msgstr "Pemisah untuk mengurus item panel"
 
-#: mate-panel/panel-addto.c:190
+#: cafe-panel/panel-addto.c:190
 msgid "A pop out drawer to store other items in"
 msgstr "Laci timbul untuk simpan item lain didalamnya"
 
-#: mate-panel/panel-addto.c:274
+#: cafe-panel/panel-addto.c:274
 msgid "(empty)"
 msgstr "(kosong)"
 
-#: mate-panel/panel-addto.c:419
+#: cafe-panel/panel-addto.c:419
 msgid "Not compatible with X11"
 msgstr "Tidak serasi dengan X11"
 
-#: mate-panel/panel-addto.c:426
+#: cafe-panel/panel-addto.c:426
 msgid "Not compatible with Wayland"
 msgstr "Tidak serasi dengan Wayland"
 
-#: mate-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1053
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "P_ilih satu item untuk ditambah ke \"%s\""
 
-#: mate-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1057
 msgid "Add to Drawer"
 msgstr "Tambah ke Laci"
 
-#: mate-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1059
 msgid "Find an _item to add to the drawer:"
 msgstr "P_ilih satu item untuk ditambah ke laci:"
 
-#: mate-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1061
 msgid "Add to Panel"
 msgstr "Tambah ke Panel"
 
-#: mate-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1063
 msgid "Find an _item to add to the panel:"
 msgstr "P_ilih satu item untuk ditambah ke panel:"
 
-#: mate-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1311
 msgid "_Back"
 msgstr "_Undur"
 
-#: mate-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:759
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "\"%s\" telah keluar tanpa dijangka"
 
-#: mate-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:761
 msgid "Panel object has quit unexpectedly"
 msgstr "Objek panel keluar tanpa dijangka"
 
-#: mate-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:768
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
@@ -2600,40 +2600,40 @@ msgstr ""
 "Jika anda muat semula objek panel, ia akan ditambah balik secara automatik "
 "ke panel."
 
-#: mate-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:775
 msgid "D_elete"
 msgstr "Pa_dam"
 
-#: mate-panel/panel-applet-frame.c:776 mate-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
 msgid "_Don't Reload"
 msgstr "Jan_gan Muat Semula"
 
-#: mate-panel/panel-applet-frame.c:777 mate-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
 msgid "_Reload"
 msgstr "_Muat Semula"
 
-#: mate-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:948
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "Panel menghadapi masalah semasa memuatkan  \"%s\"."
 
-#: mate-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:963
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Anda ingin memadam aplet dari konfigurasi anda?"
 
-#: mate-panel/panel-applet-frame.c:970 mate-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "Pa_dam"
 
-#: mate-panel/panel-context-menu.c:91
+#: cafe-panel/panel-context-menu.c:91
 msgid "And many, many others…"
 msgstr "Dan banyak lagi yang lain..."
 
-#: mate-panel/panel-context-menu.c:114
+#: cafe-panel/panel-context-menu.c:114
 msgid "The MATE Panel"
 msgstr "Panel MATE"
 
-#: mate-panel/panel-context-menu.c:116
+#: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
@@ -2643,7 +2643,7 @@ msgstr ""
 "Hak Cipta © 2004 Vincent Untz\n"
 "Hak Cipta © 2011-2020 Pembangun MATE"
 
-#: mate-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:119
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
@@ -2651,23 +2651,23 @@ msgstr ""
 "Program ini bertanggungjawab untuk melancarkan aplikasi lain dan membekalkan"
 " utiliti yang berguna."
 
-#: mate-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:123
 msgid "About the MATE Panel"
 msgstr "Perihal Panel MATE"
 
-#: mate-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
 msgstr "Tidak dapat padam panel ini"
 
-#: mate-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:155
 msgid "You must always have at least one panel."
 msgstr "Anda mesti mempunyai sekurang-kurangnya satu panel."
 
-#: mate-panel/panel-context-menu.c:199
+#: cafe-panel/panel-context-menu.c:199
 msgid "Reset this panel?"
 msgstr "Tetap semula panel ini?"
 
-#: mate-panel/panel-context-menu.c:200
+#: cafe-panel/panel-context-menu.c:200
 msgid ""
 "When a panel is reset, all \n"
 "custom settings are lost."
@@ -2675,109 +2675,109 @@ msgstr ""
 "Bila panel ditetap semula,\n"
 "semua tetapan suai akan hilang."
 
-#: mate-panel/panel-context-menu.c:214 mate-panel/panel-context-menu.c:256
+#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
 msgid "_Reset Panel"
 msgstr "_Tetap Semula Panel"
 
-#: mate-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:236
 msgid "_Add to Panel…"
 msgstr "_Tambah ke Panel..."
 
-#: mate-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:263
 msgid "_Delete This Panel"
 msgstr "Pa_dam Panel Ini"
 
-#: mate-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:276
 msgid "_New Panel"
 msgstr "Pa_nel Baru"
 
-#: mate-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:325
 msgid "A_bout Panels"
 msgstr "Perih_al Panel"
 
-#: mate-panel/panel-ditem-editor.c:115
+#: cafe-panel/panel-ditem-editor.c:115
 msgid "Application"
 msgstr "Aplikasi"
 
-#: mate-panel/panel-ditem-editor.c:117
+#: cafe-panel/panel-ditem-editor.c:117
 msgid "Application in Terminal"
 msgstr "Aplikasi dalam Terminal"
 
-#: mate-panel/panel-ditem-editor.c:119
+#: cafe-panel/panel-ditem-editor.c:119
 msgid "Location"
 msgstr "Lokasi"
 
-#: mate-panel/panel-ditem-editor.c:602
+#: cafe-panel/panel-ditem-editor.c:602
 msgid "_Type:"
 msgstr "_Jenis:"
 
-#: mate-panel/panel-ditem-editor.c:609
+#: cafe-panel/panel-ditem-editor.c:609
 msgid "_Name:"
 msgstr "_Nama:"
 
-#: mate-panel/panel-ditem-editor.c:634
+#: cafe-panel/panel-ditem-editor.c:634
 msgid "_Browse..."
 msgstr "_Layar..."
 
-#: mate-panel/panel-ditem-editor.c:641
+#: cafe-panel/panel-ditem-editor.c:641
 msgid "Co_mment:"
 msgstr "_Ulasan:"
 
-#: mate-panel/panel-ditem-editor.c:652
+#: cafe-panel/panel-ditem-editor.c:652
 msgid "_Revert"
 msgstr "_Kembali"
 
-#: mate-panel/panel-ditem-editor.c:978
+#: cafe-panel/panel-ditem-editor.c:978
 msgid "Choose an application..."
 msgstr "Pilih satu aplikasi..."
 
-#: mate-panel/panel-ditem-editor.c:982
+#: cafe-panel/panel-ditem-editor.c:982
 msgid "Choose a file..."
 msgstr "Pilih satu fail..."
 
-#: mate-panel/panel-ditem-editor.c:1146 mate-panel/panel-ditem-editor.c:1155
+#: cafe-panel/panel-ditem-editor.c:1146 cafe-panel/panel-ditem-editor.c:1155
 msgid "Comm_and:"
 msgstr "Pe_rintah:"
 
-#: mate-panel/panel-ditem-editor.c:1164
+#: cafe-panel/panel-ditem-editor.c:1164
 msgid "_Location:"
 msgstr "_Lokasi:"
 
-#: mate-panel/panel-ditem-editor.c:1327
+#: cafe-panel/panel-ditem-editor.c:1327
 msgid "The name of the launcher is not set."
 msgstr "Nama pelancar tidak ditetapkan."
 
-#: mate-panel/panel-ditem-editor.c:1331
+#: cafe-panel/panel-ditem-editor.c:1331
 msgid "Could not save directory properties"
 msgstr "Tidak dapat simpan sifat direktori"
 
-#: mate-panel/panel-ditem-editor.c:1332
+#: cafe-panel/panel-ditem-editor.c:1332
 msgid "The name of the directory is not set."
 msgstr "Nama direktori tidak ditetapkan."
 
-#: mate-panel/panel-ditem-editor.c:1348
+#: cafe-panel/panel-ditem-editor.c:1348
 msgid "The command of the launcher is not set."
 msgstr "Perintah pelancar tidak ditetapkan."
 
-#: mate-panel/panel-ditem-editor.c:1351
+#: cafe-panel/panel-ditem-editor.c:1351
 msgid "The location of the launcher is not set."
 msgstr "Lokasi pelancar tidak ditetapkan."
 
-#: mate-panel/panel-ditem-editor.c:1428
+#: cafe-panel/panel-ditem-editor.c:1428
 msgid "Could not display help document"
 msgstr "Tidak dapat paparkan dokumen bantuan"
 
-#: mate-panel/panel-force-quit.c:86
+#: cafe-panel/panel-force-quit.c:86
 msgid ""
 "Click on a window to force the application to quit. To cancel press <ESC>."
 msgstr ""
 "Klik pada tetingkap untuk paksa aplikasi keluar. Untuk batal tekan <ESC>."
 
-#: mate-panel/panel-force-quit.c:232
+#: cafe-panel/panel-force-quit.c:232
 msgid "Force this application to exit?"
 msgstr "Paksa aplikasi ini untuk keluar?"
 
-#: mate-panel/panel-force-quit.c:235
+#: cafe-panel/panel-force-quit.c:235
 msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."
@@ -2785,272 +2785,272 @@ msgstr ""
 "Jika pilih untuk paksa aplikasi untuk keluar, perubahan yang tidak disimpan "
 "pada sebarang dokumen terbuka mungkin hilang. "
 
-#: mate-panel/panel-menu-bar.c:97
+#: cafe-panel/panel-menu-bar.c:97
 msgid "Browse and run installed applications"
 msgstr "Layar dan jalankan aplikasi dipasang"
 
-#: mate-panel/panel-menu-bar.c:98
+#: cafe-panel/panel-menu-bar.c:98
 msgid "Access documents, folders and network places"
 msgstr "Capai dokumen, folder dan tempat rangkaian"
 
-#: mate-panel/panel-menu-bar.c:99
+#: cafe-panel/panel-menu-bar.c:99
 msgid "Change desktop appearance and behavior, get help, or log out"
 msgstr ""
 "Ubah penampilan dan kelakuan desktop, dapatkan bantuan atau daftar keluar"
 
-#: mate-panel/panel-menu-bar.c:166
+#: cafe-panel/panel-menu-bar.c:166
 msgid "Applications"
 msgstr "Aplikasi"
 
-#: mate-panel/panel-menu-bar.c:356 mate-panel/panel-menu-button.c:706
+#: cafe-panel/panel-menu-bar.c:356 cafe-panel/panel-menu-button.c:706
 msgid "_Edit Menus"
 msgstr "_Sunting Menu"
 
-#: mate-panel/panel-menu-button.c:1129
+#: cafe-panel/panel-menu-button.c:1129
 msgid "Main Menu"
 msgstr "Menu Utama"
 
-#: mate-panel/panel-menu-items.c:467
+#: cafe-panel/panel-menu-items.c:467
 msgid "Bookmarks"
 msgstr "Tanda Buku"
 
 #. Translators: %s is a URI
-#: mate-panel/panel-menu-items.c:490 mate-panel/panel.c:553
+#: cafe-panel/panel-menu-items.c:490 cafe-panel/panel.c:553
 #, c-format
 msgid "Open '%s'"
 msgstr "Buka '%s'"
 
-#: mate-panel/panel-menu-items.c:561
+#: cafe-panel/panel-menu-items.c:561
 #, c-format
 msgid "Unable to scan %s for media changes"
 msgstr "Tidak boleh imbas %s untuk perubahan media"
 
-#: mate-panel/panel-menu-items.c:604
+#: cafe-panel/panel-menu-items.c:604
 #, c-format
 msgid "Rescan %s"
 msgstr "Imbas semula %s"
 
-#: mate-panel/panel-menu-items.c:641
+#: cafe-panel/panel-menu-items.c:641
 #, c-format
 msgid "Unable to mount %s"
 msgstr "Tidak dapat lekap %s"
 
-#: mate-panel/panel-menu-items.c:704
+#: cafe-panel/panel-menu-items.c:704
 #, c-format
 msgid "Mount %s"
 msgstr "Lekap %s"
 
-#: mate-panel/panel-menu-items.c:912
+#: cafe-panel/panel-menu-items.c:912
 msgid "Removable Media"
 msgstr "Media Boleh Alih"
 
-#: mate-panel/panel-menu-items.c:999
+#: cafe-panel/panel-menu-items.c:999
 msgid "Network Places"
 msgstr "Tempat Rangkaian"
 
-#: mate-panel/panel-menu-items.c:1038
+#: cafe-panel/panel-menu-items.c:1038
 msgid "Open your personal folder"
 msgstr "Buka folder peribadi anda"
 
 #. Translators: Desktop is used here as in
 #. * "Desktop Folder" (this is not the Desktop
 #. * environment).
-#: mate-panel/panel-menu-items.c:1057
+#: cafe-panel/panel-menu-items.c:1057
 msgctxt "Desktop Folder"
 msgid "Desktop"
 msgstr "Desktop"
 
-#: mate-panel/panel-menu-items.c:1058
+#: cafe-panel/panel-menu-items.c:1058
 msgid "Open the contents of your desktop in a folder"
 msgstr "Buka kandungan desktop anda dalam folder"
 
-#: mate-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1074
 msgid "Computer"
 msgstr "Komputer"
 
-#: mate-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1079
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
 msgstr ""
 "Layar semua cakera jauh dan setempat serta folder boleh capai dari komputer "
 "ini"
 
-#: mate-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1092
 msgid "Network"
 msgstr "Rangkaian"
 
-#: mate-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1093
 msgid "Browse bookmarked and local network locations"
 msgstr "Layar lokasi rangkaian setempat dan bertanda buku"
 
-#: mate-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1487
 msgid "Places"
 msgstr "Tempat"
 
-#: mate-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1515
 msgid "System"
 msgstr "Sistem"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: mate-panel/panel-menu-items.c:1600
+#: cafe-panel/panel-menu-items.c:1600
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: mate-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1612
 #, c-format
 msgid "Log Out %s..."
 msgstr "Daftar Keluar %s..."
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: mate-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1616
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr "Daftar keluar %s sesi ini untuk mendaftar masuk sebagai pengguna lain"
 
-#: mate-panel/panel-properties-dialog.c:119 mate-panel/panel-test-applets.c:58
+#: cafe-panel/panel-properties-dialog.c:119 cafe-panel/panel-test-applets.c:58
 msgctxt "Orientation"
 msgid "Top"
 msgstr "Atas"
 
-#: mate-panel/panel-properties-dialog.c:120 mate-panel/panel-test-applets.c:59
+#: cafe-panel/panel-properties-dialog.c:120 cafe-panel/panel-test-applets.c:59
 msgctxt "Orientation"
 msgid "Bottom"
 msgstr "Bawah"
 
-#: mate-panel/panel-properties-dialog.c:121 mate-panel/panel-test-applets.c:60
+#: cafe-panel/panel-properties-dialog.c:121 cafe-panel/panel-test-applets.c:60
 msgctxt "Orientation"
 msgid "Left"
 msgstr "Kiri"
 
-#: mate-panel/panel-properties-dialog.c:122 mate-panel/panel-test-applets.c:61
+#: cafe-panel/panel-properties-dialog.c:122 cafe-panel/panel-test-applets.c:61
 msgctxt "Orientation"
 msgid "Right"
 msgstr "Kanan"
 
-#: mate-panel/panel-properties-dialog.c:818
+#: cafe-panel/panel-properties-dialog.c:818
 msgid "Drawer Properties"
 msgstr "Sifat Laci"
 
-#: mate-panel/panel-properties-dialog.ui:62
+#: cafe-panel/panel-properties-dialog.ui:62
 msgid "Panel Properties"
 msgstr "Sifat Panel"
 
-#: mate-panel/panel-properties-dialog.ui:148
-#: mate-panel/panel-properties-dialog.ui:416
+#: cafe-panel/panel-properties-dialog.ui:148
+#: cafe-panel/panel-properties-dialog.ui:416
 msgid "Some of these properties are locked down"
 msgstr "Sesetengah sifat ini telah dikunci"
 
-#: mate-panel/panel-properties-dialog.ui:189
+#: cafe-panel/panel-properties-dialog.ui:189
 msgid "_Icon:"
 msgstr "_Ikon:"
 
-#: mate-panel/panel-properties-dialog.ui:249
-#: mate-panel/panel-test-applets.ui:116
+#: cafe-panel/panel-properties-dialog.ui:249
+#: cafe-panel/panel-test-applets.ui:116
 msgid "_Orientation:"
 msgstr "_Orientasi:"
 
-#: mate-panel/panel-properties-dialog.ui:263
-#: mate-panel/panel-test-applets.ui:86
+#: cafe-panel/panel-properties-dialog.ui:263
+#: cafe-panel/panel-test-applets.ui:86
 msgid "_Size:"
 msgstr "_Saiz:"
 
-#: mate-panel/panel-properties-dialog.ui:281
+#: cafe-panel/panel-properties-dialog.ui:281
 msgid "E_xpand"
 msgstr "Ke_mbang"
 
-#: mate-panel/panel-properties-dialog.ui:296
+#: cafe-panel/panel-properties-dialog.ui:296
 msgid "_Autohide"
 msgstr "_Sembunyi-sendiri"
 
-#: mate-panel/panel-properties-dialog.ui:317
+#: cafe-panel/panel-properties-dialog.ui:317
 msgid "Show hide _buttons"
 msgstr "Tunjuk _butang sembunyi"
 
-#: mate-panel/panel-properties-dialog.ui:348
+#: cafe-panel/panel-properties-dialog.ui:348
 msgid "Arro_ws on hide buttons"
 msgstr "Anak pana_h pada butang sembunyi"
 
-#: mate-panel/panel-properties-dialog.ui:433
+#: cafe-panel/panel-properties-dialog.ui:433
 msgid "_None (use system theme)"
 msgstr "T_iada (guna tema sistem)"
 
-#: mate-panel/panel-properties-dialog.ui:453
+#: cafe-panel/panel-properties-dialog.ui:453
 msgid "Solid c_olor"
 msgstr "_Warna tegar"
 
-#: mate-panel/panel-properties-dialog.ui:501
+#: cafe-panel/panel-properties-dialog.ui:501
 msgid "Pick a color"
 msgstr "Pilih satu warna"
 
-#: mate-panel/panel-properties-dialog.ui:531
+#: cafe-panel/panel-properties-dialog.ui:531
 msgid "<small>Transparent</small>"
 msgstr "<small>Lutsinar</small>"
 
-#: mate-panel/panel-properties-dialog.ui:553
+#: cafe-panel/panel-properties-dialog.ui:553
 msgid "Co_lor:"
 msgstr "_Warna:"
 
-#: mate-panel/panel-properties-dialog.ui:566
+#: cafe-panel/panel-properties-dialog.ui:566
 msgid "S_tyle:"
 msgstr "Ga_ya:"
 
-#: mate-panel/panel-properties-dialog.ui:580
+#: cafe-panel/panel-properties-dialog.ui:580
 msgid "<small>Opaque</small>"
 msgstr "<small>Legap</small>"
 
-#: mate-panel/panel-properties-dialog.ui:613
+#: cafe-panel/panel-properties-dialog.ui:613
 msgid "Background _image:"
 msgstr "_Imej latar belakang:"
 
-#: mate-panel/panel-properties-dialog.ui:647
+#: cafe-panel/panel-properties-dialog.ui:647
 msgid "Select background"
 msgstr "Pilih latar belakang"
 
-#: mate-panel/panel-properties-dialog.ui:678
+#: cafe-panel/panel-properties-dialog.ui:678
 msgid "Background"
 msgstr "Latar Belakang"
 
-#: mate-panel/panel-properties-dialog.ui:710
+#: cafe-panel/panel-properties-dialog.ui:710
 msgid "Image Background Details"
 msgstr "Perincian Imej Latar Belakang"
 
-#: mate-panel/panel-properties-dialog.ui:780
+#: cafe-panel/panel-properties-dialog.ui:780
 msgid "_Tile"
 msgstr "_Jubin"
 
-#: mate-panel/panel-properties-dialog.ui:795
+#: cafe-panel/panel-properties-dialog.ui:795
 msgid "_Scale"
 msgstr "_Skala"
 
-#: mate-panel/panel-properties-dialog.ui:811
+#: cafe-panel/panel-properties-dialog.ui:811
 msgid "St_retch"
 msgstr "_Regang"
 
-#: mate-panel/panel-properties-dialog.ui:834
+#: cafe-panel/panel-properties-dialog.ui:834
 msgid "Rotate image when panel is _vertical"
 msgstr "Kilaskan imej bila pan_el menegak"
 
-#: mate-panel/panel-recent.c:78 mate-panel/panel-recent.c:88
+#: cafe-panel/panel-recent.c:78 cafe-panel/panel-recent.c:88
 #, c-format
 msgid "Could not open recently used document \"%s\""
 msgstr "Tidak dapat buka dokumen \"%s\" yang digunakan baru-baru ini"
 
-#: mate-panel/panel-recent.c:90
+#: cafe-panel/panel-recent.c:90
 #, c-format
 msgid "An unknown error occurred while trying to open \"%s\"."
 msgstr "Ralat tidak diketahui berlaku bila cuba membuka \"%s\"."
 
-#: mate-panel/panel-recent.c:147
+#: cafe-panel/panel-recent.c:147
 msgid "Clear the Recent Documents list?"
 msgstr "Kosongkan senarai Dokumen Baru-baru Ini?"
 
-#: mate-panel/panel-recent.c:149
+#: cafe-panel/panel-recent.c:149
 msgid ""
 "If you clear the Recent Documents list, you clear the following:\n"
 "• All items from the Places → Recent Documents menu item.\n"
@@ -3061,61 +3061,61 @@ msgstr ""
 "• Semua butiran dari Tempat → Dokumen Baru-baru Ini.\n"
 "• Semua butiran dari senarai dokumen baru-baru ini dalam semua aplikasi."
 
-#: mate-panel/panel-recent.c:164
+#: cafe-panel/panel-recent.c:164
 msgid "Clear Recent Documents"
 msgstr "Kosongkan Dokumen Baru-baru Ini"
 
-#: mate-panel/panel-recent.c:199
+#: cafe-panel/panel-recent.c:199
 msgid "Recent Documents"
 msgstr "Dokumen Baru-baru Ini"
 
-#: mate-panel/panel-recent.c:238
+#: cafe-panel/panel-recent.c:238
 msgid "Clear Recent Documents..."
 msgstr "Kosongkan Dokumen Baru-baru Ini..."
 
-#: mate-panel/panel-recent.c:240
+#: cafe-panel/panel-recent.c:240
 msgid "Clear all items from the recent documents list"
 msgstr "Kosongkan semua item dari senarai dokumen baru-baru ini"
 
-#: mate-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:423
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "Tidak dapat jalankan perintah '%s'"
 
-#: mate-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:464
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "Tidak dapat tukar '%s' dari UTF-8"
 
-#: mate-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1257
 msgid "Choose a file to append to the command..."
 msgstr "Pilih fail untuk ditambah ke perintah..."
 
-#: mate-panel/panel-run-dialog.c:1639 mate-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Pilih aplikasi untuk melihat keterangannya."
 
-#: mate-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1677
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "Akan jalankan perintah: '%s'"
 
-#: mate-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1710
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
 "Senarai URI dijatuhkan pada dialog jalan mempunyai format salah (%d) atau "
 "panjang (%d)\n"
 
-#: mate-panel/panel-run-dialog.ui:23
+#: cafe-panel/panel-run-dialog.ui:23
 msgid "Run Application"
 msgstr "Jalankan Aplikasi"
 
-#: mate-panel/panel-run-dialog.ui:71 mate-panel/panel-stock-icons.c:97
+#: cafe-panel/panel-run-dialog.ui:71 cafe-panel/panel-stock-icons.c:97
 msgid "_Run"
 msgstr "_Jalan"
 
-#: mate-panel/panel-run-dialog.ui:81
+#: cafe-panel/panel-run-dialog.ui:81
 msgid ""
 "Click this button to run the selected application or the command in the "
 "command entry field."
@@ -3123,27 +3123,27 @@ msgstr ""
 "Klik butang ini untuk jalankan aplikasi terpilih atau perintah dalam medan "
 "masukan perintah."
 
-#: mate-panel/panel-run-dialog.ui:125
+#: cafe-panel/panel-run-dialog.ui:125
 msgid "Command icon"
 msgstr "Ikon perintah"
 
-#: mate-panel/panel-run-dialog.ui:126
+#: cafe-panel/panel-run-dialog.ui:126
 msgid "The icon of the command to be run."
 msgstr "Ikon perintah untuk dijalankan."
 
-#: mate-panel/panel-run-dialog.ui:170
+#: cafe-panel/panel-run-dialog.ui:170
 msgid "Run in _terminal"
 msgstr "Jalankan di _terminal"
 
-#: mate-panel/panel-run-dialog.ui:178
+#: cafe-panel/panel-run-dialog.ui:178
 msgid "Select this box to run the command in a terminal window."
 msgstr "PIlih kotak ini untuk jalankan perintah pada tetingkap terminal."
 
-#: mate-panel/panel-run-dialog.ui:190
+#: cafe-panel/panel-run-dialog.ui:190
 msgid "Run with _file..."
 msgstr "Jalan  dengan _fail..."
 
-#: mate-panel/panel-run-dialog.ui:197
+#: cafe-panel/panel-run-dialog.ui:197
 msgid ""
 "Click this button to browse for a file whose name to append to the command "
 "string."
@@ -3151,146 +3151,146 @@ msgstr ""
 "Klik butang ini untuk melayar fail yang dinamanya ditambah ke rentetan "
 "perintah."
 
-#: mate-panel/panel-run-dialog.ui:256
+#: cafe-panel/panel-run-dialog.ui:256
 msgid "List of known applications"
 msgstr "Senarai aplikasi dikenali"
 
-#: mate-panel/panel-run-dialog.ui:290
+#: cafe-panel/panel-run-dialog.ui:290
 msgid "Show list of known _applications"
 msgstr "Tunjuk senarai _aplikasi dikenali"
 
-#: mate-panel/panel-stock-icons.c:98
+#: cafe-panel/panel-stock-icons.c:98
 msgid "_Force quit"
 msgstr "_Paksa keluar"
 
-#: mate-panel/panel-stock-icons.c:99
+#: cafe-panel/panel-stock-icons.c:99
 msgid "C_lear"
 msgstr "K_osongkan"
 
-#: mate-panel/panel-stock-icons.c:100
+#: cafe-panel/panel-stock-icons.c:100
 msgid "D_on't Delete"
 msgstr "_Jangan Padam"
 
-#: mate-panel/panel-test-applets.c:39
+#: cafe-panel/panel-test-applets.c:39
 msgid "Specify an applet IID to load"
 msgstr "Nyatakan IID aplet untuk dimuatkan"
 
-#: mate-panel/panel-test-applets.c:40
+#: cafe-panel/panel-test-applets.c:40
 msgid ""
 "Specify a gsettings path in which the applet preferences should be stored"
 msgstr "Nyatakan laluan gsetting yang mana keutamaan aplet tersimpan"
 
-#: mate-panel/panel-test-applets.c:41
+#: cafe-panel/panel-test-applets.c:41
 msgid "Specify the initial size of the applet (xx-small, medium, large etc.)"
 msgstr "Nyatakan saiz awal bagi aplet(xx-kecil, sederhana, besar etc.)"
 
-#: mate-panel/panel-test-applets.c:42
+#: cafe-panel/panel-test-applets.c:42
 msgid ""
 "Specify the initial orientation of the applet (top, bottom, left or right)"
 msgstr "Nyatakan orientasi awal bai aplet (atas, bawah, kiri atau kanan)"
 
-#: mate-panel/panel-test-applets.c:66
+#: cafe-panel/panel-test-applets.c:66
 msgctxt "Size"
 msgid "XX Small"
 msgstr "XX Kecil"
 
-#: mate-panel/panel-test-applets.c:67
+#: cafe-panel/panel-test-applets.c:67
 msgctxt "Size"
 msgid "X Small"
 msgstr "X Kecil"
 
-#: mate-panel/panel-test-applets.c:68
+#: cafe-panel/panel-test-applets.c:68
 msgctxt "Size"
 msgid "Small"
 msgstr "Kecil"
 
-#: mate-panel/panel-test-applets.c:69
+#: cafe-panel/panel-test-applets.c:69
 msgctxt "Size"
 msgid "Medium"
 msgstr "Sederhana"
 
-#: mate-panel/panel-test-applets.c:70
+#: cafe-panel/panel-test-applets.c:70
 msgctxt "Size"
 msgid "Large"
 msgstr "Besar"
 
-#: mate-panel/panel-test-applets.c:71
+#: cafe-panel/panel-test-applets.c:71
 msgctxt "Size"
 msgid "X Large"
 msgstr "X Besar"
 
-#: mate-panel/panel-test-applets.c:72
+#: cafe-panel/panel-test-applets.c:72
 msgctxt "Size"
 msgid "XX Large"
 msgstr "XX Besar"
 
-#: mate-panel/panel-test-applets.c:130
+#: cafe-panel/panel-test-applets.c:130
 #, c-format
 msgid "Failed to load applet %s"
 msgstr "Gagal memuatkan applet %s"
 
 #. This is an utility to easily test various applets
-#: mate-panel/panel-test-applets.ui:18
+#: cafe-panel/panel-test-applets.ui:18
 msgid "Test applet utility"
 msgstr "Utiliti aplet Ujian"
 
-#: mate-panel/panel-test-applets.ui:35
+#: cafe-panel/panel-test-applets.ui:35
 msgid "_Execute"
 msgstr "_Lakukan"
 
-#: mate-panel/panel-test-applets.ui:101
+#: cafe-panel/panel-test-applets.ui:101
 msgid "_Applet:"
 msgstr "_Aplet:"
 
-#: mate-panel/panel-test-applets.ui:131
+#: cafe-panel/panel-test-applets.ui:131
 msgid "_Prefs Path:"
 msgstr "Laluan _Keutamaan:"
 
-#: mate-panel/panel-toplevel.c:1209
+#: cafe-panel/panel-toplevel.c:1209
 msgid "Hide Panel"
 msgstr "Sembunyi Panel"
 
-#: mate-panel/panel-toplevel.c:1656 mate-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
 msgid "Top Panel"
 msgstr "Panel Atas"
 
-#: mate-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1658
 msgid "Bottom Panel"
 msgstr "Panel Bawah"
 
-#: mate-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1660
 msgid "Left Panel"
 msgstr "Panel Kiri"
 
-#: mate-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1662
 msgid "Right Panel"
 msgstr "Panel Kanan"
 
-#: mate-panel/panel-util.c:350
+#: cafe-panel/panel-util.c:350
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Ikon '%s' tidak ditemui"
 
-#: mate-panel/panel-util.c:474
+#: cafe-panel/panel-util.c:474
 #, c-format
 msgid "Could not execute '%s'"
 msgstr "Tidak dapat lakukan '%s'"
 
-#: mate-panel/panel-util.c:702
+#: cafe-panel/panel-util.c:702
 msgid "file"
 msgstr "fail"
 
-#: mate-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:875
 msgid "Home Folder"
 msgstr "Folder Rumah"
 
 #. Translators: this is the same string as the one found in
 #. * caja
-#: mate-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr "Sistem Fail"
 
-#: mate-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1060
 msgid "Search"
 msgstr "Gelintar"
 
@@ -3298,21 +3298,21 @@ msgstr "Gelintar"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: mate-panel/panel-util.c:1106
+#: cafe-panel/panel-util.c:1106
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: mate-panel/panel.c:486
+#: cafe-panel/panel.c:486
 #, c-format
 msgid "Open URL: %s"
 msgstr "Buka URL: %s"
 
-#: mate-panel/panel.c:1336
+#: cafe-panel/panel.c:1336
 msgid "Delete this drawer?"
 msgstr "Padam laci ini?"
 
-#: mate-panel/panel.c:1337
+#: cafe-panel/panel.c:1337
 msgid ""
 "When a drawer is deleted, the drawer and its\n"
 "settings are lost."
@@ -3320,11 +3320,11 @@ msgstr ""
 "Bila laci dipadam, laci dan tetapannya\n"
 "akan hilang. "
 
-#: mate-panel/panel.c:1340
+#: cafe-panel/panel.c:1340
 msgid "Delete this panel?"
 msgstr "Padam panel ini?"
 
-#: mate-panel/panel.c:1341
+#: cafe-panel/panel.c:1341
 msgid ""
 "When a panel is deleted, the panel and its\n"
 "settings are lost."
@@ -3332,24 +3332,24 @@ msgstr ""
 "Bila panel dipadam, panel dan\n"
 "tetapannya akan hilang. "
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:5
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:5
 msgid "Test DBus Applet Factory"
 msgstr "Kilang Aplet DBUS Uji"
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:6
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:6
 msgid "Factory for Test DBus Applet"
 msgstr "Kilang untuk Aplet DBUS Uji"
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:9
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:9
 msgid "Test DBus Applet"
 msgstr "Aplet DBUS Uji"
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:10
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
 msgid "A simple applet for testing the MATE panel"
 msgstr "Aplet ringkas untuk menguji panel MATE"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:12
-msgid "mate-gegl"
-msgstr "mate-gegl"
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
+msgid "cafe-gegl"
+msgstr "cafe-gegl"

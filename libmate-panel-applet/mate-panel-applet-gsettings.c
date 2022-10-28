@@ -1,5 +1,5 @@
 /*
- * mate-panel-applet-gsettings.c: panel applet preferences handling.
+ * cafe-panel-applet-gsettings.c: panel applet preferences handling.
  *
  * Copyright (C) 2012 Stefano Karapetsas
  *
@@ -25,18 +25,18 @@
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
-#include "mate-panel-applet.h"
-#include "mate-panel-applet-gsettings.h"
+#include "cafe-panel-applet.h"
+#include "cafe-panel-applet-gsettings.h"
 
 GSettings *
-mate_panel_applet_settings_new (MatePanelApplet *applet, gchar *schema)
+cafe_panel_applet_settings_new (MatePanelApplet *applet, gchar *schema)
 {
     GSettings *settings = NULL;
     gchar *path;
 
     g_return_val_if_fail (PANEL_IS_APPLET (applet), NULL);
 
-    path = mate_panel_applet_get_preferences_path (applet);
+    path = cafe_panel_applet_get_preferences_path (applet);
 
     if (path) {
         settings = g_settings_new_with_path (schema, path);
@@ -47,7 +47,7 @@ mate_panel_applet_settings_new (MatePanelApplet *applet, gchar *schema)
 }
 
 GList*
-mate_panel_applet_settings_get_glist (GSettings *settings, gchar *key)
+cafe_panel_applet_settings_get_glist (GSettings *settings, gchar *key)
 {
     gchar **array;
     GList *list = NULL;
@@ -63,7 +63,7 @@ mate_panel_applet_settings_get_glist (GSettings *settings, gchar *key)
 }
 
 void
-mate_panel_applet_settings_set_glist (GSettings *settings, gchar *key, GList *list)
+cafe_panel_applet_settings_set_glist (GSettings *settings, gchar *key, GList *list)
 {
     GArray *array;
     GList *l;
@@ -76,7 +76,7 @@ mate_panel_applet_settings_set_glist (GSettings *settings, gchar *key, GList *li
 }
 
 GSList*
-mate_panel_applet_settings_get_gslist (GSettings *settings, gchar *key)
+cafe_panel_applet_settings_get_gslist (GSettings *settings, gchar *key)
 {
     gchar **array;
     GSList *list = NULL;
@@ -92,7 +92,7 @@ mate_panel_applet_settings_get_gslist (GSettings *settings, gchar *key)
 }
 
 void
-mate_panel_applet_settings_set_gslist (GSettings *settings, gchar *key, GSList *list)
+cafe_panel_applet_settings_set_gslist (GSettings *settings, gchar *key, GSList *list)
 {
     GArray *array;
     GSList *l;

@@ -28,9 +28,9 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
-#include <mate-panel-applet.h>
+#include <cafe-panel-applet.h>
 
-#define WNCKLET_RESOURCE_PATH "/org/mate/panel/applet/wncklet/"
+#define WNCKLET_RESOURCE_PATH "/org/cafe/panel/applet/wncklet/"
 
 #ifdef __cplusplus
 extern "C" {

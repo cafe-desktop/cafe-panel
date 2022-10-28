@@ -10,8 +10,8 @@ AM_CPPFLAGS =							\
 	$(NOTIFICATION_AREA_CFLAGS)				\
 	$(LIBMATE_PANEL_APPLET_CFLAGS)				\
 	-I$(srcdir)						\
-	-I$(srcdir)/../../libmate-panel-applet			\
-	-I$(top_builddir)/libmate-panel-applet			\
+	-I$(srcdir)/../../libcafe-panel-applet			\
+	-I$(top_builddir)/libcafe-panel-applet			\
 	-DMATELOCALEDIR=\""$(datadir)/locale"\"		\
 	-DG_LOG_DOMAIN=\""notification-area-applet"\"		\
 	-DPROVIDE_WATCHER_SERVICE=1				\
@@ -38,7 +38,7 @@ NOTIFICATION_AREA_SOURCES = \
 	$(BUILT_SOURCES)
 
 NOTIFICATION_AREA_LDADD =				\
-	../../libmate-panel-applet/libmate-panel-applet-4.la	\
+	../../libcafe-panel-applet/libcafe-panel-applet-4.la	\
 	libtray.la \
 	$(NOTIFICATION_AREA_LIBS)			\
 	$(LIBMATE_PANEL_APPLET_LIBS)
@@ -69,9 +69,9 @@ notification_area_applet_LDADD = $(NOTIFICATION_AREA_LDADD)
 notification_area_applet_CFLAGS = $(AM_CFLAGS)
 endif
 
-appletdir       = $(datadir)/mate-panel/applets
-applet_in_files = org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in
-applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
+appletdir       = $(datadir)/cafe-panel/applets
+applet_in_files = org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in
+applet_DATA     = $(applet_in_files:.cafe-panel-applet.desktop.in=.cafe-panel-applet)
 
 $(applet_DATA): $(applet_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword= --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
@@ -85,16 +85,16 @@ $(applet_in_files): $(applet_in_files).in Makefile
 
 if !NOTIFICATION_AREA_INPROCESS
 servicedir       = $(datadir)/dbus-1/services
-service_in_files = org.mate.panel.applet.NotificationAreaAppletFactory.service.in
+service_in_files = org.cafe.panel.applet.NotificationAreaAppletFactory.service.in
 service_DATA     = $(service_in_files:.service.in=.service)
 
-org.mate.panel.applet.NotificationAreaAppletFactory.service: $(service_in_files)
+org.cafe.panel.applet.NotificationAreaAppletFactory.service: $(service_in_files)
 	$(AM_V_GEN)sed \
 		-e "s|\@LOCATION\@|$(APPLET_LOCATION)|" \
 		$< > $@
 endif
 
-notification_area_gschemas_in = org.mate.panel.applet.notification-area.gschema.xml.in
+notification_area_gschemas_in = org.cafe.panel.applet.notification-area.gschema.xml.in
 gsettings_SCHEMAS = $(notification_area_gschemas_in:.xml.in=.xml)
 
 ui_FILES = \
@@ -114,7 +114,7 @@ BUILT_SOURCES = 		\
 @GSETTINGS_RULES@
 
 EXTRA_DIST =								\
-	org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in	\
+	org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in	\
 	$(notification_area_gschemas_in)				\
 	$(ui_FILES)	\
 	na.gresource.xml \

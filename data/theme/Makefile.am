@@ -1,7 +1,7 @@
 NULL =
 
 EXTRA_DIST = \
-	mate-panel.css  \
+	cafe-panel.css  \
 	panel-grid-symbolic.svg \
 	$(NULL)
 

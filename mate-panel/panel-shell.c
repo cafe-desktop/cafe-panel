@@ -37,7 +37,7 @@
 
 #include "panel-shell.h"
 
-#define PANEL_DBUS_SERVICE "org.mate.Panel"
+#define PANEL_DBUS_SERVICE "org.cafe.Panel"
 
 static GDBusConnection *dbus_connection = NULL;
 

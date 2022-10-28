@@ -13,7 +13,7 @@
 
 /* FIXME Symbols needed by panel-util.c - sucky */
 #include "applet.h"
-GSList *mate_panel_applet_list_applets (void) { return NULL; }
+GSList *cafe_panel_applet_list_applets (void) { return NULL; }
 #include "panel-config-global.h"
 gboolean panel_global_config_get_tooltips_enabled (void) { return FALSE; }
 #include "panel-lockdown.h"
@@ -116,7 +116,7 @@ main (int argc, char * argv[])
 
 	if (desktops == NULL ||
 	    desktops[0] == NULL) {
-		g_printerr ("mate-desktop-item-edit: no file to edit\n");
+		g_printerr ("cafe-desktop-item-edit: no file to edit\n");
 		return 0;
 	}
 
@@ -175,10 +175,10 @@ main (int argc, char * argv[])
 							      _("Launcher Properties"));
 			} else if (type == G_FILE_TYPE_REGULAR
 				   && create_new) {
-				g_printerr ("mate-desktop-item-edit: %s "
+				g_printerr ("cafe-desktop-item-edit: %s "
 					    "already exists\n", uri);
 			} else {
-				g_printerr ("mate-desktop-item-edit: %s "
+				g_printerr ("cafe-desktop-item-edit: %s "
 					    "does not look like a desktop "
 					    "item\n", uri);
 			}
@@ -198,7 +198,7 @@ main (int argc, char * argv[])
 						      _("Create Launcher"));
 
 		} else {
-			g_printerr ("mate-desktop-item-edit: %s does not "
+			g_printerr ("cafe-desktop-item-edit: %s does not "
 				    "have a .desktop or .directory "
 				    "suffix\n", uri);
 		}

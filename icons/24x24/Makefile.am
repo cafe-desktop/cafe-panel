@@ -3,17 +3,17 @@ size = 24x24
 iconsdir = $(datadir)/icons/hicolor/$(size)/apps
 
 icons_DATA =					\
-	mate-panel-clock.png			\
-	mate-panel-drawer.png			\
-	mate-panel-fish.png			\
-	mate-panel-force-quit.png		\
-	mate-panel-launcher.png		\
-	mate-panel-notification-area.png	\
-	mate-panel-separator.png		\
-	mate-panel.png				\
-	mate-panel-window-list.png		\
-	mate-panel-window-menu.png		\
-	mate-panel-workspace-switcher.png
+	cafe-panel-clock.png			\
+	cafe-panel-drawer.png			\
+	cafe-panel-fish.png			\
+	cafe-panel-force-quit.png		\
+	cafe-panel-launcher.png		\
+	cafe-panel-notification-area.png	\
+	cafe-panel-separator.png		\
+	cafe-panel.png				\
+	cafe-panel-window-list.png		\
+	cafe-panel-window-menu.png		\
+	cafe-panel-workspace-switcher.png
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 

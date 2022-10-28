@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
-# This file is distributed under the same license as the mate-panel package.
+# This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -15,12 +15,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-panel 1.23.2\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/mate-panel/issues\n"
+"Project-Id-Version: cafe-panel 1.23.2\n"
+"Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
 "POT-Creation-Date: 2020-01-12 18:05+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Ivica  Kolić <ikoli@yahoo.com>, 2020\n"
-"Language-Team: Croatian (https://www.transifex.com/mate/teams/13566/hr/)\n"
+"Language-Team: Croatian (https://www.transifex.com/cafe/teams/13566/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -172,12 +172,12 @@ msgstr "_Prilagodbe"
 #: applets/notification_area/main.c:295 applets/wncklet/showdesktop.c:241
 #: applets/wncklet/window-list.c:365 applets/wncklet/window-list.ui:35
 #: applets/wncklet/window-menu.c:98 applets/wncklet/workspace-switcher.c:397
-#: applets/wncklet/workspace-switcher.ui:46 mate-panel/drawer.c:562
-#: mate-panel/panel-action-button.c:753 mate-panel/panel-addto.c:1308
-#: mate-panel/panel-context-menu.c:318 mate-panel/panel-ditem-editor.c:648
-#: mate-panel/panel-menu-bar.c:351 mate-panel/panel-menu-button.c:700
-#: mate-panel/panel-properties-dialog.ui:78
-#: mate-panel/panel-properties-dialog.ui:724 mate-panel/panel-run-dialog.ui:39
+#: applets/wncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
+#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
+#: cafe-panel/panel-properties-dialog.ui:78
+#: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_Pomoć"
 
@@ -217,7 +217,7 @@ msgid "City Time Zone"
 msgstr "Vermenska zona grada"
 
 #: applets/clock/clock.c:3389
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:10
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "Sat"
 
@@ -239,7 +239,7 @@ msgstr ""
 #: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
 #: applets/wncklet/window-list.c:831 applets/wncklet/window-menu.c:88
 #: applets/wncklet/workspace-switcher.c:644
-#: mate-panel/panel-context-menu.c:124
+#: cafe-panel/panel-context-menu.c:124
 msgid "translator-credits"
 msgstr ""
 "Prijevod na Transifexu:\n"
@@ -271,10 +271,10 @@ msgid "Time & Date"
 msgstr "Vrijeme i Datum"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: mate-panel/libpanel-util/panel-gtk.c:136
-#: mate-panel/panel-context-menu.c:213 mate-panel/panel-ditem-editor.c:664
-#: mate-panel/panel-force-quit.c:240 mate-panel/panel-recent.c:154
-#: mate-panel/panel-run-dialog.ui:55 mate-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-gtk.c:136
+#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
+#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
+#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "_Opozovi"
 
@@ -301,10 +301,10 @@ msgstr "Postavke _vremena"
 #: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/wncklet/window-list.ui:51 applets/wncklet/workspace-switcher.ui:62
-#: mate-panel/panel-addto.c:1319 mate-panel/panel-ditem-editor.c:660
-#: mate-panel/panel-properties-dialog.ui:94
-#: mate-panel/panel-properties-dialog.ui:740
-#: mate-panel/panel-test-applets.ui:52
+#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-properties-dialog.ui:94
+#: cafe-panel/panel-properties-dialog.ui:740
+#: cafe-panel/panel-test-applets.ui:52
 msgid "_Close"
 msgstr "_Zatvori"
 
@@ -345,11 +345,11 @@ msgid "Show _temperature"
 msgstr "Pokaži _temperaturu"
 
 #: applets/clock/clock.ui:568 applets/fish/fish.ui:102
-#: mate-panel/panel-properties-dialog.ui:384
+#: cafe-panel/panel-properties-dialog.ui:384
 msgid "General"
 msgstr "Općenito"
 
-#: applets/clock/clock.ui:620 mate-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
 msgid "_Add"
 msgstr "_Dodaj"
 
@@ -401,8 +401,8 @@ msgstr "Sjever"
 msgid "South"
 msgstr "Jug"
 
-#: applets/clock/clock.ui:939 mate-panel/libpanel-util/panel-gtk.c:140
-#: mate-panel/panel-applet-frame.c:960 mate-panel/panel-ditem-editor.c:668
+#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-gtk.c:140
+#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "_U redu"
 
@@ -503,7 +503,7 @@ msgstr "Izlazak sunca: %s / Zalaz sunca: %s"
 
 #: applets/clock/clock-utils.c:94 applets/fish/fish.c:170
 #: applets/notification_area/main.c:238 applets/wncklet/wncklet.c:75
-#: mate-panel/libpanel-util/panel-show.c:234
+#: cafe-panel/libpanel-util/panel-show.c:234
 #, c-format
 msgid "Could not display help document '%s'"
 msgstr "Ne mogu prikazati dokument pomoći '%s'"
@@ -513,11 +513,11 @@ msgstr "Ne mogu prikazati dokument pomoći '%s'"
 msgid "Error displaying help document"
 msgstr "Greška pri prikazivanju dokumenta pomoći"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:29
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:29
 msgid "Hour format"
 msgstr "Format sata"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:30
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
 "This key specifies the hour format used by the clock applet. Possible values"
 " are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
@@ -538,11 +538,11 @@ msgstr ""
 "\"prilagođeno\", sat će prikazivati vrijeme sukladno formatu određenom "
 "\"custom\" vrijednosti."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:34
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:34
 msgid "Custom format of the clock"
 msgstr "Korisnički format sata"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:35
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:35
 msgid ""
 "This key specifies the format used by the clock applet when the format key "
 "is set to \"custom\". You can use conversion specifiers understood by "
@@ -554,103 +554,103 @@ msgstr ""
 "strftime() kako bi došli do posebnog oblika. Pogledajte strftime() priručnik"
 " za dodatne informacije."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:39
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:39
 msgid "Show time with seconds"
 msgstr "Prikaži vrijeme sa sekundama"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:40
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:40
 msgid "If true, display seconds in time."
 msgstr "Ukoliko je postavljeno, prikaže sekunde u vremenu."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:44
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:44
 msgid "Show date in clock"
 msgstr "Prikaži datum na satu"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:45
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:45
 msgid "If true, display date in the clock, in addition to time."
 msgstr "Ukoliko postavljeno,, prikaži datum na satu, pored vremena"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:49
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:49
 msgid "Show date in tooltip"
 msgstr "Prikaži datum u obavještenju"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:50
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:50
 msgid "If true, show date in a tooltip when the pointer is over the clock."
 msgstr ""
 "Ukoliko je postavljeno, prikaže opis alata kada se mišem prijeđe preko sata."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:54
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:54
 msgid "Show weather in clock"
 msgstr "Pokaži vrijeme na satu"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:55
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:55
 msgid "If true, display a weather icon."
 msgstr "Ukoliko je postavljeno, prikaži ikonu vremena."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:59
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:59
 msgid "Show temperature in clock"
 msgstr "Pokaži temperaturu na satu"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:60
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:60
 msgid "If true, show the temperature next to the weather icon."
 msgstr "Ukoliko je postavljeno, pokaži temperaturu pokraj ikone vremena."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:64
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:64
 msgid "Show week numbers in calendar"
 msgstr "Prikazuj brojeve tjedna u kalendaru"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:65
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:65
 msgid "If true, show week numbers in the calendar."
 msgstr "Ukoliko je postavljeno, prikaže brojeve tjedana u kalendaru."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:69
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:69
 msgid "Expand list of locations"
 msgstr "Proširi listu lokacija"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:70
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:70
 msgid "If true, expand the list of locations in the calendar window."
 msgstr "Ukoliko je postavljeno, proširi listu lokacija u prozoru kalendara."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:74
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:74
 msgid "List of locations"
 msgstr "Lista lokacija"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:75
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:75
 msgid "A list of locations to display in the calendar window."
 msgstr "Lista lokacija za prikaz u prozoru kalendara."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:79
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:79
 msgid "Temperature unit"
 msgstr "Jedinica temperature"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:80
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:80
 msgid "The unit to use when showing temperatures."
 msgstr "Jedinica koja će se koristiti kod prikaza temperature."
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:84
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:84
 msgid "Speed unit"
 msgstr "Jedinica brzine"
 
-#: applets/clock/org.mate.panel.applet.clock.gschema.xml.in:85
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:85
 msgid "The unit to use when showing wind speed."
 msgstr "Jedinica za korištenje kod prikaza brzine vjetra."
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:6
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Clock Applet Factory"
 msgstr ""
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:7
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for clock applet"
 msgstr ""
 
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:11
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:11
 msgid "Get the current time and date"
 msgstr "Saznaj trenutno vrijeme i datum"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/clock/org.mate.panel.ClockApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-clock"
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-clock"
 msgstr ""
 
 #: applets/fish/fish.c:266
@@ -691,7 +691,7 @@ msgid "(with minor help from George)"
 msgstr "(uz malu pomoć Georgea)"
 
 #: applets/fish/fish.c:558
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:10
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Fish"
 msgstr "Riba"
 
@@ -791,8 +791,8 @@ msgstr "Izvršenje na_redbe nakon klika:"
 msgid "Animation"
 msgstr "Animacija"
 
-#: applets/fish/fish.ui:266 mate-panel/panel-properties-dialog.ui:482
-#: mate-panel/panel-properties-dialog.ui:635
+#: applets/fish/fish.ui:266 cafe-panel/panel-properties-dialog.ui:482
+#: cafe-panel/panel-properties-dialog.ui:635
 msgid "    "
 msgstr "    "
 
@@ -824,22 +824,22 @@ msgstr "sekundi/e"
 msgid "_Rotate on vertical panels"
 msgstr "_Rotiraj na vertikalnim pločama"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:5
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:5
 msgid "The fish's name"
 msgstr "Ime ribe"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:6
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:6
 msgid ""
 "A fish without a name is a pretty dull fish. Bring your fish to life by "
 "naming him."
 msgstr ""
 "Riba bez imena je poprilično glupa riba. Oživite Vašu ribu dajući joj ime."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:10
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:10
 msgid "The fish's animation pixmap"
 msgstr "Sličica za animaciju ribe"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:11
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:11
 msgid ""
 "This key specifies the filename of the pixmap which will be used for the "
 "animation displayed in the fish applet relative to the pixmap directory."
@@ -847,65 +847,65 @@ msgstr ""
 "Ovaj ključ navodi ime datoteke sa slikom koja se koristi za animaciju ribe, "
 "datu u odnosu na direktorij sa slikama."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:15
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:15
 msgid "Command to execute on click"
 msgstr "Naredba za izvršenje po kliku"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:16
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:16
 msgid ""
 "This key specifies the command that will be tried to execute when the fish "
 "is clicked."
 msgstr "Ovaj ključ navodi naredbu za izvršenje po kliku na ribu."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:20
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:20
 msgid "Frames in fish's animation"
 msgstr "Broj okvira u animaciji ribe"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:21
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
 "This key specifies the number of frames that will be displayed in the fish's"
 " animation."
 msgstr "Ovaj ključ navodi broj okvira u animaciji ribe."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:25
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
 msgid "Pause per frame"
 msgstr "Pauza po okviru"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:26
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:26
 msgid "This key specifies the number of seconds each frame will be displayed."
 msgstr "Ovaj ključ navodi trajanje svakog okvira u sekundama."
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:30
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:30
 msgid "Rotate on vertical panels"
 msgstr "Rotiraj na vertikalnim pločama"
 
-#: applets/fish/org.mate.panel.applet.fish.gschema.xml.in:31
+#: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:31
 msgid ""
 "If true, the fish's animation will be displayed rotated on vertical panels."
 msgstr ""
 "Ukoliko je postavljeno, animacija ribe će biti rotirana kada je ploča "
 "vertikalno usmjerena."
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:6
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Wanda Factory"
 msgstr ""
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:7
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:7
 msgid "From Whence That Stupid Fish Came"
 msgstr ""
 
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:11
-msgid "Display a swimming fish or another animated creature"
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
+msgid "Display a swimming fish or another anicafed creature"
 msgstr "Prikaži ribu koja pliva ili neko drugo animirano biće"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/fish/org.mate.panel.FishApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-fish"
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-fish"
 msgstr ""
 
 #: applets/notification_area/main.c:276
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:10
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Notification Area"
 msgstr "Obavjesna površina"
 
@@ -938,41 +938,41 @@ msgid "26"
 msgstr ""
 
 #: applets/notification_area/notification-area-preferences-dialog.ui:139
-#: mate-panel/panel-properties-dialog.ui:221
+#: cafe-panel/panel-properties-dialog.ui:221
 msgid "pixels"
 msgstr "piksela"
 
-#: applets/notification_area/org.mate.panel.applet.notification-area.gschema.xml.in:5
+#: applets/notification_area/org.cafe.panel.applet.notification-area.gschema.xml.in:5
 msgid "Minimum icon size"
 msgstr ""
 
-#: applets/notification_area/org.mate.panel.applet.notification-area.gschema.xml.in:6
+#: applets/notification_area/org.cafe.panel.applet.notification-area.gschema.xml.in:6
 msgid "The minimum size an icon can have."
 msgstr ""
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:6
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Notification Area Factory"
 msgstr ""
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:7
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for notification area"
 msgstr ""
 
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:11
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:11
 msgid "Area where notification icons appear"
 msgstr "Područje u kojem se pojavljuju ikone obavijesti"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/notification_area/org.mate.panel.NotificationAreaApplet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-notification-area"
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-notification-area"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:10
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "Prikaži prozore sa svih radnih površina"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:11
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
 "If true, the window list will show windows from all workspaces. Otherwise it"
 " will only display windows from the current workspace."
@@ -980,11 +980,11 @@ msgstr ""
 "Ukoliko je ovo uključeno, popis prozora prikazuje prozore sa svih radnih "
 "površina, a inače samo sa tekuće."
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:15
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
 msgid "When to group windows"
 msgstr "Kada grupirati prozore"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:16
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:16
 msgid ""
 "Decides when to group windows from the same application on the window list. "
 "Possible values are \"never\", \"auto\" and \"always\"."
@@ -993,11 +993,11 @@ msgstr ""
 "Dozvoljene vrijednosti su \"never\" (nikad), \"auto\" (automatski) i "
 "\"always\" (uvijek)."
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:20
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
 msgid "Move windows to current workspace when unminimized"
 msgstr "Prebaci umanjene prozore na trenutnu radnu površinu pri prikazu"
 
-#: applets/wncklet/org.mate.panel.applet.window-list.gschema.xml.in:21
+#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:21
 msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
@@ -1005,22 +1005,22 @@ msgstr ""
 "Ukoliko je ovo uključeno, kada prikazujete umanjeni prozor, prebaci ga na "
 "tekuću radnu površinu. Inače, prebacuje na njegovu matičnu radnu površinu."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:5
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
 msgid "Display workspace names"
 msgstr "Prikaži imena radnih površina"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:6
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:6
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
 "This setting only works when the window manager is Marco."
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:10
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"
 msgstr "Prikaži sve radne površine"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:11
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:11
 msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
@@ -1028,11 +1028,11 @@ msgstr ""
 "Ukoliko je ovo uključeno, izmjena radnih površina prikazuje sve radne "
 "površine, inače prikazuje samo trenutnu."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:15
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
 msgstr "Broj redova u promijeni radnih površina"
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:16
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
 "vertical layout) the workspace switcher shows the workspaces in. This key is"
@@ -1042,80 +1042,80 @@ msgstr ""
 "vertikalan raspored) će prikazivati izmjena radnih površina. Ovaj ključ ima "
 "značaja jedino ako je ključ display_all_workspaces postavljen."
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:20
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.applet.workspace-switcher.gschema.xml.in:21
+#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:21
 msgid ""
 "If true, the workspace switcher will allow wrap-around, which means "
 "switching from the first to the last workspace and vice versa via scrolling."
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:6
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Window Navigation Applet Factory"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:7
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for the window navigation related applets"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:10
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:10
 #: applets/wncklet/window-menu.c:76 applets/wncklet/window-menu.c:227
 msgid "Window Selector"
 msgstr "Odabir prozora"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:11
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:11
 msgid "Switch between open windows using a menu"
 msgstr "Promjeni između otvorenih prozora koristeći izbornik"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:13
-msgid "mate-panel-window-menu"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:13
+msgid "cafe-panel-window-menu"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:23
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:23
 #: applets/wncklet/workspace-switcher.c:634
 msgid "Workspace Switcher"
 msgstr "Mjenjač radnih površina"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:24
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:24
 msgid "Switch between workspaces"
 msgstr "Promjeni između radnih mjesta"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:26
-msgid "mate-panel-workspace-switcher"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:26
+msgid "cafe-panel-workspace-switcher"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:36
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:36
 #: applets/wncklet/window-list.c:821
 msgid "Window List"
 msgstr "Popis prozora"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:37
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "Promjeni između otvorenih prozora koristeći dugmad"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:39
-msgid "mate-panel-window-list"
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:39
+msgid "cafe-panel-window-list"
 msgstr ""
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:49
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
 msgstr "Pokaži radnu površinu"
 
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:50
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "Sakrij prozore programa i pokaži radnu površinu"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.mate.panel.Wncklet.mate-panel-applet.desktop.in.in:52
+#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:52
 msgid "user-desktop"
 msgstr ""
 
@@ -1332,19 +1332,19 @@ msgstr ""
 msgid "Workspaces"
 msgstr "Radni prostori"
 
-#: data/org.mate.panel.gschema.xml.in:5
+#: data/org.cafe.panel.gschema.xml.in:5
 msgid "Default panel layout"
 msgstr "Zadani raspored ploče"
 
-#: data/org.mate.panel.gschema.xml.in:6
+#: data/org.cafe.panel.gschema.xml.in:6
 msgid "The default panels layout to use when panels are created or resetted."
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:10
+#: data/org.cafe.panel.gschema.xml.in:10
 msgid "Enable program list in \"Run Application\" dialog"
 msgstr "Prikaži popis programa u dialogu za pokretanje naredbi."
 
-#: data/org.mate.panel.gschema.xml.in:11
+#: data/org.cafe.panel.gschema.xml.in:11
 msgid ""
 "If true, the \"Known Applications\" listing in the \"Run Application\" "
 "dialog is made available. Whether or not the listing is expanded when the "
@@ -1354,11 +1354,11 @@ msgstr ""
 "pokretanje programa. Je li popis razgranat pri prikazivanju prozora se "
 "podešava pomoću show_program_list ključa."
 
-#: data/org.mate.panel.gschema.xml.in:15
+#: data/org.cafe.panel.gschema.xml.in:15
 msgid "Expand program list in \"Run Application\" dialog"
 msgstr "Razgranaj popis programa u dialogu za pokretanje naredbi"
 
-#: data/org.mate.panel.gschema.xml.in:16
+#: data/org.cafe.panel.gschema.xml.in:16
 msgid ""
 "If true, the \"Known Applications\" listing in the \"Run Application\" "
 "dialog is expanded when the dialog is opened. This key is only relevant if "
@@ -1368,53 +1368,53 @@ msgstr ""
 "pokretanje programa. Ovo podešavanje je značajno jedino ako je postavljeno "
 "enable_program_list."
 
-#: data/org.mate.panel.gschema.xml.in:20
+#: data/org.cafe.panel.gschema.xml.in:20
 msgid "Enable autocompletion in \"Run Application\" dialog"
 msgstr "Ukjluči automatsko dovršavanje u dijalogu \"Pokreni program\""
 
-#: data/org.mate.panel.gschema.xml.in:21
+#: data/org.cafe.panel.gschema.xml.in:21
 msgid ""
 "If true, autocompletion in the \"Run Application\" dialog is made available."
 msgstr ""
 "Ako je postavljeno, automatsko dovršavanje je dostupno u dijalogu \"Pokreni "
 "program\""
 
-#: data/org.mate.panel.gschema.xml.in:25
+#: data/org.cafe.panel.gschema.xml.in:25
 msgid "History for \"Run Application\" dialog"
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:26
+#: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
 "commands are sorted descendingly by recency (e.g., most recent command comes"
 " first)."
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:30
+#: data/org.cafe.panel.gschema.xml.in:30
 msgid "Maximum history size for \"Run Application\" dialog"
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:31
+#: data/org.cafe.panel.gschema.xml.in:31
 msgid ""
 "Controls the maximum size of the history of the \"Run Application\" dialog. "
 "A value of 0 will disable the history."
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:35
+#: data/org.cafe.panel.gschema.xml.in:35
 msgid "Reverse the history of the \"Run Application\" dialog"
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:36
+#: data/org.cafe.panel.gschema.xml.in:36
 msgid ""
 "Displays the history in reverse. Provides a consistent view for terminal "
 "users as the up key will select the most recent entry."
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:40
+#: data/org.cafe.panel.gschema.xml.in:40
 msgid "Panel ID list"
 msgstr "Popis ID-a ploče"
 
-#: data/org.mate.panel.gschema.xml.in:41
+#: data/org.cafe.panel.gschema.xml.in:41
 msgid ""
 "A list of panel IDs. Each ID identifies an individual toplevel panel. The "
 "settings for each of these panels are stored in /apps/panel/toplevels/$(id)."
@@ -1423,11 +1423,11 @@ msgstr ""
 "svaku od ovih ploča se nalaze u "
 "/apps/panel/general/$(profile)/toplevels/$(id)."
 
-#: data/org.mate.panel.gschema.xml.in:45
+#: data/org.cafe.panel.gschema.xml.in:45
 msgid "Panel object ID list"
 msgstr "Popis ID-a objekta na ploči"
 
-#: data/org.mate.panel.gschema.xml.in:46
+#: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
 "A list of panel object IDs. Each ID identifies an individual panel object "
 "(e.g. a launcher, action button or menu button/bar). The settings for each "
@@ -1437,25 +1437,25 @@ msgstr ""
 "pokretač, gumb ili izbornik). Podešavanja za svaki objekt se nalaze u "
 "/apps/panel/general/$(profile)/objects/$(id)."
 
-#: data/org.mate.panel.gschema.xml.in:50
+#: data/org.cafe.panel.gschema.xml.in:50
 msgid "Enable tooltips"
 msgstr "Uključi savjete"
 
-#: data/org.mate.panel.gschema.xml.in:51
+#: data/org.cafe.panel.gschema.xml.in:51
 msgid "If true, tooltips are shown for objects in panels."
 msgstr ""
 "Ukoliko je postavljeno, prikazuju se kratka uputstva za objekte na ploči."
 
-#: data/org.mate.panel.gschema.xml.in:55
-#: data/org.mate.panel.toplevel.gschema.xml.in:70
+#: data/org.cafe.panel.gschema.xml.in:55
+#: data/org.cafe.panel.toplevel.gschema.xml.in:70
 msgid "Enable animations"
 msgstr "Omogući animacije"
 
-#: data/org.mate.panel.gschema.xml.in:59
+#: data/org.cafe.panel.gschema.xml.in:59
 msgid "Autoclose drawer"
 msgstr "Samozatvaranje ladice"
 
-#: data/org.mate.panel.gschema.xml.in:60
+#: data/org.cafe.panel.gschema.xml.in:60
 msgid ""
 "If true, a drawer will automatically be closed when the user clicks a "
 "launcher in it."
@@ -1463,11 +1463,11 @@ msgstr ""
 "Ukoliko je postavljeno, ladica će se sama zatvoriti kada korisnik klikne "
 "pokretač na njoj."
 
-#: data/org.mate.panel.gschema.xml.in:64
+#: data/org.cafe.panel.gschema.xml.in:64
 msgid "Confirm panel removal"
 msgstr "Potvrdi uklanjanje ploče"
 
-#: data/org.mate.panel.gschema.xml.in:65
+#: data/org.cafe.panel.gschema.xml.in:65
 msgid ""
 "If true, a dialog is shown asking for confirmation if the user wants to "
 "remove a panel."
@@ -1475,22 +1475,22 @@ msgstr ""
 "Ukoliko je postavljeno, prikazuje se prozor u kojem se traži odobrenje "
 "korisnika za uklanjanje ploče."
 
-#: data/org.mate.panel.gschema.xml.in:69
+#: data/org.cafe.panel.gschema.xml.in:69
 msgid "Highlight launchers on mouseover"
 msgstr "Osvjetli pokretače pri prelasku mišem"
 
-#: data/org.mate.panel.gschema.xml.in:70
+#: data/org.cafe.panel.gschema.xml.in:70
 msgid ""
 "If true, a launcher is highlighted when the user moves the pointer over it."
 msgstr ""
 "Ukoliko je postavljeno, pokretač se osvijetljava kada korisnik pređe "
 "strelicom miša preko njega."
 
-#: data/org.mate.panel.gschema.xml.in:74
+#: data/org.cafe.panel.gschema.xml.in:74
 msgid "Complete panel lockdown"
 msgstr "Potpuno zaključavanje ploče"
 
-#: data/org.mate.panel.gschema.xml.in:75
+#: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
 "panel. Individual applets may need to be locked down separately however. The"
@@ -1500,11 +1500,11 @@ msgstr ""
 "ploče. Pojedinačni programi se mogu zasebno zaključati. Ploču je obavezno "
 "iznova pokenuti da bi ova opcija djelovala."
 
-#: data/org.mate.panel.gschema.xml.in:79
+#: data/org.cafe.panel.gschema.xml.in:79
 msgid "Applet IIDs to disable from loading"
 msgstr "IID-ovi programčića kojima treba onemogućiti učitavanje"
 
-#: data/org.mate.panel.gschema.xml.in:80
+#: data/org.cafe.panel.gschema.xml.in:80
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
@@ -1517,11 +1517,11 @@ msgstr ""
 "\"OAFIID:MATE_MiniCommanderApplet\" u ovaj popis. Panel je neophodno ponovo "
 "pokrenuti da bi ovo imalo efekta."
 
-#: data/org.mate.panel.gschema.xml.in:84
+#: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
 msgstr "Onemogući prisilno zatvaranje"
 
-#: data/org.mate.panel.gschema.xml.in:85
+#: data/org.cafe.panel.gschema.xml.in:85
 msgid ""
 "If true, the panel will not allow a user to force an application to quit by "
 "removing access to the force quit button."
@@ -1529,105 +1529,105 @@ msgstr ""
 "Ako je postavljeno, ploča neće dozvoliti korisniku inzistiranje na izlasku "
 "iz programa, uklanjanjem pristupa gumbu inzistiranog izlaza."
 
-#: data/org.mate.panel.gschema.xml.in:89
+#: data/org.cafe.panel.gschema.xml.in:89
 msgid "Enable SNI support"
 msgstr ""
 
-#: data/org.mate.panel.gschema.xml.in:90
+#: data/org.cafe.panel.gschema.xml.in:90
 msgid "If true, the panel provides support for SNI."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:15
+#: data/org.cafe.panel.menubar.gschema.xml.in:15
 msgid "Show applications menu"
 msgstr "Pokaži izbornik programa"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:16
+#: data/org.cafe.panel.menubar.gschema.xml.in:16
 msgid "If true, show applications item in menu bar."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:20
+#: data/org.cafe.panel.menubar.gschema.xml.in:20
 msgid "Show places menu"
 msgstr "Pokaži izbornik mjesta"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:21
+#: data/org.cafe.panel.menubar.gschema.xml.in:21
 msgid "If true, show places item in menu bar."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:25
+#: data/org.cafe.panel.menubar.gschema.xml.in:25
 msgid "Show desktop menu"
 msgstr "Pokaži izbornik radne površine"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:26
+#: data/org.cafe.panel.menubar.gschema.xml.in:26
 msgid "If true, show desktop item in menu bar."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:30
+#: data/org.cafe.panel.menubar.gschema.xml.in:30
 msgid "Show icon"
 msgstr "Pokaži ikonu"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:31
+#: data/org.cafe.panel.menubar.gschema.xml.in:31
 msgid "If true, show icon in menu bar."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:35
+#: data/org.cafe.panel.menubar.gschema.xml.in:35
 msgid "Icon to show in menu bar"
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:36
+#: data/org.cafe.panel.menubar.gschema.xml.in:36
 msgid "Set the theme icon name to use in menu bar."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:40
+#: data/org.cafe.panel.menubar.gschema.xml.in:40
 msgid "Menu bar icon size"
 msgstr "Veličina ikone trake izbornika"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:41
+#: data/org.cafe.panel.menubar.gschema.xml.in:41
 msgid ""
 "Set the size of an icon used in menu bar. The panel must be restarted for "
 "this to take effect."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:45
+#: data/org.cafe.panel.menubar.gschema.xml.in:45
 msgid "Menu items icon size"
 msgstr "Veličina ikone stavki izbornika"
 
-#: data/org.mate.panel.menubar.gschema.xml.in:46
+#: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
 "Set the size of icons used in the menu. The panel must be restarted for this"
 " to take effect."
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:50
+#: data/org.cafe.panel.menubar.gschema.xml.in:50
 msgid "Threshold of menu items before submenu is created"
 msgstr ""
 
-#: data/org.mate.panel.menubar.gschema.xml.in:51
+#: data/org.cafe.panel.menubar.gschema.xml.in:51
 msgid ""
 "Maximum number of menu items (i.e. bookmarks) that are displayed without "
 "being put in a submenu."
 msgstr ""
 
-#: data/org.mate.panel.object.gschema.xml.in:5
+#: data/org.cafe.panel.object.gschema.xml.in:5
 msgid "Panel object type"
 msgstr "Vrsta objekta na ploči"
 
-#: data/org.mate.panel.object.gschema.xml.in:6
+#: data/org.cafe.panel.object.gschema.xml.in:6
 msgid "The type of this panel object."
 msgstr ""
 
-#: data/org.mate.panel.object.gschema.xml.in:10
+#: data/org.cafe.panel.object.gschema.xml.in:10
 msgid "Toplevel panel containing object"
 msgstr "Ploča prve razine koja sadrži ovaj objekt"
 
-#: data/org.mate.panel.object.gschema.xml.in:11
+#: data/org.cafe.panel.object.gschema.xml.in:11
 msgid "The identifier of the toplevel panel which contains this object."
 msgstr "Identifikator ploče prvog nivoa koji sadrži ovaj objekt."
 
-#: data/org.mate.panel.object.gschema.xml.in:15
+#: data/org.cafe.panel.object.gschema.xml.in:15
 msgid "Object's position on the panel"
 msgstr "Pozicija objekta na ploču"
 
-#: data/org.mate.panel.object.gschema.xml.in:16
+#: data/org.cafe.panel.object.gschema.xml.in:16
 msgid ""
 "The position of this panel object. The position is specified by the number "
 "of pixels from the left (or top if vertical) panel edge."
@@ -1635,11 +1635,11 @@ msgstr ""
 "Pozicija ovog objekta na ploči. Navodi se kao broj piksela u odnosu na "
 "lijevu (ili gornju ako je vertikalan) rub ploče."
 
-#: data/org.mate.panel.object.gschema.xml.in:20
+#: data/org.cafe.panel.object.gschema.xml.in:20
 msgid "Interpret position relative to bottom/right edge"
 msgstr "Pozicija je data u odnosu na donji/desni rub"
 
-#: data/org.mate.panel.object.gschema.xml.in:21
+#: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
 "If true, the position of the object is interpreted relative to the right (or"
 " bottom if vertical) edge of the panel."
@@ -1647,11 +1647,11 @@ msgstr ""
 "Ukoliko je postavljeno, pozicija objekta se promatra u odnosu na desnu (ili "
 "donju ukoliko je uspravna) ploču."
 
-#: data/org.mate.panel.object.gschema.xml.in:25
+#: data/org.cafe.panel.object.gschema.xml.in:25
 msgid "Lock the object to the panel"
 msgstr "Zaključaj objekt za ploču"
 
-#: data/org.mate.panel.object.gschema.xml.in:26
+#: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
 "If true, the user may not move the applet without first unlocking the object"
 " using the \"Unlock\" menuitem."
@@ -1659,23 +1659,23 @@ msgstr ""
 "Ukoliko je postavljeno, korisnik ne može premjestiti programe ukoliko "
 "prethodno ne oslobodi objekt pomoću stavke \"Otključaj\" iz menija."
 
-#: data/org.mate.panel.object.gschema.xml.in:30
+#: data/org.cafe.panel.object.gschema.xml.in:30
 msgid "Applet IID"
 msgstr ""
 
-#: data/org.mate.panel.object.gschema.xml.in:31
+#: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
 "The implementation ID of the applet - e.g. "
 "\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"matecomponent-"
+"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
 "applet\")."
 msgstr ""
 
-#: data/org.mate.panel.object.gschema.xml.in:35
+#: data/org.cafe.panel.object.gschema.xml.in:35
 msgid "Panel attached to drawer"
 msgstr "Ploča pridodana ovoj ladici"
 
-#: data/org.mate.panel.object.gschema.xml.in:36
+#: data/org.cafe.panel.object.gschema.xml.in:36
 msgid ""
 "The identifier of the panel attached to this drawer. This key is only "
 "relevant if the object_type key is \"drawer-object\"."
@@ -1683,11 +1683,11 @@ msgstr ""
 "Identifikator ploče koji je vezan za ovu ladicu. Ovo podešavanje je značajno"
 " jedino ako je vrsta objekta \"drawer-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:40
+#: data/org.cafe.panel.object.gschema.xml.in:40
 msgid "Tooltip displayed for drawer or menu"
 msgstr "Prikazuje kratko uputstvo za ladicu ili izbornik"
 
-#: data/org.mate.panel.object.gschema.xml.in:41
+#: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
 "only relevant if the object_type key is \"drawer-object\" or \"menu-"
@@ -1697,11 +1697,11 @@ msgstr ""
 "Ova ključ nije nadležan ukoliko je vrijednost ključa object_type \"drawer-"
 "object\" ili \"menu-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:45
+#: data/org.cafe.panel.object.gschema.xml.in:45
 msgid "Use custom icon for object's button"
 msgstr "Koristi sličicu po odabiru za gumb objekta"
 
-#: data/org.mate.panel.object.gschema.xml.in:46
+#: data/org.cafe.panel.object.gschema.xml.in:46
 msgid ""
 "If true, the custom_icon key is used as a custom icon for the button. If "
 "false, the custom_icon key is ignored. This key is only relevant if the "
@@ -1712,11 +1712,11 @@ msgstr ""
 "podešavanje je značajno jedino ako je vrsta objekta \"menu-object\" ili "
 "\"drawer-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:50
+#: data/org.cafe.panel.object.gschema.xml.in:50
 msgid "Icon used for object's button"
 msgstr "Ikona koja se koristi za gumb objekta"
 
-#: data/org.mate.panel.object.gschema.xml.in:51
+#: data/org.cafe.panel.object.gschema.xml.in:51
 msgid ""
 "The location of the image file used as the icon for the object's button. "
 "This key is only relevant if the object_type key is \"drawer-object\" or "
@@ -1726,11 +1726,11 @@ msgstr ""
 "Ovo podešavanje je značajno jedino ako je vrsta objekta  \"drawer-object\"  "
 "ili \"menu-object\", a postavljeno je use_custom_icon."
 
-#: data/org.mate.panel.object.gschema.xml.in:55
+#: data/org.cafe.panel.object.gschema.xml.in:55
 msgid "Use custom path for menu contents"
 msgstr "Koristi putanju po odabiru za sadržaj menija"
 
-#: data/org.mate.panel.object.gschema.xml.in:56
+#: data/org.cafe.panel.object.gschema.xml.in:56
 msgid ""
 "If true, the menu_path key is used as the path from which the menu contents "
 "should be constructed. If false, the menu_path key is ignored. This key is "
@@ -1741,11 +1741,11 @@ msgstr ""
 "podešavanje menu_path. Ovo je značajno jedino ukoliko je vrsta objekta "
 "\"menu-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:60
+#: data/org.cafe.panel.object.gschema.xml.in:60
 msgid "Menu content path"
 msgstr "Putanja sadržaja izbornika"
 
-#: data/org.mate.panel.object.gschema.xml.in:61
+#: data/org.cafe.panel.object.gschema.xml.in:61
 msgid ""
 "The path from which the menu contents is contructed. This key is only "
 "relevant if the use_menu_path key is true and the object_type key is \"menu-"
@@ -1754,21 +1754,21 @@ msgstr ""
 "Putanja iz koje se izvlači sadržaj izbornika. Ovo podešavanje je značajno "
 "jedino ako je postavljeno use_menu_path, a vrsta objekta je \"menu-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:65
+#: data/org.cafe.panel.object.gschema.xml.in:65
 msgid "Draw arrow in menu button"
 msgstr ""
 
-#: data/org.mate.panel.object.gschema.xml.in:66
+#: data/org.cafe.panel.object.gschema.xml.in:66
 msgid ""
 "If true, an arrow is drawn over the menu button icon. If false, menu button "
 "has only the icon."
 msgstr ""
 
-#: data/org.mate.panel.object.gschema.xml.in:70
+#: data/org.cafe.panel.object.gschema.xml.in:70
 msgid "Launcher location"
 msgstr "Pozicija pokretača"
 
-#: data/org.mate.panel.object.gschema.xml.in:71
+#: data/org.cafe.panel.object.gschema.xml.in:71
 msgid ""
 "The location of the .desktop file describing the launcher. This key is only "
 "relevant if the object_type key is \"launcher-object\"."
@@ -1776,11 +1776,11 @@ msgstr ""
 "Mjesto .desktop datoteke koja opisuje ovaj pokretač. Ovo podešavanje je "
 "značajno jedino ako je vrsta objekta  \"launcher-object\"."
 
-#: data/org.mate.panel.object.gschema.xml.in:75
+#: data/org.cafe.panel.object.gschema.xml.in:75
 msgid "Action button type"
 msgstr "Tip gumba"
 
-#: data/org.mate.panel.object.gschema.xml.in:76
+#: data/org.cafe.panel.object.gschema.xml.in:76
 msgid ""
 "The action type this button represents. Possible values are \"lock\", "
 "\"logout\", \"run\", \"search\" and \"screenshot\". This key is only "
@@ -1790,11 +1790,11 @@ msgstr ""
 "\"logout\", \"run\", \"search\" i \"screenshot\". Ovo podešavanje je "
 "značajno jedino ako je vrsta objekta \"action-applet\"."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:5
+#: data/org.cafe.panel.toplevel.gschema.xml.in:5
 msgid "Name to identify panel"
 msgstr "Ime kojim se raspoznaje ova ploča"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:6
+#: data/org.cafe.panel.toplevel.gschema.xml.in:6
 msgid ""
 "This is a human readable name which you can use to identify a panel. Its "
 "main purpose is to serve as the panel's window title which is useful when "
@@ -1804,11 +1804,11 @@ msgstr ""
 "Njegova jedina svrha je da služi kao naslov prozora ploče što može pomoći "
 "pri biranju ploče."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:10
+#: data/org.cafe.panel.toplevel.gschema.xml.in:10
 msgid "X screen where the panel is displayed"
 msgstr "X zaslon na kojem je prikazana radna ploča"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:11
+#: data/org.cafe.panel.toplevel.gschema.xml.in:11
 msgid ""
 "With a multi-screen setup, you may have panels on each individual screen. "
 "This key identifies the current screen the panel is displayed on."
@@ -1816,11 +1816,11 @@ msgstr ""
 "U sustavu sa više zaslona, možete imati ploče na svakom od zaslona. Ovaj "
 "ključ određuje tekući zaslon na kojem se prikazuje ploča."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:15
+#: data/org.cafe.panel.toplevel.gschema.xml.in:15
 msgid "Xinerama monitor where the panel is displayed"
 msgstr "Xinerama zaslon na kojem je prikazana ploča"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:16
+#: data/org.cafe.panel.toplevel.gschema.xml.in:16
 msgid ""
 "In a Xinerama setup, you may have panels on each individual monitor. This "
 "key identifies the current monitor the panel is displayed on."
@@ -1828,11 +1828,11 @@ msgstr ""
 "Kada se koristi Xinerama, možete imati ploče na svakom zaslonu. Ovaj ključ "
 "određuje tekući zaslon na kojem se prikazuje ploču."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:20
+#: data/org.cafe.panel.toplevel.gschema.xml.in:20
 msgid "Expand to occupy entire screen width"
 msgstr "Raširi da zauzme cijelu širinu zaslona"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:21
+#: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
 "vertical panel). In this mode the panel can only be placed at a screen edge."
@@ -1844,11 +1844,11 @@ msgstr ""
 "rub zaslona. Ukoliko nije postavljeno, ploča će biti taman toliko da na "
 "njega može da stane svaki program, pokretač i gumb."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:25
+#: data/org.cafe.panel.toplevel.gschema.xml.in:25
 msgid "Panel orientation"
 msgstr "Orjentacija ploče"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:26
+#: data/org.cafe.panel.toplevel.gschema.xml.in:26
 msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
@@ -1868,11 +1868,11 @@ msgstr ""
 "prikazivati ispod ploče, dok će se na \"bottom\" ploči izbornici prikazivati"
 " iznad ploče."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:30
+#: data/org.cafe.panel.toplevel.gschema.xml.in:30
 msgid "Panel size"
 msgstr "Veličina ploče"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:31
+#: data/org.cafe.panel.toplevel.gschema.xml.in:31
 msgid ""
 "The height (width for a vertical panel) of the panel. The panel will "
 "determine at runtime a minimum size based on the font size and other "
@@ -1883,11 +1883,11 @@ msgstr ""
 "najmanju veličinu na osnovu veličine pisma i ostalih pokazatelja. Najveća "
 "veličina je utvrđena na četvrtinu visine (širine) zaslona."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:35
+#: data/org.cafe.panel.toplevel.gschema.xml.in:35
 msgid "X co-ordinate of panel"
 msgstr "X koordinata ploče"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:36
+#: data/org.cafe.panel.toplevel.gschema.xml.in:36
 msgid ""
 "The location of the panel along the x-axis. This key is only relevant in un-"
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
@@ -1897,11 +1897,11 @@ msgstr ""
 "neraširenom prikazivanju. Pri raširenom prikazivanju ova se vrijednost "
 "zanemaruje i ploča se postavlja uz zaslon kako je naznačeno u usmerenju."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:40
+#: data/org.cafe.panel.toplevel.gschema.xml.in:40
 msgid "Y co-ordinate of panel"
 msgstr "Y koordinata ploče"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:41
+#: data/org.cafe.panel.toplevel.gschema.xml.in:41
 msgid ""
 "The location of the panel along the y-axis. This key is only relevant in un-"
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
@@ -1912,11 +1912,11 @@ msgstr ""
 "zanemaruje i ploča se postavlja uz rub zaslona kako je naznačeno u "
 "usmerenju."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:45
+#: data/org.cafe.panel.toplevel.gschema.xml.in:45
 msgid "X co-ordinate of panel, starting from the right of the screen"
 msgstr ""
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:46
+#: data/org.cafe.panel.toplevel.gschema.xml.in:46
 msgid ""
 "The location of the panel along the x-axis, starting from the right of the "
 "screen. If set to -1, the value is ignored and the value of the x key is "
@@ -1926,11 +1926,11 @@ msgid ""
 "the orientation key."
 msgstr ""
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:50
+#: data/org.cafe.panel.toplevel.gschema.xml.in:50
 msgid "Y co-ordinate of panel, starting from the bottom of the screen"
 msgstr ""
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:51
+#: data/org.cafe.panel.toplevel.gschema.xml.in:51
 msgid ""
 "The location of the panel along the y-axis, starting from the bottom of the "
 "screen. If set to -1, the value is ignored and the value of the y key is "
@@ -1940,11 +1940,11 @@ msgid ""
 "the orientation key."
 msgstr ""
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:55
+#: data/org.cafe.panel.toplevel.gschema.xml.in:55
 msgid "Center panel on x-axis"
 msgstr "Centriraj ploču horizontalno"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:56
+#: data/org.cafe.panel.toplevel.gschema.xml.in:56
 msgid ""
 "If true, the x and x_right keys are ignored and the panel is placed at the "
 "center of the x-axis of the screen. If the panel is resized it will remain "
@@ -1952,11 +1952,11 @@ msgid ""
 "and x_right keys specify the location of the panel."
 msgstr ""
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:60
+#: data/org.cafe.panel.toplevel.gschema.xml.in:60
 msgid "Center panel on y-axis"
 msgstr "Centriraj ploču vertikalno"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:61
+#: data/org.cafe.panel.toplevel.gschema.xml.in:61
 msgid ""
 "If true, the y and y_bottom keys are ignored and the panel is placed at the "
 "center of the y-axis of the screen. If the panel is resized it will remain "
@@ -1964,11 +1964,11 @@ msgid ""
 "and y_bottom keys specify the location of the panel."
 msgstr ""
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:65
+#: data/org.cafe.panel.toplevel.gschema.xml.in:65
 msgid "Automatically hide panel into corner"
 msgstr "Automatski sakrij ploču u kut"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:66
+#: data/org.cafe.panel.toplevel.gschema.xml.in:66
 msgid ""
 "If true, the panel is automatically hidden into a corner of the screen when "
 "the pointer leaves the panel area. Moving the pointer to that corner again "
@@ -1978,19 +1978,19 @@ msgstr ""
 "skriva u rubu zaslona. Pomicanjem pokazivača u taj rub, ploča će se ponovo "
 "prikazati."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:71
+#: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
-"If true, hiding and un-hiding of this panel will be animated rather than "
+"If true, hiding and un-hiding of this panel will be anicafed rather than "
 "happening instantly."
 msgstr ""
 "Ukoliko je postavljeno, skrivanje i otkrivanje ove ploče biti će animirano "
 "umjesto da se odigra trenutno."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:75
+#: data/org.cafe.panel.toplevel.gschema.xml.in:75
 msgid "Enable hide buttons"
 msgstr "Omogući gumbove za skrivanje"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:76
+#: data/org.cafe.panel.toplevel.gschema.xml.in:76
 msgid ""
 "If true, buttons will be placed on each side of the panel which may be used "
 "to move the panel to edge of the screen, leaving only a button showing."
@@ -1998,11 +1998,11 @@ msgstr ""
 "Ukoliko je postavljeno, sa svake strane ploče će se prikazati gumbi kojima "
 "se panel može pomaknuti na rub zaslona, tako da samo gumb ostane prikazan."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:80
+#: data/org.cafe.panel.toplevel.gschema.xml.in:80
 msgid "Enable arrows on hide buttons"
 msgstr "Prikaži strelice na gumbovima za skrivanje"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:81
+#: data/org.cafe.panel.toplevel.gschema.xml.in:81
 msgid ""
 "If true, arrows will be placed on the hide buttons. This key is only "
 "relevant if the enable_buttons key is true."
@@ -2010,11 +2010,11 @@ msgstr ""
 "Ukoliko je postavljeno, strelice će se smijestiti na gumbiće za skrivanje. "
 "Ova postavka je značajna jedino ako je postavljeno enable_buttons."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:85
+#: data/org.cafe.panel.toplevel.gschema.xml.in:85
 msgid "Panel autohide delay"
 msgstr "Vrijeme sakrivanja ploče"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:86
+#: data/org.cafe.panel.toplevel.gschema.xml.in:86
 msgid ""
 "Specifies the number of milliseconds delay after the pointer leaves the "
 "panel area before the panel is automatically hidden. This key is only "
@@ -2024,11 +2024,11 @@ msgstr ""
 "ploče prije ponovnog prikazivanja ploče. Ova postavka je značajna jedino ako"
 " je opcija auto_hide postavljena."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:90
+#: data/org.cafe.panel.toplevel.gschema.xml.in:90
 msgid "Panel autounhide delay"
 msgstr "Vrijeme otkrivanja ploče"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:91
+#: data/org.cafe.panel.toplevel.gschema.xml.in:91
 msgid ""
 "Specifies the number of milliseconds delay after the pointer enters the "
 "panel area before the panel is automatically re-shown. This key is only "
@@ -2038,11 +2038,11 @@ msgstr ""
 "ploče prije ponovnog prikazivanja ploče. Ova postavka je značajna jedino ako"
 " je opcija auto_hide postavljena."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:95
+#: data/org.cafe.panel.toplevel.gschema.xml.in:95
 msgid "Visible pixels when hidden"
 msgstr "Broj vidljivih točaka kada je skriven"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:96
+#: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
 "hidden into a corner. This key is only relevant if the auto_hide key is "
@@ -2051,11 +2051,11 @@ msgstr ""
 "Određuje koliko točaka je vidljivo kada je ploča sakrivena u rubu. Ova "
 "postavka je značajna jedino ako je opcija auto_hide postavljena."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:100
+#: data/org.cafe.panel.toplevel.gschema.xml.in:100
 msgid "Animation speed"
 msgstr "Brzina animacije"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:101
+#: data/org.cafe.panel.toplevel.gschema.xml.in:101
 msgid ""
 "The speed in which panel animations should occur. Possible values are "
 "\"slow\", \"medium\" and \"fast\". This key is only relevant if the "
@@ -2065,11 +2065,11 @@ msgstr ""
 "\"slow\", \"medium\" i \"fast\". Ova postavka je značajna jedino kade je "
 "enable_animations postavljeno."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:108
+#: data/org.cafe.panel.toplevel.gschema.xml.in:108
 msgid "Background type"
 msgstr "Vrsta pozadine"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:109
+#: data/org.cafe.panel.toplevel.gschema.xml.in:109
 msgid ""
 "Which type of background should be used for this panel. Possible values are "
 "\"none\" - the default GTK+ widget background will be used, \"color\" - the "
@@ -2077,19 +2077,19 @@ msgid ""
 "specified by the image key will be used as background."
 msgstr ""
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:113
+#: data/org.cafe.panel.toplevel.gschema.xml.in:113
 msgid "Background color"
 msgstr "Boja pozadine"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:114
+#: data/org.cafe.panel.toplevel.gschema.xml.in:114
 msgid "Specifies the background color for the panel in #RGB format."
 msgstr "Postavlja boju pozadine ploče u obliku #RGB."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:118
+#: data/org.cafe.panel.toplevel.gschema.xml.in:118
 msgid "Background color opacity"
 msgstr "Providnost boje pozadine"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:119
+#: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
 "completely opaque (a value of less than 65535), the color will be composited"
@@ -2099,11 +2099,11 @@ msgstr ""
 "(vrijednost manja od 65535), boje će se uklopiti sa pozadinom radne "
 "površine."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:123
+#: data/org.cafe.panel.toplevel.gschema.xml.in:123
 msgid "Background image"
 msgstr "Pozadinska slika"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:124
+#: data/org.cafe.panel.toplevel.gschema.xml.in:124
 msgid ""
 "Specifies the file to be used for the background image. If the image "
 "contains an alpha channel it will be composited onto the desktop background "
@@ -2112,11 +2112,11 @@ msgstr ""
 "Određuje datoteku koja se koristi kao slika za pozadinu. Ako je slika "
 "polutransparentna, onda će se uklopiti sa slikom pozadine radne površine."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:128
+#: data/org.cafe.panel.toplevel.gschema.xml.in:128
 msgid "Fit image to panel"
 msgstr "Razvuci sliku da odgovara ploči"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:129
+#: data/org.cafe.panel.toplevel.gschema.xml.in:129
 msgid ""
 "If true, the image will be scaled (retaining the aspect ratio of the image) "
 "to the panel height (if horizontal)."
@@ -2124,11 +2124,11 @@ msgstr ""
 "Ukoliko je postavljeno, slika će biti uvećana na visinu (ako je vodoravna) "
 "ploče tako da se sačuva odnos visine i širine."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:133
+#: data/org.cafe.panel.toplevel.gschema.xml.in:133
 msgid "Stretch image to panel"
 msgstr "Razvuci sliku na ploči"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:134
+#: data/org.cafe.panel.toplevel.gschema.xml.in:134
 msgid ""
 "If true, the image will be scaled to the panel dimensions. The aspect ratio "
 "of the image will not be maintained."
@@ -2136,11 +2136,11 @@ msgstr ""
 "Ukoliko je postavljeno, slika će se razvući tako da odgovara dimenzijama "
 "ploče. Neće se očuvati odnos visine i širine slike."
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:138
+#: data/org.cafe.panel.toplevel.gschema.xml.in:138
 msgid "Rotate image on vertical panels"
 msgstr "Rotiraj sliku na vertikalnim pločama"
 
-#: data/org.mate.panel.toplevel.gschema.xml.in:139
+#: data/org.cafe.panel.toplevel.gschema.xml.in:139
 msgid ""
 "If true, the background image will be rotated when the panel is oriented "
 "vertically."
@@ -2148,162 +2148,162 @@ msgstr ""
 "Ukoliko je postavljeno, slika za pozadinu biti će rotirana kada je ploča "
 "vertikalno usmjerena."
 
-#: mate-panel/libegg/eggdesktopfile.c:168
+#: cafe-panel/libegg/eggdesktopfile.c:168
 msgid "File is not a valid .desktop file"
 msgstr "Datoteka nije valjana .desktop datoteka"
 
-#: mate-panel/libegg/eggdesktopfile.c:191
+#: cafe-panel/libegg/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Neprepoznata inačica datoteke radne površine '%s'"
 
-#: mate-panel/libegg/eggdesktopfile.c:963
+#: cafe-panel/libegg/eggdesktopfile.c:963
 #, c-format
 msgid "Starting %s"
 msgstr "Pokretanje %s"
 
-#: mate-panel/libegg/eggdesktopfile.c:1105
+#: cafe-panel/libegg/eggdesktopfile.c:1105
 msgid "Application does not accept documents on command line"
 msgstr "Aplikacija ne prihvaća dokumente iz naredbenog retka"
 
-#: mate-panel/libegg/eggdesktopfile.c:1173
+#: cafe-panel/libegg/eggdesktopfile.c:1173
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Neprepoznata mogućnost pokretanja: %d"
 
-#: mate-panel/libegg/eggdesktopfile.c:1390
+#: cafe-panel/libegg/eggdesktopfile.c:1390
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 "Nije moguće proslijediti URI-je zapisa na unos radne površine 'Type=Link'"
 
-#: mate-panel/libegg/eggdesktopfile.c:1411
+#: cafe-panel/libegg/eggdesktopfile.c:1411
 msgid "Not a launchable item"
 msgstr "Nije izvršna stavka"
 
-#: mate-panel/libegg/eggsmclient.c:222
+#: cafe-panel/libegg/eggsmclient.c:222
 msgid "Disable connection to session manager"
 msgstr "Isključi vezu prema upravitelju sesija"
 
-#: mate-panel/libegg/eggsmclient.c:225
+#: cafe-panel/libegg/eggsmclient.c:225
 msgid "Specify file containing saved configuration"
 msgstr "Odredi datoteku koja sadrži spremljenu konfiguraciju"
 
-#: mate-panel/libegg/eggsmclient.c:225
+#: cafe-panel/libegg/eggsmclient.c:225
 msgid "FILE"
 msgstr "DATOTEKA"
 
-#: mate-panel/libegg/eggsmclient.c:228
+#: cafe-panel/libegg/eggsmclient.c:228
 msgid "Specify session management ID"
 msgstr "Navedi označivač upravljanja pristupnom dionicom"
 
-#: mate-panel/libegg/eggsmclient.c:228
+#: cafe-panel/libegg/eggsmclient.c:228
 msgid "ID"
 msgstr "Identifikator"
 
-#: mate-panel/libegg/eggsmclient.c:249
+#: cafe-panel/libegg/eggsmclient.c:249
 msgid "Session management options:"
 msgstr "Opcije upravljanja sesijom:"
 
-#: mate-panel/libegg/eggsmclient.c:250
+#: cafe-panel/libegg/eggsmclient.c:250
 msgid "Show session management options"
 msgstr "Prikaži opcije upravitelja prijava"
 
-#: mate-panel/libpanel-util/panel-gtk.c:138
+#: cafe-panel/libpanel-util/panel-gtk.c:138
 msgid "_Open"
 msgstr "_Otvori"
 
-#: mate-panel/libpanel-util/panel-error.c:76
-#: mate-panel/panel-applet-frame.c:798 mate-panel/panel-applet-frame.c:986
+#: cafe-panel/libpanel-util/panel-error.c:76
+#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
 msgid "Error"
 msgstr "Greška"
 
-#: mate-panel/libpanel-util/panel-icon-chooser.c:374
+#: cafe-panel/libpanel-util/panel-icon-chooser.c:374
 msgid "Choose an icon"
 msgstr "Izaberite sličicu"
 
-#: mate-panel/libpanel-util/panel-launch.c:45
+#: cafe-panel/libpanel-util/panel-launch.c:45
 #, c-format
 msgid "Could not launch '%s'"
 msgstr "Ne mogu pokrenuti '%s'"
 
-#: mate-panel/libpanel-util/panel-launch.c:48 mate-panel/launcher.c:162
+#: cafe-panel/libpanel-util/panel-launch.c:48 cafe-panel/launcher.c:162
 msgid "Could not launch application"
 msgstr "Ne mogu pokrenuti program"
 
-#: mate-panel/libpanel-util/panel-show.c:44
+#: cafe-panel/libpanel-util/panel-show.c:44
 #, c-format
 msgid "Could not open location '%s'"
 msgstr "Ne mogu otvoriti lokaciju '%s'"
 
-#: mate-panel/libpanel-util/panel-show.c:158
+#: cafe-panel/libpanel-util/panel-show.c:158
 msgid "No application to handle search folders is installed."
 msgstr ""
 
-#: mate-panel/applet.c:468
+#: cafe-panel/applet.c:468
 msgid "???"
 msgstr "???"
 
-#: mate-panel/applet.c:548 libmate-panel-applet/mate-panel-applet.c:139
+#: cafe-panel/applet.c:548 libcafe-panel-applet/cafe-panel-applet.c:139
 msgid "_Remove From Panel"
 msgstr "_Ukloniti iz ploče"
 
-#: mate-panel/applet.c:556 libmate-panel-applet/mate-panel-applet.c:142
+#: cafe-panel/applet.c:556 libcafe-panel-applet/cafe-panel-applet.c:142
 msgid "_Move"
 msgstr "_Pomakni"
 
-#: mate-panel/applet.c:574 libmate-panel-applet/mate-panel-applet.c:148
+#: cafe-panel/applet.c:574 libcafe-panel-applet/cafe-panel-applet.c:148
 msgid "Loc_k To Panel"
 msgstr "Zaključaj na ploči"
 
-#: mate-panel/applet.c:1313
+#: cafe-panel/applet.c:1313
 msgid "Cannot find an empty spot"
 msgstr "Ne mogu naći praznu točku"
 
-#: mate-panel/drawer.c:443 mate-panel/panel-addto.c:189
-#: mate-panel/panel-toplevel.c:1650
+#: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
+#: cafe-panel/panel-toplevel.c:1650
 msgid "Drawer"
 msgstr "Ladica"
 
-#: mate-panel/drawer.c:550
+#: cafe-panel/drawer.c:550
 msgid "_Add to Drawer..."
 msgstr "_Dodaj u ladicu..."
 
-#: mate-panel/drawer.c:556 mate-panel/launcher.c:602
-#: mate-panel/panel-action-button.c:194 mate-panel/panel-context-menu.c:246
+#: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
 msgid "_Properties"
 msgstr "_Svojstva"
 
-#: mate-panel/mate-desktop-item-edit.c:27
+#: cafe-panel/cafe-desktop-item-edit.c:27
 msgid "Create new file in the given directory"
 msgstr "Napravi novu datoteku u datom direktoriju"
 
-#: mate-panel/mate-desktop-item-edit.c:28
+#: cafe-panel/cafe-desktop-item-edit.c:28
 msgid "[FILE...]"
 msgstr "[DATOTEKA...]"
 
-#: mate-panel/mate-desktop-item-edit.c:106
+#: cafe-panel/cafe-desktop-item-edit.c:106
 msgid "- Edit .desktop files"
 msgstr "- Uredi .desktop datoteke"
 
-#: mate-panel/mate-desktop-item-edit.c:144
-#: mate-panel/mate-desktop-item-edit.c:198 mate-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:144
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
 msgid "Create Launcher"
 msgstr "Napravi pokretač"
 
-#: mate-panel/mate-desktop-item-edit.c:169
-#: mate-panel/mate-desktop-item-edit.c:192
+#: cafe-panel/cafe-desktop-item-edit.c:169
+#: cafe-panel/cafe-desktop-item-edit.c:192
 msgid "Directory Properties"
 msgstr "Postavke direktorija"
 
-#: mate-panel/mate-desktop-item-edit.c:175 mate-panel/launcher.c:817
+#: cafe-panel/cafe-desktop-item-edit.c:175 cafe-panel/launcher.c:817
 msgid "Launcher Properties"
 msgstr "Osobine pokretača"
 
-#: mate-panel/mate-panel.desktop.in:4 mate-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
 msgid "Panel"
 msgstr "Ploča"
 
-#: mate-panel/mate-panel.desktop.in:5
+#: cafe-panel/cafe-panel.desktop.in:5
 msgid ""
 "Launch other applications and provide various utilities to manage windows, "
 "show the time, etc."
@@ -2311,288 +2311,288 @@ msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: mate-panel/mate-panel.desktop.in:7
-msgid "mate-panel"
+#: cafe-panel/cafe-panel.desktop.in:7
+msgid "cafe-panel"
 msgstr ""
 
-#: mate-panel/launcher.c:120
+#: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
 msgstr "Ne mogu prkazati ovaj URL"
 
-#: mate-panel/launcher.c:121
+#: cafe-panel/launcher.c:121
 msgid "No URL was specified."
 msgstr "Nikakav URL nije naveden."
 
-#: mate-panel/launcher.c:217
+#: cafe-panel/launcher.c:217
 msgid "Could not use dropped item"
 msgstr "Ne mogu koristiti ispuštenu stavku"
 
-#: mate-panel/launcher.c:451
+#: cafe-panel/launcher.c:451
 msgid "No URI provided for panel launcher desktop file\n"
 msgstr "URI adresa nije navedena u datoteci pokretača ploče\n"
 
-#: mate-panel/launcher.c:490
+#: cafe-panel/launcher.c:490
 #, c-format
 msgid "Unable to open desktop file %s for panel launcher%s%s\n"
 msgstr "Ne može otvoriti desktop datoteku \"%s\" za pokretač sa panela %s%s\n"
 
-#: mate-panel/launcher.c:594
+#: cafe-panel/launcher.c:594
 msgid "_Launch"
 msgstr "Pokreni"
 
-#: mate-panel/launcher.c:910
+#: cafe-panel/launcher.c:910
 #, c-format
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "Ključ %s nije postavljen, ne mogu pokrenuti starter\n"
 
-#: mate-panel/launcher.c:1042 mate-panel/panel-ditem-editor.c:1326
-#: mate-panel/panel-ditem-editor.c:1360 mate-panel/panel-ditem-editor.c:1391
+#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Ne mogu spremiti starter"
 
-#: mate-panel/main.c:54
+#: cafe-panel/main.c:54
 msgid "Replace a currently running panel"
 msgstr ""
 
-#: mate-panel/main.c:56
+#: cafe-panel/main.c:56
 msgid "Reset the panel configuration to default"
 msgstr ""
 
-#: mate-panel/main.c:58
+#: cafe-panel/main.c:58
 msgid "Execute the run dialog"
 msgstr ""
 
-#: mate-panel/main.c:60
+#: cafe-panel/main.c:60
 msgid "Set the default panel layout"
 msgstr "Postavi zadani raspored ploče"
 
-#: mate-panel/menu.c:502
+#: cafe-panel/menu.c:502
 msgid "Add this launcher to _panel"
 msgstr "Dodaj ovaj pokretač na _ploču"
 
-#: mate-panel/menu.c:509
+#: cafe-panel/menu.c:509
 msgid "Add this launcher to _desktop"
 msgstr "Dodaj ovaj pokretač na _radnu površinu"
 
-#: mate-panel/menu.c:521
+#: cafe-panel/menu.c:521
 msgid "_Entire menu"
 msgstr "_Cijeli menu"
 
-#: mate-panel/menu.c:526
+#: cafe-panel/menu.c:526
 msgid "Add this as _drawer to panel"
 msgstr "Dodaj ovo kao _ladicu na ploču"
 
-#: mate-panel/menu.c:533
+#: cafe-panel/menu.c:533
 msgid "Add this as _menu to panel"
 msgstr "Dodaj ovo kao _meni na ploču"
 
-#: mate-panel/panel-action-button.c:182
+#: cafe-panel/panel-action-button.c:182
 msgid "_Activate Screensaver"
 msgstr "_Pokreni čuvara zaslona"
 
-#: mate-panel/panel-action-button.c:188
+#: cafe-panel/panel-action-button.c:188
 msgid "_Lock Screen"
 msgstr "_Zaključaj zaslon"
 
-#: mate-panel/panel-action-button.c:332
+#: cafe-panel/panel-action-button.c:332
 msgid "Could not connect to server"
 msgstr "Ne mogu se povezati na server"
 
-#: mate-panel/panel-action-button.c:363
+#: cafe-panel/panel-action-button.c:363
 msgid "Lock Screen"
 msgstr "Zaključaj zaslon"
 
-#: mate-panel/panel-action-button.c:364
+#: cafe-panel/panel-action-button.c:364
 msgid "Protect your computer from unauthorized use"
 msgstr "Zaštitite vaše računalo od neovlaštene upotrebe"
 
-#: mate-panel/panel-action-button.c:378
+#: cafe-panel/panel-action-button.c:378
 msgid "Log Out..."
 msgstr "Odjavi se..."
 
-#: mate-panel/panel-action-button.c:379
+#: cafe-panel/panel-action-button.c:379
 msgid "Log out of this session to log in as a different user"
 msgstr ""
 "Odjavite se iz ove prijave kako biste se mogli prijaviti kao drugi korisnik"
 
-#: mate-panel/panel-action-button.c:388
+#: cafe-panel/panel-action-button.c:388
 msgid "Run Application..."
 msgstr "Pokreni program..."
 
-#: mate-panel/panel-action-button.c:389
+#: cafe-panel/panel-action-button.c:389
 msgid "Run an application by typing a command or choosing from a list"
 msgstr "Pokrenite program upisujući naredbu ili ga odaberite sa popisa"
 
-#: mate-panel/panel-action-button.c:398
+#: cafe-panel/panel-action-button.c:398
 msgid "Search for Files..."
 msgstr "Tražite datoteke..."
 
-#: mate-panel/panel-action-button.c:399
+#: cafe-panel/panel-action-button.c:399
 msgid "Locate documents and folders on this computer by name or content"
 msgstr "Pronalazi zapise i mape u ovom računalu po nazivu ili sadržaju"
 
-#: mate-panel/panel-action-button.c:407 mate-panel/panel-force-quit.c:250
+#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
 msgid "Force Quit"
 msgstr "Obavezno zatvaranje"
 
-#: mate-panel/panel-action-button.c:408
+#: cafe-panel/panel-action-button.c:408
 msgid "Force a misbehaving application to quit"
 msgstr "Inzistiraj na isključivanju programa koji se loše ponašaju"
 
-#: mate-panel/panel-action-button.c:417
+#: cafe-panel/panel-action-button.c:417
 msgid "Connect to Server..."
 msgstr "Veza na poslužitelj..."
 
-#: mate-panel/panel-action-button.c:418
+#: cafe-panel/panel-action-button.c:418
 msgid "Connect to a remote computer or shared disk"
 msgstr "Spoji se na udaljeno računalo ili dijeljeni disk"
 
-#: mate-panel/panel-action-button.c:426
+#: cafe-panel/panel-action-button.c:426
 msgid "Shut Down..."
 msgstr "Ugasi..."
 
-#: mate-panel/panel-action-button.c:427
+#: cafe-panel/panel-action-button.c:427
 msgid "Shut down the computer"
 msgstr "Ugasi računalo"
 
-#: mate-panel/panel-addto.c:125
+#: cafe-panel/panel-addto.c:125
 msgid "Custom Application Launcher"
 msgstr ""
 
-#: mate-panel/panel-addto.c:126
+#: cafe-panel/panel-addto.c:126
 msgid "Create a new launcher"
 msgstr "Stvori novi pokretač"
 
-#: mate-panel/panel-addto.c:137
+#: cafe-panel/panel-addto.c:137
 msgid "Application Launcher..."
 msgstr "Pokretač programa..."
 
-#: mate-panel/panel-addto.c:138
+#: cafe-panel/panel-addto.c:138
 msgid "Copy a launcher from the applications menu"
 msgstr ""
 
-#: mate-panel/panel-addto.c:153
+#: cafe-panel/panel-addto.c:153
 msgid "Compact Menu"
 msgstr ""
 
-#: mate-panel/panel-addto.c:154
+#: cafe-panel/panel-addto.c:154
 msgid "A compact menu"
 msgstr ""
 
-#: mate-panel/panel-addto.c:165
+#: cafe-panel/panel-addto.c:165
 msgid "Classic Menu"
 msgstr ""
 
-#: mate-panel/panel-addto.c:166
+#: cafe-panel/panel-addto.c:166
 msgid "The classic Applications, Places and System menu bar"
 msgstr ""
 
-#: mate-panel/panel-addto.c:177
+#: cafe-panel/panel-addto.c:177
 msgid "Separator"
 msgstr "Razdjelnik"
 
-#: mate-panel/panel-addto.c:178
+#: cafe-panel/panel-addto.c:178
 msgid "A separator to organize the panel items"
 msgstr "Odjelnik za organizaciju stavaka ploče"
 
-#: mate-panel/panel-addto.c:190
+#: cafe-panel/panel-addto.c:190
 msgid "A pop out drawer to store other items in"
 msgstr "Iskakajuća ladica za spremanje drugih stvari"
 
-#: mate-panel/panel-addto.c:274
+#: cafe-panel/panel-addto.c:274
 msgid "(empty)"
 msgstr "(prazno)"
 
-#: mate-panel/panel-addto.c:419
+#: cafe-panel/panel-addto.c:419
 msgid "Not compatible with X11"
 msgstr ""
 
-#: mate-panel/panel-addto.c:426
+#: cafe-panel/panel-addto.c:426
 msgid "Not compatible with Wayland"
 msgstr ""
 
-#: mate-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1053
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr ""
 
-#: mate-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1057
 msgid "Add to Drawer"
 msgstr "_Dodaj u ladicu"
 
-#: mate-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1059
 msgid "Find an _item to add to the drawer:"
 msgstr ""
 
-#: mate-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1061
 msgid "Add to Panel"
 msgstr "Dodaj na ploču"
 
-#: mate-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1063
 msgid "Find an _item to add to the panel:"
 msgstr ""
 
-#: mate-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1311
 msgid "_Back"
 msgstr "_Nazad"
 
-#: mate-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:759
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "\"%s\" je neočekivano prekinut"
 
-#: mate-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:761
 msgid "Panel object has quit unexpectedly"
 msgstr "Objekt ploče je prekinut neočekivano"
 
-#: mate-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:768
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
 msgstr ""
 "Ako ponovo učitate objekt ploče, bit će automatski dodan natrag na ploču."
 
-#: mate-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:775
 msgid "D_elete"
 msgstr "I_zbriši"
 
-#: mate-panel/panel-applet-frame.c:776 mate-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
 msgid "_Don't Reload"
 msgstr "_Ne učitavaj ponovno"
 
-#: mate-panel/panel-applet-frame.c:777 mate-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
 msgid "_Reload"
 msgstr "_Ponovno učitavanje"
 
-#: mate-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:948
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "Ploča je naišla na problem pri učitavanju \"%s\"."
 
-#: mate-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:963
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Želite li ukloniti ovaj programčić iz vaših postavki?"
 
-#: mate-panel/panel-applet-frame.c:970 mate-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "_Izbriši"
 
-#: mate-panel/panel-context-menu.c:91
+#: cafe-panel/panel-context-menu.c:91
 msgid "And many, many others…"
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:114
+#: cafe-panel/panel-context-menu.c:114
 msgid "The MATE Panel"
 msgstr "MATE ploča"
 
-#: mate-panel/panel-context-menu.c:116
+#: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
 "Copyright © 2011-2020 MATE developers"
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:119
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
@@ -2600,461 +2600,461 @@ msgstr ""
 "Ovaj program služi pokretanju drugih aplikacija i nudi korisne pomoćne "
 "alate."
 
-#: mate-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:123
 msgid "About the MATE Panel"
 msgstr "O Mate ploči"
 
-#: mate-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
 msgstr "Ne mogu obrisati ovu ploču"
 
-#: mate-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:155
 msgid "You must always have at least one panel."
 msgstr "Morate uvijek imati najmanje jednu ploču."
 
-#: mate-panel/panel-context-menu.c:199
+#: cafe-panel/panel-context-menu.c:199
 msgid "Reset this panel?"
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:200
+#: cafe-panel/panel-context-menu.c:200
 msgid ""
 "When a panel is reset, all \n"
 "custom settings are lost."
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:214 mate-panel/panel-context-menu.c:256
+#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
 msgid "_Reset Panel"
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:236
 msgid "_Add to Panel…"
 msgstr ""
 
-#: mate-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:263
 msgid "_Delete This Panel"
 msgstr "_Obriši ovu ploču"
 
-#: mate-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:276
 msgid "_New Panel"
 msgstr "_Nova ploča"
 
-#: mate-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:325
 msgid "A_bout Panels"
 msgstr "_O programu..."
 
-#: mate-panel/panel-ditem-editor.c:115
+#: cafe-panel/panel-ditem-editor.c:115
 msgid "Application"
 msgstr "Program"
 
-#: mate-panel/panel-ditem-editor.c:117
+#: cafe-panel/panel-ditem-editor.c:117
 msgid "Application in Terminal"
 msgstr "Program u terminalu"
 
-#: mate-panel/panel-ditem-editor.c:119
+#: cafe-panel/panel-ditem-editor.c:119
 msgid "Location"
 msgstr "Lokacija"
 
-#: mate-panel/panel-ditem-editor.c:602
+#: cafe-panel/panel-ditem-editor.c:602
 msgid "_Type:"
 msgstr "_Vrsta:"
 
-#: mate-panel/panel-ditem-editor.c:609
+#: cafe-panel/panel-ditem-editor.c:609
 msgid "_Name:"
 msgstr "_Ime:"
 
-#: mate-panel/panel-ditem-editor.c:634
+#: cafe-panel/panel-ditem-editor.c:634
 msgid "_Browse..."
 msgstr "_Pregledaj..."
 
-#: mate-panel/panel-ditem-editor.c:641
+#: cafe-panel/panel-ditem-editor.c:641
 msgid "Co_mment:"
 msgstr "Na_pomena:"
 
-#: mate-panel/panel-ditem-editor.c:652
+#: cafe-panel/panel-ditem-editor.c:652
 msgid "_Revert"
 msgstr "_Vrati"
 
-#: mate-panel/panel-ditem-editor.c:978
+#: cafe-panel/panel-ditem-editor.c:978
 msgid "Choose an application..."
 msgstr "Odaberite program..."
 
-#: mate-panel/panel-ditem-editor.c:982
+#: cafe-panel/panel-ditem-editor.c:982
 msgid "Choose a file..."
 msgstr "Odaberite datoteku..."
 
-#: mate-panel/panel-ditem-editor.c:1146 mate-panel/panel-ditem-editor.c:1155
+#: cafe-panel/panel-ditem-editor.c:1146 cafe-panel/panel-ditem-editor.c:1155
 msgid "Comm_and:"
 msgstr "_Naredba:"
 
-#: mate-panel/panel-ditem-editor.c:1164
+#: cafe-panel/panel-ditem-editor.c:1164
 msgid "_Location:"
 msgstr "_Lokacija:"
 
-#: mate-panel/panel-ditem-editor.c:1327
+#: cafe-panel/panel-ditem-editor.c:1327
 msgid "The name of the launcher is not set."
 msgstr "Ime startera nije postavljeno."
 
-#: mate-panel/panel-ditem-editor.c:1331
+#: cafe-panel/panel-ditem-editor.c:1331
 msgid "Could not save directory properties"
 msgstr "Nije moguće spremiti postavke direktorija"
 
-#: mate-panel/panel-ditem-editor.c:1332
+#: cafe-panel/panel-ditem-editor.c:1332
 msgid "The name of the directory is not set."
 msgstr "Ime direktorija nije postavljeno."
 
-#: mate-panel/panel-ditem-editor.c:1348
+#: cafe-panel/panel-ditem-editor.c:1348
 msgid "The command of the launcher is not set."
 msgstr "Naredba startera nije postavljena."
 
-#: mate-panel/panel-ditem-editor.c:1351
+#: cafe-panel/panel-ditem-editor.c:1351
 msgid "The location of the launcher is not set."
 msgstr "Lokacija startera nije postavljena."
 
-#: mate-panel/panel-ditem-editor.c:1428
+#: cafe-panel/panel-ditem-editor.c:1428
 msgid "Could not display help document"
 msgstr "Nije bilo moguće prikazati pomoćni zapis"
 
-#: mate-panel/panel-force-quit.c:86
+#: cafe-panel/panel-force-quit.c:86
 msgid ""
 "Click on a window to force the application to quit. To cancel press <ESC>."
 msgstr ""
 "Pritisnite na prozor da prisilite program na izlazak. Da anulirate, "
 "pritisnite <ESC>."
 
-#: mate-panel/panel-force-quit.c:232
+#: cafe-panel/panel-force-quit.c:232
 msgid "Force this application to exit?"
 msgstr "Prisiliti aplikaciju da završi?"
 
-#: mate-panel/panel-force-quit.c:235
+#: cafe-panel/panel-force-quit.c:235
 msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."
 msgstr ""
 
-#: mate-panel/panel-menu-bar.c:97
+#: cafe-panel/panel-menu-bar.c:97
 msgid "Browse and run installed applications"
 msgstr "Pregledaj i pokreni instalirane programe"
 
-#: mate-panel/panel-menu-bar.c:98
+#: cafe-panel/panel-menu-bar.c:98
 msgid "Access documents, folders and network places"
 msgstr "Pristupi dokumentima, datotekama i mrežnim mjestima"
 
-#: mate-panel/panel-menu-bar.c:99
+#: cafe-panel/panel-menu-bar.c:99
 msgid "Change desktop appearance and behavior, get help, or log out"
 msgstr ""
 "Promijeni izgled i ponašanje radne površine, zatraži pomoć ili se odjavi"
 
-#: mate-panel/panel-menu-bar.c:166
+#: cafe-panel/panel-menu-bar.c:166
 msgid "Applications"
 msgstr "Aplikacije"
 
-#: mate-panel/panel-menu-bar.c:356 mate-panel/panel-menu-button.c:706
+#: cafe-panel/panel-menu-bar.c:356 cafe-panel/panel-menu-button.c:706
 msgid "_Edit Menus"
 msgstr "_Uredi izbornike"
 
-#: mate-panel/panel-menu-button.c:1129
+#: cafe-panel/panel-menu-button.c:1129
 msgid "Main Menu"
 msgstr "Glavni izbornik"
 
-#: mate-panel/panel-menu-items.c:467
+#: cafe-panel/panel-menu-items.c:467
 msgid "Bookmarks"
 msgstr "Zabilješke"
 
 #. Translators: %s is a URI
-#: mate-panel/panel-menu-items.c:490 mate-panel/panel.c:553
+#: cafe-panel/panel-menu-items.c:490 cafe-panel/panel.c:553
 #, c-format
 msgid "Open '%s'"
 msgstr "Otvori '%s'"
 
-#: mate-panel/panel-menu-items.c:561
+#: cafe-panel/panel-menu-items.c:561
 #, c-format
 msgid "Unable to scan %s for media changes"
 msgstr ""
 
-#: mate-panel/panel-menu-items.c:604
+#: cafe-panel/panel-menu-items.c:604
 #, c-format
 msgid "Rescan %s"
 msgstr ""
 
-#: mate-panel/panel-menu-items.c:641
+#: cafe-panel/panel-menu-items.c:641
 #, c-format
 msgid "Unable to mount %s"
 msgstr "Nije moguće postaviti %s"
 
-#: mate-panel/panel-menu-items.c:704
+#: cafe-panel/panel-menu-items.c:704
 #, c-format
 msgid "Mount %s"
 msgstr "Montiraj %s"
 
-#: mate-panel/panel-menu-items.c:912
+#: cafe-panel/panel-menu-items.c:912
 msgid "Removable Media"
 msgstr "Pokretni mediji"
 
-#: mate-panel/panel-menu-items.c:999
+#: cafe-panel/panel-menu-items.c:999
 msgid "Network Places"
 msgstr "Mrežna mjesta"
 
-#: mate-panel/panel-menu-items.c:1038
+#: cafe-panel/panel-menu-items.c:1038
 msgid "Open your personal folder"
 msgstr "Otvorite svoju osobnu mapu"
 
 #. Translators: Desktop is used here as in
 #. * "Desktop Folder" (this is not the Desktop
 #. * environment).
-#: mate-panel/panel-menu-items.c:1057
+#: cafe-panel/panel-menu-items.c:1057
 msgctxt "Desktop Folder"
 msgid "Desktop"
 msgstr "Radna površina"
 
-#: mate-panel/panel-menu-items.c:1058
+#: cafe-panel/panel-menu-items.c:1058
 msgid "Open the contents of your desktop in a folder"
 msgstr "Otvori sadržaj svoje radne površine u mapi"
 
-#: mate-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1074
 msgid "Computer"
 msgstr "Računalo"
 
-#: mate-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1079
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
 msgstr ""
 "Pregledaj sve lokalne i udaljene diskove i mape dostupne s ovog računala"
 
-#: mate-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1092
 msgid "Network"
 msgstr "Mreža"
 
-#: mate-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1093
 msgid "Browse bookmarked and local network locations"
 msgstr "Pregledaj zabilježene položaje i položaje mjesne mreže"
 
-#: mate-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1487
 msgid "Places"
 msgstr "Mjesta"
 
-#: mate-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1515
 msgid "System"
 msgstr "Sustav"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: mate-panel/panel-menu-items.c:1600
+#: cafe-panel/panel-menu-items.c:1600
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: mate-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1612
 #, c-format
 msgid "Log Out %s..."
 msgstr "Odjavi %s..."
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: mate-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1616
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr "Odjavi %s iz ove prijave kako bi se prijavio kao drugi korisnik"
 
-#: mate-panel/panel-properties-dialog.c:119 mate-panel/panel-test-applets.c:58
+#: cafe-panel/panel-properties-dialog.c:119 cafe-panel/panel-test-applets.c:58
 msgctxt "Orientation"
 msgid "Top"
 msgstr "Vrh"
 
-#: mate-panel/panel-properties-dialog.c:120 mate-panel/panel-test-applets.c:59
+#: cafe-panel/panel-properties-dialog.c:120 cafe-panel/panel-test-applets.c:59
 msgctxt "Orientation"
 msgid "Bottom"
 msgstr "Dno"
 
-#: mate-panel/panel-properties-dialog.c:121 mate-panel/panel-test-applets.c:60
+#: cafe-panel/panel-properties-dialog.c:121 cafe-panel/panel-test-applets.c:60
 msgctxt "Orientation"
 msgid "Left"
 msgstr "Lijevo"
 
-#: mate-panel/panel-properties-dialog.c:122 mate-panel/panel-test-applets.c:61
+#: cafe-panel/panel-properties-dialog.c:122 cafe-panel/panel-test-applets.c:61
 msgctxt "Orientation"
 msgid "Right"
 msgstr "Desno"
 
-#: mate-panel/panel-properties-dialog.c:818
+#: cafe-panel/panel-properties-dialog.c:818
 msgid "Drawer Properties"
 msgstr ""
 
-#: mate-panel/panel-properties-dialog.ui:62
+#: cafe-panel/panel-properties-dialog.ui:62
 msgid "Panel Properties"
 msgstr "Osobine ploče"
 
-#: mate-panel/panel-properties-dialog.ui:148
-#: mate-panel/panel-properties-dialog.ui:416
+#: cafe-panel/panel-properties-dialog.ui:148
+#: cafe-panel/panel-properties-dialog.ui:416
 msgid "Some of these properties are locked down"
 msgstr "Neke od ovih osobina su zaključane"
 
-#: mate-panel/panel-properties-dialog.ui:189
+#: cafe-panel/panel-properties-dialog.ui:189
 msgid "_Icon:"
 msgstr "_Ikona:"
 
-#: mate-panel/panel-properties-dialog.ui:249
-#: mate-panel/panel-test-applets.ui:116
+#: cafe-panel/panel-properties-dialog.ui:249
+#: cafe-panel/panel-test-applets.ui:116
 msgid "_Orientation:"
 msgstr "_Orijentacija:"
 
-#: mate-panel/panel-properties-dialog.ui:263
-#: mate-panel/panel-test-applets.ui:86
+#: cafe-panel/panel-properties-dialog.ui:263
+#: cafe-panel/panel-test-applets.ui:86
 msgid "_Size:"
 msgstr "_Veličina:"
 
-#: mate-panel/panel-properties-dialog.ui:281
+#: cafe-panel/panel-properties-dialog.ui:281
 msgid "E_xpand"
 msgstr "_Proširi"
 
-#: mate-panel/panel-properties-dialog.ui:296
+#: cafe-panel/panel-properties-dialog.ui:296
 msgid "_Autohide"
 msgstr "_Samoskrivanje"
 
-#: mate-panel/panel-properties-dialog.ui:317
+#: cafe-panel/panel-properties-dialog.ui:317
 msgid "Show hide _buttons"
 msgstr "Prikaži tipke za _skrivanje"
 
-#: mate-panel/panel-properties-dialog.ui:348
+#: cafe-panel/panel-properties-dialog.ui:348
 msgid "Arro_ws on hide buttons"
 msgstr "S_trelice na tipkama za skrivanje"
 
-#: mate-panel/panel-properties-dialog.ui:433
+#: cafe-panel/panel-properties-dialog.ui:433
 msgid "_None (use system theme)"
 msgstr "_Ništa (koristi temu sustava)"
 
-#: mate-panel/panel-properties-dialog.ui:453
+#: cafe-panel/panel-properties-dialog.ui:453
 msgid "Solid c_olor"
 msgstr "_Puna boja"
 
-#: mate-panel/panel-properties-dialog.ui:501
+#: cafe-panel/panel-properties-dialog.ui:501
 msgid "Pick a color"
 msgstr "Odaberi boju"
 
-#: mate-panel/panel-properties-dialog.ui:531
+#: cafe-panel/panel-properties-dialog.ui:531
 msgid "<small>Transparent</small>"
 msgstr "<small>Proziran</small>"
 
-#: mate-panel/panel-properties-dialog.ui:553
+#: cafe-panel/panel-properties-dialog.ui:553
 msgid "Co_lor:"
 msgstr "Bo_ja:"
 
-#: mate-panel/panel-properties-dialog.ui:566
+#: cafe-panel/panel-properties-dialog.ui:566
 msgid "S_tyle:"
 msgstr "_Stil:"
 
-#: mate-panel/panel-properties-dialog.ui:580
+#: cafe-panel/panel-properties-dialog.ui:580
 msgid "<small>Opaque</small>"
 msgstr "<small>Neproziran</small>"
 
-#: mate-panel/panel-properties-dialog.ui:613
+#: cafe-panel/panel-properties-dialog.ui:613
 msgid "Background _image:"
 msgstr "_Pozadinska slika:"
 
-#: mate-panel/panel-properties-dialog.ui:647
+#: cafe-panel/panel-properties-dialog.ui:647
 msgid "Select background"
 msgstr "Odaberi pozadinu"
 
-#: mate-panel/panel-properties-dialog.ui:678
+#: cafe-panel/panel-properties-dialog.ui:678
 msgid "Background"
 msgstr "Pozadina"
 
-#: mate-panel/panel-properties-dialog.ui:710
+#: cafe-panel/panel-properties-dialog.ui:710
 msgid "Image Background Details"
 msgstr "Detalji slike za pozadinu"
 
-#: mate-panel/panel-properties-dialog.ui:780
+#: cafe-panel/panel-properties-dialog.ui:780
 msgid "_Tile"
 msgstr "Preslagivanje"
 
-#: mate-panel/panel-properties-dialog.ui:795
+#: cafe-panel/panel-properties-dialog.ui:795
 msgid "_Scale"
 msgstr "_Razmjer"
 
-#: mate-panel/panel-properties-dialog.ui:811
+#: cafe-panel/panel-properties-dialog.ui:811
 msgid "St_retch"
 msgstr "_Rastegni"
 
-#: mate-panel/panel-properties-dialog.ui:834
+#: cafe-panel/panel-properties-dialog.ui:834
 msgid "Rotate image when panel is _vertical"
 msgstr "Rotiraj sliku ako je panel _vertikalan"
 
-#: mate-panel/panel-recent.c:78 mate-panel/panel-recent.c:88
+#: cafe-panel/panel-recent.c:78 cafe-panel/panel-recent.c:88
 #, c-format
 msgid "Could not open recently used document \"%s\""
 msgstr "Ne mogu otvoriti nedavno korišten dokument \"%s\""
 
-#: mate-panel/panel-recent.c:90
+#: cafe-panel/panel-recent.c:90
 #, c-format
 msgid "An unknown error occurred while trying to open \"%s\"."
 msgstr "Pojavila se nepoznata greška prilikom otvaranja \"%s\"."
 
-#: mate-panel/panel-recent.c:147
+#: cafe-panel/panel-recent.c:147
 msgid "Clear the Recent Documents list?"
 msgstr "Očisti listu skorašnjih dokumenata?"
 
-#: mate-panel/panel-recent.c:149
+#: cafe-panel/panel-recent.c:149
 msgid ""
 "If you clear the Recent Documents list, you clear the following:\n"
 "• All items from the Places → Recent Documents menu item.\n"
 "• All items from the recent documents list in all applications."
 msgstr ""
 
-#: mate-panel/panel-recent.c:164
+#: cafe-panel/panel-recent.c:164
 msgid "Clear Recent Documents"
 msgstr "Očisti skorašnje dokumente"
 
-#: mate-panel/panel-recent.c:199
+#: cafe-panel/panel-recent.c:199
 msgid "Recent Documents"
 msgstr "Nedavni dokumenti"
 
-#: mate-panel/panel-recent.c:238
+#: cafe-panel/panel-recent.c:238
 msgid "Clear Recent Documents..."
 msgstr "Očisti skorašnje dokumente..."
 
-#: mate-panel/panel-recent.c:240
+#: cafe-panel/panel-recent.c:240
 msgid "Clear all items from the recent documents list"
 msgstr "Očisti sve predmete iz liste skorašnjih dokumenata"
 
-#: mate-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:423
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "Ne mogu pokrenuti komandu '%s'"
 
-#: mate-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:464
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "Ne mogu konvertirati '%s' iz UTF-8"
 
-#: mate-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1257
 msgid "Choose a file to append to the command..."
 msgstr "Odaberite datoteku koju želite pridodati naredbi..."
 
-#: mate-panel/panel-run-dialog.c:1639 mate-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Odaberi program za pregled njegova opisa"
 
-#: mate-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1677
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "Izvršit će naredbu: \"%s\""
 
-#: mate-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1710
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr "URI lista spuštena na dialog ima krivi format (%d) ili duljinu (%d)\n"
 
-#: mate-panel/panel-run-dialog.ui:23
+#: cafe-panel/panel-run-dialog.ui:23
 msgid "Run Application"
 msgstr "Pokreni program"
 
-#: mate-panel/panel-run-dialog.ui:71 mate-panel/panel-stock-icons.c:97
+#: cafe-panel/panel-run-dialog.ui:71 cafe-panel/panel-stock-icons.c:97
 msgid "_Run"
 msgstr "_Pokreni"
 
-#: mate-panel/panel-run-dialog.ui:81
+#: cafe-panel/panel-run-dialog.ui:81
 msgid ""
 "Click this button to run the selected application or the command in the "
 "command entry field."
@@ -3062,174 +3062,174 @@ msgstr ""
 "Kliknite ovaj gumb da pokrenete odabrani program ili naredbu iz stavke za "
 "unos naredbe."
 
-#: mate-panel/panel-run-dialog.ui:125
+#: cafe-panel/panel-run-dialog.ui:125
 msgid "Command icon"
 msgstr "Ikona naredbe"
 
-#: mate-panel/panel-run-dialog.ui:126
+#: cafe-panel/panel-run-dialog.ui:126
 msgid "The icon of the command to be run."
 msgstr "Ikona naredbe koju treba izvršiti."
 
-#: mate-panel/panel-run-dialog.ui:170
+#: cafe-panel/panel-run-dialog.ui:170
 msgid "Run in _terminal"
 msgstr "Pokreni u _terminalu"
 
-#: mate-panel/panel-run-dialog.ui:178
+#: cafe-panel/panel-run-dialog.ui:178
 msgid "Select this box to run the command in a terminal window."
 msgstr "Označite ovu kućicu da biste pokrenuli naredbu u terminalu."
 
-#: mate-panel/panel-run-dialog.ui:190
+#: cafe-panel/panel-run-dialog.ui:190
 msgid "Run with _file..."
 msgstr "Pokreni uz _datoteku..."
 
-#: mate-panel/panel-run-dialog.ui:197
+#: cafe-panel/panel-run-dialog.ui:197
 msgid ""
 "Click this button to browse for a file whose name to append to the command "
 "string."
 msgstr ""
 "Kliknite ovoj gumb da pronađete datoteku čije ime želite pridodati naredbi."
 
-#: mate-panel/panel-run-dialog.ui:256
+#: cafe-panel/panel-run-dialog.ui:256
 msgid "List of known applications"
 msgstr "Lista poznatih programa"
 
-#: mate-panel/panel-run-dialog.ui:290
+#: cafe-panel/panel-run-dialog.ui:290
 msgid "Show list of known _applications"
 msgstr "Prikaži popis poznatih _programa"
 
-#: mate-panel/panel-stock-icons.c:98
+#: cafe-panel/panel-stock-icons.c:98
 msgid "_Force quit"
 msgstr "_Prisilno zatvori"
 
-#: mate-panel/panel-stock-icons.c:99
+#: cafe-panel/panel-stock-icons.c:99
 msgid "C_lear"
 msgstr "O_čisti"
 
-#: mate-panel/panel-stock-icons.c:100
+#: cafe-panel/panel-stock-icons.c:100
 msgid "D_on't Delete"
 msgstr "_Ne briši"
 
-#: mate-panel/panel-test-applets.c:39
+#: cafe-panel/panel-test-applets.c:39
 msgid "Specify an applet IID to load"
 msgstr "Navedite IID programčića koji treba učitati"
 
-#: mate-panel/panel-test-applets.c:40
+#: cafe-panel/panel-test-applets.c:40
 msgid ""
 "Specify a gsettings path in which the applet preferences should be stored"
 msgstr ""
 
-#: mate-panel/panel-test-applets.c:41
+#: cafe-panel/panel-test-applets.c:41
 msgid "Specify the initial size of the applet (xx-small, medium, large etc.)"
 msgstr ""
 "Navedite početnu veličinu programmčića (vrlo malo, srednje, veliko, itd.)"
 
-#: mate-panel/panel-test-applets.c:42
+#: cafe-panel/panel-test-applets.c:42
 msgid ""
 "Specify the initial orientation of the applet (top, bottom, left or right)"
 msgstr "Navedite početno usmerenje programa (gore, dolje, ljevo ili desno)"
 
-#: mate-panel/panel-test-applets.c:66
+#: cafe-panel/panel-test-applets.c:66
 msgctxt "Size"
 msgid "XX Small"
 msgstr "XX malen"
 
-#: mate-panel/panel-test-applets.c:67
+#: cafe-panel/panel-test-applets.c:67
 msgctxt "Size"
 msgid "X Small"
 msgstr "X malen"
 
-#: mate-panel/panel-test-applets.c:68
+#: cafe-panel/panel-test-applets.c:68
 msgctxt "Size"
 msgid "Small"
 msgstr "Mala"
 
-#: mate-panel/panel-test-applets.c:69
+#: cafe-panel/panel-test-applets.c:69
 msgctxt "Size"
 msgid "Medium"
 msgstr "Srednji"
 
-#: mate-panel/panel-test-applets.c:70
+#: cafe-panel/panel-test-applets.c:70
 msgctxt "Size"
 msgid "Large"
 msgstr "Velika"
 
-#: mate-panel/panel-test-applets.c:71
+#: cafe-panel/panel-test-applets.c:71
 msgctxt "Size"
 msgid "X Large"
 msgstr "X velik"
 
-#: mate-panel/panel-test-applets.c:72
+#: cafe-panel/panel-test-applets.c:72
 msgctxt "Size"
 msgid "XX Large"
 msgstr "XX velik"
 
-#: mate-panel/panel-test-applets.c:130
+#: cafe-panel/panel-test-applets.c:130
 #, c-format
 msgid "Failed to load applet %s"
 msgstr "Neuspješno učitavanje appleta %s"
 
 #. This is an utility to easily test various applets
-#: mate-panel/panel-test-applets.ui:18
+#: cafe-panel/panel-test-applets.ui:18
 msgid "Test applet utility"
 msgstr "Alat za testiranje programčića"
 
-#: mate-panel/panel-test-applets.ui:35
+#: cafe-panel/panel-test-applets.ui:35
 msgid "_Execute"
 msgstr ""
 
-#: mate-panel/panel-test-applets.ui:101
+#: cafe-panel/panel-test-applets.ui:101
 msgid "_Applet:"
 msgstr "_Programčić:"
 
-#: mate-panel/panel-test-applets.ui:131
+#: cafe-panel/panel-test-applets.ui:131
 msgid "_Prefs Path:"
 msgstr ""
 
-#: mate-panel/panel-toplevel.c:1209
+#: cafe-panel/panel-toplevel.c:1209
 msgid "Hide Panel"
 msgstr "Sakrij ploču"
 
-#: mate-panel/panel-toplevel.c:1656 mate-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
 msgid "Top Panel"
 msgstr ""
 
-#: mate-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1658
 msgid "Bottom Panel"
 msgstr ""
 
-#: mate-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1660
 msgid "Left Panel"
 msgstr ""
 
-#: mate-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1662
 msgid "Right Panel"
 msgstr ""
 
-#: mate-panel/panel-util.c:350
+#: cafe-panel/panel-util.c:350
 #, c-format
 msgid "Icon '%s' not found"
 msgstr "Sličica '%s' nije pronađena"
 
-#: mate-panel/panel-util.c:474
+#: cafe-panel/panel-util.c:474
 #, c-format
 msgid "Could not execute '%s'"
 msgstr "Ne mogu pokrenuti '%s'"
 
-#: mate-panel/panel-util.c:702
+#: cafe-panel/panel-util.c:702
 msgid "file"
 msgstr "datoteka"
 
-#: mate-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:875
 msgid "Home Folder"
 msgstr "Osobna mapa"
 
 #. Translators: this is the same string as the one found in
 #. * caja
-#: mate-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr "Datotečni sustav"
 
-#: mate-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1060
 msgid "Search"
 msgstr "Traži"
 
@@ -3237,21 +3237,21 @@ msgstr "Traži"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: mate-panel/panel-util.c:1106
+#: cafe-panel/panel-util.c:1106
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: mate-panel/panel.c:486
+#: cafe-panel/panel.c:486
 #, c-format
 msgid "Open URL: %s"
 msgstr "Otvori URL: %s"
 
-#: mate-panel/panel.c:1336
+#: cafe-panel/panel.c:1336
 msgid "Delete this drawer?"
 msgstr "Ukloni  ladicu?"
 
-#: mate-panel/panel.c:1337
+#: cafe-panel/panel.c:1337
 msgid ""
 "When a drawer is deleted, the drawer and its\n"
 "settings are lost."
@@ -3259,11 +3259,11 @@ msgstr ""
 "Kada se ladica ukloni, ladica i sve njene postavke se \n"
 "nepovratno gube."
 
-#: mate-panel/panel.c:1340
+#: cafe-panel/panel.c:1340
 msgid "Delete this panel?"
 msgstr "_Obrisi ovu ploču?"
 
-#: mate-panel/panel.c:1341
+#: cafe-panel/panel.c:1341
 msgid ""
 "When a panel is deleted, the panel and its\n"
 "settings are lost."
@@ -3271,24 +3271,24 @@ msgstr ""
 "Kada se ploča ukloni, ploča i njene postavke se \n"
 "nepovratno gube."
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:5
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:5
 msgid "Test DBus Applet Factory"
 msgstr ""
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:6
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:6
 msgid "Factory for Test DBus Applet"
 msgstr ""
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:9
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:9
 msgid "Test DBus Applet"
 msgstr ""
 
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:10
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
 msgid "A simple applet for testing the MATE panel"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: libmate-panel-applet/org.mate.panel.TestApplet.mate-panel-applet.desktop.in:12
-msgid "mate-gegl"
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
+msgid "cafe-gegl"
 msgstr ""

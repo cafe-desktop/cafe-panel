@@ -61,11 +61,11 @@ void panel_background_apply_css (PanelBackground *background, GtkWidget *widget)
 
 	switch (effective_type) {
 	case PANEL_BACK_NONE:
-		gtk_style_context_remove_class (context, "mate-custom-panel-background");
+		gtk_style_context_remove_class (context, "cafe-custom-panel-background");
 		break;
 	case PANEL_BACK_COLOR:
 	case PANEL_BACK_IMAGE:
-		gtk_style_context_add_class (context, "mate-custom-panel-background");
+		gtk_style_context_add_class (context, "cafe-custom-panel-background");
 		break;
 	default:
 		g_assert_not_reached ();
@@ -80,7 +80,7 @@ panel_background_prepare_css ()
 
 	provider = gtk_css_provider_new ();
 	gtk_css_provider_load_from_data (provider,
-					 ".mate-custom-panel-background{\n"
+					 ".cafe-custom-panel-background{\n"
 					 " background-color: rgba (0, 0, 0, 0);\n"
 					 " background-image: none;\n"
 					 "}",

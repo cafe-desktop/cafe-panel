@@ -1,6 +1,6 @@
 @YELP_HELP_RULES@
 
-HELP_ID = mate-clock
+HELP_ID = cafe-clock
 
 HELP_FILES = \
 	index.docbook \

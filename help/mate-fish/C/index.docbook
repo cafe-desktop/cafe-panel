@@ -11,7 +11,7 @@
 <!--
       (Do not remove this comment block.)
   Maintained by the MATE Documentation Project
-  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
+  http://wiki.cafe-desktop.org/dev-doc:doc-team-guide
   Template version: 2.0 beta
   Template last modified Mar 12, 2002
 
@@ -172,11 +172,11 @@
 		<title>Feedback</title>
 		<para> To report a bug or make a suggestion regarding the &applet; applet or this
 		  manual, follow the directions in the
-		  <ulink url="help:mate-user-guide/feedback" type="help">MATE Feedback Page</ulink>. </para>
+		  <ulink url="help:cafe-user-guide/feedback" type="help">MATE Feedback Page</ulink>. </para>
 
 	 </legalnotice>
 	 <abstract role="description">
-		<para>The &applet; applet displays an animated image in the panel and gives you
+		<para>The &applet; applet displays an anicafed image in the panel and gives you
                   your fortune when clicked.</para>
 	 </abstract>
   </articleinfo>
@@ -202,7 +202,7 @@
 		</screenshot>
 	 </figure>
     <!-- ==== End of Figure ======================================= -->
-<para>The <application>&applet;</application> applet displays an animated fish in the panel.  You can customize the fish's name and the program that is run when the fish is clicked in the panel.  By default, the program that is run when the fish is clicked is <application>Fortune</application>, which displays a usually comical random message from a database of quotations.</para>
+<para>The <application>&applet;</application> applet displays an anicafed fish in the panel.  You can customize the fish's name and the program that is run when the fish is clicked in the panel.  By default, the program that is run when the fish is clicked is <application>Fortune</application>, which displays a usually comical random message from a database of quotations.</para>
 
 
 

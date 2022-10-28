@@ -1,5 +1,5 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-  <schema id="org.mate.panel.toplevel">
+  <schema id="org.cafe.panel.toplevel">
     <key name="name" type="s">
       <default>''</default>
       <summary>Name to identify panel</summary>
@@ -20,7 +20,7 @@
       <summary>Expand to occupy entire screen width</summary>
       <description>If true, the panel will occupy the entire screen width (height if this is a vertical panel). In this mode the panel can only be placed at a screen edge. If false, the panel will only be large enough to accommodate the applets, launchers and buttons on the panel.</description>
     </key>
-    <key name="orientation" enum="org.mate.panel.PanelOrientation">
+    <key name="orientation" enum="org.cafe.panel.PanelOrientation">
       <default>'top'</default>
       <summary>Panel orientation</summary>
       <description>The orientation of the panel. Possible values are "top", "bottom", "left", "right". In expanded mode the key specifies which screen edge the panel is on. In un-expanded mode the difference between "top" and "bottom" is less important - both indicate that this is a horizontal panel - but still give a useful hint as to how some panel objects should behave. For example, on a "top" panel a menu button will pop up its menu below the panel, whereas on a "bottom" panel the menu will be popped up above the panel.</description>
@@ -68,7 +68,7 @@
     <key name="enable-animations" type="b">
       <default>true</default>
       <summary>Enable animations</summary>
-      <description>If true, hiding and un-hiding of this panel will be animated rather than happening instantly.</description>
+      <description>If true, hiding and un-hiding of this panel will be anicafed rather than happening instantly.</description>
     </key>
     <key name="enable-buttons" type="b">
       <default>false</default>
@@ -95,15 +95,15 @@
       <summary>Visible pixels when hidden</summary>
       <description>Specifies the number of pixels visible when the panel is automatically hidden into a corner. This key is only relevant if the auto_hide key is true.</description>
     </key>
-    <key name="animation-speed" enum="org.mate.panel.PanelAnimationSpeed">
+    <key name="animation-speed" enum="org.cafe.panel.PanelAnimationSpeed">
       <default>'fast'</default>
       <summary>Animation speed</summary>
       <description>The speed in which panel animations should occur. Possible values are "slow", "medium" and "fast". This key is only relevant if the enable_animations key is true.</description>
     </key>
-    <child name="background" schema="org.mate.panel.toplevel.background"/>
+    <child name="background" schema="org.cafe.panel.toplevel.background"/>
   </schema>
-  <schema id="org.mate.panel.toplevel.background">
-    <key name="type" enum="org.mate.panel.PanelBackgroundType">
+  <schema id="org.cafe.panel.toplevel.background">
+    <key name="type" enum="org.cafe.panel.PanelBackgroundType">
       <default>'none'</default>
       <summary>Background type</summary>
       <description>Which type of background should be used for this panel. Possible values are "none" - the default GTK+ widget background will be used, "color" - the color key will be used as background color or "image" - the image specified by the image key will be used as background.</description>

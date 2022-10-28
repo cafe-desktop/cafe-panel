@@ -1,6 +1,6 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-  <schema id="org.mate.panel.object">
-    <key name="object-type" enum="org.mate.panel.PanelObjectType">
+  <schema id="org.cafe.panel.object">
+    <key name="object-type" enum="org.cafe.panel.PanelObjectType">
       <default>'launcher'</default>
       <summary>Panel object type</summary>
       <description>The type of this panel object.</description>
@@ -28,7 +28,7 @@
     <key name="applet-iid" type="s">
       <default>''</default>
       <summary>Applet IID</summary>
-      <description>The implementation ID of the applet - e.g. "ClockAppletFactory::ClockApplet". This key is only relevant if the object_type key is "external-applet" (or the deprecated "matecomponent-applet").</description>
+      <description>The implementation ID of the applet - e.g. "ClockAppletFactory::ClockApplet". This key is only relevant if the object_type key is "external-applet" (or the deprecated "cafecomponent-applet").</description>
     </key>
     <key name="attached-toplevel-id" type="s">
       <default>''</default>
@@ -70,7 +70,7 @@
       <summary>Launcher location</summary>
       <description>The location of the .desktop file describing the launcher. This key is only relevant if the object_type key is "launcher-object".</description>
     </key>
-    <key name="action-type" enum="org.mate.panel.PanelActionButtonType">
+    <key name="action-type" enum="org.cafe.panel.PanelActionButtonType">
       <default>'none'</default>
       <summary>Action button type</summary>
       <description>The action type this button represents. Possible values are "lock", "logout", "run", "search" and "screenshot". This key is only relevant if the object_type key is "action-applet".</description>

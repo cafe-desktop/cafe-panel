@@ -37,8 +37,8 @@
 #endif
 
 #include <libpanel-util/panel-list.h>
-#include <libmate-desktop/mate-dconf.h>
-#include <libmate-desktop/mate-gsettings.h>
+#include <libcafe-desktop/cafe-dconf.h>
+#include <libcafe-desktop/cafe-gsettings.h>
 
 #include "applet.h"
 #include "panel.h"
@@ -151,7 +151,7 @@ panel_profile_find_new_id (PanelGSettingsKeyType type)
 			break;
 	}
 
-	existing_ids = mate_dconf_list_subdirs (dir, TRUE);
+	existing_ids = cafe_dconf_list_subdirs (dir, TRUE);
 
 	for (i = 0; !retval; i++) {
 		retval = g_strdup_printf ("%s-%d", prefix, i);
@@ -392,7 +392,7 @@ panel_profile_get_attached_object_settings (PanelToplevel *toplevel)
 
 	attach_widget = panel_toplevel_get_attach_widget (toplevel);
 
-	id = mate_panel_applet_get_id_by_widget (attach_widget);
+	id = cafe_panel_applet_get_id_by_widget (attach_widget);
 
 	if (!id)
 		return NULL;
@@ -801,7 +801,7 @@ panel_profile_toplevel_change_notify (GSettings *settings,
 	else UPDATE_CENTERED ("x-centered", x, x_right)
 	else UPDATE_CENTERED ("y-centered", y, y_bottom)
 	else UPDATE_BOOL ("auto-hide", auto_hide)
-	else UPDATE_BOOL ("enable-animations", animate)
+	else UPDATE_BOOL ("enable-animations", anicafe)
 	else UPDATE_BOOL ("enable-buttons", enable_buttons)
 	else UPDATE_BOOL ("enable-arrows", enable_arrows)
 	else UPDATE_INT ("hide-delay", hide_delay)
@@ -873,7 +873,7 @@ panel_profile_add_to_list (PanelGSettingsKeyType  type,
 	char *new_id = id ? g_strdup (id) : panel_profile_find_new_id (type);
 
     if (new_id != NULL) {
-		mate_gsettings_append_strv (profile_settings,
+		cafe_gsettings_append_strv (profile_settings,
 		                            key_from_type (type),
 		                            new_id);
 		g_free (new_id);
@@ -884,7 +884,7 @@ void
 panel_profile_remove_from_list (PanelGSettingsKeyType  type,
 								const char        *id)
 {
-	mate_gsettings_remove_all_from_strv (profile_settings,
+	cafe_gsettings_remove_all_from_strv (profile_settings,
 	                                     key_from_type (type),
 	                                     id);
 }
@@ -1115,7 +1115,7 @@ panel_profile_load_toplevel (const char *toplevel_id)
 	GET_ENUM ("orientation", orientation);
 	GET_INT ("size", size);
 	GET_BOOL ("auto-hide", auto_hide);
-	GET_BOOL ("enable-animations", animate);
+	GET_BOOL ("enable-animations", anicafe);
 	GET_BOOL ("enable-buttons", enable_buttons);
 	GET_BOOL ("enable-arrows", enable_arrows);
 	GET_INT ("hide-delay", hide_delay);
@@ -1187,7 +1187,7 @@ panel_profile_load_and_show_toplevel (char *toplevel_id)
 	}
 
 	if (!loading_queued_applets)
-		mate_panel_applet_load_queued_applets (FALSE);
+		cafe_panel_applet_load_queued_applets (FALSE);
 
 	g_strfreev (objects);
 	g_object_unref (panel_settings);
@@ -1266,7 +1266,7 @@ panel_profile_delete_object (AppletInfo *applet_info)
 	const char        *id;
 
 	type = PANEL_GSETTINGS_OBJECTS;
-	id = mate_panel_applet_get_id (applet_info);
+	id = cafe_panel_applet_get_id (applet_info);
 
 	panel_profile_remove_from_list (type, id);
 }
@@ -1291,7 +1291,7 @@ panel_profile_load_object (char *id)
 	right_stick = g_settings_get_boolean (settings, PANEL_OBJECT_PANEL_RIGHT_STICK_KEY);
 	locked = g_settings_get_boolean (settings, PANEL_OBJECT_LOCKED_KEY);
 
-	mate_panel_applet_queue_applet_to_load (id,
+	cafe_panel_applet_queue_applet_to_load (id,
 					   object_type,
 					   toplevel_id,
 					   position,
@@ -1308,9 +1308,9 @@ panel_profile_destroy_object (const char *id)
 {
 	AppletInfo *info;
 
-	info = mate_panel_applet_get_by_id (id);
+	info = cafe_panel_applet_get_by_id (id);
 
-	mate_panel_applet_clean (info);
+	cafe_panel_applet_clean (info);
 }
 
 static void
@@ -1334,18 +1334,18 @@ panel_profile_delete_dir (PanelGSettingsKeyType  type,
 	if (type == PANEL_GSETTINGS_TOPLEVELS) {
 		gchar *subdir;
 		subdir = g_strdup_printf (PANEL_TOPLEVEL_PATH "%s/background/", id);
-		mate_dconf_recursive_reset (subdir, NULL);
+		cafe_dconf_recursive_reset (subdir, NULL);
 		g_free (subdir);
 	}
 	else if (type == PANEL_GSETTINGS_OBJECTS) {
 		gchar *subdir;
 		subdir = g_strdup_printf (PANEL_TOPLEVEL_PATH "%s/prefs/", id);
-		mate_dconf_recursive_reset (subdir, NULL);
+		cafe_dconf_recursive_reset (subdir, NULL);
 		g_free (subdir);
 	}
 
 	if (dir != NULL) {
-		mate_dconf_recursive_reset (dir, NULL);
+		cafe_dconf_recursive_reset (dir, NULL);
 		g_free (dir);
 	}
 }
@@ -1478,7 +1478,7 @@ panel_profile_toplevel_id_list_notify (GSettings *settings,
 
 	toplevel_ids_strv = g_settings_get_strv (settings, key);
 
-	toplevel_ids = mate_gsettings_strv_to_gslist ((const gchar **) toplevel_ids_strv);
+	toplevel_ids = cafe_gsettings_strv_to_gslist ((const gchar **) toplevel_ids_strv);
 	toplevel_ids = panel_g_slist_make_unique (toplevel_ids,
 						  (GCompareFunc) g_strcmp0,
 						  TRUE);
@@ -1522,12 +1522,12 @@ panel_profile_object_id_list_update (gchar **objects)
 	GSList *sublist = NULL, *l;
 	GSList *object_ids;
 
-	object_ids = mate_gsettings_strv_to_gslist ((const gchar **) objects);
+	object_ids = cafe_gsettings_strv_to_gslist ((const gchar **) objects);
 	object_ids = panel_g_slist_make_unique (object_ids,
 						(GCompareFunc) g_strcmp0,
 						TRUE);
 
-	existing_applets = mate_panel_applet_list_applets ();
+	existing_applets = cafe_panel_applet_list_applets ();
 
 	for (l = existing_applets; l; l = l->next) {
 		AppletInfo *info = l->data;
@@ -1536,20 +1536,20 @@ panel_profile_object_id_list_update (gchar **objects)
 
 	panel_profile_load_added_ids (sublist,
 								  object_ids,
-								  (PanelProfileGetIdFunc) mate_panel_applet_get_id,
+								  (PanelProfileGetIdFunc) cafe_panel_applet_get_id,
 								  (PanelProfileLoadFunc) panel_profile_load_object,
-								  (PanelProfileOnLoadQueue) mate_panel_applet_on_load_queue);
+								  (PanelProfileOnLoadQueue) cafe_panel_applet_on_load_queue);
 
 	panel_profile_delete_removed_ids (PANEL_GSETTINGS_OBJECTS,
 									  sublist,
 									  object_ids,
-									  (PanelProfileGetIdFunc) mate_panel_applet_get_id,
+									  (PanelProfileGetIdFunc) cafe_panel_applet_get_id,
 									  (PanelProfileDestroyFunc) panel_profile_destroy_object);
 
 	g_slist_free (sublist);
 	g_slist_free_full (object_ids, g_free);
 
-	mate_panel_applet_load_queued_applets (FALSE);
+	cafe_panel_applet_load_queued_applets (FALSE);
 }
 
 static void
@@ -1620,7 +1620,7 @@ panel_profile_ensure_toplevel_per_screen ()
 void
 panel_profile_settings_load (void)
 {
-	profile_settings = g_settings_new ("org.mate.panel");
+	profile_settings = g_settings_new ("org.cafe.panel");
 }
 
 void
@@ -1639,7 +1639,7 @@ panel_profile_load (void)
 
 	panel_profile_ensure_toplevel_per_screen ();
 
-	mate_panel_applet_load_queued_applets (TRUE);
+	cafe_panel_applet_load_queued_applets (TRUE);
 }
 
 static gboolean

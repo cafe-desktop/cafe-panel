@@ -55,7 +55,7 @@ panel_context_menu_show_help (GtkWidget *w,
 			      gpointer data)
 {
 	panel_show_help (gtk_widget_get_screen (w),
-			 "mate-user-guide", "gospanel-1", NULL);
+			 "cafe-user-guide", "gospanel-1", NULL);
 }
 
 static void
@@ -303,14 +303,14 @@ panel_context_menu_create (PanelWidget *panel)
 		info = (AppletInfo *) pointer;
 
 		if (info->menu == NULL) {
-			info->menu = mate_panel_applet_create_menu (info);
+			info->menu = cafe_panel_applet_create_menu (info);
 		}
 
 		return info->menu;
 	}
 
 	retval = create_empty_menu ();
-	gtk_widget_set_name (retval, "mate-panel-context-menu");
+	gtk_widget_set_name (retval, "cafe-panel-context-menu");
 
 	if (!panel_lockdown_get_locked_down ())
 		panel_context_menu_build_edition (panel, retval);
@@ -343,7 +343,7 @@ panel_context_menu_create (PanelWidget *panel)
 	GtkStyleContext *context;
 	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
 	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
-	gtk_style_context_add_class(context,"mate-panel-menu-bar");
+	gtk_style_context_add_class(context,"cafe-panel-menu-bar");
 
 	return retval;
 }

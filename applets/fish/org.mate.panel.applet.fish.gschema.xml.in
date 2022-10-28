@@ -1,5 +1,5 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-  <schema id="org.mate.panel.applet.fish">
+  <schema id="org.cafe.panel.applet.fish">
     <key name="name" type="s">
       <default>'Wanda'</default>
       <summary>The fish's name</summary>

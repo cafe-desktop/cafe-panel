@@ -204,7 +204,7 @@ msgstr ""
 
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:201
-msgid "To report a bug or make a suggestion regarding the Clock applet or this manual, follow the directions in the <ulink url=\"help:mate-user-guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
+msgid "To report a bug or make a suggestion regarding the Clock applet or this manual, follow the directions in the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
 
 #. (itstool) path: abstract/para
@@ -562,7 +562,7 @@ msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:484
-msgid "Press the <guibutton>Set System Time</guibutton> button, then the <application>mate-polkit</application> dialog prompts for the administration password. Enter the administration password and press the <guibutton>Authenticate</guibutton> button."
+msgid "Press the <guibutton>Set System Time</guibutton> button, then the <application>cafe-polkit</application> dialog prompts for the administration password. Enter the administration password and press the <guibutton>Authenticate</guibutton> button."
 msgstr ""
 
 #. (itstool) path: para/ulink

@@ -1,5 +1,5 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-  <enum id="org.mate.panel.applet.clock.ClockFormat">
+  <enum id="org.cafe.panel.applet.clock.ClockFormat">
     <value nick="invalid" value="0"/>
     <value nick="12-hour" value="1"/>
     <value nick="24-hour" value="2"/>
@@ -7,14 +7,14 @@
     <value nick="internet" value="4"/>
     <value nick="custom" value="5"/>
   </enum>
-  <enum id="org.mate.panel.applet.clock.TemperatureUnit">
+  <enum id="org.cafe.panel.applet.clock.TemperatureUnit">
     <value nick="Invalid" value="0"/>
     <value nick="Default" value="1"/>
     <value nick="Kelvin" value="2"/>
     <value nick="Centigrade" value="3"/>
     <value nick="Fahrenheit" value="4"/>
   </enum>
-  <enum id="org.mate.panel.applet.clock.SpeedUnit">
+  <enum id="org.cafe.panel.applet.clock.SpeedUnit">
     <value nick="Invalid" value="0"/>
     <value nick="Default" value="1"/>
     <value nick="m/s" value="2"/>
@@ -23,8 +23,8 @@
     <value nick="knots" value="5"/>
     <value nick="Beaufort scale" value="6"/>
   </enum>
-  <schema id="org.mate.panel.applet.clock">
-    <key name="format" enum="org.mate.panel.applet.clock.ClockFormat">
+  <schema id="org.cafe.panel.applet.clock">
+    <key name="format" enum="org.cafe.panel.applet.clock.ClockFormat">
       <default>'24-hour'</default>
       <summary>Hour format</summary>
       <description>This key specifies the hour format used by the clock applet. Possible values are "12-hour", "24-hour", "internet", "unix" and "custom". If set to "internet", the clock will display Internet time. The Internet time system divides the day into 1000 ".beats". There are no time zones in this system, so time is the same all over the world. If set to "unix", the clock will display time in seconds since Epoch, i.e. 1970-01-01. If set to "custom", the clock will display time according to the format specified in the custom_format key.</description>
@@ -74,12 +74,12 @@
       <summary>List of locations</summary>
       <description>A list of locations to display in the calendar window.</description>
     </key>
-    <key name="temperature-unit" enum="org.mate.panel.applet.clock.TemperatureUnit">
+    <key name="temperature-unit" enum="org.cafe.panel.applet.clock.TemperatureUnit">
       <default>'Centigrade'</default>
       <summary>Temperature unit</summary>
       <description>The unit to use when showing temperatures.</description>
     </key>
-    <key name="speed-unit" enum="org.mate.panel.applet.clock.SpeedUnit">
+    <key name="speed-unit" enum="org.cafe.panel.applet.clock.SpeedUnit">
       <default>'m/s'</default>
       <summary>Speed unit</summary>
       <description>The unit to use when showing wind speed.</description>

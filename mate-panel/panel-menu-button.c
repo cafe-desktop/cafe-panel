@@ -30,7 +30,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
-#include <matemenu-tree.h>
+#include <cafemenu-tree.h>
 
 #include <libpanel-util/panel-error.h>
 #include <libpanel-util/panel-launch.h>
@@ -73,8 +73,8 @@ typedef struct {
 } MenuPathRootItem;
 
 static MenuPathRootItem root_items[] = {
-	{APPLICATIONS_MENU, "mate-applications", "mate-applications.menu"},
-	{SETTINGS_MENU, "mate-settings", "mate-settings.menu"}
+	{APPLICATIONS_MENU, "cafe-applications", "cafe-applications.menu"},
+	{SETTINGS_MENU, "cafe-settings", "cafe-settings.menu"}
 };
 
 struct _PanelMenuButtonPrivate {
@@ -320,7 +320,7 @@ panel_menu_button_associate_panel (PanelMenuButton *button)
 	if (button->priv->toplevel)
 		panel_widget = panel_toplevel_get_panel_widget (button->priv->toplevel);
 
-	mate_panel_applet_menu_set_recurse (GTK_MENU (button->priv->menu), "menu_panel", panel_widget);
+	cafe_panel_applet_menu_set_recurse (GTK_MENU (button->priv->menu), "menu_panel", panel_widget);
 }
 
 static void
@@ -687,7 +687,7 @@ panel_menu_button_load (const char  *menu_path,
 			       "has-arrow", has_arrow,
 			       NULL);
 
-	info = mate_panel_applet_register (GTK_WIDGET (button), NULL, NULL,
+	info = cafe_panel_applet_register (GTK_WIDGET (button), NULL, NULL,
 				      panel, locked, position, exactpos,
 				      PANEL_OBJECT_MENU, id);
 	if (!info) {
@@ -697,12 +697,12 @@ panel_menu_button_load (const char  *menu_path,
 
 	button->priv->applet_id = g_strdup (info->id);
 
-	mate_panel_applet_add_callback (info, "help", "help-browser", _("_Help"), NULL);
+	cafe_panel_applet_add_callback (info, "help", "help-browser", _("_Help"), NULL);
 
         if (!panel_lockdown_get_locked_down () &&
             (panel_is_program_in_path ("mozo") ||
 	    panel_is_program_in_path ("menulibre")))
-		mate_panel_applet_add_callback (info, "edit", "document-properties",
+		cafe_panel_applet_add_callback (info, "edit", "document-properties",
 					   _("_Edit Menus"), NULL);
 
 	panel_widget_set_applet_expandable (panel, GTK_WIDGET (button), FALSE, TRUE);
@@ -738,18 +738,18 @@ panel_menu_button_get_icon (PanelMenuButton *button)
 
 			if ((tree = g_object_get_data (G_OBJECT (button->priv->menu),
 						       "panel-menu-tree"))) {
-				directory = matemenu_tree_get_directory_from_path (tree,
+				directory = cafemenu_tree_get_directory_from_path (tree,
 										button->priv->menu_path);
 				g_object_set_data_full (G_OBJECT (button->priv->menu),
 							"panel-menu-tree-directory",
 							directory,
-							(GDestroyNotify) matemenu_tree_item_unref);
+							(GDestroyNotify) cafemenu_tree_item_unref);
 			}
 		}
 
 		if (directory) {
 			GIcon  *gicon;
-			gicon = matemenu_tree_directory_get_icon (directory);
+			gicon = cafemenu_tree_directory_get_icon (directory);
 			if (gicon != NULL)
 				retval = g_icon_to_string(gicon);
 		}
@@ -1021,7 +1021,7 @@ panel_menu_button_invoke_menu (PanelMenuButton *button,
 	screen = gtk_widget_get_screen (GTK_WIDGET (button));
 
 	if (!strcmp (callback_name, "help")) {
-		panel_show_help (screen, "mate-user-guide", "gospanel-37", NULL);
+		panel_show_help (screen, "cafe-user-guide", "gospanel-37", NULL);
 
 	} else if (!strcmp (callback_name, "edit")) {
 
@@ -1049,7 +1049,7 @@ panel_menu_button_set_dnd_enabled (PanelMenuButton *button,
 
 	if (dnd_enabled) {
 		static GtkTargetEntry dnd_targets [] = {
-			{ "application/x-mate-panel-applet-internal", 0, 0 }
+			{ "application/x-cafe-panel-applet-internal", 0, 0 }
 		};
 		char *icon;
 

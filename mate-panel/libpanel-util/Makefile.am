@@ -5,7 +5,7 @@ AM_CPPFLAGS =							\
 	$(DCONF_CFLAGS)						\
 	-I.							\
 	-I$(srcdir)						\
-	-I$(top_builddir)/mate-panel/libpanel-util		\
+	-I$(top_builddir)/cafe-panel/libpanel-util		\
 	-DDATADIR=\""$(datadir)"\"				\
 	$(DISABLE_DEPRECATED_CFLAGS)
 

@@ -34,8 +34,8 @@
 #include <gio/gio.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
-#include <libmate-desktop/mate-desktop-utils.h>
-#include <libmate-desktop/mate-gsettings.h>
+#include <libcafe-desktop/cafe-desktop-utils.h>
+#include <libcafe-desktop/cafe-gsettings.h>
 
 #include <libpanel-util/panel-error.h>
 #include <libpanel-util/panel-launch.h>
@@ -102,7 +102,7 @@ static ObsoleteEnumStringPair panel_action_type_map [] = {
 };
 
 /* FIXME obsolete way to get string for enum */
-/* taken from deprecated mate-conf code */
+/* taken from deprecated cafe-conf code */
 static const gchar*
 obsolete_enum_to_string (ObsoleteEnumStringPair lookup_table[],
                          gint enum_value)
@@ -176,19 +176,19 @@ panel_action_lock_is_disabled (void)
 static void
 panel_action_lock_setup_menu (PanelActionButton *button)
 {
-	mate_panel_applet_add_callback (button->priv->info,
+	cafe_panel_applet_add_callback (button->priv->info,
 				   "activate",
 				   NULL,
 				   _("_Activate Screensaver"),
 				   screensaver_enabled);
 
-	mate_panel_applet_add_callback (button->priv->info,
+	cafe_panel_applet_add_callback (button->priv->info,
 				   "lock",
 				   NULL,
 				   _("_Lock Screen"),
 				   screensaver_enabled);
 
-	mate_panel_applet_add_callback (button->priv->info,
+	cafe_panel_applet_add_callback (button->priv->info,
 				   "prefs",
 				   "document-properties",
 				   _("_Properties"),
@@ -214,7 +214,7 @@ panel_action_logout (GtkWidget *widget)
 	PanelSessionManager *manager;
 	gboolean             prompt = TRUE;
 
-	if (mate_gsettings_schema_exists (MATE_SESSION_SCHEMA)) {
+	if (cafe_gsettings_schema_exists (MATE_SESSION_SCHEMA)) {
 		GSettings *msm_settings;
 		msm_settings = g_settings_new (MATE_SESSION_SCHEMA);
 		prompt = g_settings_get_boolean (msm_settings, MATE_SESSION_LOGOUT_PROMPT_KEY);
@@ -273,8 +273,8 @@ panel_action_search (GtkWidget *widget)
 	GdkScreen *screen;
 
 	screen = gtk_widget_get_screen (widget);
-	panel_launch_desktop_file_with_fallback ("mate-search-tool.desktop",
-						 "mate-search-tool",
+	panel_launch_desktop_file_with_fallback ("cafe-search-tool.desktop",
+						 "cafe-search-tool",
 						 screen, NULL);
 }
 
@@ -322,7 +322,7 @@ panel_action_connect_server (GtkWidget *widget)
 	else
 		command = g_strdup ("nemo-connect-server");
 
-	mate_gdk_spawn_command_line_on_screen (screen, command, &error);
+	cafe_gdk_spawn_command_line_on_screen (screen, command, &error);
 	g_free (command);
 
 	if (error) {
@@ -738,7 +738,7 @@ panel_action_button_load (PanelActionButtonType  type,
 	button = g_object_new (PANEL_TYPE_ACTION_BUTTON, "action-type", type, NULL);
 
 
-	button->priv->info = mate_panel_applet_register (GTK_WIDGET (button),
+	button->priv->info = cafe_panel_applet_register (GTK_WIDGET (button),
 						    NULL, NULL,
 						    panel, locked, position,
 						    exactpos, PANEL_OBJECT_ACTION, id);
@@ -747,7 +747,7 @@ panel_action_button_load (PanelActionButtonType  type,
 		return;
 	}
 
-	mate_panel_applet_add_callback (button->priv->info,
+	cafe_panel_applet_add_callback (button->priv->info,
 				   "help",
 				   "help-browser",
 				   _("_Help"),
@@ -830,7 +830,7 @@ panel_action_button_invoke_menu (PanelActionButton *button,
 
 		screen = gtk_widget_get_screen (GTK_WIDGET (button));
 
-		panel_show_help (screen, "mate-user-guide",
+		panel_show_help (screen, "cafe-user-guide",
 				 actions [button->priv->type].help_index, NULL);
 
 		return;
@@ -897,7 +897,7 @@ panel_action_button_set_dnd_enabled (PanelActionButton *button,
 
 	if (enabled) {
 		static GtkTargetEntry dnd_targets [] = {
-			{ "application/x-mate-panel-applet-internal", 0, 0 }
+			{ "application/x-cafe-panel-applet-internal", 0, 0 }
 		};
 
 		gtk_widget_set_has_window (GTK_WIDGET (button), TRUE);

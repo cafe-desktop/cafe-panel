@@ -32,7 +32,7 @@
 extern "C" {
 #endif
 
-#define PANEL_TYPE_APPLET_FRAME_DBUS         (mate_panel_applet_frame_dbus_get_type ())
+#define PANEL_TYPE_APPLET_FRAME_DBUS         (cafe_panel_applet_frame_dbus_get_type ())
 #define MATE_PANEL_APPLET_FRAME_DBUS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET_FRAME_DBUS, MatePanelAppletFrameDBus))
 #define MATE_PANEL_APPLET_FRAME_DBUS_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET_FRAME_DBUS, MatePanelAppletFrameDBusClass))
 #define PANEL_IS_APPLET_FRAME_DBUS(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), PANEL_TYPE_APPLET_FRAME_DBUS))
@@ -53,9 +53,9 @@ struct _MatePanelAppletFrameDBus{
 	MatePanelAppletFrameDBusPrivate  *priv;
 };
 
-GType     mate_panel_applet_frame_dbus_get_type           (void) G_GNUC_CONST;
+GType     cafe_panel_applet_frame_dbus_get_type           (void) G_GNUC_CONST;
 
-gboolean  mate_panel_applet_frame_dbus_load               (const gchar                 *iid,
+gboolean  cafe_panel_applet_frame_dbus_load               (const gchar                 *iid,
 						      MatePanelAppletFrameActivating  *frame_act);
 
 #ifdef __cplusplus

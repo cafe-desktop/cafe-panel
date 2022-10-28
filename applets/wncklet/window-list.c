@@ -14,8 +14,8 @@
 
 #include <string.h>
 
-#include <mate-panel-applet.h>
-#include <mate-panel-applet-gsettings.h>
+#include <cafe-panel-applet.h>
+#include <cafe-panel-applet-gsettings.h>
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
@@ -27,15 +27,15 @@
 #endif
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
-#include <libmate-desktop/mate-desktop-utils.h>
+#include <libcafe-desktop/cafe-desktop-utils.h>
 
 #include "wncklet.h"
 #include "window-list.h"
 
-#define WINDOW_LIST_ICON "mate-panel-window-list"
-#define WINDOW_LIST_SCHEMA "org.mate.panel.applet.window-list"
+#define WINDOW_LIST_ICON "cafe-panel-window-list"
+#define WINDOW_LIST_SCHEMA "org.cafe.panel.applet.window-list"
 #ifdef HAVE_WINDOW_PREVIEWS
-#define WINDOW_LIST_PREVIEW_SCHEMA "org.mate.panel.applet.window-list-previews"
+#define WINDOW_LIST_PREVIEW_SCHEMA "org.cafe.panel.applet.window-list-previews"
 #endif
 
 typedef struct {
@@ -107,7 +107,7 @@ static void response_cb(GtkWidget* widget, int id, TasklistData* tasklist)
 {
 	if (id == GTK_RESPONSE_HELP)
 	{
-		wncklet_display_help(widget, "mate-user-guide", "windowlist-prefs", WINDOW_LIST_ICON);
+		wncklet_display_help(widget, "cafe-user-guide", "windowlist-prefs", WINDOW_LIST_ICON);
 	}
 	else
 	{
@@ -236,7 +236,7 @@ static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbn
 	gdk_monitor_get_geometry (monitor, &monitor_geom);
 
 	/* Add padding to clear the panel */
-	switch (mate_panel_applet_get_orient (MATE_PANEL_APPLET (tasklist->applet)))
+	switch (cafe_panel_applet_get_orient (MATE_PANEL_APPLET (tasklist->applet)))
 	{
 		case MATE_PANEL_APPLET_ORIENT_LEFT:
 			x_pos = monitor_geom.width + monitor_geom.x - (width + tasklist->size) - PREVIEW_PADDING;
@@ -343,7 +343,7 @@ static void applet_change_pixel_size(MatePanelApplet* applet, gint size, Tasklis
 /* TODO: this is sad, should be used a function to retrieve  applications from
  *  .desktop or some like that. */
 static const char* system_monitors[] = {
-	"mate-system-monitor",
+	"cafe-system-monitor",
 	"gnome-system-monitor",
 };
 
@@ -539,7 +539,7 @@ static void move_unminimized_windows_changed(GSettings* settings, gchar* key, Ta
 
 static void setup_gsettings(TasklistData* tasklist)
 {
-	tasklist->settings = mate_panel_applet_settings_new (MATE_PANEL_APPLET (tasklist->applet), WINDOW_LIST_SCHEMA);
+	tasklist->settings = cafe_panel_applet_settings_new (MATE_PANEL_APPLET (tasklist->applet), WINDOW_LIST_SCHEMA);
 
 	g_signal_connect (tasklist->settings,
 					  "changed::display-all-workspaces",
@@ -547,7 +547,7 @@ static void setup_gsettings(TasklistData* tasklist)
 					  tasklist);
 
 #ifdef HAVE_WINDOW_PREVIEWS
-	tasklist->preview_settings = mate_panel_applet_settings_new (MATE_PANEL_APPLET (tasklist->applet), WINDOW_LIST_PREVIEW_SCHEMA);
+	tasklist->preview_settings = cafe_panel_applet_settings_new (MATE_PANEL_APPLET (tasklist->applet), WINDOW_LIST_PREVIEW_SCHEMA);
 
 	g_signal_connect (tasklist->preview_settings,
 					  "changed::show-window-thumbnails",
@@ -597,7 +597,7 @@ static void applet_size_allocate(GtkWidget *widget, GtkAllocation *allocation, T
 
 	if (tasklist->needs_hints)
 #endif
-		mate_panel_applet_set_size_hints(MATE_PANEL_APPLET(tasklist->applet), size_hints, len, 0);
+		cafe_panel_applet_set_size_hints(MATE_PANEL_APPLET(tasklist->applet), size_hints, len, 0);
 }
 
 static GdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flags, void* data)
@@ -660,7 +660,7 @@ gboolean window_list_applet_fill(MatePanelApplet* applet)
 	provider = gtk_css_provider_new ();
 	screen = gdk_screen_get_default ();
 	gtk_css_provider_load_from_data (provider,
-										".mate-panel-menu-bar button,\n"
+										".cafe-panel-menu-bar button,\n"
 										" #tasklist-button {\n"
 										" padding: 0px;\n"
 										" margin: 0px;\n }",
@@ -670,7 +670,7 @@ gboolean window_list_applet_fill(MatePanelApplet* applet)
 										GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_object_unref (provider);
 
-	mate_panel_applet_set_flags(MATE_PANEL_APPLET(tasklist->applet), MATE_PANEL_APPLET_EXPAND_MAJOR | MATE_PANEL_APPLET_EXPAND_MINOR | MATE_PANEL_APPLET_HAS_HANDLE);
+	cafe_panel_applet_set_flags(MATE_PANEL_APPLET(tasklist->applet), MATE_PANEL_APPLET_EXPAND_MAJOR | MATE_PANEL_APPLET_EXPAND_MINOR | MATE_PANEL_APPLET_HAS_HANDLE);
 
 	setup_gsettings(tasklist);
 
@@ -686,13 +686,13 @@ gboolean window_list_applet_fill(MatePanelApplet* applet)
 
 	tasklist->move_unminimized_windows = g_settings_get_boolean (tasklist->settings, "move-unminimized-windows");
 
-	tasklist->size = mate_panel_applet_get_size(applet);
+	tasklist->size = cafe_panel_applet_get_size(applet);
 
 #if !defined(WNCKLET_INPROCESS) && !GTK_CHECK_VERSION (3, 23, 0)
 	tasklist->needs_hints = FALSE;
 #endif
 
-	switch (mate_panel_applet_get_orient(applet))
+	switch (cafe_panel_applet_get_orient(applet))
 	{
 		case MATE_PANEL_APPLET_ORIENT_LEFT:
 		case MATE_PANEL_APPLET_ORIENT_RIGHT:
@@ -726,7 +726,7 @@ gboolean window_list_applet_fill(MatePanelApplet* applet)
 	g_signal_connect(G_OBJECT(tasklist->applet), "change_size", G_CALLBACK(applet_change_pixel_size), tasklist);
 	g_signal_connect(G_OBJECT(tasklist->applet), "change_background", G_CALLBACK(applet_change_background), tasklist);
 
-	mate_panel_applet_set_background_widget(MATE_PANEL_APPLET(tasklist->applet), GTK_WIDGET(tasklist->applet));
+	cafe_panel_applet_set_background_widget(MATE_PANEL_APPLET(tasklist->applet), GTK_WIDGET(tasklist->applet));
 
 	action_group = gtk_action_group_new("Tasklist Applet Actions");
 	gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
@@ -734,7 +734,7 @@ gboolean window_list_applet_fill(MatePanelApplet* applet)
 
 
 	/* disable the item of system monitor, if not exists.
-	 * example, mate-system-monitor, o gnome-system-monitor */
+	 * example, cafe-system-monitor, o gnome-system-monitor */
 	char* programpath;
 	int i;
 
@@ -759,11 +759,11 @@ gboolean window_list_applet_fill(MatePanelApplet* applet)
 	/* end of system monitor item */
 
 
-	mate_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (tasklist->applet),
+	cafe_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (tasklist->applet),
 	                                            WNCKLET_RESOURCE_PATH "window-list-menu.xml",
 	                                            action_group);
 
-	if (mate_panel_applet_get_locked_down(MATE_PANEL_APPLET(tasklist->applet)))
+	if (cafe_panel_applet_get_locked_down(MATE_PANEL_APPLET(tasklist->applet)))
 	{
 		GtkAction* action;
 
@@ -793,7 +793,7 @@ static void call_system_monitor(GtkAction* action, TasklistData* tasklist)
 		{
 			g_free(programpath);
 
-			mate_gdk_spawn_command_line_on_screen(gtk_widget_get_screen(tasklist->applet),
+			cafe_gdk_spawn_command_line_on_screen(gtk_widget_get_screen(tasklist->applet),
 				      system_monitors[i],
 				      NULL);
 			return;
@@ -804,7 +804,7 @@ static void call_system_monitor(GtkAction* action, TasklistData* tasklist)
 
 static void display_help_dialog(GtkAction* action, TasklistData* tasklist)
 {
-	wncklet_display_help(tasklist->applet, "mate-user-guide", "windowlist", WINDOW_LIST_ICON);
+	wncklet_display_help(tasklist->applet, "cafe-user-guide", "windowlist", WINDOW_LIST_ICON);
 }
 
 static void display_about_dialog(GtkAction* action, TasklistData* tasklist)
@@ -835,7 +835,7 @@ static void display_about_dialog(GtkAction* action, TasklistData* tasklist)
 		"logo-icon-name", WINDOW_LIST_ICON,
 		"translator-credits", _("translator-credits"),
 		"version", VERSION,
-		"website", "http://www.mate-desktop.org/",
+		"website", "http://www.cafe-desktop.org/",
 		NULL);
 }
 

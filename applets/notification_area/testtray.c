@@ -32,7 +32,7 @@
 #endif
 #include "na-grid.h"
 
-#define NOTIFICATION_AREA_ICON "mate-panel-notification-area"
+#define NOTIFICATION_AREA_ICON "cafe-panel-notification-area"
 
 static guint n_windows = 0;
 

@@ -33,8 +33,8 @@
 #include <gdk/gdkx.h>
 #endif
 
-#include <libmate-desktop/mate-dconf.h>
-#include <libmate-desktop/mate-gsettings.h>
+#include <libcafe-desktop/cafe-dconf.h>
+#include <libcafe-desktop/cafe-gsettings.h>
 
 #include "panel-layout.h"
 #include "panel-profile.h"
@@ -159,7 +159,7 @@ panel_layout_append_group_helper (GKeyFile                  *keyfile,
     if (!*id)
         id = NULL;
 
-    if (id && !mate_gsettings_is_valid_keyname (id, &error)) {
+    if (id && !cafe_gsettings_is_valid_keyname (id, &error)) {
         g_warning ("Invalid id name in layout '%s' (%s)", id, error->message);
         g_error_free (error);
         return FALSE;
@@ -179,7 +179,7 @@ panel_layout_append_group_helper (GKeyFile                  *keyfile,
     }
 
     dconf_path = g_strdup_printf (PANEL_RESOURCE_PATH "/%s", dir);
-    existing_ids = mate_dconf_list_subdirs (dconf_path, TRUE);
+    existing_ids = cafe_dconf_list_subdirs (dconf_path, TRUE);
 
     if (id) {
         if (set_screen_to > 0) {
@@ -269,7 +269,7 @@ panel_layout_append_group_helper (GKeyFile                  *keyfile,
 
         GSettings *panel_settings;
         panel_settings = g_settings_new (PANEL_SCHEMA);
-        mate_gsettings_append_strv (panel_settings,
+        cafe_gsettings_append_strv (panel_settings,
                                      id_list_key,
                                      unique_id);
         g_object_unref (panel_settings);
@@ -311,7 +311,7 @@ panel_layout_apply_minimal_default (int          set_screen_to,
     GSettings *panel_settings;
     panel_settings = g_settings_new (PANEL_SCHEMA);
     g_return_if_fail(panel_settings);
-    mate_gsettings_append_strv (panel_settings,
+    cafe_gsettings_append_strv (panel_settings,
                                 PANEL_TOPLEVEL_ID_LIST_KEY,
                                 unique_id);
 

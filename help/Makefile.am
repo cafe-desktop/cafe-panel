@@ -1,3 +1,3 @@
-SUBDIRS = mate-clock mate-fish
+SUBDIRS = cafe-clock cafe-fish
 
 -include $(top_srcdir)/git.mk

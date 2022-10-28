@@ -41,7 +41,7 @@ extern "C" {
 #define PANEL_ADD_TO_DEFAULT_ICON_SIZE		32
 
 /* stock icons */
-#define PANEL_STOCK_FORCE_QUIT          "mate-panel-force-quit"
+#define PANEL_STOCK_FORCE_QUIT          "cafe-panel-force-quit"
 
 /* stock items  - no point in theme the icons one these,
  * they use stock gtk icons and just modify the text

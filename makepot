@@ -1,8 +1,8 @@
 #! /bin/sh
 
-PACKAGE=mate-panel;
-CLOCK=mate-clock;
-FISH=mate-fish;
+PACKAGE=cafe-panel;
+CLOCK=cafe-clock;
+FISH=cafe-fish;
 
 # regular translations
 make -C po $PACKAGE.pot && mv po/$PACKAGE.pot .

@@ -1,7 +1,7 @@
 #include <config.h>
 #include <string.h>
 
-#include "mate-panel-applet.h"
+#include "cafe-panel-applet.h"
 
 static void
 test_applet_on_do (GtkAction *action,
@@ -150,10 +150,10 @@ test_applet_fill (TestApplet *applet)
 	gtk_widget_show_all (GTK_WIDGET (applet));
 
 	test_applet_handle_size_change (applet,
-					mate_panel_applet_get_size (MATE_PANEL_APPLET (applet)),
+					cafe_panel_applet_get_size (MATE_PANEL_APPLET (applet)),
 					NULL);
 	test_applet_handle_orient_change (applet,
-					  mate_panel_applet_get_orient (MATE_PANEL_APPLET (applet)),
+					  cafe_panel_applet_get_orient (MATE_PANEL_APPLET (applet)),
 					  NULL);
 
 	action_group = gtk_action_group_new ("TestAppletActions");
@@ -162,14 +162,14 @@ test_applet_fill (TestApplet *applet)
 				      G_N_ELEMENTS (test_applet_menu_actions),
 				      applet);
 
-	mate_panel_applet_setup_menu (MATE_PANEL_APPLET (applet),
+	cafe_panel_applet_setup_menu (MATE_PANEL_APPLET (applet),
 				 test_applet_menu_xml,
 				 action_group);
 	g_object_unref (action_group);
 
 	gtk_widget_set_tooltip_text (GTK_WIDGET (applet), "Hello Tip");
 
-	mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet), MATE_PANEL_APPLET_HAS_HANDLE);
+	cafe_panel_applet_set_flags (MATE_PANEL_APPLET (applet), MATE_PANEL_APPLET_HAS_HANDLE);
 
 	g_signal_connect (G_OBJECT (applet),
 			  "change_orient",
