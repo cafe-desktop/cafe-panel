@@ -42,20 +42,20 @@ typedef enum {
 	MATE_PANEL_APPLET_ORIENT_RIGHT
 #define MATE_PANEL_APPLET_ORIENT_FIRST MATE_PANEL_APPLET_ORIENT_UP
 #define MATE_PANEL_APPLET_ORIENT_LAST  MATE_PANEL_APPLET_ORIENT_RIGHT
-} MatePanelAppletOrient;
+} CafePanelAppletOrient;
 
 #define PANEL_TYPE_APPLET              (cafe_panel_applet_get_type ())
-#define MATE_PANEL_APPLET(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET, MatePanelApplet))
-#define MATE_PANEL_APPLET_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET, MatePanelAppletClass))
+#define MATE_PANEL_APPLET(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET, CafePanelApplet))
+#define MATE_PANEL_APPLET_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET, CafePanelAppletClass))
 #define PANEL_IS_APPLET(o)             (G_TYPE_CHECK_INSTANCE_TYPE ((o), PANEL_TYPE_APPLET))
 #define PANEL_IS_APPLET_CLASS(k)       (G_TYPE_CHECK_CLASS_TYPE ((k), PANEL_TYPE_APPLET))
-#define MATE_PANEL_APPLET_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET, MatePanelAppletClass))
+#define MATE_PANEL_APPLET_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET, CafePanelAppletClass))
 
 typedef enum {
 	PANEL_NO_BACKGROUND,
 	PANEL_COLOR_BACKGROUND,
 	PANEL_PIXMAP_BACKGROUND
-} MatePanelAppletBackgroundType;
+} CafePanelAppletBackgroundType;
 
 typedef enum {
 	MATE_PANEL_APPLET_FLAGS_NONE   = 0,
@@ -63,64 +63,64 @@ typedef enum {
 	MATE_PANEL_APPLET_EXPAND_MINOR = 1 << 1,
 	MATE_PANEL_APPLET_HAS_HANDLE   = 1 << 2
 #define MATE_PANEL_APPLET_FLAGS_ALL (MATE_PANEL_APPLET_EXPAND_MAJOR|MATE_PANEL_APPLET_EXPAND_MINOR|MATE_PANEL_APPLET_HAS_HANDLE)
-} MatePanelAppletFlags;
+} CafePanelAppletFlags;
 
-typedef struct _MatePanelApplet        MatePanelApplet;
-typedef struct _MatePanelAppletClass   MatePanelAppletClass;
-typedef struct _MatePanelAppletPrivate MatePanelAppletPrivate;
+typedef struct _CafePanelApplet        CafePanelApplet;
+typedef struct _CafePanelAppletClass   CafePanelAppletClass;
+typedef struct _CafePanelAppletPrivate CafePanelAppletPrivate;
 
-typedef gboolean (*MatePanelAppletFactoryCallback) (MatePanelApplet* applet, const gchar *iid, gpointer user_data);
+typedef gboolean (*CafePanelAppletFactoryCallback) (CafePanelApplet* applet, const gchar *iid, gpointer user_data);
 
-struct _MatePanelApplet {
+struct _CafePanelApplet {
 	GtkEventBox event_box;
 
-	MatePanelAppletPrivate* priv;
+	CafePanelAppletPrivate* priv;
 };
 
-struct _MatePanelAppletClass {
+struct _CafePanelAppletClass {
 	GtkEventBoxClass event_box_class;
 
-	void (*change_orient) (MatePanelApplet* applet, MatePanelAppletOrient orient);
+	void (*change_orient) (CafePanelApplet* applet, CafePanelAppletOrient orient);
 
-	void (*change_size) (MatePanelApplet* applet, guint size);
+	void (*change_size) (CafePanelApplet* applet, guint size);
 
-	void (*change_background) (MatePanelApplet *applet, MatePanelAppletBackgroundType type, GdkRGBA* color, cairo_pattern_t *pattern);
+	void (*change_background) (CafePanelApplet *applet, CafePanelAppletBackgroundType type, GdkRGBA* color, cairo_pattern_t *pattern);
 
-	void (*move_focus_out_of_applet) (MatePanelApplet* frame, GtkDirectionType direction);
+	void (*move_focus_out_of_applet) (CafePanelApplet* frame, GtkDirectionType direction);
 };
 
 GType cafe_panel_applet_get_type(void) G_GNUC_CONST;
 
 GtkWidget* cafe_panel_applet_new(void);
 
-MatePanelAppletOrient cafe_panel_applet_get_orient(MatePanelApplet* applet);
-guint cafe_panel_applet_get_size(MatePanelApplet* applet);
-MatePanelAppletBackgroundType cafe_panel_applet_get_background (MatePanelApplet *applet, /* return values */ GdkRGBA* color, cairo_pattern_t** pattern);
-void cafe_panel_applet_set_background_widget(MatePanelApplet* applet, GtkWidget* widget);
+CafePanelAppletOrient cafe_panel_applet_get_orient(CafePanelApplet* applet);
+guint cafe_panel_applet_get_size(CafePanelApplet* applet);
+CafePanelAppletBackgroundType cafe_panel_applet_get_background (CafePanelApplet *applet, /* return values */ GdkRGBA* color, cairo_pattern_t** pattern);
+void cafe_panel_applet_set_background_widget(CafePanelApplet* applet, GtkWidget* widget);
 
-gchar* cafe_panel_applet_get_preferences_path(MatePanelApplet* applet);
+gchar* cafe_panel_applet_get_preferences_path(CafePanelApplet* applet);
 
-MatePanelAppletFlags cafe_panel_applet_get_flags(MatePanelApplet* applet);
-void cafe_panel_applet_set_flags(MatePanelApplet* applet, MatePanelAppletFlags flags);
+CafePanelAppletFlags cafe_panel_applet_get_flags(CafePanelApplet* applet);
+void cafe_panel_applet_set_flags(CafePanelApplet* applet, CafePanelAppletFlags flags);
 
-void cafe_panel_applet_set_size_hints(MatePanelApplet* applet, const int* size_hints, int n_elements, int base_size);
+void cafe_panel_applet_set_size_hints(CafePanelApplet* applet, const int* size_hints, int n_elements, int base_size);
 
-gboolean cafe_panel_applet_get_locked_down(MatePanelApplet* applet);
+gboolean cafe_panel_applet_get_locked_down(CafePanelApplet* applet);
 
 // Does nothing when not on X11
-void cafe_panel_applet_request_focus(MatePanelApplet* applet, guint32 timestamp);
+void cafe_panel_applet_request_focus(CafePanelApplet* applet, guint32 timestamp);
 
-void cafe_panel_applet_setup_menu(MatePanelApplet* applet, const gchar* xml, GtkActionGroup* action_group);
-void cafe_panel_applet_setup_menu_from_file(MatePanelApplet* applet, const gchar* filename, GtkActionGroup* action_group);
-void cafe_panel_applet_setup_menu_from_resource (MatePanelApplet    *applet,
+void cafe_panel_applet_setup_menu(CafePanelApplet* applet, const gchar* xml, GtkActionGroup* action_group);
+void cafe_panel_applet_setup_menu_from_file(CafePanelApplet* applet, const gchar* filename, GtkActionGroup* action_group);
+void cafe_panel_applet_setup_menu_from_resource (CafePanelApplet    *applet,
                                                  const gchar        *resource_path,
                                                  GtkActionGroup     *action_group);
 
-int cafe_panel_applet_factory_main(const gchar* factory_id,gboolean  out_process, GType applet_type, MatePanelAppletFactoryCallback callback, gpointer data);
+int cafe_panel_applet_factory_main(const gchar* factory_id,gboolean  out_process, GType applet_type, CafePanelAppletFactoryCallback callback, gpointer data);
 
 int  cafe_panel_applet_factory_setup_in_process (const gchar               *factory_id,
 							  GType                      applet_type,
-							  MatePanelAppletFactoryCallback callback,
+							  CafePanelAppletFactoryCallback callback,
 							  gpointer                   data);
 
 

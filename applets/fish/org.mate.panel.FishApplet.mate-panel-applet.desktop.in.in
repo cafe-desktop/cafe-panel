@@ -10,7 +10,7 @@ Name=Fish
 Description=Display a swimming fish or another anicafed creature
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=cafe-panel-fish
-MateComponentId=OAFIID:MATE_FishApplet;
+CafeComponentId=OAFIID:MATE_FishApplet;
 Platforms=X11;Wayland;
 X-MATE-Bugzilla-Bugzilla=MATE
 X-MATE-Bugzilla-Product=cafe-panel

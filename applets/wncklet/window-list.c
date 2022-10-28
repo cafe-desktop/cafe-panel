@@ -115,12 +115,12 @@ static void response_cb(GtkWidget* widget, int id, TasklistData* tasklist)
 	}
 }
 
-static void applet_realized(MatePanelApplet* applet, TasklistData* tasklist)
+static void applet_realized(CafePanelApplet* applet, TasklistData* tasklist)
 {
 	tasklist->icon_theme = gtk_icon_theme_get_for_screen(gtk_widget_get_screen(tasklist->applet));
 }
 
-static void applet_change_orient(MatePanelApplet* applet, MatePanelAppletOrient orient, TasklistData* tasklist)
+static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient orient, TasklistData* tasklist)
 {
 	GtkOrientation new_orient;
 
@@ -146,7 +146,7 @@ static void applet_change_orient(MatePanelApplet* applet, MatePanelAppletOrient 
 	tasklist_update(tasklist);
 }
 
-static void applet_change_background(MatePanelApplet* applet, MatePanelAppletBackgroundType type, GdkColor* color, cairo_pattern_t* pattern, TasklistData* tasklist)
+static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBackgroundType type, GdkColor* color, cairo_pattern_t* pattern, TasklistData* tasklist)
 {
 	switch (type)
 	{
@@ -330,7 +330,7 @@ static gboolean applet_leave_notify_event (WnckTasklist *tl, GList *wnck_windows
 }
 #endif
 
-static void applet_change_pixel_size(MatePanelApplet* applet, gint size, TasklistData* tasklist)
+static void applet_change_pixel_size(CafePanelApplet* applet, gint size, TasklistData* tasklist)
 {
 	if (tasklist->size == size)
 		return;
@@ -646,7 +646,7 @@ static GdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flag
 	return retval;
 }
 
-gboolean window_list_applet_fill(MatePanelApplet* applet)
+gboolean window_list_applet_fill(CafePanelApplet* applet)
 {
 	TasklistData* tasklist;
 	GtkActionGroup* action_group;

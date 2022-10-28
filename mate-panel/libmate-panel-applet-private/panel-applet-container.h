@@ -32,39 +32,39 @@ extern "C" {
 #endif
 
 #define PANEL_TYPE_APPLET_CONTAINER            (cafe_panel_applet_container_get_type ())
-#define MATE_PANEL_APPLET_CONTAINER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLET_CONTAINER, MatePanelAppletContainer))
-#define MATE_PANEL_APPLET_CONTAINER_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), PANEL_TYPE_APPLET_CONTAINER, MatePanelAppletContainerClass))
+#define MATE_PANEL_APPLET_CONTAINER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLET_CONTAINER, CafePanelAppletContainer))
+#define MATE_PANEL_APPLET_CONTAINER_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), PANEL_TYPE_APPLET_CONTAINER, CafePanelAppletContainerClass))
 #define PANEL_IS_APPLET_CONTAINER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), PANEL_TYPE_APPLET_CONTAINER))
 #define PANEL_IS_APPLET_CONTAINER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), PANEL_TYPE_APPLET_CONTAINER))
-#define MATE_PANEL_APPLET_CONTAINER_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), PANEL_TYPE_APPLET_CONTAINER, MatePanelAppletContainerClass))
+#define MATE_PANEL_APPLET_CONTAINER_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), PANEL_TYPE_APPLET_CONTAINER, CafePanelAppletContainerClass))
 
 #define MATE_PANEL_APPLET_CONTAINER_ERROR           (cafe_panel_applet_container_error_quark())
 
 typedef enum {
 	MATE_PANEL_APPLET_CONTAINER_INVALID_APPLET,
 	MATE_PANEL_APPLET_CONTAINER_INVALID_CHILD_PROPERTY
-} MatePanelAppletContainerError;
+} CafePanelAppletContainerError;
 
-typedef struct _MatePanelAppletContainer        MatePanelAppletContainer;
-typedef struct _MatePanelAppletContainerClass   MatePanelAppletContainerClass;
-typedef struct _MatePanelAppletContainerPrivate MatePanelAppletContainerPrivate;
+typedef struct _CafePanelAppletContainer        CafePanelAppletContainer;
+typedef struct _CafePanelAppletContainerClass   CafePanelAppletContainerClass;
+typedef struct _CafePanelAppletContainerPrivate CafePanelAppletContainerPrivate;
 
-struct _MatePanelAppletContainer {
+struct _CafePanelAppletContainer {
 	GtkEventBox parent;
 
-	MatePanelAppletContainerPrivate *priv;
+	CafePanelAppletContainerPrivate *priv;
 };
 
-struct _MatePanelAppletContainerClass {
+struct _CafePanelAppletContainerClass {
 	GtkEventBoxClass parent_class;
 
 	/* Signals */
-	void (*applet_broken)          (MatePanelAppletContainer *container);
-	void (*applet_move)            (MatePanelAppletContainer *container);
-	void (*applet_remove)          (MatePanelAppletContainer *container);
-	void (*applet_lock)            (MatePanelAppletContainer *container,
+	void (*applet_broken)          (CafePanelAppletContainer *container);
+	void (*applet_move)            (CafePanelAppletContainer *container);
+	void (*applet_remove)          (CafePanelAppletContainer *container);
+	void (*applet_lock)            (CafePanelAppletContainer *container,
 					gboolean              locked);
-	void (*child_property_changed) (MatePanelAppletContainer *container,
+	void (*child_property_changed) (CafePanelAppletContainer *container,
 					const gchar          *property_name,
 					GVariant             *value);
 };
@@ -74,45 +74,45 @@ GQuark     cafe_panel_applet_container_error_quark             (void) G_GNUC_CON
 GtkWidget *cafe_panel_applet_container_new                     (void);
 
 
-void       cafe_panel_applet_container_add                     (MatePanelAppletContainer *container,
+void       cafe_panel_applet_container_add                     (CafePanelAppletContainer *container,
 							   GdkScreen            *screen,
 							   const gchar          *iid,
 							   GCancellable        *cancellable,
 							   GAsyncReadyCallback  callback,
 							   gpointer             user_data,
 							   GVariant            *properties);
-gboolean   cafe_panel_applet_container_add_finish              (MatePanelAppletContainer *container,
+gboolean   cafe_panel_applet_container_add_finish              (CafePanelAppletContainer *container,
 							   GAsyncResult         *result,
 							   GError              **error);
-void       cafe_panel_applet_container_child_popup_menu        (MatePanelAppletContainer *container,
+void       cafe_panel_applet_container_child_popup_menu        (CafePanelAppletContainer *container,
 							   guint                 button,
 							   guint32               timestamp,
 							   GCancellable         *cancellable,
 							   GAsyncReadyCallback   callback,
 							   gpointer              user_data);
-gboolean   cafe_panel_applet_container_child_popup_menu_finish (MatePanelAppletContainer *container,
+gboolean   cafe_panel_applet_container_child_popup_menu_finish (CafePanelAppletContainer *container,
 							   GAsyncResult         *result,
 							   GError              **error);
 
-gconstpointer  cafe_panel_applet_container_child_set           (MatePanelAppletContainer *container,
+gconstpointer  cafe_panel_applet_container_child_set           (CafePanelAppletContainer *container,
 							   const gchar          *property_name,
 							   const GVariant       *value,
 							   GCancellable         *cancellable,
 							   GAsyncReadyCallback   callback,
 							   gpointer              user_data);
-gboolean   cafe_panel_applet_container_child_set_finish        (MatePanelAppletContainer *container,
+gboolean   cafe_panel_applet_container_child_set_finish        (CafePanelAppletContainer *container,
 							   GAsyncResult         *result,
 							   GError              **error);
-gconstpointer  cafe_panel_applet_container_child_get           (MatePanelAppletContainer *container,
+gconstpointer  cafe_panel_applet_container_child_get           (CafePanelAppletContainer *container,
 							   const gchar          *property_name,
 							   GCancellable         *cancellable,
 							   GAsyncReadyCallback   callback,
 							   gpointer              user_data);
-GVariant  *cafe_panel_applet_container_child_get_finish        (MatePanelAppletContainer *container,
+GVariant  *cafe_panel_applet_container_child_get_finish        (CafePanelAppletContainer *container,
 							   GAsyncResult         *result,
 							   GError              **error);
 
-void       cafe_panel_applet_container_cancel_operation (MatePanelAppletContainer *container,
+void       cafe_panel_applet_container_cancel_operation (CafePanelAppletContainer *container,
                                                          gconstpointer             operation);
 
 #ifdef __cplusplus

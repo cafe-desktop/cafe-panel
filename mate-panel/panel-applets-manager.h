@@ -33,48 +33,48 @@ extern "C" {
 #endif
 
 #define PANEL_TYPE_APPLETS_MANAGER		(cafe_panel_applets_manager_get_type ())
-#define MATE_PANEL_APPLETS_MANAGER(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLETS_MANAGER, MatePanelAppletsManager))
-#define MATE_PANEL_APPLETS_MANAGER_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST ((klass), PANEL_TYPE_APPLETS_MANAGER, MatePanelAppletsManagerClass))
+#define MATE_PANEL_APPLETS_MANAGER(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLETS_MANAGER, CafePanelAppletsManager))
+#define MATE_PANEL_APPLETS_MANAGER_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST ((klass), PANEL_TYPE_APPLETS_MANAGER, CafePanelAppletsManagerClass))
 #define PANEL_IS_APPLETS_MANAGER(obj)		(G_TYPE_CHECK_INSTANCE_TYPE ((obj), PANEL_TYPE_APPLETS_MANAGER))
 #define PANEL_IS_APPLETS_MANAGER_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE ((klass), PANEL_TYPE_APPLETS_MANAGER))
-#define MATE_PANEL_APPLETS_MANAGER_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS((obj), PANEL_TYPE_APPLETS_MANAGER, MatePanelAppletsManagerClass))
+#define MATE_PANEL_APPLETS_MANAGER_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS((obj), PANEL_TYPE_APPLETS_MANAGER, CafePanelAppletsManagerClass))
 
 /**
  * MATE_PANEL_APPLETS_MANAGER_EXTENSION_POINT_NAME:
  *
- * Extension point for #MatePanelAppletsManager functionality.
+ * Extension point for #CafePanelAppletsManager functionality.
  **/
 #define MATE_PANEL_APPLETS_MANAGER_EXTENSION_POINT_NAME "cafe-panel-applets-manager"
 
-typedef struct _MatePanelAppletsManager		MatePanelAppletsManager;
-typedef struct _MatePanelAppletsManagerClass	MatePanelAppletsManagerClass;
+typedef struct _CafePanelAppletsManager		CafePanelAppletsManager;
+typedef struct _CafePanelAppletsManagerClass	CafePanelAppletsManagerClass;
 
-struct _MatePanelAppletsManagerClass {
+struct _CafePanelAppletsManagerClass {
 	GObjectClass parent_class;
 
-	GList *            (*get_applets)           (MatePanelAppletsManager  *manager);
+	GList *            (*get_applets)           (CafePanelAppletsManager  *manager);
 
-	gboolean           (*factory_activate)      (MatePanelAppletsManager  *manager,
+	gboolean           (*factory_activate)      (CafePanelAppletsManager  *manager,
 						     const gchar          *iid);
-	gboolean           (*factory_deactivate)    (MatePanelAppletsManager  *manager,
-						     const gchar          *iid);
-
-	MatePanelAppletInfo  * (*get_applet_info)       (MatePanelAppletsManager  *manager,
+	gboolean           (*factory_deactivate)    (CafePanelAppletsManager  *manager,
 						     const gchar          *iid);
 
-	MatePanelAppletInfo  * (*get_applet_info_from_old_id) (MatePanelAppletsManager  *manager,
+	CafePanelAppletInfo  * (*get_applet_info)       (CafePanelAppletsManager  *manager,
+						     const gchar          *iid);
+
+	CafePanelAppletInfo  * (*get_applet_info_from_old_id) (CafePanelAppletsManager  *manager,
 							   const gchar          *iid);
 
-	gboolean           (*load_applet)           (MatePanelAppletsManager         *manager,
+	gboolean           (*load_applet)           (CafePanelAppletsManager         *manager,
 						     const gchar                 *iid,
-						     MatePanelAppletFrameActivating  *frame_act);
+						     CafePanelAppletFrameActivating  *frame_act);
 
-	GtkWidget        * (*get_applet_widget)     (MatePanelAppletsManager         *manager,
+	GtkWidget        * (*get_applet_widget)     (CafePanelAppletsManager         *manager,
 	                                             const gchar                 *iid,
 	                                             guint                        uid);
 };
 
-struct _MatePanelAppletsManager {
+struct _CafePanelAppletsManager {
 	GObject parent;
 };
 
@@ -85,11 +85,11 @@ GList            *cafe_panel_applets_manager_get_applets                 (void);
 gboolean          cafe_panel_applets_manager_factory_activate            (const gchar     *iid);
 void              cafe_panel_applets_manager_factory_deactivate          (const gchar     *iid);
 
-MatePanelAppletInfo  *cafe_panel_applets_manager_get_applet_info             (const gchar     *iid);
-MatePanelAppletInfo  *cafe_panel_applets_manager_get_applet_info_from_old_id (const gchar     *iid);
+CafePanelAppletInfo  *cafe_panel_applets_manager_get_applet_info             (const gchar     *iid);
+CafePanelAppletInfo  *cafe_panel_applets_manager_get_applet_info_from_old_id (const gchar     *iid);
 
 gboolean          cafe_panel_applets_manager_load_applet                 (const gchar                *iid,
-								     MatePanelAppletFrameActivating *frame_act);
+								     CafePanelAppletFrameActivating *frame_act);
 
 GtkWidget        *cafe_panel_applets_manager_get_applet_widget           (const gchar     *iid,
                                                                      guint            uid);

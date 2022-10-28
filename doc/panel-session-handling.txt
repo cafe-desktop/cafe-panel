@@ -7,7 +7,7 @@ reading this)
 Panel global configuration
 --------------------------
 All the panel configuration options that are not per panel are stored
-in MateConf in the /apps/panel/global folder. There is a schema for it,
+in CafeConf in the /apps/panel/global folder. There is a schema for it,
 and sysadms can override the defaults by changing the defaults in the
 default database.
 
@@ -28,7 +28,7 @@ profile everything seems to the user just like profiles don't exist.
 The profiles contain all the per-panel settings and the per-applet
 settings.
 
-Each profile stores it's configuration in MateConf in a separate prefix,
+Each profile stores it's configuration in CafeConf in a separate prefix,
 like this:
  /apps/panel/profile/Default/
  /apps/panel/profile/Work/
@@ -77,14 +77,14 @@ session-management docs in the porting-docs:
        save all their state as part of the command they pass to the
        session manager, and avoid saving persistent files.  That is, it's
        easier and more robust to have a command line option
-       --with-window-count=3 than it is to store the window count in MateConf under
+       --with-window-count=3 than it is to store the window count in CafeConf under
        /apps/terminal/sessions/4543-3252345-6745/window_count
        and provide a discard command to clear that key.
 
-It seems unnecessary to store the panel per session data in MateConf, so
+It seems unnecessary to store the panel per session data in CafeConf, so
 we would just store the command line saved to the session manager as
 "--profile=Laptop" (replace laptop by name of active profile). This
-way we won't have problems cleaning up MateConf either.
+way we won't have problems cleaning up CafeConf either.
 
 Per-Panel configuration
 -----------------------
@@ -126,15 +126,15 @@ global and the per-instance settings in some way, so users do not get
 totally confused about what is applied to all instances and what is not.
 
 Global applet preferences are managed entierly by the applet, and is
-normally stored in MateConf in a key such as:
+normally stored in CafeConf in a key such as:
 
  /apps/applet/deskguide/grouping_limit
 
-Global settings have normal MateConf behaviour, and the applet should
+Global settings have normal CafeConf behaviour, and the applet should
 install a schema for them.
 
 Per-instance preferences are private to the applet. You should write
-schemas for them for good measure, but currently MateConf doesn't handle
+schemas for them for good measure, but currently CafeConf doesn't handle
 dynamic keys well, so they will not be installed. In the future this
 will be fixed though. The keys are private anyway, so not having
 schemas does not matter that much, since other apps should not modify
@@ -142,7 +142,7 @@ them (and can't find them since they are dynamic and prefixed with
 strange id's).
 
 When the panel instantiates an applet (first time or not) it will give
-the applet a MateConf prefix (see above) for it to read and write it's
+the applet a CafeConf prefix (see above) for it to read and write it's
 per-instance configuration from. Since there is no way currently to
 have schemas for these dynamic prefixes there won't be any default
 values for the applet settings. Thus we have to hardcode the settings
@@ -164,8 +164,8 @@ applet_cafeconf_get_int_with_default (SomeAppletType *applet,
                                    GError** err)
 {
   GError* error = NULL;
-  MateConfValue* val;
-  MateConfClient *client = panel_cafeconf_get_client ();
+  CafeConfValue* val;
+  CafeConfClient *client = panel_cafeconf_get_client ();
   gchar *full_key; 
 
   g_return_val_if_fail(err == NULL || *err == NULL, 0);
@@ -216,11 +216,11 @@ the user.
 
 The only thing the panel needs to do on SaveSetup is to pass the
 command line containing the active profile "--profile=Laptop" to the
-session manager. There are no MateConf cleanup needed, or no session id
+session manager. There are no CafeConf cleanup needed, or no session id
 thrown about at all.
 
 
-Full example MateConf tree
+Full example CafeConf tree
 -----------------------
 /apps/applet/deskguide/grouping_limit
                        ...

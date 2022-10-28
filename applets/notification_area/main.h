@@ -43,7 +43,7 @@ typedef struct _NaTrayAppletPrivate NaTrayAppletPrivate;
 
 struct _NaTrayApplet
 {
-  MatePanelApplet parent_object;
+  CafePanelApplet parent_object;
 
   /*< private >*/
   NaTrayAppletPrivate *priv;
@@ -51,7 +51,7 @@ struct _NaTrayApplet
 
 struct _NaTrayAppletClass
 {
-  MatePanelAppletClass parent_class;
+  CafePanelAppletClass parent_class;
 };
 
 GType na_tray_applet_get_type (void) G_GNUC_CONST;

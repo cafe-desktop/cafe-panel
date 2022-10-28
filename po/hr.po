@@ -2602,7 +2602,7 @@ msgstr ""
 
 #: cafe-panel/panel-context-menu.c:123
 msgid "About the MATE Panel"
-msgstr "O Mate ploči"
+msgstr "O Cafe ploči"
 
 #: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"

@@ -124,8 +124,8 @@ struct _ClockData {
         GtkWidget *prefs_location_edit_button;
         GtkWidget *prefs_location_remove_button;
 
-        MateWeatherLocationEntry *location_entry;
-        MateWeatherTimezoneMenu *zone_combo;
+        CafeWeatherLocationEntry *location_entry;
+        CafeWeatherTimezoneMenu *zone_combo;
 
         GtkWidget *time_settings_button;
         GtkWidget *calendar;
@@ -162,7 +162,7 @@ struct _ClockData {
         time_t             current_time;
         char              *timeformat;
         guint              timeout;
-        MatePanelAppletOrient  orient;
+        CafePanelAppletOrient  orient;
         int                size;
         GtkAllocation      old_allocation;
 
@@ -212,8 +212,8 @@ static void display_about_dialog      (GtkAction  *action,
                                        ClockData  *cd);
 static void position_calendar_popup   (ClockData  *cd);
 static void update_orient (ClockData *cd);
-static void applet_change_orient (MatePanelApplet       *applet,
-                                  MatePanelAppletOrient  orient,
+static void applet_change_orient (CafePanelApplet       *applet,
+                                  CafePanelAppletOrient  orient,
                                   ClockData         *cd);
 
 static void edit_hide (GtkWidget *unused, ClockData *cd);
@@ -369,7 +369,7 @@ get_itime (time_t current_time)
 /* adapted from panel-toplevel.c */
 static int
 calculate_minimum_height (GtkWidget        *widget,
-                          MatePanelAppletOrient orientation)
+                          CafePanelAppletOrient orientation)
 {
         GtkStateFlags    state;
         GtkStyleContext *style_context;
@@ -863,7 +863,7 @@ create_calendar (ClockData *cd)
 
         /*Name this window so the default theme can be overridden in panel theme,
         otherwise default GtkWindow bg will be pulled in and override transparency */
-        gtk_widget_set_name(window, "MatePanelPopupWindow");
+        gtk_widget_set_name(window, "CafePanelPopupWindow");
 
         /* Make transparency possible in the theme */
         GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(window));
@@ -1488,8 +1488,8 @@ update_orient (ClockData *cd)
 
 /* this is when the panel orientation changes */
 static void
-applet_change_orient (MatePanelApplet       *applet,
-                      MatePanelAppletOrient  orient,
+applet_change_orient (CafePanelApplet       *applet,
+                      CafePanelAppletOrient  orient,
                       ClockData         *cd)
 {
         GtkOrientation o;
@@ -2002,7 +2002,7 @@ show_temperature_changed (GSettings    *settings,
 }
 
 static void
-weather_icon_updated_cb (MatePanelApplet *applet,
+weather_icon_updated_cb (CafePanelApplet *applet,
                              gint icon_size,
                              gpointer       data)
 {
@@ -2470,7 +2470,7 @@ load_gsettings (ClockData *cd)
 }
 
 static gboolean
-fill_clock_applet (MatePanelApplet *applet)
+fill_clock_applet (CafePanelApplet *applet)
 {
         ClockData      *cd;
         GtkActionGroup *action_group;
@@ -2617,7 +2617,7 @@ run_prefs_edit_save (GtkButton *button, ClockData *cd)
         const gchar *timezone, *weather_code;
         gchar *city, *name;
 
-        MateWeatherLocation *gloc;
+        CafeWeatherLocation *gloc;
         gfloat lat = 0;
         gfloat lon = 0;
 
@@ -2754,9 +2754,9 @@ location_update_ok_sensitivity (ClockData *cd)
 static void
 location_changed (GObject *object, GParamSpec *param, ClockData *cd)
 {
-        MateWeatherLocationEntry *entry = MATEWEATHER_LOCATION_ENTRY (object);
-        MateWeatherLocation *gloc;
-        MateWeatherTimezone *zone;
+        CafeWeatherLocationEntry *entry = MATEWEATHER_LOCATION_ENTRY (object);
+        CafeWeatherLocation *gloc;
+        CafeWeatherTimezone *zone;
         gboolean latlon_valid;
         double latitude = 0.0, longitude = 0.0;
 
@@ -3167,7 +3167,7 @@ ensure_prefs_window_is_created (ClockData *cd)
         GtkWidget *location_name_label;
         GtkWidget *timezone_label;
         GtkTreeSelection *selection;
-        MateWeatherLocation *world;
+        CafeWeatherLocation *world;
 
         if (cd->prefs_window)
                 return;
@@ -3400,7 +3400,7 @@ static void display_about_dialog(GtkAction* action, ClockData* cd)
 }
 
 static gboolean
-clock_factory (MatePanelApplet *applet,
+clock_factory (CafePanelApplet *applet,
                const char  *iid,
                gpointer     data)
 {

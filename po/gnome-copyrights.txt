@@ -105,7 +105,7 @@
 
 
 ========== bn.po ==========
-# Bangla Translation of Mate-Panel file.
+# Bangla Translation of Cafe-Panel file.
 # Copyright (C) 2005 Free Software Foundation.
 # This file is distributed under the same license as the cafe-panel package.
 #
@@ -121,7 +121,7 @@
 
 ========== bn_IN.po ==========
 # translation of bn_IN.po to Bengali INDIA
-# Bangla Translation of Mate-Panel file.
+# Bangla Translation of Cafe-Panel file.
 # Copyright (C) 2005 Free Software Foundation.
 # This file is distributed under the same license as the cafe-panel package.
 #
@@ -296,8 +296,8 @@
 # simos: 897 messages, 28Nov2001, (feeling good to translate HEAD).
 # simos: 272 messages, 20Apr2002, 118 messages remaining.
 # kostas: 513 messages, 19Oct2002, completed translation.
-# kostas: 531 messages, 07Jan2003, updated translation for Mate 2.1x.
-# kostas:update for Mate 2.4, 49 strings remain 02Jun2003.
+# kostas: 531 messages, 07Jan2003, updated translation for Cafe 2.1x.
+# kostas:update for Cafe 2.4, 49 strings remain 02Jun2003.
 # kostas:03Aug2003, 599 messages, updated translation.
 # Spiros Papadimitriou <sapadim+@cs.cmu.edu>, 1999.
 # Simos Xenitellis <simos@hellug.gr>, 1999, 2000, 2001, 2002.
@@ -317,7 +317,7 @@
 # Rename of module to cafe-panel.
 # Comment: Kostas unfuzzy 1
 # Nikos:29Aug2003, review tranlation
-# kostas: 30Oct2003, update translation for Mate 2.6
+# kostas: 30Oct2003, update translation for Cafe 2.6
 # kostas: 12Nov2003, fixes
 # kostas:27Jan2004, update
 
@@ -600,7 +600,7 @@
 # Gabor Sari <saga at cafe dot hu>, 2003.
 # Laszlo Dvornik <dvornik at cafe dot hu>, 2004.
 # Gabor Kelemen <kelemeng at cafe dot hu>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
-# Mate ORY <orycafe at gmail d0t com>, 2006.
+# Cafe ORY <orycafe at gmail d0t com>, 2006.
 # Nyitrai István <sianis at gmail dot com>, 2008.
 
 
@@ -637,7 +637,7 @@
 
 
 ========== is.po ==========
-# Icelandic translation of Mate.
+# Icelandic translation of Cafe.
 # Copyright (C) 2008 Free Software Foundation, Inc.
 # Tryggvi Björgvinsson <tryggvib@hi.is>, 2008
 # Anna Jonna Ármannsdóttir <annajonna@gmail.com>, 2008.
@@ -1150,7 +1150,7 @@
 #
 # Andraž Tori <andraz.tori1@guest.arnes.si>, 2002.
 # Matic Žgur <mr.zgur@gmail.com>, 2006.
-# Matej Urbančič <cafeju@svn.gnome.org>, 2007 - 2010.
+# Cafej Urbančič <cafeju@svn.gnome.org>, 2007 - 2010.
 #
 
 
@@ -1230,7 +1230,7 @@
 ========== ta.po ==========
 # translation of cafe-panel.master.ta.po to Tamil
 # translation of ta.po to
-# Tamil translation of Mate-Panel messages.
+# Tamil translation of Cafe-Panel messages.
 # Copyright (C) 2001, 2004, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
 #
 # Dinesh Nadarajah <dinesh_list@sbcglobal.net>, 2004.
@@ -1340,7 +1340,7 @@
 ========== wa.po ==========
 # Traduction into the walloon language.
 #
-# Si vos voloz donner on côp di spale pol ratoûrnaedje di Mate (ou des
+# Si vos voloz donner on côp di spale pol ratoûrnaedje di Cafe (ou des
 # ôtes libes programes) sicrijhoz-mu a l' adresse emile
 # <srtxg@chanae.alphanet.ch>; nos avons co bråmint di l' ovraedje a fé.
 #

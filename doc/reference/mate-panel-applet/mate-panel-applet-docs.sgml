@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
     "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
-<!ENTITY MatePanelApplet SYSTEM "xml/cafe-panel-applet.xml">
+<!ENTITY CafePanelApplet SYSTEM "xml/cafe-panel-applet.xml">
 ]>
 
 <book id="libcafe-panel-applet">
@@ -59,7 +59,7 @@ just about the simplest applet you could write.
 #include &lt;gtk/gtklabel.h&gt;
 
 static gboolean
-hello_applet_fill (MatePanelApplet *applet,
+hello_applet_fill (CafePanelApplet *applet,
 		   const gchar *iid,
 		   gpointer     data)
 {
@@ -85,12 +85,12 @@ MATE_PANEL_APPLET_MATECOMPONENT_FACTORY ("OAFIID:My_HelloApplet_Factory",
                              NULL);
       </programlisting>
 
-      <para>The code here is very similar to writing a normal MateComponent
+      <para>The code here is very similar to writing a normal CafeComponent
 control. You define a factory using MATE_PANEL_APPLET_MATECOMPONENT_FACTORY(),
 passing it a factory function like hello_applet_fill().
       </para>
 
-      <para>libcafe-panel-applet automatically creates a #MatePanelApplet object
+      <para>libcafe-panel-applet automatically creates a #CafePanelApplet object
 for you, passing this to your factory method. Here, you should fill
 the applet with your widgets just like a #GtkBin. For example, if you
 were writing a cdplayer applet you would create a #GtkHBox, pack the
@@ -100,7 +100,7 @@ hbox with the cdplayer buttons and in turn add the hbox to the applet.
     </sect1>
 
     <sect1 id="server-files">
-      <title>MateComponent Activation .server Files For Applets</title>
+      <title>CafeComponent Activation .server Files For Applets</title>
 
       <para>Since an applet is a cafecomponent component, you must write
 a .server file so that the cafecomponent activation daemon is aware that
@@ -114,8 +114,8 @@ your friend here ...
             location="test-cafecomponent-applet"&gt;
 
         &lt;oaf_attribute name="repo_ids" type="stringv"&gt;
-                &lt;item value="IDL:MateComponent/GenericFactory:1.0"/&gt;
-                &lt;item value="IDL:MateComponent/Unknown:1.0"/&gt;
+                &lt;item value="IDL:CafeComponent/GenericFactory:1.0"/&gt;
+                &lt;item value="IDL:CafeComponent/Unknown:1.0"/&gt;
         &lt;/oaf_attribute&gt;
         &lt;oaf_attribute name="name" type="string" value="Hello World Applet Factory"/&gt;
         &lt;oaf_attribute name="description" type="string" value="My first applet factory"/&gt;
@@ -125,9 +125,9 @@ your friend here ...
             location="OAFIID:My_HelloApplet_Factory"&gt;
 
         &lt;oaf_attribute name="repo_ids" type="stringv"&gt;
-                &lt;item value="IDL:MATE/Vertigo/MatePanelAppletShell:1.0"/&gt;
-                &lt;item value="IDL:MateComponent/Control:1.0"/&gt;
-                &lt;item value="IDL:MateComponent/Unknown:1.0"/&gt;
+                &lt;item value="IDL:MATE/Vertigo/CafePanelAppletShell:1.0"/&gt;
+                &lt;item value="IDL:CafeComponent/Control:1.0"/&gt;
+                &lt;item value="IDL:CafeComponent/Unknown:1.0"/&gt;
         &lt;/oaf_attribute&gt;
         &lt;oaf_attribute name="name" type="string" value="Hello World Applet"/&gt;
         &lt;oaf_attribute name="description" type="string" value="My first applet for the MATE2 panel"/&gt;
@@ -199,10 +199,10 @@ So the new code should look something like this</para>
       <programlisting>
 #include &lt;cafe-panel-applet.h&gt;
 
-static MateComponentObject *
+static CafeComponentObject *
 blah_applet_new ()
 {
-        MatePanelApplet *applet;
+        CafePanelApplet *applet;
 
 	/*
 	 * The old code setting up the applet widgetry
@@ -217,12 +217,12 @@ blah_applet_new ()
         return MATECOMPONENT_OBJECT (cafe_panel_applet_get_control (applet));
 }
 
-static MateComponentObject *
-blah_applet_factory (MateComponentGenericFactory *this,
+static CafeComponentObject *
+blah_applet_factory (CafeComponentGenericFactory *this,
 		     const gchar          *iid,
 		     gpointer              data)
 {
-        MateComponentObject *applet = NULL;
+        CafeComponentObject *applet = NULL;
 
         if (!strcmp (iid, "OAFIID:BlahApplet"))
                 applet = blah_applet_new ();
@@ -272,8 +272,8 @@ this :</para>
             location="blah-de-blah-2"&gt;
 
         &lt;oaf_attribute name="repo_ids" type="stringv"&gt;
-                &lt;item value="IDL:MateComponent/GenericFactory:1.0""/&gt;
-                &lt;item value="IDL:MateComponent/Unknown:1.0"/&gt;
+                &lt;item value="IDL:CafeComponent/GenericFactory:1.0""/&gt;
+                &lt;item value="IDL:CafeComponent/Unknown:1.0"/&gt;
         &lt;/oaf_attribute&gt;
         &lt;oaf_attribute name="name" type="string" value="Blah Factory"/&gt;
         &lt;oaf_attribute name="description" type="string" value="Blah De Blah"/&gt;
@@ -285,9 +285,9 @@ this :</para>
             location="OAFIID:BlahApplet_Factory"&gt;
 
         &lt;oaf_attribute name="repo_ids" type="stringv"&gt;
-                &lt;item value="IDL:MATE/MatePanelAppletShell:1.0"/&gt;
-                &lt;item value="IDL:MateComponent/Control:1.0"/&gt;
-                &lt;item value="IDL:MateComponent/Unknown:1.0"/&gt;
+                &lt;item value="IDL:MATE/CafePanelAppletShell:1.0"/&gt;
+                &lt;item value="IDL:CafeComponent/Control:1.0"/&gt;
+                &lt;item value="IDL:CafeComponent/Unknown:1.0"/&gt;
         &lt;/oaf_attribute&gt;
         &lt;oaf_attribute name="name" type="string" value="Blah Applet"/&gt;
         &lt;oaf_attribute name="description" type="string" value="Blah De Blah"/&gt;
@@ -343,7 +343,7 @@ cafe_panel_applet_setup_menu_from_file. The description of the verbs should
 look something like :</para>
 
 	<programlisting>
-static const MateComponentUIVerb fish_menu_verbs [] = {
+static const CafeComponentUIVerb fish_menu_verbs [] = {
         MATECOMPONENT_UI_VERB ("BlahProperties", display_properties_dialog),
         MATECOMPONENT_UI_VERB ("BlahHelp",       display_help_dialog),
         MATECOMPONENT_UI_VERB ("BlahAbout",      display_about_dialog),
@@ -377,7 +377,7 @@ to the callbacks.</para>
   <chapter id="cafe-panel-applet">
     <title>The Panel Applet Library</title>
 
-    &MatePanelApplet;
+    &CafePanelApplet;
   </chapter>
 
 </book>

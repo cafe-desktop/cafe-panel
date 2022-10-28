@@ -1,4 +1,4 @@
-/* Mate panel: panel widget
+/* Cafe panel: panel widget
  * (C) 1997-1998 the Free Software Foundation
  *
  * Authors:  George Lebl

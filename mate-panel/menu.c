@@ -53,7 +53,7 @@
 #include "panel-schemas.h"
 
 static GtkWidget *populate_menu_from_directory (GtkWidget          *menu,
-						MateMenuTreeDirectory *directory);
+						CafeMenuTreeDirectory *directory);
 
 static gboolean panel_menu_key_press_handler (GtkWidget   *widget,
 					      GdkEventKey *event);
@@ -87,7 +87,7 @@ add_menu_separator (GtkWidget *menu)
 
 static void
 activate_app_def (GtkWidget      *menuitem,
-		  MateMenuTreeEntry *entry)
+		  CafeMenuTreeEntry *entry)
 {
 	const char       *path;
 
@@ -194,7 +194,7 @@ create_empty_menu (void)
 
 static void
 add_app_to_panel (GtkWidget      *item,
-		  MateMenuTreeEntry *entry)
+		  CafeMenuTreeEntry *entry)
 {
 	PanelWidget   *panel_widget;
 	PanelToplevel *toplevel;
@@ -215,7 +215,7 @@ add_app_to_panel (GtkWidget      *item,
 
 static void
 add_app_to_desktop (GtkWidget      *item,
-		    MateMenuTreeEntry *entry)
+		    CafeMenuTreeEntry *entry)
 {
 	char       *source_uri;
 	const char *source;
@@ -257,12 +257,12 @@ add_app_to_desktop (GtkWidget      *item,
 }
 
 
-static void add_drawers_from_dir (MateMenuTreeDirectory *directory,
+static void add_drawers_from_dir (CafeMenuTreeDirectory *directory,
 				  int                 pos,
 				  const char         *toplevel_id);
 
 static void
-add_drawers_from_alias (MateMenuTreeAlias *alias,
+add_drawers_from_alias (CafeMenuTreeAlias *alias,
 			const char     *toplevel_id)
 {
 	gpointer item;
@@ -290,15 +290,15 @@ add_drawers_from_alias (MateMenuTreeAlias *alias,
 }
 
 static void
-add_drawers_from_dir (MateMenuTreeDirectory *directory,
+add_drawers_from_dir (CafeMenuTreeDirectory *directory,
 		      int                 pos,
 		      const char         *toplevel_id)
 {
 	const char *name;
 	GIcon *icon;
 	char       *attached_toplevel_id;
-	MateMenuTreeIter *iter;
-	MateMenuTreeItemType type;
+	CafeMenuTreeIter *iter;
+	CafeMenuTreeItemType type;
 
 	name = cafemenu_tree_directory_get_name (directory);
 	icon = cafemenu_tree_directory_get_icon (directory);
@@ -346,10 +346,10 @@ add_drawers_from_dir (MateMenuTreeDirectory *directory,
 
 static void
 add_menudrawer_to_panel (GtkWidget      *menuitem,
-			 MateMenuTreeEntry *entry)
+			 CafeMenuTreeEntry *entry)
 
 {
-	MateMenuTreeDirectory *directory;
+	CafeMenuTreeDirectory *directory;
 	PanelWidget       *panel;
 	PanelData         *pd;
 	int                insertion_pos;
@@ -370,10 +370,10 @@ add_menudrawer_to_panel (GtkWidget      *menuitem,
 
 static void
 add_menu_to_panel (GtkWidget      *menuitem,
-		   MateMenuTreeEntry *entry)
+		   CafeMenuTreeEntry *entry)
 {
-	MateMenuTreeDirectory *directory;
-	MateMenuTree          *tree;
+	CafeMenuTreeDirectory *directory;
+	CafeMenuTree          *tree;
 	PanelWidget        *panel;
 	PanelData          *pd;
 	int                 insertion_pos;
@@ -461,9 +461,9 @@ static GtkWidget *
 create_item_context_menu (GtkWidget   *item,
 			  PanelWidget *panel_widget)
 {
-	MateMenuTreeEntry     *entry;
-	MateMenuTreeDirectory *directory;
-	MateMenuTree          *tree;
+	CafeMenuTreeEntry     *entry;
+	CafeMenuTreeDirectory *directory;
+	CafeMenuTree          *tree;
 	GtkWidget          *menu;
 	GtkWidget          *submenu;
 	GtkWidget          *menuitem;
@@ -660,7 +660,7 @@ drag_data_get_menu_cb (GtkWidget        *widget,
 		       GtkSelectionData *selection_data,
 		       guint             info,
 		       guint             time,
-		       MateMenuTreeEntry   *entry)
+		       CafeMenuTreeEntry   *entry)
 {
 	const char *path;
 	char       *uri;
@@ -855,8 +855,8 @@ setup_internal_applet_drag (GtkWidget             *menuitem,
 static void
 submenu_to_display (GtkWidget *menu)
 {
-	MateMenuTree           *tree;
-	MateMenuTreeDirectory  *directory;
+	CafeMenuTree           *tree;
+	CafeMenuTreeDirectory  *directory;
 	const char          *menu_path;
 	void               (*append_callback) (GtkWidget *, gpointer);
 	gpointer             append_data;
@@ -919,7 +919,7 @@ remove_submenu_to_display_idle (gpointer data)
 }
 
 static GtkWidget *
-create_fake_menu (MateMenuTreeDirectory *directory)
+create_fake_menu (CafeMenuTreeDirectory *directory)
 {
 	GtkWidget *menu;
 	guint      idle_id;
@@ -972,7 +972,7 @@ panel_image_menu_item_new (void)
 
 static GtkWidget *
 create_submenu_entry (GtkWidget          *menu,
-		      MateMenuTreeDirectory *directory)
+		      CafeMenuTreeDirectory *directory)
 {
 	GtkWidget *menuitem;
 	gboolean   force_categories_icon;
@@ -1000,8 +1000,8 @@ create_submenu_entry (GtkWidget          *menu,
 
 static void
 create_submenu (GtkWidget          *menu,
-		MateMenuTreeDirectory *directory,
-		MateMenuTreeDirectory *alias_directory)
+		CafeMenuTreeDirectory *directory,
+		CafeMenuTreeDirectory *alias_directory)
 {
 	GtkWidget *menuitem;
 	GtkWidget *submenu;
@@ -1026,9 +1026,9 @@ create_submenu (GtkWidget          *menu,
 
 static void
 create_header (GtkWidget       *menu,
-	       MateMenuTreeHeader *header)
+	       CafeMenuTreeHeader *header)
 {
-	MateMenuTreeDirectory *directory;
+	CafeMenuTreeDirectory *directory;
 	GtkWidget          *menuitem;
 
 	directory = cafemenu_tree_header_get_directory (header);
@@ -1046,8 +1046,8 @@ create_header (GtkWidget       *menu,
 
 static void
 create_menuitem (GtkWidget          *menu,
-		 MateMenuTreeEntry     *entry,
-		 MateMenuTreeDirectory *alias_directory)
+		 CafeMenuTreeEntry     *entry,
+		 CafeMenuTreeDirectory *alias_directory)
 {
 	GtkWidget  *menuitem;
 
@@ -1138,7 +1138,7 @@ create_menuitem (GtkWidget          *menu,
 
 static void
 create_menuitem_from_alias (GtkWidget      *menu,
-			    MateMenuTreeAlias *alias)
+			    CafeMenuTreeAlias *alias)
 {
 	gpointer item, entry;
 
@@ -1163,7 +1163,7 @@ create_menuitem_from_alias (GtkWidget      *menu,
 }
 
 static void
-handle_cafemenu_tree_changed (MateMenuTree *tree,
+handle_cafemenu_tree_changed (CafeMenuTree *tree,
 			   GtkWidget *menu)
 {
 	GError *error = NULL;
@@ -1200,7 +1200,7 @@ handle_cafemenu_tree_changed (MateMenuTree *tree,
 
 static void
 remove_cafemenu_tree_monitor (GtkWidget *menu,
-                          MateMenuTree  *tree)
+                          CafeMenuTree  *tree)
 {
         g_signal_handlers_disconnect_by_func (tree,
                                               G_CALLBACK (handle_cafemenu_tree_changed),
@@ -1212,7 +1212,7 @@ create_applications_menu (const char *menu_file,
 			  const char *menu_path,
 			  gboolean    always_show_image)
 {
-	MateMenuTree *tree;
+	CafeMenuTree *tree;
 	GtkWidget *menu;
 	guint      idle_id;
 	GError *error = NULL;
@@ -1277,12 +1277,12 @@ create_applications_menu (const char *menu_file,
 
 static GtkWidget *
 populate_menu_from_directory (GtkWidget          *menu,
-			      MateMenuTreeDirectory *directory)
+			      CafeMenuTreeDirectory *directory)
 {
 	GList    *children;
 	gboolean  add_separator;
-	MateMenuTreeIter *iter;
-	MateMenuTreeItemType type;
+	CafeMenuTreeIter *iter;
+	CafeMenuTreeItemType type;
 
 	children = gtk_container_get_children (GTK_CONTAINER (menu));
 	add_separator = (children != NULL);

@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.22.0 
 
 cafe-panel - panel-properties-dialog
-Copyright (C) Mate Developer
+Copyright (C) Cafe Developer
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -26,7 +26,7 @@ Author: Wolfgang Ulbrich
   <!-- interface-license-type gplv2 -->
   <!-- interface-name cafe-panel -->
   <!-- interface-description panel-properties-dialog -->
-  <!-- interface-copyright Mate Developer -->
+  <!-- interface-copyright Cafe Developer -->
   <!-- interface-authors Wolfgang Ulbrich -->
   <object class="GtkAdjustment" id="adjustment1">
     <property name="upper">100</property>

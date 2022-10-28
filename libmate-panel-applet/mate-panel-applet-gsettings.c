@@ -29,7 +29,7 @@
 #include "cafe-panel-applet-gsettings.h"
 
 GSettings *
-cafe_panel_applet_settings_new (MatePanelApplet *applet, gchar *schema)
+cafe_panel_applet_settings_new (CafePanelApplet *applet, gchar *schema)
 {
     GSettings *settings = NULL;
     gchar *path;

@@ -34,46 +34,46 @@ extern "C" {
 #endif
 
 #define PANEL_TYPE_APPLET_FRAME         (cafe_panel_applet_frame_get_type ())
-#define MATE_PANEL_APPLET_FRAME(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET_FRAME, MatePanelAppletFrame))
-#define MATE_PANEL_APPLET_FRAME_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET_FRAME, MatePanelAppletFrameClass))
+#define MATE_PANEL_APPLET_FRAME(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET_FRAME, CafePanelAppletFrame))
+#define MATE_PANEL_APPLET_FRAME_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET_FRAME, CafePanelAppletFrameClass))
 #define PANEL_IS_APPLET_FRAME(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), PANEL_TYPE_APPLET_FRAME))
 #define PANEL_IS_APPLET_FRAME_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), PANEL_TYPE_APPLET_FRAME))
-#define MATE_PANEL_APPLET_FRAME_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET_FRAME, MatePanelAppletFrameClass))
+#define MATE_PANEL_APPLET_FRAME_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET_FRAME, CafePanelAppletFrameClass))
 
-typedef struct _MatePanelAppletFrame        MatePanelAppletFrame;
-typedef struct _MatePanelAppletFrameClass   MatePanelAppletFrameClass;
-typedef struct _MatePanelAppletFramePrivate MatePanelAppletFramePrivate;
+typedef struct _CafePanelAppletFrame        CafePanelAppletFrame;
+typedef struct _CafePanelAppletFrameClass   CafePanelAppletFrameClass;
+typedef struct _CafePanelAppletFramePrivate CafePanelAppletFramePrivate;
 
-struct _MatePanelAppletFrameClass {
+struct _CafePanelAppletFrameClass {
         GtkEventBoxClass parent_class;
 
-	void     (*init_properties)       (MatePanelAppletFrame    *frame);
+	void     (*init_properties)       (CafePanelAppletFrame    *frame);
 
-	void     (*sync_menu_state)       (MatePanelAppletFrame    *frame,
+	void     (*sync_menu_state)       (CafePanelAppletFrame    *frame,
 					   gboolean             movable,
 					   gboolean             removable,
 					   gboolean             lockable,
 					   gboolean             locked,
 					   gboolean             locked_down);
 
-	void     (*popup_menu)            (MatePanelAppletFrame    *frame,
+	void     (*popup_menu)            (CafePanelAppletFrame    *frame,
 					   guint                button,
 					   guint32              timestamp);
 
-	void     (*change_orientation)    (MatePanelAppletFrame    *frame,
+	void     (*change_orientation)    (CafePanelAppletFrame    *frame,
 					   PanelOrientation     orientation);
 
-	void     (*change_size)           (MatePanelAppletFrame    *frame,
+	void     (*change_size)           (CafePanelAppletFrame    *frame,
 					   guint                size);
 
-	void     (*change_background)     (MatePanelAppletFrame    *frame,
+	void     (*change_background)     (CafePanelAppletFrame    *frame,
 					   PanelBackgroundType  type);
 };
 
-struct _MatePanelAppletFrame {
+struct _CafePanelAppletFrame {
 	GtkEventBox parent;
 
-        MatePanelAppletFramePrivate  *priv;
+        CafePanelAppletFramePrivate  *priv;
 };
 
 GType cafe_panel_applet_frame_get_type           (void) G_GNUC_CONST;
@@ -87,57 +87,57 @@ void  cafe_panel_applet_frame_load_from_gsettings    (PanelWidget         *panel
 					     int                  position,
 					     const char          *id);
 
-void  cafe_panel_applet_frame_sync_menu_state    (MatePanelAppletFrame    *frame);
+void  cafe_panel_applet_frame_sync_menu_state    (CafePanelAppletFrame    *frame);
 
-void  cafe_panel_applet_frame_change_orientation (MatePanelAppletFrame    *frame,
+void  cafe_panel_applet_frame_change_orientation (CafePanelAppletFrame    *frame,
 					     PanelOrientation     orientation);
 
-void  cafe_panel_applet_frame_change_size        (MatePanelAppletFrame    *frame,
+void  cafe_panel_applet_frame_change_size        (CafePanelAppletFrame    *frame,
 					     guint                size);
 
-void  cafe_panel_applet_frame_change_background  (MatePanelAppletFrame    *frame,
+void  cafe_panel_applet_frame_change_background  (CafePanelAppletFrame    *frame,
 					     PanelBackgroundType  type);
 
-void  cafe_panel_applet_frame_set_panel          (MatePanelAppletFrame    *frame,
+void  cafe_panel_applet_frame_set_panel          (CafePanelAppletFrame    *frame,
 					     PanelWidget         *panel);
 
 
 /* For module implementations only */
 
-typedef struct _MatePanelAppletFrameActivating        MatePanelAppletFrameActivating;
+typedef struct _CafePanelAppletFrameActivating        CafePanelAppletFrameActivating;
 
-GdkScreen        *panel_applet_frame_activating_get_screen      (MatePanelAppletFrameActivating *frame_act);
-PanelOrientation  cafe_panel_applet_frame_activating_get_orientation (MatePanelAppletFrameActivating *frame_act);
-guint32           cafe_panel_applet_frame_activating_get_size        (MatePanelAppletFrameActivating *frame_act);
-gboolean          cafe_panel_applet_frame_activating_get_locked      (MatePanelAppletFrameActivating *frame_act);
-gboolean          cafe_panel_applet_frame_activating_get_locked_down (MatePanelAppletFrameActivating *frame_act);
-gchar            *cafe_panel_applet_frame_activating_get_conf_path   (MatePanelAppletFrameActivating *frame_act);
+GdkScreen        *panel_applet_frame_activating_get_screen      (CafePanelAppletFrameActivating *frame_act);
+PanelOrientation  cafe_panel_applet_frame_activating_get_orientation (CafePanelAppletFrameActivating *frame_act);
+guint32           cafe_panel_applet_frame_activating_get_size        (CafePanelAppletFrameActivating *frame_act);
+gboolean          cafe_panel_applet_frame_activating_get_locked      (CafePanelAppletFrameActivating *frame_act);
+gboolean          cafe_panel_applet_frame_activating_get_locked_down (CafePanelAppletFrameActivating *frame_act);
+gchar            *cafe_panel_applet_frame_activating_get_conf_path   (CafePanelAppletFrameActivating *frame_act);
 
-void  _cafe_panel_applet_frame_set_iid               (MatePanelAppletFrame           *frame,
+void  _cafe_panel_applet_frame_set_iid               (CafePanelAppletFrame           *frame,
 						 const gchar                *iid);
 
-void  _cafe_panel_applet_frame_activated             (MatePanelAppletFrame           *frame,
-						 MatePanelAppletFrameActivating *frame_act,
+void  _cafe_panel_applet_frame_activated             (CafePanelAppletFrame           *frame,
+						 CafePanelAppletFrameActivating *frame_act,
 						 GError                     *error);
 
-void  _cafe_panel_applet_frame_update_flags          (MatePanelAppletFrame *frame,
+void  _cafe_panel_applet_frame_update_flags          (CafePanelAppletFrame *frame,
 						 gboolean          major,
 						 gboolean          minor,
 						 gboolean          has_handle);
 
-void  _cafe_panel_applet_frame_update_size_hints     (MatePanelAppletFrame *frame,
+void  _cafe_panel_applet_frame_update_size_hints     (CafePanelAppletFrame *frame,
 						 gint             *size_hints,
 						 guint             n_elements);
 
-char *_cafe_panel_applet_frame_get_background_string (MatePanelAppletFrame    *frame,
+char *_cafe_panel_applet_frame_get_background_string (CafePanelAppletFrame    *frame,
 						 PanelWidget         *panel,
 						 PanelBackgroundType  type);
 
-void  _cafe_panel_applet_frame_applet_broken         (MatePanelAppletFrame *frame);
+void  _cafe_panel_applet_frame_applet_broken         (CafePanelAppletFrame *frame);
 
-void  _cafe_panel_applet_frame_applet_remove         (MatePanelAppletFrame *frame);
-void  _cafe_panel_applet_frame_applet_move           (MatePanelAppletFrame *frame);
-void  _cafe_panel_applet_frame_applet_lock           (MatePanelAppletFrame *frame,
+void  _cafe_panel_applet_frame_applet_remove         (CafePanelAppletFrame *frame);
+void  _cafe_panel_applet_frame_applet_move           (CafePanelAppletFrame *frame);
+void  _cafe_panel_applet_frame_applet_lock           (CafePanelAppletFrame *frame,
 						 gboolean          locked);
 #ifdef __cplusplus
 }

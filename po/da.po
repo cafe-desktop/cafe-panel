@@ -2617,7 +2617,7 @@ msgstr "Og mange, mange andre ..."
 
 #: cafe-panel/panel-context-menu.c:114
 msgid "The MATE Panel"
-msgstr "Mate-panelet"
+msgstr "Cafe-panelet"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""

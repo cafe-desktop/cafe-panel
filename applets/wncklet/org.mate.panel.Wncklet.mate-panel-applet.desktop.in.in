@@ -10,7 +10,7 @@ Name=Window Selector
 Description=Switch between open windows using a menu
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=cafe-panel-window-menu
-MateComponentId=OAFIID:MATE_WindowMenuApplet;
+CafeComponentId=OAFIID:MATE_WindowMenuApplet;
 Platforms=X11;
 X-MATE-Bugzilla-Bugzilla=MATE
 X-MATE-Bugzilla-Product=cafe-panel
@@ -23,7 +23,7 @@ Name=Workspace Switcher
 Description=Switch between workspaces
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=cafe-panel-workspace-switcher
-MateComponentId=OAFIID:MATE_WorkspaceSwitcherApplet;OAFIID:MATE_PagerApplet;
+CafeComponentId=OAFIID:MATE_WorkspaceSwitcherApplet;OAFIID:MATE_PagerApplet;
 Platforms=X11;
 X-MATE-Bugzilla-Bugzilla=MATE
 X-MATE-Bugzilla-Product=cafe-panel
@@ -36,7 +36,7 @@ Name=Window List
 Description=Switch between open windows using buttons
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=cafe-panel-window-list
-MateComponentId=OAFIID:MATE_TasklistApplet;OAFIID:MATE_WindowListApplet;
+CafeComponentId=OAFIID:MATE_TasklistApplet;OAFIID:MATE_WindowListApplet;
 Platforms=X11;
 X-MATE-Bugzilla-Bugzilla=MATE
 X-MATE-Bugzilla-Product=cafe-panel
@@ -49,7 +49,7 @@ Name=Show Desktop
 Description=Hide application windows and show the desktop
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=user-desktop
-MateComponentId=OAFIID:MATE_ShowDesktopApplet;
+CafeComponentId=OAFIID:MATE_ShowDesktopApplet;
 Platforms=X11;
 X-MATE-Bugzilla-Bugzilla=MATE
 X-MATE-Bugzilla-Product=cafe-panel

@@ -768,8 +768,8 @@ panel_run_dialog_find_command_idle (PanelRunDialog *dialog)
 }
 
 static int
-compare_applications (MateMenuTreeEntry *a,
-		      MateMenuTreeEntry *b)
+compare_applications (CafeMenuTreeEntry *a,
+		      CafeMenuTreeEntry *b)
 {
 	GDesktopAppInfo *infoa, *infob;
 	const gchar* name1;
@@ -784,22 +784,22 @@ compare_applications (MateMenuTreeEntry *a,
 	return compare;
 }
 
-static GSList *get_all_applications_from_dir (MateMenuTreeDirectory *directory,
+static GSList *get_all_applications_from_dir (CafeMenuTreeDirectory *directory,
 					      GSList            *list);
 
 static GSList *
-get_all_applications_from_alias (MateMenuTreeAlias *alias,
+get_all_applications_from_alias (CafeMenuTreeAlias *alias,
 				 GSList         *list)
 {
 	gpointer item;
 	switch (cafemenu_tree_alias_get_aliased_item_type (alias)) {
 		case MATEMENU_TREE_ITEM_ENTRY:
 			item = cafemenu_tree_alias_get_aliased_entry (alias);
-			list = g_slist_append (list, (MateMenuTreeEntry*) item);
+			list = g_slist_append (list, (CafeMenuTreeEntry*) item);
 			break;
 		case MATEMENU_TREE_ITEM_DIRECTORY:
 			item = cafemenu_tree_alias_get_aliased_directory (alias);
-			list = get_all_applications_from_dir ((MateMenuTreeDirectory*) item, list);
+			list = get_all_applications_from_dir ((CafeMenuTreeDirectory*) item, list);
 			cafemenu_tree_item_unref(item);
 			break;
 		default:
@@ -809,11 +809,11 @@ get_all_applications_from_alias (MateMenuTreeAlias *alias,
 }
 
 static GSList *
-get_all_applications_from_dir (MateMenuTreeDirectory *directory,
+get_all_applications_from_dir (CafeMenuTreeDirectory *directory,
 			       GSList             *list)
 {
-	MateMenuTreeIter *iter;
-	MateMenuTreeItemType type;
+	CafeMenuTreeIter *iter;
+	CafeMenuTreeItemType type;
 
 	iter = cafemenu_tree_directory_iter (directory);
 	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
@@ -821,18 +821,18 @@ get_all_applications_from_dir (MateMenuTreeDirectory *directory,
 		switch (type) {
 			case MATEMENU_TREE_ITEM_ENTRY:
 				item = cafemenu_tree_iter_get_entry (iter);
-				list = g_slist_append (list, (MateMenuTreeEntry*) item);
+				list = g_slist_append (list, (CafeMenuTreeEntry*) item);
 				break;
 
 			case MATEMENU_TREE_ITEM_DIRECTORY:
 				item = cafemenu_tree_iter_get_directory (iter);
-				list = get_all_applications_from_dir ((MateMenuTreeDirectory*)item, list);
+				list = get_all_applications_from_dir ((CafeMenuTreeDirectory*)item, list);
 				cafemenu_tree_item_unref(item);
 				break;
 
 			case MATEMENU_TREE_ITEM_ALIAS:
 				item = cafemenu_tree_iter_get_alias (iter);
-				list = get_all_applications_from_alias ((MateMenuTreeAlias *)item, list);
+				list = get_all_applications_from_alias ((CafeMenuTreeAlias *)item, list);
 				cafemenu_tree_item_unref(item);
 				break;
 
@@ -846,8 +846,8 @@ get_all_applications_from_dir (MateMenuTreeDirectory *directory,
 
 static GSList* get_all_applications(void)
 {
-	MateMenuTree* tree;
-	MateMenuTreeDirectory* root;
+	CafeMenuTree* tree;
+	CafeMenuTreeDirectory* root;
 	GError        *error = NULL;
 	GSList* retval;
 
@@ -900,7 +900,7 @@ panel_run_dialog_add_items_idle (PanelRunDialog *dialog)
 	/* Strip duplicates */
 	prev_name = NULL;
 	for (l = all_applications; l; l = next) {
-		MateMenuTreeEntry *entry = l->data;
+		CafeMenuTreeEntry *entry = l->data;
 		const char     *entry_name;
 
 		next = l->next;
@@ -918,7 +918,7 @@ panel_run_dialog_add_items_idle (PanelRunDialog *dialog)
 	}
 
 	for (l = all_applications; l; l = l->next) {
-		MateMenuTreeEntry *entry = l->data;
+		CafeMenuTreeEntry *entry = l->data;
 		GtkTreeIter    iter;
 		GDesktopAppInfo *ginfo;
 		GIcon *gicon = NULL;

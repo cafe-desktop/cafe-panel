@@ -199,7 +199,7 @@ static void window_manager_changed(WnckScreen* screen, PagerData* pager)
 	pager_update(pager);
 }
 
-static void applet_realized(MatePanelApplet* applet, PagerData* pager)
+static void applet_realized(CafePanelApplet* applet, PagerData* pager)
 {
 	pager->screen = wncklet_get_screen(GTK_WIDGET(applet));
 
@@ -207,13 +207,13 @@ static void applet_realized(MatePanelApplet* applet, PagerData* pager)
 	wncklet_connect_while_alive(pager->screen, "window_manager_changed", G_CALLBACK(window_manager_changed), pager, pager->applet);
 }
 
-static void applet_unrealized(MatePanelApplet* applet, PagerData* pager)
+static void applet_unrealized(CafePanelApplet* applet, PagerData* pager)
 {
 	pager->screen = NULL;
 	pager->wm = PAGER_WM_UNKNOWN;
 }
 
-static void applet_change_orient(MatePanelApplet* applet, MatePanelAppletOrient orient, PagerData* pager)
+static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient orient, PagerData* pager)
 {
 	GtkOrientation new_orient;
 
@@ -240,7 +240,7 @@ static void applet_change_orient(MatePanelApplet* applet, MatePanelAppletOrient 
 		gtk_label_set_text(GTK_LABEL(pager->label_row_col), pager->orientation == GTK_ORIENTATION_HORIZONTAL ? _("rows") : _("columns"));
 }
 
-static void applet_change_background(MatePanelApplet* applet, MatePanelAppletBackgroundType type, GdkColor* color, cairo_pattern_t *pattern, PagerData* pager)
+static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBackgroundType type, GdkColor* color, cairo_pattern_t *pattern, PagerData* pager)
 {
         GtkStyleContext *new_context;
         gtk_widget_reset_style (GTK_WIDGET (pager->pager));
@@ -252,7 +252,7 @@ static void applet_change_background(MatePanelApplet* applet, MatePanelAppletBac
                 type == PANEL_NO_BACKGROUND ? GTK_SHADOW_NONE : GTK_SHADOW_IN);
 }
 
-static void applet_style_updated (MatePanelApplet *applet, GtkStyleContext *context)
+static void applet_style_updated (CafePanelApplet *applet, GtkStyleContext *context)
 {
 	GtkCssProvider *provider;
 	GdkRGBA color;
@@ -280,7 +280,7 @@ static void applet_style_updated (MatePanelApplet *applet, GtkStyleContext *cont
 /* Replacement for the default scroll handler that also cares about the wrapping property.
  * Alternative: Add behaviour to libwnck (to the WnckPager widget).
  */
-static gboolean applet_scroll(MatePanelApplet* applet, GdkEventScroll* event, PagerData* pager)
+static gboolean applet_scroll(CafePanelApplet* applet, GdkEventScroll* event, PagerData* pager)
 {
 	GdkScrollDirection absolute_direction;
 	int index;
@@ -517,7 +517,7 @@ static void setup_gsettings(PagerData* pager)
 
 }
 
-gboolean workspace_switcher_applet_fill(MatePanelApplet* applet)
+gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 {
 	PagerData* pager;
 	GtkActionGroup* action_group;
