@@ -67,7 +67,7 @@ _cafe_panel_applets_managers_ensure_loaded (void)
 
 	panel_modules_ensure_loaded ();
 
-	point = g_io_extension_point_lookup (MATE_PANEL_APPLETS_MANAGER_EXTENSION_POINT_NAME);
+	point = g_io_extension_point_lookup (CAFE_PANEL_APPLETS_MANAGER_EXTENSION_POINT_NAME);
 
 	extensions = g_io_extension_point_get_extensions (point);
 
@@ -98,9 +98,9 @@ cafe_panel_applets_manager_get_applets (void)
 
 	for (l = cafe_panel_applets_managers; l != NULL; l = l->next) {
 		GList *applets;
-		CafePanelAppletsManager *manager = MATE_PANEL_APPLETS_MANAGER (l->data);
+		CafePanelAppletsManager *manager = CAFE_PANEL_APPLETS_MANAGER (l->data);
 
-		applets = MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applets (manager);
+		applets = CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applets (manager);
 		if (applets)
 			retval = g_list_concat (retval, applets);
 	}
@@ -116,9 +116,9 @@ cafe_panel_applets_manager_factory_activate (const gchar *iid)
 	_cafe_panel_applets_managers_ensure_loaded ();
 
 	for (l = cafe_panel_applets_managers; l != NULL; l = l->next) {
-		CafePanelAppletsManager *manager = MATE_PANEL_APPLETS_MANAGER (l->data);
+		CafePanelAppletsManager *manager = CAFE_PANEL_APPLETS_MANAGER (l->data);
 
-		if (MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->factory_activate (manager, iid))
+		if (CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->factory_activate (manager, iid))
 			return TRUE;
 	}
 
@@ -133,9 +133,9 @@ cafe_panel_applets_manager_factory_deactivate (const gchar *iid)
 	_cafe_panel_applets_managers_ensure_loaded ();
 
 	for (l = cafe_panel_applets_managers; l != NULL; l = l->next) {
-		CafePanelAppletsManager *manager = MATE_PANEL_APPLETS_MANAGER (l->data);
+		CafePanelAppletsManager *manager = CAFE_PANEL_APPLETS_MANAGER (l->data);
 
-		if (MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->factory_deactivate (manager, iid))
+		if (CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->factory_deactivate (manager, iid))
 			return;
 	}
 }
@@ -149,9 +149,9 @@ cafe_panel_applets_manager_get_applet_info (const gchar *iid)
 	_cafe_panel_applets_managers_ensure_loaded ();
 
 	for (l = cafe_panel_applets_managers; l != NULL; l = l->next) {
-		CafePanelAppletsManager *manager = MATE_PANEL_APPLETS_MANAGER (l->data);
+		CafePanelAppletsManager *manager = CAFE_PANEL_APPLETS_MANAGER (l->data);
 
-		retval = MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_info (manager, iid);
+		retval = CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_info (manager, iid);
 
 		if (retval != NULL)
 			return retval;
@@ -169,9 +169,9 @@ cafe_panel_applets_manager_get_applet_info_from_old_id (const gchar *iid)
 	_cafe_panel_applets_managers_ensure_loaded ();
 
 	for (l = cafe_panel_applets_managers; l != NULL; l = l->next) {
-		CafePanelAppletsManager *manager = MATE_PANEL_APPLETS_MANAGER (l->data);
+		CafePanelAppletsManager *manager = CAFE_PANEL_APPLETS_MANAGER (l->data);
 
-		retval = MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_info_from_old_id (manager, iid);
+		retval = CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_info_from_old_id (manager, iid);
 
 		if (retval != NULL)
 			return retval;
@@ -189,12 +189,12 @@ cafe_panel_applets_manager_load_applet (const gchar                *iid,
 	_cafe_panel_applets_managers_ensure_loaded ();
 
 	for (l = cafe_panel_applets_managers; l != NULL; l = l->next) {
-		CafePanelAppletsManager *manager = MATE_PANEL_APPLETS_MANAGER (l->data);
+		CafePanelAppletsManager *manager = CAFE_PANEL_APPLETS_MANAGER (l->data);
 
-		if (!MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_info (manager, iid))
+		if (!CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_info (manager, iid))
 			continue;
 
-		return MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->load_applet (manager, iid, frame_act);
+		return CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->load_applet (manager, iid, frame_act);
 	}
 
 	return FALSE;
@@ -209,12 +209,12 @@ cafe_panel_applets_manager_get_applet_widget (const gchar *iid,
 	_cafe_panel_applets_managers_ensure_loaded ();
 
 	for (l = cafe_panel_applets_managers; l != NULL; l = l->next) {
-		CafePanelAppletsManager *manager = MATE_PANEL_APPLETS_MANAGER (l->data);
+		CafePanelAppletsManager *manager = CAFE_PANEL_APPLETS_MANAGER (l->data);
 
-		if (!MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_info (manager, iid))
+		if (!CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_info (manager, iid))
 			continue;
 
-		return MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_widget (manager, iid, uid);
+		return CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_widget (manager, iid, uid);
 	}
 
 	return NULL;

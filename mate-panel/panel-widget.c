@@ -442,11 +442,11 @@ remove_panel_from_forbidden(PanelWidget *panel, PanelWidget *r)
 		return;
 
 	list = g_object_get_data (G_OBJECT(panel->master_widget),
-				  MATE_PANEL_APPLET_FORBIDDEN_PANELS);
+				  CAFE_PANEL_APPLET_FORBIDDEN_PANELS);
 	if(list) {
 		list = g_slist_remove(list,r);
 		g_object_set_data (G_OBJECT(panel->master_widget),
-				   MATE_PANEL_APPLET_FORBIDDEN_PANELS,
+				   CAFE_PANEL_APPLET_FORBIDDEN_PANELS,
 				   list);
 	}
 	parent_panel = gtk_widget_get_parent (panel->master_widget);
@@ -467,12 +467,12 @@ add_panel_to_forbidden(PanelWidget *panel, PanelWidget *r)
 		return;
 
 	list = g_object_get_data (G_OBJECT(panel->master_widget),
-				  MATE_PANEL_APPLET_FORBIDDEN_PANELS);
+				  CAFE_PANEL_APPLET_FORBIDDEN_PANELS);
 	if(g_slist_find(list,r)==NULL) {
 		list = g_slist_prepend(list,r);
 
 		g_object_set_data (G_OBJECT(panel->master_widget),
-				   MATE_PANEL_APPLET_FORBIDDEN_PANELS,
+				   CAFE_PANEL_APPLET_FORBIDDEN_PANELS,
 				   list);
 	}
 	parent_panel = gtk_widget_get_parent (panel->master_widget);
@@ -492,7 +492,7 @@ run_up_forbidden(PanelWidget *panel,
 		AppletData *ad = list->data;
 		PanelWidget *p =
 			g_object_get_data (G_OBJECT(ad->applet),
-					   MATE_PANEL_APPLET_ASSOC_PANEL_KEY);
+					   CAFE_PANEL_APPLET_ASSOC_PANEL_KEY);
 		if(p)
 			run_up_forbidden(p,runfunc);
 	}
@@ -552,7 +552,7 @@ panel_widget_cadd (GtkContainer *container,
 	panel_widget_add (PANEL_WIDGET (container), widget, FALSE, 0, FALSE);
 
 	p = g_object_get_data (G_OBJECT(widget),
-			       MATE_PANEL_APPLET_ASSOC_PANEL_KEY);
+			       CAFE_PANEL_APPLET_ASSOC_PANEL_KEY);
 	if (p) {
 		panel_toplevel_attach_to_widget (p->toplevel,
 						 PANEL_WIDGET (container)->toplevel,
@@ -573,9 +573,9 @@ panel_widget_cremove (GtkContainer *container, GtkWidget *widget)
 
 	panel = PANEL_WIDGET (container);
 
-	ad = g_object_get_data (G_OBJECT (widget), MATE_PANEL_APPLET_DATA);
+	ad = g_object_get_data (G_OBJECT (widget), CAFE_PANEL_APPLET_DATA);
 	p = g_object_get_data (G_OBJECT (widget),
-				 MATE_PANEL_APPLET_ASSOC_PANEL_KEY);
+				 CAFE_PANEL_APPLET_ASSOC_PANEL_KEY);
 
 	if (p != NULL) {
 		panel_toplevel_detach (p->toplevel);
@@ -633,7 +633,7 @@ panel_widget_is_applet_stuck (PanelWidget *panel_widget,
 	g_return_val_if_fail (PANEL_IS_WIDGET (panel_widget), FALSE);
 	g_return_val_if_fail (GTK_IS_WIDGET (widget), FALSE);
 
-	applet = g_object_get_data (G_OBJECT (widget), MATE_PANEL_APPLET_DATA);
+	applet = g_object_get_data (G_OBJECT (widget), CAFE_PANEL_APPLET_DATA);
 	if (applet) {
 		GList *applet_list, *l;
 		int    end_pos = -1;
@@ -1652,7 +1652,7 @@ panel_widget_dispose (GObject *obj)
 
 	if (panel->master_widget != NULL) {
 		g_object_set_data (G_OBJECT (panel->master_widget),
-				   MATE_PANEL_APPLET_ASSOC_PANEL_KEY,
+				   CAFE_PANEL_APPLET_ASSOC_PANEL_KEY,
 				   NULL);
 		g_object_remove_weak_pointer (G_OBJECT (panel->master_widget),
 					      (gpointer *) &panel->master_widget);
@@ -1726,7 +1726,7 @@ panel_widget_applet_drag_start_no_grab (PanelWidget *panel,
 	g_return_val_if_fail (PANEL_IS_WIDGET (panel), FALSE);
 	g_return_val_if_fail (GTK_IS_WIDGET (panel), FALSE);
 
-	ad = g_object_get_data (G_OBJECT (applet), MATE_PANEL_APPLET_DATA);
+	ad = g_object_get_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA);
 	g_return_val_if_fail (ad != NULL, FALSE);
 
 	if (ad->locked)
@@ -2052,7 +2052,7 @@ panel_widget_applet_move_to_cursor (PanelWidget *panel)
 	applet = ad->applet;
 	g_assert(GTK_IS_WIDGET(applet));
 	forb = g_object_get_data (G_OBJECT(applet),
-				  MATE_PANEL_APPLET_FORBIDDEN_PANELS);
+				  CAFE_PANEL_APPLET_FORBIDDEN_PANELS);
 
 	if(!panel_widget_is_cursor(panel,10)) {
 		GSList *list;
@@ -2348,8 +2348,8 @@ panel_widget_applet_destroy (GtkWidget *applet, gpointer data)
 
 	g_return_if_fail (GTK_IS_WIDGET (applet));
 
-	ad = g_object_get_data (G_OBJECT (applet), MATE_PANEL_APPLET_DATA);
-	g_object_set_data (G_OBJECT (applet), MATE_PANEL_APPLET_DATA, NULL);
+	ad = g_object_get_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA);
+	g_object_set_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA, NULL);
 
 	parent = gtk_widget_get_parent (applet);
 	/*if it wasn't yet removed*/
@@ -2474,7 +2474,7 @@ panel_widget_add (PanelWidget *panel,
 	g_return_val_if_fail (PANEL_IS_WIDGET (panel), -1);
 	g_return_val_if_fail (GTK_IS_WIDGET (applet), -1);
 
-	ad = g_object_get_data (G_OBJECT (applet), MATE_PANEL_APPLET_DATA);
+	ad = g_object_get_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA);
 
 	if (ad != NULL)
 		pos = ad->pos;
@@ -2514,7 +2514,7 @@ panel_widget_add (PanelWidget *panel,
 		ad->locked = locked;
 		ad->size_hints = NULL;
 		g_object_set_data (G_OBJECT (applet),
-				   MATE_PANEL_APPLET_DATA, ad);
+				   CAFE_PANEL_APPLET_DATA, ad);
 
 		/*this is a completely new applet, which was not yet bound*/
 		bind_top_applet_events (applet);
@@ -2561,7 +2561,7 @@ panel_widget_reparent (PanelWidget *old_panel,
 	g_return_val_if_fail(GTK_IS_WIDGET(applet), FALSE);
 	g_return_val_if_fail(pos>=0, FALSE);
 
-	ad = g_object_get_data (G_OBJECT (applet), MATE_PANEL_APPLET_DATA);
+	ad = g_object_get_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA);
 	g_return_val_if_fail(ad!=NULL, FALSE);
 
 	/* Don't try and reparent to an explicitly hidden panel,
@@ -2591,7 +2591,7 @@ panel_widget_reparent (PanelWidget *old_panel,
 	gtk_widget_reparent (applet, GTK_WIDGET (new_panel));
 
 	if (info && info->type == PANEL_OBJECT_APPLET)
-		cafe_panel_applet_frame_set_panel (MATE_PANEL_APPLET_FRAME (ad->applet), new_panel);
+		cafe_panel_applet_frame_set_panel (CAFE_PANEL_APPLET_FRAME (ad->applet), new_panel);
 
 	if (gtk_widget_get_can_focus (GTK_WIDGET (new_panel)))
 		gtk_widget_set_can_focus (GTK_WIDGET (new_panel), FALSE);
@@ -2833,7 +2833,7 @@ panel_widget_set_applet_size_constrained (PanelWidget *panel,
 {
 	AppletData *ad;
 
-	ad = g_object_get_data (G_OBJECT (applet), MATE_PANEL_APPLET_DATA);
+	ad = g_object_get_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA);
 	if (!ad)
 		return;
 
@@ -2855,7 +2855,7 @@ panel_widget_set_applet_expandable (PanelWidget *panel,
 {
 	AppletData *ad;
 
-	ad = g_object_get_data (G_OBJECT (applet), MATE_PANEL_APPLET_DATA);
+	ad = g_object_get_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA);
 	if (!ad)
 		return;
 
@@ -2879,7 +2879,7 @@ panel_widget_set_applet_size_hints (PanelWidget *panel,
 {
 	AppletData *ad;
 
-	ad = g_object_get_data (G_OBJECT (applet), MATE_PANEL_APPLET_DATA);
+	ad = g_object_get_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA);
 	if (!ad)
 		return;
 
@@ -2903,7 +2903,7 @@ panel_widget_set_applet_locked (PanelWidget *panel,
 {
 	AppletData *ad;
 
-	ad = g_object_get_data (G_OBJECT (applet), MATE_PANEL_APPLET_DATA);
+	ad = g_object_get_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA);
 	if (!ad)
 		return;
 
@@ -2916,7 +2916,7 @@ panel_widget_get_applet_locked (PanelWidget *panel,
 {
 	AppletData *ad;
 
-	ad = g_object_get_data (G_OBJECT (applet), MATE_PANEL_APPLET_DATA);
+	ad = g_object_get_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA);
 	if (!ad)
 		return FALSE;
 
@@ -2929,7 +2929,7 @@ panel_widget_toggle_applet_locked (PanelWidget *panel,
 {
 	AppletData *ad;
 
-	ad = g_object_get_data (G_OBJECT (applet), MATE_PANEL_APPLET_DATA);
+	ad = g_object_get_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA);
 	if (!ad)
 		return FALSE;
 

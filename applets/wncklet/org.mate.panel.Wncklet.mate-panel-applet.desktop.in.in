@@ -10,49 +10,49 @@ Name=Window Selector
 Description=Switch between open windows using a menu
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=cafe-panel-window-menu
-CafeComponentId=OAFIID:MATE_WindowMenuApplet;
+CafeComponentId=OAFIID:CAFE_WindowMenuApplet;
 Platforms=X11;
-X-MATE-Bugzilla-Bugzilla=MATE
-X-MATE-Bugzilla-Product=cafe-panel
-X-MATE-Bugzilla-Component=window selector
-X-MATE-Bugzilla-Version=@VERSION@
-X-MATE-Bugzilla-OtherBinaries=wnck-applet
+X-CAFE-Bugzilla-Bugzilla=CAFE
+X-CAFE-Bugzilla-Product=cafe-panel
+X-CAFE-Bugzilla-Component=window selector
+X-CAFE-Bugzilla-Version=@VERSION@
+X-CAFE-Bugzilla-OtherBinaries=wnck-applet
 
 [WorkspaceSwitcherApplet]
 Name=Workspace Switcher
 Description=Switch between workspaces
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=cafe-panel-workspace-switcher
-CafeComponentId=OAFIID:MATE_WorkspaceSwitcherApplet;OAFIID:MATE_PagerApplet;
+CafeComponentId=OAFIID:CAFE_WorkspaceSwitcherApplet;OAFIID:CAFE_PagerApplet;
 Platforms=X11;
-X-MATE-Bugzilla-Bugzilla=MATE
-X-MATE-Bugzilla-Product=cafe-panel
-X-MATE-Bugzilla-Component=workspace switcher
-X-MATE-Bugzilla-Version=@VERSION@
-X-MATE-Bugzilla-OtherBinaries=wnck-applet
+X-CAFE-Bugzilla-Bugzilla=CAFE
+X-CAFE-Bugzilla-Product=cafe-panel
+X-CAFE-Bugzilla-Component=workspace switcher
+X-CAFE-Bugzilla-Version=@VERSION@
+X-CAFE-Bugzilla-OtherBinaries=wnck-applet
 
 [WindowListApplet]
 Name=Window List
 Description=Switch between open windows using buttons
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=cafe-panel-window-list
-CafeComponentId=OAFIID:MATE_TasklistApplet;OAFIID:MATE_WindowListApplet;
+CafeComponentId=OAFIID:CAFE_TasklistApplet;OAFIID:CAFE_WindowListApplet;
 Platforms=X11;
-X-MATE-Bugzilla-Bugzilla=MATE
-X-MATE-Bugzilla-Product=cafe-panel
-X-MATE-Bugzilla-Component=window list
-X-MATE-Bugzilla-Version=@VERSION@
-X-MATE-Bugzilla-OtherBinaries=wnck-applet
+X-CAFE-Bugzilla-Bugzilla=CAFE
+X-CAFE-Bugzilla-Product=cafe-panel
+X-CAFE-Bugzilla-Component=window list
+X-CAFE-Bugzilla-Version=@VERSION@
+X-CAFE-Bugzilla-OtherBinaries=wnck-applet
 
 [ShowDesktopApplet]
 Name=Show Desktop
 Description=Hide application windows and show the desktop
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=user-desktop
-CafeComponentId=OAFIID:MATE_ShowDesktopApplet;
+CafeComponentId=OAFIID:CAFE_ShowDesktopApplet;
 Platforms=X11;
-X-MATE-Bugzilla-Bugzilla=MATE
-X-MATE-Bugzilla-Product=cafe-panel
-X-MATE-Bugzilla-Component=Show Desktop Button
-X-MATE-Bugzilla-Version=@VERSION@
-X-MATE-Bugzilla-OtherBinaries=wnck-applet
+X-CAFE-Bugzilla-Bugzilla=CAFE
+X-CAFE-Bugzilla-Product=cafe-panel
+X-CAFE-Bugzilla-Component=Show Desktop Button
+X-CAFE-Bugzilla-Version=@VERSION@
+X-CAFE-Bugzilla-OtherBinaries=wnck-applet

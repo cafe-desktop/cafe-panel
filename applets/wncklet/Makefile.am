@@ -1,11 +1,11 @@
 AM_CPPFLAGS =							\
-	$(LIBMATE_PANEL_APPLET_CFLAGS)				\
+	$(LIBCAFE_PANEL_APPLET_CFLAGS)				\
 	$(WNCKLET_CFLAGS)					\
 	-I$(top_builddir)					\
 	-I$(top_builddir)/applets/wncklet			\
 	-I$(top_srcdir)/libcafe-panel-applet				\
 	-I$(top_builddir)/libcafe-panel-applet			\
-	-DMATELOCALEDIR=\""$(datadir)/locale"\"	\
+	-DCAFELOCALEDIR=\""$(datadir)/locale"\"	\
 	$(DISABLE_DEPRECATED_CFLAGS)
 
 AM_CFLAGS = $(WARN_CFLAGS)
@@ -26,7 +26,7 @@ WNCKLET_SOURCES = \
 WNCKLET_LDADD =						\
 	../../libcafe-panel-applet/libcafe-panel-applet-4.la	\
 	$(WNCKLET_LIBS)					\
-	$(LIBMATE_PANEL_APPLET_LIBS)
+	$(LIBCAFE_PANEL_APPLET_LIBS)
 
 if WNCKLET_INPROCESS
 APPLET_IN_PROCESS = true

@@ -39,7 +39,7 @@ panel_modules_ensure_extension_points_registered (void)
 	if (!registered_extensions) {
 		registered_extensions = TRUE;
 
-		ep = g_io_extension_point_register (MATE_PANEL_APPLETS_MANAGER_EXTENSION_POINT_NAME);
+		ep = g_io_extension_point_register (CAFE_PANEL_APPLETS_MANAGER_EXTENSION_POINT_NAME);
 		g_io_extension_point_set_required_type (ep, PANEL_TYPE_APPLETS_MANAGER);
 	}
  }
@@ -63,7 +63,7 @@ panel_modules_ensure_loaded (void)
 		modules = g_io_modules_load_all_in_directory (PANEL_MODULES_DIR);
 		g_list_free (modules);
 
-		module_path = g_getenv ("MATE_PANEL_EXTRA_MODULES");
+		module_path = g_getenv ("CAFE_PANEL_EXTRA_MODULES");
 
 		if (module_path) {
 			gchar **paths;

@@ -32,8 +32,8 @@ msgstr "Manual for Fisk"
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:25
-msgid "<year>2015-2020</year> <holder>MATE Documentation Project</holder>"
-msgstr "<year>2015-2020</year> <holder>MATE-dokumentationsprojektet</holder>"
+msgid "<year>2015-2020</year> <holder>CAFE Documentation Project</holder>"
+msgstr "<year>2015-2020</year> <holder>CAFE-dokumentationsprojektet</holder>"
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:29
@@ -53,8 +53,8 @@ msgstr "<year>2000</year> <holder>Telsa Gwynne</holder>"
 #. (itstool) path: publisher/publishername
 #. (itstool) path: revdescription/para
 #: C/index.docbook:52 C/index.docbook:116
-msgid "MATE Documentation Project"
-msgstr "MATE-dokumentationsprojekt"
+msgid "CAFE Documentation Project"
+msgstr "CAFE-dokumentationsprojekt"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: revdescription/para
@@ -85,12 +85,12 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:12 C/legal.xml:12
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"Denne manual er en del af MATE-manualsamlingen distribueret under GFDL. Hvis"
+"Denne manual er en del af CAFE-manualsamlingen distribueret under GFDL. Hvis"
 " du vil distribuere denne manual separat fra denne samling, kan du gøre det "
 "ved at tilføje en kopi af licensen til manualen, som beskrevet i sektion 6 "
 "af licensen."
@@ -99,14 +99,14 @@ msgstr ""
 #: C/index.docbook:19 C/legal.xml:19
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
 "Mange af navnene brugt af firmaer til at skelne deres produkter og tjenester"
-" er registrerede varemærker. Der hvor disse navne optræder i MATE-"
-"dokumentationen, og medlemmerne af MATE-dokumentationsprojektet er blevet "
+" er registrerede varemærker. Der hvor disse navne optræder i CAFE-"
+"dokumentationen, og medlemmerne af CAFE-dokumentationsprojektet er blevet "
 "gjort opmærksomme på disse varemærker, er navnene skrevet med store "
 "bogstaver eller store forbogstaver."
 
@@ -178,11 +178,11 @@ msgstr ""
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:62
 msgid ""
-"<firstname>MATE Documentation Project</firstname> <surname/> <affiliation> "
-"<orgname>MATE Documentation Project</orgname> </affiliation>"
+"<firstname>CAFE Documentation Project</firstname> <surname/> <affiliation> "
+"<orgname>CAFE Documentation Project</orgname> </affiliation>"
 msgstr ""
-"<firstname>MATE-dokumentationsprojektet</firstname> <surname/> <affiliation>"
-" <orgname>MATE-dokumentationsprojektet</orgname> </affiliation>"
+"<firstname>CAFE-dokumentationsprojektet</firstname> <surname/> <affiliation>"
+" <orgname>CAFE-dokumentationsprojektet</orgname> </affiliation>"
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:69
@@ -219,8 +219,8 @@ msgstr ""
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:115
-msgid "MATE Documentation Team"
-msgstr "MATE-dokumentationsholdet"
+msgid "CAFE Documentation Team"
+msgstr "CAFE-dokumentationsholdet"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:111
@@ -311,11 +311,11 @@ msgstr "Tilbagemelding"
 msgid ""
 "To report a bug or make a suggestion regarding the Fish applet or this "
 "manual, follow the directions in the <ulink url=\"help:cafe-user-"
-"guide/feedback\" type=\"help\">MATE Feedback Page</ulink>."
+"guide/feedback\" type=\"help\">CAFE Feedback Page</ulink>."
 msgstr ""
 "For at rapportere en fejl eller komme med et forslag jævnfør panelprogrammet"
 " Fisk eller denne manual, så følg retningslinjerne i <ulink url=\"help:cafe-"
-"user-guide/feedback\" type=\"help\">MATE's side for "
+"user-guide/feedback\" type=\"help\">CAFE's side for "
 "tilbagemeldinger</ulink>."
 
 #. (itstool) path: abstract/para

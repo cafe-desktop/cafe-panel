@@ -613,7 +613,7 @@ panel_addto_prepend_alias (GSList         **parent_list,
 	gpointer item;
 
 	switch (cafemenu_tree_alias_get_aliased_item_type (alias)) {
-	case MATEMENU_TREE_ITEM_DIRECTORY:
+	case CAFEMENU_TREE_ITEM_DIRECTORY:
 		item = cafemenu_tree_alias_get_directory(alias);
 		panel_addto_prepend_directory (parent_list,
 				item,
@@ -621,7 +621,7 @@ panel_addto_prepend_alias (GSList         **parent_list,
 		cafemenu_tree_item_unref (item);
 		break;
 
-	case MATEMENU_TREE_ITEM_ENTRY:
+	case CAFEMENU_TREE_ITEM_ENTRY:
 		item = cafemenu_tree_alias_get_aliased_entry(alias);
 		panel_addto_prepend_entry (parent_list,
 				item,
@@ -642,22 +642,22 @@ panel_addto_make_application_list (GSList             **parent_list,
 	CafeMenuTreeIter *iter;
 	iter = cafemenu_tree_directory_iter (directory);
 	CafeMenuTreeItemType type;
-	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
+	while ((type = cafemenu_tree_iter_next (iter)) != CAFEMENU_TREE_ITEM_INVALID) {
 		gpointer item;
 		switch (type) {
-		case MATEMENU_TREE_ITEM_DIRECTORY:
+		case CAFEMENU_TREE_ITEM_DIRECTORY:
 			item = cafemenu_tree_iter_get_directory(iter);
 			panel_addto_prepend_directory (parent_list, item, filename);
 			cafemenu_tree_item_unref (item);
 			break;
 
-		case MATEMENU_TREE_ITEM_ENTRY:
+		case CAFEMENU_TREE_ITEM_ENTRY:
 			item = cafemenu_tree_iter_get_entry (iter);
 			panel_addto_prepend_entry (parent_list, item, filename);
 			cafemenu_tree_item_unref (item);
 			break;
 
-		case MATEMENU_TREE_ITEM_ALIAS:
+		case CAFEMENU_TREE_ITEM_ALIAS:
 			item = cafemenu_tree_iter_get_alias(iter);
 			panel_addto_prepend_alias (parent_list, item, filename);
 			cafemenu_tree_item_unref (item);
@@ -721,7 +721,7 @@ static void panel_addto_make_application_model(PanelAddtoDialog* dialog)
 				    G_TYPE_STRING,
 				    G_TYPE_BOOLEAN);
 
-	tree = cafemenu_tree_new ("cafe-applications.menu", MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
+	tree = cafemenu_tree_new ("cafe-applications.menu", CAFEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
 	if (! cafemenu_tree_load_sync (tree, &error)) {
 		g_warning("Applications menu tree loading got error:%s\n", error->message);
 		g_error_free(error);
@@ -738,7 +738,7 @@ static void panel_addto_make_application_model(PanelAddtoDialog* dialog)
 
 	g_clear_object(&tree);
 
-	tree = cafemenu_tree_new ("cafe-settings.menu", MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
+	tree = cafemenu_tree_new ("cafe-settings.menu", CAFEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
 	if (! cafemenu_tree_load_sync (tree, &error)) {
 		g_warning("Settings menu tree loading got error:%s\n", error->message);
 		g_error_free(error);

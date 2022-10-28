@@ -140,12 +140,12 @@ static RevertKey revert_keys [] = {
 	{ "Icon",     G_TYPE_STRING,  FALSE, TRUE  },
 	{ "Name",     G_TYPE_STRING,  FALSE, TRUE  },
 	{ "Comment",  G_TYPE_STRING,  FALSE, TRUE  },
-	{ "X-MATE-FullName", G_TYPE_STRING,  FALSE, TRUE  },
+	{ "X-CAFE-FullName", G_TYPE_STRING,  FALSE, TRUE  },
 	/* C version of those keys */
 	{ "Icon",     G_TYPE_STRING,  FALSE, FALSE },
 	{ "Name",     G_TYPE_STRING,  FALSE, FALSE },
 	{ "Comment",  G_TYPE_STRING,  FALSE, FALSE },
-	{ "X-MATE-FullName", G_TYPE_STRING,  FALSE, FALSE }
+	{ "X-CAFE-FullName", G_TYPE_STRING,  FALSE, FALSE }
 };
 
 enum {
@@ -827,7 +827,7 @@ panel_ditem_editor_name_changed (PanelDItemEditor *dialog)
 		/* When reverting, we don't need to set the content of the key
 		 * file; we only want to send a signal. Changing the key file
 		 * could actually break the revert since it might overwrite the
-		 * old Name value with the X-MATE-FullName value */
+		 * old Name value with the X-CAFE-FullName value */
 		if (name && name[0])
 			panel_key_file_set_locale_string (dialog->priv->key_file,
 							  "Name", name);
@@ -836,7 +836,7 @@ panel_ditem_editor_name_changed (PanelDItemEditor *dialog)
 							      "Name");
 
 		panel_key_file_remove_all_locale_key (dialog->priv->key_file,
-						      "X-MATE-FullName");
+						      "X-CAFE-FullName");
 	}
 
 	g_signal_emit (G_OBJECT (dialog), ditem_edit_signals[NAME_CHANGED], 0,
@@ -1230,7 +1230,7 @@ panel_ditem_editor_sync_display (PanelDItemEditor *dialog)
 	key_file = dialog->priv->key_file;
 
 	/* Name */
-	buffer = panel_key_file_get_locale_string (key_file, "X-MATE-FullName");
+	buffer = panel_key_file_get_locale_string (key_file, "X-CAFE-FullName");
 	if (!buffer)
 		buffer = panel_key_file_get_locale_string (key_file, "Name");
 	gtk_entry_set_text (GTK_ENTRY (dialog->priv->name_entry),

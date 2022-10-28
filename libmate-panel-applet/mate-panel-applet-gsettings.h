@@ -22,8 +22,8 @@
  *     Stefano Karapetsas <stefano@karapetsas.com>
  */
 
-#ifndef __MATE_PANEL_APPLET_GSETTINGS_H__
-#define __MATE_PANEL_APPLET_GSETTINGS_H__
+#ifndef __CAFE_PANEL_APPLET_GSETTINGS_H__
+#define __CAFE_PANEL_APPLET_GSETTINGS_H__
 
 #include <glib.h>
 #include <gio/gio.h>
@@ -42,4 +42,4 @@ void       cafe_panel_applet_settings_set_gslist (GSettings *settings, gchar *ke
 
 G_END_DECLS
 
-#endif /* __MATE_PANEL_APPLET_GSETTINGS_H__ */
+#endif /* __CAFE_PANEL_APPLET_GSETTINGS_H__ */

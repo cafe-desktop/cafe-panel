@@ -109,11 +109,11 @@ get_gtk_orientation_from_applet_orient (CafePanelAppletOrient orient)
 {
   switch (orient)
     {
-    case MATE_PANEL_APPLET_ORIENT_LEFT:
-    case MATE_PANEL_APPLET_ORIENT_RIGHT:
+    case CAFE_PANEL_APPLET_ORIENT_LEFT:
+    case CAFE_PANEL_APPLET_ORIENT_RIGHT:
       return GTK_ORIENTATION_VERTICAL;
-    case MATE_PANEL_APPLET_ORIENT_UP:
-    case MATE_PANEL_APPLET_ORIENT_DOWN:
+    case CAFE_PANEL_APPLET_ORIENT_UP:
+    case CAFE_PANEL_APPLET_ORIENT_DOWN:
     default:
       return GTK_ORIENTATION_HORIZONTAL;
     }
@@ -140,7 +140,7 @@ gsettings_changed_min_icon_size (GSettings    *settings,
 static void
 setup_gsettings (NaTrayApplet *applet)
 {
-  applet->priv->settings = cafe_panel_applet_settings_new (MATE_PANEL_APPLET (applet), NA_TRAY_SCHEMA);
+  applet->priv->settings = cafe_panel_applet_settings_new (CAFE_PANEL_APPLET (applet), NA_TRAY_SCHEMA);
   g_signal_connect (applet->priv->settings, "changed::" KEY_MIN_ICON_SIZE, G_CALLBACK (gsettings_changed_min_icon_size), applet);
 }
 
@@ -280,7 +280,7 @@ static void about_cb(GtkAction* action, NaTrayApplet* applet)
 		"copyright", _("Copyright \xc2\xa9 2002 Red Hat, Inc.\n"
 		               "Copyright \xc2\xa9 2003-2006 Vincent Untz\n"
 		               "Copyright \xc2\xa9 2011 Perberos\n"
-		               "Copyright \xc2\xa9 2012-2020 MATE developers"),
+		               "Copyright \xc2\xa9 2012-2020 CAFE developers"),
 		"documenters", documenters,
 		"logo-icon-name", NOTIFICATION_AREA_ICON,
 		"translator-credits", _("translator-credits"),
@@ -313,7 +313,7 @@ na_tray_applet_realize (GtkWidget *widget)
   action_group = gtk_action_group_new("NA Applet Menu Actions");
   gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
   gtk_action_group_add_actions(action_group, menu_actions, G_N_ELEMENTS(menu_actions), applet);
-  cafe_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (applet),
+  cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (applet),
                                               NA_RESOURCE_PATH "notification-area-menu.xml",
                                               action_group);
   g_object_unref(action_group);
@@ -426,7 +426,7 @@ na_tray_applet_class_init (NaTrayAppletClass *class)
 {
   GObjectClass     *object_class = G_OBJECT_CLASS (class);
   GtkWidgetClass   *widget_class = GTK_WIDGET_CLASS (class);
-  CafePanelAppletClass *applet_class = MATE_PANEL_APPLET_CLASS (class);
+  CafePanelAppletClass *applet_class = CAFE_PANEL_APPLET_CLASS (class);
 
   object_class->dispose = na_tray_applet_dispose;
 
@@ -475,7 +475,7 @@ na_tray_applet_init (NaTrayApplet *applet)
   applet->priv->sn_watcher = sn_watcher_service_ref ();
 #endif
 
-  orient = cafe_panel_applet_get_orient (MATE_PANEL_APPLET (applet));
+  orient = cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (applet));
   applet->priv->grid = na_grid_new (get_gtk_orientation_from_applet_orient (orient));
 
   gtk_container_add (GTK_CONTAINER (applet), GTK_WIDGET (applet->priv->grid));
@@ -484,8 +484,8 @@ na_tray_applet_init (NaTrayApplet *applet)
   atko = gtk_widget_get_accessible (GTK_WIDGET (applet));
   atk_object_set_name (atko, _("Panel Notification Area"));
 
-  cafe_panel_applet_set_flags (MATE_PANEL_APPLET (applet),
-                          MATE_PANEL_APPLET_HAS_HANDLE|MATE_PANEL_APPLET_EXPAND_MINOR);
+  cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (applet),
+                          CAFE_PANEL_APPLET_HAS_HANDLE|CAFE_PANEL_APPLET_EXPAND_MINOR);
 }
 
 static gboolean
@@ -512,13 +512,13 @@ applet_factory (CafePanelApplet *applet,
 }
 
 #ifdef NOTIFICATION_AREA_INPROCESS
-	MATE_PANEL_APPLET_IN_PROCESS_FACTORY ("NotificationAreaAppletFactory",
+	CAFE_PANEL_APPLET_IN_PROCESS_FACTORY ("NotificationAreaAppletFactory",
 				 NA_TYPE_TRAY_APPLET,
 				 "NotificationArea",
 				 applet_factory,
 				 NULL)
 #else
-	MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("NotificationAreaAppletFactory",
+	CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY ("NotificationAreaAppletFactory",
 				  NA_TYPE_TRAY_APPLET,
 				  "NotificationArea",
 				  applet_factory,

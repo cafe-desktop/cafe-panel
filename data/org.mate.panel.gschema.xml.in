@@ -77,7 +77,7 @@
     <key name="disabled-applets" type="as">
       <default>[]</default>
       <summary>Applet IIDs to disable from loading</summary>
-      <description>A list of applet IIDs that the panel will ignore.  This way you can disable certain applets from loading or showing up in the menu. For example to disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to this list.  The panel must be restarted for this to take effect.</description>
+      <description>A list of applet IIDs that the panel will ignore.  This way you can disable certain applets from loading or showing up in the menu. For example to disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to this list.  The panel must be restarted for this to take effect.</description>
     </key>
     <key name="disable-force-quit" type="b">
       <default>false</default>

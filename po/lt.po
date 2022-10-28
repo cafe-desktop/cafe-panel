@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -231,10 +231,10 @@ msgstr "Laikrodis rodo dabartinį laiką ir datą"
 #: applets/clock/clock.c:3393
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Autorių teisės © 1998-2004 Free Software Foundation, Inc.\n"
-"Autorių teisės © 2012-2020 MATE kūrėjai"
+"Autorių teisės © 2012-2020 CAFE kūrėjai"
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
 #: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
@@ -691,11 +691,11 @@ msgstr "Apie žuvį"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Autorių teisės © 1998-2002 Free Software Foundation, Inc.\n"
 "Autorių teisės © 2002-2005 Vincent Untz\n"
-"Autorių teisės © 2012-2020 MATE kūrėjai"
+"Autorių teisės © 2012-2020 CAFE kūrėjai"
 
 #: applets/fish/fish.c:579
 #, c-format
@@ -907,12 +907,12 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Autorių teisės © 2002 Red Hat, Inc.\n"
 "Autorių teisės © 2003-2006 Vincent Untz\n"
 "Autorių teisės © 2011 Perberos\n"
-"Autorių teisės © 2012-2020 MATE kūrėjai"
+"Autorių teisės © 2012-2020 CAFE kūrėjai"
 
 #: applets/notification_area/main.c:485
 msgid "Panel Notification Area"
@@ -1152,11 +1152,11 @@ msgstr ""
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Autorių teisės © 2002 Red Hat, Inc.\n"
 "Autorių teisės © 2011 Perberos\n"
-"Autorių teisės © 2012-2020 MATE kūrėjai"
+"Autorių teisės © 2012-2020 CAFE kūrėjai"
 
 #: applets/wncklet/showdesktop.c:529
 msgid ""
@@ -1267,13 +1267,13 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Autorių teisės © 2000 Helix Code, Inc.\n"
 "Autorių teisės © 2001 Free Software Foundation, Inc.\n"
 "Autorių teisės © 2003 Sun Microsystems, Inc.\n"
 "Autorių teisės © 2011 Perberos\n"
-"Autorių teisės © 2012-2020 MATE kūrėjai"
+"Autorių teisės © 2012-2020 CAFE kūrėjai"
 
 #: applets/wncklet/workspace-switcher.c:240
 #: applets/wncklet/workspace-switcher.c:939
@@ -1521,13 +1521,13 @@ msgstr "Įtaisų IID, kurių nereikia įkelti"
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "Įtaisų, kuriuos skydelis ignoruos, IID sarašas. Tokiu būdu Jūs galite "
 "atjungti tam tikrus įtaisus nuo įkėlimo arba pasirodymo meniu. Pvz. tam, kad"
 " atjungti mini-commander įtaisą į sarašą įdėkit "
-"'OAFIID:MATE_MiniCommanderApplet'. Kad pakeitimas įsigalėtų skydelis turi "
+"'OAFIID:CAFE_MiniCommanderApplet'. Kad pakeitimas įsigalėtų skydelis turi "
 "būti perkrautas."
 
 #: data/org.cafe.panel.gschema.xml.in:84
@@ -2630,18 +2630,18 @@ msgid "And many, many others…"
 msgstr "Daug daug kitų…"
 
 #: cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
-msgstr "MATE skydelis"
+msgid "The CAFE Panel"
+msgstr "CAFE skydelis"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE developers"
+"Copyright © 2011-2020 CAFE developers"
 msgstr ""
 "Autorių teisės © 1997-2003 Free Software Foundation, Inc.\n"
 "Autorių teisės © 2004 Vincent Untz\n"
-"Autorių teisės © 2011-2020 MATE kūrėjai"
+"Autorių teisės © 2011-2020 CAFE kūrėjai"
 
 #: cafe-panel/panel-context-menu.c:119
 msgid ""
@@ -2652,8 +2652,8 @@ msgstr ""
 "paleidimą."
 
 #: cafe-panel/panel-context-menu.c:123
-msgid "About the MATE Panel"
-msgstr "Apie MATE skydelį"
+msgid "About the CAFE Panel"
+msgstr "Apie CAFE skydelį"
 
 #: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
@@ -3348,8 +3348,8 @@ msgid "Test DBus Applet"
 msgstr "DBus išbandymo įtaisas"
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
-msgid "A simple applet for testing the MATE panel"
-msgstr "Paprastas įtaisas, skirtas išbandyti MATE skydelį"
+msgid "A simple applet for testing the CAFE panel"
+msgstr "Paprastas įtaisas, skirtas išbandyti CAFE skydelį"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!

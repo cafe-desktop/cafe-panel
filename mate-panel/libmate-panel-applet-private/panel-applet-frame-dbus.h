@@ -33,11 +33,11 @@ extern "C" {
 #endif
 
 #define PANEL_TYPE_APPLET_FRAME_DBUS         (cafe_panel_applet_frame_dbus_get_type ())
-#define MATE_PANEL_APPLET_FRAME_DBUS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET_FRAME_DBUS, CafePanelAppletFrameDBus))
-#define MATE_PANEL_APPLET_FRAME_DBUS_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET_FRAME_DBUS, CafePanelAppletFrameDBusClass))
+#define CAFE_PANEL_APPLET_FRAME_DBUS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET_FRAME_DBUS, CafePanelAppletFrameDBus))
+#define CAFE_PANEL_APPLET_FRAME_DBUS_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET_FRAME_DBUS, CafePanelAppletFrameDBusClass))
 #define PANEL_IS_APPLET_FRAME_DBUS(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), PANEL_TYPE_APPLET_FRAME_DBUS))
 #define PANEL_IS_APPLET_FRAME_DBUS_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), PANEL_TYPE_APPLET_FRAME_DBUS))
-#define MATE_PANEL_APPLET_FRAME_DBUS_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET_FRAME_DBUS, CafePanelAppletFrameDBusClass))
+#define CAFE_PANEL_APPLET_FRAME_DBUS_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET_FRAME_DBUS, CafePanelAppletFrameDBusClass))
 
 typedef struct _CafePanelAppletFrameDBus        CafePanelAppletFrameDBus;
 typedef struct _CafePanelAppletFrameDBusClass   CafePanelAppletFrameDBusClass;

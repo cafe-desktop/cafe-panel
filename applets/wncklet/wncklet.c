@@ -142,7 +142,7 @@ static gboolean wncklet_factory(CafePanelApplet* applet, const char* iid, gpoint
 
 
 #ifdef WNCKLET_INPROCESS
-	MATE_PANEL_APPLET_IN_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", wncklet_factory, NULL)
+	CAFE_PANEL_APPLET_IN_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", wncklet_factory, NULL)
 #else
-	MATE_PANEL_APPLET_OUT_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", wncklet_factory, NULL)
+	CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", wncklet_factory, NULL)
 #endif

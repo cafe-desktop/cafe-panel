@@ -33,7 +33,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
-#define MATE_DESKTOP_USE_UNSTABLE_API
+#define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-utils.h>
 #include <libcafe-desktop/cafe-gsettings.h>
 
@@ -214,10 +214,10 @@ panel_action_logout (GtkWidget *widget)
 	PanelSessionManager *manager;
 	gboolean             prompt = TRUE;
 
-	if (cafe_gsettings_schema_exists (MATE_SESSION_SCHEMA)) {
+	if (cafe_gsettings_schema_exists (CAFE_SESSION_SCHEMA)) {
 		GSettings *msm_settings;
-		msm_settings = g_settings_new (MATE_SESSION_SCHEMA);
-		prompt = g_settings_get_boolean (msm_settings, MATE_SESSION_LOGOUT_PROMPT_KEY);
+		msm_settings = g_settings_new (CAFE_SESSION_SCHEMA);
+		prompt = g_settings_get_boolean (msm_settings, CAFE_SESSION_LOGOUT_PROMPT_KEY);
 		g_object_unref (msm_settings);
 	}
 

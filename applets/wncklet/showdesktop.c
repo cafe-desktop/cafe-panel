@@ -83,12 +83,12 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 
 	switch (orient)
 	{
-		case MATE_PANEL_APPLET_ORIENT_LEFT:
-		case MATE_PANEL_APPLET_ORIENT_RIGHT:
+		case CAFE_PANEL_APPLET_ORIENT_LEFT:
+		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
 			new_orient = GTK_ORIENTATION_VERTICAL;
 			break;
-		case MATE_PANEL_APPLET_ORIENT_UP:
-		case MATE_PANEL_APPLET_ORIENT_DOWN:
+		case CAFE_PANEL_APPLET_ORIENT_UP:
+		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		default:
 			new_orient = GTK_ORIENTATION_HORIZONTAL;
 			break;
@@ -395,7 +395,7 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 	AtkObject* atk_obj;
 	GtkCssProvider *provider;
 
-	cafe_panel_applet_set_flags(applet, MATE_PANEL_APPLET_EXPAND_MINOR);
+	cafe_panel_applet_set_flags(applet, CAFE_PANEL_APPLET_EXPAND_MINOR);
 
 	sdd = g_new0(ShowDesktopData, 1);
 
@@ -405,18 +405,18 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 
 	switch (cafe_panel_applet_get_orient(applet))
 	{
-		case MATE_PANEL_APPLET_ORIENT_LEFT:
-		case MATE_PANEL_APPLET_ORIENT_RIGHT:
+		case CAFE_PANEL_APPLET_ORIENT_LEFT:
+		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
 			sdd->orient = GTK_ORIENTATION_VERTICAL;
 			break;
-		case MATE_PANEL_APPLET_ORIENT_UP:
-		case MATE_PANEL_APPLET_ORIENT_DOWN:
+		case CAFE_PANEL_APPLET_ORIENT_UP:
+		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		default:
 			sdd->orient = GTK_ORIENTATION_HORIZONTAL;
 			break;
 	}
 
-	sdd->size = cafe_panel_applet_get_size(MATE_PANEL_APPLET(sdd->applet));
+	sdd->size = cafe_panel_applet_get_size(CAFE_PANEL_APPLET(sdd->applet));
 
 	g_signal_connect(G_OBJECT(sdd->applet), "realize", G_CALLBACK(show_desktop_applet_realized), sdd);
 
@@ -454,12 +454,12 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 	   initial oriantation, and we get that during the _add call */
 	g_signal_connect(G_OBJECT (sdd->applet), "change_orient", G_CALLBACK (applet_change_orient), sdd);
 
-	cafe_panel_applet_set_background_widget(MATE_PANEL_APPLET (sdd->applet), GTK_WIDGET(sdd->applet));
+	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET (sdd->applet), GTK_WIDGET(sdd->applet));
 
 	action_group = gtk_action_group_new("ShowDesktop Applet Actions");
 	gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions(action_group, show_desktop_menu_actions, G_N_ELEMENTS (show_desktop_menu_actions), sdd);
-	cafe_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (sdd->applet),
+	cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (sdd->applet),
 	                                            WNCKLET_RESOURCE_PATH "showdesktop-menu.xml",
 	                                            action_group);
 	g_object_unref(action_group);
@@ -502,7 +502,7 @@ static void display_about_dialog(GtkAction* action, ShowDesktopData* sdd)
 		"comments", _("This button lets you hide all windows and show the desktop."),
 		"copyright", _("Copyright \xc2\xa9 2002 Red Hat, Inc.\n"
 		               "Copyright \xc2\xa9 2011 Perberos\n"
-                               "Copyright \xc2\xa9 2012-2020 MATE developers"),
+                               "Copyright \xc2\xa9 2012-2020 CAFE developers"),
 		"documenters", documenters,
 		"icon-name", SHOW_DESKTOP_ICON,
 		"logo-icon-name", SHOW_DESKTOP_ICON,

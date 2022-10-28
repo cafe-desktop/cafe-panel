@@ -1,5 +1,5 @@
 /*
- * MATE panel drawer module.
+ * CAFE panel drawer module.
  * (C) 1997 The Free Software Foundation
  *
  * Authors: Miguel de Icaza

@@ -1,5 +1,5 @@
 /*
- * panel-action-protocol.h: _MATE_PANEL_ACTION protocol impl.
+ * panel-action-protocol.h: _CAFE_PANEL_ACTION protocol impl.
  *
  * Copyright (C) 2003 Sun Microsystems, Inc.
  *
@@ -170,7 +170,7 @@ panel_action_protocol_init (void)
 
 	atom_cafe_panel_action =
 		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
-			     "_MATE_PANEL_ACTION",
+			     "_CAFE_PANEL_ACTION",
 			     FALSE);
 	atom_gnome_panel_action =
 		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
@@ -178,11 +178,11 @@ panel_action_protocol_init (void)
 			     FALSE);
 	atom_cafe_panel_action_main_menu =
 		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
-			     "_MATE_PANEL_ACTION_MAIN_MENU",
+			     "_CAFE_PANEL_ACTION_MAIN_MENU",
 			     FALSE);
 	atom_cafe_panel_action_run_dialog =
 		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
-			     "_MATE_PANEL_ACTION_RUN_DIALOG",
+			     "_CAFE_PANEL_ACTION_RUN_DIALOG",
 			     FALSE);
 	atom_gnome_panel_action_main_menu =
 		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
@@ -194,7 +194,7 @@ panel_action_protocol_init (void)
 			     FALSE);
 	atom_cafe_panel_action_kill_dialog =
 		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
-			     "_MATE_PANEL_ACTION_KILL_DIALOG",
+			     "_CAFE_PANEL_ACTION_KILL_DIALOG",
 			     FALSE);
 
 	/* We'll filter event sent on non-root windows later */

@@ -81,7 +81,7 @@ static void window_menu_about(GtkAction* action, WindowMenu* window_menu)
 		               "Copyright \xc2\xa9 2001 Free Software Foundation, Inc.\n"
 		               "Copyright \xc2\xa9 2003 Sun Microsystems, Inc.\n"
 		               "Copyright \xc2\xa9 2011 Perberos\n"
-		               "Copyright \xc2\xa9 2012-2020 MATE developers"),
+		               "Copyright \xc2\xa9 2012-2020 CAFE developers"),
 		"documenters", documenters,
 		"icon-name", WINDOW_MENU_ICON,
 		"logo-icon-name", WINDOW_MENU_ICON,
@@ -155,7 +155,7 @@ static void window_menu_size_allocate(CafePanelApplet* applet, GtkAllocation* al
 	child = GTK_WIDGET(children->data);
 	g_list_free(children);
 
-	if (orient == MATE_PANEL_APPLET_ORIENT_LEFT || orient == MATE_PANEL_APPLET_ORIENT_RIGHT)
+	if (orient == CAFE_PANEL_APPLET_ORIENT_LEFT || orient == CAFE_PANEL_APPLET_ORIENT_RIGHT)
 	{
 		if (window_menu->size == allocation->width && orient == window_menu->orient)
 			return;
@@ -226,7 +226,7 @@ gboolean window_menu_applet_fill(CafePanelApplet* applet)
 	gtk_widget_set_name (window_menu->applet, "window-menu-applet-button");
 	gtk_widget_set_tooltip_text(window_menu->applet, _("Window Selector"));
 
-	cafe_panel_applet_set_flags(applet, MATE_PANEL_APPLET_EXPAND_MINOR);
+	cafe_panel_applet_set_flags(applet, CAFE_PANEL_APPLET_EXPAND_MINOR);
 	window_menu->size = cafe_panel_applet_get_size(applet);
 	window_menu->orient = cafe_panel_applet_get_orient(applet);
 
@@ -235,7 +235,7 @@ gboolean window_menu_applet_fill(CafePanelApplet* applet)
 	action_group = gtk_action_group_new("WindowMenu Applet Actions");
 	gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions(action_group, window_menu_actions, G_N_ELEMENTS(window_menu_actions), window_menu);
-	cafe_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (window_menu->applet),
+	cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (window_menu->applet),
 	                                            WNCKLET_RESOURCE_PATH "window-menu-menu.xml",
 	                                            action_group);
 	g_object_unref(action_group);
@@ -243,7 +243,7 @@ gboolean window_menu_applet_fill(CafePanelApplet* applet)
 	window_menu->selector = wnck_selector_new();
 	gtk_container_add(GTK_CONTAINER(window_menu->applet), window_menu->selector);
 
-	cafe_panel_applet_set_background_widget(MATE_PANEL_APPLET(window_menu->applet), GTK_WIDGET(window_menu->selector));
+	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET(window_menu->applet), GTK_WIDGET(window_menu->selector));
 
 	g_signal_connect(window_menu->applet, "key_press_event", G_CALLBACK(window_menu_key_press_event), window_menu);
 	g_signal_connect(window_menu->applet, "size-allocate", G_CALLBACK(window_menu_size_allocate), window_menu);

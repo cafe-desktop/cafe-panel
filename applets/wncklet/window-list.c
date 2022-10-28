@@ -26,7 +26,7 @@
 #include <gdk/gdkx.h>
 #endif
 
-#define MATE_DESKTOP_USE_UNSTABLE_API
+#define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-utils.h>
 
 #include "wncklet.h"
@@ -126,12 +126,12 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 
 	switch (orient)
 	{
-		case MATE_PANEL_APPLET_ORIENT_LEFT:
-		case MATE_PANEL_APPLET_ORIENT_RIGHT:
+		case CAFE_PANEL_APPLET_ORIENT_LEFT:
+		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
 			new_orient = GTK_ORIENTATION_VERTICAL;
 			break;
-		case MATE_PANEL_APPLET_ORIENT_UP:
-		case MATE_PANEL_APPLET_ORIENT_DOWN:
+		case CAFE_PANEL_APPLET_ORIENT_UP:
+		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		default:
 			new_orient = GTK_ORIENTATION_HORIZONTAL;
 			break;
@@ -236,18 +236,18 @@ static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbn
 	gdk_monitor_get_geometry (monitor, &monitor_geom);
 
 	/* Add padding to clear the panel */
-	switch (cafe_panel_applet_get_orient (MATE_PANEL_APPLET (tasklist->applet)))
+	switch (cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (tasklist->applet)))
 	{
-		case MATE_PANEL_APPLET_ORIENT_LEFT:
+		case CAFE_PANEL_APPLET_ORIENT_LEFT:
 			x_pos = monitor_geom.width + monitor_geom.x - (width + tasklist->size) - PREVIEW_PADDING;
 			break;
-		case MATE_PANEL_APPLET_ORIENT_RIGHT:
+		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
 			x_pos = tasklist->size + PREVIEW_PADDING;
 			break;
-		case MATE_PANEL_APPLET_ORIENT_UP:
+		case CAFE_PANEL_APPLET_ORIENT_UP:
 			y_pos = monitor_geom.height + monitor_geom.y - (height + tasklist->size) - PREVIEW_PADDING;
 			break;
-		case MATE_PANEL_APPLET_ORIENT_DOWN:
+		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		default:
 			y_pos = tasklist->size + PREVIEW_PADDING;
 			break;
@@ -539,7 +539,7 @@ static void move_unminimized_windows_changed(GSettings* settings, gchar* key, Ta
 
 static void setup_gsettings(TasklistData* tasklist)
 {
-	tasklist->settings = cafe_panel_applet_settings_new (MATE_PANEL_APPLET (tasklist->applet), WINDOW_LIST_SCHEMA);
+	tasklist->settings = cafe_panel_applet_settings_new (CAFE_PANEL_APPLET (tasklist->applet), WINDOW_LIST_SCHEMA);
 
 	g_signal_connect (tasklist->settings,
 					  "changed::display-all-workspaces",
@@ -547,7 +547,7 @@ static void setup_gsettings(TasklistData* tasklist)
 					  tasklist);
 
 #ifdef HAVE_WINDOW_PREVIEWS
-	tasklist->preview_settings = cafe_panel_applet_settings_new (MATE_PANEL_APPLET (tasklist->applet), WINDOW_LIST_PREVIEW_SCHEMA);
+	tasklist->preview_settings = cafe_panel_applet_settings_new (CAFE_PANEL_APPLET (tasklist->applet), WINDOW_LIST_PREVIEW_SCHEMA);
 
 	g_signal_connect (tasklist->preview_settings,
 					  "changed::show-window-thumbnails",
@@ -597,7 +597,7 @@ static void applet_size_allocate(GtkWidget *widget, GtkAllocation *allocation, T
 
 	if (tasklist->needs_hints)
 #endif
-		cafe_panel_applet_set_size_hints(MATE_PANEL_APPLET(tasklist->applet), size_hints, len, 0);
+		cafe_panel_applet_set_size_hints(CAFE_PANEL_APPLET(tasklist->applet), size_hints, len, 0);
 }
 
 static GdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flags, void* data)
@@ -670,7 +670,7 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 										GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_object_unref (provider);
 
-	cafe_panel_applet_set_flags(MATE_PANEL_APPLET(tasklist->applet), MATE_PANEL_APPLET_EXPAND_MAJOR | MATE_PANEL_APPLET_EXPAND_MINOR | MATE_PANEL_APPLET_HAS_HANDLE);
+	cafe_panel_applet_set_flags(CAFE_PANEL_APPLET(tasklist->applet), CAFE_PANEL_APPLET_EXPAND_MAJOR | CAFE_PANEL_APPLET_EXPAND_MINOR | CAFE_PANEL_APPLET_HAS_HANDLE);
 
 	setup_gsettings(tasklist);
 
@@ -694,12 +694,12 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 
 	switch (cafe_panel_applet_get_orient(applet))
 	{
-		case MATE_PANEL_APPLET_ORIENT_LEFT:
-		case MATE_PANEL_APPLET_ORIENT_RIGHT:
+		case CAFE_PANEL_APPLET_ORIENT_LEFT:
+		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
 			tasklist->orientation = GTK_ORIENTATION_VERTICAL;
 			break;
-		case MATE_PANEL_APPLET_ORIENT_UP:
-		case MATE_PANEL_APPLET_ORIENT_DOWN:
+		case CAFE_PANEL_APPLET_ORIENT_UP:
+		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		default:
 			tasklist->orientation = GTK_ORIENTATION_HORIZONTAL;
 			break;
@@ -726,7 +726,7 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 	g_signal_connect(G_OBJECT(tasklist->applet), "change_size", G_CALLBACK(applet_change_pixel_size), tasklist);
 	g_signal_connect(G_OBJECT(tasklist->applet), "change_background", G_CALLBACK(applet_change_background), tasklist);
 
-	cafe_panel_applet_set_background_widget(MATE_PANEL_APPLET(tasklist->applet), GTK_WIDGET(tasklist->applet));
+	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET(tasklist->applet), GTK_WIDGET(tasklist->applet));
 
 	action_group = gtk_action_group_new("Tasklist Applet Actions");
 	gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
@@ -759,11 +759,11 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 	/* end of system monitor item */
 
 
-	cafe_panel_applet_setup_menu_from_resource (MATE_PANEL_APPLET (tasklist->applet),
+	cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (tasklist->applet),
 	                                            WNCKLET_RESOURCE_PATH "window-list-menu.xml",
 	                                            action_group);
 
-	if (cafe_panel_applet_get_locked_down(MATE_PANEL_APPLET(tasklist->applet)))
+	if (cafe_panel_applet_get_locked_down(CAFE_PANEL_APPLET(tasklist->applet)))
 	{
 		GtkAction* action;
 
@@ -829,7 +829,7 @@ static void display_about_dialog(GtkAction* action, TasklistData* tasklist)
 		"comments", _("The Window List shows a list of all windows in a set of buttons and lets you browse them."),
 		"copyright", _("Copyright \xc2\xa9 2002 Red Hat, Inc.\n"
 		               "Copyright \xc2\xa9 2011 Perberos\n"
-		               "Copyright \xc2\xa9 2012-2020 MATE developers"),
+		               "Copyright \xc2\xa9 2012-2020 CAFE developers"),
 		"documenters", documenters,
 		"icon-name", WINDOW_LIST_ICON,
 		"logo-icon-name", WINDOW_LIST_ICON,

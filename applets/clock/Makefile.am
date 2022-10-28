@@ -37,17 +37,17 @@ CLOCK_SOURCES = 		\
 
 CLOCK_CPPFLAGS =						\
 	$(AM_CPPFLAGS)						\
-	$(LIBMATE_PANEL_APPLET_CFLAGS)				\
+	$(LIBCAFE_PANEL_APPLET_CFLAGS)				\
 	$(CLOCK_CFLAGS)						\
 	-I$(srcdir)/../../libcafe-panel-applet			\
 	-I$(top_builddir)/libcafe-panel-applet			\
-	-DMATELOCALEDIR=\""$(datadir)/locale"\"	\
-	-DMATEWEATHER_I_KNOW_THIS_IS_UNSTABLE
+	-DCAFELOCALEDIR=\""$(datadir)/locale"\"	\
+	-DCAFEWEATHER_I_KNOW_THIS_IS_UNSTABLE
 
 CLOCK_LDADD =						\
 	../../libcafe-panel-applet/libcafe-panel-applet-4.la	\
 	$(CLOCK_LIBS)					\
-	$(LIBMATE_PANEL_APPLET_LIBS)				\
+	$(LIBCAFE_PANEL_APPLET_LIBS)				\
 	libsystem-timezone.la				\
 	-lm
 

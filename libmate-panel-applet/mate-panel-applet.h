@@ -22,8 +22,8 @@
  *     Mark McLoughlin <mark@skynet.ie>
  */
 
-#ifndef __MATE_PANEL_APPLET_H__
-#define __MATE_PANEL_APPLET_H__
+#ifndef __CAFE_PANEL_APPLET_H__
+#define __CAFE_PANEL_APPLET_H__
 
 #include <glib.h>
 #include <gtk/gtk.h>
@@ -36,20 +36,20 @@ extern "C" {
 #endif
 
 typedef enum {
-	MATE_PANEL_APPLET_ORIENT_UP,
-	MATE_PANEL_APPLET_ORIENT_DOWN,
-	MATE_PANEL_APPLET_ORIENT_LEFT,
-	MATE_PANEL_APPLET_ORIENT_RIGHT
-#define MATE_PANEL_APPLET_ORIENT_FIRST MATE_PANEL_APPLET_ORIENT_UP
-#define MATE_PANEL_APPLET_ORIENT_LAST  MATE_PANEL_APPLET_ORIENT_RIGHT
+	CAFE_PANEL_APPLET_ORIENT_UP,
+	CAFE_PANEL_APPLET_ORIENT_DOWN,
+	CAFE_PANEL_APPLET_ORIENT_LEFT,
+	CAFE_PANEL_APPLET_ORIENT_RIGHT
+#define CAFE_PANEL_APPLET_ORIENT_FIRST CAFE_PANEL_APPLET_ORIENT_UP
+#define CAFE_PANEL_APPLET_ORIENT_LAST  CAFE_PANEL_APPLET_ORIENT_RIGHT
 } CafePanelAppletOrient;
 
 #define PANEL_TYPE_APPLET              (cafe_panel_applet_get_type ())
-#define MATE_PANEL_APPLET(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET, CafePanelApplet))
-#define MATE_PANEL_APPLET_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET, CafePanelAppletClass))
+#define CAFE_PANEL_APPLET(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET, CafePanelApplet))
+#define CAFE_PANEL_APPLET_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET, CafePanelAppletClass))
 #define PANEL_IS_APPLET(o)             (G_TYPE_CHECK_INSTANCE_TYPE ((o), PANEL_TYPE_APPLET))
 #define PANEL_IS_APPLET_CLASS(k)       (G_TYPE_CHECK_CLASS_TYPE ((k), PANEL_TYPE_APPLET))
-#define MATE_PANEL_APPLET_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET, CafePanelAppletClass))
+#define CAFE_PANEL_APPLET_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET, CafePanelAppletClass))
 
 typedef enum {
 	PANEL_NO_BACKGROUND,
@@ -58,11 +58,11 @@ typedef enum {
 } CafePanelAppletBackgroundType;
 
 typedef enum {
-	MATE_PANEL_APPLET_FLAGS_NONE   = 0,
-	MATE_PANEL_APPLET_EXPAND_MAJOR = 1 << 0,
-	MATE_PANEL_APPLET_EXPAND_MINOR = 1 << 1,
-	MATE_PANEL_APPLET_HAS_HANDLE   = 1 << 2
-#define MATE_PANEL_APPLET_FLAGS_ALL (MATE_PANEL_APPLET_EXPAND_MAJOR|MATE_PANEL_APPLET_EXPAND_MINOR|MATE_PANEL_APPLET_HAS_HANDLE)
+	CAFE_PANEL_APPLET_FLAGS_NONE   = 0,
+	CAFE_PANEL_APPLET_EXPAND_MAJOR = 1 << 0,
+	CAFE_PANEL_APPLET_EXPAND_MINOR = 1 << 1,
+	CAFE_PANEL_APPLET_HAS_HANDLE   = 1 << 2
+#define CAFE_PANEL_APPLET_FLAGS_ALL (CAFE_PANEL_APPLET_EXPAND_MAJOR|CAFE_PANEL_APPLET_EXPAND_MINOR|CAFE_PANEL_APPLET_HAS_HANDLE)
 } CafePanelAppletFlags;
 
 typedef struct _CafePanelApplet        CafePanelApplet;
@@ -129,31 +129,31 @@ int  cafe_panel_applet_factory_setup_in_process (const gchar               *fact
  *
  * Things to define for these:
  *	+ required if Native Language Support is enabled (ENABLE_NLS):
- *                   GETTEXT_PACKAGE and MATELOCALEDIR
+ *                   GETTEXT_PACKAGE and CAFELOCALEDIR
  */
 
 #if !defined(ENABLE_NLS)
-	#define _MATE_PANEL_APPLET_SETUP_GETTEXT(call_textdomain) \
+	#define _CAFE_PANEL_APPLET_SETUP_GETTEXT(call_textdomain) \
 		do { } while (0)
 #else /* defined(ENABLE_NLS) */
 	#include <libintl.h>
-	#define _MATE_PANEL_APPLET_SETUP_GETTEXT(call_textdomain) \
+	#define _CAFE_PANEL_APPLET_SETUP_GETTEXT(call_textdomain) \
 	do { \
-		bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR); \
+		bindtextdomain (GETTEXT_PACKAGE, CAFELOCALEDIR); \
 		bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8"); \
 		if (call_textdomain) \
 			textdomain (GETTEXT_PACKAGE); \
 	} while (0)
 #endif /* !defined(ENABLE_NLS) */
 
-#define MATE_PANEL_APPLET_OUT_PROCESS_FACTORY(factory_id, type, name, callback, data) \
+#define CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY(factory_id, type, name, callback, data) \
 int main(int argc, char* argv[]) \
 { \
 	GOptionContext* context; \
 	GError* error; \
 	int retval; \
 	 \
-	_MATE_PANEL_APPLET_SETUP_GETTEXT (TRUE); \
+	_CAFE_PANEL_APPLET_SETUP_GETTEXT (TRUE); \
 	 \
 	context = g_option_context_new(""); \
 	g_option_context_add_group (context, gtk_get_option_group(TRUE)); \
@@ -182,11 +182,11 @@ int main(int argc, char* argv[]) \
 	return retval; \
 }
 
-#define MATE_PANEL_APPLET_IN_PROCESS_FACTORY(factory_id, type, descr, callback, data) \
+#define CAFE_PANEL_APPLET_IN_PROCESS_FACTORY(factory_id, type, descr, callback, data) \
 gboolean _cafe_panel_applet_shlib_factory (void);	\
 G_MODULE_EXPORT gint _cafe_panel_applet_shlib_factory(void) \
 { \
-	_MATE_PANEL_APPLET_SETUP_GETTEXT(FALSE); \
+	_CAFE_PANEL_APPLET_SETUP_GETTEXT(FALSE); \
 return cafe_panel_applet_factory_setup_in_process (factory_id, type,                 \
                                                callback, data);  \
 }
@@ -195,4 +195,4 @@ return cafe_panel_applet_factory_setup_in_process (factory_id, type,            
 }
 #endif
 
-#endif /* __MATE_PANEL_APPLET_H__ */
+#endif /* __CAFE_PANEL_APPLET_H__ */

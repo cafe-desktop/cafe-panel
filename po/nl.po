@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -236,10 +236,10 @@ msgstr "De klok toont de huidige tijd en datum"
 #: applets/clock/clock.c:3393
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Auteursrecht © 1998-2004 Free Software Foundation, Inc.\n"
-"Auteursrecht © 2012-2020 MATE-ontwikkelaars"
+"Auteursrecht © 2012-2020 CAFE-ontwikkelaars"
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
 #: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
@@ -703,11 +703,11 @@ msgstr "Over Vis"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Auteursrecht © 1998-2002 Free Software Foundation, Inc.\n"
 "Auteursrecht © 2002-2005 Vincent Untz\n"
-"Auteursrecht © 2012-2020 MATE-ontwikkelaars"
+"Auteursrecht © 2012-2020 CAFE-ontwikkelaars"
 
 #: applets/fish/fish.c:579
 #, c-format
@@ -928,12 +928,12 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Auteursrecht © 2002 Red Hat, Inc.\n"
 "Auteursrecht © 2003-2006 Vincent Untz\n"
 "Auteursrecht © 2011 Perberos\n"
-"Auteursrecht © 2012-2020 MATE-ontwikkelaars"
+"Auteursrecht © 2012-2020 CAFE-ontwikkelaars"
 
 #: applets/notification_area/main.c:485
 msgid "Panel Notification Area"
@@ -1176,11 +1176,11 @@ msgstr ""
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Auteursrecht © 2002 Red Hat, Inc.\n"
 "Auteursrecht © 2011 Perberos\n"
-"Auteursrecht © 2012-2020 MATE-ontwikkelaars"
+"Auteursrecht © 2012-2020 CAFE-ontwikkelaars"
 
 #: applets/wncklet/showdesktop.c:529
 msgid ""
@@ -1292,13 +1292,13 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Auteursrecht © 2000 Helix Code, Inc.\n"
 "Auteursrecht © 2001 Free Software Foundation, Inc.\n"
 "Auteursrecht © 2003 Sun Microsystems, Inc.\n"
 "Auteursrecht © 2011 Perberos\n"
-"Auteursrecht © 2012-2020 MATE-ontwikkelaars"
+"Auteursrecht © 2012-2020 CAFE-ontwikkelaars"
 
 #: applets/wncklet/workspace-switcher.c:240
 #: applets/wncklet/workspace-switcher.c:939
@@ -1557,13 +1557,13 @@ msgstr "Niet te laden Applet-IID's"
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "Eem lijst van applet-IID's die het paneel negeert. Op deze manier kunt u "
 "bepaalde applets verhinderen om te laden of om zichtbaar te worden in het "
 "menu. Bijvoorbeeld, om het mini-commander applet uit te schakelen voegt u "
-"'OAFIID:MATE_MiniCommanderApplet' toe aan deze lijst. Het paneel dient "
+"'OAFIID:CAFE_MiniCommanderApplet' toe aan deze lijst. Het paneel dient "
 "herstart te worden om dit effect te laten hebben."
 
 #: data/org.cafe.panel.gschema.xml.in:84
@@ -2695,18 +2695,18 @@ msgid "And many, many others…"
 msgstr "En heel veel andere..."
 
 #: cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
-msgstr "Het MATE-paneel"
+msgid "The CAFE Panel"
+msgstr "Het CAFE-paneel"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE developers"
+"Copyright © 2011-2020 CAFE developers"
 msgstr ""
 "Auteursrecht © 1997-2003 Free Software Foundation, Inc.\n"
 "Auteursrecht © 2004 Vincent Untz\n"
-"Auteursrecht © 2011-2020 MATE-ontwikkelaars"
+"Auteursrecht © 2011-2020 CAFE-ontwikkelaars"
 
 #: cafe-panel/panel-context-menu.c:119
 msgid ""
@@ -2717,8 +2717,8 @@ msgstr ""
 "handige hulpmiddelen."
 
 #: cafe-panel/panel-context-menu.c:123
-msgid "About the MATE Panel"
-msgstr "Over het MATE-paneel"
+msgid "About the CAFE Panel"
+msgstr "Over het CAFE-paneel"
 
 #: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
@@ -3417,9 +3417,9 @@ msgid "Test DBus Applet"
 msgstr "Test DBus-werkbalkhulpje"
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
-msgid "A simple applet for testing the MATE panel"
+msgid "A simple applet for testing the CAFE panel"
 msgstr ""
-"Een eenvoudig werkbalkhulpje voor het uitproberen van de MATE-werkbalk"
+"Een eenvoudig werkbalkhulpje voor het uitproberen van de CAFE-werkbalk"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!

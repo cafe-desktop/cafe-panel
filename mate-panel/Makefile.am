@@ -12,7 +12,7 @@ AM_CPPFLAGS = \
 	-I$(srcdir) \
 	-I$(top_builddir)/cafe-panel \
 	-I$(top_builddir)/cafe-panel/libpanel-util \
-	-DMATELOCALEDIR=\""$(datadir)/locale"\" \
+	-DCAFELOCALEDIR=\""$(datadir)/locale"\" \
 	-DPANELDATADIR=\""$(datadir)/cafe-panel"\" \
 	$(DISABLE_DEPRECATED_CFLAGS) \
 	$(GTK_LAYER_SHELL_CFLAGS)
@@ -144,7 +144,7 @@ cafe_panel_CPPFLAGS = \
 	$(AM_CPPFLAGS) \
 	$(XRANDR_CFLAGS) \
 	-DPANEL_MODULES_DIR=\"$(modulesdir)\" \
-	-DMATEMENU_I_KNOW_THIS_IS_UNSTABLE
+	-DCAFEMENU_I_KNOW_THIS_IS_UNSTABLE
 
 if ENABLE_WAYLAND
 cafe_panel_CPPFLAGS += \
@@ -201,7 +201,7 @@ cafe_panel_test_applets_SOURCES = \
 cafe_panel_test_applets_CPPFLAGS = \
 	$(AM_CPPFLAGS) \
 	-DPANEL_MODULES_DIR=\"$(modulesdir)\" \
-	-DMATE_PANEL_APPLETS_DIR=\"$(appletsdir)\"
+	-DCAFE_PANEL_APPLETS_DIR=\"$(appletsdir)\"
 
 cafe_panel_test_applets_LDADD = \
 	$(top_builddir)/cafe-panel/libcafe-panel-applet-private/libcafe-panel-applet-private-mini.la \

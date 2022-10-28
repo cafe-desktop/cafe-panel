@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -232,10 +232,10 @@ msgstr "Az Óra a jelenlegi időt és dátumot mutatja"
 #: applets/clock/clock.c:3393
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 MATE fejlesztők"
+"Copyright © 2012-2020 CAFE fejlesztők"
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
 #: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
@@ -693,11 +693,11 @@ msgstr "A Fish névjegye"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 MATE fejlesztők"
+"Copyright © 2012-2020 CAFE fejlesztők"
 
 #: applets/fish/fish.c:579
 #, c-format
@@ -912,12 +912,12 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE fejlesztők"
+"Copyright © 2012-2020 CAFE fejlesztők"
 
 #: applets/notification_area/main.c:485
 msgid "Panel Notification Area"
@@ -1156,11 +1156,11 @@ msgstr ""
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE fejlesztők"
+"Copyright © 2012-2020 CAFE fejlesztők"
 
 #: applets/wncklet/showdesktop.c:529
 msgid ""
@@ -1273,13 +1273,13 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2020 CAFE developers"
 msgstr ""
 "Copyright © 2000 Helix Code, Inc.\n"
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE fejlesztők"
+"Copyright © 2012-2020 CAFE fejlesztők"
 
 #: applets/wncklet/workspace-switcher.c:240
 #: applets/wncklet/workspace-switcher.c:939
@@ -1530,13 +1530,13 @@ msgstr "A be nem tölthető kisalkalmazások azonosítói"
 msgid ""
 "A list of applet IIDs that the panel will ignore. This way you can disable "
 "certain applets from loading or showing up in the menu. For example to "
-"disable the mini-commander applet add 'OAFIID:MATE_MiniCommanderApplet' to "
+"disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "A panel által mellőzendő kisalkalmazások azonosítóinak listája. Így "
 "megakadályozható bizonyos kisalkalmazások betöltése vagy megjelenítése a "
 "menüben. Például a parancssor kisalkalmazás letiltásához adja a listához "
-"ezt: „OAFIID:MATE_MiniCommanderApplet”. A panelt újra kell indítani ezen "
+"ezt: „OAFIID:CAFE_MiniCommanderApplet”. A panelt újra kell indítani ezen "
 "beállítás életbe lépéséhez."
 
 #: data/org.cafe.panel.gschema.xml.in:84
@@ -2646,18 +2646,18 @@ msgid "And many, many others…"
 msgstr "És sokan mások…"
 
 #: cafe-panel/panel-context-menu.c:114
-msgid "The MATE Panel"
-msgstr "A MATE panel"
+msgid "The CAFE Panel"
+msgstr "A CAFE panel"
 
 #: cafe-panel/panel-context-menu.c:116
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE developers"
+"Copyright © 2011-2020 CAFE developers"
 msgstr ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 MATE fejlesztők"
+"Copyright © 2011-2020 CAFE fejlesztők"
 
 #: cafe-panel/panel-context-menu.c:119
 msgid ""
@@ -2668,8 +2668,8 @@ msgstr ""
 "segédprogramokat biztosít."
 
 #: cafe-panel/panel-context-menu.c:123
-msgid "About the MATE Panel"
-msgstr "A MATE panel névjegye"
+msgid "About the CAFE Panel"
+msgstr "A CAFE panel névjegye"
 
 #: cafe-panel/panel-context-menu.c:154
 msgid "Cannot delete this panel"
@@ -3364,8 +3364,8 @@ msgid "Test DBus Applet"
 msgstr "Teszt DBus kisalkalmazás"
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
-msgid "A simple applet for testing the MATE panel"
-msgstr "Egy egyszerű kisalkalmazás a MATE panel teszteléséhez"
+msgid "A simple applet for testing the CAFE panel"
+msgstr "Egy egyszerű kisalkalmazás a CAFE panel teszteléséhez"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!

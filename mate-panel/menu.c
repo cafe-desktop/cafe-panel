@@ -268,7 +268,7 @@ add_drawers_from_alias (CafeMenuTreeAlias *alias,
 	gpointer item;
 
 	switch (cafemenu_tree_alias_get_aliased_item_type (alias)) {
-	case MATEMENU_TREE_ITEM_DIRECTORY:
+	case CAFEMENU_TREE_ITEM_DIRECTORY:
 		item = cafemenu_tree_alias_get_directory (alias);
 		add_drawers_from_dir (item,
 				      G_MAXINT/2,
@@ -276,7 +276,7 @@ add_drawers_from_alias (CafeMenuTreeAlias *alias,
 		cafemenu_tree_item_unref (item);
 		break;
 
-	case MATEMENU_TREE_ITEM_ENTRY:
+	case CAFEMENU_TREE_ITEM_ENTRY:
 		item = cafemenu_tree_alias_get_aliased_entry (alias);
 		panel_launcher_create_with_id (toplevel_id,
 					       G_MAXINT/2,
@@ -312,10 +312,10 @@ add_drawers_from_dir (CafeMenuTreeDirectory *directory,
 		return;
 
 	iter = cafemenu_tree_directory_iter (directory);
-	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
+	while ((type = cafemenu_tree_iter_next (iter)) != CAFEMENU_TREE_ITEM_INVALID) {
 		gpointer item;
 		switch (type) {
-			case MATEMENU_TREE_ITEM_ENTRY:
+			case CAFEMENU_TREE_ITEM_ENTRY:
 				item = cafemenu_tree_iter_get_entry (iter);
 				panel_launcher_create_with_id (attached_toplevel_id,
 						G_MAXINT/2,
@@ -323,7 +323,7 @@ add_drawers_from_dir (CafeMenuTreeDirectory *directory,
 				cafemenu_tree_item_unref (item);
 				break;
 
-			case MATEMENU_TREE_ITEM_DIRECTORY:
+			case CAFEMENU_TREE_ITEM_DIRECTORY:
 				item = cafemenu_tree_iter_get_directory (iter);
 				add_drawers_from_dir (item,
 						G_MAXINT/2,
@@ -331,7 +331,7 @@ add_drawers_from_dir (CafeMenuTreeDirectory *directory,
 				cafemenu_tree_item_unref (item);
 				break;
 
-			case MATEMENU_TREE_ITEM_ALIAS:
+			case CAFEMENU_TREE_ITEM_ALIAS:
 				item = cafemenu_tree_iter_get_alias (iter);
 				add_drawers_from_alias (item, attached_toplevel_id);
 				cafemenu_tree_item_unref (item);
@@ -1143,13 +1143,13 @@ create_menuitem_from_alias (GtkWidget      *menu,
 	gpointer item, entry;
 
 	switch (cafemenu_tree_alias_get_aliased_item_type (alias)) {
-	case MATEMENU_TREE_ITEM_DIRECTORY:
+	case CAFEMENU_TREE_ITEM_DIRECTORY:
 		item = cafemenu_tree_alias_get_directory (alias);
 		create_submenu (menu, item, item);
 		cafemenu_tree_item_unref (item);
 		break;
 
-	case MATEMENU_TREE_ITEM_ENTRY:
+	case CAFEMENU_TREE_ITEM_ENTRY:
 		entry = cafemenu_tree_alias_get_aliased_entry(alias);
 		item = cafemenu_tree_alias_get_directory (alias);
 		create_menuitem (menu, entry, item);
@@ -1224,7 +1224,7 @@ create_applications_menu (const char *menu_file,
 				   "panel-menu-force-icon-for-categories",
 				   GINT_TO_POINTER (TRUE));
 
-	tree = cafemenu_tree_new (menu_file, MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
+	tree = cafemenu_tree_new (menu_file, CAFEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
 	if (! cafemenu_tree_load_sync (tree, &error)) {
 		g_warning("Menu tree loading got error:%s\n", error->message);
 		g_error_free(error);
@@ -1289,36 +1289,36 @@ populate_menu_from_directory (GtkWidget          *menu,
 	g_list_free (children);
 
 	iter = cafemenu_tree_directory_iter (directory);
-	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
+	while ((type = cafemenu_tree_iter_next (iter)) != CAFEMENU_TREE_ITEM_INVALID) {
 		gpointer item;
-		if (add_separator || type == MATEMENU_TREE_ITEM_SEPARATOR) {
+		if (add_separator || type == CAFEMENU_TREE_ITEM_SEPARATOR) {
 			add_menu_separator (menu);
 			add_separator = FALSE;
 		}
 		switch (type) {
-			case MATEMENU_TREE_ITEM_DIRECTORY:
+			case CAFEMENU_TREE_ITEM_DIRECTORY:
 				item = cafemenu_tree_iter_get_directory(iter);
 				create_submenu (menu, item, NULL);
 				cafemenu_tree_item_unref (item);
 				break;
 
-			case MATEMENU_TREE_ITEM_ENTRY:
+			case CAFEMENU_TREE_ITEM_ENTRY:
 				item = cafemenu_tree_iter_get_entry (iter);
 				create_menuitem (menu, item, NULL);
 				cafemenu_tree_item_unref (item);
 				break;
 
-			case MATEMENU_TREE_ITEM_SEPARATOR :
+			case CAFEMENU_TREE_ITEM_SEPARATOR :
 				/* already added */
 				break;
 
-			case MATEMENU_TREE_ITEM_ALIAS:
+			case CAFEMENU_TREE_ITEM_ALIAS:
 				item = cafemenu_tree_iter_get_alias(iter);
 				create_menuitem_from_alias (menu, item);
 				cafemenu_tree_item_unref (item);
 				break;
 
-			case MATEMENU_TREE_ITEM_HEADER:
+			case CAFEMENU_TREE_ITEM_HEADER:
 				item = cafemenu_tree_iter_get_header(iter);
 				create_header (menu, item);
 				cafemenu_tree_item_unref (item);

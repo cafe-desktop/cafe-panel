@@ -61,7 +61,7 @@ panel_session_init (void)
 	 * before. Note: this depends on setting the mode to DISABLED early
 	 * during startup. */
 
-        if (do_not_restart || getenv ("MATE_PANEL_DEBUG"))
+        if (do_not_restart || getenv ("CAFE_PANEL_DEBUG"))
 		mode = EGG_SM_CLIENT_MODE_NO_RESTART;
 	else
 		mode = EGG_SM_CLIENT_MODE_NORMAL;

@@ -1,10 +1,10 @@
 cafe-panel
 ===========
 
-cafe-panel contains the MATE panel, the libcafe-panel-applet library and
+cafe-panel contains the CAFE panel, the libcafe-panel-applet library and
 several applets:
 
-  + the MATE panel is the area on your desktop from which you can run
+  + the CAFE panel is the area on your desktop from which you can run
     applications and applets, and perform other tasks.
 
   + the libcafe-panel-applet library allows to develop small applications
@@ -31,7 +31,7 @@ first need to run './autogen.sh'.
 Build dependencies
 ==================
 
-On Ubuntu MATE 18.04 (daily 2018-01-30)
+On Ubuntu CAFE 18.04 (daily 2018-01-30)
 build-essential
 cafe-common
 libglib2.0-dev
@@ -50,7 +50,7 @@ gtk-layer-shell (https://github.com/wmww/gtk-layer-shell)
 How to report bugs
 ==================
 
-Bugs should be reported to the MATE bug tracking system:
+Bugs should be reported to the CAFE bug tracking system:
 
    https://github.com/cafe-desktop/cafe-panel/issues
 

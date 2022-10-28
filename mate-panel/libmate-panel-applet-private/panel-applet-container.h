@@ -32,17 +32,17 @@ extern "C" {
 #endif
 
 #define PANEL_TYPE_APPLET_CONTAINER            (cafe_panel_applet_container_get_type ())
-#define MATE_PANEL_APPLET_CONTAINER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLET_CONTAINER, CafePanelAppletContainer))
-#define MATE_PANEL_APPLET_CONTAINER_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), PANEL_TYPE_APPLET_CONTAINER, CafePanelAppletContainerClass))
+#define CAFE_PANEL_APPLET_CONTAINER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLET_CONTAINER, CafePanelAppletContainer))
+#define CAFE_PANEL_APPLET_CONTAINER_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), PANEL_TYPE_APPLET_CONTAINER, CafePanelAppletContainerClass))
 #define PANEL_IS_APPLET_CONTAINER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), PANEL_TYPE_APPLET_CONTAINER))
 #define PANEL_IS_APPLET_CONTAINER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), PANEL_TYPE_APPLET_CONTAINER))
-#define MATE_PANEL_APPLET_CONTAINER_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), PANEL_TYPE_APPLET_CONTAINER, CafePanelAppletContainerClass))
+#define CAFE_PANEL_APPLET_CONTAINER_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), PANEL_TYPE_APPLET_CONTAINER, CafePanelAppletContainerClass))
 
-#define MATE_PANEL_APPLET_CONTAINER_ERROR           (cafe_panel_applet_container_error_quark())
+#define CAFE_PANEL_APPLET_CONTAINER_ERROR           (cafe_panel_applet_container_error_quark())
 
 typedef enum {
-	MATE_PANEL_APPLET_CONTAINER_INVALID_APPLET,
-	MATE_PANEL_APPLET_CONTAINER_INVALID_CHILD_PROPERTY
+	CAFE_PANEL_APPLET_CONTAINER_INVALID_APPLET,
+	CAFE_PANEL_APPLET_CONTAINER_INVALID_CHILD_PROPERTY
 } CafePanelAppletContainerError;
 
 typedef struct _CafePanelAppletContainer        CafePanelAppletContainer;

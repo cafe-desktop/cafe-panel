@@ -34,11 +34,11 @@ extern "C" {
 #endif
 
 #define PANEL_TYPE_APPLET_FRAME         (cafe_panel_applet_frame_get_type ())
-#define MATE_PANEL_APPLET_FRAME(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET_FRAME, CafePanelAppletFrame))
-#define MATE_PANEL_APPLET_FRAME_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET_FRAME, CafePanelAppletFrameClass))
+#define CAFE_PANEL_APPLET_FRAME(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET_FRAME, CafePanelAppletFrame))
+#define CAFE_PANEL_APPLET_FRAME_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET_FRAME, CafePanelAppletFrameClass))
 #define PANEL_IS_APPLET_FRAME(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), PANEL_TYPE_APPLET_FRAME))
 #define PANEL_IS_APPLET_FRAME_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), PANEL_TYPE_APPLET_FRAME))
-#define MATE_PANEL_APPLET_FRAME_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET_FRAME, CafePanelAppletFrameClass))
+#define CAFE_PANEL_APPLET_FRAME_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET_FRAME, CafePanelAppletFrameClass))
 
 typedef struct _CafePanelAppletFrame        CafePanelAppletFrame;
 typedef struct _CafePanelAppletFrameClass   CafePanelAppletFrameClass;
