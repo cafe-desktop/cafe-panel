@@ -1,4 +1,4 @@
-/* Mate panel: general applet functionality
+/* Cafe panel: general applet functionality
  * (C) 1997 the Free Software Foundation
  *
  * Authors:  George Lebl
@@ -777,7 +777,7 @@ typedef struct {
 	int              position;
 	guint            right_stick : 1;
 	guint            locked : 1;
-} MatePanelAppletToLoad;
+} CafePanelAppletToLoad;
 
 /* Each time those lists get both empty,
  * cafe_panel_applet_queue_initial_unhide_toplevels() should be called */
@@ -791,7 +791,7 @@ static guint    cafe_panel_applet_unhide_toplevels_timeout = 0;
 static gboolean cafe_panel_applet_have_load_idle = FALSE;
 
 static void
-free_applet_to_load (MatePanelAppletToLoad *applet)
+free_applet_to_load (CafePanelAppletToLoad *applet)
 {
 	g_free (applet->id);
 	applet->id = NULL;
@@ -807,12 +807,12 @@ cafe_panel_applet_on_load_queue (const char *id)
 {
 	GSList *li;
 	for (li = cafe_panel_applets_to_load; li != NULL; li = li->next) {
-		MatePanelAppletToLoad *applet = li->data;
+		CafePanelAppletToLoad *applet = li->data;
 		if (strcmp (applet->id, id) == 0)
 			return TRUE;
 	}
 	for (li = cafe_panel_applets_loading; li != NULL; li = li->next) {
-		MatePanelAppletToLoad *applet = li->data;
+		CafePanelAppletToLoad *applet = li->data;
 		if (strcmp (applet->id, id) == 0)
 			return TRUE;
 	}
@@ -839,7 +839,7 @@ cafe_panel_applet_queue_initial_unhide_toplevels (gpointer user_data)
 void
 cafe_panel_applet_stop_loading (const char *id)
 {
-	MatePanelAppletToLoad *applet;
+	CafePanelAppletToLoad *applet;
 	GSList *l;
 
 	for (l = cafe_panel_applets_loading; l; l = l->next) {
@@ -864,7 +864,7 @@ static gboolean
 cafe_panel_applet_load_idle_handler (gpointer dummy)
 {
 	PanelObjectType    applet_type;
-	MatePanelAppletToLoad *applet = NULL;
+	CafePanelAppletToLoad *applet = NULL;
 	PanelToplevel     *toplevel = NULL;
 	PanelWidget       *panel_widget;
 	GSList            *l;
@@ -987,14 +987,14 @@ cafe_panel_applet_queue_applet_to_load (const char      *id,
 				   gboolean         right_stick,
 				   gboolean         locked)
 {
-	MatePanelAppletToLoad *applet;
+	CafePanelAppletToLoad *applet;
 
 	if (!toplevel_id) {
 		g_warning ("No toplevel on which to load object '%s'\n", id);
 		return;
 	}
 
-	applet = g_new0 (MatePanelAppletToLoad, 1);
+	applet = g_new0 (CafePanelAppletToLoad, 1);
 
 	applet->id          = g_strdup (id);
 	applet->type        = type;
@@ -1007,8 +1007,8 @@ cafe_panel_applet_queue_applet_to_load (const char      *id,
 }
 
 static int
-cafe_panel_applet_compare (const MatePanelAppletToLoad *a,
-		      const MatePanelAppletToLoad *b)
+cafe_panel_applet_compare (const CafePanelAppletToLoad *a,
+		      const CafePanelAppletToLoad *b)
 {
 	int c;
 

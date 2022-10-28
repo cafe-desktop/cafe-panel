@@ -16,7 +16,7 @@
 extern "C" {
 #endif
 
-gboolean workspace_switcher_applet_fill(MatePanelApplet* applet);
+gboolean workspace_switcher_applet_fill(CafePanelApplet* applet);
 
 #ifdef __cplusplus
 }

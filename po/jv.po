@@ -1973,7 +1973,7 @@ msgstr "Sanes barang sing saged dilakokna"
 
 #: cafe-panel/libegg/eggsmclient.c:222
 msgid "Disable connection to session manager"
-msgstr "Mateni sambungan menyang manager sesi"
+msgstr "Cafeni sambungan menyang manager sesi"
 
 #: cafe-panel/libegg/eggsmclient.c:225
 msgid "Specify file containing saved configuration"

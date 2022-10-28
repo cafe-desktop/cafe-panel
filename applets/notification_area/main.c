@@ -70,8 +70,8 @@ G_DEFINE_TYPE_WITH_PRIVATE (NaTrayApplet, na_tray_applet, PANEL_TYPE_APPLET)
 
 static void (*parent_class_realize) (GtkWidget *widget);
 static void (*parent_class_style_updated) (GtkWidget *widget);
-static void (*parent_class_change_background)(MatePanelApplet* panel_applet, MatePanelAppletBackgroundType type, GdkRGBA* color, cairo_pattern_t* pattern);
-static void (*parent_class_change_orient)(MatePanelApplet       *panel_applet, MatePanelAppletOrient  orient);
+static void (*parent_class_change_background)(CafePanelApplet* panel_applet, CafePanelAppletBackgroundType type, GdkRGBA* color, cairo_pattern_t* pattern);
+static void (*parent_class_change_orient)(CafePanelApplet       *panel_applet, CafePanelAppletOrient  orient);
 
 
 #ifdef PROVIDE_WATCHER_SERVICE
@@ -105,7 +105,7 @@ sn_watcher_service_ref (void)
 
 
 static GtkOrientation
-get_gtk_orientation_from_applet_orient (MatePanelAppletOrient orient)
+get_gtk_orientation_from_applet_orient (CafePanelAppletOrient orient)
 {
   switch (orient)
     {
@@ -365,7 +365,7 @@ na_tray_applet_style_updated (GtkWidget *widget)
 }
 
 static void
-na_tray_applet_change_background(MatePanelApplet* panel_applet, MatePanelAppletBackgroundType type, GdkRGBA* color, cairo_pattern_t* pattern)
+na_tray_applet_change_background(CafePanelApplet* panel_applet, CafePanelAppletBackgroundType type, GdkRGBA* color, cairo_pattern_t* pattern)
 {
   NaTrayApplet *applet = NA_TRAY_APPLET (panel_applet);
 
@@ -378,8 +378,8 @@ na_tray_applet_change_background(MatePanelApplet* panel_applet, MatePanelAppletB
 }
 
 static void
-na_tray_applet_change_orient (MatePanelApplet       *panel_applet,
-                              MatePanelAppletOrient  orient)
+na_tray_applet_change_orient (CafePanelApplet       *panel_applet,
+                              CafePanelAppletOrient  orient)
 {
   NaTrayApplet *applet = NA_TRAY_APPLET (panel_applet);
 
@@ -426,7 +426,7 @@ na_tray_applet_class_init (NaTrayAppletClass *class)
 {
   GObjectClass     *object_class = G_OBJECT_CLASS (class);
   GtkWidgetClass   *widget_class = GTK_WIDGET_CLASS (class);
-  MatePanelAppletClass *applet_class = MATE_PANEL_APPLET_CLASS (class);
+  CafePanelAppletClass *applet_class = MATE_PANEL_APPLET_CLASS (class);
 
   object_class->dispose = na_tray_applet_dispose;
 
@@ -466,7 +466,7 @@ na_tray_applet_class_init (NaTrayAppletClass *class)
 static void
 na_tray_applet_init (NaTrayApplet *applet)
 {
-  MatePanelAppletOrient orient;
+  CafePanelAppletOrient orient;
   AtkObject *atko;
 
   applet->priv = na_tray_applet_get_instance_private (applet);
@@ -489,7 +489,7 @@ na_tray_applet_init (NaTrayApplet *applet)
 }
 
 static gboolean
-applet_factory (MatePanelApplet *applet,
+applet_factory (CafePanelApplet *applet,
                 const gchar *iid,
                 gpointer     user_data)
 {

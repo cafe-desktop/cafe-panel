@@ -261,7 +261,7 @@ setup_combo (GtkWidget  *combo_box,
 static void
 setup_options (void)
 {
-	MatePanelAppletsManager *manager;
+	CafePanelAppletsManager *manager;
 	GList               *applet_list, *l;
 	int                  i;
 	int                  j;
@@ -283,7 +283,7 @@ setup_options (void)
 	manager = g_object_new (PANEL_TYPE_APPLETS_MANAGER_DBUS, NULL);
 	applet_list = MATE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applets (manager);
 	for (l = applet_list, i = 1; l; l = g_list_next (l), i++) {
-		MatePanelAppletInfo *info = (MatePanelAppletInfo *)l->data;
+		CafePanelAppletInfo *info = (CafePanelAppletInfo *)l->data;
 
 		gtk_list_store_append (model, &iter);
 		gtk_list_store_set (model, &iter,

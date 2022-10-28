@@ -2,16 +2,16 @@
 
 <SECTION>
 <FILE>cafe-panel-applet</FILE>
-MatePanelApplet
-MatePanelAppletOrient
+CafePanelApplet
+CafePanelAppletOrient
 MATE_PANEL_APPLET_ORIENT_UP
 MATE_PANEL_APPLET_ORIENT_DOWN
 MATE_PANEL_APPLET_ORIENT_LEFT
 MATE_PANEL_APPLET_ORIENT_RIGHT
-MatePanelAppletBackgroundType
-MatePanelAppletFlags
-MatePanelAppletFactoryCallback
-<TITLE>MatePanelApplet</TITLE>
+CafePanelAppletBackgroundType
+CafePanelAppletFlags
+CafePanelAppletFactoryCallback
+<TITLE>CafePanelApplet</TITLE>
 cafe_panel_applet_new
 cafe_panel_applet_get_orient
 cafe_panel_applet_get_size
@@ -34,6 +34,6 @@ MATE_PANEL_APPLET_CLASS
 PANEL_IS_APPLET_CLASS
 MATE_PANEL_APPLET_GET_CLASS
 <SUBSECTION Private>
-MatePanelAppletClass
-MatePanelAppletPrivate
+CafePanelAppletClass
+CafePanelAppletPrivate
 </SECTION>

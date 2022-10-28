@@ -31,19 +31,19 @@ extern "C" {
 #endif
 
 #define PANEL_TYPE_APPLET_FACTORY            (cafe_panel_applet_factory_get_type ())
-#define MATE_PANEL_APPLET_FACTORY(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLET_FACTORY, MatePanelAppletFactory))
-#define MATE_PANEL_APPLET_FACTORY_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), PANEL_TYPE_APPLET_FACTORY, MatePanelAppletFactoryClass))
+#define MATE_PANEL_APPLET_FACTORY(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLET_FACTORY, CafePanelAppletFactory))
+#define MATE_PANEL_APPLET_FACTORY_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), PANEL_TYPE_APPLET_FACTORY, CafePanelAppletFactoryClass))
 #define PANEL_IS_APPLET_FACTORY(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), PANEL_TYPE_APPLET_FACTORY))
 
-typedef struct _MatePanelAppletFactory        MatePanelAppletFactory;
-typedef struct _MatePanelAppletFactoryClass   MatePanelAppletFactoryClass;
+typedef struct _CafePanelAppletFactory        CafePanelAppletFactory;
+typedef struct _CafePanelAppletFactoryClass   CafePanelAppletFactoryClass;
 
 GType               cafe_panel_applet_factory_get_type         (void) G_GNUC_CONST;
-MatePanelAppletFactory *cafe_panel_applet_factory_new              (const gchar        *applet_id,
+CafePanelAppletFactory *cafe_panel_applet_factory_new              (const gchar        *applet_id,
 								gboolean            out_of_process,
 							   GType               applet_type,
 							   GClosure           *closure);
-gboolean            cafe_panel_applet_factory_register_service (MatePanelAppletFactory *factory);
+gboolean            cafe_panel_applet_factory_register_service (CafePanelAppletFactory *factory);
 GtkWidget          *cafe_panel_applet_factory_get_applet_widget (const gchar        *id,
                                                             guint               uid);
 #ifdef __cplusplus

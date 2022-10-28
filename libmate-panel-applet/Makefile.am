@@ -123,15 +123,15 @@ built_introspection_sources =	\
 	cafe-panel-applet-enums.c	\
 	cafe-panel-applet-enums.h
 
-MatePanelApplet-4.0.gir: libcafe-panel-applet-4.la
-MatePanelApplet_4_0_gir_INCLUDES = GObject-2.0 Gtk-3.0 Gio-2.0
-MatePanelApplet_4_0_gir_CFLAGS = $(AM_CPPFLAGS) -I$(srcdir)
-MatePanelApplet_4_0_gir_LIBS = libcafe-panel-applet-4.la
-MatePanelApplet_4_0_gir_FILES = $(addprefix $(srcdir)/,$(introspection_sources)) $(addprefix $(builddir)/,$(built_introspection_sources))
+CafePanelApplet-4.0.gir: libcafe-panel-applet-4.la
+CafePanelApplet_4_0_gir_INCLUDES = GObject-2.0 Gtk-3.0 Gio-2.0
+CafePanelApplet_4_0_gir_CFLAGS = $(AM_CPPFLAGS) -I$(srcdir)
+CafePanelApplet_4_0_gir_LIBS = libcafe-panel-applet-4.la
+CafePanelApplet_4_0_gir_FILES = $(addprefix $(srcdir)/,$(introspection_sources)) $(addprefix $(builddir)/,$(built_introspection_sources))
 # When requiring gobject-introspection 0.9.5, use this:
-#MatePanelApplet_4_0_gir_SCANNERFLAGS = --identifier-prefix=Panel --symbol-prefix=panel --pkg-export=libcafepanelapplet-4.0
-MatePanelApplet_4_0_gir_SCANNERFLAGS = --strip-prefix=MatePanel --pkg-export=libcafepanelapplet-4.0
-INTROSPECTION_GIRS += MatePanelApplet-4.0.gir
+#CafePanelApplet_4_0_gir_SCANNERFLAGS = --identifier-prefix=Panel --symbol-prefix=panel --pkg-export=libcafepanelapplet-4.0
+CafePanelApplet_4_0_gir_SCANNERFLAGS = --strip-prefix=CafePanel --pkg-export=libcafepanelapplet-4.0
+INTROSPECTION_GIRS += CafePanelApplet-4.0.gir
 
 girdir = $(datadir)/gir-1.0
 gir_DATA = $(INTROSPECTION_GIRS)

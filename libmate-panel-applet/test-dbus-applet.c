@@ -31,12 +31,12 @@ typedef struct _TestApplet      TestApplet;
 typedef struct _TestAppletClass TestAppletClass;
 
 struct _TestApplet {
-	MatePanelApplet   base;
+	CafePanelApplet   base;
 	GtkWidget    *label;
 };
 
 struct _TestAppletClass {
-	MatePanelAppletClass   base_class;
+	CafePanelAppletClass   base_class;
 };
 
 static GType test_applet_get_type (void) G_GNUC_CONST;
@@ -55,7 +55,7 @@ test_applet_class_init (TestAppletClass *klass)
 
 static void
 test_applet_handle_orient_change (TestApplet       *applet,
-				  MatePanelAppletOrient orient,
+				  CafePanelAppletOrient orient,
 				  gpointer          dummy)
 {
         gchar *text;
@@ -111,7 +111,7 @@ test_applet_handle_size_change (TestApplet *applet,
 
 static void
 test_applet_handle_background_change (TestApplet                *applet,
-				      MatePanelAppletBackgroundType  type,
+				      CafePanelAppletBackgroundType  type,
 				      GdkColor                  *color,
 				      cairo_pattern_t           *pattern,
 				      gpointer                   dummy)
@@ -206,6 +206,6 @@ test_applet_factory (TestApplet  *applet,
 MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("TestAppletFactory",
 				  test_applet_get_type (),
 				  "A Test Applet for the MATE-3.0 Panel",
-				  (MatePanelAppletFactoryCallback) test_applet_factory,
+				  (CafePanelAppletFactoryCallback) test_applet_factory,
 				  NULL)
 

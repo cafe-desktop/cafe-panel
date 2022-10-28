@@ -117,7 +117,7 @@ void wncklet_connect_while_alive(gpointer object, const char* signal, GCallback 
 	g_signal_connect_closure_by_id(object, g_signal_lookup(signal, G_OBJECT_TYPE(object)), 0, closure, FALSE);
 }
 
-static gboolean wncklet_factory(MatePanelApplet* applet, const char* iid, gpointer data)
+static gboolean wncklet_factory(CafePanelApplet* applet, const char* iid, gpointer data)
 {
 	gboolean retval = FALSE;
 	static gboolean type_registered = FALSE;

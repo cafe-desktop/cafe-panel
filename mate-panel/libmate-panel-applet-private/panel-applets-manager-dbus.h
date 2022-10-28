@@ -30,25 +30,25 @@ extern "C" {
 #endif
 
 #define PANEL_TYPE_APPLETS_MANAGER_DBUS			(cafe_panel_applets_manager_dbus_get_type ())
-#define MATE_PANEL_APPLETS_MANAGER_DBUS(obj)			(G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLETS_MANAGER_DBUS, MatePanelAppletsManagerDBus))
-#define MATE_PANEL_APPLETS_MANAGER_DBUS_CLASS(klass)		(G_TYPE_CHECK_CLASS_CAST ((klass), PANEL_TYPE_APPLETS_MANAGER_DBUS, MatePanelAppletsManagerDBusClass))
+#define MATE_PANEL_APPLETS_MANAGER_DBUS(obj)			(G_TYPE_CHECK_INSTANCE_CAST ((obj), PANEL_TYPE_APPLETS_MANAGER_DBUS, CafePanelAppletsManagerDBus))
+#define MATE_PANEL_APPLETS_MANAGER_DBUS_CLASS(klass)		(G_TYPE_CHECK_CLASS_CAST ((klass), PANEL_TYPE_APPLETS_MANAGER_DBUS, CafePanelAppletsManagerDBusClass))
 #define PANEL_IS_APPLETS_MANAGER_DBUS(obj)		(G_TYPE_CHECK_INSTANCE_TYPE ((obj), PANEL_TYPE_APPLETS_MANAGER_DBUS))
 #define PANEL_IS_APPLETS_MANAGER_DBUS_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE ((klass), PANEL_TYPE_APPLETS_MANAGER_DBUS))
-#define MATE_PANEL_APPLETS_MANAGER_DBUS_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS((obj), PANEL_TYPE_APPLETS_MANAGER_DBUS, MatePanelAppletsManagerDBusClass))
+#define MATE_PANEL_APPLETS_MANAGER_DBUS_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS((obj), PANEL_TYPE_APPLETS_MANAGER_DBUS, CafePanelAppletsManagerDBusClass))
 
-typedef struct _MatePanelAppletsManagerDBus		MatePanelAppletsManagerDBus;
-typedef struct _MatePanelAppletsManagerDBusClass	MatePanelAppletsManagerDBusClass;
-typedef struct _MatePanelAppletsManagerDBusPrivate	MatePanelAppletsManagerDBusPrivate;
+typedef struct _CafePanelAppletsManagerDBus		CafePanelAppletsManagerDBus;
+typedef struct _CafePanelAppletsManagerDBusClass	CafePanelAppletsManagerDBusClass;
+typedef struct _CafePanelAppletsManagerDBusPrivate	CafePanelAppletsManagerDBusPrivate;
 
-struct _MatePanelAppletsManagerDBusClass {
-	MatePanelAppletsManagerClass parent_class;
+struct _CafePanelAppletsManagerDBusClass {
+	CafePanelAppletsManagerClass parent_class;
 };
 
-struct _MatePanelAppletsManagerDBus {
-	MatePanelAppletsManager parent;
+struct _CafePanelAppletsManagerDBus {
+	CafePanelAppletsManager parent;
 
 	/*< private > */
-	MatePanelAppletsManagerDBusPrivate *priv;
+	CafePanelAppletsManagerDBusPrivate *priv;
 };
 
 GType cafe_panel_applets_manager_dbus_get_type (void);

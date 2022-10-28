@@ -30,7 +30,7 @@
 #include <gdk/gdkx.h>
 #endif
 
-struct _MatePanelAppletFactory {
+struct _CafePanelAppletFactory {
 	GObject    base;
 
 	gchar     *factory_id;
@@ -47,21 +47,21 @@ struct _MatePanelAppletFactory {
 	guint            next_uid;
 };
 
-struct _MatePanelAppletFactoryClass {
+struct _CafePanelAppletFactoryClass {
 	GObjectClass base_class;
 };
 
 #define MATE_PANEL_APPLET_FACTORY_OBJECT_PATH  "/org/cafe/panel/applet/%s"
 #define MATE_PANEL_APPLET_FACTORY_SERVICE_NAME "org.cafe.panel.applet.%s"
 
-G_DEFINE_TYPE (MatePanelAppletFactory, cafe_panel_applet_factory, G_TYPE_OBJECT)
+G_DEFINE_TYPE (CafePanelAppletFactory, cafe_panel_applet_factory, G_TYPE_OBJECT)
 
 static GHashTable *factories = NULL;
 
 static void
 cafe_panel_applet_factory_finalize (GObject *object)
 {
-	MatePanelAppletFactory *factory = MATE_PANEL_APPLET_FACTORY (object);
+	CafePanelAppletFactory *factory = MATE_PANEL_APPLET_FACTORY (object);
 
 	if (factory->registration_id) {
 		g_dbus_connection_unregister_object (factory->connection, factory->registration_id);
@@ -99,14 +99,14 @@ cafe_panel_applet_factory_finalize (GObject *object)
 }
 
 static void
-cafe_panel_applet_factory_init (MatePanelAppletFactory *factory)
+cafe_panel_applet_factory_init (CafePanelAppletFactory *factory)
 {
 	factory->applets = g_hash_table_new (NULL, NULL);
 	factory->next_uid = 1;
 }
 
 static void
-cafe_panel_applet_factory_class_init (MatePanelAppletFactoryClass *klass)
+cafe_panel_applet_factory_class_init (CafePanelAppletFactoryClass *klass)
 {
 	GObjectClass *g_object_class = G_OBJECT_CLASS (klass);
 
@@ -114,7 +114,7 @@ cafe_panel_applet_factory_class_init (MatePanelAppletFactoryClass *klass)
 }
 
 static void
-cafe_panel_applet_factory_applet_removed (MatePanelAppletFactory *factory,
+cafe_panel_applet_factory_applet_removed (CafePanelAppletFactory *factory,
 				     GObject            *applet)
 {
 	guint uid;
@@ -128,13 +128,13 @@ cafe_panel_applet_factory_applet_removed (MatePanelAppletFactory *factory,
 		g_object_unref (factory);
 }
 
-MatePanelAppletFactory *
+CafePanelAppletFactory *
 cafe_panel_applet_factory_new (const gchar *factory_id,
 				gboolean     out_of_process,
 			  GType        applet_type,
 			  GClosure    *closure)
 {
-	MatePanelAppletFactory *factory;
+	CafePanelAppletFactory *factory;
 
 	factory = MATE_PANEL_APPLET_FACTORY (g_object_new (PANEL_TYPE_APPLET_FACTORY, NULL));
 	factory->factory_id = g_strdup (factory_id);
@@ -188,7 +188,7 @@ set_applet_constructor_properties (GObject  *applet,
 
 
 static void
-cafe_panel_applet_factory_get_applet (MatePanelAppletFactory    *factory,
+cafe_panel_applet_factory_get_applet (CafePanelAppletFactory    *factory,
 				 GDBusConnection       *connection,
 				 GVariant              *parameters,
 				 GDBusMethodInvocation *invocation)
@@ -254,7 +254,7 @@ method_call_cb (GDBusConnection       *connection,
 		GDBusMethodInvocation *invocation,
 		gpointer               user_data)
 {
-	MatePanelAppletFactory *factory = MATE_PANEL_APPLET_FACTORY (user_data);
+	CafePanelAppletFactory *factory = MATE_PANEL_APPLET_FACTORY (user_data);
 
 	if (g_strcmp0 (method_name, "GetApplet") == 0) {
 		cafe_panel_applet_factory_get_applet (factory, connection, parameters, invocation);
@@ -287,7 +287,7 @@ static GDBusNodeInfo *introspection_data = NULL;
 static void
 on_bus_acquired (GDBusConnection    *connection,
 		  const gchar        *name,
-		  MatePanelAppletFactory *factory)
+		  CafePanelAppletFactory *factory)
 {
 	gchar  *object_path;
 	GError *error = NULL;
@@ -313,13 +313,13 @@ on_bus_acquired (GDBusConnection    *connection,
 static void
 on_name_lost (GDBusConnection    *connection,
 	      const gchar        *name,
-	      MatePanelAppletFactory *factory)
+	      CafePanelAppletFactory *factory)
 {
 	g_object_unref (factory);
 }
 
 gboolean
-cafe_panel_applet_factory_register_service (MatePanelAppletFactory *factory)
+cafe_panel_applet_factory_register_service (CafePanelAppletFactory *factory)
 {
 	gchar *service_name;
 
@@ -343,7 +343,7 @@ GtkWidget *
 cafe_panel_applet_factory_get_applet_widget (const gchar *id,
                                         guint        uid)
 {
-	MatePanelAppletFactory *factory;
+	CafePanelAppletFactory *factory;
 	GObject            *object;
 
 	if (!factories)

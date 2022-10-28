@@ -10,7 +10,7 @@ Name=Clock
 Description=Get the current time and date
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=cafe-panel-clock
-MateComponentId=OAFIID:MATE_ClockApplet;
+CafeComponentId=OAFIID:MATE_ClockApplet;
 Platforms=X11;Wayland;
 X-MATE-Bugzilla-Bugzilla=MATE
 X-MATE-Bugzilla-Product=cafe-panel

@@ -34,7 +34,7 @@
 
 G_BEGIN_DECLS
 
-GSettings* cafe_panel_applet_settings_new (MatePanelApplet *applet, gchar *schema);
+GSettings* cafe_panel_applet_settings_new (CafePanelApplet *applet, gchar *schema);
 GList*     cafe_panel_applet_settings_get_glist (GSettings *settings, gchar *key);
 void       cafe_panel_applet_settings_set_glist (GSettings *settings, gchar *key, GList *list);
 GSList*    cafe_panel_applet_settings_get_gslist (GSettings *settings, gchar *key);

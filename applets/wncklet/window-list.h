@@ -16,7 +16,7 @@
 extern "C" {
 #endif
 
-gboolean window_list_applet_fill(MatePanelApplet* applet);
+gboolean window_list_applet_fill(CafePanelApplet* applet);
 
 #ifdef __cplusplus
 }

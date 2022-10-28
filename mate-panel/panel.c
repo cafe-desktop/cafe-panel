@@ -1,4 +1,4 @@
-/* Mate panel: Initialization routines
+/* Cafe panel: Initialization routines
  * (C) 1997,1998,1999,2000 the Free Software Foundation
  * (C) 2000 Eazel, Inc.
  *

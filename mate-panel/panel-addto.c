@@ -74,7 +74,7 @@ typedef struct {
 	GtkTreeModel *application_model;
 	GtkTreeModel *filter_application_model;
 
-	MateMenuTree    *menu_tree;
+	CafeMenuTree    *menu_tree;
 
 	GSList       *applet_list;
 	GSList       *application_list;
@@ -395,12 +395,12 @@ panel_addto_query_applets (GSList *list)
 	applet_list = cafe_panel_applets_manager_get_applets ();
 
 	for (l = applet_list; l; l = g_list_next (l)) {
-		MatePanelAppletInfo *info;
+		CafePanelAppletInfo *info;
 		const char *iid, *name, *description, *icon;
 		gboolean enabled;
 		PanelAddtoItemInfo *applet;
 
-		info = (MatePanelAppletInfo *)l->data;
+		info = (CafePanelAppletInfo *)l->data;
 
 		iid = cafe_panel_applet_info_get_iid (info);
 		name = cafe_panel_applet_info_get_name (info);
@@ -544,12 +544,12 @@ panel_addto_make_applet_model (PanelAddtoDialog *dialog)
 }
 
 static void panel_addto_make_application_list (GSList             **parent_list,
-					       MateMenuTreeDirectory  *directory,
+					       CafeMenuTreeDirectory  *directory,
 					       const char          *filename);
 
 static void
 panel_addto_prepend_directory (GSList             **parent_list,
-			       MateMenuTreeDirectory  *directory,
+			       CafeMenuTreeDirectory  *directory,
 			       const char          *filename)
 {
 	PanelAddtoAppList *data;
@@ -582,7 +582,7 @@ panel_addto_prepend_directory (GSList             **parent_list,
 
 static void
 panel_addto_prepend_entry (GSList         **parent_list,
-			   MateMenuTreeEntry  *entry,
+			   CafeMenuTreeEntry  *entry,
 			   const char      *filename)
 {
 	PanelAddtoAppList *data;
@@ -607,7 +607,7 @@ panel_addto_prepend_entry (GSList         **parent_list,
 
 static void
 panel_addto_prepend_alias (GSList         **parent_list,
-			   MateMenuTreeAlias  *alias,
+			   CafeMenuTreeAlias  *alias,
 			   const char      *filename)
 {
 	gpointer item;
@@ -636,12 +636,12 @@ panel_addto_prepend_alias (GSList         **parent_list,
 
 static void
 panel_addto_make_application_list (GSList             **parent_list,
-				   MateMenuTreeDirectory  *directory,
+				   CafeMenuTreeDirectory  *directory,
 				   const char          *filename)
 {
-	MateMenuTreeIter *iter;
+	CafeMenuTreeIter *iter;
 	iter = cafemenu_tree_directory_iter (directory);
-	MateMenuTreeItemType type;
+	CafeMenuTreeItemType type;
 	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
 		gpointer item;
 		switch (type) {
@@ -707,8 +707,8 @@ panel_addto_populate_application_model (GtkTreeStore *store,
 static void panel_addto_make_application_model(PanelAddtoDialog* dialog)
 {
 	GtkTreeStore* store;
-	MateMenuTree* tree;
-	MateMenuTreeDirectory* root;
+	CafeMenuTree* tree;
+	CafeMenuTreeDirectory* root;
 	GError *error = NULL;
 
 	if (dialog->filter_application_model != NULL)

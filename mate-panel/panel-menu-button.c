@@ -717,7 +717,7 @@ panel_menu_button_load (const char  *menu_path,
 static char *
 panel_menu_button_get_icon (PanelMenuButton *button)
 {
-	MateMenuTreeDirectory *directory;
+	CafeMenuTreeDirectory *directory;
         char               *retval;
 
 	retval = NULL;
@@ -734,7 +734,7 @@ panel_menu_button_get_icon (PanelMenuButton *button)
 					       "panel-menu-tree-directory");
 
 		if (!directory) {
-			MateMenuTree *tree;
+			CafeMenuTree *tree;
 
 			if ((tree = g_object_get_data (G_OBJECT (button->priv->menu),
 						       "panel-menu-tree"))) {

@@ -77,7 +77,7 @@ static void show_desktop_changed_callback(WnckScreen* screen, ShowDesktopData* s
 
 /* this is when the panel orientation changes */
 
-static void applet_change_orient(MatePanelApplet* applet, MatePanelAppletOrient orient, ShowDesktopData* sdd)
+static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient orient, ShowDesktopData* sdd)
 {
 	GtkOrientation new_orient;
 
@@ -354,7 +354,7 @@ static gboolean button_drag_motion(GtkWidget* widget, GdkDragContext* context, g
 	return TRUE;
 }
 
-static void show_desktop_applet_realized(MatePanelApplet* applet, gpointer data)
+static void show_desktop_applet_realized(CafePanelApplet* applet, gpointer data)
 {
 	ShowDesktopData* sdd;
 	GdkScreen* screen;
@@ -388,7 +388,7 @@ static void theme_changed_callback(GtkIconTheme* icon_theme, ShowDesktopData* sd
 	update_icon (sdd);
 }
 
-gboolean show_desktop_applet_fill(MatePanelApplet* applet)
+gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 {
 	ShowDesktopData* sdd;
 	GtkActionGroup* action_group;

@@ -31,7 +31,7 @@
 extern "C" {
 #endif
 
-gboolean show_desktop_applet_fill(MatePanelApplet* applet);
+gboolean show_desktop_applet_fill(CafePanelApplet* applet);
 
 #ifdef __cplusplus
 }

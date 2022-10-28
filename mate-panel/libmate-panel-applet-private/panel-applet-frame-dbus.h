@@ -33,30 +33,30 @@ extern "C" {
 #endif
 
 #define PANEL_TYPE_APPLET_FRAME_DBUS         (cafe_panel_applet_frame_dbus_get_type ())
-#define MATE_PANEL_APPLET_FRAME_DBUS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET_FRAME_DBUS, MatePanelAppletFrameDBus))
-#define MATE_PANEL_APPLET_FRAME_DBUS_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET_FRAME_DBUS, MatePanelAppletFrameDBusClass))
+#define MATE_PANEL_APPLET_FRAME_DBUS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), PANEL_TYPE_APPLET_FRAME_DBUS, CafePanelAppletFrameDBus))
+#define MATE_PANEL_APPLET_FRAME_DBUS_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), PANEL_TYPE_APPLET_FRAME_DBUS, CafePanelAppletFrameDBusClass))
 #define PANEL_IS_APPLET_FRAME_DBUS(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), PANEL_TYPE_APPLET_FRAME_DBUS))
 #define PANEL_IS_APPLET_FRAME_DBUS_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), PANEL_TYPE_APPLET_FRAME_DBUS))
-#define MATE_PANEL_APPLET_FRAME_DBUS_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET_FRAME_DBUS, MatePanelAppletFrameDBusClass))
+#define MATE_PANEL_APPLET_FRAME_DBUS_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), PANEL_TYPE_APPLET_FRAME_DBUS, CafePanelAppletFrameDBusClass))
 
-typedef struct _MatePanelAppletFrameDBus        MatePanelAppletFrameDBus;
-typedef struct _MatePanelAppletFrameDBusClass   MatePanelAppletFrameDBusClass;
-typedef struct _MatePanelAppletFrameDBusPrivate MatePanelAppletFrameDBusPrivate;
+typedef struct _CafePanelAppletFrameDBus        CafePanelAppletFrameDBus;
+typedef struct _CafePanelAppletFrameDBusClass   CafePanelAppletFrameDBusClass;
+typedef struct _CafePanelAppletFrameDBusPrivate CafePanelAppletFrameDBusPrivate;
 
-struct _MatePanelAppletFrameDBusClass {
-        MatePanelAppletFrameClass parent_class;
+struct _CafePanelAppletFrameDBusClass {
+        CafePanelAppletFrameClass parent_class;
 };
 
-struct _MatePanelAppletFrameDBus{
-	MatePanelAppletFrame parent;
+struct _CafePanelAppletFrameDBus{
+	CafePanelAppletFrame parent;
 
-	MatePanelAppletFrameDBusPrivate  *priv;
+	CafePanelAppletFrameDBusPrivate  *priv;
 };
 
 GType     cafe_panel_applet_frame_dbus_get_type           (void) G_GNUC_CONST;
 
 gboolean  cafe_panel_applet_frame_dbus_load               (const gchar                 *iid,
-						      MatePanelAppletFrameActivating  *frame_act);
+						      CafePanelAppletFrameActivating  *frame_act);
 
 #ifdef __cplusplus
 }

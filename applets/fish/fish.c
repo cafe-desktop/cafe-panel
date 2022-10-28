@@ -62,7 +62,7 @@
 #define LOCKDOWN_DISABLE_COMMAND_LINE_KEY     "disable-command-line"
 
 typedef struct {
-	MatePanelApplet        applet;
+	CafePanelApplet        applet;
 
 	GSettings         *settings;
 	GSettings         *lockdown_settings;
@@ -74,7 +74,7 @@ typedef struct {
 	gdouble            speed;
 	gboolean           rotate;
 
-	MatePanelAppletOrient  orientation;
+	CafePanelAppletOrient  orientation;
 
 	GtkWidget         *frame;
 	GtkWidget         *drawing_area;
@@ -113,7 +113,7 @@ typedef struct {
 } FishApplet;
 
 typedef struct {
-	MatePanelAppletClass klass;
+	CafePanelAppletClass klass;
 } FishAppletClass;
 
 
@@ -1272,7 +1272,7 @@ static void fish_disable_commande_line_notify(GSettings* settings, gchar* key, F
 
 static void setup_gsettings(FishApplet* fish)
 {
-	MatePanelApplet *applet = (MatePanelApplet *) fish;
+	CafePanelApplet *applet = (CafePanelApplet *) fish;
 
 	fish->settings = cafe_panel_applet_settings_new (applet, FISH_SCHEMA);
 	fish->lockdown_settings = g_settings_new (LOCKDOWN_SCHEMA);
@@ -1528,7 +1528,7 @@ static void fish_applet_unrealize(GtkWidget* widget, FishApplet* fish)
 	fish->surface_height = 0;
 }
 
-static void fish_applet_change_orient(MatePanelApplet* applet, MatePanelAppletOrient orientation)
+static void fish_applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient orientation)
 {
 	FishApplet *fish = (FishApplet *) applet;
 
@@ -1704,7 +1704,7 @@ static const GtkActionEntry fish_menu_verbs[] = {
 
 static gboolean fish_applet_fill(FishApplet* fish)
 {
-	MatePanelApplet* applet = (MatePanelApplet*) fish;
+	CafePanelApplet* applet = (CafePanelApplet*) fish;
 	GtkActionGroup* action_group;
 
 	fish->orientation = cafe_panel_applet_get_orient (applet);
@@ -1761,7 +1761,7 @@ static gboolean fish_applet_fill(FishApplet* fish)
 	return TRUE;
 }
 
-static gboolean fishy_factory(MatePanelApplet* applet, const char* iid, gpointer data)
+static gboolean fishy_factory(CafePanelApplet* applet, const char* iid, gpointer data)
 {
 	gboolean retval = FALSE;
 
@@ -1891,7 +1891,7 @@ static void fish_applet_instance_init(FishApplet* fish, FishAppletClass* klass)
 
 static void fish_applet_class_init(FishAppletClass* klass)
 {
-	MatePanelAppletClass* applet_class = (MatePanelAppletClass*) klass;
+	CafePanelAppletClass* applet_class = (CafePanelAppletClass*) klass;
 	GObjectClass *gobject_class        = (GObjectClass *) klass;
 
 	parent_class = g_type_class_peek_parent(klass);
@@ -1910,7 +1910,7 @@ static GType fish_applet_get_type(void)
 	if (!type)
 	{
 		static const GTypeInfo info = {
-			sizeof(MatePanelAppletClass),
+			sizeof(CafePanelAppletClass),
 			NULL, NULL,
 			(GClassInitFunc) fish_applet_class_init,
 			NULL, NULL,

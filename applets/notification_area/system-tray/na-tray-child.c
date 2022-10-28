@@ -293,10 +293,10 @@ static const struct
 } wmclass_categories[] = {
   /* order is LTR, so higher category and higher ASCII ordering on the right */
   { "keyboard",                   "~01-keyboard",  NA_ITEM_CATEGORY_HARDWARE },
-  { "Mate-volume-control-applet", "~02-volume",    NA_ITEM_CATEGORY_HARDWARE },
+  { "Cafe-volume-control-applet", "~02-volume",    NA_ITEM_CATEGORY_HARDWARE },
   { "Bluetooth-applet",           "~03-bluetooth", NA_ITEM_CATEGORY_HARDWARE },
   { "Nm-applet",                  "~04-network",   NA_ITEM_CATEGORY_HARDWARE },
-  { "Mate-power-manager",         "~05-battery",   NA_ITEM_CATEGORY_HARDWARE },
+  { "Cafe-power-manager",         "~05-battery",   NA_ITEM_CATEGORY_HARDWARE },
 };
 
 static const gchar *

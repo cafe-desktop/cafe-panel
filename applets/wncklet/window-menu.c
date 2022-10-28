@@ -47,7 +47,7 @@ typedef struct {
 	GtkWidget* applet;
 	GtkWidget* selector;
 	int size;
-	MatePanelAppletOrient orient;
+	CafePanelAppletOrient orient;
 } WindowMenu;
 
 static void window_menu_help(GtkAction* action, WindowMenu* window_menu)
@@ -143,9 +143,9 @@ static gboolean window_menu_on_draw (GtkWidget* widget,
 	return FALSE;
 }
 
-static void window_menu_size_allocate(MatePanelApplet* applet, GtkAllocation* allocation, WindowMenu* window_menu)
+static void window_menu_size_allocate(CafePanelApplet* applet, GtkAllocation* allocation, WindowMenu* window_menu)
 {
-	MatePanelAppletOrient orient;
+	CafePanelAppletOrient orient;
 	GList* children;
 	GtkWidget* child;
 
@@ -215,7 +215,7 @@ static gboolean filter_button_press(GtkWidget* widget, GdkEventButton* event, gp
 	return FALSE;
 }
 
-gboolean window_menu_applet_fill(MatePanelApplet* applet)
+gboolean window_menu_applet_fill(CafePanelApplet* applet)
 {
 	WindowMenu* window_menu;
 	GtkActionGroup* action_group;
