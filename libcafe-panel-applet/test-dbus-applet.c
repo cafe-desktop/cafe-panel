@@ -60,11 +60,11 @@ test_applet_handle_orient_change (TestApplet       *applet,
 {
         gchar *text;
 
-        text = g_strdup (ctk_label_get_text (GTK_LABEL (applet->label)));
+        text = g_strdup (ctk_label_get_text (CTK_LABEL (applet->label)));
 
         g_strreverse (text);
 
-        ctk_label_set_text (GTK_LABEL (applet->label), text);
+        ctk_label_set_text (CTK_LABEL (applet->label), text);
 
         g_free (text);
 }
@@ -77,31 +77,31 @@ test_applet_handle_size_change (TestApplet *applet,
 	switch (size) {
 	case 12:
 		ctk_label_set_markup (
-			GTK_LABEL (applet->label), "<span size=\"xx-small\">Hello</span>");
+			CTK_LABEL (applet->label), "<span size=\"xx-small\">Hello</span>");
 		break;
 	case 24:
 		ctk_label_set_markup (
-			GTK_LABEL (applet->label), "<span size=\"x-small\">Hello</span>");
+			CTK_LABEL (applet->label), "<span size=\"x-small\">Hello</span>");
 		break;
 	case 36:
 		ctk_label_set_markup (
-			GTK_LABEL (applet->label), "<span size=\"small\">Hello</span>");
+			CTK_LABEL (applet->label), "<span size=\"small\">Hello</span>");
 		break;
 	case 48:
 		ctk_label_set_markup (
-			GTK_LABEL (applet->label), "<span size=\"medium\">Hello</span>");
+			CTK_LABEL (applet->label), "<span size=\"medium\">Hello</span>");
 		break;
 	case 64:
 		ctk_label_set_markup (
-			GTK_LABEL (applet->label), "<span size=\"large\">Hello</span>");
+			CTK_LABEL (applet->label), "<span size=\"large\">Hello</span>");
 		break;
 	case 80:
 		ctk_label_set_markup (
-			GTK_LABEL (applet->label), "<span size=\"x-large\">Hello</span>");
+			CTK_LABEL (applet->label), "<span size=\"x-large\">Hello</span>");
 		break;
 	case 128:
 		ctk_label_set_markup (
-			GTK_LABEL (applet->label), "<span size=\"xx-large\">Hello</span>");
+			CTK_LABEL (applet->label), "<span size=\"xx-large\">Hello</span>");
 		break;
 	default:
 		g_assert_not_reached ();
@@ -145,9 +145,9 @@ test_applet_fill (TestApplet *applet)
 
 	applet->label = ctk_label_new (NULL);
 
-	ctk_container_add (GTK_CONTAINER (applet), applet->label);
+	ctk_container_add (CTK_CONTAINER (applet), applet->label);
 
-	ctk_widget_show_all (GTK_WIDGET (applet));
+	ctk_widget_show_all (CTK_WIDGET (applet));
 
 	test_applet_handle_size_change (applet,
 					cafe_panel_applet_get_size (CAFE_PANEL_APPLET (applet)),
@@ -167,7 +167,7 @@ test_applet_fill (TestApplet *applet)
 				 action_group);
 	g_object_unref (action_group);
 
-	ctk_widget_set_tooltip_text (GTK_WIDGET (applet), "Hello Tip");
+	ctk_widget_set_tooltip_text (CTK_WIDGET (applet), "Hello Tip");
 
 	cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (applet), CAFE_PANEL_APPLET_HAS_HANDLE);
 

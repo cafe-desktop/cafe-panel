@@ -1984,11 +1984,11 @@ msgstr "배경 형식"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:109
 msgid ""
 "Which type of background should be used for this panel. Possible values are "
-"\"none\" - the default GTK+ widget background will be used, \"color\" - the "
+"\"none\" - the default CTK+ widget background will be used, \"color\" - the "
 "color key will be used as background color or \"image\" - the image "
 "specified by the image key will be used as background."
 msgstr ""
-"이 패널에 사용할 배경 형식입니다. 가능한 값은 \"none\" - 사용할 기본 GTK+ 위젯 배경, \"color\" - 배경 색으로 "
+"이 패널에 사용할 배경 형식입니다. 가능한 값은 \"none\" - 사용할 기본 CTK+ 위젯 배경, \"color\" - 배경 색으로 "
 "사용할 색상 키, \"image\" - 배경으로 사용하는 이미지 키로 지정한 그림 입니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:113

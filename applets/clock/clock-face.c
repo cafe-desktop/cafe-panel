@@ -1,7 +1,7 @@
 /**
  * clock.c
  *
- * A GTK+ widget that implements a clock face
+ * A CTK+ widget that implements a clock face
  *
  * (c) 2007, Peter Teichman
  * (c) 2005-2006, Davyd Madeley
@@ -61,7 +61,7 @@ struct _ClockFacePrivate
     GtkWidget *size_widget;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (ClockFace, clock_face, GTK_TYPE_WIDGET)
+G_DEFINE_TYPE_WITH_PRIVATE (ClockFace, clock_face, CTK_TYPE_WIDGET)
 
 static void
 clock_face_class_init (ClockFaceClass *class)
@@ -70,7 +70,7 @@ clock_face_class_init (ClockFaceClass *class)
     GtkWidgetClass *widget_class;
 
     obj_class = G_OBJECT_CLASS (class);
-    widget_class = GTK_WIDGET_CLASS (class);
+    widget_class = CTK_WIDGET_CLASS (class);
 
     /* GtkWidget signals */
     widget_class->draw = clock_face_draw;
@@ -92,7 +92,7 @@ clock_face_init (ClockFace *this)
     priv->location = NULL;
     priv->size_widget = NULL;
 
-    ctk_widget_set_has_window (GTK_WIDGET (this), FALSE);
+    ctk_widget_set_has_window (CTK_WIDGET (this), FALSE);
 }
 
 static gboolean
@@ -109,8 +109,8 @@ clock_face_draw (GtkWidget *this, cairo_t *cr)
 
     priv = clock_face_get_instance_private (CLOCK_FACE(this));
 
-    if (GTK_WIDGET_CLASS (clock_face_parent_class)->draw)
-        GTK_WIDGET_CLASS (clock_face_parent_class)->draw (this, cr);
+    if (CTK_WIDGET_CLASS (clock_face_parent_class)->draw)
+        CTK_WIDGET_CLASS (clock_face_parent_class)->draw (this, cr);
 
     if (priv->size == CLOCK_FACE_LARGE) {
             hour_length = 0.45;
@@ -182,7 +182,7 @@ clock_face_draw (GtkWidget *this, cairo_t *cr)
 static void
 clock_face_redraw_canvas (ClockFace *this)
 {
-    ctk_widget_queue_draw (GTK_WIDGET (this));
+    ctk_widget_queue_draw (CTK_WIDGET (this));
 }
 
 static void
@@ -197,7 +197,7 @@ clock_face_get_preferred_width (GtkWidget *this,
            int child_natural_height;
 
             /* Tie our size to the height of the size_widget */
-            ctk_widget_get_preferred_height (GTK_WIDGET (priv->size_widget),
+            ctk_widget_get_preferred_height (CTK_WIDGET (priv->size_widget),
                                              &child_minimal_height,
                                              &child_natural_height);
 
@@ -230,7 +230,7 @@ clock_face_get_preferred_height (GtkWidget *this,
            int child_natural_height;
 
             /* Tie our size to the height of the size_widget */
-            ctk_widget_get_preferred_height (GTK_WIDGET (priv->size_widget),
+            ctk_widget_get_preferred_height (CTK_WIDGET (priv->size_widget),
                                              &child_minimal_height,
                                              &child_natural_height);
 
@@ -263,8 +263,8 @@ clock_face_size_allocate (GtkWidget     *this,
     old_allocation.width = this_allocation.width;
     old_allocation.height = this_allocation.height;
 
-    if (GTK_WIDGET_CLASS (clock_face_parent_class)->size_allocate)
-            GTK_WIDGET_CLASS (clock_face_parent_class)->size_allocate (this, allocation);
+    if (CTK_WIDGET_CLASS (clock_face_parent_class)->size_allocate)
+            CTK_WIDGET_CLASS (clock_face_parent_class)->size_allocate (this, allocation);
 
     if (old_allocation.width  == allocation->width &&
         old_allocation.height == allocation->height)
@@ -317,7 +317,7 @@ update_time_and_face (ClockFace *this,
 
             priv->timeofday = timeofday;
 
-            ctk_widget_get_allocation (GTK_WIDGET (this), &allocation);
+            ctk_widget_get_allocation (CTK_WIDGET (this), &allocation);
 
             width = allocation.width;
             height = allocation.height;
@@ -346,7 +346,7 @@ clock_face_new (ClockFaceSize size)
 
     priv->size = size;
 
-    return GTK_WIDGET (obj);
+    return CTK_WIDGET (obj);
 }
 
 GtkWidget *
@@ -361,7 +361,7 @@ clock_face_new_with_location (ClockFaceSize size,
     priv->location = g_object_ref (loc);
     priv->size_widget = g_object_ref (size_widget);
 
-    return GTK_WIDGET (obj);
+    return CTK_WIDGET (obj);
 }
 
 static void

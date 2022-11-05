@@ -86,8 +86,8 @@ panel_background_prepare_css ()
 					 "}",
 					 -1, NULL);
 	ctk_style_context_add_provider_for_screen (gdk_screen_get_default (),
-						   GTK_STYLE_PROVIDER (provider),
-						   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+						   CTK_STYLE_PROVIDER (provider),
+						   CTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_object_unref (provider);
 }
 
@@ -133,7 +133,7 @@ panel_background_prepare (PanelBackground *background)
 											background->default_pattern);
 			}
 			else {
-				g_warning ("%s", "unsupported value of 'background-image' in GTK+ theme (such as '-ctk-gradient')");
+				g_warning ("%s", "unsupported value of 'background-image' in CTK+ theme (such as '-ctk-gradient')");
 				/* use any background color that has been set if image is invalid */
 				gdk_window_set_background_rgba (
 				background->window, &background->default_color);
@@ -176,7 +176,7 @@ panel_background_prepare (PanelBackground *background)
 	gdk_window_get_user_data (GDK_WINDOW (background->window),
 				  (gpointer) &widget);
 
-	if (GTK_IS_WIDGET (widget)) {
+	if (CTK_IS_WIDGET (widget)) {
 		panel_background_apply_css (background, ctk_widget_get_toplevel(widget));
 		ctk_widget_set_app_paintable(widget,TRUE);
 		ctk_widget_queue_draw (widget);
@@ -452,11 +452,11 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 
 	if (background->fit_image) {
 		switch (background->orientation) {
-		case GTK_ORIENTATION_HORIZONTAL:
+		case CTK_ORIENTATION_HORIZONTAL:
 			width  = orig_width * panel_height / orig_height;
 			height = panel_height;
 			break;
-		case GTK_ORIENTATION_VERTICAL:
+		case CTK_ORIENTATION_VERTICAL:
 			if (background->rotate_image) {
 				width  = orig_width * panel_width / orig_height;
 				height = panel_width;
@@ -470,7 +470,7 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 			break;
 		}
 	} else if (background->stretch_image) {
-		if (background->orientation == GTK_ORIENTATION_VERTICAL &&
+		if (background->orientation == CTK_ORIENTATION_VERTICAL &&
 		    background->rotate_image) {
 			width  = panel_height;
 			height = panel_width;
@@ -478,7 +478,7 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 			width  = panel_width;
 			height = panel_height;
 		}
-	} else if (background->orientation == GTK_ORIENTATION_VERTICAL &&
+	} else if (background->orientation == CTK_ORIENTATION_VERTICAL &&
 		   background->rotate_image) {
 		int tmp = width;
 		width = height;
@@ -497,7 +497,7 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 	}
 
 	if (background->rotate_image &&
-	    background->orientation == GTK_ORIENTATION_VERTICAL) {
+	    background->orientation == CTK_ORIENTATION_VERTICAL) {
 		if (!background->has_alpha) {
 			guchar *dest;
 			guchar *src;
@@ -941,7 +941,7 @@ panel_background_init (PanelBackground              *background,
 	background->image        = NULL;
 	background->loaded_image = NULL;
 
-	background->orientation       = GTK_ORIENTATION_HORIZONTAL;
+	background->orientation       = CTK_ORIENTATION_HORIZONTAL;
 	background->region.x          = -1;
 	background->region.y          = -1;
 	background->region.width      = -1;

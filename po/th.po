@@ -2052,12 +2052,12 @@ msgstr "ชนิดพื้นหลัง"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:109
 msgid ""
 "Which type of background should be used for this panel. Possible values are "
-"\"none\" - the default GTK+ widget background will be used, \"color\" - the "
+"\"none\" - the default CTK+ widget background will be used, \"color\" - the "
 "color key will be used as background color or \"image\" - the image "
 "specified by the image key will be used as background."
 msgstr ""
 "พื้นหลังชนิดใดที่ควรใช้สำหรับพาเนลนี้ ค่าที่เป็นไปได้คือ \"none\" - "
-"ใช้พื้นหลังปกติของวิดเจ็ต GTK+, \"color\" - ใช้ค่าในคีย์ \"สีพื้นหลัง\" "
+"ใช้พื้นหลังปกติของวิดเจ็ต CTK+, \"color\" - ใช้ค่าในคีย์ \"สีพื้นหลัง\" "
 "เป็นสีพื้นหลัง หรือ \"image\" - ใช้ภาพในคีย์ \"ภาพพื้นหลัง\" เป็นพื้นหลัง"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:113

@@ -28,7 +28,7 @@
 #include "panel-frame.h"
 #include "panel-typebuiltins.h"
 
-G_DEFINE_TYPE (PanelFrame, panel_frame, GTK_TYPE_BIN)
+G_DEFINE_TYPE (PanelFrame, panel_frame, CTK_TYPE_BIN)
 
 enum {
 	PROP_0,
@@ -49,7 +49,7 @@ panel_frame_get_preferred_width (GtkWidget *widget,
 
 	context = ctk_widget_get_style_context (widget);
 	ctk_style_context_get_padding (context, ctk_widget_get_state_flags (widget), &padding);
-	border_width = ctk_container_get_border_width (GTK_CONTAINER (widget));
+	border_width = ctk_container_get_border_width (CTK_CONTAINER (widget));
 
 	*minimal_width = 1;
 	*natural_width = 1;
@@ -85,7 +85,7 @@ panel_frame_get_preferred_height (GtkWidget *widget,
 	int              border_width;
 
 	context = ctk_widget_get_style_context (widget);
-	ctk_style_context_get_padding (context, ctk_widget_get_state_flags (widget), &padding);	border_width = ctk_container_get_border_width (GTK_CONTAINER (widget));
+	ctk_style_context_get_padding (context, ctk_widget_get_state_flags (widget), &padding);	border_width = ctk_container_get_border_width (CTK_CONTAINER (widget));
 
 	*minimal_height = 1;
 	*natural_height = 1;
@@ -125,7 +125,7 @@ panel_frame_size_allocate (GtkWidget     *widget,
 
 	context = ctk_widget_get_style_context (widget);
 	ctk_style_context_get_padding (context, ctk_widget_get_state_flags (widget), &padding);
-	border_width = ctk_container_get_border_width (GTK_CONTAINER (widget));
+	border_width = ctk_container_get_border_width (CTK_CONTAINER (widget));
 
 	child_allocation.x      = allocation->x + border_width;
 	child_allocation.y      = allocation->y + border_width;
@@ -277,8 +277,8 @@ static gboolean panel_frame_expose(GtkWidget* widget, cairo_t* cr)
 	if (!ctk_widget_is_drawable (widget))
 		return retval;
 
-	if (GTK_WIDGET_CLASS (panel_frame_parent_class)->draw)
-		retval = GTK_WIDGET_CLASS (panel_frame_parent_class)->draw (widget, cr);
+	if (CTK_WIDGET_CLASS (panel_frame_parent_class)->draw)
+		retval = CTK_WIDGET_CLASS (panel_frame_parent_class)->draw (widget, cr);
 
 	panel_frame_draw (widget, cr, frame->edges);
 
@@ -380,7 +380,7 @@ panel_frame_set_edges (PanelFrame     *frame,
 
 	frame->edges = edges;
 
-	ctk_widget_queue_resize (GTK_WIDGET (frame));
+	ctk_widget_queue_resize (CTK_WIDGET (frame));
 
 	g_object_notify (G_OBJECT (frame), "edges");
 }

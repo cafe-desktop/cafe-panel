@@ -30,7 +30,7 @@
 
 #include "panel-icon-chooser.h"
 
-#define PANEL_ICON_CHOOSER_ICON_SIZE GTK_ICON_SIZE_DIALOG
+#define PANEL_ICON_CHOOSER_ICON_SIZE CTK_ICON_SIZE_DIALOG
 
 struct _PanelIconChooserPrivate
 {
@@ -57,7 +57,7 @@ enum {
 
 static guint panel_icon_chooser_signals[LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (PanelIconChooser, panel_icon_chooser, GTK_TYPE_BUTTON)
+G_DEFINE_TYPE_WITH_PRIVATE (PanelIconChooser, panel_icon_chooser, CTK_TYPE_BUTTON)
 
 static void _panel_icon_chooser_clicked (GtkButton *button);
 static void _panel_icon_chooser_style_set (GtkWidget *widget,
@@ -80,7 +80,7 @@ panel_icon_chooser_constructor (GType                  type,
 									     construct_properties);
 
 	chooser = PANEL_ICON_CHOOSER (obj);
-	ctk_container_add (GTK_CONTAINER (chooser), chooser->priv->image);
+	ctk_container_add (CTK_CONTAINER (chooser), chooser->priv->image);
 	ctk_widget_show (chooser->priv->image);
 
 	return obj;
@@ -171,8 +171,8 @@ static void
 panel_icon_chooser_class_init (PanelIconChooserClass *class)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (class);
-	GtkWidgetClass *ctkwidget_class = GTK_WIDGET_CLASS (class);
-	GtkButtonClass *ctkbutton_class = GTK_BUTTON_CLASS (class);
+	GtkWidgetClass *ctkwidget_class = CTK_WIDGET_CLASS (class);
+	GtkButtonClass *ctkbutton_class = CTK_BUTTON_CLASS (class);
 
 	gobject_class->constructor = panel_icon_chooser_constructor;
 	gobject_class->get_property = panel_icon_chooser_get_property;
@@ -241,7 +241,7 @@ static void
 _panel_icon_chooser_update (PanelIconChooser *chooser)
 {
 	if (!chooser->priv->icon) {
-		ctk_image_set_from_icon_name (GTK_IMAGE (chooser->priv->image),
+		ctk_image_set_from_icon_name (CTK_IMAGE (chooser->priv->image),
 					      chooser->priv->fallback_icon_name,
 					      PANEL_ICON_CHOOSER_ICON_SIZE);
 
@@ -262,7 +262,7 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 								   NULL);
 
 			if (pixbuf) {
-				ctk_image_set_from_pixbuf (GTK_IMAGE (chooser->priv->image),
+				ctk_image_set_from_pixbuf (CTK_IMAGE (chooser->priv->image),
 							   pixbuf);
 				g_object_unref (pixbuf);
 				fallback = FALSE;
@@ -270,7 +270,7 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 		}
 
 		if (fallback) {
-			ctk_image_set_from_icon_name (GTK_IMAGE (chooser->priv->image),
+			ctk_image_set_from_icon_name (CTK_IMAGE (chooser->priv->image),
 						      chooser->priv->fallback_icon_name,
 						      PANEL_ICON_CHOOSER_ICON_SIZE);
 		}
@@ -288,7 +288,7 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 		names[1] = chooser->priv->fallback_icon_name;
 		icon = g_themed_icon_new_from_names (names, 2);
 
-		ctk_image_set_from_gicon (GTK_IMAGE (chooser->priv->image),
+		ctk_image_set_from_gicon (CTK_IMAGE (chooser->priv->image),
 					  icon,
 					  PANEL_ICON_CHOOSER_ICON_SIZE);
 
@@ -300,13 +300,13 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 
 		no_ext = panel_xdg_icon_remove_extension (chooser->priv->icon);
 
-		icon_theme = ctk_icon_theme_get_for_screen (ctk_widget_get_screen (GTK_WIDGET (chooser)));
+		icon_theme = ctk_icon_theme_get_for_screen (ctk_widget_get_screen (CTK_WIDGET (chooser)));
 		if (ctk_icon_theme_has_icon (icon_theme, no_ext))
 			icon = no_ext;
 		else
 			icon = chooser->priv->fallback_icon_name;
 
-		ctk_image_set_from_icon_name (GTK_IMAGE (chooser->priv->image),
+		ctk_image_set_from_icon_name (CTK_IMAGE (chooser->priv->image),
 					      icon,
 					      PANEL_ICON_CHOOSER_ICON_SIZE);
 
@@ -321,7 +321,7 @@ _panel_icon_chooser_find_icon_from_path (PanelIconChooser *chooser,
 	GdkScreen *screen;
 	char      *icon;
 
-	screen = ctk_widget_get_screen (GTK_WIDGET (chooser));
+	screen = ctk_widget_get_screen (CTK_WIDGET (chooser));
 
 	icon = panel_xdg_icon_name_from_icon_path (path, screen);
 	if (!icon)
@@ -335,11 +335,11 @@ _panel_icon_chooser_file_chooser_response (GtkFileChooser   *filechooser,
 					   gint              response_id,
 					   PanelIconChooser *chooser)
 {
-	if (response_id == GTK_RESPONSE_ACCEPT) {
+	if (response_id == CTK_RESPONSE_ACCEPT) {
 		char *path;
 		char *icon;
 
-		path = ctk_file_chooser_get_filename (GTK_FILE_CHOOSER (filechooser));
+		path = ctk_file_chooser_get_filename (CTK_FILE_CHOOSER (filechooser));
 		icon = _panel_icon_chooser_find_icon_from_path (chooser, path);
 		g_free (path);
 
@@ -347,7 +347,7 @@ _panel_icon_chooser_file_chooser_response (GtkFileChooser   *filechooser,
 		g_free (icon);
 	}
 
-	ctk_widget_destroy (GTK_WIDGET (filechooser));
+	ctk_widget_destroy (CTK_WIDGET (filechooser));
 }
 
 static void
@@ -361,34 +361,34 @@ _panel_icon_chooser_clicked (GtkButton *button)
 	gboolean          filechooser_path_set;
 
 	if (chooser->priv->filechooser) {
-		ctk_window_present (GTK_WINDOW (chooser->priv->filechooser));
+		ctk_window_present (CTK_WINDOW (chooser->priv->filechooser));
 		return;
 	}
 
-	toplevel = ctk_widget_get_toplevel (GTK_WIDGET (button));
+	toplevel = ctk_widget_get_toplevel (CTK_WIDGET (button));
 	if (ctk_widget_is_toplevel (toplevel))
-		parent = GTK_WINDOW (toplevel);
+		parent = CTK_WINDOW (toplevel);
 	else
 		parent = NULL;
 
 	filechooser = panel_file_chooser_dialog_new (_("Choose an icon"),
 						     parent,
-						     GTK_FILE_CHOOSER_ACTION_OPEN,
+						     CTK_FILE_CHOOSER_ACTION_OPEN,
 						     "process-stop",
-						     GTK_RESPONSE_CANCEL,
+						     CTK_RESPONSE_CANCEL,
 						     "document-open",
-						     GTK_RESPONSE_ACCEPT,
+						     CTK_RESPONSE_ACCEPT,
 						     NULL);
 
-	panel_ctk_file_chooser_add_image_preview (GTK_FILE_CHOOSER (filechooser));
+	panel_ctk_file_chooser_add_image_preview (CTK_FILE_CHOOSER (filechooser));
 
 	path = g_build_filename (DATADIR, "icons", NULL);
-	ctk_file_chooser_add_shortcut_folder (GTK_FILE_CHOOSER (filechooser),
+	ctk_file_chooser_add_shortcut_folder (CTK_FILE_CHOOSER (filechooser),
 					      path, NULL);
 	g_free (path);
 
 	path = g_build_filename (DATADIR, "pixmaps", NULL);
-	ctk_file_chooser_add_shortcut_folder (GTK_FILE_CHOOSER (filechooser),
+	ctk_file_chooser_add_shortcut_folder (CTK_FILE_CHOOSER (filechooser),
 					      path, NULL);
 	g_free (path);
 
@@ -404,7 +404,7 @@ _panel_icon_chooser_clicked (GtkButton *button)
 			char         *no_ext;
 			int           size;
 
-			icon_theme = ctk_icon_theme_get_for_screen (ctk_widget_get_screen (GTK_WIDGET (chooser)));
+			icon_theme = ctk_icon_theme_get_for_screen (ctk_widget_get_screen (CTK_WIDGET (chooser)));
 			no_ext = panel_xdg_icon_remove_extension (chooser->priv->icon);
 			ctk_icon_size_lookup (PANEL_ICON_CHOOSER_ICON_SIZE,
 					      &size, NULL);
@@ -420,7 +420,7 @@ _panel_icon_chooser_clicked (GtkButton *button)
 		}
 
 		if (path) {
-			ctk_file_chooser_set_filename (GTK_FILE_CHOOSER (filechooser),
+			ctk_file_chooser_set_filename (CTK_FILE_CHOOSER (filechooser),
 						       path);
 			g_free (path);
 			filechooser_path_set = TRUE;
@@ -432,12 +432,12 @@ _panel_icon_chooser_clicked (GtkButton *button)
 		// FIXME? Use current icon theme? But there might not be a lot
 		// of icons there...
 		path = g_build_filename (DATADIR, "icons", NULL);
-		ctk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (filechooser),
+		ctk_file_chooser_set_current_folder (CTK_FILE_CHOOSER (filechooser),
 						     path);
 		g_free (path);
 	}
 
-	ctk_window_set_destroy_with_parent (GTK_WINDOW (filechooser), TRUE);
+	ctk_window_set_destroy_with_parent (CTK_WINDOW (filechooser), TRUE);
 
 	g_signal_connect (filechooser, "response",
 			  G_CALLBACK (_panel_icon_chooser_file_chooser_response),
@@ -460,7 +460,7 @@ _panel_icon_chooser_style_set (GtkWidget *widget,
 
 	chooser = PANEL_ICON_CHOOSER (widget);
 
-	GTK_WIDGET_CLASS (panel_icon_chooser_parent_class)->style_set (widget, prev_style);
+	CTK_WIDGET_CLASS (panel_icon_chooser_parent_class)->style_set (widget, prev_style);
 
 	_panel_icon_chooser_update (chooser);
 }
@@ -473,8 +473,8 @@ _panel_icon_chooser_screen_changed (GtkWidget *widget,
 
 	chooser = PANEL_ICON_CHOOSER (widget);
 
-	if (GTK_WIDGET_CLASS (panel_icon_chooser_parent_class)->screen_changed)
-		GTK_WIDGET_CLASS (panel_icon_chooser_parent_class)->screen_changed (widget, prev_screen);
+	if (CTK_WIDGET_CLASS (panel_icon_chooser_parent_class)->screen_changed)
+		CTK_WIDGET_CLASS (panel_icon_chooser_parent_class)->screen_changed (widget, prev_screen);
 
 	_panel_icon_chooser_update (chooser);
 }

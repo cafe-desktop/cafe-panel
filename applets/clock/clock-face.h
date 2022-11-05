@@ -1,7 +1,7 @@
 /**
  * clock.h
  *
- * A GTK+ widget that implements a clock face
+ * A CTK+ widget that implements a clock face
  *
  * (c) 2007, Peter Teichman
  * (c) 2005-2006, Davyd Madeley

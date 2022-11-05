@@ -45,14 +45,14 @@ extra_files =
 
 # CFLAGS and LDFLAGS for compiling scan program. Only needed if your app/lib
 # contains GtkObjects/GObjects and you want to document signals and properties.
-GTKDOC_CFLAGS =					\
+CTKDOC_CFLAGS =					\
 	$(CFLAGS)				\
 	$(CPPFLAGS)				\
 	$(PANEL_CFLAGS)				\
 	-I$(srcdir)/../../../libcafe-panel-applet    \
 	-I$(top_builddir)/libcafe-panel-applet
 
-GTKDOC_LIBS =						\
+CTKDOC_LIBS =						\
 	$(LDFLAGS)					\
 	$(PANEL_LIBS)					\
 	../../../libcafe-panel-applet/libcafe-panel-applet-4.la

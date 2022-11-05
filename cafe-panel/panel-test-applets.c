@@ -79,10 +79,10 @@ get_combo_value (GtkWidget *combo_box)
 	GtkTreeModel *model;
 	guint         value;
 
-	if (!ctk_combo_box_get_active_iter (GTK_COMBO_BOX (combo_box), &iter))
+	if (!ctk_combo_box_get_active_iter (CTK_COMBO_BOX (combo_box), &iter))
 		return 0;
 
-	model = ctk_combo_box_get_model (GTK_COMBO_BOX (combo_box));
+	model = ctk_combo_box_get_model (CTK_COMBO_BOX (combo_box));
 	ctk_tree_model_get (model, &iter, COLUMN_ITEM, &value, -1);
 
 	return value;
@@ -95,10 +95,10 @@ get_combo_applet_id (GtkWidget *combo_box)
 	GtkTreeModel *model;
 	char         *value;
 
-	if (!ctk_combo_box_get_active_iter (GTK_COMBO_BOX (combo_box), &iter))
+	if (!ctk_combo_box_get_active_iter (CTK_COMBO_BOX (combo_box), &iter))
 		return NULL;
 
-	model = ctk_combo_box_get_model (GTK_COMBO_BOX (combo_box));
+	model = ctk_combo_box_get_model (CTK_COMBO_BOX (combo_box));
 	ctk_tree_model_get (model, &iter, COLUMN_ITEM, &value, -1);
 
 	return value;
@@ -122,14 +122,14 @@ applet_activated_cb (GObject      *source_object,
 						res, &error)) {
 		GtkWidget *dialog;
 
-		dialog = ctk_message_dialog_new (GTK_WINDOW (applet_window),
-						 GTK_DIALOG_MODAL|
-						 GTK_DIALOG_DESTROY_WITH_PARENT,
-						 GTK_MESSAGE_ERROR,
-						 GTK_BUTTONS_CLOSE,
+		dialog = ctk_message_dialog_new (CTK_WINDOW (applet_window),
+						 CTK_DIALOG_MODAL|
+						 CTK_DIALOG_DESTROY_WITH_PARENT,
+						 CTK_MESSAGE_ERROR,
+						 CTK_BUTTONS_CLOSE,
 						 _("Failed to load applet %s"),
 						 error->message); // FIXME
-		ctk_dialog_run (GTK_DIALOG (dialog));
+		ctk_dialog_run (CTK_DIALOG (dialog));
 		ctk_widget_destroy (dialog);
 		return;
 	}
@@ -149,10 +149,10 @@ load_applet_into_window (const char *title,
 
 	container = cafe_panel_applet_container_new ();
 
-	applet_window = ctk_window_new (GTK_WINDOW_TOPLEVEL);
+	applet_window = ctk_window_new (CTK_WINDOW_TOPLEVEL);
 	//FIXME: we could set the window icon with the applet icon
-	ctk_window_set_title (GTK_WINDOW (applet_window), title);
-	ctk_container_add (GTK_CONTAINER (applet_window), container);
+	ctk_window_set_title (CTK_WINDOW (applet_window), title);
+	ctk_container_add (CTK_CONTAINER (applet_window), container);
 	ctk_widget_show (container);
 
 	g_signal_connect (container, "applet-broken",
@@ -216,7 +216,7 @@ on_execute_button_clicked (GtkButton *button,
 	title = get_combo_applet_id (applet_combo);
 
 	load_applet_into_window (title,
-				 ctk_entry_get_text (GTK_ENTRY (prefs_path_entry)),
+				 ctk_entry_get_text (CTK_ENTRY (prefs_path_entry)),
 				 get_combo_value (size_combo),
 				 get_combo_value (orient_combo));
 	g_free (title);
@@ -237,8 +237,8 @@ setup_combo (GtkWidget  *combo_box,
 				    G_TYPE_STRING,
 				    G_TYPE_INT);
 
-	ctk_combo_box_set_model (GTK_COMBO_BOX (combo_box),
-				 GTK_TREE_MODEL (model));
+	ctk_combo_box_set_model (CTK_COMBO_BOX (combo_box),
+				 CTK_TREE_MODEL (model));
 
 
 	for (i = 0; i < nb_items; i++) {
@@ -250,12 +250,12 @@ setup_combo (GtkWidget  *combo_box,
 	}
 
 	renderer = ctk_cell_renderer_text_new ();
-	ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (combo_box),
+	ctk_cell_layout_pack_start (CTK_CELL_LAYOUT (combo_box),
 				    renderer, TRUE);
-	ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combo_box),
+	ctk_cell_layout_set_attributes (CTK_CELL_LAYOUT (combo_box),
 					renderer, "text", COLUMN_TEXT, NULL);
 
-	ctk_combo_box_set_active (GTK_COMBO_BOX (combo_box), 0);
+	ctk_combo_box_set_active (CTK_COMBO_BOX (combo_box), 0);
 }
 
 static void
@@ -277,8 +277,8 @@ setup_options (void)
 				    G_TYPE_STRING,
 				    G_TYPE_STRING);
 
-	ctk_combo_box_set_model (GTK_COMBO_BOX (applet_combo),
-				 GTK_TREE_MODEL (model));
+	ctk_combo_box_set_model (CTK_COMBO_BOX (applet_combo),
+				 CTK_TREE_MODEL (model));
 
 	manager = g_object_new (PANEL_TYPE_APPLETS_MANAGER_DBUS, NULL);
 	applet_list = CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applets (manager);
@@ -295,12 +295,12 @@ setup_options (void)
 	g_object_unref (manager);
 
 	renderer = ctk_cell_renderer_text_new ();
-	ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (applet_combo),
+	ctk_cell_layout_pack_start (CTK_CELL_LAYOUT (applet_combo),
 				    renderer, TRUE);
-	ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (applet_combo),
+	ctk_cell_layout_set_attributes (CTK_CELL_LAYOUT (applet_combo),
 					renderer, "text", COLUMN_TEXT, NULL);
 
-	ctk_combo_box_set_active (GTK_COMBO_BOX (applet_combo), 0);
+	ctk_combo_box_set_active (CTK_COMBO_BOX (applet_combo), 0);
 
 	setup_combo (size_combo, size_items, "Size",
 		     G_N_ELEMENTS (size_items));
@@ -327,7 +327,7 @@ setup_options (void)
 	prefs_path = g_strdup_printf ("/tmp/%s/", unique_key);
 	if (unique_key)
 		g_free (unique_key);
-	ctk_entry_set_text (GTK_ENTRY (prefs_path_entry), prefs_path);
+	ctk_entry_set_text (CTK_ENTRY (prefs_path_entry), prefs_path);
 	g_free (prefs_path);
 }
 
@@ -350,7 +350,7 @@ main (int argc, char **argv)
 			g_printerr ("%s\n", error->message);
 			g_error_free (error);
 		} else
-			g_printerr ("Cannot initialize GTK+.\n");
+			g_printerr ("Cannot initialize CTK+.\n");
 
 		return 1;
 	}
@@ -377,15 +377,15 @@ main (int argc, char **argv)
 
 	ctk_builder_connect_signals (builder, NULL);
 
-	win             = GTK_WIDGET (ctk_builder_get_object (builder,
+	win             = CTK_WIDGET (ctk_builder_get_object (builder,
 							      "toplevel"));
-	applet_combo    = GTK_WIDGET (ctk_builder_get_object (builder,
+	applet_combo    = CTK_WIDGET (ctk_builder_get_object (builder,
 							      "applet-combo"));
-	prefs_path_entry = GTK_WIDGET (ctk_builder_get_object (builder,
+	prefs_path_entry = CTK_WIDGET (ctk_builder_get_object (builder,
 							      "prefs-path-entry"));
-	orient_combo    = GTK_WIDGET (ctk_builder_get_object (builder,
+	orient_combo    = CTK_WIDGET (ctk_builder_get_object (builder,
 							      "orient-combo"));
-	size_combo      = GTK_WIDGET (ctk_builder_get_object (builder,
+	size_combo      = CTK_WIDGET (ctk_builder_get_object (builder,
 							      "size-combo"));
 	g_object_unref (builder);
 

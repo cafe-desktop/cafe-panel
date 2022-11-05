@@ -245,7 +245,7 @@ enum {
 	PROP_ARROWS_ENABLED
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (PanelToplevel, panel_toplevel, GTK_TYPE_WINDOW)
+G_DEFINE_TYPE_WITH_PRIVATE (PanelToplevel, panel_toplevel, CTK_TYPE_WINDOW)
 
 static guint toplevel_signals[LAST_SIGNAL] = {0};
 static GSList* toplevel_list = NULL;
@@ -262,39 +262,39 @@ update_style_classes (PanelToplevel *toplevel)
 {
 	GtkStyleContext *context;
 
-	context = ctk_widget_get_style_context (GTK_WIDGET (toplevel));
+	context = ctk_widget_get_style_context (CTK_WIDGET (toplevel));
 
 	/*ensure the panel BG can always be themed*/
 	/*Without this ctk3.19/20 cannot set the BG color and resetting the bg to system is not immediately applied*/
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
 
-	ctk_style_context_remove_class (context, GTK_STYLE_CLASS_HORIZONTAL);
-	ctk_style_context_remove_class (context, GTK_STYLE_CLASS_VERTICAL);
-	ctk_style_context_remove_class (context, GTK_STYLE_CLASS_RIGHT);
-	ctk_style_context_remove_class (context, GTK_STYLE_CLASS_LEFT);
-	ctk_style_context_remove_class (context, GTK_STYLE_CLASS_TOP);
-	ctk_style_context_remove_class (context, GTK_STYLE_CLASS_BOTTOM);
+	ctk_style_context_remove_class (context, CTK_STYLE_CLASS_HORIZONTAL);
+	ctk_style_context_remove_class (context, CTK_STYLE_CLASS_VERTICAL);
+	ctk_style_context_remove_class (context, CTK_STYLE_CLASS_RIGHT);
+	ctk_style_context_remove_class (context, CTK_STYLE_CLASS_LEFT);
+	ctk_style_context_remove_class (context, CTK_STYLE_CLASS_TOP);
+	ctk_style_context_remove_class (context, CTK_STYLE_CLASS_BOTTOM);
 
 	switch (toplevel->priv->orientation) {
 	case PANEL_ORIENTATION_TOP:
-		ctk_style_context_add_class (context, GTK_STYLE_CLASS_HORIZONTAL);
-		ctk_style_context_add_class (context, GTK_STYLE_CLASS_TOP);
+		ctk_style_context_add_class (context, CTK_STYLE_CLASS_HORIZONTAL);
+		ctk_style_context_add_class (context, CTK_STYLE_CLASS_TOP);
 		break;
 
 	case PANEL_ORIENTATION_LEFT:
-		ctk_style_context_add_class (context, GTK_STYLE_CLASS_VERTICAL);
-		ctk_style_context_add_class (context, GTK_STYLE_CLASS_LEFT);
+		ctk_style_context_add_class (context, CTK_STYLE_CLASS_VERTICAL);
+		ctk_style_context_add_class (context, CTK_STYLE_CLASS_LEFT);
 		break;
 
 	case PANEL_ORIENTATION_BOTTOM:
-		ctk_style_context_add_class (context, GTK_STYLE_CLASS_HORIZONTAL);
-		ctk_style_context_add_class (context, GTK_STYLE_CLASS_BOTTOM);
+		ctk_style_context_add_class (context, CTK_STYLE_CLASS_HORIZONTAL);
+		ctk_style_context_add_class (context, CTK_STYLE_CLASS_BOTTOM);
 		break;
 
 	case PANEL_ORIENTATION_RIGHT:
-		ctk_style_context_add_class (context, GTK_STYLE_CLASS_VERTICAL);
-		ctk_style_context_add_class (context, GTK_STYLE_CLASS_RIGHT);
+		ctk_style_context_add_class (context, CTK_STYLE_CLASS_VERTICAL);
+		ctk_style_context_add_class (context, CTK_STYLE_CLASS_RIGHT);
 		break;
 
 	default:
@@ -377,7 +377,7 @@ static GdkCursorType panel_toplevel_grab_op_cursor(PanelToplevel* toplevel, Pane
 #ifdef HAVE_X11
 static void panel_toplevel_init_resize_drag_offsets(PanelToplevel* toplevel, PanelGrabOpType grab_op)
 {
-	g_assert (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel))));
+	g_assert (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))));
 
 	toplevel->priv->drag_offset_x = 0;
 	toplevel->priv->drag_offset_y = 0;
@@ -409,7 +409,7 @@ static void panel_toplevel_warp_pointer(PanelToplevel* toplevel)
 	GdkRectangle  geometry;
 	int           x, y;
 
-	widget = GTK_WIDGET (toplevel);
+	widget = CTK_WIDGET (toplevel);
 	g_return_if_fail (GDK_IS_X11_DISPLAY (ctk_widget_get_display (widget)));
 
 	geometry = toplevel->priv->geometry;
@@ -501,7 +501,7 @@ static void panel_toplevel_begin_grab_op(PanelToplevel* toplevel, PanelGrabOpTyp
 		return;
 	}
 
-	widget = GTK_WIDGET (toplevel);
+	widget = CTK_WIDGET (toplevel);
 	window = ctk_widget_get_window (widget);
 
 	toplevel->priv->grab_op          = op_type;
@@ -552,7 +552,7 @@ static void panel_toplevel_end_grab_op (PanelToplevel* toplevel, guint32 time_)
 
 	g_return_if_fail (toplevel->priv->grab_op != PANEL_GRAB_OP_NONE);
 
-	widget = GTK_WIDGET (toplevel);
+	widget = CTK_WIDGET (toplevel);
 
 	toplevel->priv->grab_op          = PANEL_GRAB_OP_NONE;
 	toplevel->priv->grab_is_keyboard = FALSE;
@@ -859,11 +859,11 @@ static gboolean panel_toplevel_warp_pointer_increment(PanelToplevel* toplevel, i
 	GdkDevice      *device;
 	int        new_x, new_y;
 
-	screen = ctk_window_get_screen (GTK_WINDOW (toplevel));
+	screen = ctk_window_get_screen (CTK_WINDOW (toplevel));
 	g_return_val_if_fail (GDK_IS_X11_SCREEN (screen), FALSE);
 	root_window = gdk_screen_get_root_window (screen);
-	device = gdk_seat_get_pointer (gdk_display_get_default_seat (ctk_widget_get_display (GTK_WIDGET(root_window))));
-	gdk_window_get_device_position (ctk_widget_get_window (GTK_WIDGET (root_window)), device, &new_x, &new_y, NULL);
+	device = gdk_seat_get_pointer (gdk_display_get_default_seat (ctk_widget_get_display (CTK_WIDGET(root_window))));
+	gdk_window_get_device_position (ctk_widget_get_window (CTK_WIDGET (root_window)), device, &new_x, &new_y, NULL);
 
 	switch (keyval) {
 	case GDK_KEY_Up:
@@ -1002,7 +1002,7 @@ static gboolean panel_toplevel_handle_grab_op_key_event(PanelToplevel* toplevel,
 									toplevel, event);
 			}
 #ifdef HAVE_X11
-			else if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel)))) {
+			else if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 				retval = panel_toplevel_move_keyboard_floating (
 									toplevel, event);
 			}
@@ -1016,7 +1016,7 @@ static gboolean panel_toplevel_handle_grab_op_key_event(PanelToplevel* toplevel,
 		case PANEL_GRAB_OP_RESIZE_LEFT:
 		case PANEL_GRAB_OP_RESIZE_RIGHT:
 #ifdef HAVE_X11
-			if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel))))
+			if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))))
 				retval = panel_toplevel_warp_pointer_increment (toplevel, event->keyval, 1);
 #endif // HAVE_X11
 			break;
@@ -1130,7 +1130,7 @@ static gboolean panel_toplevel_hide_button_event(PanelToplevel* toplevel, GdkEve
 	if (event->button == 1)
 		return FALSE;
 
-	return ctk_widget_event (GTK_WIDGET (toplevel), (GdkEvent *) event);
+	return ctk_widget_event (CTK_WIDGET (toplevel), (GdkEvent *) event);
 }
 
 static void panel_toplevel_hide_button_clicked(PanelToplevel* toplevel, GtkButton* button)
@@ -1142,24 +1142,24 @@ static void panel_toplevel_hide_button_clicked(PanelToplevel* toplevel, GtkButto
 	    toplevel->priv->state == PANEL_STATE_AUTO_HIDDEN)
 		return;
 
-	ltr = ctk_widget_get_direction (GTK_WIDGET (toplevel)) == GTK_TEXT_DIR_LTR;
+	ltr = ctk_widget_get_direction (CTK_WIDGET (toplevel)) == CTK_TEXT_DIR_LTR;
 	arrow_type = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (button), "arrow-type"));
 
 	if (toplevel->priv->state == PANEL_STATE_NORMAL) {
 		GtkDirectionType direction = -1;
 
 		switch (arrow_type) {
-		case GTK_ARROW_UP:
-			direction = GTK_DIR_UP;
+		case CTK_ARROW_UP:
+			direction = CTK_DIR_UP;
 			break;
-		case GTK_ARROW_DOWN:
-			direction = GTK_DIR_DOWN;
+		case CTK_ARROW_DOWN:
+			direction = CTK_DIR_DOWN;
 			break;
-		case GTK_ARROW_LEFT:
-			direction = ltr ? GTK_DIR_LEFT : GTK_DIR_RIGHT;
+		case CTK_ARROW_LEFT:
+			direction = ltr ? CTK_DIR_LEFT : CTK_DIR_RIGHT;
 			break;
-		case GTK_ARROW_RIGHT:
-			direction = ltr ? GTK_DIR_RIGHT : GTK_DIR_LEFT;
+		case CTK_ARROW_RIGHT:
+			direction = ltr ? CTK_DIR_RIGHT : CTK_DIR_LEFT;
 			break;
 		default:
 			g_assert_not_reached ();
@@ -1177,18 +1177,18 @@ set_arrow_type (GtkImage     *image,
 {
   switch (arrow_type)
     {
-    case GTK_ARROW_NONE:
-    case GTK_ARROW_DOWN:
-      ctk_image_set_from_icon_name (image, "pan-down-symbolic", GTK_ICON_SIZE_BUTTON);
+    case CTK_ARROW_NONE:
+    case CTK_ARROW_DOWN:
+      ctk_image_set_from_icon_name (image, "pan-down-symbolic", CTK_ICON_SIZE_BUTTON);
       break;
-    case GTK_ARROW_UP:
-      ctk_image_set_from_icon_name (image, "pan-up-symbolic", GTK_ICON_SIZE_BUTTON);
+    case CTK_ARROW_UP:
+      ctk_image_set_from_icon_name (image, "pan-up-symbolic", CTK_ICON_SIZE_BUTTON);
       break;
-    case GTK_ARROW_LEFT:
-      ctk_image_set_from_icon_name (image, "pan-start-symbolic", GTK_ICON_SIZE_BUTTON);
+    case CTK_ARROW_LEFT:
+      ctk_image_set_from_icon_name (image, "pan-start-symbolic", CTK_ICON_SIZE_BUTTON);
       break;
-    case GTK_ARROW_RIGHT:
-      ctk_image_set_from_icon_name (image, "pan-end-symbolic", GTK_ICON_SIZE_BUTTON);
+    case CTK_ARROW_RIGHT:
+      ctk_image_set_from_icon_name (image, "pan-end-symbolic", CTK_ICON_SIZE_BUTTON);
       break;
     }
 }
@@ -1210,8 +1210,8 @@ panel_toplevel_add_hide_button (PanelToplevel *toplevel,
 	ctk_widget_set_can_default (button, FALSE);
 
 	arrow = ctk_image_new ();
-	set_arrow_type (GTK_IMAGE (arrow), arrow_type);
-	ctk_container_add (GTK_CONTAINER (button), arrow);
+	set_arrow_type (CTK_IMAGE (arrow), arrow_type);
+	ctk_container_add (CTK_CONTAINER (button), arrow);
 	ctk_widget_show (arrow);
 
 	g_object_set_data (G_OBJECT (button),
@@ -1225,7 +1225,7 @@ panel_toplevel_add_hide_button (PanelToplevel *toplevel,
 	g_signal_connect_swapped (button, "button_release_event",
 				  G_CALLBACK (panel_toplevel_hide_button_event), toplevel);
 
-	ctk_grid_attach (GTK_GRID (toplevel->priv->grid), button, left, top, 1, 1);
+	ctk_grid_attach (CTK_GRID (toplevel->priv->grid), button, left, top, 1, 1);
 
 	return button;
 }
@@ -1299,20 +1299,20 @@ static void panel_toplevel_update_hide_buttons_size (GtkWidget *button, int pane
 		ctk_css_provider_load_from_data (css_provider, ".panel-button {min-height: 13px; min-width: 13px; padding: 0px;}", -1, NULL);
 	}
 
-	ctk_style_context_add_provider (context, GTK_STYLE_PROVIDER (css_provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+	ctk_style_context_add_provider (context, CTK_STYLE_PROVIDER (css_provider), CTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
 	/* get arrow image */
-	arrow = ctk_bin_get_child (GTK_BIN (button));
+	arrow = ctk_bin_get_child (CTK_BIN (button));
 
 	/* set image size */
 	if (panel_size < 20) {
-		ctk_image_set_pixel_size (GTK_IMAGE (arrow), 12);
+		ctk_image_set_pixel_size (CTK_IMAGE (arrow), 12);
 	} else if (panel_size < 40) {
-		ctk_image_set_pixel_size (GTK_IMAGE (arrow), 16);
+		ctk_image_set_pixel_size (CTK_IMAGE (arrow), 16);
 	} else if (panel_size < 60) {
-		ctk_image_set_pixel_size (GTK_IMAGE (arrow), 22);
+		ctk_image_set_pixel_size (CTK_IMAGE (arrow), 22);
 	} else {
-		ctk_image_set_pixel_size (GTK_IMAGE (arrow), 24);
+		ctk_image_set_pixel_size (CTK_IMAGE (arrow), 24);
 	}
 }
 
@@ -1351,17 +1351,17 @@ static void panel_toplevel_update_hide_buttons(PanelToplevel* toplevel)
 
 	if (toplevel->priv->arrows_enabled) {
 
-		ctk_widget_show (ctk_bin_get_child (GTK_BIN (toplevel->priv->hide_button_top)));
-		ctk_widget_show (ctk_bin_get_child (GTK_BIN (toplevel->priv->hide_button_bottom)));
-		ctk_widget_show (ctk_bin_get_child (GTK_BIN (toplevel->priv->hide_button_left)));
-		ctk_widget_show (ctk_bin_get_child (GTK_BIN (toplevel->priv->hide_button_right)));
+		ctk_widget_show (ctk_bin_get_child (CTK_BIN (toplevel->priv->hide_button_top)));
+		ctk_widget_show (ctk_bin_get_child (CTK_BIN (toplevel->priv->hide_button_bottom)));
+		ctk_widget_show (ctk_bin_get_child (CTK_BIN (toplevel->priv->hide_button_left)));
+		ctk_widget_show (ctk_bin_get_child (CTK_BIN (toplevel->priv->hide_button_right)));
 
 	} else {
 
-		ctk_widget_hide (ctk_bin_get_child (GTK_BIN (toplevel->priv->hide_button_top)));
-		ctk_widget_hide (ctk_bin_get_child (GTK_BIN (toplevel->priv->hide_button_bottom)));
-		ctk_widget_hide (ctk_bin_get_child (GTK_BIN (toplevel->priv->hide_button_left)));
-		ctk_widget_hide (ctk_bin_get_child (GTK_BIN (toplevel->priv->hide_button_right)));
+		ctk_widget_hide (ctk_bin_get_child (CTK_BIN (toplevel->priv->hide_button_top)));
+		ctk_widget_hide (ctk_bin_get_child (CTK_BIN (toplevel->priv->hide_button_bottom)));
+		ctk_widget_hide (ctk_bin_get_child (CTK_BIN (toplevel->priv->hide_button_left)));
+		ctk_widget_hide (ctk_bin_get_child (CTK_BIN (toplevel->priv->hide_button_right)));
 	}
 
 	/* set size after setting the arrow */
@@ -1391,7 +1391,7 @@ static gboolean panel_toplevel_contains_pointer(PanelToplevel* toplevel)
 	display = gdk_display_get_default ();
 	seat = gdk_display_get_default_seat (display);
 	pointer = gdk_seat_get_pointer (seat);
-	widget  = GTK_WIDGET (toplevel);
+	widget  = CTK_WIDGET (toplevel);
 
 	if (!ctk_widget_get_realized (widget))
 		return FALSE;
@@ -1400,7 +1400,7 @@ static gboolean panel_toplevel_contains_pointer(PanelToplevel* toplevel)
 	x = y = -1;
 	gdk_device_get_position (pointer, &screen, &x, &y);
 
-	if (screen != ctk_window_get_screen (GTK_WINDOW (toplevel)))
+	if (screen != ctk_window_get_screen (CTK_WINDOW (toplevel)))
 		return FALSE;
 
 	if (x == -1 || y == -1)
@@ -1440,7 +1440,7 @@ static gboolean panel_toplevel_update_struts(PanelToplevel* toplevel, gboolean e
 		return FALSE;
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel))) && toplevel->priv->attached) {
+	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))) && toplevel->priv->attached) {
 		panel_struts_unregister_strut (toplevel);
 		panel_struts_set_window_hint (toplevel);
 		return FALSE;
@@ -1528,10 +1528,10 @@ static gboolean panel_toplevel_update_struts(PanelToplevel* toplevel, gboolean e
 		strut = panel_toplevel_get_effective_auto_hide_size (toplevel);
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel)))) {
+	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 		if (strut > 0) {
 			GdkScreen *screen;
-			screen = ctk_widget_get_screen (GTK_WIDGET (toplevel));
+			screen = ctk_widget_get_screen (CTK_WIDGET (toplevel));
 			geometry_changed = panel_struts_register_strut (toplevel,
 									screen,
 									toplevel->priv->monitor,
@@ -1555,7 +1555,7 @@ static gboolean panel_toplevel_update_struts(PanelToplevel* toplevel, gboolean e
 #endif // HAVE_X11
 
 #ifdef HAVE_WAYLAND
-	if (GDK_IS_WAYLAND_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel)))) {
+	if (GDK_IS_WAYLAND_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 		wayland_panel_toplevel_update_placement (toplevel);
 	}
 #endif // HAVE_WAYLAND
@@ -1572,7 +1572,7 @@ void panel_toplevel_update_edges(PanelToplevel* toplevel)
 	int              width, height;
 	gboolean         inner_frame = FALSE;
 
-	widget = GTK_WIDGET (toplevel);
+	widget = CTK_WIDGET (toplevel);
 
 	panel_toplevel_get_monitor_geometry (toplevel, &monitor_geom);
 
@@ -1674,11 +1674,11 @@ static void panel_toplevel_update_description(PanelToplevel* toplevel)
 	toplevel->priv->description = g_strdup (description);
 
 	if (!toplevel->priv->name)
-		ctk_window_set_title (GTK_WINDOW (toplevel),
+		ctk_window_set_title (CTK_WINDOW (toplevel),
 				      toplevel->priv->description);
 
 	panel_a11y_set_atk_name_desc (
-		GTK_WIDGET (toplevel),
+		CTK_WIDGET (toplevel),
 		toplevel->priv->name ? toplevel->priv->name :
 				       toplevel->priv->description,
 		toplevel->priv->description);
@@ -1694,18 +1694,18 @@ static void panel_toplevel_update_attached_position(PanelToplevel* toplevel, gbo
 	int               x_origin = 0, y_origin = 0;
 	GdkRectangle      monitor_geom;
 
-	if (!ctk_widget_get_realized (GTK_WIDGET (toplevel->priv->attach_toplevel)) ||
+	if (!ctk_widget_get_realized (CTK_WIDGET (toplevel->priv->attach_toplevel)) ||
 	    !ctk_widget_get_realized (toplevel->priv->attach_widget))
 		return;
 
-	ctk_widget_get_allocation (GTK_WIDGET (toplevel->priv->attach_widget), &attach_allocation);
+	ctk_widget_get_allocation (CTK_WIDGET (toplevel->priv->attach_widget), &attach_allocation);
 
 	toplevel_box = toplevel->priv->geometry;
 	parent_box   = toplevel->priv->attach_toplevel->priv->geometry;
 	attach_box   = attach_allocation;
 
 	if (attach_box.x != -1) {
-		gdk_window_get_origin (ctk_widget_get_window (GTK_WIDGET (toplevel->priv->attach_widget)),
+		gdk_window_get_origin (ctk_widget_get_window (CTK_WIDGET (toplevel->priv->attach_widget)),
 				       &x_origin, &y_origin);
 
 		attach_box.x += x_origin;
@@ -2048,9 +2048,9 @@ panel_toplevel_update_animating_position (PanelToplevel *toplevel)
 		toplevel->priv->initial_animation_done = TRUE;
 
 		if (toplevel->priv->attached && panel_toplevel_get_is_hidden (toplevel))
-			ctk_widget_unmap (GTK_WIDGET (toplevel));
+			ctk_widget_unmap (CTK_WIDGET (toplevel));
 		else
-			ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+			ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 
 		if (toplevel->priv->state == PANEL_STATE_NORMAL)
 			g_signal_emit (toplevel, toplevel_signals [UNHIDE_SIGNAL], 0);
@@ -2240,8 +2240,8 @@ panel_toplevel_update_position (PanelToplevel *toplevel)
 		GtkBorder        padding;
 		int              max_size;
 
-		state = ctk_widget_get_state_flags (GTK_WIDGET (toplevel->priv->inner_frame));
-		context = ctk_widget_get_style_context (GTK_WIDGET (toplevel->priv->inner_frame));
+		state = ctk_widget_get_state_flags (CTK_WIDGET (toplevel->priv->inner_frame));
+		context = ctk_widget_get_style_context (CTK_WIDGET (toplevel->priv->inner_frame));
 		ctk_style_context_get_padding (context, state, &padding);
 		geometry = &toplevel->priv->geometry;
 
@@ -2287,7 +2287,7 @@ calculate_minimum_height (GtkWidget        *widget,
 
 	state = ctk_widget_get_state_flags (widget);
 	style_context = ctk_widget_get_style_context (widget);
-	ctk_style_context_get(style_context, state, GTK_STYLE_PROPERTY_FONT, &font_desc, NULL);
+	ctk_style_context_get(style_context, state, CTK_STYLE_PROPERTY_FONT, &font_desc, NULL);
 
 	pango_context = ctk_widget_get_pango_context (widget);
 	metrics = pango_context_get_metrics (pango_context,
@@ -2412,7 +2412,7 @@ panel_toplevel_update_size (PanelToplevel  *toplevel,
 	if (toplevel->priv->animating)
 		return;
 
-	widget = GTK_WIDGET (toplevel);
+	widget = CTK_WIDGET (toplevel);
 	context = ctk_widget_get_style_context (widget);
 	state = ctk_widget_get_state_flags (widget);
 	ctk_style_context_get_padding (context, state, &padding);
@@ -2428,7 +2428,7 @@ panel_toplevel_update_size (PanelToplevel  *toplevel,
 	else
 		non_panel_widget_size = 0;
 
-	minimum_height = calculate_minimum_height (GTK_WIDGET (toplevel),
+	minimum_height = calculate_minimum_height (CTK_WIDGET (toplevel),
 						   toplevel->priv->orientation);
 
 	if (toplevel->priv->orientation & PANEL_HORIZONTAL_MASK) {
@@ -2518,7 +2518,7 @@ panel_toplevel_update_geometry (PanelToplevel  *toplevel,
 	panel_toplevel_update_struts (toplevel, FALSE);
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel)))) {
+	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 		if (toplevel->priv->state == PANEL_STATE_NORMAL ||
 		toplevel->priv->state == PANEL_STATE_AUTO_HIDDEN) {
 			panel_struts_update_toplevel_geometry (toplevel,
@@ -2548,7 +2548,7 @@ panel_toplevel_attach_widget_destroyed (PanelToplevel *toplevel)
 static gboolean
 panel_toplevel_attach_widget_configure (PanelToplevel *toplevel)
 {
-	ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+	ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 
 	return FALSE;
 }
@@ -2592,7 +2592,7 @@ panel_toplevel_attach_widget_parent_set (PanelToplevel *toplevel,
 {
 	GtkWidget *panel_widget;
 
-	panel_widget = ctk_widget_get_parent (GTK_WIDGET (attach_widget));
+	panel_widget = ctk_widget_get_parent (CTK_WIDGET (attach_widget));
 	if (!panel_widget)
 		return;
 
@@ -2600,7 +2600,7 @@ panel_toplevel_attach_widget_parent_set (PanelToplevel *toplevel,
 
 	toplevel->priv->attach_toplevel = PANEL_WIDGET (panel_widget)->toplevel;
 	panel_toplevel_update_attach_orientation (toplevel);
-	ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+	ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 }
 
 static void
@@ -2633,17 +2633,17 @@ panel_toplevel_reverse_arrow (PanelToplevel *toplevel,
 	arrow_type = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (button), "arrow-type"));
 
 	switch (arrow_type) {
-	case GTK_ARROW_UP:
-		arrow_type = GTK_ARROW_DOWN;
+	case CTK_ARROW_UP:
+		arrow_type = CTK_ARROW_DOWN;
 		break;
-	case GTK_ARROW_DOWN:
-		arrow_type = GTK_ARROW_UP;
+	case CTK_ARROW_DOWN:
+		arrow_type = CTK_ARROW_UP;
 		break;
-	case GTK_ARROW_LEFT:
-		arrow_type = GTK_ARROW_RIGHT;
+	case CTK_ARROW_LEFT:
+		arrow_type = CTK_ARROW_RIGHT;
 		break;
-	case GTK_ARROW_RIGHT:
-		arrow_type = GTK_ARROW_LEFT;
+	case CTK_ARROW_RIGHT:
+		arrow_type = CTK_ARROW_LEFT;
 		break;
 	default:
 		g_assert_not_reached ();
@@ -2652,7 +2652,7 @@ panel_toplevel_reverse_arrow (PanelToplevel *toplevel,
 
 	g_object_set_data (G_OBJECT (button), "arrow-type", GINT_TO_POINTER (arrow_type));
 
-	set_arrow_type (GTK_IMAGE (ctk_bin_get_child (GTK_BIN (button))), arrow_type);
+	set_arrow_type (CTK_IMAGE (ctk_bin_get_child (CTK_BIN (button))), arrow_type);
 }
 
 static void
@@ -2745,7 +2745,7 @@ panel_toplevel_attach_to_widget (PanelToplevel *toplevel,
 {
 	g_return_if_fail (PANEL_IS_TOPLEVEL (toplevel));
 	g_return_if_fail (PANEL_IS_TOPLEVEL (attach_toplevel));
-	g_return_if_fail (GTK_IS_WIDGET (attach_widget));
+	g_return_if_fail (CTK_IS_WIDGET (attach_widget));
 
 	if (toplevel->priv->attached)
 		panel_toplevel_disconnect_attached (toplevel);
@@ -2768,14 +2768,14 @@ panel_toplevel_attach_to_widget (PanelToplevel *toplevel,
 	panel_toplevel_update_attach_orientation (toplevel);
 	panel_toplevel_update_hide_buttons (toplevel);
 
-	ctk_window_set_screen (GTK_WINDOW (toplevel),
-			       ctk_widget_get_screen (GTK_WIDGET (attach_toplevel)));
+	ctk_window_set_screen (CTK_WINDOW (toplevel),
+			       ctk_widget_get_screen (CTK_WIDGET (attach_toplevel)));
 	panel_toplevel_set_monitor (toplevel,
 			            panel_toplevel_get_monitor (attach_toplevel));
 	if (toplevel->priv->state == PANEL_STATE_NORMAL)
 		panel_toplevel_push_autohide_disabler (toplevel->priv->attach_toplevel);
 
-	ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+	ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 }
 
 void
@@ -2798,7 +2798,7 @@ panel_toplevel_detach (PanelToplevel *toplevel)
 	toplevel->priv->attach_toplevel = NULL;
 	toplevel->priv->attach_widget   = NULL;
 
-	ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+	ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 }
 
 gboolean
@@ -2906,7 +2906,7 @@ panel_toplevel_move_resize_window (PanelToplevel *toplevel,
 	int position;
 	gboolean stick;
 
-	widget = GTK_WIDGET (toplevel);
+	widget = CTK_WIDGET (toplevel);
 
 	g_assert (ctk_widget_get_realized (widget));
 
@@ -2960,7 +2960,7 @@ panel_toplevel_initially_hide (PanelToplevel *toplevel)
 		 * loaded, and then finally slide it down when it's ready to be
 		 * used */
 		toplevel->priv->state = PANEL_STATE_AUTO_HIDDEN;
-		ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+		ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 	} else
 		toplevel->priv->initial_animation_done = TRUE;
 }
@@ -3014,12 +3014,12 @@ panel_toplevel_realize (GtkWidget *widget)
 		visual = gdk_screen_get_system_visual (screen);
 
 	ctk_widget_set_visual (widget, visual);
- 	ctk_window_stick (GTK_WINDOW (widget));
-	ctk_window_set_decorated (GTK_WINDOW (widget), FALSE);
-	ctk_window_stick (GTK_WINDOW (widget));
-	ctk_window_set_type_hint (GTK_WINDOW (widget), GDK_WINDOW_TYPE_HINT_DOCK);
+ 	ctk_window_stick (CTK_WINDOW (widget));
+	ctk_window_set_decorated (CTK_WINDOW (widget), FALSE);
+	ctk_window_stick (CTK_WINDOW (widget));
+	ctk_window_set_type_hint (CTK_WINDOW (widget), GDK_WINDOW_TYPE_HINT_DOCK);
 
-	GTK_WIDGET_CLASS (panel_toplevel_parent_class)->realize (widget);
+	CTK_WIDGET_CLASS (panel_toplevel_parent_class)->realize (widget);
 
 	window = ctk_widget_get_window (widget);
 	set_background_default_style (widget);
@@ -3061,7 +3061,7 @@ panel_toplevel_unrealize (GtkWidget *widget)
 	toplevel = PANEL_TOPLEVEL (widget);
 	panel_toplevel_disconnect_timeouts (toplevel);
 	panel_background_unrealized (&toplevel->background);
-	GTK_WIDGET_CLASS (panel_toplevel_parent_class)->unrealize (widget);
+	CTK_WIDGET_CLASS (panel_toplevel_parent_class)->unrealize (widget);
 }
 
 static void
@@ -3130,7 +3130,7 @@ panel_toplevel_check_resize (GtkContainer *container)
 	GtkRequisition  requisition;
 	GtkWidget      *widget;
 
-	widget = GTK_WIDGET (container);
+	widget = CTK_WIDGET (container);
 
 	if (!ctk_widget_get_visible (widget))
 		return;
@@ -3159,7 +3159,7 @@ panel_toplevel_size_request (GtkWidget      *widget,
 	int            size_changed = FALSE;
 
 	toplevel = PANEL_TOPLEVEL (widget);
-	bin = GTK_BIN (widget);
+	bin = CTK_BIN (widget);
 
 	/* we get a size request when there are new monitors, so first try to
 	 * see if we need to move to a new monitor */
@@ -3220,7 +3220,7 @@ set_background_region (PanelToplevel *toplevel)
 	GtkAllocation allocation;
 	GtkOrientation orientation;
 
-	widget = GTK_WIDGET (toplevel);
+	widget = CTK_WIDGET (toplevel);
 
 	if (!ctk_widget_get_realized (widget))
 		return;
@@ -3232,9 +3232,9 @@ set_background_region (PanelToplevel *toplevel)
 	gdk_window_get_origin (window, &origin_x, &origin_y);
 	ctk_widget_get_allocation (widget, &allocation);
 
-	orientation = GTK_ORIENTATION_HORIZONTAL;
+	orientation = CTK_ORIENTATION_HORIZONTAL;
 	if (toplevel->priv->orientation & PANEL_VERTICAL_MASK)
-		orientation = GTK_ORIENTATION_VERTICAL;
+		orientation = CTK_ORIENTATION_VERTICAL;
 
 	panel_background_change_region (&toplevel->background, orientation,
 	                                origin_x, origin_y,
@@ -3331,8 +3331,8 @@ static gboolean panel_toplevel_draw(GtkWidget* widget, cairo_t* cr)
 	if (!ctk_widget_is_drawable (widget))
 		return retval;
 
-	if (GTK_WIDGET_CLASS (panel_toplevel_parent_class)->draw)
-		retval = GTK_WIDGET_CLASS (panel_toplevel_parent_class)->draw (widget, cr);
+	if (CTK_WIDGET_CLASS (panel_toplevel_parent_class)->draw)
+		retval = CTK_WIDGET_CLASS (panel_toplevel_parent_class)->draw (widget, cr);
 
 	edges = toplevel->priv->edges;
 	panel_frame_draw (widget, cr, edges);
@@ -3440,7 +3440,7 @@ panel_toplevel_button_press_event (GtkWidget      *widget,
 		return FALSE;
 
 	gdk_window_get_user_data (event->window, (gpointer)&event_widget);
-	g_assert (GTK_IS_WIDGET (event_widget));
+	g_assert (CTK_IS_WIDGET (event_widget));
 	ctk_widget_translate_coordinates (event_widget,
 					  widget,
 					  event->x,
@@ -3498,8 +3498,8 @@ panel_toplevel_key_press_event (GtkWidget   *widget,
 	    panel_toplevel_handle_grab_op_key_event (toplevel, event))
 		return TRUE;
 
-	if (GTK_WIDGET_CLASS (panel_toplevel_parent_class)->key_press_event)
-		return GTK_WIDGET_CLASS (panel_toplevel_parent_class)->key_press_event (widget, event);
+	if (CTK_WIDGET_CLASS (panel_toplevel_parent_class)->key_press_event)
+		return CTK_WIDGET_CLASS (panel_toplevel_parent_class)->key_press_event (widget, event);
 
 	return FALSE;
 }
@@ -3508,7 +3508,7 @@ static void
 panel_toplevel_state_flags_changed (GtkWidget     *widget,
                                     GtkStateFlags  previous_state)
 {
-	GTK_WIDGET_CLASS (panel_toplevel_parent_class)->state_flags_changed (widget,
+	CTK_WIDGET_CLASS (panel_toplevel_parent_class)->state_flags_changed (widget,
 	                                                                     previous_state);
 
 	set_background_default_style (widget);
@@ -3519,7 +3519,7 @@ panel_toplevel_motion_notify_event (GtkWidget      *widget,
 				    GdkEventMotion *event)
 {
 	if (gdk_event_get_screen ((GdkEvent *)event) ==
-	    ctk_window_get_screen (GTK_WINDOW (widget)))
+	    ctk_window_get_screen (CTK_WINDOW (widget)))
 		return panel_toplevel_handle_grab_op_motion_event (
 				PANEL_TOPLEVEL (widget), event);
 	else
@@ -3529,7 +3529,7 @@ panel_toplevel_motion_notify_event (GtkWidget      *widget,
 static gboolean
 panel_toplevel_animation_timeout (PanelToplevel *toplevel)
 {
-	ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+	ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 
 	if (!toplevel->priv->animating) {
 		toplevel->priv->animation_end_x              = 0xdead;
@@ -3642,7 +3642,7 @@ panel_toplevel_start_animation (PanelToplevel *toplevel)
 
 	panel_toplevel_update_struts (toplevel, TRUE);
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel)))) {
+	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 		panel_struts_update_toplevel_geometry (toplevel,
 						       &toplevel->priv->animation_end_x,
 						       &toplevel->priv->animation_end_y,
@@ -3652,7 +3652,7 @@ panel_toplevel_start_animation (PanelToplevel *toplevel)
 #endif // HAVE_X11
 	panel_toplevel_update_struts (toplevel, FALSE);
 
-	gdk_window_get_origin (ctk_widget_get_window (GTK_WIDGET (toplevel)), &cur_x, &cur_y);
+	gdk_window_get_origin (ctk_widget_get_window (CTK_WIDGET (toplevel)), &cur_x, &cur_y);
 
 	cur_x -= panel_multimonitor_x (toplevel->priv->monitor);
 	cur_y -= panel_multimonitor_y (toplevel->priv->monitor);
@@ -3660,7 +3660,7 @@ panel_toplevel_start_animation (PanelToplevel *toplevel)
 	deltax = toplevel->priv->animation_end_x - cur_x;
 	deltay = toplevel->priv->animation_end_y - cur_y;
 
-	ctk_widget_get_preferred_size (GTK_WIDGET (toplevel), &requisition, NULL);
+	ctk_widget_get_preferred_size (CTK_WIDGET (toplevel), &requisition, NULL);
 
 	if (toplevel->priv->animation_end_width != -1)
 		deltaw = toplevel->priv->animation_end_width - requisition.width;
@@ -3679,13 +3679,13 @@ panel_toplevel_start_animation (PanelToplevel *toplevel)
 
 	if (toplevel->priv->attached) {
 		/* Re-map unmapped attached toplevels */
-		if (!ctk_widget_get_visible (GTK_WIDGET (toplevel)))
-			ctk_widget_set_visible (GTK_WIDGET (toplevel), TRUE);
+		if (!ctk_widget_get_visible (CTK_WIDGET (toplevel)))
+			ctk_widget_set_visible (CTK_WIDGET (toplevel), TRUE);
 
-		if (!ctk_widget_get_mapped (GTK_WIDGET (toplevel)))
-			ctk_widget_map (GTK_WIDGET (toplevel));
+		if (!ctk_widget_get_mapped (CTK_WIDGET (toplevel)))
+			ctk_widget_map (CTK_WIDGET (toplevel));
 
-		ctk_window_present (GTK_WINDOW (toplevel->priv->attach_toplevel));
+		ctk_window_present (CTK_WINDOW (toplevel->priv->attach_toplevel));
 	}
 
 	g_get_current_time (&toplevel->priv->animation_start_time);
@@ -3719,25 +3719,25 @@ panel_toplevel_hide (PanelToplevel    *toplevel,
 	else {
 		if (direction == -1) {
 			if (toplevel->priv->orientation & PANEL_VERTICAL_MASK)
-				direction = GTK_DIR_UP;
+				direction = CTK_DIR_UP;
 			else
-				direction = GTK_DIR_LEFT;
+				direction = CTK_DIR_LEFT;
 		}
 
 		switch (direction) {
-		case GTK_DIR_UP:
+		case CTK_DIR_UP:
 			g_return_if_fail (toplevel->priv->orientation & PANEL_VERTICAL_MASK);
 			toplevel->priv->state = PANEL_STATE_HIDDEN_UP;
 			break;
-		case GTK_DIR_DOWN:
+		case CTK_DIR_DOWN:
 			g_return_if_fail (toplevel->priv->orientation & PANEL_VERTICAL_MASK);
 			toplevel->priv->state = PANEL_STATE_HIDDEN_DOWN;
 			break;
-		case GTK_DIR_LEFT:
+		case CTK_DIR_LEFT:
 			g_return_if_fail (toplevel->priv->orientation & PANEL_HORIZONTAL_MASK);
 			toplevel->priv->state = PANEL_STATE_HIDDEN_LEFT;
 			break;
-		case GTK_DIR_RIGHT:
+		case CTK_DIR_RIGHT:
 			g_return_if_fail (toplevel->priv->orientation & PANEL_HORIZONTAL_MASK);
 			toplevel->priv->state = PANEL_STATE_HIDDEN_RIGHT;
 			break;
@@ -3749,17 +3749,17 @@ panel_toplevel_hide (PanelToplevel    *toplevel,
 		panel_toplevel_update_hide_buttons (toplevel);
 	}
 
-	if (toplevel->priv->anicafe && ctk_widget_get_realized (GTK_WIDGET (toplevel))) {
+	if (toplevel->priv->anicafe && ctk_widget_get_realized (CTK_WIDGET (toplevel))) {
 		panel_toplevel_start_animation (toplevel);
 	}
 
 	/* if the toplevel is attached (-> drawer), hide it after the animation
 	 * this hides the hide button properly as well */
 	if (toplevel->priv->attached) {
-		ctk_widget_hide (GTK_WIDGET (toplevel));
+		ctk_widget_hide (CTK_WIDGET (toplevel));
         }
 
-	ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+	ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 }
 
 static gboolean
@@ -3802,17 +3802,17 @@ panel_toplevel_unhide (PanelToplevel *toplevel)
 	if (toplevel->priv->attach_toplevel)
 		panel_toplevel_push_autohide_disabler (toplevel->priv->attach_toplevel);
 
-	if (toplevel->priv->anicafe && ctk_widget_get_realized (GTK_WIDGET (toplevel))) {
+	if (toplevel->priv->anicafe && ctk_widget_get_realized (CTK_WIDGET (toplevel))) {
 		panel_toplevel_start_animation (toplevel);
 	}
 
 	/* if the toplevel is attached (-> drawer), unhide it after the animation
 	 * (same as for hide) */
 	if (toplevel->priv->attached) {
-		ctk_widget_show (GTK_WIDGET (toplevel));
+		ctk_widget_show (CTK_WIDGET (toplevel));
 	}
 
-	ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+	ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 
 	if (!toplevel->priv->anicafe)
 		g_signal_emit (toplevel, toplevel_signals [UNHIDE_SIGNAL], 0);
@@ -3941,8 +3941,8 @@ panel_toplevel_enter_notify_event (GtkWidget        *widget,
 	if (toplevel->priv->auto_hide && event->detail != GDK_NOTIFY_INFERIOR)
 		panel_toplevel_queue_auto_unhide (toplevel);
 
-	if (GTK_WIDGET_CLASS (panel_toplevel_parent_class)->enter_notify_event)
-		return GTK_WIDGET_CLASS (panel_toplevel_parent_class)->enter_notify_event (widget, event);
+	if (CTK_WIDGET_CLASS (panel_toplevel_parent_class)->enter_notify_event)
+		return CTK_WIDGET_CLASS (panel_toplevel_parent_class)->enter_notify_event (widget, event);
 
 	return FALSE;
 }
@@ -3960,8 +3960,8 @@ panel_toplevel_leave_notify_event (GtkWidget        *widget,
 	if (toplevel->priv->auto_hide && event->detail != GDK_NOTIFY_INFERIOR)
 		panel_toplevel_queue_auto_hide (toplevel);
 
-	if (GTK_WIDGET_CLASS (panel_toplevel_parent_class)->leave_notify_event)
-		return GTK_WIDGET_CLASS (panel_toplevel_parent_class)->leave_notify_event (widget, event);
+	if (CTK_WIDGET_CLASS (panel_toplevel_parent_class)->leave_notify_event)
+		return CTK_WIDGET_CLASS (panel_toplevel_parent_class)->leave_notify_event (widget, event);
 
 	return FALSE;
 }
@@ -3975,8 +3975,8 @@ panel_toplevel_focus_in_event (GtkWidget     *widget,
 	if (toplevel->priv->state == PANEL_STATE_AUTO_HIDDEN)
 		panel_toplevel_unhide (toplevel);
 
-	if (GTK_WIDGET_CLASS (panel_toplevel_parent_class)->focus_in_event)
-		return GTK_WIDGET_CLASS (panel_toplevel_parent_class)->focus_in_event (widget, event);
+	if (CTK_WIDGET_CLASS (panel_toplevel_parent_class)->focus_in_event)
+		return CTK_WIDGET_CLASS (panel_toplevel_parent_class)->focus_in_event (widget, event);
 
 	return FALSE;
 }
@@ -3993,8 +3993,8 @@ panel_toplevel_focus_out_event (GtkWidget     *widget,
 	if (toplevel->priv->auto_hide)
 		panel_toplevel_queue_auto_hide (toplevel);
 
-	if (GTK_WIDGET_CLASS (panel_toplevel_parent_class)->focus_out_event)
-		return GTK_WIDGET_CLASS (panel_toplevel_parent_class)->focus_out_event (widget, event);
+	if (CTK_WIDGET_CLASS (panel_toplevel_parent_class)->focus_out_event)
+		return CTK_WIDGET_CLASS (panel_toplevel_parent_class)->focus_out_event (widget, event);
 
 	return FALSE;
 }
@@ -4004,8 +4004,8 @@ panel_toplevel_style_updated (GtkWidget *widget)
 {
 	panel_toplevel_update_hide_buttons (PANEL_TOPLEVEL (widget));
 
-	if (GTK_WIDGET_CLASS (panel_toplevel_parent_class)->style_updated)
-		GTK_WIDGET_CLASS (panel_toplevel_parent_class)->style_updated (widget);
+	if (CTK_WIDGET_CLASS (panel_toplevel_parent_class)->style_updated)
+		CTK_WIDGET_CLASS (panel_toplevel_parent_class)->style_updated (widget);
 
 	set_background_default_style (widget);
 }
@@ -4032,7 +4032,7 @@ panel_toplevel_update_ctk_settings (PanelToplevel *toplevel)
 						      G_CALLBACK (panel_toplevel_drag_threshold_changed),
 						      toplevel);
 
-	toplevel->priv->ctk_settings = ctk_widget_get_settings (GTK_WIDGET (toplevel->priv->panel_widget));
+	toplevel->priv->ctk_settings = ctk_widget_get_settings (CTK_WIDGET (toplevel->priv->panel_widget));
 
 	g_signal_connect_swapped (G_OBJECT (toplevel->priv->ctk_settings),
 				  "notify::ctk-dnd-drag-threshold",
@@ -4048,8 +4048,8 @@ panel_toplevel_screen_changed (GtkWidget *widget,
 {
 	panel_toplevel_update_ctk_settings (PANEL_TOPLEVEL (widget));
 
-	if (GTK_WIDGET_CLASS (panel_toplevel_parent_class)->screen_changed)
-		GTK_WIDGET_CLASS (panel_toplevel_parent_class)->screen_changed (widget, previous_screen);
+	if (CTK_WIDGET_CLASS (panel_toplevel_parent_class)->screen_changed)
+		CTK_WIDGET_CLASS (panel_toplevel_parent_class)->screen_changed (widget, previous_screen);
 
 	ctk_widget_queue_resize (widget);
 }
@@ -4241,9 +4241,9 @@ panel_toplevel_constructor (GType                  type,
                                                            n_construct_properties,
                                                            construct_properties);
 	PanelToplevel *toplevel = PANEL_TOPLEVEL(object);
-	GdkScreen *screen = ctk_widget_get_screen(GTK_WIDGET(toplevel));
+	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
-	ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 
 	return object;
 }
@@ -4254,7 +4254,7 @@ panel_toplevel_finalize (GObject *object)
 	PanelToplevel *toplevel = (PanelToplevel *) object;
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel))))
+	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))))
 		panel_struts_unregister_strut (toplevel);
 #endif // HAVE_X11
 
@@ -4657,10 +4657,10 @@ panel_toplevel_setup_widgets (PanelToplevel *toplevel)
 
 	toplevel->priv->grid = ctk_grid_new ();
 
-	toplevel->priv->hide_button_top    = panel_toplevel_add_hide_button (toplevel, GTK_ARROW_UP,    1, 0);
-	toplevel->priv->hide_button_bottom = panel_toplevel_add_hide_button (toplevel, GTK_ARROW_DOWN,  1, 2);
-	toplevel->priv->hide_button_left   = panel_toplevel_add_hide_button (toplevel, GTK_ARROW_LEFT,  0, 1);
-	toplevel->priv->hide_button_right  = panel_toplevel_add_hide_button (toplevel, GTK_ARROW_RIGHT, 2, 1);
+	toplevel->priv->hide_button_top    = panel_toplevel_add_hide_button (toplevel, CTK_ARROW_UP,    1, 0);
+	toplevel->priv->hide_button_bottom = panel_toplevel_add_hide_button (toplevel, CTK_ARROW_DOWN,  1, 2);
+	toplevel->priv->hide_button_left   = panel_toplevel_add_hide_button (toplevel, CTK_ARROW_LEFT,  0, 1);
+	toplevel->priv->hide_button_right  = panel_toplevel_add_hide_button (toplevel, CTK_ARROW_RIGHT, 2, 1);
 
 	if (toplevel->priv->orientation & PANEL_HORIZONTAL_MASK)
 	{
@@ -4675,25 +4675,25 @@ panel_toplevel_setup_widgets (PanelToplevel *toplevel)
 
 	toplevel->priv->inner_frame = g_object_new(PANEL_TYPE_FRAME, NULL);
 
-	ctk_widget_set_hexpand (GTK_WIDGET (toplevel->priv->inner_frame), TRUE);
-	ctk_widget_set_vexpand (GTK_WIDGET (toplevel->priv->inner_frame), TRUE);
+	ctk_widget_set_hexpand (CTK_WIDGET (toplevel->priv->inner_frame), TRUE);
+	ctk_widget_set_vexpand (CTK_WIDGET (toplevel->priv->inner_frame), TRUE);
 
-	ctk_grid_attach (GTK_GRID (toplevel->priv->grid), GTK_WIDGET (toplevel->priv->inner_frame), 1, 1, 1, 1);
-	ctk_widget_show (GTK_WIDGET (toplevel->priv->inner_frame));
+	ctk_grid_attach (CTK_GRID (toplevel->priv->grid), CTK_WIDGET (toplevel->priv->inner_frame), 1, 1, 1, 1);
+	ctk_widget_show (CTK_WIDGET (toplevel->priv->inner_frame));
 
 	container = panel_widget_new (toplevel,
 				      !toplevel->priv->expand,
 				      (toplevel->priv->orientation & PANEL_HORIZONTAL_MASK) ?
-						GTK_ORIENTATION_HORIZONTAL :
-						GTK_ORIENTATION_VERTICAL,
+						CTK_ORIENTATION_HORIZONTAL :
+						CTK_ORIENTATION_VERTICAL,
 				      toplevel->priv->size);
 
 	toplevel->priv->panel_widget = PANEL_WIDGET(container);
 
-	ctk_container_add(GTK_CONTAINER(toplevel->priv->inner_frame), container);
+	ctk_container_add(CTK_CONTAINER(toplevel->priv->inner_frame), container);
 	ctk_widget_show(container);
 
-	ctk_container_add (GTK_CONTAINER (toplevel), toplevel->priv->grid);
+	ctk_container_add (CTK_CONTAINER (toplevel), toplevel->priv->grid);
 	ctk_widget_show (toplevel->priv->grid);
 }
 
@@ -4716,7 +4716,7 @@ panel_toplevel_init (PanelToplevel *toplevel)
 	toplevel->priv->expand          = TRUE;
 	toplevel->priv->orientation     = PANEL_ORIENTATION_BOTTOM;
 	toplevel->priv->size            = DEFAULT_SIZE;
-	toplevel->priv->scale           = ctk_widget_get_scale_factor (GTK_WIDGET (toplevel));
+	toplevel->priv->scale           = ctk_widget_get_scale_factor (CTK_WIDGET (toplevel));
 	toplevel->priv->x               = 0;
 	toplevel->priv->y               = 0;
 	toplevel->priv->x_right         = -1;
@@ -4792,7 +4792,7 @@ panel_toplevel_init (PanelToplevel *toplevel)
 	toplevel->priv->updated_geometry_initial = FALSE;
 	toplevel->priv->initial_animation_done   = FALSE;
 
-	widget = GTK_WIDGET (toplevel);
+	widget = CTK_WIDGET (toplevel);
 	ctk_widget_add_events (widget,
 			       GDK_BUTTON_PRESS_MASK |
 			       GDK_BUTTON_RELEASE_MASK |
@@ -4811,7 +4811,7 @@ panel_toplevel_init (PanelToplevel *toplevel)
 	/* Prevent the window from being deleted via Alt+F4 by accident.  This
 	 * happens with "alternative" window managers such as Sawfish or XFWM4.
 	 */
-	g_signal_connect(GTK_WIDGET(toplevel), "delete-event", G_CALLBACK(ctk_true), NULL);
+	g_signal_connect(CTK_WIDGET(toplevel), "delete-event", G_CALLBACK(ctk_true), NULL);
 
 	panel_background_init (&toplevel->background,
 			       (PanelBackgroundChangedNotify) background_changed,
@@ -4844,10 +4844,10 @@ panel_toplevel_update_name (PanelToplevel *toplevel)
 
 	title = toplevel->priv->name ? toplevel->priv->name : toplevel->priv->description;
 
-	ctk_window_set_title (GTK_WINDOW (toplevel), title);
+	ctk_window_set_title (CTK_WINDOW (toplevel), title);
 
 	panel_a11y_set_atk_name_desc (
-		GTK_WIDGET (toplevel),
+		CTK_WIDGET (toplevel),
 		title, toplevel->priv->description);
 }
 
@@ -4935,7 +4935,7 @@ panel_toplevel_set_expand (PanelToplevel *toplevel,
 		}
 	}
 
-	ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+	ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 
 	panel_widget_set_packed (toplevel->priv->panel_widget, !toplevel->priv->expand);
 
@@ -5032,15 +5032,15 @@ panel_toplevel_set_orientation (PanelToplevel    *toplevel,
 	toplevel->priv->orientation = orientation;
 	update_style_classes (toplevel);
 
-	ctk_widget_reset_style (GTK_WIDGET (toplevel));
+	ctk_widget_reset_style (CTK_WIDGET (toplevel));
 
 	panel_toplevel_update_hide_buttons (toplevel);
 
 	panel_widget_set_orientation (
 		toplevel->priv->panel_widget,
 		(toplevel->priv->orientation & PANEL_HORIZONTAL_MASK) ?
-					GTK_ORIENTATION_HORIZONTAL :
-					GTK_ORIENTATION_VERTICAL);
+					CTK_ORIENTATION_HORIZONTAL :
+					CTK_ORIENTATION_VERTICAL);
 
 	switch (toplevel->priv->state) {
 	case PANEL_STATE_HIDDEN_UP:
@@ -5063,14 +5063,14 @@ panel_toplevel_set_orientation (PanelToplevel    *toplevel,
 		break;
 	}
 
-	ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+	ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 
 	g_object_notify (G_OBJECT (toplevel), "orientation");
 
 	g_object_thaw_notify (G_OBJECT (toplevel));
 
 #ifdef HAVE_WAYLAND
-	if (GDK_IS_WAYLAND_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel)))) {
+	if (GDK_IS_WAYLAND_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 		wayland_panel_toplevel_update_placement (toplevel);
 	}
 #endif // HAVE_WAYLAND
@@ -5079,7 +5079,7 @@ panel_toplevel_set_orientation (PanelToplevel    *toplevel,
 PanelOrientation
 panel_toplevel_get_orientation (PanelToplevel *toplevel)
 {
-	g_return_val_if_fail (PANEL_IS_TOPLEVEL (toplevel), GTK_ORIENTATION_HORIZONTAL);
+	g_return_val_if_fail (PANEL_IS_TOPLEVEL (toplevel), CTK_ORIENTATION_HORIZONTAL);
 
 	return toplevel->priv->orientation;
 }
@@ -5098,7 +5098,7 @@ panel_toplevel_set_size (PanelToplevel *toplevel,
 
 	panel_widget_set_size (toplevel->priv->panel_widget, toplevel->priv->size);
 
-	ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+	ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 
 	panel_toplevel_update_hide_buttons (toplevel);
 
@@ -5130,7 +5130,7 @@ panel_toplevel_set_auto_hide_size (PanelToplevel *toplevel,
 				panel_toplevel_unhide (toplevel);
 				panel_toplevel_hide (toplevel, TRUE, -1);
 			} else
-				ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+				ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 		}
 	}
 
@@ -5178,7 +5178,7 @@ panel_toplevel_set_x (PanelToplevel *toplevel,
 	}
 
 	if (changed)
-		ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+		ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 
 	g_object_thaw_notify (G_OBJECT (toplevel));
 }
@@ -5216,7 +5216,7 @@ panel_toplevel_set_y (PanelToplevel *toplevel,
 	}
 
 	if (changed)
-		ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+		ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 
 	g_object_thaw_notify (G_OBJECT (toplevel));
 }
@@ -5280,7 +5280,7 @@ panel_toplevel_set_monitor_internal (PanelToplevel *toplevel,
 	toplevel->priv->monitor = monitor;
 
 	if (force_resize)
-		ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+		ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 }
 
 /**
@@ -5361,7 +5361,7 @@ panel_toplevel_set_auto_hide (PanelToplevel *toplevel,
 		panel_toplevel_queue_auto_unhide (toplevel);
 
 	if (panel_toplevel_update_struts (toplevel, FALSE))
-		ctk_widget_queue_resize (GTK_WIDGET (toplevel));
+		ctk_widget_queue_resize (CTK_WIDGET (toplevel));
 
 	g_object_notify (G_OBJECT (toplevel), "auto-hide");
 }
@@ -5571,7 +5571,7 @@ panel_toplevel_get_is_hidden (PanelToplevel *toplevel)
 int
 panel_toplevel_get_minimum_size (PanelToplevel *toplevel)
 {
-	return calculate_minimum_height (GTK_WIDGET (toplevel),
+	return calculate_minimum_height (CTK_WIDGET (toplevel),
 					 toplevel->priv->orientation);
 }
 

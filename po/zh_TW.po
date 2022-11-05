@@ -1967,11 +1967,11 @@ msgstr "背景類型"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:109
 msgid ""
 "Which type of background should be used for this panel. Possible values are "
-"\"none\" - the default GTK+ widget background will be used, \"color\" - the "
+"\"none\" - the default CTK+ widget background will be used, \"color\" - the "
 "color key will be used as background color or \"image\" - the image "
 "specified by the image key will be used as background."
 msgstr ""
-"何種類型的背景應該用於這個面板。可能的值為「none」- 將使用預設的 GTK+ 視窗元件背景、「color」- "
+"何種類型的背景應該用於這個面板。可能的值為「none」- 將使用預設的 CTK+ 視窗元件背景、「color」- "
 "顏色鍵值將做為背景顏色或是「image」- 的由圖像鍵值所指定的圖像將做為背景。"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:113

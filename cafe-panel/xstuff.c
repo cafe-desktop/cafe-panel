@@ -71,7 +71,7 @@ zoom_timeout (GtkWidget *window)
 static gboolean
 idle_destroy (gpointer data)
 {
-	ctk_widget_destroy (GTK_WIDGET (data));
+	ctk_widget_destroy (CTK_WIDGET (data));
 
 	return FALSE;
 }
@@ -102,7 +102,7 @@ zoom_draw (GtkWidget *widget,
 		int width, height;
 		int x = 0, y = 0;
 
-		ctk_window_get_size (GTK_WINDOW (widget), &width, &height);
+		ctk_window_get_size (CTK_WINDOW (widget), &width, &height);
 
 		zoom->size += MAX ((zoom->size_end - zoom->size_start) / ZOOM_STEPS, 1);
 		zoom->opacity -= 1.0 / ((double) ZOOM_STEPS + 1);
@@ -170,16 +170,16 @@ draw_zoom_animation_composited (GdkScreen *gscreen,
 	zoom->pixbuf = g_object_ref (pixbuf);
 	zoom->timeout_id = 0;
 
-	win = ctk_window_new (GTK_WINDOW_POPUP);
+	win = ctk_window_new (CTK_WINDOW_POPUP);
 
-	ctk_window_set_screen (GTK_WINDOW (win), gscreen);
-	ctk_window_set_keep_above (GTK_WINDOW (win), TRUE);
-	ctk_window_set_decorated (GTK_WINDOW (win), FALSE);
+	ctk_window_set_screen (CTK_WINDOW (win), gscreen);
+	ctk_window_set_keep_above (CTK_WINDOW (win), TRUE);
+	ctk_window_set_decorated (CTK_WINDOW (win), FALSE);
 	ctk_widget_set_app_paintable(win, TRUE);
 	ctk_widget_set_visual (win, gdk_screen_get_rgba_visual (gscreen));
 
-	ctk_window_set_gravity (GTK_WINDOW (win), GDK_GRAVITY_STATIC);
-	ctk_window_set_default_size (GTK_WINDOW (win),
+	ctk_window_set_gravity (CTK_WINDOW (win), GDK_GRAVITY_STATIC);
+	ctk_window_set_default_size (CTK_WINDOW (win),
 				     w * ZOOM_FACTOR, h * ZOOM_FACTOR);
 
 	switch (zoom->orientation) {
@@ -204,7 +204,7 @@ draw_zoom_animation_composited (GdkScreen *gscreen,
 		break;
 	}
 
-	ctk_window_move (GTK_WINDOW (win), wx, wy);
+	ctk_window_move (CTK_WINDOW (win), wx, wy);
 
 	g_signal_connect (G_OBJECT (win), "draw",
 			 G_CALLBACK (zoom_draw), zoom);

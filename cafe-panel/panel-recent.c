@@ -60,7 +60,7 @@ recent_documents_activate_cb (GtkRecentChooser *chooser,
 	GdkScreen     *screen;
 	GError        *error = NULL;
 
-	screen = ctk_widget_get_screen (GTK_WIDGET (chooser));
+	screen = ctk_widget_get_screen (CTK_WIDGET (chooser));
 
 	recent_info = ctk_recent_chooser_get_current_item (chooser);
 	uri = ctk_recent_info_get_uri (recent_info);
@@ -121,7 +121,7 @@ clear_dialog_response (GtkWidget        *widget,
 		       int               response,
 		       GtkRecentManager *manager)
 {
-        if (response == GTK_RESPONSE_ACCEPT)
+        if (response == CTK_RESPONSE_ACCEPT)
 		ctk_recent_manager_purge_items (manager, NULL);
 
 	ctk_widget_destroy (widget);
@@ -134,38 +134,38 @@ recent_documents_clear_cb (GtkMenuItem      *menuitem,
 	gpointer tmp;
 
 	if (clear_recent_dialog != NULL) {
-		ctk_window_set_screen (GTK_WINDOW (clear_recent_dialog),
-				       ctk_widget_get_screen (GTK_WIDGET (menuitem)));
-		ctk_window_present (GTK_WINDOW (clear_recent_dialog));
+		ctk_window_set_screen (CTK_WINDOW (clear_recent_dialog),
+				       ctk_widget_get_screen (CTK_WIDGET (menuitem)));
+		ctk_window_present (CTK_WINDOW (clear_recent_dialog));
 		return;
 	}
 
 	clear_recent_dialog = ctk_message_dialog_new (NULL,
 						      0 /* flags */,
-						      GTK_MESSAGE_WARNING,
-						      GTK_BUTTONS_NONE,
+						      CTK_MESSAGE_WARNING,
+						      CTK_BUTTONS_NONE,
 						      _("Clear the Recent Documents list?"));
-	ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (clear_recent_dialog),
+	ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (clear_recent_dialog),
 						  _("If you clear the Recent Documents list, you clear the following:\n"
 						    "\342\200\242 All items from the Places \342\206\222 Recent Documents menu item.\n"
 						    "\342\200\242 All items from the recent documents list in all applications."));
 
-	panel_dialog_add_button (GTK_DIALOG (clear_recent_dialog),
+	panel_dialog_add_button (CTK_DIALOG (clear_recent_dialog),
 				 _("_Cancel"), "process-stop",
-				 GTK_RESPONSE_CANCEL);
+				 CTK_RESPONSE_CANCEL);
 
-	ctk_dialog_add_button (GTK_DIALOG (clear_recent_dialog),
+	ctk_dialog_add_button (CTK_DIALOG (clear_recent_dialog),
 			       PANEL_STOCK_CLEAR,
-			       GTK_RESPONSE_ACCEPT);
+			       CTK_RESPONSE_ACCEPT);
 
-	ctk_container_set_border_width (GTK_CONTAINER (clear_recent_dialog), 6);
+	ctk_container_set_border_width (CTK_CONTAINER (clear_recent_dialog), 6);
 
-	ctk_window_set_title (GTK_WINDOW (clear_recent_dialog),
+	ctk_window_set_title (CTK_WINDOW (clear_recent_dialog),
 			      _("Clear Recent Documents"));
 
-	ctk_dialog_set_default_response (GTK_DIALOG (clear_recent_dialog),
-					 GTK_RESPONSE_ACCEPT);
-	ctk_window_set_skip_taskbar_hint (GTK_WINDOW (clear_recent_dialog),
+	ctk_dialog_set_default_response (CTK_DIALOG (clear_recent_dialog),
+					 CTK_RESPONSE_ACCEPT);
+	ctk_window_set_skip_taskbar_hint (CTK_WINDOW (clear_recent_dialog),
 					  FALSE);
 
 	g_signal_connect (clear_recent_dialog, "response",
@@ -178,8 +178,8 @@ recent_documents_clear_cb (GtkMenuItem      *menuitem,
 	tmp = &clear_recent_dialog;
 	g_object_add_weak_pointer (G_OBJECT (clear_recent_dialog), tmp);
 
-	ctk_window_set_screen (GTK_WINDOW (clear_recent_dialog),
-			       ctk_widget_get_screen (GTK_WIDGET (menuitem)));
+	ctk_window_set_screen (CTK_WINDOW (clear_recent_dialog),
+			       ctk_widget_get_screen (CTK_WIDGET (menuitem)));
 	ctk_widget_show (clear_recent_dialog);
 }
 
@@ -198,22 +198,22 @@ panel_recent_append_documents_menu (GtkWidget        *top_menu,
 				  PANEL_ICON_RECENT,
 				  _("Recent Documents"));
 	recent_menu = ctk_recent_chooser_menu_new_for_manager (manager);
-	ctk_menu_item_set_submenu (GTK_MENU_ITEM (menu_item), recent_menu);
+	ctk_menu_item_set_submenu (CTK_MENU_ITEM (menu_item), recent_menu);
 
 	g_signal_connect (G_OBJECT (recent_menu), "button_press_event",
 			  G_CALLBACK (menu_dummy_button_press_event), NULL);
 
-	ctk_menu_shell_append (GTK_MENU_SHELL (top_menu), menu_item);
+	ctk_menu_shell_append (CTK_MENU_SHELL (top_menu), menu_item);
 	ctk_widget_show_all (menu_item);
 
-	ctk_recent_chooser_set_local_only (GTK_RECENT_CHOOSER (recent_menu),
+	ctk_recent_chooser_set_local_only (CTK_RECENT_CHOOSER (recent_menu),
 					   FALSE);
-	ctk_recent_chooser_set_show_tips (GTK_RECENT_CHOOSER (recent_menu),
+	ctk_recent_chooser_set_show_tips (CTK_RECENT_CHOOSER (recent_menu),
 					  TRUE);
-	ctk_recent_chooser_set_sort_type (GTK_RECENT_CHOOSER (recent_menu),
-					  GTK_RECENT_SORT_MRU);
+	ctk_recent_chooser_set_sort_type (CTK_RECENT_CHOOSER (recent_menu),
+					  CTK_RECENT_SORT_MRU);
 
-	g_signal_connect (GTK_RECENT_CHOOSER (recent_menu),
+	g_signal_connect (CTK_RECENT_CHOOSER (recent_menu),
 			  "item-activated",
 			  G_CALLBACK (recent_documents_activate_cb),
 			  NULL);
@@ -238,7 +238,7 @@ panel_recent_append_documents_menu (GtkWidget        *top_menu,
 				   _("Clear Recent Documents..."));
 	panel_util_set_tooltip_text (menu_item,
 				     _("Clear all items from the recent documents list"));
-	ctk_menu_shell_append (GTK_MENU_SHELL (recent_menu), menu_item);
+	ctk_menu_shell_append (CTK_MENU_SHELL (recent_menu), menu_item);
 
 	g_signal_connect (menu_item, "activate",
 			  G_CALLBACK (recent_documents_clear_cb),

@@ -93,7 +93,7 @@ struct _CafePanelAppletFramePrivate {
 	guint            has_handle : 1;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (CafePanelAppletFrame, cafe_panel_applet_frame, GTK_TYPE_EVENT_BOX)
+G_DEFINE_TYPE_WITH_PRIVATE (CafePanelAppletFrame, cafe_panel_applet_frame, CTK_TYPE_EVENT_BOX)
 
 static gboolean
 cafe_panel_applet_frame_draw (GtkWidget *widget,
@@ -104,8 +104,8 @@ cafe_panel_applet_frame_draw (GtkWidget *widget,
 	GtkStateFlags     state;
 	PanelBackground  *background;
 
-	if (GTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->draw)
-		GTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->draw (widget, cr);
+	if (CTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->draw)
+		CTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->draw (widget, cr);
 
 	if (!frame->priv->has_handle)
 		return FALSE;
@@ -189,10 +189,10 @@ cafe_panel_applet_frame_get_preferred_width(GtkWidget *widget, gint *minimal_wid
 	guint             border_width;
 
 	frame = CAFE_PANEL_APPLET_FRAME (widget);
-	bin = GTK_BIN (widget);
+	bin = CTK_BIN (widget);
 
 	if (!frame->priv->has_handle) {
-		GTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->get_preferred_width (widget, minimal_width, natural_width);
+		CTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->get_preferred_width (widget, minimal_width, natural_width);
 		return;
 	}
 
@@ -200,7 +200,7 @@ cafe_panel_applet_frame_get_preferred_width(GtkWidget *widget, gint *minimal_wid
 	if (child && ctk_widget_get_visible (child))
 		ctk_widget_get_preferred_width (child, minimal_width, natural_width);
 
-	border_width = ctk_container_get_border_width (GTK_CONTAINER (widget));
+	border_width = ctk_container_get_border_width (CTK_CONTAINER (widget));
 	*minimal_width += border_width;
 	*natural_width += border_width;
 
@@ -228,10 +228,10 @@ cafe_panel_applet_frame_get_preferred_height(GtkWidget *widget, gint *minimal_he
 	guint             border_width;
 
 	frame = CAFE_PANEL_APPLET_FRAME (widget);
-	bin = GTK_BIN (widget);
+	bin = CTK_BIN (widget);
 
 	if (!frame->priv->has_handle) {
-		GTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->get_preferred_height (widget, minimal_height, natural_height);
+		CTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->get_preferred_height (widget, minimal_height, natural_height);
 		return;
 	}
 
@@ -239,7 +239,7 @@ cafe_panel_applet_frame_get_preferred_height(GtkWidget *widget, gint *minimal_he
 	if (child && ctk_widget_get_visible (child))
 		ctk_widget_get_preferred_height (child, minimal_height, natural_height);
 
-	border_width = ctk_container_get_border_width (GTK_CONTAINER (widget));
+	border_width = ctk_container_get_border_width (CTK_CONTAINER (widget));
 	*minimal_height += border_width;
 	*natural_height += border_width;
 
@@ -278,10 +278,10 @@ cafe_panel_applet_frame_size_allocate (GtkWidget     *widget,
 	old_allocation.height = widget_allocation.height;
 
 	frame = CAFE_PANEL_APPLET_FRAME (widget);
-	bin = GTK_BIN (widget);
+	bin = CTK_BIN (widget);
 
 	if (!frame->priv->has_handle) {
-		GTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->size_allocate (widget,  allocation);
+		CTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->size_allocate (widget,  allocation);
 		cafe_panel_applet_frame_update_background_size (frame, &old_allocation, allocation);
 		return;
 	}
@@ -299,8 +299,8 @@ cafe_panel_applet_frame_size_allocate (GtkWidget     *widget,
 		frame->priv->handle_rect.width  = HANDLE_SIZE;
 		frame->priv->handle_rect.height = allocation->height;
 
-		if (ctk_widget_get_direction (GTK_WIDGET (frame)) !=
-		    GTK_TEXT_DIR_RTL) {
+		if (ctk_widget_get_direction (CTK_WIDGET (frame)) !=
+		    CTK_TEXT_DIR_RTL) {
 			frame->priv->handle_rect.x = 0;
 			new_allocation.x = HANDLE_SIZE;
 		} else {
@@ -343,7 +343,7 @@ cafe_panel_applet_frame_size_allocate (GtkWidget     *widget,
 	if (ctk_widget_get_realized (widget)) {
 		guint border_width;
 
-		border_width = ctk_container_get_border_width (GTK_CONTAINER (widget));
+		border_width = ctk_container_get_border_width (CTK_CONTAINER (widget));
 		gdk_window_move_resize (window,
 			allocation->x + border_width,
 			allocation->y + border_width,
@@ -398,7 +398,7 @@ cafe_panel_applet_frame_button_changed (GtkWidget      *widget,
 			if (event->type == GDK_BUTTON_PRESS ||
 			    event->type == GDK_2BUTTON_PRESS) {
 				panel_widget_applet_drag_start (
-					frame->priv->panel, GTK_WIDGET (frame),
+					frame->priv->panel, CTK_WIDGET (frame),
 					PW_DRAG_OFF_CURSOR, event->time);
 				handled = TRUE;
 			} else if (event->type == GDK_BUTTON_RELEASE) {
@@ -488,13 +488,13 @@ cafe_panel_applet_frame_sync_menu_state (CafePanelAppletFrame *frame)
 	gboolean     movable;
 	gboolean     removable;
 
-	panel_widget = PANEL_WIDGET (ctk_widget_get_parent (GTK_WIDGET (frame)));
+	panel_widget = PANEL_WIDGET (ctk_widget_get_parent (CTK_WIDGET (frame)));
 
 	movable = cafe_panel_applet_can_freely_move (frame->priv->applet_info);
 	removable = panel_profile_id_lists_are_writable ();
 	lockable = cafe_panel_applet_lockable (frame->priv->applet_info);
 
-	locked = panel_widget_get_applet_locked (panel_widget, GTK_WIDGET (frame));
+	locked = panel_widget_get_applet_locked (panel_widget, CTK_WIDGET (frame));
 	locked_down = panel_lockdown_get_locked_down ();
 
 	CAFE_PANEL_APPLET_FRAME_GET_CLASS (frame)->sync_menu_state (frame, movable, removable, lockable, locked, locked_down);
@@ -526,14 +526,14 @@ cafe_panel_applet_frame_change_background (CafePanelAppletFrame    *frame,
 
 	g_return_if_fail (PANEL_IS_APPLET_FRAME (frame));
 
-	parent = ctk_widget_get_parent (GTK_WIDGET (frame));
+	parent = ctk_widget_get_parent (CTK_WIDGET (frame));
 
 	g_return_if_fail (PANEL_IS_WIDGET (parent));
 
 	if (frame->priv->has_handle) {
 		PanelBackground *background;
 		background = &PANEL_WIDGET (parent)->toplevel->background;
-		panel_background_apply_css (background, GTK_WIDGET (frame));
+		panel_background_apply_css (background, CTK_WIDGET (frame));
 	}
 
 	CAFE_PANEL_APPLET_FRAME_GET_CLASS (frame)->change_background (frame, type);
@@ -576,15 +576,15 @@ _cafe_panel_applet_frame_activated (CafePanelAppletFrame           *frame,
 						   frame_act->panel,
 						   frame_act->id);
 		cafe_panel_applet_frame_activating_free (frame_act);
-		ctk_widget_destroy (GTK_WIDGET (frame));
+		ctk_widget_destroy (CTK_WIDGET (frame));
 
 		return;
 	}
 
 	frame->priv->panel = frame_act->panel;
-	ctk_widget_show_all (GTK_WIDGET (frame));
+	ctk_widget_show_all (CTK_WIDGET (frame));
 
-	info = cafe_panel_applet_register (GTK_WIDGET (frame), GTK_WIDGET (frame),
+	info = cafe_panel_applet_register (CTK_WIDGET (frame), CTK_WIDGET (frame),
 				      NULL, frame->priv->panel,
 				      frame_act->locked, frame_act->position,
 				      frame_act->exactpos, PANEL_OBJECT_APPLET,
@@ -592,7 +592,7 @@ _cafe_panel_applet_frame_activated (CafePanelAppletFrame           *frame,
 	frame->priv->applet_info = info;
 
 	panel_widget_set_applet_size_constrained (frame->priv->panel,
-						  GTK_WIDGET (frame), TRUE);
+						  CTK_WIDGET (frame), TRUE);
 
 	cafe_panel_applet_frame_sync_menu_state (frame);
 	cafe_panel_applet_frame_init_properties (frame);
@@ -613,7 +613,7 @@ _cafe_panel_applet_frame_update_flags (CafePanelAppletFrame *frame,
 	gboolean old_has_handle;
 
 	panel_widget_set_applet_expandable (
-		frame->priv->panel, GTK_WIDGET (frame), major, minor);
+		frame->priv->panel, CTK_WIDGET (frame), major, minor);
 
 	old_has_handle = frame->priv->has_handle;
 	frame->priv->has_handle = has_handle;
@@ -643,7 +643,7 @@ _cafe_panel_applet_frame_update_size_hints (CafePanelAppletFrame *frame,
 
 	/* It takes the ownership of size-hints array */
 	panel_widget_set_applet_size_hints (frame->priv->panel,
-					    GTK_WIDGET (frame),
+					    CTK_WIDGET (frame),
 					    size_hints,
 					    n_elements);
 }
@@ -657,7 +657,7 @@ _cafe_panel_applet_frame_get_background_string (CafePanelAppletFrame    *frame,
 	int x;
 	int y;
 
-	ctk_widget_get_allocation (GTK_WIDGET (frame), &allocation);
+	ctk_widget_get_allocation (CTK_WIDGET (frame), &allocation);
 
 	x = allocation.x;
 	y = allocation.y;
@@ -666,8 +666,8 @@ _cafe_panel_applet_frame_get_background_string (CafePanelAppletFrame    *frame,
 		switch (frame->priv->orientation) {
 		case PANEL_ORIENTATION_TOP:
 		case PANEL_ORIENTATION_BOTTOM:
-			if (ctk_widget_get_direction (GTK_WIDGET (frame)) !=
-			    GTK_TEXT_DIR_RTL)
+			if (ctk_widget_get_direction (CTK_WIDGET (frame)) !=
+			    CTK_TEXT_DIR_RTL)
 				x += frame->priv->handle_rect.width;
 			break;
 		case PANEL_ORIENTATION_LEFT:
@@ -743,7 +743,7 @@ _cafe_panel_applet_frame_applet_broken (CafePanelAppletFrame *frame)
 	const char *applet_name = NULL;
 	char       *dialog_txt;
 
-	screen = ctk_widget_get_screen (GTK_WIDGET (frame));
+	screen = ctk_widget_get_screen (CTK_WIDGET (frame));
 
 #ifdef HAVE_X11
 	if (is_using_x11 () && xstuff_is_display_dead ())
@@ -762,53 +762,53 @@ _cafe_panel_applet_frame_applet_broken (CafePanelAppletFrame *frame)
 	else
 		dialog_txt = g_strdup (_("Panel object has quit unexpectedly"));
 
-	dialog = ctk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
-					 GTK_MESSAGE_WARNING, GTK_BUTTONS_NONE,
+	dialog = ctk_message_dialog_new (NULL, CTK_DIALOG_DESTROY_WITH_PARENT,
+					 CTK_MESSAGE_WARNING, CTK_BUTTONS_NONE,
 					 dialog_txt, applet_name ? applet_name : NULL);
 
-	ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+	ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 						  _("If you reload a panel object, it will automatically "
 						    "be added back to the panel."));
 
-	ctk_container_set_border_width (GTK_CONTAINER (dialog), 6);
+	ctk_container_set_border_width (CTK_CONTAINER (dialog), 6);
 
 	if (panel_profile_id_lists_are_writable ()) {
-		ctk_dialog_add_buttons (GTK_DIALOG (dialog),
+		ctk_dialog_add_buttons (CTK_DIALOG (dialog),
 					_("D_elete"), PANEL_RESPONSE_DELETE,
 					_("_Don't Reload"), PANEL_RESPONSE_DONT_RELOAD,
 					_("_Reload"), PANEL_RESPONSE_RELOAD,
 					NULL);
 	} else {
-		ctk_dialog_add_buttons (GTK_DIALOG (dialog),
+		ctk_dialog_add_buttons (CTK_DIALOG (dialog),
 					_("_Don't Reload"), PANEL_RESPONSE_DONT_RELOAD,
 					_("_Reload"), PANEL_RESPONSE_RELOAD,
 					NULL);
 	}
 
-	ctk_dialog_set_default_response (GTK_DIALOG (dialog),
+	ctk_dialog_set_default_response (CTK_DIALOG (dialog),
 					 PANEL_RESPONSE_RELOAD);
 
-	ctk_window_set_screen (GTK_WINDOW (dialog), screen);
+	ctk_window_set_screen (CTK_WINDOW (dialog), screen);
 
 	g_signal_connect (dialog, "response",
 			  G_CALLBACK (cafe_panel_applet_frame_reload_response),
 			  g_object_ref (frame));
 
 	panel_widget_register_open_dialog (frame->priv->panel, dialog);
-	ctk_window_set_urgency_hint (GTK_WINDOW (dialog), TRUE);
+	ctk_window_set_urgency_hint (CTK_WINDOW (dialog), TRUE);
 	/* FIXME: http://bugzilla.gnome.org/show_bug.cgi?id=165132 */
-	ctk_window_set_title (GTK_WINDOW (dialog), _("Error"));
+	ctk_window_set_title (CTK_WINDOW (dialog), _("Error"));
 
 	ctk_widget_show (dialog);
 
 #ifdef HAVE_X11
 	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (dialog)))
-		ctk_window_present_with_time (GTK_WINDOW (dialog),
-					      gdk_x11_get_server_time (ctk_widget_get_window (GTK_WIDGET (dialog))));
+		ctk_window_present_with_time (CTK_WINDOW (dialog),
+					      gdk_x11_get_server_time (ctk_widget_get_window (CTK_WIDGET (dialog))));
 	else
 #endif
 	{ // Not using X11
-		ctk_window_present(GTK_WINDOW (dialog));
+		ctk_window_present(CTK_WINDOW (dialog));
 	}
 
 	g_free (dialog_txt);
@@ -831,7 +831,7 @@ _cafe_panel_applet_frame_applet_remove (CafePanelAppletFrame *frame)
 void
 _cafe_panel_applet_frame_applet_move (CafePanelAppletFrame *frame)
 {
-	GtkWidget *widget = GTK_WIDGET (frame);
+	GtkWidget *widget = CTK_WIDGET (frame);
 	GtkWidget *parent = ctk_widget_get_parent (widget);
 
 	if (!PANEL_IS_WIDGET (parent))
@@ -847,9 +847,9 @@ void
 _cafe_panel_applet_frame_applet_lock (CafePanelAppletFrame *frame,
 				 gboolean          locked)
 {
-	PanelWidget *panel_widget = PANEL_WIDGET (ctk_widget_get_parent (GTK_WIDGET (frame)));
+	PanelWidget *panel_widget = PANEL_WIDGET (ctk_widget_get_parent (CTK_WIDGET (frame)));
 
-	if (panel_widget_get_applet_locked (panel_widget, GTK_WIDGET (frame)) == locked)
+	if (panel_widget_get_applet_locked (panel_widget, CTK_WIDGET (frame)) == locked)
 		return;
 
 	cafe_panel_applet_toggle_locked (frame->priv->applet_info);
@@ -874,7 +874,7 @@ cafe_panel_applet_frame_activating_free (CafePanelAppletFrameActivating *frame_a
 GdkScreen *
 panel_applet_frame_activating_get_screen (CafePanelAppletFrameActivating *frame_act)
 {
-    return ctk_widget_get_screen (GTK_WIDGET(frame_act->panel));
+    return ctk_widget_get_screen (CTK_WIDGET(frame_act->panel));
 }
 
 PanelOrientation
@@ -952,40 +952,40 @@ cafe_panel_applet_frame_loading_failed (const char  *iid,
 				       iid);
 
 	dialog = ctk_message_dialog_new (NULL, 0,
-					 locked_down ? GTK_MESSAGE_INFO : GTK_MESSAGE_WARNING,
-					 GTK_BUTTONS_NONE,
+					 locked_down ? CTK_MESSAGE_INFO : CTK_MESSAGE_WARNING,
+					 CTK_BUTTONS_NONE,
 					 "%s", problem_txt);
 	g_free (problem_txt);
 
 	if (locked_down) {
-		panel_dialog_add_button (GTK_DIALOG (dialog),
+		panel_dialog_add_button (CTK_DIALOG (dialog),
 					 _("_OK"), "ctk-ok", LOADING_FAILED_RESPONSE_DONT_DELETE);
 	} else {
-		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+		ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 					_("Do you want to delete the applet "
 					  "from your configuration?"));
 
-		ctk_dialog_add_button (GTK_DIALOG (dialog),
+		ctk_dialog_add_button (CTK_DIALOG (dialog),
 				       PANEL_STOCK_DONT_DELETE, LOADING_FAILED_RESPONSE_DONT_DELETE);
 
-		panel_dialog_add_button (GTK_DIALOG (dialog),
+		panel_dialog_add_button (CTK_DIALOG (dialog),
 					 _("_Delete"), "edit-delete", LOADING_FAILED_RESPONSE_DELETE);
 	}
 
-	ctk_dialog_set_default_response (GTK_DIALOG (dialog),
+	ctk_dialog_set_default_response (CTK_DIALOG (dialog),
 					 LOADING_FAILED_RESPONSE_DONT_DELETE);
 
-	ctk_window_set_screen (GTK_WINDOW (dialog),
-			       ctk_window_get_screen (GTK_WINDOW (panel->toplevel)));
+	ctk_window_set_screen (CTK_WINDOW (dialog),
+			       ctk_window_get_screen (CTK_WINDOW (panel->toplevel)));
 
 	g_signal_connect (dialog, "response",
 			  G_CALLBACK (cafe_panel_applet_frame_loading_failed_response),
 			  g_strdup (id));
 
 	panel_widget_register_open_dialog (panel, dialog);
-	ctk_window_set_urgency_hint (GTK_WINDOW (dialog), TRUE);
+	ctk_window_set_urgency_hint (CTK_WINDOW (dialog), TRUE);
 	/* FIXME: http://bugzilla.gnome.org/show_bug.cgi?id=165132 */
-	ctk_window_set_title (GTK_WINDOW (dialog), _("Error"));
+	ctk_window_set_title (CTK_WINDOW (dialog), _("Error"));
 
 	ctk_widget_show_all (dialog);
 

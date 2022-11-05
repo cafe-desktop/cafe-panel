@@ -57,7 +57,7 @@ static void na_item_init (NaItemInterface *iface);
 
 G_DEFINE_ABSTRACT_TYPE_WITH_CODE (SnItem, sn_item, SN_TYPE_FLAT_BUTTON,
                                   G_ADD_PRIVATE (SnItem)
-                                  G_IMPLEMENT_INTERFACE (GTK_TYPE_ORIENTABLE,
+                                  G_IMPLEMENT_INTERFACE (CTK_TYPE_ORIENTABLE,
                                                          NULL)
                                   G_IMPLEMENT_INTERFACE (NA_TYPE_ITEM,
                                                          na_item_init))
@@ -168,14 +168,14 @@ sn_item_get_action_coordinates (SnItem *item,
   gint height;
 
   priv = SN_ITEM (item)->priv;
-  widget = GTK_WIDGET (item);
+  widget = CTK_WIDGET (item);
   window = ctk_widget_get_window (widget);
   toplevel = ctk_widget_get_toplevel (widget);
 
   gdk_window_get_geometry (window, x, y, &width, &height);
   ctk_widget_translate_coordinates (widget, toplevel, *x, *y, x, y);
 
-  if (priv->orientation == GTK_ORIENTATION_HORIZONTAL)
+  if (priv->orientation == CTK_ORIENTATION_HORIZONTAL)
     *y += height;
   else
     *x += width;
@@ -191,7 +191,7 @@ sn_item_button_press_event (GtkWidget      *widget,
   gint y;
 
   if (event->button < 2 || event->button > 3)
-    return GTK_WIDGET_CLASS (sn_item_parent_class)->button_press_event (widget, event);
+    return CTK_WIDGET_CLASS (sn_item_parent_class)->button_press_event (widget, event);
 
   item = SN_ITEM (widget);
   priv = SN_ITEM (item)->priv;
@@ -225,7 +225,7 @@ sn_item_button_press_event (GtkWidget      *widget,
       g_assert_not_reached ();
     }
 
-  return GTK_WIDGET_CLASS (sn_item_parent_class)->button_press_event (widget, event);
+  return CTK_WIDGET_CLASS (sn_item_parent_class)->button_press_event (widget, event);
 }
 
 static gboolean
@@ -427,8 +427,8 @@ sn_item_class_init (SnItemClass *item_class)
   GtkButtonClass *button_class;
 
   object_class = G_OBJECT_CLASS (item_class);
-  widget_class = GTK_WIDGET_CLASS (item_class);
-  button_class = GTK_BUTTON_CLASS (item_class);
+  widget_class = CTK_WIDGET_CLASS (item_class);
+  button_class = CTK_BUTTON_CLASS (item_class);
 
   object_class->dispose = sn_item_dispose;
   object_class->finalize = sn_item_finalize;
@@ -452,7 +452,7 @@ sn_item_init (SnItem *item)
 {
   item->priv = sn_item_get_instance_private (item);
 
-  ctk_widget_add_events (GTK_WIDGET (item), GDK_SCROLL_MASK);
+  ctk_widget_add_events (CTK_WIDGET (item), GDK_SCROLL_MASK);
 }
 
 const gchar *

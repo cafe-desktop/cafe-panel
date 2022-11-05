@@ -100,9 +100,9 @@ panel_context_menu_show_about_dialog (GtkWidget *menuitem)
 	int   i;
 
 	if (about) {
-		ctk_window_set_screen (GTK_WINDOW (about),
+		ctk_window_set_screen (CTK_WINDOW (about),
 				       menuitem_to_screen (menuitem));
-		ctk_window_present (GTK_WINDOW (about));
+		ctk_window_present (CTK_WINDOW (about));
 		return;
 	}
 
@@ -125,7 +125,7 @@ panel_context_menu_show_about_dialog (GtkWidget *menuitem)
 		      "logo-icon-name", PANEL_ICON_PANEL,
 		      NULL);
 
-	ctk_window_set_screen (GTK_WINDOW (about),
+	ctk_window_set_screen (CTK_WINDOW (about),
 			       menuitem_to_screen (menuitem));
 	g_signal_connect (about, "destroy",
 			  G_CALLBACK (ctk_widget_destroyed),
@@ -148,8 +148,8 @@ static void
 panel_context_menu_delete_panel (PanelToplevel *toplevel)
 {
 	if (panel_toplevel_is_last_unattached (toplevel)) {
-		panel_error_dialog (GTK_WINDOW (toplevel),
-				    ctk_window_get_screen (GTK_WINDOW (toplevel)),
+		panel_error_dialog (CTK_WINDOW (toplevel),
+				    ctk_window_get_screen (CTK_WINDOW (toplevel)),
 				    "cannot_delete_last_panel", TRUE,
 				    _("Cannot delete this panel"),
 				    _("You must always have at least one panel."));
@@ -182,7 +182,7 @@ static void
 panel_reset_response (GtkWidget     *dialog,
 			 int            response)
 {
-	if (response == GTK_RESPONSE_OK) {
+	if (response == CTK_RESPONSE_OK) {
 		panel_reset ();
 	}
 
@@ -201,22 +201,22 @@ query_panel_reset (PanelToplevel *toplevel)
 			 "custom settings are lost.");
 
 	dialog = ctk_message_dialog_new (
-			GTK_WINDOW (toplevel),
-			GTK_DIALOG_MODAL,
-			GTK_MESSAGE_WARNING,
-			GTK_BUTTONS_NONE,
+			CTK_WINDOW (toplevel),
+			CTK_DIALOG_MODAL,
+			CTK_MESSAGE_WARNING,
+			CTK_BUTTONS_NONE,
 			"%s", text1);
 
-	ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+	ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 	                                          "%s", text2);
-	ctk_dialog_add_buttons (GTK_DIALOG (dialog),
-				_("_Cancel"), GTK_RESPONSE_CANCEL,
-				_("_Reset Panels"), GTK_RESPONSE_OK,
+	ctk_dialog_add_buttons (CTK_DIALOG (dialog),
+				_("_Cancel"), CTK_RESPONSE_CANCEL,
+				_("_Reset Panels"), CTK_RESPONSE_OK,
 				NULL);
 
-	ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CANCEL);
+	ctk_dialog_set_default_response (CTK_DIALOG (dialog), CTK_RESPONSE_CANCEL);
 
-	ctk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
+	ctk_window_set_position (CTK_WINDOW (dialog), CTK_WIN_POS_CENTER);
 
 	g_signal_connect (dialog, "response",
 			  G_CALLBACK (panel_reset_response),
@@ -231,12 +231,12 @@ panel_context_menu_build_edition (PanelWidget *panel_widget,
 {
 	GtkWidget *menuitem;
 
-	ctk_menu_set_reserve_toggle_size (GTK_MENU (menu), FALSE);
+	ctk_menu_set_reserve_toggle_size (CTK_MENU (menu), FALSE);
 
 	menuitem = panel_image_menu_item_new_from_icon ("list-add", _("_Add to Panel…"));
 
 	ctk_widget_show (menuitem);
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), menuitem);
         g_signal_connect (G_OBJECT (menuitem), "activate",
 	      	       	  G_CALLBACK (panel_addto_present), panel_widget);
 
@@ -246,7 +246,7 @@ panel_context_menu_build_edition (PanelWidget *panel_widget,
 	menuitem = panel_image_menu_item_new_from_icon ("document-properties", _("_Properties"));
 
 	ctk_widget_show (menuitem);
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), menuitem);
 	g_signal_connect_swapped (menuitem, "activate",
 				  G_CALLBACK (panel_properties_dialog_present),
 				  panel_widget->toplevel);
@@ -256,14 +256,14 @@ panel_context_menu_build_edition (PanelWidget *panel_widget,
 	menuitem = panel_image_menu_item_new_from_icon ("document-revert", _("_Reset All Panels"));
 
 	ctk_widget_show (menuitem);
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), menuitem);
 	g_signal_connect_swapped (menuitem, "activate",
 			  G_CALLBACK (query_panel_reset), panel_widget->toplevel);
 
 	menuitem = panel_image_menu_item_new_from_icon ("edit-delete", _("_Delete This Panel"));
 
 	ctk_widget_show (menuitem);
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), menuitem);
 	g_signal_connect_swapped (G_OBJECT (menuitem), "activate",
 				  G_CALLBACK (panel_context_menu_delete_panel),
 				  panel_widget->toplevel);
@@ -276,7 +276,7 @@ panel_context_menu_build_edition (PanelWidget *panel_widget,
 	menuitem = panel_image_menu_item_new_from_icon ("document-new", _("_New Panel"));
 
 	ctk_widget_show (menuitem);
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), menuitem);
 	g_signal_connect (menuitem, "activate",
 			  G_CALLBACK (panel_context_menu_create_new_panel),
 			  NULL);
@@ -318,14 +318,14 @@ panel_context_menu_create (PanelWidget *panel)
 	menuitem = panel_image_menu_item_new_from_icon ("help-browser", _("_Help"));
 
 	ctk_widget_show (menuitem);
-	ctk_menu_shell_append (GTK_MENU_SHELL (retval), menuitem);
+	ctk_menu_shell_append (CTK_MENU_SHELL (retval), menuitem);
 	g_signal_connect (menuitem, "activate",
 			  G_CALLBACK (panel_context_menu_show_help), NULL);
 
 	menuitem = panel_image_menu_item_new_from_icon ("help-about", _("A_bout Panels"));
 
 	ctk_widget_show (menuitem);
-	ctk_menu_shell_append (GTK_MENU_SHELL (retval), menuitem);
+	ctk_menu_shell_append (CTK_MENU_SHELL (retval), menuitem);
 	g_signal_connect (menuitem, "activate",
 			  G_CALLBACK (panel_context_menu_show_about_dialog),
 			  NULL);
@@ -336,12 +336,12 @@ panel_context_menu_create (PanelWidget *panel)
 /* Set up theme and transparency support */
 	GtkWidget *toplevel = ctk_widget_get_toplevel (retval);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
-	GdkScreen *screen = ctk_widget_get_screen(GTK_WIDGET(toplevel));
+	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
-	ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
 	GtkStyleContext *context;
-	context = ctk_widget_get_style_context (GTK_WIDGET(toplevel));
+	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
 

@@ -87,7 +87,7 @@ error_reported (GtkWidget  *dialog,
 		const char *secondary,
 		gpointer    data)
 {
-	panel_error_dialog (GTK_WINDOW (dialog), NULL,
+	panel_error_dialog (CTK_WINDOW (dialog), NULL,
 			    "error_editing_launcher", TRUE,
 			    primary, secondary);
 }

@@ -139,8 +139,8 @@ na_tray_manager_class_init (NaTrayManagerClass *klass)
 				   g_param_spec_enum ("orientation",
 						      "orientation",
 						      "orientation",
-						      GTK_TYPE_ORIENTATION,
-						      GTK_ORIENTATION_HORIZONTAL,
+						      CTK_TYPE_ORIENTATION,
+						      CTK_ORIENTATION_HORIZONTAL,
 						      G_PARAM_READWRITE |
 						      G_PARAM_CONSTRUCT |
 						      G_PARAM_STATIC_NAME |
@@ -155,7 +155,7 @@ na_tray_manager_class_init (NaTrayManagerClass *klass)
 		  NULL, NULL,
 		  g_cclosure_marshal_VOID__OBJECT,
 		  G_TYPE_NONE, 1,
-		  GTK_TYPE_SOCKET);
+		  CTK_TYPE_SOCKET);
 
   manager_signals[TRAY_ICON_REMOVED] =
     g_signal_new ("tray_icon_removed",
@@ -165,7 +165,7 @@ na_tray_manager_class_init (NaTrayManagerClass *klass)
 		  NULL, NULL,
 		  g_cclosure_marshal_VOID__OBJECT,
 		  G_TYPE_NONE, 1,
-		  GTK_TYPE_SOCKET);
+		  CTK_TYPE_SOCKET);
   manager_signals[MESSAGE_SENT] =
     g_signal_new ("message_sent",
 		  G_OBJECT_CLASS_TYPE (klass),
@@ -174,7 +174,7 @@ na_tray_manager_class_init (NaTrayManagerClass *klass)
 		  NULL, NULL,
 		  _na_marshal_VOID__OBJECT_STRING_LONG_LONG,
 		  G_TYPE_NONE, 4,
-		  GTK_TYPE_SOCKET,
+		  CTK_TYPE_SOCKET,
 		  G_TYPE_STRING,
 		  G_TYPE_LONG,
 		  G_TYPE_LONG);
@@ -186,7 +186,7 @@ na_tray_manager_class_init (NaTrayManagerClass *klass)
 		  NULL, NULL,
 		  _na_marshal_VOID__OBJECT_LONG,
 		  G_TYPE_NONE, 2,
-		  GTK_TYPE_SOCKET,
+		  CTK_TYPE_SOCKET,
 		  G_TYPE_LONG);
   manager_signals[LOST_SELECTION] =
     g_signal_new ("lost_selection",
@@ -300,7 +300,7 @@ na_tray_manager_handle_dock_request (NaTrayManager       *manager,
 
   /* If the child wasn't attached, then destroy it */
 
-  if (!GTK_IS_WINDOW (ctk_widget_get_toplevel (GTK_WIDGET (child))))
+  if (!CTK_IS_WINDOW (ctk_widget_get_toplevel (CTK_WIDGET (child))))
     {
       ctk_widget_destroy (child);
       return;
@@ -309,9 +309,9 @@ na_tray_manager_handle_dock_request (NaTrayManager       *manager,
   g_signal_connect (child, "plug_removed",
 		    G_CALLBACK (na_tray_manager_plug_removed), manager);
 
-  ctk_socket_add_id (GTK_SOCKET (child), icon_window);
+  ctk_socket_add_id (CTK_SOCKET (child), icon_window);
 
-  if (!ctk_socket_get_plug_window (GTK_SOCKET (child)))
+  if (!ctk_socket_get_plug_window (CTK_SOCKET (child)))
     {
       /* Embedding failed, we won't get a plug-removed signal */
       /* This signal destroys the socket */
@@ -547,7 +547,7 @@ na_tray_manager_unmanage (NaTrayManager *manager)
   invisible = manager->invisible;
   window = ctk_widget_get_window (invisible);
 
-  g_assert (GTK_IS_INVISIBLE (invisible));
+  g_assert (CTK_IS_INVISIBLE (invisible));
   g_assert (ctk_widget_get_realized (invisible));
   g_assert (GDK_IS_WINDOW (window));
 
@@ -590,7 +590,7 @@ na_tray_manager_set_orientation_property (NaTrayManager *manager)
   orientation_atom = gdk_x11_get_xatom_by_name_for_display (display,
                                                             "_NET_SYSTEM_TRAY_ORIENTATION");
 
-  data[0] = manager->orientation == GTK_ORIENTATION_HORIZONTAL ?
+  data[0] = manager->orientation == CTK_ORIENTATION_HORIZONTAL ?
 		SYSTEM_TRAY_ORIENTATION_HORZ :
 		SYSTEM_TRAY_ORIENTATION_VERT;
 
@@ -987,7 +987,7 @@ na_tray_manager_set_colors (NaTrayManager *manager,
 GtkOrientation
 na_tray_manager_get_orientation (NaTrayManager *manager)
 {
-  g_return_val_if_fail (NA_IS_TRAY_MANAGER (manager), GTK_ORIENTATION_HORIZONTAL);
+  g_return_val_if_fail (NA_IS_TRAY_MANAGER (manager), CTK_ORIENTATION_HORIZONTAL);
 
   return manager->orientation;
 }

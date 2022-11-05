@@ -30,7 +30,7 @@ struct _PanelPlug
   GtkPlug parent;
 };
 
-G_DEFINE_TYPE (PanelPlug, panel_plug, GTK_TYPE_PLUG)
+G_DEFINE_TYPE (PanelPlug, panel_plug, CTK_TYPE_PLUG)
 
 static gboolean
 panel_plug_draw (GtkWidget *widget,
@@ -40,7 +40,7 @@ panel_plug_draw (GtkWidget *widget,
   cairo_pattern_t *pattern;
 
   if (!ctk_widget_get_realized (widget))
-    return GTK_WIDGET_CLASS (panel_plug_parent_class)->draw (widget, cr);
+    return CTK_WIDGET_CLASS (panel_plug_parent_class)->draw (widget, cr);
 
   window = ctk_widget_get_window (widget);
   pattern = gdk_window_get_background_pattern (window);
@@ -58,7 +58,7 @@ panel_plug_draw (GtkWidget *widget,
       ctk_render_background (context, cr, 0, 0, width, height);
     }
 
-  return GTK_WIDGET_CLASS (panel_plug_parent_class)->draw (widget, cr);
+  return CTK_WIDGET_CLASS (panel_plug_parent_class)->draw (widget, cr);
 }
 
 static void
@@ -75,7 +75,7 @@ panel_plug_realize (GtkWidget *widget)
 
   ctk_widget_set_visual (widget, visual);
 
-  GTK_WIDGET_CLASS (panel_plug_parent_class)->realize (widget);
+  CTK_WIDGET_CLASS (panel_plug_parent_class)->realize (widget);
 }
 
 static void
@@ -83,7 +83,7 @@ panel_plug_class_init (PanelPlugClass *plug_class)
 {
   GtkWidgetClass *widget_class;
 
-  widget_class = GTK_WIDGET_CLASS (plug_class);
+  widget_class = CTK_WIDGET_CLASS (plug_class);
 
   widget_class->draw = panel_plug_draw;
   widget_class->realize = panel_plug_realize;
@@ -94,7 +94,7 @@ panel_plug_class_init (PanelPlugClass *plug_class)
 static void
 panel_plug_init (PanelPlug *plug)
 {
-  ctk_widget_set_app_paintable (GTK_WIDGET (plug), TRUE);
+  ctk_widget_set_app_paintable (CTK_WIDGET (plug), TRUE);
 }
 
 GtkWidget *

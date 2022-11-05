@@ -110,11 +110,11 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 	g_return_val_if_fail (have_randr, FALSE);
 	g_return_val_if_fail (GDK_IS_X11_DISPLAY (display), FALSE);
 
-	/* GTK+ 2.14.x uses the Xinerama API, instead of RANDR, to get the
+	/* CTK+ 2.14.x uses the Xinerama API, instead of RANDR, to get the
 	 * monitor geometries. It does this to avoid calling
 	 * XRRGetScreenResources(), which is slow as it re-detects all the
 	 * monitors --- note that XRRGetScreenResourcesCurrent() had not been
-	 * introduced yet.  Using Xinerama in GTK+ has the bad side effect that
+	 * introduced yet.  Using Xinerama in CTK+ has the bad side effect that
 	 * gdk_screen_get_monitor_plug_name() will return NULL, as Xinerama
 	 * does not provide that information, unlike RANDR.
 	 *
@@ -318,7 +318,7 @@ panel_multimonitor_compress_overlapping_monitors (int           *num_monitors_in
 	 * NOTE FOR THE FUTURE: We could avoid most of this mess if we had a
 	 * concept of a "primary monitor". Also, we could look at each
 	 * output's name or properties to see if it is the built-in LCD in a
-	 * laptop. However, with GTK+ 2.14.x we don't get output names, since
+	 * laptop. However, with CTK+ 2.14.x we don't get output names, since
 	 * it gets the list outputs from Xinerama, not RANDR (and Xinerama
 	 * doesn't provide output names).
 	 */

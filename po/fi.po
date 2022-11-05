@@ -2086,11 +2086,11 @@ msgstr "Taustan tyyppi"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:109
 msgid ""
 "Which type of background should be used for this panel. Possible values are "
-"\"none\" - the default GTK+ widget background will be used, \"color\" - the "
+"\"none\" - the default CTK+ widget background will be used, \"color\" - the "
 "color key will be used as background color or \"image\" - the image "
 "specified by the image key will be used as background."
 msgstr ""
-"Minkälainen tausta tällä paneelilla on. Mahdollisia arvoja ovat ”ctk” (GTK+ "
+"Minkälainen tausta tällä paneelilla on. Mahdollisia arvoja ovat ”ctk” (CTK+ "
 "säädinten oletustausta), ”color” (”color”-avaimen määrittelemä taustaväri) "
 "tai ”image” (”image”-avaimen määrittelemä kuva)."
 

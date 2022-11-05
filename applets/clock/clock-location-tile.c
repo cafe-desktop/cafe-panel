@@ -49,7 +49,7 @@ typedef struct {
         gulong location_weather_updated_id;
 } ClockLocationTilePrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (ClockLocationTile, clock_location_tile, GTK_TYPE_BIN)
+G_DEFINE_TYPE_WITH_PRIVATE (ClockLocationTile, clock_location_tile, CTK_TYPE_BIN)
 
 static void clock_location_tile_finalize (GObject *);
 
@@ -178,13 +178,13 @@ make_current_cb (gpointer data, GError *error)
         if (error) {
                 dialog = ctk_message_dialog_new (NULL,
                                                  0,
-                                                 GTK_MESSAGE_ERROR,
-                                                 GTK_BUTTONS_CLOSE,
+                                                 CTK_MESSAGE_ERROR,
+                                                 CTK_BUTTONS_CLOSE,
                                                  _("Failed to set the system timezone"));
-                ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s", error->message);
+                ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog), "%s", error->message);
                 g_signal_connect (dialog, "response",
                                   G_CALLBACK (ctk_widget_destroy), NULL);
-                ctk_window_present (GTK_WINDOW (dialog));
+                ctk_window_present (CTK_WINDOW (dialog));
         }
 }
 
@@ -224,7 +224,7 @@ enter_or_leave_tile (GtkWidget             *widget,
                 else
                         can_set = can_set_system_timezone ();
                 if (can_set != 0) {
-                        ctk_label_set_markup (GTK_LABEL (priv->current_label),
+                        ctk_label_set_markup (CTK_LABEL (priv->current_label),
                                                 can_set == 1 ?
                                                         _("<small>Set...</small>") :
                                                         _("<small>Set</small>"));
@@ -268,46 +268,46 @@ clock_location_tile_fill (ClockLocationTile *this)
         g_signal_connect (priv->box, "leave-notify-event",
                           G_CALLBACK (enter_or_leave_tile), this);
 
-        tile = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+        tile = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 6);
         ctk_widget_set_margin_top (tile, 3);
         ctk_widget_set_margin_bottom (tile, 3);
         ctk_widget_set_margin_start (tile, 3);
 
         priv->city_label = ctk_label_new (NULL);
         ctk_widget_set_margin_end (priv->city_label, 3);
-        ctk_label_set_xalign (GTK_LABEL (priv->city_label), 0.0);
-        ctk_label_set_yalign (GTK_LABEL (priv->city_label), 0.0);
+        ctk_label_set_xalign (CTK_LABEL (priv->city_label), 0.0);
+        ctk_label_set_yalign (CTK_LABEL (priv->city_label), 0.0);
 
-        head_section = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-        ctk_box_pack_start (GTK_BOX (head_section), priv->city_label, FALSE, FALSE, 0);
+        head_section = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
+        ctk_box_pack_start (CTK_BOX (head_section), priv->city_label, FALSE, FALSE, 0);
 
         priv->time_label = ctk_label_new (NULL);
-        ctk_label_set_width_chars (GTK_LABEL (priv->time_label), 20);
+        ctk_label_set_width_chars (CTK_LABEL (priv->time_label), 20);
         ctk_widget_set_margin_end (priv->time_label, 3);
-        ctk_label_set_xalign (GTK_LABEL (priv->time_label), 0.0);
-        ctk_label_set_yalign (GTK_LABEL (priv->time_label), 0.0);
+        ctk_label_set_xalign (CTK_LABEL (priv->time_label), 0.0);
+        ctk_label_set_yalign (CTK_LABEL (priv->time_label), 0.0);
 
         priv->weather_icon = ctk_image_new ();
-        ctk_widget_set_valign (priv->weather_icon, GTK_ALIGN_START);
+        ctk_widget_set_valign (priv->weather_icon, CTK_ALIGN_START);
 
-        box = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-        ctk_box_pack_start (GTK_BOX (head_section), box, FALSE, FALSE, 0);
-        ctk_box_pack_start (GTK_BOX (box), priv->weather_icon, FALSE, FALSE, 0);
-        ctk_box_pack_start (GTK_BOX (box), priv->time_label, FALSE, FALSE, 0);
+        box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
+        ctk_box_pack_start (CTK_BOX (head_section), box, FALSE, FALSE, 0);
+        ctk_box_pack_start (CTK_BOX (box), priv->weather_icon, FALSE, FALSE, 0);
+        ctk_box_pack_start (CTK_BOX (box), priv->time_label, FALSE, FALSE, 0);
 
         priv->current_button = ctk_button_new ();
         /* The correct label is set on EnterNotify events */
         priv->current_label = ctk_label_new ("");
         ctk_widget_show (priv->current_label);
         ctk_widget_set_no_show_all (priv->current_button, TRUE);
-        ctk_widget_set_valign (priv->current_button, GTK_ALIGN_CENTER);
-        ctk_container_add (GTK_CONTAINER (priv->current_button), priv->current_label);
+        ctk_widget_set_valign (priv->current_button, CTK_ALIGN_CENTER);
+        ctk_container_add (CTK_CONTAINER (priv->current_button), priv->current_label);
         ctk_widget_set_tooltip_text (priv->current_button,
                                      _("Set location as current location and use its timezone for this computer"));
 
-        priv->current_marker = ctk_image_new_from_icon_name ("go-home", GTK_ICON_SIZE_BUTTON);
-        ctk_widget_set_halign (priv->current_marker, GTK_ALIGN_END);
-        ctk_widget_set_valign (priv->current_marker, GTK_ALIGN_CENTER);
+        priv->current_marker = ctk_image_new_from_icon_name ("go-home", CTK_ICON_SIZE_BUTTON);
+        ctk_widget_set_halign (priv->current_marker, CTK_ALIGN_END);
+        ctk_widget_set_valign (priv->current_marker, CTK_ALIGN_CENTER);
         ctk_widget_set_margin_start (priv->current_marker, 75);
         ctk_widget_set_no_show_all (priv->current_marker, TRUE);
 
@@ -315,10 +315,10 @@ clock_location_tile_fill (ClockLocationTile *this)
         ctk_widget_set_no_show_all (priv->current_spacer, TRUE);
 
         strut = ctk_event_box_new ();
-        ctk_box_pack_start (GTK_BOX (box), strut, TRUE, TRUE, 0);
-        ctk_box_pack_start (GTK_BOX (box), priv->current_marker, FALSE, FALSE, 0);
-        ctk_box_pack_start (GTK_BOX (box), priv->current_spacer, FALSE, FALSE, 0);
-        priv->button_group = ctk_size_group_new (GTK_SIZE_GROUP_VERTICAL);
+        ctk_box_pack_start (CTK_BOX (box), strut, TRUE, TRUE, 0);
+        ctk_box_pack_start (CTK_BOX (box), priv->current_marker, FALSE, FALSE, 0);
+        ctk_box_pack_start (CTK_BOX (box), priv->current_spacer, FALSE, FALSE, 0);
+        priv->button_group = ctk_size_group_new (CTK_SIZE_GROUP_VERTICAL);
         ctk_size_group_add_widget (priv->button_group, strut);
 
         /*
@@ -330,7 +330,7 @@ clock_location_tile_fill (ClockLocationTile *this)
          * (The all have to be shown initially to get the sizes worked out,
          * but they are never visible together).
          */
-        priv->current_group = ctk_size_group_new (GTK_SIZE_GROUP_BOTH);
+        priv->current_group = ctk_size_group_new (CTK_SIZE_GROUP_BOTH);
         ctk_size_group_add_widget (priv->current_group, priv->current_marker);
         ctk_size_group_add_widget (priv->current_group, priv->current_spacer);
 
@@ -344,12 +344,12 @@ clock_location_tile_fill (ClockLocationTile *this)
         priv->clock_face = clock_face_new_with_location (
                 priv->size, priv->location, head_section);
 
-        ctk_box_pack_start (GTK_BOX (tile), priv->clock_face, FALSE, FALSE, 0);
-        ctk_box_pack_start (GTK_BOX (tile), head_section, TRUE, TRUE, 0);
-        ctk_box_pack_start (GTK_BOX (tile), priv->current_button, FALSE, FALSE, 0);
+        ctk_box_pack_start (CTK_BOX (tile), priv->clock_face, FALSE, FALSE, 0);
+        ctk_box_pack_start (CTK_BOX (tile), head_section, TRUE, TRUE, 0);
+        ctk_box_pack_start (CTK_BOX (tile), priv->current_button, FALSE, FALSE, 0);
 
-        ctk_container_add (GTK_CONTAINER (priv->box), tile);
-        ctk_container_add (GTK_CONTAINER (this), priv->box);
+        ctk_container_add (CTK_CONTAINER (priv->box), tile);
+        ctk_container_add (CTK_CONTAINER (this), priv->box);
 }
 
 static gboolean
@@ -555,7 +555,7 @@ clock_location_tile_refresh (ClockLocationTile *this, gboolean force_refresh)
 
         tmp = g_strdup_printf ("<big><b>%s</b></big>",
                                clock_location_get_display_name (priv->location));
-        ctk_label_set_markup (GTK_LABEL (priv->city_label), tmp);
+        ctk_label_set_markup (CTK_LABEL (priv->city_label), tmp);
         g_free (tmp);
 
         g_signal_emit (this, signals[NEED_CLOCK_FORMAT], 0, &format);
@@ -564,7 +564,7 @@ clock_location_tile_refresh (ClockLocationTile *this, gboolean force_refresh)
 
         tmp = format_time (&now, tzname, format, offset);
 
-        ctk_label_set_markup (GTK_LABEL (priv->time_label), tmp);
+        ctk_label_set_markup (CTK_LABEL (priv->time_label), tmp);
 
         g_free (tmp);
 }
@@ -589,7 +589,7 @@ weather_info_setup_tooltip (WeatherInfo *info, ClockLocation *location, GtkToolt
         icon_scale = gdk_window_get_scale_factor (gdk_get_default_root_window ());
 
         pixbuf = ctk_icon_theme_load_icon_for_scale (theme, icon_name, 48, icon_scale,
-                                                     GTK_ICON_LOOKUP_GENERIC_FALLBACK, NULL);
+                                                     CTK_ICON_LOOKUP_GENERIC_FALLBACK, NULL);
         if (pixbuf)
                 ctk_tooltip_set_icon (tooltip, pixbuf);
 
@@ -694,15 +694,15 @@ update_weather_icon (ClockLocation *loc, WeatherInfo *info, gpointer data)
 
         tile = CLOCK_LOCATION_TILE (data);
         priv = clock_location_tile_get_instance_private (tile);
-        theme = ctk_icon_theme_get_for_screen (ctk_widget_get_screen (GTK_WIDGET (priv->weather_icon)));
+        theme = ctk_icon_theme_get_for_screen (ctk_widget_get_screen (CTK_WIDGET (priv->weather_icon)));
         icon_name = weather_info_get_icon_name (info);
-        icon_scale = ctk_widget_get_scale_factor (GTK_WIDGET (priv->weather_icon));
+        icon_scale = ctk_widget_get_scale_factor (CTK_WIDGET (priv->weather_icon));
 
         surface = ctk_icon_theme_load_surface (theme, icon_name, 16, icon_scale,
-                                               NULL, GTK_ICON_LOOKUP_GENERIC_FALLBACK, NULL);
+                                               NULL, CTK_ICON_LOOKUP_GENERIC_FALLBACK, NULL);
 
         if (surface) {
-                ctk_image_set_from_surface (GTK_IMAGE (priv->weather_icon), surface);
+                ctk_image_set_from_surface (CTK_IMAGE (priv->weather_icon), surface);
                 ctk_widget_set_margin_end (priv->weather_icon, 6);
                 cairo_surface_destroy (surface);
         }

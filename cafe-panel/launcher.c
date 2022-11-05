@@ -58,7 +58,7 @@ launcher_get_screen (Launcher *launcher)
 
 	panel_widget = PANEL_WIDGET (ctk_widget_get_parent (launcher->info->widget));
 
-	return ctk_window_get_screen (GTK_WINDOW (panel_widget->toplevel));
+	return ctk_window_get_screen (CTK_WINDOW (panel_widget->toplevel));
 }
 
 static void
@@ -518,11 +518,11 @@ create_launcher (const char *location)
 
 	ctk_widget_show (launcher->button);
 
-	/*ctk_drag_dest_set (GTK_WIDGET (launcher->button),
-			   GTK_DEST_DEFAULT_ALL,
+	/*ctk_drag_dest_set (CTK_WIDGET (launcher->button),
+			   CTK_DEST_DEFAULT_ALL,
 			   dnd_targets, 2,
 			   GDK_ACTION_COPY);*/
-	ctk_drag_dest_set (GTK_WIDGET (launcher->button),
+	ctk_drag_dest_set (CTK_WIDGET (launcher->button),
 			   0, NULL, 0, 0);
 
 	g_signal_connect (launcher->button, "drag_data_get",
@@ -796,7 +796,7 @@ launcher_error_reported (GtkWidget  *dialog,
 			 const char *secondary,
 			 gpointer    data)
 {
-	panel_error_dialog (GTK_WINDOW (dialog), NULL,
+	panel_error_dialog (CTK_WINDOW (dialog), NULL,
 			    "error_editing_launcher", TRUE,
 			    primary, secondary);
 }
@@ -805,9 +805,9 @@ void
 launcher_properties (Launcher  *launcher)
 {
 	if (launcher->prop_dialog != NULL) {
-		ctk_window_set_screen (GTK_WINDOW (launcher->prop_dialog),
+		ctk_window_set_screen (CTK_WINDOW (launcher->prop_dialog),
 				       ctk_widget_get_screen (launcher->button));
-		ctk_window_present (GTK_WINDOW (launcher->prop_dialog));
+		ctk_window_present (CTK_WINDOW (launcher->prop_dialog));
 		return;
 	}
 
@@ -877,8 +877,8 @@ load_launcher_applet (const char       *location,
 		return NULL;
 	}
 
-	panel_widget_set_applet_expandable (panel, GTK_WIDGET (launcher->button), FALSE, TRUE);
-	panel_widget_set_applet_size_constrained (panel, GTK_WIDGET (launcher->button), TRUE);
+	panel_widget_set_applet_expandable (panel, CTK_WIDGET (launcher->button), FALSE, TRUE);
+	panel_widget_set_applet_size_constrained (panel, CTK_WIDGET (launcher->button), TRUE);
 
 	/* setup button according to ditem */
 	setup_button (launcher);
@@ -990,8 +990,8 @@ ask_about_launcher (const char  *file,
 	g_signal_connect (G_OBJECT (dialog), "error_reported",
 			  G_CALLBACK (launcher_error_reported), NULL);
 
-	ctk_window_set_screen (GTK_WINDOW (dialog),
-			       ctk_widget_get_screen (GTK_WIDGET (panel)));
+	ctk_window_set_screen (CTK_WINDOW (dialog),
+			       ctk_widget_get_screen (CTK_WIDGET (panel)));
 
 	g_object_set_data (G_OBJECT (dialog), "pos", GINT_TO_POINTER (pos));
 	g_object_set_data (G_OBJECT (dialog), "panel", panel);
@@ -1037,8 +1037,8 @@ panel_launcher_create_from_info (PanelToplevel *toplevel,
 	if (panel_key_file_to_file (key_file, location, &error)) {
 		panel_launcher_create (toplevel, position, location);
 	} else {
-		panel_error_dialog (GTK_WINDOW (toplevel),
-				    ctk_window_get_screen (GTK_WINDOW (toplevel)),
+		panel_error_dialog (CTK_WINDOW (toplevel),
+				    ctk_window_get_screen (CTK_WINDOW (toplevel)),
 				    "cannot_save_launcher", TRUE,
 				    _("Could not save launcher"),
 				    error->message);

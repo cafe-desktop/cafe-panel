@@ -85,7 +85,7 @@ clock_utils_display_help (GtkWidget  *widget,
 		GtkWidget *dialog;
 		char      *primary;
 
-		if (GTK_IS_WINDOW (widget))
+		if (CTK_IS_WINDOW (widget))
 			parent = widget;
 		else
 			parent = NULL;
@@ -94,14 +94,14 @@ clock_utils_display_help (GtkWidget  *widget,
 				_("Could not display help document '%s'"),
 				doc_id);
 		dialog = ctk_message_dialog_new (
-				parent ? GTK_WINDOW (parent) : NULL,
-				GTK_DIALOG_MODAL|GTK_DIALOG_DESTROY_WITH_PARENT,
-				GTK_MESSAGE_ERROR,
-				GTK_BUTTONS_CLOSE,
+				parent ? CTK_WINDOW (parent) : NULL,
+				CTK_DIALOG_MODAL|CTK_DIALOG_DESTROY_WITH_PARENT,
+				CTK_MESSAGE_ERROR,
+				CTK_BUTTONS_CLOSE,
 				"%s", primary);
 
 		ctk_message_dialog_format_secondary_text (
-					GTK_MESSAGE_DIALOG (dialog),
+					CTK_MESSAGE_DIALOG (dialog),
 					"%s", error->message);
 
 		g_error_free (error);
@@ -111,15 +111,15 @@ clock_utils_display_help (GtkWidget  *widget,
 				  G_CALLBACK (ctk_widget_destroy),
 				  NULL);
 
-		ctk_window_set_icon_name (GTK_WINDOW (dialog), CLOCK_ICON);
-		ctk_window_set_screen (GTK_WINDOW (dialog),
+		ctk_window_set_icon_name (CTK_WINDOW (dialog), CLOCK_ICON);
+		ctk_window_set_screen (CTK_WINDOW (dialog),
 				       ctk_widget_get_screen (widget));
 
 		if (parent == NULL) {
 			/* we have no parent window */
-			ctk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog),
+			ctk_window_set_skip_taskbar_hint (CTK_WINDOW (dialog),
 							  FALSE);
-			ctk_window_set_title (GTK_WINDOW (dialog),
+			ctk_window_set_title (CTK_WINDOW (dialog),
 					      _("Error displaying help document"));
 		}
 

@@ -22,8 +22,8 @@
  *	Vincent Untz <vuntz@gnome.org>
  */
 
-#ifndef PANEL_GTK_H
-#define PANEL_GTK_H
+#ifndef PANEL_CTK_H
+#define PANEL_CTK_H
 
 #include <ctk/ctk.h>
 
@@ -31,7 +31,7 @@
 extern "C" {
 #endif
 
-#define PANEL_GTK_BUILDER_GET(builder, name) GTK_WIDGET (ctk_builder_get_object (builder, name))
+#define PANEL_CTK_BUILDER_GET(builder, name) CTK_WIDGET (ctk_builder_get_object (builder, name))
 
 void panel_ctk_file_chooser_add_image_preview (GtkFileChooser *chooser);
 
@@ -58,4 +58,4 @@ GtkWidget* panel_check_menu_item_new (GtkWidget *widget_check);
 }
 #endif
 
-#endif /* PANEL_GTK_H */
+#endif /* PANEL_CTK_H */

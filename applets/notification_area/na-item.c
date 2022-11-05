@@ -20,9 +20,9 @@
 
 #include "na-item.h"
 
-G_DEFINE_INTERFACE_WITH_CODE (NaItem, na_item, GTK_TYPE_WIDGET,
+G_DEFINE_INTERFACE_WITH_CODE (NaItem, na_item, CTK_TYPE_WIDGET,
                               g_type_interface_add_prerequisite (g_define_type_id,
-                                                                 GTK_TYPE_ORIENTABLE);)
+                                                                 CTK_TYPE_ORIENTABLE);)
 
 static gboolean
 na_item_draw_on_parent_default (NaItem     *item,
@@ -68,7 +68,7 @@ na_item_get_category (NaItem *item)
 
 /*
  * Fairly ugly hack because system-tray/NaTrayChild uses a weird hack for
- * drawing itself.  I'm not sure it's still needed with the current GTK3
+ * drawing itself.  I'm not sure it's still needed with the current CTK3
  * drawing where not all widgets have an own window, but well.
  *
  * Should return %TRUE if it handled itself, or %FALSE if the parent should
@@ -82,7 +82,7 @@ na_item_draw_on_parent (NaItem    *item,
   NaItemInterface *iface;
 
   g_return_val_if_fail (NA_IS_ITEM (item), FALSE);
-  g_return_val_if_fail (GTK_IS_WIDGET (parent), FALSE);
+  g_return_val_if_fail (CTK_IS_WIDGET (parent), FALSE);
 
   iface = NA_ITEM_GET_IFACE (item);
   g_return_val_if_fail (iface->draw_on_parent != NULL, FALSE);

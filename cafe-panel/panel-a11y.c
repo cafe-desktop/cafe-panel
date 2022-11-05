@@ -27,7 +27,7 @@ panel_a11y_get_is_a11y_enabled (GtkWidget *widget)
 	static gboolean a11y_enabled = FALSE;
 
 	if (!initialised) {
-		a11y_enabled = GTK_IS_ACCESSIBLE (ctk_widget_get_accessible (widget));
+		a11y_enabled = CTK_IS_ACCESSIBLE (ctk_widget_get_accessible (widget));
 		initialised = TRUE;
 	}
 
@@ -41,7 +41,7 @@ panel_a11y_set_atk_name_desc (GtkWidget  *widget,
 {
 	AtkObject *aobj;
 
-	g_return_if_fail (GTK_IS_WIDGET (widget));
+	g_return_if_fail (CTK_IS_WIDGET (widget));
 
 	if (!panel_a11y_get_is_a11y_enabled (widget))
 		return;
@@ -72,8 +72,8 @@ panel_a11y_set_atk_relation (GtkWidget *widget,
 	AtkRelation    *relation;
 	AtkObject      *targets [1];
 
-	g_return_if_fail (GTK_IS_WIDGET(widget));
-	g_return_if_fail (GTK_IS_LABEL(label));
+	g_return_if_fail (CTK_IS_WIDGET(widget));
+	g_return_if_fail (CTK_IS_LABEL(label));
 
 	if (!panel_a11y_get_is_a11y_enabled (widget))
 		return;
@@ -82,7 +82,7 @@ panel_a11y_set_atk_relation (GtkWidget *widget,
 
 	ctk_label_set_mnemonic_widget (label, widget);
 
-	targets [0] = ctk_widget_get_accessible (GTK_WIDGET (label));
+	targets [0] = ctk_widget_get_accessible (CTK_WIDGET (label));
 
 	relation_set = atk_object_ref_relation_set (aobject);
 

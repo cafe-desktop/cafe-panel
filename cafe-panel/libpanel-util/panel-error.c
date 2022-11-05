@@ -58,22 +58,22 @@ panel_error_dialog (GtkWindow  *parent,
 		primary_text = freeme;
 	}
 
-	dialog = ctk_message_dialog_new (parent, 0, GTK_MESSAGE_ERROR,
-					 GTK_BUTTONS_CLOSE, "%s", primary_text);
+	dialog = ctk_message_dialog_new (parent, 0, CTK_MESSAGE_ERROR,
+					 CTK_BUTTONS_CLOSE, "%s", primary_text);
 	if (secondary_text != NULL)
-		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+		ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 							  "%s", secondary_text);
 
 	if (screen)
-		ctk_window_set_screen (GTK_WINDOW (dialog), screen);
+		ctk_window_set_screen (CTK_WINDOW (dialog), screen);
 
 	if (!parent) {
-		ctk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
+		ctk_window_set_skip_taskbar_hint (CTK_WINDOW (dialog), FALSE);
 		/* FIXME: We need a title in this case, but we don't know what
 		 * the format should be. Let's put something simple until
 		 * the following bug gets fixed:
 		 * http://bugzilla.gnome.org/show_bug.cgi?id=165132 */
-		ctk_window_set_title (GTK_WINDOW (dialog), _("Error"));
+		ctk_window_set_title (CTK_WINDOW (dialog), _("Error"));
 	}
 
 	ctk_widget_show_all (dialog);

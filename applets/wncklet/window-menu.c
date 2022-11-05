@@ -72,7 +72,7 @@ static void window_menu_about(GtkAction* action, WindowMenu* window_menu)
 		NULL
 	};
 
-	ctk_show_about_dialog(GTK_WINDOW(window_menu->applet),
+	ctk_show_about_dialog(CTK_WINDOW(window_menu->applet),
 		"program-name", _("Window Selector"),
 		"title", _("About Window Selector"),
 		"authors", authors,
@@ -151,8 +151,8 @@ static void window_menu_size_allocate(CafePanelApplet* applet, GtkAllocation* al
 
 	orient = cafe_panel_applet_get_orient(applet);
 
-	children = ctk_container_get_children(GTK_CONTAINER(window_menu->selector));
-	child = GTK_WIDGET(children->data);
+	children = ctk_container_get_children(CTK_CONTAINER(window_menu->selector));
+	child = CTK_WIDGET(children->data);
 	g_list_free(children);
 
 	if (orient == CAFE_PANEL_APPLET_ORIENT_LEFT || orient == CAFE_PANEL_APPLET_ORIENT_RIGHT)
@@ -196,7 +196,7 @@ static gboolean window_menu_key_press_event(GtkWidget* widget, GdkEventKey* even
 			 *
 			 * As that function is private its code is replicated here.
 			 */
-			menu_shell = GTK_MENU_SHELL(selector);
+			menu_shell = CTK_MENU_SHELL(selector);
 
 			ctk_menu_shell_select_first(menu_shell, FALSE);
 			return TRUE;
@@ -222,7 +222,7 @@ gboolean window_menu_applet_fill(CafePanelApplet* applet)
 
 	window_menu = g_new0(WindowMenu, 1);
 
-	window_menu->applet = GTK_WIDGET(applet);
+	window_menu->applet = CTK_WIDGET(applet);
 	ctk_widget_set_name (window_menu->applet, "window-menu-applet-button");
 	ctk_widget_set_tooltip_text(window_menu->applet, _("Window Selector"));
 
@@ -241,9 +241,9 @@ gboolean window_menu_applet_fill(CafePanelApplet* applet)
 	g_object_unref(action_group);
 
 	window_menu->selector = wnck_selector_new();
-	ctk_container_add(GTK_CONTAINER(window_menu->applet), window_menu->selector);
+	ctk_container_add(CTK_CONTAINER(window_menu->applet), window_menu->selector);
 
-	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET(window_menu->applet), GTK_WIDGET(window_menu->selector));
+	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET(window_menu->applet), CTK_WIDGET(window_menu->selector));
 
 	g_signal_connect(window_menu->applet, "key_press_event", G_CALLBACK(window_menu_key_press_event), window_menu);
 	g_signal_connect(window_menu->applet, "size-allocate", G_CALLBACK(window_menu_size_allocate), window_menu);
@@ -254,7 +254,7 @@ gboolean window_menu_applet_fill(CafePanelApplet* applet)
 
 	g_signal_connect(G_OBJECT(window_menu->selector), "button_press_event", G_CALLBACK(filter_button_press), window_menu);
 
-	ctk_widget_show_all(GTK_WIDGET(window_menu->applet));
+	ctk_widget_show_all(CTK_WIDGET(window_menu->applet));
 
 	return TRUE;
 }
