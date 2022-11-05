@@ -77,7 +77,7 @@ panel_session_init (void)
 	if (is_using_x11 ()) {
 		/* We don't want the X WM to try and save/restore our
 		* window position */
-		gdk_x11_set_sm_client_id (NULL);
+		cdk_x11_set_sm_client_id (NULL);
 	}
 #endif
 }

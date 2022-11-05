@@ -30,7 +30,7 @@
 #include <glib/gi18n.h>
 
 #include <gio/gio.h>
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 
 #include <libpanel-util/panel-ctk.h>
 
@@ -338,13 +338,13 @@ cafe_panel_applet_frame_size_allocate (CtkWidget     *widget,
 	     new_allocation.y != frame->priv->child_allocation.y ||
 	     new_allocation.width != frame->priv->child_allocation.width ||
 	     new_allocation.height != frame->priv->child_allocation.height))
-		gdk_window_invalidate_rect (window, &widget_allocation, FALSE);
+		cdk_window_invalidate_rect (window, &widget_allocation, FALSE);
 
 	if (ctk_widget_get_realized (widget)) {
 		guint border_width;
 
 		border_width = ctk_container_get_border_width (CTK_CONTAINER (widget));
-		gdk_window_move_resize (window,
+		cdk_window_move_resize (window,
 			allocation->x + border_width,
 			allocation->y + border_width,
 			MAX (allocation->width - border_width * 2, 0),
@@ -411,8 +411,8 @@ cafe_panel_applet_frame_button_changed (CtkWidget      *widget,
 		if (event->type == GDK_BUTTON_PRESS ||
 		    event->type == GDK_2BUTTON_PRESS) {
 			display = ctk_widget_get_display (widget);
-			seat = gdk_display_get_default_seat (display);
-			gdk_seat_ungrab (seat);
+			seat = cdk_display_get_default_seat (display);
+			cdk_seat_ungrab (seat);
 
 			CAFE_PANEL_APPLET_FRAME_GET_CLASS (frame)->popup_menu (frame,
 									  event->button,
@@ -804,7 +804,7 @@ _cafe_panel_applet_frame_applet_broken (CafePanelAppletFrame *frame)
 #ifdef HAVE_X11
 	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (dialog)))
 		ctk_window_present_with_time (CTK_WINDOW (dialog),
-					      gdk_x11_get_server_time (ctk_widget_get_window (CTK_WIDGET (dialog))));
+					      cdk_x11_get_server_time (ctk_widget_get_window (CTK_WIDGET (dialog))));
 	else
 #endif
 	{ // Not using X11

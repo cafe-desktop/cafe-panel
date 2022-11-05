@@ -32,8 +32,8 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkx.h>
 #include <cairo-xlib.h>
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
@@ -66,13 +66,13 @@ struct _PanelBackgroundMonitor {
 	GdkScreen *screen;
 
 	Window     xwindow;
-	GdkWindow *gdkwindow;
+	GdkWindow *cdkwindow;
 
 	Atom       xatom;
-	GdkAtom    gdkatom;
+	GdkAtom    cdkatom;
 
 	cairo_surface_t *surface;
-	GdkPixbuf *gdkpixbuf;
+	GdkPixbuf *cdkpixbuf;
 
 	int        width;
 	int        height;
@@ -86,10 +86,10 @@ static PanelBackgroundMonitor *global_background_monitor = NULL;
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-gboolean gdk_window_check_composited_wm(GdkWindow* window)
+gboolean cdk_window_check_composited_wm(GdkWindow* window)
 {
 	g_return_val_if_fail (GDK_IS_X11_WINDOW (window), TRUE);
-	return gdk_screen_is_composited(gdk_window_get_screen(window));
+	return cdk_screen_is_composited(cdk_window_get_screen(window));
 }
 
 static void
@@ -99,8 +99,8 @@ panel_background_monitor_finalize (GObject *object)
 
 	monitor = PANEL_BACKGROUND_MONITOR (object);
 
-	gdk_window_remove_filter (
-		monitor->gdkwindow, panel_background_monitor_xevent_filter, monitor);
+	cdk_window_remove_filter (
+		monitor->cdkwindow, panel_background_monitor_xevent_filter, monitor);
 	g_signal_handlers_disconnect_by_func (monitor->screen,
 		panel_background_monitor_changed, monitor);
 
@@ -108,9 +108,9 @@ panel_background_monitor_finalize (GObject *object)
 		cairo_surface_destroy (monitor->surface);
 	monitor->surface= NULL;
 
-	if (monitor->gdkpixbuf)
-		g_object_unref (monitor->gdkpixbuf);
-	monitor->gdkpixbuf = NULL;
+	if (monitor->cdkpixbuf)
+		g_object_unref (monitor->cdkpixbuf);
+	monitor->cdkpixbuf = NULL;
 
 	G_OBJECT_CLASS (panel_background_monitor_parent_class)->finalize (object);
 }
@@ -137,14 +137,14 @@ panel_background_monitor_init (PanelBackgroundMonitor *monitor)
 {
 	monitor->screen = NULL;
 
-	monitor->gdkwindow = NULL;
+	monitor->cdkwindow = NULL;
 	monitor->xwindow   = None;
 
-	monitor->gdkatom = gdk_atom_intern_static_string ("_XROOTPMAP_ID");
-	monitor->xatom   = gdk_x11_atom_to_xatom (monitor->gdkatom);
+	monitor->cdkatom = cdk_atom_intern_static_string ("_XROOTPMAP_ID");
+	monitor->xatom   = cdk_x11_atom_to_xatom (monitor->cdkatom);
 
 	monitor->surface = NULL;
-	monitor->gdkpixbuf = NULL;
+	monitor->cdkpixbuf = NULL;
 
 	monitor->display_grabbed = FALSE;
 }
@@ -153,8 +153,8 @@ static void
 panel_background_monitor_connect_to_screen (PanelBackgroundMonitor *monitor,
 					    GdkScreen              *screen)
 {
-	if (monitor->screen != NULL && monitor->gdkwindow != NULL) {
-		gdk_window_remove_filter (monitor->gdkwindow,
+	if (monitor->screen != NULL && monitor->cdkwindow != NULL) {
+		cdk_window_remove_filter (monitor->cdkwindow,
 					  panel_background_monitor_xevent_filter,
 					  monitor);
 	}
@@ -163,15 +163,15 @@ panel_background_monitor_connect_to_screen (PanelBackgroundMonitor *monitor,
 	g_signal_connect_swapped (screen, "size-changed",
 	    G_CALLBACK (panel_background_monitor_changed), monitor);
 
-	monitor->gdkwindow = gdk_screen_get_root_window (screen);
-	monitor->xwindow   = GDK_WINDOW_XID (monitor->gdkwindow);
+	monitor->cdkwindow = cdk_screen_get_root_window (screen);
+	monitor->xwindow   = GDK_WINDOW_XID (monitor->cdkwindow);
 
-	gdk_window_add_filter (
-		monitor->gdkwindow, panel_background_monitor_xevent_filter, monitor);
+	cdk_window_add_filter (
+		monitor->cdkwindow, panel_background_monitor_xevent_filter, monitor);
 
-	gdk_window_set_events (
-		monitor->gdkwindow,
-		gdk_window_get_events (monitor->gdkwindow) | GDK_PROPERTY_CHANGE_MASK);
+	cdk_window_set_events (
+		monitor->cdkwindow,
+		cdk_window_get_events (monitor->cdkwindow) | GDK_PROPERTY_CHANGE_MASK);
 }
 
 static PanelBackgroundMonitor *
@@ -210,9 +210,9 @@ panel_background_monitor_changed (PanelBackgroundMonitor *monitor)
 		cairo_surface_destroy (monitor->surface);
 	monitor->surface = NULL;
 
-	if (monitor->gdkpixbuf)
-		g_object_unref (monitor->gdkpixbuf);
-	monitor->gdkpixbuf = NULL;
+	if (monitor->cdkpixbuf)
+		g_object_unref (monitor->cdkpixbuf);
+	monitor->cdkpixbuf = NULL;
 
 	g_signal_emit (monitor, signals [CHANGED], 0);
 }
@@ -246,18 +246,18 @@ panel_background_monitor_tile_background (PanelBackgroundMonitor *monitor,
 	GdkPixbuf *retval;
 	int        tilewidth, tileheight;
 
-	retval = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, width, height);
+	retval = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, width, height);
 
-	tilewidth  = gdk_pixbuf_get_width (monitor->gdkpixbuf);
-	tileheight = gdk_pixbuf_get_height (monitor->gdkpixbuf);
+	tilewidth  = cdk_pixbuf_get_width (monitor->cdkpixbuf);
+	tileheight = cdk_pixbuf_get_height (monitor->cdkpixbuf);
 
 	if (tilewidth == 1 && tileheight == 1) {
 		guchar  *pixels;
 		int      n_channels;
 		guint32  pixel = 0;
 
-		n_channels = gdk_pixbuf_get_n_channels (monitor->gdkpixbuf);
-		pixels     = gdk_pixbuf_get_pixels (monitor->gdkpixbuf);
+		n_channels = cdk_pixbuf_get_n_channels (monitor->cdkpixbuf);
+		pixels     = cdk_pixbuf_get_pixels (monitor->cdkpixbuf);
 
 		if (pixels) {
 			if (n_channels == 4)
@@ -266,7 +266,7 @@ panel_background_monitor_tile_background (PanelBackgroundMonitor *monitor,
 				pixel = pixels [0] << 24 | pixels [1] << 16 | pixels [2] << 8;
 		}
 
-		gdk_pixbuf_fill (retval, pixel);
+		cdk_pixbuf_fill (retval, pixel);
 	} else {
 		unsigned char   *data;
 		cairo_t         *cr;
@@ -285,7 +285,7 @@ panel_background_monitor_tile_background (PanelBackgroundMonitor *monitor,
 		cairo_set_source_rgb (cr, 1, 1, 1);
 		cairo_paint (cr);
 
-		gdk_cairo_set_source_pixbuf (cr, monitor->gdkpixbuf, 0, 0);
+		cdk_cairo_set_source_pixbuf (cr, monitor->cdkpixbuf, 0, 0);
 		pattern = cairo_get_source (cr);
 		cairo_pattern_set_extend (pattern, CAIRO_EXTEND_REPEAT);
 		cairo_rectangle (cr, 0, 0, width, height);
@@ -310,9 +310,9 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 	int          rwidth, rheight;
 	int          pwidth, pheight;
 
-	display = gdk_screen_get_display (monitor->screen);
+	display = cdk_screen_get_display (monitor->screen);
 
-	gdk_x11_display_grab (display);
+	cdk_x11_display_grab (display);
 	monitor->display_grabbed = TRUE;
 
 	if (!monitor->surface)
@@ -321,7 +321,7 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 	if (!monitor->surface)
 	{
 		g_warning ("couldn't get background pixmap\n");
-		gdk_x11_display_ungrab (display);
+		cdk_x11_display_ungrab (display);
 		monitor->display_grabbed = FALSE;
 		return;
 	}
@@ -329,21 +329,21 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 	pwidth = cairo_xlib_surface_get_width (monitor->surface);
 	pheight = cairo_xlib_surface_get_height (monitor->surface);
 
-	gdk_window_get_geometry (monitor->gdkwindow,
+	cdk_window_get_geometry (monitor->cdkwindow,
 				 NULL, NULL, &rwidth, &rheight);
 
 	monitor->width  = MIN (pwidth,  rwidth);
 	monitor->height = MIN (pheight, rheight);
 
-	g_assert (monitor->gdkpixbuf == NULL);
-	monitor->gdkpixbuf = gdk_pixbuf_get_from_surface (monitor->surface,
+	g_assert (monitor->cdkpixbuf == NULL);
+	monitor->cdkpixbuf = cdk_pixbuf_get_from_surface (monitor->surface,
 													  0, 0,
 													  monitor->width, monitor->height);
 
-	gdk_x11_display_ungrab (display);
+	cdk_x11_display_ungrab (display);
 	monitor->display_grabbed = FALSE;
 
-	if (monitor->gdkpixbuf == NULL)
+	if (monitor->cdkpixbuf == NULL)
 		return;
 
 	if ((monitor->width < rwidth || monitor->height < rheight)) {
@@ -351,8 +351,8 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 
 		tiled = panel_background_monitor_tile_background (
 						monitor, rwidth, rheight);
-		g_object_unref (monitor->gdkpixbuf);
-		monitor->gdkpixbuf = tiled;
+		g_object_unref (monitor->cdkpixbuf);
+		monitor->cdkpixbuf = tiled;
 
 		monitor->width  = rwidth;
 		monitor->height = rheight;
@@ -371,12 +371,12 @@ panel_background_monitor_get_region (PanelBackgroundMonitor *monitor,
 	int        subx, suby;
 
 	g_return_val_if_fail (monitor, NULL);
-	g_return_val_if_fail (GDK_IS_X11_WINDOW (monitor->gdkwindow), NULL);
+	g_return_val_if_fail (GDK_IS_X11_WINDOW (monitor->cdkwindow), NULL);
 
-	if (!monitor->gdkpixbuf)
+	if (!monitor->cdkpixbuf)
 		panel_background_monitor_setup_pixbuf (monitor);
 
-	if (!monitor->gdkpixbuf)
+	if (!monitor->cdkpixbuf)
 		return NULL;
 
 	subwidth  = MIN (width,  monitor->width - x);
@@ -391,16 +391,16 @@ panel_background_monitor_get_region (PanelBackgroundMonitor *monitor,
 	if ((subwidth <= 0) || (subheight <= 0) ||
 	    (monitor->width-x < 0) || (monitor->height-y < 0) )
 		/* region is completely offscreen */
-		return gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8,
+		return cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8,
 				       width, height);
 
-	pixbuf = gdk_pixbuf_new_subpixbuf (
-			monitor->gdkpixbuf, subx, suby, subwidth, subheight);
+	pixbuf = cdk_pixbuf_new_subpixbuf (
+			monitor->cdkpixbuf, subx, suby, subwidth, subheight);
 
 	if ((subwidth < width) || (subheight < height)) {
-		tmpbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8,
+		tmpbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8,
 					 width, height);
-		gdk_pixbuf_copy_area (pixbuf, 0, 0, subwidth, subheight,
+		cdk_pixbuf_copy_area (pixbuf, 0, 0, subwidth, subheight,
 				      tmpbuf, (x < 0) ? -x : 0, (y < 0) ? -y : 0);
 		g_object_unref (pixbuf);
 		pixbuf = tmpbuf;

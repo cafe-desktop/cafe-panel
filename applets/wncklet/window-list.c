@@ -23,7 +23,7 @@
 #include <libwnck/libwnck.h>
 #include <gio/gio.h>
 #ifdef HAVE_WINDOW_PREVIEWS
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif
 
 #define CAFE_DESKTOP_USE_UNSTABLE_API
@@ -169,24 +169,24 @@ static GdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistDat
 	int width, height;
 	int scale;
 
-	window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (), wnck_window_get_xid (wnck_window));
+	window = cdk_x11_window_foreign_new_for_display (cdk_display_get_default (), wnck_window_get_xid (wnck_window));
 
 	if (window == NULL)
 		return NULL;
 
-	scale = gdk_window_get_scale_factor (window);
-	width = gdk_window_get_width (window) * scale;
-	height = gdk_window_get_height (window) * scale;
+	scale = cdk_window_get_scale_factor (window);
+	width = cdk_window_get_width (window) * scale;
+	height = cdk_window_get_height (window) * scale;
 
 	/* Generate window screenshot for preview */
-	screenshot = gdk_pixbuf_get_from_window (window, 0, 0, width / scale, height / scale);
+	screenshot = cdk_pixbuf_get_from_window (window, 0, 0, width / scale, height / scale);
 	g_object_unref (window);
 
 	if (screenshot == NULL)
 		return NULL;
 
 	/* Determine whether the contents of the screenshot are empty */
-	pixels = gdk_pixbuf_get_pixels (screenshot);
+	pixels = cdk_pixbuf_get_pixels (screenshot);
 	if (!g_strcmp0 ((const char *)pixels, ""))
 	{
 		g_object_unref (screenshot);
@@ -207,7 +207,7 @@ static GdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistDat
 		width = height * ratio;
 	}
 
-	thumbnail = gdk_pixbuf_scale_simple (screenshot, width, height, GDK_INTERP_BILINEAR);
+	thumbnail = cdk_pixbuf_scale_simple (screenshot, width, height, GDK_INTERP_BILINEAR);
 	g_object_unref (screenshot);
 
 	return thumbnail;
@@ -221,8 +221,8 @@ static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbn
 	int x_pos, y_pos;
 	int width, height;
 
-	width = gdk_pixbuf_get_width (thumbnail);
-	height = gdk_pixbuf_get_height (thumbnail);
+	width = cdk_pixbuf_get_width (thumbnail);
+	height = cdk_pixbuf_get_height (thumbnail);
 
 	/* Resize window to fit thumbnail */
 	ctk_window_resize (CTK_WINDOW (tasklist->preview), width, height);
@@ -232,8 +232,8 @@ static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbn
 	ctk_window_get_position (CTK_WINDOW (tasklist->preview), &x_pos, &y_pos);
 
 	/* Get geometry of monitor where tasklist is located to calculate correct position of preview */
-	monitor = gdk_display_get_monitor_at_point (gdk_display_get_default (), x_pos, y_pos);
-	gdk_monitor_get_geometry (monitor, &monitor_geom);
+	monitor = cdk_display_get_monitor_at_point (cdk_display_get_default (), x_pos, y_pos);
+	cdk_monitor_get_geometry (monitor, &monitor_geom);
 
 	/* Add padding to clear the panel */
 	switch (cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (tasklist->applet)))
@@ -616,7 +616,7 @@ static GdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flag
 	{
 		if (g_file_test(icon, G_FILE_TEST_EXISTS))
 		{
-			return gdk_pixbuf_new_from_file_at_size(icon, size, size, NULL);
+			return cdk_pixbuf_new_from_file_at_size(icon, size, size, NULL);
 		}
 		else
 		{
@@ -658,7 +658,7 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 	tasklist->applet = CTK_WIDGET(applet);
 
 	provider = ctk_css_provider_new ();
-	screen = gdk_screen_get_default ();
+	screen = cdk_screen_get_default ();
 	ctk_css_provider_load_from_data (provider,
 										".cafe-panel-menu-bar button,\n"
 										" #tasklist-button {\n"
@@ -793,7 +793,7 @@ static void call_system_monitor(CtkAction* action, TasklistData* tasklist)
 		{
 			g_free(programpath);
 
-			cafe_gdk_spawn_command_line_on_screen(ctk_widget_get_screen(tasklist->applet),
+			cafe_cdk_spawn_command_line_on_screen(ctk_widget_get_screen(tasklist->applet),
 				      system_monitors[i],
 				      NULL);
 			return;

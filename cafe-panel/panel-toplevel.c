@@ -32,11 +32,11 @@
 #include <string.h>
 
 #include <ctk/ctk.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 #include <glib/gi18n.h>
 
 #ifdef HAVE_X11
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif
 
 #include "panel-util.h"
@@ -530,15 +530,15 @@ static void panel_toplevel_begin_grab_op(PanelToplevel* toplevel, PanelGrabOpTyp
 				toplevel, toplevel->priv->grab_op);
 
 
-	cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
+	cursor = cdk_cursor_new_for_display (cdk_display_get_default (),
 	                                     cursor_type);
-	display = gdk_window_get_display (window);
-	seat = gdk_display_get_default_seat (display);
+	display = cdk_window_get_display (window);
+	seat = cdk_display_get_default_seat (display);
 	capabilities = GDK_SEAT_CAPABILITY_POINTER;
 	if (grab_keyboard)
 		capabilities |= GDK_SEAT_CAPABILITY_KEYBOARD;
 
-	gdk_seat_grab (seat, window, capabilities, FALSE, cursor,
+	cdk_seat_grab (seat, window, capabilities, FALSE, cursor,
 	               NULL, NULL, NULL);
 
 	g_object_unref (cursor);
@@ -560,9 +560,9 @@ static void panel_toplevel_end_grab_op (PanelToplevel* toplevel, guint32 time_)
 	ctk_grab_remove (widget);
 
 	display = ctk_widget_get_display (widget);
-	seat = gdk_display_get_default_seat (display);
+	seat = cdk_display_get_default_seat (display);
 
-	gdk_seat_ungrab (seat);
+	cdk_seat_ungrab (seat);
 }
 
 static void panel_toplevel_cancel_grab_op(PanelToplevel* toplevel, guint32 time_)
@@ -861,9 +861,9 @@ static gboolean panel_toplevel_warp_pointer_increment(PanelToplevel* toplevel, i
 
 	screen = ctk_window_get_screen (CTK_WINDOW (toplevel));
 	g_return_val_if_fail (GDK_IS_X11_SCREEN (screen), FALSE);
-	root_window = gdk_screen_get_root_window (screen);
-	device = gdk_seat_get_pointer (gdk_display_get_default_seat (ctk_widget_get_display (CTK_WIDGET(root_window))));
-	gdk_window_get_device_position (ctk_widget_get_window (CTK_WIDGET (root_window)), device, &new_x, &new_y, NULL);
+	root_window = cdk_screen_get_root_window (screen);
+	device = cdk_seat_get_pointer (cdk_display_get_default_seat (ctk_widget_get_display (CTK_WIDGET(root_window))));
+	cdk_window_get_device_position (ctk_widget_get_window (CTK_WIDGET (root_window)), device, &new_x, &new_y, NULL);
 
 	switch (keyval) {
 	case GDK_KEY_Up:
@@ -1388,9 +1388,9 @@ static gboolean panel_toplevel_contains_pointer(PanelToplevel* toplevel)
 	GdkDevice *pointer;
 	int         x, y;
 
-	display = gdk_display_get_default ();
-	seat = gdk_display_get_default_seat (display);
-	pointer = gdk_seat_get_pointer (seat);
+	display = cdk_display_get_default ();
+	seat = cdk_display_get_default_seat (display);
+	pointer = cdk_seat_get_pointer (seat);
 	widget  = CTK_WIDGET (toplevel);
 
 	if (!ctk_widget_get_realized (widget))
@@ -1398,7 +1398,7 @@ static gboolean panel_toplevel_contains_pointer(PanelToplevel* toplevel)
 
 	screen = NULL;
 	x = y = -1;
-	gdk_device_get_position (pointer, &screen, &x, &y);
+	cdk_device_get_position (pointer, &screen, &x, &y);
 
 	if (screen != ctk_window_get_screen (CTK_WINDOW (toplevel)))
 		return FALSE;
@@ -1705,7 +1705,7 @@ static void panel_toplevel_update_attached_position(PanelToplevel* toplevel, gbo
 	attach_box   = attach_allocation;
 
 	if (attach_box.x != -1) {
-		gdk_window_get_origin (ctk_widget_get_window (CTK_WIDGET (toplevel->priv->attach_widget)),
+		cdk_window_get_origin (ctk_widget_get_window (CTK_WIDGET (toplevel->priv->attach_widget)),
 				       &x_origin, &y_origin);
 
 		attach_box.x += x_origin;
@@ -2911,17 +2911,17 @@ panel_toplevel_move_resize_window (PanelToplevel *toplevel,
 	g_assert (ctk_widget_get_realized (widget));
 
 	if (move && resize)
-		gdk_window_move_resize (ctk_widget_get_window (widget),
+		cdk_window_move_resize (ctk_widget_get_window (widget),
 					toplevel->priv->geometry.x,
 					toplevel->priv->geometry.y,
 					toplevel->priv->geometry.width,
 					toplevel->priv->geometry.height);
 	else if (move)
-		gdk_window_move (ctk_widget_get_window (widget),
+		cdk_window_move (ctk_widget_get_window (widget),
 				 toplevel->priv->geometry.x,
 				 toplevel->priv->geometry.y);
 	else if (resize)
-		gdk_window_resize (ctk_widget_get_window (widget),
+		cdk_window_resize (ctk_widget_get_window (widget),
 				   toplevel->priv->geometry.width,
 				   toplevel->priv->geometry.height);
 
@@ -2991,7 +2991,7 @@ set_background_default_style (CtkWidget *widget)
 	                                    bg_color, bg_image);
 
 	if (bg_color)
-		gdk_rgba_free (bg_color);
+		cdk_rgba_free (bg_color);
 
 	if (bg_image)
 		cairo_pattern_destroy (bg_image);
@@ -3008,10 +3008,10 @@ panel_toplevel_realize (CtkWidget *widget)
 	toplevel = PANEL_TOPLEVEL (widget);
 
 	screen = ctk_widget_get_screen (widget);
-	visual = gdk_screen_get_rgba_visual (screen);
+	visual = cdk_screen_get_rgba_visual (screen);
 
 	if (visual == NULL)
-		visual = gdk_screen_get_system_visual (screen);
+		visual = cdk_screen_get_system_visual (screen);
 
 	ctk_widget_set_visual (widget, visual);
  	ctk_window_stick (CTK_WINDOW (widget));
@@ -3028,11 +3028,11 @@ panel_toplevel_realize (CtkWidget *widget)
 #ifdef HAVE_X11
 	if (GDK_IS_X11_WINDOW (window)) {
 		panel_struts_set_window_hint (toplevel);
-		gdk_window_set_geometry_hints (window, NULL, 0);
+		cdk_window_set_geometry_hints (window, NULL, 0);
 	}
 #endif // HAVE_X11
 
-	gdk_window_set_group (window, window);
+	cdk_window_set_group (window, window);
 	panel_toplevel_initially_hide (toplevel);
 
 	panel_toplevel_move_resize_window (toplevel, TRUE, TRUE);
@@ -3229,7 +3229,7 @@ set_background_region (PanelToplevel *toplevel)
 	origin_x = -1;
 	origin_y = -1;
 
-	gdk_window_get_origin (window, &origin_x, &origin_y);
+	cdk_window_get_origin (window, &origin_x, &origin_y);
 	ctk_widget_get_allocation (widget, &allocation);
 
 	orientation = CTK_ORIENTATION_HORIZONTAL;
@@ -3308,7 +3308,7 @@ panel_toplevel_size_allocate (CtkWidget     *widget,
 		CtkAllocation allocation;
 
 		ctk_widget_get_allocation (widget, &allocation);
-		gdk_window_invalidate_rect (ctk_widget_get_window (widget), &allocation, FALSE);
+		cdk_window_invalidate_rect (ctk_widget_get_window (widget), &allocation, FALSE);
 	}
 
 	if (child && ctk_widget_get_visible (child))
@@ -3439,7 +3439,7 @@ panel_toplevel_button_press_event (CtkWidget      *widget,
 	    (event->state & GDK_MODIFIER_MASK) != panel_bindings_get_mouse_button_modifier_keymask ())
 		return FALSE;
 
-	gdk_window_get_user_data (event->window, (gpointer)&event_widget);
+	cdk_window_get_user_data (event->window, (gpointer)&event_widget);
 	g_assert (CTK_IS_WIDGET (event_widget));
 	ctk_widget_translate_coordinates (event_widget,
 					  widget,
@@ -3518,7 +3518,7 @@ static gboolean
 panel_toplevel_motion_notify_event (CtkWidget      *widget,
 				    GdkEventMotion *event)
 {
-	if (gdk_event_get_screen ((GdkEvent *)event) ==
+	if (cdk_event_get_screen ((GdkEvent *)event) ==
 	    ctk_window_get_screen (CTK_WINDOW (widget)))
 		return panel_toplevel_handle_grab_op_motion_event (
 				PANEL_TOPLEVEL (widget), event);
@@ -3652,7 +3652,7 @@ panel_toplevel_start_animation (PanelToplevel *toplevel)
 #endif // HAVE_X11
 	panel_toplevel_update_struts (toplevel, FALSE);
 
-	gdk_window_get_origin (ctk_widget_get_window (CTK_WIDGET (toplevel)), &cur_x, &cur_y);
+	cdk_window_get_origin (ctk_widget_get_window (CTK_WIDGET (toplevel)), &cur_x, &cur_y);
 
 	cur_x -= panel_multimonitor_x (toplevel->priv->monitor);
 	cur_y -= panel_multimonitor_y (toplevel->priv->monitor);
@@ -4242,7 +4242,7 @@ panel_toplevel_constructor (GType                  type,
                                                            construct_properties);
 	PanelToplevel *toplevel = PANEL_TOPLEVEL(object);
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 
 	return object;
@@ -4820,7 +4820,7 @@ panel_toplevel_init (PanelToplevel *toplevel)
 	update_style_classes (toplevel);
 
 #ifdef HAVE_WAYLAND
-	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ())) {
+	if (GDK_IS_WAYLAND_DISPLAY (cdk_display_get_default ())) {
 		wayland_panel_toplevel_init (toplevel);
 	}
 #endif // HAVE_WAYLAND

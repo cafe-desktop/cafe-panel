@@ -33,7 +33,7 @@
 #include <cafe-panel-applet.h>
 
 #include <glib/gi18n.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libwnck/libwnck.h>

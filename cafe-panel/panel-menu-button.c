@@ -516,7 +516,7 @@ panel_menu_button_clicked (CtkButton *ctk_button)
 		panel_menu_button_popup_menu (button,
 					      event->button.button,
 					      event->button.time);
-		gdk_event_free (event);
+		cdk_event_free (event);
 	} else {
 		panel_menu_button_popup_menu (button, 1, GDK_CURRENT_TIME);
 	}

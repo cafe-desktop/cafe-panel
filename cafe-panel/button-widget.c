@@ -3,9 +3,9 @@
 #include <string.h>
 
 #include <glib/gi18n.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 #include <ctk/ctk.h>
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 
 #include "button-widget.h"
 #include "panel-widget.h"

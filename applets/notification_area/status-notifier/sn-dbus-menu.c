@@ -377,7 +377,7 @@ sn_dbus_menu_constructed (GObject *object)
   toplevel = ctk_widget_get_toplevel(CTK_WIDGET(menu));
   /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
   screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-  visual = gdk_screen_get_rgba_visual(screen);
+  visual = cdk_screen_get_rgba_visual(screen);
   ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
   /* Set menu and it's toplevel window to follow panel theme */
   context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));

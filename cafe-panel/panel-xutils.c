@@ -31,8 +31,8 @@
 #include "panel-xutils.h"
 
 #include <glib.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkx.h>
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 
@@ -55,7 +55,7 @@ enum {
 };
 
 void
-panel_xutils_set_strut (GdkWindow        *gdk_window,
+panel_xutils_set_strut (GdkWindow        *cdk_window,
 			PanelOrientation  orientation,
 			guint32           strut,
 			guint32           strut_start,
@@ -66,11 +66,11 @@ panel_xutils_set_strut (GdkWindow        *gdk_window,
 	gulong   struts [12] = { 0, };
 	GdkDisplay *display;
 
-	g_return_if_fail (GDK_IS_WINDOW (gdk_window));
-	g_return_if_fail (GDK_IS_X11_DISPLAY (gdk_window_get_display (gdk_window)));
+	g_return_if_fail (GDK_IS_WINDOW (cdk_window));
+	g_return_if_fail (GDK_IS_X11_DISPLAY (cdk_window_get_display (cdk_window)));
 
-	xdisplay = GDK_WINDOW_XDISPLAY (gdk_window);
-	window = GDK_WINDOW_XID (gdk_window);
+	xdisplay = GDK_WINDOW_XDISPLAY (cdk_window);
+	window = GDK_WINDOW_XID (cdk_window);
 
 	if (net_wm_strut == None)
 		net_wm_strut = XInternAtom (xdisplay, "_NET_WM_STRUT", False);
@@ -100,19 +100,19 @@ panel_xutils_set_strut (GdkWindow        *gdk_window,
 		break;
 	}
 
-	display = gdk_window_get_display (gdk_window);
-	gdk_x11_display_error_trap_push (display);
+	display = cdk_window_get_display (cdk_window);
+	cdk_x11_display_error_trap_push (display);
 	XChangeProperty (xdisplay, window, net_wm_strut,
 			 XA_CARDINAL, 32, PropModeReplace,
 			 (guchar *) &struts, 4);
 	XChangeProperty (xdisplay, window, net_wm_strut_partial,
 			 XA_CARDINAL, 32, PropModeReplace,
 			 (guchar *) &struts, 12);
-	gdk_x11_display_error_trap_pop_ignored (display);
+	cdk_x11_display_error_trap_pop_ignored (display);
 }
 
 void
-panel_warp_pointer (GdkWindow *gdk_window,
+panel_warp_pointer (GdkWindow *cdk_window,
 		    int        x,
 		    int        y)
 {
@@ -120,16 +120,16 @@ panel_warp_pointer (GdkWindow *gdk_window,
 	Window   window;
 	GdkDisplay *display;
 
-	g_return_if_fail (GDK_IS_WINDOW (gdk_window));
-	g_return_if_fail (GDK_IS_X11_DISPLAY (gdk_window_get_display (gdk_window)));
+	g_return_if_fail (GDK_IS_WINDOW (cdk_window));
+	g_return_if_fail (GDK_IS_X11_DISPLAY (cdk_window_get_display (cdk_window)));
 
-	xdisplay = GDK_WINDOW_XDISPLAY (gdk_window);
-	window = GDK_WINDOW_XID (gdk_window);
+	xdisplay = GDK_WINDOW_XDISPLAY (cdk_window);
+	window = GDK_WINDOW_XID (cdk_window);
 
-	display = gdk_window_get_display (gdk_window);
-	gdk_x11_display_error_trap_push (display);
+	display = cdk_window_get_display (cdk_window);
+	cdk_x11_display_error_trap_push (display);
 	XWarpPointer (xdisplay, None, window, 0, 0, 0, 0, x, y);
-	gdk_x11_display_error_trap_pop_ignored (display);
+	cdk_x11_display_error_trap_pop_ignored (display);
 }
 
 guint
@@ -149,8 +149,8 @@ panel_get_real_modifier_mask (guint mask)
 		return mask;
 	}
 
-	g_return_val_if_fail (GDK_IS_X11_DISPLAY (gdk_display_get_default ()), mask);
-	display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default ());
+	g_return_val_if_fail (GDK_IS_X11_DISPLAY (cdk_display_get_default ()), mask);
+	display = GDK_DISPLAY_XDISPLAY (cdk_display_get_default ());
 
 	XDisplayKeycodes (display, &min_keycode, &max_keycode);
 	keysyms_for_keycodes = XGetKeyboardMapping (display,

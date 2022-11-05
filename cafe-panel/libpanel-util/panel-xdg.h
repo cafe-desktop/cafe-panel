@@ -25,7 +25,7 @@
 #ifndef PANEL_XDG_H
 #define PANEL_XDG_H
 
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 
 #ifdef __cplusplus
 extern "C" {

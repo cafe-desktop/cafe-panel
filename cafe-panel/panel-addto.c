@@ -57,7 +57,7 @@
 #include "xstuff.h"
 #endif
 #ifdef HAVE_WAYLAND
-#include "gdk/gdkwayland.h"
+#include "cdk/cdkwayland.h"
 #endif
 
 typedef struct {
@@ -413,14 +413,14 @@ panel_addto_query_applets (GSList *list)
 
 		enabled = TRUE;
 #ifdef HAVE_X11
-		if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()) &&
+		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ()) &&
 		    !cafe_panel_applet_info_get_x11_supported (info)) {
 			enabled = FALSE;
 			description = _("Not compatible with X11");
 		}
 #endif
 #ifdef HAVE_WAYLAND
-		if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()) &&
+		if (GDK_IS_WAYLAND_DISPLAY (cdk_display_get_default ()) &&
 		    !cafe_panel_applet_info_get_wayland_supported (info)) {
 			enabled = FALSE;
 			description = _("Not compatible with Wayland");
@@ -1463,9 +1463,9 @@ panel_addto_present (CtkMenuItem *item,
 				     panel_addto_dialog_quark);
 
 	screen = ctk_window_get_screen (CTK_WINDOW (toplevel));
-	monitor = gdk_display_get_monitor_at_window (ctk_widget_get_display (CTK_WIDGET (toplevel)),
+	monitor = cdk_display_get_monitor_at_window (ctk_widget_get_display (CTK_WIDGET (toplevel)),
 						     ctk_widget_get_window (CTK_WIDGET (toplevel)));
-	gdk_monitor_get_geometry (monitor, &monitor_geom);
+	cdk_monitor_get_geometry (monitor, &monitor_geom);
 	height = MIN (MAX_ADDTOPANEL_HEIGHT, 3 * (monitor_geom.height / 4));
 
 	if (!dialog) {

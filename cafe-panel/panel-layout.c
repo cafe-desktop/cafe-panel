@@ -30,7 +30,7 @@
 #include <gio/gio.h>
 
 #ifdef HAVE_X11
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif
 
 #include <libcafe-desktop/cafe-dconf.h>
@@ -332,7 +332,7 @@ panel_layout_apply_default_from_gkeyfile (GdkScreen *screen)
     screen_n = 0;
 #ifdef HAVE_X11
     if (GDK_IS_X11_SCREEN (screen))
-	screen_n = gdk_x11_screen_get_screen_number (screen);
+	screen_n = cdk_x11_screen_get_screen_number (screen);
 #endif // HAVE_11
 
     layout_file = panel_layout_filename();

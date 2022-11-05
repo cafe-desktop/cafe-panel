@@ -1,7 +1,7 @@
 #ifndef PANEL_COLOR_H
 #define PANEL_COLOR_H
 
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 
 G_BEGIN_DECLS
 

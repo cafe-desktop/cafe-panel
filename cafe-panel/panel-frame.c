@@ -156,7 +156,7 @@ panel_frame_size_allocate (CtkWidget     *widget,
 	     child_allocation.y != child_allocation_current.y ||
 	     child_allocation.width  != child_allocation_current.width ||
 	     child_allocation.height != child_allocation_current.height))
-		gdk_window_invalidate_rect (ctk_widget_get_window (widget), allocation, FALSE);
+		cdk_window_invalidate_rect (ctk_widget_get_window (widget), allocation, FALSE);
 
 	if (child && ctk_widget_get_visible (child))
 		ctk_widget_size_allocate (child, &child_allocation);
@@ -202,7 +202,7 @@ panel_frame_draw (CtkWidget      *widget,
 
 	if (frame->edges & PANEL_EDGE_BOTTOM && padding.bottom > 0) {
 		if (padding.bottom > 1) {
-			gdk_cairo_set_source_rgba (cr, &dark);
+			cdk_cairo_set_source_rgba (cr, &dark);
 			cairo_move_to (cr, x + .5, y + height - 2 + .5);
 			cairo_line_to (cr, x + width - 1 - .5, y + height - 2 + .5);
 			cairo_stroke (cr);
@@ -212,7 +212,7 @@ panel_frame_draw (CtkWidget      *widget,
 			cairo_line_to (cr, x + width - 1 - .5, y + height - 1 - .5);
 			cairo_stroke (cr);
 		} else {
-			gdk_cairo_set_source_rgba (cr, &dark);
+			cdk_cairo_set_source_rgba (cr, &dark);
 			cairo_move_to (cr, x + .5, y + height - 1 - .5);
 			cairo_line_to (cr, x + width - 1 - .5, y + height - 1 - .5);
 			cairo_stroke (cr);
@@ -221,7 +221,7 @@ panel_frame_draw (CtkWidget      *widget,
 
 	if (frame->edges & PANEL_EDGE_RIGHT && padding.right > 0) {
 		if (padding.right > 1) {
-			gdk_cairo_set_source_rgba (cr, &dark);
+			cdk_cairo_set_source_rgba (cr, &dark);
 			cairo_move_to (cr, x + width - 2 - .5, y + .5);
 			cairo_line_to (cr, x + width - 2 - .5, y + height - 1 - .5);
 			cairo_stroke (cr);
@@ -231,7 +231,7 @@ panel_frame_draw (CtkWidget      *widget,
 			cairo_line_to (cr, x + width - 1 - .5, y + height - 1 - .5);
 			cairo_stroke (cr);
 		} else {
-			gdk_cairo_set_source_rgba (cr, &dark);
+			cdk_cairo_set_source_rgba (cr, &dark);
 			cairo_move_to (cr, x + width - 1 - .5, y + .5);
 			cairo_line_to (cr, x + width - 1 - .5, y + height - 1 - .5);
 			cairo_stroke (cr);
@@ -239,13 +239,13 @@ panel_frame_draw (CtkWidget      *widget,
 	}
 
 	if (frame->edges & PANEL_EDGE_TOP && padding.top > 0) {
-		gdk_cairo_set_source_rgba (cr, &light);
+		cdk_cairo_set_source_rgba (cr, &light);
 		cairo_move_to (cr, x + .5, y + .5);
 		cairo_line_to (cr, x + width - 1 - .5, y + .5);
 		cairo_stroke (cr);
 
 		if (padding.top > 1) {
-			gdk_cairo_set_source_rgba (cr, bg);
+			cdk_cairo_set_source_rgba (cr, bg);
 			cairo_move_to (cr, x + .5, y + 1 + .5);
 			cairo_line_to (cr, x + width - 1 - .5, y + 1 + .5);
 			cairo_stroke (cr);
@@ -253,20 +253,20 @@ panel_frame_draw (CtkWidget      *widget,
 	}
 
 	if (frame->edges & PANEL_EDGE_LEFT && padding.left > 0) {
-		gdk_cairo_set_source_rgba (cr, &light);
+		cdk_cairo_set_source_rgba (cr, &light);
 		cairo_move_to (cr, x + .5, y + .5);
 		cairo_line_to (cr, x + .5, y + height - 1 - .5);
 		cairo_stroke (cr);
 
 		if (padding.left > 1) {
-			gdk_cairo_set_source_rgba (cr, bg);
+			cdk_cairo_set_source_rgba (cr, bg);
 			cairo_move_to (cr, x + 1 + .5, y + .5);
 			cairo_line_to (cr, x + 1 + .5, y + height - 1 - .5);
 			cairo_stroke (cr);
 		}
 	}
 
-	gdk_rgba_free (bg);
+	cdk_rgba_free (bg);
 }
 
 static gboolean panel_frame_expose(CtkWidget* widget, cairo_t* cr)

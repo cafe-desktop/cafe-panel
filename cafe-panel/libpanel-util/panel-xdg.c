@@ -74,7 +74,7 @@ panel_xdg_icon_name_from_icon_path (const char *path,
 
 	/* we look if the icon comes from the current icon theme */
 	if (!screen)
-		screen = gdk_screen_get_default ();
+		screen = cdk_screen_get_default ();
 
 	settings = ctk_settings_get_for_screen (screen);
 	g_object_get (settings,

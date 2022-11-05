@@ -33,13 +33,13 @@
 
 #include <glib/gi18n-lib.h>
 #include <cairo.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkkeysyms.h>
 #include <ctk/ctk.h>
 
 #ifdef HAVE_X11
 #include <cairo-xlib.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <ctk/ctkx.h>
 #include <X11/Xatom.h>
 #include "panel-plug-private.h"
@@ -560,14 +560,14 @@ cafe_panel_applet_request_focus (CafePanelApplet	 *applet,
 	Window	    xroot;
 	XEvent	    xev;
 
-	if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+	if (!GDK_IS_X11_DISPLAY (cdk_display_get_default ()))
 		return;
 
 	g_return_if_fail (PANEL_IS_APPLET (applet));
 
 	screen	= ctk_window_get_screen (CTK_WINDOW (applet->priv->plug));
-	root	= gdk_screen_get_root_window (screen);
-	display = gdk_screen_get_display (screen);
+	root	= cdk_screen_get_root_window (screen);
+	display = cdk_screen_get_display (screen);
 
 	xdisplay = GDK_DISPLAY_XDISPLAY (display);
 	xroot	 = GDK_WINDOW_XID (root);
@@ -849,7 +849,7 @@ cafe_panel_applet_menu_popup (CafePanelApplet *applet,
 	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
 	CtkStyleContext *context;
@@ -918,7 +918,7 @@ cafe_panel_applet_button_event (CafePanelApplet      *applet,
 	window = ctk_widget_get_window (widget);
 	socket_window = ctk_plug_get_socket_window (CTK_PLUG (widget));
 
-	display = gdk_display_get_default ();
+	display = cdk_display_get_default ();
 
 	if (!GDK_IS_X11_DISPLAY (display))
 		return FALSE;
@@ -928,22 +928,22 @@ cafe_panel_applet_button_event (CafePanelApplet      *applet,
 
 		xevent.xbutton.type = ButtonPress;
 
-		seat = gdk_display_get_default_seat (display);
+		seat = cdk_display_get_default_seat (display);
 
 		/* X does an automatic pointer grab on button press
 		 * if we have both button press and release events
 		 * selected.
 		 * We don't want to hog the pointer on our parent.
 		 */
-		gdk_seat_ungrab (seat);
+		cdk_seat_ungrab (seat);
 	} else {
 		xevent.xbutton.type = ButtonRelease;
 	}
 
 	xevent.xbutton.display     = GDK_WINDOW_XDISPLAY (window);
 	xevent.xbutton.window      = GDK_WINDOW_XID (socket_window);
-	xevent.xbutton.root        = GDK_WINDOW_XID (gdk_screen_get_root_window
-							 (gdk_window_get_screen (window)));
+	xevent.xbutton.root        = GDK_WINDOW_XID (cdk_screen_get_root_window
+							 (cdk_window_get_screen (window)));
 	/*
 	 * FIXME: the following might cause
 	 *        big problems for non-CTK apps
@@ -956,14 +956,14 @@ cafe_panel_applet_button_event (CafePanelApplet      *applet,
 	xevent.xbutton.button      = event->button;
 	xevent.xbutton.same_screen = TRUE; /* FIXME ? */
 
-	gdk_x11_display_error_trap_push (display);
+	cdk_x11_display_error_trap_push (display);
 
 	XSendEvent (GDK_WINDOW_XDISPLAY (window),
 		    GDK_WINDOW_XID (socket_window),
 		    False, NoEventMask, &xevent);
 
-	gdk_display_flush (display);
-	gdk_x11_display_error_trap_pop_ignored (display);
+	cdk_display_flush (display);
+	cdk_x11_display_error_trap_pop_ignored (display);
 
 	return TRUE;
 #else
@@ -1105,7 +1105,7 @@ cafe_panel_applet_size_allocate (CtkWidget     *widget,
 		child_allocation.height = MAX (allocation->height - border_width * 2, 0);
 
 		if (ctk_widget_get_realized (widget))
-			gdk_window_move_resize (ctk_widget_get_window (widget),
+			cdk_window_move_resize (ctk_widget_get_window (widget),
 						allocation->x + border_width,
 						allocation->y + border_width,
 						child_allocation.width,
@@ -1215,7 +1215,7 @@ cafe_panel_applet_parse_color (const gchar *color_str,
 {
 	g_assert (color_str && color);
 
-	return gdk_rgba_parse (color, color_str);
+	return cdk_rgba_parse (color, color_str);
 }
 
 #ifdef HAVE_X11
@@ -1273,16 +1273,16 @@ cafe_panel_applet_create_foreign_surface_for_display (GdkDisplay *display,
 	gint x, y;
 	guint width, height, border, depth;
 
-	gdk_x11_display_error_trap_push (display);
+	cdk_x11_display_error_trap_push (display);
 	result = XGetGeometry (GDK_DISPLAY_XDISPLAY (display), xid, &window,
 	                       &x, &y, &width, &height, &border, &depth);
-	gdk_x11_display_error_trap_pop_ignored (display);
+	cdk_x11_display_error_trap_pop_ignored (display);
 
 	if (result == 0)
 		return NULL;
 
 	return cairo_xlib_surface_create (GDK_DISPLAY_XDISPLAY (display),
-	                                  xid, gdk_x11_visual_get_xvisual (visual),
+	                                  xid, cdk_x11_visual_get_xvisual (visual),
 	                                  width, height);
 }
 
@@ -1307,10 +1307,10 @@ cafe_panel_applet_get_pattern_from_pixmap (CafePanelApplet *applet,
 		return NULL;
 
 	window = ctk_widget_get_window (CTK_WIDGET (applet));
-	display = gdk_window_get_display (window);
+	display = cdk_window_get_display (window);
 
 	background = cafe_panel_applet_create_foreign_surface_for_display (display,
-									   gdk_window_get_visual (window),
+									   cdk_window_get_visual (window),
 									   xid);
 
 	/* background can be NULL if the user changes the background very fast.
@@ -1321,18 +1321,18 @@ cafe_panel_applet_get_pattern_from_pixmap (CafePanelApplet *applet,
 		return NULL;
 	}
 
-	width = gdk_window_get_width(window);
-	height = gdk_window_get_height(window);
-	surface = gdk_window_create_similar_surface (window,
+	width = cdk_window_get_width(window);
+	height = cdk_window_get_height(window);
+	surface = cdk_window_create_similar_surface (window,
 	                            CAIRO_CONTENT_COLOR_ALPHA,
 	                            width,
 	                            height);
-	gdk_x11_display_error_trap_push (display);
+	cdk_x11_display_error_trap_push (display);
 	cr = cairo_create (surface);
 	cairo_set_source_surface (cr, background, -x, -y);
 	cairo_rectangle (cr, 0, 0, width, height);
 	cairo_fill (cr);
-	gdk_x11_display_error_trap_pop_ignored (display);
+	cdk_x11_display_error_trap_pop_ignored (display);
 
 	cairo_surface_destroy (background);
 	pattern = NULL;
@@ -1380,7 +1380,7 @@ cafe_panel_applet_handle_background_string (CafePanelApplet  *applet,
 
 	} else if (elements [0] && !strcmp (elements [0], "pixmap")) {
 #ifdef HAVE_X11
-		if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 			Window pixmap_id;
 			int             x, y;
 
@@ -1532,18 +1532,18 @@ cafe_panel_applet_change_background(CafePanelApplet *applet,
 		case PANEL_NO_BACKGROUND:
 			if (applet->priv->out_of_process){
 				pattern = cairo_pattern_create_rgba (0,0,0,0);     /* Using NULL here breaks transparent */
-				gdk_window_set_background_pattern(window,pattern); /* backgrounds set by CTK theme */
+				cdk_window_set_background_pattern(window,pattern); /* backgrounds set by CTK theme */
 			}
 			break;
 		case PANEL_COLOR_BACKGROUND:
 			if (applet->priv->out_of_process){
-				gdk_window_set_background_rgba(window,color);
+				cdk_window_set_background_rgba(window,color);
 				ctk_widget_queue_draw (applet->priv->plug); /*change the bg right away always */
 			}
 			break;
 		case PANEL_PIXMAP_BACKGROUND:
 			if (applet->priv->out_of_process){
-				gdk_window_set_background_pattern(window,pattern);
+				cdk_window_set_background_pattern(window,pattern);
 				ctk_widget_queue_draw (applet->priv->plug); /*change the bg right away always */
 			}
 			break;
@@ -1765,7 +1765,7 @@ static void _cafe_panel_applet_prepare_css (CtkStyleContext *context)
 {
 	CtkCssProvider  *provider;
 
-	g_return_if_fail (GDK_IS_X11_DISPLAY (gdk_display_get_default ()));
+	g_return_if_fail (GDK_IS_X11_DISPLAY (cdk_display_get_default ()));
 	provider = ctk_css_provider_new ();
 	ctk_css_provider_load_from_data (provider,
 					 "#PanelPlug {\n"
@@ -1833,12 +1833,12 @@ cafe_panel_applet_constructor (GType                  type,
 		return object;
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ()))
 	{
 		applet->priv->plug = ctk_plug_new (0);
 
 		GdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (applet->priv->plug));
-		GdkVisual *visual = gdk_screen_get_rgba_visual (screen);
+		GdkVisual *visual = cdk_screen_get_rgba_visual (screen);
 		ctk_widget_set_visual (CTK_WIDGET (applet->priv->plug), visual);
 		CtkStyleContext *context;
 		context = ctk_widget_get_style_context (CTK_WIDGET(applet->priv->plug));
@@ -2069,16 +2069,16 @@ button_press_event_new (CafePanelApplet *applet,
   GdkDevice *device;
   GdkEvent *event;
 
-  display = gdk_display_get_default ();
-  seat = gdk_display_get_default_seat (display);
-  device = gdk_seat_get_pointer (seat);
+  display = cdk_display_get_default ();
+  seat = cdk_display_get_default_seat (display);
+  device = cdk_seat_get_pointer (seat);
 
-  event = gdk_event_new (GDK_BUTTON_PRESS);
+  event = cdk_event_new (GDK_BUTTON_PRESS);
 
   event->button.time = time;
   event->button.button = button;
 
-  gdk_event_set_device (event, device);
+  cdk_event_set_device (event, device);
 
   return event;
 }
@@ -2104,7 +2104,7 @@ method_call_cb (GDBusConnection       *connection,
 
 		event = button_press_event_new (applet, button, time);
 		cafe_panel_applet_menu_popup (applet, event);
-		gdk_event_free (event);
+		cdk_event_free (event);
 
 		g_dbus_method_invocation_return_value (invocation, NULL);
 	}
@@ -2288,7 +2288,7 @@ _x_error_handler (Display *display, XErrorEvent *error)
  *
  * To solve this latter problem, CAFE Panel sets up its own X error
  * handler which ignores certain X errors that might have been
- * caused by such a scenario. Other X errors get passed to gdk_x_error
+ * caused by such a scenario. Other X errors get passed to cdk_x_error
  * normally.
  */
 static void
@@ -2322,7 +2322,7 @@ _cafe_panel_applet_factory_main_internal (const gchar               *factory_id,
 
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 		/*Use this both in and out of process as the tray applet always uses CtkSocket
 		*to handle CtkStatusIcons whether the tray itself is built in or out of process
 		*/

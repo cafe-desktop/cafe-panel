@@ -31,7 +31,7 @@
 
 #include <ctk/ctk.h>
 
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <ctk/ctkx.h>
 
 #ifdef __cplusplus

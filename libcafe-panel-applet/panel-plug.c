@@ -43,7 +43,7 @@ panel_plug_draw (CtkWidget *widget,
     return CTK_WIDGET_CLASS (panel_plug_parent_class)->draw (widget, cr);
 
   window = ctk_widget_get_window (widget);
-  pattern = gdk_window_get_background_pattern (window);
+  pattern = cdk_window_get_background_pattern (window);
 
   if (!pattern)
     {
@@ -67,11 +67,11 @@ panel_plug_realize (CtkWidget *widget)
   GdkScreen *screen;
   GdkVisual *visual;
 
-  screen = gdk_screen_get_default ();
-  visual = gdk_screen_get_rgba_visual (screen);
+  screen = cdk_screen_get_default ();
+  visual = cdk_screen_get_rgba_visual (screen);
 
   if (!visual)
-    visual = gdk_screen_get_system_visual (screen);
+    visual = cdk_screen_get_system_visual (screen);
 
   ctk_widget_set_visual (widget, visual);
 

@@ -601,7 +601,7 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
 	CtkStyleContext *context;

@@ -25,7 +25,7 @@
 #ifndef __PANEL_RUN_DIALOG_H__
 #define __PANEL_RUN_DIALOG_H__
 
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 
 G_BEGIN_DECLS
 

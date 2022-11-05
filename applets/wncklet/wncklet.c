@@ -34,7 +34,7 @@
 
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libwnck/libwnck.h>
 
@@ -103,7 +103,7 @@ WnckScreen* wncklet_get_screen(CtkWidget* applet)
 	if (!ctk_widget_has_screen(applet))
 		return wnck_screen_get_default();
 
-	screen_num = gdk_x11_screen_get_screen_number(ctk_widget_get_screen(applet));
+	screen_num = cdk_x11_screen_get_screen_number(ctk_widget_get_screen(applet));
 
 	return wnck_screen_get(screen_num);
 }

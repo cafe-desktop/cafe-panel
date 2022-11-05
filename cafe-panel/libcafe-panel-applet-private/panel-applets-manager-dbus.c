@@ -32,10 +32,10 @@
 #include "panel-applets-manager-dbus.h"
 
 #ifdef HAVE_X11
-#include "gdk/gdkx.h"
+#include "cdk/cdkx.h"
 #endif
 #ifdef HAVE_WAYLAND
-#include "gdk/gdkwayland.h"
+#include "cdk/cdkwayland.h"
 #endif
 
 struct _CafePanelAppletsManagerDBusPrivate
@@ -457,14 +457,14 @@ cafe_panel_applets_manager_dbus_factory_activate (CafePanelAppletsManager *manag
 	applet_info = CAFE_PANEL_APPLETS_MANAGER_GET_CLASS (manager)->get_applet_info (manager, iid);
 	g_return_val_if_fail (applet_info, FALSE);
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()) &&
+	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ()) &&
 		!cafe_panel_applet_info_get_x11_supported (applet_info)) {
 		g_warning ("Failed to load %p, because it does not support X11", iid);
 		return FALSE;
 	}
 #endif
 #ifdef HAVE_WAYLAND
-	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()) &&
+	if (GDK_IS_WAYLAND_DISPLAY (cdk_display_get_default ()) &&
 		!cafe_panel_applet_info_get_wayland_supported (applet_info)) {
 		g_warning ("Failed to load %p, because it does not support Wayland", iid);
 		return FALSE;

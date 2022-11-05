@@ -33,7 +33,7 @@
 #include <gio/gio.h>
 
 #ifdef HAVE_X11
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif
 
 #include <libpanel-util/panel-list.h>
@@ -239,23 +239,23 @@ void
 panel_profile_set_background_color (PanelToplevel *toplevel,
 				    GdkRGBA       *color)
 {
-	panel_profile_set_background_gdk_rgba (toplevel, color);
+	panel_profile_set_background_cdk_rgba (toplevel, color);
 }
 
 void
 panel_profile_get_background_color (PanelToplevel *toplevel,
 				    GdkRGBA       *color)
 {
-	panel_profile_get_background_gdk_rgba (toplevel, color);
+	panel_profile_get_background_cdk_rgba (toplevel, color);
 }
 
 void
-panel_profile_set_background_gdk_rgba (PanelToplevel *toplevel,
+panel_profile_set_background_cdk_rgba (PanelToplevel *toplevel,
 					GdkRGBA      *color)
 {
 	char *color_str;
 
-	color_str = gdk_rgba_to_string (color);
+	color_str = cdk_rgba_to_string (color);
 
 	g_settings_set_string (toplevel->background_settings, "color", color_str);
 
@@ -263,13 +263,13 @@ panel_profile_set_background_gdk_rgba (PanelToplevel *toplevel,
 }
 
 void
-panel_profile_get_background_gdk_rgba (PanelToplevel *toplevel,
+panel_profile_get_background_cdk_rgba (PanelToplevel *toplevel,
 					GdkRGBA      *color)
 {
 	char *color_str;
 
 	color_str = g_settings_get_string (toplevel->background_settings, "color");
-	if (!color_str || !gdk_rgba_parse (color, color_str)) {
+	if (!color_str || !cdk_rgba_parse (color, color_str)) {
 		color->red   = 0.;
 		color->green = 0.;
 		color->blue  = 0.;
@@ -499,7 +499,7 @@ get_background_color (PanelToplevel *toplevel,
 {
 	char       *color_str;
 	color_str = g_settings_get_string (toplevel->background_settings, "color");
-	if (!color_str || !gdk_rgba_parse (color, color_str)) {
+	if (!color_str || !cdk_rgba_parse (color, color_str)) {
 		color->red   = 0;
 		color->green = 0;
 		color->blue  = 0;
@@ -579,7 +579,7 @@ panel_profile_queue_toplevel_location_change (PanelToplevel          *toplevel,
 	    GDK_IS_X11_SCREEN (change->screen)) {
 		g_settings_set_int (toplevel->queued_settings,
 							"screen",
-							gdk_x11_screen_get_screen_number (change->screen));
+							cdk_x11_screen_get_screen_number (change->screen));
 	}
 #endif
 
@@ -778,7 +778,7 @@ panel_profile_toplevel_change_notify (GSettings *settings,
 
 	if (!strcmp (key, "screen")) {
 		GdkScreen *screen;
-		screen = gdk_display_get_default_screen (gdk_display_get_default ());
+		screen = cdk_display_get_default_screen (cdk_display_get_default ());
 
 		if (screen)
 			ctk_window_set_screen (CTK_WINDOW (toplevel), screen);
@@ -836,7 +836,7 @@ panel_profile_background_change_notify (GSettings *settings,
 		GdkRGBA color;
 		gchar *str;
 		str = g_settings_get_string (settings, key);
-		if (gdk_rgba_parse (&color, str))
+		if (cdk_rgba_parse (&color, str))
 			panel_background_set_color (background, &color);
 		g_free (str);
 	} else if (!strcmp (key, "image")) {
@@ -984,7 +984,7 @@ panel_profile_create_toplevel (GdkScreen *screen)
 	screen_number = 0;
 #ifdef HAVE_X11
 	if (GDK_IS_X11_SCREEN (screen)) {
-		screen_number = gdk_x11_screen_get_screen_number (screen);
+		screen_number = cdk_x11_screen_get_screen_number (screen);
 	}
 #endif // HAVE_X11
 
@@ -1062,7 +1062,7 @@ panel_profile_load_toplevel (const char *toplevel_id)
 
 	toplevel_path = g_strdup_printf ("%s%s/", PANEL_TOPLEVEL_PATH, toplevel_id);
 
-	screen = gdk_display_get_default_screen (gdk_display_get_default ());
+	screen = cdk_display_get_default_screen (cdk_display_get_default ());
 
 	if (screen == NULL) {
 		g_free (toplevel_path);
@@ -1600,9 +1600,9 @@ panel_profile_ensure_toplevel_per_screen ()
 
 	toplevels = panel_toplevel_list_toplevels ();
 
-	display = gdk_display_get_default ();
+	display = cdk_display_get_default ();
 
-	screen = gdk_display_get_default_screen (display);
+	screen = cdk_display_get_default_screen (display);
 
 	for (l = toplevels; l; l = l->next)
 		if (ctk_window_get_screen (l->data) == screen)

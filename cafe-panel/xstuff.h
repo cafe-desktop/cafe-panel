@@ -7,10 +7,10 @@
 #endif
 #endif
 
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 #include <ctk/ctk.h>
 
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <ctk/ctkx.h>
 
 #include "panel-enums-gsettings.h"

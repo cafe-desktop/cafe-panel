@@ -27,8 +27,8 @@
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 #include <gio/gio.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
-#include <gdk/gdkx.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <cdk/cdkx.h>
 
 #define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-utils.h>
@@ -111,14 +111,14 @@ panel_push_window_busy (CtkWidget *window)
 		ctk_widget_set_sensitive (window, FALSE);
 
 		win = ctk_widget_get_window (window);
-		display = gdk_display_get_default ();
+		display = cdk_display_get_default ();
 		if (win != NULL) {
-			GdkCursor *cursor = gdk_cursor_new_for_display (display,
+			GdkCursor *cursor = cdk_cursor_new_for_display (display,
 			                                                GDK_WATCH);
 
-			gdk_window_set_cursor (win, cursor);
+			cdk_window_set_cursor (win, cursor);
 			g_object_unref (cursor);
-			gdk_display_flush (display);
+			cdk_display_flush (display);
 		}
 	}
 
@@ -140,7 +140,7 @@ panel_pop_window_busy (CtkWidget *window)
 
 		win = ctk_widget_get_window (window);
 		if (win != NULL)
-			gdk_window_set_cursor (win, NULL);
+			cdk_window_set_cursor (win, NULL);
 
 		g_object_set_data (G_OBJECT (window),
 				   "Panel:WindowBusy", NULL);
@@ -354,7 +354,7 @@ panel_load_icon (CtkIconTheme  *icon_theme,
 	}
 
 	error = NULL;
-	pixbuf = gdk_pixbuf_new_from_file_at_scale (file,
+	pixbuf = cdk_pixbuf_new_from_file_at_scale (file,
 						   desired_width,
 						   desired_height,
 						   TRUE,
@@ -366,7 +366,7 @@ panel_load_icon (CtkIconTheme  *icon_theme,
 		surface = NULL;
 	}
 	else {
-		surface = gdk_cairo_surface_create_from_pixbuf (pixbuf, 0, NULL);
+		surface = cdk_cairo_surface_create_from_pixbuf (pixbuf, 0, NULL);
 	}
 
 	g_free (file);
@@ -469,7 +469,7 @@ void panel_lock_screen_action(GdkScreen* screen, const char* action)
 		return;
 	}
 
-	if (!cafe_gdk_spawn_command_line_on_screen(screen, command, &error))
+	if (!cafe_cdk_spawn_command_line_on_screen(screen, command, &error))
 	{
 		char* primary = g_strdup_printf(_("Could not execute '%s'"), command);
 		panel_error_dialog (NULL, screen, "cannot_exec_screensaver", TRUE, primary, error->message);
@@ -726,13 +726,13 @@ panel_util_cairo_rgbdata_to_pixbuf (unsigned char *data,
 	if (!data)
 		return NULL;
 
-	retval = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, width, height);
+	retval = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, width, height);
 	if (!retval)
 		return NULL;
 
-	dstptr = gdk_pixbuf_get_pixels (retval);
+	dstptr = cdk_pixbuf_get_pixels (retval);
 	srcptr = data;
-	align  = gdk_pixbuf_get_rowstride (retval) - (width * 3);
+	align  = cdk_pixbuf_get_rowstride (retval) - (width * 3);
 
 #if G_BYTE_ORDER == G_LITTLE_ENDIAN
 /* cairo == 00RRGGBB */

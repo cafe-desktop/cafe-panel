@@ -586,7 +586,7 @@ weather_info_setup_tooltip (WeatherInfo *info, ClockLocation *location, CtkToolt
 
         theme = ctk_icon_theme_get_default ();
         icon_name = weather_info_get_icon_name (info);
-        icon_scale = gdk_window_get_scale_factor (gdk_get_default_root_window ());
+        icon_scale = cdk_window_get_scale_factor (cdk_get_default_root_window ());
 
         pixbuf = ctk_icon_theme_load_icon_for_scale (theme, icon_name, 48, icon_scale,
                                                      CTK_ICON_LOOKUP_GENERIC_FALLBACK, NULL);

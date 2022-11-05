@@ -31,7 +31,7 @@
 #endif
 #endif
 
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 
 #ifdef __cplusplus
 extern "C" {

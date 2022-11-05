@@ -31,8 +31,8 @@
 
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkx.h>
 #include <X11/Xatom.h>
 
 #include "na-item.h"
@@ -77,17 +77,17 @@ na_tray_child_realize (CtkWidget *widget)
 
       /* Set a transparent background */
       cairo_pattern_t *transparent = cairo_pattern_create_rgba (0, 0, 0, 0);
-      gdk_window_set_background_pattern (window, transparent);
-      gdk_window_set_composited (window, TRUE);
+      cdk_window_set_background_pattern (window, transparent);
+      cdk_window_set_composited (window, TRUE);
       cairo_pattern_destroy (transparent);
 
       child->parent_relative_bg = FALSE;
     }
-  else if (visual == gdk_window_get_visual(gdk_window_get_parent(window)))
+  else if (visual == cdk_window_get_visual(cdk_window_get_parent(window)))
     {
       /* Otherwise, if the visual matches the visual of the parent window, we
        * can use a parent-relative background and fake transparency. */
-      gdk_window_set_background_pattern (window, NULL);
+      cdk_window_set_background_pattern (window, NULL);
 
       child->parent_relative_bg = TRUE;
     }
@@ -97,7 +97,7 @@ na_tray_child_realize (CtkWidget *widget)
       child->parent_relative_bg = FALSE;
     }
 
-  gdk_window_set_composited (window, child->composited);
+  cdk_window_set_composited (window, child->composited);
 
   ctk_widget_set_app_paintable (CTK_WIDGET (child),
                                 child->parent_relative_bg || child->has_alpha);
@@ -184,7 +184,7 @@ na_tray_child_draw (CtkWidget *widget,
       window = ctk_widget_get_window (widget);
       target = cairo_get_group_target (cr);
 
-      gdk_cairo_get_clip_rectangle (cr, &clip_rect);
+      cdk_cairo_get_clip_rectangle (cr, &clip_rect);
 
       /* Clear to parent-relative pixmap
        * We need to use direct X access here because GDK doesn't know about
@@ -205,7 +205,7 @@ na_tray_child_draw (CtkWidget *widget,
 }
 
 /* Children with alpha channels have been set to be composited by calling
- * gdk_window_set_composited(). We need to paint these children ourselves.
+ * cdk_window_set_composited(). We need to paint these children ourselves.
  *
  * FIXME: is that still needed on CTK3?  Seems like it could be done in draw().
  */
@@ -230,7 +230,7 @@ na_tray_child_draw_on_parent (NaItem    *item,
       allocation.y -= parent_allocation.y;
 
       cairo_save (parent_cr);
-      gdk_cairo_set_source_window (parent_cr,
+      cdk_cairo_set_source_window (parent_cr,
                                    ctk_widget_get_window (widget),
                                    allocation.x,
                                    allocation.y);
@@ -414,20 +414,20 @@ na_tray_child_new (GdkScreen *screen,
    * the socket in the same visual.
    */
 
-  display = gdk_screen_get_display (screen);
+  display = cdk_screen_get_display (screen);
   if (!GDK_IS_X11_DISPLAY (display)) {
     g_warning ("na_tray only works on X11");
     return NULL;
   }
-  gdk_x11_display_error_trap_push (display);
+  cdk_x11_display_error_trap_push (display);
   result = XGetWindowAttributes (xdisplay, icon_window,
                                  &window_attributes);
-  gdk_x11_display_error_trap_pop_ignored (display);
+  cdk_x11_display_error_trap_pop_ignored (display);
 
   if (!result) /* Window already gone */
     return NULL;
 
-  visual = gdk_x11_screen_lookup_visual (screen,
+  visual = cdk_x11_screen_lookup_visual (screen,
                                          window_attributes.visual->visualid);
   if (!visual) /* Icon window is on another screen? */
     return NULL;
@@ -439,14 +439,14 @@ na_tray_child_new (GdkScreen *screen,
 
   /* We have alpha if the visual has something other than red, green,
    * and blue */
-  gdk_visual_get_red_pixel_details (visual, NULL, NULL, &red_prec);
-  gdk_visual_get_green_pixel_details (visual, NULL, NULL, &green_prec);
-  gdk_visual_get_blue_pixel_details (visual, NULL, NULL, &blue_prec);
-  depth = gdk_visual_get_depth (visual);
+  cdk_visual_get_red_pixel_details (visual, NULL, NULL, &red_prec);
+  cdk_visual_get_green_pixel_details (visual, NULL, NULL, &green_prec);
+  cdk_visual_get_blue_pixel_details (visual, NULL, NULL, &blue_prec);
+  depth = cdk_visual_get_depth (visual);
 
   visual_has_alpha = red_prec + blue_prec + green_prec < depth;
   child->has_alpha = (visual_has_alpha &&
-                      gdk_display_supports_composite (gdk_screen_get_display (screen)));
+                      cdk_display_supports_composite (cdk_screen_get_display (screen)));
 
   child->composited = child->has_alpha;
 
@@ -469,10 +469,10 @@ na_tray_child_get_title (NaTrayChild *child)
 
   display = ctk_widget_get_display (CTK_WIDGET (child));
 
-  utf8_string = gdk_x11_get_xatom_by_name_for_display (display, "UTF8_STRING");
-  atom = gdk_x11_get_xatom_by_name_for_display (display, "_NET_WM_NAME");
+  utf8_string = cdk_x11_get_xatom_by_name_for_display (display, "UTF8_STRING");
+  atom = cdk_x11_get_xatom_by_name_for_display (display, "_NET_WM_NAME");
 
-  gdk_x11_display_error_trap_push (display);
+  cdk_x11_display_error_trap_push (display);
 
   result = XGetWindowProperty (GDK_DISPLAY_XDISPLAY (display),
                                child->icon_window,
@@ -482,7 +482,7 @@ na_tray_child_get_title (NaTrayChild *child)
                                &type, &format, &nitems,
                                &bytes_after, (guchar **)&val);
 
-  if (gdk_x11_display_error_trap_pop (display) || result != Success)
+  if (cdk_x11_display_error_trap_pop (display) || result != Success)
     return NULL;
 
   if (type != utf8_string ||
@@ -531,7 +531,7 @@ na_tray_child_has_alpha (NaTrayChild *child)
  * @composited: %TRUE if the child's window should be redirected
  *
  * Sets whether the #GdkWindow of the child should be set redirected
- * using gdk_window_set_composited(). By default this is based off of
+ * using cdk_window_set_composited(). By default this is based off of
  * na_tray_child_has_alpha(), but it may be useful to override it in
  * certain circumstances; for example, if the #NaTrayChild is added
  * to a parent window and that parent window is composited against the
@@ -548,7 +548,7 @@ na_tray_child_set_composited (NaTrayChild *child,
 
   child->composited = composited;
   if (ctk_widget_get_realized (CTK_WIDGET (child)))
-    gdk_window_set_composited (ctk_widget_get_window (CTK_WIDGET (child)),
+    cdk_window_set_composited (ctk_widget_get_window (CTK_WIDGET (child)),
                                composited);
 }
 
@@ -603,10 +603,10 @@ _get_wmclass (Display *xdisplay,
   ch.res_name = NULL;
   ch.res_class = NULL;
 
-  display = gdk_display_get_default ();
-  gdk_x11_display_error_trap_push (display);
+  display = cdk_display_get_default ();
+  cdk_x11_display_error_trap_push (display);
   XGetClassHint (xdisplay, xwindow, &ch);
-  gdk_x11_display_error_trap_pop_ignored (display);
+  cdk_x11_display_error_trap_pop_ignored (display);
 
   if (res_class)
     *res_class = NULL;

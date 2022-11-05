@@ -32,7 +32,7 @@
 #include <glib/gi18n.h>
 
 #include <ctk/ctk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libwnck/libwnck.h>
@@ -349,7 +349,7 @@ static gboolean button_drag_motion(CtkWidget* widget, GdkDragContext* context, g
 	if (sdd->button_activate == 0)
 		sdd->button_activate = g_timeout_add_seconds (TIMEOUT_ACTIVATE_SECONDS, button_motion_timeout, sdd);
 
-	gdk_drag_status(context, 0, time);
+	cdk_drag_status(context, 0, time);
 
 	return TRUE;
 }
@@ -368,7 +368,7 @@ static void show_desktop_applet_realized(CafePanelApplet* applet, gpointer data)
 		g_signal_handlers_disconnect_by_func(sdd->icon_theme, theme_changed_callback, sdd);
 
 	screen = ctk_widget_get_screen(sdd->applet);
-	sdd->wnck_screen = wnck_screen_get(gdk_x11_screen_get_screen_number (screen));
+	sdd->wnck_screen = wnck_screen_get(cdk_x11_screen_get_screen_number (screen));
 
 	if (sdd->wnck_screen != NULL)
 		wncklet_connect_while_alive(sdd->wnck_screen, "showing_desktop_changed", G_CALLBACK(show_desktop_changed_callback), sdd, sdd->applet);
@@ -514,7 +514,7 @@ static void display_about_dialog(CtkAction* action, ShowDesktopData* sdd)
 
 static void button_toggled_callback(CtkWidget* button, ShowDesktopData* sdd)
 {
-	if (!gdk_x11_screen_supports_net_wm_hint(ctk_widget_get_screen(button), gdk_atom_intern("_NET_SHOWING_DESKTOP", FALSE)))
+	if (!cdk_x11_screen_supports_net_wm_hint(ctk_widget_get_screen(button), cdk_atom_intern("_NET_SHOWING_DESKTOP", FALSE)))
 	{
 		static CtkWidget* dialog = NULL;
 

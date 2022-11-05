@@ -27,7 +27,7 @@
 #error file should only be compiled when HAVE_X11 is enabled
 #endif
 
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 
 #include "panel-struts.h"
 
@@ -277,8 +277,8 @@ panel_struts_set_window_hint (PanelToplevel *toplevel)
 	scale = ctk_widget_get_scale_factor (widget);
 	strut_size = strut->allocated_strut_size;
 
-	screen_width  = WidthOfScreen (gdk_x11_screen_get_xscreen (strut->screen)) / scale;
-	screen_height = HeightOfScreen (gdk_x11_screen_get_xscreen (strut->screen)) / scale;
+	screen_width  = WidthOfScreen (cdk_x11_screen_get_xscreen (strut->screen)) / scale;
+	screen_height = HeightOfScreen (cdk_x11_screen_get_xscreen (strut->screen)) / scale;
 
 	panel_struts_get_monitor_geometry (strut->monitor,
 					   &monitor_x,
@@ -381,8 +381,8 @@ panel_struts_compare (const PanelStrut *s1,
 	int s2_depth;
 
 	if (s1->screen != s2->screen)
-		return gdk_x11_screen_get_screen_number (s1->screen) -
-			gdk_x11_screen_get_screen_number (s2->screen);
+		return cdk_x11_screen_get_screen_number (s1->screen) -
+			cdk_x11_screen_get_screen_number (s2->screen);
 
 	if (s1->monitor != s2->monitor)
 		return s1->monitor - s2->monitor;

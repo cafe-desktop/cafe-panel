@@ -263,7 +263,7 @@ static void applet_style_updated (CafePanelApplet *applet, CtkStyleContext *cont
 
 	/* Provide a fallback color for the highlighted workspace based on the current theme */
 	ctk_style_context_lookup_color (context, "theme_selected_bg_color", &color);
-	color_str = gdk_rgba_to_string (&color);
+	color_str = cdk_rgba_to_string (&color);
 	bg_css = g_strconcat (".wnck-pager:selected {\n"
 		              "	background-color:", color_str, ";\n"
 		              "}", NULL);

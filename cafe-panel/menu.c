@@ -29,7 +29,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 #include <libcafe-desktop/cafe-gsettings.h>
 #include <cafemenu-tree.h>
 
@@ -430,10 +430,10 @@ grab_widget (CtkWidget *widget)
 	GdkSeat *seat;
 
 	window = ctk_widget_get_window (widget);
-	display = gdk_window_get_display (window);
+	display = cdk_window_get_display (window);
 
-	seat = gdk_display_get_default_seat (display);
-	gdk_seat_grab (seat, window,
+	seat = cdk_display_get_default_seat (display);
+	cdk_seat_grab (seat, window,
 	               GDK_SEAT_CAPABILITY_ALL, TRUE,
 	               NULL, NULL, NULL, NULL);
 }
@@ -566,7 +566,7 @@ show_item_menu (CtkWidget      *item,
 	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 	/* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	GdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (toplevel));
-	GdkVisual *visual = gdk_screen_get_rgba_visual (screen);
+	GdkVisual *visual = cdk_screen_get_rgba_visual (screen);
 	ctk_widget_set_visual(CTK_WIDGET (toplevel), visual);
 	/* Set menu and it's toplevel window to follow panel theme */
 	CtkStyleContext *context;
@@ -954,7 +954,7 @@ create_fake_menu (CafeMenuTreeDirectory *directory)
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 
 	return menu;
@@ -1269,7 +1269,7 @@ create_applications_menu (const char *menu_file,
 /*HACK Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 
 	return menu;

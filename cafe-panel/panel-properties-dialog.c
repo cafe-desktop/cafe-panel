@@ -332,7 +332,7 @@ panel_properties_dialog_color_changed (PanelPropertiesDialog *dialog,
 	g_assert (dialog->color_button == CTK_WIDGET (color_button));
 
 	ctk_color_chooser_get_rgba (color_button, &color);
-	panel_profile_set_background_gdk_rgba (dialog->toplevel, &color);
+	panel_profile_set_background_cdk_rgba (dialog->toplevel, &color);
 	panel_properties_dialog_opacity_changed (dialog);
 }
 
@@ -697,13 +697,13 @@ panel_properties_dialog_update_background_color (PanelPropertiesDialog *dialog,
 	GdkRGBA new_color;
 	GdkRGBA old_color;
 
-	if (!gdk_rgba_parse (&new_color, str_color))
+	if (!cdk_rgba_parse (&new_color, str_color))
 		return;
 
 	ctk_color_chooser_get_rgba (CTK_COLOR_CHOOSER (dialog->color_button),
 				    &old_color);
 
-	if (!gdk_rgba_equal (&old_color, &new_color))
+	if (!cdk_rgba_equal (&old_color, &new_color))
 		ctk_color_chooser_set_rgba (CTK_COLOR_CHOOSER (dialog->color_button),
 					    &new_color);
 }

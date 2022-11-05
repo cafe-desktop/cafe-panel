@@ -48,11 +48,11 @@
 #include <glib/gi18n.h>
 
 #include <ctk/ctk.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 #include <gio/gio.h>
 
 #ifdef HAVE_X11
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif
 
 #include <libcafeweather/cafeweather-prefs.h>
@@ -867,7 +867,7 @@ create_calendar (ClockData *cd)
 
         /* Make transparency possible in the theme */
         GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(window));
-        GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+        GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
         ctk_widget_set_visual(CTK_WIDGET(window), visual);
 
         return window;
@@ -889,11 +889,11 @@ position_calendar_popup (ClockData *cd)
         int             i, n;
         gboolean        found_monitor = FALSE;
 
-        if (!GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+        if (!GDK_IS_X11_DISPLAY (cdk_display_get_default ()))
                 return;
 
         /* Get root origin of the toggle button, and position above that. */
-        gdk_window_get_origin (ctk_widget_get_window (cd->panel_button),
+        cdk_window_get_origin (ctk_widget_get_window (cd->panel_button),
                                &x, &y);
 
         ctk_window_get_size (CTK_WINDOW (cd->calendar_popup), &w, &h);
@@ -906,11 +906,11 @@ position_calendar_popup (ClockData *cd)
         button_h = allocation.height;
 
         screen = ctk_window_get_screen (CTK_WINDOW (cd->calendar_popup));
-        display = gdk_screen_get_display (screen);
+        display = cdk_screen_get_display (screen);
 
-        n = gdk_display_get_n_monitors (display);
+        n = cdk_display_get_n_monitors (display);
         for (i = 0; i < n; i++) {
-                gdk_monitor_get_geometry (gdk_display_get_monitor (display, i), &monitor);
+                cdk_monitor_get_geometry (cdk_display_get_monitor (display, i), &monitor);
                 if (x >= monitor.x && x <= monitor.x + monitor.width &&
                     y >= monitor.y && y <= monitor.y + monitor.height) {
                         found_monitor = TRUE;
@@ -923,8 +923,8 @@ position_calendar_popup (ClockData *cd)
                    monitors */
                 monitor.x = 0;
                 monitor.y = 0;
-                monitor.width = WidthOfScreen (gdk_x11_screen_get_xscreen (screen));
-                monitor.height = HeightOfScreen (gdk_x11_screen_get_xscreen (screen));
+                monitor.width = WidthOfScreen (cdk_x11_screen_get_xscreen (screen));
+                monitor.height = HeightOfScreen (cdk_x11_screen_get_xscreen (screen));
         }
 
         /* Based on panel orientation, position the popup.

@@ -30,7 +30,7 @@
 #error file should only be included when HAVE_X11 is enabled
 #endif
 
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <ctk/ctk.h>
 
 #include "na-host.h"

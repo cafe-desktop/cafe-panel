@@ -36,10 +36,10 @@
 #include <X11/SM/SMlib.h>
 
 #include <ctk/ctk.h>
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 
 #ifdef HAVE_X11
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif
 
 #define EGG_TYPE_SM_CLIENT_XSMP            (egg_sm_client_xsmp_get_type ())
@@ -372,8 +372,8 @@ sm_client_xsmp_startup (EggSMClient *client,
       free (ret_client_id);
 
 #ifdef HAVE_X11
-      if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
-        gdk_x11_set_sm_client_id (xsmp->client_id);
+      if (GDK_IS_X11_DISPLAY (cdk_display_get_default ()))
+        cdk_x11_set_sm_client_id (xsmp->client_id);
 #endif
 
       g_debug ("Got client ID \"%s\"", xsmp->client_id);
