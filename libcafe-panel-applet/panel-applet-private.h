@@ -27,7 +27,7 @@ G_BEGIN_DECLS
 
 // Returns 0 when not on X11
 guint32      cafe_panel_applet_get_xid           (CafePanelApplet *applet,
-                                             GdkScreen   *screen);
+                                             CdkScreen   *screen);
 const gchar *cafe_panel_applet_get_object_path   (CafePanelApplet *applet);
 
 CtkWidget   *cafe_panel_applet_get_applet_widget (const gchar *factory_id,

@@ -75,7 +75,7 @@ CtkWidget *cafe_panel_applet_container_new                     (void);
 
 
 void       cafe_panel_applet_container_add                     (CafePanelAppletContainer *container,
-							   GdkScreen            *screen,
+							   CdkScreen            *screen,
 							   const gchar          *iid,
 							   GCancellable        *cancellable,
 							   GAsyncReadyCallback  callback,

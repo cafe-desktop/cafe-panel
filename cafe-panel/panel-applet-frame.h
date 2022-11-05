@@ -106,7 +106,7 @@ void  cafe_panel_applet_frame_set_panel          (CafePanelAppletFrame    *frame
 
 typedef struct _CafePanelAppletFrameActivating        CafePanelAppletFrameActivating;
 
-GdkScreen        *panel_applet_frame_activating_get_screen      (CafePanelAppletFrameActivating *frame_act);
+CdkScreen        *panel_applet_frame_activating_get_screen      (CafePanelAppletFrameActivating *frame_act);
 PanelOrientation  cafe_panel_applet_frame_activating_get_orientation (CafePanelAppletFrameActivating *frame_act);
 guint32           cafe_panel_applet_frame_activating_get_size        (CafePanelAppletFrameActivating *frame_act);
 gboolean          cafe_panel_applet_frame_activating_get_locked      (CafePanelAppletFrameActivating *frame_act);

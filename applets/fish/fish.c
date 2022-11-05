@@ -79,7 +79,7 @@ typedef struct {
 	CtkWidget         *frame;
 	CtkWidget         *drawing_area;
 	CtkRequisition     requisition;
-	GdkRectangle       prev_allocation;
+	CdkRectangle       prev_allocation;
 	cairo_surface_t   *surface;
 	gint               surface_width;
 	gint               surface_height;
@@ -88,7 +88,7 @@ typedef struct {
 	int                current_frame;
 	gboolean           in_applet;
 
-	GdkPixbuf         *pixbuf;
+	CdkPixbuf         *pixbuf;
 
 	CtkWidget         *preferences_dialog;
 	CtkWidget         *name_entry;
@@ -356,7 +356,7 @@ static void chooser_preview_update(CtkFileChooser* file_chooser, gpointer data)
 {
 	CtkWidget *preview;
 	char      *filename;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	gboolean   have_preview;
 
 	preview = CTK_WIDGET (data);
@@ -822,8 +822,8 @@ static void display_fortune_dialog(FishApplet* fish)
 	const char  *charset;
 	int          argc;
 	char       **argv;
-	GdkDisplay  *display;
-	GdkScreen   *screen;
+	CdkDisplay  *display;
+	CdkScreen   *screen;
 	char        *display_name;
 
 	/* if there is still a pipe, close it */
@@ -839,8 +839,8 @@ static void display_fortune_dialog(FishApplet* fish)
 	if (!fish->fortune_dialog) {
 		CtkWidget *scrolled;
 		CtkWidget *vbox;
-		GdkMonitor *monitor;
-		GdkRectangle monitor_geom;
+		CdkMonitor *monitor;
+		CdkRectangle monitor_geom;
 
 		fish->fortune_dialog = ctk_dialog_new ();
 		ctk_window_set_title (CTK_WINDOW (fish->fortune_dialog), "");
@@ -1309,7 +1309,7 @@ static void setup_gsettings(FishApplet* fish)
 
 static gboolean load_fish_image(FishApplet* fish)
 {
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	GError    *error = NULL;
 	char      *path = NULL;
 
@@ -1561,7 +1561,7 @@ static void change_water(FishApplet* fish)
 			  G_CALLBACK (ctk_widget_destroy), NULL);
 }
 
-static gboolean handle_keypress(CtkWidget* widget, GdkEventKey* event, FishApplet* fish)
+static gboolean handle_keypress(CtkWidget* widget, CdkEventKey* event, FishApplet* fish)
 {
 	switch (event->keyval) {
 	case CDK_KEY_space:
@@ -1585,13 +1585,13 @@ static gboolean handle_keypress(CtkWidget* widget, GdkEventKey* event, FishApple
 	return TRUE;
 }
 
-static gboolean fish_enter_notify(CtkWidget* widget, GdkEventCrossing* event)
+static gboolean fish_enter_notify(CtkWidget* widget, CdkEventCrossing* event)
 {
   FishApplet *fish;
   CtkWidget  *event_widget;
 
   fish = FISH_APPLET (widget);
-  event_widget = ctk_get_event_widget ((GdkEvent*) event);
+  event_widget = ctk_get_event_widget ((CdkEvent*) event);
 
   if ((event_widget == widget) &&
       (event->detail != CDK_NOTIFY_INFERIOR))
@@ -1600,13 +1600,13 @@ static gboolean fish_enter_notify(CtkWidget* widget, GdkEventCrossing* event)
   return FALSE;
 }
 
-static gboolean fish_leave_notify(CtkWidget* widget, GdkEventCrossing* event)
+static gboolean fish_leave_notify(CtkWidget* widget, CdkEventCrossing* event)
 {
   FishApplet *fish;
   CtkWidget  *event_widget;
 
   fish = FISH_APPLET (widget);
-  event_widget = ctk_get_event_widget ((GdkEvent*) event);
+  event_widget = ctk_get_event_widget ((CdkEvent*) event);
 
   if ((event_widget == widget) &&
       (event->detail != CDK_NOTIFY_INFERIOR))
@@ -1615,7 +1615,7 @@ static gboolean fish_leave_notify(CtkWidget* widget, GdkEventCrossing* event)
   return FALSE;
 }
 
-static gboolean handle_button_release(FishApplet* fish, GdkEventButton* event)
+static gboolean handle_button_release(FishApplet* fish, CdkEventButton* event)
 {
 	if (!fish->in_applet || event->button != 1)
 		return FALSE;

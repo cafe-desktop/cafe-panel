@@ -43,13 +43,13 @@
 extern "C" {
 #endif
 
-void panel_xutils_set_strut       (GdkWindow             *cdk_window,
+void panel_xutils_set_strut       (CdkWindow             *cdk_window,
 				   PanelOrientation       orientation,
 				   guint32                strut,
 				   guint32                strut_start,
 				   guint32                strut_end);
 
-void panel_warp_pointer           (GdkWindow             *cdk_window,
+void panel_warp_pointer           (CdkWindow             *cdk_window,
 				   int                    x,
 				   int                    y);
 

@@ -127,7 +127,7 @@ emit_applet_moved (PanelWidget *panel_widget,
 
 static void
 add_tab_bindings (CtkBindingSet    *binding_set,
-   	          GdkModifierType   modifiers,
+   	          CdkModifierType   modifiers,
 		  gboolean          next)
 {
 	ctk_binding_entry_add_signal (binding_set, CDK_KEY_Tab, modifiers,
@@ -140,7 +140,7 @@ add_tab_bindings (CtkBindingSet    *binding_set,
 
 static void
 add_move_bindings (CtkBindingSet    *binding_set,
-		   GdkModifierType   modifiers,
+		   CdkModifierType   modifiers,
 		   const gchar      *name)
 {
 	ctk_binding_entry_add_signal (binding_set, CDK_KEY_Up, modifiers,
@@ -237,7 +237,7 @@ panel_widget_reset_saved_focus (PanelWidget *panel)
 
 static void
 remove_tab_bindings (CtkBindingSet    *binding_set,
-		     GdkModifierType   modifiers,
+		     CdkModifierType   modifiers,
 		     gboolean          next)
 {
 	ctk_binding_entry_remove (binding_set, CDK_KEY_Tab, modifiers);
@@ -246,7 +246,7 @@ remove_tab_bindings (CtkBindingSet    *binding_set,
 
 static void
 remove_move_bindings (CtkBindingSet    *binding_set,
-		      GdkModifierType   modifiers)
+		      CdkModifierType   modifiers)
 {
 	ctk_binding_entry_remove (binding_set, CDK_KEY_Up, modifiers);
 	ctk_binding_entry_remove (binding_set, CDK_KEY_Down, modifiers);
@@ -1562,7 +1562,7 @@ panel_widget_is_cursor(PanelWidget *panel, int overlap)
 {
 	CtkWidget     *widget;
 	CtkAllocation allocation;
-	GdkDevice      *device;
+	CdkDevice      *device;
 	int           x,y;
 	int           w,h;
 
@@ -1791,7 +1791,7 @@ panel_widget_applet_drag_start (PanelWidget *panel,
 				int          drag_off,
 				guint32      time_)
 {
-	GdkWindow *window;
+	CdkWindow *window;
 
 	g_return_if_fail (PANEL_IS_WIDGET (panel));
 	g_return_if_fail (CTK_IS_WIDGET (applet));
@@ -1810,10 +1810,10 @@ panel_widget_applet_drag_start (PanelWidget *panel,
 
 	window = ctk_widget_get_window (applet);
 	if (window) {
-		GdkGrabStatus  status;
-		GdkCursor     *fleur_cursor;
-		GdkDisplay *display;
-		GdkSeat *seat;
+		CdkGrabStatus  status;
+		CdkCursor     *fleur_cursor;
+		CdkDisplay *display;
+		CdkSeat *seat;
 
 		fleur_cursor = cdk_cursor_new_for_display (cdk_display_get_default (),
 		                                           CDK_FLEUR);
@@ -1838,8 +1838,8 @@ panel_widget_applet_drag_start (PanelWidget *panel,
 void
 panel_widget_applet_drag_end (PanelWidget *panel)
 {
-	GdkDisplay *display;
-	GdkSeat *seat;
+	CdkDisplay *display;
+	CdkSeat *seat;
 
 	g_return_if_fail (PANEL_IS_WIDGET (panel));
 
@@ -1861,7 +1861,7 @@ panel_widget_applet_drag_end (PanelWidget *panel)
 int
 panel_widget_get_cursorloc (PanelWidget *panel)
 {
-	GdkDevice      *device;
+	CdkDevice      *device;
 	int x, y;
 	gboolean rtl;
 
@@ -2035,9 +2035,9 @@ panel_widget_applet_move_to_cursor (PanelWidget *panel)
 	int pos;
 	int movement;
 	CtkWidget *applet;
-	GdkDevice      *device;
+	CdkDevice      *device;
 	GSList *forb;
-	GdkModifierType mods;
+	CdkModifierType mods;
 	AppletData *ad;
 
 	g_return_if_fail(PANEL_IS_WIDGET(panel));
@@ -2126,7 +2126,7 @@ static int
 move_timeout_handler(gpointer data)
 {
 	PanelWidget   *panel = data;
-	GdkDevice      *device;
+	CdkDevice      *device;
 
 	g_return_val_if_fail(PANEL_IS_WIDGET(data),FALSE);
 
@@ -2182,7 +2182,7 @@ schedule_try_move(PanelWidget *panel, gboolean repeater)
 
 static gboolean
 panel_widget_applet_button_press_event (CtkWidget      *widget,
-					GdkEventButton *event)
+					CdkEventButton *event)
 {
 	CtkWidget   *parent;
 	PanelWidget *panel;
@@ -2221,7 +2221,7 @@ panel_widget_applet_button_press_event (CtkWidget      *widget,
 
 static gboolean
 panel_widget_applet_button_release_event (CtkWidget      *widget,
-					  GdkEventButton *event)
+					  CdkEventButton *event)
 {
 	CtkWidget   *parent;
 	PanelWidget *panel;
@@ -2247,7 +2247,7 @@ panel_widget_applet_button_release_event (CtkWidget      *widget,
 
 static gboolean
 panel_widget_applet_motion_notify_event (CtkWidget *widget,
-					 GdkEvent  *event)
+					 CdkEvent  *event)
 {
 	CtkWidget   *parent;
 	PanelWidget *panel;
@@ -2268,7 +2268,7 @@ panel_widget_applet_motion_notify_event (CtkWidget *widget,
 
 static gboolean
 panel_widget_applet_key_press_event (CtkWidget   *widget,
-				     GdkEventKey *event)
+				     CdkEventKey *event)
 {
 	CtkWidget   *parent;
 	PanelWidget *panel;
@@ -2283,12 +2283,12 @@ panel_widget_applet_key_press_event (CtkWidget   *widget,
 		return FALSE;
 
 	return ctk_bindings_activate (G_OBJECT (panel),
-				      ((GdkEventKey *)event)->keyval,
-				      ((GdkEventKey *)event)->state);
+				      ((CdkEventKey *)event)->keyval,
+				      ((CdkEventKey *)event)->state);
 }
 
 static int
-panel_sub_event_handler(CtkWidget *widget, GdkEvent *event, gpointer data)
+panel_sub_event_handler(CtkWidget *widget, CdkEvent *event, gpointer data)
 {
 	g_return_val_if_fail(CTK_IS_WIDGET(widget),FALSE);
 	g_return_val_if_fail(event!=NULL,FALSE);
@@ -2298,7 +2298,7 @@ panel_sub_event_handler(CtkWidget *widget, GdkEvent *event, gpointer data)
 		case CDK_BUTTON_PRESS:
 		case CDK_BUTTON_RELEASE:
 		case CDK_MOTION_NOTIFY: {
-			GdkEventButton *bevent = (GdkEventButton *)event;
+			CdkEventButton *bevent = (CdkEventButton *)event;
 
 			if (bevent->button != 1 || cafe_panel_applet_in_drag)
 				return ctk_widget_event (data, event);
@@ -2554,7 +2554,7 @@ panel_widget_reparent (PanelWidget *old_panel,
 	AppletData *ad;
 	CtkWidget *focus_widget = NULL;
 	AppletInfo* info;
-	GdkDisplay *display;
+	CdkDisplay *display;
 
 	g_return_val_if_fail(PANEL_IS_WIDGET(old_panel), FALSE);
 	g_return_val_if_fail(PANEL_IS_WIDGET(new_panel), FALSE);

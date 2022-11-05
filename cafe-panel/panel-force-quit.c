@@ -43,14 +43,14 @@
 #include "panel-icon-names.h"
 #include "panel-stock-icons.h"
 
-static GdkFilterReturn popup_filter (GdkXEvent *cdk_xevent,
-				     GdkEvent  *event,
+static CdkFilterReturn popup_filter (CdkXEvent *cdk_xevent,
+				     CdkEvent  *event,
 				     CtkWidget *popup);
 
 static Atom wm_state_atom = None;
 
 static CtkWidget *
-display_popup_window (GdkScreen *screen)
+display_popup_window (CdkScreen *screen)
 {
 	CtkWidget     *retval;
 	CtkWidget     *vbox;
@@ -109,13 +109,13 @@ display_popup_window (GdkScreen *screen)
 static void
 remove_popup (CtkWidget *popup)
 {
-	GdkWindow        *root;
-	GdkDisplay       *display;
-	GdkSeat          *seat;
+	CdkWindow        *root;
+	CdkDisplay       *display;
+	CdkSeat          *seat;
 
 	root = cdk_screen_get_root_window (
 			ctk_window_get_screen (CTK_WINDOW (popup)));
-	cdk_window_remove_filter (root, (GdkFilterFunc) popup_filter, popup);
+	cdk_window_remove_filter (root, (CdkFilterFunc) popup_filter, popup);
 
 	ctk_widget_destroy (popup);
 
@@ -129,7 +129,7 @@ static gboolean
 wm_state_set (Display *xdisplay,
 	      Window   window)
 {
-	GdkDisplay *display;
+	CdkDisplay *display;
 	gulong  nitems;
 	gulong  bytes_after;
 	gulong *prop;
@@ -162,7 +162,7 @@ static Window
 find_managed_window (Display *xdisplay,
 		     Window   window)
 {
-	GdkDisplay *display;
+	CdkDisplay *display;
 	Window  root;
 	Window  parent;
 	Window *kids = NULL;
@@ -204,7 +204,7 @@ kill_window_response (CtkDialog *dialog,
 		      gpointer   user_data)
 {
 	if (response_id == CTK_RESPONSE_ACCEPT) {
-		GdkDisplay *display;
+		CdkDisplay *display;
 		Display *xdisplay;
 		Window window = (Window) user_data;
 
@@ -278,9 +278,9 @@ handle_button_press_event (CtkWidget *popup,
 	}
 }
 
-static GdkFilterReturn
-popup_filter (GdkXEvent *cdk_xevent,
-	      GdkEvent  *event,
+static CdkFilterReturn
+popup_filter (CdkXEvent *cdk_xevent,
+	      CdkEvent  *event,
 	      CtkWidget *popup)
 {
 	XEvent *xevent = (XEvent *) cdk_xevent;
@@ -320,24 +320,24 @@ popup_filter (GdkXEvent *cdk_xevent,
 }
 
 static void
-prepare_root_window (GdkSeat   *seat,
-                     GdkWindow *window,
+prepare_root_window (CdkSeat   *seat,
+                     CdkWindow *window,
                      gpointer   user_data)
 {
 	cdk_window_show_unraised (window);
 }
 
 void
-panel_force_quit (GdkScreen *screen,
+panel_force_quit (CdkScreen *screen,
 		  guint      time)
 {
-	GdkGrabStatus  status;
-	GdkCursor     *cross;
-	GdkSeatCapabilities caps;
+	CdkGrabStatus  status;
+	CdkCursor     *cross;
+	CdkSeatCapabilities caps;
 	CtkWidget     *popup;
-	GdkWindow     *root;
-	GdkDisplay    *display;
-	GdkSeat       *seat;
+	CdkWindow     *root;
+	CdkDisplay    *display;
+	CdkSeat       *seat;
 
 	g_return_if_fail (CDK_IS_X11_DISPLAY (cdk_screen_get_display (screen)));
 
@@ -345,7 +345,7 @@ panel_force_quit (GdkScreen *screen,
 
 	root = cdk_screen_get_root_window (screen);
 
-	cdk_window_add_filter (root, (GdkFilterFunc) popup_filter, popup);
+	cdk_window_add_filter (root, (CdkFilterFunc) popup_filter, popup);
 	cross = cdk_cursor_new_for_display (cdk_display_get_default (),
 	                                    CDK_CROSS);
 	caps = CDK_SEAT_CAPABILITY_POINTER | CDK_SEAT_CAPABILITY_KEYBOARD;

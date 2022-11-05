@@ -544,7 +544,7 @@ button_widget_activate (CtkButton *button)
 }
 
 static gboolean
-button_widget_button_press (CtkWidget *widget, GdkEventButton *event)
+button_widget_button_press (CtkWidget *widget, CdkEventButton *event)
 {
 	g_return_val_if_fail (BUTTON_IS_WIDGET (widget), FALSE);
 	g_return_val_if_fail (event != NULL, FALSE);
@@ -559,7 +559,7 @@ button_widget_button_press (CtkWidget *widget, GdkEventButton *event)
 }
 
 static gboolean
-button_widget_enter_notify (CtkWidget *widget, GdkEventCrossing *event)
+button_widget_enter_notify (CtkWidget *widget, CdkEventCrossing *event)
 {
 	gboolean in_button;
 
@@ -579,7 +579,7 @@ button_widget_enter_notify (CtkWidget *widget, GdkEventCrossing *event)
 }
 
 static gboolean
-button_widget_leave_notify (CtkWidget *widget, GdkEventCrossing *event)
+button_widget_leave_notify (CtkWidget *widget, CdkEventCrossing *event)
 {
 	gboolean in_button;
 

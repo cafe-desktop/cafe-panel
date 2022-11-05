@@ -96,7 +96,7 @@ struct _PanelDesktopMenuItemPrivate {
 G_DEFINE_TYPE_WITH_PRIVATE (PanelPlaceMenuItem, panel_place_menu_item, CTK_TYPE_IMAGE_MENU_ITEM)
 G_DEFINE_TYPE_WITH_PRIVATE (PanelDesktopMenuItem, panel_desktop_menu_item, CTK_TYPE_IMAGE_MENU_ITEM)
 
-static void activate_uri_on_screen(const char* uri, GdkScreen* screen)
+static void activate_uri_on_screen(const char* uri, CdkScreen* screen)
 {
 	panel_show_uri(screen, uri, ctk_get_current_event_time(), NULL);
 }
@@ -546,7 +546,7 @@ drive_poll_for_media_cb (GObject      *source_object,
 			 GAsyncResult *res,
 			 gpointer      user_data)
 {
-	GdkScreen *screen;
+	CdkScreen *screen;
 	GError    *error;
 	char      *primary;
 	char      *name;
@@ -619,7 +619,7 @@ panel_menu_item_append_drive (CtkWidget *menu,
 }
 
 typedef struct {
-	GdkScreen       *screen;
+	CdkScreen       *screen;
 	GMountOperation *mount_op;
 } PanelVolumeMountData;
 
@@ -1124,8 +1124,8 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 					    place_item->priv->recent_manager);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	CtkWidget *toplevel = ctk_widget_get_toplevel (places_menu);
-	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
+	CdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
+	CdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 
 	return places_menu;

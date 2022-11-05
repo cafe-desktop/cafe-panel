@@ -199,7 +199,7 @@ free_composited_resources (PanelBackground *background)
 
 #ifdef HAVE_X11
 
-static void _panel_background_transparency(GdkScreen* screen,PanelBackground* background)
+static void _panel_background_transparency(CdkScreen* screen,PanelBackground* background)
 {
 	panel_background_composite(background);
 }
@@ -208,7 +208,7 @@ static void
 background_changed (PanelBackgroundMonitor *monitor,
 		    PanelBackground        *background)
 {
-	GdkPixbuf *tmp;
+	CdkPixbuf *tmp;
 
 	g_return_if_fail (CDK_IS_X11_DISPLAY (cdk_display_get_default ()));
 
@@ -227,10 +227,10 @@ background_changed (PanelBackgroundMonitor *monitor,
 	panel_background_composite (background);
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 get_desktop_pixbuf (PanelBackground *background)
 {
-	GdkPixbuf *desktop;
+	CdkPixbuf *desktop;
 
 	g_return_val_if_fail (CDK_IS_X11_DISPLAY (cdk_display_get_default ()), NULL);
 
@@ -428,11 +428,11 @@ free_transformed_resources (PanelBackground *background)
 	background->transformed_image = NULL;
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 get_scaled_and_rotated_pixbuf (PanelBackground *background)
 {
-	GdkPixbuf *scaled;
-	GdkPixbuf *retval;
+	CdkPixbuf *scaled;
+	CdkPixbuf *retval;
 	int        orig_width, orig_height;
 	int        panel_width, panel_height;
 	int        width, height;
@@ -671,7 +671,7 @@ panel_background_set_opacity (PanelBackground *background,
 
 static void
 panel_background_set_color_no_update (PanelBackground *background,
-				      const GdkRGBA   *color)
+				      const CdkRGBA   *color)
 {
 	g_return_if_fail (color != NULL);
 
@@ -684,7 +684,7 @@ panel_background_set_color_no_update (PanelBackground *background,
 
 void
 panel_background_set_color (PanelBackground *background,
-			    const GdkRGBA   *color)
+			    const CdkRGBA   *color)
 {
 	g_return_if_fail (color != NULL);
 
@@ -795,7 +795,7 @@ panel_background_set_rotate (PanelBackground *background,
 void
 panel_background_set (PanelBackground     *background,
 		      PanelBackgroundType  type,
-		      const GdkRGBA       *color,
+		      const CdkRGBA       *color,
 		      const char          *image,
 		      gboolean             fit_image,
 		      gboolean             stretch_image,
@@ -811,7 +811,7 @@ panel_background_set (PanelBackground     *background,
 
 void
 panel_background_set_default_style (PanelBackground *background,
-				    GdkRGBA         *color,
+				    CdkRGBA         *color,
 				    cairo_pattern_t *pattern)
 {
 	g_return_if_fail (color != NULL);
@@ -832,7 +832,7 @@ panel_background_set_default_style (PanelBackground *background,
 
 void
 panel_background_realized (PanelBackground *background,
-			   GdkWindow       *window)
+			   CdkWindow       *window)
 {
 	g_return_if_fail (window != NULL);
 
@@ -1059,7 +1059,7 @@ panel_background_get_type (PanelBackground *background)
 	return background->type;
 }
 
-const GdkRGBA *
+const CdkRGBA *
 panel_background_get_color (PanelBackground *background)
 {
 	return &(background->color);

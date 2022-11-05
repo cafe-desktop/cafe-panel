@@ -50,7 +50,7 @@
 #include "panel-schemas.h"
 
 typedef struct {
-	GdkScreen       *screen;
+	CdkScreen       *screen;
 	int              monitor;
 	int              size;
 	int              x;
@@ -237,21 +237,21 @@ panel_profile_get_background_type (PanelToplevel *toplevel)
 
 void
 panel_profile_set_background_color (PanelToplevel *toplevel,
-				    GdkRGBA       *color)
+				    CdkRGBA       *color)
 {
 	panel_profile_set_background_cdk_rgba (toplevel, color);
 }
 
 void
 panel_profile_get_background_color (PanelToplevel *toplevel,
-				    GdkRGBA       *color)
+				    CdkRGBA       *color)
 {
 	panel_profile_get_background_cdk_rgba (toplevel, color);
 }
 
 void
 panel_profile_set_background_cdk_rgba (PanelToplevel *toplevel,
-					GdkRGBA      *color)
+					CdkRGBA      *color)
 {
 	char *color_str;
 
@@ -264,7 +264,7 @@ panel_profile_set_background_cdk_rgba (PanelToplevel *toplevel,
 
 void
 panel_profile_get_background_cdk_rgba (PanelToplevel *toplevel,
-					GdkRGBA      *color)
+					CdkRGBA      *color)
 {
 	char *color_str;
 
@@ -283,7 +283,7 @@ void
 panel_profile_set_background_opacity (PanelToplevel *toplevel,
 				      guint16        opacity)
 {
-	GdkRGBA color;
+	CdkRGBA color;
 	panel_profile_get_background_color (toplevel, &color);
 	color.alpha = opacity / 65535.0;
 	panel_profile_set_background_color (toplevel, &color);
@@ -292,7 +292,7 @@ panel_profile_set_background_opacity (PanelToplevel *toplevel,
 guint16
 panel_profile_get_background_opacity (PanelToplevel *toplevel)
 {
-	GdkRGBA color;
+	CdkRGBA color;
 	panel_profile_get_background_color (toplevel, &color);
 	return (guint16) round (color.alpha * 65535);
 }
@@ -495,7 +495,7 @@ panel_profile_is_writable_attached_tooltip (PanelToplevel *toplevel)
 
 static void
 get_background_color (PanelToplevel *toplevel,
-					  GdkRGBA       *color)
+					  CdkRGBA       *color)
 {
 	char       *color_str;
 	color_str = g_settings_get_string (toplevel->background_settings, "color");
@@ -529,7 +529,7 @@ panel_profile_load_background (PanelToplevel *toplevel)
 	PanelWidget         *panel_widget;
 	PanelBackground     *background;
 	PanelBackgroundType  background_type;
-	GdkRGBA              color;
+	CdkRGBA              color;
 	char                *image;
 	gboolean             fit;
 	gboolean             stretch;
@@ -777,7 +777,7 @@ panel_profile_toplevel_change_notify (GSettings *settings,
 		}
 
 	if (!strcmp (key, "screen")) {
-		GdkScreen *screen;
+		CdkScreen *screen;
 		screen = cdk_display_get_default_screen (cdk_display_get_default ());
 
 		if (screen)
@@ -833,7 +833,7 @@ panel_profile_background_change_notify (GSettings *settings,
 		panel_background_set_type (background, background_type);
 		panel_toplevel_update_edges (toplevel);
 	} else if (!strcmp (key, "color")) {
-		GdkRGBA color;
+		CdkRGBA color;
 		gchar *str;
 		str = g_settings_get_string (settings, key);
 		if (cdk_rgba_parse (&color, str))
@@ -904,7 +904,7 @@ panel_profile_id_lists_are_writable (void)
 }
 
 static gboolean
-panel_profile_find_empty_spot (GdkScreen *screen,
+panel_profile_find_empty_spot (CdkScreen *screen,
 			       PanelOrientation *orientation,
 			       int *monitor)
 {
@@ -920,7 +920,7 @@ panel_profile_find_empty_spot (GdkScreen *screen,
 
 	for (li = panel_toplevel_list_toplevels (); li != NULL; li = li->next) {
 		PanelToplevel *toplevel = li->data;
-		GdkScreen *toplevel_screen = ctk_window_get_screen (CTK_WINDOW (toplevel));
+		CdkScreen *toplevel_screen = ctk_window_get_screen (CTK_WINDOW (toplevel));
 		int toplevel_monitor = panel_toplevel_get_monitor (toplevel);
 
 		if (toplevel_screen != screen ||
@@ -963,7 +963,7 @@ panel_profile_find_empty_spot (GdkScreen *screen,
 }
 
 void
-panel_profile_create_toplevel (GdkScreen *screen)
+panel_profile_create_toplevel (CdkScreen *screen)
 {
 	char            *id;
 	char            *path;
@@ -1053,7 +1053,7 @@ PanelToplevel *
 panel_profile_load_toplevel (const char *toplevel_id)
 {
 	PanelToplevel *toplevel;
-	GdkScreen     *screen;
+	CdkScreen     *screen;
 	char          *toplevel_path;
 	char          *toplevel_background_path;
 
@@ -1595,8 +1595,8 @@ panel_profile_ensure_toplevel_per_screen ()
 	GSList     *toplevels;
 	GSList     *empty_screens = NULL;
 	GSList     *l;
-	GdkDisplay *display;
-	GdkScreen  *screen;
+	CdkDisplay *display;
+	CdkScreen  *screen;
 
 	toplevels = panel_toplevel_list_toplevels ();
 

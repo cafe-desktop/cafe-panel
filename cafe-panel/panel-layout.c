@@ -320,7 +320,7 @@ panel_layout_apply_minimal_default (int          set_screen_to,
 }
 
 void
-panel_layout_apply_default_from_gkeyfile (GdkScreen *screen)
+panel_layout_apply_default_from_gkeyfile (CdkScreen *screen)
 {
     int          screen_n;
     gchar       *layout_file = NULL;

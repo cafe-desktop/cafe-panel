@@ -218,7 +218,7 @@ cafe_panel_applet_factory_get_applet (CafePanelAppletFactory    *factory,
 
 #ifdef HAVE_X11
 	if (CDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
-		GdkScreen   *screen;
+		CdkScreen   *screen;
 
 		screen = screen_num != -1 ?
 			cdk_display_get_default_screen (cdk_display_get_default ()) :

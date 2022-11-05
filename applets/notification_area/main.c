@@ -70,7 +70,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (NaTrayApplet, na_tray_applet, PANEL_TYPE_APPLET)
 
 static void (*parent_class_realize) (CtkWidget *widget);
 static void (*parent_class_style_updated) (CtkWidget *widget);
-static void (*parent_class_change_background)(CafePanelApplet* panel_applet, CafePanelAppletBackgroundType type, GdkRGBA* color, cairo_pattern_t* pattern);
+static void (*parent_class_change_background)(CafePanelApplet* panel_applet, CafePanelAppletBackgroundType type, CdkRGBA* color, cairo_pattern_t* pattern);
 static void (*parent_class_change_orient)(CafePanelApplet       *panel_applet, CafePanelAppletOrient  orient);
 
 
@@ -154,7 +154,7 @@ na_preferences_dialog_min_icon_size_changed (NaTrayApplet  *applet,
 
 static gboolean
 na_preferences_dialog_hide_event (CtkWidget    *widget,
-                                  GdkEvent     *event,
+                                  CdkEvent     *event,
                                   NaTrayApplet *applet)
 {
   ctk_widget_hide (applet->priv->dialog->preferences_dialog);
@@ -365,7 +365,7 @@ na_tray_applet_style_updated (CtkWidget *widget)
 }
 
 static void
-na_tray_applet_change_background(CafePanelApplet* panel_applet, CafePanelAppletBackgroundType type, GdkRGBA* color, cairo_pattern_t* pattern)
+na_tray_applet_change_background(CafePanelApplet* panel_applet, CafePanelAppletBackgroundType type, CdkRGBA* color, cairo_pattern_t* pattern)
 {
   NaTrayApplet *applet = NA_TRAY_APPLET (panel_applet);
 
@@ -395,7 +395,7 @@ na_tray_applet_change_orient (CafePanelApplet       *panel_applet,
 
 static gboolean
 na_tray_applet_button_press_event (CtkWidget      *widget,
-                                   GdkEventButton *event)
+                                   CdkEventButton *event)
 {
   /* Prevent the panel from poping up the applet's popup on the the items,
    * which may also popup a menu which then conflicts.

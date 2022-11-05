@@ -45,7 +45,7 @@ typedef struct {
 	char            *key;
 	char            *signal;
 	guint            keyval;
-	GdkModifierType  modifiers;
+	CdkModifierType  modifiers;
 } PanelBinding;
 
 static gboolean initialised = FALSE;

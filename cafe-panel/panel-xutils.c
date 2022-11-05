@@ -55,7 +55,7 @@ enum {
 };
 
 void
-panel_xutils_set_strut (GdkWindow        *cdk_window,
+panel_xutils_set_strut (CdkWindow        *cdk_window,
 			PanelOrientation  orientation,
 			guint32           strut,
 			guint32           strut_start,
@@ -64,7 +64,7 @@ panel_xutils_set_strut (GdkWindow        *cdk_window,
 	Display *xdisplay;
 	Window   window;
 	gulong   struts [12] = { 0, };
-	GdkDisplay *display;
+	CdkDisplay *display;
 
 	g_return_if_fail (CDK_IS_WINDOW (cdk_window));
 	g_return_if_fail (CDK_IS_X11_DISPLAY (cdk_window_get_display (cdk_window)));
@@ -112,13 +112,13 @@ panel_xutils_set_strut (GdkWindow        *cdk_window,
 }
 
 void
-panel_warp_pointer (GdkWindow *cdk_window,
+panel_warp_pointer (CdkWindow *cdk_window,
 		    int        x,
 		    int        y)
 {
 	Display *xdisplay;
 	Window   window;
-	GdkDisplay *display;
+	CdkDisplay *display;
 
 	g_return_if_fail (CDK_IS_WINDOW (cdk_window));
 	g_return_if_fail (CDK_IS_X11_DISPLAY (cdk_window_get_display (cdk_window)));

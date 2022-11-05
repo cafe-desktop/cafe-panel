@@ -84,7 +84,7 @@ struct _CafePanelAppletClass {
 
 	void (*change_size) (CafePanelApplet* applet, guint size);
 
-	void (*change_background) (CafePanelApplet *applet, CafePanelAppletBackgroundType type, GdkRGBA* color, cairo_pattern_t *pattern);
+	void (*change_background) (CafePanelApplet *applet, CafePanelAppletBackgroundType type, CdkRGBA* color, cairo_pattern_t *pattern);
 
 	void (*move_focus_out_of_applet) (CafePanelApplet* frame, CtkDirectionType direction);
 };
@@ -95,7 +95,7 @@ CtkWidget* cafe_panel_applet_new(void);
 
 CafePanelAppletOrient cafe_panel_applet_get_orient(CafePanelApplet* applet);
 guint cafe_panel_applet_get_size(CafePanelApplet* applet);
-CafePanelAppletBackgroundType cafe_panel_applet_get_background (CafePanelApplet *applet, /* return values */ GdkRGBA* color, cairo_pattern_t** pattern);
+CafePanelAppletBackgroundType cafe_panel_applet_get_background (CafePanelApplet *applet, /* return values */ CdkRGBA* color, cairo_pattern_t** pattern);
 void cafe_panel_applet_set_background_widget(CafePanelApplet* applet, CtkWidget* widget);
 
 gchar* cafe_panel_applet_get_preferences_path(CafePanelApplet* applet);

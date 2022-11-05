@@ -45,7 +45,7 @@ void	panel_multimonitor_is_at_visible_extreme (int        monitor_id,
 						  gboolean  *rightmost,
 						  gboolean  *topmost,
 						  gboolean  *bottommost);
-void	panel_multimonitor_get_bounds            (GdkPoint *min,
-						  GdkPoint *max);
+void	panel_multimonitor_get_bounds            (CdkPoint *min,
+						  CdkPoint *max);
 
 #endif /* __PANEL_MULTIMONITOR_H__ */

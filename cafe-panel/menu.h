@@ -52,24 +52,24 @@ void		setup_internal_applet_drag (CtkWidget             *menuitem,
 void            setup_uri_drag             (CtkWidget  *menuitem,
 					    const char *uri,
 					    const char *icon,
-						GdkDragAction action);
+						CdkDragAction action);
 
 CtkWidget *	panel_create_menu              (void);
 
 CtkWidget *	panel_image_menu_item_new      (void);
 
-GdkPixbuf *	panel_make_menu_icon (CtkIconTheme *icon_theme,
+CdkPixbuf *	panel_make_menu_icon (CtkIconTheme *icon_theme,
 				      const char   *icon,
 				      const char   *fallback,
 				      int           size,
 				      gboolean     *long_operation);
 
-GdkScreen      *menuitem_to_screen   (CtkWidget *menuitem);
+CdkScreen      *menuitem_to_screen   (CtkWidget *menuitem);
 PanelWidget    *menu_get_panel       (CtkWidget *menu);
 CtkWidget      *add_menu_separator   (CtkWidget *menu);
 
 gboolean menu_dummy_button_press_event (CtkWidget      *menuitem,
-					GdkEventButton *event);
+					CdkEventButton *event);
 
 
 #ifdef __cplusplus

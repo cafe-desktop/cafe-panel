@@ -38,7 +38,7 @@
 
 CtkWidget *
 panel_error_dialog (CtkWindow  *parent,
-		    GdkScreen  *screen,
+		    CdkScreen  *screen,
 		    const char *dialog_class,
 		    gboolean    auto_destroy,
 		    const char *primary_text,

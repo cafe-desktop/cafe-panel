@@ -162,7 +162,7 @@ sn_item_get_action_coordinates (SnItem *item,
 {
   CtkWidget *widget;
   SnItemPrivate *priv;
-  GdkWindow *window;
+  CdkWindow *window;
   CtkWidget *toplevel;
   gint width;
   gint height;
@@ -183,7 +183,7 @@ sn_item_get_action_coordinates (SnItem *item,
 
 static gboolean
 sn_item_button_press_event (CtkWidget      *widget,
-                            GdkEventButton *event)
+                            CdkEventButton *event)
 {
   SnItem *item;
   SnItemPrivate *priv;
@@ -210,7 +210,7 @@ sn_item_button_press_event (CtkWidget      *widget,
           ctk_menu_popup_at_widget (priv->menu, widget,
                                     CDK_GRAVITY_SOUTH_WEST,
                                     CDK_GRAVITY_NORTH_WEST,
-                                    (GdkEvent *) event);
+                                    (CdkEvent *) event);
           /*Fix positioning if size changed since last shown*/
           ctk_menu_reposition(priv->menu);
         }
@@ -275,10 +275,10 @@ sn_item_clicked (CtkButton *button)
 
 static gboolean
 sn_item_scroll_event (CtkWidget      *widget,
-                      GdkEventScroll *event)
+                      CdkEventScroll *event)
 {
   SnItem *item;
-  GdkScrollDirection direction;
+  CdkScrollDirection direction;
   SnItemOrientation orientation;
   gdouble dx;
   gdouble dy;
@@ -286,7 +286,7 @@ sn_item_scroll_event (CtkWidget      *widget,
 
   item = SN_ITEM (widget);
 
-  if (!cdk_event_get_scroll_direction ((GdkEvent *) event, &direction))
+  if (!cdk_event_get_scroll_direction ((CdkEvent *) event, &direction))
     {
       g_assert_not_reached ();
     }
@@ -311,7 +311,7 @@ sn_item_scroll_event (CtkWidget      *widget,
         }
     }
 
-  if (!cdk_event_get_scroll_deltas ((GdkEvent *) event, &dx, &dy))
+  if (!cdk_event_get_scroll_deltas ((CdkEvent *) event, &dx, &dy))
     {
       switch (direction)
         {

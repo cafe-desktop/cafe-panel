@@ -146,7 +146,7 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 	tasklist_update(tasklist);
 }
 
-static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBackgroundType type, GdkColor* color, cairo_pattern_t* pattern, TasklistData* tasklist)
+static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBackgroundType type, CdkColor* color, cairo_pattern_t* pattern, TasklistData* tasklist)
 {
 	switch (type)
 	{
@@ -159,11 +159,11 @@ static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBac
 }
 
 #ifdef HAVE_WINDOW_PREVIEWS
-static GdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistData *tasklist)
+static CdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistData *tasklist)
 {
-	GdkWindow *window;
-	GdkPixbuf *screenshot;
-	GdkPixbuf *thumbnail;
+	CdkWindow *window;
+	CdkPixbuf *screenshot;
+	CdkPixbuf *thumbnail;
 	guchar *pixels;
 	double ratio;
 	int width, height;
@@ -214,10 +214,10 @@ static GdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistDat
 }
 
 #define PREVIEW_PADDING 5
-static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbnail)
+static void preview_window_reposition (TasklistData *tasklist, CdkPixbuf *thumbnail)
 {
-	GdkMonitor *monitor;
-	GdkRectangle monitor_geom;
+	CdkMonitor *monitor;
+	CdkRectangle monitor_geom;
 	int x_pos, y_pos;
 	int width, height;
 
@@ -256,7 +256,7 @@ static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbn
 	ctk_window_move (CTK_WINDOW (tasklist->preview), x_pos, y_pos);
 }
 
-static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, GdkPixbuf *thumbnail)
+static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, CdkPixbuf *thumbnail)
 {
 	CtkStyleContext *context;
 
@@ -268,7 +268,7 @@ static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, GdkPixbuf *
 
 static gboolean applet_enter_notify_event (WnckTasklist *tl, GList *wnck_windows, TasklistData *tasklist)
 {
-	GdkPixbuf *thumbnail;
+	CdkPixbuf *thumbnail;
 	WnckWindow *wnck_window = NULL;
 	int n_windows;
 
@@ -600,10 +600,10 @@ static void applet_size_allocate(CtkWidget *widget, CtkAllocation *allocation, T
 		cafe_panel_applet_set_size_hints(CAFE_PANEL_APPLET(tasklist->applet), size_hints, len, 0);
 }
 
-static GdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flags, void* data)
+static CdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flags, void* data)
 {
 	TasklistData* tasklist;
-	GdkPixbuf* retval;
+	CdkPixbuf* retval;
 	char* icon_no_extension;
 	char* p;
 
@@ -651,7 +651,7 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 	TasklistData* tasklist;
 	CtkActionGroup* action_group;
 	CtkCssProvider  *provider;
-	GdkScreen *screen;
+	CdkScreen *screen;
 
 	tasklist = g_new0(TasklistData, 1);
 

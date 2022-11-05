@@ -228,7 +228,7 @@ applet_remove_callback (CtkWidget  *widget,
 		panel_profile_delete_object (info);
 }
 
-static inline GdkScreen *
+static inline CdkScreen *
 applet_user_menu_get_screen (AppletUserMenu *menu)
 {
 	PanelWidget *panel_widget;
@@ -242,7 +242,7 @@ static void
 applet_callback_callback (CtkWidget      *widget,
 			  AppletUserMenu *menu)
 {
-	GdkScreen *screen;
+	CdkScreen *screen;
 
 	g_return_if_fail (menu->info != NULL);
 
@@ -600,8 +600,8 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 /* Set up theme and transparency support */
 	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
-	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
+	CdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
+	CdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
 	CtkStyleContext *context;
@@ -637,7 +637,7 @@ cafe_panel_applet_menu_set_recurse (CtkMenu     *menu,
 
 static void
 applet_show_menu (AppletInfo     *info,
-		  GdkEventButton *event)
+		  CdkEventButton *event)
 {
 	PanelWidget *panel_widget;
 
@@ -666,7 +666,7 @@ applet_show_menu (AppletInfo     *info,
 
 static gboolean
 applet_do_popup_menu (CtkWidget      *widget,
-		      GdkEventButton *event,
+		      CdkEventButton *event,
 		      AppletInfo     *info)
 {
 	if (cafe_panel_applet_is_in_drag ())
@@ -684,7 +684,7 @@ static gboolean
 applet_popup_menu (CtkWidget      *widget,
 		   AppletInfo     *info)
 {
-	GdkEventButton event;
+	CdkEventButton event;
 
 	event.button = 3;
 	event.time = CDK_CURRENT_TIME;
@@ -694,7 +694,7 @@ applet_popup_menu (CtkWidget      *widget,
 
 static gboolean
 applet_button_press (CtkWidget      *widget,
-		     GdkEventButton *event,
+		     CdkEventButton *event,
 		     AppletInfo     *info)
 {
 	gboolean     applet_locked;
@@ -1211,7 +1211,7 @@ cafe_panel_applet_list_applets (void)
 }
 
 AppletInfo *
-cafe_panel_applet_get_by_type (PanelObjectType object_type, GdkScreen *screen)
+cafe_panel_applet_get_by_type (PanelObjectType object_type, CdkScreen *screen)
 {
 	GSList *l;
 

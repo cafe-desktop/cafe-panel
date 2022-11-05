@@ -315,7 +315,7 @@ static void
 na_grid_realize (CtkWidget *widget)
 {
   NaGrid *self = NA_GRID (widget);
-  GdkScreen *screen;
+  CdkScreen *screen;
   CtkOrientation orientation;
   NaHost *tray_host;
 

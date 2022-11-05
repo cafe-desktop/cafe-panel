@@ -345,7 +345,7 @@ panel_popup_menu (PanelToplevel *toplevel,
 	PanelWidget *panel_widget;
 	CtkWidget   *menu;
 	PanelData   *panel_data;
-	GdkEvent    *current_event;
+	CdkEvent    *current_event;
 
 	panel_widget = panel_toplevel_get_panel_widget (toplevel);
 	panel_data   = g_object_get_data (G_OBJECT (toplevel), "PanelData");
@@ -381,7 +381,7 @@ panel_popup_menu_signal (PanelToplevel *toplevel)
 
 static gboolean
 panel_button_press_event (PanelToplevel  *toplevel,
-			  GdkEventButton *event)
+			  CdkEventButton *event)
 {
 	if (event->button != 3)
 		return FALSE;
@@ -391,7 +391,7 @@ panel_button_press_event (PanelToplevel  *toplevel,
 
 static gboolean
 panel_key_press_event (CtkWidget   *widget,
-		       GdkEventKey *event)
+		       CdkEventKey *event)
 {
 #ifdef HAVE_X11
 	/*
@@ -438,7 +438,7 @@ static gboolean
 set_background_color (PanelToplevel *toplevel,
 		      guint16       *dropped)
 {
-	GdkRGBA color;
+	CdkRGBA color;
 
 	if (!dropped)
 		return FALSE;
@@ -898,9 +898,9 @@ get_target_list (void)
 
 gboolean
 panel_check_dnd_target_data (CtkWidget      *widget,
-			     GdkDragContext *context,
+			     CdkDragContext *context,
 			     guint          *ret_info,
-			     GdkAtom        *ret_atom)
+			     CdkAtom        *ret_atom)
 {
 	GList *l;
 
@@ -914,7 +914,7 @@ panel_check_dnd_target_data (CtkWidget      *widget,
 		return FALSE;
 
 	for (l = cdk_drag_context_list_targets (context); l; l = l->next) {
-		GdkAtom atom;
+		CdkAtom atom;
 		guint   info;
 
 		atom = CDK_POINTER_TO_ATOM (l->data);
@@ -960,7 +960,7 @@ do_highlight (CtkWidget *widget, gboolean highlight)
 
 gboolean
 panel_check_drop_forbidden (PanelWidget    *panel,
-			    GdkDragContext *context,
+			    CdkDragContext *context,
 			    guint           info,
 			    guint           time_)
 {
@@ -1008,7 +1008,7 @@ panel_check_drop_forbidden (PanelWidget    *panel,
 
 static gboolean
 drag_motion_cb (CtkWidget	   *widget,
-		GdkDragContext     *context,
+		CdkDragContext     *context,
 		gint                x,
 		gint                y,
 		guint               time)
@@ -1037,13 +1037,13 @@ drag_motion_cb (CtkWidget	   *widget,
 
 static gboolean
 drag_drop_cb (CtkWidget	        *widget,
-	      GdkDragContext    *context,
+	      CdkDragContext    *context,
 	      gint               x,
 	      gint               y,
 	      guint              time,
 	      Launcher          *launcher)
 {
-	GdkAtom ret_atom = NULL;
+	CdkAtom ret_atom = NULL;
 
 	if (!panel_check_dnd_target_data (widget, context, NULL, &ret_atom))
 		return FALSE;
@@ -1055,7 +1055,7 @@ drag_drop_cb (CtkWidget	        *widget,
 
 static void
 drag_leave_cb (CtkWidget	*widget,
-	       GdkDragContext   *context,
+	       CdkDragContext   *context,
 	       guint             time,
 	       Launcher         *launcher)
 {
@@ -1072,7 +1072,7 @@ panel_receive_dnd_data (PanelWidget      *panel,
 			guint             info,
 			int               pos,
 			CtkSelectionData *selection_data,
-			GdkDragContext   *context,
+			CdkDragContext   *context,
 			guint             time_)
 {
 	const guchar *data;
@@ -1140,7 +1140,7 @@ panel_receive_dnd_data (PanelWidget      *panel,
 
 static void
 drag_data_recieved_cb (CtkWidget	*widget,
-		       GdkDragContext   *context,
+		       CdkDragContext   *context,
 		       gint              x,
 		       gint              y,
 		       CtkSelectionData *selection_data,
@@ -1254,7 +1254,7 @@ panel_setup (PanelToplevel *toplevel)
 	return pd;
 }
 
-GdkScreen *
+CdkScreen *
 panel_screen_from_panel_widget (PanelWidget *panel)
 {
 	g_return_val_if_fail (PANEL_IS_WIDGET (panel), NULL);

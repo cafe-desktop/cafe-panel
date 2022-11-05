@@ -406,7 +406,7 @@ cafe_panel_applet_frame_dbus_load (const gchar                 *iid,
 	CafePanelAppletFrameDBus *dbus_frame;
 	CafePanelAppletFrame     *frame;
 	GVariantBuilder       builder;
-	GdkScreen            *screen;
+	CdkScreen            *screen;
 	gchar                *conf_path;
 	/*gchar                *background; unused */
 	guint                 orient;

@@ -170,8 +170,8 @@ panel_frame_draw (CtkWidget      *widget,
 	PanelFrame       *frame = (PanelFrame *) widget;
 	CtkStyleContext  *context;
 	CtkStateFlags     state;
-	GdkRGBA          *bg;
-	GdkRGBA           dark, light;
+	CdkRGBA          *bg;
+	CdkRGBA           dark, light;
 	CtkBorder         padding;
 	int               x, y, width, height;
 

@@ -112,11 +112,11 @@ test_applet_handle_size_change (TestApplet *applet,
 static void
 test_applet_handle_background_change (TestApplet                *applet,
 				      CafePanelAppletBackgroundType  type,
-				      GdkColor                  *color,
+				      CdkColor                  *color,
 				      cairo_pattern_t           *pattern,
 				      gpointer                   dummy)
 {
-	GdkWindow *window = ctk_widget_get_window (applet->label);
+	CdkWindow *window = ctk_widget_get_window (applet->label);
 
 	switch (type) {
 	case PANEL_NO_BACKGROUND:

@@ -492,7 +492,7 @@ on_factory_appeared (GDBusConnection   *connection,
 
 static void
 cafe_panel_applet_container_get_applet (CafePanelAppletContainer *container,
-				   GdkScreen            *screen,
+				   CdkScreen            *screen,
 				   const gchar          *iid,
 				   GVariant             *props,
 				   GCancellable         *cancellable,
@@ -560,7 +560,7 @@ cafe_panel_applet_container_get_applet (CafePanelAppletContainer *container,
 
 void
 cafe_panel_applet_container_add (CafePanelAppletContainer *container,
-			    GdkScreen            *screen,
+			    CdkScreen            *screen,
 			    const gchar          *iid,
 			    GCancellable         *cancellable,
 			    GAsyncReadyCallback   callback,

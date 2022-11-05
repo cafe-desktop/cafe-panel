@@ -34,7 +34,7 @@ extern "C" {
 char *panel_xdg_icon_remove_extension (const char *icon);
 
 char *panel_xdg_icon_name_from_icon_path (const char *path,
-					  GdkScreen  *screen);
+					  CdkScreen  *screen);
 
 #ifdef __cplusplus
 }

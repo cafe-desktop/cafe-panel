@@ -347,7 +347,7 @@ panel_menu_button_parent_set (CtkWidget *widget,
 
 static void
 panel_menu_button_drag_data_get (CtkWidget        *widget,
-				 GdkDragContext   *context,
+				 CdkDragContext   *context,
 				 CtkSelectionData *selection_data,
 				 guint             info,
 				 guint             time)
@@ -440,7 +440,7 @@ panel_menu_button_popup_menu (PanelMenuButton *button,
 			      guint            n_button,
 			      guint32          activate_time)
 {
-	GdkScreen *screen;
+	CdkScreen *screen;
 
 	g_return_if_fail (PANEL_IS_MENU_BUTTON (button));
 
@@ -456,8 +456,8 @@ panel_menu_button_popup_menu (PanelMenuButton *button,
 	ctk_window_set_attached_to (CTK_WINDOW (ctk_widget_get_toplevel (button->priv->menu)),
 				    CTK_WIDGET (button));
 
-	GdkGravity widget_anchor = CDK_GRAVITY_NORTH_WEST;
-	GdkGravity menu_anchor = CDK_GRAVITY_NORTH_WEST;
+	CdkGravity widget_anchor = CDK_GRAVITY_NORTH_WEST;
+	CdkGravity menu_anchor = CDK_GRAVITY_NORTH_WEST;
 	switch (panel_toplevel_get_orientation (button->priv->toplevel)) {
 	case PANEL_ORIENTATION_TOP:
 		widget_anchor = CDK_GRAVITY_SOUTH_WEST;
@@ -503,7 +503,7 @@ static void
 panel_menu_button_clicked (CtkButton *ctk_button)
 {
 	PanelMenuButton *button;
-	GdkEvent        *event;
+	CdkEvent        *event;
 
 	g_return_if_fail (PANEL_IS_MENU_BUTTON (ctk_button));
 
@@ -1013,7 +1013,7 @@ void
 panel_menu_button_invoke_menu (PanelMenuButton *button,
 			       const char   *callback_name)
 {
-	GdkScreen *screen;
+	CdkScreen *screen;
 
 	g_return_if_fail (PANEL_IS_MENU_BUTTON (button));
 	g_return_if_fail (callback_name != NULL);

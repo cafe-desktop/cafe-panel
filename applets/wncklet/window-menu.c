@@ -175,7 +175,7 @@ static void window_menu_size_allocate(CafePanelApplet* applet, CtkAllocation* al
 	window_menu->orient = orient;
 }
 
-static gboolean window_menu_key_press_event(CtkWidget* widget, GdkEventKey* event, WindowMenu* window_menu)
+static gboolean window_menu_key_press_event(CtkWidget* widget, CdkEventKey* event, WindowMenu* window_menu)
 {
 	CtkMenuShell* menu_shell;
 	WnckSelector* selector;
@@ -207,7 +207,7 @@ static gboolean window_menu_key_press_event(CtkWidget* widget, GdkEventKey* even
 	return FALSE;
 }
 
-static gboolean filter_button_press(CtkWidget* widget, GdkEventButton* event, gpointer data)
+static gboolean filter_button_press(CtkWidget* widget, CdkEventButton* event, gpointer data)
 {
 	if (event->button != 1)
 		g_signal_stop_emission_by_name(widget, "button_press_event");

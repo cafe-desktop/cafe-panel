@@ -108,7 +108,7 @@ struct _PanelWidget
 
 	PanelToplevel  *toplevel;
 
-	GdkEventKey    *key_event;
+	CdkEventKey    *key_event;
 
 	/* helpers to get a good size in packed panels with applets using
 	 * size hints */
@@ -186,7 +186,7 @@ void            panel_widget_set_size           (PanelWidget    *panel_widget,
 
 /*draw EVERYTHING (meaning icons)*/
 void		panel_widget_draw_all		(PanelWidget *panel,
-						 GdkRectangle *area);
+						 CdkRectangle *area);
 /*draw just one icon (applet has to be an icon of course)*/
 void		panel_widget_draw_icon		(PanelWidget *panel,
 						 ButtonWidget *applet);

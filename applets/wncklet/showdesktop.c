@@ -314,7 +314,7 @@ static void applet_destroyed(CtkWidget* applet, ShowDesktopData* sdd)
 	g_free (sdd);
 }
 
-static gboolean do_not_eat_button_press(CtkWidget* widget, GdkEventButton* event)
+static gboolean do_not_eat_button_press(CtkWidget* widget, CdkEventButton* event)
 {
 	if (event->button != 1)
 	{
@@ -335,7 +335,7 @@ static gboolean button_motion_timeout(gpointer data)
 	return FALSE;
 }
 
-static void button_drag_leave(CtkWidget* widget, GdkDragContext* context, guint time, ShowDesktopData* sdd)
+static void button_drag_leave(CtkWidget* widget, CdkDragContext* context, guint time, ShowDesktopData* sdd)
 {
 	if (sdd->button_activate != 0)
 	{
@@ -344,7 +344,7 @@ static void button_drag_leave(CtkWidget* widget, GdkDragContext* context, guint 
 	}
 }
 
-static gboolean button_drag_motion(CtkWidget* widget, GdkDragContext* context, gint x, gint y, guint time, ShowDesktopData* sdd)
+static gboolean button_drag_motion(CtkWidget* widget, CdkDragContext* context, gint x, gint y, guint time, ShowDesktopData* sdd)
 {
 	if (sdd->button_activate == 0)
 		sdd->button_activate = g_timeout_add_seconds (TIMEOUT_ACTIVATE_SECONDS, button_motion_timeout, sdd);
@@ -357,7 +357,7 @@ static gboolean button_drag_motion(CtkWidget* widget, GdkDragContext* context, g
 static void show_desktop_applet_realized(CafePanelApplet* applet, gpointer data)
 {
 	ShowDesktopData* sdd;
-	GdkScreen* screen;
+	CdkScreen* screen;
 
 	sdd = (ShowDesktopData*) data;
 

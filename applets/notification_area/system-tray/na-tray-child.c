@@ -63,8 +63,8 @@ static void
 na_tray_child_realize (CtkWidget *widget)
 {
   NaTrayChild *child = NA_TRAY_CHILD (widget);
-  GdkVisual *visual = ctk_widget_get_visual (widget);
-  GdkWindow *window;
+  CdkVisual *visual = ctk_widget_get_visual (widget);
+  CdkWindow *window;
 
   CTK_WIDGET_CLASS (na_tray_child_parent_class)->realize (widget);
 
@@ -177,9 +177,9 @@ na_tray_child_draw (CtkWidget *widget,
   else if (child->parent_relative_bg)
     {
       /* Clear to parent-relative pixmap */
-      GdkWindow *window;
+      CdkWindow *window;
       cairo_surface_t *target;
-      GdkRectangle clip_rect;
+      CdkRectangle clip_rect;
 
       window = ctk_widget_get_window (widget);
       target = cairo_get_group_target (cr);
@@ -393,14 +393,14 @@ na_tray_child_class_init (NaTrayChildClass *klass)
 }
 
 CtkWidget *
-na_tray_child_new (GdkScreen *screen,
+na_tray_child_new (CdkScreen *screen,
                    Window     icon_window)
 {
   XWindowAttributes window_attributes;
   Display *xdisplay;
-  GdkDisplay *display;
+  CdkDisplay *display;
   NaTrayChild *child;
-  GdkVisual *visual;
+  CdkVisual *visual;
   gboolean visual_has_alpha;
   int red_prec, green_prec, blue_prec, depth;
   int result;
@@ -457,7 +457,7 @@ char *
 na_tray_child_get_title (NaTrayChild *child)
 {
   char *retval = NULL;
-  GdkDisplay *display;
+  CdkDisplay *display;
   Atom utf8_string, atom, type;
   int result;
   int format;
@@ -530,7 +530,7 @@ na_tray_child_has_alpha (NaTrayChild *child)
  * @child: a #NaTrayChild
  * @composited: %TRUE if the child's window should be redirected
  *
- * Sets whether the #GdkWindow of the child should be set redirected
+ * Sets whether the #CdkWindow of the child should be set redirected
  * using cdk_window_set_composited(). By default this is based off of
  * na_tray_child_has_alpha(), but it may be useful to override it in
  * certain circumstances; for example, if the #NaTrayChild is added
@@ -597,7 +597,7 @@ _get_wmclass (Display *xdisplay,
               char   **res_class,
               char   **res_name)
 {
-  GdkDisplay *display;
+  CdkDisplay *display;
   XClassHint ch;
 
   ch.res_name = NULL;
@@ -646,7 +646,7 @@ na_tray_child_get_wm_class (NaTrayChild  *child,
                             char        **res_name,
                             char        **res_class)
 {
-  GdkDisplay *display;
+  CdkDisplay *display;
 
   g_return_if_fail (NA_IS_TRAY_CHILD (child));
 

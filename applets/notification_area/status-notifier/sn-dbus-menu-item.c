@@ -19,13 +19,13 @@
 
 #include "sn-dbus-menu-item.h"
 
-static GdkPixbuf *
+static CdkPixbuf *
 pxibuf_new (GVariant *variant)
 {
   gsize length;
   const guchar *data;
   GInputStream *stream;
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
   GError *error;
 
   data = g_variant_get_fixed_array (variant, &length, sizeof (guchar));
@@ -44,7 +44,7 @@ pxibuf_new (GVariant *variant)
 
   if (error != NULL)
     {
-      g_warning ("Unable to build GdkPixbuf from icon data: %s", error->message);
+      g_warning ("Unable to build CdkPixbuf from icon data: %s", error->message);
       g_error_free (error);
     }
 
@@ -53,7 +53,7 @@ pxibuf_new (GVariant *variant)
 
 static SnShortcut *
 sn_shortcut_new (guint           key,
-                 GdkModifierType mask)
+                 CdkModifierType mask)
 {
   SnShortcut *shortcut;
 
@@ -79,7 +79,7 @@ sn_shortcuts_new (GVariant *variant)
   while (g_variant_iter_next (&shortcuts, "as", &shortcut))
     {
       guint key;
-      GdkModifierType mask;
+      CdkModifierType mask;
       const gchar *string;
 
       key = 0;
