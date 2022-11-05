@@ -39,7 +39,7 @@
 
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 #include <cafemenu-tree.h>
 
 #define CAFE_DESKTOP_USE_UNSTABLE_API
@@ -417,8 +417,8 @@ panel_run_dialog_launch_command (PanelRunDialog *dialog,
 	if (ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (dialog->terminal_checkbox)))
 		cafe_desktop_prepend_terminal_to_vector (&argc, &argv);
 
-	display = gdk_screen_get_display (screen);
-	display_name = g_strdup (gdk_display_get_name (display));
+	display = cdk_screen_get_display (screen);
+	display_name = g_strdup (cdk_display_get_name (display));
 
 	result = g_spawn_async (NULL, /* working directory */
 				argv,
@@ -2014,7 +2014,7 @@ panel_run_dialog_new (GdkScreen  *screen,
 	ctk_widget_realize (dialog->run_dialog);
 #ifdef HAVE_X11
 	if (is_using_x11 ())
-		gdk_x11_window_set_user_time (ctk_widget_get_window (dialog->run_dialog),
+		cdk_x11_window_set_user_time (ctk_widget_get_window (dialog->run_dialog),
 					      activate_time);
 #endif
 	ctk_widget_show (dialog->run_dialog);

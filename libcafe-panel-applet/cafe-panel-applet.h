@@ -27,7 +27,7 @@
 
 #include <glib.h>
 #include <ctk/ctk.h>
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 #include <cairo.h>
 #include <cairo-gobject.h>
 

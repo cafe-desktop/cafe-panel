@@ -26,7 +26,7 @@
 #define PANEL_LAUNCH_H
 
 #include <gio/gdesktopappinfo.h>
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 
 #ifdef __cplusplus
 extern "C" {

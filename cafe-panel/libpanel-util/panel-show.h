@@ -26,7 +26,7 @@
 #ifndef PANEL_SHOW_H
 #define PANEL_SHOW_H
 
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 
 #ifdef __cplusplus
 extern "C" {

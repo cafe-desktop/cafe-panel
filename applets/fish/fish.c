@@ -36,7 +36,7 @@
 #include <glib/gi18n.h>
 #include <glib-object.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 #include <gio/gio.h>
 
 #include <cafe-panel-applet.h>
@@ -365,7 +365,7 @@ static void chooser_preview_update(CtkFileChooser* file_chooser, gpointer data)
 	if (filename == NULL)
 		return;
 
-	pixbuf = gdk_pixbuf_new_from_file_at_size (filename, 128, 128, NULL);
+	pixbuf = cdk_pixbuf_new_from_file_at_size (filename, 128, 128, NULL);
 	have_preview = (pixbuf != NULL);
 	g_free (filename);
 
@@ -864,9 +864,9 @@ static void display_fortune_dialog(FishApplet* fish)
 		g_signal_connect (fish->fortune_dialog, "response",
 				  G_CALLBACK (handle_fortune_response), fish);
 
-		monitor = gdk_display_get_monitor_at_window (ctk_widget_get_display (CTK_WIDGET (fish)),
+		monitor = cdk_display_get_monitor_at_window (ctk_widget_get_display (CTK_WIDGET (fish)),
 							     ctk_widget_get_window (CTK_WIDGET (fish)));
-		gdk_monitor_get_geometry(monitor, &monitor_geom);
+		cdk_monitor_get_geometry(monitor, &monitor_geom);
 		ctk_window_set_default_size (CTK_WINDOW (fish->fortune_dialog),
 					     MIN (600, monitor_geom.width  * 0.9),
 					     MIN (350, monitor_geom.height * 0.9));
@@ -942,8 +942,8 @@ static void display_fortune_dialog(FishApplet* fish)
 	clear_fortune_text (fish);
 
 	screen = ctk_widget_get_screen (CTK_WIDGET (fish));
-	display = gdk_screen_get_display (screen);
-	display_name = g_strdup (gdk_display_get_name (display));
+	display = cdk_screen_get_display (screen);
+	display_name = g_strdup (cdk_display_get_name (display));
 	g_spawn_async_with_pipes (NULL, /* working directory */
 							  argv,
 							  NULL, /* envp */
@@ -1318,7 +1318,7 @@ static gboolean load_fish_image(FishApplet* fish)
 
 	path = get_image_path (fish);
 
-	pixbuf = gdk_pixbuf_new_from_file (path, &error);
+	pixbuf = cdk_pixbuf_new_from_file (path, &error);
 	if (error) {
 		g_warning ("Cannot load '%s': %s", path, error->message);
 		g_error_free (error);
@@ -1375,8 +1375,8 @@ static void update_pixmap(FishApplet* fish)
 	     fish->orientation == CAFE_PANEL_APPLET_ORIENT_RIGHT))
 		rotate = TRUE;
 
-	pixbuf_width  = gdk_pixbuf_get_width  (fish->pixbuf);
-	pixbuf_height = gdk_pixbuf_get_height (fish->pixbuf);
+	pixbuf_width  = cdk_pixbuf_get_width  (fish->pixbuf);
+	pixbuf_height = cdk_pixbuf_get_height (fish->pixbuf);
 
 	prev_requisition = fish->requisition;
 
@@ -1414,7 +1414,7 @@ static void update_pixmap(FishApplet* fish)
 
 	if (fish->surface)
 		cairo_surface_destroy (fish->surface);
-	fish->surface = gdk_window_create_similar_surface (ctk_widget_get_window (widget),
+	fish->surface = cdk_window_create_similar_surface (ctk_widget_get_window (widget),
 													   CAIRO_CONTENT_COLOR_ALPHA,
 													   width, height);
 	fish->surface_width = width;
@@ -1429,7 +1429,7 @@ static void update_pixmap(FishApplet* fish)
 	cairo_set_source_rgb (cr, 1, 1, 1);
 	cairo_paint (cr);
 
-	gdk_cairo_set_source_pixbuf (cr, fish->pixbuf, 0, 0);
+	cdk_cairo_set_source_pixbuf (cr, fish->pixbuf, 0, 0);
 	pattern = cairo_get_source (cr);
 	cairo_pattern_set_filter (pattern, CAIRO_FILTER_BEST);
 

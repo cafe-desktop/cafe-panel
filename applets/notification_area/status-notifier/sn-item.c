@@ -172,7 +172,7 @@ sn_item_get_action_coordinates (SnItem *item,
   window = ctk_widget_get_window (widget);
   toplevel = ctk_widget_get_toplevel (widget);
 
-  gdk_window_get_geometry (window, x, y, &width, &height);
+  cdk_window_get_geometry (window, x, y, &width, &height);
   ctk_widget_translate_coordinates (widget, toplevel, *x, *y, x, y);
 
   if (priv->orientation == CTK_ORIENTATION_HORIZONTAL)
@@ -200,7 +200,7 @@ sn_item_button_press_event (CtkWidget      *widget,
 
   if (event->button == 2)
     {
-      gdk_seat_ungrab (gdk_device_get_seat (event->device));
+      cdk_seat_ungrab (cdk_device_get_seat (event->device));
       SN_ITEM_GET_CLASS (item)->secondary_activate (item, x, y);
     }
   else if (event->button == 3)
@@ -216,7 +216,7 @@ sn_item_button_press_event (CtkWidget      *widget,
         }
       else
         {
-          gdk_seat_ungrab (gdk_device_get_seat (event->device));
+          cdk_seat_ungrab (cdk_device_get_seat (event->device));
           SN_ITEM_GET_CLASS (item)->context_menu (item, x, y);
         }
     }
@@ -286,7 +286,7 @@ sn_item_scroll_event (CtkWidget      *widget,
 
   item = SN_ITEM (widget);
 
-  if (!gdk_event_get_scroll_direction ((GdkEvent *) event, &direction))
+  if (!cdk_event_get_scroll_direction ((GdkEvent *) event, &direction))
     {
       g_assert_not_reached ();
     }
@@ -311,7 +311,7 @@ sn_item_scroll_event (CtkWidget      *widget,
         }
     }
 
-  if (!gdk_event_get_scroll_deltas ((GdkEvent *) event, &dx, &dy))
+  if (!cdk_event_get_scroll_deltas ((GdkEvent *) event, &dx, &dy))
     {
       switch (direction)
         {

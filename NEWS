@@ -244,16 +244,16 @@
   * CTK 3.23: don't cut tray icons too narrow in HiDPI mode
   * na-tray-child: remove na_tray_child_size_allocate
   * panel-menu-button: replace deprecated ctk_menu_popup
-  * na-tray-child: replace deprecated gdk_error_trap_push/pop functions
-  * libcafe-panel-applet: replace deprecated gdk_error_trap functions
-  * panel-xutils: replace deprecated gdk_error_trap functions
-  * panel-util: replace deprecated gdk_flush
-  * main: replace deprecated gdk_flush
-  * panel-widget: replace deprecated gdk_flush
+  * na-tray-child: replace deprecated cdk_error_trap_push/pop functions
+  * libcafe-panel-applet: replace deprecated cdk_error_trap functions
+  * panel-xutils: replace deprecated cdk_error_trap functions
+  * panel-util: replace deprecated cdk_flush
+  * main: replace deprecated cdk_flush
+  * panel-widget: replace deprecated cdk_flush
   * panel-toplevel: add position css class
-  * panel-force-quit: replace deprecated gdk_device_grab
-  * panel-force-quit: replace deprecated gdk_error_trap functions
-  * panel-force-quit: replace deprecated gdk_flush
+  * panel-force-quit: replace deprecated cdk_device_grab
+  * panel-force-quit: replace deprecated cdk_error_trap functions
+  * panel-force-quit: replace deprecated cdk_flush
   * menu.c: Fix: Keep spaces in the left if "menus-have-icons" is off
   * Panel-ctk.c: Show menu icons only when "menus-have-icons" is set
   * workspace-switcher: provide themed fallback color
@@ -384,7 +384,7 @@
   * Add option to context menu to reset the panel
   * clock:disconnect signal handlers on destroy
   * Fix crashes on moving/removing applets with glib 2.53.4 or later
-  * ctk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
+  * ctk 3.22: avoid deprecated cdk_screen_get_monitor... functions:
   * Add a gsettings key to enable/disable SNI Support (#600)
 
 ### cafe-panel 1.19.3
@@ -414,19 +414,19 @@
   * libpanel-applet: delay CtkPlug creation
   * libpanel-applet: add process type to private data
   * libpanel-applet: Remove out_process from panel_applet_factory_main()
-  * avoid deprecated gdk_screen_get_width/height
-  * avoid deprecated gdk_screen_get_n_monitors
+  * avoid deprecated cdk_screen_get_width/height
+  * avoid deprecated cdk_screen_get_n_monitors
   * fish: fix applet opening as thin line when built in-process
   * Forces a window scale of 1 for the panel,
     instead of using the default or user configured scale.
-  * avoid deprecated gdk_screen_make_display_name
-  * avoid deprecated gdk_display_get_screen
+  * avoid deprecated cdk_screen_make_display_name
+  * avoid deprecated cdk_display_get_screen
   * don't use deprecated ctk_show_uri
 
 ### cafe-panel 1.19.2
 
   * Translations update
-  * avoid deprecated gdk_screen_get_number
+  * avoid deprecated cdk_screen_get_number
   * fix applet crashes on transparent user-set panel bg
   * system tray: fix hidden icons on image/transparent color BG
   * Fix CTK theme image bg support on vertical panel
@@ -589,7 +589,7 @@
 
 ### cafe-panel 1.10.0
 
-  * Ctk3, Fix deprecated use of gdk pointer api
+  * Ctk3, Fix deprecated use of cdk pointer api
   * Ctk3, Port all CtkStyle to CtkStyleContext
   * Ctk3, Port ctk_rc_parse_string to CtkCssProvider
   * Ctk3, Several small fixes
@@ -599,7 +599,7 @@
   * clock: Check allocated size before creating the shadow pixbuf
   * applet: Disconnect show and deactivate menu signals before destroying the applet menu
   * Add a ctkimage with the current pixbuf to button-widget
-  * Fix implicit declaration of function of gdk_x11_set_sm_client_id
+  * Fix implicit declaration of function of cdk_x11_set_sm_client_id
   * panel-addto: Remove the vbox as it is redundant.
   * na: Fix handling of SYSTEM_TRAY_CANCEL_MESSAGE
   * Use ctk icon cache instead of custom one

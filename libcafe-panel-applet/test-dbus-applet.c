@@ -121,16 +121,16 @@ test_applet_handle_background_change (TestApplet                *applet,
 	switch (type) {
 	case PANEL_NO_BACKGROUND:
 		g_message ("Setting background to default");
-		gdk_window_set_background_pattern (window, NULL);
+		cdk_window_set_background_pattern (window, NULL);
 		break;
 	case PANEL_COLOR_BACKGROUND:
 		g_message ("Setting background to #%2x%2x%2x",
 			   color->red, color->green, color->blue);
-		gdk_window_set_background_pattern (window, NULL);
+		cdk_window_set_background_pattern (window, NULL);
 		break;
 	case PANEL_PIXMAP_BACKGROUND:
 		g_message ("Setting background to '%p'", pattern);
-		gdk_window_set_background_pattern (window, pattern);
+		cdk_window_set_background_pattern (window, pattern);
 		break;
 	default:
 		g_assert_not_reached ();

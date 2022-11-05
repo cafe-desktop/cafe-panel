@@ -145,7 +145,7 @@ main (int argc, char **argv)
 		panel_global_config_load ();
 		panel_lockdown_init ();
 		panel_profile_settings_load ();
-		panel_run_dialog_present (gdk_screen_get_default (),
+		panel_run_dialog_present (cdk_screen_get_default (),
 		                          ctk_get_current_event_time ());
 		panel_run_dialog_quit_on_destroy ();
 		ctk_main ();
@@ -164,7 +164,7 @@ main (int argc, char **argv)
 		return -1;
 	}
 
-	display = gdk_display_get_default ();
+	display = cdk_display_get_default ();
 
 #ifdef HAVE_X11
 	if (GDK_IS_X11_DISPLAY (display))
@@ -204,14 +204,14 @@ main (int argc, char **argv)
 
 	/* Flush to make sure our struts are seen by everyone starting
 	 * immediate after (eg, the caja desktop). */
-	gdk_display_flush (display);
+	cdk_display_flush (display);
 
 	/* Do this at the end, to be sure that we're really ready when
 	 * connecting to the session manager */
 	panel_session_init ();
 
 	/*Load a css file from a GResource so the drag handle image can be loaded*/
-	screen = gdk_screen_get_default ();
+	screen = cdk_screen_get_default ();
 	css = ctk_css_provider_new ();
 	provider = CTK_STYLE_PROVIDER (css);
 	resource = "/org/cafe/panel/theme/cafe-panel.css";

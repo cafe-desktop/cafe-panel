@@ -28,7 +28,7 @@
 #include <config.h>
 
 #ifdef HAVE_X11
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif
 
 #include <ctk/ctk.h>

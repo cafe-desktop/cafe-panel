@@ -32,7 +32,7 @@
 #include <string.h>
 
 #include <glib/gi18n.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 
 #include <libpanel-util/panel-error.h>
 #include <libpanel-util/panel-show.h>
@@ -337,7 +337,7 @@ panel_context_menu_create (PanelWidget *panel)
 	CtkWidget *toplevel = ctk_widget_get_toplevel (retval);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
 	CtkStyleContext *context;

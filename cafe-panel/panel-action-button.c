@@ -56,7 +56,7 @@
 #include "panel-schemas.h"
 
 #ifdef HAVE_X11
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include "panel-force-quit.h"
 #endif
 
@@ -322,7 +322,7 @@ panel_action_connect_server (CtkWidget *widget)
 	else
 		command = g_strdup ("nemo-connect-server");
 
-	cafe_gdk_spawn_command_line_on_screen (screen, command, &error);
+	cafe_cdk_spawn_command_line_on_screen (screen, command, &error);
 	g_free (command);
 
 	if (error) {

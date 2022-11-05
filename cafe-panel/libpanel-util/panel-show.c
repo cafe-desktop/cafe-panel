@@ -214,8 +214,8 @@ panel_show_uri_force_mime_type (GdkScreen    *screen,
 	}
 
 	uris = g_list_append (NULL, (gpointer)uri);
-	display = gdk_screen_get_display (screen);
-	context = gdk_display_get_app_launch_context (display);
+	display = cdk_screen_get_display (screen);
+	context = cdk_display_get_app_launch_context (display);
 	ret = g_app_info_launch_uris (appinfo, uris, G_APP_LAUNCH_CONTEXT(context), error);
 	g_object_unref (context);
 	g_list_free (uris);

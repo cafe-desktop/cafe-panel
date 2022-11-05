@@ -444,7 +444,7 @@ na_tray_constructor (GType type,
       initialized = TRUE;
     }
 
-  screen_number = gdk_x11_screen_get_screen_number (priv->screen);
+  screen_number = cdk_x11_screen_get_screen_number (priv->screen);
 
   if (trays_screens [screen_number].tray_manager == NULL)
     {

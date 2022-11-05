@@ -26,7 +26,7 @@
 #define __PANEL_PROFILE_H__
 
 #include <glib.h>
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 #include <gio/gio.h>
 
 #include "panel-toplevel.h"
@@ -114,9 +114,9 @@ void        panel_profile_set_background_color        (PanelToplevel       *topl
 void        panel_profile_get_background_color        (PanelToplevel       *toplevel,
 						       GdkRGBA             *color);
 
-void        panel_profile_set_background_gdk_rgba    (PanelToplevel       *toplevel,
+void        panel_profile_set_background_cdk_rgba    (PanelToplevel       *toplevel,
 						       GdkRGBA            *color);
-void        panel_profile_get_background_gdk_rgba    (PanelToplevel       *toplevel,
+void        panel_profile_get_background_cdk_rgba    (PanelToplevel       *toplevel,
 						       GdkRGBA            *color);
 
 void        panel_profile_set_background_opacity      (PanelToplevel       *toplevel,

@@ -26,7 +26,7 @@
 #error file should only be compiled when HAVE_X11 is enabled
 #endif
 
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include "fixedtip.h"
 
 /* Signals */
@@ -154,12 +154,12 @@ na_fixed_tip_position (NaFixedTip *fixedtip)
 
   ctk_widget_get_preferred_size (CTK_WIDGET (fixedtip), &req, NULL);
 
-  gdk_window_get_origin (parent_window, &root_x, &root_y);
-  parent_width = gdk_window_get_width(parent_window);
-  parent_height = gdk_window_get_height(parent_window);
+  cdk_window_get_origin (parent_window, &root_x, &root_y);
+  parent_width = cdk_window_get_width(parent_window);
+  parent_height = cdk_window_get_height(parent_window);
 
-  screen_width = WidthOfScreen (gdk_x11_screen_get_xscreen (screen));
-  screen_height = HeightOfScreen (gdk_x11_screen_get_xscreen (screen));
+  screen_width = WidthOfScreen (cdk_x11_screen_get_xscreen (screen));
+  screen_height = HeightOfScreen (cdk_x11_screen_get_xscreen (screen));
 
   /* pad between panel and message window */
 #define PAD 5

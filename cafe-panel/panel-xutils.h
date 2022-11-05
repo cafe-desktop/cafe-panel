@@ -32,8 +32,8 @@
 #endif
 
 #include <glib.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkx.h>
 
 #include <X11/Xlib.h>
 
@@ -43,13 +43,13 @@
 extern "C" {
 #endif
 
-void panel_xutils_set_strut       (GdkWindow             *gdk_window,
+void panel_xutils_set_strut       (GdkWindow             *cdk_window,
 				   PanelOrientation       orientation,
 				   guint32                strut,
 				   guint32                strut_start,
 				   guint32                strut_end);
 
-void panel_warp_pointer           (GdkWindow             *gdk_window,
+void panel_warp_pointer           (GdkWindow             *cdk_window,
 				   int                    x,
 				   int                    y);
 

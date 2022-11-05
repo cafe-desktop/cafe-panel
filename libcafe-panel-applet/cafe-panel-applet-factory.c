@@ -27,7 +27,7 @@
 #include "cafe-panel-applet-factory.h"
 
 #ifdef HAVE_X11
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif
 
 struct _CafePanelAppletFactory {
@@ -217,12 +217,12 @@ cafe_panel_applet_factory_get_applet (CafePanelAppletFactory    *factory,
 	g_variant_unref (props);
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 		GdkScreen   *screen;
 
 		screen = screen_num != -1 ?
-			gdk_display_get_default_screen (gdk_display_get_default ()) :
-			gdk_screen_get_default ();
+			cdk_display_get_default_screen (cdk_display_get_default ()) :
+			cdk_screen_get_default ();
 		xid = cafe_panel_applet_get_xid (CAFE_PANEL_APPLET (applet), screen);
 	} else
 #endif

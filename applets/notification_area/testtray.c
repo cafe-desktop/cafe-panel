@@ -139,7 +139,7 @@ create_tray_on_screen (GdkScreen *screen,
 				     "Override tray manager?");
     ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 					     "There is already a tray manager running on screen %d.",
-					     gdk_x11_screen_get_screen_number (screen));
+					     cdk_x11_screen_get_screen_number (screen));
     ctk_window_set_screen (CTK_WINDOW (dialog), screen);
     g_signal_connect (dialog, "response", G_CALLBACK (warning_dialog_response_cb), screen);
     ctk_window_present (CTK_WINDOW (dialog));
@@ -149,7 +149,7 @@ create_tray_on_screen (GdkScreen *screen,
 
   data = g_new0 (TrayData, 1);
   data->screen = screen;
-  data->screen_num = gdk_x11_screen_get_screen_number (screen);
+  data->screen_num = cdk_x11_screen_get_screen_number (screen);
 
   data->window = window = ctk_window_new (CTK_WINDOW_TOPLEVEL);
   g_object_weak_ref (G_OBJECT (window), (GWeakNotify) maybe_quit, NULL);
@@ -263,8 +263,8 @@ main (int argc, char *argv[])
 
   ctk_window_set_default_icon_name (NOTIFICATION_AREA_ICON);
 
-  display = gdk_display_get_default ();
-  screen = gdk_display_get_default_screen (display);
+  display = cdk_display_get_default ();
+  screen = cdk_display_get_default_screen (display);
 
   create_tray_on_screen (screen, FALSE);
 

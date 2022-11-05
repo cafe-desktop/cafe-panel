@@ -29,7 +29,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
 #include <X11/extensions/Xrandr.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif // HAVE_X11
 
 #include "panel-multimonitor.h"
@@ -37,7 +37,7 @@
 #include <string.h>
 
 // The number of logical monitors we are keeping track of
-// May be different than gdk_display_get_n_monitors()
+// May be different than cdk_display_get_n_monitors()
 // (see comment in panel_multimonitor_compress_overlapping_monitors for details)
 static int            monitor_count = 0;
 
@@ -105,7 +105,7 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 	int                 scale;
 	int                 i;
 
-	display = gdk_display_get_default ();
+	display = cdk_display_get_default ();
 
 	g_return_val_if_fail (have_randr, FALSE);
 	g_return_val_if_fail (GDK_IS_X11_DISPLAY (display), FALSE);
@@ -115,7 +115,7 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 	 * XRRGetScreenResources(), which is slow as it re-detects all the
 	 * monitors --- note that XRRGetScreenResourcesCurrent() had not been
 	 * introduced yet.  Using Xinerama in CTK+ has the bad side effect that
-	 * gdk_screen_get_monitor_plug_name() will return NULL, as Xinerama
+	 * cdk_screen_get_monitor_plug_name() will return NULL, as Xinerama
 	 * does not provide that information, unlike RANDR.
 	 *
 	 * Here we need to identify the output names, so that we can put the
@@ -124,7 +124,7 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 	 * display rather than on an external monitor.
 	 *
 	 * To get the output names and geometries, we will not use
-	 * gdk_screen_get_n_monitors() and friends, but rather we will call
+	 * cdk_screen_get_n_monitors() and friends, but rather we will call
 	 * XRR*() directly.
 	 *
 	 * See https://bugzilla.novell.com/show_bug.cgi?id=479684 for this
@@ -132,9 +132,9 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 	 * http://bugzilla.gnome.org/show_bug.cgi?id=562944 for a more
 	 * long-term solution.
 	 */
-	screen = gdk_display_get_default_screen (display);
+	screen = cdk_display_get_default_screen (display);
 	xdisplay = GDK_SCREEN_XDISPLAY (screen);
-	xroot = GDK_WINDOW_XID (gdk_screen_get_root_window (screen));
+	xroot = GDK_WINDOW_XID (cdk_screen_get_root_window (screen));
 
 	resources = XRRGetScreenResourcesCurrent (xdisplay, xroot);
 	if (resources->noutput == 0) {
@@ -150,10 +150,10 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 		return FALSE;
 
 	primary = XRRGetOutputPrimary (xdisplay, xroot);
-	monitor = gdk_display_get_primary_monitor (display);
+	monitor = cdk_display_get_primary_monitor (display);
 
 	/* Use scale factor to bring geometries down to device pixels to support HiDPI displays */
-	scale = gdk_monitor_get_scale_factor (monitor);
+	scale = cdk_monitor_get_scale_factor (monitor);
 
 	geometries = g_array_sized_new (FALSE, FALSE,
 					sizeof (GdkRectangle),
@@ -213,7 +213,7 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 #endif // HAVE_X11
 
 static void
-panel_multimonitor_get_gdk_monitors (int           *monitors_ret,
+panel_multimonitor_get_cdk_monitors (int           *monitors_ret,
 				     GdkRectangle **geometries_ret)
 {
 	GdkDisplay   *display;
@@ -221,12 +221,12 @@ panel_multimonitor_get_gdk_monitors (int           *monitors_ret,
 	GdkRectangle *geometries;
 	int           i;
 
-	display = gdk_display_get_default ();
-	num_monitors = gdk_display_get_n_monitors (display);
+	display = cdk_display_get_default ();
+	num_monitors = cdk_display_get_n_monitors (display);
 	geometries = g_new (GdkRectangle, num_monitors);
 
 	for (i = 0; i < num_monitors; i++)
-		gdk_monitor_get_geometry (gdk_display_get_monitor (display, i), &(geometries[i]));
+		cdk_monitor_get_geometry (cdk_display_get_monitor (display, i), &(geometries[i]));
 
 	*monitors_ret = num_monitors;
 	*geometries_ret = geometries;
@@ -243,7 +243,7 @@ panel_multimonitor_get_raw_monitors (int           *monitors_ret,
 
 #ifdef HAVE_X11
 #ifdef HAVE_RANDR
-	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()) && have_randr)
+	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ()) && have_randr)
 		res = panel_multimonitor_get_randr_monitors (monitors_ret, geometries_ret);
 #endif // HAVE_RANDR
 #endif // HAVE_X11
@@ -251,14 +251,14 @@ panel_multimonitor_get_raw_monitors (int           *monitors_ret,
 	if (res && *monitors_ret > 0)
 		return;
 
-	panel_multimonitor_get_gdk_monitors (monitors_ret, geometries_ret);
+	panel_multimonitor_get_cdk_monitors (monitors_ret, geometries_ret);
 }
 
 static inline gboolean
 rectangle_overlaps (GdkRectangle *a,
 		    GdkRectangle *b)
 {
-	return gdk_rectangle_intersect (a, b, NULL);
+	return cdk_rectangle_intersect (a, b, NULL);
 }
 
 static long
@@ -442,8 +442,8 @@ panel_multimonitor_init (void)
 	if (initialized)
 		return;
 
-	display = gdk_display_get_default ();
-	screen = gdk_display_get_default_screen (display);
+	display = cdk_display_get_default ();
+	screen = cdk_display_get_default_screen (display);
 
 	have_randr = FALSE;
 
@@ -471,10 +471,10 @@ panel_multimonitor_init (void)
 	g_signal_connect (display, "monitor-removed",
 			  G_CALLBACK (panel_multimonitor_handle_monitor_changed), NULL);
 
-	for (i = 0; i < gdk_display_get_n_monitors (display); i++) {
+	for (i = 0; i < cdk_display_get_n_monitors (display); i++) {
 		GdkMonitor *monitor;
 
-		monitor = gdk_display_get_monitor (display, i);
+		monitor = cdk_display_get_monitor (display, i);
 		g_signal_handlers_disconnect_by_func (display, panel_multimonitor_handle_monitor_invalidate, NULL);
 		g_signal_connect (monitor, "invalidate",
 			  G_CALLBACK (panel_multimonitor_handle_monitor_invalidate), NULL);
@@ -565,7 +565,7 @@ axis_distance (int p, int axis_start, int axis_size)
 		return (p - (axis_start + axis_size - 1));
 }
 
-/* The panel can't use gdk_screen_get_monitor_at_point() since it has its own
+/* The panel can't use cdk_screen_get_monitor_at_point() since it has its own
  * view of which monitors are present. Look at get_monitors_for_screen() above
  * to see why. */
 int

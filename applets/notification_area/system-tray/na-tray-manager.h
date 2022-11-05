@@ -25,7 +25,7 @@
 #define __NA_TRAY_MANAGER_H__
 
 #ifdef GDK_WINDOWING_X11
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif
 #include <ctk/ctk.h>
 

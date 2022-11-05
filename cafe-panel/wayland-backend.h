@@ -31,8 +31,8 @@
 #error file should only be included when HAVE_WAYLAND is enabled
 #endif
 
-#include <gdk/gdk.h>
-#include <gdk/gdkwayland.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkwayland.h>
 
 #include "panel-toplevel.h"
 

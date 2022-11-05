@@ -30,8 +30,8 @@
 
 #include "panel-action-protocol.h"
 
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkx.h>
 #include <X11/Xlib.h>
 
 #include "menu.h"
@@ -88,16 +88,16 @@ panel_action_protocol_main_menu (GdkScreen *screen,
 /* Set up theme and transparency support */
 	toplevel = ctk_widget_get_toplevel (menu);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
-	visual = gdk_screen_get_rgba_visual(screen);
+	visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
 	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
 
-	seat = gdk_display_get_default_seat (gdk_display_get_default());
-	device = gdk_seat_get_pointer (seat);
-	gdk_event_set_device (event, device);
+	seat = cdk_display_get_default_seat (cdk_display_get_default());
+	device = cdk_seat_get_pointer (seat);
+	cdk_event_set_device (event, device);
 
 	ctk_menu_popup_at_pointer (CTK_MENU (menu),event);
 }
@@ -117,14 +117,14 @@ panel_action_protocol_kill_dialog (GdkScreen *screen,
 }
 
 static GdkFilterReturn
-panel_action_protocol_filter (GdkXEvent *gdk_xevent,
+panel_action_protocol_filter (GdkXEvent *cdk_xevent,
 			      GdkEvent  *event,
 			      gpointer   data)
 {
 	GdkWindow *window;
 	GdkScreen *screen;
 	GdkDisplay *display;
-	XEvent    *xevent = (XEvent *) gdk_xevent;
+	XEvent    *xevent = (XEvent *) cdk_xevent;
 
 	if (xevent->type != ClientMessage)
 		return GDK_FILTER_CONTINUE;
@@ -133,15 +133,15 @@ panel_action_protocol_filter (GdkXEvent *gdk_xevent,
 	   (xevent->xclient.message_type != atom_gnome_panel_action))
 		return GDK_FILTER_CONTINUE;
 
-	screen = gdk_event_get_screen (event);
-	display = gdk_screen_get_display (screen);
+	screen = cdk_event_get_screen (event);
+	display = cdk_screen_get_display (screen);
 	if (!GDK_IS_X11_DISPLAY (display))
 		return GDK_FILTER_CONTINUE;
-	window = gdk_x11_window_lookup_for_display (display, xevent->xclient.window);
+	window = cdk_x11_window_lookup_for_display (display, xevent->xclient.window);
 	if (!window)
 		return GDK_FILTER_CONTINUE;
 
-	if (window != gdk_screen_get_root_window (screen))
+	if (window != cdk_screen_get_root_window (screen))
 		return GDK_FILTER_CONTINUE;
 
 	if (xevent->xclient.data.l [0] == atom_cafe_panel_action_main_menu)
@@ -165,7 +165,7 @@ panel_action_protocol_init (void)
 {
 	GdkDisplay *display;
 
-	display = gdk_display_get_default ();
+	display = cdk_display_get_default ();
 	g_assert(GDK_IS_X11_DISPLAY (display));
 
 	atom_cafe_panel_action =
@@ -198,5 +198,5 @@ panel_action_protocol_init (void)
 			     FALSE);
 
 	/* We'll filter event sent on non-root windows later */
-	gdk_window_add_filter (NULL, panel_action_protocol_filter, NULL);
+	cdk_window_add_filter (NULL, panel_action_protocol_filter, NULL);
 }

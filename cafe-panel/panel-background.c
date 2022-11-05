@@ -27,7 +27,7 @@
 #include "panel-background.h"
 
 #include <string.h>
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 #include <ctk/ctk.h>
 #include <cairo.h>
 
@@ -48,7 +48,7 @@ set_pixbuf_background (PanelBackground *background)
 {
 	g_assert (background->composited_pattern != NULL);
 
-	gdk_window_set_background_pattern (background->window, background->composited_pattern);
+	cdk_window_set_background_pattern (background->window, background->composited_pattern);
 }
 
 void panel_background_apply_css (PanelBackground *background, CtkWidget *widget)
@@ -85,7 +85,7 @@ panel_background_prepare_css ()
 					 " background-image: none;\n"
 					 "}",
 					 -1, NULL);
-	ctk_style_context_add_provider_for_screen (gdk_screen_get_default (),
+	ctk_style_context_add_provider_for_screen (cdk_screen_get_default (),
 						   CTK_STYLE_PROVIDER (provider),
 						   CTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_object_unref (provider);
@@ -108,7 +108,7 @@ panel_background_prepare (PanelBackground *background)
 			/* the theme background-image pattern must be scaled by
 			* the width & height of the panel so that when the
 			* backing region is cleared
-			* (gdk_window_clear_backing_region), the correctly
+			* (cdk_window_clear_backing_region), the correctly
 			* scaled pattern is used */
 			cairo_matrix_t m;
 			cairo_surface_t *surface;
@@ -129,31 +129,31 @@ panel_background_prepare (PanelBackground *background)
 						height / background->region.height);
 				cairo_pattern_set_matrix (background->default_pattern, &m);
 
-				gdk_window_set_background_pattern (background->window,
+				cdk_window_set_background_pattern (background->window,
 											background->default_pattern);
 			}
 			else {
 				g_warning ("%s", "unsupported value of 'background-image' in CTK+ theme (such as '-ctk-gradient')");
 				/* use any background color that has been set if image is invalid */
-				gdk_window_set_background_rgba (
+				cdk_window_set_background_rgba (
 				background->window, &background->default_color);
 			}
 			cairo_surface_destroy(surface);
 		} else
-			gdk_window_set_background_rgba (
+			cdk_window_set_background_rgba (
 				background->window, &background->default_color);
 		break;
 
 	case PANEL_BACK_COLOR:
 #ifdef HAVE_X11
-		if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()) &&
+		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ()) &&
 		    background->has_alpha &&
-		    !gdk_window_check_composited_wm(background->window))
+		    !cdk_window_check_composited_wm(background->window))
 			set_pixbuf_background (background);
 		else
 #endif // HAVE_X11
 		{ // Not using X11, or pixbuf background not needed
-			gdk_window_set_background_rgba (background->window,
+			cdk_window_set_background_rgba (background->window,
 			                                &background->color);
 		}
 		break;
@@ -171,9 +171,9 @@ panel_background_prepare (PanelBackground *background)
 	 * decide how to draw themselves.  Therefore, we need to
 	 * make sure that all drawing has been completed before
 	 * the applet looks at the pixmap. */
-	gdk_display_sync (gdk_window_get_display (background->window));
+	cdk_display_sync (cdk_window_get_display (background->window));
 
-	gdk_window_get_user_data (GDK_WINDOW (background->window),
+	cdk_window_get_user_data (GDK_WINDOW (background->window),
 				  (gpointer) &widget);
 
 	if (CTK_IS_WIDGET (widget)) {
@@ -210,7 +210,7 @@ background_changed (PanelBackgroundMonitor *monitor,
 {
 	GdkPixbuf *tmp;
 
-	g_return_if_fail (GDK_IS_X11_DISPLAY (gdk_display_get_default ()));
+	g_return_if_fail (GDK_IS_X11_DISPLAY (cdk_display_get_default ()));
 
 	tmp = background->desktop;
 
@@ -232,19 +232,19 @@ get_desktop_pixbuf (PanelBackground *background)
 {
 	GdkPixbuf *desktop;
 
-	g_return_val_if_fail (GDK_IS_X11_DISPLAY (gdk_display_get_default ()), NULL);
+	g_return_val_if_fail (GDK_IS_X11_DISPLAY (cdk_display_get_default ()), NULL);
 
 	if (!background->monitor) {
 		background->monitor =
 			panel_background_monitor_get_for_screen (
-				gdk_window_get_screen (background->window));
+				cdk_window_get_screen (background->window));
 
 		background->monitor_signal =
 			g_signal_connect (
 			background->monitor, "changed",
                         G_CALLBACK (background_changed), background);
 	}
-	g_signal_connect(gdk_window_get_screen(background->window), "composited-changed",
+	g_signal_connect(cdk_window_get_screen(background->window), "composited-changed",
 			 G_CALLBACK(_panel_background_transparency),
 			 background);
 
@@ -271,7 +271,7 @@ composite_image_onto_desktop (PanelBackground *background)
 	width  = background->region.width;
 	height = background->region.height;
 
-	surface = gdk_window_create_similar_surface (background->window,
+	surface = cdk_window_create_similar_surface (background->window,
 						     CAIRO_CONTENT_COLOR_ALPHA,
 						     width, height);
 	if (cairo_surface_status (surface) != CAIRO_STATUS_SUCCESS) {
@@ -282,16 +282,16 @@ composite_image_onto_desktop (PanelBackground *background)
 	cr = cairo_create (surface);
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 		if (!background->desktop)
 			background->desktop = get_desktop_pixbuf (background);
 
-		if(!gdk_window_check_composited_wm (background->window)){
+		if(!cdk_window_check_composited_wm (background->window)){
 			cairo_set_source_rgb (cr, 1, 1, 1);
 			cairo_paint (cr);
 
 			if (background->desktop) {
-				gdk_cairo_set_source_pixbuf (cr, background->desktop, 0, 0);
+				cdk_cairo_set_source_pixbuf (cr, background->desktop, 0, 0);
 				cairo_rectangle (cr, 0, 0, width, height);
 				cairo_fill (cr);
 			}
@@ -299,7 +299,7 @@ composite_image_onto_desktop (PanelBackground *background)
 	}
 #endif // HAVE_X11
 
-	gdk_cairo_set_source_pixbuf (cr, background->transformed_image, 0, 0);
+	cdk_cairo_set_source_pixbuf (cr, background->transformed_image, 0, 0);
 	pattern = cairo_get_source (cr);
 	cairo_pattern_set_extend (pattern, CAIRO_EXTEND_REPEAT);
 
@@ -320,7 +320,7 @@ composite_color_onto_desktop (PanelBackground *background)
 	cairo_pattern_t *pattern;
 	cairo_t *cr;
 
-	surface = gdk_window_create_similar_surface (background->window,
+	surface = cdk_window_create_similar_surface (background->window,
 						     CAIRO_CONTENT_COLOR_ALPHA,
 						     background->region.width,
 						     background->region.height);
@@ -332,20 +332,20 @@ composite_color_onto_desktop (PanelBackground *background)
 	cr = cairo_create (surface);
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 		if (!background->desktop)
 			background->desktop = get_desktop_pixbuf (background);
 
-		if(!gdk_window_check_composited_wm (background->window)){
+		if(!cdk_window_check_composited_wm (background->window)){
 			if (background->desktop) {
-				gdk_cairo_set_source_pixbuf (cr, background->desktop, 0, 0);
+				cdk_cairo_set_source_pixbuf (cr, background->desktop, 0, 0);
 				cairo_paint (cr);
 			}
 		}
 	}
 #endif // HAVE_X11
 
-	gdk_cairo_set_source_rgba (cr, &background->color);
+	cdk_cairo_set_source_rgba (cr, &background->color);
 	cairo_paint (cr);
 
 	cairo_destroy (cr);
@@ -441,8 +441,8 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 	if (!background->loaded_image)
 		return NULL;
 
-	orig_width  = gdk_pixbuf_get_width  (background->loaded_image);
-	orig_height = gdk_pixbuf_get_height (background->loaded_image);
+	orig_width  = cdk_pixbuf_get_width  (background->loaded_image);
+	orig_height = cdk_pixbuf_get_height (background->loaded_image);
 
 	panel_width  = background->region.width;
 	panel_height = background->region.height;
@@ -490,7 +490,7 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 		scaled = background->loaded_image;
 		g_object_ref (scaled);
 	} else {
-		scaled = gdk_pixbuf_scale_simple (
+		scaled = cdk_pixbuf_scale_simple (
 				background->loaded_image,
 				width, height,
 				GDK_INTERP_BILINEAR);
@@ -505,13 +505,13 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 			int     destrowstride;
 			int     srcrowstride;
 
-			retval = gdk_pixbuf_new (
+			retval = cdk_pixbuf_new (
 				GDK_COLORSPACE_RGB, FALSE, 8, height, width);
 
-			dest          = gdk_pixbuf_get_pixels (retval);
-			destrowstride = gdk_pixbuf_get_rowstride (retval);
-			src           = gdk_pixbuf_get_pixels (scaled);
-			srcrowstride  = gdk_pixbuf_get_rowstride (scaled);
+			dest          = cdk_pixbuf_get_pixels (retval);
+			destrowstride = cdk_pixbuf_get_rowstride (retval);
+			src           = cdk_pixbuf_get_pixels (scaled);
+			srcrowstride  = cdk_pixbuf_get_rowstride (scaled);
 
 			for (y = 0; y < height; y++)
 				for (x = 0; x < width; x++) {
@@ -530,13 +530,13 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 			int     destrowstride;
 			int     srcrowstride;
 
-			retval = gdk_pixbuf_new (
+			retval = cdk_pixbuf_new (
 				GDK_COLORSPACE_RGB, TRUE, 8, height, width);
 
-			dest          = (guint32 *) gdk_pixbuf_get_pixels (retval);
-			destrowstride =             gdk_pixbuf_get_rowstride (retval) / 4;
-			src           = (guint32 *) gdk_pixbuf_get_pixels (scaled);
-			srcrowstride  =             gdk_pixbuf_get_rowstride (scaled) / 4;
+			dest          = (guint32 *) cdk_pixbuf_get_pixels (retval);
+			destrowstride =             cdk_pixbuf_get_rowstride (retval) / 4;
+			src           = (guint32 *) cdk_pixbuf_get_pixels (scaled);
+			srcrowstride  =             cdk_pixbuf_get_rowstride (scaled) / 4;
 
 			for (y = 0; y < height; y++)
 				for (x = 0; x < width; x++)
@@ -574,7 +574,7 @@ panel_background_transform (PanelBackground *background)
 static void
 disconnect_background_monitor (PanelBackground *background)
 {
-	g_return_if_fail (GDK_IS_X11_DISPLAY (gdk_display_get_default ()));
+	g_return_if_fail (GDK_IS_X11_DISPLAY (cdk_display_get_default ()));
 	if (background->monitor) {
 		g_signal_handler_disconnect (
 			background->monitor, background->monitor_signal);
@@ -599,12 +599,12 @@ panel_background_update_has_alpha (PanelBackground *background)
 
 	else if (background->type == PANEL_BACK_IMAGE &&
 		 background->loaded_image)
-		has_alpha = gdk_pixbuf_get_has_alpha (background->loaded_image);
+		has_alpha = cdk_pixbuf_get_has_alpha (background->loaded_image);
 
 	background->has_alpha = has_alpha;
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 		if (!has_alpha)
 			disconnect_background_monitor (background);
 	}
@@ -622,7 +622,7 @@ load_background_file (PanelBackground *background)
 	//FIXME add a monitor on the file so that we reload the background
 	//when it changes
 	background->loaded_image =
-		gdk_pixbuf_new_from_file (background->image, &error);
+		cdk_pixbuf_new_from_file (background->image, &error);
 	if (!background->loaded_image) {
 		g_assert (error != NULL);
 		g_warning (G_STRLOC ": unable to open '%s': %s",
@@ -675,7 +675,7 @@ panel_background_set_color_no_update (PanelBackground *background,
 {
 	g_return_if_fail (color != NULL);
 
-	if (gdk_rgba_equal (color, &background->color))
+	if (cdk_rgba_equal (color, &background->color))
 		return;
 
 	background->color = *color;
@@ -688,7 +688,7 @@ panel_background_set_color (PanelBackground *background,
 {
 	g_return_if_fail (color != NULL);
 
-	if (gdk_rgba_equal (color, &background->color))
+	if (cdk_rgba_equal (color, &background->color))
 		return;
 
 	free_transformed_resources (background);
@@ -978,7 +978,7 @@ void
 panel_background_free (PanelBackground *background)
 {
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
+	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 		disconnect_background_monitor (background);
 	}
 #endif // HAVE_X11
@@ -1025,7 +1025,7 @@ panel_background_make_string (PanelBackground *background,
 	    (effective_type == PANEL_BACK_IMAGE ||
 	     (effective_type == PANEL_BACK_COLOR &&
 	      background->has_alpha &&
-	      !gdk_window_check_composited_wm(background->window)))) {
+	      !cdk_window_check_composited_wm(background->window)))) {
 
 		cairo_surface_t *surface;
 
@@ -1042,7 +1042,7 @@ panel_background_make_string (PanelBackground *background,
 	} else
 #endif
 	if (effective_type == PANEL_BACK_COLOR) {
-		gchar *rgba = gdk_rgba_to_string (&background->color);
+		gchar *rgba = cdk_rgba_to_string (&background->color);
 		retval = g_strdup_printf (
 				"color:%s",
 				rgba);

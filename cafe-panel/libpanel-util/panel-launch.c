@@ -26,7 +26,7 @@
 #include <gio/gio.h>
 #include <gio/gdesktopappinfo.h>
 
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 #include <ctk/ctk.h>
 
 #include "panel-error.h"
@@ -110,10 +110,10 @@ panel_app_info_launch_uris (GDesktopAppInfo   *appinfo,
 	g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
-	GdkDisplay *display = gdk_display_get_default ();
-	context = gdk_display_get_app_launch_context (display);
-	gdk_app_launch_context_set_screen (context, screen);
-	gdk_app_launch_context_set_timestamp (context, timestamp);
+	GdkDisplay *display = cdk_display_get_default ();
+	context = cdk_display_get_app_launch_context (display);
+	cdk_app_launch_context_set_screen (context, screen);
+	cdk_app_launch_context_set_timestamp (context, timestamp);
 
 	local_error = NULL;
 	if (action == NULL) {
@@ -264,8 +264,8 @@ panel_launch_desktop_file_with_fallback (const char  *desktop_file,
 		local_error = NULL;
 	}
 
-	display = gdk_screen_get_display (screen);
-	display_name = g_strdup (gdk_display_get_name (display));
+	display = cdk_screen_get_display (screen);
+	display_name = g_strdup (cdk_display_get_name (display));
 	retval = g_spawn_async (NULL, /* working directory */
 				argv,
 				NULL, /* envp */

@@ -22,8 +22,8 @@
 #include <string.h>
 #include <unistd.h>
 
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkx.h>
 #include <ctk/ctk.h>
 
 #include <X11/Xlib.h>
@@ -48,7 +48,7 @@ static gboolean xstuff_display_is_dead = FALSE;
 
 gboolean is_using_x11 ()
 {
-	return GDK_IS_X11_DISPLAY (gdk_display_get_default ());
+	return GDK_IS_X11_DISPLAY (cdk_display_get_default ());
 }
 
 typedef struct {
@@ -107,29 +107,29 @@ zoom_draw (CtkWidget *widget,
 		zoom->size += MAX ((zoom->size_end - zoom->size_start) / ZOOM_STEPS, 1);
 		zoom->opacity -= 1.0 / ((double) ZOOM_STEPS + 1);
 
-		scaled = gdk_pixbuf_scale_simple (zoom->pixbuf,
+		scaled = cdk_pixbuf_scale_simple (zoom->pixbuf,
 						  zoom->size, zoom->size,
 						  GDK_INTERP_BILINEAR);
 
 		switch (zoom->orientation) {
 		case PANEL_ORIENTATION_TOP:
-			x = (width - gdk_pixbuf_get_width (scaled)) / 2;
+			x = (width - cdk_pixbuf_get_width (scaled)) / 2;
 			y = 0;
 			break;
 
 		case PANEL_ORIENTATION_RIGHT:
-			x = width - gdk_pixbuf_get_width (scaled);
-			y = (height - gdk_pixbuf_get_height (scaled)) / 2;
+			x = width - cdk_pixbuf_get_width (scaled);
+			y = (height - cdk_pixbuf_get_height (scaled)) / 2;
 			break;
 
 		case PANEL_ORIENTATION_BOTTOM:
-			x = (width - gdk_pixbuf_get_width (scaled)) / 2;
-			y = height - gdk_pixbuf_get_height (scaled);
+			x = (width - cdk_pixbuf_get_width (scaled)) / 2;
+			y = height - cdk_pixbuf_get_height (scaled);
 			break;
 
 		case PANEL_ORIENTATION_LEFT:
 			x = 0;
-			y = (height - gdk_pixbuf_get_height (scaled)) / 2;
+			y = (height - cdk_pixbuf_get_height (scaled)) / 2;
 			break;
 		}
 
@@ -138,7 +138,7 @@ zoom_draw (CtkWidget *widget,
 		cairo_rectangle (cr, 0, 0, width, height);
 		cairo_fill (cr);
 
-		gdk_cairo_set_source_pixbuf (cr, scaled, x, y);
+		cdk_cairo_set_source_pixbuf (cr, scaled, x, y);
 		cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
 		cairo_paint_with_alpha (cr, MAX (zoom->opacity, 0));
 
@@ -176,7 +176,7 @@ draw_zoom_animation_composited (GdkScreen *gscreen,
 	ctk_window_set_keep_above (CTK_WINDOW (win), TRUE);
 	ctk_window_set_decorated (CTK_WINDOW (win), FALSE);
 	ctk_widget_set_app_paintable(win, TRUE);
-	ctk_widget_set_visual (win, gdk_screen_get_rgba_visual (gscreen));
+	ctk_widget_set_visual (win, cdk_screen_get_rgba_visual (gscreen));
 
 	ctk_window_set_gravity (CTK_WINDOW (win), GDK_GRAVITY_STATIC);
 	ctk_window_set_default_size (CTK_WINDOW (win),
@@ -211,7 +211,7 @@ draw_zoom_animation_composited (GdkScreen *gscreen,
 
 	/* see doc for ctk_widget_set_app_paintable() */
 	ctk_widget_realize (win);
-	gdk_window_set_background_pattern (ctk_widget_get_window (win), NULL);
+	cdk_window_set_background_pattern (ctk_widget_get_window (win), NULL);
 	ctk_widget_show (win);
 
 	zoom->timeout_id = g_timeout_add (ZOOM_DELAY,
@@ -238,9 +238,9 @@ draw_zoom_animation (GdkScreen *gscreen,
 	int screen;
 	int depth;
 
-	dpy = gdk_x11_display_get_xdisplay (gdk_screen_get_display (gscreen));
-	root_win = GDK_WINDOW_XID (gdk_screen_get_root_window (gscreen));
-	screen = gdk_x11_screen_get_screen_number (gscreen);
+	dpy = cdk_x11_display_get_xdisplay (cdk_screen_get_display (gscreen));
+	root_win = GDK_WINDOW_XID (cdk_screen_get_root_window (gscreen));
+	screen = cdk_x11_screen_get_screen_number (gscreen);
 	depth = DefaultDepth(dpy,screen);
 
 	/* frame GC */
@@ -352,7 +352,7 @@ xstuff_zoom_anicafe (CtkWidget *widget,
 	if (opt_rect)
 		rect = *opt_rect;
 	else {
-		gdk_window_get_origin (ctk_widget_get_window (widget), &rect.x, &rect.y);
+		cdk_window_get_origin (ctk_widget_get_window (widget), &rect.x, &rect.y);
 		ctk_widget_get_allocation (widget, &allocation);
 		if (!ctk_widget_get_has_window (widget)) {
 			rect.x += allocation.x;
@@ -364,8 +364,8 @@ xstuff_zoom_anicafe (CtkWidget *widget,
 
 	gscreen = ctk_widget_get_screen (widget);
 
-	if (gdk_screen_is_composited (gscreen) && surface) {
-		GdkPixbuf *pixbuf = gdk_pixbuf_get_from_surface (surface,
+	if (cdk_screen_is_composited (gscreen) && surface) {
+		GdkPixbuf *pixbuf = cdk_pixbuf_get_from_surface (surface,
 				0, 0,
 				cairo_image_surface_get_width (surface),
 				cairo_image_surface_get_height (surface));
@@ -375,10 +375,10 @@ xstuff_zoom_anicafe (CtkWidget *widget,
 				pixbuf, orientation);
 		g_object_unref (pixbuf);
 	} else {
-		display = gdk_screen_get_display (gscreen);
-		monitor = gdk_display_get_monitor_at_window (display,
+		display = cdk_screen_get_display (gscreen);
+		monitor = cdk_display_get_monitor_at_window (display,
 							     ctk_widget_get_window (widget));
-		gdk_monitor_get_geometry (monitor, &dest);
+		cdk_monitor_get_geometry (monitor, &dest);
 
 		draw_zoom_animation (gscreen,
 				     rect.x, rect.y, rect.width, rect.height,

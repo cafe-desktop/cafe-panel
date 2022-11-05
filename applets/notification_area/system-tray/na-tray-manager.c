@@ -33,7 +33,7 @@
 
 #include <ctk/ctk.h>
 #include <glib/gi18n.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <X11/Xatom.h>
 
 #include "na-marshal.h"
@@ -553,18 +553,18 @@ na_tray_manager_unmanage (NaTrayManager *manager)
 
   display = ctk_widget_get_display (invisible);
 
-  if (gdk_selection_owner_get_for_display (display, manager->selection_atom) ==
+  if (cdk_selection_owner_get_for_display (display, manager->selection_atom) ==
       window)
     {
-      timestamp = gdk_x11_get_server_time (window);
-      gdk_selection_owner_set_for_display (display,
+      timestamp = cdk_x11_get_server_time (window);
+      cdk_selection_owner_set_for_display (display,
                                            NULL,
                                            manager->selection_atom,
                                            timestamp,
                                            TRUE);
     }
 
-  gdk_window_remove_filter (window,
+  cdk_window_remove_filter (window,
                             na_tray_manager_window_filter, manager);
 
   manager->invisible = NULL; /* prior to destroy for reentrancy paranoia */
@@ -587,7 +587,7 @@ na_tray_manager_set_orientation_property (NaTrayManager *manager)
   g_return_if_fail (window != NULL);
 
   display = ctk_widget_get_display (manager->invisible);
-  orientation_atom = gdk_x11_get_xatom_by_name_for_display (display,
+  orientation_atom = cdk_x11_get_xatom_by_name_for_display (display,
                                                             "_NET_SYSTEM_TRAY_ORIENTATION");
 
   data[0] = manager->orientation == CTK_ORIENTATION_HORIZONTAL ?
@@ -626,13 +626,13 @@ na_tray_manager_set_visual_property (NaTrayManager *manager)
    */
 
   display = ctk_widget_get_display (manager->invisible);
-  visual_atom = gdk_x11_get_xatom_by_name_for_display (display,
+  visual_atom = cdk_x11_get_xatom_by_name_for_display (display,
 						       "_NET_SYSTEM_TRAY_VISUAL");
 
-  if (gdk_screen_get_rgba_visual (manager->screen) != NULL &&
-      gdk_display_supports_composite (display))
+  if (cdk_screen_get_rgba_visual (manager->screen) != NULL &&
+      cdk_display_supports_composite (display))
     {
-      xvisual = GDK_VISUAL_XVISUAL (gdk_screen_get_rgba_visual (manager->screen));
+      xvisual = GDK_VISUAL_XVISUAL (cdk_screen_get_rgba_visual (manager->screen));
     }
   else
     {
@@ -640,7 +640,7 @@ na_tray_manager_set_visual_property (NaTrayManager *manager)
        * be embedded. In almost all cases, this will be the same as the visual
        * of the screen.
        */
-      xvisual = GDK_VISUAL_XVISUAL (gdk_screen_get_system_visual (manager->screen));
+      xvisual = GDK_VISUAL_XVISUAL (cdk_screen_get_system_visual (manager->screen));
     }
 
   data[0] = XVisualIDFromVisual (xvisual);
@@ -668,7 +668,7 @@ na_tray_manager_set_padding_property (NaTrayManager *manager)
   g_return_if_fail (window != NULL);
 
   display = ctk_widget_get_display (manager->invisible);
-  atom = gdk_x11_get_xatom_by_name_for_display (display,
+  atom = cdk_x11_get_xatom_by_name_for_display (display,
                                                 "_NET_SYSTEM_TRAY_PADDING");
 
   data[0] = manager->padding;
@@ -696,7 +696,7 @@ na_tray_manager_set_icon_size_property (NaTrayManager *manager)
   g_return_if_fail (window != NULL);
 
   display = ctk_widget_get_display (manager->invisible);
-  atom = gdk_x11_get_xatom_by_name_for_display (display,
+  atom = cdk_x11_get_xatom_by_name_for_display (display,
                                                 "_NET_SYSTEM_TRAY_ICON_SIZE");
 
   data[0] = manager->icon_size;
@@ -724,7 +724,7 @@ na_tray_manager_set_colors_property (NaTrayManager *manager)
   g_return_if_fail (window != NULL);
 
   display = ctk_widget_get_display (manager->invisible);
-  atom = gdk_x11_get_xatom_by_name_for_display (display,
+  atom = cdk_x11_get_xatom_by_name_for_display (display,
                                                 "_NET_SYSTEM_TRAY_COLORS");
 
   data[0] = manager->fg.red * 65535;
@@ -775,7 +775,7 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
 
   manager->screen = screen;
 
-  display = gdk_screen_get_display (screen);
+  display = cdk_screen_get_display (screen);
   xscreen = GDK_SCREEN_XSCREEN (screen);
 
   invisible = ctk_invisible_new_for_screen (screen);
@@ -785,8 +785,8 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
                          GDK_PROPERTY_CHANGE_MASK | GDK_STRUCTURE_MASK);
 
   selection_atom_name = g_strdup_printf ("_NET_SYSTEM_TRAY_S%d",
-					 gdk_x11_screen_get_screen_number (screen));
-  manager->selection_atom = gdk_atom_intern (selection_atom_name, FALSE);
+					 cdk_x11_screen_get_screen_number (screen));
+  manager->selection_atom = cdk_atom_intern (selection_atom_name, FALSE);
   g_free (selection_atom_name);
 
   manager->invisible = invisible;
@@ -800,10 +800,10 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
 
   window = ctk_widget_get_window (invisible);
 
-  timestamp = gdk_x11_get_server_time (window);
+  timestamp = cdk_x11_get_server_time (window);
 
   /* Check if we could set the selection owner successfully */
-  if (gdk_selection_owner_set_for_display (display,
+  if (cdk_selection_owner_set_for_display (display,
                                            window,
                                            manager->selection_atom,
                                            timestamp,
@@ -815,12 +815,12 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
 
       xev.type = ClientMessage;
       xev.window = RootWindowOfScreen (xscreen);
-      xev.message_type = gdk_x11_get_xatom_by_name_for_display (display,
+      xev.message_type = cdk_x11_get_xatom_by_name_for_display (display,
                                                                 "MANAGER");
 
       xev.format = 32;
       xev.data.l[0] = timestamp;
-      xev.data.l[1] = gdk_x11_atom_to_xatom_for_display (display,
+      xev.data.l[1] = cdk_x11_atom_to_xatom_for_display (display,
                                                          manager->selection_atom);
       xev.data.l[2] = GDK_WINDOW_XID (window);
       xev.data.l[3] = 0;	/* manager specific data */
@@ -830,14 +830,14 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
 		  RootWindowOfScreen (xscreen),
 		  False, StructureNotifyMask, (XEvent *)&xev);
 
-      opcode_atom = gdk_atom_intern ("_NET_SYSTEM_TRAY_OPCODE", FALSE);
-      manager->opcode_atom = gdk_x11_atom_to_xatom_for_display (display,
+      opcode_atom = cdk_atom_intern ("_NET_SYSTEM_TRAY_OPCODE", FALSE);
+      manager->opcode_atom = cdk_x11_atom_to_xatom_for_display (display,
                                                                 opcode_atom);
 
-      message_data_atom = gdk_atom_intern ("_NET_SYSTEM_TRAY_MESSAGE_DATA",
+      message_data_atom = cdk_atom_intern ("_NET_SYSTEM_TRAY_MESSAGE_DATA",
                                            FALSE);
 
-      manager->message_data_atom = gdk_x11_atom_to_xatom_for_display (display,
+      manager->message_data_atom = cdk_x11_atom_to_xatom_for_display (display,
                                                                       message_data_atom);
 
       /* Add a window filter */
@@ -848,7 +848,7 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
                         manager);
 #endif
       /* This is for SYSTEM_TRAY_REQUEST_DOCK and SelectionClear */
-      gdk_window_add_filter (window,
+      cdk_window_add_filter (window,
                              na_tray_manager_window_filter, manager);
       return TRUE;
     }
@@ -889,10 +889,10 @@ na_tray_manager_check_running_screen_x11 (GdkScreen *screen)
   Atom        selection_atom;
   char       *selection_atom_name;
 
-  display = gdk_screen_get_display (screen);
+  display = cdk_screen_get_display (screen);
   selection_atom_name = g_strdup_printf ("_NET_SYSTEM_TRAY_S%d",
-                                         gdk_x11_screen_get_screen_number (screen));
-  selection_atom = gdk_x11_get_xatom_by_name_for_display (display,
+                                         cdk_x11_screen_get_screen_number (screen));
+  selection_atom = cdk_x11_get_xatom_by_name_for_display (display,
                                                           selection_atom_name);
   g_free (selection_atom_name);
 
@@ -970,10 +970,10 @@ na_tray_manager_set_colors (NaTrayManager *manager,
 {
   g_return_if_fail (NA_IS_TRAY_MANAGER (manager));
 
-  if (!gdk_rgba_equal (&manager->fg, fg) ||
-      !gdk_rgba_equal (&manager->error, error) ||
-      !gdk_rgba_equal (&manager->warning, warning) ||
-      !gdk_rgba_equal (&manager->success, success))
+  if (!cdk_rgba_equal (&manager->fg, fg) ||
+      !cdk_rgba_equal (&manager->error, error) ||
+      !cdk_rgba_equal (&manager->warning, warning) ||
+      !cdk_rgba_equal (&manager->success, success))
     {
       manager->fg = *fg;
       manager->error = *error;

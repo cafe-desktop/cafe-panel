@@ -39,7 +39,7 @@ pxibuf_new (GVariant *variant)
     return NULL;
 
   error = NULL;
-  pixbuf = gdk_pixbuf_new_from_stream (stream, NULL, &error);
+  pixbuf = cdk_pixbuf_new_from_stream (stream, NULL, &error);
   g_object_unref (stream);
 
   if (error != NULL)
@@ -198,7 +198,7 @@ sn_dbus_menu_item_new (GVariant *props)
           else if (item->icon_data)
             {
               cairo_surface_t *surface;
-              surface = gdk_cairo_surface_create_from_pixbuf (item->icon_data, 0, NULL);
+              surface = cdk_cairo_surface_create_from_pixbuf (item->icon_data, 0, NULL);
               image = ctk_image_new_from_surface (surface);
               cairo_surface_destroy (surface);
             }
@@ -338,7 +338,7 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
           if (item->icon_data)
             {
               cairo_surface_t *surface;
-              surface = gdk_cairo_surface_create_from_pixbuf (item->icon_data, 0, NULL);
+              surface = cdk_cairo_surface_create_from_pixbuf (item->icon_data, 0, NULL);
               image = ctk_image_new_from_surface (surface);
               cairo_surface_destroy (surface);
             }

@@ -10,7 +10,7 @@
 #include <stdlib.h>
 
 #include <ctk/ctk.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 
 #ifdef HAVE_X11
 #include <ctk/ctkx.h> /* for CTK_IS_SOCKET */
@@ -1381,7 +1381,7 @@ panel_widget_size_allocate(CtkWidget *widget, CtkAllocation *allocation)
 
 	ctk_widget_set_allocation (widget, allocation);
 	if (ctk_widget_get_realized (widget))
-		gdk_window_move_resize (ctk_widget_get_window (widget),
+		cdk_window_move_resize (ctk_widget_get_window (widget),
 					allocation->x,
 					allocation->y,
 					allocation->width,
@@ -1575,8 +1575,8 @@ panel_widget_is_cursor(PanelWidget *panel, int overlap)
 	   !ctk_widget_get_visible(widget))
 		return FALSE;
 
-	device = gdk_seat_get_pointer (gdk_display_get_default_seat (ctk_widget_get_display (widget)));
-	gdk_window_get_device_position(ctk_widget_get_window (widget), device, &x, &y, NULL);
+	device = cdk_seat_get_pointer (cdk_display_get_default_seat (ctk_widget_get_display (widget)));
+	cdk_window_get_device_position(ctk_widget_get_window (widget), device, &x, &y, NULL);
 
 	ctk_widget_get_allocation (widget, &allocation);
 	w = allocation.width;
@@ -1815,17 +1815,17 @@ panel_widget_applet_drag_start (PanelWidget *panel,
 		GdkDisplay *display;
 		GdkSeat *seat;
 
-		fleur_cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
+		fleur_cursor = cdk_cursor_new_for_display (cdk_display_get_default (),
 		                                           GDK_FLEUR);
 
-		display = gdk_window_get_display (window);
-		seat = gdk_display_get_default_seat (display);
+		display = cdk_window_get_display (window);
+		seat = cdk_display_get_default_seat (display);
 
-		status = gdk_seat_grab (seat, window, GDK_SEAT_CAPABILITY_POINTER,
+		status = cdk_seat_grab (seat, window, GDK_SEAT_CAPABILITY_POINTER,
 		                        FALSE, fleur_cursor, NULL, NULL, NULL);
 
 		g_object_unref (fleur_cursor);
-		gdk_display_flush (display);
+		cdk_display_flush (display);
 
 		if (status != GDK_GRAB_SUCCESS) {
 			g_warning (G_STRLOC ": failed to grab pointer (errorcode: %d)",
@@ -1847,14 +1847,14 @@ panel_widget_applet_drag_end (PanelWidget *panel)
 		return;
 
 	display = ctk_widget_get_display (CTK_WIDGET (panel));
-	seat = gdk_display_get_default_seat (display);
+	seat = cdk_display_get_default_seat (display);
 
-	gdk_seat_ungrab (seat);
+	cdk_seat_ungrab (seat);
 
 	ctk_grab_remove (panel->currently_dragged_applet->applet);
 	panel_widget_applet_drag_end_no_grab (panel);
 	panel_toplevel_pop_autohide_disabler (panel->toplevel);
-	gdk_display_flush (display);
+	cdk_display_flush (display);
 }
 
 /*get pos of the cursor location in panel coordinates*/
@@ -1867,8 +1867,8 @@ panel_widget_get_cursorloc (PanelWidget *panel)
 
 	g_return_val_if_fail (PANEL_IS_WIDGET (panel), -1);
 
-	device = gdk_seat_get_pointer (gdk_display_get_default_seat (ctk_widget_get_display (CTK_WIDGET(panel))));
-	gdk_window_get_device_position(ctk_widget_get_window (CTK_WIDGET(panel)), device, &x, &y, NULL);
+	device = cdk_seat_get_pointer (cdk_display_get_default_seat (ctk_widget_get_display (CTK_WIDGET(panel))));
+	cdk_window_get_device_position(ctk_widget_get_window (CTK_WIDGET(panel)), device, &x, &y, NULL);
 	rtl = ctk_widget_get_direction (CTK_WIDGET (panel)) == CTK_TEXT_DIR_RTL;
 
 	if (panel->orient == CTK_ORIENTATION_HORIZONTAL)
@@ -2091,8 +2091,8 @@ panel_widget_applet_move_to_cursor (PanelWidget *panel)
 		}
 	}
 
-	device = gdk_seat_get_pointer (gdk_display_get_default_seat (ctk_widget_get_display (CTK_WIDGET (panel))));
-	gdk_window_get_device_position (ctk_widget_get_window (CTK_WIDGET(panel)), device, NULL, NULL, &mods);
+	device = cdk_seat_get_pointer (cdk_display_get_default_seat (ctk_widget_get_display (CTK_WIDGET (panel))));
+	cdk_window_get_device_position (ctk_widget_get_window (CTK_WIDGET(panel)), device, NULL, NULL, &mods);
 
 	movement = PANEL_SWITCH_MOVE;
 
@@ -2146,8 +2146,8 @@ move_timeout_handler(gpointer data)
 
 		widget = panel->currently_dragged_applet->applet;
 
-		device = gdk_seat_get_pointer (gdk_display_get_default_seat (ctk_widget_get_display (widget)));
-		gdk_window_get_device_position (ctk_widget_get_window (widget), device, &x, &y, NULL);
+		device = cdk_seat_get_pointer (cdk_display_get_default_seat (ctk_widget_get_display (widget)));
+		cdk_window_get_device_position (ctk_widget_get_window (widget), device, &x, &y, NULL);
 
 		ctk_widget_get_allocation (widget, &allocation);
 		w = allocation.width;
@@ -2256,7 +2256,7 @@ panel_widget_applet_motion_notify_event (CtkWidget *widget,
 
 	g_return_val_if_fail (PANEL_IS_WIDGET (parent), FALSE);
 
-	if (gdk_event_get_screen (event) != ctk_widget_get_screen (widget))
+	if (cdk_event_get_screen (event) != ctk_widget_get_screen (widget))
 		return FALSE;
 
 	panel = PANEL_WIDGET (parent);
@@ -2607,7 +2607,7 @@ panel_widget_reparent (PanelWidget *old_panel,
  	ctk_window_present (CTK_WINDOW (new_panel->toplevel));
 
 	display = ctk_widget_get_display (CTK_WIDGET (new_panel));
-	gdk_display_flush (display);
+	cdk_display_flush (display);
 
 	emit_applet_moved (new_panel, ad);
 

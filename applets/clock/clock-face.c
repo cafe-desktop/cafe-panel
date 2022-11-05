@@ -131,7 +131,7 @@ clock_face_draw (CtkWidget *this, cairo_t *cr)
     /* clock back */
     if (priv->face_pixbuf) {
             cairo_save (cr);
-            gdk_cairo_set_source_pixbuf (cr, priv->face_pixbuf, 0, 0);
+            cdk_cairo_set_source_pixbuf (cr, priv->face_pixbuf, 0, 0);
             cairo_paint (cr);
             cairo_restore (cr);
     }
@@ -207,7 +207,7 @@ clock_face_get_preferred_width (CtkWidget *this,
             *natural_width = child_natural_height + child_natural_height / 8;
     } else if (priv->face_pixbuf != NULL) {
             /* Use the size of the current pixbuf */
-            *minimal_width = *natural_width = gdk_pixbuf_get_width (GDK_PIXBUF (priv->face_pixbuf));
+            *minimal_width = *natural_width = cdk_pixbuf_get_width (GDK_PIXBUF (priv->face_pixbuf));
     } else {
             /* we don't know anything, so use known dimensions for the svg
              * files */
@@ -240,7 +240,7 @@ clock_face_get_preferred_height (CtkWidget *this,
             *natural_height = child_natural_height + child_natural_height / 8;
     } else if (priv->face_pixbuf != NULL) {
             /* Use the size of the current pixbuf */
-            *minimal_height = *natural_height = gdk_pixbuf_get_height (GDK_PIXBUF (priv->face_pixbuf));
+            *minimal_height = *natural_height = cdk_pixbuf_get_height (GDK_PIXBUF (priv->face_pixbuf));
     } else {
             /* we don't know anything, so use known dimensions for the svg
              * files */

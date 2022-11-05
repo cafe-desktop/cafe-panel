@@ -18,7 +18,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 
 #ifdef HAVE_X11
 #include <ctk/ctkx.h> /* for CTK_IS_SOCKET */
@@ -357,7 +357,7 @@ panel_popup_menu (PanelToplevel *toplevel,
 		panel_data->insertion_pos = -1;
 
 	if (current_event)
-		gdk_event_free (current_event);
+		cdk_event_free (current_event);
 
 	menu = make_popup_panel_menu (panel_widget);
 	if (!menu)
@@ -910,10 +910,10 @@ panel_check_dnd_target_data (CtkWidget      *widget,
 	    !BUTTON_IS_WIDGET (widget))
 		return FALSE;
 
-	if (!(gdk_drag_context_get_actions (context) & (GDK_ACTION_COPY|GDK_ACTION_MOVE)))
+	if (!(cdk_drag_context_get_actions (context) & (GDK_ACTION_COPY|GDK_ACTION_MOVE)))
 		return FALSE;
 
-	for (l = gdk_drag_context_list_targets (context); l; l = l->next) {
+	for (l = cdk_drag_context_list_targets (context); l; l = l->next) {
 		GdkAtom atom;
 		guint   info;
 
@@ -988,18 +988,18 @@ panel_check_drop_forbidden (PanelWidget    *panel,
 
 	if (info == TARGET_ICON_INTERNAL ||
 	    info == TARGET_APPLET_INTERNAL) {
-		if (gdk_drag_context_get_actions (context) & GDK_ACTION_MOVE)
-			gdk_drag_status (context, GDK_ACTION_MOVE, time_);
+		if (cdk_drag_context_get_actions (context) & GDK_ACTION_MOVE)
+			cdk_drag_status (context, GDK_ACTION_MOVE, time_);
 		else
-			gdk_drag_status (context,
-					 gdk_drag_context_get_suggested_action (context),
+			cdk_drag_status (context,
+					 cdk_drag_context_get_suggested_action (context),
 					 time_);
 
-	} else if (gdk_drag_context_get_actions (context) & GDK_ACTION_COPY)
-		gdk_drag_status (context, GDK_ACTION_COPY, time_);
+	} else if (cdk_drag_context_get_actions (context) & GDK_ACTION_COPY)
+		cdk_drag_status (context, GDK_ACTION_COPY, time_);
 	else
-		gdk_drag_status (context,
-				 gdk_drag_context_get_suggested_action (context),
+		cdk_drag_status (context,
+				 cdk_drag_context_get_suggested_action (context),
 				 time_);
 
 	return TRUE;
@@ -1124,11 +1124,11 @@ panel_receive_dnd_data (PanelWidget      *panel,
 		break;
 	case TARGET_APPLET_INTERNAL:
 		success = drop_internal_applet (panel, pos, (char *)data,
-						gdk_drag_context_get_selected_action (context));
+						cdk_drag_context_get_selected_action (context));
 		break;
 	case TARGET_ICON_INTERNAL:
 		success = drop_internal_icon (panel, pos, (char *)data,
-					      gdk_drag_context_get_selected_action (context));
+					      cdk_drag_context_get_selected_action (context));
 		break;
 	default:
 		ctk_drag_finish (context, FALSE, FALSE, time_);
