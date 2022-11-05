@@ -13,13 +13,13 @@ DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.sgml
 # documenting functions and macros.
 DOC_SOURCE_DIR=../../../libcafe-panel-applet
 
-# Extra options to supply to ctkdoc-scan.
+# Extra options to supply to gtkdoc-scan.
 SCAN_OPTIONS=
 
-# Extra options to supply to ctkdoc-mkdb.
+# Extra options to supply to gtkdoc-mkdb.
 MKDB_OPTIONS=--output-format=xml
 
-# Extra options to supply to ctkdoc-fixref.
+# Extra options to supply to gtkdoc-fixref.
 FIXXREF_OPTIONS=
 
 # Used for dependencies.
