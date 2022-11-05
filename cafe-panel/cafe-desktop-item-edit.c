@@ -30,7 +30,7 @@ static GOptionEntry options[] = {
 };
 
 static void
-dialog_destroyed (GtkWidget *dialog, gpointer data)
+dialog_destroyed (CtkWidget *dialog, gpointer data)
 {
 	dialogs --;
 
@@ -82,7 +82,7 @@ find_uri_on_save (PanelDItemEditor *dialog,
 }
 
 static void
-error_reported (GtkWidget  *dialog,
+error_reported (CtkWidget  *dialog,
 		const char *primary,
 		const char *secondary,
 		gpointer    data)
@@ -126,7 +126,7 @@ main (int argc, char * argv[])
 		GFileType  type;
 		char      *uri;
 		char      *path;
-		GtkWidget *dlg = NULL;
+		CtkWidget *dlg = NULL;
 
 		file = g_file_new_for_commandline_arg (desktops[i]);
 		uri  = g_file_get_uri (file);

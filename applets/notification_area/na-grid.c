@@ -36,14 +36,14 @@
 
 typedef struct
 {
-  GtkOrientation  orientation;
+  CtkOrientation  orientation;
   gint            index;
   NaGrid         *grid;
 } SortData;
 
 struct _NaGrid
 {
-  GtkGrid    parent;
+  CtkGrid    parent;
 
   gint       icon_padding;
   gint       icon_size;
@@ -95,7 +95,7 @@ compare_items (gconstpointer a,
 }
 
 static void
-sort_items (GtkWidget *item,
+sort_items (CtkWidget *item,
             SortData  *data)
 {
   gint col, row, left_attach, top_attach;
@@ -135,8 +135,8 @@ sort_items (GtkWidget *item,
 static void
 refresh_grid (NaGrid *self)
 {
-  GtkOrientation orientation;
-  GtkAllocation allocation;
+  CtkOrientation orientation;
+  CtkAllocation allocation;
   gint rows, cols, length;
 
   orientation = ctk_orientable_get_orientation (CTK_ORIENTABLE (self));
@@ -268,10 +268,10 @@ add_host (NaGrid *self,
 }
 
 static void
-na_grid_style_updated (GtkWidget *widget)
+na_grid_style_updated (CtkWidget *widget)
 {
   NaGrid          *self = NA_GRID (widget);
-  GtkStyleContext *context;
+  CtkStyleContext *context;
   GSList          *node;
 
   if (CTK_WIDGET_CLASS (na_grid_parent_class)->style_updated)
@@ -289,7 +289,7 @@ na_grid_style_updated (GtkWidget *widget)
 
 /* Custom drawing because system-tray items need weird stuff. */
 static gboolean
-na_grid_draw (GtkWidget *grid,
+na_grid_draw (CtkWidget *grid,
               cairo_t   *cr)
 {
   GList *child;
@@ -312,11 +312,11 @@ na_grid_draw (GtkWidget *grid,
 }
 
 static void
-na_grid_realize (GtkWidget *widget)
+na_grid_realize (CtkWidget *widget)
 {
   NaGrid *self = NA_GRID (widget);
   GdkScreen *screen;
-  GtkOrientation orientation;
+  CtkOrientation orientation;
   NaHost *tray_host;
 
   CTK_WIDGET_CLASS (na_grid_parent_class)->realize (widget);
@@ -334,7 +334,7 @@ na_grid_realize (GtkWidget *widget)
 }
 
 static void
-na_grid_unrealize (GtkWidget *widget)
+na_grid_unrealize (CtkWidget *widget)
 {
   NaGrid *self = NA_GRID (widget);
 
@@ -350,8 +350,8 @@ na_grid_unrealize (GtkWidget *widget)
 }
 
 static void
-na_grid_size_allocate (GtkWidget     *widget,
-                       GtkAllocation *allocation)
+na_grid_size_allocate (CtkWidget     *widget,
+                       CtkAllocation *allocation)
 {
   CTK_WIDGET_CLASS (na_grid_parent_class)->size_allocate (widget, allocation);
   refresh_grid (NA_GRID (widget));
@@ -409,7 +409,7 @@ static void
 na_grid_class_init (NaGridClass *klass)
 {
   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
-  GtkWidgetClass *widget_class = CTK_WIDGET_CLASS (klass);
+  CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (klass);
 
   gobject_class->get_property = na_grid_get_property;
   gobject_class->set_property = na_grid_set_property;
@@ -435,8 +435,8 @@ na_grid_class_init (NaGridClass *klass)
                       G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 }
 
-GtkWidget *
-na_grid_new (GtkOrientation  orientation)
+CtkWidget *
+na_grid_new (CtkOrientation  orientation)
 {
   return g_object_new (NA_TYPE_GRID,
                        "orientation", orientation,

@@ -45,7 +45,7 @@ typedef struct _PanelDItemEditorPrivate PanelDItemEditorPrivate;
 
 struct _PanelDItemEditorClass
 {
-	GtkDialogClass parent_class;
+	CtkDialogClass parent_class;
 
 	/* File has been saved */
 	void (* saved)           (PanelDItemEditor *dialog);
@@ -75,7 +75,7 @@ struct _PanelDItemEditorClass
 
 struct _PanelDItemEditor
 {
-	GtkDialog parent_instance;
+	CtkDialog parent_instance;
 
 	PanelDItemEditorPrivate *priv;
 };
@@ -84,12 +84,12 @@ typedef char * (*PanelDitemSaveUri) (PanelDItemEditor *dialog, gpointer data);
 
 GType      panel_ditem_editor_get_type (void);
 
-GtkWidget *panel_ditem_editor_new (GtkWindow   *parent,
+CtkWidget *panel_ditem_editor_new (CtkWindow   *parent,
 				   GKeyFile    *key_file,
 				   const char  *uri,
 				   const char  *title);
 
-GtkWidget *panel_ditem_editor_new_directory (GtkWindow   *parent,
+CtkWidget *panel_ditem_editor_new_directory (CtkWindow   *parent,
 					     GKeyFile    *key_file,
 					     const char  *uri,
 					     const char  *title);

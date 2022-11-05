@@ -54,9 +54,9 @@ extern "C" {
 #define PANEL_STOCK_DEFAULT_ICON	"application-default-icon"
 
 void        panel_init_stock_icons_and_items (void);
-GtkIconSize panel_menu_icon_get_size         (void);
-GtkIconSize panel_menu_bar_icon_get_size     (void);
-GtkIconSize panel_add_to_icon_get_size       (void);
+CtkIconSize panel_menu_icon_get_size         (void);
+CtkIconSize panel_menu_bar_icon_get_size     (void);
+CtkIconSize panel_add_to_icon_get_size       (void);
 
 #ifdef __cplusplus
 }

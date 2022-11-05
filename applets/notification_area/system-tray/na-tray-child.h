@@ -51,7 +51,7 @@ typedef struct _NaTrayChildChild  NaTrayChildChild;
 
 struct _NaTrayChild
 {
-  GtkSocket parent_instance;
+  CtkSocket parent_instance;
   Window icon_window;
   guint has_alpha : 1;
   guint composited : 1;
@@ -62,12 +62,12 @@ struct _NaTrayChild
 
 struct _NaTrayChildClass
 {
-  GtkSocketClass parent_class;
+  CtkSocketClass parent_class;
 };
 
 GType           na_tray_child_get_type        (void);
 
-GtkWidget      *na_tray_child_new            (GdkScreen    *screen,
+CtkWidget      *na_tray_child_new            (GdkScreen    *screen,
                                               Window        icon_window);
 char           *na_tray_child_get_title      (NaTrayChild  *child);
 gboolean        na_tray_child_has_alpha      (NaTrayChild  *child);

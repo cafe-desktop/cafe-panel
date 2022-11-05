@@ -31,12 +31,12 @@ typedef struct _SnDBusMenuClass SnDBusMenuClass;
 
 struct _SnDBusMenuClass
 {
-  GtkMenuClass parent_class;
+  CtkMenuClass parent_class;
 };
 
 GType sn_dbus_menu_get_type (void);
 
-GtkMenu *sn_dbus_menu_new (const gchar *bus_name,
+CtkMenu *sn_dbus_menu_new (const gchar *bus_name,
                            const gchar *object_path);
 
 G_END_DECLS

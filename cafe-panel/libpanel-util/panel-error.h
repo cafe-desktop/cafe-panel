@@ -35,7 +35,7 @@
 extern "C" {
 #endif
 
-GtkWidget *panel_error_dialog (GtkWindow  *parent,
+CtkWidget *panel_error_dialog (CtkWindow  *parent,
 			       GdkScreen  *screen,
 			       const char *dialog_class,
 			       gboolean    auto_destroy,

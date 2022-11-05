@@ -22,13 +22,13 @@
 
 #include "panel-modules.h"
 
-G_GNUC_UNUSED void on_execute_button_clicked (GtkButton *button, gpointer dummy);
+G_GNUC_UNUSED void on_execute_button_clicked (CtkButton *button, gpointer dummy);
 
-static GtkWidget *win = NULL;
-static GtkWidget *applet_combo = NULL;
-static GtkWidget *prefs_path_entry = NULL;
-static GtkWidget *orient_combo = NULL;
-static GtkWidget *size_combo = NULL;
+static CtkWidget *win = NULL;
+static CtkWidget *applet_combo = NULL;
+static CtkWidget *prefs_path_entry = NULL;
+static CtkWidget *orient_combo = NULL;
+static CtkWidget *size_combo = NULL;
 
 static char *cli_iid = NULL;
 static char *cli_prefs_path = NULL;
@@ -73,10 +73,10 @@ static ComboItem size_items [] = {
 };
 
 static guint
-get_combo_value (GtkWidget *combo_box)
+get_combo_value (CtkWidget *combo_box)
 {
-	GtkTreeIter  iter;
-	GtkTreeModel *model;
+	CtkTreeIter  iter;
+	CtkTreeModel *model;
 	guint         value;
 
 	if (!ctk_combo_box_get_active_iter (CTK_COMBO_BOX (combo_box), &iter))
@@ -89,10 +89,10 @@ get_combo_value (GtkWidget *combo_box)
 }
 
 static gchar *
-get_combo_applet_id (GtkWidget *combo_box)
+get_combo_applet_id (CtkWidget *combo_box)
 {
-	GtkTreeIter  iter;
-	GtkTreeModel *model;
+	CtkTreeIter  iter;
+	CtkTreeModel *model;
 	char         *value;
 
 	if (!ctk_combo_box_get_active_iter (CTK_COMBO_BOX (combo_box), &iter))
@@ -105,8 +105,8 @@ get_combo_applet_id (GtkWidget *combo_box)
 }
 
 static void
-applet_broken_cb (GtkWidget *container,
-		  GtkWidget *window)
+applet_broken_cb (CtkWidget *container,
+		  CtkWidget *window)
 {
 	ctk_widget_destroy (window);
 }
@@ -114,13 +114,13 @@ applet_broken_cb (GtkWidget *container,
 static void
 applet_activated_cb (GObject      *source_object,
 		     GAsyncResult *res,
-		     GtkWidget    *applet_window)
+		     CtkWidget    *applet_window)
 {
 	GError *error = NULL;
 
 	if (!cafe_panel_applet_container_add_finish (CAFE_PANEL_APPLET_CONTAINER (source_object),
 						res, &error)) {
-		GtkWidget *dialog;
+		CtkWidget *dialog;
 
 		dialog = ctk_message_dialog_new (CTK_WINDOW (applet_window),
 						 CTK_DIALOG_MODAL|
@@ -143,8 +143,8 @@ load_applet_into_window (const char *title,
 			 guint       size,
 			 guint       orientation)
 {
-	GtkWidget       *container;
-	GtkWidget       *applet_window;
+	CtkWidget       *container;
+	CtkWidget       *applet_window;
 	GVariantBuilder  builder;
 
 	container = cafe_panel_applet_container_new ();
@@ -208,7 +208,7 @@ load_applet_from_command_line (void)
 }
 
 G_GNUC_UNUSED void
-on_execute_button_clicked (GtkButton *button,
+on_execute_button_clicked (CtkButton *button,
 			   gpointer   dummy)
 {
 	char *title;
@@ -223,14 +223,14 @@ on_execute_button_clicked (GtkButton *button,
 }
 
 static void
-setup_combo (GtkWidget  *combo_box,
+setup_combo (CtkWidget  *combo_box,
 	     ComboItem  *items,
 	     const char *context,
 	     int         nb_items)
 {
-	GtkListStore          *model;
-	GtkTreeIter            iter;
-	GtkCellRenderer       *renderer;
+	CtkListStore          *model;
+	CtkTreeIter            iter;
+	CtkCellRenderer       *renderer;
 	int                    i;
 
 	model = ctk_list_store_new (NUMBER_COLUMNS,
@@ -269,9 +269,9 @@ setup_options (void)
 	char                *unique_key = NULL;
 	gboolean             unique_key_found = FALSE;
 	gchar              **dconf_paths;
-	GtkListStore        *model;
-	GtkTreeIter          iter;
-	GtkCellRenderer     *renderer;
+	CtkListStore        *model;
+	CtkTreeIter          iter;
+	CtkCellRenderer     *renderer;
 
 	model = ctk_list_store_new (NUMBER_COLUMNS,
 				    G_TYPE_STRING,
@@ -334,7 +334,7 @@ setup_options (void)
 int
 main (int argc, char **argv)
 {
-	GtkBuilder *builder;
+	CtkBuilder *builder;
 	char       *applets_dir;
 	GError     *error;
 

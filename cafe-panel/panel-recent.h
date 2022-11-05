@@ -31,8 +31,8 @@
 extern "C" {
 #endif
 
-void panel_recent_append_documents_menu (GtkWidget        *menu,
-					 GtkRecentManager *manager);
+void panel_recent_append_documents_menu (CtkWidget        *menu,
+					 CtkRecentManager *manager);
 
 #ifdef __cplusplus
 }

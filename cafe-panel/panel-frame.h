@@ -43,23 +43,23 @@ typedef struct _PanelFrame      PanelFrame;
 typedef struct _PanelFrameClass PanelFrameClass;
 
 struct _PanelFrame {
-	GtkBin         bin_instance;
+	CtkBin         bin_instance;
 
 	PanelFrameEdge edges;
 };
 
 struct _PanelFrameClass {
-	GtkBinClass         bin_class;
+	CtkBinClass         bin_class;
 };
 
 GType           panel_frame_get_type  (void) G_GNUC_CONST;
-GtkWidget      *panel_frame_new       (PanelFrameEdge  edges);
+CtkWidget      *panel_frame_new       (PanelFrameEdge  edges);
 
 void            panel_frame_set_edges (PanelFrame     *toplevel,
 				       PanelFrameEdge  edges);
 PanelFrameEdge  panel_frame_get_edges (PanelFrame     *toplevel);
 
-void            panel_frame_draw      (GtkWidget      *widget,
+void            panel_frame_draw      (CtkWidget      *widget,
 				       cairo_t        *cr,
 				       PanelFrameEdge  edges);
 

@@ -36,15 +36,15 @@ enum {
 };
 
 static void
-panel_frame_get_preferred_width (GtkWidget *widget,
+panel_frame_get_preferred_width (CtkWidget *widget,
 				 gint *minimal_width,
 				 gint *natural_width)
 {
 	PanelFrame      *frame = (PanelFrame *) widget;
-	GtkBin          *bin = (GtkBin *) widget;
-	GtkStyleContext *context;
-	GtkWidget       *child;
-	GtkBorder        padding;
+	CtkBin          *bin = (CtkBin *) widget;
+	CtkStyleContext *context;
+	CtkWidget       *child;
+	CtkBorder        padding;
 	int              border_width;
 
 	context = ctk_widget_get_style_context (widget);
@@ -73,15 +73,15 @@ panel_frame_get_preferred_width (GtkWidget *widget,
 }
 
 static void
-panel_frame_get_preferred_height (GtkWidget *widget,
+panel_frame_get_preferred_height (CtkWidget *widget,
 				  gint *minimal_height,
 				  gint *natural_height)
 {
 	PanelFrame      *frame = (PanelFrame *) widget;
-	GtkBin          *bin   = (GtkBin *) widget;
-	GtkStyleContext *context;
-	GtkWidget       *child;
-	GtkBorder        padding;
+	CtkBin          *bin   = (CtkBin *) widget;
+	CtkStyleContext *context;
+	CtkWidget       *child;
+	CtkBorder        padding;
 	int              border_width;
 
 	context = ctk_widget_get_style_context (widget);
@@ -109,16 +109,16 @@ panel_frame_get_preferred_height (GtkWidget *widget,
 }
 
 static void
-panel_frame_size_allocate (GtkWidget     *widget,
-			   GtkAllocation *allocation)
+panel_frame_size_allocate (CtkWidget     *widget,
+			   CtkAllocation *allocation)
 {
 	PanelFrame      *frame = (PanelFrame *) widget;
-	GtkBin          *bin   = (GtkBin *) widget;
-	GtkStyleContext *context;
-	GtkBorder        padding;
-	GtkAllocation    child_allocation;
-	GtkAllocation    child_allocation_current;
-	GtkWidget       *child;
+	CtkBin          *bin   = (CtkBin *) widget;
+	CtkStyleContext *context;
+	CtkBorder        padding;
+	CtkAllocation    child_allocation;
+	CtkAllocation    child_allocation_current;
+	CtkWidget       *child;
 	int              border_width;
 
 	ctk_widget_set_allocation (widget, allocation);
@@ -163,16 +163,16 @@ panel_frame_size_allocate (GtkWidget     *widget,
 }
 
 void
-panel_frame_draw (GtkWidget      *widget,
+panel_frame_draw (CtkWidget      *widget,
 		  cairo_t *cr,
 		  PanelFrameEdge  edges)
 {
 	PanelFrame       *frame = (PanelFrame *) widget;
-	GtkStyleContext  *context;
-	GtkStateFlags     state;
+	CtkStyleContext  *context;
+	CtkStateFlags     state;
 	GdkRGBA          *bg;
 	GdkRGBA           dark, light;
-	GtkBorder         padding;
+	CtkBorder         padding;
 	int               x, y, width, height;
 
 
@@ -269,7 +269,7 @@ panel_frame_draw (GtkWidget      *widget,
 	gdk_rgba_free (bg);
 }
 
-static gboolean panel_frame_expose(GtkWidget* widget, cairo_t* cr)
+static gboolean panel_frame_expose(CtkWidget* widget, cairo_t* cr)
 {
 	PanelFrame *frame = (PanelFrame *) widget;
 	gboolean    retval = FALSE;
@@ -333,7 +333,7 @@ static void
 panel_frame_class_init (PanelFrameClass *klass)
 {
 	GObjectClass   *gobject_class   = (GObjectClass    *) klass;
-	GtkWidgetClass *widget_class    = (GtkWidgetClass  *) klass;
+	CtkWidgetClass *widget_class    = (CtkWidgetClass  *) klass;
 
 	gobject_class->set_property = panel_frame_set_property;
         gobject_class->get_property = panel_frame_get_property;
@@ -363,7 +363,7 @@ panel_frame_init (PanelFrame *frame)
 	frame->edges = PANEL_EDGE_NONE;
 }
 
-GtkWidget *
+CtkWidget *
 panel_frame_new (PanelFrameEdge edges)
 {
 	return g_object_new (PANEL_TYPE_FRAME, "edges", edges, NULL);

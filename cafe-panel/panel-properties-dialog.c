@@ -46,37 +46,37 @@ typedef struct {
 	GSettings     *settings;
 	GSettings     *background_settings;
 
-	GtkWidget     *properties_dialog;
+	CtkWidget     *properties_dialog;
 
-	GtkWidget     *general_table;
-	GtkWidget     *general_vbox;
-	GtkWidget     *orientation_combo;
-	GtkWidget     *orientation_label;
-	GtkWidget     *size_widgets;
-	GtkWidget     *size_spin;
-	GtkWidget     *size_label;
-	GtkWidget     *size_label_pixels;
-	GtkWidget     *icon_align;
-	GtkWidget     *icon_chooser;
-	GtkWidget     *icon_label;
-  	GtkWidget     *expand_toggle;
-	GtkWidget     *autohide_toggle;
-	GtkWidget     *hidebuttons_toggle;
-	GtkWidget     *arrows_toggle;
-	GtkWidget     *default_radio;
-	GtkWidget     *color_radio;
-	GtkWidget     *image_radio;
-	GtkWidget     *color_widgets;
-	GtkWidget     *image_widgets;
-	GtkWidget     *color_button;
-	GtkWidget     *color_label;
-	GtkWidget     *image_chooser;
-	GtkWidget     *opacity_scale;
-	GtkWidget     *opacity_label;
-	GtkWidget     *opacity_legend;
+	CtkWidget     *general_table;
+	CtkWidget     *general_vbox;
+	CtkWidget     *orientation_combo;
+	CtkWidget     *orientation_label;
+	CtkWidget     *size_widgets;
+	CtkWidget     *size_spin;
+	CtkWidget     *size_label;
+	CtkWidget     *size_label_pixels;
+	CtkWidget     *icon_align;
+	CtkWidget     *icon_chooser;
+	CtkWidget     *icon_label;
+  	CtkWidget     *expand_toggle;
+	CtkWidget     *autohide_toggle;
+	CtkWidget     *hidebuttons_toggle;
+	CtkWidget     *arrows_toggle;
+	CtkWidget     *default_radio;
+	CtkWidget     *color_radio;
+	CtkWidget     *image_radio;
+	CtkWidget     *color_widgets;
+	CtkWidget     *image_widgets;
+	CtkWidget     *color_button;
+	CtkWidget     *color_label;
+	CtkWidget     *image_chooser;
+	CtkWidget     *opacity_scale;
+	CtkWidget     *opacity_label;
+	CtkWidget     *opacity_legend;
 
-	GtkWidget     *writability_warn_general;
-	GtkWidget     *writability_warn_background;
+	CtkWidget     *writability_warn_general;
+	CtkWidget     *writability_warn_background;
 
 	/* FIXME: This is a workaround for CTK+ bug #327243 */
 	int            selection_emitted;
@@ -124,10 +124,10 @@ static OrientationComboItem orientation_items [] = {
 
 static void
 panel_properties_dialog_orientation_changed (PanelPropertiesDialog *dialog,
-					     GtkComboBox           *combo_box)
+					     CtkComboBox           *combo_box)
 {
-	GtkTreeIter           iter;
-	GtkTreeModel         *model;
+	CtkTreeIter           iter;
+	CtkTreeModel         *model;
 	OrientationComboItem *item;
 
 	g_assert (dialog->orientation_combo == CTK_WIDGET (combo_box));
@@ -145,7 +145,7 @@ panel_properties_dialog_orientation_changed (PanelPropertiesDialog *dialog,
 }
 
 static void
-panel_properties_dialog_setup_orientation_combo_sensitivty (PanelPropertiesDialog *dialog, GtkToggleButton *n)
+panel_properties_dialog_setup_orientation_combo_sensitivty (PanelPropertiesDialog *dialog, CtkToggleButton *n)
 {
 	gboolean expand;
 	expand = panel_profile_get_toplevel_expand (dialog->toplevel);
@@ -164,12 +164,12 @@ panel_properties_dialog_setup_orientation_combo_sensitivty (PanelPropertiesDialo
 
 static void
 panel_properties_dialog_setup_orientation_combo (PanelPropertiesDialog *dialog,
-						 GtkBuilder            *gui)
+						 CtkBuilder            *gui)
 {
 	PanelOrientation  orientation;
-	GtkListStore     *model;
-	GtkTreeIter       iter;
-	GtkCellRenderer  *renderer;
+	CtkListStore     *model;
+	CtkTreeIter       iter;
+	CtkCellRenderer  *renderer;
 	int               i;
 
 	dialog->orientation_combo = PANEL_CTK_BUILDER_GET (gui, "orientation_combo");
@@ -212,7 +212,7 @@ panel_properties_dialog_setup_orientation_combo (PanelPropertiesDialog *dialog,
 
 static void
 panel_properties_dialog_size_changed (PanelPropertiesDialog *dialog,
-				      GtkSpinButton         *spin_button)
+				      CtkSpinButton         *spin_button)
 {
 	panel_profile_set_toplevel_size (dialog->toplevel,
 					 ctk_spin_button_get_value_as_int (spin_button));
@@ -220,7 +220,7 @@ panel_properties_dialog_size_changed (PanelPropertiesDialog *dialog,
 
 static void
 panel_properties_dialog_setup_size_spin (PanelPropertiesDialog *dialog,
-					 GtkBuilder            *gui)
+					 CtkBuilder            *gui)
 {
 	dialog->size_widgets = PANEL_CTK_BUILDER_GET (gui, "size_widgets");
 	g_return_if_fail (dialog->size_widgets != NULL);
@@ -260,7 +260,7 @@ panel_properties_dialog_icon_changed (PanelIconChooser      *chooser,
 
 static void
 panel_properties_dialog_setup_icon_chooser (PanelPropertiesDialog *dialog,
-					    GtkBuilder            *gui)
+					    CtkBuilder            *gui)
 {
 	char *custom_icon;
 
@@ -298,14 +298,14 @@ panel_properties_dialog_setup_icon_chooser (PanelPropertiesDialog *dialog,
 #define SETUP_TOGGLE_BUTTON(wid, n, p, key)                                                            \
 	static void                                                                               \
 	panel_properties_dialog_##n (PanelPropertiesDialog *dialog,                               \
-				     GtkToggleButton       *n)                                    \
+				     CtkToggleButton       *n)                                    \
 	{                                                                                         \
 		panel_profile_set_toplevel_##p (dialog->toplevel,                                 \
 						ctk_toggle_button_get_active (n));                \
 	}                                                                                         \
 	static void                                                                               \
 	panel_properties_dialog_setup_##n (PanelPropertiesDialog *dialog,                         \
-					   GtkBuilder            *gui)                            \
+					   CtkBuilder            *gui)                            \
 	{                                                                                         \
 		dialog->n = PANEL_CTK_BUILDER_GET (gui, wid);                                      \
 		ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (dialog->n),                      \
@@ -325,7 +325,7 @@ SETUP_TOGGLE_BUTTON ("arrows_toggle",      arrows_toggle,      enable_arrows,   
 
 static void
 panel_properties_dialog_color_changed (PanelPropertiesDialog *dialog,
-				       GtkColorChooser       *color_button)
+				       CtkColorChooser       *color_button)
 {
 	GdkRGBA color;
 
@@ -338,7 +338,7 @@ panel_properties_dialog_color_changed (PanelPropertiesDialog *dialog,
 
 static void
 panel_properties_dialog_setup_color_button (PanelPropertiesDialog *dialog,
-					    GtkBuilder            *gui)
+					    CtkBuilder            *gui)
 {
 	GdkRGBA color;
 
@@ -383,7 +383,7 @@ panel_properties_dialog_image_changed (PanelPropertiesDialog *dialog)
 
 static void
 panel_properties_dialog_setup_image_chooser (PanelPropertiesDialog *dialog,
-					     GtkBuilder            *gui)
+					     CtkBuilder            *gui)
 {
 	char *image;
 
@@ -432,7 +432,7 @@ panel_properties_dialog_opacity_changed (PanelPropertiesDialog *dialog)
 
 static void
 panel_properties_dialog_setup_opacity_scale (PanelPropertiesDialog *dialog,
-					     GtkBuilder            *gui)
+					     CtkBuilder            *gui)
 {
 	guint16 opacity;
 	gdouble percentage;
@@ -474,7 +474,7 @@ panel_properties_dialog_upd_sensitivity (PanelPropertiesDialog *dialog,
 
 static void
 panel_properties_dialog_background_toggled (PanelPropertiesDialog *dialog,
-					    GtkWidget             *radio)
+					    CtkWidget             *radio)
 {
 	PanelBackgroundType background_type = PANEL_BACK_NONE;
 
@@ -497,10 +497,10 @@ panel_properties_dialog_background_toggled (PanelPropertiesDialog *dialog,
 
 static void
 panel_properties_dialog_setup_background_radios (PanelPropertiesDialog *dialog,
-						 GtkBuilder            *gui)
+						 CtkBuilder            *gui)
 {
 	PanelBackgroundType  background_type;
-	GtkWidget           *active_radio;
+	CtkWidget           *active_radio;
 
 	dialog->default_radio     = PANEL_CTK_BUILDER_GET (gui, "default_radio");
 	dialog->color_radio       = PANEL_CTK_BUILDER_GET (gui, "color_radio");
@@ -548,7 +548,7 @@ panel_properties_dialog_setup_background_radios (PanelPropertiesDialog *dialog,
 
 static void
 panel_properties_update_arrows_toggle_visible (PanelPropertiesDialog *dialog,
-					       GtkToggleButton       *toggle)
+					       CtkToggleButton       *toggle)
 {
 	if (ctk_toggle_button_get_active (toggle))
 		ctk_widget_set_sensitive (dialog->arrows_toggle,
@@ -560,7 +560,7 @@ panel_properties_update_arrows_toggle_visible (PanelPropertiesDialog *dialog,
 static void
 panel_properties_dialog_response (PanelPropertiesDialog *dialog,
 				  int                    response,
-				  GtkWidget             *properties_dialog)
+				  CtkWidget             *properties_dialog)
 {
 	char *help_id;
 
@@ -595,8 +595,8 @@ static void
 panel_properties_dialog_update_orientation (PanelPropertiesDialog *dialog,
 					    PanelOrientation       orientation)
 {
-	GtkTreeModel         *model;
-	GtkTreeIter           iter;
+	CtkTreeModel         *model;
+	CtkTreeIter           iter;
 	OrientationComboItem *item;
 	int                   max_size;
 	int                   spin_size;
@@ -669,7 +669,7 @@ static void
 panel_properties_dialog_update_background_type (PanelPropertiesDialog *dialog,
 						PanelBackgroundType    background_type)
 {
-	GtkWidget           *active_radio;
+	CtkWidget           *active_radio;
 
 	switch (background_type) {
 	case PANEL_BACK_NONE:
@@ -754,8 +754,8 @@ panel_properties_dialog_background_notify (GSettings             *settings,
 static void
 panel_properties_dialog_remove_orientation_combo (PanelPropertiesDialog *dialog)
 {
-	GtkContainer *container = CTK_CONTAINER (dialog->general_table);
-	GtkGrid      *grid      = CTK_GRID (dialog->general_table);
+	CtkContainer *container = CTK_CONTAINER (dialog->general_table);
+	CtkGrid      *grid      = CTK_GRID (dialog->general_table);
 
 	g_object_ref (dialog->size_label);
 	g_object_ref (dialog->size_widgets);
@@ -785,7 +785,7 @@ panel_properties_dialog_remove_orientation_combo (PanelPropertiesDialog *dialog)
 static void
 panel_properties_dialog_remove_icon_chooser (PanelPropertiesDialog *dialog)
 {
-	GtkContainer *container = CTK_CONTAINER (dialog->general_table);
+	CtkContainer *container = CTK_CONTAINER (dialog->general_table);
 
 	ctk_container_remove (container, dialog->icon_label);
 	ctk_container_remove (container, dialog->icon_align);
@@ -798,7 +798,7 @@ panel_properties_dialog_remove_icon_chooser (PanelPropertiesDialog *dialog)
 static void
 panel_properties_dialog_remove_toggles (PanelPropertiesDialog *dialog)
 {
-	GtkContainer *container = CTK_CONTAINER (dialog->general_vbox);
+	CtkContainer *container = CTK_CONTAINER (dialog->general_vbox);
 
 	ctk_container_remove (container, dialog->autohide_toggle);
 	ctk_container_remove (container, dialog->expand_toggle);
@@ -823,7 +823,7 @@ panel_properties_dialog_update_for_attached (PanelPropertiesDialog *dialog,
 
 static PanelPropertiesDialog *
 panel_properties_dialog_new (PanelToplevel *toplevel,
-			     GtkBuilder    *gui)
+			     CtkBuilder    *gui)
 {
 	PanelPropertiesDialog *dialog;
 	char                  *toplevel_settings_path;
@@ -910,7 +910,7 @@ void
 panel_properties_dialog_present (PanelToplevel *toplevel)
 {
 	PanelPropertiesDialog *dialog;
-	GtkBuilder            *gui;
+	CtkBuilder            *gui;
 
 	if (!panel_properties_dialog_quark)
 		panel_properties_dialog_quark =

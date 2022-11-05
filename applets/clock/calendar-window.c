@@ -49,7 +49,7 @@ enum {
 static guint signals[LAST_SIGNAL] = { 0 };
 
 struct _CalendarWindowPrivate {
-	GtkWidget  *calendar;
+	CtkWidget  *calendar;
 
 	char       *prefs_path;
 
@@ -57,7 +57,7 @@ struct _CalendarWindowPrivate {
 	gboolean     show_weeks;
 	time_t      *current_time;
 
-	GtkWidget *locations_list;
+	CtkWidget *locations_list;
 
 	GSettings  *settings;
 };
@@ -78,13 +78,13 @@ static void    calendar_window_set_current_time_p (CalendarWindow *calwin,
 static const char *calendar_window_get_prefs_path (CalendarWindow *calwin);
 static void    calendar_window_set_prefs_path     (CalendarWindow *calwin,
 						   const char           *prefs_path);
-static GtkWidget * create_hig_frame 		  (CalendarWindow *calwin,
+static CtkWidget * create_hig_frame 		  (CalendarWindow *calwin,
 		  				   const char *title,
                   				   const char *button_label,
 		  				   const char *key,
                   				   GCallback   callback);
 
-static void calendar_mark_today(GtkCalendar *calendar)
+static void calendar_mark_today(CtkCalendar *calendar)
 {
 	time_t now;
 	struct tm tm1;
@@ -102,22 +102,22 @@ static void calendar_mark_today(GtkCalendar *calendar)
 
 static gboolean calendar_update(gpointer user_data)
 {
-	GtkCalendar *calendar = user_data;
+	CtkCalendar *calendar = user_data;
 	calendar_mark_today(calendar);
 	return G_SOURCE_REMOVE;
 }
 
-static void calendar_month_changed_cb(GtkCalendar *calendar, gpointer user_data)
+static void calendar_month_changed_cb(CtkCalendar *calendar, gpointer user_data)
 {
 	ctk_calendar_clear_marks(calendar);
 	g_idle_add_full (G_PRIORITY_DEFAULT_IDLE, calendar_update, user_data, NULL);
 }
 
-static GtkWidget *
+static CtkWidget *
 calendar_window_create_calendar (CalendarWindow *calwin)
 {
-	GtkWidget                 *calendar;
-	GtkCalendarDisplayOptions  options;
+	CtkWidget                 *calendar;
+	CtkCalendarDisplayOptions  options;
 	struct tm                  tm1;
 
 	calendar = ctk_calendar_new ();
@@ -142,7 +142,7 @@ calendar_window_create_calendar (CalendarWindow *calwin)
 }
 
 static void
-expand_collapse_child (GtkWidget *child,
+expand_collapse_child (CtkWidget *child,
 		       gpointer   data)
 {
 	gboolean expanded;
@@ -155,36 +155,36 @@ expand_collapse_child (GtkWidget *child,
 }
 
 static void
-expand_collapse (GtkWidget  *expander,
+expand_collapse (CtkWidget  *expander,
 		 GParamSpec *pspec,
                  gpointer    data)
 {
-	GtkWidget *box = data;
+	CtkWidget *box = data;
 
 	ctk_container_foreach (CTK_CONTAINER (box),
-			       (GtkCallback)expand_collapse_child,
+			       (CtkCallback)expand_collapse_child,
 			       expander);
 }
 
-static void add_child (GtkContainer *container,
-                       GtkWidget    *child,
-                       GtkExpander  *expander)
+static void add_child (CtkContainer *container,
+                       CtkWidget    *child,
+                       CtkExpander  *expander)
 {
 	expand_collapse_child (child, expander);
 }
 
-static GtkWidget *
+static CtkWidget *
 create_hig_frame (CalendarWindow *calwin,
 		  const char *title,
                   const char *button_label,
 		  const char *key,
                   GCallback   callback)
 {
-        GtkWidget *vbox;
-        GtkWidget *label;
-        GtkWidget *hbox;
+        CtkWidget *vbox;
+        CtkWidget *label;
+        CtkWidget *hbox;
         char      *bold_title;
-        GtkWidget *expander;
+        CtkWidget *expander;
 
         vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
 
@@ -211,8 +211,8 @@ create_hig_frame (CalendarWindow *calwin,
 	g_signal_connect (hbox, "add", G_CALLBACK (add_child), expander);
 
         if (button_label) {
-                GtkWidget *button_box;
-                GtkWidget *button;
+                CtkWidget *button_box;
+                CtkWidget *button;
                 gchar *text;
 
                 button_box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
@@ -251,7 +251,7 @@ edit_locations (CalendarWindow *calwin)
 }
 
 static void
-calendar_window_pack_locations (CalendarWindow *calwin, GtkWidget *vbox)
+calendar_window_pack_locations (CalendarWindow *calwin, CtkWidget *vbox)
 {
 	calwin->priv->locations_list = create_hig_frame (calwin,
 							 _("Locations"), _("Edit"),
@@ -270,8 +270,8 @@ calendar_window_pack_locations (CalendarWindow *calwin, GtkWidget *vbox)
 static void
 calendar_window_fill (CalendarWindow *calwin)
 {
-        GtkWidget *frame;
-        GtkWidget *vbox;
+        CtkWidget *frame;
+        CtkWidget *vbox;
 
         frame = ctk_frame_new (NULL);
         ctk_frame_set_shadow_type (CTK_FRAME (frame), CTK_SHADOW_OUT);
@@ -298,7 +298,7 @@ calendar_window_fill (CalendarWindow *calwin)
 	}
 }
 
-GtkWidget *
+CtkWidget *
 calendar_window_get_locations_box (CalendarWindow *calwin)
 {
 	return calwin->priv->locations_list;
@@ -469,7 +469,7 @@ calendar_window_class_init (CalendarWindowClass *klass)
 static void
 calendar_window_init (CalendarWindow *calwin)
 {
-	GtkWindow *window;
+	CtkWindow *window;
 
 	calwin->priv = calendar_window_get_instance_private (calwin);
 
@@ -483,7 +483,7 @@ calendar_window_init (CalendarWindow *calwin)
 	ctk_window_set_icon_name (window, CLOCK_ICON);
 }
 
-GtkWidget *
+CtkWidget *
 calendar_window_new (time_t     *static_current_time,
 		     const char *prefs_path,
 		     gboolean    invert_order)
@@ -541,7 +541,7 @@ void
 calendar_window_set_show_weeks (CalendarWindow *calwin,
 				gboolean        show_weeks)
 {
-	GtkCalendarDisplayOptions options;
+	CtkCalendarDisplayOptions options;
 
 	g_return_if_fail (CALENDAR_IS_WINDOW (calwin));
 

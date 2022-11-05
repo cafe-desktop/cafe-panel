@@ -45,7 +45,7 @@ typedef struct _PanelIconChooserPrivate PanelIconChooserPrivate;
 
 struct _PanelIconChooserClass
 {
-	GtkButtonClass parent_class;
+	CtkButtonClass parent_class;
 
 	void (* changed)         (PanelIconChooser *chooser,
 				  const char       *icon);
@@ -53,14 +53,14 @@ struct _PanelIconChooserClass
 
 struct _PanelIconChooser
 {
-	GtkButton parent_instance;
+	CtkButton parent_instance;
 
 	PanelIconChooserPrivate *priv;
 };
 
 GType       panel_icon_chooser_get_type (void);
 
-GtkWidget  *panel_icon_chooser_new                    (const char  *icon);
+CtkWidget  *panel_icon_chooser_new                    (const char  *icon);
 
 const char *panel_icon_chooser_get_fallback_icon_name (PanelIconChooser *chooser);
 

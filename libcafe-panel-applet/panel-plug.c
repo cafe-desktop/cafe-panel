@@ -27,13 +27,13 @@
 
 struct _PanelPlug
 {
-  GtkPlug parent;
+  CtkPlug parent;
 };
 
 G_DEFINE_TYPE (PanelPlug, panel_plug, CTK_TYPE_PLUG)
 
 static gboolean
-panel_plug_draw (GtkWidget *widget,
+panel_plug_draw (CtkWidget *widget,
                  cairo_t   *cr)
 {
   GdkWindow *window;
@@ -47,7 +47,7 @@ panel_plug_draw (GtkWidget *widget,
 
   if (!pattern)
     {
-      GtkStyleContext *context;
+      CtkStyleContext *context;
       gint width;
       gint height;
 
@@ -62,7 +62,7 @@ panel_plug_draw (GtkWidget *widget,
 }
 
 static void
-panel_plug_realize (GtkWidget *widget)
+panel_plug_realize (CtkWidget *widget)
 {
   GdkScreen *screen;
   GdkVisual *visual;
@@ -81,7 +81,7 @@ panel_plug_realize (GtkWidget *widget)
 static void
 panel_plug_class_init (PanelPlugClass *plug_class)
 {
-  GtkWidgetClass *widget_class;
+  CtkWidgetClass *widget_class;
 
   widget_class = CTK_WIDGET_CLASS (plug_class);
 
@@ -97,7 +97,7 @@ panel_plug_init (PanelPlug *plug)
   ctk_widget_set_app_paintable (CTK_WIDGET (plug), TRUE);
 }
 
-GtkWidget *
+CtkWidget *
 panel_plug_new (void)
 {
   return g_object_new (PANEL_TYPE_PLUG, NULL);

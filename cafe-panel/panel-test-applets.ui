@@ -2,17 +2,17 @@
 <!-- Generated with glade 3.22.0 -->
 <interface>
   <requires lib="ctk+" version="3.22"/>
-  <object class="GtkImage" id="image1">
+  <object class="CtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">system-run</property>
   </object>
-  <object class="GtkImage" id="image2">
+  <object class="CtkImage" id="image2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">window-close</property>
   </object>
-  <object class="GtkDialog" id="toplevel">
+  <object class="CtkDialog" id="toplevel">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes" comments="This is an utility to easily test various applets">Test applet utility</property>
@@ -20,18 +20,18 @@
     <property name="type_hint">dialog</property>
     <signal name="destroy" handler="ctk_main_quit" swapped="no"/>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox1">
+      <object class="CtkBox" id="dialog-vbox1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">8</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area1">
+          <object class="CtkButtonBox" id="dialog-action_area1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="ok-button">
+              <object class="CtkButton" id="ok-button">
                 <property name="label" translatable="yes">_Execute</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -48,7 +48,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button1">
+              <object class="CtkButton" id="button1">
                 <property name="label" translatable="yes">_Close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -73,14 +73,14 @@
           </packing>
         </child>
         <child>
-          <object class="GtkGrid" id="table2">
+          <object class="CtkGrid" id="table2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">2</property>
             <property name="row_spacing">4</property>
             <property name="column_spacing">4</property>
             <child>
-              <object class="GtkLabel" id="size-label">
+              <object class="CtkLabel" id="size-label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">_Size:</property>
@@ -95,7 +95,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="applet-label">
+              <object class="CtkLabel" id="applet-label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">_Applet:</property>
@@ -110,7 +110,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="orient-label">
+              <object class="CtkLabel" id="orient-label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">_Orientation:</property>
@@ -125,7 +125,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="prefs-label">
+              <object class="CtkLabel" id="prefs-label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">_Prefs Path:</property>
@@ -140,7 +140,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="prefs-path-entry">
+              <object class="CtkEntry" id="prefs-path-entry">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="hexpand">True</property>
@@ -151,7 +151,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBox" id="applet-combo">
+              <object class="CtkComboBox" id="applet-combo">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="hexpand">True</property>
@@ -162,7 +162,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBox" id="orient-combo">
+              <object class="CtkComboBox" id="orient-combo">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="hexpand">True</property>
@@ -173,7 +173,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBox" id="size-combo">
+              <object class="CtkComboBox" id="size-combo">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="hexpand">True</property>
@@ -184,7 +184,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSeparator" id="hseparator2">
+              <object class="CtkSeparator" id="hseparator2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="valign">center</property>

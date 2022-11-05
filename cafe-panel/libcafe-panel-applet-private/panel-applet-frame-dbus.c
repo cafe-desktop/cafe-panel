@@ -333,7 +333,7 @@ cafe_panel_applet_frame_dbus_finalize (GObject *object)
 static void
 cafe_panel_applet_frame_dbus_init (CafePanelAppletFrameDBus *frame)
 {
-	GtkWidget *container;
+	CtkWidget *container;
 
 	frame->priv = cafe_panel_applet_frame_dbus_get_instance_private (frame);
 
@@ -378,7 +378,7 @@ cafe_panel_applet_frame_dbus_class_init (CafePanelAppletFrameDBusClass *class)
 	frame_class->change_size = cafe_panel_applet_frame_dbus_change_size;
 	frame_class->change_background = cafe_panel_applet_frame_dbus_change_background;
 
-	GtkWidgetClass *widget_class  = CTK_WIDGET_CLASS (class);
+	CtkWidgetClass *widget_class  = CTK_WIDGET_CLASS (class);
 	ctk_widget_class_set_css_name (widget_class, "CafePanelAppletFrameDBus");
 }
 

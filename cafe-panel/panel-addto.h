@@ -32,7 +32,7 @@
 extern "C" {
 #endif
 
-void panel_addto_present                    (GtkMenuItem *item,
+void panel_addto_present                    (CtkMenuItem *item,
 					     PanelWidget *panel_widget);
 
 #ifdef __cplusplus

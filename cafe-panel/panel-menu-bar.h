@@ -44,13 +44,13 @@ typedef struct _PanelMenuBarClass   PanelMenuBarClass;
 typedef struct _PanelMenuBarPrivate PanelMenuBarPrivate;
 
 struct _PanelMenuBar{
-	GtkMenuBar            menubar;
+	CtkMenuBar            menubar;
 
 	PanelMenuBarPrivate  *priv;
 };
 
 struct _PanelMenuBarClass {
-	GtkMenuBarClass       menubar_class;
+	CtkMenuBarClass       menubar_class;
 };
 
 GType      panel_menu_bar_get_type  (void) G_GNUC_CONST;

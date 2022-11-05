@@ -43,7 +43,7 @@ struct _CafePanelAppletContainerPrivate {
 	gboolean    out_of_process;
 	guint32     xid;
 	guint32     uid;
-	GtkWidget  *socket;
+	CtkWidget  *socket;
 
 	GHashTable *pending_ops;
 };
@@ -123,7 +123,7 @@ panel_applet_container_setup (CafePanelAppletContainer *container)
 				  container->priv->iid);
 		}
 	} else {
-		GtkWidget *applet;
+		CtkWidget *applet;
 
 		applet = cafe_panel_applets_manager_get_applet_widget (container->priv->iid, container->priv->uid);
 
@@ -259,10 +259,10 @@ cafe_panel_applet_container_child_property_get_info (const gchar *property_name)
 	return NULL;
 }
 
-GtkWidget *
+CtkWidget *
 cafe_panel_applet_container_new (void)
 {
-	GtkWidget *container;
+	CtkWidget *container;
 
 	container = CTK_WIDGET (g_object_new (PANEL_TYPE_APPLET_CONTAINER, NULL));
 

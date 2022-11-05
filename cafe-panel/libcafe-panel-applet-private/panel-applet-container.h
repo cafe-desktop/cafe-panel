@@ -50,13 +50,13 @@ typedef struct _CafePanelAppletContainerClass   CafePanelAppletContainerClass;
 typedef struct _CafePanelAppletContainerPrivate CafePanelAppletContainerPrivate;
 
 struct _CafePanelAppletContainer {
-	GtkEventBox parent;
+	CtkEventBox parent;
 
 	CafePanelAppletContainerPrivate *priv;
 };
 
 struct _CafePanelAppletContainerClass {
-	GtkEventBoxClass parent_class;
+	CtkEventBoxClass parent_class;
 
 	/* Signals */
 	void (*applet_broken)          (CafePanelAppletContainer *container);
@@ -71,7 +71,7 @@ struct _CafePanelAppletContainerClass {
 
 GType      cafe_panel_applet_container_get_type                (void) G_GNUC_CONST;
 GQuark     cafe_panel_applet_container_error_quark             (void) G_GNUC_CONST;
-GtkWidget *cafe_panel_applet_container_new                     (void);
+CtkWidget *cafe_panel_applet_container_new                     (void);
 
 
 void       cafe_panel_applet_container_add                     (CafePanelAppletContainer *container,

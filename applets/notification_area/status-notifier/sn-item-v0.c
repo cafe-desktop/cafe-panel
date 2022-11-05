@@ -45,7 +45,7 @@ struct _SnItemV0
 {
   SnItem         parent;
 
-  GtkWidget     *image;
+  CtkWidget     *image;
   gint           icon_size;
   gint           effective_icon_size;
 
@@ -89,7 +89,7 @@ G_DEFINE_TYPE (SnItemV0, sn_item_v0, SN_TYPE_ITEM)
 
 static cairo_surface_t *
 scale_surface (SnIconPixmap   *pixmap,
-               GtkOrientation  orientation,
+               CtkOrientation  orientation,
                gint            size)
 {
   gdouble ratio;
@@ -142,7 +142,7 @@ compare_size (gconstpointer a,
 {
   SnIconPixmap *p1;
   SnIconPixmap *p2;
-  GtkOrientation orientation;
+  CtkOrientation orientation;
 
   p1 = (SnIconPixmap *) a;
   p2 = (SnIconPixmap *) b;
@@ -156,7 +156,7 @@ compare_size (gconstpointer a,
 
 static cairo_surface_t *
 get_surface (SnItemV0       *v0,
-             GtkOrientation  orientation,
+             CtkOrientation  orientation,
              gint            size)
 {
   gint i;
@@ -199,7 +199,7 @@ get_icon_by_name (const gchar *icon_name,
                   gint         requested_size,
                   gint         scale)
 {
-  GtkIconTheme *icon_theme;
+  CtkIconTheme *icon_theme;
   gint *sizes;
   gint i;
   gint chosen_size = 0;
@@ -237,7 +237,7 @@ static void
 update (SnItemV0 *v0)
 {
   AtkObject *accessible;
-  GtkImage *image;
+  CtkImage *image;
   SnTooltip *tip;
   gint icon_size;
   gboolean visible;
@@ -861,7 +861,7 @@ new_icon_theme_path_cb (SnItemV0 *v0,
 
   if (v0->icon_theme_path != NULL)
     {
-      GtkIconTheme *icon_theme;
+      CtkIconTheme *icon_theme;
 
       icon_theme = ctk_icon_theme_get_default ();
 
@@ -1003,7 +1003,7 @@ get_all_cb (GObject      *source_object,
 
   if (v0->icon_theme_path != NULL)
     {
-      GtkIconTheme *icon_theme;
+      CtkIconTheme *icon_theme;
 
       icon_theme = ctk_icon_theme_get_default ();
 
@@ -1267,8 +1267,8 @@ sn_item_v0_scroll (SnItem            *item,
 }
 
 static void
-sn_item_v0_size_allocate (GtkWidget      *widget,
-                          GtkAllocation  *allocation)
+sn_item_v0_size_allocate (CtkWidget      *widget,
+                          CtkAllocation  *allocation)
 {
   SnItemV0 *v0 = SN_ITEM_V0 (widget);
 
@@ -1360,7 +1360,7 @@ static void
 sn_item_v0_class_init (SnItemV0Class *v0_class)
 {
   GObjectClass *object_class;
-  GtkWidgetClass *widget_class;
+  CtkWidgetClass *widget_class;
   SnItemClass *item_class;
 
   object_class = G_OBJECT_CLASS (v0_class);
@@ -1412,7 +1412,7 @@ sn_item_v0_new (const gchar *bus_name,
 gint
 sn_item_v0_get_icon_padding (SnItemV0 *v0)
 {
-  GtkOrientation orientation;
+  CtkOrientation orientation;
   gint a, b;
 
   orientation = ctk_orientable_get_orientation (CTK_ORIENTABLE (v0));
@@ -1435,7 +1435,7 @@ void
 sn_item_v0_set_icon_padding (SnItemV0 *v0,
                              gint padding)
 {
-  GtkOrientation orientation;
+  CtkOrientation orientation;
   gint padding_x = 0;
   gint padding_y = 0;
 

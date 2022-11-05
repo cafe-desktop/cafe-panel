@@ -27,12 +27,12 @@
 extern "C" {
 #endif
 
-gboolean panel_a11y_get_is_a11y_enabled          (GtkWidget  *widget);
-void     panel_a11y_set_atk_name_desc            (GtkWidget  *widget,
+gboolean panel_a11y_get_is_a11y_enabled          (CtkWidget  *widget);
+void     panel_a11y_set_atk_name_desc            (CtkWidget  *widget,
 						  const char *name,
 						  const char *desc);
-void     panel_a11y_set_atk_relation             (GtkWidget  *widget,
-						  GtkLabel   *label);
+void     panel_a11y_set_atk_relation             (CtkWidget  *widget,
+						  CtkLabel   *label);
 GType    panel_a11y_query_accessible_parent_type (GType       type,
 						  GTypeInfo  *type_info);
 

@@ -19,7 +19,7 @@
 #include "panel-enums-gsettings.h"
 
 struct _ButtonWidgetPrivate {
-	GtkIconTheme     *icon_theme;
+	CtkIconTheme     *icon_theme;
 	cairo_surface_t  *surface;
 	cairo_surface_t  *surface_hc;
 
@@ -117,7 +117,7 @@ make_hc_surface (cairo_surface_t *surface)
 }
 
 static void
-button_widget_realize(GtkWidget *widget)
+button_widget_realize(CtkWidget *widget)
 {
 	ctk_widget_add_events (widget, GDK_POINTER_MOTION_MASK |
 			       GDK_POINTER_MOTION_HINT_MASK |
@@ -136,7 +136,7 @@ button_widget_realize(GtkWidget *widget)
 }
 
 static void
-button_widget_unrealize (GtkWidget *widget)
+button_widget_unrealize (CtkWidget *widget)
 {
 	g_signal_handlers_disconnect_by_func (BUTTON_WIDGET (widget)->priv->icon_theme,
 					      G_CALLBACK (button_widget_icon_theme_changed),
@@ -181,7 +181,7 @@ button_widget_reload_surface (ButtonWidget *button)
 					 &error);
 		if (error) {
 			//FIXME: this is not rendered at button->priv->size
-			GtkIconTheme *icon_theme = ctk_icon_theme_get_default();
+			CtkIconTheme *icon_theme = ctk_icon_theme_get_default();
 			button->priv->surface = ctk_icon_theme_load_surface (icon_theme,
 							       "image-missing",
 							       CTK_ICON_SIZE_BUTTON,
@@ -292,7 +292,7 @@ button_widget_set_property (GObject      *object,
 	}
 }
 
-static GtkArrowType
+static CtkArrowType
 calc_arrow (PanelOrientation  orientation,
 	    int               button_width,
 	    int               button_height,
@@ -301,7 +301,7 @@ calc_arrow (PanelOrientation  orientation,
 	    gdouble          *angle,
 	    gdouble          *size)
 {
-	GtkArrowType retval = CTK_ARROW_UP;
+	CtkArrowType retval = CTK_ARROW_UP;
 
 	if (orientation & PANEL_HORIZONTAL_MASK) {
 		if (button_width > 50)
@@ -345,14 +345,14 @@ calc_arrow (PanelOrientation  orientation,
 }
 
 static gboolean
-button_widget_draw (GtkWidget *widget,
+button_widget_draw (CtkWidget *widget,
 		    cairo_t *cr)
 {
 	ButtonWidget *button_widget;
 	int width;
 	int height;
-	GtkStyleContext *context;
-	GtkStateFlags state_flags;
+	CtkStyleContext *context;
+	CtkStateFlags state_flags;
 	int off;
 	int x, y, w, h;
 	int scale;
@@ -440,12 +440,12 @@ button_widget_draw (GtkWidget *widget,
 }
 
 static void
-button_widget_get_preferred_width (GtkWidget *widget,
+button_widget_get_preferred_width (CtkWidget *widget,
 				   gint *minimal_width,
 				   gint *natural_width)
 {
  	ButtonWidget *button_widget = BUTTON_WIDGET (widget);
-	GtkWidget *parent;
+	CtkWidget *parent;
 	int size;
 
 	parent = ctk_widget_get_parent (widget);
@@ -464,12 +464,12 @@ button_widget_get_preferred_width (GtkWidget *widget,
 }
 
 static void
-button_widget_get_preferred_height (GtkWidget *widget,
+button_widget_get_preferred_height (CtkWidget *widget,
 				    gint *minimal_height,
 				    gint *natural_height)
 {
 	ButtonWidget *button_widget = BUTTON_WIDGET (widget);
-	GtkWidget *parent;
+	CtkWidget *parent;
 	int size;
 
 	parent = ctk_widget_get_parent (widget);
@@ -489,8 +489,8 @@ button_widget_get_preferred_height (GtkWidget *widget,
 }
 
 static void
-button_widget_size_allocate (GtkWidget     *widget,
-			     GtkAllocation *allocation)
+button_widget_size_allocate (CtkWidget     *widget,
+			     CtkAllocation *allocation)
 {
 	ButtonWidget *button_widget = BUTTON_WIDGET (widget);
 	int           size;
@@ -532,7 +532,7 @@ button_widget_size_allocate (GtkWidget     *widget,
 }
 
 static void
-button_widget_activate (GtkButton *button)
+button_widget_activate (CtkButton *button)
 {
 	ButtonWidget *button_widget = BUTTON_WIDGET (button);
 
@@ -544,7 +544,7 @@ button_widget_activate (GtkButton *button)
 }
 
 static gboolean
-button_widget_button_press (GtkWidget *widget, GdkEventButton *event)
+button_widget_button_press (CtkWidget *widget, GdkEventButton *event)
 {
 	g_return_val_if_fail (BUTTON_IS_WIDGET (widget), FALSE);
 	g_return_val_if_fail (event != NULL, FALSE);
@@ -559,13 +559,13 @@ button_widget_button_press (GtkWidget *widget, GdkEventButton *event)
 }
 
 static gboolean
-button_widget_enter_notify (GtkWidget *widget, GdkEventCrossing *event)
+button_widget_enter_notify (CtkWidget *widget, GdkEventCrossing *event)
 {
 	gboolean in_button;
 
 	g_return_val_if_fail (BUTTON_IS_WIDGET (widget), FALSE);
 
-	GtkStateFlags state_flags = ctk_widget_get_state_flags (widget);
+	CtkStateFlags state_flags = ctk_widget_get_state_flags (widget);
 	in_button = state_flags & CTK_STATE_FLAG_PRELIGHT;
 
 	CTK_WIDGET_CLASS (button_widget_parent_class)->enter_notify_event (widget, event);
@@ -579,13 +579,13 @@ button_widget_enter_notify (GtkWidget *widget, GdkEventCrossing *event)
 }
 
 static gboolean
-button_widget_leave_notify (GtkWidget *widget, GdkEventCrossing *event)
+button_widget_leave_notify (CtkWidget *widget, GdkEventCrossing *event)
 {
 	gboolean in_button;
 
 	g_return_val_if_fail (BUTTON_IS_WIDGET (widget), FALSE);
 
-	GtkStateFlags state_flags = ctk_widget_get_state_flags (widget);
+	CtkStateFlags state_flags = ctk_widget_get_state_flags (widget);
 	in_button = state_flags & CTK_STATE_FLAG_PRELIGHT;
 
 	CTK_WIDGET_CLASS (button_widget_parent_class)->leave_notify_event (widget, event);
@@ -623,8 +623,8 @@ static void
 button_widget_class_init (ButtonWidgetClass *klass)
 {
 	GObjectClass *gobject_class   = (GObjectClass   *) klass;
-	GtkWidgetClass *widget_class  = (GtkWidgetClass *) klass;
-	GtkButtonClass *button_class  = (GtkButtonClass *) klass;
+	CtkWidgetClass *widget_class  = (CtkWidgetClass *) klass;
+	CtkButtonClass *button_class  = (CtkButtonClass *) klass;
 
 	gobject_class->finalize     = button_widget_finalize;
 	gobject_class->get_property = button_widget_get_property;
@@ -698,12 +698,12 @@ button_widget_class_init (ButtonWidgetClass *klass)
 					     G_PARAM_READWRITE));
 }
 
-GtkWidget *
+CtkWidget *
 button_widget_new (const char       *filename,
 		   gboolean          arrow,
 		   PanelOrientation  orientation)
 {
-	GtkWidget *retval;
+	CtkWidget *retval;
 
 	retval = g_object_new (
 			BUTTON_TYPE_WIDGET,
@@ -873,7 +873,7 @@ button_widget_get_ignore_leave (ButtonWidget *button)
 	return button->priv->ignore_leave;
 }
 
-GtkIconTheme *
+CtkIconTheme *
 button_widget_get_icon_theme (ButtonWidget *button)
 {
 	g_return_val_if_fail (BUTTON_IS_WIDGET (button), NULL);

@@ -35,22 +35,22 @@ typedef struct _SnFlatButtonClass   SnFlatButtonClass;
 
 struct _SnFlatButton
 {
-  GtkButton parent_instance;
+  CtkButton parent_instance;
 
   SnFlatButtonPrivate *priv;
 };
 
 struct _SnFlatButtonClass
 {
-  GtkButtonClass parent_class;
+  CtkButtonClass parent_class;
 };
 
 GType sn_flat_button_get_type (void);
-GtkWidget *sn_flat_button_new (void);
+CtkWidget *sn_flat_button_new (void);
 
 #if 0
 #ifndef SN_COMPAT_BUTTON_NODRAW_C
-/* replace GtkButton */
+/* replace CtkButton */
 # define ctk_button_get_type sn_compat_button_nodraw_get_type
 #endif
 #endif

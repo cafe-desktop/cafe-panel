@@ -84,8 +84,8 @@ panel_binding_set_from_string (PanelBinding *binding,
 	}
 }
 
-static inline GtkBindingSet *
-get_binding_set (GtkBindingSet *binding_set)
+static inline CtkBindingSet *
+get_binding_set (CtkBindingSet *binding_set)
 {
 	if (!binding_set) {
 		PanelToplevelClass *toplevel_class;
@@ -104,7 +104,7 @@ get_binding_set (GtkBindingSet *binding_set)
 
 static void
 panel_binding_clear_entry (PanelBinding  *binding,
-			   GtkBindingSet *binding_set)
+			   CtkBindingSet *binding_set)
 {
 	binding_set = get_binding_set (binding_set);
 
@@ -113,7 +113,7 @@ panel_binding_clear_entry (PanelBinding  *binding,
 
 static void
 panel_binding_set_entry (PanelBinding  *binding,
-			 GtkBindingSet *binding_set)
+			 CtkBindingSet *binding_set)
 {
 	binding_set = get_binding_set (binding_set);
 
@@ -226,7 +226,7 @@ panel_bindings_initialise (void)
 }
 
 void
-panel_bindings_set_entries (GtkBindingSet *binding_set)
+panel_bindings_set_entries (CtkBindingSet *binding_set)
 {
 	int i;
 

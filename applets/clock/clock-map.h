@@ -19,12 +19,12 @@ extern "C" {
 
 typedef struct
 {
-        GtkWidget parent;
+        CtkWidget parent;
 } ClockMap;
 
 typedef struct
 {
-        GtkWidgetClass parent_class;
+        CtkWidgetClass parent_class;
 
 	GList *(* need_locations) (ClockMap *map);
 } ClockMapClass;

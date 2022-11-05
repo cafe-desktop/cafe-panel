@@ -12,7 +12,7 @@
   * panel-run-dialog: Fix leaking tree model strings
   * workspace-switcher: Fix leaking color string
   * panel-properties-dialog: Fix leaking string
-  * clock: Fix leaking GtkListStore
+  * clock: Fix leaking CtkListStore
   * panel-profile: Fix leaking list elements
   * clock: Fix list iteration
   * panel-lockdown: Fix leaking string array
@@ -210,12 +210,12 @@
   * Use make functions for HELP_LINGUAS
   * Check if manager->proxy is NULL
   * Migrate cafe-panel from dbus-glib to gdbus
-  * notification-area-preferences-dialog.ui: avoid GtkButton:use-stock
+  * notification-area-preferences-dialog.ui: avoid CtkButton:use-stock
   * Fix GdkSeat warning
   * Ensure alt-F1 can show the menu even if no menu applet on panel
   * na-tray: add preferences dialog and applet menu entry
   * na-tray: wide panels, add GSettings to the applet
-  * na-tray: wide panels, convert main GtkBox display to GtkGrid
+  * na-tray: wide panels, convert main CtkBox display to CtkGrid
   * na-tray: wide panels, preliminary batch box to grid rename
   * button-widget: wide panels, more suitable resize limits on Widgets and arrows
   * README - Add dependency list
@@ -231,7 +231,7 @@
   * panel: avoid a critical
   * panel-toplevel: fix memory leak in calculate_minimum_height
   * Change CTK_CHECK_VERSION to match next ctk+ release
-  * applets: Guard against CTK scale-factor fixes on GtkSocket
+  * applets: Guard against CTK scale-factor fixes on CtkSocket
   * window-list: Skip setting size hints until WnckTasklist has items to show.
   * applets: Fix runtime error messages
   * cafe-panel-applet: setup_x_error_handler for in-process applets too
@@ -266,7 +266,7 @@
   * Support new cafe-menus api
   * Convert launcher icons to cairo surfaces
   * fix rendering and removal of in-process applets on unexpanded panel
-  * applet.c: avoid deprecated GtkImageMenuItem
+  * applet.c: avoid deprecated CtkImageMenuItem
   * limit size of panel-hide-button
   * clock: fix weird thing in comments
   * clock: fix actual copy/paste error which caused use-after-free
@@ -288,16 +288,16 @@
   * libpanel-applet: Add panel_applet_setup_menu_from_resource() API
   * Theme: consistant theming for applet drag handles in all themes
   * Revert "panel-toplevel: Remove pointer boundary check in panel_toplevel_queue_auto_hide()"
-  * panel-context-menu.c: avoid deprecated GtkImageMenuItem
+  * panel-context-menu.c: avoid deprecated CtkImageMenuItem
   * avoid 'ctk_file_chooser_dialog_new' with stock ids
   * Accessibility: white/black applet handles in GNOME high contrast themes
   * panel-run-dialog.ui: avoid deprecated:
   * fish.c: avoid 'ctk_dialog_new_with_buttons' with stock id
   * panel-test-applets.ui: avoid deprecated:
-  * window-list.ui: avoid GtkVBox and GtkButton:use-stock
-  * workspace-switcher.ui: avoid deprecated GtkButton:use-stock
+  * window-list.ui: avoid CtkVBox and CtkButton:use-stock
+  * workspace-switcher.ui: avoid deprecated CtkButton:use-stock
   * Theme: show applet handles on non-CAFE themes
-  * panel-properties-dialog.ui: avoid GtkButton:use-stock and GtkImage:stock
+  * panel-properties-dialog.ui: avoid CtkButton:use-stock and CtkImage:stock
   * fish.ui: avoid deprecated:
   * clock.ui: avoid deprecated:
   * avoid ctk_dialog_add_buttons with stock ids
@@ -406,12 +406,12 @@
   * libcafe-panel-applet: fix bg rendering for in-process applets
   * libpanel-applet/panel-applet.h: Rename id to factory_id for factory
   * licafepanel-applet: add panel-applet-private.h
-  * don't use GtkPlug/GtkSocket for in process applets
+  * don't use CtkPlug/CtkSocket for in process applets
   * make it possible to get applet widget
   * libpanel-applet: add panel_applet_factory_get_applet_widget
   * libpanel-applet: return process type and applet uid
   * libpanel-applet: store factories in hash table
-  * libpanel-applet: delay GtkPlug creation
+  * libpanel-applet: delay CtkPlug creation
   * libpanel-applet: add process type to private data
   * libpanel-applet: Remove out_process from panel_applet_factory_main()
   * avoid deprecated gdk_screen_get_width/height
@@ -447,7 +447,7 @@
   * menu: fix crash when some .desktop file has empty Icon field
   * clock: properly handle visibility of edit button
   * clock: drop deprecated ctk_size_group_set_ignore_hidden
-  * clock: move GtkButton in another horizontal GtkBox parent
+  * clock: move CtkButton in another horizontal CtkBox parent
   * clock.c: drop deprecated ctk_size_group_set_ignore_hidden
   * localized application's name and description
   * menu-button: disconnect from GSettings when applet is removed
@@ -515,8 +515,8 @@
 
 ### cafe-panel 1.16.0
 
-  * Use GtkAboutDialog instead of CafeAboutDialog
-  * CTK+3: use GtkColorButton/GtkColorChooser in properties dialog
+  * Use CtkAboutDialog instead of CafeAboutDialog
+  * CTK+3: use CtkColorButton/CtkColorChooser in properties dialog
   * CTK+3: fix a lot of deprecations
   * Some more fixes and cleanups
   * Translations update
@@ -589,12 +589,12 @@
 
 ### cafe-panel 1.10.0
 
-  * Gtk3, Fix deprecated use of gdk pointer api
-  * Gtk3, Port all GtkStyle to GtkStyleContext
-  * Gtk3, Port ctk_rc_parse_string to GtkCssProvider
-  * Gtk3, Several small fixes
+  * Ctk3, Fix deprecated use of gdk pointer api
+  * Ctk3, Port all CtkStyle to CtkStyleContext
+  * Ctk3, Port ctk_rc_parse_string to CtkCssProvider
+  * Ctk3, Several small fixes
   * Several more fixes from monsta
-  * GDK_KEY_* is also in Gtk+2.24
+  * GDK_KEY_* is also in Ctk+2.24
   * showdesktop: Fix the size of the icon
   * clock: Check allocated size before creating the shadow pixbuf
   * applet: Disconnect show and deactivate menu signals before destroying the applet menu

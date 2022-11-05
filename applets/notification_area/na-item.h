@@ -47,7 +47,7 @@ struct _NaItemInterface
   NaItemCategory  (* get_category)        (NaItem *item);
 
   gboolean        (* draw_on_parent)      (NaItem    *item,
-                                           GtkWidget *parent,
+                                           CtkWidget *parent,
                                            cairo_t   *parent_cr);
 };
 
@@ -55,7 +55,7 @@ GType           na_item_get_type        (void);
 const gchar    *na_item_get_id          (NaItem *item);
 NaItemCategory  na_item_get_category    (NaItem *item);
 gboolean        na_item_draw_on_parent  (NaItem    *item,
-                                         GtkWidget *parent,
+                                         CtkWidget *parent,
                                          cairo_t   *parent_cr);
 
 G_END_DECLS

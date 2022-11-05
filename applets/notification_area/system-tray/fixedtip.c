@@ -40,15 +40,15 @@ static guint fixedtip_signals[LAST_SIGNAL] = { 0 };
 
 struct _NaFixedTipPrivate
 {
-  GtkWidget      *parent;
-  GtkWidget      *label;
-  GtkOrientation  orientation;
+  CtkWidget      *parent;
+  CtkWidget      *label;
+  CtkOrientation  orientation;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (NaFixedTip, na_fixed_tip, CTK_TYPE_WINDOW)
 
 static gboolean
-button_press_handler (GtkWidget      *fixedtip,
+button_press_handler (CtkWidget      *fixedtip,
                       GdkEventButton *event,
                       gpointer        data)
 {
@@ -59,10 +59,10 @@ button_press_handler (GtkWidget      *fixedtip,
 }
 
 static gboolean
-na_fixed_tip_draw (GtkWidget *widget, cairo_t *cr)
+na_fixed_tip_draw (CtkWidget *widget, cairo_t *cr)
 {
-  GtkStyleContext *context;
-  GtkStateFlags state;
+  CtkStyleContext *context;
+  CtkStateFlags state;
   int width, height;
 
   width = ctk_widget_get_allocated_width (widget);
@@ -89,7 +89,7 @@ na_fixed_tip_draw (GtkWidget *widget, cairo_t *cr)
 static void
 na_fixed_tip_class_init (NaFixedTipClass *class)
 {
-  GtkWidgetClass *widget_class = CTK_WIDGET_CLASS (class);
+  CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (class);
   widget_class->draw = na_fixed_tip_draw;
 
   fixedtip_signals[CLICKED] =
@@ -106,7 +106,7 @@ na_fixed_tip_class_init (NaFixedTipClass *class)
 static void
 na_fixed_tip_init (NaFixedTip *fixedtip)
 {
-  GtkWidget *label;
+  CtkWidget *label;
 
   fixedtip->priv = na_fixed_tip_get_instance_private (fixedtip);
 
@@ -139,7 +139,7 @@ na_fixed_tip_position (NaFixedTip *fixedtip)
 {
   GdkScreen      *screen;
   GdkWindow      *parent_window;
-  GtkRequisition  req;
+  CtkRequisition  req;
   int             root_x;
   int             root_y;
   int             parent_width;
@@ -190,24 +190,24 @@ na_fixed_tip_position (NaFixedTip *fixedtip)
 }
 
 static void
-na_fixed_tip_parent_size_allocated (GtkWidget     *parent,
-                                    GtkAllocation *allocation,
+na_fixed_tip_parent_size_allocated (CtkWidget     *parent,
+                                    CtkAllocation *allocation,
                                     NaFixedTip    *fixedtip)
 {
   na_fixed_tip_position (fixedtip);
 }
 
 static void
-na_fixed_tip_parent_screen_changed (GtkWidget  *parent,
+na_fixed_tip_parent_screen_changed (CtkWidget  *parent,
                                     GdkScreen  *new_screen,
                                     NaFixedTip *fixedtip)
 {
   na_fixed_tip_position (fixedtip);
 }
 
-GtkWidget *
-na_fixed_tip_new (GtkWidget      *parent,
-                  GtkOrientation  orientation)
+CtkWidget *
+na_fixed_tip_new (CtkWidget      *parent,
+                  CtkOrientation  orientation)
 {
   NaFixedTip *fixedtip;
 
@@ -222,7 +222,7 @@ na_fixed_tip_new (GtkWidget      *parent,
 #if 0
   //FIXME: would be nice to be able to get the toplevel for the tip, but this
   //doesn't work
-  GtkWidget  *toplevel;
+  CtkWidget  *toplevel;
 
   toplevel = ctk_widget_get_toplevel (parent);
   /*
@@ -247,7 +247,7 @@ na_fixed_tip_new (GtkWidget      *parent,
 }
 
 void
-na_fixed_tip_set_markup (GtkWidget  *widget,
+na_fixed_tip_set_markup (CtkWidget  *widget,
                          const char *markup_text)
 {
   NaFixedTip *fixedtip;
@@ -263,8 +263,8 @@ na_fixed_tip_set_markup (GtkWidget  *widget,
 }
 
 void
-na_fixed_tip_set_orientation (GtkWidget      *widget,
-                              GtkOrientation  orientation)
+na_fixed_tip_set_orientation (CtkWidget      *widget,
+                              CtkOrientation  orientation)
 {
   NaFixedTip *fixedtip;
 

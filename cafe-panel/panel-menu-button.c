@@ -82,7 +82,7 @@ struct _PanelMenuButtonPrivate {
 	GSettings             *settings;
 	char                  *applet_id;
 
-	GtkWidget             *menu;
+	CtkWidget             *menu;
 
 	char                  *menu_path;
 	char                  *custom_icon;
@@ -101,7 +101,7 @@ static void panel_menu_button_disconnect_from_gsettings (PanelMenuButton *button
 static void panel_menu_button_recreate_menu         (PanelMenuButton *button);
 static void panel_menu_button_set_icon              (PanelMenuButton *button);
 
-static AtkObject *panel_menu_button_get_accessible  (GtkWidget       *widget);
+static AtkObject *panel_menu_button_get_accessible  (CtkWidget       *widget);
 
 static const char *
 panel_menu_path_root_to_filename (MenuPathRoot path_root)
@@ -324,11 +324,11 @@ panel_menu_button_associate_panel (PanelMenuButton *button)
 }
 
 static void
-panel_menu_button_parent_set (GtkWidget *widget,
-			      GtkWidget *previous_parent)
+panel_menu_button_parent_set (CtkWidget *widget,
+			      CtkWidget *previous_parent)
 {
 	PanelMenuButton *button = PANEL_MENU_BUTTON (widget);
-	GtkWidget       *parent;
+	CtkWidget       *parent;
 
 	parent = ctk_widget_get_parent (widget);
 	g_return_if_fail (!parent || PANEL_IS_WIDGET (parent));
@@ -346,9 +346,9 @@ panel_menu_button_parent_set (GtkWidget *widget,
 }
 
 static void
-panel_menu_button_drag_data_get (GtkWidget        *widget,
+panel_menu_button_drag_data_get (CtkWidget        *widget,
 				 GdkDragContext   *context,
-				 GtkSelectionData *selection_data,
+				 CtkSelectionData *selection_data,
 				 guint             info,
 				 guint             time)
 {
@@ -389,7 +389,7 @@ panel_menu_button_menu_detacher	(PanelMenuButton *button)
 	button->priv->menu = NULL;
 }
 
-static GtkWidget *
+static CtkWidget *
 panel_menu_button_create_menu (PanelMenuButton *button)
 {
 	PanelWidget *panel_widget;
@@ -416,7 +416,7 @@ panel_menu_button_create_menu (PanelMenuButton *button)
 
 	ctk_menu_attach_to_widget (CTK_MENU (button->priv->menu),
 				   CTK_WIDGET (button),
-				   (GtkMenuDetachFunc) panel_menu_button_menu_detacher);
+				   (CtkMenuDetachFunc) panel_menu_button_menu_detacher);
 
 	panel_menu_button_associate_panel (button);
 
@@ -485,7 +485,7 @@ panel_menu_button_popup_menu (PanelMenuButton *button,
 }
 
 static void
-panel_menu_button_pressed (GtkButton *ctk_button)
+panel_menu_button_pressed (CtkButton *ctk_button)
 {
 	PanelMenuButton *button;
 
@@ -500,7 +500,7 @@ panel_menu_button_pressed (GtkButton *ctk_button)
 }
 
 static void
-panel_menu_button_clicked (GtkButton *ctk_button)
+panel_menu_button_clicked (CtkButton *ctk_button)
 {
 	PanelMenuButton *button;
 	GdkEvent        *event;
@@ -526,8 +526,8 @@ static void
 panel_menu_button_class_init (PanelMenuButtonClass *klass)
 {
 	GObjectClass   *gobject_class = (GObjectClass   *) klass;
-	GtkWidgetClass *widget_class  = (GtkWidgetClass *) klass;
-	GtkButtonClass *button_class  = (GtkButtonClass *) klass;
+	CtkWidgetClass *widget_class  = (CtkWidgetClass *) klass;
+	CtkButtonClass *button_class  = (CtkButtonClass *) klass;
 
 	gobject_class->finalize     = panel_menu_button_finalize;
 	gobject_class->get_property = panel_menu_button_get_property;
@@ -1048,7 +1048,7 @@ panel_menu_button_set_dnd_enabled (PanelMenuButton *button,
 		return;
 
 	if (dnd_enabled) {
-		static GtkTargetEntry dnd_targets [] = {
+		static CtkTargetEntry dnd_targets [] = {
 			{ "application/x-cafe-panel-applet-internal", 0, 0 }
 		};
 		char *icon;
@@ -1098,7 +1098,7 @@ panel_menu_button_accessible_ref_child (AtkObject *obj,
 					int        index)
 {
 	PanelMenuButton *button;
-	GtkWidget       *menu;
+	CtkWidget       *menu;
 
 	g_return_val_if_fail (PANEL_IS_MENU_BUTTON_ACCESSIBLE (obj), NULL);
 
@@ -1214,7 +1214,7 @@ panel_menu_button_accessible_factory_get_type (void)
 }
 
 static AtkObject *
-panel_menu_button_get_accessible (GtkWidget *widget)
+panel_menu_button_get_accessible (CtkWidget *widget)
 {
 	static gboolean first_time = TRUE;
 

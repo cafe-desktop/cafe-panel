@@ -19,17 +19,17 @@ typedef struct _ButtonWidgetClass	ButtonWidgetClass;
 typedef struct _ButtonWidgetPrivate	ButtonWidgetPrivate;
 
 struct _ButtonWidget {
-	GtkButton            parent;
+	CtkButton            parent;
 
 	ButtonWidgetPrivate *priv;
 };
 
 struct _ButtonWidgetClass {
-	GtkButtonClass parent_class;
+	CtkButtonClass parent_class;
 };
 
 GType            button_widget_get_type          (void) G_GNUC_CONST;
-GtkWidget *      button_widget_new               (const char       *pixmap,
+CtkWidget *      button_widget_new               (const char       *pixmap,
 						  gboolean          arrow,
 						  PanelOrientation  orientation);
 void             button_widget_set_activatable   (ButtonWidget     *button,
@@ -50,7 +50,7 @@ gboolean         button_widget_get_dnd_highlight (ButtonWidget     *button);
 void             button_widget_set_ignore_leave  (ButtonWidget     *button,
 						  gboolean          ignore_leave);
 gboolean         button_widget_get_ignore_leave  (ButtonWidget     *button);
-GtkIconTheme    *button_widget_get_icon_theme    (ButtonWidget     *button);
+CtkIconTheme    *button_widget_get_icon_theme    (ButtonWidget     *button);
 cairo_surface_t *button_widget_get_surface       (ButtonWidget     *button);
 
 #ifdef __cplusplus

@@ -31,7 +31,7 @@
 void
 wayland_panel_toplevel_init (PanelToplevel* toplevel)
 {
-	GtkWindow* window;
+	CtkWindow* window;
 
 	window = CTK_WINDOW (toplevel);
 	ctk_layer_init_for_window (window);
@@ -44,7 +44,7 @@ wayland_panel_toplevel_init (PanelToplevel* toplevel)
 void
 wayland_panel_toplevel_update_placement (PanelToplevel* toplevel)
 {
-	GtkWindow* window;
+	CtkWindow* window;
 	gboolean expand;
 	PanelOrientation orientation;
 	gboolean anchor[CTK_LAYER_SHELL_EDGE_ENTRY_NUMBER];

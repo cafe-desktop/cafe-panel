@@ -18,10 +18,10 @@ extern "C" {
 			   GDK_POINTER_MOTION_HINT_MASK)
 typedef struct {
 	PanelObjectType  type;
-	GtkWidget       *widget;
+	CtkWidget       *widget;
 
-	GtkWidget       *menu;
-	GtkWidget       *move_item;
+	CtkWidget       *menu;
+	CtkWidget       *move_item;
 	GList           *user_menu;
 
 	gpointer         data;
@@ -44,11 +44,11 @@ typedef struct {
 	int                  sensitive;
 	AppletInfo          *info;
 
-	GtkWidget           *menuitem;
-	GtkWidget           *submenu;
+	CtkWidget           *menuitem;
+	CtkWidget           *submenu;
 } AppletUserMenu;
 
-AppletInfo *cafe_panel_applet_register    (GtkWidget       *applet,
+AppletInfo *cafe_panel_applet_register    (CtkWidget       *applet,
 				      gpointer         data,
 				      GDestroyNotify   data_destroy,
 				      PanelWidget     *panel,
@@ -60,7 +60,7 @@ AppletInfo *cafe_panel_applet_register    (GtkWidget       *applet,
 void cafe_panel_applet_stop_loading (const char *id);
 
 const char *cafe_panel_applet_get_id           (AppletInfo      *info);
-const char *cafe_panel_applet_get_id_by_widget (GtkWidget       *widget);
+const char *cafe_panel_applet_get_id_by_widget (CtkWidget       *widget);
 AppletInfo *cafe_panel_applet_get_by_id        (const char      *id);
 AppletInfo *cafe_panel_applet_get_by_type      (PanelObjectType  object_type, GdkScreen *screen);
 
@@ -103,9 +103,9 @@ gboolean    cafe_panel_applet_can_freely_move (AppletInfo *applet);
 /* True if the locked flag is writable */
 gboolean    cafe_panel_applet_lockable (AppletInfo *applet);
 
-GtkWidget  *cafe_panel_applet_create_menu (AppletInfo *info);
+CtkWidget  *cafe_panel_applet_create_menu (AppletInfo *info);
 
-void        cafe_panel_applet_menu_set_recurse (GtkMenu     *menu,
+void        cafe_panel_applet_menu_set_recurse (CtkMenu     *menu,
 					   const gchar *key,
 					   gpointer     data);
 

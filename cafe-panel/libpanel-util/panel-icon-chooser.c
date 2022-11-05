@@ -39,9 +39,9 @@ struct _PanelIconChooserPrivate
 
 	char *icon_theme_dir;
 
-	GtkWidget *image;
+	CtkWidget *image;
 
-	GtkWidget *filechooser;
+	CtkWidget *filechooser;
 };
 
 enum {
@@ -59,10 +59,10 @@ static guint panel_icon_chooser_signals[LAST_SIGNAL] = { 0 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (PanelIconChooser, panel_icon_chooser, CTK_TYPE_BUTTON)
 
-static void _panel_icon_chooser_clicked (GtkButton *button);
-static void _panel_icon_chooser_style_set (GtkWidget *widget,
-					   GtkStyle  *prev_style);
-static void _panel_icon_chooser_screen_changed (GtkWidget *widget,
+static void _panel_icon_chooser_clicked (CtkButton *button);
+static void _panel_icon_chooser_style_set (CtkWidget *widget,
+					   CtkStyle  *prev_style);
+static void _panel_icon_chooser_screen_changed (CtkWidget *widget,
 						GdkScreen *prev_screen);
 
 /* gobject stuff */
@@ -171,8 +171,8 @@ static void
 panel_icon_chooser_class_init (PanelIconChooserClass *class)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (class);
-	GtkWidgetClass *ctkwidget_class = CTK_WIDGET_CLASS (class);
-	GtkButtonClass *ctkbutton_class = CTK_BUTTON_CLASS (class);
+	CtkWidgetClass *ctkwidget_class = CTK_WIDGET_CLASS (class);
+	CtkButtonClass *ctkbutton_class = CTK_BUTTON_CLASS (class);
 
 	gobject_class->constructor = panel_icon_chooser_constructor;
 	gobject_class->get_property = panel_icon_chooser_get_property;
@@ -294,7 +294,7 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 
 		g_free (names[0]);
 #endif
-		GtkIconTheme *icon_theme;
+		CtkIconTheme *icon_theme;
 		const char   *icon;
 		char         *no_ext;
 
@@ -331,7 +331,7 @@ _panel_icon_chooser_find_icon_from_path (PanelIconChooser *chooser,
 }
 
 static void
-_panel_icon_chooser_file_chooser_response (GtkFileChooser   *filechooser,
+_panel_icon_chooser_file_chooser_response (CtkFileChooser   *filechooser,
 					   gint              response_id,
 					   PanelIconChooser *chooser)
 {
@@ -351,12 +351,12 @@ _panel_icon_chooser_file_chooser_response (GtkFileChooser   *filechooser,
 }
 
 static void
-_panel_icon_chooser_clicked (GtkButton *button)
+_panel_icon_chooser_clicked (CtkButton *button)
 {
 	PanelIconChooser *chooser = PANEL_ICON_CHOOSER (button);
-	GtkWidget        *filechooser;
-	GtkWidget        *toplevel;
-	GtkWindow        *parent;
+	CtkWidget        *filechooser;
+	CtkWidget        *toplevel;
+	CtkWindow        *parent;
 	char             *path;
 	gboolean          filechooser_path_set;
 
@@ -399,8 +399,8 @@ _panel_icon_chooser_clicked (GtkButton *button)
 		if (g_path_is_absolute (chooser->priv->icon)) {
 			path = g_strdup (chooser->priv->icon);
 		} else {
-			GtkIconTheme *icon_theme;
-			GtkIconInfo  *info;
+			CtkIconTheme *icon_theme;
+			CtkIconInfo  *info;
 			char         *no_ext;
 			int           size;
 
@@ -453,8 +453,8 @@ _panel_icon_chooser_clicked (GtkButton *button)
 }
 
 static void
-_panel_icon_chooser_style_set (GtkWidget *widget,
-			       GtkStyle  *prev_style)
+_panel_icon_chooser_style_set (CtkWidget *widget,
+			       CtkStyle  *prev_style)
 {
 	PanelIconChooser *chooser;
 
@@ -466,7 +466,7 @@ _panel_icon_chooser_style_set (GtkWidget *widget,
 }
 
 static void
-_panel_icon_chooser_screen_changed (GtkWidget *widget,
+_panel_icon_chooser_screen_changed (CtkWidget *widget,
 				    GdkScreen *prev_screen)
 {
 	PanelIconChooser *chooser;
@@ -481,10 +481,10 @@ _panel_icon_chooser_screen_changed (GtkWidget *widget,
 
 /* public methods */
 
-GtkWidget  *
+CtkWidget  *
 panel_icon_chooser_new (const char  *icon)
 {
-	GtkWidget *chooser;
+	CtkWidget *chooser;
 
 	chooser = g_object_new (PANEL_TYPE_ICON_CHOOSER,
 			       "icon", icon,

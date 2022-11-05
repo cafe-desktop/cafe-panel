@@ -61,7 +61,7 @@ clock_locale_format (void)
 }
 
 void
-clock_utils_display_help (GtkWidget  *widget,
+clock_utils_display_help (CtkWidget  *widget,
 			  const char *doc_id,
 			  const char *link_id)
 {
@@ -81,8 +81,8 @@ clock_utils_display_help (GtkWidget  *widget,
 	    g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
 		g_error_free (error);
 	else if (error) {
-		GtkWidget *parent;
-		GtkWidget *dialog;
+		CtkWidget *parent;
+		CtkWidget *dialog;
 		char      *primary;
 
 		if (CTK_IS_WINDOW (widget))

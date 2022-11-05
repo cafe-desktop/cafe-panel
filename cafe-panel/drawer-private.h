@@ -19,48 +19,48 @@ extern "C" {
 /* Internal functions */
 /* event handlers */
 
-static void  drawer_click                       (GtkWidget        *widget,
+static void  drawer_click                       (CtkWidget        *widget,
                                                  Drawer           *drawer);
 
 static void  drawer_focus_panel_widget          (Drawer           *drawer,
-                                                 GtkDirectionType  direction);
+                                                 CtkDirectionType  direction);
 
-static gboolean  key_press_drawer               (GtkWidget        *widget,
+static gboolean  key_press_drawer               (CtkWidget        *widget,
                                                  GdkEventKey      *event,
                                                  Drawer           *drawer);
 
-static gboolean  key_press_drawer_widget        (GtkWidget        *widget,
+static gboolean  key_press_drawer_widget        (CtkWidget        *widget,
                                                  GdkEventKey      *event,
                                                  Drawer           *drawer);
 
     /* drag and drop handlers */
 
-static void  drag_data_get_cb                   (GtkWidget        *widget,
+static void  drag_data_get_cb                   (CtkWidget        *widget,
                                                  GdkDragContext   *context,
-                                                 GtkSelectionData *selection_data,
+                                                 CtkSelectionData *selection_data,
                                                  guint             info,
                                                  guint             time,
                                                  Drawer           *drawer);
 
-static gboolean  drag_motion_cb                 (GtkWidget        *widget,
+static gboolean  drag_motion_cb                 (CtkWidget        *widget,
                                                  GdkDragContext   *context,
                                                  int               x,
                                                  int               y,
                                                  guint             time_,
                                                  Drawer           *drawer);
 
-static gboolean  drag_drop_cb                   (GtkWidget        *widget,
+static gboolean  drag_drop_cb                   (CtkWidget        *widget,
                                                  GdkDragContext   *context,
                                                  int               x,
                                                  int               y,
                                                  guint             time_,
                                                  Drawer           *drawer);
 
-static void  drag_data_received_cb              (GtkWidget        *widget,
+static void  drag_data_received_cb              (CtkWidget        *widget,
                                                  GdkDragContext   *context,
                                                  gint              x,
                                                  gint              y,
-                                                 GtkSelectionData *selection_data,
+                                                 CtkSelectionData *selection_data,
                                                  guint             info,
                                                  guint             time_,
                                                  Drawer           *drawer);
@@ -69,15 +69,15 @@ static gboolean  close_drawer_in_idle           (gpointer          data);
 
 static void  queue_drawer_close_for_drag        (Drawer           *drawer);
 
-static void  drag_leave_cb                      (GtkWidget        *widget,
+static void  drag_leave_cb                      (CtkWidget        *widget,
                                                  GdkDragContext   *context,
                                                  guint             time_,
                                                  Drawer           *drawer);
 
     /* load_drawer_applet handlers */
 
-static void  drawer_button_size_allocated       (GtkWidget        *widget,
-                                                 GtkAllocation    *alloc,
+static void  drawer_button_size_allocated       (CtkWidget        *widget,
+                                                 CtkAllocation    *alloc,
                                                  Drawer           *drawer);
 
 static gboolean  drawer_changes_enabled         (void);
@@ -94,13 +94,13 @@ static void  panel_drawer_tooltip_changed       (GSettings        *settings,
 
     /* destroy handlers */
 
-static void  toplevel_destroyed                 (GtkWidget        *widget,
+static void  toplevel_destroyed                 (CtkWidget        *widget,
                                                  Drawer           *drawer);
 
-static void  destroy_drawer                     (GtkWidget        *widget,
+static void  destroy_drawer                     (CtkWidget        *widget,
                                                  Drawer           *drawer);
 
-static void  drawer_deletion_response           (GtkWidget        *dialog,
+static void  drawer_deletion_response           (CtkWidget        *dialog,
                                                  int               response,
                                                  Drawer           *drawer);
 

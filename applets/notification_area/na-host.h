@@ -37,13 +37,13 @@ struct _NaHostInterface
 
   void (*force_redraw)         (NaHost          *host);
   void (*style_updated)        (NaHost          *host,
-                                GtkStyleContext *context);
+                                CtkStyleContext *context);
 };
 
 GType   na_host_get_type          (void);
 void    na_host_force_redraw      (NaHost          *host);
 void    na_host_style_updated     (NaHost          *host,
-                                   GtkStyleContext *context);
+                                   CtkStyleContext *context);
 void    na_host_emit_item_added   (NaHost          *host,
                                    NaItem          *item);
 void    na_host_emit_item_removed (NaHost          *host,

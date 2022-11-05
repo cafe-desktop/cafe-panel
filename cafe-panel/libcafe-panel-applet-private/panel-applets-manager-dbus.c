@@ -54,7 +54,7 @@ G_DEFINE_TYPE_WITH_CODE (CafePanelAppletsManagerDBus,
 							 10))
 
 typedef gint (* ActivateAppletFunc) (void);
-typedef GtkWidget * (* GetAppletWidgetFunc) (const gchar *factory_id,
+typedef CtkWidget * (* GetAppletWidgetFunc) (const gchar *factory_id,
                                              guint        uid);
 
 typedef struct _CafePanelAppletFactoryInfo {
@@ -631,7 +631,7 @@ cafe_panel_applets_manager_dbus_load_applet (CafePanelAppletsManager         *ma
 	return cafe_panel_applet_frame_dbus_load (iid, frame_act);
 }
 
-static GtkWidget *
+static CtkWidget *
 cafe_panel_applets_manager_dbus_get_applet_widget (CafePanelAppletsManager *manager,
                                               const gchar         *iid,
                                               guint                uid)

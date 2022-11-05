@@ -79,7 +79,7 @@ panel_util_make_exec_uri_for_desktop (const char *exec)
 }
 
 int
-panel_find_applet_index (GtkWidget *widget)
+panel_find_applet_index (CtkWidget *widget)
 {
 	GSList *applet_list, *l;
 	int     i;
@@ -97,7 +97,7 @@ panel_find_applet_index (GtkWidget *widget)
 }
 
 void
-panel_push_window_busy (GtkWidget *window)
+panel_push_window_busy (CtkWidget *window)
 {
 	int busy = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (window),
 						       "Panel:WindowBusy"));
@@ -127,7 +127,7 @@ panel_push_window_busy (GtkWidget *window)
 }
 
 void
-panel_pop_window_busy (GtkWidget *window)
+panel_pop_window_busy (CtkWidget *window)
 {
 	int busy = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (window),
 						       "Panel:WindowBusy"));
@@ -285,11 +285,11 @@ panel_gicon_from_icon_name (const char *icon_name) {
 }
 
 char *
-panel_find_icon (GtkIconTheme  *icon_theme,
+panel_find_icon (CtkIconTheme  *icon_theme,
 		 const char    *icon_name,
 		 gint           size)
 {
-	GtkIconInfo *info;
+	CtkIconInfo *info;
 	char        *retval;
 	char        *icon_no_extension;
 
@@ -330,7 +330,7 @@ panel_find_icon (GtkIconTheme  *icon_theme,
 }
 
 cairo_surface_t *
-panel_load_icon (GtkIconTheme  *icon_theme,
+panel_load_icon (CtkIconTheme  *icon_theme,
 		 const char    *icon_name,
 		 int            size,
 		 int            desired_width,
@@ -768,7 +768,7 @@ panel_util_cairo_rgbdata_to_pixbuf (unsigned char *data,
 }
 
 char *
-guess_icon_from_exec (GtkIconTheme *icon_theme,
+guess_icon_from_exec (CtkIconTheme *icon_theme,
 		      const gchar  *exec)
 {
 	char *icon_name;
@@ -808,7 +808,7 @@ static char *
 panel_util_get_icon_name_from_g_icon (GIcon *gicon)
 {
 	const char * const *names;
-	GtkIconTheme *icon_theme;
+	CtkIconTheme *icon_theme;
 	int i;
 
 	if (!G_IS_THEMED_ICON (gicon))
@@ -1182,11 +1182,11 @@ panel_util_get_icon_for_uri (const char *text_uri)
 }
 
 static gboolean
-panel_util_query_tooltip_cb (GtkWidget  *widget,
+panel_util_query_tooltip_cb (CtkWidget  *widget,
 			     gint        x,
 			     gint        y,
 			     gboolean    keyboard_tip,
-			     GtkTooltip *tooltip,
+			     CtkTooltip *tooltip,
 			     const char *text)
 {
 	if (!panel_global_config_get_tooltips_enabled ())
@@ -1197,7 +1197,7 @@ panel_util_query_tooltip_cb (GtkWidget  *widget,
 }
 
 void
-panel_util_set_tooltip_text (GtkWidget  *widget,
+panel_util_set_tooltip_text (CtkWidget  *widget,
 			     const char *text)
 {
         g_signal_handlers_disconnect_matched (widget,

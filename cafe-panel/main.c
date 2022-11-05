@@ -62,8 +62,8 @@ static const GOptionEntry options[] = {
 };
 
 static void
-parsing_error_cb (GtkCssProvider *provider,
-                  GtkCssSection  *section,
+parsing_error_cb (CtkCssProvider *provider,
+                  CtkCssSection  *section,
                   GError         *error,
                   gpointer        user_data)
 {
@@ -78,8 +78,8 @@ main (int argc, char **argv)
 	GError         *error;
 	GdkDisplay     *display;
 	GdkScreen      *screen;
-	GtkCssProvider *css;
-	GtkStyleProvider *provider;
+	CtkCssProvider *css;
+	CtkStyleProvider *provider;
 	const gchar    *resource;
 	guint          priority;
 

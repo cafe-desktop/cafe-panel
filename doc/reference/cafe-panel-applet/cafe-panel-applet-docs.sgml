@@ -63,7 +63,7 @@ hello_applet_fill (CafePanelApplet *applet,
 		   const gchar *iid,
 		   gpointer     data)
 {
-        GtkWidget *label;
+        CtkWidget *label;
 
         if (strcmp (iid, "OAFIID:My_HelloApplet") != 0)
 		return FALSE;
@@ -92,8 +92,8 @@ passing it a factory function like hello_applet_fill().
 
       <para>libcafe-panel-applet automatically creates a #CafePanelApplet object
 for you, passing this to your factory method. Here, you should fill
-the applet with your widgets just like a #GtkBin. For example, if you
-were writing a cdplayer applet you would create a #GtkHBox, pack the
+the applet with your widgets just like a #CtkBin. For example, if you
+were writing a cdplayer applet you would create a #CtkHBox, pack the
 hbox with the cdplayer buttons and in turn add the hbox to the applet.
       </para>
 

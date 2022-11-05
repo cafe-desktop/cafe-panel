@@ -62,7 +62,7 @@ launcher_get_screen (Launcher *launcher)
 }
 
 static void
-launcher_widget_open_dialog_destroyed (GtkWidget *dialog,
+launcher_widget_open_dialog_destroyed (CtkWidget *dialog,
 				       Launcher *launcher)
 {
 	g_return_if_fail (launcher->error_dialogs != NULL);
@@ -89,7 +89,7 @@ launcher_widget_destroy_open_dialogs (Launcher *launcher)
 
 static void
 launcher_register_error_dialog (Launcher *launcher,
-				GtkWidget *dialog)
+				CtkWidget *dialog)
 {
 	launcher->error_dialogs = g_slist_append (launcher->error_dialogs,
 						  dialog);
@@ -113,7 +113,7 @@ launch_url (Launcher *launcher)
 	screen = launcher_get_screen (launcher);
 
 	if (!url || *url == 0) {
-		GtkWidget *error_dialog;
+		CtkWidget *error_dialog;
 
 		error_dialog = panel_error_dialog (NULL, screen,
 						   "no_url_dialog", TRUE,
@@ -152,7 +152,7 @@ launcher_launch (Launcher  *launcher,
 		panel_launch_key_file (launcher->key_file, NULL,
 				       launcher_get_screen (launcher), action, &error);
 		if (error) {
-			GtkWidget *error_dialog;
+			CtkWidget *error_dialog;
 
 			error_dialog = panel_error_dialog (
 						NULL,
@@ -169,11 +169,11 @@ launcher_launch (Launcher  *launcher,
 }
 
 static void
-drag_data_received_cb (GtkWidget        *widget,
+drag_data_received_cb (CtkWidget        *widget,
 		       GdkDragContext   *context,
 		       gint              x,
 		       gint              y,
-		       GtkSelectionData *selection_data,
+		       CtkSelectionData *selection_data,
 		       guint             info,
 		       guint             time,
 		       Launcher         *launcher)
@@ -209,7 +209,7 @@ drag_data_received_cb (GtkWidget        *widget,
 	g_strfreev (uris);
 
 	if (error) {
-		GtkWidget *error_dialog;
+		CtkWidget *error_dialog;
 		error_dialog = panel_error_dialog (NULL,
 						   launcher_get_screen (launcher),
 						   "cannot_use_dropped_item",
@@ -224,7 +224,7 @@ drag_data_received_cb (GtkWidget        *widget,
 }
 
 static void
-destroy_launcher (GtkWidget *widget,
+destroy_launcher (CtkWidget *widget,
 		  Launcher  *launcher)
 {
 	launcher_properties_destroy (launcher);
@@ -234,7 +234,7 @@ destroy_launcher (GtkWidget *widget,
 void
 launcher_properties_destroy (Launcher *launcher)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 
 	dialog = launcher->prop_dialog;
 	launcher->prop_dialog = NULL;
@@ -288,12 +288,12 @@ panel_launcher_delete (Launcher *launcher)
 }
 
 static gboolean
-is_this_drop_ok (GtkWidget      *widget,
+is_this_drop_ok (CtkWidget      *widget,
 		 GdkDragContext *context)
 {
 	static GdkAtom  text_uri_list = GDK_NONE;
 	GList           *l;
-	GtkWidget       *source;
+	CtkWidget       *source;
 
 	source = ctk_drag_get_source_widget (context);
 
@@ -315,7 +315,7 @@ is_this_drop_ok (GtkWidget      *widget,
 }
 
 static void
-drag_leave_cb(GtkWidget	       *widget,
+drag_leave_cb(CtkWidget	       *widget,
 	      GdkDragContext   *context,
 	      guint             time,
 	      Launcher *launcher)
@@ -325,7 +325,7 @@ drag_leave_cb(GtkWidget	       *widget,
 
 
 static gboolean
-drag_motion_cb(GtkWidget *widget,
+drag_motion_cb(CtkWidget *widget,
 	       GdkDragContext *context,
 	       gint x,
 	       gint y,
@@ -343,7 +343,7 @@ drag_motion_cb(GtkWidget *widget,
 }
 
 static gboolean
-drag_drop_cb (GtkWidget	        *widget,
+drag_drop_cb (CtkWidget	        *widget,
 	      GdkDragContext    *context,
 	      gint               x,
 	      gint               y,
@@ -370,9 +370,9 @@ enum {
 
 
 static void
-drag_data_get_cb (GtkWidget        *widget,
+drag_data_get_cb (CtkWidget        *widget,
 		  GdkDragContext   *context,
-		  GtkSelectionData *selection_data,
+		  CtkSelectionData *selection_data,
 		  guint             info,
 		  guint             time,
 		  Launcher         *launcher)
@@ -402,7 +402,7 @@ drag_data_get_cb (GtkWidget        *widget,
 
 static void
 clicked_cb (Launcher  *launcher,
-		  GtkWidget        *widget)
+		  CtkWidget        *widget)
 {
 
 #ifdef HAVE_X11
@@ -766,7 +766,7 @@ launcher_save_uri (PanelDItemEditor *dialog,
 }
 
 static void
-launcher_saved (GtkWidget *dialog,
+launcher_saved (CtkWidget *dialog,
 		Launcher  *launcher)
 {
 	const char  *uri;
@@ -791,7 +791,7 @@ launcher_saved (GtkWidget *dialog,
 }
 
 static void
-launcher_error_reported (GtkWidget  *dialog,
+launcher_error_reported (CtkWidget  *dialog,
 			 const char *primary,
 			 const char *secondary,
 			 gpointer    data)
@@ -936,7 +936,7 @@ launcher_load_from_gsettings (PanelWidget *panel_widget,
 }
 
 static void
-launcher_new_saved (GtkWidget *dialog,
+launcher_new_saved (CtkWidget *dialog,
 		    gpointer   data)
 {
 	PanelWidget *panel;
@@ -964,7 +964,7 @@ ask_about_launcher (const char  *file,
 		    int          pos,
 		    gboolean     exactpos)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 	GKeyFile  *key_file;
 
 	if (panel_lockdown_get_disable_command_line ())
@@ -1170,7 +1170,7 @@ panel_launcher_set_dnd_enabled (Launcher *launcher,
 	cairo_surface_t *surface;
 
 	if (dnd_enabled) {
-		static GtkTargetEntry dnd_targets[] = {
+		static CtkTargetEntry dnd_targets[] = {
 			{ "application/x-panel-icon-internal", 0, TARGET_ICON_INTERNAL },
 			{ "text/uri-list", 0, TARGET_URI_LIST }
 		};

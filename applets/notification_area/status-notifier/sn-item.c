@@ -27,9 +27,9 @@ struct _SnItemPrivate
   gchar          *bus_name;
   gchar          *object_path;
 
-  GtkOrientation  orientation;
+  CtkOrientation  orientation;
 
-  GtkMenu        *menu;
+  CtkMenu        *menu;
 };
 
 enum
@@ -160,10 +160,10 @@ sn_item_get_action_coordinates (SnItem *item,
                                 gint   *x,
                                 gint   *y)
 {
-  GtkWidget *widget;
+  CtkWidget *widget;
   SnItemPrivate *priv;
   GdkWindow *window;
-  GtkWidget *toplevel;
+  CtkWidget *toplevel;
   gint width;
   gint height;
 
@@ -182,7 +182,7 @@ sn_item_get_action_coordinates (SnItem *item,
 }
 
 static gboolean
-sn_item_button_press_event (GtkWidget      *widget,
+sn_item_button_press_event (CtkWidget      *widget,
                             GdkEventButton *event)
 {
   SnItem *item;
@@ -229,7 +229,7 @@ sn_item_button_press_event (GtkWidget      *widget,
 }
 
 static gboolean
-sn_item_popup_menu (GtkWidget *widget)
+sn_item_popup_menu (CtkWidget *widget)
 {
   SnItem *item;
   SnItemPrivate *priv;
@@ -260,7 +260,7 @@ sn_item_popup_menu (GtkWidget *widget)
 }
 
 static void
-sn_item_clicked (GtkButton *button)
+sn_item_clicked (CtkButton *button)
 {
   SnItem *item;
   gint x;
@@ -274,7 +274,7 @@ sn_item_clicked (GtkButton *button)
 }
 
 static gboolean
-sn_item_scroll_event (GtkWidget      *widget,
+sn_item_scroll_event (CtkWidget      *widget,
                       GdkEventScroll *event)
 {
   SnItem *item;
@@ -423,8 +423,8 @@ static void
 sn_item_class_init (SnItemClass *item_class)
 {
   GObjectClass *object_class;
-  GtkWidgetClass *widget_class;
-  GtkButtonClass *button_class;
+  CtkWidgetClass *widget_class;
+  CtkButtonClass *button_class;
 
   object_class = G_OBJECT_CLASS (item_class);
   widget_class = CTK_WIDGET_CLASS (item_class);

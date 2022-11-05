@@ -67,23 +67,23 @@
 #endif
 
 typedef struct {
-	GtkWidget        *run_dialog;
+	CtkWidget        *run_dialog;
 
-	GtkWidget        *main_box;
-	GtkWidget        *program_list_box;
+	CtkWidget        *main_box;
+	CtkWidget        *program_list_box;
 
-	GtkWidget        *combobox;
-	GtkWidget        *pixmap;
-	GtkWidget        *run_button;
-	GtkWidget        *file_button;
-	GtkWidget        *list_expander;
-	GtkWidget        *terminal_checkbox;
-	GtkWidget        *program_label;
-	GtkWidget        *program_list;
+	CtkWidget        *combobox;
+	CtkWidget        *pixmap;
+	CtkWidget        *run_button;
+	CtkWidget        *file_button;
+	CtkWidget        *list_expander;
+	CtkWidget        *terminal_checkbox;
+	CtkWidget        *program_label;
+	CtkWidget        *program_list;
 
 	long              changed_id;
 
-	GtkListStore     *program_list_store;
+	CtkListStore     *program_list_store;
 
 	GHashTable       *dir_hash;
 	GList		 *possible_executables;
@@ -122,10 +122,10 @@ static void panel_run_dialog_disconnect_pixmap (PanelRunDialog *dialog);
 #define PANEL_RUN_HISTORY_REVERSE_KEY "history-reverse-cafe-run"
 #define PANEL_RUN_SHOW_PROGRAM_LIST_KEY "show-program-list"
 
-static GtkTreeModel *
+static CtkTreeModel *
 _panel_run_get_recent_programs_list (PanelRunDialog *dialog)
 {
-	GtkListStore *list;
+	CtkListStore *list;
 	gchar       **items;
 	guint         history_max_size;
 	gboolean      history_reverse = FALSE;
@@ -139,7 +139,7 @@ _panel_run_get_recent_programs_list (PanelRunDialog *dialog)
 	for (i = 0;
 	     items[i] && i < history_max_size;
 	     i++) {
-		GtkTreeIter iter;
+		CtkTreeIter iter;
 		/* add history in reverse */
 		if (history_reverse)
 			ctk_list_store_prepend (list, &iter);
@@ -155,11 +155,11 @@ _panel_run_get_recent_programs_list (PanelRunDialog *dialog)
 
 static void
 _panel_run_save_recent_programs_list (PanelRunDialog   *dialog,
-				      GtkComboBox      *entry,
+				      CtkComboBox      *entry,
 				      char             *lastcommand)
 {
-	GtkTreeModel *model;
-	GtkTreeIter   iter;
+	CtkTreeModel *model;
+	CtkTreeIter   iter;
 	guint         history_max_size;
 	gboolean      history_reverse;
 
@@ -267,7 +267,7 @@ panel_run_dialog_destroy (PanelRunDialog *dialog)
 static const char *
 panel_run_dialog_get_combo_text (PanelRunDialog *dialog)
 {
-	GtkWidget *entry;
+	CtkWidget *entry;
 
 	entry = ctk_bin_get_child (CTK_BIN (dialog->combobox));
 
@@ -306,8 +306,8 @@ panel_run_dialog_set_icon (PanelRunDialog *dialog,
 
 		ctk_icon_size_lookup (CTK_ICON_SIZE_DIALOG, &size, NULL);
 
-		GtkIconTheme *icon_theme = ctk_icon_theme_get_default ();
-		GtkIconInfo *icon_info = ctk_icon_theme_lookup_by_gicon (icon_theme, icon, size, CTK_ICON_LOOKUP_FORCE_SIZE);
+		CtkIconTheme *icon_theme = ctk_icon_theme_get_default ();
+		CtkIconInfo *icon_info = ctk_icon_theme_lookup_by_gicon (icon_theme, icon, size, CTK_ICON_LOOKUP_FORCE_SIZE);
 		pixbuf = ctk_icon_info_load_icon (icon_info, NULL);
 		g_object_unref (icon_info);
 	}
@@ -526,7 +526,7 @@ panel_run_dialog_execute (PanelRunDialog *dialog)
 static void
 panel_run_dialog_response (PanelRunDialog *dialog,
 			   int             response,
-			   GtkWidget      *run_dialog)
+			   CtkWidget      *run_dialog)
 {
 
 	dialog->completion_started = FALSE;
@@ -572,7 +572,7 @@ panel_run_dialog_append_file_utf8 (PanelRunDialog *dialog,
 {
 	const char *text;
 	char       *quoted, *temp;
-	GtkWidget  *entry;
+	CtkWidget  *entry;
 
 	/* Don't allow filenames beginning with '-' */
 	if (!file || !file[0] || file[0] == '-')
@@ -659,9 +659,9 @@ fuzzy_command_match (const char *cmd1,
 }
 
 static gboolean
-panel_run_dialog_make_all_list_visible (GtkTreeModel *model,
-					GtkTreePath  *path,
-					GtkTreeIter  *iter,
+panel_run_dialog_make_all_list_visible (CtkTreeModel *model,
+					CtkTreePath  *path,
+					CtkTreeIter  *iter,
 					gpointer      data)
 {
 	ctk_list_store_set (CTK_LIST_STORE (model), iter,
@@ -674,9 +674,9 @@ panel_run_dialog_make_all_list_visible (GtkTreeModel *model,
 static gboolean
 panel_run_dialog_find_command_idle (PanelRunDialog *dialog)
 {
-	GtkTreeIter   iter;
-	GtkTreeModel *model;
-	GtkTreePath  *path;
+	CtkTreeIter   iter;
+	CtkTreeModel *model;
+	CtkTreePath  *path;
 	char         *text;
 	GIcon        *found_icon;
 	char         *found_name;
@@ -878,9 +878,9 @@ static GSList* get_all_applications(void)
 static gboolean
 panel_run_dialog_add_items_idle (PanelRunDialog *dialog)
 {
-	GtkCellRenderer   *renderer;
-	GtkTreeViewColumn *column;
-	GtkTreeModel      *model_filter;
+	CtkCellRenderer   *renderer;
+	CtkTreeViewColumn *column;
+	CtkTreeModel      *model_filter;
 	GSList            *all_applications;
 	GSList            *l;
 	GSList            *next;
@@ -919,7 +919,7 @@ panel_run_dialog_add_items_idle (PanelRunDialog *dialog)
 
 	for (l = all_applications; l; l = l->next) {
 		CafeMenuTreeEntry *entry = l->data;
-		GtkTreeIter    iter;
+		CtkTreeIter    iter;
 		GDesktopAppInfo *ginfo;
 		GIcon *gicon = NULL;
 
@@ -1009,18 +1009,18 @@ remove_parameters (const char *exec)
 }
 
 static void
-program_list_selection_changed (GtkTreeSelection *selection,
+program_list_selection_changed (CtkTreeSelection *selection,
 				PanelRunDialog   *dialog)
 {
-	GtkTreeModel *filter_model;
-	GtkTreeModel *child_model;
-	GtkTreeIter   iter;
-	GtkTreeIter   filter_iter;
+	CtkTreeModel *filter_model;
+	CtkTreeModel *child_model;
+	CtkTreeIter   iter;
+	CtkTreeIter   filter_iter;
 	char         *temp;
 	char         *path, *stripped;
 	gboolean      terminal;
 	GKeyFile     *key_file;
-	GtkWidget    *entry;
+	CtkWidget    *entry;
 	GIcon        *icon = NULL;
 
 	if (!ctk_tree_selection_get_selected (selection, &filter_model,
@@ -1095,12 +1095,12 @@ program_list_selection_changed (GtkTreeSelection *selection,
 }
 
 static void
-program_list_selection_activated (GtkTreeView       *view,
-				  GtkTreePath       *path,
-				  GtkTreeViewColumn *column,
+program_list_selection_activated (CtkTreeView       *view,
+				  CtkTreePath       *path,
+				  CtkTreeViewColumn *column,
 				  PanelRunDialog    *dialog)
 {
-	GtkTreeSelection *selection;
+	CtkTreeSelection *selection;
 
 	/* update the entry with the info from the selection */
 	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (dialog->program_list));
@@ -1113,9 +1113,9 @@ program_list_selection_activated (GtkTreeView       *view,
 
 static void
 panel_run_dialog_setup_program_list (PanelRunDialog *dialog,
-				     GtkBuilder     *gui)
+				     CtkBuilder     *gui)
 {
-	GtkTreeSelection *selection;
+	CtkTreeSelection *selection;
 
 	dialog->program_list = PANEL_CTK_BUILDER_GET (gui, "program_list");
 	dialog->program_list_box = PANEL_CTK_BUILDER_GET (gui, "program_list_box");
@@ -1154,7 +1154,7 @@ panel_run_dialog_update_content (PanelRunDialog *dialog,
 {
 
 	if (!panel_profile_get_enable_program_list ()) {
-		GtkWidget *parent;
+		CtkWidget *parent;
 
 		parent = ctk_widget_get_parent (dialog->list_expander);
 		if (parent)
@@ -1211,7 +1211,7 @@ panel_run_dialog_content_notify (GSettings      *settings,
 }
 
 static void
-list_expander_toggled (GtkExpander    *expander,
+list_expander_toggled (CtkExpander    *expander,
 		       GParamSpec     *pspec,
 		       PanelRunDialog *dialog)
 {
@@ -1220,7 +1220,7 @@ list_expander_toggled (GtkExpander    *expander,
 
 static void
 panel_run_dialog_setup_list_expander (PanelRunDialog *dialog,
-				      GtkBuilder     *gui)
+				      CtkBuilder     *gui)
 {
 	dialog->list_expander = PANEL_CTK_BUILDER_GET (gui, "list_expander");
 
@@ -1243,7 +1243,7 @@ panel_run_dialog_setup_list_expander (PanelRunDialog *dialog,
 }
 
 static void
-file_button_browse_response (GtkWidget      *chooser,
+file_button_browse_response (CtkWidget      *chooser,
 			     gint            response,
 			     PanelRunDialog *dialog)
 {
@@ -1261,10 +1261,10 @@ file_button_browse_response (GtkWidget      *chooser,
 }
 
 static void
-file_button_clicked (GtkButton      *button,
+file_button_clicked (CtkButton      *button,
 		     PanelRunDialog *dialog)
 {
-	GtkWidget *chooser;
+	CtkWidget *chooser;
 
 	chooser = panel_file_chooser_dialog_new (_("Choose a file to append to the command..."),
 						 CTK_WINDOW (dialog->run_dialog),
@@ -1287,7 +1287,7 @@ file_button_clicked (GtkButton      *button,
 
 static void
 panel_run_dialog_setup_file_button (PanelRunDialog *dialog,
-				    GtkBuilder     *gui)
+				    CtkBuilder     *gui)
 {
 	dialog->file_button = PANEL_CTK_BUILDER_GET (gui, "file_button");
 
@@ -1498,11 +1498,11 @@ panel_run_dialog_update_completion (PanelRunDialog *dialog,
 }
 
 static gboolean
-entry_event (GtkEditable    *entry,
+entry_event (CtkEditable    *entry,
 	     GdkEventKey    *event,
 	     PanelRunDialog *dialog)
 {
-	GtkTreeSelection *selection;
+	CtkTreeSelection *selection;
 	char             *prefix;
 	char             *nospace_prefix;
 	char             *nprefix;
@@ -1614,7 +1614,7 @@ entry_event (GtkEditable    *entry,
 }
 
 static void
-combobox_changed (GtkComboBox    *combobox,
+combobox_changed (CtkComboBox    *combobox,
 		  PanelRunDialog *dialog)
 {
 	char *text;
@@ -1658,8 +1658,8 @@ combobox_changed (GtkComboBox    *combobox,
 		}
 
 		if (panel_profile_get_enable_program_list ()) {
-			GtkTreeIter  iter;
-			GtkTreePath *path;
+			CtkTreeIter  iter;
+			CtkTreePath *path;
 
 			ctk_tree_model_foreach (CTK_TREE_MODEL (dialog->program_list_store),
 						panel_run_dialog_make_all_list_visible,
@@ -1705,11 +1705,11 @@ combobox_changed (GtkComboBox    *combobox,
 }
 
 static void
-entry_drag_data_received (GtkEditable      *entry,
+entry_drag_data_received (CtkEditable      *entry,
 			  GdkDragContext   *context,
 			  gint              x,
 			  gint              y,
-			  GtkSelectionData *selection_data,
+			  CtkSelectionData *selection_data,
 			  guint             info,
 			  guint32           time,
 			  PanelRunDialog   *dialog)
@@ -1752,10 +1752,10 @@ entry_drag_data_received (GtkEditable      *entry,
 
 static void
 panel_run_dialog_setup_entry (PanelRunDialog *dialog,
-			      GtkBuilder     *gui)
+			      CtkBuilder     *gui)
 {
 	int                    width_request;
-	GtkWidget             *entry;
+	CtkWidget             *entry;
 
 	dialog->combobox = PANEL_CTK_BUILDER_GET (gui, "comboboxentry");
 
@@ -1871,9 +1871,9 @@ panel_run_dialog_create_desktop_file (PanelRunDialog *dialog)
 }
 
 static void
-pixmap_drag_data_get (GtkWidget          *run_dialog,
+pixmap_drag_data_get (CtkWidget          *run_dialog,
 	  	      GdkDragContext     *context,
-		      GtkSelectionData   *selection_data,
+		      CtkSelectionData   *selection_data,
 		      guint               info,
 		      guint               time,
 		      PanelRunDialog     *dialog)
@@ -1894,7 +1894,7 @@ pixmap_drag_data_get (GtkWidget          *run_dialog,
 }
 
 static void
-panel_run_dialog_style_updated (GtkWidget *widget,
+panel_run_dialog_style_updated (CtkWidget *widget,
 				PanelRunDialog *dialog)
 {
   if (dialog->icon) {
@@ -1907,7 +1907,7 @@ panel_run_dialog_style_updated (GtkWidget *widget,
 }
 
 static void
-panel_run_dialog_screen_changed (GtkWidget      *widget,
+panel_run_dialog_screen_changed (CtkWidget      *widget,
 				 GdkScreen      *prev_screen,
 				 PanelRunDialog *dialog)
 {
@@ -1922,7 +1922,7 @@ panel_run_dialog_screen_changed (GtkWidget      *widget,
 
 static void
 panel_run_dialog_setup_pixmap (PanelRunDialog *dialog,
-			       GtkBuilder     *gui)
+			       CtkBuilder     *gui)
 {
 	dialog->pixmap = PANEL_CTK_BUILDER_GET (gui, "icon_pixmap");
 
@@ -1940,7 +1940,7 @@ panel_run_dialog_setup_pixmap (PanelRunDialog *dialog,
 
 /* this runs after entry_event() */
 static gboolean
-key_press_event (GtkWidget    *run_dialog,
+key_press_event (CtkWidget    *run_dialog,
 				GdkEventKey    *event,
 				PanelRunDialog *dialog)
 {
@@ -1950,7 +1950,7 @@ key_press_event (GtkWidget    *run_dialog,
 		return FALSE;
 
 	/* If the program list is enabled and open and the user presses the F6 key
-	 * the focus should jump between GtkComboBoxText and the program list  */
+	 * the focus should jump between CtkComboBoxText and the program list  */
 	if (panel_profile_get_enable_program_list () && panel_profile_get_show_program_list () && event->keyval == GDK_KEY_F6) {
 
 		/* jump to the program list from anywhere */
@@ -1969,7 +1969,7 @@ key_press_event (GtkWidget    *run_dialog,
 
 static PanelRunDialog *
 panel_run_dialog_new (GdkScreen  *screen,
-		      GtkBuilder *gui,
+		      CtkBuilder *gui,
 		      guint32    activate_time)
 {
 	PanelRunDialog *dialog;
@@ -2044,7 +2044,7 @@ void
 panel_run_dialog_present (GdkScreen *screen,
 			  guint32    activate_time)
 {
-	GtkBuilder *gui;
+	CtkBuilder *gui;
 
 	if (panel_lockdown_get_disable_command_line ())
 		return;

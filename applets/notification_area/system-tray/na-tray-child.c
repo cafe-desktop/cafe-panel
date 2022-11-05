@@ -60,7 +60,7 @@ na_tray_child_finalize (GObject *object)
 }
 
 static void
-na_tray_child_realize (GtkWidget *widget)
+na_tray_child_realize (CtkWidget *widget)
 {
   NaTrayChild *child = NA_TRAY_CHILD (widget);
   GdkVisual *visual = ctk_widget_get_visual (widget);
@@ -104,8 +104,8 @@ na_tray_child_realize (GtkWidget *widget)
 }
 
 static void
-na_tray_child_style_set (GtkWidget *widget,
-                         GtkStyle  *previous_style)
+na_tray_child_style_set (CtkWidget *widget,
+                         CtkStyle  *previous_style)
 {
   /* The default handler resets the background according to the new style.
    * We either use a transparent background or a parent-relative background
@@ -115,7 +115,7 @@ na_tray_child_style_set (GtkWidget *widget,
 
 #if !CTK_CHECK_VERSION (3, 23, 0)
 static void
-na_tray_child_get_preferred_width (GtkWidget *widget,
+na_tray_child_get_preferred_width (CtkWidget *widget,
                                    gint      *minimal_width,
                                    gint      *natural_width)
 {
@@ -136,7 +136,7 @@ na_tray_child_get_preferred_width (GtkWidget *widget,
 }
 
 static void
-na_tray_child_get_preferred_height (GtkWidget *widget,
+na_tray_child_get_preferred_height (CtkWidget *widget,
                                     gint      *minimal_height,
                                     gint      *natural_height)
 {
@@ -162,7 +162,7 @@ na_tray_child_get_preferred_height (GtkWidget *widget,
  * expose handler draws with real or fake transparency.
  */
 static gboolean
-na_tray_child_draw (GtkWidget *widget,
+na_tray_child_draw (CtkWidget *widget,
                     cairo_t *cr)
 {
   NaTrayChild *child = NA_TRAY_CHILD (widget);
@@ -211,14 +211,14 @@ na_tray_child_draw (GtkWidget *widget,
  */
 static gboolean
 na_tray_child_draw_on_parent (NaItem    *item,
-                              GtkWidget *parent,
+                              CtkWidget *parent,
                               cairo_t   *parent_cr)
 {
   if (na_tray_child_has_alpha (NA_TRAY_CHILD (item)))
     {
-      GtkWidget    *widget = CTK_WIDGET (item);
-      GtkAllocation parent_allocation = { 0 };
-      GtkAllocation allocation;
+      CtkWidget    *widget = CTK_WIDGET (item);
+      CtkAllocation parent_allocation = { 0 };
+      CtkAllocation allocation;
 
       /* if the parent doesn't have a window, our allocation is not relative to
        * the context coordinates but to the parent's allocation */
@@ -371,10 +371,10 @@ static void
 na_tray_child_class_init (NaTrayChildClass *klass)
 {
   GObjectClass *gobject_class;
-  GtkWidgetClass *widget_class;
+  CtkWidgetClass *widget_class;
 
   gobject_class = (GObjectClass *)klass;
-  widget_class = (GtkWidgetClass *)klass;
+  widget_class = (CtkWidgetClass *)klass;
 
   gobject_class->finalize = na_tray_child_finalize;
   gobject_class->get_property = na_tray_child_get_property;
@@ -392,7 +392,7 @@ na_tray_child_class_init (NaTrayChildClass *klass)
   g_object_class_override_property (gobject_class, PROP_ORIENTATION, "orientation");
 }
 
-GtkWidget *
+CtkWidget *
 na_tray_child_new (GdkScreen *screen,
                    Window     icon_window)
 {
@@ -559,7 +559,7 @@ na_tray_child_set_composited (NaTrayChild *child,
 void
 na_tray_child_force_redraw (NaTrayChild *child)
 {
-  GtkWidget *widget = CTK_WIDGET (child);
+  CtkWidget *widget = CTK_WIDGET (child);
 
   if (ctk_widget_get_mapped (widget))
     {

@@ -44,7 +44,7 @@
 #include "window-list.h"
 #include "showdesktop.h"
 
-void wncklet_display_help(GtkWidget* widget, const char* doc_id, const char* link_id, const char* icon_name)
+void wncklet_display_help(CtkWidget* widget, const char* doc_id, const char* link_id, const char* icon_name)
 {
 	GError* error = NULL;
 	char* uri;
@@ -63,8 +63,8 @@ void wncklet_display_help(GtkWidget* widget, const char* doc_id, const char* lin
 	}
 	else if (error)
 	{
-		GtkWidget* parent;
-		GtkWidget* dialog;
+		CtkWidget* parent;
+		CtkWidget* dialog;
 		char* primary;
 
 		if (CTK_IS_WINDOW(widget))
@@ -96,7 +96,7 @@ void wncklet_display_help(GtkWidget* widget, const char* doc_id, const char* lin
 	}
 }
 
-WnckScreen* wncklet_get_screen(GtkWidget* applet)
+WnckScreen* wncklet_get_screen(CtkWidget* applet)
 {
 	int screen_num;
 

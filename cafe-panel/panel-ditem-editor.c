@@ -63,25 +63,25 @@ struct _PanelDItemEditorPrivate
 	PanelDitemSaveUri save_uri;
 	gpointer          save_uri_data;
 
-	GtkWidget *grid;
-	GtkWidget *type_label;
-	GtkWidget *type_combo;
-	GtkWidget *name_label;
-	GtkWidget *name_entry;
-	GtkWidget *command_hbox;
-	GtkWidget *command_label;
-	GtkWidget *command_entry;
-	GtkWidget *command_browse_button;
-	GtkWidget *command_browse_filechooser;
-	GtkWidget *comment_label;
-	GtkWidget *comment_entry;
-	GtkWidget *icon_chooser;
+	CtkWidget *grid;
+	CtkWidget *type_label;
+	CtkWidget *type_combo;
+	CtkWidget *name_label;
+	CtkWidget *name_entry;
+	CtkWidget *command_hbox;
+	CtkWidget *command_label;
+	CtkWidget *command_entry;
+	CtkWidget *command_browse_button;
+	CtkWidget *command_browse_filechooser;
+	CtkWidget *comment_label;
+	CtkWidget *comment_entry;
+	CtkWidget *icon_chooser;
 
-	GtkWidget *help_button;
-	GtkWidget *revert_button;
-	GtkWidget *close_button;
-	GtkWidget *cancel_button;
-	GtkWidget *ok_button;
+	CtkWidget *help_button;
+	CtkWidget *revert_button;
+	CtkWidget *close_button;
+	CtkWidget *cancel_button;
+	CtkWidget *ok_button;
 };
 
 /* Time in seconds after which we save the file on the disk */
@@ -174,7 +174,7 @@ static void panel_ditem_editor_setup_ui (PanelDItemEditor *dialog);
 
 static void type_combo_changed (PanelDItemEditor *dialog);
 
-static void response_cb (GtkDialog *dialog,
+static void response_cb (CtkDialog *dialog,
 			 gint       response_id);
 
 static void setup_icon_chooser (PanelDItemEditor *dialog,
@@ -488,10 +488,10 @@ panel_ditem_editor_class_init (PanelDItemEditorClass *class)
 				      G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
 }
 
-static GtkWidget *
+static CtkWidget *
 label_new_with_mnemonic (const char *text)
 {
-	GtkWidget *label;
+	CtkWidget *label;
 	char      *bold;
 
 	bold = g_strdup_printf ("<b>%s</b>", text);
@@ -508,27 +508,27 @@ label_new_with_mnemonic (const char *text)
 }
 
 static inline void
-grid_attach_label (GtkGrid *grid, GtkWidget *label, int left, int top, int width, int height)
+grid_attach_label (CtkGrid *grid, CtkWidget *label, int left, int top, int width, int height)
 {
 	ctk_grid_attach (grid, label, left, top, width, height);
 }
 
 static inline void
-grid_attach_entry (GtkGrid *grid, GtkWidget *entry, int left, int top, int width, int height)
+grid_attach_entry (CtkGrid *grid, CtkWidget *entry, int left, int top, int width, int height)
 {
 	ctk_widget_set_hexpand (entry, TRUE);
 	ctk_grid_attach (grid, entry, left, top, width, height);
 }
 
 static void
-setup_combo (GtkWidget            *combo_box,
+setup_combo (CtkWidget            *combo_box,
 	     ComboItem            *items,
 	     int                   nb_items,
 	     const char           *for_type)
 {
-	GtkListStore          *model;
-	GtkTreeIter            iter;
-	GtkCellRenderer       *renderer;
+	CtkListStore          *model;
+	CtkTreeIter            iter;
+	CtkCellRenderer       *renderer;
 	int                    i;
 
 	model = ctk_list_store_new (NUMBER_COLUMNS,
@@ -561,8 +561,8 @@ setup_combo (GtkWidget            *combo_box,
 static PanelDItemEditorType
 panel_ditem_editor_get_item_type (PanelDItemEditor *dialog)
 {
-	GtkTreeIter           iter;
-	GtkTreeModel         *model;
+	CtkTreeIter           iter;
+	CtkTreeModel         *model;
 	PanelDItemEditorType  type;
 
 	if (dialog->priv->type_directory)
@@ -582,7 +582,7 @@ static void
 panel_ditem_editor_make_ui (PanelDItemEditor *dialog)
 {
 	PanelDItemEditorPrivate *priv;
-	GtkWidget *dialog_vbox;
+	CtkWidget *dialog_vbox;
 
 	priv = dialog->priv;
 
@@ -714,8 +714,8 @@ panel_ditem_editor_setup_ui (PanelDItemEditor *dialog)
 	}
 
 	if (show_combo) {
-		GtkTreeIter           iter;
-		GtkTreeModel         *model;
+		CtkTreeIter           iter;
+		CtkTreeModel         *model;
 		PanelDItemEditorType  buf_type;
 
 		grid_attach_label (CTK_GRID (priv->grid), priv->type_label, 1, 0, 1, 1);
@@ -848,7 +848,7 @@ panel_ditem_editor_command_changed (PanelDItemEditor *dialog)
 {
 	PanelDItemEditorType  type;
 	const char           *exec_or_uri;
-	GtkIconTheme         *icon_theme;
+	CtkIconTheme         *icon_theme;
 	char                 *icon;
 
 	exec_or_uri = ctk_entry_get_text (CTK_ENTRY (dialog->priv->command_entry));
@@ -931,7 +931,7 @@ panel_ditem_editor_icon_changed (PanelDItemEditor *dialog,
 }
 
 static void
-command_browse_chooser_response (GtkFileChooser   *chooser,
+command_browse_chooser_response (CtkFileChooser   *chooser,
 				 gint              response_id,
 				 PanelDItemEditor *dialog)
 {
@@ -967,7 +967,7 @@ update_chooser_for_type (PanelDItemEditor *dialog)
 {
 	const char *title;
 	gboolean    local_only;
-	GtkWidget  *chooser;
+	CtkWidget  *chooser;
 
 	if (!dialog->priv->command_browse_filechooser)
 		return;
@@ -997,7 +997,7 @@ update_chooser_for_type (PanelDItemEditor *dialog)
 static void
 command_browse_button_clicked (PanelDItemEditor *dialog)
 {
-	GtkWidget *chooser;
+	CtkWidget *chooser;
 
 	if (dialog->priv->command_browse_filechooser) {
 		ctk_window_present (CTK_WINDOW (dialog->priv->command_browse_filechooser));
@@ -1059,7 +1059,7 @@ panel_ditem_editor_connect_signals (PanelDItemEditor *dialog)
 				  dialog);
 
 	/* We do a signal connection here rather than overriding the method in
-	 * class_init because GtkDialog::response is a RUN_LAST signal. We
+	 * class_init because CtkDialog::response is a RUN_LAST signal. We
 	 * want *our* handler to be run *first*, regardless of whether the user
 	 * installs response handlers of his own.
 	 */
@@ -1221,8 +1221,8 @@ panel_ditem_editor_sync_display (PanelDItemEditor *dialog)
 	gboolean              run_in_terminal;
 	GKeyFile             *key_file;
 	char                 *buffer;
-	GtkTreeIter           iter;
-	GtkTreeModel         *model;
+	CtkTreeIter           iter;
+	CtkTreeModel         *model;
 	PanelDItemEditorType  buf_type;
 
 	g_return_if_fail (PANEL_IS_DITEM_EDITOR (dialog));
@@ -1414,7 +1414,7 @@ panel_ditem_editor_save_timeout (gpointer data)
 }
 
 static void
-response_cb (GtkDialog *dialog,
+response_cb (CtkDialog *dialog,
 	     gint       response_id)
 {
 	GError *error = NULL;
@@ -1631,14 +1631,14 @@ panel_ditem_editor_load_uri (PanelDItemEditor  *dialog,
 	return TRUE;
 }
 
-static GtkWidget *
-panel_ditem_editor_new_full (GtkWindow   *parent,
+static CtkWidget *
+panel_ditem_editor_new_full (CtkWindow   *parent,
 			     GKeyFile    *key_file,
 			     const char  *uri,
 			     const char  *title,
 			     gboolean     type_directory)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 
 	dialog = g_object_new (PANEL_TYPE_DITEM_EDITOR,
 			       "title", title,
@@ -1653,8 +1653,8 @@ panel_ditem_editor_new_full (GtkWindow   *parent,
 	return dialog;
 }
 
-GtkWidget *
-panel_ditem_editor_new (GtkWindow   *parent,
+CtkWidget *
+panel_ditem_editor_new (CtkWindow   *parent,
 			GKeyFile    *key_file,
 			const char  *uri,
 			const char  *title)
@@ -1663,8 +1663,8 @@ panel_ditem_editor_new (GtkWindow   *parent,
 					    title, FALSE);
 }
 
-GtkWidget *
-panel_ditem_editor_new_directory (GtkWindow   *parent,
+CtkWidget *
+panel_ditem_editor_new_directory (CtkWindow   *parent,
 				  GKeyFile    *key_file,
 				  const char  *uri,
 				  const char  *title)

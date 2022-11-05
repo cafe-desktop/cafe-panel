@@ -53,10 +53,10 @@ struct _PanelMenuBarPrivate {
 	AppletInfo* info;
 	PanelWidget* panel;
 
-	GtkWidget* applications_menu;
-	GtkWidget* applications_item;
-	GtkWidget* places_item;
-	GtkWidget* desktop_item;
+	CtkWidget* applications_menu;
+	CtkWidget* applications_item;
+	CtkWidget* places_item;
+	CtkWidget* desktop_item;
 
 	GSettings* settings;
 
@@ -72,7 +72,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (PanelMenuBar, panel_menu_bar, CTK_TYPE_MENU_BAR)
 
 static void panel_menu_bar_update_text_gravity(PanelMenuBar* menubar);
 
-static gboolean panel_menu_bar_reinit_tooltip(GtkWidget* widget, PanelMenuBar* menubar)
+static gboolean panel_menu_bar_reinit_tooltip(CtkWidget* widget, PanelMenuBar* menubar)
 {
 	g_object_set(menubar->priv->applications_item, "has-tooltip", TRUE, NULL);
 	g_object_set(menubar->priv->places_item, "has-tooltip", TRUE, NULL);
@@ -81,7 +81,7 @@ static gboolean panel_menu_bar_reinit_tooltip(GtkWidget* widget, PanelMenuBar* m
 	return FALSE;
 }
 
-static gboolean panel_menu_bar_hide_tooltip_and_focus(GtkWidget* widget, PanelMenuBar* menubar)
+static gboolean panel_menu_bar_hide_tooltip_and_focus(CtkWidget* widget, PanelMenuBar* menubar)
 {
 	/* remove focus that would be drawn on the currently focused child of
 	 * the toplevel. See bug#308632. */
@@ -110,9 +110,9 @@ static void panel_menu_bar_setup_tooltip(PanelMenuBar* menubar)
 
 static void panel_menu_bar_update_visibility (GSettings* settings, gchar* key, PanelMenuBar* menubar)
 {
-	GtkWidget* image;
+	CtkWidget* image;
 	gchar *str;
-	GtkIconSize icon_size;
+	CtkIconSize icon_size;
 	gint icon_height;
 
 	if (!CTK_IS_WIDGET (menubar))
@@ -141,7 +141,7 @@ static void panel_menu_bar_update_visibility (GSettings* settings, gchar* key, P
 
 static void panel_menu_bar_init(PanelMenuBar* menubar)
 {
-	GtkCssProvider *provider;
+	CtkCssProvider *provider;
 
 	menubar->priv = panel_menu_bar_get_instance_private(menubar);
 
@@ -221,10 +221,10 @@ static void panel_menu_bar_set_property(GObject* object, guint prop_id, const GV
 	}
 }
 
-static void panel_menu_bar_parent_set(GtkWidget* widget, GtkWidget* previous_parent)
+static void panel_menu_bar_parent_set(CtkWidget* widget, CtkWidget* previous_parent)
 {
 	PanelMenuBar* menubar = PANEL_MENU_BAR(widget);
-	GtkWidget* parent;
+	CtkWidget* parent;
 
 	parent = ctk_widget_get_parent(widget);
 
@@ -248,10 +248,10 @@ static void panel_menu_bar_parent_set(GtkWidget* widget, GtkWidget* previous_par
 	}
 }
 
-static void panel_menu_bar_size_allocate(GtkWidget* widget, GtkAllocation* allocation)
+static void panel_menu_bar_size_allocate(CtkWidget* widget, CtkAllocation* allocation)
 {
-	GtkAllocation old_allocation;
-	GtkAllocation widget_allocation;
+	CtkAllocation old_allocation;
+	CtkAllocation widget_allocation;
 	PanelBackground* background;
 
 	ctk_widget_get_allocation(widget, &widget_allocation);
@@ -293,7 +293,7 @@ static void panel_menu_bar_finalize (GObject* object)
 static void panel_menu_bar_class_init(PanelMenuBarClass* klass)
 {
 	GObjectClass* gobject_class = (GObjectClass*) klass;
-	GtkWidgetClass* widget_class  = (GtkWidgetClass*) klass;
+	CtkWidgetClass* widget_class  = (CtkWidgetClass*) klass;
 
 	gobject_class->get_property = panel_menu_bar_get_property;
 	gobject_class->set_property = panel_menu_bar_set_property;
@@ -305,12 +305,12 @@ static void panel_menu_bar_class_init(PanelMenuBarClass* klass)
 	g_object_class_install_property(gobject_class, PROP_ORIENTATION, g_param_spec_enum("orientation", "Orientation", "The PanelMenuBar orientation", PANEL_TYPE_ORIENTATION, PANEL_ORIENTATION_TOP, G_PARAM_READWRITE));
 }
 
-static gboolean panel_menu_bar_on_draw (GtkWidget* widget, cairo_t* cr, gpointer data)
+static gboolean panel_menu_bar_on_draw (CtkWidget* widget, cairo_t* cr, gpointer data)
 {
 	PanelMenuBar* menubar = data;
 
 	if (ctk_widget_has_focus(CTK_WIDGET(menubar))) {
-		GtkStyleContext *context;
+		CtkStyleContext *context;
 
 		context = ctk_widget_get_style_context (widget);
 		ctk_style_context_save (context);
@@ -331,7 +331,7 @@ static gboolean panel_menu_bar_on_draw (GtkWidget* widget, cairo_t* cr, gpointer
 static void panel_menu_bar_load(PanelWidget* panel, gboolean locked, int position, gboolean exactpos, const char* id)
 {
 	PanelMenuBar* menubar;
-	GtkSettings* settings;
+	CtkSettings* settings;
 
 	g_return_if_fail (panel != NULL);
 
@@ -405,8 +405,8 @@ void panel_menu_bar_invoke_menu(PanelMenuBar* menubar, const char* callback_name
 
 void panel_menu_bar_popup_menu(PanelMenuBar* menubar, guint32 activate_time)
 {
-	GtkMenu* menu;
-	GtkMenuShell* menu_shell;
+	CtkMenu* menu;
+	CtkMenuShell* menu_shell;
 
 	g_return_if_fail(PANEL_IS_MENU_BAR(menubar));
 
@@ -429,9 +429,9 @@ void panel_menu_bar_change_background(PanelMenuBar* menubar)
 	panel_background_apply_css(&menubar->priv->panel->toplevel->background, CTK_WIDGET(menubar));
 }
 
-static void set_item_text_gravity(GtkWidget* item)
+static void set_item_text_gravity(CtkWidget* item)
 {
-	GtkWidget* label;
+	CtkWidget* label;
 	PangoLayout* layout;
 	PangoContext* context;
 
@@ -448,9 +448,9 @@ static void panel_menu_bar_update_text_gravity(PanelMenuBar* menubar)
 	set_item_text_gravity(menubar->priv->desktop_item);
 }
 
-static void set_item_text_angle_and_alignment(GtkWidget* item, double text_angle, float xalign, float yalign)
+static void set_item_text_angle_and_alignment(CtkWidget* item, double text_angle, float xalign, float yalign)
 {
-	GtkWidget *label;
+	CtkWidget *label;
 
 	label = ctk_bin_get_child (CTK_BIN (item));
 
@@ -462,7 +462,7 @@ static void set_item_text_angle_and_alignment(GtkWidget* item, double text_angle
 
 static void panel_menu_bar_update_orientation(PanelMenuBar* menubar)
 {
-	GtkPackDirection pack_direction;
+	CtkPackDirection pack_direction;
 	double text_angle;
 	float text_xalign;
 	float text_yalign;

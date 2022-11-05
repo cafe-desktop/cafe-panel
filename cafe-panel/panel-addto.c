@@ -63,16 +63,16 @@
 typedef struct {
 	PanelWidget *panel_widget;
 
-	GtkWidget    *addto_dialog;
-	GtkWidget    *label;
-	GtkWidget    *search_entry;
-	GtkWidget    *back_button;
-	GtkWidget    *add_button;
-	GtkWidget    *tree_view;
-	GtkTreeModel *applet_model;
-	GtkTreeModel *filter_applet_model;
-	GtkTreeModel *application_model;
-	GtkTreeModel *filter_application_model;
+	CtkWidget    *addto_dialog;
+	CtkWidget    *label;
+	CtkWidget    *search_entry;
+	CtkWidget    *back_button;
+	CtkWidget    *add_button;
+	CtkWidget    *tree_view;
+	CtkTreeModel *applet_model;
+	CtkTreeModel *filter_applet_model;
+	CtkTreeModel *application_model;
+	CtkTreeModel *filter_application_model;
 
 	CafeMenuTree    *menu_tree;
 
@@ -214,8 +214,8 @@ enum {
 
 static void panel_addto_present_applications (PanelAddtoDialog *dialog);
 static void panel_addto_present_applets      (PanelAddtoDialog *dialog);
-static gboolean panel_addto_filter_func (GtkTreeModel *model,
-					 GtkTreeIter  *iter,
+static gboolean panel_addto_filter_func (CtkTreeModel *model,
+					 CtkTreeIter  *iter,
 					 gpointer      data);
 
 static int
@@ -285,9 +285,9 @@ panel_addto_make_text (const char *name,
 }
 
 static void
-panel_addto_drag_data_get_cb (GtkWidget        *widget,
+panel_addto_drag_data_get_cb (CtkWidget        *widget,
 			      GdkDragContext   *context,
-			      GtkSelectionData *selection_data,
+			      CtkSelectionData *selection_data,
 			      guint             info,
 			      guint             time,
 			      const char       *string)
@@ -298,15 +298,15 @@ panel_addto_drag_data_get_cb (GtkWidget        *widget,
 }
 
 static void
-panel_addto_drag_begin_cb (GtkWidget      *widget,
+panel_addto_drag_begin_cb (CtkWidget      *widget,
 			   GdkDragContext *context,
 			   gpointer        data)
 {
-	GtkTreeModel *filter_model;
-	GtkTreeModel *child_model;
-	GtkTreePath  *path;
-	GtkTreeIter   iter;
-	GtkTreeIter   filter_iter;
+	CtkTreeModel *filter_model;
+	CtkTreeModel *child_model;
+	CtkTreePath  *path;
+	CtkTreeIter   iter;
+	CtkTreeIter   filter_iter;
 	gchar         *icon_name;
 
 	filter_model = ctk_tree_view_get_model (CTK_TREE_VIEW (widget));
@@ -327,8 +327,8 @@ panel_addto_drag_begin_cb (GtkWidget      *widget,
 }
 
 static void
-panel_addto_setup_drag (GtkTreeView          *tree_view,
-			const GtkTargetEntry *target,
+panel_addto_setup_drag (CtkTreeView          *tree_view,
+			const CtkTargetEntry *target,
 			const char           *text)
 {
 	if (!text || panel_lockdown_get_locked_down ())
@@ -349,10 +349,10 @@ panel_addto_setup_drag (GtkTreeView          *tree_view,
 }
 
 static void
-panel_addto_setup_launcher_drag (GtkTreeView *tree_view,
+panel_addto_setup_launcher_drag (CtkTreeView *tree_view,
 				 const char  *path)
 {
-        static GtkTargetEntry target[] = {
+        static CtkTargetEntry target[] = {
 		{ "text/uri-list", 0, 0 }
 	};
 	char *uri;
@@ -366,10 +366,10 @@ panel_addto_setup_launcher_drag (GtkTreeView *tree_view,
 }
 
 static void
-panel_addto_setup_applet_drag (GtkTreeView *tree_view,
+panel_addto_setup_applet_drag (CtkTreeView *tree_view,
 			       const char  *iid)
 {
-	static GtkTargetEntry target[] = {
+	static CtkTargetEntry target[] = {
 		{ "application/x-cafe-panel-applet-iid", 0, 0 }
 	};
 
@@ -377,10 +377,10 @@ panel_addto_setup_applet_drag (GtkTreeView *tree_view,
 }
 
 static void
-panel_addto_setup_internal_applet_drag (GtkTreeView *tree_view,
+panel_addto_setup_internal_applet_drag (CtkTreeView *tree_view,
 					const char  *applet_type)
 {
-	static GtkTargetEntry target[] = {
+	static CtkTargetEntry target[] = {
 		{ "application/x-cafe-panel-applet-internal", 0, 0 }
 	};
 
@@ -446,11 +446,11 @@ panel_addto_query_applets (GSList *list)
 
 static void
 panel_addto_append_item (PanelAddtoDialog *dialog,
-			 GtkListStore *model,
+			 CtkListStore *model,
 			 PanelAddtoItemInfo *applet)
 {
 	char *text;
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 
 	if (applet == NULL) {
 		ctk_list_store_append (model, &iter);
@@ -481,7 +481,7 @@ panel_addto_append_item (PanelAddtoDialog *dialog,
 
 static void
 panel_addto_append_special_applets (PanelAddtoDialog *dialog,
-				    GtkListStore *model)
+				    CtkListStore *model)
 {
 	static gboolean translated = FALSE;
 	int i;
@@ -505,7 +505,7 @@ panel_addto_append_special_applets (PanelAddtoDialog *dialog,
 static void
 panel_addto_make_applet_model (PanelAddtoDialog *dialog)
 {
-	GtkListStore *model;
+	CtkListStore *model;
 	GSList       *l;
 
 	if (dialog->filter_applet_model != NULL)
@@ -672,12 +672,12 @@ panel_addto_make_application_list (GSList             **parent_list,
 }
 
 static void
-panel_addto_populate_application_model (GtkTreeStore *store,
-					GtkTreeIter  *parent,
+panel_addto_populate_application_model (CtkTreeStore *store,
+					CtkTreeIter  *parent,
 					GSList       *app_list)
 {
 	PanelAddtoAppList *data;
-	GtkTreeIter        iter;
+	CtkTreeIter        iter;
 	char              *text;
 	GSList            *app;
 
@@ -706,7 +706,7 @@ panel_addto_populate_application_model (GtkTreeStore *store,
 
 static void panel_addto_make_application_model(PanelAddtoDialog* dialog)
 {
-	GtkTreeStore* store;
+	CtkTreeStore* store;
 	CafeMenuTree* tree;
 	CafeMenuTreeDirectory* root;
 	GError *error = NULL;
@@ -747,7 +747,7 @@ static void panel_addto_make_application_model(PanelAddtoDialog* dialog)
 
 	if ((root = cafemenu_tree_get_root_directory(tree)))
 	{
-		GtkTreeIter iter;
+		CtkTreeIter iter;
 
 		ctk_tree_store_append(store, &iter, NULL);
 		ctk_tree_store_set (store, &iter,
@@ -825,15 +825,15 @@ panel_addto_add_item (PanelAddtoDialog   *dialog,
 }
 
 static void
-panel_addto_dialog_response (GtkWidget *widget_dialog,
+panel_addto_dialog_response (CtkWidget *widget_dialog,
 			     guint response_id,
 			     PanelAddtoDialog *dialog)
 {
-	GtkTreeSelection *selection;
-	GtkTreeModel     *filter_model;
-	GtkTreeModel     *child_model;
-	GtkTreeIter       iter;
-	GtkTreeIter       filter_iter;
+	CtkTreeSelection *selection;
+	CtkTreeModel     *filter_model;
+	CtkTreeModel     *child_model;
+	CtkTreeIter       iter;
+	CtkTreeIter       filter_iter;
 
 	switch (response_id) {
 	case CTK_RESPONSE_HELP:
@@ -876,7 +876,7 @@ panel_addto_dialog_response (GtkWidget *widget_dialog,
 }
 
 static void
-panel_addto_dialog_destroy (GtkWidget *widget_dialog,
+panel_addto_dialog_destroy (CtkWidget *widget_dialog,
 			    PanelAddtoDialog *dialog)
 {
 	panel_toplevel_pop_autohide_disabler (PANEL_TOPLEVEL (dialog->panel_widget->toplevel));
@@ -1083,8 +1083,8 @@ panel_addto_name_notify (GSettings        *settings,
 }
 
 static gboolean
-panel_addto_filter_func (GtkTreeModel *model,
-			 GtkTreeIter  *iter,
+panel_addto_filter_func (CtkTreeModel *model,
+			 CtkTreeIter  *iter,
 			 gpointer      userdata)
 {
 	PanelAddtoDialog   *dialog;
@@ -1113,13 +1113,13 @@ panel_addto_filter_func (GtkTreeModel *model,
 }
 
 static void
-panel_addto_search_entry_changed (GtkWidget        *entry,
+panel_addto_search_entry_changed (CtkWidget        *entry,
 				  PanelAddtoDialog *dialog)
 {
-	GtkTreeModel *model;
+	CtkTreeModel *model;
 	char         *new_text;
-	GtkTreeIter   iter;
-	GtkTreePath  *path;
+	CtkTreeIter   iter;
+	CtkTreePath  *path;
 
 	new_text = g_strdup (ctk_entry_get_text (CTK_ENTRY (dialog->search_entry)));
 	g_strchomp (new_text);
@@ -1139,7 +1139,7 @@ panel_addto_search_entry_changed (GtkWidget        *entry,
 
 	path = ctk_tree_path_new_first ();
 	if (ctk_tree_model_get_iter (model, &iter, path)) {
-		GtkTreeSelection *selection;
+		CtkTreeSelection *selection;
 
 		ctk_tree_view_scroll_to_cell (CTK_TREE_VIEW (dialog->tree_view),
 					      path, NULL, FALSE, 0, 0);
@@ -1150,7 +1150,7 @@ panel_addto_search_entry_changed (GtkWidget        *entry,
 }
 
 static void
-panel_addto_search_entry_activated (GtkWidget        *entry,
+panel_addto_search_entry_activated (CtkWidget        *entry,
 				    PanelAddtoDialog *dialog)
 {
 	ctk_dialog_response (CTK_DIALOG (dialog->addto_dialog),
@@ -1158,13 +1158,13 @@ panel_addto_search_entry_activated (GtkWidget        *entry,
 }
 
 static gboolean
-panel_addto_selection_func (GtkTreeSelection  *selection,
-			    GtkTreeModel      *model,
-			    GtkTreePath       *path,
+panel_addto_selection_func (CtkTreeSelection  *selection,
+			    CtkTreeModel      *model,
+			    CtkTreePath       *path,
 			    gboolean           path_currently_selected,
 			    gpointer           data)
 {
-	GtkTreeIter         iter;
+	CtkTreeIter         iter;
 	gboolean            enabled;
 
 	if (!ctk_tree_model_get_iter (model, &iter, path))
@@ -1177,13 +1177,13 @@ panel_addto_selection_func (GtkTreeSelection  *selection,
 }
 
 static void
-panel_addto_selection_changed (GtkTreeSelection *selection,
+panel_addto_selection_changed (CtkTreeSelection *selection,
 			       PanelAddtoDialog *dialog)
 {
-	GtkTreeModel       *filter_model;
-	GtkTreeModel       *child_model;
-	GtkTreeIter         iter;
-	GtkTreeIter         filter_iter;
+	CtkTreeModel       *filter_model;
+	CtkTreeModel       *child_model;
+	CtkTreeIter         iter;
+	CtkTreeIter         filter_iter;
 	PanelAddtoItemInfo *data;
 	char               *iid;
 
@@ -1252,9 +1252,9 @@ panel_addto_selection_changed (GtkTreeSelection *selection,
 }
 
 static void
-panel_addto_selection_activated (GtkTreeView       *view,
-				 GtkTreePath       *path,
-				 GtkTreeViewColumn *column,
+panel_addto_selection_activated (CtkTreeView       *view,
+				 CtkTreePath       *path,
+				 CtkTreeViewColumn *column,
 				 PanelAddtoDialog  *dialog)
 {
 	ctk_dialog_response (CTK_DIALOG (dialog->addto_dialog),
@@ -1262,8 +1262,8 @@ panel_addto_selection_activated (GtkTreeView       *view,
 }
 
 static gboolean
-panel_addto_separator_func (GtkTreeModel *model,
-			    GtkTreeIter *iter,
+panel_addto_separator_func (CtkTreeModel *model,
+			    CtkTreeIter *iter,
 			    gpointer data)
 {
 	int column = GPOINTER_TO_INT (data);
@@ -1282,13 +1282,13 @@ static PanelAddtoDialog *
 panel_addto_dialog_new (PanelWidget *panel_widget)
 {
 	PanelAddtoDialog *dialog;
-	GtkWidget *dialog_vbox;
-	GtkWidget *inner_vbox;
-	GtkWidget *find_hbox;
-	GtkWidget *sw;
-	GtkCellRenderer *renderer;
-	GtkTreeSelection *selection;
-	GtkTreeViewColumn *column;
+	CtkWidget *dialog_vbox;
+	CtkWidget *inner_vbox;
+	CtkWidget *find_hbox;
+	CtkWidget *sw;
+	CtkCellRenderer *renderer;
+	CtkTreeSelection *selection;
+	CtkTreeViewColumn *column;
 
 	dialog = g_new0 (PanelAddtoDialog, 1);
 
@@ -1441,7 +1441,7 @@ panel_addto_dialog_new (PanelWidget *panel_widget)
 #define MAX_ADDTOPANEL_HEIGHT 490
 
 void
-panel_addto_present (GtkMenuItem *item,
+panel_addto_present (CtkMenuItem *item,
 		     PanelWidget *panel_widget)
 {
 	PanelAddtoDialog *dialog;

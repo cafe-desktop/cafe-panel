@@ -40,13 +40,13 @@ typedef struct
 {
   GdkScreen *screen;
   guint screen_num;
-  GtkWidget *window;
-  GtkWidget *traybox;
-  GtkLabel *count_label;
+  CtkWidget *window;
+  CtkWidget *traybox;
+  CtkLabel *count_label;
 } TrayData;
 
 static void
-do_add (GtkWidget *child, guint *n_children)
+do_add (CtkWidget *child, guint *n_children)
 {
   *n_children += 1;
 }
@@ -60,14 +60,14 @@ update_child_count (TrayData *data)
   if (!ctk_widget_get_realized (data->window))
     return;
 
-  ctk_container_foreach (CTK_CONTAINER (data->traybox), (GtkCallback) do_add, &n_children);
+  ctk_container_foreach (CTK_CONTAINER (data->traybox), (CtkCallback) do_add, &n_children);
 
   g_snprintf (text, sizeof (text), "%u icons", n_children);
   ctk_label_set_text (data->count_label, text);
 }
 
 static void
-tray_added_cb (GtkContainer *box, GtkWidget *icon, TrayData *data)
+tray_added_cb (CtkContainer *box, CtkWidget *icon, TrayData *data)
 {
   g_print ("[Screen %u tray %p] Child %p added to tray: \"%s\"\n",
 	   data->screen_num, data->traybox, icon, "XXX");//na_tray_child_get_title (icon));
@@ -76,7 +76,7 @@ tray_added_cb (GtkContainer *box, GtkWidget *icon, TrayData *data)
 }
 
 static void
-tray_removed_cb (GtkContainer *box, GtkWidget *icon, TrayData *data)
+tray_removed_cb (CtkContainer *box, CtkWidget *icon, TrayData *data)
 {
   g_print ("[Screen %u tray %p] Child %p removed from tray\n",
 	   data->screen_num, data->traybox, icon);
@@ -84,9 +84,9 @@ tray_removed_cb (GtkContainer *box, GtkWidget *icon, TrayData *data)
   update_child_count (data);
 }
 
-static void orientation_changed_cb (GtkComboBox *combo, TrayData *data)
+static void orientation_changed_cb (CtkComboBox *combo, TrayData *data)
 {
-  GtkOrientation orientation = (GtkOrientation) ctk_combo_box_get_active (combo);
+  CtkOrientation orientation = (CtkOrientation) ctk_combo_box_get_active (combo);
 
   g_print ("[Screen %u tray %p] Setting orientation to \"%s\"\n",
 	   data->screen_num, data->traybox, orientation == 0 ? "horizontal" : "vertical");
@@ -106,7 +106,7 @@ maybe_quit (gpointer data,
 static TrayData *create_tray_on_screen (GdkScreen *screen, gboolean force);
 
 static void
-warning_dialog_response_cb (GtkWidget *dialog,
+warning_dialog_response_cb (CtkWidget *dialog,
 			    gint response,
 			    GdkScreen *screen)
 {
@@ -118,7 +118,7 @@ warning_dialog_response_cb (GtkWidget *dialog,
 }
 
 static void
-add_tray_cb (GtkWidget *button, TrayData *data)
+add_tray_cb (CtkWidget *button, TrayData *data)
 {
   create_tray_on_screen (data->screen, TRUE);
 }
@@ -127,13 +127,13 @@ static TrayData *
 create_tray_on_screen (GdkScreen *screen,
 		       gboolean force)
 {
-  GtkWidget *window, *hbox, *vbox, *button, *combo, *label;
+  CtkWidget *window, *hbox, *vbox, *button, *combo, *label;
   TrayData *data;
 
   n_windows++;
 
   if (!force && na_tray_manager_check_running (screen)) {
-    GtkWidget *dialog;
+    CtkWidget *dialog;
 
     dialog = ctk_message_dialog_new (NULL, 0, CTK_MESSAGE_WARNING, CTK_BUTTONS_YES_NO,
 				     "Override tray manager?");

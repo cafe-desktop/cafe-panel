@@ -23,16 +23,16 @@
 static GHashTable *pixbuf_cache = NULL;
 
 static void     clock_face_finalize             (GObject *);
-static gboolean clock_face_draw                 (GtkWidget      *clock,
+static gboolean clock_face_draw                 (CtkWidget      *clock,
                                                  cairo_t        *cr);
-static void     clock_face_get_preferred_width  (GtkWidget      *this,
+static void     clock_face_get_preferred_width  (CtkWidget      *this,
                                                  gint           *minimal_width,
                                                  gint           *natural_width);
-static void     clock_face_get_preferred_height (GtkWidget      *this,
+static void     clock_face_get_preferred_height (CtkWidget      *this,
                                                  gint           *minimal_height,
                                                  gint           *natural_height);
-static void     clock_face_size_allocate        (GtkWidget      *clock,
-                                                 GtkAllocation  *allocation);
+static void     clock_face_size_allocate        (CtkWidget      *clock,
+                                                 CtkAllocation  *allocation);
 
 static void update_time_and_face  (ClockFace      *this,
                                    gboolean        force_face_loading);
@@ -58,7 +58,7 @@ struct _ClockFacePrivate
     ClockFaceTimeOfDay timeofday;
     ClockLocation *location;
     GdkPixbuf *face_pixbuf;
-    GtkWidget *size_widget;
+    CtkWidget *size_widget;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (ClockFace, clock_face, CTK_TYPE_WIDGET)
@@ -67,12 +67,12 @@ static void
 clock_face_class_init (ClockFaceClass *class)
 {
     GObjectClass *obj_class;
-    GtkWidgetClass *widget_class;
+    CtkWidgetClass *widget_class;
 
     obj_class = G_OBJECT_CLASS (class);
     widget_class = CTK_WIDGET_CLASS (class);
 
-    /* GtkWidget signals */
+    /* CtkWidget signals */
     widget_class->draw = clock_face_draw;
     widget_class->get_preferred_width  = clock_face_get_preferred_width;
     widget_class->get_preferred_height = clock_face_get_preferred_height;
@@ -96,7 +96,7 @@ clock_face_init (ClockFace *this)
 }
 
 static gboolean
-clock_face_draw (GtkWidget *this, cairo_t *cr)
+clock_face_draw (CtkWidget *this, cairo_t *cr)
 {
     ClockFacePrivate *priv;
     int width, height;
@@ -186,7 +186,7 @@ clock_face_redraw_canvas (ClockFace *this)
 }
 
 static void
-clock_face_get_preferred_width (GtkWidget *this,
+clock_face_get_preferred_width (CtkWidget *this,
                                 gint      *minimal_width,
                                 gint      *natural_width)
 {
@@ -219,7 +219,7 @@ clock_face_get_preferred_width (GtkWidget *this,
 }
 
 static void
-clock_face_get_preferred_height (GtkWidget *this,
+clock_face_get_preferred_height (CtkWidget *this,
                                  gint      *minimal_height,
                                  gint      *natural_height)
 {
@@ -252,11 +252,11 @@ clock_face_get_preferred_height (GtkWidget *this,
 }
 
 static void
-clock_face_size_allocate (GtkWidget     *this,
-                          GtkAllocation *allocation)
+clock_face_size_allocate (CtkWidget     *this,
+                          CtkAllocation *allocation)
 {
-    GtkAllocation this_allocation;
-    GtkAllocation old_allocation;
+    CtkAllocation this_allocation;
+    CtkAllocation old_allocation;
 
     ctk_widget_get_allocation (this, &this_allocation);
 
@@ -312,7 +312,7 @@ update_time_and_face (ClockFace *this,
         timeofday = CLOCK_FACE_NIGHT;
 
     if (priv->timeofday != timeofday || force_face_loading) {
-            GtkAllocation allocation;
+            CtkAllocation allocation;
             gint width, height;
 
             priv->timeofday = timeofday;
@@ -338,7 +338,7 @@ clock_face_refresh (ClockFace *this)
     return TRUE; /* keep running this event */
 }
 
-GtkWidget *
+CtkWidget *
 clock_face_new (ClockFaceSize size)
 {
     GObject *obj = g_object_new (INTL_TYPE_CLOCK_FACE, NULL);
@@ -349,10 +349,10 @@ clock_face_new (ClockFaceSize size)
     return CTK_WIDGET (obj);
 }
 
-GtkWidget *
+CtkWidget *
 clock_face_new_with_location (ClockFaceSize size,
                               ClockLocation *loc,
-                              GtkWidget *size_widget)
+                              CtkWidget *size_widget)
 {
     GObject *obj = g_object_new (INTL_TYPE_CLOCK_FACE, NULL);
     ClockFacePrivate *priv = clock_face_get_instance_private (CLOCK_FACE(obj));

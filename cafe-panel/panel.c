@@ -60,7 +60,7 @@ enum {
 };
 
 /*we call this recursively*/
-static void orient_change_foreach(GtkWidget *w, gpointer data);
+static void orient_change_foreach(CtkWidget *w, gpointer data);
 
 void
 orientation_change (AppletInfo  *info,
@@ -107,7 +107,7 @@ orientation_change (AppletInfo  *info,
 }
 
 static void
-orient_change_foreach(GtkWidget *w, gpointer data)
+orient_change_foreach(CtkWidget *w, gpointer data)
 {
 	AppletInfo *info = g_object_get_data (G_OBJECT (w), "applet_info");
 	PanelWidget *panel = data;
@@ -117,7 +117,7 @@ orient_change_foreach(GtkWidget *w, gpointer data)
 
 
 static void
-panel_orient_change (GtkWidget *widget, gpointer data)
+panel_orient_change (CtkWidget *widget, gpointer data)
 {
 	ctk_container_foreach(CTK_CONTAINER(widget),
 			      orient_change_foreach,
@@ -125,7 +125,7 @@ panel_orient_change (GtkWidget *widget, gpointer data)
 }
 
 /*we call this recursively*/
-static void size_change_foreach(GtkWidget *w, gpointer data);
+static void size_change_foreach(CtkWidget *w, gpointer data);
 
 void
 size_change (AppletInfo  *info,
@@ -137,7 +137,7 @@ size_change (AppletInfo  *info,
 }
 
 static void
-size_change_foreach(GtkWidget *w, gpointer data)
+size_change_foreach(CtkWidget *w, gpointer data)
 {
 	AppletInfo *info = g_object_get_data (G_OBJECT (w), "applet_info");
 	PanelWidget *panel = data;
@@ -147,7 +147,7 @@ size_change_foreach(GtkWidget *w, gpointer data)
 
 
 static void
-panel_size_change (GtkWidget *widget, gpointer data)
+panel_size_change (CtkWidget *widget, gpointer data)
 {
 	ctk_container_foreach(CTK_CONTAINER(widget), size_change_foreach,
 			      widget);
@@ -174,7 +174,7 @@ back_change (AppletInfo  *info,
 }
 
 static void
-back_change_foreach (GtkWidget   *widget,
+back_change_foreach (CtkWidget   *widget,
 		     PanelWidget *panel)
 {
 	AppletInfo *info;
@@ -185,10 +185,10 @@ back_change_foreach (GtkWidget   *widget,
 }
 
 static void
-panel_back_change (GtkWidget *widget, gpointer data)
+panel_back_change (CtkWidget *widget, gpointer data)
 {
 	ctk_container_foreach (CTK_CONTAINER (widget),
-			       (GtkCallback) back_change_foreach,
+			       (CtkCallback) back_change_foreach,
 			       widget);
 
 #ifdef FIXME_FOR_NEW_CONFIG
@@ -198,7 +198,7 @@ panel_back_change (GtkWidget *widget, gpointer data)
 }
 
 static void
-cafe_panel_applet_added(GtkWidget *widget, GtkWidget *applet, gpointer data)
+cafe_panel_applet_added(CtkWidget *widget, CtkWidget *applet, gpointer data)
 {
 	AppletInfo    *info;
 
@@ -210,7 +210,7 @@ cafe_panel_applet_added(GtkWidget *widget, GtkWidget *applet, gpointer data)
 }
 
 static void
-cafe_panel_applet_removed(GtkWidget *widget, GtkWidget *applet, gpointer data)
+cafe_panel_applet_removed(CtkWidget *widget, CtkWidget *applet, gpointer data)
 {
 	PanelToplevel *toplevel;
 	AppletInfo    *info;
@@ -238,7 +238,7 @@ deactivate_idle (gpointer data)
 }
 
 static void
-context_menu_deactivate (GtkWidget *w,
+context_menu_deactivate (CtkWidget *w,
 			 PanelData *pd)
 {
 	if (pd->deactivate_idle == 0)
@@ -248,7 +248,7 @@ context_menu_deactivate (GtkWidget *w,
 }
 
 static void
-context_menu_show (GtkWidget *w,
+context_menu_show (CtkWidget *w,
 		   PanelData *pd)
 {
 	panel_toplevel_push_autohide_disabler (PANEL_TOPLEVEL (pd->panel));
@@ -290,7 +290,7 @@ panel_destroy (PanelToplevel *toplevel,
 }
 
 static void
-cafe_panel_applet_move(PanelWidget *panel, GtkWidget *widget, gpointer data)
+cafe_panel_applet_move(PanelWidget *panel, CtkWidget *widget, gpointer data)
 {
 	AppletInfo *info;
 
@@ -301,7 +301,7 @@ cafe_panel_applet_move(PanelWidget *panel, GtkWidget *widget, gpointer data)
 	cafe_panel_applet_save_position (info, info->id, FALSE);
 }
 
-static GtkWidget *
+static CtkWidget *
 panel_menu_get (PanelWidget *panel, PanelData *pd)
 {
 	if (!pd->menu) {
@@ -316,11 +316,11 @@ panel_menu_get (PanelWidget *panel, PanelData *pd)
 	return pd->menu;
 }
 
-static GtkWidget *
+static CtkWidget *
 make_popup_panel_menu (PanelWidget *panel_widget)
 {
 	PanelData *pd;
-	GtkWidget *menu;
+	CtkWidget *menu;
 
 	if (!panel_widget) {
 		PanelToplevel *toplevel;
@@ -343,7 +343,7 @@ panel_popup_menu (PanelToplevel *toplevel,
 		  guint32        activate_time)
 {
 	PanelWidget *panel_widget;
-	GtkWidget   *menu;
+	CtkWidget   *menu;
 	PanelData   *panel_data;
 	GdkEvent    *current_event;
 
@@ -390,12 +390,12 @@ panel_button_press_event (PanelToplevel  *toplevel,
 }
 
 static gboolean
-panel_key_press_event (GtkWidget   *widget,
+panel_key_press_event (CtkWidget   *widget,
 		       GdkEventKey *event)
 {
 #ifdef HAVE_X11
 	/*
-  	 * If the focus widget is a GtkSocket, i.e. the
+  	 * If the focus widget is a CtkSocket, i.e. the
 	 * focus is in an applet in another process, then key
 	 * bindings do not work. We get around this by
 	 * activating the key bindings here.
@@ -738,7 +738,7 @@ move_applet (PanelWidget *panel, int pos, int applet_index)
 {
 	GSList     *applet_list;
 	AppletInfo *info;
-	GtkWidget  *parent;
+	CtkWidget  *parent;
 
 	applet_list = cafe_panel_applet_list_applets ();
 
@@ -869,10 +869,10 @@ drop_internal_applet (PanelWidget *panel, int pos, const char *applet_type,
 	return success;
 }
 
-static GtkTargetList *
+static CtkTargetList *
 get_target_list (void)
 {
-	static GtkTargetEntry drop_types [] = {
+	static CtkTargetEntry drop_types [] = {
 		{ "text/uri-list",                       0, TARGET_URL },
 		{ "x-url/http",                          0, TARGET_NETSCAPE_URL },
 		{ "x-url/ftp",                           0, TARGET_NETSCAPE_URL },
@@ -885,7 +885,7 @@ get_target_list (void)
 		{ "property/bgimage",                    0, TARGET_BGIMAGE },
 		{ "x-special/cafe-reset-background",    0, TARGET_BACKGROUND_RESET },
 	};
-	static GtkTargetList *target_list = NULL;
+	static CtkTargetList *target_list = NULL;
 
 	if (!target_list) {
 		gint length = sizeof (drop_types) / sizeof (drop_types [0]);
@@ -897,7 +897,7 @@ get_target_list (void)
 }
 
 gboolean
-panel_check_dnd_target_data (GtkWidget      *widget,
+panel_check_dnd_target_data (CtkWidget      *widget,
 			     GdkDragContext *context,
 			     guint          *ret_info,
 			     GdkAtom        *ret_atom)
@@ -933,7 +933,7 @@ panel_check_dnd_target_data (GtkWidget      *widget,
 }
 
 static void
-do_highlight (GtkWidget *widget, gboolean highlight)
+do_highlight (CtkWidget *widget, gboolean highlight)
 {
 	gboolean have_drag;
 
@@ -971,7 +971,7 @@ panel_check_drop_forbidden (PanelWidget    *panel,
 		return FALSE;
 
 	if (info == TARGET_APPLET_INTERNAL) {
-		GtkWidget *source_widget;
+		CtkWidget *source_widget;
 
 		source_widget = ctk_drag_get_source_widget (context);
 
@@ -1007,7 +1007,7 @@ panel_check_drop_forbidden (PanelWidget    *panel,
 }
 
 static gboolean
-drag_motion_cb (GtkWidget	   *widget,
+drag_motion_cb (CtkWidget	   *widget,
 		GdkDragContext     *context,
 		gint                x,
 		gint                y,
@@ -1036,7 +1036,7 @@ drag_motion_cb (GtkWidget	   *widget,
 }
 
 static gboolean
-drag_drop_cb (GtkWidget	        *widget,
+drag_drop_cb (CtkWidget	        *widget,
 	      GdkDragContext    *context,
 	      gint               x,
 	      gint               y,
@@ -1054,7 +1054,7 @@ drag_drop_cb (GtkWidget	        *widget,
 }
 
 static void
-drag_leave_cb (GtkWidget	*widget,
+drag_leave_cb (CtkWidget	*widget,
 	       GdkDragContext   *context,
 	       guint             time,
 	       Launcher         *launcher)
@@ -1071,7 +1071,7 @@ void
 panel_receive_dnd_data (PanelWidget      *panel,
 			guint             info,
 			int               pos,
-			GtkSelectionData *selection_data,
+			CtkSelectionData *selection_data,
 			GdkDragContext   *context,
 			guint             time_)
 {
@@ -1139,11 +1139,11 @@ panel_receive_dnd_data (PanelWidget      *panel,
 }
 
 static void
-drag_data_recieved_cb (GtkWidget	*widget,
+drag_data_recieved_cb (CtkWidget	*widget,
 		       GdkDragContext   *context,
 		       gint              x,
 		       gint              y,
-		       GtkSelectionData *selection_data,
+		       CtkSelectionData *selection_data,
 		       guint             info,
 		       guint             time)
 {
@@ -1264,9 +1264,9 @@ panel_screen_from_panel_widget (PanelWidget *panel)
 }
 
 gboolean
-panel_is_applet_right_stick (GtkWidget *applet)
+panel_is_applet_right_stick (CtkWidget *applet)
 {
-	GtkWidget   *parent;
+	CtkWidget   *parent;
 	PanelWidget *panel_widget;
 
 	g_return_val_if_fail (CTK_IS_WIDGET (applet), FALSE);
@@ -1303,7 +1303,7 @@ panel_delete_without_query (PanelToplevel *toplevel)
 }
 
 static void
-panel_deletion_response (GtkWidget     *dialog,
+panel_deletion_response (CtkWidget     *dialog,
 			 int            response,
 			 PanelToplevel *toplevel)
 {
@@ -1317,18 +1317,18 @@ panel_deletion_response (GtkWidget     *dialog,
 }
 
 static void
-panel_deletion_destroy_dialog (GtkWidget *widget,
+panel_deletion_destroy_dialog (CtkWidget *widget,
 			       PanelToplevel *toplevel)
 {
 	panel_toplevel_pop_autohide_disabler (toplevel);
 	g_object_set_data (G_OBJECT (toplevel), "panel-delete-dialog", NULL);
 }
 
-GtkWidget *
+CtkWidget *
 panel_deletion_dialog (PanelToplevel *toplevel)
 {
 
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 	char *text1;
 	char *text2;
 
@@ -1380,7 +1380,7 @@ panel_deletion_dialog (PanelToplevel *toplevel)
 static void
 panel_query_deletion (PanelToplevel *toplevel)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 
 	dialog = g_object_get_data (G_OBJECT (toplevel), "panel-delete-dialog");
 

@@ -188,7 +188,7 @@ sn_dbus_menu_item_new (GVariant *props)
         }
       else
         {
-          GtkWidget *image = NULL;
+          CtkWidget *image = NULL;
 
           if (item->icon_name)
             {
@@ -210,7 +210,7 @@ sn_dbus_menu_item_new (GVariant *props)
 
       if (g_strcmp0 (item->children_display, "submenu") == 0)
         {
-          GtkWidget *submenu;
+          CtkWidget *submenu;
 
           submenu = ctk_menu_new ();
           ctk_menu_item_set_submenu (CTK_MENU_ITEM (item->item), submenu);
@@ -233,7 +233,7 @@ sn_dbus_menu_item_new (GVariant *props)
 
       if (item->toggle_state != -1 && CTK_IS_CHECK_MENU_ITEM (item->item))
         {
-          GtkCheckMenuItem *check;
+          CtkCheckMenuItem *check;
 
           check = CTK_CHECK_MENU_ITEM (item->item);
 
@@ -310,7 +310,7 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
         }
       else if (g_strcmp0 (prop, "icon-name") == 0)
         {
-          GtkWidget *image;
+          CtkWidget *image;
 
           g_free (item->icon_name);
           item->icon_name = g_variant_dup_string (value, NULL);
@@ -330,7 +330,7 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
         }
       else if (g_strcmp0 (prop, "icon-data") == 0)
         {
-          GtkWidget *image;
+          CtkWidget *image;
 
           g_clear_object (&item->icon_data);
           item->icon_data = pxibuf_new (value);
@@ -374,7 +374,7 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
 
           if (item->toggle_state != -1 && CTK_IS_CHECK_MENU_ITEM (item->item))
             {
-              GtkCheckMenuItem *check;
+              CtkCheckMenuItem *check;
 
               check = CTK_CHECK_MENU_ITEM (item->item);
 

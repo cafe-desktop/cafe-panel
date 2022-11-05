@@ -47,16 +47,16 @@
 
 typedef struct
 {
-  GtkWidget *preferences_dialog;
-  GtkWidget *min_icon_size_spin;
+  CtkWidget *preferences_dialog;
+  CtkWidget *min_icon_size_spin;
 } NAPreferencesDialog;
 
 struct _NaTrayAppletPrivate
 {
-  GtkWidget               *grid;
+  CtkWidget               *grid;
 
   NAPreferencesDialog     *dialog;
-  GtkBuilder              *builder;
+  CtkBuilder              *builder;
 
   GSettings               *settings;
   gint                     min_icon_size;
@@ -68,8 +68,8 @@ struct _NaTrayAppletPrivate
 
 G_DEFINE_TYPE_WITH_PRIVATE (NaTrayApplet, na_tray_applet, PANEL_TYPE_APPLET)
 
-static void (*parent_class_realize) (GtkWidget *widget);
-static void (*parent_class_style_updated) (GtkWidget *widget);
+static void (*parent_class_realize) (CtkWidget *widget);
+static void (*parent_class_style_updated) (CtkWidget *widget);
 static void (*parent_class_change_background)(CafePanelApplet* panel_applet, CafePanelAppletBackgroundType type, GdkRGBA* color, cairo_pattern_t* pattern);
 static void (*parent_class_change_orient)(CafePanelApplet       *panel_applet, CafePanelAppletOrient  orient);
 
@@ -104,7 +104,7 @@ sn_watcher_service_ref (void)
 #endif
 
 
-static GtkOrientation
+static CtkOrientation
 get_ctk_orientation_from_applet_orient (CafePanelAppletOrient orient)
 {
   switch (orient)
@@ -146,14 +146,14 @@ setup_gsettings (NaTrayApplet *applet)
 
 static void
 na_preferences_dialog_min_icon_size_changed (NaTrayApplet  *applet,
-                                             GtkSpinButton *spin_button)
+                                             CtkSpinButton *spin_button)
 {
   applet->priv->min_icon_size = ctk_spin_button_get_value_as_int (spin_button);
   g_settings_set_int (applet->priv->settings, KEY_MIN_ICON_SIZE, applet->priv->min_icon_size);
 }
 
 static gboolean
-na_preferences_dialog_hide_event (GtkWidget    *widget,
+na_preferences_dialog_hide_event (CtkWidget    *widget,
                                   GdkEvent     *event,
                                   NaTrayApplet *applet)
 {
@@ -164,7 +164,7 @@ na_preferences_dialog_hide_event (GtkWidget    *widget,
 static void
 na_preferences_dialog_response (NaTrayApplet *applet,
                                 int           response,
-                                GtkWidget    *preferences_dialog)
+                                CtkWidget    *preferences_dialog)
 {
   switch (response)
     {
@@ -206,7 +206,7 @@ ensure_prefs_window_is_created (NaTrayApplet *applet)
 }
 
 static void
-properties_dialog (GtkAction    *action,
+properties_dialog (CtkAction    *action,
                    NaTrayApplet *applet)
 {
   ensure_prefs_window_is_created (applet);
@@ -216,7 +216,7 @@ properties_dialog (GtkAction    *action,
   ctk_window_present (CTK_WINDOW (applet->priv->dialog->preferences_dialog));
 }
 
-static void help_cb(GtkAction* action, NaTrayApplet* applet)
+static void help_cb(CtkAction* action, NaTrayApplet* applet)
 {
 	GError* error = NULL;
 	char* uri;
@@ -232,7 +232,7 @@ static void help_cb(GtkAction* action, NaTrayApplet* applet)
 	}
 	else if(error)
 	{
-		GtkWidget* dialog;
+		CtkWidget* dialog;
 		char* primary;
 
 		primary = g_markup_printf_escaped (_("Could not display help document '%s'"), NA_HELP_DOC);
@@ -255,7 +255,7 @@ static void help_cb(GtkAction* action, NaTrayApplet* applet)
 	}
 }
 
-static void about_cb(GtkAction* action, NaTrayApplet* applet)
+static void about_cb(CtkAction* action, NaTrayApplet* applet)
 {
 	const gchar* authors[] = {
 		"Havoc Pennington <hp@redhat.com>",
@@ -288,7 +288,7 @@ static void about_cb(GtkAction* action, NaTrayApplet* applet)
 		NULL);
 }
 
-static const GtkActionEntry menu_actions [] = {
+static const CtkActionEntry menu_actions [] = {
 	{ "SystemTrayPreferences", "document-properties", N_("_Preferences"),
 	  NULL, NULL,
 	  G_CALLBACK (properties_dialog) },
@@ -302,14 +302,14 @@ static const GtkActionEntry menu_actions [] = {
 
 
 static void
-na_tray_applet_realize (GtkWidget *widget)
+na_tray_applet_realize (CtkWidget *widget)
 {
   NaTrayApplet      *applet = NA_TRAY_APPLET (widget);
 
   if (parent_class_realize)
     parent_class_realize (widget);
 
-  GtkActionGroup* action_group;
+  CtkActionGroup* action_group;
   action_group = ctk_action_group_new("NA Applet Menu Actions");
   ctk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
   ctk_action_group_add_actions(action_group, menu_actions, G_N_ELEMENTS(menu_actions), applet);
@@ -342,7 +342,7 @@ na_tray_applet_dispose (GObject *object)
 }
 
 static void
-na_tray_applet_style_updated (GtkWidget *widget)
+na_tray_applet_style_updated (CtkWidget *widget)
 {
   NaTrayApplet    *applet = NA_TRAY_APPLET (widget);
   gint             padding;
@@ -394,7 +394,7 @@ na_tray_applet_change_orient (CafePanelApplet       *panel_applet,
 }
 
 static gboolean
-na_tray_applet_button_press_event (GtkWidget      *widget,
+na_tray_applet_button_press_event (CtkWidget      *widget,
                                    GdkEventButton *event)
 {
   /* Prevent the panel from poping up the applet's popup on the the items,
@@ -407,8 +407,8 @@ na_tray_applet_button_press_event (GtkWidget      *widget,
 }
 
 static gboolean
-na_tray_applet_focus (GtkWidget        *widget,
-                      GtkDirectionType  direction)
+na_tray_applet_focus (CtkWidget        *widget,
+                      CtkDirectionType  direction)
 {
   NaTrayApplet *applet = NA_TRAY_APPLET (widget);
 
@@ -425,7 +425,7 @@ static void
 na_tray_applet_class_init (NaTrayAppletClass *class)
 {
   GObjectClass     *object_class = G_OBJECT_CLASS (class);
-  GtkWidgetClass   *widget_class = CTK_WIDGET_CLASS (class);
+  CtkWidgetClass   *widget_class = CTK_WIDGET_CLASS (class);
   CafePanelAppletClass *applet_class = CAFE_PANEL_APPLET_CLASS (class);
 
   object_class->dispose = na_tray_applet_dispose;

@@ -32,23 +32,23 @@
 #include "panel-icon-names.h"
 #include "panel-schemas.h"
 
-static GtkIconSize panel_menu_icon_size = 0;
-static GtkIconSize panel_menu_bar_icon_size = 0;
-static GtkIconSize panel_add_to_icon_size = 0;
+static CtkIconSize panel_menu_icon_size = 0;
+static CtkIconSize panel_menu_bar_icon_size = 0;
+static CtkIconSize panel_add_to_icon_size = 0;
 
-GtkIconSize
+CtkIconSize
 panel_menu_icon_get_size (void)
 {
 	return panel_menu_icon_size;
 }
 
-GtkIconSize
+CtkIconSize
 panel_menu_bar_icon_get_size (void)
 {
 	return panel_menu_bar_icon_size;
 }
 
-GtkIconSize panel_add_to_icon_get_size(void)
+CtkIconSize panel_add_to_icon_get_size(void)
 {
 	return panel_add_to_icon_size;
 }
@@ -63,16 +63,16 @@ static PanelStockIcon stock_icons [] = {
 };
 
 static void
-panel_init_stock_icons (GtkIconFactory *factory)
+panel_init_stock_icons (CtkIconFactory *factory)
 {
-	GtkIconSource *source;
+	CtkIconSource *source;
 	int            i;
 
 
 	source = ctk_icon_source_new ();
 
 	for (i = 0; i < G_N_ELEMENTS (stock_icons); i++) {
-		GtkIconSet *set;
+		CtkIconSet *set;
 
 		ctk_icon_source_set_icon_name (source, stock_icons [i].icon);
 
@@ -101,15 +101,15 @@ static PanelStockItem stock_items [] = {
 };
 
 static void
-panel_init_stock_items (GtkIconFactory *factory)
+panel_init_stock_items (CtkIconFactory *factory)
 {
-	GtkStockItem *items;
+	CtkStockItem *items;
 	int           i;
 
-	items = g_new (GtkStockItem, G_N_ELEMENTS (stock_items));
+	items = g_new (CtkStockItem, G_N_ELEMENTS (stock_items));
 
 	for (i = 0; i < G_N_ELEMENTS (stock_items); i++) {
-		GtkIconSet *icon_set;
+		CtkIconSet *icon_set;
 
 		items [i].stock_id           = g_strdup (stock_items [i].stock_id);
 		items [i].label              = g_strdup (stock_items [i].label);
@@ -128,7 +128,7 @@ panel_init_stock_items (GtkIconFactory *factory)
 void
 panel_init_stock_icons_and_items (void)
 {
-	GtkIconFactory *factory;
+	CtkIconFactory *factory;
 	GSettings      *settings;
 	gint		icon_size;
 

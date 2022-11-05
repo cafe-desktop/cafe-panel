@@ -46,7 +46,7 @@ typedef enum {
 gboolean clock_locale_supports_am_pm (void);
 ClockFormat clock_locale_format (void);
 
-void clock_utils_display_help (GtkWidget  *widget,
+void clock_utils_display_help (CtkWidget  *widget,
 			       const char *doc_id,
 			       const char *link_id);
 

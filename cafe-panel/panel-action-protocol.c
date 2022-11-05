@@ -57,11 +57,11 @@ panel_action_protocol_main_menu (GdkScreen *screen,
 				 guint32    activate_time, GdkEvent  *event)
 {
 	PanelWidget *panel_widget;
-	GtkWidget   *menu;
+	CtkWidget   *menu;
 	AppletInfo  *info;
 	GdkVisual *visual;
-	GtkWidget *toplevel;
-	GtkStyleContext *context;
+	CtkWidget *toplevel;
+	CtkStyleContext *context;
 	GdkSeat *seat;
 	GdkDevice *device;
 

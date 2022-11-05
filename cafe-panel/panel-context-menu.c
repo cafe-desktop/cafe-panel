@@ -51,7 +51,7 @@
 #include "panel-reset.h"
 
 static void
-panel_context_menu_show_help (GtkWidget *w,
+panel_context_menu_show_help (CtkWidget *w,
 			      gpointer data)
 {
 	panel_show_help (ctk_widget_get_screen (w),
@@ -59,9 +59,9 @@ panel_context_menu_show_help (GtkWidget *w,
 }
 
 static void
-panel_context_menu_show_about_dialog (GtkWidget *menuitem)
+panel_context_menu_show_about_dialog (CtkWidget *menuitem)
 {
-	static GtkWidget *about = NULL;
+	static CtkWidget *about = NULL;
 	char             *authors [] = {
 		/* CAFE */
 		"Perberos <perberos@gmail.com>",
@@ -139,7 +139,7 @@ panel_context_menu_show_about_dialog (GtkWidget *menuitem)
 }
 
 static void
-panel_context_menu_create_new_panel (GtkWidget *menuitem)
+panel_context_menu_create_new_panel (CtkWidget *menuitem)
 {
 	panel_profile_create_toplevel (ctk_widget_get_screen (menuitem));
 }
@@ -160,8 +160,8 @@ panel_context_menu_delete_panel (PanelToplevel *toplevel)
 }
 
 static void
-panel_context_menu_setup_delete_panel_item (GtkWidget *menu,
-					    GtkWidget *menuitem)
+panel_context_menu_setup_delete_panel_item (CtkWidget *menu,
+					    CtkWidget *menuitem)
 {
 	PanelWidget *panel_widget;
 	gboolean     sensitive;
@@ -179,7 +179,7 @@ panel_context_menu_setup_delete_panel_item (GtkWidget *menu,
 }
 
 static void
-panel_reset_response (GtkWidget     *dialog,
+panel_reset_response (CtkWidget     *dialog,
 			 int            response)
 {
 	if (response == CTK_RESPONSE_OK) {
@@ -192,7 +192,7 @@ panel_reset_response (GtkWidget     *dialog,
 static void
 query_panel_reset (PanelToplevel *toplevel)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 	char *text1;
 	char *text2;
 
@@ -227,9 +227,9 @@ query_panel_reset (PanelToplevel *toplevel)
 
 static void
 panel_context_menu_build_edition (PanelWidget *panel_widget,
-				  GtkWidget   *menu)
+				  CtkWidget   *menu)
 {
-	GtkWidget *menuitem;
+	CtkWidget *menuitem;
 
 	ctk_menu_set_reserve_toggle_size (CTK_MENU (menu), FALSE);
 
@@ -286,11 +286,11 @@ panel_context_menu_build_edition (PanelWidget *panel_widget,
 	add_menu_separator (menu);
 }
 
-GtkWidget *
+CtkWidget *
 panel_context_menu_create (PanelWidget *panel)
 {
-	GtkWidget *retval;
-	GtkWidget *menuitem;
+	CtkWidget *retval;
+	CtkWidget *menuitem;
 
 	if (panel->master_widget) {
 		gpointer    *pointer;
@@ -334,13 +334,13 @@ panel_context_menu_create (PanelWidget *panel)
 	g_object_set_data (G_OBJECT (retval), "menu_panel", panel);
 
 /* Set up theme and transparency support */
-	GtkWidget *toplevel = ctk_widget_get_toplevel (retval);
+	CtkWidget *toplevel = ctk_widget_get_toplevel (retval);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
-	GtkStyleContext *context;
+	CtkStyleContext *context;
 	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");

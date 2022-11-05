@@ -4,13 +4,13 @@
 #include "cafe-panel-applet.h"
 
 static void
-test_applet_on_do (GtkAction *action,
+test_applet_on_do (CtkAction *action,
 		   gpointer   user_data)
 {
         g_message ("%s called\n", ctk_action_get_name (action));
 }
 
-static const GtkActionEntry test_applet_menu_actions[] = {
+static const CtkActionEntry test_applet_menu_actions[] = {
 	{ "TestAppletDo1", NULL, "TestAppletDo1",
 	  NULL, NULL,
 	  G_CALLBACK (test_applet_on_do) },
@@ -32,7 +32,7 @@ typedef struct _TestAppletClass TestAppletClass;
 
 struct _TestApplet {
 	CafePanelApplet   base;
-	GtkWidget    *label;
+	CtkWidget    *label;
 };
 
 struct _TestAppletClass {
@@ -141,7 +141,7 @@ test_applet_handle_background_change (TestApplet                *applet,
 static gboolean
 test_applet_fill (TestApplet *applet)
 {
-	GtkActionGroup *action_group;
+	CtkActionGroup *action_group;
 
 	applet->label = ctk_label_new (NULL);
 

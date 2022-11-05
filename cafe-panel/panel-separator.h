@@ -44,13 +44,13 @@ typedef struct _PanelSeparatorClass   PanelSeparatorClass;
 typedef struct _PanelSeparatorPrivate PanelSeparatorPrivate;
 
 struct _PanelSeparator {
-	GtkEventBox             parent;
+	CtkEventBox             parent;
 
 	PanelSeparatorPrivate  *priv;
 };
 
 struct _PanelSeparatorClass {
-	GtkEventBoxClass        parent_class;
+	CtkEventBoxClass        parent_class;
 };
 
 GType  panel_separator_get_type          (void) G_GNUC_CONST;
