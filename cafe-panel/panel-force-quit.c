@@ -31,14 +31,14 @@
 #include "panel-force-quit.h"
 
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkx.h>
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 
 #include <X11/extensions/XInput2.h>
 
-#include <libpanel-util/panel-gtk.h>
+#include <libpanel-util/panel-ctk.h>
 
 #include "panel-icon-names.h"
 #include "panel-stock-icons.h"
@@ -60,48 +60,48 @@ display_popup_window (GdkScreen *screen)
 	int            screen_width, screen_height;
 	GtkAllocation  allocation;
 
-	retval = gtk_window_new (GTK_WINDOW_POPUP);
-	atk_object_set_role (gtk_widget_get_accessible (retval), ATK_ROLE_ALERT);
-	gtk_window_set_screen (GTK_WINDOW (retval), screen);
-	gtk_window_stick (GTK_WINDOW (retval));
-	gtk_widget_add_events (retval, GDK_BUTTON_PRESS_MASK | GDK_KEY_PRESS_MASK);
+	retval = ctk_window_new (GTK_WINDOW_POPUP);
+	atk_object_set_role (ctk_widget_get_accessible (retval), ATK_ROLE_ALERT);
+	ctk_window_set_screen (GTK_WINDOW (retval), screen);
+	ctk_window_stick (GTK_WINDOW (retval));
+	ctk_widget_add_events (retval, GDK_BUTTON_PRESS_MASK | GDK_KEY_PRESS_MASK);
 
-	frame = gtk_frame_new (NULL);
-	gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_ETCHED_IN);
-	gtk_container_add (GTK_CONTAINER (retval), frame);
-	gtk_widget_show (frame);
+	frame = ctk_frame_new (NULL);
+	ctk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_ETCHED_IN);
+	ctk_container_add (GTK_CONTAINER (retval), frame);
+	ctk_widget_show (frame);
 
-	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	gtk_container_set_border_width (GTK_CONTAINER (vbox), 8);
-	gtk_container_add (GTK_CONTAINER (frame), vbox);
-	gtk_widget_show (vbox);
+	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	ctk_container_set_border_width (GTK_CONTAINER (vbox), 8);
+	ctk_container_add (GTK_CONTAINER (frame), vbox);
+	ctk_widget_show (vbox);
 
-	image = gtk_image_new_from_icon_name (PANEL_ICON_FORCE_QUIT,
+	image = ctk_image_new_from_icon_name (PANEL_ICON_FORCE_QUIT,
 					      GTK_ICON_SIZE_DIALOG);
-	gtk_widget_set_halign (image, GTK_ALIGN_CENTER);
-	gtk_widget_set_valign (image, GTK_ALIGN_CENTER);
-	gtk_box_pack_start (GTK_BOX (vbox), image, TRUE, TRUE, 4);
-	gtk_widget_show (image);
+	ctk_widget_set_halign (image, GTK_ALIGN_CENTER);
+	ctk_widget_set_valign (image, GTK_ALIGN_CENTER);
+	ctk_box_pack_start (GTK_BOX (vbox), image, TRUE, TRUE, 4);
+	ctk_widget_show (image);
 
-	label = gtk_label_new (_("Click on a window to force the application to quit. "
+	label = ctk_label_new (_("Click on a window to force the application to quit. "
 				 "To cancel press <ESC>."));
-	gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-	gtk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_CENTER);
-	gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 4);
-	gtk_widget_show (label);
+	ctk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+	ctk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_CENTER);
+	ctk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 4);
+	ctk_widget_show (label);
 
-	gtk_widget_realize (retval);
+	ctk_widget_realize (retval);
 
 	screen_width  = WidthOfScreen (gdk_x11_screen_get_xscreen (screen));
 	screen_height = HeightOfScreen (gdk_x11_screen_get_xscreen (screen));
 
-	gtk_widget_get_allocation (retval, &allocation);
+	ctk_widget_get_allocation (retval, &allocation);
 
-	gtk_window_move (GTK_WINDOW (retval),
+	ctk_window_move (GTK_WINDOW (retval),
 			 (screen_width  - allocation.width) / 2,
 			 (screen_height - allocation.height) / 2);
 
-	gtk_widget_show (GTK_WIDGET (retval));
+	ctk_widget_show (GTK_WIDGET (retval));
 
 	return retval;
 }
@@ -114,10 +114,10 @@ remove_popup (GtkWidget *popup)
 	GdkSeat          *seat;
 
 	root = gdk_screen_get_root_window (
-			gtk_window_get_screen (GTK_WINDOW (popup)));
+			ctk_window_get_screen (GTK_WINDOW (popup)));
 	gdk_window_remove_filter (root, (GdkFilterFunc) popup_filter, popup);
 
-	gtk_widget_destroy (popup);
+	ctk_widget_destroy (popup);
 
 	display = gdk_window_get_display (root);
 	seat = gdk_display_get_default_seat (display);
@@ -208,7 +208,7 @@ kill_window_response (GtkDialog *dialog,
 		Display *xdisplay;
 		Window window = (Window) user_data;
 
-		display = gtk_widget_get_display (GTK_WIDGET (dialog));
+		display = ctk_widget_get_display (GTK_WIDGET (dialog));
 		xdisplay = GDK_DISPLAY_XDISPLAY (display);
 
 		gdk_x11_display_error_trap_push (display);
@@ -217,7 +217,7 @@ kill_window_response (GtkDialog *dialog,
 		gdk_x11_display_error_trap_pop_ignored (display);
 	}
 
-	gtk_widget_destroy (GTK_WIDGET (dialog));
+	ctk_widget_destroy (GTK_WIDGET (dialog));
 }
 
 /* From marco */
@@ -226,12 +226,12 @@ kill_window_question (gpointer window)
 {
 	GtkWidget *dialog;
 
-	dialog = gtk_message_dialog_new (NULL, 0,
+	dialog = ctk_message_dialog_new (NULL, 0,
 					 GTK_MESSAGE_WARNING,
 					 GTK_BUTTONS_NONE,
 					 _("Force this application to exit?"));
 
-	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+	ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
 						  _("If you choose to force an application "
 						  "to exit, unsaved changes in any open documents "
 						  "in it might get lost."));
@@ -240,19 +240,19 @@ kill_window_question (gpointer window)
 				 _("_Cancel"), "process-stop",
 				 GTK_RESPONSE_CANCEL);
 
-	gtk_dialog_add_button (GTK_DIALOG (dialog),
+	ctk_dialog_add_button (GTK_DIALOG (dialog),
 			       PANEL_STOCK_FORCE_QUIT,
 			       GTK_RESPONSE_ACCEPT);
 
-	gtk_dialog_set_default_response (GTK_DIALOG (dialog),
+	ctk_dialog_set_default_response (GTK_DIALOG (dialog),
 					 GTK_RESPONSE_CANCEL);
-	gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
-	gtk_window_set_title (GTK_WINDOW (dialog), _("Force Quit"));
+	ctk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
+	ctk_window_set_title (GTK_WINDOW (dialog), _("Force Quit"));
 
 	g_signal_connect (dialog, "response",
 			  G_CALLBACK (kill_window_response), window);
 
-	gtk_widget_show (dialog);
+	ctk_widget_show (dialog);
 }
 
 static void

@@ -73,25 +73,25 @@ activate_cb (GtkWidget  *widget,
 {
   guint id;
 
-  if (gtk_menu_item_get_submenu (GTK_MENU_ITEM (widget)) != NULL)
+  if (ctk_menu_item_get_submenu (GTK_MENU_ITEM (widget)) != NULL)
     return;
 
   id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (widget), "item-id"));
   sn_dbus_menu_gen_call_event_sync (menu->proxy, id, "clicked",
                                     g_variant_new ("v", g_variant_new_int32 (0)),
-                                    gtk_get_current_event_time (), NULL, NULL);
+                                    ctk_get_current_event_time (), NULL, NULL);
 }
 
 static GtkMenu *
 layout_update_item (SnDBusMenu *menu,
-                    GtkMenu    *gtk_menu,
+                    GtkMenu    *ctk_menu,
                     guint       id,
                     GVariant   *props)
 {
   SnDBusMenuItem *item;
 
   if (id == 0)
-    return gtk_menu;
+    return ctk_menu;
 
   item = g_hash_table_lookup (menu->items, GUINT_TO_POINTER (id));
 
@@ -100,7 +100,7 @@ layout_update_item (SnDBusMenu *menu,
       item = sn_dbus_menu_item_new (props);
 
       g_object_set_data (G_OBJECT (item->item), "item-id", GUINT_TO_POINTER (id));
-      gtk_menu_shell_append (GTK_MENU_SHELL (gtk_menu), item->item);
+      ctk_menu_shell_append (GTK_MENU_SHELL (ctk_menu), item->item);
 
       item->activate_id = g_signal_connect (item->item, "activate",
                                             G_CALLBACK (activate_cb), menu);
@@ -117,7 +117,7 @@ layout_update_item (SnDBusMenu *menu,
 static void
 layout_parse (SnDBusMenu *menu,
               GVariant   *layout,
-              GtkMenu    *gtk_menu)
+              GtkMenu    *ctk_menu)
 {
   guint id;
   GVariant *props;
@@ -137,7 +137,7 @@ layout_parse (SnDBusMenu *menu,
 
   g_variant_get (layout, "(i@a{sv}@av)", &id, &props, &items);
 
-  submenu = layout_update_item (menu, gtk_menu, id, props);
+  submenu = layout_update_item (menu, ctk_menu, id, props);
   g_variant_unref (props);
 
   g_variant_iter_init (&iter, items);
@@ -190,7 +190,7 @@ get_layout_cb (GObject      *source_object,
 
   /* Reposition menu to accomodate any size changes   */
   /* Menu size never changes with GTK 3.20 or earlier */
-  gtk_menu_reposition(GTK_MENU(menu));
+  ctk_menu_reposition(GTK_MENU(menu));
 
   g_variant_unref (layout);
 }
@@ -269,7 +269,7 @@ map_cb (GtkWidget  *widget,
 
   sn_dbus_menu_gen_call_event_sync (menu->proxy, 0, "opened",
                                     g_variant_new ("v", g_variant_new_int32 (0)),
-                                    gtk_get_current_event_time (),
+                                    ctk_get_current_event_time (),
                                     NULL, NULL);
 
   sn_dbus_menu_gen_call_about_to_show_sync (menu->proxy, 0, &need_update,
@@ -287,7 +287,7 @@ unmap_cb (GtkWidget  *widget,
 {
   sn_dbus_menu_gen_call_event_sync (menu->proxy, 0, "closed",
                                     g_variant_new ("v", g_variant_new_int32 (0)),
-                                    gtk_get_current_event_time (),
+                                    ctk_get_current_event_time (),
                                     NULL, NULL);
 }
 
@@ -374,15 +374,15 @@ sn_dbus_menu_constructed (GObject *object)
   menu = SN_DBUS_MENU (object);
 
   /*Set up theme and transparency support*/
-  toplevel = gtk_widget_get_toplevel(GTK_WIDGET(menu));
-  /* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
-  screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+  toplevel = ctk_widget_get_toplevel(GTK_WIDGET(menu));
+  /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
+  screen = ctk_widget_get_screen(GTK_WIDGET(toplevel));
   visual = gdk_screen_get_rgba_visual(screen);
-  gtk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+  ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
   /* Set menu and it's toplevel window to follow panel theme */
-  context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
-  gtk_style_context_add_class(context,"gnome-panel-menu-bar");
-  gtk_style_context_add_class(context,"cafe-panel-menu-bar");
+  context = ctk_widget_get_style_context (GTK_WIDGET(toplevel));
+  ctk_style_context_add_class(context,"gnome-panel-menu-bar");
+  ctk_style_context_add_class(context,"cafe-panel-menu-bar");
 
   menu->name_id = g_bus_watch_name (G_BUS_TYPE_SESSION, menu->bus_name,
                                     G_BUS_NAME_WATCHER_FLAGS_NONE,

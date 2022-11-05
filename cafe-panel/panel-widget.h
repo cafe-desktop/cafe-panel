@@ -11,7 +11,7 @@
 #define PANEL_WIDGET_H
 
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include "button-widget.h"
 #include "panel-types.h"

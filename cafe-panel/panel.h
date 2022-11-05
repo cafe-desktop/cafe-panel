@@ -1,7 +1,7 @@
 #ifndef PANEL_H
 #define PANEL_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "panel-toplevel.h"
 #include "panel-widget.h"
 #include "applet.h"

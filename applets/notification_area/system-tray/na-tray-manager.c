@@ -31,7 +31,7 @@
 
 #include "na-tray-manager.h"
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <glib/gi18n.h>
 #include <gdk/gdkx.h>
 #include <X11/Xatom.h>
@@ -300,18 +300,18 @@ na_tray_manager_handle_dock_request (NaTrayManager       *manager,
 
   /* If the child wasn't attached, then destroy it */
 
-  if (!GTK_IS_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (child))))
+  if (!GTK_IS_WINDOW (ctk_widget_get_toplevel (GTK_WIDGET (child))))
     {
-      gtk_widget_destroy (child);
+      ctk_widget_destroy (child);
       return;
     }
 
   g_signal_connect (child, "plug_removed",
 		    G_CALLBACK (na_tray_manager_plug_removed), manager);
 
-  gtk_socket_add_id (GTK_SOCKET (child), icon_window);
+  ctk_socket_add_id (GTK_SOCKET (child), icon_window);
 
-  if (!gtk_socket_get_plug_window (GTK_SOCKET (child)))
+  if (!ctk_socket_get_plug_window (GTK_SOCKET (child)))
     {
       /* Embedding failed, we won't get a plug-removed signal */
       /* This signal destroys the socket */
@@ -321,7 +321,7 @@ na_tray_manager_handle_dock_request (NaTrayManager       *manager,
 
   g_hash_table_insert (manager->socket_table,
                        GINT_TO_POINTER (icon_window), child);
-  gtk_widget_show (child);
+  ctk_widget_show (child);
 }
 
 static void
@@ -545,13 +545,13 @@ na_tray_manager_unmanage (NaTrayManager *manager)
     return;
 
   invisible = manager->invisible;
-  window = gtk_widget_get_window (invisible);
+  window = ctk_widget_get_window (invisible);
 
   g_assert (GTK_IS_INVISIBLE (invisible));
-  g_assert (gtk_widget_get_realized (invisible));
+  g_assert (ctk_widget_get_realized (invisible));
   g_assert (GDK_IS_WINDOW (window));
 
-  display = gtk_widget_get_display (invisible);
+  display = ctk_widget_get_display (invisible);
 
   if (gdk_selection_owner_get_for_display (display, manager->selection_atom) ==
       window)
@@ -568,7 +568,7 @@ na_tray_manager_unmanage (NaTrayManager *manager)
                             na_tray_manager_window_filter, manager);
 
   manager->invisible = NULL; /* prior to destroy for reentrancy paranoia */
-  gtk_widget_destroy (invisible);
+  ctk_widget_destroy (invisible);
   g_object_unref (G_OBJECT (invisible));
 #endif
 }
@@ -583,10 +583,10 @@ na_tray_manager_set_orientation_property (NaTrayManager *manager)
   gulong      data[1];
 
   g_return_if_fail (manager->invisible != NULL);
-  window = gtk_widget_get_window (manager->invisible);
+  window = ctk_widget_get_window (manager->invisible);
   g_return_if_fail (window != NULL);
 
-  display = gtk_widget_get_display (manager->invisible);
+  display = ctk_widget_get_display (manager->invisible);
   orientation_atom = gdk_x11_get_xatom_by_name_for_display (display,
                                                             "_NET_SYSTEM_TRAY_ORIENTATION");
 
@@ -614,7 +614,7 @@ na_tray_manager_set_visual_property (NaTrayManager *manager)
   gulong      data[1];
 
   g_return_if_fail (manager->invisible != NULL);
-  window = gtk_widget_get_window (manager->invisible);
+  window = ctk_widget_get_window (manager->invisible);
   g_return_if_fail (window != NULL);
 
   /* The visual property is a hint to the tray icons as to what visual they
@@ -625,7 +625,7 @@ na_tray_manager_set_visual_property (NaTrayManager *manager)
    * relative backgrounds to simulate transparency.
    */
 
-  display = gtk_widget_get_display (manager->invisible);
+  display = ctk_widget_get_display (manager->invisible);
   visual_atom = gdk_x11_get_xatom_by_name_for_display (display,
 						       "_NET_SYSTEM_TRAY_VISUAL");
 
@@ -664,10 +664,10 @@ na_tray_manager_set_padding_property (NaTrayManager *manager)
   gulong      data[1];
 
   g_return_if_fail (manager->invisible != NULL);
-  window = gtk_widget_get_window (manager->invisible);
+  window = ctk_widget_get_window (manager->invisible);
   g_return_if_fail (window != NULL);
 
-  display = gtk_widget_get_display (manager->invisible);
+  display = ctk_widget_get_display (manager->invisible);
   atom = gdk_x11_get_xatom_by_name_for_display (display,
                                                 "_NET_SYSTEM_TRAY_PADDING");
 
@@ -692,10 +692,10 @@ na_tray_manager_set_icon_size_property (NaTrayManager *manager)
   gulong      data[1];
 
   g_return_if_fail (manager->invisible != NULL);
-  window = gtk_widget_get_window (manager->invisible);
+  window = ctk_widget_get_window (manager->invisible);
   g_return_if_fail (window != NULL);
 
-  display = gtk_widget_get_display (manager->invisible);
+  display = ctk_widget_get_display (manager->invisible);
   atom = gdk_x11_get_xatom_by_name_for_display (display,
                                                 "_NET_SYSTEM_TRAY_ICON_SIZE");
 
@@ -720,10 +720,10 @@ na_tray_manager_set_colors_property (NaTrayManager *manager)
   gulong      data[12];
 
   g_return_if_fail (manager->invisible != NULL);
-  window = gtk_widget_get_window (manager->invisible);
+  window = ctk_widget_get_window (manager->invisible);
   g_return_if_fail (window != NULL);
 
-  display = gtk_widget_get_display (manager->invisible);
+  display = ctk_widget_get_display (manager->invisible);
   atom = gdk_x11_get_xatom_by_name_for_display (display,
                                                 "_NET_SYSTEM_TRAY_COLORS");
 
@@ -778,10 +778,10 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
   display = gdk_screen_get_display (screen);
   xscreen = GDK_SCREEN_XSCREEN (screen);
 
-  invisible = gtk_invisible_new_for_screen (screen);
-  gtk_widget_realize (invisible);
+  invisible = ctk_invisible_new_for_screen (screen);
+  ctk_widget_realize (invisible);
 
-  gtk_widget_add_events (invisible,
+  ctk_widget_add_events (invisible,
                          GDK_PROPERTY_CHANGE_MASK | GDK_STRUCTURE_MASK);
 
   selection_atom_name = g_strdup_printf ("_NET_SYSTEM_TRAY_S%d",
@@ -798,7 +798,7 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
   na_tray_manager_set_icon_size_property (manager);
   na_tray_manager_set_colors_property (manager);
 
-  window = gtk_widget_get_window (invisible);
+  window = ctk_widget_get_window (invisible);
 
   timestamp = gdk_x11_get_server_time (window);
 
@@ -854,7 +854,7 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
     }
   else
     {
-      gtk_widget_destroy (invisible);
+      ctk_widget_destroy (invisible);
       g_object_unref (invisible);
       manager->invisible = NULL;
 

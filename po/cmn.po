@@ -244,7 +244,7 @@ msgid "Time & Date"
 msgstr "時刻 & 日期"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-gtk.c:136
+#: cafe-panel/libpanel-util/panel-ctk.c:136
 #: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
 #: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
 #: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
@@ -374,7 +374,7 @@ msgstr "北"
 msgid "South"
 msgstr "南"
 
-#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-gtk.c:140
+#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
 #: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr ""
@@ -2069,7 +2069,7 @@ msgstr "作業階段管理選項："
 msgid "Show session management options"
 msgstr "顯示作業階段管理選項"
 
-#: cafe-panel/libpanel-util/panel-gtk.c:138
+#: cafe-panel/libpanel-util/panel-ctk.c:138
 msgid "_Open"
 msgstr "開啟(_O)"
 

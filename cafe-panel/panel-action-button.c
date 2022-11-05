@@ -145,7 +145,7 @@ obsolete_string_to_enum (ObsoleteEnumStringPair lookup_table[],
  */
 static void panel_action_lock_screen(GtkWidget* widget)
 {
-	panel_lock_screen(gtk_widget_get_screen(widget));
+	panel_lock_screen(ctk_widget_get_screen(widget));
 }
 
 static gboolean
@@ -202,7 +202,7 @@ panel_action_lock_invoke_menu (PanelActionButton *button,
 	g_return_if_fail (PANEL_IS_ACTION_BUTTON (button));
 	g_return_if_fail (callback_name != NULL);
 
-	panel_lock_screen_action (gtk_widget_get_screen (GTK_WIDGET (button)),
+	panel_lock_screen_action (ctk_widget_get_screen (GTK_WIDGET (button)),
 				  callback_name);
 }
 
@@ -261,8 +261,8 @@ panel_action_shutdown_reboot_is_disabled (void)
 static void
 panel_action_run_program (GtkWidget *widget)
 {
-	panel_run_dialog_present (gtk_widget_get_screen (widget),
-				  gtk_get_current_event_time ());
+	panel_run_dialog_present (ctk_widget_get_screen (widget),
+				  ctk_get_current_event_time ());
 }
 
 /* Search For Files
@@ -272,7 +272,7 @@ panel_action_search (GtkWidget *widget)
 {
 	GdkScreen *screen;
 
-	screen = gtk_widget_get_screen (widget);
+	screen = ctk_widget_get_screen (widget);
 	panel_launch_desktop_file_with_fallback ("cafe-search-tool.desktop",
 						 "cafe-search-tool",
 						 screen, NULL);
@@ -287,20 +287,20 @@ panel_action_force_quit (GtkWidget *widget)
 	GtkDialogFlags flags;
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (gtk_widget_get_display (widget))) {
-		panel_force_quit (gtk_widget_get_screen (widget),
-				  gtk_get_current_event_time ());
+	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (widget))) {
+		panel_force_quit (ctk_widget_get_screen (widget),
+				  ctk_get_current_event_time ());
 		return;
 	}
 #endif
 	flags = GTK_DIALOG_DESTROY_WITH_PARENT;
-	dialog = gtk_message_dialog_new (GTK_WINDOW (widget),
+	dialog = ctk_message_dialog_new (GTK_WINDOW (widget),
 					 flags,
 					 GTK_MESSAGE_ERROR,
 					 GTK_BUTTONS_CLOSE,
 					 "Force quit only available in X11");
-	gtk_dialog_run (GTK_DIALOG (dialog));
-	gtk_widget_destroy (dialog);
+	ctk_dialog_run (GTK_DIALOG (dialog));
+	ctk_widget_destroy (dialog);
 }
 
 /* Connect Server
@@ -312,7 +312,7 @@ panel_action_connect_server (GtkWidget *widget)
 	char      *command;
 	GError    *error;
 
-	screen = gtk_widget_get_screen (GTK_WIDGET (widget));
+	screen = ctk_widget_get_screen (GTK_WIDGET (widget));
 	error = NULL;
 
 	if (panel_is_program_in_path ("caja-connect-server"))
@@ -581,21 +581,21 @@ panel_action_button_drag_data_get (GtkWidget          *widget,
 				     obsolete_enum_to_string (panel_action_type_map, button->priv->type),
 				     panel_find_applet_index (widget));
 
-	gtk_selection_data_set (
-		selection_data, gtk_selection_data_get_target (selection_data),
+	ctk_selection_data_set (
+		selection_data, ctk_selection_data_get_target (selection_data),
 		8, (guchar *) drag_data, strlen (drag_data));
 
 	g_free (drag_data);
 }
 
 static void
-panel_action_button_clicked (GtkButton *gtk_button)
+panel_action_button_clicked (GtkButton *ctk_button)
 {
 	PanelActionButton *button;
 
-	g_return_if_fail (PANEL_IS_ACTION_BUTTON (gtk_button));
+	g_return_if_fail (PANEL_IS_ACTION_BUTTON (ctk_button));
 
-	button = PANEL_ACTION_BUTTON (gtk_button);
+	button = PANEL_ACTION_BUTTON (ctk_button);
 
 	g_return_if_fail (button->priv->type > PANEL_ACTION_NONE);
 	g_return_if_fail (button->priv->type < PANEL_ACTION_LAST);
@@ -603,7 +603,7 @@ panel_action_button_clicked (GtkButton *gtk_button)
 	if (panel_global_config_get_drawer_auto_close ()) {
 		PanelToplevel *toplevel;
 
-		toplevel = PANEL_WIDGET (gtk_widget_get_parent (GTK_WIDGET (button)))->toplevel;
+		toplevel = PANEL_WIDGET (ctk_widget_get_parent (GTK_WIDGET (button)))->toplevel;
 
 		if (panel_toplevel_get_is_attached (toplevel))
 			panel_toplevel_hide (toplevel, FALSE, -1);
@@ -743,7 +743,7 @@ panel_action_button_load (PanelActionButtonType  type,
 						    panel, locked, position,
 						    exactpos, PANEL_OBJECT_ACTION, id);
 	if (!button->priv->info) {
-		gtk_widget_destroy (GTK_WIDGET (button));
+		ctk_widget_destroy (GTK_WIDGET (button));
 		return;
 	}
 
@@ -828,7 +828,7 @@ panel_action_button_invoke_menu (PanelActionButton *button,
 		if (!actions [button->priv->type].help_index)
 			return;
 
-		screen = gtk_widget_get_screen (GTK_WIDGET (button));
+		screen = ctk_widget_get_screen (GTK_WIDGET (button));
 
 		panel_show_help (screen, "cafe-user-guide",
 				 actions [button->priv->type].help_index, NULL);
@@ -900,16 +900,16 @@ panel_action_button_set_dnd_enabled (PanelActionButton *button,
 			{ "application/x-cafe-panel-applet-internal", 0, 0 }
 		};
 
-		gtk_widget_set_has_window (GTK_WIDGET (button), TRUE);
-		gtk_drag_source_set (GTK_WIDGET (button), GDK_BUTTON1_MASK,
+		ctk_widget_set_has_window (GTK_WIDGET (button), TRUE);
+		ctk_drag_source_set (GTK_WIDGET (button), GDK_BUTTON1_MASK,
 				     dnd_targets, 1,
 				     GDK_ACTION_COPY | GDK_ACTION_MOVE);
 		if (actions [button->priv->type].icon_name != NULL)
-			gtk_drag_source_set_icon_name (GTK_WIDGET (button),
+			ctk_drag_source_set_icon_name (GTK_WIDGET (button),
 						       actions [button->priv->type].icon_name);
-		gtk_widget_set_has_window (GTK_WIDGET (button), FALSE);
+		ctk_widget_set_has_window (GTK_WIDGET (button), FALSE);
 	} else
-		gtk_drag_source_unset (GTK_WIDGET (button));
+		ctk_drag_source_unset (GTK_WIDGET (button));
 
 	button->priv->dnd_enabled = enabled;
 

@@ -20,7 +20,7 @@
 #include <stdlib.h>
 
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libwnck/libwnck.h>
 #include <gio/gio.h>
@@ -113,66 +113,66 @@ static void update_properties_for_wm(PagerData* pager)
 	{
 		case PAGER_WM_MARCO:
 			if (pager->workspaces_frame)
-				gtk_widget_show(pager->workspaces_frame);
+				ctk_widget_show(pager->workspaces_frame);
 			if (pager->workspace_names_label)
-				gtk_widget_show(pager->workspace_names_label);
+				ctk_widget_show(pager->workspace_names_label);
 			if (pager->workspace_names_scroll)
-				gtk_widget_show(pager->workspace_names_scroll);
+				ctk_widget_show(pager->workspace_names_scroll);
 			if (pager->display_workspaces_toggle)
-				gtk_widget_show(pager->display_workspaces_toggle);
+				ctk_widget_show(pager->display_workspaces_toggle);
 			if (pager->cell)
 				g_object_set (pager->cell, "editable", TRUE, NULL);
 			break;
 		case PAGER_WM_METACITY:
 			if (pager->workspaces_frame)
-				gtk_widget_show(pager->workspaces_frame);
+				ctk_widget_show(pager->workspaces_frame);
 			if (pager->workspace_names_label)
-				gtk_widget_show(pager->workspace_names_label);
+				ctk_widget_show(pager->workspace_names_label);
 			if (pager->workspace_names_scroll)
-				gtk_widget_show(pager->workspace_names_scroll);
+				ctk_widget_show(pager->workspace_names_scroll);
 			if (pager->display_workspaces_toggle)
-				gtk_widget_show(pager->display_workspaces_toggle);
+				ctk_widget_show(pager->display_workspaces_toggle);
 			if (pager->cell)
 				g_object_set (pager->cell, "editable", TRUE, NULL);
 			break;
 		case PAGER_WM_I3:
 			if (pager->workspaces_frame)
-				gtk_widget_show(pager->workspaces_frame);
+				ctk_widget_show(pager->workspaces_frame);
 			if (pager->num_workspaces_spin)
-				gtk_widget_set_sensitive(pager->num_workspaces_spin, FALSE);
+				ctk_widget_set_sensitive(pager->num_workspaces_spin, FALSE);
 			if (pager->workspace_names_label)
-				gtk_widget_hide(pager->workspace_names_label);
+				ctk_widget_hide(pager->workspace_names_label);
 			if (pager->workspace_names_scroll)
-				gtk_widget_hide(pager->workspace_names_scroll);
+				ctk_widget_hide(pager->workspace_names_scroll);
 			if (pager->display_workspaces_toggle)
-				gtk_widget_show(pager->display_workspaces_toggle);
+				ctk_widget_show(pager->display_workspaces_toggle);
 			if (pager->cell)
 				g_object_set (pager->cell, "editable", FALSE, NULL);
 			break;
 		case PAGER_WM_COMPIZ:
 			if (pager->workspaces_frame)
-				gtk_widget_show(pager->workspaces_frame);
+				ctk_widget_show(pager->workspaces_frame);
 			if (pager->workspace_names_label)
-				gtk_widget_hide(pager->workspace_names_label);
+				ctk_widget_hide(pager->workspace_names_label);
 			if (pager->workspace_names_scroll)
-				gtk_widget_hide(pager->workspace_names_scroll);
+				ctk_widget_hide(pager->workspace_names_scroll);
 			if (pager->display_workspaces_toggle)
-				gtk_widget_hide(pager->display_workspaces_toggle);
+				ctk_widget_hide(pager->display_workspaces_toggle);
 			if (pager->cell)
 				g_object_set (pager->cell, "editable", FALSE, NULL);
 			break;
 		case PAGER_WM_UNKNOWN:
 			if (pager->workspaces_frame)
-				gtk_widget_hide(pager->workspaces_frame);
+				ctk_widget_hide(pager->workspaces_frame);
 			break;
 		default:
 			g_assert_not_reached();
 	}
 
 	if (pager->properties_dialog) {
-	        gtk_widget_hide (pager->properties_dialog);
-	        gtk_widget_unrealize (pager->properties_dialog);
-	        gtk_widget_show (pager->properties_dialog);
+	        ctk_widget_hide (pager->properties_dialog);
+	        ctk_widget_unrealize (pager->properties_dialog);
+	        ctk_widget_show (pager->properties_dialog);
 	}
 }
 
@@ -237,15 +237,15 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 	pager_update(pager);
 
 	if (pager->label_row_col)
-		gtk_label_set_text(GTK_LABEL(pager->label_row_col), pager->orientation == GTK_ORIENTATION_HORIZONTAL ? _("rows") : _("columns"));
+		ctk_label_set_text(GTK_LABEL(pager->label_row_col), pager->orientation == GTK_ORIENTATION_HORIZONTAL ? _("rows") : _("columns"));
 }
 
 static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBackgroundType type, GdkColor* color, cairo_pattern_t *pattern, PagerData* pager)
 {
         GtkStyleContext *new_context;
-        gtk_widget_reset_style (GTK_WIDGET (pager->pager));
-        new_context = gtk_style_context_new ();
-        gtk_style_context_set_path (new_context, gtk_widget_get_path (GTK_WIDGET (pager->pager)));
+        ctk_widget_reset_style (GTK_WIDGET (pager->pager));
+        new_context = ctk_style_context_new ();
+        ctk_style_context_set_path (new_context, ctk_widget_get_path (GTK_WIDGET (pager->pager)));
         g_object_unref (new_context);
 
         wnck_pager_set_shadow_type (WNCK_PAGER (pager->pager),
@@ -259,19 +259,19 @@ static void applet_style_updated (CafePanelApplet *applet, GtkStyleContext *cont
 	gchar *color_str;
 	gchar *bg_css;
 
-	provider = gtk_css_provider_new ();
+	provider = ctk_css_provider_new ();
 
 	/* Provide a fallback color for the highlighted workspace based on the current theme */
-	gtk_style_context_lookup_color (context, "theme_selected_bg_color", &color);
+	ctk_style_context_lookup_color (context, "theme_selected_bg_color", &color);
 	color_str = gdk_rgba_to_string (&color);
 	bg_css = g_strconcat (".wnck-pager:selected {\n"
 		              "	background-color:", color_str, ";\n"
 		              "}", NULL);
-	gtk_css_provider_load_from_data (provider, bg_css, -1, NULL);
+	ctk_css_provider_load_from_data (provider, bg_css, -1, NULL);
 	g_free (bg_css);
 	g_free (color_str);
 
-	gtk_style_context_add_provider (context,
+	ctk_style_context_add_provider (context,
 					GTK_STYLE_PROVIDER (provider),
 					GTK_STYLE_PROVIDER_PRIORITY_FALLBACK);
 	g_object_unref (provider);
@@ -305,7 +305,7 @@ static gboolean applet_scroll(CafePanelApplet* applet, GdkEventScroll* event, Pa
 
 	absolute_direction = event->direction;
 
-	if (gtk_widget_get_direction(GTK_WIDGET(applet)) == GTK_TEXT_DIR_RTL)
+	if (ctk_widget_get_direction(GTK_WIDGET(applet)) == GTK_TEXT_DIR_RTL)
 	{
 		switch (event->direction)
 		{
@@ -424,8 +424,8 @@ static void num_rows_changed(GSettings* settings, gchar* key, PagerData* pager)
 	pager->n_rows = n_rows;
 	pager_update(pager);
 
-	if (pager->num_rows_spin && gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(pager->num_rows_spin)) != n_rows)
-		gtk_spin_button_set_value(GTK_SPIN_BUTTON(pager->num_rows_spin), pager->n_rows);
+	if (pager->num_rows_spin && ctk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(pager->num_rows_spin)) != n_rows)
+		ctk_spin_button_set_value(GTK_SPIN_BUTTON(pager->num_rows_spin), pager->n_rows);
 }
 
 static void display_workspace_names_changed(GSettings* settings, gchar* key, PagerData* pager)
@@ -445,9 +445,9 @@ static void display_workspace_names_changed(GSettings* settings, gchar* key, Pag
 
 	pager_update(pager);
 
-	if (pager->display_workspaces_toggle && gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(pager->display_workspaces_toggle)) != value)
+	if (pager->display_workspaces_toggle && ctk_toggle_button_get_active(GTK_TOGGLE_BUTTON(pager->display_workspaces_toggle)) != value)
 	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->display_workspaces_toggle), value);
+		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->display_workspaces_toggle), value);
 	}
 }
 
@@ -463,20 +463,20 @@ static void all_workspaces_changed(GSettings* settings, gchar* key, PagerData* p
 
 	if (pager->all_workspaces_radio)
 	{
-		if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(pager->all_workspaces_radio)) != value)
+		if (ctk_toggle_button_get_active(GTK_TOGGLE_BUTTON(pager->all_workspaces_radio)) != value)
 		{
 			if (value)
 			{
-				gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->all_workspaces_radio), TRUE);
+				ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->all_workspaces_radio), TRUE);
 			}
 			else
 			{
-				gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->current_only_radio), TRUE);
+				ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->current_only_radio), TRUE);
 			}
 		}
 
 		if (!g_object_get_data(G_OBJECT(pager->num_rows_spin), NEVER_SENSITIVE))
-			gtk_widget_set_sensitive(pager->num_rows_spin, value);
+			ctk_widget_set_sensitive(pager->num_rows_spin, value);
 	}
 }
 
@@ -488,9 +488,9 @@ static void wrap_workspaces_changed(GSettings* settings, gchar* key, PagerData* 
 
 	pager->wrap_workspaces = value;
 
-	if (pager->wrap_workspaces_toggle && gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(pager->wrap_workspaces_toggle)) != value)
+	if (pager->wrap_workspaces_toggle && ctk_toggle_button_get_active(GTK_TOGGLE_BUTTON(pager->wrap_workspaces_toggle)) != value)
 	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->wrap_workspaces_toggle), value);
+		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->wrap_workspaces_toggle), value);
 	}
 }
 
@@ -569,17 +569,17 @@ gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 	wnck_pager_set_shadow_type(WNCK_PAGER(pager->pager), GTK_SHADOW_IN);
 
 	GtkStyleContext *context;
-	context = gtk_widget_get_style_context (GTK_WIDGET (applet));
-	gtk_style_context_add_class (context, "wnck-applet");
-	context = gtk_widget_get_style_context (pager->pager);
-	gtk_style_context_add_class (context, "wnck-pager");
+	context = ctk_widget_get_style_context (GTK_WIDGET (applet));
+	ctk_style_context_add_class (context, "wnck-applet");
+	context = ctk_widget_get_style_context (pager->pager);
+	ctk_style_context_add_class (context, "wnck-pager");
 
 	g_signal_connect(G_OBJECT(pager->pager), "destroy", G_CALLBACK(destroy_pager), pager);
 
 	/* overwrite default WnckPager widget scroll-event */
 	g_signal_connect(G_OBJECT(pager->pager), "scroll-event", G_CALLBACK(applet_scroll), pager);
 
-	gtk_container_add(GTK_CONTAINER(pager->applet), pager->pager);
+	ctk_container_add(GTK_CONTAINER(pager->applet), pager->pager);
 
 	g_signal_connect(G_OBJECT(pager->applet), "realize", G_CALLBACK(applet_realized), pager);
 	g_signal_connect(G_OBJECT(pager->applet), "unrealize", G_CALLBACK(applet_unrealized), pager);
@@ -587,14 +587,14 @@ gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 	g_signal_connect(G_OBJECT(pager->applet), "change_background", G_CALLBACK(applet_change_background), pager);
 	g_signal_connect(G_OBJECT(pager->applet), "style-updated", G_CALLBACK(applet_style_updated), context);
 
-	gtk_widget_show(pager->pager);
-	gtk_widget_show(pager->applet);
+	ctk_widget_show(pager->pager);
+	ctk_widget_show(pager->applet);
 
 	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET(pager->applet), GTK_WIDGET(pager->applet));
 
-	action_group = gtk_action_group_new("WorkspaceSwitcher Applet Actions");
-	gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
-	gtk_action_group_add_actions(action_group, pager_menu_actions, G_N_ELEMENTS(pager_menu_actions), pager);
+	action_group = ctk_action_group_new("WorkspaceSwitcher Applet Actions");
+	ctk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
+	ctk_action_group_add_actions(action_group, pager_menu_actions, G_N_ELEMENTS(pager_menu_actions), pager);
 	cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (pager->applet),
 	                                            WNCKLET_RESOURCE_PATH "workspace-switcher-menu.xml",
 	                                            action_group);
@@ -603,8 +603,8 @@ gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 	{
 		GtkAction *action;
 
-		action = gtk_action_group_get_action(action_group, "PagerPreferences");
-		gtk_action_set_visible(action, FALSE);
+		action = ctk_action_group_get_action(action_group, "PagerPreferences");
+		ctk_action_set_visible(action, FALSE);
 	}
 
 	g_object_unref(action_group);
@@ -634,7 +634,7 @@ static void display_about_dialog(GtkAction* action, PagerData* pager)
 		NULL
 	};
 
-	gtk_show_about_dialog(GTK_WINDOW(pager->applet),
+	ctk_show_about_dialog(GTK_WINDOW(pager->applet),
 		"program-name", _("Workspace Switcher"),
 		"title", _("About Workspace Switcher"),
 		"authors", authors,
@@ -653,22 +653,22 @@ static void display_about_dialog(GtkAction* action, PagerData* pager)
 
 static void wrap_workspaces_toggled(GtkToggleButton* button, PagerData* pager)
 {
-	g_settings_set_boolean(pager->settings, "wrap-workspaces", gtk_toggle_button_get_active(button));
+	g_settings_set_boolean(pager->settings, "wrap-workspaces", ctk_toggle_button_get_active(button));
 }
 
 static void display_workspace_names_toggled(GtkToggleButton* button, PagerData* pager)
 {
-	g_settings_set_boolean(pager->settings, "display-workspace-names", gtk_toggle_button_get_active(button));
+	g_settings_set_boolean(pager->settings, "display-workspace-names", ctk_toggle_button_get_active(button));
 }
 
 static void all_workspaces_toggled(GtkToggleButton* button, PagerData* pager)
 {
-	g_settings_set_boolean(pager->settings, "display-all-workspaces", gtk_toggle_button_get_active(button));
+	g_settings_set_boolean(pager->settings, "display-all-workspaces", ctk_toggle_button_get_active(button));
 }
 
 static void num_rows_value_changed(GtkSpinButton* button, PagerData* pager)
 {
-	g_settings_set_int(pager->settings, "num-rows", gtk_spin_button_get_value_as_int(button));
+	g_settings_set_int(pager->settings, "num-rows", ctk_spin_button_get_value_as_int(button));
 }
 
 static void update_workspaces_model(PagerData* pager)
@@ -681,16 +681,16 @@ static void update_workspaces_model(PagerData* pager)
 
 	if (pager->properties_dialog)
 	{
-		if (nr_ws != gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(pager->num_workspaces_spin)))
-			gtk_spin_button_set_value(GTK_SPIN_BUTTON(pager->num_workspaces_spin), nr_ws);
+		if (nr_ws != ctk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(pager->num_workspaces_spin)))
+			ctk_spin_button_set_value(GTK_SPIN_BUTTON(pager->num_workspaces_spin), nr_ws);
 
-		gtk_list_store_clear(pager->workspaces_store);
+		ctk_list_store_clear(pager->workspaces_store);
 
 		for (i = 0; i < nr_ws; i++)
 		{
 			workspace = wnck_screen_get_workspace(pager->screen, i);
-			gtk_list_store_append(pager->workspaces_store, &iter);
-			gtk_list_store_set(pager->workspaces_store, &iter, 0, wnck_workspace_get_name(workspace), -1);
+			ctk_list_store_append(pager->workspaces_store, &iter);
+			ctk_list_store_set(pager->workspaces_store, &iter, 0, wnck_workspace_get_name(workspace), -1);
 		}
 	}
 }
@@ -702,8 +702,8 @@ static void workspace_renamed(WnckWorkspace* space, PagerData* pager)
 
 	i = wnck_workspace_get_number(space);
 
-	if (gtk_tree_model_iter_nth_child(GTK_TREE_MODEL(pager->workspaces_store), &iter, NULL, i))
-		gtk_list_store_set(pager->workspaces_store, &iter, 0, wnck_workspace_get_name(space), -1);
+	if (ctk_tree_model_iter_nth_child(GTK_TREE_MODEL(pager->workspaces_store), &iter, NULL, i))
+		ctk_list_store_set(pager->workspaces_store, &iter, 0, wnck_workspace_get_name(space), -1);
 }
 
 static void workspace_created(WnckScreen* screen, WnckWorkspace* space, PagerData* pager)
@@ -723,15 +723,15 @@ static void workspace_destroyed(WnckScreen* screen, WnckWorkspace* space, PagerD
 
 static void num_workspaces_value_changed(GtkSpinButton* button, PagerData* pager)
 {
-	wnck_screen_change_workspace_count(pager->screen, gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(pager->num_workspaces_spin)));
+	wnck_screen_change_workspace_count(pager->screen, ctk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(pager->num_workspaces_spin)));
 }
 
 static gboolean workspaces_tree_focused_out(GtkTreeView* treeview, GdkEventFocus* event, PagerData* pager)
 {
 	GtkTreeSelection* selection;
 
-	selection = gtk_tree_view_get_selection(treeview);
-	gtk_tree_selection_unselect_all(selection);
+	selection = ctk_tree_view_get_selection(treeview);
+	ctk_tree_selection_unselect_all(selection);
 	return TRUE;
 }
 
@@ -741,8 +741,8 @@ static void workspace_name_edited(GtkCellRendererText* cell_renderer_text, const
 	WnckWorkspace* workspace;
 	GtkTreePath* p;
 
-	p = gtk_tree_path_new_from_string(path);
-	indices = gtk_tree_path_get_indices(p);
+	p = ctk_tree_path_new_from_string(path);
+	indices = ctk_tree_path_get_indices(p);
 	workspace = wnck_screen_get_workspace(pager->screen, indices[0]);
 
 	if (workspace != NULL)
@@ -758,7 +758,7 @@ static void workspace_name_edited(GtkCellRendererText* cell_renderer_text, const
 		g_warning("Edited name of workspace %d which no longer exists", indices[0]);
 	}
 
-	gtk_tree_path_free(p);
+	ctk_tree_path_free(p);
 }
 
 static void properties_dialog_destroyed(GtkWidget* widget, PagerData* pager)
@@ -780,7 +780,7 @@ static void properties_dialog_destroyed(GtkWidget* widget, PagerData* pager)
 
 static gboolean delete_event(GtkWidget* widget, gpointer data)
 {
-	gtk_widget_destroy(widget);
+	ctk_widget_destroy(widget);
 	return TRUE;
 }
 
@@ -789,7 +789,7 @@ static void response_cb(GtkWidget* widget, int id, PagerData* pager)
 	if (id == GTK_RESPONSE_HELP)
 		wncklet_display_help(widget, "cafe-user-guide", "overview-workspaces", WORKSPACE_SWITCHER_ICON);
 	else
-		gtk_widget_destroy(widget);
+		ctk_widget_destroy(widget);
 }
 
 static void close_dialog(GtkWidget* button, gpointer data)
@@ -802,21 +802,21 @@ static void close_dialog(GtkWidget* button, gpointer data)
 	/* This is a hack. The "editable" signal for GtkCellRenderer is emitted
 	only on button press or focus cycle. Hence when the user changes the
 	name and closes the preferences dialog without a button-press he would
-	lose the name changes. So, we call the gtk_cell_editable_editing_done
+	lose the name changes. So, we call the ctk_cell_editable_editing_done
 	to stop the editing. Thanks to Paolo for a better crack than the one I had.
 	*/
 
-	col = gtk_tree_view_get_column(GTK_TREE_VIEW(pager->workspaces_tree), 0);
+	col = ctk_tree_view_get_column(GTK_TREE_VIEW(pager->workspaces_tree), 0);
 
-	area = gtk_cell_layout_get_area (GTK_CELL_LAYOUT (col));
-	edit_widget = gtk_cell_area_get_edit_widget (area);
+	area = ctk_cell_layout_get_area (GTK_CELL_LAYOUT (col));
+	edit_widget = ctk_cell_area_get_edit_widget (area);
 	if (edit_widget)
-		gtk_cell_editable_editing_done (edit_widget);
+		ctk_cell_editable_editing_done (edit_widget);
 
-	gtk_widget_destroy(pager->properties_dialog);
+	ctk_widget_destroy(pager->properties_dialog);
 }
 
-#define WID(s) GTK_WIDGET(gtk_builder_get_object(builder, s))
+#define WID(s) GTK_WIDGET(ctk_builder_get_object(builder, s))
 
 static void
 setup_sensitivity(PagerData* pager, GtkBuilder* builder, const char* wid1, const char* wid2, const char* wid3, GSettings* settings, const char* key)
@@ -831,14 +831,14 @@ setup_sensitivity(PagerData* pager, GtkBuilder* builder, const char* wid1, const
 	w = WID(wid1);
 	g_assert(w != NULL);
 	g_object_set_data(G_OBJECT(w), NEVER_SENSITIVE, GINT_TO_POINTER(1));
-	gtk_widget_set_sensitive(w, FALSE);
+	ctk_widget_set_sensitive(w, FALSE);
 
 	if (wid2 != NULL)
 	{
 		w = WID(wid2);
 		g_assert(w != NULL);
 		g_object_set_data(G_OBJECT(w), NEVER_SENSITIVE, GINT_TO_POINTER(1));
-		gtk_widget_set_sensitive(w, FALSE);
+		ctk_widget_set_sensitive(w, FALSE);
 	}
 
 	if (wid3 != NULL)
@@ -846,7 +846,7 @@ setup_sensitivity(PagerData* pager, GtkBuilder* builder, const char* wid1, const
 		w = WID(wid3);
 		g_assert(w != NULL);
 		g_object_set_data(G_OBJECT(w), NEVER_SENSITIVE, GINT_TO_POINTER(1));
-		gtk_widget_set_sensitive(w, FALSE);
+		ctk_widget_set_sensitive(w, FALSE);
 	}
 }
 
@@ -898,7 +898,7 @@ static void setup_dialog(GtkBuilder* builder, PagerData* pager)
 	if (pager->wrap_workspaces_toggle)
 	{
 		/* make sure the toggle button resembles the value of wrap_workspaces */
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->wrap_workspaces_toggle), pager->wrap_workspaces);
+		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->wrap_workspaces_toggle), pager->wrap_workspaces);
 	}
 
 	g_signal_connect(G_OBJECT(pager->wrap_workspaces_toggle), "toggled", (GCallback) wrap_workspaces_toggled, pager);
@@ -916,31 +916,31 @@ static void setup_dialog(GtkBuilder* builder, PagerData* pager)
 		value = FALSE;
 	}
 
-	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->display_workspaces_toggle), value);
+	ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->display_workspaces_toggle), value);
 
 	/* Display all workspaces: */
 	g_signal_connect(G_OBJECT(pager->all_workspaces_radio), "toggled", (GCallback) all_workspaces_toggled, pager);
 
 	if (pager->display_all)
 	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->all_workspaces_radio), TRUE);
+		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->all_workspaces_radio), TRUE);
 
 		if (!g_object_get_data(G_OBJECT(pager->num_rows_spin), NEVER_SENSITIVE))
 		{
-			gtk_widget_set_sensitive(pager->num_rows_spin, TRUE);
+			ctk_widget_set_sensitive(pager->num_rows_spin, TRUE);
 		}
 	}
 	else
 	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->current_only_radio), TRUE);
-		gtk_widget_set_sensitive(pager->num_rows_spin, FALSE);
+		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(pager->current_only_radio), TRUE);
+		ctk_widget_set_sensitive(pager->num_rows_spin, FALSE);
 	}
 
 	/* Num rows: */
 	g_signal_connect(G_OBJECT(pager->num_rows_spin), "value_changed", (GCallback) num_rows_value_changed, pager);
 
-	gtk_spin_button_set_value(GTK_SPIN_BUTTON(pager->num_rows_spin), pager->n_rows);
-	gtk_label_set_text(GTK_LABEL(pager->label_row_col), pager->orientation == GTK_ORIENTATION_HORIZONTAL ? _("rows") : _("columns"));
+	ctk_spin_button_set_value(GTK_SPIN_BUTTON(pager->num_rows_spin), pager->n_rows);
+	ctk_label_set_text(GTK_LABEL(pager->label_row_col), pager->orientation == GTK_ORIENTATION_HORIZONTAL ? _("rows") : _("columns"));
 
 	g_signal_connect(pager->properties_dialog, "destroy", G_CALLBACK(properties_dialog_destroyed), pager);
 	g_signal_connect(pager->properties_dialog, "delete_event", G_CALLBACK(delete_event), pager);
@@ -948,7 +948,7 @@ static void setup_dialog(GtkBuilder* builder, PagerData* pager)
 
 	g_signal_connect(WID("done_button"), "clicked", (GCallback) close_dialog, pager);
 
-	gtk_spin_button_set_value(GTK_SPIN_BUTTON(pager->num_workspaces_spin), wnck_screen_get_workspace_count(pager->screen));
+	ctk_spin_button_set_value(GTK_SPIN_BUTTON(pager->num_workspaces_spin), wnck_screen_get_workspace_count(pager->screen));
 	g_signal_connect(G_OBJECT(pager->num_workspaces_spin), "value_changed", (GCallback) num_workspaces_value_changed, pager);
 
 	wncklet_connect_while_alive(pager->screen, "workspace_created", G_CALLBACK(workspace_created), pager, pager->properties_dialog);
@@ -957,16 +957,16 @@ static void setup_dialog(GtkBuilder* builder, PagerData* pager)
 
 	g_signal_connect(G_OBJECT(pager->workspaces_tree), "focus_out_event", (GCallback) workspaces_tree_focused_out, pager);
 
-	pager->workspaces_store = gtk_list_store_new(1, G_TYPE_STRING, NULL);
+	pager->workspaces_store = ctk_list_store_new(1, G_TYPE_STRING, NULL);
 	update_workspaces_model(pager);
-	gtk_tree_view_set_model(GTK_TREE_VIEW(pager->workspaces_tree), GTK_TREE_MODEL(pager->workspaces_store));
+	ctk_tree_view_set_model(GTK_TREE_VIEW(pager->workspaces_tree), GTK_TREE_MODEL(pager->workspaces_store));
 
 	g_object_unref(pager->workspaces_store);
 
 	cell = g_object_new(GTK_TYPE_CELL_RENDERER_TEXT, "editable", TRUE, NULL);
 	pager->cell = cell;
-	column = gtk_tree_view_column_new_with_attributes("workspace", cell, "text", 0, NULL);
-	gtk_tree_view_append_column(GTK_TREE_VIEW(pager->workspaces_tree), column);
+	column = ctk_tree_view_column_new_with_attributes("workspace", cell, "text", 0, NULL);
+	ctk_tree_view_append_column(GTK_TREE_VIEW(pager->workspaces_tree), column);
 	g_signal_connect(cell, "edited", (GCallback) workspace_name_edited, pager);
 
 	nr_ws = wnck_screen_get_workspace_count(pager->screen);
@@ -985,9 +985,9 @@ static void display_properties_dialog(GtkAction* action, PagerData* pager)
 	{
 		GtkBuilder* builder;
 
-		builder = gtk_builder_new();
-		gtk_builder_set_translation_domain(builder, GETTEXT_PACKAGE);
-		gtk_builder_add_from_resource (builder, WNCKLET_RESOURCE_PATH "workspace-switcher.ui", NULL);
+		builder = ctk_builder_new();
+		ctk_builder_set_translation_domain(builder, GETTEXT_PACKAGE);
+		ctk_builder_add_from_resource (builder, WNCKLET_RESOURCE_PATH "workspace-switcher.ui", NULL);
 
 		pager->properties_dialog = WID("pager_properties_dialog");
 
@@ -998,9 +998,9 @@ static void display_properties_dialog(GtkAction* action, PagerData* pager)
 		g_object_unref(builder);
 	}
 
-	gtk_window_set_icon_name(GTK_WINDOW(pager->properties_dialog), WORKSPACE_SWITCHER_ICON);
-	gtk_window_set_screen(GTK_WINDOW(pager->properties_dialog), gtk_widget_get_screen(pager->applet));
-	gtk_window_present(GTK_WINDOW(pager->properties_dialog));
+	ctk_window_set_icon_name(GTK_WINDOW(pager->properties_dialog), WORKSPACE_SWITCHER_ICON);
+	ctk_window_set_screen(GTK_WINDOW(pager->properties_dialog), ctk_widget_get_screen(pager->applet));
+	ctk_window_present(GTK_WINDOW(pager->properties_dialog));
 }
 
 static void destroy_pager(GtkWidget* widget, PagerData* pager)
@@ -1010,6 +1010,6 @@ static void destroy_pager(GtkWidget* widget, PagerData* pager)
 	g_object_unref (pager->settings);
 
 	if (pager->properties_dialog)
-		gtk_widget_destroy(pager->properties_dialog);
+		ctk_widget_destroy(pager->properties_dialog);
 	g_free(pager);
 }

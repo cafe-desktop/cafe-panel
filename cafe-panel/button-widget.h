@@ -1,7 +1,7 @@
 #ifndef BUTTON_WIDGET_H
 #define BUTTON_WIDGET_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "panel-enums.h"
 
 #ifdef __cplusplus

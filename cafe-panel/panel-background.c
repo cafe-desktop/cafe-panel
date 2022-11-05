@@ -28,7 +28,7 @@
 
 #include <string.h>
 #include <gdk/gdk.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <cairo.h>
 
 #ifdef HAVE_X11
@@ -56,16 +56,16 @@ void panel_background_apply_css (PanelBackground *background, GtkWidget *widget)
 	GtkStyleContext     *context;
 	PanelBackgroundType  effective_type;
 
-	context = gtk_widget_get_style_context (widget);
+	context = ctk_widget_get_style_context (widget);
 	effective_type = panel_background_effective_type (background);
 
 	switch (effective_type) {
 	case PANEL_BACK_NONE:
-		gtk_style_context_remove_class (context, "cafe-custom-panel-background");
+		ctk_style_context_remove_class (context, "cafe-custom-panel-background");
 		break;
 	case PANEL_BACK_COLOR:
 	case PANEL_BACK_IMAGE:
-		gtk_style_context_add_class (context, "cafe-custom-panel-background");
+		ctk_style_context_add_class (context, "cafe-custom-panel-background");
 		break;
 	default:
 		g_assert_not_reached ();
@@ -78,14 +78,14 @@ panel_background_prepare_css ()
 {
 	GtkCssProvider      *provider;
 
-	provider = gtk_css_provider_new ();
-	gtk_css_provider_load_from_data (provider,
+	provider = ctk_css_provider_new ();
+	ctk_css_provider_load_from_data (provider,
 					 ".cafe-custom-panel-background{\n"
 					 " background-color: rgba (0, 0, 0, 0);\n"
 					 " background-image: none;\n"
 					 "}",
 					 -1, NULL);
-	gtk_style_context_add_provider_for_screen (gdk_screen_get_default (),
+	ctk_style_context_add_provider_for_screen (gdk_screen_get_default (),
 						   GTK_STYLE_PROVIDER (provider),
 						   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_object_unref (provider);
@@ -118,7 +118,7 @@ panel_background_prepare (PanelBackground *background)
 			width = 1.0;
 			height = 1.0;
 			cairo_pattern_get_surface(background->default_pattern, &surface);
-			/* catch invalid images (e.g. -gtk-gradient) before scaling and rendering */
+			/* catch invalid images (e.g. -ctk-gradient) before scaling and rendering */
 			if (surface != NULL ){
 				cairo_surface_reference(surface);
 				width = cairo_image_surface_get_width (surface);
@@ -133,7 +133,7 @@ panel_background_prepare (PanelBackground *background)
 											background->default_pattern);
 			}
 			else {
-				g_warning ("%s", "unsupported value of 'background-image' in GTK+ theme (such as '-gtk-gradient')");
+				g_warning ("%s", "unsupported value of 'background-image' in GTK+ theme (such as '-ctk-gradient')");
 				/* use any background color that has been set if image is invalid */
 				gdk_window_set_background_rgba (
 				background->window, &background->default_color);
@@ -177,9 +177,9 @@ panel_background_prepare (PanelBackground *background)
 				  (gpointer) &widget);
 
 	if (GTK_IS_WIDGET (widget)) {
-		panel_background_apply_css (background, gtk_widget_get_toplevel(widget));
-		gtk_widget_set_app_paintable(widget,TRUE);
-		gtk_widget_queue_draw (widget);
+		panel_background_apply_css (background, ctk_widget_get_toplevel(widget));
+		ctk_widget_set_app_paintable(widget,TRUE);
+		ctk_widget_queue_draw (widget);
 	}
 
 	background->notify_changed (background, background->user_data);
@@ -1067,7 +1067,7 @@ panel_background_get_color (PanelBackground *background)
 
 /* What are we actually rendering - e.g. if we're supposed to
  * be rendering an image, but haven't got a valid image, then
- * we're rendering the default gtk background.
+ * we're rendering the default ctk background.
  */
 PanelBackgroundType
 panel_background_effective_type (PanelBackground *background)

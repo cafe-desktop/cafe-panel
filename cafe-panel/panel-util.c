@@ -108,9 +108,9 @@ panel_push_window_busy (GtkWidget *window)
 		GdkWindow *win;
 		GdkDisplay *display;
 
-		gtk_widget_set_sensitive (window, FALSE);
+		ctk_widget_set_sensitive (window, FALSE);
 
-		win = gtk_widget_get_window (window);
+		win = ctk_widget_get_window (window);
 		display = gdk_display_get_default ();
 		if (win != NULL) {
 			GdkCursor *cursor = gdk_cursor_new_for_display (display,
@@ -136,9 +136,9 @@ panel_pop_window_busy (GtkWidget *window)
 	if (busy <= 0) {
 		GdkWindow *win;
 
-		gtk_widget_set_sensitive (window, TRUE);
+		ctk_widget_set_sensitive (window, TRUE);
 
-		win = gtk_widget_get_window (window);
+		win = ctk_widget_get_window (window);
 		if (win != NULL)
 			gdk_window_set_cursor (win, NULL);
 
@@ -315,13 +315,13 @@ panel_find_icon (GtkIconTheme  *icon_theme,
 	 * an extension as icon */
 	icon_no_extension = panel_xdg_icon_remove_extension (icon_name);
 
-	info = gtk_icon_theme_lookup_icon (icon_theme, icon_no_extension,
+	info = ctk_icon_theme_lookup_icon (icon_theme, icon_no_extension,
 					   size, 0);
 
 	g_free (icon_no_extension);
 
 	if (info) {
-		retval = g_strdup (gtk_icon_info_get_filename (info));
+		retval = g_strdup (ctk_icon_info_get_filename (info));
 		g_object_unref (info);
 	} else
 		retval = NULL;
@@ -815,10 +815,10 @@ panel_util_get_icon_name_from_g_icon (GIcon *gicon)
 		return NULL;
 
 	names = g_themed_icon_get_names (G_THEMED_ICON (gicon));
-	icon_theme = gtk_icon_theme_get_default ();
+	icon_theme = ctk_icon_theme_get_default ();
 
 	for (i = 0; names[i] != NULL; i++) {
-		if (gtk_icon_theme_has_icon (icon_theme, names[i]))
+		if (ctk_icon_theme_has_icon (icon_theme, names[i]))
 			return g_strdup (names[i]);
 	}
 
@@ -1192,7 +1192,7 @@ panel_util_query_tooltip_cb (GtkWidget  *widget,
 	if (!panel_global_config_get_tooltips_enabled ())
 		return FALSE;
 
-	gtk_tooltip_set_text (tooltip, text);
+	ctk_tooltip_set_text (tooltip, text);
 	return TRUE;
 }
 

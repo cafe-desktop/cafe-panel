@@ -28,7 +28,7 @@
 
 #include <string.h>
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "na-tray-manager.h"
 #include "fixedtip.h"
@@ -134,7 +134,7 @@ tray_added (NaTrayManager *manager,
   na_host_emit_item_added (NA_HOST (tray), NA_ITEM (icon));
 
   /*Does not seem to be needed anymore and can cause a render issue with hidpi*/
-  /*gtk_widget_show (GTK_WIDGET (icon));*/
+  /*ctk_widget_show (GTK_WIDGET (icon));*/
 }
 
 static void
@@ -182,7 +182,7 @@ icon_tip_free (gpointer data)
   icontip = data;
 
   if (icontip->fixedtip != NULL)
-    gtk_widget_destroy (GTK_WIDGET (icontip->fixedtip));
+    ctk_widget_destroy (GTK_WIDGET (icontip->fixedtip));
   icontip->fixedtip = NULL;
 
   if (icontip->source_id != 0)
@@ -252,7 +252,7 @@ icon_tip_show_next (IconTip *icontip)
   if (icontip->fixedtip == NULL)
     {
       icontip->fixedtip = na_fixed_tip_new (icontip->icon,
-                                            gtk_orientable_get_orientation (GTK_ORIENTABLE (icontip->tray)));
+                                            ctk_orientable_get_orientation (GTK_ORIENTABLE (icontip->tray)));
 
       g_signal_connect (icontip->fixedtip, "clicked",
                         G_CALLBACK (icon_tip_show_next_clicked), icontip);
@@ -260,8 +260,8 @@ icon_tip_show_next (IconTip *icontip)
 
   na_fixed_tip_set_markup (icontip->fixedtip, buffer->text);
 
-  if (!gtk_widget_get_mapped (icontip->fixedtip))
-    gtk_widget_show (icontip->fixedtip);
+  if (!ctk_widget_get_mapped (icontip->fixedtip))
+    ctk_widget_show (icontip->fixedtip);
 
   icontip->id = buffer->id;
 
@@ -524,7 +524,7 @@ na_tray_dispose (GObject *object)
           new_tray = get_tray (trays_screen);
           if (new_tray != NULL)
             na_tray_manager_set_orientation (trays_screen->tray_manager,
-                                             gtk_orientable_get_orientation (GTK_ORIENTABLE (new_tray)));
+                                             ctk_orientable_get_orientation (GTK_ORIENTABLE (new_tray)));
         }
     }
 
@@ -692,19 +692,19 @@ na_tray_style_updated (NaHost          *host,
   GdkRGBA warning;
   GdkRGBA success;
 
-  gtk_style_context_save (context);
-  gtk_style_context_set_state (context, GTK_STATE_FLAG_NORMAL);
+  ctk_style_context_save (context);
+  ctk_style_context_set_state (context, GTK_STATE_FLAG_NORMAL);
 
-  gtk_style_context_get_color (context, GTK_STATE_FLAG_NORMAL, &fg);
+  ctk_style_context_get_color (context, GTK_STATE_FLAG_NORMAL, &fg);
 
-  if (!gtk_style_context_lookup_color (context, "error_color", &error))
+  if (!ctk_style_context_lookup_color (context, "error_color", &error))
     error = fg;
-  if (!gtk_style_context_lookup_color (context, "warning_color", &warning))
+  if (!ctk_style_context_lookup_color (context, "warning_color", &warning))
     warning = fg;
-  if (!gtk_style_context_lookup_color (context, "success_color", &success))
+  if (!ctk_style_context_lookup_color (context, "success_color", &success))
     success = fg;
 
-  gtk_style_context_restore (context);
+  ctk_style_context_restore (context);
 
   na_tray_set_colors (NA_TRAY (host), &fg, &error, &warning, &success);
 }

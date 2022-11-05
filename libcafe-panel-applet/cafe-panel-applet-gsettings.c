@@ -22,7 +22,7 @@
  *     Stefano Karapetsas <stefano@karapetsas.com>
  */
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 
 #include "cafe-panel-applet.h"

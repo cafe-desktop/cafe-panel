@@ -56,9 +56,9 @@ launcher_get_screen (Launcher *launcher)
 	g_return_val_if_fail (launcher->info != NULL, NULL);
 	g_return_val_if_fail (launcher->info->widget != NULL, NULL);
 
-	panel_widget = PANEL_WIDGET (gtk_widget_get_parent (launcher->info->widget));
+	panel_widget = PANEL_WIDGET (ctk_widget_get_parent (launcher->info->widget));
 
-	return gtk_window_get_screen (GTK_WINDOW (panel_widget->toplevel));
+	return ctk_window_get_screen (GTK_WINDOW (panel_widget->toplevel));
 }
 
 static void
@@ -82,7 +82,7 @@ launcher_widget_destroy_open_dialogs (Launcher *launcher)
 		g_signal_handlers_disconnect_by_func (G_OBJECT (l->data),
 						      G_CALLBACK (launcher_widget_open_dialog_destroyed),
 						      launcher);
-		gtk_widget_destroy (l->data);
+		ctk_widget_destroy (l->data);
 	}
 	g_slist_free (list);
 }
@@ -124,7 +124,7 @@ launch_url (Launcher *launcher)
 		return;
 	}
 
-	panel_show_uri (screen, url, gtk_get_current_event_time (), NULL);
+	panel_show_uri (screen, url, ctk_get_current_event_time (), NULL);
 
 	g_free (url);
 }
@@ -197,7 +197,7 @@ drag_data_received_cb (GtkWidget        *widget,
 #endif
 
 	file_list = NULL;
-	uris = g_uri_list_extract_uris ((const char *) gtk_selection_data_get_data (selection_data));
+	uris = g_uri_list_extract_uris ((const char *) ctk_selection_data_get_data (selection_data));
 	for (i = 0; uris[i]; i++)
 		file_list = g_list_prepend (file_list, uris[i]);
 	file_list = g_list_reverse (file_list);
@@ -220,7 +220,7 @@ drag_data_received_cb (GtkWidget        *widget,
 		g_clear_error (&error);
 	}
 
-	gtk_drag_finish (context, TRUE, FALSE, time);
+	ctk_drag_finish (context, TRUE, FALSE, time);
 }
 
 static void
@@ -240,7 +240,7 @@ launcher_properties_destroy (Launcher *launcher)
 	launcher->prop_dialog = NULL;
 
 	if (dialog)
-		gtk_widget_destroy (dialog);
+		ctk_widget_destroy (dialog);
 }
 
 static void
@@ -295,7 +295,7 @@ is_this_drop_ok (GtkWidget      *widget,
 	GList           *l;
 	GtkWidget       *source;
 
-	source = gtk_drag_get_source_widget (context);
+	source = ctk_drag_get_source_widget (context);
 
 	if (source == widget)
 		return FALSE;
@@ -358,7 +358,7 @@ drag_drop_cb (GtkWidget	        *widget,
 	if (text_uri_list == NULL)
 		text_uri_list = gdk_atom_intern_static_string ("text/uri-list");
 
-	gtk_drag_get_data (widget, context, text_uri_list, time);
+	ctk_drag_get_data (widget, context, text_uri_list, time);
 
 	return TRUE;
 }
@@ -389,12 +389,12 @@ drag_data_get_cb (GtkWidget        *widget,
 		uri[0] = panel_launcher_get_uri (location);
 		uri[1] = NULL;
 
-		gtk_selection_data_set_uris (selection_data, uri);
+		ctk_selection_data_set_uris (selection_data, uri);
 
 		g_free (uri[0]);
 	} else if (info == TARGET_ICON_INTERNAL)
-		gtk_selection_data_set (selection_data,
-					gtk_selection_data_get_target (selection_data), 8,
+		ctk_selection_data_set (selection_data,
+					ctk_selection_data_get_target (selection_data), 8,
 					(unsigned char *) location,
 					strlen (location));
 
@@ -423,7 +423,7 @@ clicked_cb (Launcher  *launcher,
 		PanelToplevel *toplevel;
 		PanelToplevel *parent;
 
-		toplevel = PANEL_WIDGET (gtk_widget_get_parent (launcher->button))->toplevel;
+		toplevel = PANEL_WIDGET (ctk_widget_get_parent (launcher->button))->toplevel;
 
 		if (panel_toplevel_get_is_attached (toplevel)) {
 			parent = panel_toplevel_get_attach_toplevel (toplevel);
@@ -516,13 +516,13 @@ create_launcher (const char *location)
 					      FALSE,
 					      PANEL_ORIENTATION_TOP);
 
-	gtk_widget_show (launcher->button);
+	ctk_widget_show (launcher->button);
 
-	/*gtk_drag_dest_set (GTK_WIDGET (launcher->button),
+	/*ctk_drag_dest_set (GTK_WIDGET (launcher->button),
 			   GTK_DEST_DEFAULT_ALL,
 			   dnd_targets, 2,
 			   GDK_ACTION_COPY);*/
-	gtk_drag_dest_set (GTK_WIDGET (launcher->button),
+	ctk_drag_dest_set (GTK_WIDGET (launcher->button),
 			   0, NULL, 0, 0);
 
 	g_signal_connect (launcher->button, "drag_data_get",
@@ -805,9 +805,9 @@ void
 launcher_properties (Launcher  *launcher)
 {
 	if (launcher->prop_dialog != NULL) {
-		gtk_window_set_screen (GTK_WINDOW (launcher->prop_dialog),
-				       gtk_widget_get_screen (launcher->button));
-		gtk_window_present (GTK_WINDOW (launcher->prop_dialog));
+		ctk_window_set_screen (GTK_WINDOW (launcher->prop_dialog),
+				       ctk_widget_get_screen (launcher->button));
+		ctk_window_present (GTK_WINDOW (launcher->prop_dialog));
 		return;
 	}
 
@@ -817,7 +817,7 @@ launcher_properties (Launcher  *launcher)
 							_("Launcher Properties"));
 
 	panel_widget_register_open_dialog (PANEL_WIDGET
-					   (gtk_widget_get_parent (launcher->info->widget)),
+					   (ctk_widget_get_parent (launcher->info->widget)),
 					   launcher->prop_dialog);
 
 	panel_ditem_register_save_uri_func (PANEL_DITEM_EDITOR (launcher->prop_dialog),
@@ -837,10 +837,10 @@ launcher_properties (Launcher  *launcher)
 			  G_CALLBACK (launcher_error_reported), NULL);
 
 	g_signal_connect (launcher->prop_dialog, "destroy",
-			  G_CALLBACK (gtk_widget_destroyed),
+			  G_CALLBACK (ctk_widget_destroyed),
 			  &launcher->prop_dialog);
 
-	gtk_widget_show (launcher->prop_dialog);
+	ctk_widget_show (launcher->prop_dialog);
 }
 
 static gboolean
@@ -990,13 +990,13 @@ ask_about_launcher (const char  *file,
 	g_signal_connect (G_OBJECT (dialog), "error_reported",
 			  G_CALLBACK (launcher_error_reported), NULL);
 
-	gtk_window_set_screen (GTK_WINDOW (dialog),
-			       gtk_widget_get_screen (GTK_WIDGET (panel)));
+	ctk_window_set_screen (GTK_WINDOW (dialog),
+			       ctk_widget_get_screen (GTK_WIDGET (panel)));
 
 	g_object_set_data (G_OBJECT (dialog), "pos", GINT_TO_POINTER (pos));
 	g_object_set_data (G_OBJECT (dialog), "panel", panel);
 
-	gtk_widget_show (dialog);
+	ctk_widget_show (dialog);
 }
 
 void
@@ -1038,7 +1038,7 @@ panel_launcher_create_from_info (PanelToplevel *toplevel,
 		panel_launcher_create (toplevel, position, location);
 	} else {
 		panel_error_dialog (GTK_WINDOW (toplevel),
-				    gtk_window_get_screen (GTK_WINDOW (toplevel)),
+				    ctk_window_get_screen (GTK_WINDOW (toplevel)),
 				    "cannot_save_launcher", TRUE,
 				    _("Could not save launcher"),
 				    error->message);
@@ -1175,8 +1175,8 @@ panel_launcher_set_dnd_enabled (Launcher *launcher,
 			{ "text/uri-list", 0, TARGET_URI_LIST }
 		};
 
-		gtk_widget_set_has_window (launcher->button, TRUE);
-		gtk_drag_source_set (launcher->button,
+		ctk_widget_set_has_window (launcher->button, TRUE);
+		ctk_drag_source_set (launcher->button,
 				     GDK_BUTTON1_MASK,
 				     dnd_targets, 2,
 				     GDK_ACTION_COPY | GDK_ACTION_MOVE);
@@ -1188,12 +1188,12 @@ panel_launcher_set_dnd_enabled (Launcher *launcher,
 							 0,
 							 cairo_image_surface_get_width (surface),
 							 cairo_image_surface_get_height (surface));
-			gtk_drag_source_set_icon_pixbuf (launcher->button,
+			ctk_drag_source_set_icon_pixbuf (launcher->button,
 							 pixbuf);
 			g_object_unref (pixbuf);
 			cairo_surface_destroy (surface);
 		}
-		gtk_widget_set_has_window (launcher->button, FALSE);
+		ctk_widget_set_has_window (launcher->button, FALSE);
 	} else
-		gtk_drag_source_unset (launcher->button);
+		ctk_drag_source_unset (launcher->button);
 }

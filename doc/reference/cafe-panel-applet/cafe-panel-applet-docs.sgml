@@ -56,7 +56,7 @@ just about the simplest applet you could write.
 #include &lt;string.h&gt;
 
 #include &lt;cafe-panel-applet.h&gt;
-#include &lt;gtk/gtklabel.h&gt;
+#include &lt;ctk/ctklabel.h&gt;
 
 static gboolean
 hello_applet_fill (CafePanelApplet *applet,
@@ -68,10 +68,10 @@ hello_applet_fill (CafePanelApplet *applet,
         if (strcmp (iid, "OAFIID:My_HelloApplet") != 0)
 		return FALSE;
 
-        label = gtk_label_new ("Hello World");
-	gtk_container_add (GTK_CONTAINER (applet), label);
+        label = ctk_label_new ("Hello World");
+	ctk_container_add (GTK_CONTAINER (applet), label);
 
-	gtk_widget_show_all (GTK_WIDGET (applet));
+	ctk_widget_show_all (GTK_WIDGET (applet));
 
         return TRUE;
 }
@@ -329,9 +329,9 @@ cafe_panel_applet_setup_menu.</para></listitem>
 static const char fish_menu_xml [] =
         "&lt;popup name=\"button3\"&gt;\n"
         "   &lt;menuitem name=\"Properties Item\" verb=\"BlahProperties\" _label=\"Properties ...\"\n"
-        "             pixtype=\"stock\" pixname=\"gtk-properties\"/&gt;\n"
+        "             pixtype=\"stock\" pixname=\"ctk-properties\"/&gt;\n"
         "   &lt;menuitem name=\"Help Item\" verb=\"BlahHelp\" _label=\"Help\"\n"
-        "             pixtype=\"stock\" pixname=\"gtk-help\"/&gt;\n"
+        "             pixtype=\"stock\" pixname=\"ctk-help\"/&gt;\n"
         "   &lt;menuitem name=\"About Item\" verb=\"BlahAbout\" _label=\"About ...\"\n"
         "             pixtype=\"stock\" pixname=\"cafe-stock-about\"/&gt;\n"
         "&lt;/popup&gt;\n";

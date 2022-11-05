@@ -22,7 +22,7 @@
  */
 
 #include <time.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <math.h>
 #include "clock-sunpos.h"
 
@@ -180,7 +180,7 @@ main (int argc, char *argv[])
   GTimeVal timeval;
   gdouble lat, lon;
 
-  gtk_init (&argc, &argv);
+  ctk_init (&argc, &argv);
 
   g_get_current_time (&timeval);
   now = timeval.tv_sec;

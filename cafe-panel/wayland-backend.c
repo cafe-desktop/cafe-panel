@@ -24,7 +24,7 @@
 
 #include <config.h>
 
-#include <gtk-layer-shell.h>
+#include <ctk-layer-shell.h>
 
 #include "wayland-backend.h"
 
@@ -34,10 +34,10 @@ wayland_panel_toplevel_init (PanelToplevel* toplevel)
 	GtkWindow* window;
 
 	window = GTK_WINDOW (toplevel);
-	gtk_layer_init_for_window (window);
-	gtk_layer_set_layer (window, GTK_LAYER_SHELL_LAYER_TOP);
-	gtk_layer_set_namespace (window, "panel");
-	gtk_layer_auto_exclusive_zone_enable (window);
+	ctk_layer_init_for_window (window);
+	ctk_layer_set_layer (window, GTK_LAYER_SHELL_LAYER_TOP);
+	ctk_layer_set_namespace (window, "panel");
+	ctk_layer_auto_exclusive_zone_enable (window);
 	wayland_panel_toplevel_update_placement (toplevel);
 }
 
@@ -77,5 +77,5 @@ wayland_panel_toplevel_update_placement (PanelToplevel* toplevel)
 	}
 
 	for (int i = 0; i < GTK_LAYER_SHELL_EDGE_ENTRY_NUMBER; i++)
-		gtk_layer_set_anchor (window, i, anchor[i]);
+		ctk_layer_set_anchor (window, i, anchor[i]);
 }

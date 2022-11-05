@@ -65,23 +65,23 @@ na_fixed_tip_draw (GtkWidget *widget, cairo_t *cr)
   GtkStateFlags state;
   int width, height;
 
-  width = gtk_widget_get_allocated_width (widget);
-  height = gtk_widget_get_allocated_height (widget);
+  width = ctk_widget_get_allocated_width (widget);
+  height = ctk_widget_get_allocated_height (widget);
 
-  state = gtk_widget_get_state_flags (widget);
-  context = gtk_widget_get_style_context (widget);
-  gtk_style_context_save (context);
-  gtk_style_context_add_class (context, GTK_STYLE_CLASS_TOOLTIP);
-  gtk_style_context_set_state (context, state);
+  state = ctk_widget_get_state_flags (widget);
+  context = ctk_widget_get_style_context (widget);
+  ctk_style_context_save (context);
+  ctk_style_context_add_class (context, GTK_STYLE_CLASS_TOOLTIP);
+  ctk_style_context_set_state (context, state);
 
   cairo_save (cr);
-  gtk_render_background (context, cr,
+  ctk_render_background (context, cr,
                          0., 0.,
                          (gdouble)width,
                          (gdouble)height);
   cairo_restore (cr);
 
-  gtk_style_context_restore (context);
+  ctk_style_context_restore (context);
 
   return FALSE;
 }
@@ -102,7 +102,7 @@ na_fixed_tip_class_init (NaFixedTipClass *class)
 		  G_TYPE_NONE, 0);
 }
 
-/* Did you already see this code? Yes, it's gtk_tooltips_ force_window() ;-) */
+/* Did you already see this code? Yes, it's ctk_tooltips_ force_window() ;-) */
 static void
 na_fixed_tip_init (NaFixedTip *fixedtip)
 {
@@ -110,23 +110,23 @@ na_fixed_tip_init (NaFixedTip *fixedtip)
 
   fixedtip->priv = na_fixed_tip_get_instance_private (fixedtip);
 
-  gtk_window_set_type_hint (GTK_WINDOW (fixedtip),
+  ctk_window_set_type_hint (GTK_WINDOW (fixedtip),
                             GDK_WINDOW_TYPE_HINT_TOOLTIP);
 
-  gtk_widget_set_app_paintable (GTK_WIDGET (fixedtip), TRUE);
-  gtk_window_set_resizable (GTK_WINDOW (fixedtip), FALSE);
-  gtk_widget_set_name (GTK_WIDGET (fixedtip), "gtk-tooltips");
-  gtk_container_set_border_width (GTK_CONTAINER (fixedtip), 4);
+  ctk_widget_set_app_paintable (GTK_WIDGET (fixedtip), TRUE);
+  ctk_window_set_resizable (GTK_WINDOW (fixedtip), FALSE);
+  ctk_widget_set_name (GTK_WIDGET (fixedtip), "ctk-tooltips");
+  ctk_container_set_border_width (GTK_CONTAINER (fixedtip), 4);
 
-  label = gtk_label_new (NULL);
-  gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-  gtk_label_set_xalign (GTK_LABEL (label), 0.5);
-  gtk_label_set_yalign (GTK_LABEL (label), 0.5);
-  gtk_widget_show (label);
-  gtk_container_add (GTK_CONTAINER (fixedtip), label);
+  label = ctk_label_new (NULL);
+  ctk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+  ctk_label_set_xalign (GTK_LABEL (label), 0.5);
+  ctk_label_set_yalign (GTK_LABEL (label), 0.5);
+  ctk_widget_show (label);
+  ctk_container_add (GTK_CONTAINER (fixedtip), label);
   fixedtip->priv->label = label;
 
-  gtk_widget_add_events (GTK_WIDGET (fixedtip), GDK_BUTTON_PRESS_MASK);
+  ctk_widget_add_events (GTK_WIDGET (fixedtip), GDK_BUTTON_PRESS_MASK);
 
   g_signal_connect (fixedtip, "button_press_event",
                     G_CALLBACK (button_press_handler), NULL);
@@ -147,12 +147,12 @@ na_fixed_tip_position (NaFixedTip *fixedtip)
   int             screen_width;
   int             screen_height;
 
-  screen = gtk_widget_get_screen (fixedtip->priv->parent);
-  parent_window = gtk_widget_get_window (fixedtip->priv->parent);
+  screen = ctk_widget_get_screen (fixedtip->priv->parent);
+  parent_window = ctk_widget_get_window (fixedtip->priv->parent);
 
-  gtk_window_set_screen (GTK_WINDOW (fixedtip), screen);
+  ctk_window_set_screen (GTK_WINDOW (fixedtip), screen);
 
-  gtk_widget_get_preferred_size (GTK_WIDGET (fixedtip), &req, NULL);
+  ctk_widget_get_preferred_size (GTK_WIDGET (fixedtip), &req, NULL);
 
   gdk_window_get_origin (parent_window, &root_x, &root_y);
   parent_width = gdk_window_get_width(parent_window);
@@ -186,7 +186,7 @@ na_fixed_tip_position (NaFixedTip *fixedtip)
   if ((root_y + req.height) > screen_height)
     root_y = screen_height - req.height;
 
-  gtk_window_move (GTK_WINDOW (fixedtip), root_x, root_y);
+  ctk_window_move (GTK_WINDOW (fixedtip), root_x, root_y);
 }
 
 static void
@@ -224,10 +224,10 @@ na_fixed_tip_new (GtkWidget      *parent,
   //doesn't work
   GtkWidget  *toplevel;
 
-  toplevel = gtk_widget_get_toplevel (parent);
+  toplevel = ctk_widget_get_toplevel (parent);
   /*
-  if (toplevel && gtk_widget_is_toplevel (toplevel) && GTK_IS_WINDOW (toplevel))
-    gtk_window_set_transient_for (GTK_WINDOW (fixedtip), GTK_WINDOW (toplevel));
+  if (toplevel && ctk_widget_is_toplevel (toplevel) && GTK_IS_WINDOW (toplevel))
+    ctk_window_set_transient_for (GTK_WINDOW (fixedtip), GTK_WINDOW (toplevel));
     */
 #endif
 
@@ -256,7 +256,7 @@ na_fixed_tip_set_markup (GtkWidget  *widget,
 
   fixedtip = NA_FIXED_TIP (widget);
 
-  gtk_label_set_markup (GTK_LABEL (fixedtip->priv->label),
+  ctk_label_set_markup (GTK_LABEL (fixedtip->priv->label),
                         markup_text);
 
   na_fixed_tip_position (fixedtip);

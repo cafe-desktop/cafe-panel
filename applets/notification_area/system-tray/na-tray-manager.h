@@ -27,7 +27,7 @@
 #ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
 #endif
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "na-tray-child.h"
 

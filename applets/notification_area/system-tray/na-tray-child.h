@@ -29,10 +29,10 @@
 #error file should only be included when HAVE_X11 is enabled
 #endif
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include <gdk/gdkx.h>
-#include <gtk/gtkx.h>
+#include <ctk/ctkx.h>
 
 #ifdef __cplusplus
 extern "C" {

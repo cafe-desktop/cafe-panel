@@ -26,7 +26,7 @@
 #define __CAFE_PANEL_APPLET_H__
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdk.h>
 #include <cairo.h>
 #include <cairo-gobject.h>
@@ -156,7 +156,7 @@ int main(int argc, char* argv[]) \
 	_CAFE_PANEL_APPLET_SETUP_GETTEXT (TRUE); \
 	 \
 	context = g_option_context_new(""); \
-	g_option_context_add_group (context, gtk_get_option_group(TRUE)); \
+	g_option_context_add_group (context, ctk_get_option_group(TRUE)); \
 	 \
 	error = NULL; \
 	if (!g_option_context_parse (context, &argc, &argv, &error)) \
@@ -174,7 +174,7 @@ int main(int argc, char* argv[]) \
 		return 1; \
 	} \
 	 \
-	gtk_init (&argc, &argv); \
+	ctk_init (&argc, &argv); \
 	 \
 	retval = cafe_panel_applet_factory_main (factory_id,TRUE, type, callback, data); \
 	g_option_context_free (context); \

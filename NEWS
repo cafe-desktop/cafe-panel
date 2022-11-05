@@ -70,7 +70,7 @@
   * clock: avoid deprecated g_type_class_add_private
   * When determining whether the pos is in the applet, use ad->cells to calc.
   * build: use AC_STRUCT_DIRENT_D_TYPE instead of custom macro
-  * panel-toplevel: avoid deprecated 'gtk_css_provider_get_default'
+  * panel-toplevel: avoid deprecated 'ctk_css_provider_get_default'
   * panel-toplevel: fix applets placement on expanded vertical panel
   * panel-toplevel: fix coding style and spacing a bit
   * Fix GTK Layer Shell include and CFLAGS
@@ -114,7 +114,7 @@
   * panel-addto support disabling applets
   * Panel addto Wayland support
   * Add CAFE_PANEL_APPLET_LIB_PREFIX environment variable
-  * Switch out wayland protocols for gtk-layer-shell dependency
+  * Switch out wayland protocols for ctk-layer-shell dependency
   * Update FSF address
   * revert menu-bar: transfer focus correctly on alt-F1
   * na-tray: avoid deprecated g_type_class_add_private
@@ -139,7 +139,7 @@
   * Dropped *-protocol suffix from generated files
   * help: update copyright
   * [Security] panel-keyfile: Use 'g_strlcpy' instead of 'strcpy'
-  * na-tray-child: avoid deprecated 'gtk_widget_set_double_buffered'
+  * na-tray-child: avoid deprecated 'ctk_widget_set_double_buffered'
   * [ci] Enable clang-analyzer
   * Wayland support for several files
   * Error if compiling panel-plug-private.h without X11 support
@@ -153,8 +153,8 @@
   * update translations
   * Ensure proper translation of the about dialog title
   * Make translatable the copyright in about dialog
-  * Fix last menu with gtk_menu_popup and failure to follow panel theme
-  * cafe-panel-applet.c: replace deprecated gtk_menu_popup
+  * Fix last menu with ctk_menu_popup and failure to follow panel theme
+  * cafe-panel-applet.c: replace deprecated ctk_menu_popup
   * Properly align button menu positions on vertical panels
   * initial travis-CI support
   * fix crash on removing tray
@@ -202,7 +202,7 @@
   * Add XDG Shell protocol xml
   * Add Layer Shell protocol xml
   * Remove legacy X11 package detection
-  * panel-gtk: Fix memory leaks
+  * panel-ctk: Fix memory leaks
 
 ### cafe-panel 1.21.3
 
@@ -230,20 +230,20 @@
   * menu-bar: transfer focus correctly on alt-F1
   * panel: avoid a critical
   * panel-toplevel: fix memory leak in calculate_minimum_height
-  * Change GTK_CHECK_VERSION to match next gtk+ release
+  * Change GTK_CHECK_VERSION to match next ctk+ release
   * applets: Guard against GTK scale-factor fixes on GtkSocket
   * window-list: Skip setting size hints until WnckTasklist has items to show.
   * applets: Fix runtime error messages
   * cafe-panel-applet: setup_x_error_handler for in-process applets too
   * GTK 3.23: fix applet size allocation
-  * fish: avoid deprecated 'gtk_window_set_wmclass'
+  * fish: avoid deprecated 'ctk_window_set_wmclass'
   * Tray: simplify force-redraw, use code that actually works
-  * panel-actions: replace deprecated gtk_menu_popup
-  * applet-context-menu: replace deprecated gtk_menu_popup
-  * panel-context-menu: replace deprecated gtk_menu_popup
+  * panel-actions: replace deprecated ctk_menu_popup
+  * applet-context-menu: replace deprecated ctk_menu_popup
+  * panel-context-menu: replace deprecated ctk_menu_popup
   * GTK 3.23: don't cut tray icons too narrow in HiDPI mode
   * na-tray-child: remove na_tray_child_size_allocate
-  * panel-menu-button: replace deprecated gtk_menu_popup
+  * panel-menu-button: replace deprecated ctk_menu_popup
   * na-tray-child: replace deprecated gdk_error_trap_push/pop functions
   * libcafe-panel-applet: replace deprecated gdk_error_trap functions
   * panel-xutils: replace deprecated gdk_error_trap functions
@@ -255,7 +255,7 @@
   * panel-force-quit: replace deprecated gdk_error_trap functions
   * panel-force-quit: replace deprecated gdk_flush
   * menu.c: Fix: Keep spaces in the left if "menus-have-icons" is off
-  * Panel-gtk.c: Show menu icons only when "menus-have-icons" is set
+  * Panel-ctk.c: Show menu icons only when "menus-have-icons" is set
   * workspace-switcher: provide themed fallback color
 
 ### cafe-panel 1.21.1
@@ -289,10 +289,10 @@
   * Theme: consistant theming for applet drag handles in all themes
   * Revert "panel-toplevel: Remove pointer boundary check in panel_toplevel_queue_auto_hide()"
   * panel-context-menu.c: avoid deprecated GtkImageMenuItem
-  * avoid 'gtk_file_chooser_dialog_new' with stock ids
+  * avoid 'ctk_file_chooser_dialog_new' with stock ids
   * Accessibility: white/black applet handles in GNOME high contrast themes
   * panel-run-dialog.ui: avoid deprecated:
-  * fish.c: avoid 'gtk_dialog_new_with_buttons' with stock id
+  * fish.c: avoid 'ctk_dialog_new_with_buttons' with stock id
   * panel-test-applets.ui: avoid deprecated:
   * window-list.ui: avoid GtkVBox and GtkButton:use-stock
   * workspace-switcher.ui: avoid deprecated GtkButton:use-stock
@@ -300,7 +300,7 @@
   * panel-properties-dialog.ui: avoid GtkButton:use-stock and GtkImage:stock
   * fish.ui: avoid deprecated:
   * clock.ui: avoid deprecated:
-  * avoid gtk_dialog_add_buttons with stock ids
+  * avoid ctk_dialog_add_buttons with stock ids
   * workspace-switcher: support i3 WM
   * tx: update config with branch specific resoures
   * workspace-switcher: support metacity WM
@@ -384,7 +384,7 @@
   * Add option to context menu to reset the panel
   * clock:disconnect signal handlers on destroy
   * Fix crashes on moving/removing applets with glib 2.53.4 or later
-  * gtk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
+  * ctk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
   * Add a gsettings key to enable/disable SNI Support (#600)
 
 ### cafe-panel 1.19.3
@@ -421,7 +421,7 @@
     instead of using the default or user configured scale.
   * avoid deprecated gdk_screen_make_display_name
   * avoid deprecated gdk_display_get_screen
-  * don't use deprecated gtk_show_uri
+  * don't use deprecated ctk_show_uri
 
 ### cafe-panel 1.19.2
 
@@ -446,9 +446,9 @@
   * Restore Polish translation credits from GNOME
   * menu: fix crash when some .desktop file has empty Icon field
   * clock: properly handle visibility of edit button
-  * clock: drop deprecated gtk_size_group_set_ignore_hidden
+  * clock: drop deprecated ctk_size_group_set_ignore_hidden
   * clock: move GtkButton in another horizontal GtkBox parent
-  * clock.c: drop deprecated gtk_size_group_set_ignore_hidden
+  * clock.c: drop deprecated ctk_size_group_set_ignore_hidden
   * localized application's name and description
   * menu-button: disconnect from GSettings when applet is removed
   * action-button: disconnect from GSettings when applet is removed
@@ -492,7 +492,7 @@
   * Build: require libcafe-menu >= 1.10 and dconf >= 0.13.4
   * Build: require libcafeweather and libcafe-desktop >= 1.17
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
-    --with-gtk build option
+    --with-ctk build option
   * Launchers: add desktop actions support for additional launch
     options
   * Menu applets: add support for Menulibre menu editor, and prefer
@@ -591,18 +591,18 @@
 
   * Gtk3, Fix deprecated use of gdk pointer api
   * Gtk3, Port all GtkStyle to GtkStyleContext
-  * Gtk3, Port gtk_rc_parse_string to GtkCssProvider
+  * Gtk3, Port ctk_rc_parse_string to GtkCssProvider
   * Gtk3, Several small fixes
   * Several more fixes from monsta
   * GDK_KEY_* is also in Gtk+2.24
   * showdesktop: Fix the size of the icon
   * clock: Check allocated size before creating the shadow pixbuf
   * applet: Disconnect show and deactivate menu signals before destroying the applet menu
-  * Add a gtkimage with the current pixbuf to button-widget
+  * Add a ctkimage with the current pixbuf to button-widget
   * Fix implicit declaration of function of gdk_x11_set_sm_client_id
   * panel-addto: Remove the vbox as it is redundant.
   * na: Fix handling of SYSTEM_TRAY_CANCEL_MESSAGE
-  * Use gtk icon cache instead of custom one
+  * Use ctk icon cache instead of custom one
   * Several small fixes by monsta
 
 ### cafe-panel 1.8.0

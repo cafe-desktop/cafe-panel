@@ -2,7 +2,7 @@
 
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include <libpanel-util/panel-error.h>
 #include <libpanel-util/panel-keyfile.h>
@@ -35,7 +35,7 @@ dialog_destroyed (GtkWidget *dialog, gpointer data)
 	dialogs --;
 
 	if (dialogs <= 0)
-		gtk_main_quit ();
+		ctk_main_quit ();
 }
 
 static void
@@ -102,7 +102,7 @@ main (int argc, char * argv[])
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
-	if (!gtk_init_with_args (&argc, &argv,
+	if (!ctk_init_with_args (&argc, &argv,
 	                         _("- Edit .desktop files"),
 	                         options,
 	                         GETTEXT_PACKAGE,
@@ -112,7 +112,7 @@ main (int argc, char * argv[])
 		return 1;
 	}
 
-	gtk_window_set_default_icon_name (PANEL_ICON_LAUNCHER);
+	ctk_window_set_default_icon_name (PANEL_ICON_LAUNCHER);
 
 	if (desktops == NULL ||
 	    desktops[0] == NULL) {
@@ -209,7 +209,7 @@ main (int argc, char * argv[])
 					  G_CALLBACK (dialog_destroyed), NULL);
 			g_signal_connect (G_OBJECT (dlg), "error_reported",
 					  G_CALLBACK (error_reported), NULL);
-			gtk_widget_show (dlg);
+			ctk_widget_show (dlg);
 		}
 
 		g_free (uri);
@@ -217,7 +217,7 @@ main (int argc, char * argv[])
 	}
 
 	if (dialogs > 0)
-		gtk_main ();
+		ctk_main ();
 
         return 0;
 }

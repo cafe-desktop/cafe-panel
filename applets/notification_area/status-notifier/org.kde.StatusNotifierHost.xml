@@ -3,6 +3,6 @@
 "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
   <interface name="org.kde.StatusNotifierHost">
-    <annotation name="org.gtk.GDBus.C.Name" value="HostV0Gen" />
+    <annotation name="org.ctk.GDBus.C.Name" value="HostV0Gen" />
   </interface>
 </node>

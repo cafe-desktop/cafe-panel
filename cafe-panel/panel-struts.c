@@ -240,7 +240,7 @@ panel_struts_allocate_struts (PanelToplevel *toplevel,
 			if (strut->toplevel == toplevel)
 				toplevel_changed = TRUE;
 			else
-				gtk_widget_queue_resize (GTK_WIDGET (strut->toplevel));
+				ctk_widget_queue_resize (GTK_WIDGET (strut->toplevel));
 		}
 
 		allocated = g_slist_append (allocated, strut);
@@ -264,9 +264,9 @@ panel_struts_set_window_hint (PanelToplevel *toplevel)
 
 	widget = GTK_WIDGET (toplevel);
 
-	g_return_if_fail (GDK_IS_X11_DISPLAY (gtk_widget_get_display (widget)));
+	g_return_if_fail (GDK_IS_X11_DISPLAY (ctk_widget_get_display (widget)));
 
-	if (!gtk_widget_get_realized (widget))
+	if (!ctk_widget_get_realized (widget))
 		return;
 
 	if (!(strut = panel_struts_find_strut (toplevel))) {
@@ -274,7 +274,7 @@ panel_struts_set_window_hint (PanelToplevel *toplevel)
 		return;
 	}
 
-	scale = gtk_widget_get_scale_factor (widget);
+	scale = ctk_widget_get_scale_factor (widget);
 	strut_size = strut->allocated_strut_size;
 
 	screen_width  = WidthOfScreen (gdk_x11_screen_get_xscreen (strut->screen)) / scale;
@@ -318,7 +318,7 @@ panel_struts_set_window_hint (PanelToplevel *toplevel)
 		break;
 	}
 
-	panel_xutils_set_strut (gtk_widget_get_window (widget),
+	panel_xutils_set_strut (ctk_widget_get_window (widget),
 				strut->orientation,
 				strut_size,
 				strut->allocated_strut_start * scale,
@@ -328,12 +328,12 @@ panel_struts_set_window_hint (PanelToplevel *toplevel)
 void
 panel_struts_unset_window_hint (PanelToplevel *toplevel)
 {
-	g_return_if_fail (GDK_IS_X11_DISPLAY (gtk_widget_get_display (GTK_WIDGET (toplevel))));
+	g_return_if_fail (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel))));
 
-	if (!gtk_widget_get_realized (GTK_WIDGET (toplevel)))
+	if (!ctk_widget_get_realized (GTK_WIDGET (toplevel)))
 		return;
 
-	panel_xutils_set_strut (gtk_widget_get_window (GTK_WIDGET (toplevel)), 0, 0, 0, 0);
+	panel_xutils_set_strut (ctk_widget_get_window (GTK_WIDGET (toplevel)), 0, 0, 0, 0);
 }
 
 static inline int
@@ -419,7 +419,7 @@ panel_struts_register_strut (PanelToplevel    *toplevel,
 	gboolean    new_strut = FALSE;
 	int         monitor_x, monitor_y, monitor_width, monitor_height;
 
-	g_return_val_if_fail (GDK_IS_X11_DISPLAY (gtk_widget_get_display (GTK_WIDGET (toplevel))), FALSE);
+	g_return_val_if_fail (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel))), FALSE);
 
 	if (!(strut = panel_struts_find_strut (toplevel))) {
 		strut = g_new0 (PanelStrut, 1);
@@ -497,7 +497,7 @@ panel_struts_unregister_strut (PanelToplevel *toplevel)
 	GdkScreen  *screen;
 	int         monitor;
 
-	g_return_if_fail (GDK_IS_X11_DISPLAY (gtk_widget_get_display (GTK_WIDGET (toplevel))));
+	g_return_if_fail (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel))));
 
 	if (!(strut = panel_struts_find_strut (toplevel)))
 		return;
@@ -520,7 +520,7 @@ panel_struts_update_toplevel_geometry (PanelToplevel *toplevel,
 {
 	PanelStrut *strut;
 
-	g_return_val_if_fail (GDK_IS_X11_DISPLAY (gtk_widget_get_display (GTK_WIDGET (toplevel))), FALSE);
+	g_return_val_if_fail (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (toplevel))), FALSE);
 	g_return_val_if_fail (x != NULL, FALSE);
 	g_return_val_if_fail (y != NULL, FALSE);
 

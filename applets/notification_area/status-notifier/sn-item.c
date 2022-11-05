@@ -169,11 +169,11 @@ sn_item_get_action_coordinates (SnItem *item,
 
   priv = SN_ITEM (item)->priv;
   widget = GTK_WIDGET (item);
-  window = gtk_widget_get_window (widget);
-  toplevel = gtk_widget_get_toplevel (widget);
+  window = ctk_widget_get_window (widget);
+  toplevel = ctk_widget_get_toplevel (widget);
 
   gdk_window_get_geometry (window, x, y, &width, &height);
-  gtk_widget_translate_coordinates (widget, toplevel, *x, *y, x, y);
+  ctk_widget_translate_coordinates (widget, toplevel, *x, *y, x, y);
 
   if (priv->orientation == GTK_ORIENTATION_HORIZONTAL)
     *y += height;
@@ -207,12 +207,12 @@ sn_item_button_press_event (GtkWidget      *widget,
     {
       if (priv->menu != NULL)
         {
-          gtk_menu_popup_at_widget (priv->menu, widget,
+          ctk_menu_popup_at_widget (priv->menu, widget,
                                     GDK_GRAVITY_SOUTH_WEST,
                                     GDK_GRAVITY_NORTH_WEST,
                                     (GdkEvent *) event);
           /*Fix positioning if size changed since last shown*/
-          gtk_menu_reposition(priv->menu);
+          ctk_menu_reposition(priv->menu);
         }
       else
         {
@@ -239,12 +239,12 @@ sn_item_popup_menu (GtkWidget *widget)
 
   if (priv->menu != NULL)
     {
-      gtk_menu_popup_at_widget (priv->menu, widget,
+      ctk_menu_popup_at_widget (priv->menu, widget,
                                 GDK_GRAVITY_SOUTH_WEST,
                                 GDK_GRAVITY_NORTH_WEST,
                                 NULL);
       /*Fix positioning if size changed since last shown*/
-      gtk_menu_reposition(priv->menu);
+      ctk_menu_reposition(priv->menu);
     }
   else
     {
@@ -452,7 +452,7 @@ sn_item_init (SnItem *item)
 {
   item->priv = sn_item_get_instance_private (item);
 
-  gtk_widget_add_events (GTK_WIDGET (item), GDK_SCROLL_MASK);
+  ctk_widget_add_events (GTK_WIDGET (item), GDK_SCROLL_MASK);
 }
 
 const gchar *

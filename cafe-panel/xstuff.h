@@ -8,10 +8,10 @@
 #endif
 
 #include <gdk/gdk.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include <gdk/gdkx.h>
-#include <gtk/gtkx.h>
+#include <ctk/ctkx.h>
 
 #include "panel-enums-gsettings.h"
 

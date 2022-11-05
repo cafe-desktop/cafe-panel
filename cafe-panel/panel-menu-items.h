@@ -24,7 +24,7 @@
 #ifndef __PANEL_MENU_ITEMS_H__
 #define __PANEL_MENU_ITEMS_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "panel-widget.h"
 
 #ifdef __cplusplus

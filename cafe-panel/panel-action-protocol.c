@@ -84,22 +84,22 @@ panel_action_protocol_main_menu (GdkScreen *screen,
 
 	panel_toplevel_push_autohide_disabler (panel_widget->toplevel);
 
-	gtk_menu_set_screen (GTK_MENU (menu), screen);
+	ctk_menu_set_screen (GTK_MENU (menu), screen);
 /* Set up theme and transparency support */
-	toplevel = gtk_widget_get_toplevel (menu);
-/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
+	toplevel = ctk_widget_get_toplevel (menu);
+/* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	visual = gdk_screen_get_rgba_visual(screen);
-	gtk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
-	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
-	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
-	gtk_style_context_add_class(context,"cafe-panel-menu-bar");
+	context = ctk_widget_get_style_context (GTK_WIDGET(toplevel));
+	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
+	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
 
 	seat = gdk_display_get_default_seat (gdk_display_get_default());
 	device = gdk_seat_get_pointer (seat);
 	gdk_event_set_device (event, device);
 
-	gtk_menu_popup_at_pointer (GTK_MENU (menu),event);
+	ctk_menu_popup_at_pointer (GTK_MENU (menu),event);
 }
 
 static void

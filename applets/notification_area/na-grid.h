@@ -31,7 +31,7 @@
 #include <gdk/gdkx.h>
 #endif
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 G_BEGIN_DECLS
 

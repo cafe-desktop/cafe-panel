@@ -23,7 +23,7 @@
 #ifndef FIXED_TIP_H
 #define FIXED_TIP_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

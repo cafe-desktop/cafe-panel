@@ -4,7 +4,7 @@
 #include "clock.h"
 #include "clock-location.h"
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

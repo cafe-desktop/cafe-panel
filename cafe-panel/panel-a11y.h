@@ -21,7 +21,7 @@
 #ifndef __PANEL_A11Y_H__
 #define __PANEL_A11Y_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

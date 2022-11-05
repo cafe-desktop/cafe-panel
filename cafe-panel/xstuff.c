@@ -24,7 +24,7 @@
 
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include <X11/Xlib.h>
 
@@ -64,14 +64,14 @@ typedef struct {
 static gboolean
 zoom_timeout (GtkWidget *window)
 {
-	gtk_widget_queue_draw (window);
+	ctk_widget_queue_draw (window);
 	return TRUE;
 }
 
 static gboolean
 idle_destroy (gpointer data)
 {
-	gtk_widget_destroy (GTK_WIDGET (data));
+	ctk_widget_destroy (GTK_WIDGET (data));
 
 	return FALSE;
 }
@@ -90,7 +90,7 @@ zoom_draw (GtkWidget *widget,
 			g_source_remove (zoom->timeout_id);
 		zoom->timeout_id = 0;
 
-		gtk_widget_hide (widget);
+		ctk_widget_hide (widget);
 		g_idle_add (idle_destroy, widget);
 
 		g_object_unref (zoom->pixbuf);
@@ -102,7 +102,7 @@ zoom_draw (GtkWidget *widget,
 		int width, height;
 		int x = 0, y = 0;
 
-		gtk_window_get_size (GTK_WINDOW (widget), &width, &height);
+		ctk_window_get_size (GTK_WINDOW (widget), &width, &height);
 
 		zoom->size += MAX ((zoom->size_end - zoom->size_start) / ZOOM_STEPS, 1);
 		zoom->opacity -= 1.0 / ((double) ZOOM_STEPS + 1);
@@ -170,16 +170,16 @@ draw_zoom_animation_composited (GdkScreen *gscreen,
 	zoom->pixbuf = g_object_ref (pixbuf);
 	zoom->timeout_id = 0;
 
-	win = gtk_window_new (GTK_WINDOW_POPUP);
+	win = ctk_window_new (GTK_WINDOW_POPUP);
 
-	gtk_window_set_screen (GTK_WINDOW (win), gscreen);
-	gtk_window_set_keep_above (GTK_WINDOW (win), TRUE);
-	gtk_window_set_decorated (GTK_WINDOW (win), FALSE);
-	gtk_widget_set_app_paintable(win, TRUE);
-	gtk_widget_set_visual (win, gdk_screen_get_rgba_visual (gscreen));
+	ctk_window_set_screen (GTK_WINDOW (win), gscreen);
+	ctk_window_set_keep_above (GTK_WINDOW (win), TRUE);
+	ctk_window_set_decorated (GTK_WINDOW (win), FALSE);
+	ctk_widget_set_app_paintable(win, TRUE);
+	ctk_widget_set_visual (win, gdk_screen_get_rgba_visual (gscreen));
 
-	gtk_window_set_gravity (GTK_WINDOW (win), GDK_GRAVITY_STATIC);
-	gtk_window_set_default_size (GTK_WINDOW (win),
+	ctk_window_set_gravity (GTK_WINDOW (win), GDK_GRAVITY_STATIC);
+	ctk_window_set_default_size (GTK_WINDOW (win),
 				     w * ZOOM_FACTOR, h * ZOOM_FACTOR);
 
 	switch (zoom->orientation) {
@@ -204,15 +204,15 @@ draw_zoom_animation_composited (GdkScreen *gscreen,
 		break;
 	}
 
-	gtk_window_move (GTK_WINDOW (win), wx, wy);
+	ctk_window_move (GTK_WINDOW (win), wx, wy);
 
 	g_signal_connect (G_OBJECT (win), "draw",
 			 G_CALLBACK (zoom_draw), zoom);
 
-	/* see doc for gtk_widget_set_app_paintable() */
-	gtk_widget_realize (win);
-	gdk_window_set_background_pattern (gtk_widget_get_window (win), NULL);
-	gtk_widget_show (win);
+	/* see doc for ctk_widget_set_app_paintable() */
+	ctk_widget_realize (win);
+	gdk_window_set_background_pattern (ctk_widget_get_window (win), NULL);
+	ctk_widget_show (win);
 
 	zoom->timeout_id = g_timeout_add (ZOOM_DELAY,
 					  (GSourceFunc) zoom_timeout,
@@ -352,9 +352,9 @@ xstuff_zoom_anicafe (GtkWidget *widget,
 	if (opt_rect)
 		rect = *opt_rect;
 	else {
-		gdk_window_get_origin (gtk_widget_get_window (widget), &rect.x, &rect.y);
-		gtk_widget_get_allocation (widget, &allocation);
-		if (!gtk_widget_get_has_window (widget)) {
+		gdk_window_get_origin (ctk_widget_get_window (widget), &rect.x, &rect.y);
+		ctk_widget_get_allocation (widget, &allocation);
+		if (!ctk_widget_get_has_window (widget)) {
 			rect.x += allocation.x;
 			rect.y += allocation.y;
 		}
@@ -362,7 +362,7 @@ xstuff_zoom_anicafe (GtkWidget *widget,
 		rect.width = allocation.width;
 	}
 
-	gscreen = gtk_widget_get_screen (widget);
+	gscreen = ctk_widget_get_screen (widget);
 
 	if (gdk_screen_is_composited (gscreen) && surface) {
 		GdkPixbuf *pixbuf = gdk_pixbuf_get_from_surface (surface,
@@ -377,7 +377,7 @@ xstuff_zoom_anicafe (GtkWidget *widget,
 	} else {
 		display = gdk_screen_get_display (gscreen);
 		monitor = gdk_display_get_monitor_at_window (display,
-							     gtk_widget_get_window (widget));
+							     ctk_widget_get_window (widget));
 		gdk_monitor_get_geometry (monitor, &dest);
 
 		draw_zoom_animation (gscreen,

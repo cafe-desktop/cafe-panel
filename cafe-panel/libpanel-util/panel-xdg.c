@@ -26,7 +26,7 @@
 
 #include <glib.h>
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "panel-xdg.h"
 
@@ -76,13 +76,13 @@ panel_xdg_icon_name_from_icon_path (const char *path,
 	if (!screen)
 		screen = gdk_screen_get_default ();
 
-	settings = gtk_settings_get_for_screen (screen);
+	settings = ctk_settings_get_for_screen (screen);
 	g_object_get (settings,
-		      "gtk-icon-theme-name", &theme_name,
+		      "ctk-icon-theme-name", &theme_name,
 		      NULL);
 
-	theme = gtk_icon_theme_get_for_screen (screen);
-	gtk_icon_theme_get_search_path (theme, &paths, &n_paths);
+	theme = ctk_icon_theme_get_for_screen (screen);
+	ctk_icon_theme_get_search_path (theme, &paths, &n_paths);
 
 	file = g_file_new_for_path (path);
 	icon = NULL;

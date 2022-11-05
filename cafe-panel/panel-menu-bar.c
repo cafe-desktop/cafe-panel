@@ -85,7 +85,7 @@ static gboolean panel_menu_bar_hide_tooltip_and_focus(GtkWidget* widget, PanelMe
 {
 	/* remove focus that would be drawn on the currently focused child of
 	 * the toplevel. See bug#308632. */
-	gtk_window_set_focus(GTK_WINDOW(menubar->priv->panel->toplevel), NULL);
+	ctk_window_set_focus(GTK_WINDOW(menubar->priv->panel->toplevel), NULL);
 
 	g_object_set(widget, "has-tooltip", FALSE, NULL);
 
@@ -118,25 +118,25 @@ static void panel_menu_bar_update_visibility (GSettings* settings, gchar* key, P
 	if (!GTK_IS_WIDGET (menubar))
 		return;
 
-	gtk_widget_set_visible (GTK_WIDGET (menubar->priv->applications_item), g_settings_get_boolean (settings, PANEL_MENU_BAR_SHOW_APPLICATIONS_KEY));
-	gtk_widget_set_visible (GTK_WIDGET (menubar->priv->places_item), g_settings_get_boolean (settings, PANEL_MENU_BAR_SHOW_PLACES_KEY));
-	gtk_widget_set_visible (GTK_WIDGET (menubar->priv->desktop_item), g_settings_get_boolean (settings, PANEL_MENU_BAR_SHOW_DESKTOP_KEY));
+	ctk_widget_set_visible (GTK_WIDGET (menubar->priv->applications_item), g_settings_get_boolean (settings, PANEL_MENU_BAR_SHOW_APPLICATIONS_KEY));
+	ctk_widget_set_visible (GTK_WIDGET (menubar->priv->places_item), g_settings_get_boolean (settings, PANEL_MENU_BAR_SHOW_PLACES_KEY));
+	ctk_widget_set_visible (GTK_WIDGET (menubar->priv->desktop_item), g_settings_get_boolean (settings, PANEL_MENU_BAR_SHOW_DESKTOP_KEY));
 
 	if (g_settings_get_boolean (settings, PANEL_MENU_BAR_SHOW_ICON_KEY))
 	{
 		str = g_settings_get_string (settings, PANEL_MENU_BAR_ICON_NAME_KEY);
 		icon_size = panel_menu_bar_icon_get_size ();
-		gtk_icon_size_lookup (icon_size, NULL, &icon_height);
+		ctk_icon_size_lookup (icon_size, NULL, &icon_height);
 		if (str != NULL && str[0] != 0)
-			image = gtk_image_new_from_icon_name(str, icon_size);
+			image = ctk_image_new_from_icon_name(str, icon_size);
 		else
-			image = gtk_image_new_from_icon_name(PANEL_ICON_MAIN_MENU, icon_size);
-		gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menubar->priv->applications_item), image);
-		gtk_image_set_pixel_size (GTK_IMAGE (image), icon_height);
+			image = ctk_image_new_from_icon_name(PANEL_ICON_MAIN_MENU, icon_size);
+		ctk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menubar->priv->applications_item), image);
+		ctk_image_set_pixel_size (GTK_IMAGE (image), icon_height);
 		g_free (str);
 	}
 	else
-		gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menubar->priv->applications_item), NULL);
+		ctk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menubar->priv->applications_item), NULL);
 }
 
 static void panel_menu_bar_init(PanelMenuBar* menubar)
@@ -145,13 +145,13 @@ static void panel_menu_bar_init(PanelMenuBar* menubar)
 
 	menubar->priv = panel_menu_bar_get_instance_private(menubar);
 
-	provider = gtk_css_provider_new ();
-	gtk_css_provider_load_from_data (provider,
+	provider = ctk_css_provider_new ();
+	ctk_css_provider_load_from_data (provider,
 		"PanelMenuBar {\n"
 		" border-width: 0px;\n"
 		"}",
 		-1, NULL);
-	gtk_style_context_add_provider (gtk_widget_get_style_context (GTK_WIDGET (menubar)),
+	ctk_style_context_add_provider (ctk_widget_get_style_context (GTK_WIDGET (menubar)),
 		GTK_STYLE_PROVIDER (provider),
 		GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_object_unref (provider);
@@ -163,16 +163,16 @@ static void panel_menu_bar_init(PanelMenuBar* menubar)
 	menubar->priv->applications_menu = create_applications_menu("cafe-applications.menu", NULL, TRUE);
 
 	menubar->priv->applications_item = panel_image_menu_item_new();
-	gtk_menu_item_set_label(GTK_MENU_ITEM(menubar->priv->applications_item), _("Applications"));
+	ctk_menu_item_set_label(GTK_MENU_ITEM(menubar->priv->applications_item), _("Applications"));
 
-	gtk_menu_item_set_submenu(GTK_MENU_ITEM(menubar->priv->applications_item), menubar->priv->applications_menu);
-	gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menubar->priv->applications_item);
+	ctk_menu_item_set_submenu(GTK_MENU_ITEM(menubar->priv->applications_item), menubar->priv->applications_menu);
+	ctk_menu_shell_append(GTK_MENU_SHELL(menubar), menubar->priv->applications_item);
 
 	menubar->priv->places_item = panel_place_menu_item_new(FALSE);
-	gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menubar->priv->places_item);
+	ctk_menu_shell_append(GTK_MENU_SHELL(menubar), menubar->priv->places_item);
 
 	menubar->priv->desktop_item = panel_desktop_menu_item_new(FALSE, TRUE);
-	gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menubar->priv->desktop_item);
+	ctk_menu_shell_append(GTK_MENU_SHELL(menubar), menubar->priv->desktop_item);
 
 	panel_menu_bar_setup_tooltip(menubar);
 
@@ -226,7 +226,7 @@ static void panel_menu_bar_parent_set(GtkWidget* widget, GtkWidget* previous_par
 	PanelMenuBar* menubar = PANEL_MENU_BAR(widget);
 	GtkWidget* parent;
 
-	parent = gtk_widget_get_parent(widget);
+	parent = ctk_widget_get_parent(widget);
 
 	g_assert(!parent || PANEL_IS_WIDGET(parent));
 
@@ -254,7 +254,7 @@ static void panel_menu_bar_size_allocate(GtkWidget* widget, GtkAllocation* alloc
 	GtkAllocation widget_allocation;
 	PanelBackground* background;
 
-	gtk_widget_get_allocation(widget, &widget_allocation);
+	ctk_widget_get_allocation(widget, &widget_allocation);
 
 	old_allocation.x = widget_allocation.x;
 	old_allocation.y = widget_allocation.y;
@@ -309,21 +309,21 @@ static gboolean panel_menu_bar_on_draw (GtkWidget* widget, cairo_t* cr, gpointer
 {
 	PanelMenuBar* menubar = data;
 
-	if (gtk_widget_has_focus(GTK_WIDGET(menubar))) {
+	if (ctk_widget_has_focus(GTK_WIDGET(menubar))) {
 		GtkStyleContext *context;
 
-		context = gtk_widget_get_style_context (widget);
-		gtk_style_context_save (context);
-		gtk_style_context_set_state (context, gtk_widget_get_state_flags (widget));
+		context = ctk_widget_get_style_context (widget);
+		ctk_style_context_save (context);
+		ctk_style_context_set_state (context, ctk_widget_get_state_flags (widget));
 
 		cairo_save (cr);
-		gtk_render_focus (context, cr,
+		ctk_render_focus (context, cr,
 				  0, 0,
-				  gtk_widget_get_allocated_width (widget),
-				  gtk_widget_get_allocated_height (widget));
+				  ctk_widget_get_allocated_width (widget),
+				  ctk_widget_get_allocated_height (widget));
 		cairo_restore (cr);
 
-		gtk_style_context_restore (context);
+		ctk_style_context_restore (context);
         }
 	return FALSE;
 }
@@ -341,12 +341,12 @@ static void panel_menu_bar_load(PanelWidget* panel, gboolean locked, int positio
 
 	if (!menubar->priv->info)
 	{
-		gtk_widget_destroy(GTK_WIDGET(menubar));
+		ctk_widget_destroy(GTK_WIDGET(menubar));
 		return;
 	}
 
-	settings = gtk_settings_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (panel)));
-	g_object_set (settings, "gtk-shell-shows-app-menu", FALSE, "gtk-shell-shows-menubar", FALSE, NULL);
+	settings = ctk_settings_get_for_screen (ctk_widget_get_screen (GTK_WIDGET (panel)));
+	g_object_set (settings, "ctk-shell-shows-app-menu", FALSE, "ctk-shell-shows-menubar", FALSE, NULL);
 
 	cafe_panel_applet_add_callback(menubar->priv->info, "help", "help-browser", _("_Help"), NULL);
 
@@ -356,11 +356,11 @@ static void panel_menu_bar_load(PanelWidget* panel, gboolean locked, int positio
 		cafe_panel_applet_add_callback (menubar->priv->info, "edit", "document-properties", _("_Edit Menus"), NULL);
 	}
 
-	g_signal_connect_after(menubar, "focus-in-event", G_CALLBACK(gtk_widget_queue_draw), menubar);
-	g_signal_connect_after(menubar, "focus-out-event", G_CALLBACK(gtk_widget_queue_draw), menubar);
+	g_signal_connect_after(menubar, "focus-in-event", G_CALLBACK(ctk_widget_queue_draw), menubar);
+	g_signal_connect_after(menubar, "focus-out-event", G_CALLBACK(ctk_widget_queue_draw), menubar);
 	g_signal_connect_after(menubar, "draw", G_CALLBACK(panel_menu_bar_on_draw), menubar);
 
-	gtk_widget_set_can_focus(GTK_WIDGET(menubar), TRUE);
+	ctk_widget_set_can_focus(GTK_WIDGET(menubar), TRUE);
 
 	panel_widget_set_applet_expandable(panel, GTK_WIDGET(menubar), FALSE, TRUE);
 	panel_menu_bar_update_visibility(menubar->priv->settings, NULL, menubar);
@@ -387,7 +387,7 @@ void panel_menu_bar_invoke_menu(PanelMenuBar* menubar, const char* callback_name
 	g_return_if_fail(PANEL_IS_MENU_BAR(menubar));
 	g_return_if_fail(callback_name != NULL);
 
-	screen = gtk_widget_get_screen(GTK_WIDGET(menubar));
+	screen = ctk_widget_get_screen(GTK_WIDGET(menubar));
 
 	if (!strcmp(callback_name, "help"))
 	{
@@ -413,15 +413,15 @@ void panel_menu_bar_popup_menu(PanelMenuBar* menubar, guint32 activate_time)
 	menu = GTK_MENU(menubar->priv->applications_menu);
 
 	/*
-	 * We need to call _gtk_menu_shell_activate() here as is done in
-	 * window_key_press_handler in gtkmenubar.c which pops up menu
+	 * We need to call _ctk_menu_shell_activate() here as is done in
+	 * window_key_press_handler in ctkmenubar.c which pops up menu
 	 * when F10 is pressed.
 	 *
 	 * As that function is private its code is replicated here.
 	 */
 	menu_shell = GTK_MENU_SHELL(menubar);
 
-	gtk_menu_shell_select_item(menu_shell, gtk_menu_get_attach_widget(menu));
+	ctk_menu_shell_select_item(menu_shell, ctk_menu_get_attach_widget(menu));
 }
 
 void panel_menu_bar_change_background(PanelMenuBar* menubar)
@@ -435,8 +435,8 @@ static void set_item_text_gravity(GtkWidget* item)
 	PangoLayout* layout;
 	PangoContext* context;
 
-	label = gtk_bin_get_child(GTK_BIN(item));
-	layout = gtk_label_get_layout(GTK_LABEL(label));
+	label = ctk_bin_get_child(GTK_BIN(item));
+	layout = ctk_label_get_layout(GTK_LABEL(label));
 	context = pango_layout_get_context(layout);
 	pango_context_set_base_gravity(context, PANGO_GRAVITY_AUTO);
 }
@@ -452,12 +452,12 @@ static void set_item_text_angle_and_alignment(GtkWidget* item, double text_angle
 {
 	GtkWidget *label;
 
-	label = gtk_bin_get_child (GTK_BIN (item));
+	label = ctk_bin_get_child (GTK_BIN (item));
 
-	gtk_label_set_angle (GTK_LABEL (label), text_angle);
+	ctk_label_set_angle (GTK_LABEL (label), text_angle);
 
-	gtk_label_set_xalign (GTK_LABEL (label), xalign);
-	gtk_label_set_yalign (GTK_LABEL (label), yalign);
+	ctk_label_set_xalign (GTK_LABEL (label), xalign);
+	ctk_label_set_yalign (GTK_LABEL (label), yalign);
 }
 
 static void panel_menu_bar_update_orientation(PanelMenuBar* menubar)
@@ -494,8 +494,8 @@ static void panel_menu_bar_update_orientation(PanelMenuBar* menubar)
 			break;
 	}
 
-	gtk_menu_bar_set_pack_direction(GTK_MENU_BAR(menubar), pack_direction);
-	gtk_menu_bar_set_child_pack_direction(GTK_MENU_BAR(menubar), pack_direction);
+	ctk_menu_bar_set_pack_direction(GTK_MENU_BAR(menubar), pack_direction);
+	ctk_menu_bar_set_child_pack_direction(GTK_MENU_BAR(menubar), pack_direction);
 
 	set_item_text_angle_and_alignment(menubar->priv->applications_item, text_angle, text_xalign, text_yalign);
 	set_item_text_angle_and_alignment(menubar->priv->places_item, text_angle, text_xalign, text_yalign);

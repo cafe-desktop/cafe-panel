@@ -18,7 +18,7 @@
 #ifndef SN_DBUS_MENU_ITEM_H
 #define SN_DUBS_MENU_ITEM_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 G_BEGIN_DECLS
 

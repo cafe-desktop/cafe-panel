@@ -25,7 +25,7 @@
 #ifndef __PANEL_TOPLEVEL_H__
 #define __PANEL_TOPLEVEL_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "panel-background.h"
 #include "panel-enums.h"

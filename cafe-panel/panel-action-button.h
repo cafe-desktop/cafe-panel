@@ -26,7 +26,7 @@
 #ifndef __PANEL_ACTION_BUTTON_H__
 #define __PANEL_ACTION_BUTTON_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "button-widget.h"
 #include "panel-widget.h"
 #include "panel-enums.h"

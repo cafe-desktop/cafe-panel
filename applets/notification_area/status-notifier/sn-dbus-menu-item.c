@@ -96,7 +96,7 @@ sn_shortcuts_new (GVariant *variant)
           else if (g_strcmp0 (string, "Super") == 0)
             mask |= GDK_SUPER_MASK;
           else
-            gtk_accelerator_parse (string, &key, NULL);
+            ctk_accelerator_parse (string, &key, NULL);
         }
 
       g_ptr_array_add (array,sn_shortcut_new (key, mask));
@@ -170,20 +170,20 @@ sn_dbus_menu_item_new (GVariant *props)
 
   if (g_strcmp0 (item->type, "separator") == 0)
     {
-      item->item = gtk_separator_menu_item_new ();
+      item->item = ctk_separator_menu_item_new ();
     }
   else
     {
       if (g_strcmp0 (item->toggle_type, "checkmark") == 0)
         {
-          item->item = gtk_check_menu_item_new ();
+          item->item = ctk_check_menu_item_new ();
         }
       else if (g_strcmp0 (item->toggle_type, "radio") == 0)
         {
-          item->item = gtk_check_menu_item_new ();
-          gtk_check_menu_item_set_draw_as_radio (GTK_CHECK_MENU_ITEM(item->item),TRUE);
+          item->item = ctk_check_menu_item_new ();
+          ctk_check_menu_item_set_draw_as_radio (GTK_CHECK_MENU_ITEM(item->item),TRUE);
           AtkObject *atk_obj;
-          atk_obj = gtk_widget_get_accessible (item->item);
+          atk_obj = ctk_widget_get_accessible (item->item);
           atk_object_set_role (atk_obj,ATK_ROLE_RADIO_MENU_ITEM);
         }
       else
@@ -192,19 +192,19 @@ sn_dbus_menu_item_new (GVariant *props)
 
           if (item->icon_name)
             {
-              image = gtk_image_new_from_icon_name (item->icon_name,
+              image = ctk_image_new_from_icon_name (item->icon_name,
                                                     GTK_ICON_SIZE_MENU);
             }
           else if (item->icon_data)
             {
               cairo_surface_t *surface;
               surface = gdk_cairo_surface_create_from_pixbuf (item->icon_data, 0, NULL);
-              image = gtk_image_new_from_surface (surface);
+              image = ctk_image_new_from_surface (surface);
               cairo_surface_destroy (surface);
             }
 
-          item->item = gtk_image_menu_item_new ();
-          gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item->item),
+          item->item = ctk_image_menu_item_new ();
+          ctk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item->item),
                                          image);
         }
 
@@ -212,15 +212,15 @@ sn_dbus_menu_item_new (GVariant *props)
         {
           GtkWidget *submenu;
 
-          submenu = gtk_menu_new ();
-          gtk_menu_item_set_submenu (GTK_MENU_ITEM (item->item), submenu);
+          submenu = ctk_menu_new ();
+          ctk_menu_item_set_submenu (GTK_MENU_ITEM (item->item), submenu);
 
           item->submenu = GTK_MENU (submenu);
           g_object_ref_sink (item->submenu);
         }
 
-      gtk_menu_item_set_use_underline (GTK_MENU_ITEM (item->item), TRUE);
-      gtk_menu_item_set_label (GTK_MENU_ITEM (item->item), item->label);
+      ctk_menu_item_set_use_underline (GTK_MENU_ITEM (item->item), TRUE);
+      ctk_menu_item_set_label (GTK_MENU_ITEM (item->item), item->label);
 
       if (item->shortcuts)
         {
@@ -238,14 +238,14 @@ sn_dbus_menu_item_new (GVariant *props)
           check = GTK_CHECK_MENU_ITEM (item->item);
 
           if (item->toggle_state == 1)
-            gtk_check_menu_item_set_active (check, TRUE);
+            ctk_check_menu_item_set_active (check, TRUE);
           else if (item->toggle_state == 0)
-            gtk_check_menu_item_set_active (check, FALSE);
+            ctk_check_menu_item_set_active (check, FALSE);
         }
     }
 
-  gtk_widget_set_sensitive (item->item, item->enabled);
-  gtk_widget_set_visible (item->item, item->visible);
+  ctk_widget_set_sensitive (item->item, item->enabled);
+  ctk_widget_set_visible (item->item, item->visible);
 
   g_object_ref_sink (item->item);
   return item;
@@ -270,7 +270,7 @@ sn_dubs_menu_item_free (gpointer data)
   g_clear_pointer (&item->toggle_type, g_free);
   g_clear_pointer (&item->type, g_free);
 
-  gtk_widget_destroy (item->item);
+  ctk_widget_destroy (item->item);
   g_clear_object (&item->item);
   g_clear_object (&item->submenu);
 
@@ -306,7 +306,7 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
       else if (g_strcmp0 (prop, "enabled") == 0)
         {
           item->enabled = g_variant_get_boolean (value);
-          gtk_widget_set_sensitive (item->item, item->enabled);
+          ctk_widget_set_sensitive (item->item, item->enabled);
         }
       else if (g_strcmp0 (prop, "icon-name") == 0)
         {
@@ -317,7 +317,7 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
 
           if (item->icon_name)
             {
-              image = gtk_image_new_from_icon_name (item->icon_name,
+              image = ctk_image_new_from_icon_name (item->icon_name,
                                                     GTK_ICON_SIZE_MENU);
             }
           else
@@ -325,7 +325,7 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
               image = NULL;
             }
 
-          gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item->item),
+          ctk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item->item),
                                          image);
         }
       else if (g_strcmp0 (prop, "icon-data") == 0)
@@ -339,7 +339,7 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
             {
               cairo_surface_t *surface;
               surface = gdk_cairo_surface_create_from_pixbuf (item->icon_data, 0, NULL);
-              image = gtk_image_new_from_surface (surface);
+              image = ctk_image_new_from_surface (surface);
               cairo_surface_destroy (surface);
             }
           else
@@ -347,7 +347,7 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
               image = NULL;
             }
 
-          gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item->item),
+          ctk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item->item),
                                          image);
         }
       else if (g_strcmp0 (prop, "label") == 0)
@@ -356,7 +356,7 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
           item->label = g_variant_dup_string (value, NULL);
 
           if (!GTK_IS_SEPARATOR_MENU_ITEM (item->item))
-            gtk_menu_item_set_label (GTK_MENU_ITEM (item->item), item->label);
+            ctk_menu_item_set_label (GTK_MENU_ITEM (item->item), item->label);
         }
       else if (g_strcmp0 (prop, "shortcut") == 0)
         {
@@ -381,9 +381,9 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
               g_signal_handler_block (item->item, item->activate_id);
 
               if (item->toggle_state == 1)
-                gtk_check_menu_item_set_active (check, TRUE);
+                ctk_check_menu_item_set_active (check, TRUE);
               else if (item->toggle_state == 0)
-                gtk_check_menu_item_set_active (check, FALSE);
+                ctk_check_menu_item_set_active (check, FALSE);
 
               g_signal_handler_unblock (item->item, item->activate_id);
             }
@@ -396,7 +396,7 @@ sn_dbus_menu_item_update_props (SnDBusMenuItem *item,
       else if (g_strcmp0 (prop, "visible") == 0)
         {
           item->visible = g_variant_get_boolean (value);
-          gtk_widget_set_visible (item->item, item->visible);
+          ctk_widget_set_visible (item->item, item->visible);
         }
       else
         {
@@ -432,14 +432,14 @@ sn_dbus_menu_item_remove_props (SnDBusMenuItem *item,
       else if (g_strcmp0 (prop, "enabled") == 0)
         {
           item->enabled = TRUE;
-          gtk_widget_set_sensitive (item->item, item->enabled);
+          ctk_widget_set_sensitive (item->item, item->enabled);
         }
       else if (g_strcmp0 (prop, "icon-name") == 0)
         {
           g_clear_pointer (&item->icon_name, g_free);
           if (GTK_IS_IMAGE_MENU_ITEM (item->item))
             {
-              gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item->item),
+              ctk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item->item),
                                              NULL);
             }
         }
@@ -448,7 +448,7 @@ sn_dbus_menu_item_remove_props (SnDBusMenuItem *item,
           g_clear_object (&item->icon_data);
           if (GTK_IS_IMAGE_MENU_ITEM (item->item))
             {
-              gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item->item),
+              ctk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item->item),
                                              NULL);
             }
         }
@@ -456,7 +456,7 @@ sn_dbus_menu_item_remove_props (SnDBusMenuItem *item,
         {
           g_clear_pointer (&item->label, g_free);
           if (!GTK_IS_SEPARATOR_MENU_ITEM (item->item))
-            gtk_menu_item_set_label (GTK_MENU_ITEM (item->item), item->label);
+            ctk_menu_item_set_label (GTK_MENU_ITEM (item->item), item->label);
         }
       else if (g_strcmp0 (prop, "shortcut") == 0)
         {
@@ -477,7 +477,7 @@ sn_dbus_menu_item_remove_props (SnDBusMenuItem *item,
       else if (g_strcmp0 (prop, "visible") == 0)
         {
           item->visible = TRUE;
-          gtk_widget_set_visible (item->item, item->visible);
+          ctk_widget_set_visible (item->item, item->visible);
         }
       else
         {

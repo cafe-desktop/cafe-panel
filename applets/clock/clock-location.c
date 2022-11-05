@@ -15,7 +15,7 @@
 
 #include <glib.h>
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "clock-location.h"
 #include "clock-marshallers.h"

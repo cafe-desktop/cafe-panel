@@ -25,7 +25,7 @@
 #ifndef __PANEL_FRAME_H__
 #define __PANEL_FRAME_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "panel-enums.h"
 
 #ifdef __cplusplus

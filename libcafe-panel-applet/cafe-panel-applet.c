@@ -35,12 +35,12 @@
 #include <cairo.h>
 #include <gdk/gdk.h>
 #include <gdk/gdkkeysyms.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef HAVE_X11
 #include <cairo-xlib.h>
 #include <gdk/gdkx.h>
-#include <gtk/gtkx.h>
+#include <ctk/ctkx.h>
 #include <X11/Xatom.h>
 #include "panel-plug-private.h"
 #endif
@@ -402,7 +402,7 @@ cafe_panel_applet_set_locked (CafePanelApplet *applet,
 	g_signal_handlers_block_by_func (action,
 					 cafe_panel_applet_menu_cmd_lock,
 					 applet);
-	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), locked);
+	ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), locked);
 	g_signal_handlers_unblock_by_func (action,
 					   cafe_panel_applet_menu_cmd_lock,
 					   applet);
@@ -487,11 +487,11 @@ cafe_panel_applet_find_toplevel_dock_window (CafePanelApplet *applet,
 	Window	    root, parent, *child;
 	int	    num_children;
 
-	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (applet));
-	if (!gtk_widget_get_realized (toplevel))
+	toplevel = ctk_widget_get_toplevel (GTK_WIDGET (applet));
+	if (!ctk_widget_get_realized (toplevel))
 		return None;
 
-	xwin = GDK_WINDOW_XID (gtk_widget_get_window (toplevel));
+	xwin = GDK_WINDOW_XID (ctk_widget_get_window (toplevel));
 
 	child = NULL;
 	parent = root = None;
@@ -565,7 +565,7 @@ cafe_panel_applet_request_focus (CafePanelApplet	 *applet,
 
 	g_return_if_fail (PANEL_IS_APPLET (applet));
 
-	screen	= gtk_window_get_screen (GTK_WINDOW (applet->priv->plug));
+	screen	= ctk_window_get_screen (GTK_WINDOW (applet->priv->plug));
 	root	= gdk_screen_get_root_window (screen);
 	display = gdk_screen_get_display (screen);
 
@@ -601,7 +601,7 @@ static GtkAction *
 cafe_panel_applet_menu_get_action (CafePanelApplet *applet,
 			      const gchar *action)
 {
-	return gtk_action_group_get_action (applet->priv->panel_action_group, action);
+	return ctk_action_group_get_action (applet->priv->panel_action_group, action);
 }
 
 static void
@@ -672,7 +672,7 @@ cafe_panel_applet_menu_cmd_lock (GtkAction   *action,
 {
 	gboolean locked;
 
-	locked = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
+	locked = ctk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
 	cafe_panel_applet_set_locked (applet, locked);
 }
 
@@ -691,15 +691,15 @@ cafe_panel_applet_setup_menu (CafePanelApplet    *applet,
 		return;
 
 	applet->priv->applet_action_group = g_object_ref (applet_action_group);
-	gtk_ui_manager_insert_action_group (applet->priv->ui_manager,
+	ctk_ui_manager_insert_action_group (applet->priv->ui_manager,
 					    applet_action_group, 0);
 
 	new_xml = g_strdup_printf ("<ui><popup name=\"CafePanelAppletPopup\" action=\"AppletItems\">"
 				   "<placeholder name=\"AppletItems\">%s\n</placeholder>\n"
 				   "</popup></ui>\n", xml);
-	gtk_ui_manager_add_ui_from_string (applet->priv->ui_manager, new_xml, -1, &error);
+	ctk_ui_manager_add_ui_from_string (applet->priv->ui_manager, new_xml, -1, &error);
 	g_free (new_xml);
-	gtk_ui_manager_ensure_update (applet->priv->ui_manager);
+	ctk_ui_manager_ensure_update (applet->priv->ui_manager);
 	if (error) {
 		g_warning ("Error merging menus: %s\n", error->message);
 		g_error_free (error);
@@ -819,11 +819,11 @@ container_has_focusable_child (GtkContainer *container)
 	GList *t;
 	gboolean retval = FALSE;
 
-	list = gtk_container_get_children (container);
+	list = ctk_container_get_children (container);
 
 	for (t = list; t; t = t->next) {
 		child = GTK_WIDGET (t->data);
-		if (gtk_widget_get_can_focus (child)) {
+		if (ctk_widget_get_can_focus (child)) {
 			retval = TRUE;
 			break;
 		} else if (GTK_IS_CONTAINER (child)) {
@@ -842,20 +842,20 @@ cafe_panel_applet_menu_popup (CafePanelApplet *applet,
 {
 	GtkWidget *menu;
 
-	menu = gtk_ui_manager_get_widget (applet->priv->ui_manager,
+	menu = ctk_ui_manager_get_widget (applet->priv->ui_manager,
 					  "/CafePanelAppletPopup");
 
 /* Set up theme and transparency support */
-	GtkWidget *toplevel = gtk_widget_get_toplevel (menu);
-/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
-	GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+	GtkWidget *toplevel = ctk_widget_get_toplevel (menu);
+/* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
+	GdkScreen *screen = ctk_widget_get_screen(GTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
-	gtk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
 	GtkStyleContext *context;
-	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
-	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
-	gtk_style_context_add_class(context,"cafe-panel-menu-bar");
+	context = ctk_widget_get_style_context (GTK_WIDGET(toplevel));
+	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
+	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
 	GdkGravity widget_anchor = GDK_GRAVITY_NORTH_WEST;
 	GdkGravity menu_anchor = GDK_GRAVITY_NORTH_WEST;
 	switch (applet->priv->orient) {
@@ -872,7 +872,7 @@ cafe_panel_applet_menu_popup (CafePanelApplet *applet,
 		widget_anchor = GDK_GRAVITY_NORTH_EAST;
 		break;
 	}
-	gtk_menu_popup_at_widget (GTK_MENU (menu),
+	ctk_menu_popup_at_widget (GTK_MENU (menu),
 	                          GTK_WIDGET (applet),
 	                          widget_anchor,
 	                          menu_anchor,
@@ -886,7 +886,7 @@ cafe_panel_applet_can_focus (GtkWidget *widget)
 	 * A CafePanelApplet widget can focus if it has a tooltip or it does
 	 * not have any focusable children.
 	 */
-	if (gtk_widget_get_has_tooltip (widget))
+	if (ctk_widget_get_has_tooltip (widget))
 		return TRUE;
 
 	if (!PANEL_IS_APPLET (widget))
@@ -912,11 +912,11 @@ cafe_panel_applet_button_event (CafePanelApplet      *applet,
 
 	widget = applet->priv->plug;
 
-	if (!gtk_widget_is_toplevel (widget))
+	if (!ctk_widget_is_toplevel (widget))
 		return FALSE;
 
-	window = gtk_widget_get_window (widget);
-	socket_window = gtk_plug_get_socket_window (GTK_PLUG (widget));
+	window = ctk_widget_get_window (widget);
+	socket_window = ctk_plug_get_socket_window (GTK_PLUG (widget));
 
 	display = gdk_display_get_default ();
 
@@ -978,9 +978,9 @@ cafe_panel_applet_button_press (GtkWidget      *widget,
 	CafePanelApplet *applet = CAFE_PANEL_APPLET (widget);
 
 	if (!container_has_focusable_child (GTK_CONTAINER (applet))) {
-		if (!gtk_widget_has_focus (widget)) {
-			gtk_widget_set_can_focus (widget, TRUE);
-			gtk_widget_grab_focus (widget);
+		if (!ctk_widget_has_focus (widget)) {
+			ctk_widget_set_can_focus (widget, TRUE);
+			ctk_widget_grab_focus (widget);
 		}
 	}
 
@@ -1034,7 +1034,7 @@ cafe_panel_applet_get_preferred_width (GtkWidget *widget,
 		 * they are back at their own intended size.
 		 */
 		gint scale;
-		scale = gtk_widget_get_scale_factor (widget);
+		scale = ctk_widget_get_scale_factor (widget);
 		*minimum_width /= scale;
 		*natural_width /= scale;
 	}
@@ -1058,7 +1058,7 @@ cafe_panel_applet_get_preferred_height (GtkWidget *widget,
 		 * For these builds divide by the scale factor to ensure
 		 * they are back at their own intended size.
 		 */
-		scale = gtk_widget_get_scale_factor (widget);
+		scale = ctk_widget_get_scale_factor (widget);
 		*minimum_height /= scale;
 		*natural_height /= scale;
 	}
@@ -1093,9 +1093,9 @@ cafe_panel_applet_size_allocate (GtkWidget     *widget,
 		GTK_WIDGET_CLASS (cafe_panel_applet_parent_class)->size_allocate (widget, allocation);
 	} else {
 
-		border_width = gtk_container_get_border_width (GTK_CONTAINER (widget));
+		border_width = ctk_container_get_border_width (GTK_CONTAINER (widget));
 
-		gtk_widget_set_allocation (widget, allocation);
+		ctk_widget_set_allocation (widget, allocation);
 		bin = GTK_BIN (widget);
 
 		child_allocation.x = 0;
@@ -1104,16 +1104,16 @@ cafe_panel_applet_size_allocate (GtkWidget     *widget,
 		child_allocation.width  = MAX (allocation->width  - border_width * 2, 0);
 		child_allocation.height = MAX (allocation->height - border_width * 2, 0);
 
-		if (gtk_widget_get_realized (widget))
-			gdk_window_move_resize (gtk_widget_get_window (widget),
+		if (ctk_widget_get_realized (widget))
+			gdk_window_move_resize (ctk_widget_get_window (widget),
 						allocation->x + border_width,
 						allocation->y + border_width,
 						child_allocation.width,
 						child_allocation.height);
 
-		child = gtk_bin_get_child (bin);
+		child = ctk_bin_get_child (bin);
 		if (child)
-			gtk_widget_size_allocate (child, &child_allocation);
+			ctk_widget_size_allocate (child, &child_allocation);
 	}
 
 	applet = CAFE_PANEL_APPLET (widget);
@@ -1135,13 +1135,13 @@ static gboolean cafe_panel_applet_draw(GtkWidget* widget, cairo_t* cr)
 
 	GTK_WIDGET_CLASS (cafe_panel_applet_parent_class)->draw(widget, cr);
 
-        if (!gtk_widget_has_focus (widget))
+        if (!ctk_widget_has_focus (widget))
 		return FALSE;
 
-	width = gtk_widget_get_allocated_width (widget);
-	height = gtk_widget_get_allocated_height (widget);
+	width = ctk_widget_get_allocated_width (widget);
+	height = ctk_widget_get_allocated_height (widget);
 
-	border_width = gtk_container_get_border_width (GTK_CONTAINER (widget));
+	border_width = ctk_container_get_border_width (GTK_CONTAINER (widget));
 
 	x = 0;
 	y = 0;
@@ -1149,14 +1149,14 @@ static gboolean cafe_panel_applet_draw(GtkWidget* widget, cairo_t* cr)
 	width -= 2 * border_width;
 	height -= 2 * border_width;
 
-	context = gtk_widget_get_style_context (widget);
-	gtk_style_context_save (context);
+	context = ctk_widget_get_style_context (widget);
+	ctk_style_context_save (context);
 
 	cairo_save (cr);
-	gtk_render_focus (context, cr, x, y, width, height);
+	ctk_render_focus (context, cr, x, y, width, height);
 	cairo_restore (cr);
 
-	gtk_style_context_restore (context);
+	ctk_style_context_restore (context);
 
 	return FALSE;
 }
@@ -1181,27 +1181,27 @@ cafe_panel_applet_focus (GtkWidget        *widget,
 		return FALSE;
 	}
 
-	previous_focus_child = gtk_container_get_focus_child (GTK_CONTAINER (widget));
-	if (!previous_focus_child && !gtk_widget_has_focus (widget)) {
-		if (gtk_widget_get_has_tooltip (widget)) {
-			gtk_widget_set_can_focus (widget, TRUE);
-			gtk_widget_grab_focus (widget);
-			gtk_widget_set_can_focus (widget, FALSE);
+	previous_focus_child = ctk_container_get_focus_child (GTK_CONTAINER (widget));
+	if (!previous_focus_child && !ctk_widget_has_focus (widget)) {
+		if (ctk_widget_get_has_tooltip (widget)) {
+			ctk_widget_set_can_focus (widget, TRUE);
+			ctk_widget_grab_focus (widget);
+			ctk_widget_set_can_focus (widget, FALSE);
 			return TRUE;
 		}
 	}
 	ret = GTK_WIDGET_CLASS (cafe_panel_applet_parent_class)->focus (widget, dir);
 
 	if (!ret && !previous_focus_child) {
-		if (!gtk_widget_has_focus (widget))  {
+		if (!ctk_widget_has_focus (widget))  {
 			/*
 			 * Applet does not have a widget which can focus so set
 			 * the focus on the applet unless it already had focus
 			 * because it had a tooltip.
 			 */
-			gtk_widget_set_can_focus (widget, TRUE);
-			gtk_widget_grab_focus (widget);
-			gtk_widget_set_can_focus (widget, FALSE);
+			ctk_widget_set_can_focus (widget, TRUE);
+			ctk_widget_grab_focus (widget);
+			ctk_widget_set_can_focus (widget, FALSE);
 			ret = TRUE;
 		}
 	}
@@ -1303,10 +1303,10 @@ cafe_panel_applet_get_pattern_from_pixmap (CafePanelApplet *applet,
 
 	g_return_val_if_fail (PANEL_IS_APPLET (applet), NULL);
 
-	if (!gtk_widget_get_realized (GTK_WIDGET (applet)))
+	if (!ctk_widget_get_realized (GTK_WIDGET (applet)))
 		return NULL;
 
-	window = gtk_widget_get_window (GTK_WIDGET (applet));
+	window = ctk_widget_get_window (GTK_WIDGET (applet));
 	display = gdk_window_get_display (window);
 
 	background = cafe_panel_applet_create_foreign_surface_for_display (display,
@@ -1358,7 +1358,7 @@ cafe_panel_applet_handle_background_string (CafePanelApplet  *applet,
 
 	retval = PANEL_NO_BACKGROUND;
 
-	if (!gtk_widget_get_realized (GTK_WIDGET (applet)) || !applet->priv->background)
+	if (!ctk_widget_get_realized (GTK_WIDGET (applet)) || !applet->priv->background)
 		return retval;
 
 	elements = g_strsplit (applet->priv->background, ":", -1);
@@ -1502,10 +1502,10 @@ cafe_panel_applet_move_focus_out_of_applet (CafePanelApplet      *applet,
 	GtkWidget *toplevel;
 
 	applet->priv->moving_focus_out = TRUE;
-	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (applet));
+	toplevel = ctk_widget_get_toplevel (GTK_WIDGET (applet));
 	g_return_if_fail (toplevel);
 
-	gtk_widget_child_focus (toplevel, dir);
+	ctk_widget_child_focus (toplevel, dir);
 	applet->priv->moving_focus_out = FALSE;
 }
 
@@ -1519,11 +1519,11 @@ cafe_panel_applet_change_background(CafePanelApplet *applet,
 	GdkWindow* window;
 
 	if (applet->priv->out_of_process)
-		window = gtk_widget_get_window (GTK_WIDGET (applet->priv->plug));
+		window = ctk_widget_get_window (GTK_WIDGET (applet->priv->plug));
 	else
-		window = gtk_widget_get_window (GTK_WIDGET (applet));
+		window = ctk_widget_get_window (GTK_WIDGET (applet));
 
-	gtk_widget_set_app_paintable(GTK_WIDGET(applet),TRUE);
+	ctk_widget_set_app_paintable(GTK_WIDGET(applet),TRUE);
 
 	if (applet->priv->out_of_process)
 		_cafe_panel_applet_apply_css(GTK_WIDGET(applet->priv->plug),type);
@@ -1538,13 +1538,13 @@ cafe_panel_applet_change_background(CafePanelApplet *applet,
 		case PANEL_COLOR_BACKGROUND:
 			if (applet->priv->out_of_process){
 				gdk_window_set_background_rgba(window,color);
-				gtk_widget_queue_draw (applet->priv->plug); /*change the bg right away always */
+				ctk_widget_queue_draw (applet->priv->plug); /*change the bg right away always */
 			}
 			break;
 		case PANEL_PIXMAP_BACKGROUND:
 			if (applet->priv->out_of_process){
 				gdk_window_set_background_pattern(window,pattern);
-				gtk_widget_queue_draw (applet->priv->plug); /*change the bg right away always */
+				ctk_widget_queue_draw (applet->priv->plug); /*change the bg right away always */
 			}
 			break;
 		default:
@@ -1553,13 +1553,13 @@ cafe_panel_applet_change_background(CafePanelApplet *applet,
 	}
 
 	if (applet->priv->out_of_process){
-		context = gtk_widget_get_style_context (GTK_WIDGET(applet->priv->plug));
+		context = ctk_widget_get_style_context (GTK_WIDGET(applet->priv->plug));
 		if (applet->priv->orient == CAFE_PANEL_APPLET_ORIENT_UP ||
 			applet->priv->orient == CAFE_PANEL_APPLET_ORIENT_DOWN){
-			gtk_style_context_add_class(context,"horizontal");
+			ctk_style_context_add_class(context,"horizontal");
 		}
 		else {
-			gtk_style_context_add_class(context,"vertical");
+			ctk_style_context_add_class(context,"vertical");
 		}
 	}
 }
@@ -1688,10 +1688,10 @@ add_tab_bindings (GtkBindingSet   *binding_set,
 		  GdkModifierType  modifiers,
 		  GtkDirectionType direction)
 {
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Tab, modifiers,
+	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Tab, modifiers,
 				      "move_focus_out_of_applet", 1,
 				      GTK_TYPE_DIRECTION_TYPE, direction);
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_KP_Tab, modifiers,
+	ctk_binding_entry_add_signal (binding_set, GDK_KEY_KP_Tab, modifiers,
 				      "move_focus_out_of_applet", 1,
 				      GTK_TYPE_DIRECTION_TYPE, direction);
 }
@@ -1744,15 +1744,15 @@ void _cafe_panel_applet_apply_css(GtkWidget* widget, CafePanelAppletBackgroundTy
 {
 	GtkStyleContext* context;
 
-	context = gtk_widget_get_style_context (widget);
+	context = ctk_widget_get_style_context (widget);
 
 	switch (type) {
 	case PANEL_NO_BACKGROUND:
-		gtk_style_context_remove_class (context, "cafe-custom-panel-background");
+		ctk_style_context_remove_class (context, "cafe-custom-panel-background");
 		break;
 	case PANEL_COLOR_BACKGROUND:
 	case PANEL_PIXMAP_BACKGROUND:
-		gtk_style_context_add_class (context, "cafe-custom-panel-background");
+		ctk_style_context_add_class (context, "cafe-custom-panel-background");
 		break;
 	default:
 		g_assert_not_reached ();
@@ -1766,10 +1766,10 @@ static void _cafe_panel_applet_prepare_css (GtkStyleContext *context)
 	GtkCssProvider  *provider;
 
 	g_return_if_fail (GDK_IS_X11_DISPLAY (gdk_display_get_default ()));
-	provider = gtk_css_provider_new ();
-	gtk_css_provider_load_from_data (provider,
+	provider = ctk_css_provider_new ();
+	ctk_css_provider_load_from_data (provider,
 					 "#PanelPlug {\n"
-					 " background-repeat: no-repeat;\n" /*disable in gtk theme features */
+					 " background-repeat: no-repeat;\n" /*disable in ctk theme features */
 					 " background-size: cover; "        /*that don't work on panel-toplevel */
 					 " }\n"
 					 ".cafe-custom-panel-background{\n" /*prepare CSS for user set theme */
@@ -1778,7 +1778,7 @@ static void _cafe_panel_applet_prepare_css (GtkStyleContext *context)
 					 "}",
 					 -1, NULL);
 
-	gtk_style_context_add_provider (context,
+	ctk_style_context_add_provider (context,
 					GTK_STYLE_PROVIDER (provider),
 					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_object_unref (provider);
@@ -1794,24 +1794,24 @@ cafe_panel_applet_init (CafePanelApplet *applet)
 	applet->priv->orient = CAFE_PANEL_APPLET_ORIENT_UP;
 	applet->priv->size   = 24;
 
-	applet->priv->panel_action_group = gtk_action_group_new ("PanelActions");
-	gtk_action_group_set_translation_domain (applet->priv->panel_action_group, GETTEXT_PACKAGE);
-	gtk_action_group_add_actions (applet->priv->panel_action_group,
+	applet->priv->panel_action_group = ctk_action_group_new ("PanelActions");
+	ctk_action_group_set_translation_domain (applet->priv->panel_action_group, GETTEXT_PACKAGE);
+	ctk_action_group_add_actions (applet->priv->panel_action_group,
 				      menu_entries,
 				      G_N_ELEMENTS (menu_entries),
 				      applet);
-	gtk_action_group_add_toggle_actions (applet->priv->panel_action_group,
+	ctk_action_group_add_toggle_actions (applet->priv->panel_action_group,
 					     menu_toggle_entries,
 					     G_N_ELEMENTS (menu_toggle_entries),
 					     applet);
 
-	applet->priv->ui_manager = gtk_ui_manager_new ();
-	gtk_ui_manager_insert_action_group (applet->priv->ui_manager,
+	applet->priv->ui_manager = ctk_ui_manager_new ();
+	ctk_ui_manager_insert_action_group (applet->priv->ui_manager,
 					    applet->priv->panel_action_group, 1);
-	gtk_ui_manager_add_ui_from_string (applet->priv->ui_manager,
+	ctk_ui_manager_add_ui_from_string (applet->priv->ui_manager,
 					   panel_menu_ui, -1, NULL);
 
-	gtk_widget_set_events (GTK_WIDGET (applet),
+	ctk_widget_set_events (GTK_WIDGET (applet),
 			       GDK_BUTTON_PRESS_MASK |
 			       GDK_BUTTON_RELEASE_MASK);
 }
@@ -1835,23 +1835,23 @@ cafe_panel_applet_constructor (GType                  type,
 #ifdef HAVE_X11
 	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
 	{
-		applet->priv->plug = gtk_plug_new (0);
+		applet->priv->plug = ctk_plug_new (0);
 
-		GdkScreen *screen = gtk_widget_get_screen (GTK_WIDGET (applet->priv->plug));
+		GdkScreen *screen = ctk_widget_get_screen (GTK_WIDGET (applet->priv->plug));
 		GdkVisual *visual = gdk_screen_get_rgba_visual (screen);
-		gtk_widget_set_visual (GTK_WIDGET (applet->priv->plug), visual);
+		ctk_widget_set_visual (GTK_WIDGET (applet->priv->plug), visual);
 		GtkStyleContext *context;
-		context = gtk_widget_get_style_context (GTK_WIDGET(applet->priv->plug));
-		gtk_style_context_add_class (context,"gnome-panel-menu-bar");
-		gtk_style_context_add_class (context,"cafe-panel-menu-bar");
-		gtk_widget_set_name (GTK_WIDGET (applet->priv->plug), "PanelPlug");
+		context = ctk_widget_get_style_context (GTK_WIDGET(applet->priv->plug));
+		ctk_style_context_add_class (context,"gnome-panel-menu-bar");
+		ctk_style_context_add_class (context,"cafe-panel-menu-bar");
+		ctk_widget_set_name (GTK_WIDGET (applet->priv->plug), "PanelPlug");
 		_cafe_panel_applet_prepare_css (context);
 
 		g_signal_connect_swapped (G_OBJECT (applet->priv->plug), "embedded",
 					  G_CALLBACK (cafe_panel_applet_setup),
 					  applet);
 
-		gtk_container_add (GTK_CONTAINER (applet->priv->plug), GTK_WIDGET (applet));
+		ctk_container_add (GTK_CONTAINER (applet->priv->plug), GTK_WIDGET (applet));
 	} else
 #endif
 	{ // not using X11
@@ -1869,7 +1869,7 @@ cafe_panel_applet_constructed (GObject* object)
 	/* Rename the class to have compatibility with all GTK2 themes
 	 * https://github.com/perberos/Cafe-Desktop-Environment/issues/27
 	 */
-	gtk_widget_set_name(GTK_WIDGET(applet), "PanelApplet");
+	ctk_widget_set_name(GTK_WIDGET(applet), "PanelApplet");
 
 	cafe_panel_applet_register_object (applet);
 }
@@ -2043,13 +2043,13 @@ cafe_panel_applet_class_init (CafePanelAppletClass *klass)
 			      1,
 			      GTK_TYPE_DIRECTION_TYPE);
 
-	binding_set = gtk_binding_set_by_class (gobject_class);
+	binding_set = ctk_binding_set_by_class (gobject_class);
 	add_tab_bindings (binding_set, 0, GTK_DIR_TAB_FORWARD);
 	add_tab_bindings (binding_set, GDK_SHIFT_MASK, GTK_DIR_TAB_BACKWARD);
 	add_tab_bindings (binding_set, GDK_CONTROL_MASK, GTK_DIR_TAB_FORWARD);
 	add_tab_bindings (binding_set, GDK_CONTROL_MASK | GDK_SHIFT_MASK, GTK_DIR_TAB_BACKWARD);
 
-	gtk_widget_class_set_css_name (widget_class, "PanelApplet");
+	ctk_widget_class_set_css_name (widget_class, "PanelApplet");
 }
 
 GtkWidget* cafe_panel_applet_new(void)
@@ -2245,7 +2245,7 @@ cafe_panel_applet_register_object (CafePanelApplet *applet)
 
 static void cafe_panel_applet_factory_main_finalized(gpointer data, GObject* object)
 {
-	gtk_main_quit();
+	ctk_main_quit();
 
 	if (introspection_data)
 	{
@@ -2345,7 +2345,7 @@ _cafe_panel_applet_factory_main_internal (const gchar               *factory_id,
 		if (out_process)
 		{
 			g_object_weak_ref(G_OBJECT(factory), cafe_panel_applet_factory_main_finalized, NULL);
-			gtk_main();
+			ctk_main();
 		}
 
 		return 0;
@@ -2423,10 +2423,10 @@ cafe_panel_applet_get_xid (CafePanelApplet *applet,
 		return 0;
 
 #ifdef HAVE_X11
-	gtk_window_set_screen (GTK_WINDOW (applet->priv->plug), screen);
-	gtk_widget_show (applet->priv->plug);
+	ctk_window_set_screen (GTK_WINDOW (applet->priv->plug), screen);
+	ctk_widget_show (applet->priv->plug);
 
-	return gtk_plug_get_id (GTK_PLUG (applet->priv->plug));
+	return ctk_plug_get_id (GTK_PLUG (applet->priv->plug));
 #else
 	return 0;
 #endif

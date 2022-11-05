@@ -28,7 +28,7 @@
 #include <config.h>
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "panel-enums.h"
 #include "panel-types.h"

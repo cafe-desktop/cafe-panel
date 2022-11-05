@@ -497,10 +497,10 @@ panel_multimonitor_reinit (void)
 	initialized = FALSE;
 	panel_multimonitor_init ();
 
-	toplevels = gtk_window_list_toplevels ();
+	toplevels = ctk_window_list_toplevels ();
 
 	for (l = toplevels; l; l = l->next)
-		gtk_widget_queue_resize (l->data);
+		ctk_widget_queue_resize (l->data);
 
 	g_list_free (toplevels);
 }
@@ -545,7 +545,7 @@ panel_multimonitor_locate_widget_monitor (GtkWidget *widget)
 	GtkWidget *toplevel;
 	int        retval = -1;
 
-	toplevel = gtk_widget_get_toplevel (widget);
+	toplevel = ctk_widget_get_toplevel (widget);
 	if (!toplevel)
 		return -1;
 

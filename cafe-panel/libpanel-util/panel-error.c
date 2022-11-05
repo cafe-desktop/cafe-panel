@@ -32,7 +32,7 @@
 
 #include <glib/gi18n.h>
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "panel-error.h"
 
@@ -58,29 +58,29 @@ panel_error_dialog (GtkWindow  *parent,
 		primary_text = freeme;
 	}
 
-	dialog = gtk_message_dialog_new (parent, 0, GTK_MESSAGE_ERROR,
+	dialog = ctk_message_dialog_new (parent, 0, GTK_MESSAGE_ERROR,
 					 GTK_BUTTONS_CLOSE, "%s", primary_text);
 	if (secondary_text != NULL)
-		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
 							  "%s", secondary_text);
 
 	if (screen)
-		gtk_window_set_screen (GTK_WINDOW (dialog), screen);
+		ctk_window_set_screen (GTK_WINDOW (dialog), screen);
 
 	if (!parent) {
-		gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
+		ctk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
 		/* FIXME: We need a title in this case, but we don't know what
 		 * the format should be. Let's put something simple until
 		 * the following bug gets fixed:
 		 * http://bugzilla.gnome.org/show_bug.cgi?id=165132 */
-		gtk_window_set_title (GTK_WINDOW (dialog), _("Error"));
+		ctk_window_set_title (GTK_WINDOW (dialog), _("Error"));
 	}
 
-	gtk_widget_show_all (dialog);
+	ctk_widget_show_all (dialog);
 
 	if (auto_destroy)
 		g_signal_connect_swapped (G_OBJECT (dialog), "response",
-					  G_CALLBACK (gtk_widget_destroy),
+					  G_CALLBACK (ctk_widget_destroy),
 					  G_OBJECT (dialog));
 
 	if (freeme)

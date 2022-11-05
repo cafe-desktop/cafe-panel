@@ -68,30 +68,30 @@ WEATHER_REQUIRED=1.17.0
 
 dnl pkg-config dependency checks
 
-PKG_CHECK_MODULES(EGG_SMCLIENT, ice sm gtk+-3.0)
+PKG_CHECK_MODULES(EGG_SMCLIENT, ice sm ctk+-3.0)
 
 PKG_CHECK_MODULES(GMODULE, gmodule-2.0,[GMODULE_ADD="gmodule-2.0"],[GMODULE_ADD=""])
-PKG_CHECK_MODULES(PANEL, $GMODULE_ADD gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED pango >= $PANGO_REQUIRED gtk+-3.0 >= $GTK_REQUIRED glib-2.0 >= $GLIB_REQUIRED gio-unix-2.0 >= $GLIB_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED gio-2.0 >= $GLIB_REQUIRED libcafe-menu >= $LIBCAFE_MENU_REQUIRED)
+PKG_CHECK_MODULES(PANEL, $GMODULE_ADD gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED pango >= $PANGO_REQUIRED ctk+-3.0 >= $GTK_REQUIRED glib-2.0 >= $GLIB_REQUIRED gio-unix-2.0 >= $GLIB_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED gio-2.0 >= $GLIB_REQUIRED libcafe-menu >= $LIBCAFE_MENU_REQUIRED)
 AC_SUBST(PANEL_CFLAGS)
 AC_SUBST(PANEL_LIBS)
 
 PKG_CHECK_MODULES(DCONF, dconf >= $DCONF_REQUIRED)
 
-PKG_CHECK_MODULES(LIBCAFE_PANEL_APPLET, gtk+-3.0 >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gio-unix-2.0 >= $GLIB_REQUIRED)
+PKG_CHECK_MODULES(LIBCAFE_PANEL_APPLET, ctk+-3.0 >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gio-unix-2.0 >= $GLIB_REQUIRED)
 AC_SUBST(LIBCAFE_PANEL_APPLET_CFLAGS)
 AC_SUBST(LIBCAFE_PANEL_APPLET_LIBS)
 
-PKG_CHECK_MODULES(FISH, gtk+-3.0 >= $GTK_REQUIRED cairo >= $CAIRO_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED)
+PKG_CHECK_MODULES(FISH, ctk+-3.0 >= $GTK_REQUIRED cairo >= $CAIRO_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED)
 AC_SUBST(FISH_CFLAGS)
 AC_SUBST(FISH_LIBS)
 
-PKG_CHECK_MODULES(NOTIFICATION_AREA, gtk+-3.0 >= $GTK_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED)
+PKG_CHECK_MODULES(NOTIFICATION_AREA, ctk+-3.0 >= $GTK_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED)
 AC_SUBST(NOTIFICATION_AREA_CFLAGS)
 AC_SUBST(NOTIFICATION_AREA_LIBS)
 
 # Check if we have a version of libwnck that allows for window previews
-PKG_CHECK_MODULES(WNCKLET, gtk+-3.0 >= $GTK_REQUIRED libwnck-3.0 >= $LIBWNCK_PREVIEWS_OPTIONAL cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=yes, [
-   PKG_CHECK_MODULES(WNCKLET, gtk+-3.0 >= $GTK_REQUIRED libwnck-3.0 >= $LIBWNCK_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=no)
+PKG_CHECK_MODULES(WNCKLET, ctk+-3.0 >= $GTK_REQUIRED libwnck-3.0 >= $LIBWNCK_PREVIEWS_OPTIONAL cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=yes, [
+   PKG_CHECK_MODULES(WNCKLET, ctk+-3.0 >= $GTK_REQUIRED libwnck-3.0 >= $LIBWNCK_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=no)
 ])
 AC_SUBST(WNCKLET_CFLAGS)
 AC_SUBST(WNCKLET_LIBS)
@@ -107,7 +107,7 @@ PKG_CHECK_MODULES(TZ, gio-2.0 >= $GLIB_REQUIRED)
 AC_SUBST(TZ_CFLAGS)
 AC_SUBST(TZ_LIBS)
 
-PKG_CHECK_MODULES(CLOCK, pango >= $PANGO_REQUIRED gtk+-3.0 >= $GTK_REQUIRED glib-2.0 >= $GLIB_REQUIRED gio-2.0 >= $GLIB_REQUIRED librsvg-2.0 >= $LIBRSVG_REQUIRED cafeweather >= $WEATHER_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED)
+PKG_CHECK_MODULES(CLOCK, pango >= $PANGO_REQUIRED ctk+-3.0 >= $GTK_REQUIRED glib-2.0 >= $GLIB_REQUIRED gio-2.0 >= $GLIB_REQUIRED librsvg-2.0 >= $LIBRSVG_REQUIRED cafeweather >= $WEATHER_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED)
 AC_SUBST(CLOCK_CFLAGS)
 AC_SUBST(CLOCK_LIBS)
 
@@ -192,10 +192,10 @@ AC_ARG_ENABLE(wayland,
               [enable_wayland=$enableval],
               [enable_wayland=auto])
 
-# Check if we have gtk-layer-shell installed, and thus should build with Wayland support
+# Check if we have ctk-layer-shell installed, and thus should build with Wayland support
 have_wayland=no
 if test "x$enable_wayland" != "xno"; then
-  PKG_CHECK_MODULES(GTK_LAYER_SHELL, gtk-layer-shell-0, have_wayland=yes, [
+  PKG_CHECK_MODULES(GTK_LAYER_SHELL, ctk-layer-shell-0, have_wayland=yes, [
         if test "x$enable_wayland" = "xyes"; then
           AC_MSG_ERROR([Wayland enabled but GTK Layer Shell library not found])
         fi
@@ -260,7 +260,7 @@ GETTEXT_PACKAGE=cafe-panel
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Define the gettext package to be used])
 AC_SUBST(GETTEXT_PACKAGE)
 
-dnl gtk-doc stuff
+dnl ctk-doc stuff
 
 GTK_DOC_CHECK([1.0])
 
@@ -381,6 +381,6 @@ echo "
         X11 support:                   ${have_x11}
         XRandr support:                ${have_randr}
         Build introspection support:   ${found_introspection}
-        Build gtk-doc documentation:   ${enable_gtk_doc}
+        Build ctk-doc documentation:   ${enable_ctk_doc}
 
 "

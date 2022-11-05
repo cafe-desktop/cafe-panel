@@ -18,7 +18,7 @@
 #ifndef SN_FLAT_BUTTON_H
 #define SN_FLAT_BUTTON_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 G_BEGIN_DECLS
 
@@ -51,7 +51,7 @@ GtkWidget *sn_flat_button_new (void);
 #if 0
 #ifndef SN_COMPAT_BUTTON_NODRAW_C
 /* replace GtkButton */
-# define gtk_button_get_type sn_compat_button_nodraw_get_type
+# define ctk_button_get_type sn_compat_button_nodraw_get_type
 #endif
 #endif
 

@@ -101,10 +101,10 @@ main (int argc, char **argv)
 	context = g_option_context_new ("");
 	g_option_context_add_group (context,
 				    egg_sm_client_get_option_group ());
-	g_option_context_add_group (context, gtk_get_option_group (TRUE));
+	g_option_context_add_group (context, ctk_get_option_group (TRUE));
 	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
 
-	gtk_init (&argc, &argv);
+	ctk_init (&argc, &argv);
 
 	error = NULL;
 	if (!g_option_context_parse (context, &argc, &argv, &error)) {
@@ -146,9 +146,9 @@ main (int argc, char **argv)
 		panel_lockdown_init ();
 		panel_profile_settings_load ();
 		panel_run_dialog_present (gdk_screen_get_default (),
-		                          gtk_get_current_event_time ());
+		                          ctk_get_current_event_time ());
 		panel_run_dialog_quit_on_destroy ();
-		gtk_main ();
+		ctk_main ();
 		panel_lockdown_finalize ();
 		panel_cleanup_do ();
 		return 0;
@@ -156,7 +156,7 @@ main (int argc, char **argv)
 
 	if (!egg_get_desktop_file ()) {
 		g_set_application_name (_("Panel"));
-		gtk_window_set_default_icon_name (PANEL_ICON_PANEL);
+		ctk_window_set_default_icon_name (PANEL_ICON_PANEL);
 	}
 
 	if (!panel_shell_register (replace)) {
@@ -212,19 +212,19 @@ main (int argc, char **argv)
 
 	/*Load a css file from a GResource so the drag handle image can be loaded*/
 	screen = gdk_screen_get_default ();
-	css = gtk_css_provider_new ();
+	css = ctk_css_provider_new ();
 	provider = GTK_STYLE_PROVIDER (css);
 	resource = "/org/cafe/panel/theme/cafe-panel.css";
 	priority = GTK_STYLE_PROVIDER_PRIORITY_FALLBACK;
 
 	g_signal_connect (provider, "parsing-error", G_CALLBACK (parsing_error_cb), NULL);
 
-	gtk_css_provider_load_from_resource (css, resource);
-	gtk_style_context_add_provider_for_screen (screen, provider, priority);
+	ctk_css_provider_load_from_resource (css, resource);
+	ctk_style_context_add_provider_for_screen (screen, provider, priority);
 
 	g_object_unref (provider);
 
-	gtk_main ();
+	ctk_main ();
 
 	panel_lockdown_finalize ();
 

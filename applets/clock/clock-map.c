@@ -4,7 +4,7 @@
 
 #include <cairo.h>
 #include <sys/time.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <math.h>
 
 #include "clock.h"
@@ -120,7 +120,7 @@ clock_map_init (ClockMap *this)
         int i;
         ClockMapPrivate *priv = clock_map_get_instance_private (this);
 
-        gtk_widget_set_has_window (GTK_WIDGET (this), FALSE);
+        ctk_widget_set_has_window (GTK_WIDGET (this), FALSE);
 
 	priv->last_refresh = 0;
 	priv->width = 0;
@@ -187,7 +187,7 @@ clock_map_refresh (ClockMap *this)
 	GtkWidget *widget = GTK_WIDGET (this);
 	GtkAllocation allocation;
 
-	gtk_widget_get_allocation (widget, &allocation);
+	ctk_widget_get_allocation (widget, &allocation);
 
         /* Only do something if we have some space allocated.
          * Note that 1x1 is not really some space... */
@@ -226,8 +226,8 @@ clock_map_draw (GtkWidget *this, cairo_t *cr)
 	GtkStyleContext *context;
 	GdkRGBA color;
 
-	context = gtk_widget_get_style_context (this);
-	gtk_style_context_get_color (context, GTK_STATE_FLAG_ACTIVE, &color);
+	context = ctk_widget_get_style_context (this);
+	ctk_style_context_get_color (context, GTK_STATE_FLAG_ACTIVE, &color);
 
 	if (!priv->shadow_map_pixbuf) {
                 g_warning ("Needed to refresh the map in expose event.");
@@ -587,7 +587,7 @@ clock_map_display (ClockMap *this)
 
         if (priv->width > 0 || priv->height > 0)
                 clock_map_render_shadow (this);
-	gtk_widget_queue_draw (GTK_WIDGET (this));
+	ctk_widget_queue_draw (GTK_WIDGET (this));
 
         time (&priv->last_refresh);
 }

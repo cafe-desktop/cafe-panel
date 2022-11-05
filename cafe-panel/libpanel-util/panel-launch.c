@@ -27,7 +27,7 @@
 #include <gio/gdesktopappinfo.h>
 
 #include <gdk/gdk.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "panel-error.h"
 #include "panel-glib.h"
@@ -182,7 +182,7 @@ panel_launch_key_file (GKeyFile   *keyfile,
 
 	retval = panel_app_info_launch_uris (appinfo,
 					     uri_list, screen, action,
-					     gtk_get_current_event_time (),
+					     ctk_get_current_event_time (),
 					     error);
 
 	g_object_unref (appinfo);
@@ -219,7 +219,7 @@ panel_launch_desktop_file (const char  *desktop_file,
 		return FALSE;
 
 	retval = panel_app_info_launch_uris (appinfo, NULL, screen, NULL,
-					     gtk_get_current_event_time (),
+					     ctk_get_current_event_time (),
 					     error);
 
 	g_object_unref (appinfo);

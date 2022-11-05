@@ -77,7 +77,7 @@ panel_binding_set_from_string (PanelBinding *binding,
 		return;
 	}
 
-	gtk_accelerator_parse (str, &binding->keyval, &binding->modifiers);
+	ctk_accelerator_parse (str, &binding->keyval, &binding->modifiers);
 	if (binding->keyval == 0 && binding->modifiers == 0) {
 		g_warning ("Unable to parse binding '%s'\n", str);
 		return;
@@ -96,7 +96,7 @@ get_binding_set (GtkBindingSet *binding_set)
 
 		g_assert (PANEL_IS_TOPLEVEL_CLASS (toplevel_class));
 
-		binding_set = gtk_binding_set_by_class (toplevel_class);
+		binding_set = ctk_binding_set_by_class (toplevel_class);
 	}
 
 	return binding_set;
@@ -108,7 +108,7 @@ panel_binding_clear_entry (PanelBinding  *binding,
 {
 	binding_set = get_binding_set (binding_set);
 
-        gtk_binding_entry_remove (binding_set, binding->keyval, binding->modifiers);
+        ctk_binding_entry_remove (binding_set, binding->keyval, binding->modifiers);
 }
 
 static void
@@ -117,7 +117,7 @@ panel_binding_set_entry (PanelBinding  *binding,
 {
 	binding_set = get_binding_set (binding_set);
 
-        gtk_binding_entry_add_signal (binding_set,
+        ctk_binding_entry_add_signal (binding_set,
 				      binding->keyval,
 				      binding->modifiers,
 				      binding->signal,
@@ -164,7 +164,7 @@ panel_bindings_mouse_modifier_set_from_string (const char *str)
 	guint modifier_keysym;
 	guint modifier_keymask;
 
-	gtk_accelerator_parse (str, &modifier_keysym, &modifier_keymask);
+	ctk_accelerator_parse (str, &modifier_keysym, &modifier_keymask);
 
 	if (modifier_keysym == 0 && modifier_keymask == 0) {
 		g_warning ("Unable to parse mouse modifier '%s'\n", str);
