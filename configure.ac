@@ -260,7 +260,7 @@ GETTEXT_PACKAGE=cafe-panel
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Define the gettext package to be used])
 AC_SUBST(GETTEXT_PACKAGE)
 
-dnl ctk-doc stuff
+dnl gtk-doc stuff
 
 CTK_DOC_CHECK([1.0])
 
@@ -381,6 +381,6 @@ echo "
         X11 support:                   ${have_x11}
         XRandr support:                ${have_randr}
         Build introspection support:   ${found_introspection}
-        Build ctk-doc documentation:   ${enable_ctk_doc}
+        Build gtk-doc documentation:   ${enable_ctk_doc}
 
 "
