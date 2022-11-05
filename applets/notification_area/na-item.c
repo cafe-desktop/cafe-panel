@@ -26,7 +26,7 @@ G_DEFINE_INTERFACE_WITH_CODE (NaItem, na_item, CTK_TYPE_WIDGET,
 
 static gboolean
 na_item_draw_on_parent_default (NaItem     *item,
-                                GtkWidget  *parent,
+                                CtkWidget  *parent,
                                 cairo_t    *parent_cr)
 {
   return FALSE;
@@ -76,7 +76,7 @@ na_item_get_category (NaItem *item)
  */
 gboolean
 na_item_draw_on_parent (NaItem    *item,
-                        GtkWidget *parent,
+                        CtkWidget *parent,
                         cairo_t   *parent_cr)
 {
   NaItemInterface *iface;

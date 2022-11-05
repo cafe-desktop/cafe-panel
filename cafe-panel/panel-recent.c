@@ -51,10 +51,10 @@ show_uri (const char *uri, const char *mime_type, GdkScreen *screen,
 
 
 static void
-recent_documents_activate_cb (GtkRecentChooser *chooser,
+recent_documents_activate_cb (CtkRecentChooser *chooser,
 			      gpointer          data)
 {
-	GtkRecentInfo *recent_info;
+	CtkRecentInfo *recent_info;
 	const char    *uri;
 	const char    *mime_type;
 	GdkScreen     *screen;
@@ -104,8 +104,8 @@ recent_documents_activate_cb (GtkRecentChooser *chooser,
 }
 
 static void
-panel_recent_manager_changed_cb (GtkRecentManager *manager,
-				 GtkWidget        *menu_item)
+panel_recent_manager_changed_cb (CtkRecentManager *manager,
+				 CtkWidget        *menu_item)
 {
 	int size;
 
@@ -114,12 +114,12 @@ panel_recent_manager_changed_cb (GtkRecentManager *manager,
 	ctk_widget_set_sensitive (menu_item, size > 0);
 }
 
-static GtkWidget *clear_recent_dialog = NULL;
+static CtkWidget *clear_recent_dialog = NULL;
 
 static void
-clear_dialog_response (GtkWidget        *widget,
+clear_dialog_response (CtkWidget        *widget,
 		       int               response,
-		       GtkRecentManager *manager)
+		       CtkRecentManager *manager)
 {
         if (response == CTK_RESPONSE_ACCEPT)
 		ctk_recent_manager_purge_items (manager, NULL);
@@ -128,8 +128,8 @@ clear_dialog_response (GtkWidget        *widget,
 }
 
 static void
-recent_documents_clear_cb (GtkMenuItem      *menuitem,
-                           GtkRecentManager *manager)
+recent_documents_clear_cb (CtkMenuItem      *menuitem,
+                           CtkRecentManager *manager)
 {
 	gpointer tmp;
 
@@ -184,11 +184,11 @@ recent_documents_clear_cb (GtkMenuItem      *menuitem,
 }
 
 void
-panel_recent_append_documents_menu (GtkWidget        *top_menu,
-				    GtkRecentManager *manager)
+panel_recent_append_documents_menu (CtkWidget        *top_menu,
+				    CtkRecentManager *manager)
 {
-	GtkWidget      *recent_menu;
-	GtkWidget      *menu_item;
+	CtkWidget      *recent_menu;
+	CtkWidget      *menu_item;
 	int             size;
 
 	menu_item = ctk_image_menu_item_new ();
@@ -218,7 +218,7 @@ panel_recent_append_documents_menu (GtkWidget        *top_menu,
 			  G_CALLBACK (recent_documents_activate_cb),
 			  NULL);
 
-	//FIXME this is not possible with GtkRecent...: egg_recent_view_ctk_set_icon_size (view, panel_menu_icon_get_size ());
+	//FIXME this is not possible with CtkRecent...: egg_recent_view_ctk_set_icon_size (view, panel_menu_icon_get_size ());
 
 	g_signal_connect_object (manager, "changed",
 				 G_CALLBACK (panel_recent_manager_changed_cb),

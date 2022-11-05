@@ -264,7 +264,7 @@ na_tray_manager_new (void)
 #ifdef GDK_WINDOWING_X11
 
 static gboolean
-na_tray_manager_plug_removed (GtkSocket       *socket,
+na_tray_manager_plug_removed (CtkSocket       *socket,
 			      NaTrayManager   *manager)
 {
   NaTrayChild *child = NA_TRAY_CHILD (socket);
@@ -282,7 +282,7 @@ na_tray_manager_handle_dock_request (NaTrayManager       *manager,
 				     XClientMessageEvent *xevent)
 {
   Window icon_window = xevent->data.l[2];
-  GtkWidget *child;
+  CtkWidget *child;
 
   if (g_hash_table_lookup (manager->socket_table,
                            GINT_TO_POINTER (icon_window)))
@@ -354,7 +354,7 @@ na_tray_manager_handle_message_data (NaTrayManager *manager,
 
 	  if (msg->remaining_len == 0)
 	    {
-	      GtkSocket *socket;
+	      CtkSocket *socket;
 
 	      socket = g_hash_table_lookup (manager->socket_table,
                                             GINT_TO_POINTER (msg->window));
@@ -377,7 +377,7 @@ static void
 na_tray_manager_handle_begin_message (NaTrayManager       *manager,
 				      XClientMessageEvent *xevent)
 {
-  GtkSocket      *socket;
+  CtkSocket      *socket;
   GList          *p;
   PendingMessage *msg;
   long            timeout;
@@ -435,7 +435,7 @@ na_tray_manager_handle_cancel_message (NaTrayManager       *manager,
 				       XClientMessageEvent *xevent)
 {
   GList     *p;
-  GtkSocket *socket;
+  CtkSocket *socket;
   long       id;
 
   id = xevent->data.l[2];
@@ -520,7 +520,7 @@ na_tray_manager_window_filter (GdkXEvent *xev,
 #if 0
 //FIXME investigate why this doesn't work
 static gboolean
-na_tray_manager_selection_clear_event (GtkWidget         *widget,
+na_tray_manager_selection_clear_event (CtkWidget         *widget,
                                        GdkEventSelection *event,
                                        NaTrayManager     *manager)
 {
@@ -538,7 +538,7 @@ na_tray_manager_unmanage (NaTrayManager *manager)
 #ifdef GDK_WINDOWING_X11
   GdkDisplay *display;
   guint32     timestamp;
-  GtkWidget  *invisible;
+  CtkWidget  *invisible;
   GdkWindow  *window;
 
   if (manager->invisible == NULL)
@@ -757,7 +757,7 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
 {
   GdkDisplay *display;
   Screen     *xscreen;
-  GtkWidget  *invisible;
+  CtkWidget  *invisible;
   GdkWindow  *window;
   char       *selection_atom_name;
   guint32     timestamp;
@@ -919,7 +919,7 @@ na_tray_manager_check_running (GdkScreen *screen)
 
 void
 na_tray_manager_set_orientation (NaTrayManager  *manager,
-				 GtkOrientation  orientation)
+				 CtkOrientation  orientation)
 {
   g_return_if_fail (NA_IS_TRAY_MANAGER (manager));
 
@@ -984,7 +984,7 @@ na_tray_manager_set_colors (NaTrayManager *manager,
     }
 }
 
-GtkOrientation
+CtkOrientation
 na_tray_manager_get_orientation (NaTrayManager *manager)
 {
   g_return_val_if_fail (NA_IS_TRAY_MANAGER (manager), CTK_ORIENTATION_HORIZONTAL);

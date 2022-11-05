@@ -43,8 +43,8 @@ typedef struct
   gchar       *type;
   gboolean     visible;
 
-  GtkWidget   *item;
-  GtkMenu     *submenu;
+  CtkWidget   *item;
+  CtkMenu     *submenu;
 
   gulong       activate_id;
 } SnDBusMenuItem;

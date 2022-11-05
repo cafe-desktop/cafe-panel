@@ -40,10 +40,10 @@
 static GSettings *icon_settings = NULL;
 
 static void
-panel_ctk_file_chooser_preview_update (GtkFileChooser *chooser,
+panel_ctk_file_chooser_preview_update (CtkFileChooser *chooser,
 				       gpointer data)
 {
-	GtkWidget *preview;
+	CtkWidget *preview;
 	char      *filename;
 	GdkPixbuf *pixbuf;
 	gboolean   have_preview;
@@ -67,10 +67,10 @@ panel_ctk_file_chooser_preview_update (GtkFileChooser *chooser,
 }
 
 void
-panel_ctk_file_chooser_add_image_preview (GtkFileChooser *chooser)
+panel_ctk_file_chooser_add_image_preview (CtkFileChooser *chooser)
 {
-	GtkFileFilter *filter;
-	GtkWidget     *chooser_preview;
+	CtkFileFilter *filter;
+	CtkWidget     *chooser_preview;
 
 	g_return_if_fail (CTK_IS_FILE_CHOOSER (chooser));
 
@@ -89,13 +89,13 @@ panel_ctk_file_chooser_add_image_preview (GtkFileChooser *chooser)
  * End of code coming from panel-properties-dialog.c
  */
 
-GtkWidget*
-panel_dialog_add_button (GtkDialog   *dialog,
+CtkWidget*
+panel_dialog_add_button (CtkDialog   *dialog,
 			 const gchar *button_text,
 			 const gchar *icon_name,
 			       gint   response_id)
 {
-	GtkWidget *button;
+	CtkWidget *button;
 
 	button = ctk_button_new_with_mnemonic (button_text);
 	ctk_button_set_image (CTK_BUTTON (button), ctk_image_new_from_icon_name (icon_name, CTK_ICON_SIZE_BUTTON));
@@ -109,14 +109,14 @@ panel_dialog_add_button (GtkDialog   *dialog,
 	return button;
 }
 
-static GtkWidget *
+static CtkWidget *
 panel_file_chooser_dialog_new_valist (const gchar          *title,
-				      GtkWindow            *parent,
-				      GtkFileChooserAction  action,
+				      CtkWindow            *parent,
+				      CtkFileChooserAction  action,
 				      const gchar          *first_button_text,
 				      va_list               varargs)
 {
-	GtkWidget *result;
+	CtkWidget *result;
 	const char *button_text = first_button_text;
 	gint response_id;
 
@@ -147,14 +147,14 @@ panel_file_chooser_dialog_new_valist (const gchar          *title,
 	return result;
 }
 
-GtkWidget *
+CtkWidget *
 panel_file_chooser_dialog_new (const gchar          *title,
-			       GtkWindow            *parent,
-			       GtkFileChooserAction  action,
+			       CtkWindow            *parent,
+			       CtkFileChooserAction  action,
 			       const gchar          *first_button_text,
 			       ...)
 {
-	GtkWidget *result;
+	CtkWidget *result;
 	va_list varargs;
 
 	va_start (varargs, first_button_text);
@@ -179,15 +179,15 @@ ensure_icon_settings (void)
 					&icon_settings);
 }
 
-GtkWidget *
+CtkWidget *
 panel_image_menu_item_new_from_icon (const gchar *icon_name,
 				     const gchar *label_name)
 {
 	gchar *concat;
-	GtkWidget *icon;
-	GtkStyleContext *context;
-	GtkWidget *box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 6);
-	GtkWidget *icon_box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
+	CtkWidget *icon;
+	CtkStyleContext *context;
+	CtkWidget *box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 6);
+	CtkWidget *icon_box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
 
 	if (icon_name)
 		icon = ctk_image_new_from_icon_name (icon_name, CTK_ICON_SIZE_MENU);
@@ -195,8 +195,8 @@ panel_image_menu_item_new_from_icon (const gchar *icon_name,
 		icon = ctk_image_new ();
 
 	concat = g_strconcat (label_name, "     ", NULL);
-	GtkWidget *label_menu = ctk_label_new_with_mnemonic (concat);
-	GtkWidget *menuitem = ctk_menu_item_new ();
+	CtkWidget *label_menu = ctk_label_new_with_mnemonic (concat);
+	CtkWidget *menuitem = ctk_menu_item_new ();
 
 	context = ctk_widget_get_style_context (CTK_WIDGET(icon_box));
 	ctk_style_context_add_class(context,"cafe-panel-menu-icon-box");
@@ -217,15 +217,15 @@ panel_image_menu_item_new_from_icon (const gchar *icon_name,
 	return menuitem;
 }
 
-GtkWidget *
+CtkWidget *
 panel_image_menu_item_new_from_gicon (GIcon       *gicon,
 				      const gchar *label_name)
 {
 	gchar *concat;
-	GtkWidget *icon;
-	GtkStyleContext *context;
-	GtkWidget *box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 6);
-	GtkWidget *icon_box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
+	CtkWidget *icon;
+	CtkStyleContext *context;
+	CtkWidget *box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 6);
+	CtkWidget *icon_box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
 
 	if (gicon)
 		icon = ctk_image_new_from_gicon (gicon, CTK_ICON_SIZE_MENU);
@@ -233,8 +233,8 @@ panel_image_menu_item_new_from_gicon (GIcon       *gicon,
 		icon = ctk_image_new ();
 
 	concat = g_strconcat (label_name, "     ", NULL);
-	GtkWidget *label_menu = ctk_label_new_with_mnemonic (concat);
-	GtkWidget *menuitem = ctk_menu_item_new ();
+	CtkWidget *label_menu = ctk_label_new_with_mnemonic (concat);
+	CtkWidget *menuitem = ctk_menu_item_new ();
 
 	context = ctk_widget_get_style_context (CTK_WIDGET(icon_box));
 	ctk_style_context_add_class(context,"cafe-panel-menu-icon-box");
@@ -255,12 +255,12 @@ panel_image_menu_item_new_from_gicon (GIcon       *gicon,
 	return menuitem;
 }
 
-GtkWidget *
-panel_check_menu_item_new (GtkWidget *widget_check)
+CtkWidget *
+panel_check_menu_item_new (CtkWidget *widget_check)
 {
-	GtkWidget *box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 6);
-	GtkWidget *menuitem = ctk_menu_item_new ();
-	GtkWidget *label_name = ctk_bin_get_child (CTK_BIN (widget_check));
+	CtkWidget *box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 6);
+	CtkWidget *menuitem = ctk_menu_item_new ();
+	CtkWidget *label_name = ctk_bin_get_child (CTK_BIN (widget_check));
 	gchar *concat = g_strconcat (ctk_label_get_label (CTK_LABEL (label_name)), "     ", NULL);
 
 	ctk_label_set_text_with_mnemonic (CTK_LABEL (label_name), concat);

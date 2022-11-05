@@ -42,28 +42,28 @@ typedef struct _NaFixedTipClass   NaFixedTipClass;
 
 struct _NaFixedTip
 {
-  GtkWindow parent_instance;
+  CtkWindow parent_instance;
 
   NaFixedTipPrivate *priv;
 };
 
 struct _NaFixedTipClass
 {
-  GtkWindowClass parent_class;
+  CtkWindowClass parent_class;
 
   void (* clicked)    (NaFixedTip *fixedtip);
 };
 
 GType      na_fixed_tip_get_type (void);
 
-GtkWidget *na_fixed_tip_new (GtkWidget      *parent,
-                             GtkOrientation  orientation);
+CtkWidget *na_fixed_tip_new (CtkWidget      *parent,
+                             CtkOrientation  orientation);
 
-void       na_fixed_tip_set_markup (GtkWidget  *widget,
+void       na_fixed_tip_set_markup (CtkWidget  *widget,
                                     const char *markup_text);
 
-void       na_fixed_tip_set_orientation (GtkWidget      *widget,
-                                         GtkOrientation  orientation);
+void       na_fixed_tip_set_orientation (CtkWidget      *widget,
+                                         CtkOrientation  orientation);
 
 #ifdef __cplusplus
 }

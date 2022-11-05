@@ -21,12 +21,12 @@ extern "C" {
 
 typedef struct
 {
-        GtkBin parent;
+        CtkBin parent;
 } ClockLocationTile;
 
 typedef struct
 {
-        GtkBinClass parent_class;
+        CtkBinClass parent_class;
 
         void (* tile_pressed) (ClockLocationTile *tile);
         int  (* need_clock_format) (ClockLocationTile *tile);
@@ -39,7 +39,7 @@ ClockLocationTile *clock_location_tile_new (ClockLocation *loc,
 
 ClockLocation *clock_location_tile_get_location (ClockLocationTile *this);
 
-void weather_info_setup_tooltip (WeatherInfo *info, ClockLocation *location, GtkTooltip *tip,
+void weather_info_setup_tooltip (WeatherInfo *info, ClockLocation *location, CtkTooltip *tip,
                                  ClockFormat clock_format);
 
 void clock_location_tile_refresh (ClockLocationTile *this,

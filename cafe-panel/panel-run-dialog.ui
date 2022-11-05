@@ -2,22 +2,22 @@
 <!-- Generated with glade 3.22.0 -->
 <interface>
   <requires lib="ctk+" version="3.22"/>
-  <object class="GtkImage" id="image1">
+  <object class="CtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">help-browser</property>
   </object>
-  <object class="GtkImage" id="image2">
+  <object class="CtkImage" id="image2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">process-stop</property>
   </object>
-  <object class="GtkImage" id="run_button_image">
+  <object class="CtkImage" id="run_button_image">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">system-run</property>
   </object>
-  <object class="GtkDialog" id="panel_run_dialog">
+  <object class="CtkDialog" id="panel_run_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Run Application</property>
@@ -25,17 +25,17 @@
     <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox1">
+      <object class="CtkBox" id="dialog-vbox1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area1">
+          <object class="CtkButtonBox" id="dialog-action_area1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkButton" id="help_button">
+              <object class="CtkButton" id="help_button">
                 <property name="label" translatable="yes">_Help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -51,7 +51,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="cancel_button">
+              <object class="CtkButton" id="cancel_button">
                 <property name="label" translatable="yes">_Cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -67,7 +67,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="run_button">
+              <object class="CtkButton" id="run_button">
                 <property name="label" translatable="yes">_Run</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -97,18 +97,18 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="main_box">
+          <object class="CtkBox" id="main_box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">5</property>
             <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
-              <object class="GtkBox" id="entry_box">
+              <object class="CtkBox" id="entry_box">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <child>
-                  <object class="GtkAlignment" id="alignment1">
+                  <object class="CtkAlignment" id="alignment1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="xalign">0</property>
@@ -116,7 +116,7 @@
                     <property name="xscale">0</property>
                     <property name="yscale">0</property>
                     <child>
-                      <object class="GtkImage" id="icon_pixmap">
+                      <object class="CtkImage" id="icon_pixmap">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="icon_name">image-missing</property>
@@ -137,18 +137,18 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="vbox2">
+                  <object class="CtkBox" id="vbox2">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="orientation">vertical</property>
                     <property name="spacing">6</property>
                     <child>
-                      <object class="GtkComboBoxText" id="comboboxentry">
+                      <object class="CtkComboBoxText" id="comboboxentry">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="has_entry">True</property>
                         <child internal-child="entry">
-                          <object class="GtkEntry">
+                          <object class="CtkEntry">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                           </object>
@@ -161,12 +161,12 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox" id="hbox2">
+                      <object class="CtkBox" id="hbox2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="spacing">12</property>
                         <child>
-                          <object class="GtkCheckButton" id="terminal_checkbox">
+                          <object class="CtkCheckButton" id="terminal_checkbox">
                             <property name="label" translatable="yes">Run in _terminal</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -186,7 +186,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="file_button">
+                          <object class="CtkButton" id="file_button">
                             <property name="label" translatable="yes">Run with _file...</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -226,30 +226,30 @@
               </packing>
             </child>
             <child>
-              <object class="GtkExpander" id="list_expander">
+              <object class="CtkExpander" id="list_expander">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="expanded">True</property>
                 <child>
-                  <object class="GtkBox" id="program_list_box">
+                  <object class="CtkBox" id="program_list_box">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="vexpand">True</property>
                     <property name="orientation">vertical</property>
                     <property name="spacing">6</property>
                     <child>
-                      <object class="GtkScrolledWindow" id="scrolledwindow1">
+                      <object class="CtkScrolledWindow" id="scrolledwindow1">
                         <property name="height_request">140</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="shadow_type">in</property>
                         <child>
-                          <object class="GtkTreeView" id="program_list">
+                          <object class="CtkTreeView" id="program_list">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="headers_visible">False</property>
                             <child internal-child="selection">
-                              <object class="GtkTreeSelection"/>
+                              <object class="CtkTreeSelection"/>
                             </child>
                             <child internal-child="accessible">
                               <object class="AtkObject" id="program_list-atkobject">
@@ -266,7 +266,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="program_label">
+                      <object class="CtkLabel" id="program_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Select an application to view its description.</property>
@@ -284,7 +284,7 @@
                   </object>
                 </child>
                 <child type="label">
-                  <object class="GtkLabel" id="label3">
+                  <object class="CtkLabel" id="label3">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Show list of known _applications</property>

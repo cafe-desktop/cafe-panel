@@ -78,7 +78,7 @@ na_host_force_redraw (NaHost *host)
 
 void
 na_host_style_updated (NaHost          *host,
-                       GtkStyleContext *context)
+                       CtkStyleContext *context)
 {
   NaHostInterface *iface;
 

@@ -33,14 +33,14 @@ typedef struct _ClockFaceClass      ClockFaceClass;
 
 struct _ClockFace
 {
-        GtkWidget parent;
+        CtkWidget parent;
 
         /* < private > */
 };
 
 struct _ClockFaceClass
 {
-        GtkWidgetClass parent_class;
+        CtkWidgetClass parent_class;
 };
 
 typedef enum {
@@ -50,10 +50,10 @@ typedef enum {
 
 GType clock_face_get_type (void);
 
-GtkWidget *clock_face_new (ClockFaceSize size);
-GtkWidget *clock_face_new_with_location (ClockFaceSize size,
+CtkWidget *clock_face_new (ClockFaceSize size);
+CtkWidget *clock_face_new_with_location (ClockFaceSize size,
 					 ClockLocation *loc,
-					 GtkWidget *size_widget);
+					 CtkWidget *size_widget);
 gboolean clock_face_refresh (ClockFace *this);
 
 

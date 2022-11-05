@@ -34,18 +34,18 @@ struct _PanelSeparatorPrivate {
 	AppletInfo     *info;
 	PanelWidget    *panel;
 
-	GtkOrientation  orientation;
+	CtkOrientation  orientation;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (PanelSeparator, panel_separator, CTK_TYPE_EVENT_BOX)
 
 static gboolean
-panel_separator_draw (GtkWidget *widget, cairo_t *cr)
+panel_separator_draw (CtkWidget *widget, cairo_t *cr)
 {
 	PanelSeparator  *separator;
-	GtkStyleContext *context;
-	GtkStateFlags    state;
-	GtkBorder        padding;
+	CtkStyleContext *context;
+	CtkStateFlags    state;
+	CtkBorder        padding;
 	int              width;
 	int              height;
 
@@ -95,7 +95,7 @@ panel_separator_draw (GtkWidget *widget, cairo_t *cr)
 }
 
 static void
-panel_separator_get_preferred_width (GtkWidget *widget,
+panel_separator_get_preferred_width (CtkWidget *widget,
 				     gint *minimal_width,
 				     gint *natural_width)
 {
@@ -113,7 +113,7 @@ panel_separator_get_preferred_width (GtkWidget *widget,
 }
 
 static void
-panel_separator_get_preferred_height (GtkWidget *widget,
+panel_separator_get_preferred_height (CtkWidget *widget,
 				      gint *minimal_height,
 				      gint *natural_height)
 {
@@ -131,11 +131,11 @@ panel_separator_get_preferred_height (GtkWidget *widget,
 }
 
 static void
-panel_separator_size_allocate (GtkWidget     *widget,
-			       GtkAllocation *allocation)
+panel_separator_size_allocate (CtkWidget     *widget,
+			       CtkAllocation *allocation)
 {
-	GtkAllocation    old_allocation;
-	GtkAllocation    widget_allocation;
+	CtkAllocation    old_allocation;
+	CtkAllocation    widget_allocation;
 	PanelBackground *background;
 
 	ctk_widget_get_allocation (widget, &widget_allocation);
@@ -162,11 +162,11 @@ panel_separator_size_allocate (GtkWidget     *widget,
 }
 
 static void
-panel_separator_parent_set (GtkWidget *widget,
-			   GtkWidget *previous_parent)
+panel_separator_parent_set (CtkWidget *widget,
+			   CtkWidget *previous_parent)
 {
 	PanelSeparator *separator;
-	GtkWidget      *parent;
+	CtkWidget      *parent;
 
 	separator = PANEL_SEPARATOR (widget);
 
@@ -179,7 +179,7 @@ panel_separator_parent_set (GtkWidget *widget,
 static void
 panel_separator_class_init (PanelSeparatorClass *klass)
 {
-	GtkWidgetClass *widget_class  = CTK_WIDGET_CLASS (klass);
+	CtkWidgetClass *widget_class  = CTK_WIDGET_CLASS (klass);
 
 	widget_class->draw                 = panel_separator_draw;
 	widget_class->get_preferred_width  = panel_separator_get_preferred_width;
@@ -204,7 +204,7 @@ void
 panel_separator_set_orientation (PanelSeparator   *separator,
 				 PanelOrientation  orientation)
 {
-	GtkOrientation orient = CTK_ORIENTATION_HORIZONTAL;
+	CtkOrientation orient = CTK_ORIENTATION_HORIZONTAL;
 
 	g_return_if_fail (PANEL_IS_SEPARATOR (separator));
 

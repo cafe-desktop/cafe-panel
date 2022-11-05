@@ -2,17 +2,17 @@
 <!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="ctk+" version="3.22"/>
-  <object class="GtkImage" id="image1">
+  <object class="CtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">help-browser</property>
   </object>
-  <object class="GtkImage" id="image2">
+  <object class="CtkImage" id="image2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">window-close</property>
   </object>
-  <object class="GtkDialog" id="tasklist_properties_dialog">
+  <object class="CtkDialog" id="tasklist_properties_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Window List Preferences</property>
@@ -21,17 +21,17 @@
       <placeholder/>
     </child>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox2">
+      <object class="CtkBox" id="dialog-vbox2">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area2">
+          <object class="CtkButtonBox" id="dialog-action_area2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkButton" id="help_button">
+              <object class="CtkButton" id="help_button">
                 <property name="label" translatable="yes">_Help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -47,7 +47,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="done_button">
+              <object class="CtkButton" id="done_button">
                 <property name="label" translatable="yes">_Close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -72,7 +72,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="vbox1">
+          <object class="CtkBox" id="vbox1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -80,13 +80,13 @@
             <property name="orientation">vertical</property>
             <property name="spacing">18</property>
             <child>
-              <object class="GtkBox" id="vbox7">
+              <object class="CtkBox" id="vbox7">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkLabel" id="label1">
+                  <object class="CtkLabel" id="label1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Window List Content</property>
@@ -102,19 +102,19 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkAlignment" id="alignment1">
+                  <object class="CtkAlignment" id="alignment1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="left_padding">12</property>
                     <child>
-                      <object class="GtkBox" id="vbox9">
+                      <object class="CtkBox" id="vbox9">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkRadioButton" id="show_current_radio">
+                          <object class="CtkRadioButton" id="show_current_radio">
                             <property name="label" translatable="yes">Sh_ow windows from current workspace</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -129,7 +129,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkRadioButton" id="show_all_radio">
+                          <object class="CtkRadioButton" id="show_all_radio">
                             <property name="label" translatable="yes">Show windows from a_ll workspaces</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -161,13 +161,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="window_thumbnails">
+              <object class="CtkBox" id="window_thumbnails">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkLabel" id="label4">
+                  <object class="CtkLabel" id="label4">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Window Thumbnails</property>
@@ -183,19 +183,19 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkAlignment" id="alignment4">
+                  <object class="CtkAlignment" id="alignment4">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="left_padding">12</property>
                     <child>
-                      <object class="GtkBox" id="vbox16">
+                      <object class="CtkBox" id="vbox16">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkRadioButton" id="show_thumbnails_radio">
+                          <object class="CtkRadioButton" id="show_thumbnails_radio">
                             <property name="label" translatable="yes">Show _thumbnails on hover</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -210,7 +210,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkRadioButton" id="hide_thumbnails_radio">
+                          <object class="CtkRadioButton" id="hide_thumbnails_radio">
                             <property name="label" translatable="yes">_Hide thumbnails on hover</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -235,18 +235,18 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkAlignment" id="alignment5">
+                  <object class="CtkAlignment" id="alignment5">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="left_padding">12</property>
                     <child>
-                      <object class="GtkBox" id="hbox1">
+                      <object class="CtkBox" id="hbox1">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkLabel" id="label2">
+                          <object class="CtkLabel" id="label2">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="tooltip_text" translatable="yes">Thumbnail width in pixels. Window aspect ratio will be maintained.</property>
@@ -259,7 +259,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkSpinButton" id="thumbnail_size_spin">
+                          <object class="CtkSpinButton" id="thumbnail_size_spin">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="max_length">3</property>
@@ -293,13 +293,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="vbox11">
+              <object class="CtkBox" id="vbox11">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkLabel" id="label3">
+                  <object class="CtkLabel" id="label3">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Window Grouping</property>
@@ -315,19 +315,19 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkAlignment" id="alignment2">
+                  <object class="CtkAlignment" id="alignment2">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="left_padding">12</property>
                     <child>
-                      <object class="GtkBox" id="vbox12">
+                      <object class="CtkBox" id="vbox12">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkRadioButton" id="never_group_radio">
+                          <object class="CtkRadioButton" id="never_group_radio">
                             <property name="label" translatable="yes">_Never group windows</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -342,7 +342,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkRadioButton" id="auto_group_radio">
+                          <object class="CtkRadioButton" id="auto_group_radio">
                             <property name="label" translatable="yes">Group windows when _space is limited</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -358,7 +358,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkRadioButton" id="always_group_radio">
+                          <object class="CtkRadioButton" id="always_group_radio">
                             <property name="label" translatable="yes">_Always group windows</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -390,13 +390,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="vbox13">
+              <object class="CtkBox" id="vbox13">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkLabel" id="minimized_windows_label">
+                  <object class="CtkLabel" id="minimized_windows_label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">Restoring Minimized Windows</property>
@@ -412,19 +412,19 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkAlignment" id="alignment3">
+                  <object class="CtkAlignment" id="alignment3">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="left_padding">12</property>
                     <child>
-                      <object class="GtkBox" id="vbox14">
+                      <object class="CtkBox" id="vbox14">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkRadioButton" id="move_minimized_radio">
+                          <object class="CtkRadioButton" id="move_minimized_radio">
                             <property name="label" translatable="yes">Restore to current _workspace</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -439,7 +439,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkRadioButton" id="change_workspace_radio">
+                          <object class="CtkRadioButton" id="change_workspace_radio">
                             <property name="label" translatable="yes">Restore to na_tive workspace</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>

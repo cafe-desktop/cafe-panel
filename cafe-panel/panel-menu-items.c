@@ -60,14 +60,14 @@
 #define MAX_BOOKMARK_ITEMS      100
 
 struct _PanelPlaceMenuItemPrivate {
-	GtkWidget   *menu;
+	CtkWidget   *menu;
 	PanelWidget *panel;
 
 	GSettings   *caja_desktop_settings;
 	GSettings   *caja_prefs_settings;
 	GSettings   *menubar_settings;
 
-	GtkRecentManager *recent_manager;
+	CtkRecentManager *recent_manager;
 
 	GFileMonitor *bookmarks_monitor;
 
@@ -86,7 +86,7 @@ struct _PanelPlaceMenuItemPrivate {
 };
 
 struct _PanelDesktopMenuItemPrivate {
-	GtkWidget   *menu;
+	CtkWidget   *menu;
 	PanelWidget *panel;
 
 	guint        use_image : 1;
@@ -102,14 +102,14 @@ static void activate_uri_on_screen(const char* uri, GdkScreen* screen)
 }
 
 static void
-activate_uri (GtkWidget  *menuitem,
+activate_uri (CtkWidget  *menuitem,
 	      const char *uri)
 {
 	activate_uri_on_screen (uri, menuitem_to_screen (menuitem));
 }
 
 static void
-activate_path (GtkWidget  *menuitem,
+activate_path (CtkWidget  *menuitem,
 	       const char *path)
 {
 	char *uri;
@@ -120,14 +120,14 @@ activate_path (GtkWidget  *menuitem,
 }
 
 static void
-activate_home_uri (GtkWidget *menuitem,
+activate_home_uri (CtkWidget *menuitem,
 		   gpointer   data)
 {
 	activate_path (menuitem, g_get_home_dir ());
 }
 
 static void
-activate_desktop_uri (GtkWidget *menuitem,
+activate_desktop_uri (CtkWidget *menuitem,
 		      gpointer   data)
 {
 	activate_path (menuitem,
@@ -135,14 +135,14 @@ activate_desktop_uri (GtkWidget *menuitem,
 }
 
 static void
-panel_menu_items_append_from_desktop (GtkWidget *menu,
+panel_menu_items_append_from_desktop (CtkWidget *menu,
 				      char      *path,
 				      char      *force_name,
                                       gboolean   use_icon)
 {
 	GKeyFile  *key_file;
 	gboolean   loaded;
-	GtkWidget *item;
+	CtkWidget *item;
 	char      *path_freeme;
 	char      *full_path;
 	char      *uri;
@@ -278,11 +278,11 @@ panel_menu_items_append_place_item (const char *icon_name,
 				    GIcon      *gicon,
 				    const char *title,
 				    const char *tooltip,
-				    GtkWidget  *menu,
+				    CtkWidget  *menu,
 				    GCallback   callback,
 				    const char *uri)
 {
-	GtkWidget *item;
+	CtkWidget *item;
 	char      *user_data;
 
 	item = panel_image_menu_item_new ();
@@ -306,12 +306,12 @@ panel_menu_items_append_place_item (const char *icon_name,
 		setup_uri_drag (item, uri, icon_name, GDK_ACTION_LINK);
 }
 
-static GtkWidget *
+static CtkWidget *
 panel_menu_items_create_action_item_full (PanelActionButtonType  action_type,
 					  const char            *label,
 					  const char            *tooltip)
 {
-	GtkWidget *item;
+	CtkWidget *item;
 
 	if (panel_action_get_is_disabled (action_type))
 		return NULL;
@@ -337,7 +337,7 @@ panel_menu_items_create_action_item_full (PanelActionButtonType  action_type,
 	return item;
 }
 
-static GtkWidget *
+static CtkWidget *
 panel_menu_items_create_action_item (PanelActionButtonType action_type)
 {
 	return panel_menu_items_create_action_item_full (action_type,
@@ -345,14 +345,14 @@ panel_menu_items_create_action_item (PanelActionButtonType action_type)
 }
 
 static void
-panel_place_menu_item_append_ctk_bookmarks (GtkWidget *menu, guint max_items_or_submenu)
+panel_place_menu_item_append_ctk_bookmarks (CtkWidget *menu, guint max_items_or_submenu)
 {
 	typedef struct {
 		char *full_uri;
 		char *label;
 	} PanelBookmark;
 
-	GtkWidget   *add_menu;
+	CtkWidget   *add_menu;
 	char        *filename;
 	GIOChannel  *io_channel;
 	GHashTable  *table;
@@ -459,7 +459,7 @@ panel_place_menu_item_append_ctk_bookmarks (GtkWidget *menu, guint max_items_or_
 	if (g_slist_length (add_bookmarks) <= max_items_or_submenu) {
 		add_menu = menu;
 	} else {
-		GtkWidget *item;
+		CtkWidget *item;
 
 		item = ctk_image_menu_item_new ();
 		setup_menuitem_with_icon (item, panel_menu_icon_get_size (),
@@ -574,7 +574,7 @@ drive_poll_for_media_cb (GObject      *source_object,
 }
 
 static void
-panel_menu_item_rescan_drive (GtkWidget *menuitem,
+panel_menu_item_rescan_drive (CtkWidget *menuitem,
 			      GDrive    *drive)
 {
 	g_drive_poll_for_media (drive, NULL,
@@ -583,10 +583,10 @@ panel_menu_item_rescan_drive (GtkWidget *menuitem,
 }
 
 static void
-panel_menu_item_append_drive (GtkWidget *menu,
+panel_menu_item_append_drive (CtkWidget *menu,
 			      GDrive    *drive)
 {
-	GtkWidget *item;
+	CtkWidget *item;
 	GIcon     *icon;
 	char      *title;
 	char      *tooltip;
@@ -667,7 +667,7 @@ volume_mount_cb (GObject      *source_object,
 }
 
 static void
-panel_menu_item_mount_volume (GtkWidget *menuitem,
+panel_menu_item_mount_volume (CtkWidget *menuitem,
 			      GVolume   *volume)
 {
 	PanelVolumeMountData *mount_data;
@@ -683,10 +683,10 @@ panel_menu_item_mount_volume (GtkWidget *menuitem,
 }
 
 static void
-panel_menu_item_append_volume (GtkWidget *menu,
+panel_menu_item_append_volume (CtkWidget *menu,
 			       GVolume   *volume)
 {
-	GtkWidget *item;
+	CtkWidget *item;
 	GIcon     *icon;
 	char      *title;
 	char      *tooltip;
@@ -719,7 +719,7 @@ panel_menu_item_append_volume (GtkWidget *menu,
 }
 
 static void
-panel_menu_item_append_mount (GtkWidget *menu,
+panel_menu_item_append_mount (CtkWidget *menu,
 			      GMount    *mount)
 {
 	GFile  *root;
@@ -764,7 +764,7 @@ typedef struct {
 /* this is loosely based on update_places() from caja-places-sidebar.c */
 static void
 panel_place_menu_item_append_local_gio (PanelPlaceMenuItem *place_item,
-					GtkWidget          *menu)
+					CtkWidget          *menu)
 {
 	GList   *l;
 	GList   *ll;
@@ -777,7 +777,7 @@ panel_place_menu_item_append_local_gio (PanelPlaceMenuItem *place_item,
 	GSList       *items;
 	GSList       *sl;
 	PanelGioItem *item;
-	GtkWidget *add_menu;
+	CtkWidget *add_menu;
 
 	items = NULL;
 
@@ -903,7 +903,7 @@ panel_place_menu_item_append_local_gio (PanelPlaceMenuItem *place_item,
 	if (g_slist_length (items) <= g_settings_get_uint (place_item->priv->menubar_settings, PANEL_MENU_BAR_MAX_ITEMS_OR_SUBMENU)) {
 		add_menu = menu;
 	} else {
-		GtkWidget  *item;
+		CtkWidget  *item;
 
 		item = ctk_image_menu_item_new ();
 		setup_menuitem_with_icon (item, panel_menu_icon_get_size (),
@@ -945,9 +945,9 @@ panel_place_menu_item_append_local_gio (PanelPlaceMenuItem *place_item,
 /* this is loosely based on update_places() from caja-places-sidebar.c */
 static void
 panel_place_menu_item_append_remote_gio (PanelPlaceMenuItem *place_item,
-					 GtkWidget          *menu)
+					 CtkWidget          *menu)
 {
-	GtkWidget *add_menu;
+	CtkWidget *add_menu;
 	GList     *mounts, *l;
 	GMount    *mount;
 	GSList    *add_mounts, *sl;
@@ -990,7 +990,7 @@ panel_place_menu_item_append_remote_gio (PanelPlaceMenuItem *place_item,
 	if (g_slist_length (add_mounts) <= g_settings_get_uint (place_item->priv->menubar_settings, PANEL_MENU_BAR_MAX_ITEMS_OR_SUBMENU)) {
 		add_menu = menu;
 	} else {
-		GtkWidget  *item;
+		CtkWidget  *item;
 
 		item = panel_image_menu_item_new ();
 		setup_menuitem_with_icon (item, panel_menu_icon_get_size (),
@@ -1016,11 +1016,11 @@ panel_place_menu_item_append_remote_gio (PanelPlaceMenuItem *place_item,
 }
 
 
-static GtkWidget *
+static CtkWidget *
 panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 {
-	GtkWidget *places_menu;
-	GtkWidget *item;
+	CtkWidget *places_menu;
+	CtkWidget *item;
 	char      *gsettings_name = NULL;
 	char      *name;
 	char      *uri;
@@ -1123,7 +1123,7 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 	panel_recent_append_documents_menu (places_menu,
 					    place_item->priv->recent_manager);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
-	GtkWidget *toplevel = ctk_widget_get_toplevel (places_menu);
+	CtkWidget *toplevel = ctk_widget_get_toplevel (places_menu);
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
@@ -1132,7 +1132,7 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 }
 
 static void
-panel_place_menu_item_recreate_menu (GtkWidget *widget)
+panel_place_menu_item_recreate_menu (CtkWidget *widget)
 {
 	PanelPlaceMenuItem *place_item;
 
@@ -1155,7 +1155,7 @@ panel_place_menu_item_recreate_menu (GtkWidget *widget)
 static void
 panel_place_menu_item_key_changed (GSettings   *settings,
 				   gchar       *key,
-				   GtkWidget   *place_item)
+				   CtkWidget   *place_item)
 {
 	panel_place_menu_item_recreate_menu (place_item);
 }
@@ -1173,7 +1173,7 @@ panel_place_menu_item_ctk_bookmarks_changed (GFileMonitor *handle,
 static void
 panel_place_menu_item_drives_changed (GVolumeMonitor *monitor,
 				      GDrive         *drive,
-				      GtkWidget      *place_menu)
+				      CtkWidget      *place_menu)
 {
 	panel_place_menu_item_recreate_menu (place_menu);
 }
@@ -1181,7 +1181,7 @@ panel_place_menu_item_drives_changed (GVolumeMonitor *monitor,
 static void
 panel_place_menu_item_volumes_changed (GVolumeMonitor *monitor,
 				       GVolume        *volume,
-				       GtkWidget      *place_menu)
+				       CtkWidget      *place_menu)
 {
 	panel_place_menu_item_recreate_menu (place_menu);
 }
@@ -1189,13 +1189,13 @@ panel_place_menu_item_volumes_changed (GVolumeMonitor *monitor,
 static void
 panel_place_menu_item_mounts_changed (GVolumeMonitor *monitor,
 				      GMount         *mount,
-				      GtkWidget      *place_menu)
+				      CtkWidget      *place_menu)
 {
 	panel_place_menu_item_recreate_menu (place_menu);
 }
 
 static void
-panel_desktop_menu_item_append_menu (GtkWidget *menu,
+panel_desktop_menu_item_append_menu (CtkWidget *menu,
 				     gpointer   data)
 {
 	PanelDesktopMenuItem *parent;
@@ -1225,10 +1225,10 @@ panel_desktop_menu_item_append_menu (GtkWidget *menu,
 		panel_menu_items_append_lock_logout (menu);
 }
 
-static GtkWidget *
+static CtkWidget *
 panel_desktop_menu_item_create_menu (PanelDesktopMenuItem *desktop_item)
 {
-	GtkWidget *desktop_menu;
+	CtkWidget *desktop_menu;
 
 	desktop_menu = create_applications_menu ("cafe-settings.menu", NULL, FALSE);
 
@@ -1470,10 +1470,10 @@ panel_desktop_menu_item_class_init (PanelDesktopMenuItemClass *klass)
 	gobject_class->finalize  = panel_desktop_menu_item_finalize;
 }
 
-GtkWidget* panel_place_menu_item_new(gboolean use_image)
+CtkWidget* panel_place_menu_item_new(gboolean use_image)
 {
 	PanelPlaceMenuItem* menuitem;
-	GtkWidget* image;
+	CtkWidget* image;
 
 	menuitem = g_object_new(PANEL_TYPE_PLACE_MENU_ITEM, NULL);
 
@@ -1496,12 +1496,12 @@ GtkWidget* panel_place_menu_item_new(gboolean use_image)
 	return CTK_WIDGET(menuitem);
 }
 
-GtkWidget *
+CtkWidget *
 panel_desktop_menu_item_new (gboolean use_image,
 			     gboolean append_lock_logout)
 {
 	PanelDesktopMenuItem *menuitem;
-	GtkWidget            *image;
+	CtkWidget            *image;
 
 	menuitem = g_object_new (PANEL_TYPE_DESKTOP_MENU_ITEM, NULL);
 
@@ -1531,7 +1531,7 @@ panel_desktop_menu_item_new (gboolean use_image,
 }
 
 void
-panel_place_menu_item_set_panel (GtkWidget   *item,
+panel_place_menu_item_set_panel (CtkWidget   *item,
 				 PanelWidget *panel)
 {
 	PanelPlaceMenuItem *place_item;
@@ -1544,7 +1544,7 @@ panel_place_menu_item_set_panel (GtkWidget   *item,
 }
 
 void
-panel_desktop_menu_item_set_panel (GtkWidget   *item,
+panel_desktop_menu_item_set_panel (CtkWidget   *item,
 				   PanelWidget *panel)
 {
 	PanelDesktopMenuItem *desktop_item;
@@ -1557,12 +1557,12 @@ panel_desktop_menu_item_set_panel (GtkWidget   *item,
 }
 
 void
-panel_menu_items_append_lock_logout (GtkWidget *menu)
+panel_menu_items_append_lock_logout (CtkWidget *menu)
 {
 	gboolean    separator_inserted;
 	GList      *children;
 	GList      *last;
-	GtkWidget  *item;
+	CtkWidget  *item;
 	const char *translate;
 	char       *label;
 	char       *tooltip;
@@ -1647,7 +1647,7 @@ panel_menu_items_append_lock_logout (GtkWidget *menu)
 }
 
 void
-panel_menu_item_activate_desktop_file (GtkWidget  *menuitem,
+panel_menu_item_activate_desktop_file (CtkWidget  *menuitem,
 				       const char *path)
 {
 	panel_launch_desktop_file (path, menuitem_to_screen (menuitem), NULL);

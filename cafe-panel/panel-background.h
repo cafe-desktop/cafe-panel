@@ -54,7 +54,7 @@ struct _PanelBackground {
 	char                   *image;
 	GdkPixbuf              *loaded_image;
 
-	GtkOrientation          orientation;
+	CtkOrientation          orientation;
 	GdkRectangle            region;
 	GdkPixbuf              *transformed_image;
 	cairo_pattern_t        *composited_pattern;
@@ -112,7 +112,7 @@ void  panel_background_realized          (PanelBackground     *background,
 					  GdkWindow           *window);
 void  panel_background_unrealized        (PanelBackground     *background);
 void  panel_background_change_region     (PanelBackground     *background,
-					  GtkOrientation       orientation,
+					  CtkOrientation       orientation,
 					  int                  x,
 					  int                  y,
 					  int                  width,
@@ -127,6 +127,6 @@ const GdkRGBA       *panel_background_get_color  (PanelBackground *background);
 PanelBackgroundType
       panel_background_effective_type    (PanelBackground     *background);
 
-void panel_background_apply_css(PanelBackground *background, GtkWidget *widget);
+void panel_background_apply_css(PanelBackground *background, CtkWidget *widget);
 
 #endif /* __PANEL_BACKGROUND_H__ */

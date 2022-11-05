@@ -540,9 +540,9 @@ panel_multimonitor_height (int monitor)
 }
 
 int
-panel_multimonitor_locate_widget_monitor (GtkWidget *widget)
+panel_multimonitor_locate_widget_monitor (CtkWidget *widget)
 {
-	GtkWidget *toplevel;
+	CtkWidget *toplevel;
 	int        retval = -1;
 
 	toplevel = ctk_widget_get_toplevel (widget);

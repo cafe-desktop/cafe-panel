@@ -17,7 +17,7 @@
 
 gboolean is_using_x11                   (void);
 
-void xstuff_zoom_anicafe                (GtkWidget        *widget,
+void xstuff_zoom_anicafe                (CtkWidget        *widget,
 					 cairo_surface_t  *surface,
 					 PanelOrientation  orientation,
 					 GdkRectangle     *opt_src_rect);

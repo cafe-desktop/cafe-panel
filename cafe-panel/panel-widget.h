@@ -63,7 +63,7 @@ struct _AppletSizeHintsAlloc {
 
 struct _AppletData
 {
-	GtkWidget *	applet;
+	CtkWidget *	applet;
 	int		pos;
 	int             constrained;
 	int		cells;
@@ -85,23 +85,23 @@ struct _AppletData
 
 struct _PanelWidget
 {
-	GtkFixed        fixed;
+	CtkFixed        fixed;
 
 	GList          *applet_list;
 
 	GSList         *open_dialogs;
 
 	int             size;
-	GtkOrientation  orient;
+	CtkOrientation  orient;
 	int             sz;
 
 	AppletData     *currently_dragged_applet;
 
 	PanelBackground background;
 
-	GtkWidget      *master_widget;
+	CtkWidget      *master_widget;
 
-	GtkWidget      *drop_widget;     /* widget that the panel checks for
+	CtkWidget      *drop_widget;     /* widget that the panel checks for
 	                                  * the cursor on drops usually the
 	                                  * panel widget itself
 	                                  */
@@ -121,22 +121,22 @@ struct _PanelWidget
 
 struct _PanelWidgetClass
 {
-	GtkFixedClass parent_class;
+	CtkFixedClass parent_class;
 
 	void (* size_change) (PanelWidget *panel);
 	void (* back_change) (PanelWidget *panel);
 	void (* applet_move) (PanelWidget *panel,
-			      GtkWidget *applet);
+			      CtkWidget *applet);
 	void (* applet_added) (PanelWidget *panel,
-			       GtkWidget *applet);
+			       CtkWidget *applet);
 	void (* applet_removed) (PanelWidget *panel,
-				 GtkWidget *applet);
+				 CtkWidget *applet);
 	void (* push_move) (PanelWidget		*panel,
-                            GtkDirectionType	 dir);
+                            CtkDirectionType	 dir);
 	void (* switch_move) (PanelWidget	*panel,
-                              GtkDirectionType	 dir);
+                              CtkDirectionType	 dir);
 	void (* free_move) (PanelWidget		*panel,
-                            GtkDirectionType	 dir);
+                            CtkDirectionType	 dir);
 	void (* tab_move) (PanelWidget	*panel,
                            gboolean	 next);
 	void (* end_move) (PanelWidget	*panel);
@@ -144,14 +144,14 @@ struct _PanelWidgetClass
 
 GType		panel_widget_get_type		(void) G_GNUC_CONST;
 
-GtkWidget *	panel_widget_new		(PanelToplevel  *toplevel,
+CtkWidget *	panel_widget_new		(PanelToplevel  *toplevel,
 						 gboolean        packed,
-						 GtkOrientation  orient,
+						 CtkOrientation  orient,
 						 int             sz);
 /*add an applet to the panel, preferably at position pos, if insert_at_pos
   is on, we REALLY want to insert at the pos given by pos*/
 int		panel_widget_add		(PanelWidget *panel,
-						 GtkWidget   *applet,
+						 CtkWidget   *applet,
 						 gboolean     locked,
 						 int          pos,
 						 gboolean     insert_at_pos);
@@ -162,7 +162,7 @@ void		panel_widget_add_forbidden	(PanelWidget *panel);
 /*move applet to a different panel*/
 int		panel_widget_reparent		(PanelWidget *old_panel,
 						 PanelWidget *new_panel,
-						 GtkWidget *applet,
+						 CtkWidget *applet,
 						 int pos);
 
 /* use these for drag_off for special cases */
@@ -172,7 +172,7 @@ int		panel_widget_reparent		(PanelWidget *old_panel,
 /*drag*/
 gboolean        cafe_panel_applet_is_in_drag         (void);
 void		panel_widget_applet_drag_start	(PanelWidget *panel,
-						 GtkWidget   *applet,
+						 CtkWidget   *applet,
 						 int          drag_off,
 						 guint32      time_);
 void		panel_widget_applet_drag_end	(PanelWidget *panel);
@@ -180,7 +180,7 @@ void		panel_widget_applet_drag_end	(PanelWidget *panel);
 void            panel_widget_set_packed         (PanelWidget    *panel_widget,
 						 gboolean        packed);
 void            panel_widget_set_orientation    (PanelWidget    *panel_widget,
-						 GtkOrientation  orientation);
+						 CtkOrientation  orientation);
 void            panel_widget_set_size           (PanelWidget    *panel_widget,
 						 int             size);
 
@@ -194,7 +194,7 @@ void		panel_widget_draw_icon		(PanelWidget *panel,
 
 /*tells us if an applet is "stuck" on the right side*/
 int		panel_widget_is_applet_stuck	(PanelWidget *panel,
-						 GtkWidget *applet);
+						 CtkWidget *applet);
 /*get pos of the cursor location in panel coordinates*/
 int		panel_widget_get_cursorloc	(PanelWidget *panel);
 
@@ -209,27 +209,27 @@ PanelOrientation panel_widget_get_applet_orientation (PanelWidget *panel);
 void     panel_widget_emit_background_changed (PanelWidget *panel);
 
 void     panel_widget_set_applet_size_constrained (PanelWidget *panel,
-						   GtkWidget   *applet,
+						   CtkWidget   *applet,
 						   gboolean     size_constrained);
 void     panel_widget_set_applet_expandable       (PanelWidget *panel,
-						   GtkWidget   *applet,
+						   CtkWidget   *applet,
 						   gboolean     major,
 						   gboolean     minor);
 void     panel_widget_set_applet_size_hints       (PanelWidget *panel,
-						   GtkWidget   *applet,
+						   CtkWidget   *applet,
 						   int         *size_hints,
 						   int          size_hints_len);
 
 void     panel_widget_set_applet_locked           (PanelWidget *panel,
-						   GtkWidget   *applet,
+						   CtkWidget   *applet,
 						   gboolean     locked);
 gboolean panel_widget_get_applet_locked           (PanelWidget *panel,
-						   GtkWidget   *applet);
+						   CtkWidget   *applet);
 gboolean panel_widget_toggle_applet_locked        (PanelWidget *panel,
-						   GtkWidget   *applet);
+						   CtkWidget   *applet);
 
 void     panel_widget_register_open_dialog        (PanelWidget *panel,
-						   GtkWidget   *dialog);
+						   CtkWidget   *dialog);
 #ifdef __cplusplus
 }
 #endif

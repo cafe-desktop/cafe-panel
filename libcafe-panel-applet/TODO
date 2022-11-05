@@ -5,7 +5,7 @@ libcafe-panel-applet todo list
 anyway complete.
 
 	* Size negotiation. Basically make sure this works. It should be no
-	  different than the usual GtkWidget size request/allocation. The
+	  different than the usual CtkWidget size request/allocation. The
 	  applets shouldn't be allowed to be any bigger than the panel. The
 	  other issue is with applets that want to expand to fill the available
 	  space on the panel. At the moment this is solved with getExpandFlags,

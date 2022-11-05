@@ -200,7 +200,7 @@ cafe_panel_applets_manager_load_applet (const gchar                *iid,
 	return FALSE;
 }
 
-GtkWidget *
+CtkWidget *
 cafe_panel_applets_manager_get_applet_widget (const gchar *iid,
                                          guint        uid)
 {

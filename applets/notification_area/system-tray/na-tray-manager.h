@@ -53,9 +53,9 @@ struct _NaTrayManager
   Atom message_data_atom;
 #endif
 
-  GtkWidget *invisible;
+  CtkWidget *invisible;
   GdkScreen *screen;
-  GtkOrientation orientation;
+  CtkOrientation orientation;
   gint padding;
   gint icon_size;
   GdkRGBA fg;
@@ -96,8 +96,8 @@ NaTrayManager  *na_tray_manager_new             (void);
 gboolean        na_tray_manager_manage_screen   (NaTrayManager      *manager,
 						 GdkScreen          *screen);
 void            na_tray_manager_set_orientation (NaTrayManager      *manager,
-						 GtkOrientation      orientation);
-GtkOrientation  na_tray_manager_get_orientation (NaTrayManager      *manager);
+						 CtkOrientation      orientation);
+CtkOrientation  na_tray_manager_get_orientation (NaTrayManager      *manager);
 void            na_tray_manager_set_padding     (NaTrayManager      *manager,
 						 gint                padding);
 void            na_tray_manager_set_icon_size   (NaTrayManager      *manager,

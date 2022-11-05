@@ -55,14 +55,14 @@ typedef struct {
 G_DEFINE_TYPE_WITH_PRIVATE (ClockMap, clock_map, CTK_TYPE_WIDGET)
 
 static void clock_map_finalize (GObject *);
-static void clock_map_size_allocate (GtkWidget *this,
-					 GtkAllocation *allocation);
-static gboolean clock_map_draw (GtkWidget *this,
+static void clock_map_size_allocate (CtkWidget *this,
+					 CtkAllocation *allocation);
+static gboolean clock_map_draw (CtkWidget *this,
 				      cairo_t *cr);
-static void clock_map_get_preferred_width (GtkWidget *widget,
+static void clock_map_get_preferred_width (CtkWidget *widget,
 					   gint *minimum_width,
 					   gint *natural_width);
-static void clock_map_get_preferred_height (GtkWidget *widget,
+static void clock_map_get_preferred_height (CtkWidget *widget,
 					    gint *minimum_height,
 					    gint *natural_height);
 static void clock_map_place_locations (ClockMap *this);
@@ -83,11 +83,11 @@ static void
 clock_map_class_init (ClockMapClass *this_class)
 {
         GObjectClass *g_obj_class = G_OBJECT_CLASS (this_class);
-        GtkWidgetClass *widget_class = CTK_WIDGET_CLASS (g_obj_class);
+        CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (g_obj_class);
 
         g_obj_class->finalize = clock_map_finalize;
 
-        /* GtkWidget signals */
+        /* CtkWidget signals */
 
         widget_class->size_allocate = clock_map_size_allocate;
         widget_class->draw = clock_map_draw;
@@ -184,8 +184,8 @@ void
 clock_map_refresh (ClockMap *this)
 {
     ClockMapPrivate *priv = clock_map_get_instance_private (this);
-	GtkWidget *widget = CTK_WIDGET (this);
-	GtkAllocation allocation;
+	CtkWidget *widget = CTK_WIDGET (this);
+	CtkAllocation allocation;
 
 	ctk_widget_get_allocation (widget, &allocation);
 
@@ -219,11 +219,11 @@ clock_map_refresh (ClockMap *this)
 }
 
 static gboolean
-clock_map_draw (GtkWidget *this, cairo_t *cr)
+clock_map_draw (CtkWidget *this, cairo_t *cr)
 {
     ClockMapPrivate *priv = clock_map_get_instance_private (CLOCK_MAP(this));
 	int width, height;
-	GtkStyleContext *context;
+	CtkStyleContext *context;
 	GdkRGBA color;
 
 	context = ctk_widget_get_style_context (this);
@@ -252,7 +252,7 @@ clock_map_draw (GtkWidget *this, cairo_t *cr)
 }
 
 static void
-clock_map_get_preferred_width (GtkWidget *this,
+clock_map_get_preferred_width (CtkWidget *this,
                                 gint *minimum_width,
                                 gint *natural_width)
 {
@@ -260,7 +260,7 @@ clock_map_get_preferred_width (GtkWidget *this,
 }
 
 static void
-clock_map_get_preferred_height (GtkWidget *this,
+clock_map_get_preferred_height (CtkWidget *this,
                                  gint *minimum_height,
                                  gint *natural_height)
 {
@@ -268,7 +268,7 @@ clock_map_get_preferred_height (GtkWidget *this,
 }
 
 static void
-clock_map_size_allocate (GtkWidget *this, GtkAllocation *allocation)
+clock_map_size_allocate (CtkWidget *this, CtkAllocation *allocation)
 {
         ClockMapPrivate *priv = clock_map_get_instance_private (CLOCK_MAP(this));
 

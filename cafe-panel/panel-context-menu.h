@@ -28,6 +28,6 @@
 
 #include "panel-widget.h"
 
-GtkWidget *panel_context_menu_create (PanelWidget *panel);
+CtkWidget *panel_context_menu_create (PanelWidget *panel);
 
 #endif /* __PANEL_CONTEXT_MENU_H__ */

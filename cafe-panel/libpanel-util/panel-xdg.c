@@ -63,8 +63,8 @@ char *
 panel_xdg_icon_name_from_icon_path (const char *path,
 				    GdkScreen  *screen)
 {
-	GtkIconTheme  *theme;
-	GtkSettings   *settings;
+	CtkIconTheme  *theme;
+	CtkSettings   *settings;
 	char          *theme_name;
 	char          *icon;
 	char         **paths;

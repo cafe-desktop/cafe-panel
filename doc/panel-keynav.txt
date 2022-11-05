@@ -36,8 +36,8 @@ When focus is in an applet the event is passed to the focus widget then its
 children until a toplevel is reached unless the event is handled. This is 
 done in ctk_window_key_press_event(). The original implemementation  for 
 "move_focus_out_of_applet" had the action signal defined on CafePanelAppletFrame 
-but as a GtkSocket always reports a key press event as being handled when 
-the GtkPlug is in a different process, the event has not passed to the 
+but as a CtkSocket always reports a key press event as being handled when 
+the CtkPlug is in a different process, the event has not passed to the 
 CafePanelAppletFrame.
 
 The implementation for "moving_focus_out_of_applet" sets a flag 
@@ -48,7 +48,7 @@ move the focus within the applet if this flag is set.
 
 - Implementing key bindings
 
-If focus is in an applet which is in another process, the GtkSocket will 
+If focus is in an applet which is in another process, the CtkSocket will 
 report the key stroke as having been handled. This means that key bindings
 will not be activated. The workaround for this is to handle those key
 strokes in panel_event() a signal handler for the event signal in panel.c.

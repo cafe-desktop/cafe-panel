@@ -41,10 +41,10 @@ static GSList *registered_applets = NULL;
 static GSList *queued_position_saves = NULL;
 static guint   queued_position_source = 0;
 
-static GtkCheckMenuItem *checkbox_id = NULL;
+static CtkCheckMenuItem *checkbox_id = NULL;
 
-static void applet_menu_show (GtkWidget *w, AppletInfo *info);
-static void applet_menu_deactivate (GtkWidget *w, AppletInfo *info);
+static void applet_menu_show (CtkWidget *w, AppletInfo *info);
+static void applet_menu_deactivate (CtkWidget *w, AppletInfo *info);
 
 static inline PanelWidget *
 cafe_panel_applet_get_panel_widget (AppletInfo *info)
@@ -100,14 +100,14 @@ cafe_panel_applet_toggle_locked (AppletInfo *info)
 }
 
 static void
-checkbox_status (GtkCheckMenuItem *menuitem,
+checkbox_status (CtkCheckMenuItem *menuitem,
 		 AppletInfo       *info)
 {
 	checkbox_id = CTK_CHECK_MENU_ITEM (menuitem);
 }
 
 static void
-cafe_panel_applet_lock (GtkMenuItem *menuitem,
+cafe_panel_applet_lock (CtkMenuItem *menuitem,
 			AppletInfo  *info)
 {
 	gboolean locked;
@@ -121,9 +121,9 @@ cafe_panel_applet_lock (GtkMenuItem *menuitem,
 }
 
 static void
-move_applet_callback (GtkWidget *widget, AppletInfo *info)
+move_applet_callback (CtkWidget *widget, AppletInfo *info)
 {
-	GtkWidget   *parent;
+	CtkWidget   *parent;
 	PanelWidget *panel;
 
 	g_return_if_fail (info != NULL);
@@ -153,7 +153,7 @@ cafe_panel_applet_clean (AppletInfo *info)
 		panel_launcher_delete (info->data);
 
 	if (info->widget) {
-		GtkWidget *widget = info->widget;
+		CtkWidget *widget = info->widget;
 
 		info->widget = NULL;
 		ctk_widget_destroy (widget);
@@ -185,7 +185,7 @@ cafe_panel_applet_recreate_menu (AppletInfo	*info)
 static void
 cafe_panel_applet_locked_change_notify (GSettings *settings,
 									    gchar *key,
-									    GtkWidget   *applet)
+									    CtkWidget   *applet)
 {
 	gboolean     locked;
 	gboolean     applet_locked;
@@ -218,7 +218,7 @@ cafe_panel_applet_locked_change_notify (GSettings *settings,
 }
 
 static void
-applet_remove_callback (GtkWidget  *widget,
+applet_remove_callback (CtkWidget  *widget,
 			AppletInfo *info)
 {
 
@@ -239,7 +239,7 @@ applet_user_menu_get_screen (AppletUserMenu *menu)
 }
 
 static void
-applet_callback_callback (GtkWidget      *widget,
+applet_callback_callback (CtkWidget      *widget,
 			  AppletUserMenu *menu)
 {
 	GdkScreen *screen;
@@ -302,7 +302,7 @@ applet_callback_callback (GtkWidget      *widget,
 }
 
 static void
-applet_menu_show (GtkWidget *w,
+applet_menu_show (CtkWidget *w,
 		  AppletInfo *info)
 {
 	PanelWidget *panel_widget;
@@ -314,7 +314,7 @@ applet_menu_show (GtkWidget *w,
 
 
 static void
-applet_menu_deactivate (GtkWidget *w,
+applet_menu_deactivate (CtkWidget *w,
 			AppletInfo *info)
 {
 	PanelWidget *panel_widget;
@@ -388,7 +388,7 @@ cafe_panel_applet_clear_user_menu (AppletInfo *info)
 
 static void
 setup_an_item (AppletUserMenu *menu,
-	       GtkWidget      *submenu,
+	       CtkWidget      *submenu,
 	       int             is_submenu)
 {
 	menu->menuitem = panel_image_menu_item_new_from_gicon (menu->gicon, menu->text);
@@ -432,7 +432,7 @@ add_to_submenus (AppletInfo *info,
 		 const char *path,
 		 const char *name,
 		 AppletUserMenu *menu,
-		 GtkWidget *submenu,
+		 CtkWidget *submenu,
 		 GList *user_menu)
 {
 	char *n = g_strdup (name);
@@ -492,11 +492,11 @@ add_to_submenus (AppletInfo *info,
 	g_free(n);
 }
 
-GtkWidget *
+CtkWidget *
 cafe_panel_applet_create_menu (AppletInfo *info)
 {
-	GtkWidget   *menu;
-	GtkWidget   *menuitem;
+	CtkWidget   *menu;
+	CtkWidget   *menuitem;
 	GList       *l;
 	PanelWidget *panel_widget;
 	gboolean     added_anything = FALSE;
@@ -598,13 +598,13 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 	}
 
 /* Set up theme and transparency support */
-	GtkWidget *toplevel = ctk_widget_get_toplevel (menu);
+	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
-	GtkStyleContext *context;
+	CtkStyleContext *context;
 	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
@@ -613,7 +613,7 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 }
 
 void
-cafe_panel_applet_menu_set_recurse (GtkMenu     *menu,
+cafe_panel_applet_menu_set_recurse (CtkMenu     *menu,
 			       const gchar *key,
 			       gpointer     data)
 {
@@ -625,7 +625,7 @@ cafe_panel_applet_menu_set_recurse (GtkMenu     *menu,
 	children = ctk_container_get_children (CTK_CONTAINER (menu));
 
 	for (l = children; l; l = l->next) {
-		GtkWidget *submenu = ctk_menu_item_get_submenu (CTK_MENU_ITEM (l->data));
+		CtkWidget *submenu = ctk_menu_item_get_submenu (CTK_MENU_ITEM (l->data));
 
 		if (submenu)
 			cafe_panel_applet_menu_set_recurse (
@@ -665,7 +665,7 @@ applet_show_menu (AppletInfo     *info,
 }
 
 static gboolean
-applet_do_popup_menu (GtkWidget      *widget,
+applet_do_popup_menu (CtkWidget      *widget,
 		      GdkEventButton *event,
 		      AppletInfo     *info)
 {
@@ -681,7 +681,7 @@ applet_do_popup_menu (GtkWidget      *widget,
 }
 
 static gboolean
-applet_popup_menu (GtkWidget      *widget,
+applet_popup_menu (CtkWidget      *widget,
 		   AppletInfo     *info)
 {
 	GdkEventButton event;
@@ -693,7 +693,7 @@ applet_popup_menu (GtkWidget      *widget,
 }
 
 static gboolean
-applet_button_press (GtkWidget      *widget,
+applet_button_press (CtkWidget      *widget,
 		     GdkEventButton *event,
 		     AppletInfo     *info)
 {
@@ -713,7 +713,7 @@ applet_button_press (GtkWidget      *widget,
 }
 
 static void
-cafe_panel_applet_destroy (GtkWidget  *widget,
+cafe_panel_applet_destroy (CtkWidget  *widget,
 		      AppletInfo *info)
 {
 	g_return_if_fail (info != NULL);
@@ -1172,7 +1172,7 @@ cafe_panel_applet_get_id (AppletInfo *info)
 }
 
 const char *
-cafe_panel_applet_get_id_by_widget (GtkWidget *applet_widget)
+cafe_panel_applet_get_id_by_widget (CtkWidget *applet_widget)
 {
 	GSList *l;
 
@@ -1231,7 +1231,7 @@ cafe_panel_applet_get_by_type (PanelObjectType object_type, GdkScreen *screen)
 }
 
 AppletInfo *
-cafe_panel_applet_register (GtkWidget       *applet,
+cafe_panel_applet_register (CtkWidget       *applet,
 		       gpointer         data,
 		       GDestroyNotify   data_destroy,
 		       PanelWidget     *panel,

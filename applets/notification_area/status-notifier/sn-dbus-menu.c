@@ -23,7 +23,7 @@
 
 struct _SnDBusMenu
 {
-  GtkMenu        parent;
+  CtkMenu        parent;
 
   GHashTable    *items;
 
@@ -68,7 +68,7 @@ static const gchar *property_names[] =
 G_DEFINE_TYPE (SnDBusMenu, sn_dbus_menu, CTK_TYPE_MENU)
 
 static void
-activate_cb (GtkWidget  *widget,
+activate_cb (CtkWidget  *widget,
              SnDBusMenu *menu)
 {
   guint id;
@@ -82,9 +82,9 @@ activate_cb (GtkWidget  *widget,
                                     ctk_get_current_event_time (), NULL, NULL);
 }
 
-static GtkMenu *
+static CtkMenu *
 layout_update_item (SnDBusMenu *menu,
-                    GtkMenu    *ctk_menu,
+                    CtkMenu    *ctk_menu,
                     guint       id,
                     GVariant   *props)
 {
@@ -117,12 +117,12 @@ layout_update_item (SnDBusMenu *menu,
 static void
 layout_parse (SnDBusMenu *menu,
               GVariant   *layout,
-              GtkMenu    *ctk_menu)
+              CtkMenu    *ctk_menu)
 {
   guint id;
   GVariant *props;
   GVariant *items;
-  GtkMenu *submenu;
+  CtkMenu *submenu;
   GVariantIter iter;
   GVariant *child;
 
@@ -262,7 +262,7 @@ item_activation_requested_cb (SnDBusMenuGen *proxy,
 }
 
 static void
-map_cb (GtkWidget  *widget,
+map_cb (CtkWidget  *widget,
         SnDBusMenu *menu)
 {
   gboolean need_update;
@@ -282,7 +282,7 @@ map_cb (GtkWidget  *widget,
 }
 
 static void
-unmap_cb (GtkWidget  *widget,
+unmap_cb (CtkWidget  *widget,
           SnDBusMenu *menu)
 {
   sn_dbus_menu_gen_call_event_sync (menu->proxy, 0, "closed",
@@ -365,10 +365,10 @@ static void
 sn_dbus_menu_constructed (GObject *object)
 {
   SnDBusMenu *menu;
-  GtkWidget *toplevel;
+  CtkWidget *toplevel;
   GdkScreen *screen;
   GdkVisual *visual;
-  GtkStyleContext *context;
+  CtkStyleContext *context;
 
   G_OBJECT_CLASS (sn_dbus_menu_parent_class)->constructed (object);
   menu = SN_DBUS_MENU (object);
@@ -489,7 +489,7 @@ sn_dbus_menu_init (SnDBusMenu *menu)
   menu->cancellable = g_cancellable_new ();
 }
 
-GtkMenu *
+CtkMenu *
 sn_dbus_menu_new (const gchar *bus_name,
                   const gchar *object_path)
 {

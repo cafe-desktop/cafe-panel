@@ -52,7 +52,7 @@
 #include "cafe-panel-applet-enums.h"
 
 struct _CafePanelAppletPrivate {
-	GtkWidget         *plug;
+	CtkWidget         *plug;
 	GDBusConnection   *connection;
 
 	gboolean           out_of_process;
@@ -63,9 +63,9 @@ struct _CafePanelAppletPrivate {
 	guint              object_id;
 	char              *prefs_path;
 
-	GtkUIManager      *ui_manager;
-	GtkActionGroup    *applet_action_group;
-	GtkActionGroup    *panel_action_group;
+	CtkUIManager      *ui_manager;
+	CtkActionGroup    *applet_action_group;
+	CtkActionGroup    *panel_action_group;
 
 	CafePanelAppletFlags   flags;
 	CafePanelAppletOrient  orient;
@@ -111,17 +111,17 @@ enum {
 };
 
 static void       cafe_panel_applet_handle_background   (CafePanelApplet       *applet);
-static GtkAction *cafe_panel_applet_menu_get_action     (CafePanelApplet       *applet,
+static CtkAction *cafe_panel_applet_menu_get_action     (CafePanelApplet       *applet,
 						    const gchar       *action);
 static void       cafe_panel_applet_menu_update_actions (CafePanelApplet       *applet);
-static void       cafe_panel_applet_menu_cmd_remove     (GtkAction         *action,
+static void       cafe_panel_applet_menu_cmd_remove     (CtkAction         *action,
 						    CafePanelApplet       *applet);
-static void       cafe_panel_applet_menu_cmd_move       (GtkAction         *action,
+static void       cafe_panel_applet_menu_cmd_move       (CtkAction         *action,
 						    CafePanelApplet       *applet);
-static void       cafe_panel_applet_menu_cmd_lock       (GtkAction         *action,
+static void       cafe_panel_applet_menu_cmd_lock       (CtkAction         *action,
 						    CafePanelApplet       *applet);
 static void       cafe_panel_applet_register_object     (CafePanelApplet       *applet);
-void	_cafe_panel_applet_apply_css	(GtkWidget* widget, CafePanelAppletBackgroundType type);
+void	_cafe_panel_applet_apply_css	(CtkWidget* widget, CafePanelAppletBackgroundType type);
 
 static const gchar panel_menu_ui[] =
 	"<ui>\n"
@@ -135,7 +135,7 @@ static const gchar panel_menu_ui[] =
 	"  </popup>\n"
 	"</ui>\n";
 
-static const GtkActionEntry menu_entries[] = {
+static const CtkActionEntry menu_entries[] = {
 	{ "Remove", "list-remove", N_("_Remove From Panel"),
 	  NULL, NULL,
 	  G_CALLBACK (cafe_panel_applet_menu_cmd_remove) },
@@ -144,7 +144,7 @@ static const GtkActionEntry menu_entries[] = {
 	  G_CALLBACK (cafe_panel_applet_menu_cmd_move) }
 };
 
-static const GtkToggleActionEntry menu_toggle_entries[] = {
+static const CtkToggleActionEntry menu_toggle_entries[] = {
 	{ "Lock", NULL, N_("Loc_k To Panel"),
 	  NULL, NULL,
 	  G_CALLBACK (cafe_panel_applet_menu_cmd_lock) }
@@ -389,7 +389,7 @@ static void
 cafe_panel_applet_set_locked (CafePanelApplet *applet,
 			 gboolean     locked)
 {
-	GtkAction *action;
+	CtkAction *action;
 
 	g_return_if_fail (PANEL_IS_APPLET (applet));
 
@@ -482,7 +482,7 @@ static Window
 cafe_panel_applet_find_toplevel_dock_window (CafePanelApplet *applet,
 					Display	    *xdisplay)
 {
-	GtkWidget  *toplevel;
+	CtkWidget  *toplevel;
 	Window	    xwin;
 	Window	    root, parent, *child;
 	int	    num_children;
@@ -597,7 +597,7 @@ cafe_panel_applet_request_focus (CafePanelApplet	 *applet,
 #endif
 }
 
-static GtkAction *
+static CtkAction *
 cafe_panel_applet_menu_get_action (CafePanelApplet *applet,
 			      const gchar *action)
 {
@@ -623,7 +623,7 @@ cafe_panel_applet_menu_update_actions (CafePanelApplet *applet)
 }
 
 static void
-cafe_panel_applet_menu_cmd_remove (GtkAction   *action,
+cafe_panel_applet_menu_cmd_remove (CtkAction   *action,
 			      CafePanelApplet *applet)
 {
 	GError *error = NULL;
@@ -645,7 +645,7 @@ cafe_panel_applet_menu_cmd_remove (GtkAction   *action,
 }
 
 static void
-cafe_panel_applet_menu_cmd_move (GtkAction   *action,
+cafe_panel_applet_menu_cmd_move (CtkAction   *action,
 			    CafePanelApplet *applet)
 {
 	GError *error = NULL;
@@ -667,7 +667,7 @@ cafe_panel_applet_menu_cmd_move (GtkAction   *action,
 }
 
 static void
-cafe_panel_applet_menu_cmd_lock (GtkAction   *action,
+cafe_panel_applet_menu_cmd_lock (CtkAction   *action,
 			    CafePanelApplet *applet)
 {
 	gboolean locked;
@@ -679,7 +679,7 @@ cafe_panel_applet_menu_cmd_lock (GtkAction   *action,
 void
 cafe_panel_applet_setup_menu (CafePanelApplet    *applet,
 			 const gchar    *xml,
-			 GtkActionGroup *applet_action_group)
+			 CtkActionGroup *applet_action_group)
 {
 	gchar  *new_xml;
 	GError *error = NULL;
@@ -709,7 +709,7 @@ cafe_panel_applet_setup_menu (CafePanelApplet    *applet,
 void
 cafe_panel_applet_setup_menu_from_file (CafePanelApplet    *applet,
 				   const gchar    *filename,
-				   GtkActionGroup *applet_action_group)
+				   CtkActionGroup *applet_action_group)
 {
 	gchar  *xml = NULL;
 	GError *error = NULL;
@@ -728,11 +728,11 @@ cafe_panel_applet_setup_menu_from_file (CafePanelApplet    *applet,
  * cafe_panel_applet_setup_menu_from_resource:
  * @applet: a #CafePanelApplet.
  * @resource_path: a resource path
- * @action_group: a #GtkActionGroup.
+ * @action_group: a #CtkActionGroup.
  *
  * Sets up the context menu of @applet. @filename is a resource path to a menu
- * XML file, containing a #GtkUIManager UI definition that describes how to
- * display the menu items. @action_group contains the various #GtkAction that
+ * XML file, containing a #CtkUIManager UI definition that describes how to
+ * display the menu items. @action_group contains the various #CtkAction that
  * are referenced in @xml.
  *
  * See also the <link linkend="getting-started.context-menu">Context
@@ -743,7 +743,7 @@ cafe_panel_applet_setup_menu_from_file (CafePanelApplet    *applet,
 void
 cafe_panel_applet_setup_menu_from_resource (CafePanelApplet    *applet,
 				       const gchar    *resource_path,
-				       GtkActionGroup *action_group)
+				       CtkActionGroup *action_group)
 {
 	GBytes *bytes;
 	GError *error = NULL;
@@ -812,9 +812,9 @@ cafe_panel_applet_finalize (GObject *object)
 }
 
 static gboolean
-container_has_focusable_child (GtkContainer *container)
+container_has_focusable_child (CtkContainer *container)
 {
-	GtkWidget *child;
+	CtkWidget *child;
 	GList *list;
 	GList *t;
 	gboolean retval = FALSE;
@@ -840,19 +840,19 @@ static void
 cafe_panel_applet_menu_popup (CafePanelApplet *applet,
                               GdkEvent    *event)
 {
-	GtkWidget *menu;
+	CtkWidget *menu;
 
 	menu = ctk_ui_manager_get_widget (applet->priv->ui_manager,
 					  "/CafePanelAppletPopup");
 
 /* Set up theme and transparency support */
-	GtkWidget *toplevel = ctk_widget_get_toplevel (menu);
+	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
-	GtkStyleContext *context;
+	CtkStyleContext *context;
 	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
@@ -880,7 +880,7 @@ cafe_panel_applet_menu_popup (CafePanelApplet *applet,
 }
 
 static gboolean
-cafe_panel_applet_can_focus (GtkWidget *widget)
+cafe_panel_applet_can_focus (CtkWidget *widget)
 {
 	/*
 	 * A CafePanelApplet widget can focus if it has a tooltip or it does
@@ -901,7 +901,7 @@ cafe_panel_applet_button_event (CafePanelApplet      *applet,
 			   GdkEventButton *event)
 {
 #ifdef HAVE_X11
-	GtkWidget *widget;
+	CtkWidget *widget;
 	GdkWindow *window;
 	GdkWindow *socket_window;
 	XEvent     xevent;
@@ -972,7 +972,7 @@ cafe_panel_applet_button_event (CafePanelApplet      *applet,
 }
 
 static gboolean
-cafe_panel_applet_button_press (GtkWidget      *widget,
+cafe_panel_applet_button_press (CtkWidget      *widget,
 			   GdkEventButton *event)
 {
 	CafePanelApplet *applet = CAFE_PANEL_APPLET (widget);
@@ -994,7 +994,7 @@ cafe_panel_applet_button_press (GtkWidget      *widget,
 }
 
 static gboolean
-cafe_panel_applet_button_release (GtkWidget      *widget,
+cafe_panel_applet_button_release (CtkWidget      *widget,
 			     GdkEventButton *event)
 {
 	CafePanelApplet *applet = CAFE_PANEL_APPLET (widget);
@@ -1006,7 +1006,7 @@ cafe_panel_applet_button_release (GtkWidget      *widget,
  *Do not open it on Return or some applets won't work
  */
 static gboolean
-cafe_panel_applet_key_press_event (GtkWidget   *widget,
+cafe_panel_applet_key_press_event (CtkWidget   *widget,
 			      GdkEventKey *event)
 {
     if (event->keyval == GDK_KEY_Menu) {
@@ -1018,7 +1018,7 @@ cafe_panel_applet_key_press_event (GtkWidget   *widget,
 }
 
 static void
-cafe_panel_applet_get_preferred_width (GtkWidget *widget,
+cafe_panel_applet_get_preferred_width (CtkWidget *widget,
 				       int       *minimum_width,
 				       int       *natural_width)
 {
@@ -1042,7 +1042,7 @@ cafe_panel_applet_get_preferred_width (GtkWidget *widget,
 }
 
 static void
-cafe_panel_applet_get_preferred_height (GtkWidget *widget,
+cafe_panel_applet_get_preferred_height (CtkWidget *widget,
 					int       *minimum_height,
 					int       *natural_height)
 {
@@ -1065,8 +1065,8 @@ cafe_panel_applet_get_preferred_height (GtkWidget *widget,
 #endif
 }
 
-static GtkSizeRequestMode
-cafe_panel_applet_get_request_mode (GtkWidget *widget)
+static CtkSizeRequestMode
+cafe_panel_applet_get_request_mode (CtkWidget *widget)
 {
 	/*Do not use CTK_SIZE_REQUEST_HEIGHT_FOR_WIDTH
 	 *or CTK_SIZE_REQUEST_WIDTH_FOR_HEIGHT
@@ -1080,12 +1080,12 @@ cafe_panel_applet_get_request_mode (GtkWidget *widget)
 }
 
 static void
-cafe_panel_applet_size_allocate (GtkWidget     *widget,
-			    GtkAllocation *allocation)
+cafe_panel_applet_size_allocate (CtkWidget     *widget,
+			    CtkAllocation *allocation)
 {
-	GtkAllocation  child_allocation;
-	GtkBin        *bin;
-	GtkWidget     *child;
+	CtkAllocation  child_allocation;
+	CtkBin        *bin;
+	CtkWidget     *child;
 	int            border_width;
 	CafePanelApplet   *applet;
 
@@ -1127,9 +1127,9 @@ cafe_panel_applet_size_allocate (GtkWidget     *widget,
 	}
 }
 
-static gboolean cafe_panel_applet_draw(GtkWidget* widget, cairo_t* cr)
+static gboolean cafe_panel_applet_draw(CtkWidget* widget, cairo_t* cr)
 {
-	GtkStyleContext *context;
+	CtkStyleContext *context;
 	int border_width;
 	gdouble x, y, width, height;
 
@@ -1162,11 +1162,11 @@ static gboolean cafe_panel_applet_draw(GtkWidget* widget, cairo_t* cr)
 }
 
 static gboolean
-cafe_panel_applet_focus (GtkWidget        *widget,
-		    GtkDirectionType  dir)
+cafe_panel_applet_focus (CtkWidget        *widget,
+		    CtkDirectionType  dir)
 {
 	gboolean ret;
-	GtkWidget *previous_focus_child;
+	CtkWidget *previous_focus_child;
 	CafePanelApplet *applet;
 
 	g_return_val_if_fail (PANEL_IS_APPLET (widget), FALSE);
@@ -1487,7 +1487,7 @@ cafe_panel_applet_handle_background (CafePanelApplet *applet)
 }
 
 static void
-cafe_panel_applet_realize (GtkWidget *widget)
+cafe_panel_applet_realize (CtkWidget *widget)
 {
 	CTK_WIDGET_CLASS (cafe_panel_applet_parent_class)->realize (widget);
 
@@ -1497,9 +1497,9 @@ cafe_panel_applet_realize (GtkWidget *widget)
 
 static void
 cafe_panel_applet_move_focus_out_of_applet (CafePanelApplet      *applet,
-				       GtkDirectionType  dir)
+				       CtkDirectionType  dir)
 {
-	GtkWidget *toplevel;
+	CtkWidget *toplevel;
 
 	applet->priv->moving_focus_out = TRUE;
 	toplevel = ctk_widget_get_toplevel (CTK_WIDGET (applet));
@@ -1515,7 +1515,7 @@ cafe_panel_applet_change_background(CafePanelApplet *applet,
 				    GdkRGBA* color,
 				    cairo_pattern_t *pattern)
 {
-	GtkStyleContext* context;
+	CtkStyleContext* context;
 	GdkWindow* window;
 
 	if (applet->priv->out_of_process)
@@ -1684,9 +1684,9 @@ cafe_panel_applet_set_property (GObject      *object,
 }
 
 static void
-add_tab_bindings (GtkBindingSet   *binding_set,
+add_tab_bindings (CtkBindingSet   *binding_set,
 		  GdkModifierType  modifiers,
-		  GtkDirectionType direction)
+		  CtkDirectionType direction)
 {
 	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Tab, modifiers,
 				      "move_focus_out_of_applet", 1,
@@ -1740,9 +1740,9 @@ cafe_panel_applet_setup (CafePanelApplet *applet)
 	}
 }
 
-void _cafe_panel_applet_apply_css(GtkWidget* widget, CafePanelAppletBackgroundType type)
+void _cafe_panel_applet_apply_css(CtkWidget* widget, CafePanelAppletBackgroundType type)
 {
-	GtkStyleContext* context;
+	CtkStyleContext* context;
 
 	context = ctk_widget_get_style_context (widget);
 
@@ -1761,9 +1761,9 @@ void _cafe_panel_applet_apply_css(GtkWidget* widget, CafePanelAppletBackgroundTy
 }
 
 #ifdef HAVE_X11
-static void _cafe_panel_applet_prepare_css (GtkStyleContext *context)
+static void _cafe_panel_applet_prepare_css (CtkStyleContext *context)
 {
-	GtkCssProvider  *provider;
+	CtkCssProvider  *provider;
 
 	g_return_if_fail (GDK_IS_X11_DISPLAY (gdk_display_get_default ()));
 	provider = ctk_css_provider_new ();
@@ -1840,7 +1840,7 @@ cafe_panel_applet_constructor (GType                  type,
 		GdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (applet->priv->plug));
 		GdkVisual *visual = gdk_screen_get_rgba_visual (screen);
 		ctk_widget_set_visual (CTK_WIDGET (applet->priv->plug), visual);
-		GtkStyleContext *context;
+		CtkStyleContext *context;
 		context = ctk_widget_get_style_context (CTK_WIDGET(applet->priv->plug));
 		ctk_style_context_add_class (context,"gnome-panel-menu-bar");
 		ctk_style_context_add_class (context,"cafe-panel-menu-bar");
@@ -1878,8 +1878,8 @@ static void
 cafe_panel_applet_class_init (CafePanelAppletClass *klass)
 {
 	GObjectClass   *gobject_class = (GObjectClass *) klass;
-	GtkWidgetClass *widget_class = (GtkWidgetClass *) klass;
-	GtkBindingSet *binding_set;
+	CtkWidgetClass *widget_class = (CtkWidgetClass *) klass;
+	CtkBindingSet *binding_set;
 
 	gobject_class->get_property = cafe_panel_applet_get_property;
 	gobject_class->set_property = cafe_panel_applet_set_property;
@@ -2052,7 +2052,7 @@ cafe_panel_applet_class_init (CafePanelAppletClass *klass)
 	ctk_widget_class_set_css_name (widget_class, "PanelApplet");
 }
 
-GtkWidget* cafe_panel_applet_new(void)
+CtkWidget* cafe_panel_applet_new(void)
 {
 	CafePanelApplet* applet = g_object_new(PANEL_TYPE_APPLET, NULL);
 
@@ -2277,13 +2277,13 @@ _x_error_handler (Display *display, XErrorEvent *error)
 /*
  * To do graphical embedding in the X window system, CAFE Panel
  * uses the classic foreign-window-reparenting trick. The
- * GtkPlug/GtkSocket widgets are used for this purpose. However,
- * serious robustness problems arise if the GtkSocket end of the
+ * CtkPlug/CtkSocket widgets are used for this purpose. However,
+ * serious robustness problems arise if the CtkSocket end of the
  * connection unexpectedly dies. The X server sends out DestroyNotify
- * events for the descendants of the GtkPlug (i.e., your embedded
+ * events for the descendants of the CtkPlug (i.e., your embedded
  * component's windows) in effectively random order. Furthermore, if
  * you happened to be drawing on any of those windows when the
- * GtkSocket was destroyed (a common state of affairs), an X error
+ * CtkSocket was destroyed (a common state of affairs), an X error
  * will kill your application.
  *
  * To solve this latter problem, CAFE Panel sets up its own X error
@@ -2323,8 +2323,8 @@ _cafe_panel_applet_factory_main_internal (const gchar               *factory_id,
 
 #ifdef HAVE_X11
 	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
-		/*Use this both in and out of process as the tray applet always uses GtkSocket
-		*to handle GtkStatusIcons whether the tray itself is built in or out of process
+		/*Use this both in and out of process as the tray applet always uses CtkSocket
+		*to handle CtkStatusIcons whether the tray itself is built in or out of process
 		*/
 		_cafe_panel_applet_setup_x_error_handler();
 	} else
@@ -2399,7 +2399,7 @@ cafe_panel_applet_factory_setup_in_process (const gchar               *factory_i
 /**
  * cafe_panel_applet_set_background_widget:
  * @applet: a #PanelApplet.
- * @widget: a #GtkWidget.
+ * @widget: a #CtkWidget.
  *
  * Configure #PanelApplet to automatically draw the background of the applet on
  * @widget. It is generally enough to call this function with @applet as
@@ -2410,7 +2410,7 @@ cafe_panel_applet_factory_setup_in_process (const gchar               *factory_i
 
 void
 cafe_panel_applet_set_background_widget (CafePanelApplet *applet,
-				    GtkWidget   *widget)
+				    CtkWidget   *widget)
 {
 }
 
@@ -2438,11 +2438,11 @@ cafe_panel_applet_get_object_path (CafePanelApplet *applet)
 	return applet->priv->object_path;
 }
 
-G_MODULE_EXPORT GtkWidget *
+G_MODULE_EXPORT CtkWidget *
 cafe_panel_applet_get_applet_widget (const gchar *factory_id,
                                 guint        uid)
 {
-	GtkWidget *widget;
+	CtkWidget *widget;
 
 	widget = cafe_panel_applet_factory_get_applet_widget (factory_id, uid);
 	if (!widget) {

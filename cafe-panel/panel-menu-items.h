@@ -43,13 +43,13 @@ typedef struct _PanelPlaceMenuItemClass   PanelPlaceMenuItemClass;
 typedef struct _PanelPlaceMenuItemPrivate PanelPlaceMenuItemPrivate;
 
 struct _PanelPlaceMenuItem {
-	GtkImageMenuItem            menuitem;
+	CtkImageMenuItem            menuitem;
 
 	PanelPlaceMenuItemPrivate  *priv;
 };
 
 struct _PanelPlaceMenuItemClass {
-	GtkImageMenuItemClass       menuitem_class;
+	CtkImageMenuItemClass       menuitem_class;
 };
 
 GType panel_place_menu_item_get_type (void) G_GNUC_CONST;
@@ -68,28 +68,28 @@ typedef struct _PanelDesktopMenuItemClass   PanelDesktopMenuItemClass;
 typedef struct _PanelDesktopMenuItemPrivate PanelDesktopMenuItemPrivate;
 
 struct _PanelDesktopMenuItem{
-	GtkImageMenuItem            menuitem;
+	CtkImageMenuItem            menuitem;
 
 	PanelDesktopMenuItemPrivate  *priv;
 };
 
 struct _PanelDesktopMenuItemClass {
-	GtkImageMenuItemClass       menuitem_class;
+	CtkImageMenuItemClass       menuitem_class;
 };
 
 GType panel_desktop_menu_item_get_type (void) G_GNUC_CONST;
 
 
-GtkWidget* panel_place_menu_item_new(gboolean use_image);
-GtkWidget* panel_desktop_menu_item_new(gboolean use_image, gboolean append_lock_logout);
+CtkWidget* panel_place_menu_item_new(gboolean use_image);
+CtkWidget* panel_desktop_menu_item_new(gboolean use_image, gboolean append_lock_logout);
 
-void panel_place_menu_item_set_panel   (GtkWidget   *item,
+void panel_place_menu_item_set_panel   (CtkWidget   *item,
 					PanelWidget *panel);
-void panel_desktop_menu_item_set_panel (GtkWidget   *item,
+void panel_desktop_menu_item_set_panel (CtkWidget   *item,
 					PanelWidget *panel);
 
-void panel_menu_items_append_lock_logout (GtkWidget *menu);
-void panel_menu_item_activate_desktop_file (GtkWidget  *menuitem,
+void panel_menu_items_append_lock_logout (CtkWidget *menu);
+void panel_menu_item_activate_desktop_file (CtkWidget  *menuitem,
 					    const char *path);
 
 #ifdef __cplusplus

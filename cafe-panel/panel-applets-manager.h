@@ -69,7 +69,7 @@ struct _CafePanelAppletsManagerClass {
 						     const gchar                 *iid,
 						     CafePanelAppletFrameActivating  *frame_act);
 
-	GtkWidget        * (*get_applet_widget)     (CafePanelAppletsManager         *manager,
+	CtkWidget        * (*get_applet_widget)     (CafePanelAppletsManager         *manager,
 	                                             const gchar                 *iid,
 	                                             guint                        uid);
 };
@@ -91,7 +91,7 @@ CafePanelAppletInfo  *cafe_panel_applets_manager_get_applet_info_from_old_id (co
 gboolean          cafe_panel_applets_manager_load_applet                 (const gchar                *iid,
 								     CafePanelAppletFrameActivating *frame_act);
 
-GtkWidget        *cafe_panel_applets_manager_get_applet_widget           (const gchar     *iid,
+CtkWidget        *cafe_panel_applets_manager_get_applet_widget           (const gchar     *iid,
                                                                      guint            uid);
 
 #ifdef __cplusplus

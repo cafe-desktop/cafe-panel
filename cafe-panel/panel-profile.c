@@ -385,7 +385,7 @@ TOPLEVEL_GET_SET_BG_FUNCS ("rotate",  background, boolean, rotate,         gbool
 GSettings*
 panel_profile_get_attached_object_settings (PanelToplevel *toplevel)
 {
-	GtkWidget  *attach_widget;
+	CtkWidget  *attach_widget;
 	const char *id;
 	char *path;
 	GSettings *settings;

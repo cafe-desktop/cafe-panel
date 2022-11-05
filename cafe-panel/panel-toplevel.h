@@ -53,7 +53,7 @@ typedef struct _PanelToplevelClass   PanelToplevelClass;
 typedef struct _PanelToplevelPrivate PanelToplevelPrivate;
 
 struct _PanelToplevel {
-	GtkWindow              window_instance;
+	CtkWindow              window_instance;
 	GSettings             *settings;
 	GSettings             *queued_settings;
 	GSettings             *background_settings;
@@ -62,7 +62,7 @@ struct _PanelToplevel {
 };
 
 struct _PanelToplevelClass {
-	GtkWindowClass         window_class;
+	CtkWindowClass         window_class;
 
 	/* key bindings */
 	gboolean  (*popup_panel_menu) (PanelToplevel *toplevel);
@@ -124,11 +124,11 @@ void                 panel_toplevel_rotate                 (PanelToplevel       
 
 void                 panel_toplevel_attach_to_widget       (PanelToplevel       *toplevel,
 							    PanelToplevel       *attach_toplevel,
-							    GtkWidget           *attach_widget);
+							    CtkWidget           *attach_widget);
 void                 panel_toplevel_detach                 (PanelToplevel       *toplevel);
 gboolean             panel_toplevel_get_is_attached        (PanelToplevel       *toplevel);
 PanelToplevel       *panel_toplevel_get_attach_toplevel    (PanelToplevel       *toplevel);
-GtkWidget           *panel_toplevel_get_attach_widget      (PanelToplevel       *toplevel);
+CtkWidget           *panel_toplevel_get_attach_widget      (PanelToplevel       *toplevel);
 
 gboolean             panel_toplevel_get_is_floating	   (PanelToplevel       *toplevel);
 
@@ -137,7 +137,7 @@ PanelState           panel_toplevel_get_state              (PanelToplevel       
 
 void                 panel_toplevel_hide                   (PanelToplevel       *toplevel,
 							    gboolean             auto_hide,
-							    GtkDirectionType     direction);
+							    CtkDirectionType     direction);
 void                 panel_toplevel_unhide                 (PanelToplevel       *toplevel);
 void                 panel_toplevel_queue_auto_hide        (PanelToplevel       *toplevel);
 void                 panel_toplevel_queue_auto_unhide      (PanelToplevel       *toplevel);

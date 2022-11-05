@@ -39,10 +39,10 @@
 #endif
 
 typedef struct {
-	GtkWidget* applet;
-	GtkWidget* tasklist;
+	CtkWidget* applet;
+	CtkWidget* tasklist;
 #ifdef HAVE_WINDOW_PREVIEWS
-	GtkWidget* preview;
+	CtkWidget* preview;
 
 	gboolean show_window_thumbnails;
 	gint thumbnail_size;
@@ -51,29 +51,29 @@ typedef struct {
 	WnckTasklistGroupingType grouping;
 	gboolean move_unminimized_windows;
 
-	GtkOrientation orientation;
+	CtkOrientation orientation;
 	int size;
 #if !defined(WNCKLET_INPROCESS) && !CTK_CHECK_VERSION (3, 23, 0)
 	gboolean needs_hints;
 #endif
 
-	GtkIconTheme* icon_theme;
+	CtkIconTheme* icon_theme;
 
 	/* Properties: */
-	GtkWidget* properties_dialog;
-	GtkWidget* show_current_radio;
-	GtkWidget* show_all_radio;
+	CtkWidget* properties_dialog;
+	CtkWidget* show_current_radio;
+	CtkWidget* show_all_radio;
 #ifdef HAVE_WINDOW_PREVIEWS
-	GtkWidget* show_thumbnails_radio;
-	GtkWidget* hide_thumbnails_radio;
-	GtkWidget* thumbnail_size_spin;
+	CtkWidget* show_thumbnails_radio;
+	CtkWidget* hide_thumbnails_radio;
+	CtkWidget* thumbnail_size_spin;
 #endif
-	GtkWidget* never_group_radio;
-	GtkWidget* auto_group_radio;
-	GtkWidget* always_group_radio;
-	GtkWidget* minimized_windows_label;
-	GtkWidget* move_minimized_radio;
-	GtkWidget* change_workspace_radio;
+	CtkWidget* never_group_radio;
+	CtkWidget* auto_group_radio;
+	CtkWidget* always_group_radio;
+	CtkWidget* minimized_windows_label;
+	CtkWidget* move_minimized_radio;
+	CtkWidget* change_workspace_radio;
 
 	GSettings* settings;
 #ifdef HAVE_WINDOW_PREVIEWS
@@ -81,11 +81,11 @@ typedef struct {
 #endif
 } TasklistData;
 
-static void call_system_monitor(GtkAction* action, TasklistData* tasklist);
-static void display_properties_dialog(GtkAction* action, TasklistData* tasklist);
-static void display_help_dialog(GtkAction* action, TasklistData* tasklist);
-static void display_about_dialog(GtkAction* action, TasklistData* tasklist);
-static void destroy_tasklist(GtkWidget* widget, TasklistData* tasklist);
+static void call_system_monitor(CtkAction* action, TasklistData* tasklist);
+static void display_properties_dialog(CtkAction* action, TasklistData* tasklist);
+static void display_help_dialog(CtkAction* action, TasklistData* tasklist);
+static void display_about_dialog(CtkAction* action, TasklistData* tasklist);
+static void destroy_tasklist(CtkWidget* widget, TasklistData* tasklist);
 
 static void tasklist_update(TasklistData* tasklist)
 {
@@ -103,7 +103,7 @@ static void tasklist_update(TasklistData* tasklist)
 	wnck_tasklist_set_switch_workspace_on_unminimize(WNCK_TASKLIST(tasklist->tasklist), tasklist->move_unminimized_windows);
 }
 
-static void response_cb(GtkWidget* widget, int id, TasklistData* tasklist)
+static void response_cb(CtkWidget* widget, int id, TasklistData* tasklist)
 {
 	if (id == CTK_RESPONSE_HELP)
 	{
@@ -122,7 +122,7 @@ static void applet_realized(CafePanelApplet* applet, TasklistData* tasklist)
 
 static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient orient, TasklistData* tasklist)
 {
-	GtkOrientation new_orient;
+	CtkOrientation new_orient;
 
 	switch (orient)
 	{
@@ -256,9 +256,9 @@ static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbn
 	ctk_window_move (CTK_WINDOW (tasklist->preview), x_pos, y_pos);
 }
 
-static gboolean preview_window_draw (GtkWidget *widget, cairo_t *cr, GdkPixbuf *thumbnail)
+static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, GdkPixbuf *thumbnail)
 {
-	GtkStyleContext *context;
+	CtkStyleContext *context;
 
 	context = ctk_widget_get_style_context (widget);
 	ctk_render_icon (context, cr, thumbnail, 0, 0);
@@ -347,7 +347,7 @@ static const char* system_monitors[] = {
 	"gnome-system-monitor",
 };
 
-static const GtkActionEntry tasklist_menu_actions[] = {
+static const CtkActionEntry tasklist_menu_actions[] = {
 	{
 		"TasklistSystemMonitor",
 		"utilities-system-monitor",
@@ -384,7 +384,7 @@ static const GtkActionEntry tasklist_menu_actions[] = {
 
 static void tasklist_properties_update_content_radio(TasklistData* tasklist)
 {
-	GtkWidget* button;
+	CtkWidget* button;
 
 	if (tasklist->show_current_radio == NULL)
 		return;
@@ -421,7 +421,7 @@ static void display_all_workspaces_changed(GSettings* settings, gchar* key, Task
 #ifdef HAVE_WINDOW_PREVIEWS
 static void tasklist_update_thumbnails_radio(TasklistData* tasklist)
 {
-	GtkWidget* button;
+	CtkWidget* button;
 
 	if (tasklist->show_thumbnails_radio == NULL || tasklist->hide_thumbnails_radio == NULL)
 		return;
@@ -452,7 +452,7 @@ static void window_thumbnails_changed(GSettings *settings, gchar* key, TasklistD
 
 static void tasklist_update_thumbnail_size_spin(TasklistData* tasklist)
 {
-	GtkWidget* button;
+	CtkWidget* button;
 
 	if (!tasklist->thumbnail_size)
 		return;
@@ -469,7 +469,7 @@ static void thumbnail_size_changed(GSettings *settings, gchar* key, TasklistData
 }
 #endif
 
-static GtkWidget* get_grouping_button(TasklistData* tasklist, WnckTasklistGroupingType type)
+static CtkWidget* get_grouping_button(TasklistData* tasklist, WnckTasklistGroupingType type)
 {
 	switch (type)
 	{
@@ -489,7 +489,7 @@ static GtkWidget* get_grouping_button(TasklistData* tasklist, WnckTasklistGroupi
 static void group_windows_changed(GSettings* settings, gchar* key, TasklistData* tasklist)
 {
 	WnckTasklistGroupingType type;
-	GtkWidget* button;
+	CtkWidget* button;
 
 	type = g_settings_get_enum (settings, key);
 
@@ -506,7 +506,7 @@ static void group_windows_changed(GSettings* settings, gchar* key, TasklistData*
 
 static void tasklist_update_unminimization_radio(TasklistData* tasklist)
 {
-	GtkWidget* button;
+	CtkWidget* button;
 
 	if (tasklist->move_minimized_radio == NULL)
 		return;
@@ -568,7 +568,7 @@ static void setup_gsettings(TasklistData* tasklist)
 					  tasklist);
 }
 
-static void applet_size_allocate(GtkWidget *widget, GtkAllocation *allocation, TasklistData *tasklist)
+static void applet_size_allocate(CtkWidget *widget, CtkAllocation *allocation, TasklistData *tasklist)
 {
 	int len;
 	const int* size_hints;
@@ -649,8 +649,8 @@ static GdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flag
 gboolean window_list_applet_fill(CafePanelApplet* applet)
 {
 	TasklistData* tasklist;
-	GtkActionGroup* action_group;
-	GtkCssProvider  *provider;
+	CtkActionGroup* action_group;
+	CtkCssProvider  *provider;
 	GdkScreen *screen;
 
 	tasklist = g_new0(TasklistData, 1);
@@ -765,7 +765,7 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 
 	if (cafe_panel_applet_get_locked_down(CAFE_PANEL_APPLET(tasklist->applet)))
 	{
-		GtkAction* action;
+		CtkAction* action;
 
 		action = ctk_action_group_get_action(action_group, "TasklistPreferences");
 		ctk_action_set_visible(action, FALSE);
@@ -780,7 +780,7 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 	return TRUE;
 }
 
-static void call_system_monitor(GtkAction* action, TasklistData* tasklist)
+static void call_system_monitor(CtkAction* action, TasklistData* tasklist)
 {
 	char *programpath;
 	int i;
@@ -802,12 +802,12 @@ static void call_system_monitor(GtkAction* action, TasklistData* tasklist)
 }
 
 
-static void display_help_dialog(GtkAction* action, TasklistData* tasklist)
+static void display_help_dialog(CtkAction* action, TasklistData* tasklist)
 {
 	wncklet_display_help(tasklist->applet, "cafe-user-guide", "windowlist", WINDOW_LIST_ICON);
 }
 
-static void display_about_dialog(GtkAction* action, TasklistData* tasklist)
+static void display_about_dialog(CtkAction* action, TasklistData* tasklist)
 {
 	static const gchar* authors[] = {
 		"Perberos <perberos@gmail.com>",
@@ -839,7 +839,7 @@ static void display_about_dialog(GtkAction* action, TasklistData* tasklist)
 		NULL);
 }
 
-static void group_windows_toggled(GtkToggleButton* button, TasklistData* tasklist)
+static void group_windows_toggled(CtkToggleButton* button, TasklistData* tasklist)
 {
 	if (ctk_toggle_button_get_active(button))
 	{
@@ -850,32 +850,32 @@ static void group_windows_toggled(GtkToggleButton* button, TasklistData* tasklis
 }
 
 #ifdef HAVE_WINDOW_PREVIEWS
-static void show_thumbnails_toggled(GtkToggleButton* button, TasklistData* tasklist)
+static void show_thumbnails_toggled(CtkToggleButton* button, TasklistData* tasklist)
 {
 	g_settings_set_boolean(tasklist->preview_settings, "show-window-thumbnails", ctk_toggle_button_get_active(button));
 }
 
-static void thumbnail_size_spin_changed(GtkSpinButton* button, TasklistData* tasklist)
+static void thumbnail_size_spin_changed(CtkSpinButton* button, TasklistData* tasklist)
 {
 	g_settings_set_int(tasklist->preview_settings, "thumbnail-window-size", ctk_spin_button_get_value_as_int(button));
 }
 #endif
 
-static void move_minimized_toggled(GtkToggleButton* button, TasklistData* tasklist)
+static void move_minimized_toggled(CtkToggleButton* button, TasklistData* tasklist)
 {
 	g_settings_set_boolean(tasklist->settings, "move-unminimized-windows", ctk_toggle_button_get_active(button));
 }
 
-static void display_all_workspaces_toggled(GtkToggleButton* button, TasklistData* tasklist)
+static void display_all_workspaces_toggled(CtkToggleButton* button, TasklistData* tasklist)
 {
 	g_settings_set_boolean(tasklist->settings, "display-all-workspaces", ctk_toggle_button_get_active(button));
 }
 
 #define WID(s) CTK_WIDGET(ctk_builder_get_object(builder, s))
 
-static void setup_sensitivity(TasklistData* tasklist, GtkBuilder* builder, const char* wid1, const char* wid2, const char* wid3, const char* key)
+static void setup_sensitivity(TasklistData* tasklist, CtkBuilder* builder, const char* wid1, const char* wid2, const char* wid3, const char* key)
 {
-	GtkWidget* w;
+	CtkWidget* w;
 
 	if (g_settings_is_writable(tasklist->settings, key))
 	{
@@ -901,11 +901,11 @@ static void setup_sensitivity(TasklistData* tasklist, GtkBuilder* builder, const
 	}
 }
 
-static void setup_dialog(GtkBuilder* builder, TasklistData* tasklist)
+static void setup_dialog(CtkBuilder* builder, TasklistData* tasklist)
 {
-	GtkWidget* button;
+	CtkWidget* button;
 #ifdef HAVE_WINDOW_PREVIEWS
-	GtkAdjustment *adjustment;
+	CtkAdjustment *adjustment;
 #endif
 
 	tasklist->show_current_radio = WID("show_current_radio");
@@ -972,11 +972,11 @@ static void setup_dialog(GtkBuilder* builder, TasklistData* tasklist)
 	g_signal_connect(tasklist->properties_dialog, "response", G_CALLBACK(response_cb), tasklist);
 }
 
-static void display_properties_dialog(GtkAction* action, TasklistData* tasklist)
+static void display_properties_dialog(CtkAction* action, TasklistData* tasklist)
 {
 	if (tasklist->properties_dialog == NULL)
 	{
-		GtkBuilder* builder;
+		CtkBuilder* builder;
 
 		builder = ctk_builder_new();
 		ctk_builder_set_translation_domain(builder, GETTEXT_PACKAGE);
@@ -998,7 +998,7 @@ static void display_properties_dialog(GtkAction* action, TasklistData* tasklist)
 	ctk_window_present(CTK_WINDOW(tasklist->properties_dialog));
 }
 
-static void destroy_tasklist(GtkWidget* widget, TasklistData* tasklist)
+static void destroy_tasklist(CtkWidget* widget, TasklistData* tasklist)
 {
 	g_signal_handlers_disconnect_by_data (G_OBJECT (tasklist->applet), tasklist);
 

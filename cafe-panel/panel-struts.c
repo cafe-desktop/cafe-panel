@@ -254,7 +254,7 @@ panel_struts_allocate_struts (PanelToplevel *toplevel,
 void
 panel_struts_set_window_hint (PanelToplevel *toplevel)
 {
-	GtkWidget  *widget;
+	CtkWidget  *widget;
 	PanelStrut *strut;
 	int         strut_size;
 	int         monitor_x, monitor_y, monitor_width, monitor_height;

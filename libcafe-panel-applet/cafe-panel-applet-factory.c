@@ -339,7 +339,7 @@ cafe_panel_applet_factory_register_service (CafePanelAppletFactory *factory)
 	return TRUE;
 }
 
-GtkWidget *
+CtkWidget *
 cafe_panel_applet_factory_get_applet_widget (const gchar *id,
                                         guint        uid)
 {

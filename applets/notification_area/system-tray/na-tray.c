@@ -50,7 +50,7 @@ struct _NaTrayPrivate
 
   guint idle_redraw_id;
 
-  GtkOrientation orientation;
+  CtkOrientation orientation;
   gint           icon_padding;
   gint           icon_size;
 };
@@ -65,8 +65,8 @@ typedef struct
 typedef struct
 {
   NaTray *tray;      /* tray containing the tray icon */
-  GtkWidget  *icon;      /* tray icon sending the message */
-  GtkWidget  *fixedtip;
+  CtkWidget  *icon;      /* tray icon sending the message */
+  CtkWidget  *fixedtip;
   guint       source_id;
   glong       id;        /* id of the current message */
   GSList     *buffer;    /* buffered messages */
@@ -89,7 +89,7 @@ static void icon_tip_show_next (IconTip *icontip);
 /* NaTray */
 static void na_host_init          (NaHostInterface *iface);
 static void na_tray_style_updated (NaHost          *host,
-                                   GtkStyleContext *context);
+                                   CtkStyleContext *context);
 static void na_tray_force_redraw  (NaHost          *host);
 
 G_DEFINE_TYPE_WITH_CODE (NaTray, na_tray, G_TYPE_OBJECT,
@@ -213,7 +213,7 @@ icon_tip_buffer_compare (gconstpointer a,
 }
 
 static void
-icon_tip_show_next_clicked (GtkWidget *widget,
+icon_tip_show_next_clicked (CtkWidget *widget,
                             gpointer   data)
 {
   icon_tip_show_next ((IconTip *) data);
@@ -275,7 +275,7 @@ icon_tip_show_next (IconTip *icontip)
 
 static void
 message_sent (NaTrayManager *manager,
-              GtkWidget     *icon,
+              CtkWidget     *icon,
               const char    *text,
               glong          id,
               glong          timeout,
@@ -338,7 +338,7 @@ message_sent (NaTrayManager *manager,
 
 static void
 message_cancelled (NaTrayManager *manager,
-                   GtkWidget     *icon,
+                   CtkWidget     *icon,
                    glong          id,
                    TraysScreen   *trays_screen)
 {
@@ -541,7 +541,7 @@ na_tray_dispose (GObject *object)
 
 static void
 na_tray_set_orientation (NaTray         *tray,
-			 GtkOrientation  orientation)
+			 CtkOrientation  orientation)
 {
   NaTrayPrivate *priv = tray->priv;
 
@@ -640,7 +640,7 @@ na_tray_class_init (NaTrayClass *klass)
 
 NaHost *
 na_tray_new_for_screen (GdkScreen      *screen,
-		        GtkOrientation  orientation)
+		        CtkOrientation  orientation)
 {
   return g_object_new (NA_TYPE_TRAY,
 		       "screen", screen,
@@ -685,7 +685,7 @@ na_tray_set_colors (NaTray   *tray,
 
 static void
 na_tray_style_updated (NaHost          *host,
-                       GtkStyleContext *context)
+                       CtkStyleContext *context)
 {
   GdkRGBA fg;
   GdkRGBA error;

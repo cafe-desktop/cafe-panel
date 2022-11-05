@@ -62,7 +62,7 @@ typedef struct {
 } CompositedZoomData;
 
 static gboolean
-zoom_timeout (GtkWidget *window)
+zoom_timeout (CtkWidget *window)
 {
 	ctk_widget_queue_draw (window);
 	return TRUE;
@@ -77,7 +77,7 @@ idle_destroy (gpointer data)
 }
 
 static gboolean
-zoom_draw (GtkWidget *widget,
+zoom_draw (CtkWidget *widget,
 	     cairo_t *cr,
 	     gpointer        user_data)
 {
@@ -154,7 +154,7 @@ draw_zoom_animation_composited (GdkScreen *gscreen,
 				GdkPixbuf *pixbuf,
 				PanelOrientation orientation)
 {
-	GtkWidget *win;
+	CtkWidget *win;
 	CompositedZoomData *zoom;
 	int wx = 0, wy = 0;
 
@@ -338,14 +338,14 @@ draw_zoom_animation (GdkScreen *gscreen,
 #undef FRAMES
 
 void
-xstuff_zoom_anicafe (GtkWidget *widget,
+xstuff_zoom_anicafe (CtkWidget *widget,
 		     cairo_surface_t *surface,
 		     PanelOrientation orientation,
 		     GdkRectangle *opt_rect)
 {
 	GdkScreen *gscreen;
 	GdkRectangle rect, dest;
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 	GdkMonitor *monitor;
 	GdkDisplay *display;
 

@@ -33,26 +33,26 @@ extern "C" {
 
 #define PANEL_CTK_BUILDER_GET(builder, name) CTK_WIDGET (ctk_builder_get_object (builder, name))
 
-void panel_ctk_file_chooser_add_image_preview (GtkFileChooser *chooser);
+void panel_ctk_file_chooser_add_image_preview (CtkFileChooser *chooser);
 
-GtkWidget* panel_dialog_add_button (GtkDialog   *dialog,
+CtkWidget* panel_dialog_add_button (CtkDialog   *dialog,
 				    const gchar *button_text,
 				    const gchar *icon_name,
 				          gint   response_id);
 
-GtkWidget* panel_file_chooser_dialog_new (const gchar          *title,
-					  GtkWindow            *parent,
-					  GtkFileChooserAction  action,
+CtkWidget* panel_file_chooser_dialog_new (const gchar          *title,
+					  CtkWindow            *parent,
+					  CtkFileChooserAction  action,
 					  const gchar          *first_button_text,
 					  ...);
 
-GtkWidget* panel_image_menu_item_new_from_icon (const gchar *icon_name,
+CtkWidget* panel_image_menu_item_new_from_icon (const gchar *icon_name,
 						const gchar *label_name);
 
-GtkWidget* panel_image_menu_item_new_from_gicon (GIcon       *gicon,
+CtkWidget* panel_image_menu_item_new_from_gicon (GIcon       *gicon,
 						 const gchar *label_name);
 
-GtkWidget* panel_check_menu_item_new (GtkWidget *widget_check);
+CtkWidget* panel_check_menu_item_new (CtkWidget *widget_check);
 
 #ifdef __cplusplus
 }

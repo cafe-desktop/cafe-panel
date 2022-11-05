@@ -36,15 +36,15 @@
 
 #include "panel-error.h"
 
-GtkWidget *
-panel_error_dialog (GtkWindow  *parent,
+CtkWidget *
+panel_error_dialog (CtkWindow  *parent,
 		    GdkScreen  *screen,
 		    const char *dialog_class,
 		    gboolean    auto_destroy,
 		    const char *primary_text,
 		    const char *secondary_text)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 	char      *freeme;
 
 	freeme = NULL;

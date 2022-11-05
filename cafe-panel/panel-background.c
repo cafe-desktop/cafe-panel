@@ -51,9 +51,9 @@ set_pixbuf_background (PanelBackground *background)
 	gdk_window_set_background_pattern (background->window, background->composited_pattern);
 }
 
-void panel_background_apply_css (PanelBackground *background, GtkWidget *widget)
+void panel_background_apply_css (PanelBackground *background, CtkWidget *widget)
 {
-	GtkStyleContext     *context;
+	CtkStyleContext     *context;
 	PanelBackgroundType  effective_type;
 
 	context = ctk_widget_get_style_context (widget);
@@ -76,7 +76,7 @@ void panel_background_apply_css (PanelBackground *background, GtkWidget *widget)
 static void
 panel_background_prepare_css ()
 {
-	GtkCssProvider      *provider;
+	CtkCssProvider      *provider;
 
 	provider = ctk_css_provider_new ();
 	ctk_css_provider_load_from_data (provider,
@@ -95,7 +95,7 @@ static gboolean
 panel_background_prepare (PanelBackground *background)
 {
 	PanelBackgroundType  effective_type;
-	GtkWidget           *widget = NULL;
+	CtkWidget           *widget = NULL;
 
 	if (!background->transformed)
 		return FALSE;
@@ -856,7 +856,7 @@ panel_background_unrealized (PanelBackground *background)
 
 void
 panel_background_change_region (PanelBackground *background,
-				GtkOrientation   orientation,
+				CtkOrientation   orientation,
 				int              x,
 				int              y,
 				int              width,

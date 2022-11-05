@@ -12,7 +12,7 @@ typedef struct {
     char          *tooltip;
 
     PanelToplevel *toplevel;
-    GtkWidget     *button;
+    CtkWidget     *button;
 
     gboolean       opened_for_drag;
     guint          close_timeout_id;

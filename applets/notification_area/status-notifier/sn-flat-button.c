@@ -16,7 +16,7 @@
  */
 
 /*
- * A GtkButton that doesn't draw anything specific but the focus, and pass
+ * A CtkButton that doesn't draw anything specific but the focus, and pass
  * all drawing and sizing requests to its child.
  */
 
@@ -31,17 +31,17 @@ G_DEFINE_TYPE (SnFlatButton,
                CTK_TYPE_BUTTON)
 
 static gboolean
-sn_flat_button_draw (GtkWidget *widget,
+sn_flat_button_draw (CtkWidget *widget,
                      cairo_t   *cr)
 {
-  GtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
+  CtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
 
   if (child)
     ctk_container_propagate_draw (CTK_CONTAINER (widget), child, cr);
 
   if (ctk_widget_is_drawable (widget) && ctk_widget_has_focus (widget))
     {
-      GtkStyleContext *context = ctk_widget_get_style_context (widget);
+      CtkStyleContext *context = ctk_widget_get_style_context (widget);
       gdouble x1, y1, x2, y2;
 
       cairo_clip_extents (cr, &x1, &y1, &x2, &y2);
@@ -52,10 +52,10 @@ sn_flat_button_draw (GtkWidget *widget,
 }
 
 static void
-sn_flat_button_size_allocate (GtkWidget     *widget,
-                              GtkAllocation *allocation)
+sn_flat_button_size_allocate (CtkWidget     *widget,
+                              CtkAllocation *allocation)
 {
-  GtkWidget *child;
+  CtkWidget *child;
 
   CTK_WIDGET_CLASS (sn_flat_button_parent_class)->size_allocate (widget,
                                                                  allocation);
@@ -66,10 +66,10 @@ sn_flat_button_size_allocate (GtkWidget     *widget,
     ctk_widget_size_allocate (child, allocation);
 }
 
-static GtkSizeRequestMode
-sn_flat_button_get_request_mode (GtkWidget *widget)
+static CtkSizeRequestMode
+sn_flat_button_get_request_mode (CtkWidget *widget)
 {
-  GtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
+  CtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
 
   if (child)
     return ctk_widget_get_request_mode (child);
@@ -78,11 +78,11 @@ sn_flat_button_get_request_mode (GtkWidget *widget)
 }
 
 static void
-sn_flat_button_get_preferred_height (GtkWidget *widget,
+sn_flat_button_get_preferred_height (CtkWidget *widget,
                                      gint      *min,
                                      gint      *nat)
 {
-  GtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
+  CtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
 
   if (child)
     ctk_widget_get_preferred_height (child, min, nat);
@@ -91,11 +91,11 @@ sn_flat_button_get_preferred_height (GtkWidget *widget,
 }
 
 static void
-sn_flat_button_get_preferred_width (GtkWidget *widget,
+sn_flat_button_get_preferred_width (CtkWidget *widget,
                                     gint      *min,
                                     gint      *nat)
 {
-  GtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
+  CtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
 
   if (child)
     ctk_widget_get_preferred_width (child, min, nat);
@@ -104,12 +104,12 @@ sn_flat_button_get_preferred_width (GtkWidget *widget,
 }
 
 static void
-sn_flat_button_get_preferred_height_for_width (GtkWidget *widget,
+sn_flat_button_get_preferred_height_for_width (CtkWidget *widget,
                                                gint       width,
                                                gint      *min,
                                                gint      *nat)
 {
-  GtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
+  CtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
 
   if (child)
     ctk_widget_get_preferred_height_for_width (child, width, min, nat);
@@ -118,12 +118,12 @@ sn_flat_button_get_preferred_height_for_width (GtkWidget *widget,
 }
 
 static void
-sn_flat_button_get_preferred_width_for_height (GtkWidget *widget,
+sn_flat_button_get_preferred_width_for_height (CtkWidget *widget,
                                                gint       height,
                                                gint      *min,
                                                gint      *nat)
 {
-  GtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
+  CtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
 
   if (child)
     ctk_widget_get_preferred_width_for_height (child, height, min, nat);
@@ -132,14 +132,14 @@ sn_flat_button_get_preferred_width_for_height (GtkWidget *widget,
 }
 
 static void
-sn_flat_button_get_preferred_height_and_baseline_for_width (GtkWidget *widget,
+sn_flat_button_get_preferred_height_and_baseline_for_width (CtkWidget *widget,
                                                             gint       width,
                                                             gint      *min,
                                                             gint      *nat,
                                                             gint      *min_baseline,
                                                             gint      *nat_baseline)
 {
-  GtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
+  CtkWidget *child = ctk_bin_get_child (CTK_BIN (widget));
 
   if (child)
     ctk_widget_get_preferred_height_and_baseline_for_width (child, width, min, nat,
@@ -153,7 +153,7 @@ sn_flat_button_get_preferred_height_and_baseline_for_width (GtkWidget *widget,
 static void
 sn_flat_button_class_init (SnFlatButtonClass *klass)
 {
-  GtkWidgetClass *widget_class;
+  CtkWidgetClass *widget_class;
 
   widget_class = CTK_WIDGET_CLASS (klass);
 

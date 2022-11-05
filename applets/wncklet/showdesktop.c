@@ -48,11 +48,11 @@
 
 typedef struct {
 	/* widgets */
-	GtkWidget* applet;
-	GtkWidget* button;
-	GtkWidget* image;
+	CtkWidget* applet;
+	CtkWidget* button;
+	CtkWidget* image;
 
-	GtkOrientation orient;
+	CtkOrientation orient;
 	int size;
 
 	WnckScreen* wnck_screen;
@@ -60,26 +60,26 @@ typedef struct {
 	guint showing_desktop: 1;
 	guint button_activate;
 
-	GtkIconTheme* icon_theme;
+	CtkIconTheme* icon_theme;
 } ShowDesktopData;
 
-static void display_help_dialog(GtkAction* action, ShowDesktopData* sdd);
-static void display_about_dialog(GtkAction* action, ShowDesktopData* sdd);
+static void display_help_dialog(CtkAction* action, ShowDesktopData* sdd);
+static void display_about_dialog(CtkAction* action, ShowDesktopData* sdd);
 
 static void update_icon(ShowDesktopData* sdd);
 static void update_button_state(ShowDesktopData* sdd);
 static void update_button_display(ShowDesktopData* sdd);
 
-static void theme_changed_callback(GtkIconTheme* icon_theme, ShowDesktopData* sdd);
+static void theme_changed_callback(CtkIconTheme* icon_theme, ShowDesktopData* sdd);
 
-static void button_toggled_callback(GtkWidget* button, ShowDesktopData* sdd);
+static void button_toggled_callback(CtkWidget* button, ShowDesktopData* sdd);
 static void show_desktop_changed_callback(WnckScreen* screen, ShowDesktopData* sdd);
 
 /* this is when the panel orientation changes */
 
 static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient orient, ShowDesktopData* sdd)
 {
-	GtkOrientation new_orient;
+	CtkOrientation new_orient;
 
 	switch (orient)
 	{
@@ -103,7 +103,7 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 }
 
 /* this is when the panel size changes */
-static void button_size_allocated(GtkWidget* button, GtkAllocation* allocation, ShowDesktopData* sdd)
+static void button_size_allocated(CtkWidget* button, CtkAllocation* allocation, ShowDesktopData* sdd)
 {
 	/*
 	if ((sdd->orient == CTK_ORIENTATION_HORIZONTAL) && (sdd->size == allocation->height))
@@ -134,9 +134,9 @@ static void button_size_allocated(GtkWidget* button, GtkAllocation* allocation, 
 
 static void update_icon(ShowDesktopData* sdd)
 {
-	GtkStyleContext *context;
-	GtkStateFlags    state;
-	GtkBorder        padding;
+	CtkStyleContext *context;
+	CtkStateFlags    state;
+	CtkBorder        padding;
 	int width, height;
 	cairo_surface_t* icon;
 	cairo_surface_t* scaled;
@@ -235,7 +235,7 @@ static void update_icon(ShowDesktopData* sdd)
 	cairo_surface_destroy (icon);
 }
 
-static const GtkActionEntry show_desktop_menu_actions[] = {
+static const CtkActionEntry show_desktop_menu_actions[] = {
 	{
 		"ShowDesktopHelp",
 		"help-browser",
@@ -291,7 +291,7 @@ static void update_button_state(ShowDesktopData* sdd)
 	update_button_display (sdd);
 }
 
-static void applet_destroyed(GtkWidget* applet, ShowDesktopData* sdd)
+static void applet_destroyed(CtkWidget* applet, ShowDesktopData* sdd)
 {
 	if (sdd->button_activate != 0)
 	{
@@ -314,7 +314,7 @@ static void applet_destroyed(GtkWidget* applet, ShowDesktopData* sdd)
 	g_free (sdd);
 }
 
-static gboolean do_not_eat_button_press(GtkWidget* widget, GdkEventButton* event)
+static gboolean do_not_eat_button_press(CtkWidget* widget, GdkEventButton* event)
 {
 	if (event->button != 1)
 	{
@@ -335,7 +335,7 @@ static gboolean button_motion_timeout(gpointer data)
 	return FALSE;
 }
 
-static void button_drag_leave(GtkWidget* widget, GdkDragContext* context, guint time, ShowDesktopData* sdd)
+static void button_drag_leave(CtkWidget* widget, GdkDragContext* context, guint time, ShowDesktopData* sdd)
 {
 	if (sdd->button_activate != 0)
 	{
@@ -344,7 +344,7 @@ static void button_drag_leave(GtkWidget* widget, GdkDragContext* context, guint 
 	}
 }
 
-static gboolean button_drag_motion(GtkWidget* widget, GdkDragContext* context, gint x, gint y, guint time, ShowDesktopData* sdd)
+static gboolean button_drag_motion(CtkWidget* widget, GdkDragContext* context, gint x, gint y, guint time, ShowDesktopData* sdd)
 {
 	if (sdd->button_activate == 0)
 		sdd->button_activate = g_timeout_add_seconds (TIMEOUT_ACTIVATE_SECONDS, button_motion_timeout, sdd);
@@ -383,7 +383,7 @@ static void show_desktop_applet_realized(CafePanelApplet* applet, gpointer data)
 	update_icon (sdd);
 }
 
-static void theme_changed_callback(GtkIconTheme* icon_theme, ShowDesktopData* sdd)
+static void theme_changed_callback(CtkIconTheme* icon_theme, ShowDesktopData* sdd)
 {
 	update_icon (sdd);
 }
@@ -391,9 +391,9 @@ static void theme_changed_callback(GtkIconTheme* icon_theme, ShowDesktopData* sd
 gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 {
 	ShowDesktopData* sdd;
-	GtkActionGroup* action_group;
+	CtkActionGroup* action_group;
 	AtkObject* atk_obj;
-	GtkCssProvider *provider;
+	CtkCssProvider *provider;
 
 	cafe_panel_applet_set_flags(applet, CAFE_PANEL_APPLET_EXPAND_MINOR);
 
@@ -476,12 +476,12 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 	return TRUE;
 }
 
-static void display_help_dialog(GtkAction* action, ShowDesktopData* sdd)
+static void display_help_dialog(CtkAction* action, ShowDesktopData* sdd)
 {
 	wncklet_display_help(sdd->applet, "cafe-user-guide", "gospanel-564", SHOW_DESKTOP_ICON);
 }
 
-static void display_about_dialog(GtkAction* action, ShowDesktopData* sdd)
+static void display_about_dialog(CtkAction* action, ShowDesktopData* sdd)
 {
 	static const gchar* authors[] = {
 		"Perberos <perberos@gmail.com>",
@@ -512,11 +512,11 @@ static void display_about_dialog(GtkAction* action, ShowDesktopData* sdd)
 		NULL);
 }
 
-static void button_toggled_callback(GtkWidget* button, ShowDesktopData* sdd)
+static void button_toggled_callback(CtkWidget* button, ShowDesktopData* sdd)
 {
 	if (!gdk_x11_screen_supports_net_wm_hint(ctk_widget_get_screen(button), gdk_atom_intern("_NET_SHOWING_DESKTOP", FALSE)))
 	{
-		static GtkWidget* dialog = NULL;
+		static CtkWidget* dialog = NULL;
 
 		if (dialog && ctk_widget_get_screen(dialog) != ctk_widget_get_screen(button))
 			ctk_widget_destroy (dialog);

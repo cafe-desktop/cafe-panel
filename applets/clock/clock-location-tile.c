@@ -32,19 +32,19 @@ typedef struct {
 
         ClockFaceSize size;
 
-        GtkWidget *box;
-        GtkWidget *clock_face;
-        GtkWidget *city_label;
-        GtkWidget *time_label;
+        CtkWidget *box;
+        CtkWidget *clock_face;
+        CtkWidget *city_label;
+        CtkWidget *time_label;
 
-        GtkWidget *current_button;
-        GtkWidget *current_label;
-        GtkWidget *current_marker;
-        GtkWidget *current_spacer;
-        GtkSizeGroup *current_group;
-        GtkSizeGroup *button_group;
+        CtkWidget *current_button;
+        CtkWidget *current_label;
+        CtkWidget *current_marker;
+        CtkWidget *current_spacer;
+        CtkSizeGroup *current_group;
+        CtkSizeGroup *button_group;
 
-        GtkWidget *weather_icon;
+        CtkWidget *weather_icon;
 
         gulong location_weather_updated_id;
 } ClockLocationTilePrivate;
@@ -55,10 +55,10 @@ static void clock_location_tile_finalize (GObject *);
 
 static void clock_location_tile_fill (ClockLocationTile *this);
 static void update_weather_icon (ClockLocation *loc, WeatherInfo *info, gpointer data);
-static gboolean weather_tooltip (GtkWidget *widget,
+static gboolean weather_tooltip (CtkWidget *widget,
                                  gint x, gint y,
                                  gboolean    keyboard_mode,
-                                 GtkTooltip *tooltip,
+                                 CtkTooltip *tooltip,
                                  gpointer    data);
 
 ClockLocationTile *
@@ -161,7 +161,7 @@ clock_location_tile_finalize (GObject *g_obj)
 }
 
 static gboolean
-press_on_tile      (GtkWidget             *widget,
+press_on_tile      (CtkWidget             *widget,
                     GdkEventButton        *event,
                     ClockLocationTile *tile)
 {
@@ -173,7 +173,7 @@ press_on_tile      (GtkWidget             *widget,
 static void
 make_current_cb (gpointer data, GError *error)
 {
-        GtkWidget *dialog;
+        CtkWidget *dialog;
 
         if (error) {
                 dialog = ctk_message_dialog_new (NULL,
@@ -189,7 +189,7 @@ make_current_cb (gpointer data, GError *error)
 }
 
 static void
-make_current (GtkWidget *widget, ClockLocationTile *tile)
+make_current (CtkWidget *widget, ClockLocationTile *tile)
 {
         ClockLocationTilePrivate *priv = clock_location_tile_get_instance_private (tile);
 
@@ -198,7 +198,7 @@ make_current (GtkWidget *widget, ClockLocationTile *tile)
 }
 
 static gboolean
-enter_or_leave_tile (GtkWidget             *widget,
+enter_or_leave_tile (CtkWidget             *widget,
                      GdkEventCrossing      *event,
                      ClockLocationTile *tile)
 {
@@ -253,10 +253,10 @@ static void
 clock_location_tile_fill (ClockLocationTile *this)
 {
         ClockLocationTilePrivate *priv = clock_location_tile_get_instance_private (this);
-        GtkWidget *strut;
-        GtkWidget *box;
-        GtkWidget *tile;
-        GtkWidget *head_section;
+        CtkWidget *strut;
+        CtkWidget *box;
+        CtkWidget *tile;
+        CtkWidget *head_section;
 
         priv->box = ctk_event_box_new ();
 
@@ -570,11 +570,11 @@ clock_location_tile_refresh (ClockLocationTile *this, gboolean force_refresh)
 }
 
 void
-weather_info_setup_tooltip (WeatherInfo *info, ClockLocation *location, GtkTooltip *tooltip,
+weather_info_setup_tooltip (WeatherInfo *info, ClockLocation *location, CtkTooltip *tooltip,
                             ClockFormat clock_format)
 {
         GdkPixbuf *pixbuf = NULL;
-        GtkIconTheme *theme = NULL;
+        CtkIconTheme *theme = NULL;
         const gchar *conditions, *wind;
         gchar *temp, *apparent;
         gchar *line1, *line2, *line3, *line4, *tip;
@@ -653,11 +653,11 @@ weather_info_setup_tooltip (WeatherInfo *info, ClockLocation *location, GtkToolt
 }
 
 static gboolean
-weather_tooltip (GtkWidget  *widget,
+weather_tooltip (CtkWidget  *widget,
                  gint        x,
                  gint        y,
                  gboolean    keyboard_mode,
-                 GtkTooltip *tooltip,
+                 CtkTooltip *tooltip,
                  gpointer    data)
 {
         ClockLocationTile *tile;
@@ -685,7 +685,7 @@ update_weather_icon (ClockLocation *loc, WeatherInfo *info, gpointer data)
         ClockLocationTile *tile;
         ClockLocationTilePrivate *priv;
         cairo_surface_t *surface = NULL;
-        GtkIconTheme *theme = NULL;
+        CtkIconTheme *theme = NULL;
         const gchar *icon_name;
         gint icon_scale;
 

@@ -36,9 +36,9 @@ G_BEGIN_DECLS
  */
 
 #define PANEL_TYPE_PLUG panel_plug_get_type ()
-G_DECLARE_FINAL_TYPE (PanelPlug, panel_plug, PANEL, PLUG, GtkPlug)
+G_DECLARE_FINAL_TYPE (PanelPlug, panel_plug, PANEL, PLUG, CtkPlug)
 
-GtkWidget *panel_plug_new (void);
+CtkWidget *panel_plug_new (void);
 
 G_END_DECLS
 

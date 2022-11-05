@@ -21,7 +21,7 @@
 #include "panel-a11y.h"
 
 gboolean
-panel_a11y_get_is_a11y_enabled (GtkWidget *widget)
+panel_a11y_get_is_a11y_enabled (CtkWidget *widget)
 {
 	static gboolean initialised  = FALSE;
 	static gboolean a11y_enabled = FALSE;
@@ -35,7 +35,7 @@ panel_a11y_get_is_a11y_enabled (GtkWidget *widget)
 }
 
 void
-panel_a11y_set_atk_name_desc (GtkWidget  *widget,
+panel_a11y_set_atk_name_desc (CtkWidget  *widget,
 			      const char *name,
 			      const char *desc)
 {
@@ -57,15 +57,15 @@ panel_a11y_set_atk_name_desc (GtkWidget  *widget,
 
 /**
  * panel_a11y_set_atk_relation
- * @widget : The Gtk widget which is labelled by @label
+ * @widget : The Ctk widget which is labelled by @label
  * @label : The label for the @widget.
  *
  * Description : This function establishes atk relation
  * between a ctk widget and a label.
  */
 void
-panel_a11y_set_atk_relation (GtkWidget *widget,
-			     GtkLabel  *label)
+panel_a11y_set_atk_relation (CtkWidget *widget,
+			     CtkLabel  *label)
 {
 	AtkObject      *aobject;
 	AtkRelationSet *relation_set;

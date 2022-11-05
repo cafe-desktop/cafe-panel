@@ -44,7 +44,7 @@ CafePanelAppletFactory *cafe_panel_applet_factory_new              (const gchar 
 							   GType               applet_type,
 							   GClosure           *closure);
 gboolean            cafe_panel_applet_factory_register_service (CafePanelAppletFactory *factory);
-GtkWidget          *cafe_panel_applet_factory_get_applet_widget (const gchar        *id,
+CtkWidget          *cafe_panel_applet_factory_get_applet_widget (const gchar        *id,
                                                             guint               uid);
 #ifdef __cplusplus
 }

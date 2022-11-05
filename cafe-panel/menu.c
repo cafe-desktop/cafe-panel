@@ -52,10 +52,10 @@
 #include "panel-icon-names.h"
 #include "panel-schemas.h"
 
-static GtkWidget *populate_menu_from_directory (GtkWidget          *menu,
+static CtkWidget *populate_menu_from_directory (CtkWidget          *menu,
 						CafeMenuTreeDirectory *directory);
 
-static gboolean panel_menu_key_press_handler (GtkWidget   *widget,
+static gboolean panel_menu_key_press_handler (CtkWidget   *widget,
 					      GdkEventKey *event);
 
 static inline gboolean desktop_is_home_dir(void)
@@ -72,10 +72,10 @@ static inline gboolean desktop_is_home_dir(void)
 	return retval;
 }
 
-GtkWidget *
-add_menu_separator (GtkWidget *menu)
+CtkWidget *
+add_menu_separator (CtkWidget *menu)
 {
-	GtkWidget *menuitem;
+	CtkWidget *menuitem;
 
 	menuitem = ctk_separator_menu_item_new ();
 	ctk_widget_set_sensitive (menuitem, FALSE);
@@ -86,7 +86,7 @@ add_menu_separator (GtkWidget *menu)
 }
 
 static void
-activate_app_def (GtkWidget      *menuitem,
+activate_app_def (CtkWidget      *menuitem,
 		  CafeMenuTreeEntry *entry)
 {
 	const char       *path;
@@ -96,7 +96,7 @@ activate_app_def (GtkWidget      *menuitem,
 }
 
 PanelWidget *
-menu_get_panel (GtkWidget *menu)
+menu_get_panel (CtkWidget *menu)
 {
 	PanelWidget *retval = NULL;
 
@@ -131,7 +131,7 @@ menu_get_panel (GtkWidget *menu)
 }
 
 static void
-setup_menu_panel (GtkWidget *menu)
+setup_menu_panel (CtkWidget *menu)
 {
 	PanelWidget *panel;
 
@@ -148,7 +148,7 @@ setup_menu_panel (GtkWidget *menu)
 }
 
 GdkScreen *
-menuitem_to_screen (GtkWidget *menuitem)
+menuitem_to_screen (CtkWidget *menuitem)
 {
 	PanelWidget *panel_widget;
 
@@ -157,10 +157,10 @@ menuitem_to_screen (GtkWidget *menuitem)
 	return ctk_window_get_screen (CTK_WINDOW (panel_widget->toplevel));
 }
 
-GtkWidget *
+CtkWidget *
 panel_create_menu (void)
 {
-	GtkWidget       *retval;
+	CtkWidget       *retval;
 
 	retval = ctk_menu_new ();
 
@@ -175,10 +175,10 @@ panel_create_menu (void)
 	return retval;
 }
 
-GtkWidget *
+CtkWidget *
 create_empty_menu (void)
 {
-	GtkWidget *retval;
+	CtkWidget *retval;
 
 	retval = panel_create_menu ();
 
@@ -193,7 +193,7 @@ create_empty_menu (void)
 }
 
 static void
-add_app_to_panel (GtkWidget      *item,
+add_app_to_panel (CtkWidget      *item,
 		  CafeMenuTreeEntry *entry)
 {
 	PanelWidget   *panel_widget;
@@ -214,7 +214,7 @@ add_app_to_panel (GtkWidget      *item,
 
 
 static void
-add_app_to_desktop (GtkWidget      *item,
+add_app_to_desktop (CtkWidget      *item,
 		    CafeMenuTreeEntry *entry)
 {
 	char       *source_uri;
@@ -345,7 +345,7 @@ add_drawers_from_dir (CafeMenuTreeDirectory *directory,
 }
 
 static void
-add_menudrawer_to_panel (GtkWidget      *menuitem,
+add_menudrawer_to_panel (CtkWidget      *menuitem,
 			 CafeMenuTreeEntry *entry)
 
 {
@@ -369,7 +369,7 @@ add_menudrawer_to_panel (GtkWidget      *menuitem,
 }
 
 static void
-add_menu_to_panel (GtkWidget      *menuitem,
+add_menu_to_panel (CtkWidget      *menuitem,
 		   CafeMenuTreeEntry *entry)
 {
 	CafeMenuTreeDirectory *directory;
@@ -421,7 +421,7 @@ add_menu_to_panel (GtkWidget      *menuitem,
 }
 
 static void
-grab_widget (GtkWidget *widget)
+grab_widget (CtkWidget *widget)
 {
 	g_return_if_fail (widget != NULL);
 
@@ -439,10 +439,10 @@ grab_widget (GtkWidget *widget)
 }
 
 static void
-restore_grabs (GtkWidget *menu,
-               GtkWidget *item)
+restore_grabs (CtkWidget *menu,
+               CtkWidget *item)
 {
-	GtkWidget *parent = ctk_widget_get_parent (item);
+	CtkWidget *parent = ctk_widget_get_parent (item);
 
 	if (parent) {
 		grab_widget (parent);
@@ -450,23 +450,23 @@ restore_grabs (GtkWidget *menu,
 }
 
 static void
-menu_destroy_context_menu (GtkWidget *item,
-                           GtkWidget *menu)
+menu_destroy_context_menu (CtkWidget *item,
+                           CtkWidget *menu)
 {
 	g_signal_handlers_disconnect_by_func (menu, restore_grabs, item);
 	ctk_widget_destroy (menu);
 }
 
-static GtkWidget *
-create_item_context_menu (GtkWidget   *item,
+static CtkWidget *
+create_item_context_menu (CtkWidget   *item,
 			  PanelWidget *panel_widget)
 {
 	CafeMenuTreeEntry     *entry;
 	CafeMenuTreeDirectory *directory;
 	CafeMenuTree          *tree;
-	GtkWidget          *menu;
-	GtkWidget          *submenu;
-	GtkWidget          *menuitem;
+	CtkWidget          *menu;
+	CtkWidget          *submenu;
+	CtkWidget          *menuitem;
 	const char         *menu_filename;
 	gboolean            id_lists_writable;
 
@@ -541,11 +541,11 @@ create_item_context_menu (GtkWidget   *item,
 }
 
 static gboolean
-show_item_menu (GtkWidget      *item,
+show_item_menu (CtkWidget      *item,
 		GdkEvent *event)
 {
 	PanelWidget *panel_widget;
-	GtkWidget   *menu;
+	CtkWidget   *menu;
 
 	if (panel_lockdown_get_locked_down ())
 		return FALSE;
@@ -563,13 +563,13 @@ show_item_menu (GtkWidget      *item,
 	ctk_menu_set_screen (CTK_MENU (menu),
 			     ctk_window_get_screen (CTK_WINDOW (panel_widget->toplevel)));
 	/* Set up theme and transparency support */
-	GtkWidget *toplevel = ctk_widget_get_toplevel (menu);
+	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 	/* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	GdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual (screen);
 	ctk_widget_set_visual(CTK_WIDGET (toplevel), visual);
 	/* Set menu and it's toplevel window to follow panel theme */
-	GtkStyleContext *context;
+	CtkStyleContext *context;
 	context = ctk_widget_get_style_context (CTK_WIDGET (toplevel));
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
@@ -579,7 +579,7 @@ show_item_menu (GtkWidget      *item,
 }
 
 gboolean
-menu_dummy_button_press_event (GtkWidget      *menuitem,
+menu_dummy_button_press_event (CtkWidget      *menuitem,
 			       GdkEventButton *event)
 {
 	if (event->button == 3)
@@ -589,7 +589,7 @@ menu_dummy_button_press_event (GtkWidget      *menuitem,
 }
 
 static gboolean
-menuitem_button_press_event (GtkWidget      *menuitem,
+menuitem_button_press_event (CtkWidget      *menuitem,
 			     GdkEventButton *event)
 {
 	if (event->button == 3)
@@ -599,11 +599,11 @@ menuitem_button_press_event (GtkWidget      *menuitem,
 }
 
 static void
-drag_begin_menu_cb (GtkWidget *widget, GdkDragContext     *context)
+drag_begin_menu_cb (CtkWidget *widget, GdkDragContext     *context)
 {
 	/* FIXME: workaround for a possible ctk+ bug
 	 *    See bugs #92085(ctk+) and #91184(panel) for details.
-	 *    Maybe it's not needed with GtkTooltip?
+	 *    Maybe it's not needed with CtkTooltip?
 	 */
 	g_object_set (widget, "has-tooltip", FALSE, NULL);
 }
@@ -612,10 +612,10 @@ drag_begin_menu_cb (GtkWidget *widget, GdkDragContext     *context)
  * CTK+ menuing code in some manner.
  */
 static void
-drag_end_menu_cb (GtkWidget *widget, GdkDragContext     *context)
+drag_end_menu_cb (CtkWidget *widget, GdkDragContext     *context)
 {
-  GtkWidget *xgrab_shell;
-  GtkWidget *parent;
+  CtkWidget *xgrab_shell;
+  CtkWidget *parent;
 
   /* Find the last viewable ancestor, and make an X grab on it
    */
@@ -630,7 +630,7 @@ drag_end_menu_cb (GtkWidget *widget, GdkDragContext     *context)
   while (parent)
     {
       gboolean viewable = TRUE;
-      GtkWidget *tmp = parent;
+      CtkWidget *tmp = parent;
 
       while (tmp)
 	{
@@ -655,9 +655,9 @@ drag_end_menu_cb (GtkWidget *widget, GdkDragContext     *context)
 }
 
 static void
-drag_data_get_menu_cb (GtkWidget        *widget,
+drag_data_get_menu_cb (CtkWidget        *widget,
 		       GdkDragContext   *context,
-		       GtkSelectionData *selection_data,
+		       CtkSelectionData *selection_data,
 		       guint             info,
 		       guint             time,
 		       CafeMenuTreeEntry   *entry)
@@ -715,13 +715,13 @@ menu_escape_underscores_and_prepend (const char *text)
 }
 
 void
-setup_menuitem_with_icon (GtkWidget   *menuitem,
-			  GtkIconSize  icon_size,
+setup_menuitem_with_icon (CtkWidget   *menuitem,
+			  CtkIconSize  icon_size,
 			  GIcon       *gicon,
 			  const char  *image_filename,
 			  const char  *title)
 {
-	GtkWidget *image;
+	CtkWidget *image;
 	GIcon *icon = NULL;
 
 	image = ctk_image_new ();
@@ -741,13 +741,13 @@ setup_menuitem_with_icon (GtkWidget   *menuitem,
 }
 
 void
-setup_menuitem (GtkWidget   *menuitem,
-		GtkIconSize  icon_size,
-		GtkWidget   *image,
+setup_menuitem (CtkWidget   *menuitem,
+		CtkIconSize  icon_size,
+		CtkWidget   *image,
 		const char  *title)
 
 {
-	GtkWidget *label;
+	CtkWidget *label;
 	char      *_title;
 
 	/* this creates a label with an invisible mnemonic */
@@ -780,8 +780,8 @@ setup_menuitem (GtkWidget   *menuitem,
 }
 
 static void
-drag_data_get_string_cb (GtkWidget *widget, GdkDragContext     *context,
-			 GtkSelectionData   *selection_data, guint info,
+drag_data_get_string_cb (CtkWidget *widget, GdkDragContext     *context,
+			 CtkSelectionData   *selection_data, guint info,
 			 guint time, const char *string)
 {
 	ctk_selection_data_set (selection_data,
@@ -790,12 +790,12 @@ drag_data_get_string_cb (GtkWidget *widget, GdkDragContext     *context,
 }
 
 void
-setup_uri_drag (GtkWidget  *menuitem,
+setup_uri_drag (CtkWidget  *menuitem,
 		const char *uri,
 		const char *icon,
 		GdkDragAction action)
 {
-	static GtkTargetEntry menu_item_targets[] = {
+	static CtkTargetEntry menu_item_targets[] = {
 		{ "text/uri-list", 0, 0 }
 	};
 
@@ -822,10 +822,10 @@ setup_uri_drag (GtkWidget  *menuitem,
 }
 
 void
-setup_internal_applet_drag (GtkWidget             *menuitem,
+setup_internal_applet_drag (CtkWidget             *menuitem,
 			    PanelActionButtonType  type)
 {
-	static GtkTargetEntry menu_item_targets[] = {
+	static CtkTargetEntry menu_item_targets[] = {
 		{ "application/x-cafe-panel-applet-internal", 0, 0 }
 	};
 
@@ -853,12 +853,12 @@ setup_internal_applet_drag (GtkWidget             *menuitem,
 }
 
 static void
-submenu_to_display (GtkWidget *menu)
+submenu_to_display (CtkWidget *menu)
 {
 	CafeMenuTree           *tree;
 	CafeMenuTreeDirectory  *directory;
 	const char          *menu_path;
-	void               (*append_callback) (GtkWidget *, gpointer);
+	void               (*append_callback) (CtkWidget *, gpointer);
 	gpointer             append_data;
 
 	if (!g_object_get_data (G_OBJECT (menu), "panel-menu-needs-loading"))
@@ -901,7 +901,7 @@ submenu_to_display (GtkWidget *menu)
 static gboolean
 submenu_to_display_in_idle (gpointer data)
 {
-	GtkWidget *menu = CTK_WIDGET (data);
+	CtkWidget *menu = CTK_WIDGET (data);
 
 	g_object_set_data (G_OBJECT (menu), "panel-menu-idle-id", NULL);
 
@@ -918,10 +918,10 @@ remove_submenu_to_display_idle (gpointer data)
 	g_source_remove (idle_id);
 }
 
-static GtkWidget *
+static CtkWidget *
 create_fake_menu (CafeMenuTreeDirectory *directory)
 {
-	GtkWidget *menu;
+	CtkWidget *menu;
 	guint      idle_id;
 
 	menu = create_empty_menu ();
@@ -952,17 +952,17 @@ create_fake_menu (CafeMenuTreeDirectory *directory)
 
 
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
-	GtkWidget *toplevel = ctk_widget_get_toplevel (menu);
+	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 
 	return menu;
 }
-GtkWidget *
+CtkWidget *
 panel_image_menu_item_new (void)
 {
-	GtkWidget *menuitem;
+	CtkWidget *menuitem;
 
 	menuitem = ctk_image_menu_item_new ();
 	ctk_image_menu_item_set_always_show_image (CTK_IMAGE_MENU_ITEM (menuitem),
@@ -970,11 +970,11 @@ panel_image_menu_item_new (void)
 	return menuitem;
 }
 
-static GtkWidget *
-create_submenu_entry (GtkWidget          *menu,
+static CtkWidget *
+create_submenu_entry (CtkWidget          *menu,
 		      CafeMenuTreeDirectory *directory)
 {
-	GtkWidget *menuitem;
+	CtkWidget *menuitem;
 	gboolean   force_categories_icon;
 
 	force_categories_icon = g_object_get_data (G_OBJECT (menu),
@@ -999,12 +999,12 @@ create_submenu_entry (GtkWidget          *menu,
 }
 
 static void
-create_submenu (GtkWidget          *menu,
+create_submenu (CtkWidget          *menu,
 		CafeMenuTreeDirectory *directory,
 		CafeMenuTreeDirectory *alias_directory)
 {
-	GtkWidget *menuitem;
-	GtkWidget *submenu;
+	CtkWidget *menuitem;
+	CtkWidget *submenu;
 	gboolean   force_categories_icon;
 
 	if (alias_directory)
@@ -1025,11 +1025,11 @@ create_submenu (GtkWidget          *menu,
 }
 
 static void
-create_header (GtkWidget       *menu,
+create_header (CtkWidget       *menu,
 	       CafeMenuTreeHeader *header)
 {
 	CafeMenuTreeDirectory *directory;
-	GtkWidget          *menuitem;
+	CtkWidget          *menuitem;
 
 	directory = cafemenu_tree_header_get_directory (header);
 	menuitem = create_submenu_entry (menu, directory);
@@ -1045,11 +1045,11 @@ create_header (GtkWidget       *menu,
 }
 
 static void
-create_menuitem (GtkWidget          *menu,
+create_menuitem (CtkWidget          *menu,
 		 CafeMenuTreeEntry     *entry,
 		 CafeMenuTreeDirectory *alias_directory)
 {
-	GtkWidget  *menuitem;
+	CtkWidget  *menuitem;
 
 	menuitem = panel_image_menu_item_new ();
 
@@ -1100,7 +1100,7 @@ create_menuitem (GtkWidget          *menu,
 				G_CALLBACK (menuitem_button_press_event), NULL);
 
 	if (!panel_lockdown_get_locked_down ()) {
-		static GtkTargetEntry menu_item_targets[] = {
+		static CtkTargetEntry menu_item_targets[] = {
 			{ "text/uri-list", 0, 0 }
 		};
 
@@ -1137,7 +1137,7 @@ create_menuitem (GtkWidget          *menu,
 }
 
 static void
-create_menuitem_from_alias (GtkWidget      *menu,
+create_menuitem_from_alias (CtkWidget      *menu,
 			    CafeMenuTreeAlias *alias)
 {
 	gpointer item, entry;
@@ -1164,7 +1164,7 @@ create_menuitem_from_alias (GtkWidget      *menu,
 
 static void
 handle_cafemenu_tree_changed (CafeMenuTree *tree,
-			   GtkWidget *menu)
+			   CtkWidget *menu)
 {
 	GError *error = NULL;
 	guint idle_id;
@@ -1199,7 +1199,7 @@ handle_cafemenu_tree_changed (CafeMenuTree *tree,
 }
 
 static void
-remove_cafemenu_tree_monitor (GtkWidget *menu,
+remove_cafemenu_tree_monitor (CtkWidget *menu,
                           CafeMenuTree  *tree)
 {
         g_signal_handlers_disconnect_by_func (tree,
@@ -1207,13 +1207,13 @@ remove_cafemenu_tree_monitor (GtkWidget *menu,
                                               menu);
 }
 
-GtkWidget *
+CtkWidget *
 create_applications_menu (const char *menu_file,
 			  const char *menu_path,
 			  gboolean    always_show_image)
 {
 	CafeMenuTree *tree;
-	GtkWidget *menu;
+	CtkWidget *menu;
 	guint      idle_id;
 	GError *error = NULL;
 
@@ -1267,7 +1267,7 @@ create_applications_menu (const char *menu_file,
 	g_object_unref(tree);
 
 /*HACK Fix any failures of compiz/other wm's to communicate with ctk for transparency */
-	GtkWidget *toplevel = ctk_widget_get_toplevel (menu);
+	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
@@ -1275,8 +1275,8 @@ create_applications_menu (const char *menu_file,
 	return menu;
 }
 
-static GtkWidget *
-populate_menu_from_directory (GtkWidget          *menu,
+static CtkWidget *
+populate_menu_from_directory (CtkWidget          *menu,
 			      CafeMenuTreeDirectory *directory)
 {
 	GList    *children;
@@ -1334,11 +1334,11 @@ populate_menu_from_directory (GtkWidget          *menu,
 }
 
 static void
-main_menu_append (GtkWidget *main_menu,
+main_menu_append (CtkWidget *main_menu,
 		  gpointer   data)
 {
 	PanelWidget *panel;
-	GtkWidget   *item;
+	CtkWidget   *item;
 	gboolean     add_separator;
 	GList       *children;
 	GList       *last;
@@ -1369,9 +1369,9 @@ main_menu_append (GtkWidget *main_menu,
 	panel_menu_items_append_lock_logout (main_menu);
 }
 
-GtkWidget* create_main_menu(PanelWidget* panel)
+CtkWidget* create_main_menu(PanelWidget* panel)
 {
-	GtkWidget* main_menu;
+	CtkWidget* main_menu;
 
 	main_menu = create_applications_menu("cafe-applications.menu", NULL, TRUE);
 
@@ -1385,16 +1385,16 @@ GtkWidget* create_main_menu(PanelWidget* panel)
 }
 
 static gboolean
-panel_menu_key_press_handler (GtkWidget   *widget,
+panel_menu_key_press_handler (CtkWidget   *widget,
 			      GdkEventKey *event)
 {
 	gboolean retval = FALSE;
-	GtkWidget *active_menu_item = NULL;
+	CtkWidget *active_menu_item = NULL;
 
 	if ((event->keyval == GDK_KEY_Menu) ||
 	    (event->keyval == GDK_KEY_F10 &&
 	    (event->state & ctk_accelerator_get_default_mod_mask ()) == GDK_SHIFT_MASK)) {
-		GtkMenuShell *menu_shell = CTK_MENU_SHELL (widget);
+		CtkMenuShell *menu_shell = CTK_MENU_SHELL (widget);
 
 		active_menu_item = ctk_menu_shell_get_selected_item (menu_shell);
 		if (active_menu_item && ctk_menu_item_get_submenu (CTK_MENU_ITEM (active_menu_item)) == NULL)

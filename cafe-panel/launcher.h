@@ -20,12 +20,12 @@ extern "C" {
 
 typedef struct {
 	AppletInfo        *info;
-	GtkWidget         *button;
+	CtkWidget         *button;
 
 	char              *location;
 	GKeyFile          *key_file;
 
-	GtkWidget         *prop_dialog;
+	CtkWidget         *prop_dialog;
 	GSList            *error_dialogs;
 
 	gulong             destroy_handler;

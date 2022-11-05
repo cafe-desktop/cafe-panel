@@ -72,13 +72,13 @@ typedef struct _CafePanelAppletPrivate CafePanelAppletPrivate;
 typedef gboolean (*CafePanelAppletFactoryCallback) (CafePanelApplet* applet, const gchar *iid, gpointer user_data);
 
 struct _CafePanelApplet {
-	GtkEventBox event_box;
+	CtkEventBox event_box;
 
 	CafePanelAppletPrivate* priv;
 };
 
 struct _CafePanelAppletClass {
-	GtkEventBoxClass event_box_class;
+	CtkEventBoxClass event_box_class;
 
 	void (*change_orient) (CafePanelApplet* applet, CafePanelAppletOrient orient);
 
@@ -86,17 +86,17 @@ struct _CafePanelAppletClass {
 
 	void (*change_background) (CafePanelApplet *applet, CafePanelAppletBackgroundType type, GdkRGBA* color, cairo_pattern_t *pattern);
 
-	void (*move_focus_out_of_applet) (CafePanelApplet* frame, GtkDirectionType direction);
+	void (*move_focus_out_of_applet) (CafePanelApplet* frame, CtkDirectionType direction);
 };
 
 GType cafe_panel_applet_get_type(void) G_GNUC_CONST;
 
-GtkWidget* cafe_panel_applet_new(void);
+CtkWidget* cafe_panel_applet_new(void);
 
 CafePanelAppletOrient cafe_panel_applet_get_orient(CafePanelApplet* applet);
 guint cafe_panel_applet_get_size(CafePanelApplet* applet);
 CafePanelAppletBackgroundType cafe_panel_applet_get_background (CafePanelApplet *applet, /* return values */ GdkRGBA* color, cairo_pattern_t** pattern);
-void cafe_panel_applet_set_background_widget(CafePanelApplet* applet, GtkWidget* widget);
+void cafe_panel_applet_set_background_widget(CafePanelApplet* applet, CtkWidget* widget);
 
 gchar* cafe_panel_applet_get_preferences_path(CafePanelApplet* applet);
 
@@ -110,11 +110,11 @@ gboolean cafe_panel_applet_get_locked_down(CafePanelApplet* applet);
 // Does nothing when not on X11
 void cafe_panel_applet_request_focus(CafePanelApplet* applet, guint32 timestamp);
 
-void cafe_panel_applet_setup_menu(CafePanelApplet* applet, const gchar* xml, GtkActionGroup* action_group);
-void cafe_panel_applet_setup_menu_from_file(CafePanelApplet* applet, const gchar* filename, GtkActionGroup* action_group);
+void cafe_panel_applet_setup_menu(CafePanelApplet* applet, const gchar* xml, CtkActionGroup* action_group);
+void cafe_panel_applet_setup_menu_from_file(CafePanelApplet* applet, const gchar* filename, CtkActionGroup* action_group);
 void cafe_panel_applet_setup_menu_from_resource (CafePanelApplet    *applet,
                                                  const gchar        *resource_path,
-                                                 GtkActionGroup     *action_group);
+                                                 CtkActionGroup     *action_group);
 
 int cafe_panel_applet_factory_main(const gchar* factory_id,gboolean  out_process, GType applet_type, CafePanelAppletFactoryCallback callback, gpointer data);
 

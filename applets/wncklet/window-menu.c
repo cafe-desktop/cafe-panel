@@ -44,18 +44,18 @@
 #define WINDOW_MENU_ICON "cafe-panel-window-menu"
 
 typedef struct {
-	GtkWidget* applet;
-	GtkWidget* selector;
+	CtkWidget* applet;
+	CtkWidget* selector;
 	int size;
 	CafePanelAppletOrient orient;
 } WindowMenu;
 
-static void window_menu_help(GtkAction* action, WindowMenu* window_menu)
+static void window_menu_help(CtkAction* action, WindowMenu* window_menu)
 {
 	wncklet_display_help(window_menu->applet, "cafe-user-guide", "panel-windowselector", WINDOW_MENU_ICON);
 }
 
-static void window_menu_about(GtkAction* action, WindowMenu* window_menu)
+static void window_menu_about(CtkAction* action, WindowMenu* window_menu)
 {
 	static const char* authors[] = {
 		"Perberos <perberos@gmail.com>",
@@ -91,7 +91,7 @@ static void window_menu_about(GtkAction* action, WindowMenu* window_menu)
 		NULL);
 }
 
-static const GtkActionEntry window_menu_actions[] = {
+static const CtkActionEntry window_menu_actions[] = {
 	{
 		"WindowMenuHelp",
 		"help-browser",
@@ -110,17 +110,17 @@ static const GtkActionEntry window_menu_actions[] = {
 	}
 };
 
-static void window_menu_destroy(GtkWidget* widget, WindowMenu* window_menu)
+static void window_menu_destroy(CtkWidget* widget, WindowMenu* window_menu)
 {
 	g_free(window_menu);
 }
 
-static gboolean window_menu_on_draw (GtkWidget* widget,
+static gboolean window_menu_on_draw (CtkWidget* widget,
 				     cairo_t*   cr,
 				     gpointer   data)
 {
-	GtkStyleContext *context;
-	GtkStateFlags    state;
+	CtkStyleContext *context;
+	CtkStateFlags    state;
 	WindowMenu      *window_menu = data;
 
 	if (!ctk_widget_has_focus (window_menu->applet))
@@ -143,11 +143,11 @@ static gboolean window_menu_on_draw (GtkWidget* widget,
 	return FALSE;
 }
 
-static void window_menu_size_allocate(CafePanelApplet* applet, GtkAllocation* allocation, WindowMenu* window_menu)
+static void window_menu_size_allocate(CafePanelApplet* applet, CtkAllocation* allocation, WindowMenu* window_menu)
 {
 	CafePanelAppletOrient orient;
 	GList* children;
-	GtkWidget* child;
+	CtkWidget* child;
 
 	orient = cafe_panel_applet_get_orient(applet);
 
@@ -175,9 +175,9 @@ static void window_menu_size_allocate(CafePanelApplet* applet, GtkAllocation* al
 	window_menu->orient = orient;
 }
 
-static gboolean window_menu_key_press_event(GtkWidget* widget, GdkEventKey* event, WindowMenu* window_menu)
+static gboolean window_menu_key_press_event(CtkWidget* widget, GdkEventKey* event, WindowMenu* window_menu)
 {
-	GtkMenuShell* menu_shell;
+	CtkMenuShell* menu_shell;
 	WnckSelector* selector;
 
 	switch (event->keyval)
@@ -207,7 +207,7 @@ static gboolean window_menu_key_press_event(GtkWidget* widget, GdkEventKey* even
 	return FALSE;
 }
 
-static gboolean filter_button_press(GtkWidget* widget, GdkEventButton* event, gpointer data)
+static gboolean filter_button_press(CtkWidget* widget, GdkEventButton* event, gpointer data)
 {
 	if (event->button != 1)
 		g_signal_stop_emission_by_name(widget, "button_press_event");
@@ -218,7 +218,7 @@ static gboolean filter_button_press(GtkWidget* widget, GdkEventButton* event, gp
 gboolean window_menu_applet_fill(CafePanelApplet* applet)
 {
 	WindowMenu* window_menu;
-	GtkActionGroup* action_group;
+	CtkActionGroup* action_group;
 
 	window_menu = g_new0(WindowMenu, 1);
 

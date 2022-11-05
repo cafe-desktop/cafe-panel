@@ -45,7 +45,7 @@ typedef struct _CafePanelAppletFrameClass   CafePanelAppletFrameClass;
 typedef struct _CafePanelAppletFramePrivate CafePanelAppletFramePrivate;
 
 struct _CafePanelAppletFrameClass {
-        GtkEventBoxClass parent_class;
+        CtkEventBoxClass parent_class;
 
 	void     (*init_properties)       (CafePanelAppletFrame    *frame);
 
@@ -71,7 +71,7 @@ struct _CafePanelAppletFrameClass {
 };
 
 struct _CafePanelAppletFrame {
-	GtkEventBox parent;
+	CtkEventBox parent;
 
         CafePanelAppletFramePrivate  *priv;
 };

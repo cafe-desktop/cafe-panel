@@ -87,7 +87,7 @@ struct _CafePanelAppletFramePrivate {
 
 	gchar           *iid;
 
-	GtkAllocation    child_allocation;
+	CtkAllocation    child_allocation;
 	GdkRectangle     handle_rect;
 
 	guint            has_handle : 1;
@@ -96,12 +96,12 @@ struct _CafePanelAppletFramePrivate {
 G_DEFINE_TYPE_WITH_PRIVATE (CafePanelAppletFrame, cafe_panel_applet_frame, CTK_TYPE_EVENT_BOX)
 
 static gboolean
-cafe_panel_applet_frame_draw (GtkWidget *widget,
+cafe_panel_applet_frame_draw (CtkWidget *widget,
                          cairo_t   *cr)
 {
 	CafePanelAppletFrame *frame = CAFE_PANEL_APPLET_FRAME (widget);
-	GtkStyleContext *context;
-	GtkStateFlags     state;
+	CtkStyleContext *context;
+	CtkStateFlags     state;
 	PanelBackground  *background;
 
 	if (CTK_WIDGET_CLASS (cafe_panel_applet_frame_parent_class)->draw)
@@ -161,8 +161,8 @@ cafe_panel_applet_frame_draw (GtkWidget *widget,
 
 static void
 cafe_panel_applet_frame_update_background_size (CafePanelAppletFrame *frame,
-					   GtkAllocation    *old_allocation,
-					   GtkAllocation    *new_allocation)
+					   CtkAllocation    *old_allocation,
+					   CtkAllocation    *new_allocation)
 {
 	PanelBackground *background;
 
@@ -181,11 +181,11 @@ cafe_panel_applet_frame_update_background_size (CafePanelAppletFrame *frame,
 }
 
 static void
-cafe_panel_applet_frame_get_preferred_width(GtkWidget *widget, gint *minimal_width, gint *natural_width)
+cafe_panel_applet_frame_get_preferred_width(CtkWidget *widget, gint *minimal_width, gint *natural_width)
 {
 	CafePanelAppletFrame *frame;
-	GtkBin           *bin;
-	GtkWidget        *child;
+	CtkBin           *bin;
+	CtkWidget        *child;
 	guint             border_width;
 
 	frame = CAFE_PANEL_APPLET_FRAME (widget);
@@ -220,11 +220,11 @@ cafe_panel_applet_frame_get_preferred_width(GtkWidget *widget, gint *minimal_wid
 }
 
 static void
-cafe_panel_applet_frame_get_preferred_height(GtkWidget *widget, gint *minimal_height, gint *natural_height)
+cafe_panel_applet_frame_get_preferred_height(CtkWidget *widget, gint *minimal_height, gint *natural_height)
 {
 	CafePanelAppletFrame *frame;
-	GtkBin           *bin;
-	GtkWidget        *child;
+	CtkBin           *bin;
+	CtkWidget        *child;
 	guint             border_width;
 
 	frame = CAFE_PANEL_APPLET_FRAME (widget);
@@ -259,16 +259,16 @@ cafe_panel_applet_frame_get_preferred_height(GtkWidget *widget, gint *minimal_he
 }
 
 static void
-cafe_panel_applet_frame_size_allocate (GtkWidget     *widget,
-				  GtkAllocation *allocation)
+cafe_panel_applet_frame_size_allocate (CtkWidget     *widget,
+				  CtkAllocation *allocation)
 {
 	CafePanelAppletFrame *frame;
-	GtkBin           *bin;
-	GtkWidget        *child;
+	CtkBin           *bin;
+	CtkWidget        *child;
 	GdkWindow        *window;
-	GtkAllocation     new_allocation;
-	GtkAllocation     old_allocation;
-	GtkAllocation     widget_allocation;
+	CtkAllocation     new_allocation;
+	CtkAllocation     old_allocation;
+	CtkAllocation     widget_allocation;
 
 	ctk_widget_get_allocation (widget, &widget_allocation);
 
@@ -375,7 +375,7 @@ button_event_in_rect (GdkEventButton *event,
 }
 
 static gboolean
-cafe_panel_applet_frame_button_changed (GtkWidget      *widget,
+cafe_panel_applet_frame_button_changed (CtkWidget      *widget,
 					GdkEventButton *event)
 {
 	CafePanelAppletFrame *frame;
@@ -449,7 +449,7 @@ static void
 cafe_panel_applet_frame_class_init (CafePanelAppletFrameClass *klass)
 {
 	GObjectClass   *gobject_class = (GObjectClass *) klass;
-	GtkWidgetClass *widget_class = (GtkWidgetClass *) klass;
+	CtkWidgetClass *widget_class = (CtkWidgetClass *) klass;
 
 	gobject_class->finalize = cafe_panel_applet_frame_finalize;
 
@@ -522,7 +522,7 @@ void
 cafe_panel_applet_frame_change_background (CafePanelAppletFrame    *frame,
 				      PanelBackgroundType  type)
 {
-	GtkWidget *parent;
+	CtkWidget *parent;
 
 	g_return_if_fail (PANEL_IS_APPLET_FRAME (frame));
 
@@ -653,7 +653,7 @@ _cafe_panel_applet_frame_get_background_string (CafePanelAppletFrame    *frame,
 					   PanelWidget         *panel,
 					   PanelBackgroundType  type)
 {
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 	int x;
 	int y;
 
@@ -684,7 +684,7 @@ _cafe_panel_applet_frame_get_background_string (CafePanelAppletFrame    *frame,
 }
 
 static void
-cafe_panel_applet_frame_reload_response (GtkWidget        *dialog,
+cafe_panel_applet_frame_reload_response (CtkWidget        *dialog,
 				    int               response,
 				    CafePanelAppletFrame *frame)
 {
@@ -738,7 +738,7 @@ cafe_panel_applet_frame_reload_response (GtkWidget        *dialog,
 void
 _cafe_panel_applet_frame_applet_broken (CafePanelAppletFrame *frame)
 {
-	GtkWidget  *dialog;
+	CtkWidget  *dialog;
 	GdkScreen  *screen;
 	const char *applet_name = NULL;
 	char       *dialog_txt;
@@ -831,8 +831,8 @@ _cafe_panel_applet_frame_applet_remove (CafePanelAppletFrame *frame)
 void
 _cafe_panel_applet_frame_applet_move (CafePanelAppletFrame *frame)
 {
-	GtkWidget *widget = CTK_WIDGET (frame);
-	GtkWidget *parent = ctk_widget_get_parent (widget);
+	CtkWidget *widget = CTK_WIDGET (frame);
+	CtkWidget *parent = ctk_widget_get_parent (widget);
 
 	if (!PANEL_IS_WIDGET (parent))
 		return;
@@ -908,7 +908,7 @@ cafe_panel_applet_frame_activating_get_conf_path (CafePanelAppletFrameActivating
 }
 
 static void
-cafe_panel_applet_frame_loading_failed_response (GtkWidget *dialog,
+cafe_panel_applet_frame_loading_failed_response (CtkWidget *dialog,
 					    guint      response,
 					    char      *id)
 {
@@ -938,7 +938,7 @@ cafe_panel_applet_frame_loading_failed (const char  *iid,
 				   PanelWidget *panel,
 				   const char  *id)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 	char      *problem_txt;
 	gboolean   locked_down;
 

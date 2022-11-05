@@ -143,7 +143,7 @@ obsolete_string_to_enum (ObsoleteEnumStringPair lookup_table[],
 
 /* Lock Screen
  */
-static void panel_action_lock_screen(GtkWidget* widget)
+static void panel_action_lock_screen(CtkWidget* widget)
 {
 	panel_lock_screen(ctk_widget_get_screen(widget));
 }
@@ -209,7 +209,7 @@ panel_action_lock_invoke_menu (PanelActionButton *button,
 /* Log Out
  */
 static void
-panel_action_logout (GtkWidget *widget)
+panel_action_logout (CtkWidget *widget)
 {
 	PanelSessionManager *manager;
 	gboolean             prompt = TRUE;
@@ -235,7 +235,7 @@ panel_action_logout (GtkWidget *widget)
 }
 
 static void
-panel_action_shutdown (GtkWidget *widget)
+panel_action_shutdown (CtkWidget *widget)
 {
 	PanelSessionManager *manager;
 
@@ -259,7 +259,7 @@ panel_action_shutdown_reboot_is_disabled (void)
 /* Run Application
  */
 static void
-panel_action_run_program (GtkWidget *widget)
+panel_action_run_program (CtkWidget *widget)
 {
 	panel_run_dialog_present (ctk_widget_get_screen (widget),
 				  ctk_get_current_event_time ());
@@ -268,7 +268,7 @@ panel_action_run_program (GtkWidget *widget)
 /* Search For Files
  */
 static void
-panel_action_search (GtkWidget *widget)
+panel_action_search (CtkWidget *widget)
 {
 	GdkScreen *screen;
 
@@ -281,10 +281,10 @@ panel_action_search (GtkWidget *widget)
 /* Force Quit
  */
 static void
-panel_action_force_quit (GtkWidget *widget)
+panel_action_force_quit (CtkWidget *widget)
 {
-	GtkWidget *dialog;
-	GtkDialogFlags flags;
+	CtkWidget *dialog;
+	CtkDialogFlags flags;
 
 #ifdef HAVE_X11
 	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (widget))) {
@@ -306,7 +306,7 @@ panel_action_force_quit (GtkWidget *widget)
 /* Connect Server
  */
 static void
-panel_action_connect_server (GtkWidget *widget)
+panel_action_connect_server (CtkWidget *widget)
 {
 	GdkScreen *screen;
 	char      *command;
@@ -342,7 +342,7 @@ typedef struct {
 	char                   *tooltip;
 	char                   *help_index;
 	char                   *drag_id;
-	void                  (*invoke)      (GtkWidget         *widget);
+	void                  (*invoke)      (CtkWidget         *widget);
 	void                  (*setup_menu)  (PanelActionButton *button);
 	void                  (*invoke_menu) (PanelActionButton *button,
 					      const char        *callback_name);
@@ -564,9 +564,9 @@ panel_action_button_set_property (GObject      *object,
 }
 
 static void
-panel_action_button_drag_data_get (GtkWidget          *widget,
+panel_action_button_drag_data_get (CtkWidget          *widget,
 				   GdkDragContext     *context,
-				   GtkSelectionData   *selection_data,
+				   CtkSelectionData   *selection_data,
 				   guint               info,
 				   guint               time)
 {
@@ -589,7 +589,7 @@ panel_action_button_drag_data_get (GtkWidget          *widget,
 }
 
 static void
-panel_action_button_clicked (GtkButton *ctk_button)
+panel_action_button_clicked (CtkButton *ctk_button)
 {
 	PanelActionButton *button;
 
@@ -617,8 +617,8 @@ static void
 panel_action_button_class_init (PanelActionButtonClass *klass)
 {
 	GObjectClass   *gobject_class = (GObjectClass *) klass;
-	GtkWidgetClass *widget_class  = (GtkWidgetClass *) klass;
-	GtkButtonClass *button_class  = (GtkButtonClass *) klass;
+	CtkWidgetClass *widget_class  = (CtkWidgetClass *) klass;
+	CtkButtonClass *button_class  = (CtkButtonClass *) klass;
 
 	gobject_class->finalize     = panel_action_button_finalize;
 	gobject_class->get_property = panel_action_button_get_property;
@@ -896,7 +896,7 @@ panel_action_button_set_dnd_enabled (PanelActionButton *button,
 		return;
 
 	if (enabled) {
-		static GtkTargetEntry dnd_targets [] = {
+		static CtkTargetEntry dnd_targets [] = {
 			{ "application/x-cafe-panel-applet-internal", 0, 0 }
 		};
 

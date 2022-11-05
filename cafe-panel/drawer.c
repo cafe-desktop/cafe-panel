@@ -40,7 +40,7 @@
 
 
 static void
-drawer_click (GtkWidget *widget,
+drawer_click (CtkWidget *widget,
               Drawer    *drawer)
 {
     if (!panel_toplevel_get_is_hidden (drawer->toplevel))
@@ -51,7 +51,7 @@ drawer_click (GtkWidget *widget,
 
 static void
 drawer_focus_panel_widget (Drawer           *drawer,
-                           GtkDirectionType  direction)
+                           CtkDirectionType  direction)
 {
     PanelWidget *panel_widget;
 
@@ -63,12 +63,12 @@ drawer_focus_panel_widget (Drawer           *drawer,
 }
 
 static gboolean
-key_press_drawer (GtkWidget   *widget,
+key_press_drawer (CtkWidget   *widget,
                   GdkEventKey *event,
                   Drawer      *drawer)
 {
     gboolean retval = TRUE;
-    GtkOrientation orient;
+    CtkOrientation orient;
 
     if (event->state & ctk_accelerator_get_default_mod_mask ())
         return FALSE;
@@ -133,7 +133,7 @@ key_press_drawer (GtkWidget   *widget,
  * to the drawer icon without closing the drawer when focus is in the drawer.
  */
 static gboolean
-key_press_drawer_widget (GtkWidget   *widget,
+key_press_drawer_widget (CtkWidget   *widget,
                          GdkEventKey *event,
                          Drawer      *drawer)
 {
@@ -158,9 +158,9 @@ key_press_drawer_widget (GtkWidget   *widget,
     /* drag and drop handlers */
 
 static void
-drag_data_get_cb (GtkWidget          *widget,
+drag_data_get_cb (CtkWidget          *widget,
                   GdkDragContext     *context,
-                  GtkSelectionData   *selection_data,
+                  CtkSelectionData   *selection_data,
                   guint               info,
                   guint               time,
                   Drawer             *drawer)
@@ -175,7 +175,7 @@ drag_data_get_cb (GtkWidget          *widget,
 }
 
 static gboolean
-drag_motion_cb (GtkWidget          *widget,
+drag_motion_cb (CtkWidget          *widget,
                 GdkDragContext     *context,
                 int                 x,
                 int                 y,
@@ -209,7 +209,7 @@ drag_motion_cb (GtkWidget          *widget,
 }
 
 static gboolean
-drag_drop_cb (GtkWidget      *widget,
+drag_drop_cb (CtkWidget      *widget,
               GdkDragContext *context,
               int             x,
               int             y,
@@ -227,11 +227,11 @@ drag_drop_cb (GtkWidget      *widget,
 }
 
 static void
-drag_data_received_cb (GtkWidget          *widget,
+drag_data_received_cb (CtkWidget          *widget,
                        GdkDragContext     *context,
                        gint                x,
                        gint                y,
-                       GtkSelectionData   *selection_data,
+                       CtkSelectionData   *selection_data,
                        guint               info,
                        guint               time_,
                        Drawer             *drawer)
@@ -271,7 +271,7 @@ queue_drawer_close_for_drag (Drawer *drawer)
 }
 
 static void
-drag_leave_cb (GtkWidget      *widget,
+drag_leave_cb (CtkWidget      *widget,
                GdkDragContext *context,
                guint           time_,
                Drawer         *drawer)
@@ -284,8 +284,8 @@ drag_leave_cb (GtkWidget      *widget,
     /* load_drawer_applet handlers */
 
 static void
-drawer_button_size_allocated (GtkWidget     *widget,
-                              GtkAllocation *alloc,
+drawer_button_size_allocated (CtkWidget     *widget,
+                              CtkAllocation *alloc,
                               Drawer        *drawer)
 {
     if (!ctk_widget_get_realized (widget))
@@ -337,7 +337,7 @@ panel_drawer_tooltip_changed (GSettings *settings,
     /* destroy handlers */
 
 static void
-toplevel_destroyed (GtkWidget *widget,
+toplevel_destroyed (CtkWidget *widget,
                     Drawer    *drawer)
 {
     drawer->toplevel = NULL;
@@ -349,7 +349,7 @@ toplevel_destroyed (GtkWidget *widget,
 }
 
 static void
-destroy_drawer (GtkWidget *widget,
+destroy_drawer (CtkWidget *widget,
                 Drawer    *drawer)
 {
     if (drawer->toplevel) {
@@ -364,7 +364,7 @@ destroy_drawer (GtkWidget *widget,
 }
 
 static void
-drawer_deletion_response (GtkWidget   *dialog,
+drawer_deletion_response (CtkWidget   *dialog,
                           int          response,
                           Drawer      *drawer)
 {
@@ -706,7 +706,7 @@ panel_drawer_set_dnd_enabled (Drawer   *drawer,
                               gboolean  dnd_enabled)
 {
     if (dnd_enabled) {
-        static GtkTargetEntry dnd_targets[] = {
+        static CtkTargetEntry dnd_targets[] = {
             { "application/x-cafe-panel-applet-internal", 0, 0 }
         };
 
@@ -727,7 +727,7 @@ panel_drawer_set_dnd_enabled (Drawer   *drawer,
 void
 drawer_query_deletion (Drawer *drawer)
 {
-    GtkWidget *dialog;
+    CtkWidget *dialog;
 
      if (drawer->toplevel) {
         PanelWidget *panel_widget;

@@ -45,20 +45,20 @@
 
 static GdkFilterReturn popup_filter (GdkXEvent *gdk_xevent,
 				     GdkEvent  *event,
-				     GtkWidget *popup);
+				     CtkWidget *popup);
 
 static Atom wm_state_atom = None;
 
-static GtkWidget *
+static CtkWidget *
 display_popup_window (GdkScreen *screen)
 {
-	GtkWidget     *retval;
-	GtkWidget     *vbox;
-	GtkWidget     *image;
-	GtkWidget     *frame;
-	GtkWidget     *label;
+	CtkWidget     *retval;
+	CtkWidget     *vbox;
+	CtkWidget     *image;
+	CtkWidget     *frame;
+	CtkWidget     *label;
 	int            screen_width, screen_height;
-	GtkAllocation  allocation;
+	CtkAllocation  allocation;
 
 	retval = ctk_window_new (CTK_WINDOW_POPUP);
 	atk_object_set_role (ctk_widget_get_accessible (retval), ATK_ROLE_ALERT);
@@ -107,7 +107,7 @@ display_popup_window (GdkScreen *screen)
 }
 
 static void
-remove_popup (GtkWidget *popup)
+remove_popup (CtkWidget *popup)
 {
 	GdkWindow        *root;
 	GdkDisplay       *display;
@@ -199,7 +199,7 @@ find_managed_window (Display *xdisplay,
 }
 
 static void
-kill_window_response (GtkDialog *dialog,
+kill_window_response (CtkDialog *dialog,
 		      gint       response_id,
 		      gpointer   user_data)
 {
@@ -224,7 +224,7 @@ kill_window_response (GtkDialog *dialog,
 static void
 kill_window_question (gpointer window)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 
 	dialog = ctk_message_dialog_new (NULL, 0,
 					 CTK_MESSAGE_WARNING,
@@ -256,7 +256,7 @@ kill_window_question (gpointer window)
 }
 
 static void
-handle_button_press_event (GtkWidget *popup,
+handle_button_press_event (CtkWidget *popup,
 			   Display *display,
 			   Window subwindow)
 {
@@ -281,7 +281,7 @@ handle_button_press_event (GtkWidget *popup,
 static GdkFilterReturn
 popup_filter (GdkXEvent *gdk_xevent,
 	      GdkEvent  *event,
-	      GtkWidget *popup)
+	      CtkWidget *popup)
 {
 	XEvent *xevent = (XEvent *) gdk_xevent;
 	XIEvent *xiev;
@@ -334,7 +334,7 @@ panel_force_quit (GdkScreen *screen,
 	GdkGrabStatus  status;
 	GdkCursor     *cross;
 	GdkSeatCapabilities caps;
-	GtkWidget     *popup;
+	CtkWidget     *popup;
 	GdkWindow     *root;
 	GdkDisplay    *display;
 	GdkSeat       *seat;
