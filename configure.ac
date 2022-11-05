@@ -262,7 +262,7 @@ AC_SUBST(GETTEXT_PACKAGE)
 
 dnl gtk-doc stuff
 
-CTK_DOC_CHECK([1.0])
+GTK_DOC_CHECK([1.0])
 
 dnl yelp-tools stuff
 
