@@ -372,7 +372,7 @@ sm_client_xsmp_startup (EggSMClient *client,
       free (ret_client_id);
 
 #ifdef HAVE_X11
-      if (GDK_IS_X11_DISPLAY (cdk_display_get_default ()))
+      if (CDK_IS_X11_DISPLAY (cdk_display_get_default ()))
         cdk_x11_set_sm_client_id (xsmp->client_id);
 #endif
 

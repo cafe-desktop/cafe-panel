@@ -76,8 +76,8 @@ key_press_drawer (CtkWidget   *widget,
     orient = PANEL_WIDGET (ctk_widget_get_parent (drawer->button))->orient;
 
     switch (event->keyval) {
-    case GDK_KEY_Up:
-    case GDK_KEY_KP_Up:
+    case CDK_KEY_Up:
+    case CDK_KEY_KP_Up:
         if (orient == CTK_ORIENTATION_HORIZONTAL) {
             if (!panel_toplevel_get_is_hidden (drawer->toplevel))
                 drawer_focus_panel_widget (drawer, CTK_DIR_TAB_BACKWARD);
@@ -86,8 +86,8 @@ key_press_drawer (CtkWidget   *widget,
             retval = FALSE;
         }
         break;
-    case GDK_KEY_Left:
-    case GDK_KEY_KP_Left:
+    case CDK_KEY_Left:
+    case CDK_KEY_KP_Left:
         if (orient == CTK_ORIENTATION_VERTICAL) {
             if (!panel_toplevel_get_is_hidden (drawer->toplevel))
                 drawer_focus_panel_widget (drawer, CTK_DIR_TAB_BACKWARD);
@@ -96,8 +96,8 @@ key_press_drawer (CtkWidget   *widget,
             retval = FALSE;
         }
         break;
-    case GDK_KEY_Down:
-    case GDK_KEY_KP_Down:
+    case CDK_KEY_Down:
+    case CDK_KEY_KP_Down:
         if (orient == CTK_ORIENTATION_HORIZONTAL) {
             if (!panel_toplevel_get_is_hidden (drawer->toplevel))
                 drawer_focus_panel_widget (drawer, CTK_DIR_TAB_FORWARD);
@@ -106,8 +106,8 @@ key_press_drawer (CtkWidget   *widget,
             retval = FALSE;
         }
         break;
-    case GDK_KEY_Right:
-    case GDK_KEY_KP_Right:
+    case CDK_KEY_Right:
+    case CDK_KEY_KP_Right:
         if (orient == CTK_ORIENTATION_VERTICAL) {
             if (!panel_toplevel_get_is_hidden (drawer->toplevel))
                 drawer_focus_panel_widget (drawer, CTK_DIR_TAB_FORWARD);
@@ -116,7 +116,7 @@ key_press_drawer (CtkWidget   *widget,
             retval = FALSE;
         }
         break;
-    case GDK_KEY_Escape:
+    case CDK_KEY_Escape:
         panel_toplevel_hide (drawer->toplevel, FALSE, -1);
         break;
     default:
@@ -139,14 +139,14 @@ key_press_drawer_widget (CtkWidget   *widget,
 {
     PanelWidget *panel_widget;
 
-    if (event->keyval != GDK_KEY_Escape)
+    if (event->keyval != CDK_KEY_Escape)
         return FALSE;
 
     panel_widget = panel_toplevel_get_panel_widget (drawer->toplevel);
 
     ctk_window_present (CTK_WINDOW (panel_widget->toplevel));
 
-    if ((event->state & ctk_accelerator_get_default_mod_mask ()) == GDK_SHIFT_MASK ||
+    if ((event->state & ctk_accelerator_get_default_mod_mask ()) == CDK_SHIFT_MASK ||
         panel_toplevel_get_is_hidden (drawer->toplevel))
             return TRUE;
 
@@ -712,9 +712,9 @@ panel_drawer_set_dnd_enabled (Drawer   *drawer,
 
         ctk_widget_set_has_window (drawer->button, TRUE);
         ctk_drag_source_set (drawer->button,
-                             GDK_BUTTON1_MASK,
+                             CDK_BUTTON1_MASK,
                              dnd_targets, 1,
-                             GDK_ACTION_MOVE);
+                             CDK_ACTION_MOVE);
         //FIXME: we're forgetting the use_custom_icon case, here
         ctk_drag_source_set_icon_name (drawer->button, button_widget_get_icon_name (BUTTON_WIDGET (drawer->button)));
 

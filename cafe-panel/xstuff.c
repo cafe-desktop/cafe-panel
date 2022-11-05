@@ -48,7 +48,7 @@ static gboolean xstuff_display_is_dead = FALSE;
 
 gboolean is_using_x11 ()
 {
-	return GDK_IS_X11_DISPLAY (cdk_display_get_default ());
+	return CDK_IS_X11_DISPLAY (cdk_display_get_default ());
 }
 
 typedef struct {
@@ -109,7 +109,7 @@ zoom_draw (CtkWidget *widget,
 
 		scaled = cdk_pixbuf_scale_simple (zoom->pixbuf,
 						  zoom->size, zoom->size,
-						  GDK_INTERP_BILINEAR);
+						  CDK_INTERP_BILINEAR);
 
 		switch (zoom->orientation) {
 		case PANEL_ORIENTATION_TOP:
@@ -178,7 +178,7 @@ draw_zoom_animation_composited (GdkScreen *gscreen,
 	ctk_widget_set_app_paintable(win, TRUE);
 	ctk_widget_set_visual (win, cdk_screen_get_rgba_visual (gscreen));
 
-	ctk_window_set_gravity (CTK_WINDOW (win), GDK_GRAVITY_STATIC);
+	ctk_window_set_gravity (CTK_WINDOW (win), CDK_GRAVITY_STATIC);
 	ctk_window_set_default_size (CTK_WINDOW (win),
 				     w * ZOOM_FACTOR, h * ZOOM_FACTOR);
 
@@ -239,7 +239,7 @@ draw_zoom_animation (GdkScreen *gscreen,
 	int depth;
 
 	dpy = cdk_x11_display_get_xdisplay (cdk_screen_get_display (gscreen));
-	root_win = GDK_WINDOW_XID (cdk_screen_get_root_window (gscreen));
+	root_win = CDK_WINDOW_XID (cdk_screen_get_root_window (gscreen));
 	screen = cdk_x11_screen_get_screen_number (gscreen);
 	depth = DefaultDepth(dpy,screen);
 

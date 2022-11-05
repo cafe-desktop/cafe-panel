@@ -456,23 +456,23 @@ panel_menu_button_popup_menu (PanelMenuButton *button,
 	ctk_window_set_attached_to (CTK_WINDOW (ctk_widget_get_toplevel (button->priv->menu)),
 				    CTK_WIDGET (button));
 
-	GdkGravity widget_anchor = GDK_GRAVITY_NORTH_WEST;
-	GdkGravity menu_anchor = GDK_GRAVITY_NORTH_WEST;
+	GdkGravity widget_anchor = CDK_GRAVITY_NORTH_WEST;
+	GdkGravity menu_anchor = CDK_GRAVITY_NORTH_WEST;
 	switch (panel_toplevel_get_orientation (button->priv->toplevel)) {
 	case PANEL_ORIENTATION_TOP:
-		widget_anchor = GDK_GRAVITY_SOUTH_WEST;
+		widget_anchor = CDK_GRAVITY_SOUTH_WEST;
 		g_message ("PANEL_ORIENTATION_TOP");
 		break;
 	case PANEL_ORIENTATION_BOTTOM:
-		menu_anchor = GDK_GRAVITY_SOUTH_WEST;
+		menu_anchor = CDK_GRAVITY_SOUTH_WEST;
 		g_message ("PANEL_ORIENTATION_BOTTOM");
 		break;
 	case PANEL_ORIENTATION_LEFT:
-		widget_anchor = GDK_GRAVITY_NORTH_EAST;
+		widget_anchor = CDK_GRAVITY_NORTH_EAST;
 		g_message ("PANEL_ORIENTATION_LEFT");
 		break;
 	case PANEL_ORIENTATION_RIGHT:
-		menu_anchor = GDK_GRAVITY_NORTH_EAST;
+		menu_anchor = CDK_GRAVITY_NORTH_EAST;
 		g_message ("PANEL_ORIENTATION_RIGHT");
 		break;
 	}
@@ -518,7 +518,7 @@ panel_menu_button_clicked (CtkButton *ctk_button)
 					      event->button.time);
 		cdk_event_free (event);
 	} else {
-		panel_menu_button_popup_menu (button, 1, GDK_CURRENT_TIME);
+		panel_menu_button_popup_menu (button, 1, CDK_CURRENT_TIME);
 	}
 }
 
@@ -1054,9 +1054,9 @@ panel_menu_button_set_dnd_enabled (PanelMenuButton *button,
 		char *icon;
 
 		ctk_widget_set_has_window (CTK_WIDGET (button), TRUE);
-		ctk_drag_source_set (CTK_WIDGET (button), GDK_BUTTON1_MASK,
+		ctk_drag_source_set (CTK_WIDGET (button), CDK_BUTTON1_MASK,
 				     dnd_targets, 1,
-				     GDK_ACTION_COPY | GDK_ACTION_MOVE);
+				     CDK_ACTION_COPY | CDK_ACTION_MOVE);
 
 		icon = panel_menu_button_get_icon (button);
 		if (icon != NULL) {

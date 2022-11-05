@@ -107,7 +107,7 @@ panel_app_info_launch_uris (GDesktopAppInfo   *appinfo,
 	gboolean             retval;
 
 	g_return_val_if_fail (G_IS_DESKTOP_APP_INFO (appinfo), FALSE);
-	g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
+	g_return_val_if_fail (CDK_IS_SCREEN (screen), FALSE);
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
 	GdkDisplay *display = cdk_display_get_default ();
@@ -147,7 +147,7 @@ panel_app_info_launch_uri (GDesktopAppInfo     *appinfo,
 	gboolean  retval;
 
 	g_return_val_if_fail (G_IS_APP_INFO (appinfo), FALSE);
-	g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
+	g_return_val_if_fail (CDK_IS_SCREEN (screen), FALSE);
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
 	uris = NULL;
@@ -173,7 +173,7 @@ panel_launch_key_file (GKeyFile   *keyfile,
 	gboolean         retval;
 
 	g_return_val_if_fail (keyfile != NULL, FALSE);
-	g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
+	g_return_val_if_fail (CDK_IS_SCREEN (screen), FALSE);
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
 	appinfo = g_desktop_app_info_new_from_keyfile (keyfile);
@@ -198,7 +198,7 @@ panel_launch_desktop_file (const char  *desktop_file,
 	gboolean         retval;
 
 	g_return_val_if_fail (desktop_file != NULL, FALSE);
-	g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
+	g_return_val_if_fail (CDK_IS_SCREEN (screen), FALSE);
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
 	appinfo = NULL;
@@ -251,7 +251,7 @@ panel_launch_desktop_file_with_fallback (const char  *desktop_file,
 
 	g_return_val_if_fail (desktop_file != NULL, FALSE);
 	g_return_val_if_fail (fallback_exec != NULL, FALSE);
-	g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
+	g_return_val_if_fail (CDK_IS_SCREEN (screen), FALSE);
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
 	/* need to pass a non-NULL error to avoid getting a dialog */

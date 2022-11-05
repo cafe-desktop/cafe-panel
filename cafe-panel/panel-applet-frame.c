@@ -395,21 +395,21 @@ cafe_panel_applet_frame_button_changed (CtkWidget      *widget,
 	case 1:
 	case 2:
 		if (button_event_in_rect (event, &frame->priv->handle_rect)) {
-			if (event->type == GDK_BUTTON_PRESS ||
-			    event->type == GDK_2BUTTON_PRESS) {
+			if (event->type == CDK_BUTTON_PRESS ||
+			    event->type == CDK_2BUTTON_PRESS) {
 				panel_widget_applet_drag_start (
 					frame->priv->panel, CTK_WIDGET (frame),
 					PW_DRAG_OFF_CURSOR, event->time);
 				handled = TRUE;
-			} else if (event->type == GDK_BUTTON_RELEASE) {
+			} else if (event->type == CDK_BUTTON_RELEASE) {
 				panel_widget_applet_drag_end (frame->priv->panel);
 				handled = TRUE;
 			}
 		}
 		break;
 	case 3:
-		if (event->type == GDK_BUTTON_PRESS ||
-		    event->type == GDK_2BUTTON_PRESS) {
+		if (event->type == CDK_BUTTON_PRESS ||
+		    event->type == CDK_2BUTTON_PRESS) {
 			display = ctk_widget_get_display (widget);
 			seat = cdk_display_get_default_seat (display);
 			cdk_seat_ungrab (seat);
@@ -419,7 +419,7 @@ cafe_panel_applet_frame_button_changed (CtkWidget      *widget,
 									  event->time);
 
 			handled = TRUE;
-		} else if (event->type == GDK_BUTTON_RELEASE)
+		} else if (event->type == CDK_BUTTON_RELEASE)
 			handled = TRUE;
 		break;
 	default:
@@ -802,7 +802,7 @@ _cafe_panel_applet_frame_applet_broken (CafePanelAppletFrame *frame)
 	ctk_widget_show (dialog);
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (dialog)))
+	if (CDK_IS_X11_DISPLAY (ctk_widget_get_display (dialog)))
 		ctk_window_present_with_time (CTK_WINDOW (dialog),
 					      cdk_x11_get_server_time (ctk_widget_get_window (CTK_WIDGET (dialog))));
 	else
@@ -840,7 +840,7 @@ _cafe_panel_applet_frame_applet_move (CafePanelAppletFrame *frame)
 	panel_widget_applet_drag_start (PANEL_WIDGET (parent),
 					widget,
 					PW_DRAG_OFF_CENTER,
-					GDK_CURRENT_TIME);
+					CDK_CURRENT_TIME);
 }
 
 void

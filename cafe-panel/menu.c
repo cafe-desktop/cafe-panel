@@ -434,7 +434,7 @@ grab_widget (CtkWidget *widget)
 
 	seat = cdk_display_get_default_seat (display);
 	cdk_seat_grab (seat, window,
-	               GDK_SEAT_CAPABILITY_ALL, TRUE,
+	               CDK_SEAT_CAPABILITY_ALL, TRUE,
 	               NULL, NULL, NULL, NULL);
 }
 
@@ -803,7 +803,7 @@ setup_uri_drag (CtkWidget  *menuitem,
 		return;
 
 	ctk_drag_source_set (menuitem,
-			     GDK_BUTTON1_MASK|GDK_BUTTON2_MASK,
+			     CDK_BUTTON1_MASK|CDK_BUTTON2_MASK,
 			     menu_item_targets, 1,
 			     action);
 
@@ -833,9 +833,9 @@ setup_internal_applet_drag (CtkWidget             *menuitem,
 		return;
 
 	ctk_drag_source_set (menuitem,
-			     GDK_BUTTON1_MASK|GDK_BUTTON2_MASK,
+			     CDK_BUTTON1_MASK|CDK_BUTTON2_MASK,
 			     menu_item_targets, 1,
-			     GDK_ACTION_COPY);
+			     CDK_ACTION_COPY);
 
 	if (panel_action_get_icon_name (type)  != NULL)
 		ctk_drag_source_set_icon_name (menuitem,
@@ -1105,9 +1105,9 @@ create_menuitem (CtkWidget          *menu,
 		};
 
 		ctk_drag_source_set (menuitem,
-				     GDK_BUTTON1_MASK | GDK_BUTTON2_MASK,
+				     CDK_BUTTON1_MASK | CDK_BUTTON2_MASK,
 				     menu_item_targets, 1,
-				     GDK_ACTION_COPY);
+				     CDK_ACTION_COPY);
 
 		GDesktopAppInfo *ginfo;
 		ginfo = cafemenu_tree_entry_get_app_info (entry);
@@ -1391,9 +1391,9 @@ panel_menu_key_press_handler (CtkWidget   *widget,
 	gboolean retval = FALSE;
 	CtkWidget *active_menu_item = NULL;
 
-	if ((event->keyval == GDK_KEY_Menu) ||
-	    (event->keyval == GDK_KEY_F10 &&
-	    (event->state & ctk_accelerator_get_default_mod_mask ()) == GDK_SHIFT_MASK)) {
+	if ((event->keyval == CDK_KEY_Menu) ||
+	    (event->keyval == CDK_KEY_F10 &&
+	    (event->state & ctk_accelerator_get_default_mod_mask ()) == CDK_SHIFT_MASK)) {
 		CtkMenuShell *menu_shell = CTK_MENU_SHELL (widget);
 
 		active_menu_item = ctk_menu_shell_get_selected_item (menu_shell);

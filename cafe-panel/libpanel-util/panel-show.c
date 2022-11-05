@@ -169,7 +169,7 @@ gboolean panel_show_uri(GdkScreen* screen, const gchar* uri, guint32 timestamp, 
 {
 	GError* local_error = NULL;
 
-	g_return_val_if_fail(GDK_IS_SCREEN (screen), FALSE);
+	g_return_val_if_fail(CDK_IS_SCREEN (screen), FALSE);
 	g_return_val_if_fail(uri != NULL, FALSE);
 	g_return_val_if_fail(error == NULL || *error == NULL, FALSE);
 
@@ -197,7 +197,7 @@ panel_show_uri_force_mime_type (GdkScreen    *screen,
 	GdkAppLaunchContext *context;
 	GList    *uris;
 
-	g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
+	g_return_val_if_fail (CDK_IS_SCREEN (screen), FALSE);
 	g_return_val_if_fail (uri != NULL, FALSE);
 	g_return_val_if_fail (mime_type != NULL, FALSE);
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
@@ -274,7 +274,7 @@ panel_show_help (GdkScreen    *screen,
 	GError *local_error = NULL;
 	char   *uri;
 
-	g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
+	g_return_val_if_fail (CDK_IS_SCREEN (screen), FALSE);
 	g_return_val_if_fail (doc != NULL, FALSE);
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 

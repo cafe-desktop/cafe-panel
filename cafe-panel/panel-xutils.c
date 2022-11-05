@@ -66,11 +66,11 @@ panel_xutils_set_strut (GdkWindow        *cdk_window,
 	gulong   struts [12] = { 0, };
 	GdkDisplay *display;
 
-	g_return_if_fail (GDK_IS_WINDOW (cdk_window));
-	g_return_if_fail (GDK_IS_X11_DISPLAY (cdk_window_get_display (cdk_window)));
+	g_return_if_fail (CDK_IS_WINDOW (cdk_window));
+	g_return_if_fail (CDK_IS_X11_DISPLAY (cdk_window_get_display (cdk_window)));
 
-	xdisplay = GDK_WINDOW_XDISPLAY (cdk_window);
-	window = GDK_WINDOW_XID (cdk_window);
+	xdisplay = CDK_WINDOW_XDISPLAY (cdk_window);
+	window = CDK_WINDOW_XID (cdk_window);
 
 	if (net_wm_strut == None)
 		net_wm_strut = XInternAtom (xdisplay, "_NET_WM_STRUT", False);
@@ -120,11 +120,11 @@ panel_warp_pointer (GdkWindow *cdk_window,
 	Window   window;
 	GdkDisplay *display;
 
-	g_return_if_fail (GDK_IS_WINDOW (cdk_window));
-	g_return_if_fail (GDK_IS_X11_DISPLAY (cdk_window_get_display (cdk_window)));
+	g_return_if_fail (CDK_IS_WINDOW (cdk_window));
+	g_return_if_fail (CDK_IS_X11_DISPLAY (cdk_window_get_display (cdk_window)));
 
-	xdisplay = GDK_WINDOW_XDISPLAY (cdk_window);
-	window = GDK_WINDOW_XID (cdk_window);
+	xdisplay = CDK_WINDOW_XDISPLAY (cdk_window);
+	window = CDK_WINDOW_XID (cdk_window);
 
 	display = cdk_window_get_display (cdk_window);
 	cdk_x11_display_error_trap_push (display);
@@ -149,8 +149,8 @@ panel_get_real_modifier_mask (guint mask)
 		return mask;
 	}
 
-	g_return_val_if_fail (GDK_IS_X11_DISPLAY (cdk_display_get_default ()), mask);
-	display = GDK_DISPLAY_XDISPLAY (cdk_display_get_default ());
+	g_return_val_if_fail (CDK_IS_X11_DISPLAY (cdk_display_get_default ()), mask);
+	display = CDK_DISPLAY_XDISPLAY (cdk_display_get_default ());
 
 	XDisplayKeycodes (display, &min_keycode, &max_keycode);
 	keysyms_for_keycodes = XGetKeyboardMapping (display,
@@ -194,17 +194,17 @@ panel_get_real_modifier_mask (guint mask)
 			switch (keysyms_for_keycode[j]) {
 				case XK_Super_L:
 				case XK_Super_R:
-					if (mask & GDK_SUPER_MASK)
+					if (mask & CDK_SUPER_MASK)
 						real_mask |= map_mask;
 					break;
 				case XK_Hyper_L:
 				case XK_Hyper_R:
-					if (mask & GDK_HYPER_MASK)
+					if (mask & CDK_HYPER_MASK)
 						real_mask |= map_mask;
 					break;
 				case XK_Meta_L:
 				case XK_Meta_R:
-					if (mask & GDK_META_MASK)
+					if (mask & CDK_META_MASK)
 						real_mask |= map_mask;
 					break;
 				default:

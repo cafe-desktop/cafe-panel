@@ -204,7 +204,7 @@ enter_or_leave_tile (CtkWidget             *widget,
 {
         ClockLocationTilePrivate *priv = clock_location_tile_get_instance_private (tile);
 
-        if (event->mode != GDK_CROSSING_NORMAL) {
+        if (event->mode != CDK_CROSSING_NORMAL) {
                 return TRUE;
         }
 
@@ -216,7 +216,7 @@ enter_or_leave_tile (CtkWidget             *widget,
                 return TRUE;
         }
 
-        if (event->type == GDK_ENTER_NOTIFY) {
+        if (event->type == CDK_ENTER_NOTIFY) {
                 gint can_set;
 
                 if (clock_location_is_current_timezone (priv->location))
@@ -239,7 +239,7 @@ enter_or_leave_tile (CtkWidget             *widget,
                 }
         }
         else {
-                if (event->detail != GDK_NOTIFY_INFERIOR) {
+                if (event->detail != CDK_NOTIFY_INFERIOR) {
                         ctk_widget_hide (priv->current_button);
                         ctk_widget_hide (priv->current_marker);
                         ctk_widget_show (priv->current_spacer);
@@ -260,7 +260,7 @@ clock_location_tile_fill (ClockLocationTile *this)
 
         priv->box = ctk_event_box_new ();
 
-        ctk_widget_add_events (priv->box, GDK_BUTTON_PRESS_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK);
+        ctk_widget_add_events (priv->box, CDK_BUTTON_PRESS_MASK | CDK_ENTER_NOTIFY_MASK | CDK_LEAVE_NOTIFY_MASK);
         g_signal_connect (priv->box, "button-press-event",
                           G_CALLBACK (press_on_tile), this);
         g_signal_connect (priv->box, "enter-notify-event",

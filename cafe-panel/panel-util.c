@@ -114,7 +114,7 @@ panel_push_window_busy (CtkWidget *window)
 		display = cdk_display_get_default ();
 		if (win != NULL) {
 			GdkCursor *cursor = cdk_cursor_new_for_display (display,
-			                                                GDK_WATCH);
+			                                                CDK_WATCH);
 
 			cdk_window_set_cursor (win, cursor);
 			g_object_unref (cursor);
@@ -454,7 +454,7 @@ void panel_lock_screen_action(GdkScreen* screen, const char* action)
 	GError* error = NULL;
 	char* command = NULL;
 
-	g_return_if_fail(GDK_IS_SCREEN (screen));
+	g_return_if_fail(CDK_IS_SCREEN (screen));
 	g_return_if_fail(action != NULL);
 
 	if (strcmp(action, "prefs") != 0 && panel_lockdown_get_disable_lock_screen())
@@ -726,7 +726,7 @@ panel_util_cairo_rgbdata_to_pixbuf (unsigned char *data,
 	if (!data)
 		return NULL;
 
-	retval = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, width, height);
+	retval = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, width, height);
 	if (!retval)
 		return NULL;
 

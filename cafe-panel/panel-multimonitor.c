@@ -108,7 +108,7 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 	display = cdk_display_get_default ();
 
 	g_return_val_if_fail (have_randr, FALSE);
-	g_return_val_if_fail (GDK_IS_X11_DISPLAY (display), FALSE);
+	g_return_val_if_fail (CDK_IS_X11_DISPLAY (display), FALSE);
 
 	/* CTK+ 2.14.x uses the Xinerama API, instead of RANDR, to get the
 	 * monitor geometries. It does this to avoid calling
@@ -133,8 +133,8 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 	 * long-term solution.
 	 */
 	screen = cdk_display_get_default_screen (display);
-	xdisplay = GDK_SCREEN_XDISPLAY (screen);
-	xroot = GDK_WINDOW_XID (cdk_screen_get_root_window (screen));
+	xdisplay = CDK_SCREEN_XDISPLAY (screen);
+	xroot = CDK_WINDOW_XID (cdk_screen_get_root_window (screen));
 
 	resources = XRRGetScreenResourcesCurrent (xdisplay, xroot);
 	if (resources->noutput == 0) {
@@ -243,7 +243,7 @@ panel_multimonitor_get_raw_monitors (int           *monitors_ret,
 
 #ifdef HAVE_X11
 #ifdef HAVE_RANDR
-	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ()) && have_randr)
+	if (CDK_IS_X11_DISPLAY (cdk_display_get_default ()) && have_randr)
 		res = panel_multimonitor_get_randr_monitors (monitors_ret, geometries_ret);
 #endif // HAVE_RANDR
 #endif // HAVE_X11
@@ -408,14 +408,14 @@ panel_multimonitor_init_randr (GdkDisplay *display)
 	Display *xdisplay;
 	int      event_base, error_base;
 
-	g_return_if_fail (GDK_IS_X11_DISPLAY (display));
+	g_return_if_fail (CDK_IS_X11_DISPLAY (display));
 
 	have_randr = FALSE;
 
-	if (!GDK_IS_X11_DISPLAY (display))
+	if (!CDK_IS_X11_DISPLAY (display))
 		return;
 
-	xdisplay = GDK_DISPLAY_XDISPLAY (display);
+	xdisplay = CDK_DISPLAY_XDISPLAY (display);
 
 	/* We don't remember the event/error bases, as we expect to get monitor
 	 * added/removed events from the display instead.
@@ -449,7 +449,7 @@ panel_multimonitor_init (void)
 
 #ifdef HAVE_X11
 #ifdef HAVE_RANDR
-	if (GDK_IS_X11_DISPLAY (display))
+	if (CDK_IS_X11_DISPLAY (display))
 		panel_multimonitor_init_randr (display);
 #endif // HAVE_RANDR
 #endif // HAVE_X11

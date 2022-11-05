@@ -351,7 +351,7 @@ panel_popup_menu (PanelToplevel *toplevel,
 	panel_data   = g_object_get_data (G_OBJECT (toplevel), "PanelData");
 
 	current_event = ctk_get_current_event ();
-	if (current_event && current_event->type == GDK_BUTTON_PRESS)
+	if (current_event && current_event->type == CDK_BUTTON_PRESS)
 		panel_data->insertion_pos = panel_widget_get_cursorloc (panel_widget);
 	else
 		panel_data->insertion_pos = -1;
@@ -376,7 +376,7 @@ panel_popup_menu (PanelToplevel *toplevel,
 static gboolean
 panel_popup_menu_signal (PanelToplevel *toplevel)
 {
-	return panel_popup_menu (toplevel, 3, GDK_CURRENT_TIME);
+	return panel_popup_menu (toplevel, 3, CDK_CURRENT_TIME);
 }
 
 static gboolean
@@ -403,8 +403,8 @@ panel_key_press_event (CtkWidget   *widget,
 	 * Will always be false when not using X
 	 */
 	if (CTK_IS_SOCKET (ctk_window_get_focus (CTK_WINDOW (widget))) &&
-	    event->keyval == GDK_KEY_F10 &&
-	    (event->state & ctk_accelerator_get_default_mod_mask ()) == GDK_CONTROL_MASK)
+	    event->keyval == CDK_KEY_F10 &&
+	    (event->state & ctk_accelerator_get_default_mod_mask ()) == CDK_CONTROL_MASK)
 		return ctk_bindings_activate (G_OBJECT (widget),
 					      event->keyval,
 					      event->state);
@@ -715,7 +715,7 @@ drop_internal_icon (PanelWidget *panel,
 	if (!panel_profile_id_lists_are_writable ())
 		return FALSE;
 
-	if (action == GDK_ACTION_MOVE)
+	if (action == CDK_ACTION_MOVE)
 		old_launcher = find_launcher (icon_name);
 
 	if (!panel_launcher_create_copy (panel->toplevel, pos, icon_name))
@@ -782,7 +782,7 @@ drop_internal_applet (PanelWidget *panel, int pos, const char *applet_type,
 
 	if (sscanf (applet_type, "MENU:%d", &applet_index) == 1 ||
 	    sscanf (applet_type, "DRAWER:%d", &applet_index) == 1) {
-		if (action != GDK_ACTION_MOVE)
+		if (action != CDK_ACTION_MOVE)
 			g_warning ("Only MOVE supported for menus/drawers");
 		success = move_applet (panel, pos, applet_index);
 
@@ -854,7 +854,7 @@ drop_internal_applet (PanelWidget *panel, int pos, const char *applet_type,
 	}
 
 	if (remove_applet &&
-	    action == GDK_ACTION_MOVE) {
+	    action == CDK_ACTION_MOVE) {
 		AppletInfo *info;
 		GSList     *applet_list;
 
@@ -910,14 +910,14 @@ panel_check_dnd_target_data (CtkWidget      *widget,
 	    !BUTTON_IS_WIDGET (widget))
 		return FALSE;
 
-	if (!(cdk_drag_context_get_actions (context) & (GDK_ACTION_COPY|GDK_ACTION_MOVE)))
+	if (!(cdk_drag_context_get_actions (context) & (CDK_ACTION_COPY|CDK_ACTION_MOVE)))
 		return FALSE;
 
 	for (l = cdk_drag_context_list_targets (context); l; l = l->next) {
 		GdkAtom atom;
 		guint   info;
 
-		atom = GDK_POINTER_TO_ATOM (l->data);
+		atom = CDK_POINTER_TO_ATOM (l->data);
 
 		if (ctk_target_list_find (get_target_list (), atom, &info)) {
 			if (ret_info)
@@ -988,15 +988,15 @@ panel_check_drop_forbidden (PanelWidget    *panel,
 
 	if (info == TARGET_ICON_INTERNAL ||
 	    info == TARGET_APPLET_INTERNAL) {
-		if (cdk_drag_context_get_actions (context) & GDK_ACTION_MOVE)
-			cdk_drag_status (context, GDK_ACTION_MOVE, time_);
+		if (cdk_drag_context_get_actions (context) & CDK_ACTION_MOVE)
+			cdk_drag_status (context, CDK_ACTION_MOVE, time_);
 		else
 			cdk_drag_status (context,
 					 cdk_drag_context_get_suggested_action (context),
 					 time_);
 
-	} else if (cdk_drag_context_get_actions (context) & GDK_ACTION_COPY)
-		cdk_drag_status (context, GDK_ACTION_COPY, time_);
+	} else if (cdk_drag_context_get_actions (context) & CDK_ACTION_COPY)
+		cdk_drag_status (context, CDK_ACTION_COPY, time_);
 	else
 		cdk_drag_status (context,
 				 cdk_drag_context_get_suggested_action (context),

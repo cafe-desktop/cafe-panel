@@ -926,7 +926,7 @@ start_startup_notification (GdkDisplay     *display,
   char *description, *wmclass;
   char *screen_str, *workspace_str;
 
-  g_assert(GDK_IS_X11_DISPLAY (display));
+  g_assert(CDK_IS_X11_DISPLAY (display));
 
   if (g_key_file_has_key (desktop_file->key_file,
 			  EGG_DESKTOP_FILE_GROUP,
@@ -1213,7 +1213,7 @@ egg_desktop_file_launchv (EggDesktopFile *desktop_file,
       startup_id = NULL;
 
 #ifdef HAVE_X11
-      if (GDK_IS_X11_DISPLAY (display))
+      if (CDK_IS_X11_DISPLAY (display))
         {
 	  int screen_num;
 
@@ -1255,7 +1255,7 @@ egg_desktop_file_launchv (EggDesktopFile *desktop_file,
 	  if (current_success)
 	    {
 #ifdef HAVE_X11
-	      if (GDK_IS_X11_DISPLAY (display))
+	      if (CDK_IS_X11_DISPLAY (display))
 		{
 		  set_startup_notification_timeout (display, startup_id);
 		}

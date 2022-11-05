@@ -64,7 +64,7 @@ display_popup_window (GdkScreen *screen)
 	atk_object_set_role (ctk_widget_get_accessible (retval), ATK_ROLE_ALERT);
 	ctk_window_set_screen (CTK_WINDOW (retval), screen);
 	ctk_window_stick (CTK_WINDOW (retval));
-	ctk_widget_add_events (retval, GDK_BUTTON_PRESS_MASK | GDK_KEY_PRESS_MASK);
+	ctk_widget_add_events (retval, CDK_BUTTON_PRESS_MASK | CDK_KEY_PRESS_MASK);
 
 	frame = ctk_frame_new (NULL);
 	ctk_frame_set_shadow_type (CTK_FRAME (frame), CTK_SHADOW_ETCHED_IN);
@@ -209,7 +209,7 @@ kill_window_response (CtkDialog *dialog,
 		Window window = (Window) user_data;
 
 		display = ctk_widget_get_display (CTK_WIDGET (dialog));
-		xdisplay = GDK_DISPLAY_XDISPLAY (display);
+		xdisplay = CDK_DISPLAY_XDISPLAY (display);
 
 		cdk_x11_display_error_trap_push (display);
 		XKillClient (xdisplay, window);
@@ -290,11 +290,11 @@ popup_filter (GdkXEvent *cdk_xevent,
 	switch (xevent->type) {
 	case ButtonPress:
 		handle_button_press_event (popup, xevent->xbutton.display, xevent->xbutton.subwindow);
-		return GDK_FILTER_REMOVE;
+		return CDK_FILTER_REMOVE;
 	case KeyPress:
 		if (xevent->xkey.keycode == XKeysymToKeycode (xevent->xany.display, XK_Escape)) {
 			remove_popup (popup);
-			return GDK_FILTER_REMOVE;
+			return CDK_FILTER_REMOVE;
 		}
 		break;
 	case GenericEvent:
@@ -304,19 +304,19 @@ popup_filter (GdkXEvent *cdk_xevent,
 		case XI_KeyPress:
 			if (xidev->detail == XKeysymToKeycode (xevent->xany.display, XK_Escape)) {
 				remove_popup (popup);
-				return GDK_FILTER_REMOVE;
+				return CDK_FILTER_REMOVE;
 			}
 			break;
 		case XI_ButtonPress:
 			handle_button_press_event (popup, xidev->display, xidev->child);
-			return GDK_FILTER_REMOVE;
+			return CDK_FILTER_REMOVE;
 		}
 		break;
 	default:
 		break;
 	}
 
-	return GDK_FILTER_CONTINUE;
+	return CDK_FILTER_CONTINUE;
 }
 
 static void
@@ -339,7 +339,7 @@ panel_force_quit (GdkScreen *screen,
 	GdkDisplay    *display;
 	GdkSeat       *seat;
 
-	g_return_if_fail (GDK_IS_X11_DISPLAY (cdk_screen_get_display (screen)));
+	g_return_if_fail (CDK_IS_X11_DISPLAY (cdk_screen_get_display (screen)));
 
 	popup = display_popup_window (screen);
 
@@ -347,8 +347,8 @@ panel_force_quit (GdkScreen *screen,
 
 	cdk_window_add_filter (root, (GdkFilterFunc) popup_filter, popup);
 	cross = cdk_cursor_new_for_display (cdk_display_get_default (),
-	                                    GDK_CROSS);
-	caps = GDK_SEAT_CAPABILITY_POINTER | GDK_SEAT_CAPABILITY_KEYBOARD;
+	                                    CDK_CROSS);
+	caps = CDK_SEAT_CAPABILITY_POINTER | CDK_SEAT_CAPABILITY_KEYBOARD;
 	display = cdk_window_get_display (root);
 	seat = cdk_display_get_default_seat (display);
 
@@ -360,7 +360,7 @@ panel_force_quit (GdkScreen *screen,
 
 	g_object_unref (cross);
 
-	if (status != GDK_GRAB_SUCCESS) {
+	if (status != CDK_GRAB_SUCCESS) {
 		g_warning ("Pointer grab failed\n");
 		remove_popup (popup);
 		return;

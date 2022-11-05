@@ -335,8 +335,8 @@ panel_addto_setup_drag (CtkTreeView          *tree_view,
 		return;
 
 	ctk_tree_view_enable_model_drag_source (CTK_TREE_VIEW (tree_view),
-						GDK_BUTTON1_MASK|GDK_BUTTON2_MASK,
-						target, 1, GDK_ACTION_COPY);
+						CDK_BUTTON1_MASK|CDK_BUTTON2_MASK,
+						target, 1, CDK_ACTION_COPY);
 
 	g_signal_connect_data (G_OBJECT (tree_view), "drag_data_get",
 			       G_CALLBACK (panel_addto_drag_data_get_cb),
@@ -413,14 +413,14 @@ panel_addto_query_applets (GSList *list)
 
 		enabled = TRUE;
 #ifdef HAVE_X11
-		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ()) &&
+		if (CDK_IS_X11_DISPLAY (cdk_display_get_default ()) &&
 		    !cafe_panel_applet_info_get_x11_supported (info)) {
 			enabled = FALSE;
 			description = _("Not compatible with X11");
 		}
 #endif
 #ifdef HAVE_WAYLAND
-		if (GDK_IS_WAYLAND_DISPLAY (cdk_display_get_default ()) &&
+		if (CDK_IS_WAYLAND_DISPLAY (cdk_display_get_default ()) &&
 		    !cafe_panel_applet_info_get_wayland_supported (info)) {
 			enabled = FALSE;
 			description = _("Not compatible with Wayland");

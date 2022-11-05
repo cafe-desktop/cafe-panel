@@ -291,7 +291,7 @@ static gboolean
 is_this_drop_ok (CtkWidget      *widget,
 		 GdkDragContext *context)
 {
-	static GdkAtom  text_uri_list = GDK_NONE;
+	static GdkAtom  text_uri_list = CDK_NONE;
 	GList           *l;
 	CtkWidget       *source;
 
@@ -300,14 +300,14 @@ is_this_drop_ok (CtkWidget      *widget,
 	if (source == widget)
 		return FALSE;
 
-	if (!(cdk_drag_context_get_actions (context) & GDK_ACTION_COPY))
+	if (!(cdk_drag_context_get_actions (context) & CDK_ACTION_COPY))
 		return FALSE;
 
 	if (!text_uri_list)
 		text_uri_list = cdk_atom_intern_static_string ("text/uri-list");
 
 	for (l = cdk_drag_context_list_targets (context); l; l = l->next) {
-		if (GDK_POINTER_TO_ATOM (l->data) == text_uri_list)
+		if (CDK_POINTER_TO_ATOM (l->data) == text_uri_list)
 			break;
 	}
 
@@ -335,7 +335,7 @@ drag_motion_cb(CtkWidget *widget,
 	if ( ! is_this_drop_ok (widget, context))
 		return FALSE;
 
-	cdk_drag_status (context, GDK_ACTION_COPY, time);
+	cdk_drag_status (context, CDK_ACTION_COPY, time);
 
 	button_widget_set_dnd_highlight(BUTTON_WIDGET(widget), TRUE);
 
@@ -521,7 +521,7 @@ create_launcher (const char *location)
 	/*ctk_drag_dest_set (CTK_WIDGET (launcher->button),
 			   CTK_DEST_DEFAULT_ALL,
 			   dnd_targets, 2,
-			   GDK_ACTION_COPY);*/
+			   CDK_ACTION_COPY);*/
 	ctk_drag_dest_set (CTK_WIDGET (launcher->button),
 			   0, NULL, 0, 0);
 
@@ -1177,9 +1177,9 @@ panel_launcher_set_dnd_enabled (Launcher *launcher,
 
 		ctk_widget_set_has_window (launcher->button, TRUE);
 		ctk_drag_source_set (launcher->button,
-				     GDK_BUTTON1_MASK,
+				     CDK_BUTTON1_MASK,
 				     dnd_targets, 2,
-				     GDK_ACTION_COPY | GDK_ACTION_MOVE);
+				     CDK_ACTION_COPY | CDK_ACTION_MOVE);
 		surface = button_widget_get_surface (BUTTON_WIDGET (launcher->button));
 		if (surface) {
 			GdkPixbuf *pixbuf;

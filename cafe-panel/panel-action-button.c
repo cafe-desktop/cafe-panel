@@ -287,7 +287,7 @@ panel_action_force_quit (CtkWidget *widget)
 	CtkDialogFlags flags;
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (widget))) {
+	if (CDK_IS_X11_DISPLAY (ctk_widget_get_display (widget))) {
 		panel_force_quit (ctk_widget_get_screen (widget),
 				  ctk_get_current_event_time ());
 		return;
@@ -901,9 +901,9 @@ panel_action_button_set_dnd_enabled (PanelActionButton *button,
 		};
 
 		ctk_widget_set_has_window (CTK_WIDGET (button), TRUE);
-		ctk_drag_source_set (CTK_WIDGET (button), GDK_BUTTON1_MASK,
+		ctk_drag_source_set (CTK_WIDGET (button), CDK_BUTTON1_MASK,
 				     dnd_targets, 1,
-				     GDK_ACTION_COPY | GDK_ACTION_MOVE);
+				     CDK_ACTION_COPY | CDK_ACTION_MOVE);
 		if (actions [button->priv->type].icon_name != NULL)
 			ctk_drag_source_set_icon_name (CTK_WIDGET (button),
 						       actions [button->priv->type].icon_name);

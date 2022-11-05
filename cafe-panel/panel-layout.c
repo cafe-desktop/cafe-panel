@@ -331,7 +331,7 @@ panel_layout_apply_default_from_gkeyfile (GdkScreen *screen)
 
     screen_n = 0;
 #ifdef HAVE_X11
-    if (GDK_IS_X11_SCREEN (screen))
+    if (CDK_IS_X11_SCREEN (screen))
 	screen_n = cdk_x11_screen_get_screen_number (screen);
 #endif // HAVE_11
 

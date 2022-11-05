@@ -808,7 +808,7 @@ close_on_escape (CtkWidget       *widget,
                  GdkEventKey     *event,
                  CtkToggleButton *toggle_button)
 {
-        if (event->keyval == GDK_KEY_Escape) {
+        if (event->keyval == CDK_KEY_Escape) {
                 ctk_toggle_button_set_active (toggle_button, FALSE);
                 return TRUE;
         }
@@ -882,14 +882,14 @@ position_calendar_popup (ClockData *cd)
         GdkDisplay     *display;
         GdkScreen      *screen;
         GdkRectangle    monitor;
-        GdkGravity      gravity = GDK_GRAVITY_NORTH_WEST;
+        GdkGravity      gravity = CDK_GRAVITY_NORTH_WEST;
         int             button_w, button_h;
         int             x, y;
         int             w, h;
         int             i, n;
         gboolean        found_monitor = FALSE;
 
-        if (!GDK_IS_X11_DISPLAY (cdk_display_get_default ()))
+        if (!CDK_IS_X11_DISPLAY (cdk_display_get_default ()))
                 return;
 
         /* Get root origin of the toggle button, and position above that. */
@@ -939,9 +939,9 @@ position_calendar_popup (ClockData *cd)
                         y -= (y + h) - (monitor.y + monitor.height);
 
                 if ((y + h) > (monitor.height / 2))
-                        gravity = GDK_GRAVITY_SOUTH_WEST;
+                        gravity = CDK_GRAVITY_SOUTH_WEST;
                 else
-                        gravity = GDK_GRAVITY_NORTH_WEST;
+                        gravity = CDK_GRAVITY_NORTH_WEST;
 
                 break;
         case CAFE_PANEL_APPLET_ORIENT_LEFT:
@@ -950,9 +950,9 @@ position_calendar_popup (ClockData *cd)
                         y -= (y + h) - (monitor.y + monitor.height);
 
                 if ((y + h) > (monitor.height / 2))
-                        gravity = GDK_GRAVITY_SOUTH_EAST;
+                        gravity = CDK_GRAVITY_SOUTH_EAST;
                 else
-                        gravity = GDK_GRAVITY_NORTH_EAST;
+                        gravity = CDK_GRAVITY_NORTH_EAST;
 
                 break;
         case CAFE_PANEL_APPLET_ORIENT_DOWN:
@@ -960,7 +960,7 @@ position_calendar_popup (ClockData *cd)
                 if ((x + w) > monitor.x + monitor.width)
                         x -= (x + w) - (monitor.x + monitor.width);
 
-                gravity = GDK_GRAVITY_NORTH_WEST;
+                gravity = CDK_GRAVITY_NORTH_WEST;
 
                 break;
         case CAFE_PANEL_APPLET_ORIENT_UP:
@@ -968,7 +968,7 @@ position_calendar_popup (ClockData *cd)
                 if ((x + w) > monitor.x + monitor.width)
                         x -= (x + w) - (monitor.x + monitor.width);
 
-                gravity = GDK_GRAVITY_SOUTH_WEST;
+                gravity = CDK_GRAVITY_SOUTH_WEST;
 
                 break;
         }
@@ -1619,9 +1619,9 @@ copy_time (CtkAction *action,
         }
 
         utf8 = g_locale_to_utf8 (string, -1, NULL, NULL, NULL);
-        ctk_clipboard_set_text (ctk_clipboard_get (GDK_SELECTION_PRIMARY),
+        ctk_clipboard_set_text (ctk_clipboard_get (CDK_SELECTION_PRIMARY),
                                 utf8, -1);
-        ctk_clipboard_set_text (ctk_clipboard_get (GDK_SELECTION_CLIPBOARD),
+        ctk_clipboard_set_text (ctk_clipboard_get (CDK_SELECTION_CLIPBOARD),
                                 utf8, -1);
         g_free (utf8);
 }
@@ -1647,9 +1647,9 @@ copy_date (CtkAction *action,
         g_free (loc);
 
         utf8 = g_locale_to_utf8 (string, -1, NULL, NULL, NULL);
-        ctk_clipboard_set_text (ctk_clipboard_get (GDK_SELECTION_PRIMARY),
+        ctk_clipboard_set_text (ctk_clipboard_get (CDK_SELECTION_PRIMARY),
                                 utf8, -1);
-        ctk_clipboard_set_text (ctk_clipboard_get (GDK_SELECTION_CLIPBOARD),
+        ctk_clipboard_set_text (ctk_clipboard_get (CDK_SELECTION_CLIPBOARD),
                                 utf8, -1);
         g_free (utf8);
 }
@@ -3298,15 +3298,15 @@ dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, CtkWindow
         }
 
         switch (event->direction) {
-        case GDK_SCROLL_RIGHT:
-        case GDK_SCROLL_DOWN:
+        case CDK_SCROLL_RIGHT:
+        case CDK_SCROLL_DOWN:
                 ctk_notebook_next_page (notebook);
                 break;
-        case GDK_SCROLL_LEFT:
-        case GDK_SCROLL_UP:
+        case CDK_SCROLL_LEFT:
+        case CDK_SCROLL_UP:
                 ctk_notebook_prev_page (notebook);
                 break;
-        case GDK_SCROLL_SMOOTH:
+        case CDK_SCROLL_SMOOTH:
                 switch (ctk_notebook_get_tab_pos (notebook)) {
                 case CTK_POS_LEFT:
                 case CTK_POS_RIGHT:
@@ -3339,7 +3339,7 @@ display_properties_dialog (ClockData *cd, gboolean start_in_locations_page)
         ensure_prefs_window_is_created (cd);
 
         CtkWidget *notebook = _clock_get_widget (cd, "notebook");
-        ctk_widget_add_events (notebook, GDK_SCROLL_MASK);
+        ctk_widget_add_events (notebook, CDK_SCROLL_MASK);
         g_signal_connect (CTK_NOTEBOOK (notebook), "scroll-event",
                           G_CALLBACK (dialog_page_scroll_event_cb), CTK_WINDOW (cd->prefs_window));
         

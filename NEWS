@@ -161,7 +161,7 @@
   * panel-action-protocol: Error if used when X11 is disabled
   * panel-force-quit: Error if used when X11 is disabled
   * panel-xutils: Error if used when X11 is disabled
-  * xstuff: include CTK and GDK X11 headers, so including files don't have to
+  * xstuff: include CTK and CDK X11 headers, so including files don't have to
   * xstuff: add is_using_x11 ()
   * xstuff: Error if X11 not enabled
   * Applets: only compile X11 applets when X11 is enabled
@@ -316,7 +316,7 @@
   * run-dialog: use F6 to switch between entry field and program list
   * transifex: set minimum_perc and type in config file
   * Fix strut sizes for HiDPI multi-monitors
-  * Do not down-scale monitor geometries for GDK monitors
+  * Do not down-scale monitor geometries for CDK monitors
   * Scale monitor geometries down to device pixels to support multiple monitors in HiDPI
   * Drawer cleanup and fix arrow behavior
 
@@ -472,7 +472,7 @@
   * properly fit expanded panel to smaller screen size
   * system-tray: Properly propagate orientation changes
   * notification-area: Fix item orientation
-  * workspace switcher: handle GDK_SCROLL_SMOOTH and fix build warning
+  * workspace switcher: handle CDK_SCROLL_SMOOTH and fix build warning
   * Reenable workspace switcher wrapping
   * pre-bump version
   * status-notifier: Fix handling of icon-padding style property
@@ -594,7 +594,7 @@
   * Ctk3, Port ctk_rc_parse_string to CtkCssProvider
   * Ctk3, Several small fixes
   * Several more fixes from monsta
-  * GDK_KEY_* is also in Ctk+2.24
+  * CDK_KEY_* is also in Ctk+2.24
   * showdesktop: Fix the size of the icon
   * clock: Check allocated size before creating the shadow pixbuf
   * applet: Disconnect show and deactivate menu signals before destroying the applet menu

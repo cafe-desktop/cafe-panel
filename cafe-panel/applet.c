@@ -138,7 +138,7 @@ move_applet_callback (CtkWidget *widget, AppletInfo *info)
 
 	panel_widget_applet_drag_start (panel, info->widget,
 					PW_DRAG_OFF_CENTER,
-					GDK_CURRENT_TIME);
+					CDK_CURRENT_TIME);
 }
 
 /* permanently remove an applet - all non-permanent
@@ -687,7 +687,7 @@ applet_popup_menu (CtkWidget      *widget,
 	GdkEventButton event;
 
 	event.button = 3;
-	event.time = GDK_CURRENT_TIME;
+	event.time = CDK_CURRENT_TIME;
 
 	return applet_do_popup_menu (widget, &event, info);
 }
@@ -1250,8 +1250,8 @@ cafe_panel_applet_register (CtkWidget       *applet,
 	if (ctk_widget_get_has_window (applet))
 		ctk_widget_set_events (applet, (ctk_widget_get_events (applet) |
 						APPLET_EVENT_MASK) &
-				       ~( GDK_POINTER_MOTION_MASK |
-					  GDK_POINTER_MOTION_HINT_MASK));
+				       ~( CDK_POINTER_MOTION_MASK |
+					  CDK_POINTER_MOTION_HINT_MASK));
 
 	info = g_new0 (AppletInfo, 1);
 	info->type         = type;

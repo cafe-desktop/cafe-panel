@@ -1564,12 +1564,12 @@ static void change_water(FishApplet* fish)
 static gboolean handle_keypress(CtkWidget* widget, GdkEventKey* event, FishApplet* fish)
 {
 	switch (event->keyval) {
-	case GDK_KEY_space:
-	case GDK_KEY_KP_Space:
-	case GDK_KEY_Return:
-	case GDK_KEY_KP_Enter:
-	case GDK_KEY_ISO_Enter:
-	case GDK_KEY_3270_Enter:
+	case CDK_KEY_space:
+	case CDK_KEY_KP_Space:
+	case CDK_KEY_Return:
+	case CDK_KEY_KP_Enter:
+	case CDK_KEY_ISO_Enter:
+	case CDK_KEY_3270_Enter:
 		if (fish->april_fools) {
 			change_water (fish);
 			return TRUE;
@@ -1594,7 +1594,7 @@ static gboolean fish_enter_notify(CtkWidget* widget, GdkEventCrossing* event)
   event_widget = ctk_get_event_widget ((GdkEvent*) event);
 
   if ((event_widget == widget) &&
-      (event->detail != GDK_NOTIFY_INFERIOR))
+      (event->detail != CDK_NOTIFY_INFERIOR))
       fish->in_applet = TRUE;
 
   return FALSE;
@@ -1609,7 +1609,7 @@ static gboolean fish_leave_notify(CtkWidget* widget, GdkEventCrossing* event)
   event_widget = ctk_get_event_widget ((GdkEvent*) event);
 
   if ((event_widget == widget) &&
-      (event->detail != GDK_NOTIFY_INFERIOR))
+      (event->detail != CDK_NOTIFY_INFERIOR))
       fish->in_applet = FALSE;
 
   return FALSE;
@@ -1660,9 +1660,9 @@ static void setup_fish_widget(FishApplet* fish)
 	g_signal_connect (fish->drawing_area, "draw",
 			  G_CALLBACK (fish_applet_draw), fish);
 
-	ctk_widget_add_events (widget, GDK_ENTER_NOTIFY_MASK |
-				       GDK_LEAVE_NOTIFY_MASK |
-				       GDK_BUTTON_RELEASE_MASK);
+	ctk_widget_add_events (widget, CDK_ENTER_NOTIFY_MASK |
+				       CDK_LEAVE_NOTIFY_MASK |
+				       CDK_BUTTON_RELEASE_MASK);
 
 	g_signal_connect_swapped (widget, "enter_notify_event",
 				  G_CALLBACK (fish_enter_notify), fish);
@@ -1671,7 +1671,7 @@ static void setup_fish_widget(FishApplet* fish)
 	g_signal_connect_swapped (widget, "button_release_event",
 				  G_CALLBACK (handle_button_release), fish);
 
-	ctk_widget_add_events (fish->drawing_area, GDK_BUTTON_RELEASE_MASK);
+	ctk_widget_add_events (fish->drawing_area, CDK_BUTTON_RELEASE_MASK);
 	g_signal_connect_swapped (fish->drawing_area, "button_release_event",
 				  G_CALLBACK (handle_button_release), fish);
 

@@ -474,7 +474,7 @@ calendar_window_init (CalendarWindow *calwin)
 	calwin->priv = calendar_window_get_instance_private (calwin);
 
 	window = CTK_WINDOW (calwin);
-	ctk_window_set_type_hint (window, GDK_WINDOW_TYPE_HINT_DOCK);
+	ctk_window_set_type_hint (window, CDK_WINDOW_TYPE_HINT_DOCK);
 	ctk_window_set_decorated (window, FALSE);
 	ctk_window_set_resizable (window, FALSE);
 	ctk_window_set_default_size (window, 337, -1);

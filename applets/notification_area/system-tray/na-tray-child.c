@@ -187,12 +187,12 @@ na_tray_child_draw (CtkWidget *widget,
       cdk_cairo_get_clip_rectangle (cr, &clip_rect);
 
       /* Clear to parent-relative pixmap
-       * We need to use direct X access here because GDK doesn't know about
+       * We need to use direct X access here because CDK doesn't know about
        * the parent relative pixmap. */
       cairo_surface_flush (target);
 
-      XClearArea (GDK_WINDOW_XDISPLAY (window),
-                  GDK_WINDOW_XID (window),
+      XClearArea (CDK_WINDOW_XDISPLAY (window),
+                  CDK_WINDOW_XID (window),
                   clip_rect.x, clip_rect.y,
                   clip_rect.width, clip_rect.height,
                   False);
@@ -405,17 +405,17 @@ na_tray_child_new (GdkScreen *screen,
   int red_prec, green_prec, blue_prec, depth;
   int result;
 
-  g_return_val_if_fail (GDK_IS_SCREEN (screen), NULL);
+  g_return_val_if_fail (CDK_IS_SCREEN (screen), NULL);
   g_return_val_if_fail (icon_window != None, NULL);
 
-  xdisplay = GDK_SCREEN_XDISPLAY (screen);
+  xdisplay = CDK_SCREEN_XDISPLAY (screen);
 
   /* We need to determine the visual of the window we are embedding and create
    * the socket in the same visual.
    */
 
   display = cdk_screen_get_display (screen);
-  if (!GDK_IS_X11_DISPLAY (display)) {
+  if (!CDK_IS_X11_DISPLAY (display)) {
     g_warning ("na_tray only works on X11");
     return NULL;
   }
@@ -474,7 +474,7 @@ na_tray_child_get_title (NaTrayChild *child)
 
   cdk_x11_display_error_trap_push (display);
 
-  result = XGetWindowProperty (GDK_DISPLAY_XDISPLAY (display),
+  result = XGetWindowProperty (CDK_DISPLAY_XDISPLAY (display),
                                child->icon_window,
                                atom,
                                0, G_MAXLONG,
@@ -652,7 +652,7 @@ na_tray_child_get_wm_class (NaTrayChild  *child,
 
   display = ctk_widget_get_display (CTK_WIDGET (child));
 
-  _get_wmclass (GDK_DISPLAY_XDISPLAY (display),
+  _get_wmclass (CDK_DISPLAY_XDISPLAY (display),
                 child->icon_window,
                 res_class,
                 res_name);

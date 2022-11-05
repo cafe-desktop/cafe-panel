@@ -182,12 +182,12 @@ static gboolean window_menu_key_press_event(CtkWidget* widget, GdkEventKey* even
 
 	switch (event->keyval)
 	{
-		case GDK_KEY_KP_Enter:
-		case GDK_KEY_ISO_Enter:
-		case GDK_KEY_3270_Enter:
-		case GDK_KEY_Return:
-		case GDK_KEY_space:
-		case GDK_KEY_KP_Space:
+		case CDK_KEY_KP_Enter:
+		case CDK_KEY_ISO_Enter:
+		case CDK_KEY_3270_Enter:
+		case CDK_KEY_Return:
+		case CDK_KEY_space:
+		case CDK_KEY_KP_Space:
 			selector = WNCK_SELECTOR(window_menu->selector);
 			/*
 			 * We need to call _ctk_menu_shell_activate() here as is done in

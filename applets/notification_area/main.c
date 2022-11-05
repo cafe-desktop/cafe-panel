@@ -497,7 +497,7 @@ applet_factory (CafePanelApplet *applet,
         strcmp (iid, "SystemTrayApplet") == 0))
     return FALSE;
 
-  if (!GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (applet)))) {
+  if (!CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (applet)))) {
     g_warning ("Notification area only works on X");
     return FALSE;
   }
