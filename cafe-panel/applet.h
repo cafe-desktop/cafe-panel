@@ -12,10 +12,10 @@ extern "C" {
 #endif
 
 
-#define APPLET_EVENT_MASK (GDK_BUTTON_PRESS_MASK |		\
-			   GDK_BUTTON_RELEASE_MASK |		\
-			   GDK_POINTER_MOTION_MASK |		\
-			   GDK_POINTER_MOTION_HINT_MASK)
+#define APPLET_EVENT_MASK (CDK_BUTTON_PRESS_MASK |		\
+			   CDK_BUTTON_RELEASE_MASK |		\
+			   CDK_POINTER_MOTION_MASK |		\
+			   CDK_POINTER_MOTION_HINT_MASK)
 typedef struct {
 	PanelObjectType  type;
 	CtkWidget       *widget;

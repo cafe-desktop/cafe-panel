@@ -127,22 +127,22 @@ panel_action_protocol_filter (GdkXEvent *cdk_xevent,
 	XEvent    *xevent = (XEvent *) cdk_xevent;
 
 	if (xevent->type != ClientMessage)
-		return GDK_FILTER_CONTINUE;
+		return CDK_FILTER_CONTINUE;
 
 	if ((xevent->xclient.message_type != atom_cafe_panel_action) &&
 	   (xevent->xclient.message_type != atom_gnome_panel_action))
-		return GDK_FILTER_CONTINUE;
+		return CDK_FILTER_CONTINUE;
 
 	screen = cdk_event_get_screen (event);
 	display = cdk_screen_get_display (screen);
-	if (!GDK_IS_X11_DISPLAY (display))
-		return GDK_FILTER_CONTINUE;
+	if (!CDK_IS_X11_DISPLAY (display))
+		return CDK_FILTER_CONTINUE;
 	window = cdk_x11_window_lookup_for_display (display, xevent->xclient.window);
 	if (!window)
-		return GDK_FILTER_CONTINUE;
+		return CDK_FILTER_CONTINUE;
 
 	if (window != cdk_screen_get_root_window (screen))
-		return GDK_FILTER_CONTINUE;
+		return CDK_FILTER_CONTINUE;
 
 	if (xevent->xclient.data.l [0] == atom_cafe_panel_action_main_menu)
 		panel_action_protocol_main_menu (screen, xevent->xclient.data.l [1], event);
@@ -155,9 +155,9 @@ panel_action_protocol_filter (GdkXEvent *cdk_xevent,
 	else if (xevent->xclient.data.l [0] == atom_cafe_panel_action_kill_dialog)
 		panel_action_protocol_kill_dialog (screen, xevent->xclient.data.l [1]);
 	else
-		return GDK_FILTER_CONTINUE;
+		return CDK_FILTER_CONTINUE;
 
-	return GDK_FILTER_REMOVE;
+	return CDK_FILTER_REMOVE;
 }
 
 void
@@ -166,34 +166,34 @@ panel_action_protocol_init (void)
 	GdkDisplay *display;
 
 	display = cdk_display_get_default ();
-	g_assert(GDK_IS_X11_DISPLAY (display));
+	g_assert(CDK_IS_X11_DISPLAY (display));
 
 	atom_cafe_panel_action =
-		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
+		XInternAtom (CDK_DISPLAY_XDISPLAY (display),
 			     "_CAFE_PANEL_ACTION",
 			     FALSE);
 	atom_gnome_panel_action =
-		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
+		XInternAtom (CDK_DISPLAY_XDISPLAY (display),
 			     "_GNOME_PANEL_ACTION",
 			     FALSE);
 	atom_cafe_panel_action_main_menu =
-		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
+		XInternAtom (CDK_DISPLAY_XDISPLAY (display),
 			     "_CAFE_PANEL_ACTION_MAIN_MENU",
 			     FALSE);
 	atom_cafe_panel_action_run_dialog =
-		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
+		XInternAtom (CDK_DISPLAY_XDISPLAY (display),
 			     "_CAFE_PANEL_ACTION_RUN_DIALOG",
 			     FALSE);
 	atom_gnome_panel_action_main_menu =
-		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
+		XInternAtom (CDK_DISPLAY_XDISPLAY (display),
 			     "_GNOME_PANEL_ACTION_MAIN_MENU",
 			     FALSE);
 	atom_gnome_panel_action_run_dialog =
-		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
+		XInternAtom (CDK_DISPLAY_XDISPLAY (display),
 			     "_GNOME_PANEL_ACTION_RUN_DIALOG",
 			     FALSE);
 	atom_cafe_panel_action_kill_dialog =
-		XInternAtom (GDK_DISPLAY_XDISPLAY (display),
+		XInternAtom (CDK_DISPLAY_XDISPLAY (display),
 			     "_CAFE_PANEL_ACTION_KILL_DIALOG",
 			     FALSE);
 

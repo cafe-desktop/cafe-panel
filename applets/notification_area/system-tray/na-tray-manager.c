@@ -61,7 +61,7 @@ typedef struct
 
   long timeout;
   char *str;
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
   Window window;
 #endif
 } PendingMessage;
@@ -75,7 +75,7 @@ static guint manager_signals[LAST_SIGNAL] = { 0 };
 #define SYSTEM_TRAY_ORIENTATION_HORZ 0
 #define SYSTEM_TRAY_ORIENTATION_VERT 1
 
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
 static gboolean na_tray_manager_check_running_screen_x11 (GdkScreen *screen);
 #endif
 
@@ -261,7 +261,7 @@ na_tray_manager_new (void)
   return manager;
 }
 
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
 
 static gboolean
 na_tray_manager_plug_removed (CtkSocket       *socket,
@@ -482,7 +482,7 @@ na_tray_manager_window_filter (GdkXEvent *xev,
 	{
           na_tray_manager_handle_dock_request (manager,
                                                (XClientMessageEvent *) xevent);
-          return GDK_FILTER_REMOVE;
+          return CDK_FILTER_REMOVE;
 	}
       /* _NET_SYSTEM_TRAY_OPCODE: SYSTEM_TRAY_BEGIN_MESSAGE */
       else if (xevent->xclient.message_type == manager->opcode_atom &&
@@ -490,7 +490,7 @@ na_tray_manager_window_filter (GdkXEvent *xev,
         {
           na_tray_manager_handle_begin_message (manager,
                                                 (XClientMessageEvent *) event);
-          return GDK_FILTER_REMOVE;
+          return CDK_FILTER_REMOVE;
         }
       /* _NET_SYSTEM_TRAY_OPCODE: SYSTEM_TRAY_CANCEL_MESSAGE */
       else if (xevent->xclient.message_type == manager->opcode_atom &&
@@ -498,14 +498,14 @@ na_tray_manager_window_filter (GdkXEvent *xev,
         {
           na_tray_manager_handle_cancel_message (manager,
                                                  (XClientMessageEvent *) event);
-          return GDK_FILTER_REMOVE;
+          return CDK_FILTER_REMOVE;
         }
       /* _NET_SYSTEM_TRAY_MESSAGE_DATA */
       else if (xevent->xclient.message_type == manager->message_data_atom)
         {
           na_tray_manager_handle_message_data (manager,
                                                (XClientMessageEvent *) event);
-          return GDK_FILTER_REMOVE;
+          return CDK_FILTER_REMOVE;
         }
     }
   else if (xevent->type == SelectionClear)
@@ -514,7 +514,7 @@ na_tray_manager_window_filter (GdkXEvent *xev,
       na_tray_manager_unmanage (manager);
     }
 
-  return GDK_FILTER_CONTINUE;
+  return CDK_FILTER_CONTINUE;
 }
 
 #if 0
@@ -535,7 +535,7 @@ na_tray_manager_selection_clear_event (CtkWidget         *widget,
 static void
 na_tray_manager_unmanage (NaTrayManager *manager)
 {
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
   GdkDisplay *display;
   guint32     timestamp;
   CtkWidget  *invisible;
@@ -549,7 +549,7 @@ na_tray_manager_unmanage (NaTrayManager *manager)
 
   g_assert (CTK_IS_INVISIBLE (invisible));
   g_assert (ctk_widget_get_realized (invisible));
-  g_assert (GDK_IS_WINDOW (window));
+  g_assert (CDK_IS_WINDOW (window));
 
   display = ctk_widget_get_display (invisible);
 
@@ -576,7 +576,7 @@ na_tray_manager_unmanage (NaTrayManager *manager)
 static void
 na_tray_manager_set_orientation_property (NaTrayManager *manager)
 {
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
   GdkWindow  *window;
   GdkDisplay *display;
   Atom        orientation_atom;
@@ -594,8 +594,8 @@ na_tray_manager_set_orientation_property (NaTrayManager *manager)
 		SYSTEM_TRAY_ORIENTATION_HORZ :
 		SYSTEM_TRAY_ORIENTATION_VERT;
 
-  XChangeProperty (GDK_DISPLAY_XDISPLAY (display),
-		   GDK_WINDOW_XID (window),
+  XChangeProperty (CDK_DISPLAY_XDISPLAY (display),
+		   CDK_WINDOW_XID (window),
                    orientation_atom,
 		   XA_CARDINAL, 32,
 		   PropModeReplace,
@@ -606,7 +606,7 @@ na_tray_manager_set_orientation_property (NaTrayManager *manager)
 static void
 na_tray_manager_set_visual_property (NaTrayManager *manager)
 {
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
   GdkWindow  *window;
   GdkDisplay *display;
   Visual     *xvisual;
@@ -632,7 +632,7 @@ na_tray_manager_set_visual_property (NaTrayManager *manager)
   if (cdk_screen_get_rgba_visual (manager->screen) != NULL &&
       cdk_display_supports_composite (display))
     {
-      xvisual = GDK_VISUAL_XVISUAL (cdk_screen_get_rgba_visual (manager->screen));
+      xvisual = CDK_VISUAL_XVISUAL (cdk_screen_get_rgba_visual (manager->screen));
     }
   else
     {
@@ -640,13 +640,13 @@ na_tray_manager_set_visual_property (NaTrayManager *manager)
        * be embedded. In almost all cases, this will be the same as the visual
        * of the screen.
        */
-      xvisual = GDK_VISUAL_XVISUAL (cdk_screen_get_system_visual (manager->screen));
+      xvisual = CDK_VISUAL_XVISUAL (cdk_screen_get_system_visual (manager->screen));
     }
 
   data[0] = XVisualIDFromVisual (xvisual);
 
-  XChangeProperty (GDK_DISPLAY_XDISPLAY (display),
-                   GDK_WINDOW_XID (window),
+  XChangeProperty (CDK_DISPLAY_XDISPLAY (display),
+                   CDK_WINDOW_XID (window),
                    visual_atom,
                    XA_VISUALID, 32,
                    PropModeReplace,
@@ -657,7 +657,7 @@ na_tray_manager_set_visual_property (NaTrayManager *manager)
 static void
 na_tray_manager_set_padding_property (NaTrayManager *manager)
 {
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
   GdkWindow  *window;
   GdkDisplay *display;
   Atom        atom;
@@ -673,8 +673,8 @@ na_tray_manager_set_padding_property (NaTrayManager *manager)
 
   data[0] = manager->padding;
 
-  XChangeProperty (GDK_DISPLAY_XDISPLAY (display),
-                   GDK_WINDOW_XID (window),
+  XChangeProperty (CDK_DISPLAY_XDISPLAY (display),
+                   CDK_WINDOW_XID (window),
                    atom,
                    XA_CARDINAL, 32,
                    PropModeReplace,
@@ -685,7 +685,7 @@ na_tray_manager_set_padding_property (NaTrayManager *manager)
 static void
 na_tray_manager_set_icon_size_property (NaTrayManager *manager)
 {
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
   GdkWindow  *window;
   GdkDisplay *display;
   Atom        atom;
@@ -701,8 +701,8 @@ na_tray_manager_set_icon_size_property (NaTrayManager *manager)
 
   data[0] = manager->icon_size;
 
-  XChangeProperty (GDK_DISPLAY_XDISPLAY (display),
-                   GDK_WINDOW_XID (window),
+  XChangeProperty (CDK_DISPLAY_XDISPLAY (display),
+                   CDK_WINDOW_XID (window),
                    atom,
                    XA_CARDINAL, 32,
                    PropModeReplace,
@@ -713,7 +713,7 @@ na_tray_manager_set_icon_size_property (NaTrayManager *manager)
 static void
 na_tray_manager_set_colors_property (NaTrayManager *manager)
 {
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
   GdkWindow  *window;
   GdkDisplay *display;
   Atom        atom;
@@ -740,8 +740,8 @@ na_tray_manager_set_colors_property (NaTrayManager *manager)
   data[10] = manager->success.green * 65535;
   data[11] = manager->success.blue * 65535;
 
-  XChangeProperty (GDK_DISPLAY_XDISPLAY (display),
-                   GDK_WINDOW_XID (window),
+  XChangeProperty (CDK_DISPLAY_XDISPLAY (display),
+                   CDK_WINDOW_XID (window),
                    atom,
                    XA_CARDINAL, 32,
                    PropModeReplace,
@@ -749,7 +749,7 @@ na_tray_manager_set_colors_property (NaTrayManager *manager)
 #endif
 }
 
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
 
 static gboolean
 na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
@@ -776,13 +776,13 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
   manager->screen = screen;
 
   display = cdk_screen_get_display (screen);
-  xscreen = GDK_SCREEN_XSCREEN (screen);
+  xscreen = CDK_SCREEN_XSCREEN (screen);
 
   invisible = ctk_invisible_new_for_screen (screen);
   ctk_widget_realize (invisible);
 
   ctk_widget_add_events (invisible,
-                         GDK_PROPERTY_CHANGE_MASK | GDK_STRUCTURE_MASK);
+                         CDK_PROPERTY_CHANGE_MASK | CDK_STRUCTURE_MASK);
 
   selection_atom_name = g_strdup_printf ("_NET_SYSTEM_TRAY_S%d",
 					 cdk_x11_screen_get_screen_number (screen));
@@ -822,11 +822,11 @@ na_tray_manager_manage_screen_x11 (NaTrayManager *manager,
       xev.data.l[0] = timestamp;
       xev.data.l[1] = cdk_x11_atom_to_xatom_for_display (display,
                                                          manager->selection_atom);
-      xev.data.l[2] = GDK_WINDOW_XID (window);
+      xev.data.l[2] = CDK_WINDOW_XID (window);
       xev.data.l[3] = 0;	/* manager specific data */
       xev.data.l[4] = 0;	/* manager specific data */
 
-      XSendEvent (GDK_DISPLAY_XDISPLAY (display),
+      XSendEvent (CDK_DISPLAY_XDISPLAY (display),
 		  RootWindowOfScreen (xscreen),
 		  False, StructureNotifyMask, (XEvent *)&xev);
 
@@ -870,17 +870,17 @@ gboolean
 na_tray_manager_manage_screen (NaTrayManager *manager,
 			       GdkScreen     *screen)
 {
-  g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
+  g_return_val_if_fail (CDK_IS_SCREEN (screen), FALSE);
   g_return_val_if_fail (manager->screen == NULL, FALSE);
 
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
   return na_tray_manager_manage_screen_x11 (manager, screen);
 #else
   return FALSE;
 #endif
 }
 
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
 
 static gboolean
 na_tray_manager_check_running_screen_x11 (GdkScreen *screen)
@@ -896,7 +896,7 @@ na_tray_manager_check_running_screen_x11 (GdkScreen *screen)
                                                           selection_atom_name);
   g_free (selection_atom_name);
 
-  if (XGetSelectionOwner (GDK_DISPLAY_XDISPLAY (display),
+  if (XGetSelectionOwner (CDK_DISPLAY_XDISPLAY (display),
                           selection_atom) != None)
     return TRUE;
   else
@@ -908,9 +908,9 @@ na_tray_manager_check_running_screen_x11 (GdkScreen *screen)
 gboolean
 na_tray_manager_check_running (GdkScreen *screen)
 {
-  g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
+  g_return_val_if_fail (CDK_IS_SCREEN (screen), FALSE);
 
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
   return na_tray_manager_check_running_screen_x11 (screen);
 #else
   return FALSE;

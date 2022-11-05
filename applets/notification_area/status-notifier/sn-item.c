@@ -208,8 +208,8 @@ sn_item_button_press_event (CtkWidget      *widget,
       if (priv->menu != NULL)
         {
           ctk_menu_popup_at_widget (priv->menu, widget,
-                                    GDK_GRAVITY_SOUTH_WEST,
-                                    GDK_GRAVITY_NORTH_WEST,
+                                    CDK_GRAVITY_SOUTH_WEST,
+                                    CDK_GRAVITY_NORTH_WEST,
                                     (GdkEvent *) event);
           /*Fix positioning if size changed since last shown*/
           ctk_menu_reposition(priv->menu);
@@ -240,8 +240,8 @@ sn_item_popup_menu (CtkWidget *widget)
   if (priv->menu != NULL)
     {
       ctk_menu_popup_at_widget (priv->menu, widget,
-                                GDK_GRAVITY_SOUTH_WEST,
-                                GDK_GRAVITY_NORTH_WEST,
+                                CDK_GRAVITY_SOUTH_WEST,
+                                CDK_GRAVITY_NORTH_WEST,
                                 NULL);
       /*Fix positioning if size changed since last shown*/
       ctk_menu_reposition(priv->menu);
@@ -294,17 +294,17 @@ sn_item_scroll_event (CtkWidget      *widget,
     {
       switch (direction)
         {
-          case GDK_SCROLL_UP:
-          case GDK_SCROLL_DOWN:
+          case CDK_SCROLL_UP:
+          case CDK_SCROLL_DOWN:
             orientation = SN_ITEM_ORIENTATION_VERTICAL;
             break;
 
-          case GDK_SCROLL_LEFT:
-          case GDK_SCROLL_RIGHT:
+          case CDK_SCROLL_LEFT:
+          case CDK_SCROLL_RIGHT:
             orientation = SN_ITEM_ORIENTATION_HORIZONTAL;
             break;
 
-          case GDK_SCROLL_SMOOTH:
+          case CDK_SCROLL_SMOOTH:
           default:
             g_assert_not_reached ();
             break;
@@ -315,17 +315,17 @@ sn_item_scroll_event (CtkWidget      *widget,
     {
       switch (direction)
         {
-          case GDK_SCROLL_UP:
-          case GDK_SCROLL_LEFT:
+          case CDK_SCROLL_UP:
+          case CDK_SCROLL_LEFT:
             delta = 1;
             break;
 
-          case GDK_SCROLL_DOWN:
-          case GDK_SCROLL_RIGHT:
+          case CDK_SCROLL_DOWN:
+          case CDK_SCROLL_RIGHT:
             delta = -1;
             break;
 
-          case GDK_SCROLL_SMOOTH:
+          case CDK_SCROLL_SMOOTH:
           default:
             g_assert_not_reached ();
             break;
@@ -341,7 +341,7 @@ sn_item_scroll_event (CtkWidget      *widget,
 
   SN_ITEM_GET_CLASS (item)->scroll (item, delta, orientation);
 
-  return GDK_EVENT_STOP;
+  return CDK_EVENT_STOP;
 }
 
 static void
@@ -452,7 +452,7 @@ sn_item_init (SnItem *item)
 {
   item->priv = sn_item_get_instance_private (item);
 
-  ctk_widget_add_events (CTK_WIDGET (item), GDK_SCROLL_MASK);
+  ctk_widget_add_events (CTK_WIDGET (item), CDK_SCROLL_MASK);
 }
 
 const gchar *

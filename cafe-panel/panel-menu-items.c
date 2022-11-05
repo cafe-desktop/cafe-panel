@@ -255,7 +255,7 @@ panel_menu_items_append_from_desktop (CtkWidget *menu,
 
 	uri = g_filename_to_uri (full_path, NULL, NULL);
 
-	setup_uri_drag (item, uri, icon, GDK_ACTION_COPY);
+	setup_uri_drag (item, uri, icon, CDK_ACTION_COPY);
 	g_free (uri);
 
 	g_key_file_free (key_file);
@@ -303,7 +303,7 @@ panel_menu_items_append_place_item (const char *icon_name,
 			  G_CALLBACK (menu_dummy_button_press_event), NULL);
 
 	if (g_str_has_prefix (uri, "file:")) /*Links only work for local files*/
-		setup_uri_drag (item, uri, icon_name, GDK_ACTION_LINK);
+		setup_uri_drag (item, uri, icon_name, CDK_ACTION_LINK);
 }
 
 static CtkWidget *
@@ -555,7 +555,7 @@ drive_poll_for_media_cb (GObject      *source_object,
 	if (!g_drive_poll_for_media_finish (G_DRIVE (source_object),
 					    res, &error)) {
 		if (error->code != G_IO_ERROR_FAILED_HANDLED) {
-			screen = GDK_SCREEN (user_data);
+			screen = CDK_SCREEN (user_data);
 
 			name = g_drive_get_name (G_DRIVE (source_object));
 			primary = g_strdup_printf (_("Unable to scan %s for media changes"),

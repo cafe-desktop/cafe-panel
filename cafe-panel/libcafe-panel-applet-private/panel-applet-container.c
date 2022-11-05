@@ -106,7 +106,7 @@ panel_applet_container_setup (CafePanelAppletContainer *container)
 {
 	if (container->priv->out_of_process) {
 #ifdef HAVE_X11
-		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
+		if (CDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 			container->priv->socket = ctk_socket_new ();
 
 			g_signal_connect_swapped (container->priv->socket,
@@ -273,7 +273,7 @@ cafe_panel_applet_container_new (void)
 static gboolean
 cafe_panel_applet_container_plug_removed (CafePanelAppletContainer *container)
 {
-	g_return_val_if_fail (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (container))), FALSE);
+	g_return_val_if_fail (CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (container))), FALSE);
 
 	if (!container->priv->applet_proxy)
 		return FALSE;
@@ -529,7 +529,7 @@ cafe_panel_applet_container_get_applet (CafePanelAppletContainer *container,
 	/* we can't use the screen of the container widget since it's not in a
 	 * widget hierarchy yet */
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (cdk_screen_get_display (screen))) {
+	if (CDK_IS_X11_DISPLAY (cdk_screen_get_display (screen))) {
 		screen_number = cdk_x11_screen_get_screen_number (screen);
 	} else
 #endif

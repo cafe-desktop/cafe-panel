@@ -1509,7 +1509,7 @@ entry_event (CtkEditable    *entry,
 	char             *temp;
 	int               pos, tmp;
 
-	if (event->type != GDK_KEY_PRESS)
+	if (event->type != CDK_KEY_PRESS)
 		return FALSE;
 
 	/* if user typed something we're not using the list anymore
@@ -1525,7 +1525,7 @@ entry_event (CtkEditable    *entry,
 		return FALSE;
 
 	/* tab completion */
-	if (event->keyval == GDK_KEY_Tab) {
+	if (event->keyval == CDK_KEY_Tab) {
 		ctk_editable_get_selection_bounds (entry, &pos, &tmp);
 
 		if (dialog->completion_started &&
@@ -1679,9 +1679,9 @@ combobox_changed (CtkComboBox    *combobox,
 
 	ctk_widget_set_sensitive (dialog->run_button, TRUE);
 	ctk_drag_source_set (dialog->run_dialog,
-			     GDK_BUTTON1_MASK,
+			     CDK_BUTTON1_MASK,
 			     NULL, 0,
-			     GDK_ACTION_COPY);
+			     CDK_ACTION_COPY);
 	ctk_drag_source_add_uri_targets (dialog->run_dialog);
 
 	if (panel_profile_get_enable_program_list () &&
@@ -1785,7 +1785,7 @@ panel_run_dialog_setup_entry (PanelRunDialog *dialog,
 	ctk_drag_dest_set (dialog->combobox,
 			   CTK_DEST_DEFAULT_MOTION|CTK_DEST_DEFAULT_HIGHLIGHT,
 			   NULL, 0,
-			   GDK_ACTION_COPY);
+			   CDK_ACTION_COPY);
 	ctk_drag_dest_add_uri_targets (dialog->combobox);
 
 	g_signal_connect (dialog->combobox, "drag_data_received",
@@ -1946,12 +1946,12 @@ key_press_event (CtkWidget    *run_dialog,
 {
 
 	/* allow only key presses */
-	if (event->type != GDK_KEY_PRESS)
+	if (event->type != CDK_KEY_PRESS)
 		return FALSE;
 
 	/* If the program list is enabled and open and the user presses the F6 key
 	 * the focus should jump between CtkComboBoxText and the program list  */
-	if (panel_profile_get_enable_program_list () && panel_profile_get_show_program_list () && event->keyval == GDK_KEY_F6) {
+	if (panel_profile_get_enable_program_list () && panel_profile_get_show_program_list () && event->keyval == CDK_KEY_F6) {
 
 		/* jump to the program list from anywhere */
 		if (!ctk_widget_has_focus (dialog->program_list)) {

@@ -24,7 +24,7 @@
 #ifndef __NA_TRAY_MANAGER_H__
 #define __NA_TRAY_MANAGER_H__
 
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
 #include <cdk/cdkx.h>
 #endif
 #include <ctk/ctk.h>
@@ -47,7 +47,7 @@ struct _NaTrayManager
 {
   GObject parent_instance;
 
-#ifdef GDK_WINDOWING_X11
+#ifdef CDK_WINDOWING_X11
   GdkAtom selection_atom;
   Atom    opcode_atom;
   Atom message_data_atom;

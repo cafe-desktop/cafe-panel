@@ -167,7 +167,7 @@ main (int argc, char **argv)
 	display = cdk_display_get_default ();
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (display))
+	if (CDK_IS_X11_DISPLAY (display))
 		panel_action_protocol_init ();
 #endif
 
@@ -186,20 +186,20 @@ main (int argc, char **argv)
 	gboolean found_backend = FALSE;
 
 #ifdef HAVE_WAYLAND
-	if (GDK_IS_WAYLAND_DISPLAY (display)) {
+	if (CDK_IS_WAYLAND_DISPLAY (display)) {
 		found_backend = TRUE;
 	}
 #endif
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (display)) {
+	if (CDK_IS_X11_DISPLAY (display)) {
 		xstuff_init ();
 		found_backend = TRUE;
 	}
 #endif
 
 	if (!found_backend) {
-		g_error("GDK platform not supported");
+		g_error("CDK platform not supported");
 	}
 
 	/* Flush to make sure our struts are seen by everyone starting

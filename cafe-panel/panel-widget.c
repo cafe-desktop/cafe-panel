@@ -130,10 +130,10 @@ add_tab_bindings (CtkBindingSet    *binding_set,
    	          GdkModifierType   modifiers,
 		  gboolean          next)
 {
-	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Tab, modifiers,
+	ctk_binding_entry_add_signal (binding_set, CDK_KEY_Tab, modifiers,
 				      "tab_move", 1,
 				      G_TYPE_BOOLEAN, next);
-	ctk_binding_entry_add_signal (binding_set, GDK_KEY_KP_Tab, modifiers,
+	ctk_binding_entry_add_signal (binding_set, CDK_KEY_KP_Tab, modifiers,
 				      "tab_move", 1,
 				      G_TYPE_BOOLEAN, next);
 }
@@ -143,16 +143,16 @@ add_move_bindings (CtkBindingSet    *binding_set,
 		   GdkModifierType   modifiers,
 		   const gchar      *name)
 {
-	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Up, modifiers,
+	ctk_binding_entry_add_signal (binding_set, CDK_KEY_Up, modifiers,
                                       name, 1,
                                       CTK_TYPE_DIRECTION_TYPE, CTK_DIR_UP);
-	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Down, modifiers,
+	ctk_binding_entry_add_signal (binding_set, CDK_KEY_Down, modifiers,
                                       name, 1,
                                       CTK_TYPE_DIRECTION_TYPE, CTK_DIR_DOWN);
-	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Left, modifiers,
+	ctk_binding_entry_add_signal (binding_set, CDK_KEY_Left, modifiers,
                                       name, 1,
                                       CTK_TYPE_DIRECTION_TYPE, CTK_DIR_LEFT);
-	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Right, modifiers,
+	ctk_binding_entry_add_signal (binding_set, CDK_KEY_Right, modifiers,
                                       name, 1,
                                       CTK_TYPE_DIRECTION_TYPE, CTK_DIR_RIGHT);
 }
@@ -167,28 +167,28 @@ add_all_move_bindings (PanelWidget *panel)
 
 	binding_set = ctk_binding_set_by_class (class);
 
-	add_move_bindings (binding_set, GDK_SHIFT_MASK, "push_move");
-	add_move_bindings (binding_set, GDK_CONTROL_MASK, "switch_move");
-	add_move_bindings (binding_set, GDK_MOD1_MASK, "free_move");
+	add_move_bindings (binding_set, CDK_SHIFT_MASK, "push_move");
+	add_move_bindings (binding_set, CDK_CONTROL_MASK, "switch_move");
+	add_move_bindings (binding_set, CDK_MOD1_MASK, "free_move");
 	add_move_bindings (binding_set, 0, "free_move");
 
 	add_tab_bindings (binding_set, 0, TRUE);
-	add_tab_bindings (binding_set, GDK_SHIFT_MASK, FALSE);
+	add_tab_bindings (binding_set, CDK_SHIFT_MASK, FALSE);
 
 	ctk_binding_entry_add_signal (binding_set,
-                                      GDK_KEY_Escape, 0,
+                                      CDK_KEY_Escape, 0,
                                       "end_move", 0);
 	ctk_binding_entry_add_signal (binding_set,
-                                      GDK_KEY_KP_Enter, 0,
+                                      CDK_KEY_KP_Enter, 0,
                                       "end_move", 0);
 	ctk_binding_entry_add_signal (binding_set,
-                                      GDK_KEY_Return, 0,
+                                      CDK_KEY_Return, 0,
                                       "end_move", 0);
 	ctk_binding_entry_add_signal (binding_set,
-                                      GDK_KEY_KP_Space, 0,
+                                      CDK_KEY_KP_Space, 0,
                                       "end_move", 0);
 	ctk_binding_entry_add_signal (binding_set,
-                                      GDK_KEY_space, 0,
+                                      CDK_KEY_space, 0,
                                       "end_move", 0);
 
 #ifdef HAVE_X11
@@ -240,18 +240,18 @@ remove_tab_bindings (CtkBindingSet    *binding_set,
 		     GdkModifierType   modifiers,
 		     gboolean          next)
 {
-	ctk_binding_entry_remove (binding_set, GDK_KEY_Tab, modifiers);
-	ctk_binding_entry_remove (binding_set, GDK_KEY_KP_Tab, modifiers);
+	ctk_binding_entry_remove (binding_set, CDK_KEY_Tab, modifiers);
+	ctk_binding_entry_remove (binding_set, CDK_KEY_KP_Tab, modifiers);
 }
 
 static void
 remove_move_bindings (CtkBindingSet    *binding_set,
 		      GdkModifierType   modifiers)
 {
-	ctk_binding_entry_remove (binding_set, GDK_KEY_Up, modifiers);
-	ctk_binding_entry_remove (binding_set, GDK_KEY_Down, modifiers);
-	ctk_binding_entry_remove (binding_set, GDK_KEY_Left, modifiers);
-	ctk_binding_entry_remove (binding_set, GDK_KEY_Right, modifiers);
+	ctk_binding_entry_remove (binding_set, CDK_KEY_Up, modifiers);
+	ctk_binding_entry_remove (binding_set, CDK_KEY_Down, modifiers);
+	ctk_binding_entry_remove (binding_set, CDK_KEY_Left, modifiers);
+	ctk_binding_entry_remove (binding_set, CDK_KEY_Right, modifiers);
 }
 
 static void
@@ -266,18 +266,18 @@ remove_all_move_bindings (PanelWidget *panel)
 
 	panel_widget_reset_saved_focus (panel);
 
-	remove_move_bindings (binding_set, GDK_SHIFT_MASK);
-	remove_move_bindings (binding_set, GDK_CONTROL_MASK);
-	remove_move_bindings (binding_set, GDK_MOD1_MASK);
+	remove_move_bindings (binding_set, CDK_SHIFT_MASK);
+	remove_move_bindings (binding_set, CDK_CONTROL_MASK);
+	remove_move_bindings (binding_set, CDK_MOD1_MASK);
 	remove_move_bindings (binding_set, 0);
 	remove_tab_bindings (binding_set, 0, TRUE);
-	remove_tab_bindings (binding_set, GDK_SHIFT_MASK, FALSE);
+	remove_tab_bindings (binding_set, CDK_SHIFT_MASK, FALSE);
 
-	ctk_binding_entry_remove (binding_set, GDK_KEY_Escape, 0);
-	ctk_binding_entry_remove (binding_set, GDK_KEY_KP_Enter, 0);
-	ctk_binding_entry_remove (binding_set, GDK_KEY_Return, 0);
-	ctk_binding_entry_remove (binding_set, GDK_KEY_KP_Space, 0);
-	ctk_binding_entry_remove (binding_set, GDK_KEY_space, 0);
+	ctk_binding_entry_remove (binding_set, CDK_KEY_Escape, 0);
+	ctk_binding_entry_remove (binding_set, CDK_KEY_KP_Enter, 0);
+	ctk_binding_entry_remove (binding_set, CDK_KEY_Return, 0);
+	ctk_binding_entry_remove (binding_set, CDK_KEY_KP_Space, 0);
+	ctk_binding_entry_remove (binding_set, CDK_KEY_space, 0);
 }
 
 static void
@@ -1669,7 +1669,7 @@ panel_widget_init (PanelWidget *panel)
 
 	ctk_widget_set_events (
 		widget,
-		ctk_widget_get_events (widget) | GDK_BUTTON_RELEASE_MASK);
+		ctk_widget_get_events (widget) | CDK_BUTTON_RELEASE_MASK);
 
 	panel->packed        = FALSE;
 	panel->orient        = CTK_ORIENTATION_HORIZONTAL;
@@ -1816,18 +1816,18 @@ panel_widget_applet_drag_start (PanelWidget *panel,
 		GdkSeat *seat;
 
 		fleur_cursor = cdk_cursor_new_for_display (cdk_display_get_default (),
-		                                           GDK_FLEUR);
+		                                           CDK_FLEUR);
 
 		display = cdk_window_get_display (window);
 		seat = cdk_display_get_default_seat (display);
 
-		status = cdk_seat_grab (seat, window, GDK_SEAT_CAPABILITY_POINTER,
+		status = cdk_seat_grab (seat, window, CDK_SEAT_CAPABILITY_POINTER,
 		                        FALSE, fleur_cursor, NULL, NULL, NULL);
 
 		g_object_unref (fleur_cursor);
 		cdk_display_flush (display);
 
-		if (status != GDK_GRAB_SUCCESS) {
+		if (status != CDK_GRAB_SUCCESS) {
 			g_warning (G_STRLOC ": failed to grab pointer (errorcode: %d)",
 				   status);
 			panel_widget_applet_drag_end (panel);
@@ -2078,12 +2078,12 @@ panel_widget_applet_move_to_cursor (PanelWidget *panel)
 				/*disable reentrancy into this function*/
 				if (!panel_widget_reparent (panel, new_panel, applet, pos)) {
 					panel_widget_applet_drag_start (
-						panel, applet, ad->drag_off, GDK_CURRENT_TIME);
+						panel, applet, ad->drag_off, CDK_CURRENT_TIME);
 					continue;
 				}
 
 				panel_widget_applet_drag_start (
-					new_panel, applet, ad->drag_off, GDK_CURRENT_TIME);
+					new_panel, applet, ad->drag_off, CDK_CURRENT_TIME);
 				schedule_try_move (new_panel, TRUE);
 
 				return;
@@ -2099,11 +2099,11 @@ panel_widget_applet_move_to_cursor (PanelWidget *panel)
 	if (panel->packed) {
 		movement = PANEL_SWITCH_MOVE;
 	} else {
-		if (mods & GDK_CONTROL_MASK)
+		if (mods & CDK_CONTROL_MASK)
 			movement = PANEL_SWITCH_MOVE;
-		else if (mods & GDK_SHIFT_MASK)
+		else if (mods & CDK_SHIFT_MASK)
 			movement = PANEL_PUSH_MOVE;
-		else if (mods & GDK_MOD1_MASK)
+		else if (mods & CDK_MOD1_MASK)
 			movement = PANEL_FREE_MOVE;
 	}
 
@@ -2212,7 +2212,7 @@ panel_widget_applet_button_press_event (CtkWidget      *widget,
 	/* time on sent events seems to be bogus */
 	event_time = event->time;
 	if (event->send_event)
-		event_time = GDK_CURRENT_TIME;
+		event_time = CDK_CURRENT_TIME;
 
 	panel_widget_applet_drag_start (panel, widget, PW_DRAG_OFF_CURSOR, event_time);
 
@@ -2295,9 +2295,9 @@ panel_sub_event_handler(CtkWidget *widget, GdkEvent *event, gpointer data)
 
 	switch (event->type) {
 		/*pass these to the parent!*/
-		case GDK_BUTTON_PRESS:
-		case GDK_BUTTON_RELEASE:
-		case GDK_MOTION_NOTIFY: {
+		case CDK_BUTTON_PRESS:
+		case CDK_BUTTON_RELEASE:
+		case CDK_MOTION_NOTIFY: {
 			GdkEventButton *bevent = (GdkEventButton *)event;
 
 			if (bevent->button != 1 || cafe_panel_applet_in_drag)
@@ -2305,7 +2305,7 @@ panel_sub_event_handler(CtkWidget *widget, GdkEvent *event, gpointer data)
 
 			}
 			break;
-		case GDK_KEY_PRESS:
+		case CDK_KEY_PRESS:
 			if (cafe_panel_applet_in_drag)
 				return ctk_widget_event(data, event);
 			break;

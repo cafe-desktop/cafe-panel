@@ -491,7 +491,7 @@ cafe_panel_applet_find_toplevel_dock_window (CafePanelApplet *applet,
 	if (!ctk_widget_get_realized (toplevel))
 		return None;
 
-	xwin = GDK_WINDOW_XID (ctk_widget_get_window (toplevel));
+	xwin = CDK_WINDOW_XID (ctk_widget_get_window (toplevel));
 
 	child = NULL;
 	parent = root = None;
@@ -560,7 +560,7 @@ cafe_panel_applet_request_focus (CafePanelApplet	 *applet,
 	Window	    xroot;
 	XEvent	    xev;
 
-	if (!GDK_IS_X11_DISPLAY (cdk_display_get_default ()))
+	if (!CDK_IS_X11_DISPLAY (cdk_display_get_default ()))
 		return;
 
 	g_return_if_fail (PANEL_IS_APPLET (applet));
@@ -569,8 +569,8 @@ cafe_panel_applet_request_focus (CafePanelApplet	 *applet,
 	root	= cdk_screen_get_root_window (screen);
 	display = cdk_screen_get_display (screen);
 
-	xdisplay = GDK_DISPLAY_XDISPLAY (display);
-	xroot	 = GDK_WINDOW_XID (root);
+	xdisplay = CDK_DISPLAY_XDISPLAY (display);
+	xroot	 = CDK_WINDOW_XID (root);
 
 	cafe_panel_applet_init_atoms (xdisplay);
 
@@ -856,20 +856,20 @@ cafe_panel_applet_menu_popup (CafePanelApplet *applet,
 	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
-	GdkGravity widget_anchor = GDK_GRAVITY_NORTH_WEST;
-	GdkGravity menu_anchor = GDK_GRAVITY_NORTH_WEST;
+	GdkGravity widget_anchor = CDK_GRAVITY_NORTH_WEST;
+	GdkGravity menu_anchor = CDK_GRAVITY_NORTH_WEST;
 	switch (applet->priv->orient) {
 	case CAFE_PANEL_APPLET_ORIENT_UP:
-		menu_anchor = GDK_GRAVITY_SOUTH_WEST;
+		menu_anchor = CDK_GRAVITY_SOUTH_WEST;
 		break;
 	case CAFE_PANEL_APPLET_ORIENT_DOWN:
-		widget_anchor = GDK_GRAVITY_SOUTH_WEST;
+		widget_anchor = CDK_GRAVITY_SOUTH_WEST;
 		break;
 	case CAFE_PANEL_APPLET_ORIENT_LEFT:
-		menu_anchor = GDK_GRAVITY_NORTH_EAST;
+		menu_anchor = CDK_GRAVITY_NORTH_EAST;
 		break;
 	case CAFE_PANEL_APPLET_ORIENT_RIGHT:
-		widget_anchor = GDK_GRAVITY_NORTH_EAST;
+		widget_anchor = CDK_GRAVITY_NORTH_EAST;
 		break;
 	}
 	ctk_menu_popup_at_widget (CTK_MENU (menu),
@@ -920,10 +920,10 @@ cafe_panel_applet_button_event (CafePanelApplet      *applet,
 
 	display = cdk_display_get_default ();
 
-	if (!GDK_IS_X11_DISPLAY (display))
+	if (!CDK_IS_X11_DISPLAY (display))
 		return FALSE;
 
-	if (event->type == GDK_BUTTON_PRESS) {
+	if (event->type == CDK_BUTTON_PRESS) {
 		GdkSeat *seat;
 
 		xevent.xbutton.type = ButtonPress;
@@ -940,9 +940,9 @@ cafe_panel_applet_button_event (CafePanelApplet      *applet,
 		xevent.xbutton.type = ButtonRelease;
 	}
 
-	xevent.xbutton.display     = GDK_WINDOW_XDISPLAY (window);
-	xevent.xbutton.window      = GDK_WINDOW_XID (socket_window);
-	xevent.xbutton.root        = GDK_WINDOW_XID (cdk_screen_get_root_window
+	xevent.xbutton.display     = CDK_WINDOW_XDISPLAY (window);
+	xevent.xbutton.window      = CDK_WINDOW_XID (socket_window);
+	xevent.xbutton.root        = CDK_WINDOW_XID (cdk_screen_get_root_window
 							 (cdk_window_get_screen (window)));
 	/*
 	 * FIXME: the following might cause
@@ -958,8 +958,8 @@ cafe_panel_applet_button_event (CafePanelApplet      *applet,
 
 	cdk_x11_display_error_trap_push (display);
 
-	XSendEvent (GDK_WINDOW_XDISPLAY (window),
-		    GDK_WINDOW_XID (socket_window),
+	XSendEvent (CDK_WINDOW_XDISPLAY (window),
+		    CDK_WINDOW_XID (socket_window),
 		    False, NoEventMask, &xevent);
 
 	cdk_display_flush (display);
@@ -1009,7 +1009,7 @@ static gboolean
 cafe_panel_applet_key_press_event (CtkWidget   *widget,
 			      GdkEventKey *event)
 {
-    if (event->keyval == GDK_KEY_Menu) {
+    if (event->keyval == CDK_KEY_Menu) {
         cafe_panel_applet_menu_popup (CAFE_PANEL_APPLET (widget), (GdkEvent *) event);
         return TRUE;
     }
@@ -1274,14 +1274,14 @@ cafe_panel_applet_create_foreign_surface_for_display (GdkDisplay *display,
 	guint width, height, border, depth;
 
 	cdk_x11_display_error_trap_push (display);
-	result = XGetGeometry (GDK_DISPLAY_XDISPLAY (display), xid, &window,
+	result = XGetGeometry (CDK_DISPLAY_XDISPLAY (display), xid, &window,
 	                       &x, &y, &width, &height, &border, &depth);
 	cdk_x11_display_error_trap_pop_ignored (display);
 
 	if (result == 0)
 		return NULL;
 
-	return cairo_xlib_surface_create (GDK_DISPLAY_XDISPLAY (display),
+	return cairo_xlib_surface_create (CDK_DISPLAY_XDISPLAY (display),
 	                                  xid, cdk_x11_visual_get_xvisual (visual),
 	                                  width, height);
 }
@@ -1380,7 +1380,7 @@ cafe_panel_applet_handle_background_string (CafePanelApplet  *applet,
 
 	} else if (elements [0] && !strcmp (elements [0], "pixmap")) {
 #ifdef HAVE_X11
-		if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
+		if (CDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 			Window pixmap_id;
 			int             x, y;
 
@@ -1688,10 +1688,10 @@ add_tab_bindings (CtkBindingSet   *binding_set,
 		  GdkModifierType  modifiers,
 		  CtkDirectionType direction)
 {
-	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Tab, modifiers,
+	ctk_binding_entry_add_signal (binding_set, CDK_KEY_Tab, modifiers,
 				      "move_focus_out_of_applet", 1,
 				      CTK_TYPE_DIRECTION_TYPE, direction);
-	ctk_binding_entry_add_signal (binding_set, GDK_KEY_KP_Tab, modifiers,
+	ctk_binding_entry_add_signal (binding_set, CDK_KEY_KP_Tab, modifiers,
 				      "move_focus_out_of_applet", 1,
 				      CTK_TYPE_DIRECTION_TYPE, direction);
 }
@@ -1765,7 +1765,7 @@ static void _cafe_panel_applet_prepare_css (CtkStyleContext *context)
 {
 	CtkCssProvider  *provider;
 
-	g_return_if_fail (GDK_IS_X11_DISPLAY (cdk_display_get_default ()));
+	g_return_if_fail (CDK_IS_X11_DISPLAY (cdk_display_get_default ()));
 	provider = ctk_css_provider_new ();
 	ctk_css_provider_load_from_data (provider,
 					 "#PanelPlug {\n"
@@ -1812,8 +1812,8 @@ cafe_panel_applet_init (CafePanelApplet *applet)
 					   panel_menu_ui, -1, NULL);
 
 	ctk_widget_set_events (CTK_WIDGET (applet),
-			       GDK_BUTTON_PRESS_MASK |
-			       GDK_BUTTON_RELEASE_MASK);
+			       CDK_BUTTON_PRESS_MASK |
+			       CDK_BUTTON_RELEASE_MASK);
 }
 
 static GObject *
@@ -1833,7 +1833,7 @@ cafe_panel_applet_constructor (GType                  type,
 		return object;
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ()))
+	if (CDK_IS_X11_DISPLAY (cdk_display_get_default ()))
 	{
 		applet->priv->plug = ctk_plug_new (0);
 
@@ -2028,7 +2028,7 @@ cafe_panel_applet_class_init (CafePanelAppletClass *klass)
                               G_TYPE_NONE,
 			      3,
 			      PANEL_TYPE_CAFE_PANEL_APPLET_BACKGROUND_TYPE,
-			      GDK_TYPE_RGBA,
+			      CDK_TYPE_RGBA,
 			      CAIRO_GOBJECT_TYPE_PATTERN);
 
 	cafe_panel_applet_signals [MOVE_FOCUS_OUT_OF_APPLET] =
@@ -2045,9 +2045,9 @@ cafe_panel_applet_class_init (CafePanelAppletClass *klass)
 
 	binding_set = ctk_binding_set_by_class (gobject_class);
 	add_tab_bindings (binding_set, 0, CTK_DIR_TAB_FORWARD);
-	add_tab_bindings (binding_set, GDK_SHIFT_MASK, CTK_DIR_TAB_BACKWARD);
-	add_tab_bindings (binding_set, GDK_CONTROL_MASK, CTK_DIR_TAB_FORWARD);
-	add_tab_bindings (binding_set, GDK_CONTROL_MASK | GDK_SHIFT_MASK, CTK_DIR_TAB_BACKWARD);
+	add_tab_bindings (binding_set, CDK_SHIFT_MASK, CTK_DIR_TAB_BACKWARD);
+	add_tab_bindings (binding_set, CDK_CONTROL_MASK, CTK_DIR_TAB_FORWARD);
+	add_tab_bindings (binding_set, CDK_CONTROL_MASK | CDK_SHIFT_MASK, CTK_DIR_TAB_BACKWARD);
 
 	ctk_widget_class_set_css_name (widget_class, "PanelApplet");
 }
@@ -2073,7 +2073,7 @@ button_press_event_new (CafePanelApplet *applet,
   seat = cdk_display_get_default_seat (display);
   device = cdk_seat_get_pointer (seat);
 
-  event = cdk_event_new (GDK_BUTTON_PRESS);
+  event = cdk_event_new (CDK_BUTTON_PRESS);
 
   event->button.time = time;
   event->button.button = button;
@@ -2322,7 +2322,7 @@ _cafe_panel_applet_factory_main_internal (const gchar               *factory_id,
 
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
+	if (CDK_IS_X11_DISPLAY (cdk_display_get_default ())) {
 		/*Use this both in and out of process as the tray applet always uses CtkSocket
 		*to handle CtkStatusIcons whether the tray itself is built in or out of process
 		*/

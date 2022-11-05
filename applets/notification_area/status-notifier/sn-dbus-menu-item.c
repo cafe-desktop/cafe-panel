@@ -88,13 +88,13 @@ sn_shortcuts_new (GVariant *variant)
       while (g_variant_iter_next (shortcut, "&s", &string))
         {
           if (g_strcmp0 (string, "Control") == 0)
-            mask |= GDK_CONTROL_MASK;
+            mask |= CDK_CONTROL_MASK;
           else if (g_strcmp0 (string, "Alt") == 0)
-            mask |= GDK_MOD1_MASK;
+            mask |= CDK_MOD1_MASK;
           else if (g_strcmp0 (string, "Shift") == 0)
-            mask |= GDK_SHIFT_MASK;
+            mask |= CDK_SHIFT_MASK;
           else if (g_strcmp0 (string, "Super") == 0)
-            mask |= GDK_SUPER_MASK;
+            mask |= CDK_SUPER_MASK;
           else
             ctk_accelerator_parse (string, &key, NULL);
         }

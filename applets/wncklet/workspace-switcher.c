@@ -288,10 +288,10 @@ static gboolean applet_scroll(CafePanelApplet* applet, GdkEventScroll* event, Pa
 	int n_columns;
 	int in_last_row;
 
-	if (event->type != GDK_SCROLL)
+	if (event->type != CDK_SCROLL)
 		return FALSE;
 
-	if (event->direction == GDK_SCROLL_SMOOTH)
+	if (event->direction == CDK_SCROLL_SMOOTH)
 		return FALSE;
 
 	index = wnck_workspace_get_number(wnck_screen_get_active_workspace(pager->screen));
@@ -309,11 +309,11 @@ static gboolean applet_scroll(CafePanelApplet* applet, GdkEventScroll* event, Pa
 	{
 		switch (event->direction)
 		{
-			case GDK_SCROLL_RIGHT:
-				absolute_direction = GDK_SCROLL_LEFT;
+			case CDK_SCROLL_RIGHT:
+				absolute_direction = CDK_SCROLL_LEFT;
 				break;
-			case GDK_SCROLL_LEFT:
-				absolute_direction = GDK_SCROLL_RIGHT;
+			case CDK_SCROLL_LEFT:
+				absolute_direction = CDK_SCROLL_RIGHT;
 				break;
 			default:
 				break;
@@ -322,7 +322,7 @@ static gboolean applet_scroll(CafePanelApplet* applet, GdkEventScroll* event, Pa
 
 	switch (absolute_direction)
 	{
-		case GDK_SCROLL_DOWN:
+		case CDK_SCROLL_DOWN:
 			if (index + n_columns < n_workspaces)
 			{
 				index += n_columns;
@@ -337,7 +337,7 @@ static gboolean applet_scroll(CafePanelApplet* applet, GdkEventScroll* event, Pa
 			}
 			break;
 
-		case GDK_SCROLL_RIGHT:
+		case CDK_SCROLL_RIGHT:
 			if (index < n_workspaces - 1)
 			{
 				index++;
@@ -348,7 +348,7 @@ static gboolean applet_scroll(CafePanelApplet* applet, GdkEventScroll* event, Pa
 			}
 			break;
 
-		case GDK_SCROLL_UP:
+		case CDK_SCROLL_UP:
 			if (index - n_columns >= 0)
 			{
 				index -= n_columns;
@@ -366,7 +366,7 @@ static gboolean applet_scroll(CafePanelApplet* applet, GdkEventScroll* event, Pa
 				index -= n_columns;
 			break;
 
-		case GDK_SCROLL_LEFT:
+		case CDK_SCROLL_LEFT:
 			if (index > 0)
 			{
 				index--;

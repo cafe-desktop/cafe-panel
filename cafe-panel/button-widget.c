@@ -119,9 +119,9 @@ make_hc_surface (cairo_surface_t *surface)
 static void
 button_widget_realize(CtkWidget *widget)
 {
-	ctk_widget_add_events (widget, GDK_POINTER_MOTION_MASK |
-			       GDK_POINTER_MOTION_HINT_MASK |
-			       GDK_KEY_PRESS_MASK);
+	ctk_widget_add_events (widget, CDK_POINTER_MOTION_MASK |
+			       CDK_POINTER_MOTION_HINT_MASK |
+			       CDK_KEY_PRESS_MASK);
 
 	CTK_WIDGET_CLASS (button_widget_parent_class)->realize (widget);
 
@@ -552,7 +552,7 @@ button_widget_button_press (CtkWidget *widget, GdkEventButton *event)
 	if (event->button == 1 && BUTTON_WIDGET (widget)->priv->activatable &&
 	/* we don't want to have two/three "click" events for double/triple
 	 * clicks. FIXME: this is only a workaround, waiting for bug 159101 */
-	    event->type == GDK_BUTTON_PRESS)
+	    event->type == CDK_BUTTON_PRESS)
 		return CTK_WIDGET_CLASS (button_widget_parent_class)->button_press_event (widget, event);
 
 	return FALSE;

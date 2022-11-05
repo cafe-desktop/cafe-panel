@@ -39,7 +39,7 @@
 #include "panel-xutils.h"
 #endif
 
-#define DEFAULT_MOUSE_MODIFIER GDK_MOD1_MASK
+#define DEFAULT_MOUSE_MODIFIER CDK_MOD1_MASK
 
 typedef struct {
 	char            *key;

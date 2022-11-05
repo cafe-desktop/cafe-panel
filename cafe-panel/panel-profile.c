@@ -576,7 +576,7 @@ panel_profile_queue_toplevel_location_change (PanelToplevel          *toplevel,
 
 #ifdef HAVE_X11
 	if (change->screen_changed &&
-	    GDK_IS_X11_SCREEN (change->screen)) {
+	    CDK_IS_X11_SCREEN (change->screen)) {
 		g_settings_set_int (toplevel->queued_settings,
 							"screen",
 							cdk_x11_screen_get_screen_number (change->screen));
@@ -983,7 +983,7 @@ panel_profile_create_toplevel (GdkScreen *screen)
 
 	screen_number = 0;
 #ifdef HAVE_X11
-	if (GDK_IS_X11_SCREEN (screen)) {
+	if (CDK_IS_X11_SCREEN (screen)) {
 		screen_number = cdk_x11_screen_get_screen_number (screen);
 	}
 #endif // HAVE_X11

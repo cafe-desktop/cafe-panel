@@ -630,7 +630,7 @@ na_tray_class_init (NaTrayClass *klass)
     (gobject_class,
      PROP_SCREEN,
      g_param_spec_object ("screen", "screen", "screen",
-			  GDK_TYPE_SCREEN,
+			  CDK_TYPE_SCREEN,
 			  G_PARAM_WRITABLE |
 			  G_PARAM_CONSTRUCT_ONLY |
 			  G_PARAM_STATIC_NAME |

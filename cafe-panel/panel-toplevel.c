@@ -350,21 +350,21 @@ static GdkCursorType panel_toplevel_grab_op_cursor(PanelToplevel* toplevel, Pane
 	case PANEL_GRAB_OP_MOVE:
 	case PANEL_GRAB_OP_RESIZE:
 		if (toplevel->priv->grab_is_keyboard)
-			retval = GDK_CROSS;
+			retval = CDK_CROSS;
 		else
-			retval = GDK_FLEUR;
+			retval = CDK_FLEUR;
 		break;
 	case PANEL_GRAB_OP_RESIZE_UP:
-		retval = GDK_TOP_SIDE;
+		retval = CDK_TOP_SIDE;
 		break;
 	case PANEL_GRAB_OP_RESIZE_DOWN:
-		retval = GDK_BOTTOM_SIDE;
+		retval = CDK_BOTTOM_SIDE;
 		break;
 	case PANEL_GRAB_OP_RESIZE_LEFT:
-		retval = GDK_LEFT_SIDE;
+		retval = CDK_LEFT_SIDE;
 		break;
 	case PANEL_GRAB_OP_RESIZE_RIGHT:
-		retval = GDK_RIGHT_SIDE;
+		retval = CDK_RIGHT_SIDE;
 		break;
 	default:
 		g_assert_not_reached ();
@@ -377,7 +377,7 @@ static GdkCursorType panel_toplevel_grab_op_cursor(PanelToplevel* toplevel, Pane
 #ifdef HAVE_X11
 static void panel_toplevel_init_resize_drag_offsets(PanelToplevel* toplevel, PanelGrabOpType grab_op)
 {
-	g_assert (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))));
+	g_assert (CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))));
 
 	toplevel->priv->drag_offset_x = 0;
 	toplevel->priv->drag_offset_y = 0;
@@ -410,7 +410,7 @@ static void panel_toplevel_warp_pointer(PanelToplevel* toplevel)
 	int           x, y;
 
 	widget = CTK_WIDGET (toplevel);
-	g_return_if_fail (GDK_IS_X11_DISPLAY (ctk_widget_get_display (widget)));
+	g_return_if_fail (CDK_IS_X11_DISPLAY (ctk_widget_get_display (widget)));
 
 	geometry = toplevel->priv->geometry;
 
@@ -520,7 +520,7 @@ static void panel_toplevel_begin_grab_op(PanelToplevel* toplevel, PanelGrabOpTyp
 	ctk_grab_add (widget);
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (widget)) &&
+	if (CDK_IS_X11_DISPLAY (ctk_widget_get_display (widget)) &&
 	    toplevel->priv->grab_is_keyboard) {
 		panel_toplevel_warp_pointer (toplevel);
 	}
@@ -534,9 +534,9 @@ static void panel_toplevel_begin_grab_op(PanelToplevel* toplevel, PanelGrabOpTyp
 	                                     cursor_type);
 	display = cdk_window_get_display (window);
 	seat = cdk_display_get_default_seat (display);
-	capabilities = GDK_SEAT_CAPABILITY_POINTER;
+	capabilities = CDK_SEAT_CAPABILITY_POINTER;
 	if (grab_keyboard)
-		capabilities |= GDK_SEAT_CAPABILITY_KEYBOARD;
+		capabilities |= CDK_SEAT_CAPABILITY_KEYBOARD;
 
 	cdk_seat_grab (seat, window, capabilities, FALSE, cursor,
 	               NULL, NULL, NULL);
@@ -860,26 +860,26 @@ static gboolean panel_toplevel_warp_pointer_increment(PanelToplevel* toplevel, i
 	int        new_x, new_y;
 
 	screen = ctk_window_get_screen (CTK_WINDOW (toplevel));
-	g_return_val_if_fail (GDK_IS_X11_SCREEN (screen), FALSE);
+	g_return_val_if_fail (CDK_IS_X11_SCREEN (screen), FALSE);
 	root_window = cdk_screen_get_root_window (screen);
 	device = cdk_seat_get_pointer (cdk_display_get_default_seat (ctk_widget_get_display (CTK_WIDGET(root_window))));
 	cdk_window_get_device_position (ctk_widget_get_window (CTK_WIDGET (root_window)), device, &new_x, &new_y, NULL);
 
 	switch (keyval) {
-	case GDK_KEY_Up:
-	case GDK_KEY_KP_Up:
+	case CDK_KEY_Up:
+	case CDK_KEY_KP_Up:
 		new_y -= increment;
 		break;
-	case GDK_KEY_Left:
-	case GDK_KEY_KP_Left:
+	case CDK_KEY_Left:
+	case CDK_KEY_KP_Left:
 		new_x -= increment;
 		break;
-	case GDK_KEY_Down:
-	case GDK_KEY_KP_Down:
+	case CDK_KEY_Down:
+	case CDK_KEY_KP_Down:
 		new_y += increment;
 		break;
-	case GDK_KEY_Right:
-	case GDK_KEY_KP_Right:
+	case CDK_KEY_Right:
+	case CDK_KEY_KP_Right:
 		new_x += increment;
 		break;
 	default:
@@ -899,7 +899,7 @@ static gboolean panel_toplevel_move_keyboard_floating(PanelToplevel* toplevel, G
 
 	int increment = NORMAL_INCREMENT;
 
-	if ((event->state & ctk_accelerator_get_default_mod_mask ()) == GDK_SHIFT_MASK)
+	if ((event->state & ctk_accelerator_get_default_mod_mask ()) == CDK_SHIFT_MASK)
 		increment = SMALL_INCREMENT;
 
 	return panel_toplevel_warp_pointer_increment (
@@ -916,20 +916,20 @@ static gboolean panel_toplevel_move_keyboard_expanded(PanelToplevel* toplevel, G
 	PanelOrientation new_orientation;
 
 	switch (event->keyval) {
-	case GDK_KEY_Up:
-	case GDK_KEY_KP_Up:
+	case CDK_KEY_Up:
+	case CDK_KEY_KP_Up:
 		new_orientation = PANEL_ORIENTATION_TOP;
 		break;
-	case GDK_KEY_Left:
-	case GDK_KEY_KP_Left:
+	case CDK_KEY_Left:
+	case CDK_KEY_KP_Left:
 		new_orientation = PANEL_ORIENTATION_LEFT;
 		break;
-	case GDK_KEY_Down:
-	case GDK_KEY_KP_Down:
+	case CDK_KEY_Down:
+	case CDK_KEY_KP_Down:
 		new_orientation = PANEL_ORIENTATION_BOTTOM;
 		break;
-	case GDK_KEY_Right:
-	case GDK_KEY_KP_Right:
+	case CDK_KEY_Right:
+	case CDK_KEY_KP_Right:
 		new_orientation = PANEL_ORIENTATION_RIGHT;
 		break;
 	default:
@@ -947,26 +947,26 @@ static gboolean panel_toplevel_initial_resize_keypress(PanelToplevel* toplevel, 
 	PanelGrabOpType grab_op;
 
 	switch (event->keyval) {
-	case GDK_KEY_Up:
-	case GDK_KEY_KP_Up:
+	case CDK_KEY_Up:
+	case CDK_KEY_KP_Up:
 		if (!(toplevel->priv->orientation & PANEL_HORIZONTAL_MASK))
 			return FALSE;
 		grab_op = PANEL_GRAB_OP_RESIZE_UP;
 		break;
-	case GDK_KEY_Left:
-	case GDK_KEY_KP_Left:
+	case CDK_KEY_Left:
+	case CDK_KEY_KP_Left:
 		if (!(toplevel->priv->orientation & PANEL_VERTICAL_MASK))
 			return FALSE;
 		grab_op = PANEL_GRAB_OP_RESIZE_LEFT;
 		break;
-	case GDK_KEY_Down:
-	case GDK_KEY_KP_Down:
+	case CDK_KEY_Down:
+	case CDK_KEY_KP_Down:
 		if (!(toplevel->priv->orientation & PANEL_HORIZONTAL_MASK))
 			return FALSE;
 		grab_op = PANEL_GRAB_OP_RESIZE_DOWN;
 		break;
-	case GDK_KEY_Right:
-	case GDK_KEY_KP_Right:
+	case CDK_KEY_Right:
+	case CDK_KEY_KP_Right:
 		if (!(toplevel->priv->orientation & PANEL_VERTICAL_MASK))
 			return FALSE;
 		grab_op = PANEL_GRAB_OP_RESIZE_RIGHT;
@@ -987,14 +987,14 @@ static gboolean panel_toplevel_handle_grab_op_key_event(PanelToplevel* toplevel,
 	gboolean retval = FALSE;
 
 	switch (event->keyval) {
-	case GDK_KEY_Up:
-	case GDK_KEY_KP_Up:
-	case GDK_KEY_Left:
-	case GDK_KEY_KP_Left:
-	case GDK_KEY_Down:
-	case GDK_KEY_KP_Down:
-	case GDK_KEY_Right:
-	case GDK_KEY_KP_Right:
+	case CDK_KEY_Up:
+	case CDK_KEY_KP_Up:
+	case CDK_KEY_Left:
+	case CDK_KEY_KP_Left:
+	case CDK_KEY_Down:
+	case CDK_KEY_KP_Down:
+	case CDK_KEY_Right:
+	case CDK_KEY_KP_Right:
 		switch (toplevel->priv->grab_op) {
 		case PANEL_GRAB_OP_MOVE:
 			if (toplevel->priv->expand) {
@@ -1002,7 +1002,7 @@ static gboolean panel_toplevel_handle_grab_op_key_event(PanelToplevel* toplevel,
 									toplevel, event);
 			}
 #ifdef HAVE_X11
-			else if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
+			else if (CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 				retval = panel_toplevel_move_keyboard_floating (
 									toplevel, event);
 			}
@@ -1016,7 +1016,7 @@ static gboolean panel_toplevel_handle_grab_op_key_event(PanelToplevel* toplevel,
 		case PANEL_GRAB_OP_RESIZE_LEFT:
 		case PANEL_GRAB_OP_RESIZE_RIGHT:
 #ifdef HAVE_X11
-			if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))))
+			if (CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))))
 				retval = panel_toplevel_warp_pointer_increment (toplevel, event->keyval, 1);
 #endif // HAVE_X11
 			break;
@@ -1025,12 +1025,12 @@ static gboolean panel_toplevel_handle_grab_op_key_event(PanelToplevel* toplevel,
 			break;
 		}
 		break;
-	case GDK_KEY_Escape:
+	case CDK_KEY_Escape:
 		panel_toplevel_cancel_grab_op (toplevel, event->time);
-	case GDK_KEY_Return: /* drop through*/
-	case GDK_KEY_KP_Enter:
-	case GDK_KEY_space:
-	case GDK_KEY_KP_Space:
+	case CDK_KEY_Return: /* drop through*/
+	case CDK_KEY_KP_Enter:
+	case CDK_KEY_space:
+	case CDK_KEY_KP_Space:
 		panel_toplevel_end_grab_op (toplevel, event->time);
 		retval = TRUE;
 	default: /* drop through*/
@@ -1048,7 +1048,7 @@ static gboolean panel_toplevel_handle_grab_op_motion_event(PanelToplevel* toplev
 			panel_toplevel_calc_new_orientation (
 					toplevel, event->x_root, event->y_root);
 
-		else if ((event->state & ctk_accelerator_get_default_mod_mask ()) == GDK_CONTROL_MASK)
+		else if ((event->state & ctk_accelerator_get_default_mod_mask ()) == CDK_CONTROL_MASK)
 			panel_toplevel_rotate_to_pointer (
 					toplevel, event->x_root, event->y_root);
 
@@ -1440,7 +1440,7 @@ static gboolean panel_toplevel_update_struts(PanelToplevel* toplevel, gboolean e
 		return FALSE;
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))) && toplevel->priv->attached) {
+	if (CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))) && toplevel->priv->attached) {
 		panel_struts_unregister_strut (toplevel);
 		panel_struts_set_window_hint (toplevel);
 		return FALSE;
@@ -1528,7 +1528,7 @@ static gboolean panel_toplevel_update_struts(PanelToplevel* toplevel, gboolean e
 		strut = panel_toplevel_get_effective_auto_hide_size (toplevel);
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
+	if (CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 		if (strut > 0) {
 			GdkScreen *screen;
 			screen = ctk_widget_get_screen (CTK_WIDGET (toplevel));
@@ -1555,7 +1555,7 @@ static gboolean panel_toplevel_update_struts(PanelToplevel* toplevel, gboolean e
 #endif // HAVE_X11
 
 #ifdef HAVE_WAYLAND
-	if (GDK_IS_WAYLAND_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
+	if (CDK_IS_WAYLAND_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 		wayland_panel_toplevel_update_placement (toplevel);
 	}
 #endif // HAVE_WAYLAND
@@ -2518,7 +2518,7 @@ panel_toplevel_update_geometry (PanelToplevel  *toplevel,
 	panel_toplevel_update_struts (toplevel, FALSE);
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
+	if (CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 		if (toplevel->priv->state == PANEL_STATE_NORMAL ||
 		toplevel->priv->state == PANEL_STATE_AUTO_HIDDEN) {
 			panel_struts_update_toplevel_geometry (toplevel,
@@ -2877,7 +2877,7 @@ panel_toplevel_begin_move (PanelToplevel *toplevel)
 		return FALSE;
 
 	panel_toplevel_begin_grab_op (
-			toplevel, PANEL_GRAB_OP_MOVE, TRUE, GDK_CURRENT_TIME);
+			toplevel, PANEL_GRAB_OP_MOVE, TRUE, CDK_CURRENT_TIME);
 
 	return TRUE;
 }
@@ -2889,7 +2889,7 @@ panel_toplevel_begin_resize (PanelToplevel *toplevel)
 		return FALSE;
 
 	panel_toplevel_begin_grab_op (
-			toplevel, PANEL_GRAB_OP_RESIZE, TRUE, GDK_CURRENT_TIME);
+			toplevel, PANEL_GRAB_OP_RESIZE, TRUE, CDK_CURRENT_TIME);
 
 	return TRUE;
 }
@@ -3017,7 +3017,7 @@ panel_toplevel_realize (CtkWidget *widget)
  	ctk_window_stick (CTK_WINDOW (widget));
 	ctk_window_set_decorated (CTK_WINDOW (widget), FALSE);
 	ctk_window_stick (CTK_WINDOW (widget));
-	ctk_window_set_type_hint (CTK_WINDOW (widget), GDK_WINDOW_TYPE_HINT_DOCK);
+	ctk_window_set_type_hint (CTK_WINDOW (widget), CDK_WINDOW_TYPE_HINT_DOCK);
 
 	CTK_WIDGET_CLASS (panel_toplevel_parent_class)->realize (widget);
 
@@ -3026,7 +3026,7 @@ panel_toplevel_realize (CtkWidget *widget)
 	panel_background_realized (&toplevel->background, window);
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_WINDOW (window)) {
+	if (CDK_IS_X11_WINDOW (window)) {
 		panel_struts_set_window_hint (toplevel);
 		cdk_window_set_geometry_hints (window, NULL, 0);
 	}
@@ -3436,7 +3436,7 @@ panel_toplevel_button_press_event (CtkWidget      *widget,
 	 * moves are considered. We don't this for non-expanded panels since we
 	 * only have the handles that the user can grab. */
 	if ((toplevel->priv->expand || toplevel->priv->attached) &&
-	    (event->state & GDK_MODIFIER_MASK) != panel_bindings_get_mouse_button_modifier_keymask ())
+	    (event->state & CDK_MODIFIER_MASK) != panel_bindings_get_mouse_button_modifier_keymask ())
 		return FALSE;
 
 	cdk_window_get_user_data (event->window, (gpointer)&event_widget);
@@ -3642,7 +3642,7 @@ panel_toplevel_start_animation (PanelToplevel *toplevel)
 
 	panel_toplevel_update_struts (toplevel, TRUE);
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
+	if (CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 		panel_struts_update_toplevel_geometry (toplevel,
 						       &toplevel->priv->animation_end_x,
 						       &toplevel->priv->animation_end_y,
@@ -3938,7 +3938,7 @@ panel_toplevel_enter_notify_event (CtkWidget        *widget,
 
 	toplevel = PANEL_TOPLEVEL (widget);
 
-	if (toplevel->priv->auto_hide && event->detail != GDK_NOTIFY_INFERIOR)
+	if (toplevel->priv->auto_hide && event->detail != CDK_NOTIFY_INFERIOR)
 		panel_toplevel_queue_auto_unhide (toplevel);
 
 	if (CTK_WIDGET_CLASS (panel_toplevel_parent_class)->enter_notify_event)
@@ -3957,7 +3957,7 @@ panel_toplevel_leave_notify_event (CtkWidget        *widget,
 
 	toplevel = PANEL_TOPLEVEL (widget);
 
-	if (toplevel->priv->auto_hide && event->detail != GDK_NOTIFY_INFERIOR)
+	if (toplevel->priv->auto_hide && event->detail != CDK_NOTIFY_INFERIOR)
 		panel_toplevel_queue_auto_hide (toplevel);
 
 	if (CTK_WIDGET_CLASS (panel_toplevel_parent_class)->leave_notify_event)
@@ -4254,7 +4254,7 @@ panel_toplevel_finalize (GObject *object)
 	PanelToplevel *toplevel = (PanelToplevel *) object;
 
 #ifdef HAVE_X11
-	if (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))))
+	if (CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))))
 		panel_struts_unregister_strut (toplevel);
 #endif // HAVE_X11
 
@@ -4644,7 +4644,7 @@ panel_toplevel_class_init (PanelToplevelClass *klass)
 			      G_TYPE_BOOLEAN,
 			      0);
 
-	ctk_binding_entry_add_signal (binding_set, GDK_KEY_F10, GDK_CONTROL_MASK,
+	ctk_binding_entry_add_signal (binding_set, CDK_KEY_F10, CDK_CONTROL_MASK,
                                      "popup_panel_menu", 0);
 
 	panel_bindings_set_entries (binding_set);
@@ -4794,11 +4794,11 @@ panel_toplevel_init (PanelToplevel *toplevel)
 
 	widget = CTK_WIDGET (toplevel);
 	ctk_widget_add_events (widget,
-			       GDK_BUTTON_PRESS_MASK |
-			       GDK_BUTTON_RELEASE_MASK |
-			       GDK_POINTER_MOTION_MASK |
-			       GDK_ENTER_NOTIFY_MASK |
-			       GDK_LEAVE_NOTIFY_MASK);
+			       CDK_BUTTON_PRESS_MASK |
+			       CDK_BUTTON_RELEASE_MASK |
+			       CDK_POINTER_MOTION_MASK |
+			       CDK_ENTER_NOTIFY_MASK |
+			       CDK_LEAVE_NOTIFY_MASK);
 
 	ctk_widget_set_app_paintable (widget, TRUE);
 
@@ -4820,7 +4820,7 @@ panel_toplevel_init (PanelToplevel *toplevel)
 	update_style_classes (toplevel);
 
 #ifdef HAVE_WAYLAND
-	if (GDK_IS_WAYLAND_DISPLAY (cdk_display_get_default ())) {
+	if (CDK_IS_WAYLAND_DISPLAY (cdk_display_get_default ())) {
 		wayland_panel_toplevel_init (toplevel);
 	}
 #endif // HAVE_WAYLAND
@@ -5070,7 +5070,7 @@ panel_toplevel_set_orientation (PanelToplevel    *toplevel,
 	g_object_thaw_notify (G_OBJECT (toplevel));
 
 #ifdef HAVE_WAYLAND
-	if (GDK_IS_WAYLAND_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
+	if (CDK_IS_WAYLAND_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 		wayland_panel_toplevel_update_placement (toplevel);
 	}
 #endif // HAVE_WAYLAND

@@ -52,7 +52,7 @@ button_press_handler (CtkWidget      *fixedtip,
                       GdkEventButton *event,
                       gpointer        data)
 {
-  if (event->button == 1 && event->type == GDK_BUTTON_PRESS)
+  if (event->button == 1 && event->type == CDK_BUTTON_PRESS)
     g_signal_emit (fixedtip, fixedtip_signals[CLICKED], 0);
 
   return FALSE;
@@ -111,7 +111,7 @@ na_fixed_tip_init (NaFixedTip *fixedtip)
   fixedtip->priv = na_fixed_tip_get_instance_private (fixedtip);
 
   ctk_window_set_type_hint (CTK_WINDOW (fixedtip),
-                            GDK_WINDOW_TYPE_HINT_TOOLTIP);
+                            CDK_WINDOW_TYPE_HINT_TOOLTIP);
 
   ctk_widget_set_app_paintable (CTK_WIDGET (fixedtip), TRUE);
   ctk_window_set_resizable (CTK_WINDOW (fixedtip), FALSE);
@@ -126,7 +126,7 @@ na_fixed_tip_init (NaFixedTip *fixedtip)
   ctk_container_add (CTK_CONTAINER (fixedtip), label);
   fixedtip->priv->label = label;
 
-  ctk_widget_add_events (CTK_WIDGET (fixedtip), GDK_BUTTON_PRESS_MASK);
+  ctk_widget_add_events (CTK_WIDGET (fixedtip), CDK_BUTTON_PRESS_MASK);
 
   g_signal_connect (fixedtip, "button_press_event",
                     G_CALLBACK (button_press_handler), NULL);
