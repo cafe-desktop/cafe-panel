@@ -47,16 +47,16 @@ panel_frame_get_preferred_width (GtkWidget *widget,
 	GtkBorder        padding;
 	int              border_width;
 
-	context = gtk_widget_get_style_context (widget);
-	gtk_style_context_get_padding (context, gtk_widget_get_state_flags (widget), &padding);
-	border_width = gtk_container_get_border_width (GTK_CONTAINER (widget));
+	context = ctk_widget_get_style_context (widget);
+	ctk_style_context_get_padding (context, ctk_widget_get_state_flags (widget), &padding);
+	border_width = ctk_container_get_border_width (GTK_CONTAINER (widget));
 
 	*minimal_width = 1;
 	*natural_width = 1;
 
-	child = gtk_bin_get_child (bin);
-	if (child && gtk_widget_get_visible (child))
-		gtk_widget_get_preferred_width (child, minimal_width, natural_width);
+	child = ctk_bin_get_child (bin);
+	if (child && ctk_widget_get_visible (child))
+		ctk_widget_get_preferred_width (child, minimal_width, natural_width);
 
 	*minimal_width += border_width;
 	*natural_width += border_width;
@@ -84,15 +84,15 @@ panel_frame_get_preferred_height (GtkWidget *widget,
 	GtkBorder        padding;
 	int              border_width;
 
-	context = gtk_widget_get_style_context (widget);
-	gtk_style_context_get_padding (context, gtk_widget_get_state_flags (widget), &padding);	border_width = gtk_container_get_border_width (GTK_CONTAINER (widget));
+	context = ctk_widget_get_style_context (widget);
+	ctk_style_context_get_padding (context, ctk_widget_get_state_flags (widget), &padding);	border_width = ctk_container_get_border_width (GTK_CONTAINER (widget));
 
 	*minimal_height = 1;
 	*natural_height = 1;
 
-	child = gtk_bin_get_child (bin);
-	if (child && gtk_widget_get_visible (child))
-		gtk_widget_get_preferred_height (child, minimal_height, natural_height);
+	child = ctk_bin_get_child (bin);
+	if (child && ctk_widget_get_visible (child))
+		ctk_widget_get_preferred_height (child, minimal_height, natural_height);
 
 	*minimal_height += border_width;
 	*natural_height += border_width;
@@ -121,11 +121,11 @@ panel_frame_size_allocate (GtkWidget     *widget,
 	GtkWidget       *child;
 	int              border_width;
 
-	gtk_widget_set_allocation (widget, allocation);
+	ctk_widget_set_allocation (widget, allocation);
 
-	context = gtk_widget_get_style_context (widget);
-	gtk_style_context_get_padding (context, gtk_widget_get_state_flags (widget), &padding);
-	border_width = gtk_container_get_border_width (GTK_CONTAINER (widget));
+	context = ctk_widget_get_style_context (widget);
+	ctk_style_context_get_padding (context, ctk_widget_get_state_flags (widget), &padding);
+	border_width = ctk_container_get_border_width (GTK_CONTAINER (widget));
 
 	child_allocation.x      = allocation->x + border_width;
 	child_allocation.y      = allocation->y + border_width;
@@ -148,18 +148,18 @@ panel_frame_size_allocate (GtkWidget     *widget,
 	if (frame->edges & PANEL_EDGE_BOTTOM)
 		child_allocation.height -= padding.top;
 
-	child = gtk_bin_get_child (bin);
-	gtk_widget_get_allocation (child, &child_allocation_current);
+	child = ctk_bin_get_child (bin);
+	ctk_widget_get_allocation (child, &child_allocation_current);
 
-	if (gtk_widget_get_mapped (widget) &&
+	if (ctk_widget_get_mapped (widget) &&
 	    (child_allocation.x != child_allocation_current.x ||
 	     child_allocation.y != child_allocation_current.y ||
 	     child_allocation.width  != child_allocation_current.width ||
 	     child_allocation.height != child_allocation_current.height))
-		gdk_window_invalidate_rect (gtk_widget_get_window (widget), allocation, FALSE);
+		gdk_window_invalidate_rect (ctk_widget_get_window (widget), allocation, FALSE);
 
-	if (child && gtk_widget_get_visible (child))
-		gtk_widget_size_allocate (child, &child_allocation);
+	if (child && ctk_widget_get_visible (child))
+		ctk_widget_size_allocate (child, &child_allocation);
 }
 
 void
@@ -179,22 +179,22 @@ panel_frame_draw (GtkWidget      *widget,
 	if (edges == PANEL_EDGE_NONE)
 		return;
 
-	context = gtk_widget_get_style_context (widget);
-	state = gtk_widget_get_state_flags (widget);
+	context = ctk_widget_get_style_context (widget);
+	state = ctk_widget_get_state_flags (widget);
 
-	width = gtk_widget_get_allocated_width (widget);
-	height = gtk_widget_get_allocated_height (widget);
+	width = ctk_widget_get_allocated_width (widget);
+	height = ctk_widget_get_allocated_height (widget);
 
-	gtk_style_context_get (context, state,
+	ctk_style_context_get (context, state,
 	                       "background-color", &bg,
 	                       NULL);
 
-	gtk_style_shade (bg, &dark, 0.7);
-	gtk_style_shade (bg, &light, 1.3);
+	ctk_style_shade (bg, &dark, 0.7);
+	ctk_style_shade (bg, &light, 1.3);
 
-	gtk_style_context_get_padding (context, state, &padding);
+	ctk_style_context_get_padding (context, state, &padding);
 
-	/* Copied from gtk_default_draw_shadow() */
+	/* Copied from ctk_default_draw_shadow() */
 
 	x = y = 0;
 
@@ -274,7 +274,7 @@ static gboolean panel_frame_expose(GtkWidget* widget, cairo_t* cr)
 	PanelFrame *frame = (PanelFrame *) widget;
 	gboolean    retval = FALSE;
 
-	if (!gtk_widget_is_drawable (widget))
+	if (!ctk_widget_is_drawable (widget))
 		return retval;
 
 	if (GTK_WIDGET_CLASS (panel_frame_parent_class)->draw)
@@ -343,7 +343,7 @@ panel_frame_class_init (PanelFrameClass *klass)
 	widget_class->get_preferred_height = panel_frame_get_preferred_height;
 	widget_class->draw                 = panel_frame_expose;
 
-	gtk_widget_class_set_css_name (widget_class, "PanelFrame");
+	ctk_widget_class_set_css_name (widget_class, "PanelFrame");
 
 	g_object_class_install_property (
 		gobject_class,
@@ -380,7 +380,7 @@ panel_frame_set_edges (PanelFrame     *frame,
 
 	frame->edges = edges;
 
-	gtk_widget_queue_resize (GTK_WIDGET (frame));
+	ctk_widget_queue_resize (GTK_WIDGET (frame));
 
 	g_object_notify (G_OBJECT (frame), "edges");
 }

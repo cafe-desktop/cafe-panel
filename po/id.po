@@ -259,7 +259,7 @@ msgid "Time & Date"
 msgstr "Tanggal & Waktu"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-gtk.c:136
+#: cafe-panel/libpanel-util/panel-ctk.c:136
 #: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
 #: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
 #: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
@@ -389,7 +389,7 @@ msgstr "Utara"
 msgid "South"
 msgstr "Selatan"
 
-#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-gtk.c:140
+#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
 #: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "_OK"
@@ -2138,7 +2138,7 @@ msgid ""
 "specified by the image key will be used as background."
 msgstr ""
 "Tipe latar yang mana yang akan digunakan pada panel ini. Ada 3 nilai yang "
-"mungkin; \"gtk\", latar GTK+ widget default yang akan digunakan, \"color\", "
+"mungkin; \"ctk\", latar GTK+ widget default yang akan digunakan, \"color\", "
 "pilihan warna akan di gunakan sebagai warna latar atau \"image\", gambar "
 "yang ditentukan dalam pilihan image akan digunakan sebagai latar."
 
@@ -2273,7 +2273,7 @@ msgstr "Opsi manajemen sesi:"
 msgid "Show session management options"
 msgstr "Menampilkan opsi manajemen sesi"
 
-#: cafe-panel/libpanel-util/panel-gtk.c:138
+#: cafe-panel/libpanel-util/panel-ctk.c:138
 msgid "_Open"
 msgstr "B_uka"
 

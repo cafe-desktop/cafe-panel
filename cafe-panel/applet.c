@@ -15,7 +15,7 @@
 #include <gio/gio.h>
 
 #include <libpanel-util/panel-show.h>
-#include <libpanel-util/panel-gtk.h>
+#include <libpanel-util/panel-ctk.h>
 
 #include "button-widget.h"
 #include "drawer.h"
@@ -49,7 +49,7 @@ static void applet_menu_deactivate (GtkWidget *w, AppletInfo *info);
 static inline PanelWidget *
 cafe_panel_applet_get_panel_widget (AppletInfo *info)
 {
-	return PANEL_WIDGET (gtk_widget_get_parent (info->widget));
+	return PANEL_WIDGET (ctk_widget_get_parent (info->widget));
 }
 
 static void
@@ -114,10 +114,10 @@ cafe_panel_applet_lock (GtkMenuItem *menuitem,
 
 	locked = cafe_panel_applet_toggle_locked (info);
 
-	gtk_check_menu_item_set_active (checkbox_id, locked);
+	ctk_check_menu_item_set_active (checkbox_id, locked);
 
 	if (info->move_item)
-		gtk_widget_set_sensitive (info->move_item, !locked);
+		ctk_widget_set_sensitive (info->move_item, !locked);
 }
 
 static void
@@ -129,7 +129,7 @@ move_applet_callback (GtkWidget *widget, AppletInfo *info)
 	g_return_if_fail (info != NULL);
 	g_return_if_fail (info->widget != NULL);
 
-	parent = gtk_widget_get_parent (info->widget);
+	parent = ctk_widget_get_parent (info->widget);
 
 	g_return_if_fail (parent != NULL);
 	g_return_if_fail (PANEL_IS_WIDGET (parent));
@@ -156,7 +156,7 @@ cafe_panel_applet_clean (AppletInfo *info)
 		GtkWidget *widget = info->widget;
 
 		info->widget = NULL;
-		gtk_widget_destroy (widget);
+		ctk_widget_destroy (widget);
 	}
 }
 
@@ -235,7 +235,7 @@ applet_user_menu_get_screen (AppletUserMenu *menu)
 
 	panel_widget = cafe_panel_applet_get_panel_widget (menu->info);
 
-	return gtk_window_get_screen (GTK_WINDOW (panel_widget->toplevel));
+	return ctk_window_get_screen (GTK_WINDOW (panel_widget->toplevel));
 }
 
 static void
@@ -393,14 +393,14 @@ setup_an_item (AppletUserMenu *menu,
 {
 	menu->menuitem = panel_image_menu_item_new_from_gicon (menu->gicon, menu->text);
 
-	gtk_widget_show (menu->menuitem);
+	ctk_widget_show (menu->menuitem);
 
 	g_signal_connect (G_OBJECT (menu->menuitem), "destroy",
-			  G_CALLBACK (gtk_widget_destroyed),
+			  G_CALLBACK (ctk_widget_destroyed),
 			  &menu->menuitem);
 
 	if(submenu)
-		gtk_menu_shell_append (GTK_MENU_SHELL (submenu), menu->menuitem);
+		ctk_menu_shell_append (GTK_MENU_SHELL (submenu), menu->menuitem);
 
 	/*if an item not a submenu*/
 	if (!is_submenu) {
@@ -408,23 +408,23 @@ setup_an_item (AppletUserMenu *menu,
 				  G_CALLBACK (applet_callback_callback),
 				  menu);
 		g_signal_connect (submenu, "destroy",
-				  G_CALLBACK (gtk_widget_destroyed),
+				  G_CALLBACK (ctk_widget_destroyed),
 				  &menu->submenu);
 	/* if the item is a submenu and doesn't have it's menu
 	   created yet*/
 	} else if (!menu->submenu) {
-		menu->submenu = gtk_menu_new ();
+		menu->submenu = ctk_menu_new ();
 	}
 
 	if(menu->submenu) {
-		gtk_menu_item_set_submenu(GTK_MENU_ITEM(menu->menuitem),
+		ctk_menu_item_set_submenu(GTK_MENU_ITEM(menu->menuitem),
 					  menu->submenu);
 		g_signal_connect (G_OBJECT (menu->submenu), "destroy",
-				    G_CALLBACK (gtk_widget_destroyed),
+				    G_CALLBACK (ctk_widget_destroyed),
 				    &menu->submenu);
 	}
 
-	gtk_widget_set_sensitive(menu->menuitem,menu->sensitive);
+	ctk_widget_set_sensitive(menu->menuitem,menu->sensitive);
 }
 
 static void
@@ -475,11 +475,11 @@ add_to_submenus (AppletInfo *info,
 	}
 
 	if (s_menu->submenu == NULL) {
-		s_menu->submenu = gtk_menu_new ();
+		s_menu->submenu = ctk_menu_new ();
 		/*a more elegant way to do this should be done
 		  when I don't want to go to sleep */
 		if (s_menu->menuitem != NULL) {
-			gtk_widget_destroy (s_menu->menuitem);
+			ctk_widget_destroy (s_menu->menuitem);
 			s_menu->menuitem = NULL;
 		}
 	}
@@ -503,9 +503,9 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 
 	panel_widget = cafe_panel_applet_get_panel_widget (info);
 
-	menu = g_object_ref_sink (gtk_menu_new ());
+	menu = g_object_ref_sink (ctk_menu_new ());
 
-	gtk_menu_set_reserve_toggle_size (GTK_MENU (menu), FALSE);
+	ctk_menu_set_reserve_toggle_size (GTK_MENU (menu), FALSE);
 
 	/* connect the show & deactivate signal, so that we can "disallow" and
 	 * "re-allow" autohide when the menu is shown/deactivated.
@@ -540,26 +540,26 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 		locked = panel_widget_get_applet_locked (panel_widget, info->widget);
 
 		if (added_anything) {
-			menuitem = gtk_separator_menu_item_new ();
-			gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
-			gtk_widget_show (menuitem);
+			menuitem = ctk_separator_menu_item_new ();
+			ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+			ctk_widget_show (menuitem);
 		}
 
 		menuitem = panel_image_menu_item_new_from_icon ("list-remove", _("_Remove From Panel"));
 
 		g_signal_connect (menuitem, "activate",
 				  G_CALLBACK (applet_remove_callback), info);
-		gtk_widget_show (menuitem);
-		gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
-		gtk_widget_set_sensitive (menuitem, (!locked || lockable) && removable);
+		ctk_widget_show (menuitem);
+		ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+		ctk_widget_set_sensitive (menuitem, (!locked || lockable) && removable);
 
 		menuitem = panel_image_menu_item_new_from_icon (NULL, _("_Move"));
 
 		g_signal_connect (menuitem, "activate",
 				  G_CALLBACK (move_applet_callback), info);
-		gtk_widget_show (menuitem);
-		gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
-		gtk_widget_set_sensitive (menuitem, !locked && movable);
+		ctk_widget_show (menuitem);
+		ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+		ctk_widget_set_sensitive (menuitem, !locked && movable);
 
 		g_assert (info->move_item == NULL);
 
@@ -567,13 +567,13 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 		g_object_add_weak_pointer (G_OBJECT (menuitem),
 					   (gpointer *) &info->move_item);
 
-		menuitem = gtk_separator_menu_item_new ();
-		gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
-		gtk_widget_show (menuitem);
+		menuitem = ctk_separator_menu_item_new ();
+		ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+		ctk_widget_show (menuitem);
 
-		menuitem = gtk_check_menu_item_new_with_mnemonic (_("Loc_k To Panel"));
+		menuitem = ctk_check_menu_item_new_with_mnemonic (_("Loc_k To Panel"));
 
-		gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (menuitem),
+		ctk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (menuitem),
 						locked);
 
 		g_signal_connect (menuitem, "map",
@@ -584,10 +584,10 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 		g_signal_connect (menuitem, "activate",
 				  G_CALLBACK (cafe_panel_applet_lock), info);
 
-		gtk_widget_show (menuitem);
+		ctk_widget_show (menuitem);
 
-		gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
-		gtk_widget_set_sensitive (menuitem, lockable);
+		ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+		ctk_widget_set_sensitive (menuitem, lockable);
 
 		added_anything = TRUE;
 	}
@@ -598,16 +598,16 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 	}
 
 /* Set up theme and transparency support */
-	GtkWidget *toplevel = gtk_widget_get_toplevel (menu);
-/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
-	GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+	GtkWidget *toplevel = ctk_widget_get_toplevel (menu);
+/* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
+	GdkScreen *screen = ctk_widget_get_screen(GTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
-	gtk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
 	GtkStyleContext *context;
-	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
-	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
-	gtk_style_context_add_class(context,"cafe-panel-menu-bar");
+	context = ctk_widget_get_style_context (GTK_WIDGET(toplevel));
+	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
+	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
 
 	return menu;
 }
@@ -622,10 +622,10 @@ cafe_panel_applet_menu_set_recurse (GtkMenu     *menu,
 
 	g_object_set_data (G_OBJECT (menu), key, data);
 
-	children = gtk_container_get_children (GTK_CONTAINER (menu));
+	children = ctk_container_get_children (GTK_CONTAINER (menu));
 
 	for (l = children; l; l = l->next) {
-		GtkWidget *submenu = gtk_menu_item_get_submenu (GTK_MENU_ITEM (l->data));
+		GtkWidget *submenu = ctk_menu_item_get_submenu (GTK_MENU_ITEM (l->data));
 
 		if (submenu)
 			cafe_panel_applet_menu_set_recurse (
@@ -655,13 +655,13 @@ applet_show_menu (AppletInfo     *info,
 				       "menu_panel",
 				       panel_widget);
 
-	gtk_menu_set_screen (GTK_MENU (info->menu),
-			     gtk_window_get_screen (GTK_WINDOW (panel_widget->toplevel)));
+	ctk_menu_set_screen (GTK_MENU (info->menu),
+			     ctk_window_get_screen (GTK_WINDOW (panel_widget->toplevel)));
 
-	if (!gtk_widget_get_realized (info->menu))
-		gtk_widget_show (info->menu);
+	if (!ctk_widget_get_realized (info->menu))
+		ctk_widget_show (info->menu);
 
-	gtk_menu_popup_at_pointer (GTK_MENU (info->menu), NULL);
+	ctk_menu_popup_at_pointer (GTK_MENU (info->menu), NULL);
 }
 
 static gboolean
@@ -742,7 +742,7 @@ cafe_panel_applet_destroy (GtkWidget  *widget,
 							drawer->toplevel);
 			panel_widget->master_widget = NULL;
 
-			gtk_widget_destroy (GTK_WIDGET (drawer->toplevel));
+			ctk_widget_destroy (GTK_WIDGET (drawer->toplevel));
 			drawer->toplevel = NULL;
 		}
 	}
@@ -1220,7 +1220,7 @@ cafe_panel_applet_get_by_type (PanelObjectType object_type, GdkScreen *screen)
 
 		if (info->type == object_type) {
 			if (screen) {
-				if (screen == gtk_widget_get_screen (info->widget))
+				if (screen == ctk_widget_get_screen (info->widget))
 					return info;
 			} else
 				return info;
@@ -1247,8 +1247,8 @@ cafe_panel_applet_register (GtkWidget       *applet,
 
 	g_return_val_if_fail (applet != NULL && panel != NULL, NULL);
 
-	if (gtk_widget_get_has_window (applet))
-		gtk_widget_set_events (applet, (gtk_widget_get_events (applet) |
+	if (ctk_widget_get_has_window (applet))
+		ctk_widget_set_events (applet, (ctk_widget_get_events (applet) |
 						APPLET_EVENT_MASK) &
 				       ~( GDK_POINTER_MOTION_MASK |
 					  GDK_POINTER_MOTION_HINT_MASK));
@@ -1317,7 +1317,7 @@ cafe_panel_applet_register (GtkWidget       *applet,
 	}
 
 	if (BUTTON_IS_WIDGET (applet) ||
-	    gtk_widget_get_has_window (applet)) {
+	    ctk_widget_get_has_window (applet)) {
 		g_signal_connect (applet, "button_press_event",
 				  G_CALLBACK (applet_button_press),
 				  info);
@@ -1333,16 +1333,16 @@ cafe_panel_applet_register (GtkWidget       *applet,
 
 	cafe_panel_applet_set_dnd_enabled (info, !locked);
 
-	gtk_widget_show_all (applet);
+	ctk_widget_show_all (applet);
 
 	orientation_change (info, panel);
 	size_change (info, panel);
 	back_change (info, panel);
 
 	if (type != PANEL_OBJECT_APPLET)
-		gtk_widget_grab_focus (applet);
+		ctk_widget_grab_focus (applet);
 	else
-		gtk_widget_child_focus (applet, GTK_DIR_TAB_FORWARD);
+		ctk_widget_child_focus (applet, GTK_DIR_TAB_FORWARD);
 
 	return info;
 }

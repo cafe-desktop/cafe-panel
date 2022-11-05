@@ -26,7 +26,7 @@
 #define __PANEL_STOCK_ICONS_H__
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,7 +44,7 @@ extern "C" {
 #define PANEL_STOCK_FORCE_QUIT          "cafe-panel-force-quit"
 
 /* stock items  - no point in theme the icons one these,
- * they use stock gtk icons and just modify the text
+ * they use stock ctk icons and just modify the text
  * for the stock item.
  */
 #define PANEL_STOCK_EXECUTE             "panel-execute"

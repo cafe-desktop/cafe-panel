@@ -25,7 +25,7 @@
 #ifndef __PANEL_GLOBALS_H__
 #define __PANEL_GLOBALS_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

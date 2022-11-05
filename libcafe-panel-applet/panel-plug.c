@@ -21,7 +21,7 @@
 #error file should only be built when HAVE_X11 is enabled
 #endif
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "panel-plug-private.h"
 
@@ -39,10 +39,10 @@ panel_plug_draw (GtkWidget *widget,
   GdkWindow *window;
   cairo_pattern_t *pattern;
 
-  if (!gtk_widget_get_realized (widget))
+  if (!ctk_widget_get_realized (widget))
     return GTK_WIDGET_CLASS (panel_plug_parent_class)->draw (widget, cr);
 
-  window = gtk_widget_get_window (widget);
+  window = ctk_widget_get_window (widget);
   pattern = gdk_window_get_background_pattern (window);
 
   if (!pattern)
@@ -51,11 +51,11 @@ panel_plug_draw (GtkWidget *widget,
       gint width;
       gint height;
 
-      context = gtk_widget_get_style_context (widget);
-      width = gtk_widget_get_allocated_width (widget);
-      height = gtk_widget_get_allocated_height (widget);
+      context = ctk_widget_get_style_context (widget);
+      width = ctk_widget_get_allocated_width (widget);
+      height = ctk_widget_get_allocated_height (widget);
 
-      gtk_render_background (context, cr, 0, 0, width, height);
+      ctk_render_background (context, cr, 0, 0, width, height);
     }
 
   return GTK_WIDGET_CLASS (panel_plug_parent_class)->draw (widget, cr);
@@ -73,7 +73,7 @@ panel_plug_realize (GtkWidget *widget)
   if (!visual)
     visual = gdk_screen_get_system_visual (screen);
 
-  gtk_widget_set_visual (widget, visual);
+  ctk_widget_set_visual (widget, visual);
 
   GTK_WIDGET_CLASS (panel_plug_parent_class)->realize (widget);
 }
@@ -88,13 +88,13 @@ panel_plug_class_init (PanelPlugClass *plug_class)
   widget_class->draw = panel_plug_draw;
   widget_class->realize = panel_plug_realize;
 
-  gtk_widget_class_set_css_name (widget_class, "PanelApplet");
+  ctk_widget_class_set_css_name (widget_class, "PanelApplet");
 }
 
 static void
 panel_plug_init (PanelPlug *plug)
 {
-  gtk_widget_set_app_paintable (GTK_WIDGET (plug), TRUE);
+  ctk_widget_set_app_paintable (GTK_WIDGET (plug), TRUE);
 }
 
 GtkWidget *

@@ -25,7 +25,7 @@
 #ifndef __PANEL_RECENT_H__
 #define __PANEL_RECENT_H__
 
-#include "gtk/gtk.h"
+#include "ctk/ctk.h"
 
 #ifdef __cplusplus
 extern "C" {

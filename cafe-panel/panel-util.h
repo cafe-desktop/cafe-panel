@@ -2,7 +2,7 @@
 #define PANEL_UTIL_H
 
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

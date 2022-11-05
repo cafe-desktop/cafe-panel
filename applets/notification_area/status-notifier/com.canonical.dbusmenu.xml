@@ -3,7 +3,7 @@
 "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
   <interface name="com.canonical.dbusmenu">
-    <annotation name="org.gtk.GDBus.C.Name" value="DBusMenuGen" />
+    <annotation name="org.ctk.GDBus.C.Name" value="DBusMenuGen" />
 
     <method name="GetLayout">
       <arg type="i" name="parentId" direction="in" />

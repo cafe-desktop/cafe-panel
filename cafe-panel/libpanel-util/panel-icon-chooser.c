@@ -23,9 +23,9 @@
  */
 
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
-#include "panel-gtk.h"
+#include "panel-ctk.h"
 #include "panel-xdg.h"
 
 #include "panel-icon-chooser.h"
@@ -80,8 +80,8 @@ panel_icon_chooser_constructor (GType                  type,
 									     construct_properties);
 
 	chooser = PANEL_ICON_CHOOSER (obj);
-	gtk_container_add (GTK_CONTAINER (chooser), chooser->priv->image);
-	gtk_widget_show (chooser->priv->image);
+	ctk_container_add (GTK_CONTAINER (chooser), chooser->priv->image);
+	ctk_widget_show (chooser->priv->image);
 
 	return obj;
 }
@@ -146,7 +146,7 @@ panel_icon_chooser_dispose (GObject *object)
 	chooser = PANEL_ICON_CHOOSER (object);
 
 	if (chooser->priv->filechooser) {
-		gtk_widget_destroy (chooser->priv->filechooser);
+		ctk_widget_destroy (chooser->priv->filechooser);
 		chooser->priv->filechooser = NULL;
 	}
 
@@ -171,8 +171,8 @@ static void
 panel_icon_chooser_class_init (PanelIconChooserClass *class)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (class);
-	GtkWidgetClass *gtkwidget_class = GTK_WIDGET_CLASS (class);
-	GtkButtonClass *gtkbutton_class = GTK_BUTTON_CLASS (class);
+	GtkWidgetClass *ctkwidget_class = GTK_WIDGET_CLASS (class);
+	GtkButtonClass *ctkbutton_class = GTK_BUTTON_CLASS (class);
 
 	gobject_class->constructor = panel_icon_chooser_constructor;
 	gobject_class->get_property = panel_icon_chooser_get_property;
@@ -180,10 +180,10 @@ panel_icon_chooser_class_init (PanelIconChooserClass *class)
 
 	gobject_class->dispose = panel_icon_chooser_dispose;
 
-	gtkwidget_class->style_set = _panel_icon_chooser_style_set;
-	gtkwidget_class->screen_changed = _panel_icon_chooser_screen_changed;
+	ctkwidget_class->style_set = _panel_icon_chooser_style_set;
+	ctkwidget_class->screen_changed = _panel_icon_chooser_screen_changed;
 
-	gtkbutton_class->clicked = _panel_icon_chooser_clicked;
+	ctkbutton_class->clicked = _panel_icon_chooser_clicked;
 
 	panel_icon_chooser_signals[CHANGED] =
 		g_signal_new ("changed",
@@ -229,7 +229,7 @@ panel_icon_chooser_init (PanelIconChooser *chooser)
 	priv->icon = NULL;
 	priv->icon_theme_dir = NULL;
 
-	priv->image = gtk_image_new_from_icon_name (priv->fallback_icon_name,
+	priv->image = ctk_image_new_from_icon_name (priv->fallback_icon_name,
 						    PANEL_ICON_CHOOSER_ICON_SIZE);
 
 	priv->filechooser = NULL;
@@ -241,7 +241,7 @@ static void
 _panel_icon_chooser_update (PanelIconChooser *chooser)
 {
 	if (!chooser->priv->icon) {
-		gtk_image_set_from_icon_name (GTK_IMAGE (chooser->priv->image),
+		ctk_image_set_from_icon_name (GTK_IMAGE (chooser->priv->image),
 					      chooser->priv->fallback_icon_name,
 					      PANEL_ICON_CHOOSER_ICON_SIZE);
 
@@ -255,14 +255,14 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 			GdkPixbuf *pixbuf;
 			int        width, height;
 
-			gtk_icon_size_lookup (PANEL_ICON_CHOOSER_ICON_SIZE,
+			ctk_icon_size_lookup (PANEL_ICON_CHOOSER_ICON_SIZE,
 					      &width, &height);
 			pixbuf = gdk_pixbuf_new_from_file_at_size (chooser->priv->icon,
 								   width, height,
 								   NULL);
 
 			if (pixbuf) {
-				gtk_image_set_from_pixbuf (GTK_IMAGE (chooser->priv->image),
+				ctk_image_set_from_pixbuf (GTK_IMAGE (chooser->priv->image),
 							   pixbuf);
 				g_object_unref (pixbuf);
 				fallback = FALSE;
@@ -270,7 +270,7 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 		}
 
 		if (fallback) {
-			gtk_image_set_from_icon_name (GTK_IMAGE (chooser->priv->image),
+			ctk_image_set_from_icon_name (GTK_IMAGE (chooser->priv->image),
 						      chooser->priv->fallback_icon_name,
 						      PANEL_ICON_CHOOSER_ICON_SIZE);
 		}
@@ -288,7 +288,7 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 		names[1] = chooser->priv->fallback_icon_name;
 		icon = g_themed_icon_new_from_names (names, 2);
 
-		gtk_image_set_from_gicon (GTK_IMAGE (chooser->priv->image),
+		ctk_image_set_from_gicon (GTK_IMAGE (chooser->priv->image),
 					  icon,
 					  PANEL_ICON_CHOOSER_ICON_SIZE);
 
@@ -300,13 +300,13 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 
 		no_ext = panel_xdg_icon_remove_extension (chooser->priv->icon);
 
-		icon_theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (chooser)));
-		if (gtk_icon_theme_has_icon (icon_theme, no_ext))
+		icon_theme = ctk_icon_theme_get_for_screen (ctk_widget_get_screen (GTK_WIDGET (chooser)));
+		if (ctk_icon_theme_has_icon (icon_theme, no_ext))
 			icon = no_ext;
 		else
 			icon = chooser->priv->fallback_icon_name;
 
-		gtk_image_set_from_icon_name (GTK_IMAGE (chooser->priv->image),
+		ctk_image_set_from_icon_name (GTK_IMAGE (chooser->priv->image),
 					      icon,
 					      PANEL_ICON_CHOOSER_ICON_SIZE);
 
@@ -321,7 +321,7 @@ _panel_icon_chooser_find_icon_from_path (PanelIconChooser *chooser,
 	GdkScreen *screen;
 	char      *icon;
 
-	screen = gtk_widget_get_screen (GTK_WIDGET (chooser));
+	screen = ctk_widget_get_screen (GTK_WIDGET (chooser));
 
 	icon = panel_xdg_icon_name_from_icon_path (path, screen);
 	if (!icon)
@@ -339,7 +339,7 @@ _panel_icon_chooser_file_chooser_response (GtkFileChooser   *filechooser,
 		char *path;
 		char *icon;
 
-		path = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (filechooser));
+		path = ctk_file_chooser_get_filename (GTK_FILE_CHOOSER (filechooser));
 		icon = _panel_icon_chooser_find_icon_from_path (chooser, path);
 		g_free (path);
 
@@ -347,7 +347,7 @@ _panel_icon_chooser_file_chooser_response (GtkFileChooser   *filechooser,
 		g_free (icon);
 	}
 
-	gtk_widget_destroy (GTK_WIDGET (filechooser));
+	ctk_widget_destroy (GTK_WIDGET (filechooser));
 }
 
 static void
@@ -361,12 +361,12 @@ _panel_icon_chooser_clicked (GtkButton *button)
 	gboolean          filechooser_path_set;
 
 	if (chooser->priv->filechooser) {
-		gtk_window_present (GTK_WINDOW (chooser->priv->filechooser));
+		ctk_window_present (GTK_WINDOW (chooser->priv->filechooser));
 		return;
 	}
 
-	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (button));
-	if (gtk_widget_is_toplevel (toplevel))
+	toplevel = ctk_widget_get_toplevel (GTK_WIDGET (button));
+	if (ctk_widget_is_toplevel (toplevel))
 		parent = GTK_WINDOW (toplevel);
 	else
 		parent = NULL;
@@ -380,15 +380,15 @@ _panel_icon_chooser_clicked (GtkButton *button)
 						     GTK_RESPONSE_ACCEPT,
 						     NULL);
 
-	panel_gtk_file_chooser_add_image_preview (GTK_FILE_CHOOSER (filechooser));
+	panel_ctk_file_chooser_add_image_preview (GTK_FILE_CHOOSER (filechooser));
 
 	path = g_build_filename (DATADIR, "icons", NULL);
-	gtk_file_chooser_add_shortcut_folder (GTK_FILE_CHOOSER (filechooser),
+	ctk_file_chooser_add_shortcut_folder (GTK_FILE_CHOOSER (filechooser),
 					      path, NULL);
 	g_free (path);
 
 	path = g_build_filename (DATADIR, "pixmaps", NULL);
-	gtk_file_chooser_add_shortcut_folder (GTK_FILE_CHOOSER (filechooser),
+	ctk_file_chooser_add_shortcut_folder (GTK_FILE_CHOOSER (filechooser),
 					      path, NULL);
 	g_free (path);
 
@@ -404,23 +404,23 @@ _panel_icon_chooser_clicked (GtkButton *button)
 			char         *no_ext;
 			int           size;
 
-			icon_theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (chooser)));
+			icon_theme = ctk_icon_theme_get_for_screen (ctk_widget_get_screen (GTK_WIDGET (chooser)));
 			no_ext = panel_xdg_icon_remove_extension (chooser->priv->icon);
-			gtk_icon_size_lookup (PANEL_ICON_CHOOSER_ICON_SIZE,
+			ctk_icon_size_lookup (PANEL_ICON_CHOOSER_ICON_SIZE,
 					      &size, NULL);
 
-			info = gtk_icon_theme_lookup_icon (icon_theme, no_ext,
+			info = ctk_icon_theme_lookup_icon (icon_theme, no_ext,
 							   size, 0);
 			g_free (no_ext);
 
 			if (info) {
-				path = g_strdup (gtk_icon_info_get_filename (info));
+				path = g_strdup (ctk_icon_info_get_filename (info));
 				g_object_unref (info);
 			}
 		}
 
 		if (path) {
-			gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (filechooser),
+			ctk_file_chooser_set_filename (GTK_FILE_CHOOSER (filechooser),
 						       path);
 			g_free (path);
 			filechooser_path_set = TRUE;
@@ -432,12 +432,12 @@ _panel_icon_chooser_clicked (GtkButton *button)
 		// FIXME? Use current icon theme? But there might not be a lot
 		// of icons there...
 		path = g_build_filename (DATADIR, "icons", NULL);
-		gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (filechooser),
+		ctk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (filechooser),
 						     path);
 		g_free (path);
 	}
 
-	gtk_window_set_destroy_with_parent (GTK_WINDOW (filechooser), TRUE);
+	ctk_window_set_destroy_with_parent (GTK_WINDOW (filechooser), TRUE);
 
 	g_signal_connect (filechooser, "response",
 			  G_CALLBACK (_panel_icon_chooser_file_chooser_response),
@@ -446,10 +446,10 @@ _panel_icon_chooser_clicked (GtkButton *button)
 	chooser->priv->filechooser = filechooser;
 
 	g_signal_connect (G_OBJECT (filechooser), "destroy",
-			  G_CALLBACK (gtk_widget_destroyed),
+			  G_CALLBACK (ctk_widget_destroyed),
 			  &chooser->priv->filechooser);
 
-	gtk_widget_show (filechooser);
+	ctk_widget_show (filechooser);
 }
 
 static void

@@ -241,7 +241,7 @@ msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត�
 msgid "Time & Date"
 msgstr ""
 
-#: ../applets/clock/clock.ui.h:2 ../cafe-panel/libpanel-util/panel-gtk.c:136
+#: ../applets/clock/clock.ui.h:2 ../cafe-panel/libpanel-util/panel-ctk.c:136
 #: ../cafe-panel/panel-context-menu.c:212
 #: ../cafe-panel/panel-ditem-editor.c:669 ../cafe-panel/panel-force-quit.c:236
 #: ../cafe-panel/panel-recent.c:155 ../cafe-panel/panel-run-dialog.ui.h:3
@@ -371,7 +371,7 @@ msgstr ""
 msgid "South"
 msgstr ""
 
-#: ../applets/clock/clock.ui.h:34 ../cafe-panel/libpanel-util/panel-gtk.c:140
+#: ../applets/clock/clock.ui.h:34 ../cafe-panel/libpanel-util/panel-ctk.c:140
 #: ../cafe-panel/panel-applet-frame.c:954
 #: ../cafe-panel/panel-ditem-editor.c:673
 msgid "_OK"
@@ -1860,7 +1860,7 @@ msgstr ""
 msgid "Show session management options"
 msgstr ""
 
-#: ../cafe-panel/libpanel-util/panel-gtk.c:138
+#: ../cafe-panel/libpanel-util/panel-ctk.c:138
 msgid "_Open"
 msgstr ""
 

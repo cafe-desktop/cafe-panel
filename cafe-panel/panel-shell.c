@@ -157,8 +157,8 @@ panel_shell_quit (void)
 
         toplevels_to_destroy = g_slist_copy (panel_toplevel_list_toplevels ());
         for (l = toplevels_to_destroy; l; l = l->next)
-		gtk_widget_destroy (l->data);
+		ctk_widget_destroy (l->data);
         g_slist_free (toplevels_to_destroy);
 
-	gtk_main_quit ();
+	ctk_main_quit ();
 }

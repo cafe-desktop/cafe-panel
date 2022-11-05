@@ -207,10 +207,10 @@ get_icon_by_name (const gchar *icon_name,
   g_return_val_if_fail (icon_name != NULL && icon_name[0] != '\0', NULL);
   g_return_val_if_fail (requested_size > 0, NULL);
 
-  icon_theme = gtk_icon_theme_get_default ();
-  gtk_icon_theme_rescan_if_needed (icon_theme);
+  icon_theme = ctk_icon_theme_get_default ();
+  ctk_icon_theme_rescan_if_needed (icon_theme);
 
-  sizes = gtk_icon_theme_get_icon_sizes (icon_theme, icon_name);
+  sizes = ctk_icon_theme_get_icon_sizes (icon_theme, icon_name);
   for (i = 0; sizes[i] != 0; i++)
     {
       if (sizes[i] == requested_size ||
@@ -228,7 +228,7 @@ get_icon_by_name (const gchar *icon_name,
   if (chosen_size == 0)
     chosen_size = requested_size;
 
-  return gtk_icon_theme_load_surface (icon_theme, icon_name,
+  return ctk_icon_theme_load_surface (icon_theme, icon_name,
                                       chosen_size, scale,
                                       NULL, GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
 }
@@ -255,7 +255,7 @@ update (SnItemV0 *v0)
       cairo_surface_t *surface;
       gint scale;
 
-      scale = gtk_widget_get_scale_factor (GTK_WIDGET (image));
+      scale = ctk_widget_get_scale_factor (GTK_WIDGET (image));
       surface = get_icon_by_name (v0->icon_name, icon_size, scale);
 
       if (!surface)
@@ -277,7 +277,7 @@ update (SnItemV0 *v0)
           /*deal with missing icon or failure to load icon*/
           surface = get_icon_by_name ("image-missing", icon_size, scale);
         }
-      gtk_image_set_from_surface (image, surface);
+      ctk_image_set_from_surface (image, surface);
       cairo_surface_destroy (surface);
     }
   else if (v0->icon_pixmap != NULL && v0->icon_pixmap[0] != NULL)
@@ -285,18 +285,18 @@ update (SnItemV0 *v0)
       cairo_surface_t *surface;
 
       surface = get_surface (v0,
-                             gtk_orientable_get_orientation (GTK_ORIENTABLE (v0)),
+                             ctk_orientable_get_orientation (GTK_ORIENTABLE (v0)),
                              icon_size);
       if (surface != NULL)
         {
-          gtk_image_set_from_surface (image, surface);
+          ctk_image_set_from_surface (image, surface);
           cairo_surface_destroy (surface);
         }
     }
   else
     {
-      gtk_image_set_from_icon_name (image, "image-missing", GTK_ICON_SIZE_MENU);
-      gtk_image_set_pixel_size (image, icon_size);
+      ctk_image_set_from_icon_name (image, "image-missing", GTK_ICON_SIZE_MENU);
+      ctk_image_set_pixel_size (image, icon_size);
     }
 
   tip = v0->tooltip;
@@ -321,15 +321,15 @@ update (SnItemV0 *v0)
           markup = g_strdup (tip->text);
         }
 
-      gtk_widget_set_tooltip_markup (GTK_WIDGET (v0), markup);
+      ctk_widget_set_tooltip_markup (GTK_WIDGET (v0), markup);
       g_free (markup);
     }
   else
     {
-      gtk_widget_set_tooltip_markup (GTK_WIDGET (v0), NULL);
+      ctk_widget_set_tooltip_markup (GTK_WIDGET (v0), NULL);
     }
 
-  accessible = gtk_widget_get_accessible (GTK_WIDGET (v0));
+  accessible = ctk_widget_get_accessible (GTK_WIDGET (v0));
 
   if (v0->title != NULL && *v0->title != '\0')
     atk_object_set_name (accessible, v0->title);
@@ -340,10 +340,10 @@ update (SnItemV0 *v0)
   /*Special case cafe-polkit*/
   if (g_strcmp0 (v0->status, "password-dialog") != 0){
     visible = g_strcmp0 (v0->status, "Passive") != 0;
-    gtk_widget_set_visible (GTK_WIDGET (v0), visible);
+    ctk_widget_set_visible (GTK_WIDGET (v0), visible);
     }
   else
-  gtk_widget_set_visible (GTK_WIDGET (v0), TRUE);
+  ctk_widget_set_visible (GTK_WIDGET (v0), TRUE);
 }
 
 static gboolean
@@ -863,9 +863,9 @@ new_icon_theme_path_cb (SnItemV0 *v0,
     {
       GtkIconTheme *icon_theme;
 
-      icon_theme = gtk_icon_theme_get_default ();
+      icon_theme = ctk_icon_theme_get_default ();
 
-      gtk_icon_theme_append_search_path (icon_theme, v0->icon_theme_path);
+      ctk_icon_theme_append_search_path (icon_theme, v0->icon_theme_path);
     }
 
   queue_update (v0);
@@ -1005,9 +1005,9 @@ get_all_cb (GObject      *source_object,
     {
       GtkIconTheme *icon_theme;
 
-      icon_theme = gtk_icon_theme_get_default ();
+      icon_theme = ctk_icon_theme_get_default ();
 
-      gtk_icon_theme_append_search_path (icon_theme, v0->icon_theme_path);
+      ctk_icon_theme_append_search_path (icon_theme, v0->icon_theme_path);
     }
 
   g_signal_connect (v0->proxy, "g-properties-changed",
@@ -1280,7 +1280,7 @@ sn_item_v0_size_allocate (GtkWidget      *widget,
     {
       gint prev_effective_icon_size = v0->effective_icon_size;
 
-      if (gtk_orientable_get_orientation (GTK_ORIENTABLE (v0)) == GTK_ORIENTATION_HORIZONTAL)
+      if (ctk_orientable_get_orientation (GTK_ORIENTABLE (v0)) == GTK_ORIENTATION_HORIZONTAL)
         v0->effective_icon_size = allocation->height;
       else
         v0->effective_icon_size = allocation->width;
@@ -1384,7 +1384,7 @@ sn_item_v0_class_init (SnItemV0Class *v0_class)
 
   widget_class->size_allocate = sn_item_v0_size_allocate;
 
-  gtk_widget_class_set_css_name (widget_class, "sn-item");
+  ctk_widget_class_set_css_name (widget_class, "sn-item");
 
   install_properties (object_class);
 }
@@ -1394,9 +1394,9 @@ sn_item_v0_init (SnItemV0 *v0)
 {
   v0->icon_size = 16;
   v0->effective_icon_size = 0;
-  v0->image = gtk_image_new ();
-  gtk_container_add (GTK_CONTAINER (v0), v0->image);
-  gtk_widget_show (v0->image);
+  v0->image = ctk_image_new ();
+  ctk_container_add (GTK_CONTAINER (v0), v0->image);
+  ctk_widget_show (v0->image);
 }
 
 SnItem *
@@ -1415,17 +1415,17 @@ sn_item_v0_get_icon_padding (SnItemV0 *v0)
   GtkOrientation orientation;
   gint a, b;
 
-  orientation = gtk_orientable_get_orientation (GTK_ORIENTABLE (v0));
+  orientation = ctk_orientable_get_orientation (GTK_ORIENTABLE (v0));
 
   if (orientation == GTK_ORIENTATION_HORIZONTAL)
     {
-      a = gtk_widget_get_margin_start (v0->image);
-      b = gtk_widget_get_margin_end (v0->image);
+      a = ctk_widget_get_margin_start (v0->image);
+      b = ctk_widget_get_margin_end (v0->image);
     }
   else
     {
-      a = gtk_widget_get_margin_top (v0->image);
-      b = gtk_widget_get_margin_bottom (v0->image);
+      a = ctk_widget_get_margin_top (v0->image);
+      b = ctk_widget_get_margin_bottom (v0->image);
     }
 
   return (a + b) / 2;
@@ -1439,17 +1439,17 @@ sn_item_v0_set_icon_padding (SnItemV0 *v0,
   gint padding_x = 0;
   gint padding_y = 0;
 
-  orientation = gtk_orientable_get_orientation (GTK_ORIENTABLE (v0));
+  orientation = ctk_orientable_get_orientation (GTK_ORIENTABLE (v0));
 
   if (orientation == GTK_ORIENTATION_HORIZONTAL)
     padding_x = padding;
   else
     padding_y = padding;
 
-  gtk_widget_set_margin_start (v0->image, padding_x);
-  gtk_widget_set_margin_end (v0->image, padding_x);
-  gtk_widget_set_margin_top (v0->image, padding_y);
-  gtk_widget_set_margin_bottom (v0->image, padding_y);
+  ctk_widget_set_margin_start (v0->image, padding_x);
+  ctk_widget_set_margin_end (v0->image, padding_x);
+  ctk_widget_set_margin_top (v0->image, padding_y);
+  ctk_widget_set_margin_bottom (v0->image, padding_y);
 }
 
 gint

@@ -31,7 +31,7 @@
 
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "calendar-window.h"
 
@@ -90,13 +90,13 @@ static void calendar_mark_today(GtkCalendar *calendar)
 	struct tm tm1;
 	guint year, month, day;
 
-	gtk_calendar_get_date(calendar, &year, &month, &day);
+	ctk_calendar_get_date(calendar, &year, &month, &day);
 	time(&now);
 	localtime_r (&now, &tm1);
 	if ((tm1.tm_mon == month) && (tm1.tm_year + 1900 == year)) {
-		gtk_calendar_mark_day (GTK_CALENDAR (calendar), tm1.tm_mday);
+		ctk_calendar_mark_day (GTK_CALENDAR (calendar), tm1.tm_mday);
 	} else {
-		gtk_calendar_unmark_day (GTK_CALENDAR (calendar), tm1.tm_mday);
+		ctk_calendar_unmark_day (GTK_CALENDAR (calendar), tm1.tm_mday);
 	}
 }
 
@@ -109,7 +109,7 @@ static gboolean calendar_update(gpointer user_data)
 
 static void calendar_month_changed_cb(GtkCalendar *calendar, gpointer user_data)
 {
-	gtk_calendar_clear_marks(calendar);
+	ctk_calendar_clear_marks(calendar);
 	g_idle_add_full (G_PRIORITY_DEFAULT_IDLE, calendar_update, user_data, NULL);
 }
 
@@ -120,19 +120,19 @@ calendar_window_create_calendar (CalendarWindow *calwin)
 	GtkCalendarDisplayOptions  options;
 	struct tm                  tm1;
 
-	calendar = gtk_calendar_new ();
-	gtk_widget_set_size_request(GTK_WIDGET(calendar), 330, 100);
-	options = gtk_calendar_get_display_options (GTK_CALENDAR (calendar));
+	calendar = ctk_calendar_new ();
+	ctk_widget_set_size_request(GTK_WIDGET(calendar), 330, 100);
+	options = ctk_calendar_get_display_options (GTK_CALENDAR (calendar));
 	if (calwin->priv->show_weeks)
 		options |= GTK_CALENDAR_SHOW_WEEK_NUMBERS;
 	else
 		options &= ~(GTK_CALENDAR_SHOW_WEEK_NUMBERS);
-	gtk_calendar_set_display_options (GTK_CALENDAR (calendar), options);
+	ctk_calendar_set_display_options (GTK_CALENDAR (calendar), options);
 
 	localtime_r (calwin->priv->current_time, &tm1);
-	gtk_calendar_select_month (GTK_CALENDAR (calendar),
+	ctk_calendar_select_month (GTK_CALENDAR (calendar),
 				   tm1.tm_mon, tm1.tm_year + 1900);
-	gtk_calendar_select_day (GTK_CALENDAR (calendar), tm1.tm_mday);
+	ctk_calendar_select_day (GTK_CALENDAR (calendar), tm1.tm_mday);
 	calendar_mark_today (GTK_CALENDAR(calendar));
 
 	g_signal_connect(calendar, "month-changed",
@@ -147,10 +147,10 @@ expand_collapse_child (GtkWidget *child,
 {
 	gboolean expanded;
 
-	if (data == child || gtk_widget_is_ancestor (data, child))
+	if (data == child || ctk_widget_is_ancestor (data, child))
 		return;
 
-	expanded = gtk_expander_get_expanded (GTK_EXPANDER (data));
+	expanded = ctk_expander_get_expanded (GTK_EXPANDER (data));
 	g_object_set (child, "visible", expanded, NULL);
 }
 
@@ -161,7 +161,7 @@ expand_collapse (GtkWidget  *expander,
 {
 	GtkWidget *box = data;
 
-	gtk_container_foreach (GTK_CONTAINER (box),
+	ctk_container_foreach (GTK_CONTAINER (box),
 			       (GtkCallback)expand_collapse_child,
 			       expander);
 }
@@ -186,18 +186,18 @@ create_hig_frame (CalendarWindow *calwin,
         char      *bold_title;
         GtkWidget *expander;
 
-        vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+        vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 
         bold_title = g_strdup_printf ("<b>%s</b>", title);
-	expander = gtk_expander_new (bold_title);
+	expander = ctk_expander_new (bold_title);
         g_free (bold_title);
-	gtk_expander_set_use_markup (GTK_EXPANDER (expander), TRUE);
+	ctk_expander_set_use_markup (GTK_EXPANDER (expander), TRUE);
 
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 
-	gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
-        gtk_box_pack_start (GTK_BOX (hbox), expander, FALSE, FALSE, 0);
-	gtk_widget_show_all (vbox);
+	ctk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+        ctk_box_pack_start (GTK_BOX (hbox), expander, FALSE, FALSE, 0);
+	ctk_widget_show_all (vbox);
 
 	g_signal_connect (expander, "notify::expanded",
 			  G_CALLBACK (expand_collapse), hbox);
@@ -205,7 +205,7 @@ create_hig_frame (CalendarWindow *calwin,
 			  G_CALLBACK (expand_collapse), vbox);
 
 	/* FIXME: this doesn't really work, since "add" does not
-	 * get emitted for e.g. gtk_box_pack_start
+	 * get emitted for e.g. ctk_box_pack_start
 	 */
 	g_signal_connect (vbox, "add", G_CALLBACK (add_child), expander);
 	g_signal_connect (hbox, "add", G_CALLBACK (add_child), expander);
@@ -215,21 +215,21 @@ create_hig_frame (CalendarWindow *calwin,
                 GtkWidget *button;
                 gchar *text;
 
-                button_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-                gtk_widget_show (button_box);
+                button_box = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+                ctk_widget_show (button_box);
 
-                button = gtk_button_new ();
-                gtk_container_add (GTK_CONTAINER (button_box), button);
+                button = ctk_button_new ();
+                ctk_container_add (GTK_CONTAINER (button_box), button);
 
                 text = g_markup_printf_escaped ("<small>%s</small>", button_label);
-                label = gtk_label_new (text);
+                label = ctk_label_new (text);
                 g_free (text);
-                gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
-                gtk_container_add (GTK_CONTAINER (button), label);
+                ctk_label_set_use_markup (GTK_LABEL (label), TRUE);
+                ctk_container_add (GTK_CONTAINER (button), label);
 
-                gtk_widget_show_all (button);
+                ctk_widget_show_all (button);
 
-                gtk_box_pack_end (GTK_BOX (hbox), button_box, FALSE, FALSE, 0);
+                ctk_box_pack_end (GTK_BOX (hbox), button_box, FALSE, FALSE, 0);
 
                 g_signal_connect_swapped (button, "clicked", callback, calwin);
 
@@ -261,10 +261,10 @@ calendar_window_pack_locations (CalendarWindow *calwin, GtkWidget *vbox)
 	/* we show the widget before adding to the container, since adding to
 	 * the container changes the visibility depending on the state of the
 	 * expander */
-	gtk_widget_show (calwin->priv->locations_list);
-	gtk_container_add (GTK_CONTAINER (vbox), calwin->priv->locations_list);
+	ctk_widget_show (calwin->priv->locations_list);
+	ctk_container_add (GTK_CONTAINER (vbox), calwin->priv->locations_list);
 
-	//gtk_box_pack_start (GTK_BOX (vbox), calwin->priv->locations_list, TRUE, FALSE, 0);
+	//ctk_box_pack_start (GTK_BOX (vbox), calwin->priv->locations_list, TRUE, FALSE, 0);
 }
 
 static void
@@ -273,27 +273,27 @@ calendar_window_fill (CalendarWindow *calwin)
         GtkWidget *frame;
         GtkWidget *vbox;
 
-        frame = gtk_frame_new (NULL);
-        gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_OUT);
-        gtk_container_add (GTK_CONTAINER (calwin), frame);
-        gtk_widget_show (frame);
+        frame = ctk_frame_new (NULL);
+        ctk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_OUT);
+        ctk_container_add (GTK_CONTAINER (calwin), frame);
+        ctk_widget_show (frame);
 
-        vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+        vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 
-        gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
-        gtk_container_add (GTK_CONTAINER (frame), vbox);
-        gtk_widget_show (vbox);
+        ctk_container_set_border_width (GTK_CONTAINER (vbox), 6);
+        ctk_container_add (GTK_CONTAINER (frame), vbox);
+        ctk_widget_show (vbox);
 
 	calwin->priv->calendar = calendar_window_create_calendar (calwin);
-        gtk_widget_show (calwin->priv->calendar);
+        ctk_widget_show (calwin->priv->calendar);
 
 	if (!calwin->priv->invert_order) {
-                gtk_box_pack_start (GTK_BOX (vbox),
+                ctk_box_pack_start (GTK_BOX (vbox),
 				    calwin->priv->calendar, TRUE, FALSE, 0);
 		calendar_window_pack_locations (calwin, vbox);
 	} else {
 		calendar_window_pack_locations (calwin, vbox);
-                gtk_box_pack_start (GTK_BOX (vbox),
+                ctk_box_pack_start (GTK_BOX (vbox),
 				    calwin->priv->calendar, TRUE, FALSE, 0);
 	}
 }
@@ -474,13 +474,13 @@ calendar_window_init (CalendarWindow *calwin)
 	calwin->priv = calendar_window_get_instance_private (calwin);
 
 	window = GTK_WINDOW (calwin);
-	gtk_window_set_type_hint (window, GDK_WINDOW_TYPE_HINT_DOCK);
-	gtk_window_set_decorated (window, FALSE);
-	gtk_window_set_resizable (window, FALSE);
-	gtk_window_set_default_size (window, 337, -1);
-	gtk_window_stick (window);
-	gtk_window_set_title (window, _("Calendar"));
-	gtk_window_set_icon_name (window, CLOCK_ICON);
+	ctk_window_set_type_hint (window, GDK_WINDOW_TYPE_HINT_DOCK);
+	ctk_window_set_decorated (window, FALSE);
+	ctk_window_set_resizable (window, FALSE);
+	ctk_window_set_default_size (window, 337, -1);
+	ctk_window_stick (window);
+	ctk_window_set_title (window, _("Calendar"));
+	ctk_window_set_icon_name (window, CLOCK_ICON);
 }
 
 GtkWidget *
@@ -551,14 +551,14 @@ calendar_window_set_show_weeks (CalendarWindow *calwin,
 	calwin->priv->show_weeks = show_weeks;
 
 	if (calwin->priv->calendar) {
-		options = gtk_calendar_get_display_options (GTK_CALENDAR (calwin->priv->calendar));
+		options = ctk_calendar_get_display_options (GTK_CALENDAR (calwin->priv->calendar));
 
 		if (show_weeks)
 			options |= GTK_CALENDAR_SHOW_WEEK_NUMBERS;
 		else
 			options &= ~(GTK_CALENDAR_SHOW_WEEK_NUMBERS);
 
-		gtk_calendar_set_display_options (GTK_CALENDAR (calwin->priv->calendar),
+		ctk_calendar_set_display_options (GTK_CALENDAR (calwin->priv->calendar),
 						  options);
 	}
 

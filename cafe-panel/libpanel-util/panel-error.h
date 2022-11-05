@@ -29,7 +29,7 @@
 #define PANEL_ERROR_H
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

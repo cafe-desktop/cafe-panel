@@ -72,7 +72,7 @@ static void window_menu_about(GtkAction* action, WindowMenu* window_menu)
 		NULL
 	};
 
-	gtk_show_about_dialog(GTK_WINDOW(window_menu->applet),
+	ctk_show_about_dialog(GTK_WINDOW(window_menu->applet),
 		"program-name", _("Window Selector"),
 		"title", _("About Window Selector"),
 		"authors", authors,
@@ -123,22 +123,22 @@ static gboolean window_menu_on_draw (GtkWidget* widget,
 	GtkStateFlags    state;
 	WindowMenu      *window_menu = data;
 
-	if (!gtk_widget_has_focus (window_menu->applet))
+	if (!ctk_widget_has_focus (window_menu->applet))
 		return FALSE;
 
-	state = gtk_widget_get_state_flags (widget);
-	context = gtk_widget_get_style_context (widget);
-	gtk_style_context_save (context);
-	gtk_style_context_set_state (context, state);
+	state = ctk_widget_get_state_flags (widget);
+	context = ctk_widget_get_style_context (widget);
+	ctk_style_context_save (context);
+	ctk_style_context_set_state (context, state);
 
 	cairo_save (cr);
-	gtk_render_focus (context, cr,
+	ctk_render_focus (context, cr,
 			  0., 0.,
-			  gtk_widget_get_allocated_width (widget),
-			  gtk_widget_get_allocated_height (widget));
+			  ctk_widget_get_allocated_width (widget),
+			  ctk_widget_get_allocated_height (widget));
 			  cairo_restore (cr);
 
-	gtk_style_context_restore (context);
+	ctk_style_context_restore (context);
 
 	return FALSE;
 }
@@ -151,7 +151,7 @@ static void window_menu_size_allocate(CafePanelApplet* applet, GtkAllocation* al
 
 	orient = cafe_panel_applet_get_orient(applet);
 
-	children = gtk_container_get_children(GTK_CONTAINER(window_menu->selector));
+	children = ctk_container_get_children(GTK_CONTAINER(window_menu->selector));
 	child = GTK_WIDGET(children->data);
 	g_list_free(children);
 
@@ -161,7 +161,7 @@ static void window_menu_size_allocate(CafePanelApplet* applet, GtkAllocation* al
 			return;
 
 		window_menu->size = allocation->width;
-		gtk_widget_set_size_request(child, window_menu->size, -1);
+		ctk_widget_set_size_request(child, window_menu->size, -1);
 	}
 	else
 	{
@@ -169,7 +169,7 @@ static void window_menu_size_allocate(CafePanelApplet* applet, GtkAllocation* al
 			return;
 
 		window_menu->size = allocation->height;
-		gtk_widget_set_size_request(child, -1, window_menu->size);
+		ctk_widget_set_size_request(child, -1, window_menu->size);
 	}
 
 	window_menu->orient = orient;
@@ -190,15 +190,15 @@ static gboolean window_menu_key_press_event(GtkWidget* widget, GdkEventKey* even
 		case GDK_KEY_KP_Space:
 			selector = WNCK_SELECTOR(window_menu->selector);
 			/*
-			 * We need to call _gtk_menu_shell_activate() here as is done in
-			 * window_key_press_handler in gtkmenubar.c which pops up menu
+			 * We need to call _ctk_menu_shell_activate() here as is done in
+			 * window_key_press_handler in ctkmenubar.c which pops up menu
 			 * when F10 is pressed.
 			 *
 			 * As that function is private its code is replicated here.
 			 */
 			menu_shell = GTK_MENU_SHELL(selector);
 
-			gtk_menu_shell_select_first(menu_shell, FALSE);
+			ctk_menu_shell_select_first(menu_shell, FALSE);
 			return TRUE;
 		default:
 			break;
@@ -223,8 +223,8 @@ gboolean window_menu_applet_fill(CafePanelApplet* applet)
 	window_menu = g_new0(WindowMenu, 1);
 
 	window_menu->applet = GTK_WIDGET(applet);
-	gtk_widget_set_name (window_menu->applet, "window-menu-applet-button");
-	gtk_widget_set_tooltip_text(window_menu->applet, _("Window Selector"));
+	ctk_widget_set_name (window_menu->applet, "window-menu-applet-button");
+	ctk_widget_set_tooltip_text(window_menu->applet, _("Window Selector"));
 
 	cafe_panel_applet_set_flags(applet, CAFE_PANEL_APPLET_EXPAND_MINOR);
 	window_menu->size = cafe_panel_applet_get_size(applet);
@@ -232,29 +232,29 @@ gboolean window_menu_applet_fill(CafePanelApplet* applet)
 
 	g_signal_connect(window_menu->applet, "destroy", G_CALLBACK(window_menu_destroy), window_menu);
 
-	action_group = gtk_action_group_new("WindowMenu Applet Actions");
-	gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
-	gtk_action_group_add_actions(action_group, window_menu_actions, G_N_ELEMENTS(window_menu_actions), window_menu);
+	action_group = ctk_action_group_new("WindowMenu Applet Actions");
+	ctk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
+	ctk_action_group_add_actions(action_group, window_menu_actions, G_N_ELEMENTS(window_menu_actions), window_menu);
 	cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (window_menu->applet),
 	                                            WNCKLET_RESOURCE_PATH "window-menu-menu.xml",
 	                                            action_group);
 	g_object_unref(action_group);
 
 	window_menu->selector = wnck_selector_new();
-	gtk_container_add(GTK_CONTAINER(window_menu->applet), window_menu->selector);
+	ctk_container_add(GTK_CONTAINER(window_menu->applet), window_menu->selector);
 
 	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET(window_menu->applet), GTK_WIDGET(window_menu->selector));
 
 	g_signal_connect(window_menu->applet, "key_press_event", G_CALLBACK(window_menu_key_press_event), window_menu);
 	g_signal_connect(window_menu->applet, "size-allocate", G_CALLBACK(window_menu_size_allocate), window_menu);
 
-	g_signal_connect_after(G_OBJECT(window_menu->applet), "focus-in-event", G_CALLBACK(gtk_widget_queue_draw), window_menu);
-	g_signal_connect_after(G_OBJECT(window_menu->applet), "focus-out-event", G_CALLBACK(gtk_widget_queue_draw), window_menu);
+	g_signal_connect_after(G_OBJECT(window_menu->applet), "focus-in-event", G_CALLBACK(ctk_widget_queue_draw), window_menu);
+	g_signal_connect_after(G_OBJECT(window_menu->applet), "focus-out-event", G_CALLBACK(ctk_widget_queue_draw), window_menu);
 	g_signal_connect_after(G_OBJECT(window_menu->selector), "draw", G_CALLBACK(window_menu_on_draw), window_menu);
 
 	g_signal_connect(G_OBJECT(window_menu->selector), "button_press_event", G_CALLBACK(filter_button_press), window_menu);
 
-	gtk_widget_show_all(GTK_WIDGET(window_menu->applet));
+	ctk_widget_show_all(GTK_WIDGET(window_menu->applet));
 
 	return TRUE;
 }

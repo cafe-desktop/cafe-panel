@@ -3,7 +3,7 @@
 "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
   <interface name="org.kde.StatusNotifierItem">
-    <annotation name="org.gtk.GDBus.C.Name" value="ItemV0Gen" />
+    <annotation name="org.ctk.GDBus.C.Name" value="ItemV0Gen" />
 
     <method name="ContextMenu">
         <arg name="x" type="i" direction="in" />

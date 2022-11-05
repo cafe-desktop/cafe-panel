@@ -31,7 +31,7 @@
 
 #include <glib/gi18n.h>
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkx.h>
 
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
@@ -147,9 +147,9 @@ static void update_icon(ShowDesktopData* sdd)
 	if (!sdd->icon_theme)
 		return;
 
-	state = gtk_widget_get_state_flags (sdd->button);
-	context = gtk_widget_get_style_context (sdd->button);
-	gtk_style_context_get_padding (context, state, &padding);
+	state = ctk_widget_get_state_flags (sdd->button);
+	context = ctk_widget_get_style_context (sdd->button);
+	ctk_style_context_get_padding (context, state, &padding);
 
 	switch (sdd->orient) {
 	case GTK_ORIENTATION_HORIZONTAL:
@@ -160,7 +160,7 @@ static void update_icon(ShowDesktopData* sdd)
 		break;
 	}
 
-	icon_scale = gtk_widget_get_scale_factor (sdd->button);
+	icon_scale = ctk_widget_get_scale_factor (sdd->button);
 	icon_size = sdd->size * icon_scale - thickness;
 
 	if (icon_size < 22)
@@ -177,7 +177,7 @@ static void update_icon(ShowDesktopData* sdd)
 		icon_size = 64;
 
 	error = NULL;
-	icon = gtk_icon_theme_load_surface (sdd->icon_theme, SHOW_DESKTOP_ICON, icon_size, icon_scale, NULL, 0, &error);
+	icon = ctk_icon_theme_load_surface (sdd->icon_theme, SHOW_DESKTOP_ICON, icon_size, icon_scale, NULL, 0, &error);
 
 	if (icon == NULL)
 	{
@@ -189,7 +189,7 @@ static void update_icon(ShowDesktopData* sdd)
 			error = NULL;
 		}
 
-		gtk_image_set_from_icon_name (GTK_IMAGE (sdd->image), "image-missing", GTK_ICON_SIZE_SMALL_TOOLBAR);
+		ctk_image_set_from_icon_name (GTK_IMAGE (sdd->image), "image-missing", GTK_ICON_SIZE_SMALL_TOOLBAR);
 		return;
 	}
 
@@ -223,13 +223,13 @@ static void update_icon(ShowDesktopData* sdd)
 		cairo_scale (cr, (double) width / icon_size, (double) height / icon_size);
 		cairo_set_source_surface (cr, icon, 0, 0);
 		cairo_paint (cr);
-		gtk_image_set_from_surface (GTK_IMAGE(sdd->image), scaled);
+		ctk_image_set_from_surface (GTK_IMAGE(sdd->image), scaled);
 		cairo_destroy (cr);
 		cairo_surface_destroy (scaled);
 	}
 	else
 	{
-		gtk_image_set_from_surface (GTK_IMAGE (sdd->image), icon);
+		ctk_image_set_from_surface (GTK_IMAGE (sdd->image), icon);
 	}
 
 	cairo_surface_destroy (icon);
@@ -261,7 +261,7 @@ static void update_button_display(ShowDesktopData* sdd)
 {
 	const char* tip;
 
-	if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(sdd->button)))
+	if (ctk_toggle_button_get_active(GTK_TOGGLE_BUTTON(sdd->button)))
 	{
 		tip = _("Click here to restore hidden windows.");
 	}
@@ -270,7 +270,7 @@ static void update_button_display(ShowDesktopData* sdd)
 		tip = _("Click here to hide all windows and show the desktop.");
 	}
 
-	gtk_widget_set_tooltip_text(sdd->button, tip);
+	ctk_widget_set_tooltip_text(sdd->button, tip);
 }
 
 static void update_button_state(ShowDesktopData* sdd)
@@ -278,13 +278,13 @@ static void update_button_state(ShowDesktopData* sdd)
 	if (sdd->showing_desktop)
 	{
 		g_signal_handlers_block_by_func(G_OBJECT(sdd->button), G_CALLBACK(button_toggled_callback), sdd);
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(sdd->button), TRUE);
+		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(sdd->button), TRUE);
 		g_signal_handlers_unblock_by_func(G_OBJECT(sdd->button), G_CALLBACK(button_toggled_callback), sdd);
 	}
 	else
 	{
 		g_signal_handlers_block_by_func(G_OBJECT(sdd->button), G_CALLBACK(button_toggled_callback), sdd);
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(sdd->button), FALSE);
+		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(sdd->button), FALSE);
 		g_signal_handlers_unblock_by_func(G_OBJECT(sdd->button), G_CALLBACK(button_toggled_callback), sdd);
 	}
 
@@ -367,7 +367,7 @@ static void show_desktop_applet_realized(CafePanelApplet* applet, gpointer data)
 	if (sdd->icon_theme != NULL)
 		g_signal_handlers_disconnect_by_func(sdd->icon_theme, theme_changed_callback, sdd);
 
-	screen = gtk_widget_get_screen(sdd->applet);
+	screen = ctk_widget_get_screen(sdd->applet);
 	sdd->wnck_screen = wnck_screen_get(gdk_x11_screen_get_screen_number (screen));
 
 	if (sdd->wnck_screen != NULL)
@@ -377,7 +377,7 @@ static void show_desktop_applet_realized(CafePanelApplet* applet, gpointer data)
 
 	show_desktop_changed_callback(sdd->wnck_screen, sdd);
 
-	sdd->icon_theme = gtk_icon_theme_get_for_screen (screen);
+	sdd->icon_theme = ctk_icon_theme_get_for_screen (screen);
 	wncklet_connect_while_alive(sdd->icon_theme, "changed", G_CALLBACK(theme_changed_callback), sdd, sdd->applet);
 
 	update_icon (sdd);
@@ -401,7 +401,7 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 
 	sdd->applet = GTK_WIDGET(applet);
 
-	sdd->image = gtk_image_new();
+	sdd->image = ctk_image_new();
 
 	switch (cafe_panel_applet_get_orient(applet))
 	{
@@ -420,31 +420,31 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 
 	g_signal_connect(G_OBJECT(sdd->applet), "realize", G_CALLBACK(show_desktop_applet_realized), sdd);
 
-	sdd->button = gtk_toggle_button_new ();
+	sdd->button = ctk_toggle_button_new ();
 
-	gtk_widget_set_name (sdd->button, "showdesktop-button");
-    provider = gtk_css_provider_new ();
-	gtk_css_provider_load_from_data (provider,
+	ctk_widget_set_name (sdd->button, "showdesktop-button");
+    provider = ctk_css_provider_new ();
+	ctk_css_provider_load_from_data (provider,
 					 "#showdesktop-button {\n"
                      "border-width: 0px; \n" /*a border here causes GTK warnings */
 					 " padding: 0px;\n"
 					 " margin: 0px; }",
 					 -1, NULL);
 
-	gtk_style_context_add_provider (gtk_widget_get_style_context (sdd->button),
+	ctk_style_context_add_provider (ctk_widget_get_style_context (sdd->button),
 					GTK_STYLE_PROVIDER (provider),
 					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 					g_object_unref (provider);
 
-	atk_obj = gtk_widget_get_accessible(sdd->button);
+	atk_obj = ctk_widget_get_accessible(sdd->button);
 	atk_object_set_name (atk_obj, _("Show Desktop Button"));
 	g_signal_connect(G_OBJECT(sdd->button), "button_press_event", G_CALLBACK(do_not_eat_button_press), NULL);
 
 	g_signal_connect(G_OBJECT(sdd->button), "toggled", G_CALLBACK(button_toggled_callback), sdd);
 
-	gtk_container_set_border_width(GTK_CONTAINER(sdd->button), 0);
-	gtk_container_add(GTK_CONTAINER(sdd->button), sdd->image);
-	gtk_container_add(GTK_CONTAINER(sdd->applet), sdd->button);
+	ctk_container_set_border_width(GTK_CONTAINER(sdd->button), 0);
+	ctk_container_add(GTK_CONTAINER(sdd->button), sdd->image);
+	ctk_container_add(GTK_CONTAINER(sdd->applet), sdd->button);
 
 	g_signal_connect (G_OBJECT(sdd->button), "size_allocate", G_CALLBACK(button_size_allocated), sdd);
 
@@ -456,9 +456,9 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 
 	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET (sdd->applet), GTK_WIDGET(sdd->applet));
 
-	action_group = gtk_action_group_new("ShowDesktop Applet Actions");
-	gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
-	gtk_action_group_add_actions(action_group, show_desktop_menu_actions, G_N_ELEMENTS (show_desktop_menu_actions), sdd);
+	action_group = ctk_action_group_new("ShowDesktop Applet Actions");
+	ctk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
+	ctk_action_group_add_actions(action_group, show_desktop_menu_actions, G_N_ELEMENTS (show_desktop_menu_actions), sdd);
 	cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (sdd->applet),
 	                                            WNCKLET_RESOURCE_PATH "showdesktop-menu.xml",
 	                                            action_group);
@@ -466,12 +466,12 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 
 	g_signal_connect(G_OBJECT(sdd->applet), "destroy", G_CALLBACK(applet_destroyed), sdd);
 
-	gtk_drag_dest_set(GTK_WIDGET(sdd->button), 0, NULL, 0, 0);
+	ctk_drag_dest_set(GTK_WIDGET(sdd->button), 0, NULL, 0, 0);
 
 	g_signal_connect(G_OBJECT(sdd->button), "drag_motion", G_CALLBACK (button_drag_motion), sdd);
 	g_signal_connect(G_OBJECT(sdd->button), "drag_leave", G_CALLBACK (button_drag_leave), sdd);
 
-	gtk_widget_show_all(sdd->applet);
+	ctk_widget_show_all(sdd->applet);
 
 	return TRUE;
 }
@@ -495,7 +495,7 @@ static void display_about_dialog(GtkAction* action, ShowDesktopData* sdd)
 		NULL
 	};
 
-	gtk_show_about_dialog(GTK_WINDOW(sdd->applet),
+	ctk_show_about_dialog(GTK_WINDOW(sdd->applet),
 		"program-name", _("Show Desktop Button"),
 		"title", _("About Show Desktop Button"),
 		"authors", authors,
@@ -514,34 +514,34 @@ static void display_about_dialog(GtkAction* action, ShowDesktopData* sdd)
 
 static void button_toggled_callback(GtkWidget* button, ShowDesktopData* sdd)
 {
-	if (!gdk_x11_screen_supports_net_wm_hint(gtk_widget_get_screen(button), gdk_atom_intern("_NET_SHOWING_DESKTOP", FALSE)))
+	if (!gdk_x11_screen_supports_net_wm_hint(ctk_widget_get_screen(button), gdk_atom_intern("_NET_SHOWING_DESKTOP", FALSE)))
 	{
 		static GtkWidget* dialog = NULL;
 
-		if (dialog && gtk_widget_get_screen(dialog) != gtk_widget_get_screen(button))
-			gtk_widget_destroy (dialog);
+		if (dialog && ctk_widget_get_screen(dialog) != ctk_widget_get_screen(button))
+			ctk_widget_destroy (dialog);
 
 		if (dialog)
 		{
-			gtk_window_present(GTK_WINDOW(dialog));
+			ctk_window_present(GTK_WINDOW(dialog));
 			return;
 		}
 
-		dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _("Your window manager does not support the show desktop button, or you are not running a window manager."));
+		dialog = ctk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _("Your window manager does not support the show desktop button, or you are not running a window manager."));
 
 		g_object_add_weak_pointer(G_OBJECT(dialog), (gpointer) &dialog);
 
-		g_signal_connect(G_OBJECT(dialog), "response", G_CALLBACK(gtk_widget_destroy), NULL);
+		g_signal_connect(G_OBJECT(dialog), "response", G_CALLBACK(ctk_widget_destroy), NULL);
 
-		gtk_window_set_resizable(GTK_WINDOW(dialog), FALSE);
-		gtk_window_set_screen(GTK_WINDOW(dialog), gtk_widget_get_screen(button));
-		gtk_widget_show(dialog);
+		ctk_window_set_resizable(GTK_WINDOW(dialog), FALSE);
+		ctk_window_set_screen(GTK_WINDOW(dialog), ctk_widget_get_screen(button));
+		ctk_widget_show(dialog);
 
 		return;
 	}
 
 	if (sdd->wnck_screen != NULL)
-		wnck_screen_toggle_showing_desktop(sdd->wnck_screen, gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(button)));
+		wnck_screen_toggle_showing_desktop(sdd->wnck_screen, ctk_toggle_button_get_active(GTK_TOGGLE_BUTTON(button)));
 
 	update_button_display (sdd);
 }

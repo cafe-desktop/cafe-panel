@@ -7,7 +7,7 @@ static void
 test_applet_on_do (GtkAction *action,
 		   gpointer   user_data)
 {
-        g_message ("%s called\n", gtk_action_get_name (action));
+        g_message ("%s called\n", ctk_action_get_name (action));
 }
 
 static const GtkActionEntry test_applet_menu_actions[] = {
@@ -60,11 +60,11 @@ test_applet_handle_orient_change (TestApplet       *applet,
 {
         gchar *text;
 
-        text = g_strdup (gtk_label_get_text (GTK_LABEL (applet->label)));
+        text = g_strdup (ctk_label_get_text (GTK_LABEL (applet->label)));
 
         g_strreverse (text);
 
-        gtk_label_set_text (GTK_LABEL (applet->label), text);
+        ctk_label_set_text (GTK_LABEL (applet->label), text);
 
         g_free (text);
 }
@@ -76,31 +76,31 @@ test_applet_handle_size_change (TestApplet *applet,
 {
 	switch (size) {
 	case 12:
-		gtk_label_set_markup (
+		ctk_label_set_markup (
 			GTK_LABEL (applet->label), "<span size=\"xx-small\">Hello</span>");
 		break;
 	case 24:
-		gtk_label_set_markup (
+		ctk_label_set_markup (
 			GTK_LABEL (applet->label), "<span size=\"x-small\">Hello</span>");
 		break;
 	case 36:
-		gtk_label_set_markup (
+		ctk_label_set_markup (
 			GTK_LABEL (applet->label), "<span size=\"small\">Hello</span>");
 		break;
 	case 48:
-		gtk_label_set_markup (
+		ctk_label_set_markup (
 			GTK_LABEL (applet->label), "<span size=\"medium\">Hello</span>");
 		break;
 	case 64:
-		gtk_label_set_markup (
+		ctk_label_set_markup (
 			GTK_LABEL (applet->label), "<span size=\"large\">Hello</span>");
 		break;
 	case 80:
-		gtk_label_set_markup (
+		ctk_label_set_markup (
 			GTK_LABEL (applet->label), "<span size=\"x-large\">Hello</span>");
 		break;
 	case 128:
-		gtk_label_set_markup (
+		ctk_label_set_markup (
 			GTK_LABEL (applet->label), "<span size=\"xx-large\">Hello</span>");
 		break;
 	default:
@@ -116,7 +116,7 @@ test_applet_handle_background_change (TestApplet                *applet,
 				      cairo_pattern_t           *pattern,
 				      gpointer                   dummy)
 {
-	GdkWindow *window = gtk_widget_get_window (applet->label);
+	GdkWindow *window = ctk_widget_get_window (applet->label);
 
 	switch (type) {
 	case PANEL_NO_BACKGROUND:
@@ -143,11 +143,11 @@ test_applet_fill (TestApplet *applet)
 {
 	GtkActionGroup *action_group;
 
-	applet->label = gtk_label_new (NULL);
+	applet->label = ctk_label_new (NULL);
 
-	gtk_container_add (GTK_CONTAINER (applet), applet->label);
+	ctk_container_add (GTK_CONTAINER (applet), applet->label);
 
-	gtk_widget_show_all (GTK_WIDGET (applet));
+	ctk_widget_show_all (GTK_WIDGET (applet));
 
 	test_applet_handle_size_change (applet,
 					cafe_panel_applet_get_size (CAFE_PANEL_APPLET (applet)),
@@ -156,8 +156,8 @@ test_applet_fill (TestApplet *applet)
 					  cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (applet)),
 					  NULL);
 
-	action_group = gtk_action_group_new ("TestAppletActions");
-	gtk_action_group_add_actions (action_group,
+	action_group = ctk_action_group_new ("TestAppletActions");
+	ctk_action_group_add_actions (action_group,
 				      test_applet_menu_actions,
 				      G_N_ELEMENTS (test_applet_menu_actions),
 				      applet);
@@ -167,7 +167,7 @@ test_applet_fill (TestApplet *applet)
 				 action_group);
 	g_object_unref (action_group);
 
-	gtk_widget_set_tooltip_text (GTK_WIDGET (applet), "Hello Tip");
+	ctk_widget_set_tooltip_text (GTK_WIDGET (applet), "Hello Tip");
 
 	cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (applet), CAFE_PANEL_APPLET_HAS_HANDLE);
 

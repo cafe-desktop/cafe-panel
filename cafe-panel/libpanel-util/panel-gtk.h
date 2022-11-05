@@ -1,5 +1,5 @@
 /*
- * panel-gtk.h: various small extensions to gtk+
+ * panel-ctk.h: various small extensions to ctk+
  *
  * Copyright (C) 2009-2010 Novell, Inc.
  *
@@ -25,15 +25,15 @@
 #ifndef PANEL_GTK_H
 #define PANEL_GTK_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#define PANEL_GTK_BUILDER_GET(builder, name) GTK_WIDGET (gtk_builder_get_object (builder, name))
+#define PANEL_GTK_BUILDER_GET(builder, name) GTK_WIDGET (ctk_builder_get_object (builder, name))
 
-void panel_gtk_file_chooser_add_image_preview (GtkFileChooser *chooser);
+void panel_ctk_file_chooser_add_image_preview (GtkFileChooser *chooser);
 
 GtkWidget* panel_dialog_add_button (GtkDialog   *dialog,
 				    const gchar *button_text,

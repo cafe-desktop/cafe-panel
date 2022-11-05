@@ -27,7 +27,7 @@
 #include "panel-stock-icons.h"
 
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "panel-icon-names.h"
 #include "panel-schemas.h"
@@ -69,21 +69,21 @@ panel_init_stock_icons (GtkIconFactory *factory)
 	int            i;
 
 
-	source = gtk_icon_source_new ();
+	source = ctk_icon_source_new ();
 
 	for (i = 0; i < G_N_ELEMENTS (stock_icons); i++) {
 		GtkIconSet *set;
 
-		gtk_icon_source_set_icon_name (source, stock_icons [i].icon);
+		ctk_icon_source_set_icon_name (source, stock_icons [i].icon);
 
-		set = gtk_icon_set_new ();
-		gtk_icon_set_add_source (set, source);
+		set = ctk_icon_set_new ();
+		ctk_icon_set_add_source (set, source);
 
-		gtk_icon_factory_add (factory, stock_icons [i].stock_id, set);
-		gtk_icon_set_unref (set);
+		ctk_icon_factory_add (factory, stock_icons [i].stock_id, set);
+		ctk_icon_set_unref (set);
 	}
 
-	gtk_icon_source_free (source);
+	ctk_icon_source_free (source);
 
 }
 
@@ -94,10 +94,10 @@ typedef struct {
 } PanelStockItem;
 
 static PanelStockItem stock_items [] = {
-	{ PANEL_STOCK_EXECUTE,     "gtk-execute",          N_("_Run") },
+	{ PANEL_STOCK_EXECUTE,     "ctk-execute",          N_("_Run") },
 	{ PANEL_STOCK_FORCE_QUIT,  PANEL_STOCK_FORCE_QUIT, N_("_Force quit") },
-	{ PANEL_STOCK_CLEAR,       "gtk-clear",            N_("C_lear") },
-	{ PANEL_STOCK_DONT_DELETE, "gtk-cancel",           N_("D_on't Delete") }
+	{ PANEL_STOCK_CLEAR,       "ctk-clear",            N_("C_lear") },
+	{ PANEL_STOCK_DONT_DELETE, "ctk-cancel",           N_("D_on't Delete") }
 };
 
 static void
@@ -118,11 +118,11 @@ panel_init_stock_items (GtkIconFactory *factory)
 		items [i].translation_domain = g_strdup (GETTEXT_PACKAGE);
 
 		/* FIXME: does this take into account the theme? */
-		icon_set = gtk_icon_factory_lookup_default (stock_items [i].stock_icon_id);
-		gtk_icon_factory_add (factory, stock_items [i].stock_id, icon_set);
+		icon_set = ctk_icon_factory_lookup_default (stock_items [i].stock_icon_id);
+		ctk_icon_factory_add (factory, stock_items [i].stock_id, icon_set);
 	}
 
-	gtk_stock_add_static (items, G_N_ELEMENTS (stock_items));
+	ctk_stock_add_static (items, G_N_ELEMENTS (stock_items));
 }
 
 void
@@ -136,33 +136,33 @@ panel_init_stock_icons_and_items (void)
 
 	icon_size = g_settings_get_enum (settings, "item-icon-size");
 	if (icon_size <= 0) {
-		panel_menu_icon_size = gtk_icon_size_register ("panel-menu",
+		panel_menu_icon_size = ctk_icon_size_register ("panel-menu",
 							       PANEL_DEFAULT_MENU_ICON_SIZE,
 							       PANEL_DEFAULT_MENU_ICON_SIZE);
 	} else {
 		/* underscores to prevent themes from altering these settings */
-		panel_menu_icon_size = gtk_icon_size_register ("__panel-menu",
+		panel_menu_icon_size = ctk_icon_size_register ("__panel-menu",
 							       icon_size,
 							       icon_size);
 	}
 
 	icon_size = g_settings_get_enum (settings, "icon-size");
 	if (icon_size <= 0) {
-		panel_menu_bar_icon_size = gtk_icon_size_register ("panel-foobar",
+		panel_menu_bar_icon_size = ctk_icon_size_register ("panel-foobar",
 								   PANEL_DEFAULT_MENU_BAR_ICON_SIZE,
 								   PANEL_DEFAULT_MENU_BAR_ICON_SIZE);
 	} else {
-		panel_menu_bar_icon_size = gtk_icon_size_register ("__panel-foobar",
+		panel_menu_bar_icon_size = ctk_icon_size_register ("__panel-foobar",
 								   icon_size,
 								   icon_size);
 	}
 
-	panel_add_to_icon_size = gtk_icon_size_register ("panel-add-to",
+	panel_add_to_icon_size = ctk_icon_size_register ("panel-add-to",
 							 PANEL_ADD_TO_DEFAULT_ICON_SIZE,
 							 PANEL_ADD_TO_DEFAULT_ICON_SIZE);
 
-	factory = gtk_icon_factory_new ();
-	gtk_icon_factory_add_default (factory);
+	factory = ctk_icon_factory_new ();
+	ctk_icon_factory_add_default (factory);
 
 	panel_init_stock_icons (factory);
 	panel_init_stock_items (factory);

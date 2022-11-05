@@ -35,7 +35,7 @@
 
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkkeysyms.h>
 #include <gio/gio.h>
 
@@ -155,8 +155,8 @@ static void show_help(FishApplet* fish, const char* link_id)
 	else
 		uri = g_strdup_printf ("help:%s", FISH_HELP_DOC);
 
-	gtk_show_uri_on_window (NULL, uri,
-			  gtk_get_current_event_time (), &error);
+	ctk_show_uri_on_window (NULL, uri,
+			  ctk_get_current_event_time (), &error);
 	g_free (uri);
 
 	if (error &&
@@ -169,14 +169,14 @@ static void show_help(FishApplet* fish, const char* link_id)
 		primary = g_markup_printf_escaped (
 				_("Could not display help document '%s'"),
 				FISH_HELP_DOC);
-		dialog = gtk_message_dialog_new (
+		dialog = ctk_message_dialog_new (
 				NULL,
 				GTK_DIALOG_DESTROY_WITH_PARENT,
 				GTK_MESSAGE_ERROR,
 				GTK_BUTTONS_CLOSE,
 				"%s", primary);
 
-		gtk_message_dialog_format_secondary_text (
+		ctk_message_dialog_format_secondary_text (
 					GTK_MESSAGE_DIALOG (dialog),
 					"%s", error->message);
 
@@ -184,18 +184,18 @@ static void show_help(FishApplet* fish, const char* link_id)
 		g_free (primary);
 
 		g_signal_connect (dialog, "response",
-				  G_CALLBACK (gtk_widget_destroy),
+				  G_CALLBACK (ctk_widget_destroy),
 				  NULL);
 
-		gtk_window_set_icon_name (GTK_WINDOW (dialog), FISH_ICON);
-		gtk_window_set_screen (GTK_WINDOW (dialog),
-				       gtk_widget_get_screen (GTK_WIDGET (fish)));
+		ctk_window_set_icon_name (GTK_WINDOW (dialog), FISH_ICON);
+		ctk_window_set_screen (GTK_WINDOW (dialog),
+				       ctk_widget_get_screen (GTK_WIDGET (fish)));
 		/* we have no parent window */
-		gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
-		gtk_window_set_title (GTK_WINDOW (dialog),
+		ctk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
+		ctk_window_set_title (GTK_WINDOW (dialog),
 				      _("Error displaying help document"));
 
-		gtk_widget_show (dialog);
+		ctk_widget_show (dialog);
 	}
 }
 
@@ -203,7 +203,7 @@ static void name_value_changed(GtkEntry* entry, FishApplet* fish)
 {
 	const char *text;
 
-	text = gtk_entry_get_text (entry);
+	text = ctk_entry_get_text (entry);
 
 	if (!text || !text [0])
 		return;
@@ -216,7 +216,7 @@ static void image_value_changed(GtkFileChooser* chooser, FishApplet* fish)
 	char *image;
 	char *path_gsettings;
 
-	path = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
+	path = ctk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
 
 	if (!path || !path[0]) {
 		g_free (path);
@@ -247,7 +247,7 @@ static void command_value_changed(GtkEntry* entry, FishApplet *fish)
 {
 	const char *text;
 
-	text = gtk_entry_get_text (entry);
+	text = ctk_entry_get_text (entry);
 
 	if (!text || !text [0]) {
 		g_settings_set_string (fish->settings, FISH_COMMAND_KEY, "");
@@ -291,7 +291,7 @@ static void n_frames_value_changed(GtkSpinButton* button, FishApplet* fish)
         g_settings_set_int (
 			fish->settings,
 			FISH_FRAMES_KEY,
-			gtk_spin_button_get_value_as_int (button));
+			ctk_spin_button_get_value_as_int (button));
 }
 
 static void speed_value_changed (GtkSpinButton* button, FishApplet* fish)
@@ -299,7 +299,7 @@ static void speed_value_changed (GtkSpinButton* button, FishApplet* fish)
         g_settings_set_double (
 			fish->settings,
 			FISH_SPEED_KEY,
-			gtk_spin_button_get_value (button));
+			ctk_spin_button_get_value (button));
 }
 
 static void rotate_value_changed(GtkToggleButton* toggle, FishApplet* fish)
@@ -307,12 +307,12 @@ static void rotate_value_changed(GtkToggleButton* toggle, FishApplet* fish)
 		g_settings_set_boolean (
 			fish->settings,
 			FISH_ROTATE_KEY,
-			gtk_toggle_button_get_active (toggle));
+			ctk_toggle_button_get_active (toggle));
 }
 
 static gboolean delete_event(GtkWidget* widget, FishApplet* fish)
 {
-	gtk_widget_hide (widget);
+	ctk_widget_hide (widget);
 
 	return TRUE;
 }
@@ -324,7 +324,7 @@ static void handle_response(GtkWidget* widget, int id, FishApplet* fish)
 		return;
 	}
 
-	gtk_widget_hide (fish->preferences_dialog);
+	ctk_widget_hide (fish->preferences_dialog);
 }
 
 static void setup_sensitivity(FishApplet* fish, GtkBuilder* builder, const char* wid, const char* label, const char* label_post, const char* key)
@@ -335,19 +335,19 @@ static void setup_sensitivity(FishApplet* fish, GtkBuilder* builder, const char*
 		return;
 	}
 
-	w = GTK_WIDGET (gtk_builder_get_object (builder, wid));
+	w = GTK_WIDGET (ctk_builder_get_object (builder, wid));
 	g_assert (w != NULL);
-	gtk_widget_set_sensitive (w, FALSE);
+	ctk_widget_set_sensitive (w, FALSE);
 
 	if (label != NULL) {
-		w = GTK_WIDGET (gtk_builder_get_object (builder, label));
+		w = GTK_WIDGET (ctk_builder_get_object (builder, label));
 		g_assert (w != NULL);
-		gtk_widget_set_sensitive (w, FALSE);
+		ctk_widget_set_sensitive (w, FALSE);
 	}
 	if (label_post != NULL) {
-		w = GTK_WIDGET (gtk_builder_get_object (builder, label_post));
+		w = GTK_WIDGET (ctk_builder_get_object (builder, label_post));
 		g_assert (w != NULL);
-		gtk_widget_set_sensitive (w, FALSE);
+		ctk_widget_set_sensitive (w, FALSE);
 	}
 
 }
@@ -360,7 +360,7 @@ static void chooser_preview_update(GtkFileChooser* file_chooser, gpointer data)
 	gboolean   have_preview;
 
 	preview = GTK_WIDGET (data);
-	filename = gtk_file_chooser_get_preview_filename (file_chooser);
+	filename = ctk_file_chooser_get_preview_filename (file_chooser);
 
 	if (filename == NULL)
 		return;
@@ -369,11 +369,11 @@ static void chooser_preview_update(GtkFileChooser* file_chooser, gpointer data)
 	have_preview = (pixbuf != NULL);
 	g_free (filename);
 
-	gtk_image_set_from_pixbuf (GTK_IMAGE (preview), pixbuf);
+	ctk_image_set_from_pixbuf (GTK_IMAGE (preview), pixbuf);
 	if (pixbuf)
 		g_object_unref (pixbuf);
 
-	gtk_file_chooser_set_preview_widget_active (file_chooser,
+	ctk_file_chooser_set_preview_widget_active (file_chooser,
 						    have_preview);
 }
 
@@ -386,28 +386,28 @@ static void display_preferences_dialog(GtkAction* action, FishApplet* fish)
 	char          *path;
 
 	if (fish->preferences_dialog) {
-		gtk_window_set_screen (GTK_WINDOW (fish->preferences_dialog),
-				       gtk_widget_get_screen (GTK_WIDGET (fish)));
-		gtk_window_present (GTK_WINDOW (fish->preferences_dialog));
+		ctk_window_set_screen (GTK_WINDOW (fish->preferences_dialog),
+				       ctk_widget_get_screen (GTK_WIDGET (fish)));
+		ctk_window_present (GTK_WINDOW (fish->preferences_dialog));
 		return;
 	}
 
-	builder = gtk_builder_new ();
-	gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
-	gtk_builder_add_from_resource (builder, FISH_RESOURCE_PATH "fish.ui", NULL);
+	builder = ctk_builder_new ();
+	ctk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
+	ctk_builder_add_from_resource (builder, FISH_RESOURCE_PATH "fish.ui", NULL);
 
-	fish->preferences_dialog = GTK_WIDGET (gtk_builder_get_object (builder, "fish_preferences_dialog"));
+	fish->preferences_dialog = GTK_WIDGET (ctk_builder_get_object (builder, "fish_preferences_dialog"));
 
 	g_object_add_weak_pointer (G_OBJECT (fish->preferences_dialog),
 				   (void**) &fish->preferences_dialog);
 
-	gtk_window_set_icon_name (GTK_WINDOW (fish->preferences_dialog),
+	ctk_window_set_icon_name (GTK_WINDOW (fish->preferences_dialog),
 				  FISH_ICON);
-	gtk_dialog_set_default_response (
+	ctk_dialog_set_default_response (
 		GTK_DIALOG (fish->preferences_dialog), GTK_RESPONSE_OK);
 
-	fish->name_entry = GTK_WIDGET (gtk_builder_get_object (builder, "name_entry"));
-	gtk_entry_set_text (GTK_ENTRY (fish->name_entry), fish->name);
+	fish->name_entry = GTK_WIDGET (ctk_builder_get_object (builder, "name_entry"));
+	ctk_entry_set_text (GTK_ENTRY (fish->name_entry), fish->name);
 
 	g_signal_connect (fish->name_entry, "changed",
 			  G_CALLBACK (name_value_changed), fish);
@@ -418,26 +418,26 @@ static void display_preferences_dialog(GtkAction* action, FishApplet* fish)
 			   NULL /* label_post */,
 			   FISH_NAME_KEY /* key */);
 
-	fish->preview_image = GTK_WIDGET (gtk_builder_get_object (builder, "preview_image"));
+	fish->preview_image = GTK_WIDGET (ctk_builder_get_object (builder, "preview_image"));
 	if (fish->pixbuf)
-		gtk_image_set_from_pixbuf (GTK_IMAGE (fish->preview_image),
+		ctk_image_set_from_pixbuf (GTK_IMAGE (fish->preview_image),
 					   fish->pixbuf);
 
-	fish->image_chooser =  GTK_WIDGET (gtk_builder_get_object (builder, "image_chooser"));
-	filter = gtk_file_filter_new ();
-	gtk_file_filter_set_name (filter, _("Images"));
-	gtk_file_filter_add_pixbuf_formats (filter);
-	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (fish->image_chooser),
+	fish->image_chooser =  GTK_WIDGET (ctk_builder_get_object (builder, "image_chooser"));
+	filter = ctk_file_filter_new ();
+	ctk_file_filter_set_name (filter, _("Images"));
+	ctk_file_filter_add_pixbuf_formats (filter);
+	ctk_file_chooser_add_filter (GTK_FILE_CHOOSER (fish->image_chooser),
 				     filter);
-	gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (fish->image_chooser),
+	ctk_file_chooser_set_filter (GTK_FILE_CHOOSER (fish->image_chooser),
 				     filter);
-	chooser_preview = gtk_image_new ();
-	gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (fish->image_chooser),
+	chooser_preview = ctk_image_new ();
+	ctk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (fish->image_chooser),
 					     chooser_preview);
 	g_signal_connect (fish->image_chooser, "update-preview",
 			  G_CALLBACK (chooser_preview_update), chooser_preview);
 	path = get_image_path (fish);
-	gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (fish->image_chooser),
+	ctk_file_chooser_set_filename (GTK_FILE_CHOOSER (fish->image_chooser),
 				       path);
 	g_free (path);
 
@@ -450,9 +450,9 @@ static void display_preferences_dialog(GtkAction* action, FishApplet* fish)
 			   NULL /* label_post */,
 			   FISH_IMAGE_KEY /* key */);
 
-	fish->command_label = GTK_WIDGET (gtk_builder_get_object (builder, "command_label"));
-	fish->command_entry = GTK_WIDGET (gtk_builder_get_object (builder, "command_entry"));
-	gtk_entry_set_text (GTK_ENTRY (fish->command_entry), fish->command);
+	fish->command_label = GTK_WIDGET (ctk_builder_get_object (builder, "command_label"));
+	fish->command_entry = GTK_WIDGET (ctk_builder_get_object (builder, "command_entry"));
+	ctk_entry_set_text (GTK_ENTRY (fish->command_entry), fish->command);
 
 	g_signal_connect (fish->command_entry, "changed",
 			  G_CALLBACK (command_value_changed), fish);
@@ -464,12 +464,12 @@ static void display_preferences_dialog(GtkAction* action, FishApplet* fish)
 			   FISH_COMMAND_KEY /* key */);
 
 	if (g_settings_get_boolean (fish->lockdown_settings, LOCKDOWN_DISABLE_COMMAND_LINE_KEY)) {
-		gtk_widget_set_sensitive (fish->command_label, FALSE);
-		gtk_widget_set_sensitive (fish->command_entry, FALSE);
+		ctk_widget_set_sensitive (fish->command_label, FALSE);
+		ctk_widget_set_sensitive (fish->command_entry, FALSE);
 	}
 
-	fish->frames_spin = GTK_WIDGET (gtk_builder_get_object (builder, "frames_spin"));
-	gtk_spin_button_set_value (GTK_SPIN_BUTTON (fish->frames_spin),
+	fish->frames_spin = GTK_WIDGET (ctk_builder_get_object (builder, "frames_spin"));
+	ctk_spin_button_set_value (GTK_SPIN_BUTTON (fish->frames_spin),
 				   fish->n_frames);
 
 	g_signal_connect (fish->frames_spin, "value_changed",
@@ -481,8 +481,8 @@ static void display_preferences_dialog(GtkAction* action, FishApplet* fish)
 			   "frames_post_label" /* label_post */,
 			   FISH_FRAMES_KEY /* key */);
 
-	fish->speed_spin = GTK_WIDGET (gtk_builder_get_object (builder, "speed_spin"));
-	gtk_spin_button_set_value (GTK_SPIN_BUTTON (fish->speed_spin), fish->speed);
+	fish->speed_spin = GTK_WIDGET (ctk_builder_get_object (builder, "speed_spin"));
+	ctk_spin_button_set_value (GTK_SPIN_BUTTON (fish->speed_spin), fish->speed);
 
 	g_signal_connect (fish->speed_spin, "value_changed",
 			  G_CALLBACK (speed_value_changed), fish);
@@ -493,8 +493,8 @@ static void display_preferences_dialog(GtkAction* action, FishApplet* fish)
 			   "speed_post_label" /* label_post */,
 			   FISH_SPEED_KEY /* key */);
 
-	fish->rotate_toggle = GTK_WIDGET (gtk_builder_get_object (builder, "rotate_toggle"));
-	gtk_toggle_button_set_active (
+	fish->rotate_toggle = GTK_WIDGET (ctk_builder_get_object (builder, "rotate_toggle"));
+	ctk_toggle_button_set_active (
 		GTK_TOGGLE_BUTTON (fish->rotate_toggle), fish->rotate);
 
 	g_signal_connect (fish->rotate_toggle, "toggled",
@@ -511,15 +511,15 @@ static void display_preferences_dialog(GtkAction* action, FishApplet* fish)
 	g_signal_connect (fish->preferences_dialog, "response",
 			  G_CALLBACK (handle_response), fish);
 
-	button = GTK_WIDGET (gtk_builder_get_object (builder, "done_button"));
+	button = GTK_WIDGET (ctk_builder_get_object (builder, "done_button"));
         g_signal_connect_swapped (button, "clicked",
-				  (GCallback) gtk_widget_hide,
+				  (GCallback) ctk_widget_hide,
 				  fish->preferences_dialog);
 
-	gtk_window_set_screen (GTK_WINDOW (fish->preferences_dialog),
-			       gtk_widget_get_screen (GTK_WIDGET (fish)));
-	gtk_window_set_resizable (GTK_WINDOW (fish->preferences_dialog), FALSE);
-	gtk_window_present (GTK_WINDOW (fish->preferences_dialog));
+	ctk_window_set_screen (GTK_WINDOW (fish->preferences_dialog),
+			       ctk_widget_get_screen (GTK_WIDGET (fish)));
+	ctk_window_set_resizable (GTK_WINDOW (fish->preferences_dialog), FALSE);
+	ctk_window_present (GTK_WINDOW (fish->preferences_dialog));
 
 	g_object_unref (builder);
 }
@@ -554,7 +554,7 @@ static void display_about_dialog(GtkAction* action, FishApplet* fish)
 
 	descr = g_strdup_printf(about_format, fish->name);
 
-	gtk_show_about_dialog(NULL,
+	ctk_show_about_dialog(NULL,
 		"program-name", _("Fish"),
 		"title", _("About Fish"),
 		"authors", authors,
@@ -580,7 +580,7 @@ static void set_ally_name_desc(GtkWidget* widget, FishApplet* fish)
 	AtkObject  *obj;
 	char       *desc, *name;
 
-	obj = gtk_widget_get_accessible (widget);
+	obj = ctk_widget_get_accessible (widget);
 	/* Return immediately if GAIL is not loaded */
 	if (!GTK_IS_ACCESSIBLE (obj))
 		return;
@@ -598,21 +598,21 @@ static void something_fishy_going_on(FishApplet* fish, const char* message)
 {
 	GtkWidget *dialog;
 
-	dialog = gtk_message_dialog_new (NULL,
+	dialog = ctk_message_dialog_new (NULL,
 					 GTK_DIALOG_DESTROY_WITH_PARENT,
 					 GTK_MESSAGE_ERROR,
 					 GTK_BUTTONS_CLOSE,
 					 "%s", message);
 
 	g_signal_connect (dialog, "response",
-			  G_CALLBACK (gtk_widget_destroy),
+			  G_CALLBACK (ctk_widget_destroy),
 			  NULL);
 
-	gtk_window_set_icon_name (GTK_WINDOW (dialog), FISH_ICON);
-	gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
-	gtk_window_set_screen (GTK_WINDOW (dialog),
-			       gtk_widget_get_screen (GTK_WIDGET (fish)));
-	gtk_widget_show (dialog);
+	ctk_window_set_icon_name (GTK_WINDOW (dialog), FISH_ICON);
+	ctk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
+	ctk_window_set_screen (GTK_WINDOW (dialog),
+			       ctk_widget_get_screen (GTK_WIDGET (fish)));
+	ctk_widget_show (dialog);
 }
 
 static gboolean locate_fortune_command (FishApplet* fish, int* argcp, char*** argvp)
@@ -668,7 +668,7 @@ static void handle_fortune_response(GtkWidget* widget, int id, FishApplet* fish)
 			g_source_remove (fish->source_id);
 		fish->source_id = 0;
 		fish_close_channel (fish);
-		gtk_widget_hide (fish->fortune_dialog);
+		ctk_widget_hide (fish->fortune_dialog);
 	}
 }
 
@@ -682,14 +682,14 @@ static void update_fortune_dialog(FishApplet* fish)
 
 	/* xgettext:no-c-format */
 	text = g_strdup_printf (_("%s the Fish"), fish->name);
-	gtk_window_set_title (GTK_WINDOW (fish->fortune_dialog), text);
+	ctk_window_set_title (GTK_WINDOW (fish->fortune_dialog), text);
 	g_free (text);
 
 	/* xgettext:no-c-format */
 	label_text = g_strdup_printf (_("%s the Fish Says:"), fish->name);
 
 	text = g_strdup_printf ("<big><big>%s</big></big>", label_text);
-	gtk_label_set_markup (GTK_LABEL (fish->fortune_label), text);
+	ctk_label_set_markup (GTK_LABEL (fish->fortune_label), text);
 	g_free (text);
 
 	g_free (label_text);
@@ -701,25 +701,25 @@ static void insert_fortune_text(FishApplet* fish, const char* text)
 {
 	GtkTextIter iter;
 
-	gtk_text_buffer_get_iter_at_offset (fish->fortune_buffer, &iter, -1);
+	ctk_text_buffer_get_iter_at_offset (fish->fortune_buffer, &iter, -1);
 
-	gtk_text_buffer_insert_with_tags_by_name (fish->fortune_buffer, &iter,
+	ctk_text_buffer_insert_with_tags_by_name (fish->fortune_buffer, &iter,
 						  text, -1, "monospace_tag",
 						  NULL);
 
-	while (gtk_events_pending ())
-	  gtk_main_iteration ();
+	while (ctk_events_pending ())
+	  ctk_main_iteration ();
 }
 
 static void clear_fortune_text(FishApplet* fish)
 {
 	GtkTextIter begin, end;
 
-	gtk_text_buffer_get_iter_at_offset (fish->fortune_buffer, &begin, 0);
-	gtk_text_buffer_get_iter_at_offset (fish->fortune_buffer, &end, -1);
+	ctk_text_buffer_get_iter_at_offset (fish->fortune_buffer, &begin, 0);
+	ctk_text_buffer_get_iter_at_offset (fish->fortune_buffer, &end, -1);
 
-	gtk_text_buffer_delete (fish->fortune_buffer, &begin, &end);
-	gtk_text_buffer_remove_tag_by_name (fish->fortune_buffer,
+	ctk_text_buffer_delete (fish->fortune_buffer, &begin, &end);
+	ctk_text_buffer_remove_tag_by_name (fish->fortune_buffer,
 					    "monospace_tag", &begin, &end);
 
 	/* insert an empty line */
@@ -802,14 +802,14 @@ panel_dialog_add_button (GtkDialog   *dialog,
 {
 	GtkWidget *button;
 
-	button = gtk_button_new_with_mnemonic (button_text);
-	gtk_button_set_image (GTK_BUTTON (button), gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON));
+	button = ctk_button_new_with_mnemonic (button_text);
+	ctk_button_set_image (GTK_BUTTON (button), ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON));
 
-	gtk_button_set_use_underline (GTK_BUTTON (button), TRUE);
-	gtk_style_context_add_class (gtk_widget_get_style_context (button), "text-button");
-	gtk_widget_set_can_default (button, TRUE);
-	gtk_widget_show (button);
-	gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
+	ctk_button_set_use_underline (GTK_BUTTON (button), TRUE);
+	ctk_style_context_add_class (ctk_widget_get_style_context (button), "text-button");
+	ctk_widget_set_can_default (button, TRUE);
+	ctk_widget_show (button);
+	ctk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
 
 	return button;
 }
@@ -842,10 +842,10 @@ static void display_fortune_dialog(FishApplet* fish)
 		GdkMonitor *monitor;
 		GdkRectangle monitor_geom;
 
-		fish->fortune_dialog = gtk_dialog_new ();
-		gtk_window_set_title (GTK_WINDOW (fish->fortune_dialog), "");
+		fish->fortune_dialog = ctk_dialog_new ();
+		ctk_window_set_title (GTK_WINDOW (fish->fortune_dialog), "");
 
-		gtk_dialog_add_button (GTK_DIALOG (fish->fortune_dialog),
+		ctk_dialog_add_button (GTK_DIALOG (fish->fortune_dialog),
 				       _("_Speak again"),
 				       FISH_RESPONSE_SPEAK);
 
@@ -853,10 +853,10 @@ static void display_fortune_dialog(FishApplet* fish)
 					 _("_Close"), "window-close",
 					 GTK_RESPONSE_CLOSE);
 
-		gtk_window_set_icon_name (GTK_WINDOW (fish->fortune_dialog),
+		ctk_window_set_icon_name (GTK_WINDOW (fish->fortune_dialog),
 					  FISH_ICON);
 
-		gtk_dialog_set_default_response (
+		ctk_dialog_set_default_response (
 			GTK_DIALOG (fish->fortune_dialog), GTK_RESPONSE_CLOSE);
 
 		g_signal_connect (fish->fortune_dialog, "delete_event",
@@ -864,51 +864,51 @@ static void display_fortune_dialog(FishApplet* fish)
 		g_signal_connect (fish->fortune_dialog, "response",
 				  G_CALLBACK (handle_fortune_response), fish);
 
-		monitor = gdk_display_get_monitor_at_window (gtk_widget_get_display (GTK_WIDGET (fish)),
-							     gtk_widget_get_window (GTK_WIDGET (fish)));
+		monitor = gdk_display_get_monitor_at_window (ctk_widget_get_display (GTK_WIDGET (fish)),
+							     ctk_widget_get_window (GTK_WIDGET (fish)));
 		gdk_monitor_get_geometry(monitor, &monitor_geom);
-		gtk_window_set_default_size (GTK_WINDOW (fish->fortune_dialog),
+		ctk_window_set_default_size (GTK_WINDOW (fish->fortune_dialog),
 					     MIN (600, monitor_geom.width  * 0.9),
 					     MIN (350, monitor_geom.height * 0.9));
 
-		fish->fortune_view = gtk_text_view_new ();
-		gtk_text_view_set_editable (GTK_TEXT_VIEW (fish->fortune_view), FALSE);
-		gtk_text_view_set_cursor_visible (GTK_TEXT_VIEW (fish->fortune_view), FALSE);
-		gtk_text_view_set_left_margin (GTK_TEXT_VIEW (fish->fortune_view), 10);
-		gtk_text_view_set_right_margin (GTK_TEXT_VIEW (fish->fortune_view), 10);
+		fish->fortune_view = ctk_text_view_new ();
+		ctk_text_view_set_editable (GTK_TEXT_VIEW (fish->fortune_view), FALSE);
+		ctk_text_view_set_cursor_visible (GTK_TEXT_VIEW (fish->fortune_view), FALSE);
+		ctk_text_view_set_left_margin (GTK_TEXT_VIEW (fish->fortune_view), 10);
+		ctk_text_view_set_right_margin (GTK_TEXT_VIEW (fish->fortune_view), 10);
 		fish->fortune_buffer =
-			gtk_text_view_get_buffer (GTK_TEXT_VIEW (fish->fortune_view));
+			ctk_text_view_get_buffer (GTK_TEXT_VIEW (fish->fortune_view));
 
-		gtk_text_buffer_create_tag (GTK_TEXT_BUFFER (fish->fortune_buffer),
+		ctk_text_buffer_create_tag (GTK_TEXT_BUFFER (fish->fortune_buffer),
 					    "monospace_tag", "family",
 					    "Monospace", NULL);
 
-		scrolled = gtk_scrolled_window_new (NULL, NULL);
-		gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
+		scrolled = ctk_scrolled_window_new (NULL, NULL);
+		ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
 						GTK_POLICY_AUTOMATIC,
 						GTK_POLICY_AUTOMATIC);
-		gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolled),
+		ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolled),
 						     GTK_SHADOW_IN);
 
-		gtk_container_add (GTK_CONTAINER (scrolled), fish->fortune_view);
+		ctk_container_add (GTK_CONTAINER (scrolled), fish->fortune_view);
 
-		fish->fortune_label = gtk_label_new ("");
-		gtk_label_set_ellipsize (GTK_LABEL (fish->fortune_label),
+		fish->fortune_label = ctk_label_new ("");
+		ctk_label_set_ellipsize (GTK_LABEL (fish->fortune_label),
 					 PANGO_ELLIPSIZE_MIDDLE);
-		fish->fortune_cmd_label = gtk_label_new ("");
-		gtk_label_set_xalign (GTK_LABEL (fish->fortune_cmd_label), 0.0);
-		gtk_label_set_yalign (GTK_LABEL (fish->fortune_cmd_label), 0.5);
+		fish->fortune_cmd_label = ctk_label_new ("");
+		ctk_label_set_xalign (GTK_LABEL (fish->fortune_cmd_label), 0.0);
+		ctk_label_set_yalign (GTK_LABEL (fish->fortune_cmd_label), 0.5);
 
-		vbox = gtk_dialog_get_content_area (GTK_DIALOG (fish->fortune_dialog));
-		gtk_box_pack_start (GTK_BOX (vbox),
+		vbox = ctk_dialog_get_content_area (GTK_DIALOG (fish->fortune_dialog));
+		ctk_box_pack_start (GTK_BOX (vbox),
 				    fish->fortune_label,
 				    FALSE, FALSE, 6);
 
-		gtk_box_pack_start (GTK_BOX (vbox),
+		ctk_box_pack_start (GTK_BOX (vbox),
 				    scrolled,
 				    TRUE, TRUE, 6);
 
-		gtk_box_pack_start (GTK_BOX (vbox),
+		ctk_box_pack_start (GTK_BOX (vbox),
 				    fish->fortune_cmd_label,
 				    FALSE, FALSE, 6);
 
@@ -916,10 +916,10 @@ static void display_fortune_dialog(FishApplet* fish)
 
 		/* We don't show_all for the dialog since fortune_cmd_label
 		 * might need to be hidden
-		 * The dialog will be shown with gtk_window_present later */
-		gtk_widget_show (scrolled);
-		gtk_widget_show (fish->fortune_view);
-		gtk_widget_show (fish->fortune_label);
+		 * The dialog will be shown with ctk_window_present later */
+		ctk_widget_show (scrolled);
+		ctk_widget_show (fish->fortune_view);
+		ctk_widget_show (fish->fortune_label);
 	}
 
 	if (!user_command) {
@@ -930,18 +930,18 @@ static void display_fortune_dialog(FishApplet* fish)
 		text = g_strdup_printf (_("The configured command is not "
 					  "working and has been replaced by: "
 					  "%s"), command);
-		gtk_label_set_markup (GTK_LABEL (fish->fortune_cmd_label),
+		ctk_label_set_markup (GTK_LABEL (fish->fortune_cmd_label),
 				      text);
 		g_free (command);
 		g_free (text);
-		gtk_widget_show (fish->fortune_cmd_label);
+		ctk_widget_show (fish->fortune_cmd_label);
 	} else {
-		gtk_widget_hide (fish->fortune_cmd_label);
+		ctk_widget_hide (fish->fortune_cmd_label);
 	}
 
 	clear_fortune_text (fish);
 
-	screen = gtk_widget_get_screen (GTK_WIDGET (fish));
+	screen = ctk_widget_get_screen (GTK_WIDGET (fish));
 	display = gdk_screen_get_display (screen);
 	display_name = g_strdup (gdk_display_get_name (display));
 	g_spawn_async_with_pipes (NULL, /* working directory */
@@ -991,9 +991,9 @@ static void display_fortune_dialog(FishApplet* fish)
 					  G_IO_IN|G_IO_ERR|G_IO_HUP|G_IO_NVAL,
 					  fish_read_output, fish);
 
-	gtk_window_set_screen (GTK_WINDOW (fish->fortune_dialog),
-			       gtk_widget_get_screen (GTK_WIDGET (fish)));
-	gtk_window_present (GTK_WINDOW (fish->fortune_dialog));
+	ctk_window_set_screen (GTK_WINDOW (fish->fortune_dialog),
+			       ctk_widget_get_screen (GTK_WIDGET (fish)));
+	ctk_window_present (GTK_WINDOW (fish->fortune_dialog));
 }
 
 static void name_changed_notify(GSettings* settings, gchar* key, FishApplet* fish)
@@ -1014,8 +1014,8 @@ static void name_changed_notify(GSettings* settings, gchar* key, FishApplet* fis
 	set_ally_name_desc (GTK_WIDGET (fish), fish);
 
 	if (fish->name_entry &&
-	    strcmp (gtk_entry_get_text (GTK_ENTRY (fish->name_entry)), fish->name))
-		gtk_entry_set_text (GTK_ENTRY (fish->name_entry), fish->name);
+	    strcmp (ctk_entry_get_text (GTK_ENTRY (fish->name_entry)), fish->name))
+		ctk_entry_set_text (GTK_ENTRY (fish->name_entry), fish->name);
 
 	if (value)
 		g_free (value);
@@ -1042,9 +1042,9 @@ static void image_changed_notify(GSettings* settings, gchar* key, FishApplet* fi
 		char *path_chooser;
 
 		path_gsettings = get_image_path (fish);
-		path_chooser = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (fish->image_chooser));
+		path_chooser = ctk_file_chooser_get_filename (GTK_FILE_CHOOSER (fish->image_chooser));
 		if (strcmp (path_gsettings, path_chooser))
-			gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (fish->image_chooser),
+			ctk_file_chooser_set_filename (GTK_FILE_CHOOSER (fish->image_chooser),
 						       path_gsettings);
 
 		g_free (path_gsettings);
@@ -1069,8 +1069,8 @@ static void command_changed_notify(GSettings* settings, gchar* key, FishApplet* 
 	fish->command = g_strdup (value);
 
 	if (fish->command_entry &&
-	    strcmp (gtk_entry_get_text (GTK_ENTRY (fish->command_entry)), fish->command))
-		gtk_entry_set_text (GTK_ENTRY (fish->command_entry), fish->command);
+	    strcmp (ctk_entry_get_text (GTK_ENTRY (fish->command_entry)), fish->command))
+		ctk_entry_set_text (GTK_ENTRY (fish->command_entry), fish->command);
 
 	if (value)
 		g_free (value);
@@ -1093,8 +1093,8 @@ static void n_frames_changed_notify(GSettings* settings, gchar* key, FishApplet*
 	update_pixmap (fish);
 
 	if (fish->frames_spin &&
-	    gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (fish->frames_spin)) != fish->n_frames)
-		gtk_spin_button_set_value (GTK_SPIN_BUTTON (fish->frames_spin), fish->n_frames);
+	    ctk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (fish->frames_spin)) != fish->n_frames)
+		ctk_spin_button_set_value (GTK_SPIN_BUTTON (fish->frames_spin), fish->n_frames);
 }
 
 static char* get_location(void)
@@ -1206,7 +1206,7 @@ static gboolean timeout_handler(gpointer data)
 	if (fish->current_frame >= fish->n_frames)
 		fish->current_frame = 0;
 
-	gtk_widget_queue_draw (fish->drawing_area);
+	ctk_widget_queue_draw (fish->drawing_area);
 
 	return TRUE;
 }
@@ -1234,8 +1234,8 @@ static void speed_changed_notify(GSettings* settings, gchar* key, FishApplet* fi
 	setup_timeout (fish);
 
 	if (fish->speed_spin &&
-	    gtk_spin_button_get_value (GTK_SPIN_BUTTON (fish->frames_spin)) != fish->speed)
-		gtk_spin_button_set_value (GTK_SPIN_BUTTON (fish->speed_spin), fish->speed);
+	    ctk_spin_button_get_value (GTK_SPIN_BUTTON (fish->frames_spin)) != fish->speed)
+		ctk_spin_button_set_value (GTK_SPIN_BUTTON (fish->speed_spin), fish->speed);
 }
 
 static void rotate_changed_notify(GSettings* settings, gchar* key, FishApplet* fish)
@@ -1253,8 +1253,8 @@ static void rotate_changed_notify(GSettings* settings, gchar* key, FishApplet* f
 		update_pixmap (fish);
 
 	if (fish->rotate_toggle &&
-	    gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (fish->rotate_toggle)) != fish->rotate)
-		gtk_toggle_button_set_active (
+	    ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (fish->rotate_toggle)) != fish->rotate)
+		ctk_toggle_button_set_active (
 			GTK_TOGGLE_BUTTON (fish->rotate_toggle), fish->rotate);
 }
 
@@ -1265,9 +1265,9 @@ static void fish_disable_commande_line_notify(GSettings* settings, gchar* key, F
 	locked_down = !g_settings_get_boolean (settings, key);
 
 	if (fish->command_label != NULL)
-		gtk_widget_set_sensitive (fish->command_label, locked_down);
+		ctk_widget_set_sensitive (fish->command_label, locked_down);
 	if (fish->command_entry != NULL)
-		gtk_widget_set_sensitive (fish->command_entry, locked_down);
+		ctk_widget_set_sensitive (fish->command_entry, locked_down);
 }
 
 static void setup_gsettings(FishApplet* fish)
@@ -1331,7 +1331,7 @@ static gboolean load_fish_image(FishApplet* fish)
 	fish->pixbuf = pixbuf;
 
 	if (fish->preview_image)
-		gtk_image_set_from_pixbuf (GTK_IMAGE (fish->preview_image),
+		ctk_image_set_from_pixbuf (GTK_IMAGE (fish->preview_image),
 					   fish->pixbuf);
 
 	g_free (path);
@@ -1360,9 +1360,9 @@ static void update_pixmap(FishApplet* fish)
 	cairo_matrix_t matrix;
 	cairo_pattern_t *pattern;
 
-	gtk_widget_get_allocation (widget, &allocation);
+	ctk_widget_get_allocation (widget, &allocation);
 
-	if (!gtk_widget_get_realized (widget) ||
+	if (!ctk_widget_get_realized (widget) ||
 	    allocation.width <= 0 ||
 	    allocation.height <= 0)
 		return;
@@ -1402,7 +1402,7 @@ static void update_pixmap(FishApplet* fish)
 
 	if (prev_requisition.width  != fish->requisition.width ||
 	    prev_requisition.height != fish->requisition.height) {
-		gtk_widget_set_size_request (widget,
+		ctk_widget_set_size_request (widget,
 					     fish->requisition.width,
 					     fish->requisition.height);
 		}
@@ -1414,13 +1414,13 @@ static void update_pixmap(FishApplet* fish)
 
 	if (fish->surface)
 		cairo_surface_destroy (fish->surface);
-	fish->surface = gdk_window_create_similar_surface (gtk_widget_get_window (widget),
+	fish->surface = gdk_window_create_similar_surface (ctk_widget_get_window (widget),
 													   CAIRO_CONTENT_COLOR_ALPHA,
 													   width, height);
 	fish->surface_width = width;
 	fish->surface_height = height;
 
-	gtk_widget_queue_resize (widget);
+	ctk_widget_queue_resize (widget);
 
 	g_assert (pixbuf_width != -1 && pixbuf_height != -1);
 
@@ -1545,20 +1545,20 @@ static void change_water(FishApplet* fish)
 {
 	GtkWidget *dialog;
 
-	dialog = gtk_message_dialog_new (
+	dialog = ctk_message_dialog_new (
 			NULL, 0, GTK_MESSAGE_INFO,
 			GTK_BUTTONS_OK,
 			_("The water needs changing"));
-	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+	ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
 						  _("Look at today's date!"));
-	gtk_window_set_icon_name (GTK_WINDOW (dialog), FISH_ICON);
-	gtk_window_set_screen (GTK_WINDOW (dialog),
-			       gtk_widget_get_screen (GTK_WIDGET (fish)));
+	ctk_window_set_icon_name (GTK_WINDOW (dialog), FISH_ICON);
+	ctk_window_set_screen (GTK_WINDOW (dialog),
+			       ctk_widget_get_screen (GTK_WIDGET (fish)));
 
-	gtk_widget_show_all (dialog);
+	ctk_widget_show_all (dialog);
 
 	g_signal_connect (dialog, "response",
-			  G_CALLBACK (gtk_widget_destroy), NULL);
+			  G_CALLBACK (ctk_widget_destroy), NULL);
 }
 
 static gboolean handle_keypress(GtkWidget* widget, GdkEventKey* event, FishApplet* fish)
@@ -1591,7 +1591,7 @@ static gboolean fish_enter_notify(GtkWidget* widget, GdkEventCrossing* event)
   GtkWidget  *event_widget;
 
   fish = FISH_APPLET (widget);
-  event_widget = gtk_get_event_widget ((GdkEvent*) event);
+  event_widget = ctk_get_event_widget ((GdkEvent*) event);
 
   if ((event_widget == widget) &&
       (event->detail != GDK_NOTIFY_INFERIOR))
@@ -1606,7 +1606,7 @@ static gboolean fish_leave_notify(GtkWidget* widget, GdkEventCrossing* event)
   GtkWidget  *event_widget;
 
   fish = FISH_APPLET (widget);
-  event_widget = gtk_get_event_widget ((GdkEvent*) event);
+  event_widget = ctk_get_event_widget ((GdkEvent*) event);
 
   if ((event_widget == widget) &&
       (event->detail != GDK_NOTIFY_INFERIOR))
@@ -1636,7 +1636,7 @@ static void set_tooltip(FishApplet* fish)
 	char       *desc;
 
 	desc = g_markup_printf_escaped (desc_format, fish->name);
-	gtk_widget_set_tooltip_markup (GTK_WIDGET (fish), desc);
+	ctk_widget_set_tooltip_markup (GTK_WIDGET (fish), desc);
 	g_free (desc);
 }
 
@@ -1644,12 +1644,12 @@ static void setup_fish_widget(FishApplet* fish)
 {
 	GtkWidget *widget = (GtkWidget *) fish;
 
-	fish->frame = gtk_frame_new (NULL);
-	gtk_frame_set_shadow_type (GTK_FRAME (fish->frame), GTK_SHADOW_IN);
-	gtk_container_add (GTK_CONTAINER (widget), fish->frame);
+	fish->frame = ctk_frame_new (NULL);
+	ctk_frame_set_shadow_type (GTK_FRAME (fish->frame), GTK_SHADOW_IN);
+	ctk_container_add (GTK_CONTAINER (widget), fish->frame);
 
-	fish->drawing_area = gtk_drawing_area_new ();
-	gtk_container_add (GTK_CONTAINER (fish->frame), fish->drawing_area);
+	fish->drawing_area = ctk_drawing_area_new ();
+	ctk_container_add (GTK_CONTAINER (fish->frame), fish->drawing_area);
 
 	g_signal_connect (fish->drawing_area, "realize",
 			  G_CALLBACK (fish_applet_realize), fish);
@@ -1660,7 +1660,7 @@ static void setup_fish_widget(FishApplet* fish)
 	g_signal_connect (fish->drawing_area, "draw",
 			  G_CALLBACK (fish_applet_draw), fish);
 
-	gtk_widget_add_events (widget, GDK_ENTER_NOTIFY_MASK |
+	ctk_widget_add_events (widget, GDK_ENTER_NOTIFY_MASK |
 				       GDK_LEAVE_NOTIFY_MASK |
 				       GDK_BUTTON_RELEASE_MASK);
 
@@ -1671,7 +1671,7 @@ static void setup_fish_widget(FishApplet* fish)
 	g_signal_connect_swapped (widget, "button_release_event",
 				  G_CALLBACK (handle_button_release), fish);
 
-	gtk_widget_add_events (fish->drawing_area, GDK_BUTTON_RELEASE_MASK);
+	ctk_widget_add_events (fish->drawing_area, GDK_BUTTON_RELEASE_MASK);
 	g_signal_connect_swapped (fish->drawing_area, "button_release_event",
 				  G_CALLBACK (handle_button_release), fish);
 
@@ -1687,7 +1687,7 @@ static void setup_fish_widget(FishApplet* fish)
 	g_signal_connect (fish, "key_press_event",
 			  G_CALLBACK (handle_keypress), fish);
 
-	gtk_widget_show_all (widget);
+	ctk_widget_show_all (widget);
 }
 
 static const GtkActionEntry fish_menu_verbs[] = {
@@ -1734,9 +1734,9 @@ static gboolean fish_applet_fill(FishApplet* fish)
 
 	fish->rotate = g_settings_get_boolean (fish->settings, FISH_ROTATE_KEY);
 
-	action_group = gtk_action_group_new ("Fish Applet Actions");
-	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
-	gtk_action_group_add_actions (action_group,
+	action_group = ctk_action_group_new ("Fish Applet Actions");
+	ctk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
+	ctk_action_group_add_actions (action_group,
 				      fish_menu_verbs,
 				      G_N_ELEMENTS (fish_menu_verbs),
 				      fish);
@@ -1747,13 +1747,13 @@ static gboolean fish_applet_fill(FishApplet* fish)
 	if (cafe_panel_applet_get_locked_down (applet)) {
 		GtkAction *action;
 
-		action = gtk_action_group_get_action (action_group, "FishPreferences");
-		gtk_action_set_visible (action, FALSE);
+		action = ctk_action_group_get_action (action_group, "FishPreferences");
+		ctk_action_set_visible (action, FALSE);
 	}
 	g_object_unref (action_group);
 
 	#ifndef FISH_INPROCESS
-		gtk_window_set_default_icon_name(FISH_ICON);
+		ctk_window_set_default_icon_name(FISH_ICON);
 	#endif
 
 	setup_fish_widget(fish);
@@ -1819,11 +1819,11 @@ static void fish_applet_dispose (GObject *object)
 	fish->pixbuf = NULL;
 
 	if (fish->preferences_dialog)
-		gtk_widget_destroy (fish->preferences_dialog);
+		ctk_widget_destroy (fish->preferences_dialog);
 	fish->preferences_dialog = NULL;
 
 	if (fish->fortune_dialog)
-		gtk_widget_destroy (fish->fortune_dialog);
+		ctk_widget_destroy (fish->fortune_dialog);
 	fish->fortune_dialog = NULL;
 
 	if (fish->source_id)

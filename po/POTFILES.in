@@ -32,7 +32,7 @@ data/org.cafe.panel.object.gschema.xml.in
 data/org.cafe.panel.toplevel.gschema.xml.in
 cafe-panel/libegg/eggdesktopfile.c
 cafe-panel/libegg/eggsmclient.c
-cafe-panel/libpanel-util/panel-gtk.c
+cafe-panel/libpanel-util/panel-ctk.c
 cafe-panel/libpanel-util/panel-error.c
 cafe-panel/libpanel-util/panel-icon-chooser.c
 cafe-panel/libpanel-util/panel-launch.c

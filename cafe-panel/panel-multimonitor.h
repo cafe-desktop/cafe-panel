@@ -26,7 +26,7 @@
 #ifndef __PANEL_MULTIMONITOR_H__
 #define __PANEL_MULTIMONITOR_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 void	panel_multimonitor_init                  (void);
 void	panel_multimonitor_reinit                (void);

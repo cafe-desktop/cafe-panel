@@ -33,7 +33,7 @@
 #include <cafe-panel-applet-gsettings.h>
 
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 
 #include "main.h"
@@ -105,7 +105,7 @@ sn_watcher_service_ref (void)
 
 
 static GtkOrientation
-get_gtk_orientation_from_applet_orient (CafePanelAppletOrient orient)
+get_ctk_orientation_from_applet_orient (CafePanelAppletOrient orient)
 {
   switch (orient)
     {
@@ -131,7 +131,7 @@ gsettings_changed_min_icon_size (GSettings    *settings,
   applet->priv->min_icon_size = g_settings_get_int (settings, key);
 
   if (applet->priv->dialog)
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON (applet->priv->dialog->min_icon_size_spin),
+    ctk_spin_button_set_value (GTK_SPIN_BUTTON (applet->priv->dialog->min_icon_size_spin),
                                applet->priv->min_icon_size);
 
   na_grid_set_min_icon_size (NA_GRID (applet->priv->grid), applet->priv->min_icon_size);
@@ -148,7 +148,7 @@ static void
 na_preferences_dialog_min_icon_size_changed (NaTrayApplet  *applet,
                                              GtkSpinButton *spin_button)
 {
-  applet->priv->min_icon_size = gtk_spin_button_get_value_as_int (spin_button);
+  applet->priv->min_icon_size = ctk_spin_button_get_value_as_int (spin_button);
   g_settings_set_int (applet->priv->settings, KEY_MIN_ICON_SIZE, applet->priv->min_icon_size);
 }
 
@@ -157,7 +157,7 @@ na_preferences_dialog_hide_event (GtkWidget    *widget,
                                   GdkEvent     *event,
                                   NaTrayApplet *applet)
 {
-  gtk_widget_hide (applet->priv->dialog->preferences_dialog);
+  ctk_widget_hide (applet->priv->dialog->preferences_dialog);
   return TRUE;
 }
 
@@ -169,7 +169,7 @@ na_preferences_dialog_response (NaTrayApplet *applet,
   switch (response)
     {
     case GTK_RESPONSE_CLOSE:
-      gtk_widget_hide (preferences_dialog);
+      ctk_widget_hide (preferences_dialog);
       break;
     default:
       break;
@@ -184,15 +184,15 @@ ensure_prefs_window_is_created (NaTrayApplet *applet)
 
   applet->priv->dialog = g_new0 (NAPreferencesDialog, 1);
 
-  applet->priv->dialog->preferences_dialog = GTK_WIDGET (gtk_builder_get_object (applet->priv->builder, "notification_area_preferences_dialog"));
+  applet->priv->dialog->preferences_dialog = GTK_WIDGET (ctk_builder_get_object (applet->priv->builder, "notification_area_preferences_dialog"));
 
-  gtk_window_set_icon_name (GTK_WINDOW (applet->priv->dialog->preferences_dialog), NOTIFICATION_AREA_ICON);
+  ctk_window_set_icon_name (GTK_WINDOW (applet->priv->dialog->preferences_dialog), NOTIFICATION_AREA_ICON);
 
-  applet->priv->dialog->min_icon_size_spin = GTK_WIDGET (gtk_builder_get_object (applet->priv->builder, "min_icon_size_spin"));
+  applet->priv->dialog->min_icon_size_spin = GTK_WIDGET (ctk_builder_get_object (applet->priv->builder, "min_icon_size_spin"));
   g_return_if_fail (applet->priv->dialog->min_icon_size_spin != NULL);
 
-  gtk_spin_button_set_range (GTK_SPIN_BUTTON (applet->priv->dialog->min_icon_size_spin), 7, 130);
-  gtk_spin_button_set_value (GTK_SPIN_BUTTON (applet->priv->dialog->min_icon_size_spin), applet->priv->min_icon_size);
+  ctk_spin_button_set_range (GTK_SPIN_BUTTON (applet->priv->dialog->min_icon_size_spin), 7, 130);
+  ctk_spin_button_set_value (GTK_SPIN_BUTTON (applet->priv->dialog->min_icon_size_spin), applet->priv->min_icon_size);
 
   g_signal_connect_swapped (applet->priv->dialog->min_icon_size_spin, "value_changed",
                             G_CALLBACK (na_preferences_dialog_min_icon_size_changed),
@@ -211,9 +211,9 @@ properties_dialog (GtkAction    *action,
 {
   ensure_prefs_window_is_created (applet);
 
-  gtk_window_set_screen (GTK_WINDOW (applet->priv->dialog->preferences_dialog),
-                         gtk_widget_get_screen (GTK_WIDGET (applet)));
-  gtk_window_present (GTK_WINDOW (applet->priv->dialog->preferences_dialog));
+  ctk_window_set_screen (GTK_WINDOW (applet->priv->dialog->preferences_dialog),
+                         ctk_widget_get_screen (GTK_WIDGET (applet)));
+  ctk_window_present (GTK_WINDOW (applet->priv->dialog->preferences_dialog));
 }
 
 static void help_cb(GtkAction* action, NaTrayApplet* applet)
@@ -223,7 +223,7 @@ static void help_cb(GtkAction* action, NaTrayApplet* applet)
 	#define NA_HELP_DOC "cafe-user-guide"
 
 	uri = g_strdup_printf("help:%s/%s", NA_HELP_DOC, "panels-notification-area");
-	gtk_show_uri_on_window (NULL, uri, gtk_get_current_event_time (), &error);
+	ctk_show_uri_on_window (NULL, uri, ctk_get_current_event_time (), &error);
 	g_free(uri);
 
 	if (error && g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
@@ -236,22 +236,22 @@ static void help_cb(GtkAction* action, NaTrayApplet* applet)
 		char* primary;
 
 		primary = g_markup_printf_escaped (_("Could not display help document '%s'"), NA_HELP_DOC);
-		dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "%s", primary);
+		dialog = ctk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "%s", primary);
 
-		gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog), "%s", error->message);
+		ctk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog), "%s", error->message);
 
 		g_error_free(error);
 		g_free(primary);
 
-		g_signal_connect(dialog, "response", G_CALLBACK (gtk_widget_destroy), NULL);
+		g_signal_connect(dialog, "response", G_CALLBACK (ctk_widget_destroy), NULL);
 
-		gtk_window_set_icon_name (GTK_WINDOW (dialog), NOTIFICATION_AREA_ICON);
-		gtk_window_set_screen (GTK_WINDOW (dialog), gtk_widget_get_screen (GTK_WIDGET (applet)));
+		ctk_window_set_icon_name (GTK_WINDOW (dialog), NOTIFICATION_AREA_ICON);
+		ctk_window_set_screen (GTK_WINDOW (dialog), ctk_widget_get_screen (GTK_WIDGET (applet)));
 		/* we have no parent window */
-		gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
-		gtk_window_set_title (GTK_WINDOW (dialog), _("Error displaying help document"));
+		ctk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
+		ctk_window_set_title (GTK_WINDOW (dialog), _("Error displaying help document"));
 
-		gtk_widget_show (dialog);
+		ctk_widget_show (dialog);
 	}
 }
 
@@ -272,7 +272,7 @@ static void about_cb(GtkAction* action, NaTrayApplet* applet)
 		NULL
 	};
 
-	gtk_show_about_dialog(NULL,
+	ctk_show_about_dialog(NULL,
 		"program-name", _("Notification Area"),
 		"title", _("About Notification Area"),
 		"authors", authors,
@@ -310,9 +310,9 @@ na_tray_applet_realize (GtkWidget *widget)
     parent_class_realize (widget);
 
   GtkActionGroup* action_group;
-  action_group = gtk_action_group_new("NA Applet Menu Actions");
-  gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
-  gtk_action_group_add_actions(action_group, menu_actions, G_N_ELEMENTS(menu_actions), applet);
+  action_group = ctk_action_group_new("NA Applet Menu Actions");
+  ctk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
+  ctk_action_group_add_actions(action_group, menu_actions, G_N_ELEMENTS(menu_actions), applet);
   cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (applet),
                                               NA_RESOURCE_PATH "notification-area-menu.xml",
                                               action_group);
@@ -323,9 +323,9 @@ na_tray_applet_realize (GtkWidget *widget)
   // load min icon size
   gsettings_changed_min_icon_size (applet->priv->settings, KEY_MIN_ICON_SIZE, applet);
 
-  applet->priv->builder = gtk_builder_new ();
-  gtk_builder_set_translation_domain (applet->priv->builder, GETTEXT_PACKAGE);
-  gtk_builder_add_from_resource (applet->priv->builder, NA_RESOURCE_PATH "notification-area-preferences-dialog.ui", NULL);
+  applet->priv->builder = ctk_builder_new ();
+  ctk_builder_set_translation_domain (applet->priv->builder, GETTEXT_PACKAGE);
+  ctk_builder_add_from_resource (applet->priv->builder, NA_RESOURCE_PATH "notification-area-preferences-dialog.ui", NULL);
 }
 
 static void
@@ -354,7 +354,7 @@ na_tray_applet_style_updated (GtkWidget *widget)
   if (!applet->priv->grid)
     return;
 
-  gtk_widget_style_get (widget,
+  ctk_widget_style_get (widget,
                         "icon-padding", &padding,
                         "icon-size", &icon_size,
                         NULL);
@@ -389,8 +389,8 @@ na_tray_applet_change_orient (CafePanelApplet       *panel_applet,
   if (!applet->priv->grid)
     return;
 
-  gtk_orientable_set_orientation (GTK_ORIENTABLE (applet->priv->grid),
-                                  get_gtk_orientation_from_applet_orient (orient));
+  ctk_orientable_set_orientation (GTK_ORIENTABLE (applet->priv->grid),
+                                  get_ctk_orientation_from_applet_orient (orient));
 }
 
 static gboolean
@@ -415,7 +415,7 @@ na_tray_applet_focus (GtkWidget        *widget,
   /* We let the grid handle the focus movement because we behave more like a
    * container than a single applet.  But if focus didn't move, we let the
    * applet do its thing. */
-  if (gtk_widget_child_focus (applet->priv->grid, direction))
+  if (ctk_widget_child_focus (applet->priv->grid, direction))
     return TRUE;
 
   return GTK_WIDGET_CLASS (na_tray_applet_parent_class)->focus (widget, direction);
@@ -444,7 +444,7 @@ na_tray_applet_class_init (NaTrayAppletClass *class)
   parent_class_change_orient = applet_class->change_orient;
   applet_class->change_orient = na_tray_applet_change_orient;
 
-  gtk_widget_class_install_style_property (
+  ctk_widget_class_install_style_property (
           widget_class,
           g_param_spec_int ("icon-padding",
                             "Padding around icons",
@@ -452,7 +452,7 @@ na_tray_applet_class_init (NaTrayAppletClass *class)
                             0, G_MAXINT, 0,
                             G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
 
-  gtk_widget_class_install_style_property (
+  ctk_widget_class_install_style_property (
           widget_class,
           g_param_spec_int ("icon-size",
                             "Icon size",
@@ -460,7 +460,7 @@ na_tray_applet_class_init (NaTrayAppletClass *class)
                             0, G_MAXINT, 0,
                             G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
 
-  gtk_widget_class_set_css_name (widget_class, "na-tray-applet");
+  ctk_widget_class_set_css_name (widget_class, "na-tray-applet");
 }
 
 static void
@@ -476,12 +476,12 @@ na_tray_applet_init (NaTrayApplet *applet)
 #endif
 
   orient = cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (applet));
-  applet->priv->grid = na_grid_new (get_gtk_orientation_from_applet_orient (orient));
+  applet->priv->grid = na_grid_new (get_ctk_orientation_from_applet_orient (orient));
 
-  gtk_container_add (GTK_CONTAINER (applet), GTK_WIDGET (applet->priv->grid));
-  gtk_widget_show (GTK_WIDGET (applet->priv->grid));
+  ctk_container_add (GTK_CONTAINER (applet), GTK_WIDGET (applet->priv->grid));
+  ctk_widget_show (GTK_WIDGET (applet->priv->grid));
 
-  atko = gtk_widget_get_accessible (GTK_WIDGET (applet));
+  atko = ctk_widget_get_accessible (GTK_WIDGET (applet));
   atk_object_set_name (atko, _("Panel Notification Area"));
 
   cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (applet),
@@ -497,16 +497,16 @@ applet_factory (CafePanelApplet *applet,
         strcmp (iid, "SystemTrayApplet") == 0))
     return FALSE;
 
-  if (!GDK_IS_X11_DISPLAY (gtk_widget_get_display (GTK_WIDGET (applet)))) {
+  if (!GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (applet)))) {
     g_warning ("Notification area only works on X");
     return FALSE;
   }
 
 #ifndef NOTIFICATION_AREA_INPROCESS
-  gtk_window_set_default_icon_name (NOTIFICATION_AREA_ICON);
+  ctk_window_set_default_icon_name (NOTIFICATION_AREA_ICON);
 #endif
 
-  gtk_widget_show_all (GTK_WIDGET (applet));
+  ctk_widget_show_all (GTK_WIDGET (applet));
 
   return TRUE;
 }

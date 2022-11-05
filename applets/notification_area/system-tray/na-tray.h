@@ -31,7 +31,7 @@
 #endif
 
 #include <gdk/gdkx.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "na-host.h"
 

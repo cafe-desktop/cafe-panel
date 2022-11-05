@@ -27,7 +27,7 @@
 #include <libwnck/libwnck.h>
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <cafe-panel-applet.h>
 
 #define WNCKLET_RESOURCE_PATH "/org/cafe/panel/applet/wncklet/"

@@ -26,7 +26,7 @@
 #define __PANEL_BINDINGS_H__
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

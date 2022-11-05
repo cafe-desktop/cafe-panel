@@ -26,8 +26,8 @@
 #endif
 #endif
 
-#include <gtk/gtk.h>
-#include <gtk/gtkx.h>
+#include <ctk/ctk.h>
+#include <ctk/ctkx.h>
 
 G_BEGIN_DECLS
 

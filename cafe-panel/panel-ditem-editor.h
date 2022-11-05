@@ -25,7 +25,7 @@
 #ifndef PANEL_DITEM_EDITOR_H
 #define PANEL_DITEM_EDITOR_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

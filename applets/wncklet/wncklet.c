@@ -33,7 +33,7 @@
 #include <cafe-panel-applet.h>
 
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkx.h>
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libwnck/libwnck.h>
@@ -54,7 +54,7 @@ void wncklet_display_help(GtkWidget* widget, const char* doc_id, const char* lin
 	else
 		uri = g_strdup_printf("help:%s", doc_id);
 
-	gtk_show_uri_on_window (NULL, uri, gtk_get_current_event_time (), &error);
+	ctk_show_uri_on_window (NULL, uri, ctk_get_current_event_time (), &error);
 	g_free(uri);
 
 	if (error && g_error_matches(error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
@@ -73,26 +73,26 @@ void wncklet_display_help(GtkWidget* widget, const char* doc_id, const char* lin
 			parent = NULL;
 
 		primary = g_markup_printf_escaped(_("Could not display help document '%s'"), doc_id);
-		dialog = gtk_message_dialog_new(parent ? GTK_WINDOW(parent) : NULL, GTK_DIALOG_MODAL|GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "%s", primary);
+		dialog = ctk_message_dialog_new(parent ? GTK_WINDOW(parent) : NULL, GTK_DIALOG_MODAL|GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "%s", primary);
 
-		gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog), "%s", error->message);
+		ctk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog), "%s", error->message);
 
 		g_error_free(error);
 		g_free(primary);
 
-		g_signal_connect(dialog, "response", G_CALLBACK(gtk_widget_destroy), NULL);
+		g_signal_connect(dialog, "response", G_CALLBACK(ctk_widget_destroy), NULL);
 
-		gtk_window_set_icon_name(GTK_WINDOW(dialog), icon_name);
-		gtk_window_set_screen(GTK_WINDOW(dialog), gtk_widget_get_screen(widget));
+		ctk_window_set_icon_name(GTK_WINDOW(dialog), icon_name);
+		ctk_window_set_screen(GTK_WINDOW(dialog), ctk_widget_get_screen(widget));
 
 		if (parent == NULL)
 		{
 			/* we have no parent window */
-			gtk_window_set_skip_taskbar_hint(GTK_WINDOW(dialog), FALSE);
-			gtk_window_set_title(GTK_WINDOW(dialog), _("Error displaying help document"));
+			ctk_window_set_skip_taskbar_hint(GTK_WINDOW(dialog), FALSE);
+			ctk_window_set_title(GTK_WINDOW(dialog), _("Error displaying help document"));
 		}
 
-		gtk_widget_show(dialog);
+		ctk_widget_show(dialog);
 	}
 }
 
@@ -100,10 +100,10 @@ WnckScreen* wncklet_get_screen(GtkWidget* applet)
 {
 	int screen_num;
 
-	if (!gtk_widget_has_screen(applet))
+	if (!ctk_widget_has_screen(applet))
 		return wnck_screen_get_default();
 
-	screen_num = gdk_x11_screen_get_screen_number(gtk_widget_get_screen(applet));
+	screen_num = gdk_x11_screen_get_screen_number(ctk_widget_get_screen(applet));
 
 	return wnck_screen_get(screen_num);
 }

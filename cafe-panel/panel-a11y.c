@@ -27,7 +27,7 @@ panel_a11y_get_is_a11y_enabled (GtkWidget *widget)
 	static gboolean a11y_enabled = FALSE;
 
 	if (!initialised) {
-		a11y_enabled = GTK_IS_ACCESSIBLE (gtk_widget_get_accessible (widget));
+		a11y_enabled = GTK_IS_ACCESSIBLE (ctk_widget_get_accessible (widget));
 		initialised = TRUE;
 	}
 
@@ -46,7 +46,7 @@ panel_a11y_set_atk_name_desc (GtkWidget  *widget,
 	if (!panel_a11y_get_is_a11y_enabled (widget))
 		return;
 
-	aobj = gtk_widget_get_accessible (widget);
+	aobj = ctk_widget_get_accessible (widget);
 
 	if (name)
 		atk_object_set_name (aobj, name);
@@ -61,7 +61,7 @@ panel_a11y_set_atk_name_desc (GtkWidget  *widget,
  * @label : The label for the @widget.
  *
  * Description : This function establishes atk relation
- * between a gtk widget and a label.
+ * between a ctk widget and a label.
  */
 void
 panel_a11y_set_atk_relation (GtkWidget *widget,
@@ -78,11 +78,11 @@ panel_a11y_set_atk_relation (GtkWidget *widget,
 	if (!panel_a11y_get_is_a11y_enabled (widget))
 		return;
 
-	aobject = gtk_widget_get_accessible (widget);
+	aobject = ctk_widget_get_accessible (widget);
 
-	gtk_label_set_mnemonic_widget (label, widget);
+	ctk_label_set_mnemonic_widget (label, widget);
 
-	targets [0] = gtk_widget_get_accessible (GTK_WIDGET (label));
+	targets [0] = ctk_widget_get_accessible (GTK_WIDGET (label));
 
 	relation_set = atk_object_ref_relation_set (aobject);
 

@@ -247,7 +247,7 @@ msgid "Time & Date"
 msgstr "समय व दिनांक"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-gtk.c:136
+#: cafe-panel/libpanel-util/panel-ctk.c:136
 #: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
 #: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
 #: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
@@ -377,7 +377,7 @@ msgstr "उत्तर"
 msgid "South"
 msgstr "दक्षिण"
 
-#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-gtk.c:140
+#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
 #: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr ""
@@ -2198,7 +2198,7 @@ msgstr "सत्र प्रबंधन विकल्प:"
 msgid "Show session management options"
 msgstr "दिखाएँ सत्र प्रबंधन विकल्प"
 
-#: cafe-panel/libpanel-util/panel-gtk.c:138
+#: cafe-panel/libpanel-util/panel-ctk.c:138
 msgid "_Open"
 msgstr "खोलें (_O)"
 

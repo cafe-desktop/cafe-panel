@@ -11,7 +11,7 @@
  *   Peter Teichman <peter@novell.com>
  */
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <math.h>
 #include <time.h>
 
@@ -92,7 +92,7 @@ clock_face_init (ClockFace *this)
     priv->location = NULL;
     priv->size_widget = NULL;
 
-    gtk_widget_set_has_window (GTK_WIDGET (this), FALSE);
+    ctk_widget_set_has_window (GTK_WIDGET (this), FALSE);
 }
 
 static gboolean
@@ -122,8 +122,8 @@ clock_face_draw (GtkWidget *this, cairo_t *cr)
             sec_length = 0.8;   /* not drawn currently */
     }
 
-    width = gtk_widget_get_allocated_width (this);
-    height = gtk_widget_get_allocated_width (this);
+    width = ctk_widget_get_allocated_width (this);
+    height = ctk_widget_get_allocated_width (this);
     x = width / 2;
     y = height / 2;
     radius = MIN (width / 2, height / 2) - 5;
@@ -182,7 +182,7 @@ clock_face_draw (GtkWidget *this, cairo_t *cr)
 static void
 clock_face_redraw_canvas (ClockFace *this)
 {
-    gtk_widget_queue_draw (GTK_WIDGET (this));
+    ctk_widget_queue_draw (GTK_WIDGET (this));
 }
 
 static void
@@ -197,7 +197,7 @@ clock_face_get_preferred_width (GtkWidget *this,
            int child_natural_height;
 
             /* Tie our size to the height of the size_widget */
-            gtk_widget_get_preferred_height (GTK_WIDGET (priv->size_widget),
+            ctk_widget_get_preferred_height (GTK_WIDGET (priv->size_widget),
                                              &child_minimal_height,
                                              &child_natural_height);
 
@@ -230,7 +230,7 @@ clock_face_get_preferred_height (GtkWidget *this,
            int child_natural_height;
 
             /* Tie our size to the height of the size_widget */
-            gtk_widget_get_preferred_height (GTK_WIDGET (priv->size_widget),
+            ctk_widget_get_preferred_height (GTK_WIDGET (priv->size_widget),
                                              &child_minimal_height,
                                              &child_natural_height);
 
@@ -258,7 +258,7 @@ clock_face_size_allocate (GtkWidget     *this,
     GtkAllocation this_allocation;
     GtkAllocation old_allocation;
 
-    gtk_widget_get_allocation (this, &this_allocation);
+    ctk_widget_get_allocation (this, &this_allocation);
 
     old_allocation.width = this_allocation.width;
     old_allocation.height = this_allocation.height;
@@ -317,7 +317,7 @@ update_time_and_face (ClockFace *this,
 
             priv->timeofday = timeofday;
 
-            gtk_widget_get_allocation (GTK_WIDGET (this), &allocation);
+            ctk_widget_get_allocation (GTK_WIDGET (this), &allocation);
 
             width = allocation.width;
             height = allocation.height;

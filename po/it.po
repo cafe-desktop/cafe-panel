@@ -254,7 +254,7 @@ msgid "Time & Date"
 msgstr "Ora e data"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-gtk.c:136
+#: cafe-panel/libpanel-util/panel-ctk.c:136
 #: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
 #: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
 #: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
@@ -384,7 +384,7 @@ msgstr "Nord"
 msgid "South"
 msgstr "Sud"
 
-#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-gtk.c:140
+#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
 #: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "_OK"
@@ -2302,7 +2302,7 @@ msgstr "Opzioni di gestione della sessione:"
 msgid "Show session management options"
 msgstr "Mostra le opzioni di gestione sessione"
 
-#: cafe-panel/libpanel-util/panel-gtk.c:138
+#: cafe-panel/libpanel-util/panel-ctk.c:138
 msgid "_Open"
 msgstr "_Apri"
 

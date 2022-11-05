@@ -210,7 +210,7 @@ panel_menu_button_finalize (GObject *object)
 
 	if (button->priv->menu) {
 		/* detaching the menu will kill our reference */
-		gtk_menu_detach (GTK_MENU (button->priv->menu));
+		ctk_menu_detach (GTK_MENU (button->priv->menu));
 		button->priv->menu = NULL;
 	}
 
@@ -330,7 +330,7 @@ panel_menu_button_parent_set (GtkWidget *widget,
 	PanelMenuButton *button = PANEL_MENU_BUTTON (widget);
 	GtkWidget       *parent;
 
-	parent = gtk_widget_get_parent (widget);
+	parent = ctk_widget_get_parent (widget);
 	g_return_if_fail (!parent || PANEL_IS_WIDGET (parent));
 
 	if (parent)
@@ -358,8 +358,8 @@ panel_menu_button_drag_data_get (GtkWidget        *widget,
 
 	drag_data = g_strdup_printf ("MENU:%d", panel_find_applet_index (widget));
 
-	gtk_selection_data_set (
-		selection_data, gtk_selection_data_get_target (selection_data),
+	ctk_selection_data_set (
+		selection_data, ctk_selection_data_get_target (selection_data),
 		8, (guchar *) drag_data, strlen (drag_data));
 
 	g_free (drag_data);
@@ -370,7 +370,7 @@ panel_menu_button_menu_deactivated (PanelMenuButton *button)
 {
 	panel_toplevel_pop_autohide_disabler (button->priv->toplevel);
 
-	gtk_widget_unset_state_flags (GTK_WIDGET (button),
+	ctk_widget_unset_state_flags (GTK_WIDGET (button),
 				      GTK_STATE_FLAG_PRELIGHT);
 	button_widget_set_ignore_leave (BUTTON_WIDGET (button), FALSE);
 }
@@ -414,7 +414,7 @@ panel_menu_button_create_menu (PanelMenuButton *button)
 	} else
 		button->priv->menu = create_main_menu (panel_widget);
 
-	gtk_menu_attach_to_widget (GTK_MENU (button->priv->menu),
+	ctk_menu_attach_to_widget (GTK_MENU (button->priv->menu),
 				   GTK_WIDGET (button),
 				   (GtkMenuDetachFunc) panel_menu_button_menu_detacher);
 
@@ -431,7 +431,7 @@ static void
 panel_menu_button_recreate_menu (PanelMenuButton *button)
 {
 	if (button->priv->menu)
-		gtk_widget_destroy (button->priv->menu);
+		ctk_widget_destroy (button->priv->menu);
 	button->priv->menu = NULL;
 }
 
@@ -450,10 +450,10 @@ panel_menu_button_popup_menu (PanelMenuButton *button,
 
 	button_widget_set_ignore_leave (BUTTON_WIDGET (button), TRUE);
 
-	screen = gtk_window_get_screen (GTK_WINDOW (button->priv->toplevel));
-	gtk_menu_set_screen (GTK_MENU (button->priv->menu), screen);
+	screen = ctk_window_get_screen (GTK_WINDOW (button->priv->toplevel));
+	ctk_menu_set_screen (GTK_MENU (button->priv->menu), screen);
 
-	gtk_window_set_attached_to (GTK_WINDOW (gtk_widget_get_toplevel (button->priv->menu)),
+	ctk_window_set_attached_to (GTK_WINDOW (ctk_widget_get_toplevel (button->priv->menu)),
 				    GTK_WIDGET (button));
 
 	GdkGravity widget_anchor = GDK_GRAVITY_NORTH_WEST;
@@ -477,7 +477,7 @@ panel_menu_button_popup_menu (PanelMenuButton *button,
 		break;
 	}
 
-	gtk_menu_popup_at_widget (GTK_MENU (button->priv->menu),
+	ctk_menu_popup_at_widget (GTK_MENU (button->priv->menu),
 	                          GTK_WIDGET (button),
 	                          widget_anchor,
 	                          menu_anchor,
@@ -485,34 +485,34 @@ panel_menu_button_popup_menu (PanelMenuButton *button,
 }
 
 static void
-panel_menu_button_pressed (GtkButton *gtk_button)
+panel_menu_button_pressed (GtkButton *ctk_button)
 {
 	PanelMenuButton *button;
 
-	g_return_if_fail (PANEL_IS_MENU_BUTTON (gtk_button));
+	g_return_if_fail (PANEL_IS_MENU_BUTTON (ctk_button));
 
-	button = PANEL_MENU_BUTTON (gtk_button);
+	button = PANEL_MENU_BUTTON (ctk_button);
 
 	if (GTK_BUTTON_CLASS (panel_menu_button_parent_class)->pressed)
-		GTK_BUTTON_CLASS (panel_menu_button_parent_class)->pressed (gtk_button);
+		GTK_BUTTON_CLASS (panel_menu_button_parent_class)->pressed (ctk_button);
 
-	panel_menu_button_popup_menu (button, 0, gtk_get_current_event_time());
+	panel_menu_button_popup_menu (button, 0, ctk_get_current_event_time());
 }
 
 static void
-panel_menu_button_clicked (GtkButton *gtk_button)
+panel_menu_button_clicked (GtkButton *ctk_button)
 {
 	PanelMenuButton *button;
 	GdkEvent        *event;
 
-	g_return_if_fail (PANEL_IS_MENU_BUTTON (gtk_button));
+	g_return_if_fail (PANEL_IS_MENU_BUTTON (ctk_button));
 
-	button = PANEL_MENU_BUTTON (gtk_button);
+	button = PANEL_MENU_BUTTON (ctk_button);
 
 	if (GTK_BUTTON_CLASS (panel_menu_button_parent_class)->clicked)
-		GTK_BUTTON_CLASS (panel_menu_button_parent_class)->clicked (gtk_button);
+		GTK_BUTTON_CLASS (panel_menu_button_parent_class)->clicked (ctk_button);
 
-	if ((event = gtk_get_current_event ())) {
+	if ((event = ctk_get_current_event ())) {
 		panel_menu_button_popup_menu (button,
 					      event->button.button,
 					      event->button.time);
@@ -691,7 +691,7 @@ panel_menu_button_load (const char  *menu_path,
 				      panel, locked, position, exactpos,
 				      PANEL_OBJECT_MENU, id);
 	if (!info) {
-		gtk_widget_destroy (GTK_WIDGET (button));
+		ctk_widget_destroy (GTK_WIDGET (button));
 		return;
 	}
 
@@ -828,7 +828,7 @@ panel_menu_button_set_menu_path (PanelMenuButton *button,
 	button->priv->menu_path = g_strdup (menu_path);
 
 	if (button->priv->menu)
-		gtk_menu_detach (GTK_MENU (button->priv->menu));
+		ctk_menu_detach (GTK_MENU (button->priv->menu));
 	button->priv->menu = NULL;
 
 	panel_menu_button_set_icon (button);
@@ -878,7 +878,7 @@ panel_menu_button_set_use_menu_path (PanelMenuButton *button,
 	button->priv->use_menu_path = use_menu_path;
 
 	if (button->priv->menu)
-		gtk_menu_detach (GTK_MENU (button->priv->menu));
+		ctk_menu_detach (GTK_MENU (button->priv->menu));
 	button->priv->menu = NULL;
 
 	panel_menu_button_set_icon (button);
@@ -1018,7 +1018,7 @@ panel_menu_button_invoke_menu (PanelMenuButton *button,
 	g_return_if_fail (PANEL_IS_MENU_BUTTON (button));
 	g_return_if_fail (callback_name != NULL);
 
-	screen = gtk_widget_get_screen (GTK_WIDGET (button));
+	screen = ctk_widget_get_screen (GTK_WIDGET (button));
 
 	if (!strcmp (callback_name, "help")) {
 		panel_show_help (screen, "cafe-user-guide", "gospanel-37", NULL);
@@ -1053,21 +1053,21 @@ panel_menu_button_set_dnd_enabled (PanelMenuButton *button,
 		};
 		char *icon;
 
-		gtk_widget_set_has_window (GTK_WIDGET (button), TRUE);
-		gtk_drag_source_set (GTK_WIDGET (button), GDK_BUTTON1_MASK,
+		ctk_widget_set_has_window (GTK_WIDGET (button), TRUE);
+		ctk_drag_source_set (GTK_WIDGET (button), GDK_BUTTON1_MASK,
 				     dnd_targets, 1,
 				     GDK_ACTION_COPY | GDK_ACTION_MOVE);
 
 		icon = panel_menu_button_get_icon (button);
 		if (icon != NULL) {
-			gtk_drag_source_set_icon_name (GTK_WIDGET (button),
+			ctk_drag_source_set_icon_name (GTK_WIDGET (button),
 						       icon);
 			g_free (icon);
 		}
 
-		gtk_widget_set_has_window (GTK_WIDGET (button), FALSE);
+		ctk_widget_set_has_window (GTK_WIDGET (button), FALSE);
 	} else
-		gtk_drag_source_unset (GTK_WIDGET (button));
+		ctk_drag_source_unset (GTK_WIDGET (button));
 }
 
 /*
@@ -1090,7 +1090,7 @@ panel_menu_button_accessible_get_n_children (AtkObject *obj)
 {
 	g_return_val_if_fail (PANEL_IS_MENU_BUTTON_ACCESSIBLE (obj), 0);
 
-	return gtk_accessible_get_widget (GTK_ACCESSIBLE (obj)) ? 1 : 0;
+	return ctk_accessible_get_widget (GTK_ACCESSIBLE (obj)) ? 1 : 0;
 }
 
 static AtkObject *
@@ -1105,7 +1105,7 @@ panel_menu_button_accessible_ref_child (AtkObject *obj,
 	if (index != 0)
 		return NULL;
 
-	if (!(button = PANEL_MENU_BUTTON (gtk_accessible_get_widget (GTK_ACCESSIBLE (obj)))))
+	if (!(button = PANEL_MENU_BUTTON (ctk_accessible_get_widget (GTK_ACCESSIBLE (obj)))))
 		return NULL;
 
 	if (!(menu = panel_menu_button_create_menu (button)))
@@ -1115,7 +1115,7 @@ panel_menu_button_accessible_ref_child (AtkObject *obj,
 	 */
 	g_signal_emit_by_name (menu, "show", NULL);
 
-	return g_object_ref (gtk_widget_get_accessible (menu));
+	return g_object_ref (ctk_widget_get_accessible (menu));
 }
 
 static const gchar* panel_menu_button_accessible_get_name(AtkObject* obj)

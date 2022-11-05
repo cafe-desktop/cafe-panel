@@ -28,7 +28,7 @@
 
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkkeysyms.h>
 #include <libcafe-desktop/cafe-gsettings.h>
 #include <cafemenu-tree.h>
@@ -77,10 +77,10 @@ add_menu_separator (GtkWidget *menu)
 {
 	GtkWidget *menuitem;
 
-	menuitem = gtk_separator_menu_item_new ();
-	gtk_widget_set_sensitive (menuitem, FALSE);
-	gtk_widget_show (menuitem);
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+	menuitem = ctk_separator_menu_item_new ();
+	ctk_widget_set_sensitive (menuitem, FALSE);
+	ctk_widget_show (menuitem);
+	ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
 
 	return menuitem;
 }
@@ -103,7 +103,7 @@ menu_get_panel (GtkWidget *menu)
 	g_return_val_if_fail (menu != NULL, NULL);
 
 	if (GTK_IS_MENU_ITEM (menu))
-		menu = gtk_widget_get_parent (menu);
+		menu = ctk_widget_get_parent (menu);
 
 	g_return_val_if_fail (GTK_IS_MENU (menu), NULL);
 
@@ -112,7 +112,7 @@ menu_get_panel (GtkWidget *menu)
 		if (retval)
 			break;
 
-		menu = gtk_widget_get_parent (gtk_menu_get_attach_widget (GTK_MENU (menu)));
+		menu = ctk_widget_get_parent (ctk_menu_get_attach_widget (GTK_MENU (menu)));
 		if (!GTK_IS_MENU (menu))
 			break;
 	}
@@ -143,8 +143,8 @@ setup_menu_panel (GtkWidget *menu)
 	g_object_set_data (G_OBJECT (menu), "menu_panel", panel);
 
 	if (panel)
-		gtk_menu_set_screen (GTK_MENU (menu),
-				     gtk_widget_get_screen (GTK_WIDGET (panel)));
+		ctk_menu_set_screen (GTK_MENU (menu),
+				     ctk_widget_get_screen (GTK_WIDGET (panel)));
 }
 
 GdkScreen *
@@ -154,7 +154,7 @@ menuitem_to_screen (GtkWidget *menuitem)
 
 	panel_widget = menu_get_panel (menuitem);
 
-	return gtk_window_get_screen (GTK_WINDOW (panel_widget->toplevel));
+	return ctk_window_get_screen (GTK_WINDOW (panel_widget->toplevel));
 }
 
 GtkWidget *
@@ -162,11 +162,11 @@ panel_create_menu (void)
 {
 	GtkWidget       *retval;
 
-	retval = gtk_menu_new ();
+	retval = ctk_menu_new ();
 
-	gtk_menu_set_reserve_toggle_size (GTK_MENU (retval), TRUE);
+	ctk_menu_set_reserve_toggle_size (GTK_MENU (retval), TRUE);
 
-	gtk_widget_set_name (retval, "cafe-panel-main-menu");
+	ctk_widget_set_name (retval, "cafe-panel-main-menu");
 
 	g_signal_connect (retval, "key_press_event",
 			  G_CALLBACK (panel_menu_key_press_handler),
@@ -429,7 +429,7 @@ grab_widget (GtkWidget *widget)
 	GdkDisplay *display;
 	GdkSeat *seat;
 
-	window = gtk_widget_get_window (widget);
+	window = ctk_widget_get_window (widget);
 	display = gdk_window_get_display (window);
 
 	seat = gdk_display_get_default_seat (display);
@@ -442,7 +442,7 @@ static void
 restore_grabs (GtkWidget *menu,
                GtkWidget *item)
 {
-	GtkWidget *parent = gtk_widget_get_parent (item);
+	GtkWidget *parent = ctk_widget_get_parent (item);
 
 	if (parent) {
 		grab_widget (parent);
@@ -454,7 +454,7 @@ menu_destroy_context_menu (GtkWidget *item,
                            GtkWidget *menu)
 {
 	g_signal_handlers_disconnect_by_func (menu, restore_grabs, item);
-	gtk_widget_destroy (menu);
+	ctk_widget_destroy (menu);
 }
 
 static GtkWidget *
@@ -499,43 +499,43 @@ create_item_context_menu (GtkWidget   *item,
 	g_signal_connect (menu, "deactivate",
 			  G_CALLBACK (restore_grabs), item);
 
-	menuitem = gtk_menu_item_new_with_mnemonic (_("Add this launcher to _panel"));
+	menuitem = ctk_menu_item_new_with_mnemonic (_("Add this launcher to _panel"));
 	g_signal_connect (menuitem, "activate",
 			  G_CALLBACK (add_app_to_panel), entry);
-	gtk_widget_set_sensitive (menuitem, id_lists_writable);
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
-	gtk_widget_show (menuitem);
+	ctk_widget_set_sensitive (menuitem, id_lists_writable);
+	ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+	ctk_widget_show (menuitem);
 
-	menuitem = gtk_menu_item_new_with_mnemonic (_("Add this launcher to _desktop"));
+	menuitem = ctk_menu_item_new_with_mnemonic (_("Add this launcher to _desktop"));
 	g_signal_connect (menuitem, "activate",
 			  G_CALLBACK (add_app_to_desktop), entry);
-	gtk_widget_set_sensitive (menuitem, id_lists_writable);
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
-	gtk_widget_show (menuitem);
+	ctk_widget_set_sensitive (menuitem, id_lists_writable);
+	ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+	ctk_widget_show (menuitem);
 
 
 	submenu = create_empty_menu ();
 
 	g_object_set_data (G_OBJECT (submenu), "menu_panel", panel_widget);
 
-	menuitem = gtk_menu_item_new_with_mnemonic (_("_Entire menu"));
-	gtk_menu_item_set_submenu (GTK_MENU_ITEM (menuitem), submenu);
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
-	gtk_widget_show (menuitem);
+	menuitem = ctk_menu_item_new_with_mnemonic (_("_Entire menu"));
+	ctk_menu_item_set_submenu (GTK_MENU_ITEM (menuitem), submenu);
+	ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+	ctk_widget_show (menuitem);
 
-	menuitem = gtk_menu_item_new_with_mnemonic (_("Add this as _drawer to panel"));
+	menuitem = ctk_menu_item_new_with_mnemonic (_("Add this as _drawer to panel"));
 	g_signal_connect (menuitem, "activate",
 			  G_CALLBACK (add_menudrawer_to_panel), entry);
-	gtk_widget_set_sensitive (menuitem, id_lists_writable);
-	gtk_menu_shell_append (GTK_MENU_SHELL (submenu), menuitem);
-	gtk_widget_show (menuitem);
+	ctk_widget_set_sensitive (menuitem, id_lists_writable);
+	ctk_menu_shell_append (GTK_MENU_SHELL (submenu), menuitem);
+	ctk_widget_show (menuitem);
 
-	menuitem = gtk_menu_item_new_with_mnemonic (_("Add this as _menu to panel"));
+	menuitem = ctk_menu_item_new_with_mnemonic (_("Add this as _menu to panel"));
 	g_signal_connect (menuitem, "activate",
 			  G_CALLBACK (add_menu_to_panel), entry);
-	gtk_widget_set_sensitive (menuitem, id_lists_writable);
-	gtk_menu_shell_append (GTK_MENU_SHELL (submenu), menuitem);
-	gtk_widget_show (menuitem);
+	ctk_widget_set_sensitive (menuitem, id_lists_writable);
+	ctk_menu_shell_append (GTK_MENU_SHELL (submenu), menuitem);
+	ctk_widget_show (menuitem);
 
 	return menu;
 }
@@ -560,20 +560,20 @@ show_item_menu (GtkWidget      *item,
 	if (!menu)
 		return FALSE;
 
-	gtk_menu_set_screen (GTK_MENU (menu),
-			     gtk_window_get_screen (GTK_WINDOW (panel_widget->toplevel)));
+	ctk_menu_set_screen (GTK_MENU (menu),
+			     ctk_window_get_screen (GTK_WINDOW (panel_widget->toplevel)));
 	/* Set up theme and transparency support */
-	GtkWidget *toplevel = gtk_widget_get_toplevel (menu);
-	/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
-	GdkScreen *screen = gtk_widget_get_screen (GTK_WIDGET (toplevel));
+	GtkWidget *toplevel = ctk_widget_get_toplevel (menu);
+	/* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
+	GdkScreen *screen = ctk_widget_get_screen (GTK_WIDGET (toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual (screen);
-	gtk_widget_set_visual(GTK_WIDGET (toplevel), visual);
+	ctk_widget_set_visual(GTK_WIDGET (toplevel), visual);
 	/* Set menu and it's toplevel window to follow panel theme */
 	GtkStyleContext *context;
-	context = gtk_widget_get_style_context (GTK_WIDGET (toplevel));
-	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
-	gtk_style_context_add_class(context,"cafe-panel-menu-bar");
-	gtk_menu_popup_at_pointer (GTK_MENU (menu), event);
+	context = ctk_widget_get_style_context (GTK_WIDGET (toplevel));
+	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
+	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
+	ctk_menu_popup_at_pointer (GTK_MENU (menu), event);
 
 	return TRUE;
 }
@@ -601,8 +601,8 @@ menuitem_button_press_event (GtkWidget      *menuitem,
 static void
 drag_begin_menu_cb (GtkWidget *widget, GdkDragContext     *context)
 {
-	/* FIXME: workaround for a possible gtk+ bug
-	 *    See bugs #92085(gtk+) and #91184(panel) for details.
+	/* FIXME: workaround for a possible ctk+ bug
+	 *    See bugs #92085(ctk+) and #91184(panel) for details.
 	 *    Maybe it's not needed with GtkTooltip?
 	 */
 	g_object_set (widget, "has-tooltip", FALSE, NULL);
@@ -619,11 +619,11 @@ drag_end_menu_cb (GtkWidget *widget, GdkDragContext     *context)
 
   /* Find the last viewable ancestor, and make an X grab on it
    */
-  parent = gtk_widget_get_parent (widget);
+  parent = ctk_widget_get_parent (widget);
   xgrab_shell = NULL;
 
-  /* FIXME: workaround for a possible gtk+ bug
-   *    See bugs #92085(gtk+) and #91184(panel) for details.
+  /* FIXME: workaround for a possible ctk+ bug
+   *    See bugs #92085(ctk+) and #91184(panel) for details.
    */
   g_object_set (widget, "has-tooltip", TRUE, NULL);
 
@@ -634,18 +634,18 @@ drag_end_menu_cb (GtkWidget *widget, GdkDragContext     *context)
 
       while (tmp)
 	{
-	  if (!gtk_widget_get_mapped (tmp))
+	  if (!ctk_widget_get_mapped (tmp))
 	    {
 	      viewable = FALSE;
 	      break;
 	    }
-	  tmp = gtk_widget_get_parent (tmp);
+	  tmp = ctk_widget_get_parent (tmp);
 	}
 
       if (viewable)
 	xgrab_shell = parent;
 
-      parent = gtk_menu_shell_get_parent_shell (GTK_MENU_SHELL (parent));
+      parent = ctk_menu_shell_get_parent_shell (GTK_MENU_SHELL (parent));
     }
 
   if (xgrab_shell)
@@ -671,8 +671,8 @@ drag_data_get_menu_cb (GtkWidget        *widget,
 	uri_list = g_strconcat (uri, "\r\n", NULL);
 	g_free (uri);
 
-	gtk_selection_data_set (selection_data,
-				gtk_selection_data_get_target (selection_data), 8, (guchar *)uri_list,
+	ctk_selection_data_set (selection_data,
+				ctk_selection_data_get_target (selection_data), 8, (guchar *)uri_list,
 				strlen (uri_list));
 	g_free (uri_list);
 }
@@ -724,7 +724,7 @@ setup_menuitem_with_icon (GtkWidget   *menuitem,
 	GtkWidget *image;
 	GIcon *icon = NULL;
 
-	image = gtk_image_new ();
+	image = ctk_image_new ();
 	g_object_set (image, "icon-size", icon_size, NULL);
 
 	if (gicon)
@@ -732,10 +732,10 @@ setup_menuitem_with_icon (GtkWidget   *menuitem,
 	else if (image_filename)
 		icon = panel_gicon_from_icon_name (image_filename);
 
-	gtk_image_set_from_gicon (GTK_IMAGE(image), icon, icon_size);
+	ctk_image_set_from_gicon (GTK_IMAGE(image), icon, icon_size);
 	g_clear_object (&icon);
 
-	gtk_widget_show (image);
+	ctk_widget_show (image);
 
 	setup_menuitem (menuitem, icon_size, image, title);
 }
@@ -753,30 +753,30 @@ setup_menuitem (GtkWidget   *menuitem,
 	/* this creates a label with an invisible mnemonic */
 	label = g_object_new (GTK_TYPE_ACCEL_LABEL, NULL);
 	_title = menu_escape_underscores_and_prepend (title);
-	gtk_label_set_text_with_mnemonic (GTK_LABEL (label), _title);
+	ctk_label_set_text_with_mnemonic (GTK_LABEL (label), _title);
 	g_free (_title);
 
-	gtk_label_set_pattern (GTK_LABEL (label), "");
+	ctk_label_set_pattern (GTK_LABEL (label), "");
 
-	gtk_accel_label_set_accel_widget (GTK_ACCEL_LABEL (label), menuitem);
+	ctk_accel_label_set_accel_widget (GTK_ACCEL_LABEL (label), menuitem);
 
-	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-	gtk_label_set_yalign (GTK_LABEL (label), 0.5);
-	gtk_widget_show (label);
+	ctk_label_set_xalign (GTK_LABEL (label), 0.0);
+	ctk_label_set_yalign (GTK_LABEL (label), 0.5);
+	ctk_widget_show (label);
 
-	gtk_container_add (GTK_CONTAINER (menuitem), label);
+	ctk_container_add (GTK_CONTAINER (menuitem), label);
 
 	if (image) {
 		gint icon_height = PANEL_DEFAULT_MENU_ICON_SIZE;
 
-		gtk_icon_size_lookup (icon_size, NULL, &icon_height);
-		gtk_widget_show (image);
-		gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menuitem),
+		ctk_icon_size_lookup (icon_size, NULL, &icon_height);
+		ctk_widget_show (image);
+		ctk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menuitem),
 					       image);
-		gtk_image_set_pixel_size (GTK_IMAGE(image), icon_height);
+		ctk_image_set_pixel_size (GTK_IMAGE(image), icon_height);
 	}
 
-	gtk_widget_show (menuitem);
+	ctk_widget_show (menuitem);
 }
 
 static void
@@ -784,8 +784,8 @@ drag_data_get_string_cb (GtkWidget *widget, GdkDragContext     *context,
 			 GtkSelectionData   *selection_data, guint info,
 			 guint time, const char *string)
 {
-	gtk_selection_data_set (selection_data,
-				gtk_selection_data_get_target (selection_data), 8, (guchar *)string,
+	ctk_selection_data_set (selection_data,
+				ctk_selection_data_get_target (selection_data), 8, (guchar *)string,
 				strlen(string));
 }
 
@@ -802,13 +802,13 @@ setup_uri_drag (GtkWidget  *menuitem,
 	if (panel_lockdown_get_locked_down ())
 		return;
 
-	gtk_drag_source_set (menuitem,
+	ctk_drag_source_set (menuitem,
 			     GDK_BUTTON1_MASK|GDK_BUTTON2_MASK,
 			     menu_item_targets, 1,
 			     action);
 
 	if (icon != NULL)
-		gtk_drag_source_set_icon_name (menuitem, icon);
+		ctk_drag_source_set_icon_name (menuitem, icon);
 
 	g_signal_connect (G_OBJECT (menuitem), "drag_begin",
 			  G_CALLBACK (drag_begin_menu_cb), NULL);
@@ -832,13 +832,13 @@ setup_internal_applet_drag (GtkWidget             *menuitem,
 	if (panel_lockdown_get_locked_down ())
 		return;
 
-	gtk_drag_source_set (menuitem,
+	ctk_drag_source_set (menuitem,
 			     GDK_BUTTON1_MASK|GDK_BUTTON2_MASK,
 			     menu_item_targets, 1,
 			     GDK_ACTION_COPY);
 
 	if (panel_action_get_icon_name (type)  != NULL)
-		gtk_drag_source_set_icon_name (menuitem,
+		ctk_drag_source_set_icon_name (menuitem,
 					       panel_action_get_icon_name (type));
 
 	g_signal_connect (G_OBJECT (menuitem), "drag_begin",
@@ -951,11 +951,11 @@ create_fake_menu (CafeMenuTreeDirectory *directory)
 			  G_CALLBACK (menu_dummy_button_press_event), NULL);
 
 
-/* Fix any failures of compiz/other wm's to communicate with gtk for transparency */
-	GtkWidget *toplevel = gtk_widget_get_toplevel (menu);
-	GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+/* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
+	GtkWidget *toplevel = ctk_widget_get_toplevel (menu);
+	GdkScreen *screen = ctk_widget_get_screen(GTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
-	gtk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
 
 	return menu;
 }
@@ -964,8 +964,8 @@ panel_image_menu_item_new (void)
 {
 	GtkWidget *menuitem;
 
-	menuitem = gtk_image_menu_item_new ();
-	gtk_image_menu_item_set_always_show_image (GTK_IMAGE_MENU_ITEM (menuitem),
+	menuitem = ctk_image_menu_item_new ();
+	ctk_image_menu_item_set_always_show_image (GTK_IMAGE_MENU_ITEM (menuitem),
 						   TRUE);
 	return menuitem;
 }
@@ -983,7 +983,7 @@ create_submenu_entry (GtkWidget          *menu,
 	if (force_categories_icon)
 		menuitem = panel_image_menu_item_new ();
 	else
-		menuitem = gtk_image_menu_item_new ();
+		menuitem = ctk_image_menu_item_new ();
 
 	setup_menuitem_with_icon (menuitem,
 				  panel_menu_icon_get_size (),
@@ -991,9 +991,9 @@ create_submenu_entry (GtkWidget          *menu,
 				  NULL,
 				  cafemenu_tree_directory_get_name (directory));
 
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+	ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
 
-	gtk_widget_show (menuitem);
+	ctk_widget_show (menuitem);
 
 	return menuitem;
 }
@@ -1014,7 +1014,7 @@ create_submenu (GtkWidget          *menu,
 
 	submenu = create_fake_menu (directory);
 
-	gtk_menu_item_set_submenu (GTK_MENU_ITEM (menuitem), submenu);
+	ctk_menu_item_set_submenu (GTK_MENU_ITEM (menuitem), submenu);
 
 	/* Keep the infor that we force (or not) the icons to be visible */
 	force_categories_icon = g_object_get_data (G_OBJECT (menu),
@@ -1041,7 +1041,7 @@ create_header (GtkWidget       *menu,
 				(GDestroyNotify) cafemenu_tree_item_unref);
 
 	g_signal_connect (menuitem, "activate",
-			  G_CALLBACK (gtk_false), NULL);
+			  G_CALLBACK (ctk_false), NULL);
 }
 
 static void
@@ -1104,7 +1104,7 @@ create_menuitem (GtkWidget          *menu,
 			{ "text/uri-list", 0, 0 }
 		};
 
-		gtk_drag_source_set (menuitem,
+		ctk_drag_source_set (menuitem,
 				     GDK_BUTTON1_MASK | GDK_BUTTON2_MASK,
 				     menu_item_targets, 1,
 				     GDK_ACTION_COPY);
@@ -1116,7 +1116,7 @@ create_menuitem (GtkWidget          *menu,
 
 			gicon = g_app_info_get_icon (G_APP_INFO(ginfo));
 			if (gicon != NULL) {
-				gtk_drag_source_set_icon_gicon (menuitem, gicon);
+				ctk_drag_source_set_icon_gicon (menuitem, gicon);
 			}
 		}
 
@@ -1128,12 +1128,12 @@ create_menuitem (GtkWidget          *menu,
 				  G_CALLBACK (drag_end_menu_cb), NULL);
 	}
 
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+	ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
 
 	g_signal_connect (menuitem, "activate",
 			  G_CALLBACK (activate_app_def), entry);
 
-	gtk_widget_show (menuitem);
+	ctk_widget_show (menuitem);
 }
 
 static void
@@ -1170,9 +1170,9 @@ handle_cafemenu_tree_changed (CafeMenuTree *tree,
 	guint idle_id;
 
 	GList *list, *l;
-	list = gtk_container_get_children (GTK_CONTAINER (menu));
+	list = ctk_container_get_children (GTK_CONTAINER (menu));
 	for (l = list; l; l = l->next)
-		gtk_widget_destroy (l->data);
+		ctk_widget_destroy (l->data);
 	g_list_free (list);
 
 	if (! cafemenu_tree_load_sync (tree, &error)) {
@@ -1266,11 +1266,11 @@ create_applications_menu (const char *menu_file,
 
 	g_object_unref(tree);
 
-/*HACK Fix any failures of compiz/other wm's to communicate with gtk for transparency */
-	GtkWidget *toplevel = gtk_widget_get_toplevel (menu);
-	GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
+/*HACK Fix any failures of compiz/other wm's to communicate with ctk for transparency */
+	GtkWidget *toplevel = ctk_widget_get_toplevel (menu);
+	GdkScreen *screen = ctk_widget_get_screen(GTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
-	gtk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
 
 	return menu;
 }
@@ -1284,7 +1284,7 @@ populate_menu_from_directory (GtkWidget          *menu,
 	CafeMenuTreeIter *iter;
 	CafeMenuTreeItemType type;
 
-	children = gtk_container_get_children (GTK_CONTAINER (menu));
+	children = ctk_container_get_children (GTK_CONTAINER (menu));
 	add_separator = (children != NULL);
 	g_list_free (children);
 
@@ -1346,7 +1346,7 @@ main_menu_append (GtkWidget *main_menu,
 	panel = PANEL_WIDGET (data);
 
 	add_separator = FALSE;
-	children = gtk_container_get_children (GTK_CONTAINER (main_menu));
+	children = ctk_container_get_children (GTK_CONTAINER (main_menu));
 	last = g_list_last (children);
 	if (last != NULL) {
 		add_separator = !GTK_IS_SEPARATOR (GTK_WIDGET (last->data));
@@ -1358,13 +1358,13 @@ main_menu_append (GtkWidget *main_menu,
 
 	item = panel_place_menu_item_new (TRUE);
 	panel_place_menu_item_set_panel (item, panel);
-	gtk_menu_shell_append (GTK_MENU_SHELL (main_menu), item);
-	gtk_widget_show (item);
+	ctk_menu_shell_append (GTK_MENU_SHELL (main_menu), item);
+	ctk_widget_show (item);
 
 	item = panel_desktop_menu_item_new (TRUE, FALSE);
 	panel_desktop_menu_item_set_panel (item, panel);
-	gtk_menu_shell_append (GTK_MENU_SHELL (main_menu), item);
-	gtk_widget_show (item);
+	ctk_menu_shell_append (GTK_MENU_SHELL (main_menu), item);
+	ctk_widget_show (item);
 
 	panel_menu_items_append_lock_logout (main_menu);
 }
@@ -1393,11 +1393,11 @@ panel_menu_key_press_handler (GtkWidget   *widget,
 
 	if ((event->keyval == GDK_KEY_Menu) ||
 	    (event->keyval == GDK_KEY_F10 &&
-	    (event->state & gtk_accelerator_get_default_mod_mask ()) == GDK_SHIFT_MASK)) {
+	    (event->state & ctk_accelerator_get_default_mod_mask ()) == GDK_SHIFT_MASK)) {
 		GtkMenuShell *menu_shell = GTK_MENU_SHELL (widget);
 
-		active_menu_item = gtk_menu_shell_get_selected_item (menu_shell);
-		if (active_menu_item && gtk_menu_item_get_submenu (GTK_MENU_ITEM (active_menu_item)) == NULL)
+		active_menu_item = ctk_menu_shell_get_selected_item (menu_shell);
+		if (active_menu_item && ctk_menu_item_get_submenu (GTK_MENU_ITEM (active_menu_item)) == NULL)
 			retval = show_item_menu (active_menu_item, (GdkEvent *) event);
 	}
 	return retval;

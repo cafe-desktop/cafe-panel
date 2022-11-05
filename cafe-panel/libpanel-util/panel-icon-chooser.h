@@ -25,7 +25,7 @@
 #ifndef PANEL_ICON_CHOOSER_H
 #define PANEL_ICON_CHOOSER_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

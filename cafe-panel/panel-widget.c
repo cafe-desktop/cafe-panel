@@ -9,11 +9,11 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkkeysyms.h>
 
 #ifdef HAVE_X11
-#include <gtk/gtkx.h> /* for GTK_IS_SOCKET */
+#include <ctk/ctkx.h> /* for GTK_IS_SOCKET */
 #endif
 
 #include <libpanel-util/panel-list.h>
@@ -115,7 +115,7 @@ emit_applet_moved (PanelWidget *panel_widget,
 {
 	/* we always want to queue a draw after moving, so do it here instead
 	* of after the signal emission in all callers */
-	gtk_widget_queue_draw (applet->applet);
+	ctk_widget_queue_draw (applet->applet);
 	g_signal_emit (panel_widget,
 		       panel_widget_signals [APPLET_MOVE_SIGNAL], 0,
 		       applet->applet);
@@ -130,10 +130,10 @@ add_tab_bindings (GtkBindingSet    *binding_set,
    	          GdkModifierType   modifiers,
 		  gboolean          next)
 {
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Tab, modifiers,
+	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Tab, modifiers,
 				      "tab_move", 1,
 				      G_TYPE_BOOLEAN, next);
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_KP_Tab, modifiers,
+	ctk_binding_entry_add_signal (binding_set, GDK_KEY_KP_Tab, modifiers,
 				      "tab_move", 1,
 				      G_TYPE_BOOLEAN, next);
 }
@@ -143,16 +143,16 @@ add_move_bindings (GtkBindingSet    *binding_set,
 		   GdkModifierType   modifiers,
 		   const gchar      *name)
 {
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Up, modifiers,
+	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Up, modifiers,
                                       name, 1,
                                       GTK_TYPE_DIRECTION_TYPE, GTK_DIR_UP);
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Down, modifiers,
+	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Down, modifiers,
                                       name, 1,
                                       GTK_TYPE_DIRECTION_TYPE, GTK_DIR_DOWN);
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Left, modifiers,
+	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Left, modifiers,
                                       name, 1,
                                       GTK_TYPE_DIRECTION_TYPE, GTK_DIR_LEFT);
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Right, modifiers,
+	ctk_binding_entry_add_signal (binding_set, GDK_KEY_Right, modifiers,
                                       name, 1,
                                       GTK_TYPE_DIRECTION_TYPE, GTK_DIR_RIGHT);
 }
@@ -165,7 +165,7 @@ add_all_move_bindings (PanelWidget *panel)
 
 	class = GTK_WIDGET_GET_CLASS (panel);
 
-	binding_set = gtk_binding_set_by_class (class);
+	binding_set = ctk_binding_set_by_class (class);
 
 	add_move_bindings (binding_set, GDK_SHIFT_MASK, "push_move");
 	add_move_bindings (binding_set, GDK_CONTROL_MASK, "switch_move");
@@ -175,26 +175,26 @@ add_all_move_bindings (PanelWidget *panel)
 	add_tab_bindings (binding_set, 0, TRUE);
 	add_tab_bindings (binding_set, GDK_SHIFT_MASK, FALSE);
 
-	gtk_binding_entry_add_signal (binding_set,
+	ctk_binding_entry_add_signal (binding_set,
                                       GDK_KEY_Escape, 0,
                                       "end_move", 0);
-	gtk_binding_entry_add_signal (binding_set,
+	ctk_binding_entry_add_signal (binding_set,
                                       GDK_KEY_KP_Enter, 0,
                                       "end_move", 0);
-	gtk_binding_entry_add_signal (binding_set,
+	ctk_binding_entry_add_signal (binding_set,
                                       GDK_KEY_Return, 0,
                                       "end_move", 0);
-	gtk_binding_entry_add_signal (binding_set,
+	ctk_binding_entry_add_signal (binding_set,
                                       GDK_KEY_KP_Space, 0,
                                       "end_move", 0);
-	gtk_binding_entry_add_signal (binding_set,
+	ctk_binding_entry_add_signal (binding_set,
                                       GDK_KEY_space, 0,
                                       "end_move", 0);
 
 #ifdef HAVE_X11
 	GtkWidget *focus_widget;
 
-	focus_widget = gtk_window_get_focus (GTK_WINDOW (panel->toplevel));
+	focus_widget = ctk_window_get_focus (GTK_WINDOW (panel->toplevel));
 	// will always be false when not on X
 	if (GTK_IS_SOCKET (focus_widget)) {
 		/*
@@ -204,8 +204,8 @@ add_all_move_bindings (PanelWidget *panel)
 		 * by setting the focus to the PanelWidget for the
 		 * duration of the move.
 		 */
-		gtk_widget_set_can_focus (GTK_WIDGET (panel), TRUE);
-		gtk_widget_grab_focus (GTK_WIDGET (panel));
+		ctk_widget_set_can_focus (GTK_WIDGET (panel), TRUE);
+		ctk_widget_grab_focus (GTK_WIDGET (panel));
 		saved_focus_widget = focus_widget;
 	}
 #endif // HAVE_X11
@@ -214,22 +214,22 @@ add_all_move_bindings (PanelWidget *panel)
 static void
 panel_widget_force_grab_focus (GtkWidget *widget)
 {
-	gboolean can_focus = gtk_widget_get_can_focus (widget);
+	gboolean can_focus = ctk_widget_get_can_focus (widget);
 	/*
-	 * This follows what gtk_socket_claim_focus() does
+	 * This follows what ctk_socket_claim_focus() does
 	 */
 	if (!can_focus)
-		gtk_widget_set_can_focus (widget, TRUE);
-	gtk_widget_grab_focus (widget);
+		ctk_widget_set_can_focus (widget, TRUE);
+	ctk_widget_grab_focus (widget);
 	if (!can_focus)
-		gtk_widget_set_can_focus (widget, FALSE);
+		ctk_widget_set_can_focus (widget, FALSE);
 }
 
 static void
 panel_widget_reset_saved_focus (PanelWidget *panel)
 {
 	if (saved_focus_widget) {
-		gtk_widget_set_can_focus (GTK_WIDGET (panel), FALSE);
+		ctk_widget_set_can_focus (GTK_WIDGET (panel), FALSE);
 		panel_widget_force_grab_focus (saved_focus_widget);
 		saved_focus_widget = NULL;
 	}
@@ -240,18 +240,18 @@ remove_tab_bindings (GtkBindingSet    *binding_set,
 		     GdkModifierType   modifiers,
 		     gboolean          next)
 {
-	gtk_binding_entry_remove (binding_set, GDK_KEY_Tab, modifiers);
-	gtk_binding_entry_remove (binding_set, GDK_KEY_KP_Tab, modifiers);
+	ctk_binding_entry_remove (binding_set, GDK_KEY_Tab, modifiers);
+	ctk_binding_entry_remove (binding_set, GDK_KEY_KP_Tab, modifiers);
 }
 
 static void
 remove_move_bindings (GtkBindingSet    *binding_set,
 		      GdkModifierType   modifiers)
 {
-	gtk_binding_entry_remove (binding_set, GDK_KEY_Up, modifiers);
-	gtk_binding_entry_remove (binding_set, GDK_KEY_Down, modifiers);
-	gtk_binding_entry_remove (binding_set, GDK_KEY_Left, modifiers);
-	gtk_binding_entry_remove (binding_set, GDK_KEY_Right, modifiers);
+	ctk_binding_entry_remove (binding_set, GDK_KEY_Up, modifiers);
+	ctk_binding_entry_remove (binding_set, GDK_KEY_Down, modifiers);
+	ctk_binding_entry_remove (binding_set, GDK_KEY_Left, modifiers);
+	ctk_binding_entry_remove (binding_set, GDK_KEY_Right, modifiers);
 }
 
 static void
@@ -262,7 +262,7 @@ remove_all_move_bindings (PanelWidget *panel)
 
 	class = GTK_WIDGET_GET_CLASS (panel);
 
-	binding_set = gtk_binding_set_by_class (class);
+	binding_set = ctk_binding_set_by_class (class);
 
 	panel_widget_reset_saved_focus (panel);
 
@@ -273,11 +273,11 @@ remove_all_move_bindings (PanelWidget *panel)
 	remove_tab_bindings (binding_set, 0, TRUE);
 	remove_tab_bindings (binding_set, GDK_SHIFT_MASK, FALSE);
 
-	gtk_binding_entry_remove (binding_set, GDK_KEY_Escape, 0);
-	gtk_binding_entry_remove (binding_set, GDK_KEY_KP_Enter, 0);
-	gtk_binding_entry_remove (binding_set, GDK_KEY_Return, 0);
-	gtk_binding_entry_remove (binding_set, GDK_KEY_KP_Space, 0);
-	gtk_binding_entry_remove (binding_set, GDK_KEY_space, 0);
+	ctk_binding_entry_remove (binding_set, GDK_KEY_Escape, 0);
+	ctk_binding_entry_remove (binding_set, GDK_KEY_KP_Enter, 0);
+	ctk_binding_entry_remove (binding_set, GDK_KEY_Return, 0);
+	ctk_binding_entry_remove (binding_set, GDK_KEY_KP_Space, 0);
+	ctk_binding_entry_remove (binding_set, GDK_KEY_space, 0);
 }
 
 static void
@@ -422,7 +422,7 @@ panel_widget_class_init (PanelWidgetClass *class)
 	widget_class->get_preferred_height = panel_widget_get_preferred_height;
 	widget_class->size_allocate = panel_widget_size_allocate;
 
-	gtk_widget_class_set_css_name (widget_class, "PanelWidget");
+	ctk_widget_class_set_css_name (widget_class, "PanelWidget");
 
 	widget_class->focus = panel_widget_real_focus;
 	container_class->add = panel_widget_cadd;
@@ -449,7 +449,7 @@ remove_panel_from_forbidden(PanelWidget *panel, PanelWidget *r)
 				   CAFE_PANEL_APPLET_FORBIDDEN_PANELS,
 				   list);
 	}
-	parent_panel = gtk_widget_get_parent (panel->master_widget);
+	parent_panel = ctk_widget_get_parent (panel->master_widget);
 	if (parent_panel)
 		remove_panel_from_forbidden(PANEL_WIDGET(parent_panel), r);
 }
@@ -475,7 +475,7 @@ add_panel_to_forbidden(PanelWidget *panel, PanelWidget *r)
 				   CAFE_PANEL_APPLET_FORBIDDEN_PANELS,
 				   list);
 	}
-	parent_panel = gtk_widget_get_parent (panel->master_widget);
+	parent_panel = ctk_widget_get_parent (panel->master_widget);
 	if (parent_panel)
 		add_panel_to_forbidden(PANEL_WIDGET(parent_panel), r);
 }
@@ -505,10 +505,10 @@ panel_widget_reset_focus (GtkContainer *container,
 {
 	PanelWidget *panel = PANEL_WIDGET (container);
 
-	if (gtk_container_get_focus_child (container) == widget) {
+	if (ctk_container_get_focus_child (container) == widget) {
 		GList *children;
 
-		children = gtk_container_get_children (container);
+		children = ctk_container_get_children (container);
 
 		/* More than one element on the list */
 		if (children && children->next) {
@@ -530,7 +530,7 @@ panel_widget_reset_focus (GtkContainer *container,
 				else
 					next_widget = l->prev->data;
 
-				gtk_widget_child_focus (next_widget,
+				ctk_widget_child_focus (next_widget,
 						        GTK_DIR_TAB_FORWARD);
 			}
 		} else
@@ -707,7 +707,7 @@ panel_widget_jump_applet_right (PanelWidget *panel,
 	ad->pos = ad->constrained = pos;
 	panel->applet_list = g_list_remove_link (panel->applet_list, list);
 	panel->applet_list = panel_g_list_insert_before (panel->applet_list, next, list);
-	gtk_widget_queue_resize (GTK_WIDGET (panel));
+	ctk_widget_queue_resize (GTK_WIDGET (panel));
 	emit_applet_moved (panel, ad);
 }
 
@@ -729,7 +729,7 @@ panel_widget_switch_applet_right (PanelWidget *panel,
 
 	if (!nad || nad->constrained >= ad->constrained + ad->min_cells + MOVE_INCREMENT) {
 		ad->pos = ad->constrained += MOVE_INCREMENT;
-		gtk_widget_queue_resize (GTK_WIDGET (panel));
+		ctk_widget_queue_resize (GTK_WIDGET (panel));
 		emit_applet_moved (panel, ad);
 		return;
 	}
@@ -746,7 +746,7 @@ panel_widget_switch_applet_right (PanelWidget *panel,
 	ad->constrained = ad->pos = ad->constrained + nad->min_cells;
 	panel->applet_list = panel_g_list_swap_next (panel->applet_list, list);
 
-	gtk_widget_queue_resize (GTK_WIDGET (panel));
+	ctk_widget_queue_resize (GTK_WIDGET (panel));
 
 	emit_applet_moved (panel, ad);
 	emit_applet_moved (panel, nad);
@@ -783,7 +783,7 @@ panel_widget_jump_applet_left (PanelWidget *panel,
 	ad->pos = ad->constrained = pos;
 	panel->applet_list = g_list_remove_link (panel->applet_list, list);
 	panel->applet_list = panel_g_list_insert_after (panel->applet_list, prev, list);
-	gtk_widget_queue_resize (GTK_WIDGET (panel));
+	ctk_widget_queue_resize (GTK_WIDGET (panel));
 	emit_applet_moved (panel, ad);
 }
 
@@ -803,7 +803,7 @@ panel_widget_switch_applet_left (PanelWidget *panel,
 
 	if (!pad || pad->constrained + pad->min_cells <= ad->constrained - MOVE_INCREMENT) {
 		ad->pos = ad->constrained -= MOVE_INCREMENT;
-		gtk_widget_queue_resize (GTK_WIDGET (panel));
+		ctk_widget_queue_resize (GTK_WIDGET (panel));
 		emit_applet_moved (panel, ad);
 		return;
 	}
@@ -820,7 +820,7 @@ panel_widget_switch_applet_left (PanelWidget *panel,
 	pad->constrained = pad->pos = ad->constrained + ad->min_cells;
 	panel->applet_list = panel_g_list_swap_prev (panel->applet_list, list);
 
-	gtk_widget_queue_resize (GTK_WIDGET (panel));
+	ctk_widget_queue_resize (GTK_WIDGET (panel));
 
 	emit_applet_moved (panel, ad);
 	emit_applet_moved (panel, pad);
@@ -1000,7 +1000,7 @@ panel_widget_switch_move (PanelWidget *panel,
 		if (list->prev) {
 			pad = list->prev->data;
 			if (pad->expand_major)
-				gtk_widget_queue_resize (GTK_WIDGET (panel));
+				ctk_widget_queue_resize (GTK_WIDGET (panel));
 		}
 
 		while (ad->constrained < finalpos) {
@@ -1016,7 +1016,7 @@ panel_widget_switch_move (PanelWidget *panel,
 		if (list->prev) {
 			pad = list->prev->data;
 			if (pad->expand_major)
-				gtk_widget_queue_resize (GTK_WIDGET (panel));
+				ctk_widget_queue_resize (GTK_WIDGET (panel));
 		}
 	} else {
 		AppletData *nad;
@@ -1024,7 +1024,7 @@ panel_widget_switch_move (PanelWidget *panel,
 		if (list->next) {
 			nad = list->next->data;
 			if (nad->expand_major)
-				gtk_widget_queue_resize (GTK_WIDGET (panel));
+				ctk_widget_queue_resize (GTK_WIDGET (panel));
 		}
 
 		while (ad->constrained > finalpos) {
@@ -1061,7 +1061,7 @@ panel_widget_push_applet_right (PanelWidget *panel,
 
 	if (!nad || nad->constrained >= ad->constrained + ad->min_cells + push) {
 		ad->pos = ad->constrained += push;
-		gtk_widget_queue_resize (GTK_WIDGET (panel));
+		ctk_widget_queue_resize (GTK_WIDGET (panel));
 		emit_applet_moved (panel, ad);
 		return TRUE;
 	}
@@ -1072,7 +1072,7 @@ panel_widget_push_applet_right (PanelWidget *panel,
 		return FALSE;
 
 	ad->pos = ad->constrained += push;;
-	gtk_widget_queue_resize (GTK_WIDGET (panel));
+	ctk_widget_queue_resize (GTK_WIDGET (panel));
 	emit_applet_moved (panel, ad);
 
 	return TRUE;
@@ -1100,7 +1100,7 @@ panel_widget_push_applet_left (PanelWidget *panel,
 
 	if (!pad || pad->constrained + pad->min_cells <= ad->constrained - push) {
 		ad->pos = ad->constrained -= push;
-		gtk_widget_queue_resize (GTK_WIDGET (panel));
+		ctk_widget_queue_resize (GTK_WIDGET (panel));
 		emit_applet_moved (panel, ad);
 		return TRUE;
 	}
@@ -1111,7 +1111,7 @@ panel_widget_push_applet_left (PanelWidget *panel,
 		return FALSE;
 
 	ad->pos = ad->constrained -= push;
-	gtk_widget_queue_resize (GTK_WIDGET (panel));
+	ctk_widget_queue_resize (GTK_WIDGET (panel));
 	emit_applet_moved (panel, ad);
 
 	return TRUE;
@@ -1145,7 +1145,7 @@ panel_widget_push_move (PanelWidget *panel,
                 if (list->prev) {
 			pad = list->prev->data;
 			if (pad->expand_major)
-				gtk_widget_queue_resize (GTK_WIDGET (panel));
+				ctk_widget_queue_resize (GTK_WIDGET (panel));
 		}
 	} else {
                 while (ad->constrained > finalpos)
@@ -1222,13 +1222,13 @@ panel_widget_get_preferred_size(GtkWidget	     *widget,
 	natural_size->height = minimum_size->height;
 
 	ad_with_hints = NULL;
-	scale = gtk_widget_get_scale_factor(widget);
+	scale = ctk_widget_get_scale_factor(widget);
 
 	for (list = panel->applet_list; list!=NULL; list = g_list_next(list)) {
 		AppletData *ad = list->data;
 		GtkRequisition child_min_size;
 		GtkRequisition child_natural_size;
-		gtk_widget_get_preferred_size(ad->applet,
+		ctk_widget_get_preferred_size(ad->applet,
 		                              &child_min_size,
 		                              &child_natural_size);
 
@@ -1358,7 +1358,7 @@ queue_resize_on_all_applets(PanelWidget *panel)
 	for(li = panel->applet_list; li != NULL;
 	    li = g_list_next(li)) {
 		AppletData *ad = li->data;
-		gtk_widget_queue_resize (ad->applet);
+		ctk_widget_queue_resize (ad->applet);
 	}
 }
 
@@ -1377,11 +1377,11 @@ panel_widget_size_allocate(GtkWidget *widget, GtkAllocation *allocation)
 	panel = PANEL_WIDGET(widget);
 
 	old_size = panel->size;
-	ltr = gtk_widget_get_direction (widget) == GTK_TEXT_DIR_LTR;
+	ltr = ctk_widget_get_direction (widget) == GTK_TEXT_DIR_LTR;
 
-	gtk_widget_set_allocation (widget, allocation);
-	if (gtk_widget_get_realized (widget))
-		gdk_window_move_resize (gtk_widget_get_window (widget),
+	ctk_widget_set_allocation (widget, allocation);
+	if (ctk_widget_get_realized (widget))
+		gdk_window_move_resize (ctk_widget_get_window (widget),
 					allocation->x,
 					allocation->y,
 					allocation->width,
@@ -1406,7 +1406,7 @@ panel_widget_size_allocate(GtkWidget *widget, GtkAllocation *allocation)
 			AppletData *ad = list->data;
 			GtkAllocation challoc;
 			GtkRequisition chreq;
-			gtk_widget_get_preferred_size (ad->applet, &chreq, NULL);
+			ctk_widget_get_preferred_size (ad->applet, &chreq, NULL);
 
 			ad->constrained = i;
 
@@ -1440,7 +1440,7 @@ panel_widget_size_allocate(GtkWidget *widget, GtkAllocation *allocation)
 				challoc.y = ad->constrained;
 			}
 			ad->min_cells  = ad->cells;
-			gtk_widget_size_allocate(ad->applet,&challoc);
+			ctk_widget_size_allocate(ad->applet,&challoc);
 			i += ad->cells;
 		}
 
@@ -1457,7 +1457,7 @@ panel_widget_size_allocate(GtkWidget *widget, GtkAllocation *allocation)
 			AppletData *ad = list->data;
 			GtkRequisition chreq;
 
-			gtk_widget_get_preferred_size (ad->applet, &chreq, NULL);
+			ctk_widget_get_preferred_size (ad->applet, &chreq, NULL);
 
 			if (!ad->expand_major || !ad->size_hints) {
 				if(panel->orient == GTK_ORIENTATION_HORIZONTAL)
@@ -1527,7 +1527,7 @@ panel_widget_size_allocate(GtkWidget *widget, GtkAllocation *allocation)
 			AppletData *ad = list->data;
 			GtkAllocation challoc;
 			GtkRequisition chreq;
-			gtk_widget_get_preferred_size (ad->applet, &chreq, NULL);
+			ctk_widget_get_preferred_size (ad->applet, &chreq, NULL);
 
 			challoc.width = chreq.width;
 			challoc.height = chreq.height;
@@ -1550,11 +1550,11 @@ panel_widget_size_allocate(GtkWidget *widget, GtkAllocation *allocation)
 			challoc.width = MAX(challoc.width, 1);
 			challoc.height = MAX(challoc.height, 1);
 
-			gtk_widget_size_allocate(ad->applet,&challoc);
+			ctk_widget_size_allocate(ad->applet,&challoc);
 		}
 	}
 
-	gtk_widget_queue_resize(widget);
+	ctk_widget_queue_resize(widget);
 }
 
 gboolean
@@ -1572,13 +1572,13 @@ panel_widget_is_cursor(PanelWidget *panel, int overlap)
 
 	if(!widget ||
 	   !GTK_IS_WIDGET(widget) ||
-	   !gtk_widget_get_visible(widget))
+	   !ctk_widget_get_visible(widget))
 		return FALSE;
 
-	device = gdk_seat_get_pointer (gdk_display_get_default_seat (gtk_widget_get_display (widget)));
-	gdk_window_get_device_position(gtk_widget_get_window (widget), device, &x, &y, NULL);
+	device = gdk_seat_get_pointer (gdk_display_get_default_seat (ctk_widget_get_display (widget)));
+	gdk_window_get_device_position(ctk_widget_get_window (widget), device, &x, &y, NULL);
 
-	gtk_widget_get_allocation (widget, &allocation);
+	ctk_widget_get_allocation (widget, &allocation);
 	w = allocation.width;
 	h = allocation.height;
 
@@ -1631,7 +1631,7 @@ panel_widget_destroy_open_dialogs (PanelWidget *panel_widget)
 		g_signal_handlers_disconnect_by_func (G_OBJECT (l->data),
 				G_CALLBACK (panel_widget_open_dialog_destroyed),
 				panel_widget);
-		gtk_widget_destroy (l->data);
+		ctk_widget_destroy (l->data);
 	}
 	g_slist_free (list);
 
@@ -1667,9 +1667,9 @@ panel_widget_init (PanelWidget *panel)
 {
 	GtkWidget *widget = (GtkWidget *) panel;
 
-	gtk_widget_set_events (
+	ctk_widget_set_events (
 		widget,
-		gtk_widget_get_events (widget) | GDK_BUTTON_RELEASE_MASK);
+		ctk_widget_get_events (widget) | GDK_BUTTON_RELEASE_MASK);
 
 	panel->packed        = FALSE;
 	panel->orient        = GTK_ORIENTATION_HORIZONTAL;
@@ -1696,8 +1696,8 @@ panel_widget_new (PanelToplevel  *toplevel,
 
 	panel = g_object_new (PANEL_TYPE_WIDGET, NULL);
 
-	gtk_widget_set_has_window (GTK_WIDGET (panel), TRUE);
-	gtk_widget_set_can_focus (GTK_WIDGET (panel), TRUE);
+	ctk_widget_set_has_window (GTK_WIDGET (panel), TRUE);
+	ctk_widget_set_can_focus (GTK_WIDGET (panel), TRUE);
 
 	panel->orient = orient;
 	panel->sz = sz;
@@ -1806,9 +1806,9 @@ panel_widget_applet_drag_start (PanelWidget *panel,
 
 	panel_toplevel_push_autohide_disabler (panel->toplevel);
 
-	gtk_grab_add (applet);
+	ctk_grab_add (applet);
 
-	window = gtk_widget_get_window (applet);
+	window = ctk_widget_get_window (applet);
 	if (window) {
 		GdkGrabStatus  status;
 		GdkCursor     *fleur_cursor;
@@ -1846,12 +1846,12 @@ panel_widget_applet_drag_end (PanelWidget *panel)
 	if (panel->currently_dragged_applet == NULL)
 		return;
 
-	display = gtk_widget_get_display (GTK_WIDGET (panel));
+	display = ctk_widget_get_display (GTK_WIDGET (panel));
 	seat = gdk_display_get_default_seat (display);
 
 	gdk_seat_ungrab (seat);
 
-	gtk_grab_remove (panel->currently_dragged_applet->applet);
+	ctk_grab_remove (panel->currently_dragged_applet->applet);
 	panel_widget_applet_drag_end_no_grab (panel);
 	panel_toplevel_pop_autohide_disabler (panel->toplevel);
 	gdk_display_flush (display);
@@ -1867,9 +1867,9 @@ panel_widget_get_cursorloc (PanelWidget *panel)
 
 	g_return_val_if_fail (PANEL_IS_WIDGET (panel), -1);
 
-	device = gdk_seat_get_pointer (gdk_display_get_default_seat (gtk_widget_get_display (GTK_WIDGET(panel))));
-	gdk_window_get_device_position(gtk_widget_get_window (GTK_WIDGET(panel)), device, &x, &y, NULL);
-	rtl = gtk_widget_get_direction (GTK_WIDGET (panel)) == GTK_TEXT_DIR_RTL;
+	device = gdk_seat_get_pointer (gdk_display_get_default_seat (ctk_widget_get_display (GTK_WIDGET(panel))));
+	gdk_window_get_device_position(ctk_widget_get_window (GTK_WIDGET(panel)), device, &x, &y, NULL);
+	rtl = ctk_widget_get_direction (GTK_WIDGET (panel)) == GTK_TEXT_DIR_RTL;
 
 	if (panel->orient == GTK_ORIENTATION_HORIZONTAL)
 		return (rtl ? panel->size - x : x);
@@ -2019,7 +2019,7 @@ panel_widget_nice_move (PanelWidget *panel,
 		panel_g_list_resort_item (panel->applet_list, ad,
 					  (GCompareFunc)applet_data_compare);
 
-	gtk_widget_queue_resize (GTK_WIDGET (panel));
+	ctk_widget_queue_resize (GTK_WIDGET (panel));
 
 	emit_applet_moved (panel, ad);
 }
@@ -2091,8 +2091,8 @@ panel_widget_applet_move_to_cursor (PanelWidget *panel)
 		}
 	}
 
-	device = gdk_seat_get_pointer (gdk_display_get_default_seat (gtk_widget_get_display (GTK_WIDGET (panel))));
-	gdk_window_get_device_position (gtk_widget_get_window (GTK_WIDGET(panel)), device, NULL, NULL, &mods);
+	device = gdk_seat_get_pointer (gdk_display_get_default_seat (ctk_widget_get_display (GTK_WIDGET (panel))));
+	gdk_window_get_device_position (ctk_widget_get_window (GTK_WIDGET(panel)), device, NULL, NULL, &mods);
 
 	movement = PANEL_SWITCH_MOVE;
 
@@ -2146,10 +2146,10 @@ move_timeout_handler(gpointer data)
 
 		widget = panel->currently_dragged_applet->applet;
 
-		device = gdk_seat_get_pointer (gdk_display_get_default_seat (gtk_widget_get_display (widget)));
-		gdk_window_get_device_position (gtk_widget_get_window (widget), device, &x, &y, NULL);
+		device = gdk_seat_get_pointer (gdk_display_get_default_seat (ctk_widget_get_display (widget)));
+		gdk_window_get_device_position (ctk_widget_get_window (widget), device, &x, &y, NULL);
 
-		gtk_widget_get_allocation (widget, &allocation);
+		ctk_widget_get_allocation (widget, &allocation);
 		w = allocation.width;
 		h = allocation.height;
 
@@ -2188,7 +2188,7 @@ panel_widget_applet_button_press_event (GtkWidget      *widget,
 	PanelWidget *panel;
 	guint32      event_time;
 
-	parent = gtk_widget_get_parent (widget);
+	parent = ctk_widget_get_parent (widget);
 
 	g_return_val_if_fail (PANEL_IS_WIDGET (parent), FALSE);
 
@@ -2206,7 +2206,7 @@ panel_widget_applet_button_press_event (GtkWidget      *widget,
 	/* Begin drag if the middle mouse button is pressed, unless the panel
 	 * is locked down or a grab is active (meaning a menu is open) */
 	if (panel_lockdown_get_locked_down () || event->button != 2 ||
-	    gtk_grab_get_current() != NULL)
+	    ctk_grab_get_current() != NULL)
 		return FALSE;
 
 	/* time on sent events seems to be bogus */
@@ -2226,7 +2226,7 @@ panel_widget_applet_button_release_event (GtkWidget      *widget,
 	GtkWidget   *parent;
 	PanelWidget *panel;
 
-	parent = gtk_widget_get_parent (widget);
+	parent = ctk_widget_get_parent (widget);
 
 	g_return_val_if_fail (PANEL_IS_WIDGET (parent), FALSE);
 
@@ -2252,11 +2252,11 @@ panel_widget_applet_motion_notify_event (GtkWidget *widget,
 	GtkWidget   *parent;
 	PanelWidget *panel;
 
-	parent = gtk_widget_get_parent (widget);
+	parent = ctk_widget_get_parent (widget);
 
 	g_return_val_if_fail (PANEL_IS_WIDGET (parent), FALSE);
 
-	if (gdk_event_get_screen (event) != gtk_widget_get_screen (widget))
+	if (gdk_event_get_screen (event) != ctk_widget_get_screen (widget))
 		return FALSE;
 
 	panel = PANEL_WIDGET (parent);
@@ -2273,7 +2273,7 @@ panel_widget_applet_key_press_event (GtkWidget   *widget,
 	GtkWidget   *parent;
 	PanelWidget *panel;
 
-	parent = gtk_widget_get_parent (widget);
+	parent = ctk_widget_get_parent (widget);
 
 	g_return_val_if_fail (PANEL_IS_WIDGET (parent), FALSE);
 
@@ -2282,7 +2282,7 @@ panel_widget_applet_key_press_event (GtkWidget   *widget,
 	if (!cafe_panel_applet_in_drag)
 		return FALSE;
 
-	return gtk_bindings_activate (G_OBJECT (panel),
+	return ctk_bindings_activate (G_OBJECT (panel),
 				      ((GdkEventKey *)event)->keyval,
 				      ((GdkEventKey *)event)->state);
 }
@@ -2301,13 +2301,13 @@ panel_sub_event_handler(GtkWidget *widget, GdkEvent *event, gpointer data)
 			GdkEventButton *bevent = (GdkEventButton *)event;
 
 			if (bevent->button != 1 || cafe_panel_applet_in_drag)
-				return gtk_widget_event (data, event);
+				return ctk_widget_event (data, event);
 
 			}
 			break;
 		case GDK_KEY_PRESS:
 			if (cafe_panel_applet_in_drag)
-				return gtk_widget_event(data, event);
+				return ctk_widget_event(data, event);
 			break;
 		default:
 			break;
@@ -2330,13 +2330,13 @@ bind_applet_events(GtkWidget *widget, gpointer data)
 	 * GtkEventBox) for processing by us.
 	 */
 
-	if (gtk_widget_get_has_window (widget))
+	if (ctk_widget_get_has_window (widget))
 		g_signal_connect (G_OBJECT(widget), "event",
 				  G_CALLBACK (panel_sub_event_handler),
 				  data);
 
 	if (GTK_IS_CONTAINER(widget))
-		gtk_container_foreach (GTK_CONTAINER (widget),
+		ctk_container_foreach (GTK_CONTAINER (widget),
 				       bind_applet_events, data);
 }
 
@@ -2351,7 +2351,7 @@ panel_widget_applet_destroy (GtkWidget *applet, gpointer data)
 	ad = g_object_get_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA);
 	g_object_set_data (G_OBJECT (applet), CAFE_PANEL_APPLET_DATA, NULL);
 
-	parent = gtk_widget_get_parent (applet);
+	parent = ctk_widget_get_parent (applet);
 	/*if it wasn't yet removed*/
 	if(parent) {
 		PanelWidget *panel = PANEL_WIDGET (parent);
@@ -2399,7 +2399,7 @@ bind_top_applet_events (GtkWidget *widget)
 	 */
 
 	if (GTK_IS_CONTAINER(widget))
-		gtk_container_foreach (GTK_CONTAINER (widget),
+		ctk_container_foreach (GTK_CONTAINER (widget),
 				       bind_applet_events, widget);
 }
 
@@ -2526,14 +2526,14 @@ panel_widget_add (PanelWidget *panel,
 
 	/*this will get done right on size allocate!*/
 	if(panel->orient == GTK_ORIENTATION_HORIZONTAL)
-		gtk_fixed_put(GTK_FIXED(panel),applet,
+		ctk_fixed_put(GTK_FIXED(panel),applet,
 			      pos,0);
 	else
-		gtk_fixed_put(GTK_FIXED(panel),applet,
+		ctk_fixed_put(GTK_FIXED(panel),applet,
 			      0,pos);
 
 
-	gtk_widget_queue_resize(GTK_WIDGET(panel));
+	ctk_widget_queue_resize(GTK_WIDGET(panel));
 
 	g_signal_emit (G_OBJECT(panel),
 		       panel_widget_signals[APPLET_ADDED_SIGNAL],
@@ -2576,25 +2576,25 @@ panel_widget_reparent (PanelWidget *old_panel,
 	if (ad->pos == -1)
 		ad->pos = ad->constrained = 0;
 
-	gtk_widget_queue_resize (GTK_WIDGET (new_panel));
-	gtk_widget_queue_resize (GTK_WIDGET (old_panel));
+	ctk_widget_queue_resize (GTK_WIDGET (new_panel));
+	ctk_widget_queue_resize (GTK_WIDGET (old_panel));
 
 	panel_widget_reset_saved_focus (old_panel);
-	if (gtk_container_get_focus_child (GTK_CONTAINER (old_panel)) == applet)
-		focus_widget = gtk_window_get_focus (GTK_WINDOW (old_panel->toplevel));
+	if (ctk_container_get_focus_child (GTK_CONTAINER (old_panel)) == applet)
+		focus_widget = ctk_window_get_focus (GTK_WINDOW (old_panel->toplevel));
 
 	/* Do not touch until GTK+4
 	 * or until we figure out how to properly
-	 * reimplement gtk_widget_reparent.
+	 * reimplement ctk_widget_reparent.
 	 * https://github.com/cafe-desktop/cafe-panel/issues/504
 	 */
-	gtk_widget_reparent (applet, GTK_WIDGET (new_panel));
+	ctk_widget_reparent (applet, GTK_WIDGET (new_panel));
 
 	if (info && info->type == PANEL_OBJECT_APPLET)
 		cafe_panel_applet_frame_set_panel (CAFE_PANEL_APPLET_FRAME (ad->applet), new_panel);
 
-	if (gtk_widget_get_can_focus (GTK_WIDGET (new_panel)))
-		gtk_widget_set_can_focus (GTK_WIDGET (new_panel), FALSE);
+	if (ctk_widget_get_can_focus (GTK_WIDGET (new_panel)))
+		ctk_widget_set_can_focus (GTK_WIDGET (new_panel), FALSE);
 	if (focus_widget) {
 		panel_widget_force_grab_focus (focus_widget);
 	} else {
@@ -2604,9 +2604,9 @@ panel_widget_reparent (PanelWidget *old_panel,
 				       GTK_DIR_TAB_FORWARD,
 				       &return_val);
 	}
- 	gtk_window_present (GTK_WINDOW (new_panel->toplevel));
+ 	ctk_window_present (GTK_WINDOW (new_panel->toplevel));
 
-	display = gtk_widget_get_display (GTK_WIDGET (new_panel));
+	display = ctk_widget_get_display (GTK_WIDGET (new_panel));
 	gdk_display_flush (display);
 
 	emit_applet_moved (new_panel, ad);
@@ -2620,7 +2620,7 @@ panel_widget_set_packed (PanelWidget *panel_widget,
 {
 	panel_widget->packed = packed;
 
-	gtk_widget_queue_resize (GTK_WIDGET (panel_widget));
+	ctk_widget_queue_resize (GTK_WIDGET (panel_widget));
 }
 
 void
@@ -2629,7 +2629,7 @@ panel_widget_set_orientation (PanelWidget    *panel_widget,
 {
 	panel_widget->orient = orientation;
 
-	gtk_widget_queue_resize (GTK_WIDGET (panel_widget));
+	ctk_widget_queue_resize (GTK_WIDGET (panel_widget));
 }
 
 void
@@ -2647,7 +2647,7 @@ panel_widget_set_size (PanelWidget *panel_widget,
 
 	g_signal_emit (panel_widget, panel_widget_signals [SIZE_CHANGE_SIGNAL], 0);
 
-	gtk_widget_queue_resize (GTK_WIDGET (panel_widget));
+	ctk_widget_queue_resize (GTK_WIDGET (panel_widget));
 }
 
 void
@@ -2793,8 +2793,8 @@ static gboolean
 panel_widget_real_focus (GtkWidget        *widget,
                          GtkDirectionType  direction)
 {
-	if (gtk_widget_get_can_focus (widget) && gtk_container_get_children (GTK_CONTAINER (widget))) {
-		gtk_widget_set_can_focus (widget, FALSE);
+	if (ctk_widget_get_can_focus (widget) && ctk_container_get_children (GTK_CONTAINER (widget))) {
+		ctk_widget_set_can_focus (widget, FALSE);
 	}
 	return GTK_WIDGET_CLASS (panel_widget_parent_class)->focus (widget, direction);
 }
@@ -2811,9 +2811,9 @@ panel_widget_focus (PanelWidget *panel_widget)
 	 * previously focused child. We also need to set GTK_CAN_FOCUS flag
 	 * on the panel as it is unset when this function is called.
 	 */
-	gtk_container_set_focus_child (GTK_CONTAINER (panel_widget), NULL);
-	gtk_widget_set_can_focus (GTK_WIDGET (panel_widget), TRUE);
-	gtk_widget_grab_focus (GTK_WIDGET (panel_widget));
+	ctk_container_set_focus_child (GTK_CONTAINER (panel_widget), NULL);
+	ctk_widget_set_can_focus (GTK_WIDGET (panel_widget), TRUE);
+	ctk_widget_grab_focus (GTK_WIDGET (panel_widget));
 }
 
 
@@ -2844,7 +2844,7 @@ panel_widget_set_applet_size_constrained (PanelWidget *panel,
 
 	ad->size_constrained = size_constrained;
 
-	gtk_widget_queue_resize (GTK_WIDGET (panel));
+	ctk_widget_queue_resize (GTK_WIDGET (panel));
 }
 
 void
@@ -2868,7 +2868,7 @@ panel_widget_set_applet_expandable (PanelWidget *panel,
 	ad->expand_major = major;
 	ad->expand_minor = minor;
 
-	gtk_widget_queue_resize (GTK_WIDGET (panel));
+	ctk_widget_queue_resize (GTK_WIDGET (panel));
 }
 
 void
@@ -2893,7 +2893,7 @@ panel_widget_set_applet_size_hints (PanelWidget *panel,
 		ad->size_hints = NULL;
 	}
 
-	gtk_widget_queue_resize (GTK_WIDGET (panel));
+	ctk_widget_queue_resize (GTK_WIDGET (panel));
 }
 
 void
@@ -2949,7 +2949,7 @@ panel_widget_register_open_dialog (PanelWidget *panel,
 	/* the window is for a panel, so it should be shown in the taskbar. See
 	 * HIG: An alert should not appear in the panel window list unless it
 	 * is, or may be, the only window shown by an application. */
-	gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
+	ctk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
 
 	panel->open_dialogs = g_slist_append (panel->open_dialogs,
 					      dialog);

@@ -17,15 +17,15 @@
 
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkkeysyms.h>
 
 #ifdef HAVE_X11
-#include <gtk/gtkx.h> /* for GTK_IS_SOCKET */
+#include <ctk/ctkx.h> /* for GTK_IS_SOCKET */
 #endif
 
 #include <libpanel-util/panel-glib.h>
-#include <libpanel-util/panel-gtk.h>
+#include <libpanel-util/panel-ctk.h>
 
 #include "panel.h"
 
@@ -91,8 +91,8 @@ orientation_change (AppletInfo  *info,
 
 		button_widget_set_orientation (BUTTON_WIDGET (info->widget), orientation);
 
-		gtk_widget_queue_resize (GTK_WIDGET (drawer->toplevel));
-		gtk_container_foreach (GTK_CONTAINER (panel_widget),
+		ctk_widget_queue_resize (GTK_WIDGET (drawer->toplevel));
+		ctk_container_foreach (GTK_CONTAINER (panel_widget),
 				       orient_change_foreach,
 				       panel_widget);
 		}
@@ -119,7 +119,7 @@ orient_change_foreach(GtkWidget *w, gpointer data)
 static void
 panel_orient_change (GtkWidget *widget, gpointer data)
 {
-	gtk_container_foreach(GTK_CONTAINER(widget),
+	ctk_container_foreach(GTK_CONTAINER(widget),
 			      orient_change_foreach,
 			      widget);
 }
@@ -149,7 +149,7 @@ size_change_foreach(GtkWidget *w, gpointer data)
 static void
 panel_size_change (GtkWidget *widget, gpointer data)
 {
-	gtk_container_foreach(GTK_CONTAINER(widget), size_change_foreach,
+	ctk_container_foreach(GTK_CONTAINER(widget), size_change_foreach,
 			      widget);
 }
 
@@ -187,7 +187,7 @@ back_change_foreach (GtkWidget   *widget,
 static void
 panel_back_change (GtkWidget *widget, gpointer data)
 {
-	gtk_container_foreach (GTK_CONTAINER (widget),
+	ctk_container_foreach (GTK_CONTAINER (widget),
 			       (GtkCallback) back_change_foreach,
 			       widget);
 
@@ -350,7 +350,7 @@ panel_popup_menu (PanelToplevel *toplevel,
 	panel_widget = panel_toplevel_get_panel_widget (toplevel);
 	panel_data   = g_object_get_data (G_OBJECT (toplevel), "PanelData");
 
-	current_event = gtk_get_current_event ();
+	current_event = ctk_get_current_event ();
 	if (current_event && current_event->type == GDK_BUTTON_PRESS)
 		panel_data->insertion_pos = panel_widget_get_cursorloc (panel_widget);
 	else
@@ -363,12 +363,12 @@ panel_popup_menu (PanelToplevel *toplevel,
 	if (!menu)
 		return FALSE;
 
-	gtk_menu_set_screen (GTK_MENU (menu),
-			     gtk_window_get_screen (GTK_WINDOW (toplevel)));
+	ctk_menu_set_screen (GTK_MENU (menu),
+			     ctk_window_get_screen (GTK_WINDOW (toplevel)));
 
-	gtk_window_set_attached_to (GTK_WINDOW (gtk_widget_get_toplevel (menu)),
+	ctk_window_set_attached_to (GTK_WINDOW (ctk_widget_get_toplevel (menu)),
 				    GTK_WIDGET (toplevel));
-	gtk_menu_popup_at_pointer (GTK_MENU (menu), NULL);
+	ctk_menu_popup_at_pointer (GTK_MENU (menu), NULL);
 
 	return TRUE;
 }
@@ -402,10 +402,10 @@ panel_key_press_event (GtkWidget   *widget,
 	 *
 	 * Will always be false when not using X
 	 */
-	if (GTK_IS_SOCKET (gtk_window_get_focus (GTK_WINDOW (widget))) &&
+	if (GTK_IS_SOCKET (ctk_window_get_focus (GTK_WINDOW (widget))) &&
 	    event->keyval == GDK_KEY_F10 &&
-	    (event->state & gtk_accelerator_get_default_mod_mask ()) == GDK_CONTROL_MASK)
-		return gtk_bindings_activate (G_OBJECT (widget),
+	    (event->state & ctk_accelerator_get_default_mod_mask ()) == GDK_CONTROL_MASK)
+		return ctk_bindings_activate (G_OBJECT (widget),
 					      event->keyval,
 					      event->state);
 #endif
@@ -750,7 +750,7 @@ move_applet (PanelWidget *panel, int pos, int applet_index)
 	if (pos < 0)
 		pos = 0;
 
-	parent = gtk_widget_get_parent (info->widget);
+	parent = ctk_widget_get_parent (info->widget);
 
 	if (info != NULL &&
 	    info->widget != NULL &&
@@ -890,7 +890,7 @@ get_target_list (void)
 	if (!target_list) {
 		gint length = sizeof (drop_types) / sizeof (drop_types [0]);
 
-		target_list = gtk_target_list_new (drop_types, length);
+		target_list = ctk_target_list_new (drop_types, length);
 	}
 
 	return target_list;
@@ -919,7 +919,7 @@ panel_check_dnd_target_data (GtkWidget      *widget,
 
 		atom = GDK_POINTER_TO_ATOM (l->data);
 
-		if (gtk_target_list_find (get_target_list (), atom, &info)) {
+		if (ctk_target_list_find (get_target_list (), atom, &info)) {
 			if (ret_info)
 				*ret_info = info;
 
@@ -947,13 +947,13 @@ do_highlight (GtkWidget *widget, gboolean highlight)
 		if(!have_drag) {
 			g_object_set_data (G_OBJECT (widget), "have-drag",
 					   GINT_TO_POINTER (TRUE));
-			gtk_drag_highlight (widget);
+			ctk_drag_highlight (widget);
 		}
 	} else {
 		if(have_drag) {
 			g_object_set_data (G_OBJECT (widget),
 					   "have-drag", NULL);
-			gtk_drag_unhighlight (widget);
+			ctk_drag_unhighlight (widget);
 		}
 	}
 }
@@ -973,7 +973,7 @@ panel_check_drop_forbidden (PanelWidget    *panel,
 	if (info == TARGET_APPLET_INTERNAL) {
 		GtkWidget *source_widget;
 
-		source_widget = gtk_drag_get_source_widget (context);
+		source_widget = ctk_drag_get_source_widget (context);
 
 		if (BUTTON_IS_WIDGET (source_widget)) {
 			GSList *forb;
@@ -1048,7 +1048,7 @@ drag_drop_cb (GtkWidget	        *widget,
 	if (!panel_check_dnd_target_data (widget, context, NULL, &ret_atom))
 		return FALSE;
 
-	gtk_drag_get_data (widget, context, ret_atom, time);
+	ctk_drag_get_data (widget, context, ret_atom, time);
 
 	return TRUE;
 }
@@ -1079,11 +1079,11 @@ panel_receive_dnd_data (PanelWidget      *panel,
 	gboolean      success = FALSE;
 
 	if (panel_lockdown_get_locked_down ()) {
-		gtk_drag_finish (context, FALSE, FALSE, time_);
+		ctk_drag_finish (context, FALSE, FALSE, time_);
 		return;
 	}
 
-	data = gtk_selection_data_get_data (selection_data);
+	data = ctk_selection_data_get_data (selection_data);
 
 	switch (info) {
 	case TARGET_URL:
@@ -1111,8 +1111,8 @@ panel_receive_dnd_data (PanelWidget      *panel,
 				    PANEL_ICON_FOLDER);
 		break;
 	case TARGET_APPLET:
-		if (!gtk_selection_data_get_data (selection_data)) {
-			gtk_drag_finish (context, FALSE, FALSE, time_);
+		if (!ctk_selection_data_get_data (selection_data)) {
+			ctk_drag_finish (context, FALSE, FALSE, time_);
 			return;
 		}
 		if (panel_profile_id_lists_are_writable ()) {
@@ -1131,11 +1131,11 @@ panel_receive_dnd_data (PanelWidget      *panel,
 					      gdk_drag_context_get_selected_action (context));
 		break;
 	default:
-		gtk_drag_finish (context, FALSE, FALSE, time_);
+		ctk_drag_finish (context, FALSE, FALSE, time_);
 		return;
 	}
 
-	gtk_drag_finish (context, success, FALSE, time_);
+	ctk_drag_finish (context, success, FALSE, time_);
 }
 
 static void
@@ -1156,7 +1156,7 @@ drag_data_recieved_cb (GtkWidget	*widget,
 	   know this is an ok drop site and the info that got passed
 	   to us is bogus (it's always 0 in fact) */
 	if (!panel_check_dnd_target_data (widget, context, &info, NULL)) {
-		gtk_drag_finish (context, FALSE, FALSE, time);
+		ctk_drag_finish (context, FALSE, FALSE, time);
 		return;
 	}
 
@@ -1237,7 +1237,7 @@ panel_setup (PanelToplevel *toplevel)
 	g_signal_connect (toplevel, "drag_drop",
 			  G_CALLBACK (drag_drop_cb), NULL);
 
-	gtk_drag_dest_set (GTK_WIDGET (toplevel), 0, NULL, 0, 0);
+	ctk_drag_dest_set (GTK_WIDGET (toplevel), 0, NULL, 0, 0);
 
 	g_signal_connect (toplevel, "key-press-event",
 			  G_CALLBACK (panel_key_press_event), NULL);
@@ -1260,7 +1260,7 @@ panel_screen_from_panel_widget (PanelWidget *panel)
 	g_return_val_if_fail (PANEL_IS_WIDGET (panel), NULL);
 	g_return_val_if_fail (PANEL_IS_TOPLEVEL (panel->toplevel), NULL);
 
-	return gtk_window_get_screen (GTK_WINDOW (panel->toplevel));
+	return ctk_window_get_screen (GTK_WINDOW (panel->toplevel));
 }
 
 gboolean
@@ -1271,7 +1271,7 @@ panel_is_applet_right_stick (GtkWidget *applet)
 
 	g_return_val_if_fail (GTK_IS_WIDGET (applet), FALSE);
 
-	parent = gtk_widget_get_parent (applet);
+	parent = ctk_widget_get_parent (applet);
 
 	g_return_val_if_fail (PANEL_IS_WIDGET (parent), FALSE);
 
@@ -1313,7 +1313,7 @@ panel_deletion_response (GtkWidget     *dialog,
 		panel_pop_window_busy (dialog);
 	}
 
-	gtk_widget_destroy (dialog);
+	ctk_widget_destroy (dialog);
 }
 
 static void
@@ -1342,14 +1342,14 @@ panel_deletion_dialog (PanelToplevel *toplevel)
 			 "settings are lost.");
 	}
 
-	dialog = gtk_message_dialog_new (
+	dialog = ctk_message_dialog_new (
 			GTK_WINDOW (toplevel),
 			GTK_DIALOG_MODAL,
 			GTK_MESSAGE_WARNING,
 			GTK_BUTTONS_NONE,
 			"%s", text1);
 
-	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+	ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
 	                                          "%s", text2);
 
 	panel_dialog_add_button (GTK_DIALOG (dialog),
@@ -1360,12 +1360,12 @@ panel_deletion_dialog (PanelToplevel *toplevel)
 				 _("_Delete"), "edit-delete",
 				 GTK_RESPONSE_OK);
 
-	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CANCEL);
+	ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CANCEL);
 
-	gtk_window_set_screen (GTK_WINDOW (dialog),
-				gtk_window_get_screen (GTK_WINDOW (toplevel)));
+	ctk_window_set_screen (GTK_WINDOW (dialog),
+				ctk_window_get_screen (GTK_WINDOW (toplevel)));
 
-	gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
+	ctk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
 
 	 g_signal_connect (dialog, "destroy",
                            G_CALLBACK (panel_deletion_destroy_dialog),
@@ -1385,7 +1385,7 @@ panel_query_deletion (PanelToplevel *toplevel)
 	dialog = g_object_get_data (G_OBJECT (toplevel), "panel-delete-dialog");
 
 	if (dialog) {
-		gtk_window_present (GTK_WINDOW (dialog));
+		ctk_window_present (GTK_WINDOW (dialog));
 		return;
 	}
 
@@ -1396,11 +1396,11 @@ panel_query_deletion (PanelToplevel *toplevel)
 			  toplevel);
 
 	g_signal_connect_object (toplevel, "destroy",
-				 G_CALLBACK (gtk_widget_destroy),
+				 G_CALLBACK (ctk_widget_destroy),
 				 dialog,
 				 G_CONNECT_SWAPPED);
 
-	gtk_widget_show_all (dialog);
+	ctk_widget_show_all (dialog);
 }
 
 void

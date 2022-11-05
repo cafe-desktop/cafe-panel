@@ -20,8 +20,8 @@ libpanel_util_la_SOURCES =		\
 	panel-error.h			\
 	panel-glib.c			\
 	panel-glib.h			\
-	panel-gtk.c			\
-	panel-gtk.h			\
+	panel-ctk.c			\
+	panel-ctk.h			\
 	panel-icon-chooser.c		\
 	panel-icon-chooser.h		\
 	panel-keyfile.c			\

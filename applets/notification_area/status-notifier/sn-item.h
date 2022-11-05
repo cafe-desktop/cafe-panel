@@ -18,7 +18,7 @@
 #ifndef SN_ITEM_H
 #define SN_ITEM_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "sn-flat-button.h"
 

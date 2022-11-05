@@ -24,7 +24,7 @@
 #define __PANEL_APPLET_CONTAINER_H__
 
 #include <glib-object.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "panel.h"
 
 #ifdef __cplusplus

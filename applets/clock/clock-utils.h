@@ -27,7 +27,7 @@
 #ifndef __CLOCK_UTILS_H__
 #define __CLOCK_UTILS_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

@@ -28,7 +28,7 @@
 #ifndef CALENDAR_WINDOW_H
 #define CALENDAR_WINDOW_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "clock-utils.h"
 
 #ifdef __cplusplus

@@ -196,7 +196,7 @@ change_orientation_cb (CafePanelAppletContainer *container,
 		return;
 	}
 
-	gtk_widget_queue_resize (GTK_WIDGET (frame));
+	ctk_widget_queue_resize (GTK_WIDGET (frame));
 }
 
 static void
@@ -246,7 +246,7 @@ cafe_panel_applet_frame_dbus_change_background (CafePanelAppletFrame    *frame,
 	char *bg_str;
 
 	bg_str = _cafe_panel_applet_frame_get_background_string (
-			frame, PANEL_WIDGET (gtk_widget_get_parent (GTK_WIDGET (frame))), type);
+			frame, PANEL_WIDGET (ctk_widget_get_parent (GTK_WIDGET (frame))), type);
 
 	if (bg_str != NULL) {
 		if (priv->bg_operation)
@@ -338,8 +338,8 @@ cafe_panel_applet_frame_dbus_init (CafePanelAppletFrameDBus *frame)
 	frame->priv = cafe_panel_applet_frame_dbus_get_instance_private (frame);
 
 	container = cafe_panel_applet_container_new ();
-	gtk_widget_show (container);
-	gtk_container_add (GTK_CONTAINER (frame), container);
+	ctk_widget_show (container);
+	ctk_container_add (GTK_CONTAINER (frame), container);
 	frame->priv->container = CAFE_PANEL_APPLET_CONTAINER (container);
 	frame->priv->bg_operation = NULL;
 
@@ -379,7 +379,7 @@ cafe_panel_applet_frame_dbus_class_init (CafePanelAppletFrameDBusClass *class)
 	frame_class->change_background = cafe_panel_applet_frame_dbus_change_background;
 
 	GtkWidgetClass *widget_class  = GTK_WIDGET_CLASS (class);
-	gtk_widget_class_set_css_name (widget_class, "CafePanelAppletFrameDBus");
+	ctk_widget_class_set_css_name (widget_class, "CafePanelAppletFrameDBus");
 }
 
 static void

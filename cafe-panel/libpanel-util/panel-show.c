@@ -1,5 +1,5 @@
 /*
- * panel-show.c: a helper around gtk_show_uri
+ * panel-show.c: a helper around ctk_show_uri
  *
  * Copyright (C) 2008 Novell, Inc.
  *
@@ -26,7 +26,7 @@
 #include <gio/gio.h>
 #include <gio/gdesktopappinfo.h>
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "panel-error.h"
 #include "panel-glib.h"
@@ -69,7 +69,7 @@ _panel_show_mount_async_callback (GObject      *source_object,
 		char *uri = g_file_get_uri (file);
 
 		panel_show_uri (handle->screen, uri,
-				gtk_get_current_event_time (), NULL);
+				ctk_get_current_event_time (), NULL);
 		g_free (uri);
 	} else {
 		if (!g_error_matches (error, G_IO_ERROR,
@@ -114,8 +114,8 @@ static gboolean _panel_show_handle_error(const gchar* uri, GdkScreen* screen, GE
 		file = g_file_new_for_uri (uri);
 
 		/* If it's not mounted, try to mount it ourselves */
-		handle->mount_op = gtk_mount_operation_new (NULL);
-		gtk_mount_operation_set_screen (GTK_MOUNT_OPERATION (handle->mount_op),
+		handle->mount_op = ctk_mount_operation_new (NULL);
+		ctk_mount_operation_set_screen (GTK_MOUNT_OPERATION (handle->mount_op),
 						screen);
 		handle->screen = screen;
 
@@ -178,7 +178,7 @@ gboolean panel_show_uri(GdkScreen* screen, const gchar* uri, guint32 timestamp, 
 		return panel_show_caja_search_uri(screen, uri, timestamp, error);
 	}
 
-	gtk_show_uri_on_window (NULL, uri,timestamp, &local_error);
+	ctk_show_uri_on_window (NULL, uri,timestamp, &local_error);
 
 	return _panel_show_handle_error(uri, screen, local_error, error);
 }
@@ -283,7 +283,7 @@ panel_show_help (GdkScreen    *screen,
 	else
 		uri = g_strdup_printf ("help:%s", doc);
 
-	gtk_show_uri_on_window (NULL, uri, gtk_get_current_event_time (), &local_error);
+	ctk_show_uri_on_window (NULL, uri, ctk_get_current_event_time (), &local_error);
 	g_free (uri);
 
 	return _panel_show_help_handle_error (doc, screen, local_error, error);

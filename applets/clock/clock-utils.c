@@ -32,7 +32,7 @@
 
 #include <glib/gi18n.h>
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include <librsvg/rsvg.h>
 
@@ -73,8 +73,8 @@ clock_utils_display_help (GtkWidget  *widget,
 	else
 		uri = g_strdup_printf ("help:%s", doc_id);
 
-	gtk_show_uri_on_window (NULL, uri,
-		gtk_get_current_event_time (), &error);
+	ctk_show_uri_on_window (NULL, uri,
+		ctk_get_current_event_time (), &error);
 	g_free (uri);
 
 	if (error &&
@@ -93,14 +93,14 @@ clock_utils_display_help (GtkWidget  *widget,
 		primary = g_markup_printf_escaped (
 				_("Could not display help document '%s'"),
 				doc_id);
-		dialog = gtk_message_dialog_new (
+		dialog = ctk_message_dialog_new (
 				parent ? GTK_WINDOW (parent) : NULL,
 				GTK_DIALOG_MODAL|GTK_DIALOG_DESTROY_WITH_PARENT,
 				GTK_MESSAGE_ERROR,
 				GTK_BUTTONS_CLOSE,
 				"%s", primary);
 
-		gtk_message_dialog_format_secondary_text (
+		ctk_message_dialog_format_secondary_text (
 					GTK_MESSAGE_DIALOG (dialog),
 					"%s", error->message);
 
@@ -108,22 +108,22 @@ clock_utils_display_help (GtkWidget  *widget,
 		g_free (primary);
 
 		g_signal_connect (dialog, "response",
-				  G_CALLBACK (gtk_widget_destroy),
+				  G_CALLBACK (ctk_widget_destroy),
 				  NULL);
 
-		gtk_window_set_icon_name (GTK_WINDOW (dialog), CLOCK_ICON);
-		gtk_window_set_screen (GTK_WINDOW (dialog),
-				       gtk_widget_get_screen (widget));
+		ctk_window_set_icon_name (GTK_WINDOW (dialog), CLOCK_ICON);
+		ctk_window_set_screen (GTK_WINDOW (dialog),
+				       ctk_widget_get_screen (widget));
 
 		if (parent == NULL) {
 			/* we have no parent window */
-			gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog),
+			ctk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog),
 							  FALSE);
-			gtk_window_set_title (GTK_WINDOW (dialog),
+			ctk_window_set_title (GTK_WINDOW (dialog),
 					      _("Error displaying help document"));
 		}
 
-		gtk_widget_show (dialog);
+		ctk_widget_show (dialog);
 	}
 }
 

@@ -51,20 +51,20 @@ panel_separator_draw (GtkWidget *widget, cairo_t *cr)
 
 	separator = PANEL_SEPARATOR (widget);
 
-	if (!gtk_widget_is_drawable(widget))
+	if (!ctk_widget_is_drawable(widget))
 		return FALSE;
 
 	GTK_WIDGET_CLASS(panel_separator_parent_class)->draw(widget, cr);
 
-	state = gtk_widget_get_state_flags (widget);
-	width = gtk_widget_get_allocated_width (widget);
-	height = gtk_widget_get_allocated_height (widget);
+	state = ctk_widget_get_state_flags (widget);
+	width = ctk_widget_get_allocated_width (widget);
+	height = ctk_widget_get_allocated_height (widget);
 
-	context = gtk_widget_get_style_context (widget);
-	gtk_style_context_get_padding (context, state, &padding);
+	context = ctk_widget_get_style_context (widget);
+	ctk_style_context_get_padding (context, state, &padding);
 
-	gtk_style_context_save (context);
-	gtk_style_context_set_state (context, state);
+	ctk_style_context_save (context);
+	ctk_style_context_set_state (context, state);
 
 	cairo_save (cr);
 
@@ -74,7 +74,7 @@ panel_separator_draw (GtkWidget *widget, cairo_t *cr)
 		x = (width - padding.left - padding.right) / 2 + padding.left;
 		x = MIN (x, width - padding.right);
 
-		gtk_render_line (context, cr,
+		ctk_render_line (context, cr,
 				 x, padding.top,
 				 x, height - padding.bottom);
 	} else {
@@ -83,13 +83,13 @@ panel_separator_draw (GtkWidget *widget, cairo_t *cr)
 		y = (height - padding.top - padding.bottom) / 2 + padding.top;
 		y = MIN (y, height - padding.bottom);
 
-		gtk_render_line (context, cr,
+		ctk_render_line (context, cr,
 				 padding.left, y,
 				 width - padding.right, y);
 	}
 	cairo_restore (cr);
 
-	gtk_style_context_restore (context);
+	ctk_style_context_restore (context);
 
 	return FALSE;
 }
@@ -138,7 +138,7 @@ panel_separator_size_allocate (GtkWidget     *widget,
 	GtkAllocation    widget_allocation;
 	PanelBackground *background;
 
-	gtk_widget_get_allocation (widget, &widget_allocation);
+	ctk_widget_get_allocation (widget, &widget_allocation);
 
 	old_allocation.x      = widget_allocation.x;
 	old_allocation.y      = widget_allocation.y;
@@ -170,7 +170,7 @@ panel_separator_parent_set (GtkWidget *widget,
 
 	separator = PANEL_SEPARATOR (widget);
 
-	parent = gtk_widget_get_parent (widget);
+	parent = ctk_widget_get_parent (widget);
 	g_assert (!parent || PANEL_IS_WIDGET (parent));
 
 	separator->priv->panel = (PanelWidget *) parent;
@@ -187,7 +187,7 @@ panel_separator_class_init (PanelSeparatorClass *klass)
 	widget_class->size_allocate = panel_separator_size_allocate;
 	widget_class->parent_set    = panel_separator_parent_set;
 
-	gtk_widget_class_set_css_name (widget_class, "PanelSeparator");
+	ctk_widget_class_set_css_name (widget_class, "PanelSeparator");
 }
 
 static void
@@ -224,7 +224,7 @@ panel_separator_set_orientation (PanelSeparator   *separator,
 
 	separator->priv->orientation = orient;
 
-	gtk_widget_queue_draw (GTK_WIDGET (separator));
+	ctk_widget_queue_draw (GTK_WIDGET (separator));
 }
 
 void
@@ -245,7 +245,7 @@ panel_separator_load_from_gsettings (PanelWidget *panel,
 						       id);
 
 	if (!separator->priv->info) {
-		gtk_widget_destroy (GTK_WIDGET (separator));
+		ctk_widget_destroy (GTK_WIDGET (separator));
 		return;
 	}
 

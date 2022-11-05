@@ -14,7 +14,7 @@
 #ifndef __INTL_CLOCK_FACE_H__
 #define __INTL_CLOCK_FACE_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "clock-location.h"
 
 #ifdef __cplusplus

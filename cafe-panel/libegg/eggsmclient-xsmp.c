@@ -35,7 +35,7 @@
 #include <unistd.h>
 #include <X11/SM/SMlib.h>
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdk.h>
 
 #ifdef HAVE_X11
@@ -1252,7 +1252,7 @@ card8_prop (const char *name, unsigned char value)
  * than SM. (DCOP uses ICE, but it has its own private copy of
  * libICE.)
  *
- * When this moves to gtk, it will need to be cleverer, to avoid
+ * When this moves to ctk, it will need to be cleverer, to avoid
  * tripping over old apps that use CafeClient or that use libSM
  * directly.
  */

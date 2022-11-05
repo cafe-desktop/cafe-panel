@@ -25,7 +25,7 @@
 #include <stdio.h>
 #include <signal.h>
 #include <glib-unix.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "system-tray/na-tray-manager.h"
 #ifdef PROVIDE_WATCHER_SERVICE
 # include "libstatus-notifier-watcher/gf-status-notifier-watcher.h"
@@ -57,13 +57,13 @@ update_child_count (TrayData *data)
   guint n_children = 0;
   char text[64];
 
-  if (!gtk_widget_get_realized (data->window))
+  if (!ctk_widget_get_realized (data->window))
     return;
 
-  gtk_container_foreach (GTK_CONTAINER (data->traybox), (GtkCallback) do_add, &n_children);
+  ctk_container_foreach (GTK_CONTAINER (data->traybox), (GtkCallback) do_add, &n_children);
 
   g_snprintf (text, sizeof (text), "%u icons", n_children);
-  gtk_label_set_text (data->count_label, text);
+  ctk_label_set_text (data->count_label, text);
 }
 
 static void
@@ -86,12 +86,12 @@ tray_removed_cb (GtkContainer *box, GtkWidget *icon, TrayData *data)
 
 static void orientation_changed_cb (GtkComboBox *combo, TrayData *data)
 {
-  GtkOrientation orientation = (GtkOrientation) gtk_combo_box_get_active (combo);
+  GtkOrientation orientation = (GtkOrientation) ctk_combo_box_get_active (combo);
 
   g_print ("[Screen %u tray %p] Setting orientation to \"%s\"\n",
 	   data->screen_num, data->traybox, orientation == 0 ? "horizontal" : "vertical");
 
-  gtk_orientable_set_orientation (GTK_ORIENTABLE (data->traybox), orientation);
+  ctk_orientable_set_orientation (GTK_ORIENTABLE (data->traybox), orientation);
 }
 
 static void
@@ -99,7 +99,7 @@ maybe_quit (gpointer data,
 	    GObject *zombie)
 {
   if (--n_windows == 0) {
-    gtk_main_quit ();
+    ctk_main_quit ();
   }
 }
 
@@ -114,7 +114,7 @@ warning_dialog_response_cb (GtkWidget *dialog,
     create_tray_on_screen (screen, TRUE);
   }
 
-  gtk_widget_destroy (dialog);
+  ctk_widget_destroy (dialog);
 }
 
 static void
@@ -135,14 +135,14 @@ create_tray_on_screen (GdkScreen *screen,
   if (!force && na_tray_manager_check_running (screen)) {
     GtkWidget *dialog;
 
-    dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_WARNING, GTK_BUTTONS_YES_NO,
+    dialog = ctk_message_dialog_new (NULL, 0, GTK_MESSAGE_WARNING, GTK_BUTTONS_YES_NO,
 				     "Override tray manager?");
-    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+    ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
 					     "There is already a tray manager running on screen %d.",
 					     gdk_x11_screen_get_screen_number (screen));
-    gtk_window_set_screen (GTK_WINDOW (dialog), screen);
+    ctk_window_set_screen (GTK_WINDOW (dialog), screen);
     g_signal_connect (dialog, "response", G_CALLBACK (warning_dialog_response_cb), screen);
-    gtk_window_present (GTK_WINDOW (dialog));
+    ctk_window_present (GTK_WINDOW (dialog));
     g_object_weak_ref (G_OBJECT (dialog), (GWeakNotify) maybe_quit, NULL);
     return NULL;
   }
@@ -151,50 +151,50 @@ create_tray_on_screen (GdkScreen *screen,
   data->screen = screen;
   data->screen_num = gdk_x11_screen_get_screen_number (screen);
 
-  data->window = window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  data->window = window = ctk_window_new (GTK_WINDOW_TOPLEVEL);
   g_object_weak_ref (G_OBJECT (window), (GWeakNotify) maybe_quit, NULL);
 
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_container_add (GTK_CONTAINER (window), vbox);
+  vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  ctk_container_add (GTK_CONTAINER (window), vbox);
 
-  button = gtk_button_new_with_mnemonic ("_Add another tray");
+  button = ctk_button_new_with_mnemonic ("_Add another tray");
   g_signal_connect (button, "clicked", G_CALLBACK (add_tray_cb), data);
-  gtk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 0);
+  ctk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 0);
 
-  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
-  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
-  label = gtk_label_new_with_mnemonic ("_Orientation:");
-  gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-  gtk_label_set_yalign (GTK_LABEL (label), 0.5);
-  gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
+  hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
+  ctk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+  label = ctk_label_new_with_mnemonic ("_Orientation:");
+  ctk_label_set_xalign (GTK_LABEL (label), 0.0);
+  ctk_label_set_yalign (GTK_LABEL (label), 0.5);
+  ctk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
 
-  combo = gtk_combo_box_text_new ();
-  gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (combo), "Horizontal");
-  gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (combo), "Vertical");
+  combo = ctk_combo_box_text_new ();
+  ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (combo), "Horizontal");
+  ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (combo), "Vertical");
   g_signal_connect (combo, "changed",
 		    G_CALLBACK (orientation_changed_cb), data);
-  gtk_box_pack_start (GTK_BOX (hbox), combo, FALSE, FALSE, 0);
+  ctk_box_pack_start (GTK_BOX (hbox), combo, FALSE, FALSE, 0);
 
-  label = gtk_label_new (NULL);
+  label = ctk_label_new (NULL);
   data->count_label = GTK_LABEL (label);
-  gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-  gtk_label_set_yalign (GTK_LABEL (label), 0.5);
-  gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
+  ctk_label_set_xalign (GTK_LABEL (label), 0.0);
+  ctk_label_set_yalign (GTK_LABEL (label), 0.5);
+  ctk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
 
   data->traybox = na_grid_new (GTK_ORIENTATION_HORIZONTAL);
-  gtk_box_pack_start (GTK_BOX (vbox), GTK_WIDGET (data->traybox), TRUE, TRUE, 0);
+  ctk_box_pack_start (GTK_BOX (vbox), GTK_WIDGET (data->traybox), TRUE, TRUE, 0);
 
   g_signal_connect_after (data->traybox, "add", G_CALLBACK (tray_added_cb), data);
   g_signal_connect_after (data->traybox, "remove", G_CALLBACK (tray_removed_cb), data);
 
-  gtk_combo_box_set_active (GTK_COMBO_BOX (combo), 0);
+  ctk_combo_box_set_active (GTK_COMBO_BOX (combo), 0);
 
-  gtk_window_set_screen (GTK_WINDOW (window), screen);
-  gtk_window_set_default_size (GTK_WINDOW (window), -1, 200);
+  ctk_window_set_screen (GTK_WINDOW (window), screen);
+  ctk_window_set_default_size (GTK_WINDOW (window), -1, 200);
 
-  /* gtk_window_set_resizable (GTK_WINDOW (window), FALSE); */
+  /* ctk_window_set_resizable (GTK_WINDOW (window), FALSE); */
 
-  gtk_widget_show_all (window);
+  ctk_widget_show_all (window);
 
   update_child_count (data);
 
@@ -204,7 +204,7 @@ create_tray_on_screen (GdkScreen *screen,
 static gboolean
 signal_handler (gpointer data G_GNUC_UNUSED)
 {
-  gtk_main_quit ();
+  ctk_main_quit ();
 
   return FALSE;
 }
@@ -252,7 +252,7 @@ main (int argc, char *argv[])
   GfStatusNotifierWatcher *service;
 #endif
 
-  gtk_init (&argc, &argv);
+  ctk_init (&argc, &argv);
 
   g_unix_signal_add (SIGTERM, signal_handler, NULL);
   g_unix_signal_add (SIGINT, signal_handler, NULL);
@@ -261,14 +261,14 @@ main (int argc, char *argv[])
   service = status_notifier_watcher_maybe_new ();
 #endif
 
-  gtk_window_set_default_icon_name (NOTIFICATION_AREA_ICON);
+  ctk_window_set_default_icon_name (NOTIFICATION_AREA_ICON);
 
   display = gdk_display_get_default ();
   screen = gdk_display_get_default_screen (display);
 
   create_tray_on_screen (screen, FALSE);
 
-  gtk_main ();
+  ctk_main ();
 
 #ifdef PROVIDE_WATCHER_SERVICE
   if (service)

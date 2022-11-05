@@ -23,10 +23,10 @@
 #include <config.h>
 #include <string.h>
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef HAVE_X11
-#include <gtk/gtkx.h>
+#include <ctk/ctkx.h>
 #endif
 
 #include <panel-applets-manager.h>
@@ -107,15 +107,15 @@ panel_applet_container_setup (CafePanelAppletContainer *container)
 	if (container->priv->out_of_process) {
 #ifdef HAVE_X11
 		if (GDK_IS_X11_DISPLAY (gdk_display_get_default ())) {
-			container->priv->socket = gtk_socket_new ();
+			container->priv->socket = ctk_socket_new ();
 
 			g_signal_connect_swapped (container->priv->socket,
 						"plug-removed",
 						G_CALLBACK (cafe_panel_applet_container_plug_removed),
 						container);
 
-			gtk_container_add (GTK_CONTAINER (container), container->priv->socket);
-			gtk_widget_show (container->priv->socket);
+			ctk_container_add (GTK_CONTAINER (container), container->priv->socket);
+			ctk_widget_show (container->priv->socket);
 		} else
 #endif
 		{ // Not using X11
@@ -127,7 +127,7 @@ panel_applet_container_setup (CafePanelAppletContainer *container)
 
 		applet = cafe_panel_applets_manager_get_applet_widget (container->priv->iid, container->priv->uid);
 
-		gtk_container_add (GTK_CONTAINER (container), applet);
+		ctk_container_add (GTK_CONTAINER (container), applet);
 	}
  }
 
@@ -273,7 +273,7 @@ cafe_panel_applet_container_new (void)
 static gboolean
 cafe_panel_applet_container_plug_removed (CafePanelAppletContainer *container)
 {
-	g_return_val_if_fail (GDK_IS_X11_DISPLAY (gtk_widget_get_display (GTK_WIDGET (container))), FALSE);
+	g_return_val_if_fail (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (container))), FALSE);
 
 	if (!container->priv->applet_proxy)
 		return FALSE;
@@ -391,7 +391,7 @@ on_proxy_appeared (GObject      *source_object,
 #ifdef HAVE_X11
 	// xid always <= 0 when not using X11
 	if (container->priv->xid > 0) {
-		gtk_socket_add_id (GTK_SOCKET (container->priv->socket),
+		ctk_socket_add_id (GTK_SOCKET (container->priv->socket),
 				   container->priv->xid);
 	}
 #endif

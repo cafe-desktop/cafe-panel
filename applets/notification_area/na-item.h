@@ -19,7 +19,7 @@
 #ifndef NA_ITEM_H
 #define NA_ITEM_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 G_BEGIN_DECLS
 

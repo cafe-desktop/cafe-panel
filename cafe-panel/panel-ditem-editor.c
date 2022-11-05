@@ -28,13 +28,13 @@
 
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include <libpanel-util/panel-icon-chooser.h>
 #include <libpanel-util/panel-keyfile.h>
 #include <libpanel-util/panel-show.h>
 #include <libpanel-util/panel-xdg.h>
-#include <libpanel-util/panel-gtk.h>
+#include <libpanel-util/panel-ctk.h>
 
 #include "panel-ditem-editor.h"
 #include "panel-icon-names.h"
@@ -495,14 +495,14 @@ label_new_with_mnemonic (const char *text)
 	char      *bold;
 
 	bold = g_strdup_printf ("<b>%s</b>", text);
-	label = gtk_label_new_with_mnemonic (bold);
+	label = ctk_label_new_with_mnemonic (bold);
 	g_free (bold);
 
-	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
-	gtk_label_set_xalign (GTK_LABEL (label), 1.0);
-	gtk_label_set_yalign (GTK_LABEL (label), 0.5);
+	ctk_label_set_use_markup (GTK_LABEL (label), TRUE);
+	ctk_label_set_xalign (GTK_LABEL (label), 1.0);
+	ctk_label_set_yalign (GTK_LABEL (label), 0.5);
 
-	gtk_widget_show (label);
+	ctk_widget_show (label);
 
 	return label;
 }
@@ -510,14 +510,14 @@ label_new_with_mnemonic (const char *text)
 static inline void
 grid_attach_label (GtkGrid *grid, GtkWidget *label, int left, int top, int width, int height)
 {
-	gtk_grid_attach (grid, label, left, top, width, height);
+	ctk_grid_attach (grid, label, left, top, width, height);
 }
 
 static inline void
 grid_attach_entry (GtkGrid *grid, GtkWidget *entry, int left, int top, int width, int height)
 {
-	gtk_widget_set_hexpand (entry, TRUE);
-	gtk_grid_attach (grid, entry, left, top, width, height);
+	ctk_widget_set_hexpand (entry, TRUE);
+	ctk_grid_attach (grid, entry, left, top, width, height);
 }
 
 static void
@@ -531,31 +531,31 @@ setup_combo (GtkWidget            *combo_box,
 	GtkCellRenderer       *renderer;
 	int                    i;
 
-	model = gtk_list_store_new (NUMBER_COLUMNS,
+	model = ctk_list_store_new (NUMBER_COLUMNS,
 				    G_TYPE_STRING,
 				    G_TYPE_INT);
 
-	gtk_combo_box_set_model (GTK_COMBO_BOX (combo_box),
+	ctk_combo_box_set_model (GTK_COMBO_BOX (combo_box),
 				 GTK_TREE_MODEL (model));
 
 	for (i = 0; i < nb_items; i++) {
 		if (for_type && strcmp (for_type, items [i].show_for))
 			continue;
 
-		gtk_list_store_append (model, &iter);
-		gtk_list_store_set (model, &iter,
+		ctk_list_store_append (model, &iter);
+		ctk_list_store_set (model, &iter,
 				    COLUMN_TEXT, _(items [i].name),
 				    COLUMN_TYPE, items [i].type,
 				    -1);
 	}
 
-	renderer = gtk_cell_renderer_text_new ();
-	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (combo_box),
+	renderer = ctk_cell_renderer_text_new ();
+	ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (combo_box),
 				    renderer, TRUE);
-	gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combo_box),
+	ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combo_box),
 					renderer, "text", COLUMN_TEXT, NULL);
 
-	gtk_combo_box_set_active (GTK_COMBO_BOX (combo_box), 0);
+	ctk_combo_box_set_active (GTK_COMBO_BOX (combo_box), 0);
 }
 
 static PanelDItemEditorType
@@ -568,12 +568,12 @@ panel_ditem_editor_get_item_type (PanelDItemEditor *dialog)
 	if (dialog->priv->type_directory)
 		return PANEL_DITEM_EDITOR_TYPE_DIRECTORY;
 
-	if (!gtk_combo_box_get_active_iter (GTK_COMBO_BOX (dialog->priv->type_combo),
+	if (!ctk_combo_box_get_active_iter (GTK_COMBO_BOX (dialog->priv->type_combo),
 					    &iter))
 		return PANEL_DITEM_EDITOR_TYPE_NULL;
 
-	model = gtk_combo_box_get_model (GTK_COMBO_BOX (dialog->priv->type_combo));
-	gtk_tree_model_get (model, &iter, COLUMN_TYPE, &type, -1);
+	model = ctk_combo_box_get_model (GTK_COMBO_BOX (dialog->priv->type_combo));
+	ctk_tree_model_get (model, &iter, COLUMN_TYPE, &type, -1);
 
 	return type;
 }
@@ -586,62 +586,62 @@ panel_ditem_editor_make_ui (PanelDItemEditor *dialog)
 
 	priv = dialog->priv;
 
-	gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
+	ctk_container_set_border_width (GTK_CONTAINER (dialog), 5);
 
-	dialog_vbox = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
-	gtk_box_set_spacing (GTK_BOX (dialog_vbox), 2);
+	dialog_vbox = ctk_dialog_get_content_area (GTK_DIALOG (dialog));
+	ctk_box_set_spacing (GTK_BOX (dialog_vbox), 2);
 
-	priv->grid = gtk_grid_new ();
-	gtk_container_set_border_width (GTK_CONTAINER (priv->grid), 5);
-	gtk_grid_set_row_spacing (GTK_GRID (priv->grid), 6);
-	gtk_grid_set_column_spacing (GTK_GRID (priv->grid), 12);
-	gtk_box_pack_start (GTK_BOX (dialog_vbox), priv->grid, TRUE, TRUE, 0);
-	gtk_widget_show (priv->grid);
+	priv->grid = ctk_grid_new ();
+	ctk_container_set_border_width (GTK_CONTAINER (priv->grid), 5);
+	ctk_grid_set_row_spacing (GTK_GRID (priv->grid), 6);
+	ctk_grid_set_column_spacing (GTK_GRID (priv->grid), 12);
+	ctk_box_pack_start (GTK_BOX (dialog_vbox), priv->grid, TRUE, TRUE, 0);
+	ctk_widget_show (priv->grid);
 
 	/* Type */
 	priv->type_label = label_new_with_mnemonic (_("_Type:"));
-	priv->type_combo = gtk_combo_box_new ();
-	gtk_widget_show (priv->type_combo);
-	gtk_label_set_mnemonic_widget (GTK_LABEL (priv->type_label),
+	priv->type_combo = ctk_combo_box_new ();
+	ctk_widget_show (priv->type_combo);
+	ctk_label_set_mnemonic_widget (GTK_LABEL (priv->type_label),
 				       priv->type_combo);
 
 	/* Name */
 	priv->name_label = label_new_with_mnemonic (_("_Name:"));
-	priv->name_entry = gtk_entry_new ();
-	gtk_widget_show (priv->name_entry);
-	gtk_label_set_mnemonic_widget (GTK_LABEL (priv->name_label),
+	priv->name_entry = ctk_entry_new ();
+	ctk_widget_show (priv->name_entry);
+	ctk_label_set_mnemonic_widget (GTK_LABEL (priv->name_label),
 				       priv->name_entry);
 
 	/* Icon */
 	priv->icon_chooser = panel_icon_chooser_new (NULL);
 	panel_icon_chooser_set_fallback_icon_name (PANEL_ICON_CHOOSER (priv->icon_chooser),
 						   PANEL_ICON_LAUNCHER);
-	gtk_grid_attach (GTK_GRID (priv->grid), priv->icon_chooser, 0, 0, 1, 2);
-	gtk_widget_show (priv->icon_chooser);
+	ctk_grid_attach (GTK_GRID (priv->grid), priv->icon_chooser, 0, 0, 1, 2);
+	ctk_widget_show (priv->icon_chooser);
 
 	/* Command */
 	priv->command_label = label_new_with_mnemonic ("");
 
-	priv->command_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
-	gtk_widget_show (priv->command_hbox);
+	priv->command_hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
+	ctk_widget_show (priv->command_hbox);
 
-	priv->command_entry = gtk_entry_new ();
-	gtk_box_pack_start (GTK_BOX (priv->command_hbox),
+	priv->command_entry = ctk_entry_new ();
+	ctk_box_pack_start (GTK_BOX (priv->command_hbox),
 			    priv->command_entry,
 			    TRUE, TRUE, 0);
-	gtk_widget_show (priv->command_entry);
+	ctk_widget_show (priv->command_entry);
 
-	priv->command_browse_button = gtk_button_new_with_mnemonic (_("_Browse..."));
-	gtk_box_pack_start (GTK_BOX (priv->command_hbox),
+	priv->command_browse_button = ctk_button_new_with_mnemonic (_("_Browse..."));
+	ctk_box_pack_start (GTK_BOX (priv->command_hbox),
 			    priv->command_browse_button,
 			    FALSE, FALSE, 0);
-	gtk_widget_show (priv->command_browse_button);
+	ctk_widget_show (priv->command_browse_button);
 
 	/* Comment */
 	priv->comment_label = label_new_with_mnemonic (_("Co_mment:"));
-	priv->comment_entry = gtk_entry_new ();
-	gtk_widget_show (priv->comment_entry);
-	gtk_label_set_mnemonic_widget (GTK_LABEL (priv->comment_label),
+	priv->comment_entry = ctk_entry_new ();
+	ctk_widget_show (priv->comment_entry);
+	ctk_label_set_mnemonic_widget (GTK_LABEL (priv->comment_label),
 				       priv->comment_entry);
 
 	priv->help_button = panel_dialog_add_button (GTK_DIALOG (dialog),
@@ -652,7 +652,7 @@ panel_ditem_editor_make_ui (PanelDItemEditor *dialog)
 						       _("_Revert"), "document-revert",
 						       REVERT_BUTTON);
 
-	gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
+	ctk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 					   REVERT_BUTTON,
 					   FALSE);
 
@@ -665,7 +665,7 @@ panel_ditem_editor_make_ui (PanelDItemEditor *dialog)
 						       GTK_RESPONSE_CANCEL);
 
 	priv->ok_button = panel_dialog_add_button (GTK_DIALOG (dialog),
-						   _("_OK"), "gtk-ok",
+						   _("_OK"), "ctk-ok",
 						   GTK_RESPONSE_OK);
 
 	/* FIXME: There needs to be a way to edit ALL keys/sections */
@@ -683,11 +683,11 @@ panel_ditem_editor_setup_ui (PanelDItemEditor *dialog)
 	type = panel_ditem_editor_get_item_type (dialog);
 
 	if (priv->new_file) {
-		gtk_widget_hide (priv->revert_button);
-		gtk_widget_hide (priv->close_button);
-		gtk_widget_show (priv->cancel_button);
-		gtk_widget_show (priv->ok_button);
-		gtk_dialog_set_default_response (GTK_DIALOG (dialog),
+		ctk_widget_hide (priv->revert_button);
+		ctk_widget_hide (priv->close_button);
+		ctk_widget_show (priv->cancel_button);
+		ctk_widget_show (priv->ok_button);
+		ctk_dialog_set_default_response (GTK_DIALOG (dialog),
 						 GTK_RESPONSE_OK);
 
 		if (!priv->combo_setuped) {
@@ -697,16 +697,16 @@ panel_ditem_editor_setup_ui (PanelDItemEditor *dialog)
 			priv->combo_setuped = TRUE;
 		}
 
-		gtk_combo_box_set_active (GTK_COMBO_BOX (priv->type_combo), 0);
+		ctk_combo_box_set_active (GTK_COMBO_BOX (priv->type_combo), 0);
 
 		show_combo = !priv->type_directory;
 	} else {
 
-		gtk_widget_show (priv->revert_button);
-		gtk_widget_show (priv->close_button);
-		gtk_widget_hide (priv->cancel_button);
-		gtk_widget_hide (priv->ok_button);
-		gtk_dialog_set_default_response (GTK_DIALOG (dialog),
+		ctk_widget_show (priv->revert_button);
+		ctk_widget_show (priv->close_button);
+		ctk_widget_hide (priv->cancel_button);
+		ctk_widget_hide (priv->ok_button);
+		ctk_dialog_set_default_response (GTK_DIALOG (dialog),
 						 GTK_RESPONSE_CLOSE);
 
 		show_combo = (type != PANEL_DITEM_EDITOR_TYPE_LINK) &&
@@ -731,18 +731,18 @@ panel_ditem_editor_setup_ui (PanelDItemEditor *dialog)
 		grid_attach_entry (GTK_GRID (priv->grid), priv->comment_entry, 2, 3, 1, 1);
 
 		/* FIXME: hack hack hack */
-		model = gtk_combo_box_get_model (GTK_COMBO_BOX (priv->type_combo));
-		if (!gtk_tree_model_get_iter_first (model, &iter))
+		model = ctk_combo_box_get_model (GTK_COMBO_BOX (priv->type_combo));
+		if (!ctk_tree_model_get_iter_first (model, &iter))
 			g_assert_not_reached ();
 		do {
-			gtk_tree_model_get (model, &iter,
+			ctk_tree_model_get (model, &iter,
 					    COLUMN_TYPE, &buf_type, -1);
 			if (buf_type == PANEL_DITEM_EDITOR_TYPE_DIRECTORY) {
-				gtk_list_store_remove (GTK_LIST_STORE (model),
+				ctk_list_store_remove (GTK_LIST_STORE (model),
 						       &iter);
 				break;
 			}
-		} while (gtk_tree_model_iter_next (model, &iter));
+		} while (ctk_tree_model_iter_next (model, &iter));
 	} else if (type == PANEL_DITEM_EDITOR_TYPE_DIRECTORY) {
 		grid_attach_label (GTK_GRID (priv->grid), priv->name_label, 1, 0, 1, 1);
 		grid_attach_entry (GTK_GRID (priv->grid), priv->name_entry, 2, 0, 1, 1);
@@ -771,10 +771,10 @@ panel_ditem_editor_setup_ui (PanelDItemEditor *dialog)
 	focus_chain = g_list_prepend (focus_chain, priv->command_hbox);
 	focus_chain = g_list_prepend (focus_chain, priv->comment_entry);
 	focus_chain = g_list_reverse (focus_chain);
-	gtk_container_set_focus_chain (GTK_CONTAINER (priv->grid), focus_chain);
+	ctk_container_set_focus_chain (GTK_CONTAINER (priv->grid), focus_chain);
 	g_list_free (focus_chain);
 
-	gtk_widget_grab_focus (priv->name_entry);
+	ctk_widget_grab_focus (priv->name_entry);
 }
 
 /*
@@ -796,7 +796,7 @@ panel_ditem_editor_changed (PanelDItemEditor *dialog)
 
 		/* We can revert to the original state */
 		if (dialog->priv->revert_key_file != NULL)
-			gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
+			ctk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 							   REVERT_BUTTON,
 							   TRUE);
 	}
@@ -808,11 +808,11 @@ panel_ditem_editor_changed (PanelDItemEditor *dialog)
 static void
 panel_ditem_editor_activated (PanelDItemEditor *dialog)
 {
-	if (gtk_widget_get_visible (dialog->priv->ok_button))
-		gtk_dialog_response (GTK_DIALOG (dialog),
+	if (ctk_widget_get_visible (dialog->priv->ok_button))
+		ctk_dialog_response (GTK_DIALOG (dialog),
 				     GTK_RESPONSE_OK);
-	else if (gtk_widget_get_visible (dialog->priv->close_button))
-		gtk_dialog_response (GTK_DIALOG (dialog),
+	else if (ctk_widget_get_visible (dialog->priv->close_button))
+		ctk_dialog_response (GTK_DIALOG (dialog),
 				     GTK_RESPONSE_CLOSE);
 }
 
@@ -821,7 +821,7 @@ panel_ditem_editor_name_changed (PanelDItemEditor *dialog)
 {
 	const char *name;
 
-	name = gtk_entry_get_text (GTK_ENTRY (dialog->priv->name_entry));
+	name = ctk_entry_get_text (GTK_ENTRY (dialog->priv->name_entry));
 
 	if (!dialog->priv->reverting) {
 		/* When reverting, we don't need to set the content of the key
@@ -851,7 +851,7 @@ panel_ditem_editor_command_changed (PanelDItemEditor *dialog)
 	GtkIconTheme         *icon_theme;
 	char                 *icon;
 
-	exec_or_uri = gtk_entry_get_text (GTK_ENTRY (dialog->priv->command_entry));
+	exec_or_uri = ctk_entry_get_text (GTK_ENTRY (dialog->priv->command_entry));
 
 	if (exec_or_uri && exec_or_uri[0])
 		type = panel_ditem_editor_get_item_type (dialog);
@@ -865,7 +865,7 @@ panel_ditem_editor_command_changed (PanelDItemEditor *dialog)
 		panel_key_file_set_string (dialog->priv->key_file, "Exec",
 					   exec_or_uri);
 
-		icon_theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (dialog)));
+		icon_theme = ctk_icon_theme_get_for_screen (ctk_widget_get_screen (GTK_WIDGET (dialog)));
 		icon = guess_icon_from_exec (icon_theme, exec_or_uri);
 		if (icon) {
 			char *current;
@@ -899,7 +899,7 @@ panel_ditem_editor_comment_changed (PanelDItemEditor *dialog)
 {
 	const char *comment;
 
-	comment = gtk_entry_get_text (GTK_ENTRY (dialog->priv->comment_entry));
+	comment = ctk_entry_get_text (GTK_ENTRY (dialog->priv->comment_entry));
 
 	if (comment && comment[0])
 		panel_key_file_set_locale_string (dialog->priv->key_file,
@@ -942,23 +942,23 @@ command_browse_chooser_response (GtkFileChooser   *chooser,
 		switch (panel_ditem_editor_get_item_type (dialog)) {
 		case PANEL_DITEM_EDITOR_TYPE_APPLICATION:
 		case PANEL_DITEM_EDITOR_TYPE_TERMINAL_APPLICATION:
-			text = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
+			text = ctk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
 			uri = panel_util_make_exec_uri_for_desktop (text);
 			g_free (text);
 			break;
 		case PANEL_DITEM_EDITOR_TYPE_LINK:
-			uri = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
+			uri = ctk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
 			break;
 		default:
 			g_assert_not_reached ();
 		}
 
-		gtk_entry_set_text (GTK_ENTRY (dialog->priv->command_entry),
+		ctk_entry_set_text (GTK_ENTRY (dialog->priv->command_entry),
 				    uri);
 		g_free (uri);
 	}
 
-	gtk_widget_destroy (GTK_WIDGET (chooser));
+	ctk_widget_destroy (GTK_WIDGET (chooser));
 	dialog->priv->command_browse_filechooser = NULL;
 }
 
@@ -988,9 +988,9 @@ update_chooser_for_type (PanelDItemEditor *dialog)
 
 	chooser = dialog->priv->command_browse_filechooser;
 
-	gtk_window_set_title (GTK_WINDOW (chooser),
+	ctk_window_set_title (GTK_WINDOW (chooser),
 			      title);
-	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser),
+	ctk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser),
 					 local_only);
 }
 
@@ -1000,7 +1000,7 @@ command_browse_button_clicked (PanelDItemEditor *dialog)
 	GtkWidget *chooser;
 
 	if (dialog->priv->command_browse_filechooser) {
-		gtk_window_present (GTK_WINDOW (dialog->priv->command_browse_filechooser));
+		ctk_window_present (GTK_WINDOW (dialog->priv->command_browse_filechooser));
 		return;
 	}
 
@@ -1012,7 +1012,7 @@ command_browse_button_clicked (PanelDItemEditor *dialog)
 						 GTK_RESPONSE_ACCEPT,
 						 NULL);
 
-	gtk_window_set_destroy_with_parent (GTK_WINDOW (chooser), TRUE);
+	ctk_window_set_destroy_with_parent (GTK_WINDOW (chooser), TRUE);
 
 	g_signal_connect (chooser, "response",
 			  G_CALLBACK (command_browse_chooser_response), dialog);
@@ -1020,7 +1020,7 @@ command_browse_button_clicked (PanelDItemEditor *dialog)
 	dialog->priv->command_browse_filechooser = chooser;
 	update_chooser_for_type (dialog);
 
-	gtk_widget_show (chooser);
+	ctk_widget_show (chooser);
 }
 
 static void
@@ -1180,11 +1180,11 @@ type_combo_changed (PanelDItemEditor *dialog)
 	}
 
 	bold = g_strdup_printf ("<b>%s</b>", text);
-	gtk_label_set_markup_with_mnemonic (GTK_LABEL (dialog->priv->command_label),
+	ctk_label_set_markup_with_mnemonic (GTK_LABEL (dialog->priv->command_label),
 					    bold);
 	g_free (bold);
 
-	gtk_label_set_mnemonic_widget (GTK_LABEL (dialog->priv->command_label),
+	ctk_label_set_mnemonic_widget (GTK_LABEL (dialog->priv->command_label),
 				       dialog->priv->command_entry);
 
 	update_chooser_for_type (dialog);
@@ -1233,7 +1233,7 @@ panel_ditem_editor_sync_display (PanelDItemEditor *dialog)
 	buffer = panel_key_file_get_locale_string (key_file, "X-CAFE-FullName");
 	if (!buffer)
 		buffer = panel_key_file_get_locale_string (key_file, "Name");
-	gtk_entry_set_text (GTK_ENTRY (dialog->priv->name_entry),
+	ctk_entry_set_text (GTK_ENTRY (dialog->priv->name_entry),
 			    buffer ? buffer : "");
 	g_free (buffer);
 
@@ -1251,17 +1251,17 @@ panel_ditem_editor_sync_display (PanelDItemEditor *dialog)
 	editor_type = map_type_from_desktop_item (type, run_in_terminal);
 	g_free (type);
 
-	model = gtk_combo_box_get_model (GTK_COMBO_BOX (dialog->priv->type_combo));
-	if (!gtk_tree_model_get_iter_first (model, &iter))
+	model = ctk_combo_box_get_model (GTK_COMBO_BOX (dialog->priv->type_combo));
+	if (!ctk_tree_model_get_iter_first (model, &iter))
 		g_assert_not_reached ();
 	do {
-		gtk_tree_model_get (model, &iter, COLUMN_TYPE, &buf_type, -1);
+		ctk_tree_model_get (model, &iter, COLUMN_TYPE, &buf_type, -1);
 		if (editor_type == buf_type) {
-			gtk_combo_box_set_active_iter (GTK_COMBO_BOX (dialog->priv->type_combo),
+			ctk_combo_box_set_active_iter (GTK_COMBO_BOX (dialog->priv->type_combo),
 						       &iter);
 			break;
 		}
-	} while (gtk_tree_model_iter_next (model, &iter));
+	} while (ctk_tree_model_iter_next (model, &iter));
 
 	g_assert (editor_type == buf_type ||
 		  editor_type == PANEL_DITEM_EDITOR_TYPE_NULL);
@@ -1275,13 +1275,13 @@ panel_ditem_editor_sync_display (PanelDItemEditor *dialog)
 	else
 		buffer = NULL;
 
-	gtk_entry_set_text (GTK_ENTRY (dialog->priv->command_entry),
+	ctk_entry_set_text (GTK_ENTRY (dialog->priv->command_entry),
 			    buffer ? buffer : "");
 	g_free (buffer);
 
 	/* Comment */
 	buffer = panel_key_file_get_locale_string (key_file, "Comment");
-	gtk_entry_set_text (GTK_ENTRY (dialog->priv->comment_entry),
+	ctk_entry_set_text (GTK_ENTRY (dialog->priv->comment_entry),
 			    buffer ? buffer : "");
 	g_free (buffer);
 
@@ -1317,7 +1317,7 @@ panel_ditem_editor_save (PanelDItemEditor *dialog,
 		return TRUE;
 
 	/* Verify that the required informations are set */
-	const_buf = gtk_entry_get_text (GTK_ENTRY (dialog->priv->name_entry));
+	const_buf = ctk_entry_get_text (GTK_ENTRY (dialog->priv->name_entry));
 	if (const_buf == NULL || const_buf [0] == '\0') {
 		if (report_errors) {
 			if (!dialog->priv->type_directory)
@@ -1334,7 +1334,7 @@ panel_ditem_editor_save (PanelDItemEditor *dialog,
 		return FALSE;
 	}
 
-	const_buf = gtk_entry_get_text (GTK_ENTRY (dialog->priv->command_entry));
+	const_buf = ctk_entry_get_text (GTK_ENTRY (dialog->priv->command_entry));
 	if (!dialog->priv->type_directory &&
 	    (const_buf == NULL || const_buf [0] == '\0')) {
 		PanelDItemEditorType  type;
@@ -1421,7 +1421,7 @@ response_cb (GtkDialog *dialog,
 
 	switch (response_id) {
 	case GTK_RESPONSE_HELP:
-		if (!panel_show_help (gtk_window_get_screen (GTK_WINDOW (dialog)),
+		if (!panel_show_help (ctk_window_get_screen (GTK_WINDOW (dialog)),
 				      "cafe-user-guide", "gospanel-52", &error)) {
 			g_signal_emit (G_OBJECT (dialog),
 				       ditem_edit_signals[ERROR_REPORTED], 0,
@@ -1432,23 +1432,23 @@ response_cb (GtkDialog *dialog,
 		break;
 	case REVERT_BUTTON:
 		panel_ditem_editor_revert (PANEL_DITEM_EDITOR (dialog));
-		gtk_dialog_set_response_sensitive (dialog,
+		ctk_dialog_set_response_sensitive (dialog,
 						   REVERT_BUTTON,
 						   FALSE);
 		break;
 	case GTK_RESPONSE_OK:
 	case GTK_RESPONSE_CLOSE:
 		if (panel_ditem_editor_save (PANEL_DITEM_EDITOR (dialog), TRUE))
-			gtk_widget_destroy (GTK_WIDGET (dialog));
+			ctk_widget_destroy (GTK_WIDGET (dialog));
 		break;
 	case GTK_RESPONSE_DELETE_EVENT:
 		if (!PANEL_DITEM_EDITOR (dialog)->priv->new_file)
 			/* We need to revert the changes */
-			gtk_dialog_response (dialog, REVERT_BUTTON);
-		gtk_widget_destroy (GTK_WIDGET (dialog));
+			ctk_dialog_response (dialog, REVERT_BUTTON);
+		ctk_widget_destroy (GTK_WIDGET (dialog));
 		break;
 	case GTK_RESPONSE_CANCEL:
-		gtk_widget_destroy (GTK_WIDGET (dialog));
+		ctk_widget_destroy (GTK_WIDGET (dialog));
 		break;
 	default:
 		g_assert_not_reached ();
@@ -1596,7 +1596,7 @@ panel_ditem_editor_key_file_loaded (PanelDItemEditor  *dialog)
 	/* This should be after panel_ditem_editor_sync_display ()
 	 * so the revert button is insensitive */
 	if (dialog->priv->revert_key_file != NULL)
-		gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
+		ctk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 						   REVERT_BUTTON,
 						   TRUE);
 	else
@@ -1648,7 +1648,7 @@ panel_ditem_editor_new_full (GtkWindow   *parent,
 			       NULL);
 
 	if (parent)
-		gtk_window_set_transient_for (GTK_WINDOW (dialog), parent);
+		ctk_window_set_transient_for (GTK_WINDOW (dialog), parent);
 
 	return dialog;
 }
