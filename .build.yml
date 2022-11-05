@@ -21,8 +21,6 @@ requires:
     - libdconf-dev
     - libgirepository1.0-dev
     - libglib2.0-dev
-    - libctk-3-dev
-    - libctk-layer-shell-dev
     - libice-dev
     - libpango1.0-dev
     - librsvg2-dev
