@@ -37,7 +37,7 @@ extern "C" {
 #endif
 
 gboolean panel_struts_register_strut           (PanelToplevel    *toplevel,
-						GdkScreen        *screen,
+						CdkScreen        *screen,
 						int               monitor,
 						PanelOrientation  orientation,
 						int               strut_size,

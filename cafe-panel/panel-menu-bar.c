@@ -382,7 +382,7 @@ void panel_menu_bar_create(PanelToplevel* toplevel, int position)
 
 void panel_menu_bar_invoke_menu(PanelMenuBar* menubar, const char* callback_name)
 {
-	GdkScreen* screen;
+	CdkScreen* screen;
 
 	g_return_if_fail(PANEL_IS_MENU_BAR(menubar));
 	g_return_if_fail(callback_name != NULL);

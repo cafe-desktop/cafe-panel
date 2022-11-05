@@ -240,7 +240,7 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 		ctk_label_set_text(CTK_LABEL(pager->label_row_col), pager->orientation == CTK_ORIENTATION_HORIZONTAL ? _("rows") : _("columns"));
 }
 
-static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBackgroundType type, GdkColor* color, cairo_pattern_t *pattern, PagerData* pager)
+static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBackgroundType type, CdkColor* color, cairo_pattern_t *pattern, PagerData* pager)
 {
         CtkStyleContext *new_context;
         ctk_widget_reset_style (CTK_WIDGET (pager->pager));
@@ -255,7 +255,7 @@ static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBac
 static void applet_style_updated (CafePanelApplet *applet, CtkStyleContext *context)
 {
 	CtkCssProvider *provider;
-	GdkRGBA color;
+	CdkRGBA color;
 	gchar *color_str;
 	gchar *bg_css;
 
@@ -280,9 +280,9 @@ static void applet_style_updated (CafePanelApplet *applet, CtkStyleContext *cont
 /* Replacement for the default scroll handler that also cares about the wrapping property.
  * Alternative: Add behaviour to libwnck (to the WnckPager widget).
  */
-static gboolean applet_scroll(CafePanelApplet* applet, GdkEventScroll* event, PagerData* pager)
+static gboolean applet_scroll(CafePanelApplet* applet, CdkEventScroll* event, PagerData* pager)
 {
-	GdkScrollDirection absolute_direction;
+	CdkScrollDirection absolute_direction;
 	int index;
 	int n_workspaces;
 	int n_columns;
@@ -726,7 +726,7 @@ static void num_workspaces_value_changed(CtkSpinButton* button, PagerData* pager
 	wnck_screen_change_workspace_count(pager->screen, ctk_spin_button_get_value_as_int(CTK_SPIN_BUTTON(pager->num_workspaces_spin)));
 }
 
-static gboolean workspaces_tree_focused_out(CtkTreeView* treeview, GdkEventFocus* event, PagerData* pager)
+static gboolean workspaces_tree_focused_out(CtkTreeView* treeview, CdkEventFocus* event, PagerData* pager)
 {
 	CtkTreeSelection* selection;
 

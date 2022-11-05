@@ -36,7 +36,7 @@
 
 static void
 _panel_show_error_dialog (const gchar *uri,
-			  GdkScreen   *screen,
+			  CdkScreen   *screen,
 			  const gchar *message)
 {
 	char *primary;
@@ -50,7 +50,7 @@ _panel_show_error_dialog (const gchar *uri,
 
 typedef struct {
 	GMountOperation *mount_op;
-	GdkScreen *screen;
+	CdkScreen *screen;
 } PanelShowMountOperationHandle;
 
 static void
@@ -92,7 +92,7 @@ _panel_show_mount_async_callback (GObject      *source_object,
 	g_slice_free (PanelShowMountOperationHandle, handle);
 }
 
-static gboolean _panel_show_handle_error(const gchar* uri, GdkScreen* screen, GError* local_error, GError** error)
+static gboolean _panel_show_handle_error(const gchar* uri, CdkScreen* screen, GError* local_error, GError** error)
 {
 	if (local_error == NULL)
 	{
@@ -139,7 +139,7 @@ static gboolean _panel_show_handle_error(const gchar* uri, GdkScreen* screen, GE
 	return FALSE;
 }
 
-static gboolean panel_show_caja_search_uri(GdkScreen* screen, const gchar* uri, guint32 timestamp, GError** error)
+static gboolean panel_show_caja_search_uri(CdkScreen* screen, const gchar* uri, guint32 timestamp, GError** error)
 {
 	char* desktopfile = NULL;
 	GDesktopAppInfo* appinfo = NULL;
@@ -165,7 +165,7 @@ static gboolean panel_show_caja_search_uri(GdkScreen* screen, const gchar* uri, 
 	return ret;
 }
 
-gboolean panel_show_uri(GdkScreen* screen, const gchar* uri, guint32 timestamp, GError** error)
+gboolean panel_show_uri(CdkScreen* screen, const gchar* uri, guint32 timestamp, GError** error)
 {
 	GError* local_error = NULL;
 
@@ -184,7 +184,7 @@ gboolean panel_show_uri(GdkScreen* screen, const gchar* uri, guint32 timestamp, 
 }
 
 gboolean
-panel_show_uri_force_mime_type (GdkScreen    *screen,
+panel_show_uri_force_mime_type (CdkScreen    *screen,
 				const gchar  *uri,
 				const gchar  *mime_type,
 				guint32       timestamp,
@@ -193,8 +193,8 @@ panel_show_uri_force_mime_type (GdkScreen    *screen,
 	GFile    *file;
 	GAppInfo *appinfo;
 	gboolean  ret;
-	GdkDisplay *display;
-	GdkAppLaunchContext *context;
+	CdkDisplay *display;
+	CdkAppLaunchContext *context;
 	GList    *uris;
 
 	g_return_val_if_fail (CDK_IS_SCREEN (screen), FALSE);
@@ -226,7 +226,7 @@ panel_show_uri_force_mime_type (GdkScreen    *screen,
 
 static void
 _panel_show_help_error_dialog (const gchar *doc,
-			       GdkScreen   *screen,
+			       CdkScreen   *screen,
 			       const gchar *message)
 {
 	char *primary;
@@ -240,7 +240,7 @@ _panel_show_help_error_dialog (const gchar *doc,
 
 static gboolean
 _panel_show_help_handle_error (const gchar  *doc,
-			       GdkScreen    *screen,
+			       CdkScreen    *screen,
 			       GError       *local_error,
 			       GError      **error)
 {
@@ -266,7 +266,7 @@ _panel_show_help_handle_error (const gchar  *doc,
 }
 
 gboolean
-panel_show_help (GdkScreen    *screen,
+panel_show_help (CdkScreen    *screen,
 		 const gchar  *doc,
 		 const gchar  *link,
 		 GError      **error)

@@ -366,8 +366,8 @@ sn_dbus_menu_constructed (GObject *object)
 {
   SnDBusMenu *menu;
   CtkWidget *toplevel;
-  GdkScreen *screen;
-  GdkVisual *visual;
+  CdkScreen *screen;
+  CdkVisual *visual;
   CtkStyleContext *context;
 
   G_OBJECT_CLASS (sn_dbus_menu_parent_class)->constructed (object);

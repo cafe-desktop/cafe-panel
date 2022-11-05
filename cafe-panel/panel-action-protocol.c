@@ -53,17 +53,17 @@ static Atom atom_gnome_panel_action_run_dialog = None;
 static Atom atom_cafe_panel_action_kill_dialog = None;
 
 static void
-panel_action_protocol_main_menu (GdkScreen *screen,
-				 guint32    activate_time, GdkEvent  *event)
+panel_action_protocol_main_menu (CdkScreen *screen,
+				 guint32    activate_time, CdkEvent  *event)
 {
 	PanelWidget *panel_widget;
 	CtkWidget   *menu;
 	AppletInfo  *info;
-	GdkVisual *visual;
+	CdkVisual *visual;
 	CtkWidget *toplevel;
 	CtkStyleContext *context;
-	GdkSeat *seat;
-	GdkDevice *device;
+	CdkSeat *seat;
+	CdkDevice *device;
 
 	info = cafe_panel_applet_get_by_type (PANEL_OBJECT_MENU_BAR, screen);
 	if (info) {
@@ -103,27 +103,27 @@ panel_action_protocol_main_menu (GdkScreen *screen,
 }
 
 static void
-panel_action_protocol_run_dialog (GdkScreen *screen,
+panel_action_protocol_run_dialog (CdkScreen *screen,
 				  guint32    activate_time)
 {
 	panel_run_dialog_present (screen, activate_time);
 }
 
 static void
-panel_action_protocol_kill_dialog (GdkScreen *screen,
+panel_action_protocol_kill_dialog (CdkScreen *screen,
 				   guint32    activate_time)
 {
 	panel_force_quit (screen, activate_time);
 }
 
-static GdkFilterReturn
-panel_action_protocol_filter (GdkXEvent *cdk_xevent,
-			      GdkEvent  *event,
+static CdkFilterReturn
+panel_action_protocol_filter (CdkXEvent *cdk_xevent,
+			      CdkEvent  *event,
 			      gpointer   data)
 {
-	GdkWindow *window;
-	GdkScreen *screen;
-	GdkDisplay *display;
+	CdkWindow *window;
+	CdkScreen *screen;
+	CdkDisplay *display;
 	XEvent    *xevent = (XEvent *) cdk_xevent;
 
 	if (xevent->type != ClientMessage)
@@ -163,7 +163,7 @@ panel_action_protocol_filter (GdkXEvent *cdk_xevent,
 void
 panel_action_protocol_init (void)
 {
-	GdkDisplay *display;
+	CdkDisplay *display;
 
 	display = cdk_display_get_default ();
 	g_assert(CDK_IS_X11_DISPLAY (display));

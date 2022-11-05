@@ -47,7 +47,7 @@
 static gboolean
 launcher_properties_enabled (void);
 
-static GdkScreen *
+static CdkScreen *
 launcher_get_screen (Launcher *launcher)
 {
 	PanelWidget *panel_widget;
@@ -102,7 +102,7 @@ static void
 launch_url (Launcher *launcher)
 {
 	char *url;
-	GdkScreen *screen;
+	CdkScreen *screen;
 
 	g_return_if_fail (launcher != NULL);
 	g_return_if_fail (launcher->key_file != NULL);
@@ -170,7 +170,7 @@ launcher_launch (Launcher  *launcher,
 
 static void
 drag_data_received_cb (CtkWidget        *widget,
-		       GdkDragContext   *context,
+		       CdkDragContext   *context,
 		       gint              x,
 		       gint              y,
 		       CtkSelectionData *selection_data,
@@ -289,9 +289,9 @@ panel_launcher_delete (Launcher *launcher)
 
 static gboolean
 is_this_drop_ok (CtkWidget      *widget,
-		 GdkDragContext *context)
+		 CdkDragContext *context)
 {
-	static GdkAtom  text_uri_list = CDK_NONE;
+	static CdkAtom  text_uri_list = CDK_NONE;
 	GList           *l;
 	CtkWidget       *source;
 
@@ -316,7 +316,7 @@ is_this_drop_ok (CtkWidget      *widget,
 
 static void
 drag_leave_cb(CtkWidget	       *widget,
-	      GdkDragContext   *context,
+	      CdkDragContext   *context,
 	      guint             time,
 	      Launcher *launcher)
 {
@@ -326,7 +326,7 @@ drag_leave_cb(CtkWidget	       *widget,
 
 static gboolean
 drag_motion_cb(CtkWidget *widget,
-	       GdkDragContext *context,
+	       CdkDragContext *context,
 	       gint x,
 	       gint y,
 	       guint time,
@@ -344,13 +344,13 @@ drag_motion_cb(CtkWidget *widget,
 
 static gboolean
 drag_drop_cb (CtkWidget	        *widget,
-	      GdkDragContext    *context,
+	      CdkDragContext    *context,
 	      gint               x,
 	      gint               y,
 	      guint              time,
 	      Launcher          *launcher)
 {
-	static GdkAtom text_uri_list = NULL;
+	static CdkAtom text_uri_list = NULL;
 
 	if ( ! is_this_drop_ok (widget, context))
 		return FALSE;
@@ -371,7 +371,7 @@ enum {
 
 static void
 drag_data_get_cb (CtkWidget        *widget,
-		  GdkDragContext   *context,
+		  CdkDragContext   *context,
 		  CtkSelectionData *selection_data,
 		  guint             info,
 		  guint             time,
@@ -1182,7 +1182,7 @@ panel_launcher_set_dnd_enabled (Launcher *launcher,
 				     CDK_ACTION_COPY | CDK_ACTION_MOVE);
 		surface = button_widget_get_surface (BUTTON_WIDGET (launcher->button));
 		if (surface) {
-			GdkPixbuf *pixbuf;
+			CdkPixbuf *pixbuf;
 			pixbuf = cdk_pixbuf_get_from_surface (surface,
 							 0,
 							 0,

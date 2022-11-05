@@ -327,7 +327,7 @@ static void
 panel_properties_dialog_color_changed (PanelPropertiesDialog *dialog,
 				       CtkColorChooser       *color_button)
 {
-	GdkRGBA color;
+	CdkRGBA color;
 
 	g_assert (dialog->color_button == CTK_WIDGET (color_button));
 
@@ -340,7 +340,7 @@ static void
 panel_properties_dialog_setup_color_button (PanelPropertiesDialog *dialog,
 					    CtkBuilder            *gui)
 {
-	GdkRGBA color;
+	CdkRGBA color;
 
 	dialog->color_button = PANEL_CTK_BUILDER_GET (gui, "color_button");
 	g_return_if_fail (dialog->color_button != NULL);
@@ -694,8 +694,8 @@ static void
 panel_properties_dialog_update_background_color (PanelPropertiesDialog *dialog,
 						 gchar                 *str_color)
 {
-	GdkRGBA new_color;
-	GdkRGBA old_color;
+	CdkRGBA new_color;
+	CdkRGBA old_color;
 
 	if (!cdk_rgba_parse (&new_color, str_color))
 		return;

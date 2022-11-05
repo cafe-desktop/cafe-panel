@@ -38,16 +38,16 @@
 typedef struct {
         PanelToplevel    *toplevel;
 
-	GdkScreen        *screen;
+	CdkScreen        *screen;
 	int               monitor;
 
         PanelOrientation  orientation;
-	GdkRectangle      geometry;
+	CdkRectangle      geometry;
         int               strut_size;
         int               strut_start;
         int               strut_end;
 
-	GdkRectangle      allocated_geometry;
+	CdkRectangle      allocated_geometry;
         int               allocated_strut_size;
         int               allocated_strut_start;
         int               allocated_strut_end;
@@ -87,7 +87,7 @@ panel_struts_get_monitor_geometry (int        monitor,
 
 static PanelStrut *
 panel_struts_intersect (GSList       *struts,
-			GdkRectangle *geometry,
+			CdkRectangle *geometry,
 			int           skip)
 {
 	GSList *l;
@@ -116,7 +116,7 @@ panel_struts_intersect (GSList       *struts,
 static int
 panel_struts_allocation_overlapped (PanelStrut   *strut,
 				    PanelStrut   *overlap,
-				    GdkRectangle *geometry,
+				    CdkRectangle *geometry,
 				    gboolean     *moved_down,
 				    int           skip)
 {
@@ -186,7 +186,7 @@ panel_struts_allocation_overlapped (PanelStrut   *strut,
 
 static gboolean
 panel_struts_allocate_struts (PanelToplevel *toplevel,
-			      GdkScreen     *screen,
+			      CdkScreen     *screen,
 			      int            monitor)
 {
 	GSList   *allocated = NULL;
@@ -196,7 +196,7 @@ panel_struts_allocate_struts (PanelToplevel *toplevel,
 	for (l = panel_struts_list; l; l = l->next) {
 		PanelStrut   *strut = l->data;
 		PanelStrut   *overlap;
-		GdkRectangle  geometry;
+		CdkRectangle  geometry;
 		int           monitor_x, monitor_y;
 		int           monitor_width, monitor_height;
 		gboolean      moved_down;
@@ -407,7 +407,7 @@ panel_struts_compare (const PanelStrut *s1,
 
 gboolean
 panel_struts_register_strut (PanelToplevel    *toplevel,
-			     GdkScreen        *screen,
+			     CdkScreen        *screen,
 			     int               monitor,
 			     PanelOrientation  orientation,
 			     int               strut_size,
@@ -494,7 +494,7 @@ void
 panel_struts_unregister_strut (PanelToplevel *toplevel)
 {
 	PanelStrut *strut;
-	GdkScreen  *screen;
+	CdkScreen  *screen;
 	int         monitor;
 
 	g_return_if_fail (CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel))));

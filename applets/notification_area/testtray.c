@@ -38,7 +38,7 @@ static guint n_windows = 0;
 
 typedef struct
 {
-  GdkScreen *screen;
+  CdkScreen *screen;
   guint screen_num;
   CtkWidget *window;
   CtkWidget *traybox;
@@ -103,12 +103,12 @@ maybe_quit (gpointer data,
   }
 }
 
-static TrayData *create_tray_on_screen (GdkScreen *screen, gboolean force);
+static TrayData *create_tray_on_screen (CdkScreen *screen, gboolean force);
 
 static void
 warning_dialog_response_cb (CtkWidget *dialog,
 			    gint response,
-			    GdkScreen *screen)
+			    CdkScreen *screen)
 {
   if (response == CTK_RESPONSE_YES) {
     create_tray_on_screen (screen, TRUE);
@@ -124,7 +124,7 @@ add_tray_cb (CtkWidget *button, TrayData *data)
 }
 
 static TrayData *
-create_tray_on_screen (GdkScreen *screen,
+create_tray_on_screen (CdkScreen *screen,
 		       gboolean force)
 {
   CtkWidget *window, *hbox, *vbox, *button, *combo, *label;
@@ -246,8 +246,8 @@ status_notifier_watcher_maybe_new (void)
 int
 main (int argc, char *argv[])
 {
-  GdkDisplay *display;
-  GdkScreen *screen;
+  CdkDisplay *display;
+  CdkScreen *screen;
 #ifdef PROVIDE_WATCHER_SERVICE
   GfStatusNotifierWatcher *service;
 #endif

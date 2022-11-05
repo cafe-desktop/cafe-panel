@@ -76,8 +76,8 @@ main (int argc, char **argv)
 	char           *desktopfile;
 	GOptionContext *context;
 	GError         *error;
-	GdkDisplay     *display;
-	GdkScreen      *screen;
+	CdkDisplay     *display;
+	CdkScreen      *screen;
 	CtkCssProvider *css;
 	CtkStyleProvider *provider;
 	const gchar    *resource;

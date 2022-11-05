@@ -105,15 +105,15 @@ panel_push_window_busy (CtkWidget *window)
 	busy ++;
 
 	if (busy == 1) {
-		GdkWindow *win;
-		GdkDisplay *display;
+		CdkWindow *win;
+		CdkDisplay *display;
 
 		ctk_widget_set_sensitive (window, FALSE);
 
 		win = ctk_widget_get_window (window);
 		display = cdk_display_get_default ();
 		if (win != NULL) {
-			GdkCursor *cursor = cdk_cursor_new_for_display (display,
+			CdkCursor *cursor = cdk_cursor_new_for_display (display,
 			                                                CDK_WATCH);
 
 			cdk_window_set_cursor (win, cursor);
@@ -134,7 +134,7 @@ panel_pop_window_busy (CtkWidget *window)
 	busy --;
 
 	if (busy <= 0) {
-		GdkWindow *win;
+		CdkWindow *win;
 
 		ctk_widget_set_sensitive (window, TRUE);
 
@@ -337,7 +337,7 @@ panel_load_icon (CtkIconTheme  *icon_theme,
 		 int            desired_height,
 		 char         **error_msg)
 {
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	cairo_surface_t *surface;
 	char      *file;
 	GError    *error;
@@ -449,7 +449,7 @@ panel_lock_screen_action_available (const char *action)
 	return enabled;
 }
 
-void panel_lock_screen_action(GdkScreen* screen, const char* action)
+void panel_lock_screen_action(CdkScreen* screen, const char* action)
 {
 	GError* error = NULL;
 	char* command = NULL;
@@ -480,7 +480,7 @@ void panel_lock_screen_action(GdkScreen* screen, const char* action)
 	g_free(command);
 }
 
-void panel_lock_screen(GdkScreen* screen)
+void panel_lock_screen(CdkScreen* screen)
 {
 	panel_lock_screen_action(screen, "lock");
 }
@@ -711,12 +711,12 @@ panel_make_unique_desktop_uri (const char *dir,
 	return uri;
 }
 
-GdkPixbuf *
+CdkPixbuf *
 panel_util_cairo_rgbdata_to_pixbuf (unsigned char *data,
 				    int            width,
 				    int            height)
 {
-	GdkPixbuf     *retval;
+	CdkPixbuf     *retval;
 	unsigned char *dstptr;
 	unsigned char *srcptr;
 	int            align;

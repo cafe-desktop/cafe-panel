@@ -67,7 +67,7 @@ struct _NaTrayChildClass
 
 GType           na_tray_child_get_type        (void);
 
-CtkWidget      *na_tray_child_new            (GdkScreen    *screen,
+CtkWidget      *na_tray_child_new            (CdkScreen    *screen,
                                               Window        icon_window);
 char           *na_tray_child_get_title      (NaTrayChild  *child);
 gboolean        na_tray_child_has_alpha      (NaTrayChild  *child);

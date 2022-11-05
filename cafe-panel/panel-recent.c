@@ -41,7 +41,7 @@
 #include "panel-icon-names.h"
 
 static gboolean
-show_uri (const char *uri, const char *mime_type, GdkScreen *screen,
+show_uri (const char *uri, const char *mime_type, CdkScreen *screen,
 	  GError **error)
 {
 	return panel_show_uri_force_mime_type (screen, uri, mime_type,
@@ -57,7 +57,7 @@ recent_documents_activate_cb (CtkRecentChooser *chooser,
 	CtkRecentInfo *recent_info;
 	const char    *uri;
 	const char    *mime_type;
-	GdkScreen     *screen;
+	CdkScreen     *screen;
 	GError        *error = NULL;
 
 	screen = ctk_widget_get_screen (CTK_WIDGET (chooser));

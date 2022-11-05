@@ -32,18 +32,18 @@
 extern "C" {
 #endif
 
-gboolean panel_show_uri (GdkScreen    *screen,
+gboolean panel_show_uri (CdkScreen    *screen,
 			 const gchar  *uri,
 			 guint32       timestamp,
 			 GError      **error);
 
-gboolean panel_show_uri_force_mime_type (GdkScreen    *screen,
+gboolean panel_show_uri_force_mime_type (CdkScreen    *screen,
 					 const gchar  *uri,
 					 const gchar  *mime_type,
 					 guint32       timestamp,
 					 GError      **error);
 
-gboolean panel_show_help (GdkScreen    *screen,
+gboolean panel_show_help (CdkScreen    *screen,
 			  const gchar  *doc,
 			  const gchar  *link,
 			  GError      **error);

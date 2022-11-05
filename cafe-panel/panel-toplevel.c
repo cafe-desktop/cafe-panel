@@ -121,7 +121,7 @@ struct _PanelToplevelPrivate {
 	guint                   hide_timeout;
 	guint                   unhide_timeout;
 
-	GdkRectangle            geometry;
+	CdkRectangle            geometry;
 	PanelFrameEdge          edges;
 
 	int                     original_width;
@@ -331,7 +331,7 @@ gboolean panel_toplevel_is_last_unattached(PanelToplevel* toplevel)
 	return TRUE;
 }
 
-static void panel_toplevel_get_monitor_geometry(PanelToplevel* toplevel, GdkRectangle *geom)
+static void panel_toplevel_get_monitor_geometry(PanelToplevel* toplevel, CdkRectangle *geom)
 {
 	g_return_if_fail(PANEL_IS_TOPLEVEL(toplevel));
 	g_return_if_fail(geom);
@@ -342,9 +342,9 @@ static void panel_toplevel_get_monitor_geometry(PanelToplevel* toplevel, GdkRect
 	geom->height = panel_multimonitor_height(toplevel->priv->monitor);
 }
 
-static GdkCursorType panel_toplevel_grab_op_cursor(PanelToplevel* toplevel, PanelGrabOpType grab_op)
+static CdkCursorType panel_toplevel_grab_op_cursor(PanelToplevel* toplevel, PanelGrabOpType grab_op)
 {
-	GdkCursorType retval = -1;
+	CdkCursorType retval = -1;
 
 	switch (grab_op) {
 	case PANEL_GRAB_OP_MOVE:
@@ -406,7 +406,7 @@ static void panel_toplevel_init_resize_drag_offsets(PanelToplevel* toplevel, Pan
 static void panel_toplevel_warp_pointer(PanelToplevel* toplevel)
 {
 	CtkWidget    *widget;
-	GdkRectangle  geometry;
+	CdkRectangle  geometry;
 	int           x, y;
 
 	widget = CTK_WIDGET (toplevel);
@@ -467,12 +467,12 @@ static void panel_toplevel_begin_attached_move(PanelToplevel* toplevel, gboolean
 static void panel_toplevel_begin_grab_op(PanelToplevel* toplevel, PanelGrabOpType op_type, gboolean grab_keyboard, guint32 time_)
 {
 	CtkWidget     *widget;
-	GdkWindow     *window;
-	GdkCursorType  cursor_type;
-	GdkCursor     *cursor;
-	GdkDisplay *display;
-	GdkSeat *seat;
-	GdkSeatCapabilities capabilities;
+	CdkWindow     *window;
+	CdkCursorType  cursor_type;
+	CdkCursor     *cursor;
+	CdkDisplay *display;
+	CdkSeat *seat;
+	CdkSeatCapabilities capabilities;
 
 	if (toplevel->priv->state != PANEL_STATE_NORMAL ||
 	    toplevel->priv->grab_op != PANEL_GRAB_OP_NONE)
@@ -547,8 +547,8 @@ static void panel_toplevel_begin_grab_op(PanelToplevel* toplevel, PanelGrabOpTyp
 static void panel_toplevel_end_grab_op (PanelToplevel* toplevel, guint32 time_)
 {
 	CtkWidget *widget;
-	GdkDisplay *display;
-	GdkSeat *seat;
+	CdkDisplay *display;
+	CdkSeat *seat;
 
 	g_return_if_fail (toplevel->priv->grab_op != PANEL_GRAB_OP_NONE);
 
@@ -586,7 +586,7 @@ static void panel_toplevel_resize_to_pointer(PanelToplevel* toplevel, int x, int
 	int new_x, new_y;
 	int new_x_right, new_y_bottom;
 	int new_x_centered, new_y_centered;
-	GdkRectangle monitor_geom;
+	CdkRectangle monitor_geom;
 
 	new_size       = toplevel->priv->size;
 	new_x          = toplevel->priv->x;
@@ -727,8 +727,8 @@ static void panel_toplevel_move_to(PanelToplevel* toplevel, int new_x, int new_y
 {
 	PanelOrientation  new_orientation;
 	gboolean          x_centered, y_centered;
-	GdkPoint          display_min, display_max;
-	GdkRectangle      monitor_geom;
+	CdkPoint          display_min, display_max;
+	CdkRectangle      monitor_geom;
 	int               width, height;
 	int               new_monitor;
 	int               x, y, x_right, y_bottom;
@@ -854,9 +854,9 @@ static void panel_toplevel_rotate_to_pointer(PanelToplevel* toplevel, int pointe
 #ifdef HAVE_X11
 static gboolean panel_toplevel_warp_pointer_increment(PanelToplevel* toplevel, int keyval, int increment)
 {
-	GdkScreen *screen;
-	GdkWindow *root_window;
-	GdkDevice      *device;
+	CdkScreen *screen;
+	CdkWindow *root_window;
+	CdkDevice      *device;
 	int        new_x, new_y;
 
 	screen = ctk_window_get_screen (CTK_WINDOW (toplevel));
@@ -892,7 +892,7 @@ static gboolean panel_toplevel_warp_pointer_increment(PanelToplevel* toplevel, i
 	return TRUE;
 }
 
-static gboolean panel_toplevel_move_keyboard_floating(PanelToplevel* toplevel, GdkEventKey* event)
+static gboolean panel_toplevel_move_keyboard_floating(PanelToplevel* toplevel, CdkEventKey* event)
 {
 #define SMALL_INCREMENT  1
 #define NORMAL_INCREMENT 10
@@ -911,7 +911,7 @@ static gboolean panel_toplevel_move_keyboard_floating(PanelToplevel* toplevel, G
 
 #endif // HAVE_X11
 
-static gboolean panel_toplevel_move_keyboard_expanded(PanelToplevel* toplevel, GdkEventKey* event)
+static gboolean panel_toplevel_move_keyboard_expanded(PanelToplevel* toplevel, CdkEventKey* event)
 {
 	PanelOrientation new_orientation;
 
@@ -942,7 +942,7 @@ static gboolean panel_toplevel_move_keyboard_expanded(PanelToplevel* toplevel, G
 	return TRUE;
 }
 
-static gboolean panel_toplevel_initial_resize_keypress(PanelToplevel* toplevel, GdkEventKey* event)
+static gboolean panel_toplevel_initial_resize_keypress(PanelToplevel* toplevel, CdkEventKey* event)
 {
 	PanelGrabOpType grab_op;
 
@@ -982,7 +982,7 @@ static gboolean panel_toplevel_initial_resize_keypress(PanelToplevel* toplevel, 
 	return TRUE;
 }
 
-static gboolean panel_toplevel_handle_grab_op_key_event(PanelToplevel* toplevel, GdkEventKey* event)
+static gboolean panel_toplevel_handle_grab_op_key_event(PanelToplevel* toplevel, CdkEventKey* event)
 {
 	gboolean retval = FALSE;
 
@@ -1040,7 +1040,7 @@ static gboolean panel_toplevel_handle_grab_op_key_event(PanelToplevel* toplevel,
 	return retval;
 }
 
-static gboolean panel_toplevel_handle_grab_op_motion_event(PanelToplevel* toplevel, GdkEventMotion* event)
+static gboolean panel_toplevel_handle_grab_op_motion_event(PanelToplevel* toplevel, CdkEventMotion* event)
 {
 	switch (toplevel->priv->grab_op) {
 	case PANEL_GRAB_OP_MOVE:
@@ -1071,8 +1071,8 @@ static gboolean panel_toplevel_handle_grab_op_motion_event(PanelToplevel* toplev
 
 static void panel_toplevel_calc_floating(PanelToplevel* toplevel)
 {
-	GdkRectangle       monitor_geom;
-	GdkPoint           position_on_monitor;
+	CdkRectangle       monitor_geom;
+	CdkPoint           position_on_monitor;
 	int                snap_tolerance;
 
 	if (toplevel->priv->expand) {
@@ -1125,12 +1125,12 @@ static gboolean panel_toplevel_get_autohide_disabled(PanelToplevel* toplevel)
 	return toplevel->priv->n_autohide_disablers > 0 ? TRUE : FALSE;
 }
 
-static gboolean panel_toplevel_hide_button_event(PanelToplevel* toplevel, GdkEventButton* event, CtkButton* button)
+static gboolean panel_toplevel_hide_button_event(PanelToplevel* toplevel, CdkEventButton* event, CtkButton* button)
 {
 	if (event->button == 1)
 		return FALSE;
 
-	return ctk_widget_event (CTK_WIDGET (toplevel), (GdkEvent *) event);
+	return ctk_widget_event (CTK_WIDGET (toplevel), (CdkEvent *) event);
 }
 
 static void panel_toplevel_hide_button_clicked(PanelToplevel* toplevel, CtkButton* button)
@@ -1381,11 +1381,11 @@ static void panel_toplevel_update_hide_buttons(PanelToplevel* toplevel)
 
 static gboolean panel_toplevel_contains_pointer(PanelToplevel* toplevel)
 {
-	GdkDisplay *display;
-	GdkScreen  *screen;
+	CdkDisplay *display;
+	CdkScreen  *screen;
 	CtkWidget  *widget;
-	GdkSeat *seat;
-	GdkDevice *pointer;
+	CdkSeat *seat;
+	CdkDevice *pointer;
 	int         x, y;
 
 	display = cdk_display_get_default ();
@@ -1434,7 +1434,7 @@ static gboolean panel_toplevel_update_struts(PanelToplevel* toplevel, gboolean e
 	gboolean          geometry_changed = FALSE;
 	int               strut, strut_start, strut_end;
 	int               x, y, width, height;
-	GdkRectangle	  monitor_geom;
+	CdkRectangle	  monitor_geom;
 
 	if (!toplevel->priv->updated_geometry_initial)
 		return FALSE;
@@ -1530,7 +1530,7 @@ static gboolean panel_toplevel_update_struts(PanelToplevel* toplevel, gboolean e
 #ifdef HAVE_X11
 	if (CDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (toplevel)))) {
 		if (strut > 0) {
-			GdkScreen *screen;
+			CdkScreen *screen;
 			screen = ctk_widget_get_screen (CTK_WIDGET (toplevel));
 			geometry_changed = panel_struts_register_strut (toplevel,
 									screen,
@@ -1568,7 +1568,7 @@ void panel_toplevel_update_edges(PanelToplevel* toplevel)
 	PanelFrameEdge   edges;
 	PanelFrameEdge   inner_edges;
 	PanelFrameEdge   outer_edges;
-	GdkRectangle     monitor_geom;
+	CdkRectangle     monitor_geom;
 	int              width, height;
 	gboolean         inner_frame = FALSE;
 
@@ -1688,11 +1688,11 @@ static void panel_toplevel_update_attached_position(PanelToplevel* toplevel, gbo
 {
 	CtkAllocation     attach_allocation;
 	PanelOrientation  attach_orientation;
-	GdkRectangle      toplevel_box;
-	GdkRectangle      parent_box;
-	GdkRectangle      attach_box;
+	CdkRectangle      toplevel_box;
+	CdkRectangle      parent_box;
+	CdkRectangle      attach_box;
 	int               x_origin = 0, y_origin = 0;
-	GdkRectangle      monitor_geom;
+	CdkRectangle      monitor_geom;
 
 	if (!ctk_widget_get_realized (CTK_WIDGET (toplevel->priv->attach_toplevel)) ||
 	    !ctk_widget_get_realized (toplevel->priv->attach_widget))
@@ -1773,7 +1773,7 @@ static void panel_toplevel_update_attached_position(PanelToplevel* toplevel, gbo
 
 static void panel_toplevel_update_normal_position(PanelToplevel* toplevel, int* x, int* y, int* w, int* h)
 {
-	GdkRectangle monitor_geom;
+	CdkRectangle monitor_geom;
 	int          width, height;
 	int          snap_tolerance;
 
@@ -1821,7 +1821,7 @@ panel_toplevel_update_auto_hide_position (PanelToplevel *toplevel,
 					  gboolean       for_end_position)
 {
 	int width, height;
-	GdkRectangle monitor_geom;
+	CdkRectangle monitor_geom;
 	int auto_hide_size;
 	int snap_tolerance;
 
@@ -1901,7 +1901,7 @@ panel_toplevel_update_hidden_position (PanelToplevel *toplevel,
 {
 	int width, height;
 	int min_hide_size;
-	GdkRectangle monitor_geom;
+	CdkRectangle monitor_geom;
 	CtkAllocation hide_allocation;
 
 	g_assert (x != NULL && y != NULL);
@@ -2060,7 +2060,7 @@ panel_toplevel_update_animating_position (PanelToplevel *toplevel)
 static void
 panel_toplevel_update_expanded_position (PanelToplevel *toplevel)
 {
-	GdkRectangle monitor_geom;
+	CdkRectangle monitor_geom;
 	int        x, y;
 	int        x_right, y_bottom;
 	int        monitor;
@@ -2137,7 +2137,7 @@ panel_toplevel_update_position (PanelToplevel *toplevel)
 	PanelBackground *background;
 	int              x, y;
 	int              w, h;
-	GdkRectangle     monitor_geom;
+	CdkRectangle     monitor_geom;
 
 	panel_toplevel_get_monitor_geometry (toplevel, &monitor_geom);
 
@@ -2236,7 +2236,7 @@ panel_toplevel_update_position (PanelToplevel *toplevel)
 	if (panel_background_effective_type (background) == PANEL_BACK_NONE) {
 		CtkStyleContext *context;
 		CtkStateFlags    state;
-		GdkRectangle    *geometry;
+		CdkRectangle    *geometry;
 		CtkBorder        padding;
 		int              max_size;
 
@@ -2404,7 +2404,7 @@ panel_toplevel_update_size (PanelToplevel  *toplevel,
 	CtkStyleContext *context;
 	CtkStateFlags    state;
 	CtkBorder        padding;
-	GdkRectangle     monitor_geom;
+	CdkRectangle     monitor_geom;
 	int              width, height;
 	int              minimum_height;
 	int              non_panel_widget_size;
@@ -2971,7 +2971,7 @@ set_background_default_style (CtkWidget *widget)
 	PanelToplevel *toplevel;
 	CtkStyleContext *context;
 	CtkStateFlags state;
-	GdkRGBA *bg_color;
+	CdkRGBA *bg_color;
 	cairo_pattern_t *bg_image;
 
 	if (!ctk_widget_get_realized (widget))
@@ -3001,9 +3001,9 @@ static void
 panel_toplevel_realize (CtkWidget *widget)
 {
 	PanelToplevel *toplevel;
-	GdkScreen *screen;
-	GdkVisual *visual;
-	GdkWindow *window;
+	CdkScreen *screen;
+	CdkVisual *visual;
+	CdkWindow *window;
 
 	toplevel = PANEL_TOPLEVEL (widget);
 
@@ -3154,7 +3154,7 @@ panel_toplevel_size_request (CtkWidget      *widget,
 	PanelToplevel *toplevel;
 	CtkBin        *bin;
 	CtkWidget     *child;
-	GdkRectangle   old_geometry;
+	CdkRectangle   old_geometry;
 	int            position_changed = FALSE;
 	int            size_changed = FALSE;
 
@@ -3214,7 +3214,7 @@ static void
 set_background_region (PanelToplevel *toplevel)
 {
 	CtkWidget *widget;
-	GdkWindow *window;
+	CdkWindow *window;
 	gint origin_x;
 	gint origin_y;
 	CtkAllocation allocation;
@@ -3417,7 +3417,7 @@ static gboolean panel_toplevel_draw(CtkWidget* widget, cairo_t* cr)
 
 static gboolean
 panel_toplevel_button_press_event (CtkWidget      *widget,
-				   GdkEventButton *event)
+				   CdkEventButton *event)
 {
 	PanelToplevel *toplevel;
 	CtkWidget     *event_widget;
@@ -3455,7 +3455,7 @@ panel_toplevel_button_press_event (CtkWidget      *widget,
 
 static gboolean
 panel_toplevel_button_release_event (CtkWidget      *widget,
-				     GdkEventButton *event)
+				     CdkEventButton *event)
 {
 	PanelToplevel *toplevel;
 
@@ -3477,7 +3477,7 @@ panel_toplevel_button_release_event (CtkWidget      *widget,
 
 static gboolean
 panel_toplevel_configure_event (CtkWidget	  *widget,
-				GdkEventConfigure *event)
+				CdkEventConfigure *event)
 {
 	PanelToplevel *toplevel;
 
@@ -3490,7 +3490,7 @@ panel_toplevel_configure_event (CtkWidget	  *widget,
 
 static gboolean
 panel_toplevel_key_press_event (CtkWidget   *widget,
-				GdkEventKey *event)
+				CdkEventKey *event)
 {
 	PanelToplevel *toplevel = (PanelToplevel *) widget;
 
@@ -3516,9 +3516,9 @@ panel_toplevel_state_flags_changed (CtkWidget     *widget,
 
 static gboolean
 panel_toplevel_motion_notify_event (CtkWidget      *widget,
-				    GdkEventMotion *event)
+				    CdkEventMotion *event)
 {
-	if (cdk_event_get_screen ((GdkEvent *)event) ==
+	if (cdk_event_get_screen ((CdkEvent *)event) ==
 	    ctk_window_get_screen (CTK_WINDOW (widget)))
 		return panel_toplevel_handle_grab_op_motion_event (
 				PANEL_TOPLEVEL (widget), event);
@@ -3583,7 +3583,7 @@ panel_toplevel_get_animation_time (PanelToplevel *toplevel)
 static void
 panel_toplevel_calculate_animation_end_geometry (PanelToplevel *toplevel)
 {
-	GdkRectangle monitor_geom;
+	CdkRectangle monitor_geom;
 
 	toplevel->priv->animation_end_x      = toplevel->priv->x;
 	toplevel->priv->animation_end_y      = toplevel->priv->y;
@@ -3930,7 +3930,7 @@ panel_toplevel_queue_initial_unhide (PanelToplevel *toplevel)
 
 static gboolean
 panel_toplevel_enter_notify_event (CtkWidget        *widget,
-				   GdkEventCrossing *event)
+				   CdkEventCrossing *event)
 {
 	PanelToplevel *toplevel;
 
@@ -3949,7 +3949,7 @@ panel_toplevel_enter_notify_event (CtkWidget        *widget,
 
 static gboolean
 panel_toplevel_leave_notify_event (CtkWidget        *widget,
-				   GdkEventCrossing *event)
+				   CdkEventCrossing *event)
 {
 	PanelToplevel *toplevel;
 
@@ -3968,7 +3968,7 @@ panel_toplevel_leave_notify_event (CtkWidget        *widget,
 
 static gboolean
 panel_toplevel_focus_in_event (CtkWidget     *widget,
-			       GdkEventFocus *event)
+			       CdkEventFocus *event)
 {
 	PanelToplevel *toplevel = PANEL_TOPLEVEL (widget);
 
@@ -3983,7 +3983,7 @@ panel_toplevel_focus_in_event (CtkWidget     *widget,
 
 static gboolean
 panel_toplevel_focus_out_event (CtkWidget     *widget,
-				GdkEventFocus *event)
+				CdkEventFocus *event)
 {
 	PanelToplevel *toplevel = PANEL_TOPLEVEL (widget);
 
@@ -4044,7 +4044,7 @@ panel_toplevel_update_ctk_settings (PanelToplevel *toplevel)
 
 static void
 panel_toplevel_screen_changed (CtkWidget *widget,
-			       GdkScreen *previous_screen)
+			       CdkScreen *previous_screen)
 {
 	panel_toplevel_update_ctk_settings (PANEL_TOPLEVEL (widget));
 
@@ -4241,8 +4241,8 @@ panel_toplevel_constructor (GType                  type,
                                                            n_construct_properties,
                                                            construct_properties);
 	PanelToplevel *toplevel = PANEL_TOPLEVEL(object);
-	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
+	CdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
+	CdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 
 	return object;
@@ -4963,7 +4963,7 @@ panel_toplevel_set_orientation (PanelToplevel    *toplevel,
 				PanelOrientation  orientation)
 {
 	gboolean     rotate;
-	GdkRectangle monitor_geom;
+	CdkRectangle monitor_geom;
 
 	g_return_if_fail (PANEL_IS_TOPLEVEL (toplevel));
 
@@ -5578,7 +5578,7 @@ panel_toplevel_get_minimum_size (PanelToplevel *toplevel)
 int
 panel_toplevel_get_maximum_size (PanelToplevel *toplevel)
 {
-	GdkRectangle monitor_geom;
+	CdkRectangle monitor_geom;
 
 	panel_toplevel_get_monitor_geometry (toplevel, &monitor_geom);
 

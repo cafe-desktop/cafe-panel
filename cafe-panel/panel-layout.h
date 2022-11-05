@@ -31,7 +31,7 @@
 
 G_BEGIN_DECLS
 
-void        panel_layout_apply_default_from_gkeyfile (GdkScreen *screen);
+void        panel_layout_apply_default_from_gkeyfile (CdkScreen *screen);
 
 G_END_DECLS
 

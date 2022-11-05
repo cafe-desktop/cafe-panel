@@ -49,25 +49,25 @@ struct _PanelBackground {
 	PanelBackgroundChangedNotify notify_changed;
 	gpointer                user_data;
 
-	GdkRGBA                 color;
+	CdkRGBA                 color;
 
 	char                   *image;
-	GdkPixbuf              *loaded_image;
+	CdkPixbuf              *loaded_image;
 
 	CtkOrientation          orientation;
-	GdkRectangle            region;
-	GdkPixbuf              *transformed_image;
+	CdkRectangle            region;
+	CdkPixbuf              *transformed_image;
 	cairo_pattern_t        *composited_pattern;
 
 #ifdef HAVE_X11
 	PanelBackgroundMonitor *monitor;
-	GdkPixbuf              *desktop;
+	CdkPixbuf              *desktop;
 	gulong                  monitor_signal;
 #endif // HAVE_X11
 
-	GdkWindow              *window;
+	CdkWindow              *window;
 	cairo_pattern_t        *default_pattern;
-	GdkRGBA                 default_color;
+	CdkRGBA                 default_color;
 
 	guint                   fit_image : 1;
 	guint                   stretch_image : 1;
@@ -86,7 +86,7 @@ void  panel_background_init              (PanelBackground     *background,
 void  panel_background_free              (PanelBackground     *background);
 void  panel_background_set               (PanelBackground     *background,
 					  PanelBackgroundType  type,
-					  const GdkRGBA       *color,
+					  const CdkRGBA       *color,
 					  const char          *image,
 					  gboolean             fit_image,
 					  gboolean             stretch_image,
@@ -96,7 +96,7 @@ void  panel_background_set_type          (PanelBackground     *background,
 void  panel_background_set_opacity       (PanelBackground     *background,
 					  guint16              opacity);
 void  panel_background_set_color         (PanelBackground     *background,
-					  const GdkRGBA             *color);
+					  const CdkRGBA             *color);
 void  panel_background_set_image         (PanelBackground     *background,
 					  const char          *image);
 void  panel_background_set_fit           (PanelBackground     *background,
@@ -106,10 +106,10 @@ void  panel_background_set_stretch       (PanelBackground     *background,
 void  panel_background_set_rotate        (PanelBackground     *background,
 					  gboolean             rotate_image);
 void  panel_background_set_default_style (PanelBackground     *background,
-					  GdkRGBA             *color,
+					  CdkRGBA             *color,
 					  cairo_pattern_t     *pattern);
 void  panel_background_realized          (PanelBackground     *background,
-					  GdkWindow           *window);
+					  CdkWindow           *window);
 void  panel_background_unrealized        (PanelBackground     *background);
 void  panel_background_change_region     (PanelBackground     *background,
 					  CtkOrientation       orientation,
@@ -122,7 +122,7 @@ char *panel_background_make_string       (PanelBackground     *background,
 					  int                  y);
 
 PanelBackgroundType  panel_background_get_type   (PanelBackground *background);
-const GdkRGBA       *panel_background_get_color  (PanelBackground *background);
+const CdkRGBA       *panel_background_get_color  (PanelBackground *background);
 
 PanelBackgroundType
       panel_background_effective_type    (PanelBackground     *background);

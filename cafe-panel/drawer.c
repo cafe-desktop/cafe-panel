@@ -64,7 +64,7 @@ drawer_focus_panel_widget (Drawer           *drawer,
 
 static gboolean
 key_press_drawer (CtkWidget   *widget,
-                  GdkEventKey *event,
+                  CdkEventKey *event,
                   Drawer      *drawer)
 {
     gboolean retval = TRUE;
@@ -134,7 +134,7 @@ key_press_drawer (CtkWidget   *widget,
  */
 static gboolean
 key_press_drawer_widget (CtkWidget   *widget,
-                         GdkEventKey *event,
+                         CdkEventKey *event,
                          Drawer      *drawer)
 {
     PanelWidget *panel_widget;
@@ -159,7 +159,7 @@ key_press_drawer_widget (CtkWidget   *widget,
 
 static void
 drag_data_get_cb (CtkWidget          *widget,
-                  GdkDragContext     *context,
+                  CdkDragContext     *context,
                   CtkSelectionData   *selection_data,
                   guint               info,
                   guint               time,
@@ -176,7 +176,7 @@ drag_data_get_cb (CtkWidget          *widget,
 
 static gboolean
 drag_motion_cb (CtkWidget          *widget,
-                GdkDragContext     *context,
+                CdkDragContext     *context,
                 int                 x,
                 int                 y,
                 guint               time_,
@@ -210,13 +210,13 @@ drag_motion_cb (CtkWidget          *widget,
 
 static gboolean
 drag_drop_cb (CtkWidget      *widget,
-              GdkDragContext *context,
+              CdkDragContext *context,
               int             x,
               int             y,
               guint           time_,
               Drawer         *drawer)
 {
-    GdkAtom atom = NULL;
+    CdkAtom atom = NULL;
 
     if (!panel_check_dnd_target_data (widget, context, NULL, &atom))
         return FALSE;
@@ -228,7 +228,7 @@ drag_drop_cb (CtkWidget      *widget,
 
 static void
 drag_data_received_cb (CtkWidget          *widget,
-                       GdkDragContext     *context,
+                       CdkDragContext     *context,
                        gint                x,
                        gint                y,
                        CtkSelectionData   *selection_data,
@@ -272,7 +272,7 @@ queue_drawer_close_for_drag (Drawer *drawer)
 
 static void
 drag_leave_cb (CtkWidget      *widget,
-               GdkDragContext *context,
+               CdkDragContext *context,
                guint           time_,
                Drawer         *drawer)
 {

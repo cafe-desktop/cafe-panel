@@ -217,7 +217,7 @@ static void applet_change_orient (CafePanelApplet       *applet,
                                   ClockData         *cd);
 
 static void edit_hide (CtkWidget *unused, ClockData *cd);
-static gboolean edit_delete (CtkWidget *unused, GdkEvent *event, ClockData *cd);
+static gboolean edit_delete (CtkWidget *unused, CdkEvent *event, ClockData *cd);
 static void save_cities_store (ClockData *cd);
 
 /* ClockBox, an instantiable CtkBox */
@@ -805,7 +805,7 @@ destroy_clock (CtkWidget * widget, ClockData *cd)
 
 static gboolean
 close_on_escape (CtkWidget       *widget,
-                 GdkEventKey     *event,
+                 CdkEventKey     *event,
                  CtkToggleButton *toggle_button)
 {
         if (event->keyval == CDK_KEY_Escape) {
@@ -818,7 +818,7 @@ close_on_escape (CtkWidget       *widget,
 
 static gboolean
 delete_event (CtkWidget       *widget,
-              GdkEvent        *event,
+              CdkEvent        *event,
               CtkToggleButton *toggle_button)
 {
         ctk_toggle_button_set_active (toggle_button, FALSE);
@@ -866,8 +866,8 @@ create_calendar (ClockData *cd)
         ctk_widget_set_name(window, "CafePanelPopupWindow");
 
         /* Make transparency possible in the theme */
-        GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(window));
-        GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
+        CdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(window));
+        CdkVisual *visual = cdk_screen_get_rgba_visual(screen);
         ctk_widget_set_visual(CTK_WIDGET(window), visual);
 
         return window;
@@ -879,10 +879,10 @@ position_calendar_popup (ClockData *cd)
 #ifdef HAVE_X11
         CtkRequisition  req;
         CtkAllocation   allocation;
-        GdkDisplay     *display;
-        GdkScreen      *screen;
-        GdkRectangle    monitor;
-        GdkGravity      gravity = CDK_GRAVITY_NORTH_WEST;
+        CdkDisplay     *display;
+        CdkScreen      *screen;
+        CdkRectangle    monitor;
+        CdkGravity      gravity = CDK_GRAVITY_NORTH_WEST;
         int             button_w, button_h;
         int             x, y;
         int             w, h;
@@ -1268,7 +1268,7 @@ toggle_calendar (CtkWidget *button,
 
 static gboolean
 do_not_eat_button_press (CtkWidget      *widget,
-                         GdkEventButton *event)
+                         CdkEventButton *event)
 {
         if (event->button != 1)
                 g_signal_stop_emission_by_name (widget, "button_press_event");
@@ -1734,7 +1734,7 @@ cancel_time_settings (CtkWidget *button, ClockData *cd)
 }
 
 static gboolean
-delete_time_settings (CtkWidget *widget, GdkEvent *event, gpointer data)
+delete_time_settings (CtkWidget *widget, CdkEvent *event, gpointer data)
 {
         cancel_time_settings (widget, data);
 
@@ -2818,7 +2818,7 @@ edit_hide (CtkWidget *unused, ClockData *cd)
 }
 
 static gboolean
-edit_delete (CtkWidget *unused, GdkEvent *event, ClockData *cd)
+edit_delete (CtkWidget *unused, CdkEvent *event, ClockData *cd)
 {
         edit_hide (unused, cd);
 
@@ -2826,7 +2826,7 @@ edit_delete (CtkWidget *unused, GdkEvent *event, ClockData *cd)
 }
 
 static gboolean
-edit_hide_event (CtkWidget *widget, GdkEvent *event, ClockData *cd)
+edit_hide_event (CtkWidget *widget, CdkEvent *event, ClockData *cd)
 {
         edit_hide (widget, cd);
 
@@ -2850,7 +2850,7 @@ prefs_hide (CtkWidget *widget, ClockData *cd)
 }
 
 static gboolean
-prefs_hide_event (CtkWidget *widget, GdkEvent *event, ClockData *cd)
+prefs_hide_event (CtkWidget *widget, CdkEvent *event, ClockData *cd)
 {
         prefs_hide (widget, cd);
 
@@ -3270,7 +3270,7 @@ ensure_prefs_window_is_created (ClockData *cd)
 }
 
 static gboolean
-dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, CtkWindow *window)
+dialog_page_scroll_event_cb (CtkWidget *widget, CdkEventScroll *event, CtkWindow *window)
 {
         CtkNotebook *notebook = CTK_NOTEBOOK (widget);
         CtkWidget *child, *event_widget, *action_widget;
@@ -3280,7 +3280,7 @@ dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, CtkWindow
                 return FALSE;
         }
 
-        event_widget = ctk_get_event_widget ((GdkEvent *) event);
+        event_widget = ctk_get_event_widget ((CdkEvent *) event);
 
         /* Ignore scroll events from the content of the page */
         if (event_widget == NULL || event_widget == child || ctk_widget_is_ancestor (event_widget, child)) {

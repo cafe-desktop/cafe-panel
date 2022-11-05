@@ -45,7 +45,7 @@ typedef struct
 
 struct _NaTrayPrivate
 {
-  GdkScreen   *screen;
+  CdkScreen   *screen;
   TraysScreen *trays_screen;
 
   guint idle_redraw_id;
@@ -639,7 +639,7 @@ na_tray_class_init (NaTrayClass *klass)
 }
 
 NaHost *
-na_tray_new_for_screen (GdkScreen      *screen,
+na_tray_new_for_screen (CdkScreen      *screen,
 		        CtkOrientation  orientation)
 {
   return g_object_new (NA_TYPE_TRAY,
@@ -672,10 +672,10 @@ na_tray_set_icon_size (NaTray *tray,
 
 static void
 na_tray_set_colors (NaTray   *tray,
-                    GdkRGBA  *fg,
-                    GdkRGBA  *error,
-                    GdkRGBA  *warning,
-                    GdkRGBA  *success)
+                    CdkRGBA  *fg,
+                    CdkRGBA  *error,
+                    CdkRGBA  *warning,
+                    CdkRGBA  *success)
 {
   NaTrayPrivate *priv = tray->priv;
 
@@ -687,10 +687,10 @@ static void
 na_tray_style_updated (NaHost          *host,
                        CtkStyleContext *context)
 {
-  GdkRGBA fg;
-  GdkRGBA error;
-  GdkRGBA warning;
-  GdkRGBA success;
+  CdkRGBA fg;
+  CdkRGBA error;
+  CdkRGBA warning;
+  CdkRGBA success;
 
   ctk_style_context_save (context);
   ctk_style_context_set_state (context, CTK_STATE_FLAG_NORMAL);

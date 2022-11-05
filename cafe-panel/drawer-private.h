@@ -26,38 +26,38 @@ static void  drawer_focus_panel_widget          (Drawer           *drawer,
                                                  CtkDirectionType  direction);
 
 static gboolean  key_press_drawer               (CtkWidget        *widget,
-                                                 GdkEventKey      *event,
+                                                 CdkEventKey      *event,
                                                  Drawer           *drawer);
 
 static gboolean  key_press_drawer_widget        (CtkWidget        *widget,
-                                                 GdkEventKey      *event,
+                                                 CdkEventKey      *event,
                                                  Drawer           *drawer);
 
     /* drag and drop handlers */
 
 static void  drag_data_get_cb                   (CtkWidget        *widget,
-                                                 GdkDragContext   *context,
+                                                 CdkDragContext   *context,
                                                  CtkSelectionData *selection_data,
                                                  guint             info,
                                                  guint             time,
                                                  Drawer           *drawer);
 
 static gboolean  drag_motion_cb                 (CtkWidget        *widget,
-                                                 GdkDragContext   *context,
+                                                 CdkDragContext   *context,
                                                  int               x,
                                                  int               y,
                                                  guint             time_,
                                                  Drawer           *drawer);
 
 static gboolean  drag_drop_cb                   (CtkWidget        *widget,
-                                                 GdkDragContext   *context,
+                                                 CdkDragContext   *context,
                                                  int               x,
                                                  int               y,
                                                  guint             time_,
                                                  Drawer           *drawer);
 
 static void  drag_data_received_cb              (CtkWidget        *widget,
-                                                 GdkDragContext   *context,
+                                                 CdkDragContext   *context,
                                                  gint              x,
                                                  gint              y,
                                                  CtkSelectionData *selection_data,
@@ -70,7 +70,7 @@ static gboolean  close_drawer_in_idle           (gpointer          data);
 static void  queue_drawer_close_for_drag        (Drawer           *drawer);
 
 static void  drag_leave_cb                      (CtkWidget        *widget,
-                                                 GdkDragContext   *context,
+                                                 CdkDragContext   *context,
                                                  guint             time_,
                                                  Drawer           *drawer);
 

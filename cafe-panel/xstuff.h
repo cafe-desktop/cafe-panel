@@ -20,7 +20,7 @@ gboolean is_using_x11                   (void);
 void xstuff_zoom_anicafe                (CtkWidget        *widget,
 					 cairo_surface_t  *surface,
 					 PanelOrientation  orientation,
-					 GdkRectangle     *opt_src_rect);
+					 CdkRectangle     *opt_src_rect);
 
 gboolean xstuff_is_display_dead         (void);
 

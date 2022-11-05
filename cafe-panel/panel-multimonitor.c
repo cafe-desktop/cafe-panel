@@ -43,7 +43,7 @@ static int            monitor_count = 0;
 
 // A dynamically allocated array of monitor geometries
 // monitor_count is the length
-static GdkRectangle  *geometries = NULL;
+static CdkRectangle  *geometries = NULL;
 
 static gboolean       initialized = FALSE;
 static gboolean       have_randr  = FALSE;
@@ -92,11 +92,11 @@ _panel_multimonitor_output_should_be_first (Display       *xdisplay,
 
 static gboolean
 panel_multimonitor_get_randr_monitors (int           *monitors_ret,
-				       GdkRectangle **geometries_ret)
+				       CdkRectangle **geometries_ret)
 {
-	GdkDisplay         *display;
-	GdkScreen          *screen;
-	GdkMonitor         *monitor;
+	CdkDisplay         *display;
+	CdkScreen          *screen;
+	CdkMonitor         *monitor;
 	Display            *xdisplay;
 	Window              xroot;
 	XRRScreenResources *resources;
@@ -156,7 +156,7 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 	scale = cdk_monitor_get_scale_factor (monitor);
 
 	geometries = g_array_sized_new (FALSE, FALSE,
-					sizeof (GdkRectangle),
+					sizeof (CdkRectangle),
 					resources->noutput);
 
 	for (i = 0; i < resources->noutput; i++) {
@@ -168,7 +168,7 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 		if (output->connection != RR_Disconnected &&
 		    output->crtc != 0) {
 			XRRCrtcInfo  *crtc;
-			GdkRectangle  rect;
+			CdkRectangle  rect;
 
 			crtc = XRRGetCrtcInfo (xdisplay, resources,
 					       output->crtc);
@@ -205,7 +205,7 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 	}
 
 	*monitors_ret = geometries->len;
-	*geometries_ret = (GdkRectangle *) g_array_free (geometries, FALSE);
+	*geometries_ret = (CdkRectangle *) g_array_free (geometries, FALSE);
 
 	return TRUE;
 }
@@ -214,16 +214,16 @@ panel_multimonitor_get_randr_monitors (int           *monitors_ret,
 
 static void
 panel_multimonitor_get_cdk_monitors (int           *monitors_ret,
-				     GdkRectangle **geometries_ret)
+				     CdkRectangle **geometries_ret)
 {
-	GdkDisplay   *display;
+	CdkDisplay   *display;
 	int           num_monitors;
-	GdkRectangle *geometries;
+	CdkRectangle *geometries;
 	int           i;
 
 	display = cdk_display_get_default ();
 	num_monitors = cdk_display_get_n_monitors (display);
-	geometries = g_new (GdkRectangle, num_monitors);
+	geometries = g_new (CdkRectangle, num_monitors);
 
 	for (i = 0; i < num_monitors; i++)
 		cdk_monitor_get_geometry (cdk_display_get_monitor (display, i), &(geometries[i]));
@@ -234,7 +234,7 @@ panel_multimonitor_get_cdk_monitors (int           *monitors_ret,
 
 static void
 panel_multimonitor_get_raw_monitors (int           *monitors_ret,
-				     GdkRectangle **geometries_ret)
+				     CdkRectangle **geometries_ret)
 {
 	gboolean res = FALSE;
 
@@ -255,24 +255,24 @@ panel_multimonitor_get_raw_monitors (int           *monitors_ret,
 }
 
 static inline gboolean
-rectangle_overlaps (GdkRectangle *a,
-		    GdkRectangle *b)
+rectangle_overlaps (CdkRectangle *a,
+		    CdkRectangle *b)
 {
 	return cdk_rectangle_intersect (a, b, NULL);
 }
 
 static long
-pixels_in_rectangle (GdkRectangle *r)
+pixels_in_rectangle (CdkRectangle *r)
 {
 	return (long) (r->width * r->height);
 }
 
 static void
 panel_multimonitor_compress_overlapping_monitors (int           *num_monitors_inout,
-						  GdkRectangle **geometries_inout)
+						  CdkRectangle **geometries_inout)
 {
 	int           num_monitors;
-	GdkRectangle *geometries;
+	CdkRectangle *geometries;
 	int           i;
 
 	num_monitors = *num_monitors_inout;
@@ -370,7 +370,7 @@ panel_multimonitor_reinit_idle (gpointer data)
 }
 
 static void
-panel_multimonitor_handle_screen_changed (GdkScreen *screen,
+panel_multimonitor_handle_screen_changed (CdkScreen *screen,
 					  gpointer    user_data)
 {
 	if (reinit_id)
@@ -380,8 +380,8 @@ panel_multimonitor_handle_screen_changed (GdkScreen *screen,
 }
 
 static void
-panel_multimonitor_handle_monitor_changed (GdkDisplay *display,
-					   GdkMonitor *monitor,
+panel_multimonitor_handle_monitor_changed (CdkDisplay *display,
+					   CdkMonitor *monitor,
 					   gpointer    user_data)
 {
 	if (reinit_id)
@@ -391,7 +391,7 @@ panel_multimonitor_handle_monitor_changed (GdkDisplay *display,
 }
 
 static void
-panel_multimonitor_handle_monitor_invalidate (GdkMonitor *monitor,
+panel_multimonitor_handle_monitor_invalidate (CdkMonitor *monitor,
 					      gpointer    user_data)
 {
 	if (reinit_id)
@@ -403,7 +403,7 @@ panel_multimonitor_handle_monitor_invalidate (GdkMonitor *monitor,
 #ifdef HAVE_X11
 #ifdef HAVE_RANDR
 static void
-panel_multimonitor_init_randr (GdkDisplay *display)
+panel_multimonitor_init_randr (CdkDisplay *display)
 {
 	Display *xdisplay;
 	int      event_base, error_base;
@@ -435,8 +435,8 @@ panel_multimonitor_init_randr (GdkDisplay *display)
 void
 panel_multimonitor_init (void)
 {
-	GdkDisplay *display;
-	GdkScreen  *screen;
+	CdkDisplay *display;
+	CdkScreen  *screen;
 	int i;
 
 	if (initialized)
@@ -472,7 +472,7 @@ panel_multimonitor_init (void)
 			  G_CALLBACK (panel_multimonitor_handle_monitor_changed), NULL);
 
 	for (i = 0; i < cdk_display_get_n_monitors (display); i++) {
-		GdkMonitor *monitor;
+		CdkMonitor *monitor;
 
 		monitor = cdk_display_get_monitor (display, i);
 		g_signal_handlers_disconnect_by_func (display, panel_multimonitor_handle_monitor_invalidate, NULL);
@@ -671,8 +671,8 @@ panel_multimonitor_is_at_visible_extreme (int        n_monitor,
 }
 
 void
-panel_multimonitor_get_bounds (GdkPoint *min,
-			       GdkPoint *max)
+panel_multimonitor_get_bounds (CdkPoint *min,
+			       CdkPoint *max)
 {
 	int i;
 

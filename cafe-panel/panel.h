@@ -24,25 +24,25 @@ void back_change(AppletInfo *info, PanelWidget *panel);
 
 PanelData *panel_setup (PanelToplevel *toplevel);
 
-GdkScreen *panel_screen_from_panel_widget  (PanelWidget *panel);
+CdkScreen *panel_screen_from_panel_widget  (PanelWidget *panel);
 
 gboolean panel_is_applet_right_stick (CtkWidget *applet);
 
 
 gboolean panel_check_dnd_target_data (CtkWidget      *widget,
-				      GdkDragContext *context,
+				      CdkDragContext *context,
 				      guint          *ret_info,
-				      GdkAtom        *ret_atom);
+				      CdkAtom        *ret_atom);
 
 void panel_receive_dnd_data (PanelWidget      *panel,
 			     guint             info,
 			     int               pos,
 			     CtkSelectionData *selection_data,
-			     GdkDragContext   *context,
+			     CdkDragContext   *context,
 			     guint             time_);
 
 gboolean panel_check_drop_forbidden (PanelWidget    *panel,
-				     GdkDragContext *context,
+				     CdkDragContext *context,
 				     guint           info,
 				     guint           time_);
 

@@ -51,8 +51,8 @@ enum {
 
 static void panel_background_monitor_changed (PanelBackgroundMonitor *monitor);
 
-static GdkFilterReturn panel_background_monitor_xevent_filter (GdkXEvent *xevent,
-							       GdkEvent  *event,
+static CdkFilterReturn panel_background_monitor_xevent_filter (CdkXEvent *xevent,
+							       CdkEvent  *event,
 							       gpointer   data);
 
 struct _PanelBackgroundMonitorClass {
@@ -63,16 +63,16 @@ struct _PanelBackgroundMonitorClass {
 struct _PanelBackgroundMonitor {
 	GObject    parent_instance;
 
-	GdkScreen *screen;
+	CdkScreen *screen;
 
 	Window     xwindow;
-	GdkWindow *cdkwindow;
+	CdkWindow *cdkwindow;
 
 	Atom       xatom;
-	GdkAtom    cdkatom;
+	CdkAtom    cdkatom;
 
 	cairo_surface_t *surface;
-	GdkPixbuf *cdkpixbuf;
+	CdkPixbuf *cdkpixbuf;
 
 	int        width;
 	int        height;
@@ -86,7 +86,7 @@ static PanelBackgroundMonitor *global_background_monitor = NULL;
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-gboolean cdk_window_check_composited_wm(GdkWindow* window)
+gboolean cdk_window_check_composited_wm(CdkWindow* window)
 {
 	g_return_val_if_fail (CDK_IS_X11_WINDOW (window), TRUE);
 	return cdk_screen_is_composited(cdk_window_get_screen(window));
@@ -151,7 +151,7 @@ panel_background_monitor_init (PanelBackgroundMonitor *monitor)
 
 static void
 panel_background_monitor_connect_to_screen (PanelBackgroundMonitor *monitor,
-					    GdkScreen              *screen)
+					    CdkScreen              *screen)
 {
 	if (monitor->screen != NULL && monitor->cdkwindow != NULL) {
 		cdk_window_remove_filter (monitor->cdkwindow,
@@ -175,7 +175,7 @@ panel_background_monitor_connect_to_screen (PanelBackgroundMonitor *monitor,
 }
 
 static PanelBackgroundMonitor *
-panel_background_monitor_new (GdkScreen *screen)
+panel_background_monitor_new (CdkScreen *screen)
 {
 	PanelBackgroundMonitor *monitor;
 
@@ -187,7 +187,7 @@ panel_background_monitor_new (GdkScreen *screen)
 }
 
 PanelBackgroundMonitor *
-panel_background_monitor_get_for_screen (GdkScreen *screen)
+panel_background_monitor_get_for_screen (CdkScreen *screen)
 {
 	g_return_val_if_fail (CDK_IS_X11_SCREEN (screen), NULL);
 
@@ -217,9 +217,9 @@ panel_background_monitor_changed (PanelBackgroundMonitor *monitor)
 	g_signal_emit (monitor, signals [CHANGED], 0);
 }
 
-static GdkFilterReturn
-panel_background_monitor_xevent_filter (GdkXEvent *xevent,
-					GdkEvent  *event,
+static CdkFilterReturn
+panel_background_monitor_xevent_filter (CdkXEvent *xevent,
+					CdkEvent  *event,
 					gpointer   data)
 {
 	PanelBackgroundMonitor *monitor;
@@ -238,12 +238,12 @@ panel_background_monitor_xevent_filter (GdkXEvent *xevent,
 	return CDK_FILTER_CONTINUE;
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 panel_background_monitor_tile_background (PanelBackgroundMonitor *monitor,
 					  int                     width,
 					  int                     height)
 {
-	GdkPixbuf *retval;
+	CdkPixbuf *retval;
 	int        tilewidth, tileheight;
 
 	retval = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, width, height);
@@ -306,7 +306,7 @@ panel_background_monitor_tile_background (PanelBackgroundMonitor *monitor,
 static void
 panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 {
-	GdkDisplay  *display;
+	CdkDisplay  *display;
 	int          rwidth, rheight;
 	int          pwidth, pheight;
 
@@ -347,7 +347,7 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 		return;
 
 	if ((monitor->width < rwidth || monitor->height < rheight)) {
-		GdkPixbuf *tiled;
+		CdkPixbuf *tiled;
 
 		tiled = panel_background_monitor_tile_background (
 						monitor, rwidth, rheight);
@@ -359,14 +359,14 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 	}
 }
 
-GdkPixbuf *
+CdkPixbuf *
 panel_background_monitor_get_region (PanelBackgroundMonitor *monitor,
 				     int                     x,
 				     int                     y,
 				     int                     width,
 				     int                     height)
 {
-	GdkPixbuf *pixbuf, *tmpbuf;
+	CdkPixbuf *pixbuf, *tmpbuf;
 	int        subwidth, subheight;
 	int        subx, suby;
 

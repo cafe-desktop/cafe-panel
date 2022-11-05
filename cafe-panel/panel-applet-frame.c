@@ -88,7 +88,7 @@ struct _CafePanelAppletFramePrivate {
 	gchar           *iid;
 
 	CtkAllocation    child_allocation;
-	GdkRectangle     handle_rect;
+	CdkRectangle     handle_rect;
 
 	guint            has_handle : 1;
 };
@@ -265,7 +265,7 @@ cafe_panel_applet_frame_size_allocate (CtkWidget     *widget,
 	CafePanelAppletFrame *frame;
 	CtkBin           *bin;
 	CtkWidget        *child;
-	GdkWindow        *window;
+	CdkWindow        *window;
 	CtkAllocation     new_allocation;
 	CtkAllocation     old_allocation;
 	CtkAllocation     widget_allocation;
@@ -362,8 +362,8 @@ cafe_panel_applet_frame_size_allocate (CtkWidget     *widget,
 }
 
 static inline gboolean
-button_event_in_rect (GdkEventButton *event,
-		      GdkRectangle   *rect)
+button_event_in_rect (CdkEventButton *event,
+		      CdkRectangle   *rect)
 {
 	if (event->x >= rect->x &&
 	    event->x <= (rect->x + rect->width) &&
@@ -376,12 +376,12 @@ button_event_in_rect (GdkEventButton *event,
 
 static gboolean
 cafe_panel_applet_frame_button_changed (CtkWidget      *widget,
-					GdkEventButton *event)
+					CdkEventButton *event)
 {
 	CafePanelAppletFrame *frame;
 	gboolean              handled = FALSE;
-	GdkDisplay *display;
-	GdkSeat *seat;
+	CdkDisplay *display;
+	CdkSeat *seat;
 
 	frame = CAFE_PANEL_APPLET_FRAME (widget);
 
@@ -739,7 +739,7 @@ void
 _cafe_panel_applet_frame_applet_broken (CafePanelAppletFrame *frame)
 {
 	CtkWidget  *dialog;
-	GdkScreen  *screen;
+	CdkScreen  *screen;
 	const char *applet_name = NULL;
 	char       *dialog_txt;
 
@@ -871,7 +871,7 @@ cafe_panel_applet_frame_activating_free (CafePanelAppletFrameActivating *frame_a
 	g_slice_free (CafePanelAppletFrameActivating, frame_act);
 }
 
-GdkScreen *
+CdkScreen *
 panel_applet_frame_activating_get_screen (CafePanelAppletFrameActivating *frame_act)
 {
     return ctk_widget_get_screen (CTK_WIDGET(frame_act->panel));

@@ -63,7 +63,7 @@ static void _panel_icon_chooser_clicked (CtkButton *button);
 static void _panel_icon_chooser_style_set (CtkWidget *widget,
 					   CtkStyle  *prev_style);
 static void _panel_icon_chooser_screen_changed (CtkWidget *widget,
-						GdkScreen *prev_screen);
+						CdkScreen *prev_screen);
 
 /* gobject stuff */
 
@@ -252,7 +252,7 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 
 		if (g_file_test (chooser->priv->icon, G_FILE_TEST_EXISTS)) {
 			/* we pass via a pixbuf to force the size we want */
-			GdkPixbuf *pixbuf;
+			CdkPixbuf *pixbuf;
 			int        width, height;
 
 			ctk_icon_size_lookup (PANEL_ICON_CHOOSER_ICON_SIZE,
@@ -318,7 +318,7 @@ static char *
 _panel_icon_chooser_find_icon_from_path (PanelIconChooser *chooser,
 					 const char       *path)
 {
-	GdkScreen *screen;
+	CdkScreen *screen;
 	char      *icon;
 
 	screen = ctk_widget_get_screen (CTK_WIDGET (chooser));
@@ -467,7 +467,7 @@ _panel_icon_chooser_style_set (CtkWidget *widget,
 
 static void
 _panel_icon_chooser_screen_changed (CtkWidget *widget,
-				    GdkScreen *prev_screen)
+				    CdkScreen *prev_screen)
 {
 	PanelIconChooser *chooser;
 

@@ -286,7 +286,7 @@ panel_addto_make_text (const char *name,
 
 static void
 panel_addto_drag_data_get_cb (CtkWidget        *widget,
-			      GdkDragContext   *context,
+			      CdkDragContext   *context,
 			      CtkSelectionData *selection_data,
 			      guint             info,
 			      guint             time,
@@ -299,7 +299,7 @@ panel_addto_drag_data_get_cb (CtkWidget        *widget,
 
 static void
 panel_addto_drag_begin_cb (CtkWidget      *widget,
-			   GdkDragContext *context,
+			   CdkDragContext *context,
 			   gpointer        data)
 {
 	CtkTreeModel *filter_model;
@@ -1447,9 +1447,9 @@ panel_addto_present (CtkMenuItem *item,
 	PanelAddtoDialog *dialog;
 	PanelToplevel *toplevel;
 	PanelData     *pd;
-	GdkScreen *screen;
-	GdkMonitor *monitor;
-	GdkRectangle monitor_geom;
+	CdkScreen *screen;
+	CdkMonitor *monitor;
+	CdkRectangle monitor_geom;
 	gint height;
 
 	toplevel = panel_widget->toplevel;

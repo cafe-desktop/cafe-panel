@@ -62,7 +62,7 @@ void cafe_panel_applet_stop_loading (const char *id);
 const char *cafe_panel_applet_get_id           (AppletInfo      *info);
 const char *cafe_panel_applet_get_id_by_widget (CtkWidget       *widget);
 AppletInfo *cafe_panel_applet_get_by_id        (const char      *id);
-AppletInfo *cafe_panel_applet_get_by_type      (PanelObjectType  object_type, GdkScreen *screen);
+AppletInfo *cafe_panel_applet_get_by_type      (PanelObjectType  object_type, CdkScreen *screen);
 
 GSList     *cafe_panel_applet_list_applets (void);
 

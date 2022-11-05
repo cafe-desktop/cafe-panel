@@ -56,7 +56,7 @@ void           panel_profile_add_to_list            (PanelGSettingsKeyType  type
 void           panel_profile_remove_from_list       (PanelGSettingsKeyType  type,
 						     const char        *id);
 gboolean       panel_profile_id_lists_are_writable  (void);
-void           panel_profile_create_toplevel        (GdkScreen         *screen);
+void           panel_profile_create_toplevel        (CdkScreen         *screen);
 PanelToplevel *panel_profile_load_toplevel          (const char        *toplevel_id);
 void           panel_profile_delete_toplevel        (PanelToplevel     *toplevel);
 char          *panel_profile_prepare_object         (PanelObjectType    object_type,
@@ -110,14 +110,14 @@ PanelBackgroundType
 	    panel_profile_get_background_type         (PanelToplevel       *toplevel);
 
 void        panel_profile_set_background_color        (PanelToplevel       *toplevel,
-						       GdkRGBA             *color);
+						       CdkRGBA             *color);
 void        panel_profile_get_background_color        (PanelToplevel       *toplevel,
-						       GdkRGBA             *color);
+						       CdkRGBA             *color);
 
 void        panel_profile_set_background_cdk_rgba    (PanelToplevel       *toplevel,
-						       GdkRGBA            *color);
+						       CdkRGBA            *color);
 void        panel_profile_get_background_cdk_rgba    (PanelToplevel       *toplevel,
-						       GdkRGBA            *color);
+						       CdkRGBA            *color);
 
 void        panel_profile_set_background_opacity      (PanelToplevel       *toplevel,
 						       guint16              opacity);

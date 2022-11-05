@@ -34,30 +34,30 @@ extern "C" {
 
 gboolean panel_app_info_launch_uris (GDesktopAppInfo   *appinfo,
 				     GList      *uris,
-				     GdkScreen  *screen,
+				     CdkScreen  *screen,
 				     const gchar *action,
 				     guint32     timestamp,
 				     GError    **error);
 
 gboolean panel_app_info_launch_uri (GDesktopAppInfo     *appinfo,
 				    const gchar  *uri,
-				    GdkScreen    *screen,
+				    CdkScreen    *screen,
 				    guint32       timestamp,
 				    GError      **error);
 
 gboolean panel_launch_key_file (GKeyFile   *keyfile,
 				GList      *uri_list,
-				GdkScreen  *screen,
+				CdkScreen  *screen,
 				const gchar *action,
 				GError    **error);
 
 gboolean panel_launch_desktop_file (const char  *desktop_file,
-				    GdkScreen   *screen,
+				    CdkScreen   *screen,
 				    GError     **error);
 
 gboolean panel_launch_desktop_file_with_fallback (const char  *desktop_file,
 						  const char  *fallback_exec,
-						  GdkScreen   *screen,
+						  CdkScreen   *screen,
 						  GError     **error);
 
 #ifdef __cplusplus

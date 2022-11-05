@@ -36,7 +36,7 @@
 
 static void
 _panel_launch_error_dialog (const gchar *name,
-			    GdkScreen   *screen,
+			    CdkScreen   *screen,
 			    const gchar *message)
 {
 	char *primary;
@@ -54,7 +54,7 @@ _panel_launch_error_dialog (const gchar *name,
 
 static gboolean
 _panel_launch_handle_error (const gchar  *name,
-			    GdkScreen    *screen,
+			    CdkScreen    *screen,
 			    GError       *local_error,
 			    GError      **error)
 {
@@ -97,12 +97,12 @@ gather_pid_callback (GDesktopAppInfo   *gapp,
 gboolean
 panel_app_info_launch_uris (GDesktopAppInfo   *appinfo,
 			    GList      *uris,
-			    GdkScreen  *screen,
+			    CdkScreen  *screen,
 			    const gchar *action,
 			    guint32     timestamp,
 			    GError    **error)
 {
-	GdkAppLaunchContext *context;
+	CdkAppLaunchContext *context;
 	GError              *local_error;
 	gboolean             retval;
 
@@ -110,7 +110,7 @@ panel_app_info_launch_uris (GDesktopAppInfo   *appinfo,
 	g_return_val_if_fail (CDK_IS_SCREEN (screen), FALSE);
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
-	GdkDisplay *display = cdk_display_get_default ();
+	CdkDisplay *display = cdk_display_get_default ();
 	context = cdk_display_get_app_launch_context (display);
 	cdk_app_launch_context_set_screen (context, screen);
 	cdk_app_launch_context_set_timestamp (context, timestamp);
@@ -139,7 +139,7 @@ panel_app_info_launch_uris (GDesktopAppInfo   *appinfo,
 gboolean
 panel_app_info_launch_uri (GDesktopAppInfo     *appinfo,
 			   const gchar  *uri,
-			   GdkScreen    *screen,
+			   CdkScreen    *screen,
 			   guint32       timestamp,
 			   GError      **error)
 {
@@ -165,7 +165,7 @@ panel_app_info_launch_uri (GDesktopAppInfo     *appinfo,
 gboolean
 panel_launch_key_file (GKeyFile   *keyfile,
 		       GList      *uri_list,
-		       GdkScreen  *screen,
+		       CdkScreen  *screen,
 		       const gchar *action,
 		       GError    **error)
 {
@@ -191,7 +191,7 @@ panel_launch_key_file (GKeyFile   *keyfile,
 
 gboolean
 panel_launch_desktop_file (const char  *desktop_file,
-			   GdkScreen   *screen,
+			   CdkScreen   *screen,
 			   GError     **error)
 {
 	GDesktopAppInfo *appinfo;
@@ -239,14 +239,14 @@ set_environment (gpointer display)
 gboolean
 panel_launch_desktop_file_with_fallback (const char  *desktop_file,
 					 const char  *fallback_exec,
-					 GdkScreen   *screen,
+					 CdkScreen   *screen,
 					 GError     **error)
 {
 	char       *argv[2] = { (char *) fallback_exec, NULL };
 	GError     *local_error;
 	gboolean    retval;
 	GPid        pid;
-	GdkDisplay *display;
+	CdkDisplay *display;
 	char       *display_name;
 
 	g_return_val_if_fail (desktop_file != NULL, FALSE);

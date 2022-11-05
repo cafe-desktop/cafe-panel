@@ -552,9 +552,9 @@ cafe_panel_applet_request_focus (CafePanelApplet	 *applet,
 			    guint32	  timestamp)
 {
 #ifdef HAVE_X11
-	GdkScreen  *screen;
-	GdkWindow  *root;
-	GdkDisplay *display;
+	CdkScreen  *screen;
+	CdkWindow  *root;
+	CdkDisplay *display;
 	Display	   *xdisplay;
 	Window	    dock_xwindow;
 	Window	    xroot;
@@ -838,7 +838,7 @@ container_has_focusable_child (CtkContainer *container)
 
 static void
 cafe_panel_applet_menu_popup (CafePanelApplet *applet,
-                              GdkEvent    *event)
+                              CdkEvent    *event)
 {
 	CtkWidget *menu;
 
@@ -848,16 +848,16 @@ cafe_panel_applet_menu_popup (CafePanelApplet *applet,
 /* Set up theme and transparency support */
 	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
-	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
+	CdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
+	CdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
 	CtkStyleContext *context;
 	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
-	GdkGravity widget_anchor = CDK_GRAVITY_NORTH_WEST;
-	GdkGravity menu_anchor = CDK_GRAVITY_NORTH_WEST;
+	CdkGravity widget_anchor = CDK_GRAVITY_NORTH_WEST;
+	CdkGravity menu_anchor = CDK_GRAVITY_NORTH_WEST;
 	switch (applet->priv->orient) {
 	case CAFE_PANEL_APPLET_ORIENT_UP:
 		menu_anchor = CDK_GRAVITY_SOUTH_WEST;
@@ -898,14 +898,14 @@ cafe_panel_applet_can_focus (CtkWidget *widget)
 /* Taken from libcafecomponentui/cafecomponent/cafecomponent-plug.c */
 static gboolean
 cafe_panel_applet_button_event (CafePanelApplet      *applet,
-			   GdkEventButton *event)
+			   CdkEventButton *event)
 {
 #ifdef HAVE_X11
 	CtkWidget *widget;
-	GdkWindow *window;
-	GdkWindow *socket_window;
+	CdkWindow *window;
+	CdkWindow *socket_window;
 	XEvent     xevent;
-	GdkDisplay *display;
+	CdkDisplay *display;
 
 	if (!applet->priv->out_of_process)
 		return FALSE;
@@ -924,7 +924,7 @@ cafe_panel_applet_button_event (CafePanelApplet      *applet,
 		return FALSE;
 
 	if (event->type == CDK_BUTTON_PRESS) {
-		GdkSeat *seat;
+		CdkSeat *seat;
 
 		xevent.xbutton.type = ButtonPress;
 
@@ -973,7 +973,7 @@ cafe_panel_applet_button_event (CafePanelApplet      *applet,
 
 static gboolean
 cafe_panel_applet_button_press (CtkWidget      *widget,
-			   GdkEventButton *event)
+			   CdkEventButton *event)
 {
 	CafePanelApplet *applet = CAFE_PANEL_APPLET (widget);
 
@@ -985,7 +985,7 @@ cafe_panel_applet_button_press (CtkWidget      *widget,
 	}
 
 	if (event->button == 3) {
-		cafe_panel_applet_menu_popup (applet, (GdkEvent *) event);
+		cafe_panel_applet_menu_popup (applet, (CdkEvent *) event);
 
 		return TRUE;
 	}
@@ -995,7 +995,7 @@ cafe_panel_applet_button_press (CtkWidget      *widget,
 
 static gboolean
 cafe_panel_applet_button_release (CtkWidget      *widget,
-			     GdkEventButton *event)
+			     CdkEventButton *event)
 {
 	CafePanelApplet *applet = CAFE_PANEL_APPLET (widget);
 
@@ -1007,10 +1007,10 @@ cafe_panel_applet_button_release (CtkWidget      *widget,
  */
 static gboolean
 cafe_panel_applet_key_press_event (CtkWidget   *widget,
-			      GdkEventKey *event)
+			      CdkEventKey *event)
 {
     if (event->keyval == CDK_KEY_Menu) {
-        cafe_panel_applet_menu_popup (CAFE_PANEL_APPLET (widget), (GdkEvent *) event);
+        cafe_panel_applet_menu_popup (CAFE_PANEL_APPLET (widget), (CdkEvent *) event);
         return TRUE;
     }
     else
@@ -1211,7 +1211,7 @@ cafe_panel_applet_focus (CtkWidget        *widget,
 
 static gboolean
 cafe_panel_applet_parse_color (const gchar *color_str,
-			       GdkRGBA     *color)
+			       CdkRGBA     *color)
 {
 	g_assert (color_str && color);
 
@@ -1264,8 +1264,8 @@ ERROR_AND_FREE:
 }
 
 static cairo_surface_t *
-cafe_panel_applet_create_foreign_surface_for_display (GdkDisplay *display,
-                                                      GdkVisual  *visual,
+cafe_panel_applet_create_foreign_surface_for_display (CdkDisplay *display,
+                                                      CdkVisual  *visual,
                                                       Window      xid)
 {
 	Status result = 0;
@@ -1294,10 +1294,10 @@ cafe_panel_applet_get_pattern_from_pixmap (CafePanelApplet *applet,
 {
 	cairo_surface_t *background;
 	cairo_surface_t *surface;
-	GdkWindow       *window;
+	CdkWindow       *window;
 	int              width;
 	int              height;
-	GdkDisplay      *display;
+	CdkDisplay      *display;
 	cairo_t         *cr;
 	cairo_pattern_t *pattern;
 
@@ -1350,7 +1350,7 @@ cafe_panel_applet_get_pattern_from_pixmap (CafePanelApplet *applet,
 
 static CafePanelAppletBackgroundType
 cafe_panel_applet_handle_background_string (CafePanelApplet  *applet,
-					    GdkRGBA          *color,
+					    CdkRGBA          *color,
 					    cairo_pattern_t **pattern)
 {
 	CafePanelAppletBackgroundType   retval;
@@ -1417,7 +1417,7 @@ cafe_panel_applet_handle_background_string (CafePanelApplet  *applet,
 
 CafePanelAppletBackgroundType
 cafe_panel_applet_get_background (CafePanelApplet  *applet,
-				  GdkRGBA          *color,
+				  CdkRGBA          *color,
 				  cairo_pattern_t **pattern)
 {
 	g_return_val_if_fail (PANEL_IS_APPLET (applet), PANEL_NO_BACKGROUND);
@@ -1426,7 +1426,7 @@ cafe_panel_applet_get_background (CafePanelApplet  *applet,
 	if (pattern != NULL)
 		*pattern = NULL;
 	if (color != NULL)
-		memset (color, 0, sizeof (GdkRGBA));
+		memset (color, 0, sizeof (CdkRGBA));
 
 	return cafe_panel_applet_handle_background_string (applet, color, pattern);
 }
@@ -1454,7 +1454,7 @@ cafe_panel_applet_handle_background (CafePanelApplet *applet)
 {
 	CafePanelAppletBackgroundType  type;
 
-	GdkRGBA                    color;
+	CdkRGBA                    color;
 	cairo_pattern_t           *pattern;
 
 	type = cafe_panel_applet_get_background (applet, &color, &pattern);
@@ -1512,11 +1512,11 @@ cafe_panel_applet_move_focus_out_of_applet (CafePanelApplet      *applet,
 static void
 cafe_panel_applet_change_background(CafePanelApplet *applet,
 				    CafePanelAppletBackgroundType type,
-				    GdkRGBA* color,
+				    CdkRGBA* color,
 				    cairo_pattern_t *pattern)
 {
 	CtkStyleContext* context;
-	GdkWindow* window;
+	CdkWindow* window;
 
 	if (applet->priv->out_of_process)
 		window = ctk_widget_get_window (CTK_WIDGET (applet->priv->plug));
@@ -1685,7 +1685,7 @@ cafe_panel_applet_set_property (GObject      *object,
 
 static void
 add_tab_bindings (CtkBindingSet   *binding_set,
-		  GdkModifierType  modifiers,
+		  CdkModifierType  modifiers,
 		  CtkDirectionType direction)
 {
 	ctk_binding_entry_add_signal (binding_set, CDK_KEY_Tab, modifiers,
@@ -1837,8 +1837,8 @@ cafe_panel_applet_constructor (GType                  type,
 	{
 		applet->priv->plug = ctk_plug_new (0);
 
-		GdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (applet->priv->plug));
-		GdkVisual *visual = cdk_screen_get_rgba_visual (screen);
+		CdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (applet->priv->plug));
+		CdkVisual *visual = cdk_screen_get_rgba_visual (screen);
 		ctk_widget_set_visual (CTK_WIDGET (applet->priv->plug), visual);
 		CtkStyleContext *context;
 		context = ctk_widget_get_style_context (CTK_WIDGET(applet->priv->plug));
@@ -2059,15 +2059,15 @@ CtkWidget* cafe_panel_applet_new(void)
 	return CTK_WIDGET(applet);
 }
 
-static GdkEvent *
+static CdkEvent *
 button_press_event_new (CafePanelApplet *applet,
                         guint        button,
                         guint        time)
 {
-  GdkDisplay *display;
-  GdkSeat *seat;
-  GdkDevice *device;
-  GdkEvent *event;
+  CdkDisplay *display;
+  CdkSeat *seat;
+  CdkDevice *device;
+  CdkEvent *event;
 
   display = cdk_display_get_default ();
   seat = cdk_display_get_default_seat (display);
@@ -2094,7 +2094,7 @@ method_call_cb (GDBusConnection       *connection,
 		gpointer               user_data)
 {
 	CafePanelApplet *applet = CAFE_PANEL_APPLET (user_data);
-	GdkEvent *event;
+	CdkEvent *event;
 
 	if (g_strcmp0 (method_name, "PopupMenu") == 0) {
 		guint button;
@@ -2416,7 +2416,7 @@ cafe_panel_applet_set_background_widget (CafePanelApplet *applet,
 
 guint32
 cafe_panel_applet_get_xid (CafePanelApplet *applet,
-		      GdkScreen   *screen)
+		      CdkScreen   *screen)
 {
 	// out_of_process should only be true on X11, so an extra runtime Wayland check is not needed
 	if (applet->priv->out_of_process == FALSE)

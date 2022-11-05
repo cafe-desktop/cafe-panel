@@ -56,7 +56,7 @@ static CtkWidget *populate_menu_from_directory (CtkWidget          *menu,
 						CafeMenuTreeDirectory *directory);
 
 static gboolean panel_menu_key_press_handler (CtkWidget   *widget,
-					      GdkEventKey *event);
+					      CdkEventKey *event);
 
 static inline gboolean desktop_is_home_dir(void)
 {
@@ -147,7 +147,7 @@ setup_menu_panel (CtkWidget *menu)
 				     ctk_widget_get_screen (CTK_WIDGET (panel)));
 }
 
-GdkScreen *
+CdkScreen *
 menuitem_to_screen (CtkWidget *menuitem)
 {
 	PanelWidget *panel_widget;
@@ -425,9 +425,9 @@ grab_widget (CtkWidget *widget)
 {
 	g_return_if_fail (widget != NULL);
 
-	GdkWindow *window;
-	GdkDisplay *display;
-	GdkSeat *seat;
+	CdkWindow *window;
+	CdkDisplay *display;
+	CdkSeat *seat;
 
 	window = ctk_widget_get_window (widget);
 	display = cdk_window_get_display (window);
@@ -542,7 +542,7 @@ create_item_context_menu (CtkWidget   *item,
 
 static gboolean
 show_item_menu (CtkWidget      *item,
-		GdkEvent *event)
+		CdkEvent *event)
 {
 	PanelWidget *panel_widget;
 	CtkWidget   *menu;
@@ -565,8 +565,8 @@ show_item_menu (CtkWidget      *item,
 	/* Set up theme and transparency support */
 	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 	/* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
-	GdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (toplevel));
-	GdkVisual *visual = cdk_screen_get_rgba_visual (screen);
+	CdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (toplevel));
+	CdkVisual *visual = cdk_screen_get_rgba_visual (screen);
 	ctk_widget_set_visual(CTK_WIDGET (toplevel), visual);
 	/* Set menu and it's toplevel window to follow panel theme */
 	CtkStyleContext *context;
@@ -580,7 +580,7 @@ show_item_menu (CtkWidget      *item,
 
 gboolean
 menu_dummy_button_press_event (CtkWidget      *menuitem,
-			       GdkEventButton *event)
+			       CdkEventButton *event)
 {
 	if (event->button == 3)
 		return TRUE;
@@ -590,16 +590,16 @@ menu_dummy_button_press_event (CtkWidget      *menuitem,
 
 static gboolean
 menuitem_button_press_event (CtkWidget      *menuitem,
-			     GdkEventButton *event)
+			     CdkEventButton *event)
 {
 	if (event->button == 3)
-		return show_item_menu (menuitem, (GdkEvent *) event);
+		return show_item_menu (menuitem, (CdkEvent *) event);
 
 	return FALSE;
 }
 
 static void
-drag_begin_menu_cb (CtkWidget *widget, GdkDragContext     *context)
+drag_begin_menu_cb (CtkWidget *widget, CdkDragContext     *context)
 {
 	/* FIXME: workaround for a possible ctk+ bug
 	 *    See bugs #92085(ctk+) and #91184(panel) for details.
@@ -612,7 +612,7 @@ drag_begin_menu_cb (CtkWidget *widget, GdkDragContext     *context)
  * CTK+ menuing code in some manner.
  */
 static void
-drag_end_menu_cb (CtkWidget *widget, GdkDragContext     *context)
+drag_end_menu_cb (CtkWidget *widget, CdkDragContext     *context)
 {
   CtkWidget *xgrab_shell;
   CtkWidget *parent;
@@ -656,7 +656,7 @@ drag_end_menu_cb (CtkWidget *widget, GdkDragContext     *context)
 
 static void
 drag_data_get_menu_cb (CtkWidget        *widget,
-		       GdkDragContext   *context,
+		       CdkDragContext   *context,
 		       CtkSelectionData *selection_data,
 		       guint             info,
 		       guint             time,
@@ -780,7 +780,7 @@ setup_menuitem (CtkWidget   *menuitem,
 }
 
 static void
-drag_data_get_string_cb (CtkWidget *widget, GdkDragContext     *context,
+drag_data_get_string_cb (CtkWidget *widget, CdkDragContext     *context,
 			 CtkSelectionData   *selection_data, guint info,
 			 guint time, const char *string)
 {
@@ -793,7 +793,7 @@ void
 setup_uri_drag (CtkWidget  *menuitem,
 		const char *uri,
 		const char *icon,
-		GdkDragAction action)
+		CdkDragAction action)
 {
 	static CtkTargetEntry menu_item_targets[] = {
 		{ "text/uri-list", 0, 0 }
@@ -953,8 +953,8 @@ create_fake_menu (CafeMenuTreeDirectory *directory)
 
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
-	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
+	CdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
+	CdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 
 	return menu;
@@ -1268,8 +1268,8 @@ create_applications_menu (const char *menu_file,
 
 /*HACK Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	CtkWidget *toplevel = ctk_widget_get_toplevel (menu);
-	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
+	CdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
+	CdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 
 	return menu;
@@ -1386,7 +1386,7 @@ CtkWidget* create_main_menu(PanelWidget* panel)
 
 static gboolean
 panel_menu_key_press_handler (CtkWidget   *widget,
-			      GdkEventKey *event)
+			      CdkEventKey *event)
 {
 	gboolean retval = FALSE;
 	CtkWidget *active_menu_item = NULL;
@@ -1398,7 +1398,7 @@ panel_menu_key_press_handler (CtkWidget   *widget,
 
 		active_menu_item = ctk_menu_shell_get_selected_item (menu_shell);
 		if (active_menu_item && ctk_menu_item_get_submenu (CTK_MENU_ITEM (active_menu_item)) == NULL)
-			retval = show_item_menu (active_menu_item, (GdkEvent *) event);
+			retval = show_item_menu (active_menu_item, (CdkEvent *) event);
 	}
 	return retval;
 }

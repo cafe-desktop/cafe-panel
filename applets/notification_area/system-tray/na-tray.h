@@ -61,7 +61,7 @@ struct _NaTrayClass
 };
 
 GType           na_tray_get_type        (void);
-NaHost         *na_tray_new_for_screen  (GdkScreen     *screen,
+NaHost         *na_tray_new_for_screen  (CdkScreen     *screen,
 					 CtkOrientation orientation);
 void            na_tray_set_padding     (NaTray        *tray,
 					 gint           padding);

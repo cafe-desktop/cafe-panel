@@ -162,7 +162,7 @@ clock_location_tile_finalize (GObject *g_obj)
 
 static gboolean
 press_on_tile      (CtkWidget             *widget,
-                    GdkEventButton        *event,
+                    CdkEventButton        *event,
                     ClockLocationTile *tile)
 {
         g_signal_emit (tile, signals[TILE_PRESSED], 0);
@@ -199,7 +199,7 @@ make_current (CtkWidget *widget, ClockLocationTile *tile)
 
 static gboolean
 enter_or_leave_tile (CtkWidget             *widget,
-                     GdkEventCrossing      *event,
+                     CdkEventCrossing      *event,
                      ClockLocationTile *tile)
 {
         ClockLocationTilePrivate *priv = clock_location_tile_get_instance_private (tile);
@@ -573,7 +573,7 @@ void
 weather_info_setup_tooltip (WeatherInfo *info, ClockLocation *location, CtkTooltip *tooltip,
                             ClockFormat clock_format)
 {
-        GdkPixbuf *pixbuf = NULL;
+        CdkPixbuf *pixbuf = NULL;
         CtkIconTheme *theme = NULL;
         const gchar *conditions, *wind;
         gchar *temp, *apparent;

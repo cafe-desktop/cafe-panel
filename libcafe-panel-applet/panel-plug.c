@@ -36,7 +36,7 @@ static gboolean
 panel_plug_draw (CtkWidget *widget,
                  cairo_t   *cr)
 {
-  GdkWindow *window;
+  CdkWindow *window;
   cairo_pattern_t *pattern;
 
   if (!ctk_widget_get_realized (widget))
@@ -64,8 +64,8 @@ panel_plug_draw (CtkWidget *widget,
 static void
 panel_plug_realize (CtkWidget *widget)
 {
-  GdkScreen *screen;
-  GdkVisual *visual;
+  CdkScreen *screen;
+  CdkVisual *visual;
 
   screen = cdk_screen_get_default ();
   visual = cdk_screen_get_rgba_visual (screen);

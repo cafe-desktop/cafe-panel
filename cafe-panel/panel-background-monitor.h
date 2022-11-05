@@ -55,11 +55,11 @@
 typedef struct _PanelBackgroundMonitorClass PanelBackgroundMonitorClass;
 typedef struct _PanelBackgroundMonitor      PanelBackgroundMonitor;
 
-gboolean                cdk_window_check_composited_wm          (GdkWindow* window);
+gboolean                cdk_window_check_composited_wm          (CdkWindow* window);
 
 GType                   panel_background_monitor_get_type       (void);
-PanelBackgroundMonitor *panel_background_monitor_get_for_screen (GdkScreen *screen);
-GdkPixbuf              *panel_background_monitor_get_region     (PanelBackgroundMonitor *monitor,
+PanelBackgroundMonitor *panel_background_monitor_get_for_screen (CdkScreen *screen);
+CdkPixbuf              *panel_background_monitor_get_region     (PanelBackgroundMonitor *monitor,
 								 int                     x,
 								 int                     y,
 								 int                     width,

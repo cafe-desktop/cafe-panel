@@ -57,7 +57,7 @@ typedef struct {
 	int size_end;
 	PanelOrientation orientation;
 	double opacity;
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 	guint timeout_id;
 } CompositedZoomData;
 
@@ -98,7 +98,7 @@ zoom_draw (CtkWidget *widget,
 
 		g_slice_free (CompositedZoomData, zoom);
 	} else {
-		GdkPixbuf *scaled;
+		CdkPixbuf *scaled;
 		int width, height;
 		int x = 0, y = 0;
 
@@ -149,9 +149,9 @@ zoom_draw (CtkWidget *widget,
 }
 
 static void
-draw_zoom_animation_composited (GdkScreen *gscreen,
+draw_zoom_animation_composited (CdkScreen *gscreen,
 				int x, int y, int w, int h,
-				GdkPixbuf *pixbuf,
+				CdkPixbuf *pixbuf,
 				PanelOrientation orientation)
 {
 	CtkWidget *win;
@@ -220,7 +220,7 @@ draw_zoom_animation_composited (GdkScreen *gscreen,
 }
 
 static void
-draw_zoom_animation (GdkScreen *gscreen,
+draw_zoom_animation (CdkScreen *gscreen,
 		     int x, int y, int w, int h,
 		     int fx, int fy, int fw, int fh,
 		     int steps)
@@ -232,7 +232,7 @@ draw_zoom_animation (GdkScreen *gscreen,
 	int i, j;
 	GC frame_gc;
 	XGCValues gcv;
-	GdkColor color = { 65535, 65535, 65535 };
+	CdkColor color = { 65535, 65535, 65535 };
 	Display *dpy;
 	Window root_win;
 	int screen;
@@ -341,13 +341,13 @@ void
 xstuff_zoom_anicafe (CtkWidget *widget,
 		     cairo_surface_t *surface,
 		     PanelOrientation orientation,
-		     GdkRectangle *opt_rect)
+		     CdkRectangle *opt_rect)
 {
-	GdkScreen *gscreen;
-	GdkRectangle rect, dest;
+	CdkScreen *gscreen;
+	CdkRectangle rect, dest;
 	CtkAllocation allocation;
-	GdkMonitor *monitor;
-	GdkDisplay *display;
+	CdkMonitor *monitor;
+	CdkDisplay *display;
 
 	if (opt_rect)
 		rect = *opt_rect;
@@ -365,7 +365,7 @@ xstuff_zoom_anicafe (CtkWidget *widget,
 	gscreen = ctk_widget_get_screen (widget);
 
 	if (cdk_screen_is_composited (gscreen) && surface) {
-		GdkPixbuf *pixbuf = cdk_pixbuf_get_from_surface (surface,
+		CdkPixbuf *pixbuf = cdk_pixbuf_get_from_surface (surface,
 				0, 0,
 				cairo_image_surface_get_width (surface),
 				cairo_image_surface_get_height (surface));

@@ -48,20 +48,20 @@ struct _NaTrayManager
   GObject parent_instance;
 
 #ifdef CDK_WINDOWING_X11
-  GdkAtom selection_atom;
+  CdkAtom selection_atom;
   Atom    opcode_atom;
   Atom message_data_atom;
 #endif
 
   CtkWidget *invisible;
-  GdkScreen *screen;
+  CdkScreen *screen;
   CtkOrientation orientation;
   gint padding;
   gint icon_size;
-  GdkRGBA fg;
-  GdkRGBA error;
-  GdkRGBA warning;
-  GdkRGBA success;
+  CdkRGBA fg;
+  CdkRGBA error;
+  CdkRGBA warning;
+  CdkRGBA success;
 
   GList *messages;
   GHashTable *socket_table;
@@ -91,10 +91,10 @@ struct _NaTrayManagerClass
 
 GType           na_tray_manager_get_type        (void);
 
-gboolean        na_tray_manager_check_running   (GdkScreen          *screen);
+gboolean        na_tray_manager_check_running   (CdkScreen          *screen);
 NaTrayManager  *na_tray_manager_new             (void);
 gboolean        na_tray_manager_manage_screen   (NaTrayManager      *manager,
-						 GdkScreen          *screen);
+						 CdkScreen          *screen);
 void            na_tray_manager_set_orientation (NaTrayManager      *manager,
 						 CtkOrientation      orientation);
 CtkOrientation  na_tray_manager_get_orientation (NaTrayManager      *manager);
@@ -103,10 +103,10 @@ void            na_tray_manager_set_padding     (NaTrayManager      *manager,
 void            na_tray_manager_set_icon_size   (NaTrayManager      *manager,
 						 gint                padding);
 void            na_tray_manager_set_colors      (NaTrayManager      *manager,
-						 GdkRGBA            *fg,
-						 GdkRGBA            *error,
-						 GdkRGBA            *warning,
-						 GdkRGBA            *success);
+						 CdkRGBA            *fg,
+						 CdkRGBA            *error,
+						 CdkRGBA            *warning,
+						 CdkRGBA            *success);
 
 G_END_DECLS
 

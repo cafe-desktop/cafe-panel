@@ -166,7 +166,7 @@ hls_to_rgb (gdouble *h, gdouble *l, gdouble *s)
  * ctkstyle.c cut-and-pastage.
  */
 void
-ctk_style_shade (GdkRGBA *a, GdkRGBA *b, gdouble k)
+ctk_style_shade (CdkRGBA *a, CdkRGBA *b, gdouble k)
 {
 	gdouble red;
 	gdouble green;

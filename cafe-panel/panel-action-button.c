@@ -270,7 +270,7 @@ panel_action_run_program (CtkWidget *widget)
 static void
 panel_action_search (CtkWidget *widget)
 {
-	GdkScreen *screen;
+	CdkScreen *screen;
 
 	screen = ctk_widget_get_screen (widget);
 	panel_launch_desktop_file_with_fallback ("cafe-search-tool.desktop",
@@ -308,7 +308,7 @@ panel_action_force_quit (CtkWidget *widget)
 static void
 panel_action_connect_server (CtkWidget *widget)
 {
-	GdkScreen *screen;
+	CdkScreen *screen;
 	char      *command;
 	GError    *error;
 
@@ -565,7 +565,7 @@ panel_action_button_set_property (GObject      *object,
 
 static void
 panel_action_button_drag_data_get (CtkWidget          *widget,
-				   GdkDragContext     *context,
+				   CdkDragContext     *context,
 				   CtkSelectionData   *selection_data,
 				   guint               info,
 				   guint               time)
@@ -823,7 +823,7 @@ panel_action_button_invoke_menu (PanelActionButton *button,
 			  button->priv->type < PANEL_ACTION_LAST);
 
 	if (!strcmp (callback_name, "help")) {
-		GdkScreen *screen;
+		CdkScreen *screen;
 
 		if (!actions [button->priv->type].help_index)
 			return;

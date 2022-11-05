@@ -294,7 +294,7 @@ panel_run_dialog_set_icon (PanelRunDialog *dialog,
 			   GIcon          *icon,
 			   gboolean        force)
 {
-	GdkPixbuf *pixbuf = NULL;
+	CdkPixbuf *pixbuf = NULL;
 
 	if (!force && g_icon_equal(icon, dialog->icon))
 		return;
@@ -400,8 +400,8 @@ panel_run_dialog_launch_command (PanelRunDialog *dialog,
 				 const char     *command,
 				 const char     *locale_command)
 {
-	GdkDisplay *display;
-	GdkScreen  *screen;
+	CdkDisplay *display;
+	CdkScreen  *screen;
 	gboolean    result;
 	GError     *error = NULL;
 	char      **argv;
@@ -495,7 +495,7 @@ panel_run_dialog_execute (PanelRunDialog *dialog)
 	if (!result) {
 		GFile     *file;
 		char      *uri;
-		GdkScreen *screen;
+		CdkScreen *screen;
 
 		file = panel_util_get_file_optional_homedir (command);
 		uri = g_file_get_uri (file);
@@ -1499,7 +1499,7 @@ panel_run_dialog_update_completion (PanelRunDialog *dialog,
 
 static gboolean
 entry_event (CtkEditable    *entry,
-	     GdkEventKey    *event,
+	     CdkEventKey    *event,
 	     PanelRunDialog *dialog)
 {
 	CtkTreeSelection *selection;
@@ -1706,7 +1706,7 @@ combobox_changed (CtkComboBox    *combobox,
 
 static void
 entry_drag_data_received (CtkEditable      *entry,
-			  GdkDragContext   *context,
+			  CdkDragContext   *context,
 			  gint              x,
 			  gint              y,
 			  CtkSelectionData *selection_data,
@@ -1872,7 +1872,7 @@ panel_run_dialog_create_desktop_file (PanelRunDialog *dialog)
 
 static void
 pixmap_drag_data_get (CtkWidget          *run_dialog,
-	  	      GdkDragContext     *context,
+	  	      CdkDragContext     *context,
 		      CtkSelectionData   *selection_data,
 		      guint               info,
 		      guint               time,
@@ -1908,7 +1908,7 @@ panel_run_dialog_style_updated (CtkWidget *widget,
 
 static void
 panel_run_dialog_screen_changed (CtkWidget      *widget,
-				 GdkScreen      *prev_screen,
+				 CdkScreen      *prev_screen,
 				 PanelRunDialog *dialog)
 {
   if (dialog->icon) {
@@ -1941,7 +1941,7 @@ panel_run_dialog_setup_pixmap (PanelRunDialog *dialog,
 /* this runs after entry_event() */
 static gboolean
 key_press_event (CtkWidget    *run_dialog,
-				GdkEventKey    *event,
+				CdkEventKey    *event,
 				PanelRunDialog *dialog)
 {
 
@@ -1968,7 +1968,7 @@ key_press_event (CtkWidget    *run_dialog,
 }
 
 static PanelRunDialog *
-panel_run_dialog_new (GdkScreen  *screen,
+panel_run_dialog_new (CdkScreen  *screen,
 		      CtkBuilder *gui,
 		      guint32    activate_time)
 {
@@ -2041,7 +2041,7 @@ panel_run_dialog_static_dialog_destroyed (PanelRunDialog *dialog)
 }
 
 void
-panel_run_dialog_present (GdkScreen *screen,
+panel_run_dialog_present (CdkScreen *screen,
 			  guint32    activate_time)
 {
 	CtkBuilder *gui;
