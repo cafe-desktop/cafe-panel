@@ -50,7 +50,7 @@ enum {
 
 #define BUTTON_WIDGET_DISPLACEMENT 2
 
-G_DEFINE_TYPE_WITH_PRIVATE (ButtonWidget, button_widget, GTK_TYPE_BUTTON)
+G_DEFINE_TYPE_WITH_PRIVATE (ButtonWidget, button_widget, CTK_TYPE_BUTTON)
 
 /* colorshift a surface */
 static void
@@ -123,7 +123,7 @@ button_widget_realize(GtkWidget *widget)
 			       GDK_POINTER_MOTION_HINT_MASK |
 			       GDK_KEY_PRESS_MASK);
 
-	GTK_WIDGET_CLASS (button_widget_parent_class)->realize (widget);
+	CTK_WIDGET_CLASS (button_widget_parent_class)->realize (widget);
 
 	BUTTON_WIDGET (widget)->priv->icon_theme = ctk_icon_theme_get_for_screen (ctk_widget_get_screen (widget));
 	g_signal_connect_object (BUTTON_WIDGET (widget)->priv->icon_theme,
@@ -142,7 +142,7 @@ button_widget_unrealize (GtkWidget *widget)
 					      G_CALLBACK (button_widget_icon_theme_changed),
 					      widget);
 
-	GTK_WIDGET_CLASS (button_widget_parent_class)->unrealize (widget);
+	CTK_WIDGET_CLASS (button_widget_parent_class)->unrealize (widget);
 }
 
 static void
@@ -170,7 +170,7 @@ button_widget_reload_surface (ButtonWidget *button)
 		gint scale;
 		char *error = NULL;
 
-		scale = ctk_widget_get_scale_factor (GTK_WIDGET (button));
+		scale = ctk_widget_get_scale_factor (CTK_WIDGET (button));
 
 		button->priv->surface =
 			panel_load_icon (button->priv->icon_theme,
@@ -184,10 +184,10 @@ button_widget_reload_surface (ButtonWidget *button)
 			GtkIconTheme *icon_theme = ctk_icon_theme_get_default();
 			button->priv->surface = ctk_icon_theme_load_surface (icon_theme,
 							       "image-missing",
-							       GTK_ICON_SIZE_BUTTON,
+							       CTK_ICON_SIZE_BUTTON,
 							       scale,
 							       NULL,
-							       GTK_ICON_LOOKUP_FORCE_SVG | GTK_ICON_LOOKUP_USE_BUILTIN,
+							       CTK_ICON_LOOKUP_FORCE_SVG | CTK_ICON_LOOKUP_USE_BUILTIN,
 							       NULL);
 			g_free (error);
 		}
@@ -195,7 +195,7 @@ button_widget_reload_surface (ButtonWidget *button)
 
 	button->priv->surface_hc = make_hc_surface (button->priv->surface);
 
-	ctk_widget_queue_resize (GTK_WIDGET (button));
+	ctk_widget_queue_resize (CTK_WIDGET (button));
 }
 
 static void
@@ -301,7 +301,7 @@ calc_arrow (PanelOrientation  orientation,
 	    gdouble          *angle,
 	    gdouble          *size)
 {
-	GtkArrowType retval = GTK_ARROW_UP;
+	GtkArrowType retval = CTK_ARROW_UP;
 
 	if (orientation & PANEL_HORIZONTAL_MASK) {
 		if (button_width > 50)
@@ -317,27 +317,27 @@ calc_arrow (PanelOrientation  orientation,
 	switch (orientation) {
 	case PANEL_ORIENTATION_TOP:
 		*x     = (button_width - (*size)) / 2;
-		*y     = button_height * .99 - (*size) / (3/2);	// 3/2 is the approxicafe ratio of GTK arrows
+		*y     = button_height * .99 - (*size) / (3/2);	// 3/2 is the approxicafe ratio of CTK arrows
 		*angle = G_PI;
-		retval = GTK_ARROW_DOWN;
+		retval = CTK_ARROW_DOWN;
 		break;
 	case PANEL_ORIENTATION_BOTTOM:
 		*x     = (button_width - (*size)) / 2;
 		*y     = button_height * .01;
 		*angle = 0;
-		retval = GTK_ARROW_UP;
+		retval = CTK_ARROW_UP;
 		break;
 	case PANEL_ORIENTATION_LEFT:
-		*x     = button_width * .99 - (*size) / (3/2);	// 3/2 is the approxicafe ratio of GTK arrows
+		*x     = button_width * .99 - (*size) / (3/2);	// 3/2 is the approxicafe ratio of CTK arrows
 		*y     = (button_height - (*size)) / 2;
 		*angle = G_PI / 2;
-		retval = GTK_ARROW_RIGHT;
+		retval = CTK_ARROW_RIGHT;
 		break;
 	case PANEL_ORIENTATION_RIGHT:
 		*x     = button_width * .01;
 		*y     = (button_height - (*size)) / 2;
 		*angle = 3 * (G_PI / 2);
-		retval = GTK_ARROW_LEFT;
+		retval = CTK_ARROW_LEFT;
 		break;
 	}
 
@@ -371,7 +371,7 @@ button_widget_draw (GtkWidget *widget,
 
 	/* offset for pressed buttons */
 	off = (button_widget->priv->activatable &&
-		(state_flags & GTK_STATE_FLAG_PRELIGHT) && (state_flags & GTK_STATE_FLAG_ACTIVE)) ?
+		(state_flags & CTK_STATE_FLAG_PRELIGHT) && (state_flags & CTK_STATE_FLAG_ACTIVE)) ?
 		BUTTON_WIDGET_DISPLACEMENT * height / 48.0 : 0;
 
 	w = cairo_image_surface_get_width (button_widget->priv->surface) / scale;
@@ -387,7 +387,7 @@ button_widget_draw (GtkWidget *widget,
 		cairo_set_operator (cr, CAIRO_OPERATOR_HSL_SATURATION);
 		cairo_set_source_rgba (cr, 0, 0, 0, 0.2);
 	} else if (panel_global_config_get_highlight_when_over () &&
-		   (state_flags & GTK_STATE_FLAG_PRELIGHT || ctk_widget_has_focus (widget))) {
+		   (state_flags & CTK_STATE_FLAG_PRELIGHT || ctk_widget_has_focus (widget))) {
 		cairo_set_source_surface (cr, button_widget->priv->surface_hc, x, y);
 	} else {
 		cairo_set_source_surface (cr, button_widget->priv->surface, x, y);
@@ -506,7 +506,7 @@ button_widget_size_allocate (GtkWidget     *widget,
 		}
 	}
 
-	GTK_WIDGET_CLASS (button_widget_parent_class)->size_allocate (widget, allocation);
+	CTK_WIDGET_CLASS (button_widget_parent_class)->size_allocate (widget, allocation);
 
 	if (button_widget->priv->orientation & PANEL_HORIZONTAL_MASK)
 		size = allocation->height;
@@ -539,8 +539,8 @@ button_widget_activate (GtkButton *button)
 	if (!button_widget->priv->activatable)
 		return;
 
-	if (GTK_BUTTON_CLASS (button_widget_parent_class)->activate)
-		GTK_BUTTON_CLASS (button_widget_parent_class)->activate (button);
+	if (CTK_BUTTON_CLASS (button_widget_parent_class)->activate)
+		CTK_BUTTON_CLASS (button_widget_parent_class)->activate (button);
 }
 
 static gboolean
@@ -553,7 +553,7 @@ button_widget_button_press (GtkWidget *widget, GdkEventButton *event)
 	/* we don't want to have two/three "click" events for double/triple
 	 * clicks. FIXME: this is only a workaround, waiting for bug 159101 */
 	    event->type == GDK_BUTTON_PRESS)
-		return GTK_WIDGET_CLASS (button_widget_parent_class)->button_press_event (widget, event);
+		return CTK_WIDGET_CLASS (button_widget_parent_class)->button_press_event (widget, event);
 
 	return FALSE;
 }
@@ -566,12 +566,12 @@ button_widget_enter_notify (GtkWidget *widget, GdkEventCrossing *event)
 	g_return_val_if_fail (BUTTON_IS_WIDGET (widget), FALSE);
 
 	GtkStateFlags state_flags = ctk_widget_get_state_flags (widget);
-	in_button = state_flags & GTK_STATE_FLAG_PRELIGHT;
+	in_button = state_flags & CTK_STATE_FLAG_PRELIGHT;
 
-	GTK_WIDGET_CLASS (button_widget_parent_class)->enter_notify_event (widget, event);
+	CTK_WIDGET_CLASS (button_widget_parent_class)->enter_notify_event (widget, event);
 
 	state_flags = ctk_widget_get_state_flags (widget);
-	if (in_button != (state_flags & GTK_STATE_FLAG_PRELIGHT) &&
+	if (in_button != (state_flags & CTK_STATE_FLAG_PRELIGHT) &&
 	    panel_global_config_get_highlight_when_over ())
 		ctk_widget_queue_draw (widget);
 
@@ -586,12 +586,12 @@ button_widget_leave_notify (GtkWidget *widget, GdkEventCrossing *event)
 	g_return_val_if_fail (BUTTON_IS_WIDGET (widget), FALSE);
 
 	GtkStateFlags state_flags = ctk_widget_get_state_flags (widget);
-	in_button = state_flags & GTK_STATE_FLAG_PRELIGHT;
+	in_button = state_flags & CTK_STATE_FLAG_PRELIGHT;
 
-	GTK_WIDGET_CLASS (button_widget_parent_class)->leave_notify_event (widget, event);
+	CTK_WIDGET_CLASS (button_widget_parent_class)->leave_notify_event (widget, event);
 
 	state_flags = ctk_widget_get_state_flags (widget);
-	if (in_button != (state_flags & GTK_STATE_FLAG_PRELIGHT) &&
+	if (in_button != (state_flags & CTK_STATE_FLAG_PRELIGHT) &&
 	    panel_global_config_get_highlight_when_over ())
 		ctk_widget_queue_draw (widget);
 
@@ -726,8 +726,8 @@ button_widget_set_activatable (ButtonWidget *button,
 	if (button->priv->activatable != activatable) {
 		button->priv->activatable = activatable;
 
-		if (ctk_widget_is_drawable (GTK_WIDGET (button)))
-			ctk_widget_queue_draw (GTK_WIDGET (button));
+		if (ctk_widget_is_drawable (CTK_WIDGET (button)))
+			ctk_widget_queue_draw (CTK_WIDGET (button));
 
 		g_object_notify (G_OBJECT (button), "activatable");
 	}
@@ -782,7 +782,7 @@ button_widget_set_orientation (ButtonWidget     *button,
 	/* Force a re-scale */
 	button->priv->size = -1;
 
-	ctk_widget_queue_resize (GTK_WIDGET (button));
+	ctk_widget_queue_resize (CTK_WIDGET (button));
 
 	g_object_notify (G_OBJECT (button), "orientation");
 }
@@ -808,7 +808,7 @@ button_widget_set_has_arrow (ButtonWidget *button,
 
 	button->priv->arrow = has_arrow;
 
-	ctk_widget_queue_draw (GTK_WIDGET (button));
+	ctk_widget_queue_draw (CTK_WIDGET (button));
 
 	g_object_notify (G_OBJECT (button), "has-arrow");
 }
@@ -834,7 +834,7 @@ button_widget_set_dnd_highlight (ButtonWidget *button,
 
 	button->priv->dnd_highlight = dnd_highlight;
 
-	ctk_widget_queue_draw (GTK_WIDGET (button));
+	ctk_widget_queue_draw (CTK_WIDGET (button));
 
 	g_object_notify (G_OBJECT (button), "dnd-highlight");
 }
@@ -860,7 +860,7 @@ button_widget_set_ignore_leave (ButtonWidget *button,
 
 	button->priv->ignore_leave = ignore_leave;
 
-	ctk_widget_queue_draw (GTK_WIDGET (button));
+	ctk_widget_queue_draw (CTK_WIDGET (button));
 
 	g_object_notify (G_OBJECT (button), "ignore-leave");
 }

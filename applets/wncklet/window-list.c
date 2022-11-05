@@ -53,7 +53,7 @@ typedef struct {
 
 	GtkOrientation orientation;
 	int size;
-#if !defined(WNCKLET_INPROCESS) && !GTK_CHECK_VERSION (3, 23, 0)
+#if !defined(WNCKLET_INPROCESS) && !CTK_CHECK_VERSION (3, 23, 0)
 	gboolean needs_hints;
 #endif
 
@@ -89,13 +89,13 @@ static void destroy_tasklist(GtkWidget* widget, TasklistData* tasklist);
 
 static void tasklist_update(TasklistData* tasklist)
 {
-	if (tasklist->orientation == GTK_ORIENTATION_HORIZONTAL)
+	if (tasklist->orientation == CTK_ORIENTATION_HORIZONTAL)
 	{
-		ctk_widget_set_size_request(GTK_WIDGET(tasklist->tasklist), -1, tasklist->size);
+		ctk_widget_set_size_request(CTK_WIDGET(tasklist->tasklist), -1, tasklist->size);
 	}
 	else
 	{
-		ctk_widget_set_size_request(GTK_WIDGET(tasklist->tasklist), tasklist->size, -1);
+		ctk_widget_set_size_request(CTK_WIDGET(tasklist->tasklist), tasklist->size, -1);
 	}
 
 	wnck_tasklist_set_grouping(WNCK_TASKLIST(tasklist->tasklist), tasklist->grouping);
@@ -105,7 +105,7 @@ static void tasklist_update(TasklistData* tasklist)
 
 static void response_cb(GtkWidget* widget, int id, TasklistData* tasklist)
 {
-	if (id == GTK_RESPONSE_HELP)
+	if (id == CTK_RESPONSE_HELP)
 	{
 		wncklet_display_help(widget, "cafe-user-guide", "windowlist-prefs", WINDOW_LIST_ICON);
 	}
@@ -128,12 +128,12 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 	{
 		case CAFE_PANEL_APPLET_ORIENT_LEFT:
 		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
-			new_orient = GTK_ORIENTATION_VERTICAL;
+			new_orient = CTK_ORIENTATION_VERTICAL;
 			break;
 		case CAFE_PANEL_APPLET_ORIENT_UP:
 		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		default:
-			new_orient = GTK_ORIENTATION_HORIZONTAL;
+			new_orient = CTK_ORIENTATION_HORIZONTAL;
 			break;
 	}
 
@@ -153,7 +153,7 @@ static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBac
 		case PANEL_NO_BACKGROUND:
 		case PANEL_COLOR_BACKGROUND:
 		case PANEL_PIXMAP_BACKGROUND:
-			wnck_tasklist_set_button_relief(WNCK_TASKLIST(tasklist->tasklist), GTK_RELIEF_NONE);
+			wnck_tasklist_set_button_relief(WNCK_TASKLIST(tasklist->tasklist), CTK_RELIEF_NONE);
 			break;
 	}
 }
@@ -225,11 +225,11 @@ static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbn
 	height = gdk_pixbuf_get_height (thumbnail);
 
 	/* Resize window to fit thumbnail */
-	ctk_window_resize (GTK_WINDOW (tasklist->preview), width, height);
+	ctk_window_resize (CTK_WINDOW (tasklist->preview), width, height);
 
 	/* Set position at pointer, then re-adjust from there to just outside of the pointer */
-	ctk_window_set_position (GTK_WINDOW (tasklist->preview), GTK_WIN_POS_MOUSE);
-	ctk_window_get_position (GTK_WINDOW (tasklist->preview), &x_pos, &y_pos);
+	ctk_window_set_position (CTK_WINDOW (tasklist->preview), CTK_WIN_POS_MOUSE);
+	ctk_window_get_position (CTK_WINDOW (tasklist->preview), &x_pos, &y_pos);
 
 	/* Get geometry of monitor where tasklist is located to calculate correct position of preview */
 	monitor = gdk_display_get_monitor_at_point (gdk_display_get_default (), x_pos, y_pos);
@@ -253,7 +253,7 @@ static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbn
 			break;
 	}
 
-	ctk_window_move (GTK_WINDOW (tasklist->preview), x_pos, y_pos);
+	ctk_window_move (CTK_WINDOW (tasklist->preview), x_pos, y_pos);
 }
 
 static gboolean preview_window_draw (GtkWidget *widget, cairo_t *cr, GdkPixbuf *thumbnail)
@@ -304,10 +304,10 @@ static gboolean applet_enter_notify_event (WnckTasklist *tl, GList *wnck_windows
 		return FALSE;
 
 	/* Create window to display preview */
-	tasklist->preview = ctk_window_new (GTK_WINDOW_POPUP);
+	tasklist->preview = ctk_window_new (CTK_WINDOW_POPUP);
 
 	ctk_widget_set_app_paintable (tasklist->preview, TRUE);
-	ctk_window_set_resizable (GTK_WINDOW (tasklist->preview), TRUE);
+	ctk_window_set_resizable (CTK_WINDOW (tasklist->preview), TRUE);
 
 	preview_window_reposition (tasklist, thumbnail);
 
@@ -398,8 +398,8 @@ static void tasklist_properties_update_content_radio(TasklistData* tasklist)
 		button = tasklist->show_current_radio;
 	}
 
-	if (!ctk_toggle_button_get_active(GTK_TOGGLE_BUTTON(button)))
-		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button), TRUE);
+	if (!ctk_toggle_button_get_active(CTK_TOGGLE_BUTTON(button)))
+		ctk_toggle_button_set_active(CTK_TOGGLE_BUTTON(button), TRUE);
 
 	ctk_widget_set_sensitive(tasklist->minimized_windows_label, tasklist->include_all_workspaces);
 	ctk_widget_set_sensitive(tasklist->move_minimized_radio, tasklist->include_all_workspaces);
@@ -435,8 +435,8 @@ static void tasklist_update_thumbnails_radio(TasklistData* tasklist)
 		button = tasklist->hide_thumbnails_radio;
 	}
 
-	if (!ctk_toggle_button_get_active(GTK_TOGGLE_BUTTON(button)))
-		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button), TRUE);
+	if (!ctk_toggle_button_get_active(CTK_TOGGLE_BUTTON(button)))
+		ctk_toggle_button_set_active(CTK_TOGGLE_BUTTON(button), TRUE);
 }
 
 static void window_thumbnails_changed(GSettings *settings, gchar* key, TasklistData* tasklist)
@@ -459,7 +459,7 @@ static void tasklist_update_thumbnail_size_spin(TasklistData* tasklist)
 
 	button = tasklist->thumbnail_size_spin;
 
-	ctk_spin_button_set_value(GTK_SPIN_BUTTON(button), (gdouble)tasklist->thumbnail_size);
+	ctk_spin_button_set_value(CTK_SPIN_BUTTON(button), (gdouble)tasklist->thumbnail_size);
 }
 
 static void thumbnail_size_changed(GSettings *settings, gchar* key, TasklistData* tasklist)
@@ -498,9 +498,9 @@ static void group_windows_changed(GSettings* settings, gchar* key, TasklistData*
 
 	button = get_grouping_button(tasklist, type);
 
-	if (button && !ctk_toggle_button_get_active(GTK_TOGGLE_BUTTON(button)))
+	if (button && !ctk_toggle_button_get_active(CTK_TOGGLE_BUTTON(button)))
 	{
-		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button), TRUE);
+		ctk_toggle_button_set_active(CTK_TOGGLE_BUTTON(button), TRUE);
 	}
 }
 
@@ -520,8 +520,8 @@ static void tasklist_update_unminimization_radio(TasklistData* tasklist)
 		button = tasklist->change_workspace_radio;
 	}
 
-	if (!ctk_toggle_button_get_active(GTK_TOGGLE_BUTTON(button)))
-		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button), TRUE);
+	if (!ctk_toggle_button_get_active(CTK_TOGGLE_BUTTON(button)))
+		ctk_toggle_button_set_active(CTK_TOGGLE_BUTTON(button), TRUE);
 }
 
 
@@ -577,7 +577,7 @@ static void applet_size_allocate(GtkWidget *widget, GtkAllocation *allocation, T
 
 	g_assert(len % 2 == 0);
 
-#if !defined(WNCKLET_INPROCESS) && !GTK_CHECK_VERSION (3, 23, 0)
+#if !defined(WNCKLET_INPROCESS) && !CTK_CHECK_VERSION (3, 23, 0)
 	/* HACK: When loading the WnckTasklist initially, it reports size hints as though there were
 	 * no elements in the Tasklist. This causes a rendering issue when built out-of-process in
 	 * HiDPI displays. We keep a flag to skip size hinting until WnckTasklist has something to
@@ -655,7 +655,7 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 
 	tasklist = g_new0(TasklistData, 1);
 
-	tasklist->applet = GTK_WIDGET(applet);
+	tasklist->applet = CTK_WIDGET(applet);
 
 	provider = ctk_css_provider_new ();
 	screen = gdk_screen_get_default ();
@@ -666,8 +666,8 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 										" margin: 0px;\n }",
 										-1, NULL);
 	ctk_style_context_add_provider_for_screen (screen,
-										GTK_STYLE_PROVIDER (provider),
-										GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+										CTK_STYLE_PROVIDER (provider),
+										CTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_object_unref (provider);
 
 	cafe_panel_applet_set_flags(CAFE_PANEL_APPLET(tasklist->applet), CAFE_PANEL_APPLET_EXPAND_MAJOR | CAFE_PANEL_APPLET_EXPAND_MINOR | CAFE_PANEL_APPLET_HAS_HANDLE);
@@ -688,7 +688,7 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 
 	tasklist->size = cafe_panel_applet_get_size(applet);
 
-#if !defined(WNCKLET_INPROCESS) && !GTK_CHECK_VERSION (3, 23, 0)
+#if !defined(WNCKLET_INPROCESS) && !CTK_CHECK_VERSION (3, 23, 0)
 	tasklist->needs_hints = FALSE;
 #endif
 
@@ -696,12 +696,12 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 	{
 		case CAFE_PANEL_APPLET_ORIENT_LEFT:
 		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
-			tasklist->orientation = GTK_ORIENTATION_VERTICAL;
+			tasklist->orientation = CTK_ORIENTATION_VERTICAL;
 			break;
 		case CAFE_PANEL_APPLET_ORIENT_UP:
 		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		default:
-			tasklist->orientation = GTK_ORIENTATION_HORIZONTAL;
+			tasklist->orientation = CTK_ORIENTATION_HORIZONTAL;
 			break;
 	}
 
@@ -719,14 +719,14 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 
 	g_signal_connect(G_OBJECT(tasklist->applet), "size_allocate", G_CALLBACK(applet_size_allocate), tasklist);
 
-	ctk_container_add(GTK_CONTAINER(tasklist->applet), tasklist->tasklist);
+	ctk_container_add(CTK_CONTAINER(tasklist->applet), tasklist->tasklist);
 
 	g_signal_connect(G_OBJECT(tasklist->applet), "realize", G_CALLBACK(applet_realized), tasklist);
 	g_signal_connect(G_OBJECT(tasklist->applet), "change_orient", G_CALLBACK(applet_change_orient), tasklist);
 	g_signal_connect(G_OBJECT(tasklist->applet), "change_size", G_CALLBACK(applet_change_pixel_size), tasklist);
 	g_signal_connect(G_OBJECT(tasklist->applet), "change_background", G_CALLBACK(applet_change_background), tasklist);
 
-	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET(tasklist->applet), GTK_WIDGET(tasklist->applet));
+	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET(tasklist->applet), CTK_WIDGET(tasklist->applet));
 
 	action_group = ctk_action_group_new("Tasklist Applet Actions");
 	ctk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
@@ -822,7 +822,7 @@ static void display_about_dialog(GtkAction* action, TasklistData* tasklist)
 		NULL
 	};
 
-	ctk_show_about_dialog(GTK_WINDOW(tasklist->applet),
+	ctk_show_about_dialog(CTK_WINDOW(tasklist->applet),
 		"program-name", _("Window List"),
 		"title", _("About Window List"),
 		"authors", authors,
@@ -871,7 +871,7 @@ static void display_all_workspaces_toggled(GtkToggleButton* button, TasklistData
 	g_settings_set_boolean(tasklist->settings, "display-all-workspaces", ctk_toggle_button_get_active(button));
 }
 
-#define WID(s) GTK_WIDGET(ctk_builder_get_object(builder, s))
+#define WID(s) CTK_WIDGET(ctk_builder_get_object(builder, s))
 
 static void setup_sensitivity(TasklistData* tasklist, GtkBuilder* builder, const char* wid1, const char* wid2, const char* wid3, const char* key)
 {
@@ -926,7 +926,7 @@ static void setup_dialog(GtkBuilder* builder, TasklistData* tasklist)
 
 	setup_sensitivity(tasklist, builder, "show_thumbnails_radio", "hide_thumbnails_radio", NULL, "show-window-thumbnails" /* key */);
 	ctk_widget_set_sensitive(tasklist->thumbnail_size_spin, TRUE);
-	adjustment = ctk_spin_button_get_adjustment (GTK_SPIN_BUTTON(tasklist->thumbnail_size_spin));
+	adjustment = ctk_spin_button_get_adjustment (CTK_SPIN_BUTTON(tasklist->thumbnail_size_spin));
 	ctk_adjustment_set_lower (adjustment, 0);
 	ctk_adjustment_set_upper (adjustment, 999);
 	ctk_adjustment_set_step_increment (adjustment, 1);
@@ -942,7 +942,7 @@ static void setup_dialog(GtkBuilder* builder, TasklistData* tasklist)
 
 	/* Window grouping: */
 	button = get_grouping_button(tasklist, tasklist->grouping);
-	ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button), TRUE);
+	ctk_toggle_button_set_active(CTK_TOGGLE_BUTTON(button), TRUE);
 	g_object_set_data(G_OBJECT(tasklist->never_group_radio), "group_value", "never");
 	g_object_set_data(G_OBJECT(tasklist->auto_group_radio), "group_value", "auto");
 	g_object_set_data(G_OBJECT(tasklist->always_group_radio), "group_value", "always");
@@ -991,11 +991,11 @@ static void display_properties_dialog(GtkAction* action, TasklistData* tasklist)
 		g_object_unref(builder);
 	}
 
-	ctk_window_set_icon_name(GTK_WINDOW(tasklist->properties_dialog), WINDOW_LIST_ICON);
+	ctk_window_set_icon_name(CTK_WINDOW(tasklist->properties_dialog), WINDOW_LIST_ICON);
 
-	ctk_window_set_resizable(GTK_WINDOW(tasklist->properties_dialog), FALSE);
-	ctk_window_set_screen(GTK_WINDOW(tasklist->properties_dialog), ctk_widget_get_screen(tasklist->applet));
-	ctk_window_present(GTK_WINDOW(tasklist->properties_dialog));
+	ctk_window_set_resizable(CTK_WINDOW(tasklist->properties_dialog), FALSE);
+	ctk_window_set_screen(CTK_WINDOW(tasklist->properties_dialog), ctk_widget_get_screen(tasklist->applet));
+	ctk_window_present(CTK_WINDOW(tasklist->properties_dialog));
 }
 
 static void destroy_tasklist(GtkWidget* widget, TasklistData* tasklist)

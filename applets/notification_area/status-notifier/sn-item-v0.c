@@ -106,7 +106,7 @@ scale_surface (SnIconPixmap   *pixmap,
   g_return_val_if_fail (pixmap != NULL, NULL);
 
   ratio = pixmap->width / (gdouble) pixmap->height;
-  if (orientation == GTK_ORIENTATION_HORIZONTAL)
+  if (orientation == CTK_ORIENTATION_HORIZONTAL)
     {
       new_height = (gdouble) size;
       new_width = new_height * ratio;
@@ -148,7 +148,7 @@ compare_size (gconstpointer a,
   p2 = (SnIconPixmap *) b;
   orientation = GPOINTER_TO_UINT (user_data);
 
-  if (orientation == GTK_ORIENTATION_HORIZONTAL)
+  if (orientation == CTK_ORIENTATION_HORIZONTAL)
     return p1->height - p2->height;
   else
     return p1->width - p2->width;
@@ -230,7 +230,7 @@ get_icon_by_name (const gchar *icon_name,
 
   return ctk_icon_theme_load_surface (icon_theme, icon_name,
                                       chosen_size, scale,
-                                      NULL, GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
+                                      NULL, CTK_ICON_LOOKUP_FORCE_SIZE, NULL);
 }
 
 static void
@@ -243,7 +243,7 @@ update (SnItemV0 *v0)
   gboolean visible;
   g_return_if_fail (SN_IS_ITEM_V0 (v0));
 
-  image = GTK_IMAGE (v0->image);
+  image = CTK_IMAGE (v0->image);
 
   if (v0->icon_size > 0)
     icon_size = v0->icon_size;
@@ -255,7 +255,7 @@ update (SnItemV0 *v0)
       cairo_surface_t *surface;
       gint scale;
 
-      scale = ctk_widget_get_scale_factor (GTK_WIDGET (image));
+      scale = ctk_widget_get_scale_factor (CTK_WIDGET (image));
       surface = get_icon_by_name (v0->icon_name, icon_size, scale);
 
       if (!surface)
@@ -285,7 +285,7 @@ update (SnItemV0 *v0)
       cairo_surface_t *surface;
 
       surface = get_surface (v0,
-                             ctk_orientable_get_orientation (GTK_ORIENTABLE (v0)),
+                             ctk_orientable_get_orientation (CTK_ORIENTABLE (v0)),
                              icon_size);
       if (surface != NULL)
         {
@@ -295,7 +295,7 @@ update (SnItemV0 *v0)
     }
   else
     {
-      ctk_image_set_from_icon_name (image, "image-missing", GTK_ICON_SIZE_MENU);
+      ctk_image_set_from_icon_name (image, "image-missing", CTK_ICON_SIZE_MENU);
       ctk_image_set_pixel_size (image, icon_size);
     }
 
@@ -321,15 +321,15 @@ update (SnItemV0 *v0)
           markup = g_strdup (tip->text);
         }
 
-      ctk_widget_set_tooltip_markup (GTK_WIDGET (v0), markup);
+      ctk_widget_set_tooltip_markup (CTK_WIDGET (v0), markup);
       g_free (markup);
     }
   else
     {
-      ctk_widget_set_tooltip_markup (GTK_WIDGET (v0), NULL);
+      ctk_widget_set_tooltip_markup (CTK_WIDGET (v0), NULL);
     }
 
-  accessible = ctk_widget_get_accessible (GTK_WIDGET (v0));
+  accessible = ctk_widget_get_accessible (CTK_WIDGET (v0));
 
   if (v0->title != NULL && *v0->title != '\0')
     atk_object_set_name (accessible, v0->title);
@@ -340,10 +340,10 @@ update (SnItemV0 *v0)
   /*Special case cafe-polkit*/
   if (g_strcmp0 (v0->status, "password-dialog") != 0){
     visible = g_strcmp0 (v0->status, "Passive") != 0;
-    ctk_widget_set_visible (GTK_WIDGET (v0), visible);
+    ctk_widget_set_visible (CTK_WIDGET (v0), visible);
     }
   else
-  ctk_widget_set_visible (GTK_WIDGET (v0), TRUE);
+  ctk_widget_set_visible (CTK_WIDGET (v0), TRUE);
 }
 
 static gboolean
@@ -1272,7 +1272,7 @@ sn_item_v0_size_allocate (GtkWidget      *widget,
 {
   SnItemV0 *v0 = SN_ITEM_V0 (widget);
 
-  GTK_WIDGET_CLASS (sn_item_v0_parent_class)->size_allocate (widget, allocation);
+  CTK_WIDGET_CLASS (sn_item_v0_parent_class)->size_allocate (widget, allocation);
 
   /* FIXME: this leads to grow-only size, unless there's underallocation.
    *        not a problem in the panel, but one in the test app. */
@@ -1280,7 +1280,7 @@ sn_item_v0_size_allocate (GtkWidget      *widget,
     {
       gint prev_effective_icon_size = v0->effective_icon_size;
 
-      if (ctk_orientable_get_orientation (GTK_ORIENTABLE (v0)) == GTK_ORIENTATION_HORIZONTAL)
+      if (ctk_orientable_get_orientation (CTK_ORIENTABLE (v0)) == CTK_ORIENTATION_HORIZONTAL)
         v0->effective_icon_size = allocation->height;
       else
         v0->effective_icon_size = allocation->width;
@@ -1364,7 +1364,7 @@ sn_item_v0_class_init (SnItemV0Class *v0_class)
   SnItemClass *item_class;
 
   object_class = G_OBJECT_CLASS (v0_class);
-  widget_class = GTK_WIDGET_CLASS (v0_class);
+  widget_class = CTK_WIDGET_CLASS (v0_class);
   item_class = SN_ITEM_CLASS (v0_class);
 
   object_class->constructed = sn_item_v0_constructed;
@@ -1395,7 +1395,7 @@ sn_item_v0_init (SnItemV0 *v0)
   v0->icon_size = 16;
   v0->effective_icon_size = 0;
   v0->image = ctk_image_new ();
-  ctk_container_add (GTK_CONTAINER (v0), v0->image);
+  ctk_container_add (CTK_CONTAINER (v0), v0->image);
   ctk_widget_show (v0->image);
 }
 
@@ -1415,9 +1415,9 @@ sn_item_v0_get_icon_padding (SnItemV0 *v0)
   GtkOrientation orientation;
   gint a, b;
 
-  orientation = ctk_orientable_get_orientation (GTK_ORIENTABLE (v0));
+  orientation = ctk_orientable_get_orientation (CTK_ORIENTABLE (v0));
 
-  if (orientation == GTK_ORIENTATION_HORIZONTAL)
+  if (orientation == CTK_ORIENTATION_HORIZONTAL)
     {
       a = ctk_widget_get_margin_start (v0->image);
       b = ctk_widget_get_margin_end (v0->image);
@@ -1439,9 +1439,9 @@ sn_item_v0_set_icon_padding (SnItemV0 *v0,
   gint padding_x = 0;
   gint padding_y = 0;
 
-  orientation = ctk_orientable_get_orientation (GTK_ORIENTABLE (v0));
+  orientation = ctk_orientable_get_orientation (CTK_ORIENTABLE (v0));
 
-  if (orientation == GTK_ORIENTATION_HORIZONTAL)
+  if (orientation == CTK_ORIENTATION_HORIZONTAL)
     padding_x = padding;
   else
     padding_y = padding;

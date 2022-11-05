@@ -84,7 +84,7 @@ static const AppletPropertyInfo applet_properties [] = {
 static gboolean cafe_panel_applet_container_plug_removed (CafePanelAppletContainer *container);
 #endif
 
-G_DEFINE_TYPE_WITH_PRIVATE (CafePanelAppletContainer, cafe_panel_applet_container, GTK_TYPE_EVENT_BOX);
+G_DEFINE_TYPE_WITH_PRIVATE (CafePanelAppletContainer, cafe_panel_applet_container, CTK_TYPE_EVENT_BOX);
 
 GQuark cafe_panel_applet_container_error_quark (void)
 {
@@ -114,7 +114,7 @@ panel_applet_container_setup (CafePanelAppletContainer *container)
 						G_CALLBACK (cafe_panel_applet_container_plug_removed),
 						container);
 
-			ctk_container_add (GTK_CONTAINER (container), container->priv->socket);
+			ctk_container_add (CTK_CONTAINER (container), container->priv->socket);
 			ctk_widget_show (container->priv->socket);
 		} else
 #endif
@@ -127,7 +127,7 @@ panel_applet_container_setup (CafePanelAppletContainer *container)
 
 		applet = cafe_panel_applets_manager_get_applet_widget (container->priv->iid, container->priv->uid);
 
-		ctk_container_add (GTK_CONTAINER (container), applet);
+		ctk_container_add (CTK_CONTAINER (container), applet);
 	}
  }
 
@@ -264,7 +264,7 @@ cafe_panel_applet_container_new (void)
 {
 	GtkWidget *container;
 
-	container = GTK_WIDGET (g_object_new (PANEL_TYPE_APPLET_CONTAINER, NULL));
+	container = CTK_WIDGET (g_object_new (PANEL_TYPE_APPLET_CONTAINER, NULL));
 
 	return container;
 }
@@ -273,7 +273,7 @@ cafe_panel_applet_container_new (void)
 static gboolean
 cafe_panel_applet_container_plug_removed (CafePanelAppletContainer *container)
 {
-	g_return_val_if_fail (GDK_IS_X11_DISPLAY (ctk_widget_get_display (GTK_WIDGET (container))), FALSE);
+	g_return_val_if_fail (GDK_IS_X11_DISPLAY (ctk_widget_get_display (CTK_WIDGET (container))), FALSE);
 
 	if (!container->priv->applet_proxy)
 		return FALSE;
@@ -391,7 +391,7 @@ on_proxy_appeared (GObject      *source_object,
 #ifdef HAVE_X11
 	// xid always <= 0 when not using X11
 	if (container->priv->xid > 0) {
-		ctk_socket_add_id (GTK_SOCKET (container->priv->socket),
+		ctk_socket_add_id (CTK_SOCKET (container->priv->socket),
 				   container->priv->xid);
 	}
 #endif

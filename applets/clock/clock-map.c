@@ -52,7 +52,7 @@ typedef struct {
         GdkPixbuf *shadow_map_pixbuf;
 } ClockMapPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (ClockMap, clock_map, GTK_TYPE_WIDGET)
+G_DEFINE_TYPE_WITH_PRIVATE (ClockMap, clock_map, CTK_TYPE_WIDGET)
 
 static void clock_map_finalize (GObject *);
 static void clock_map_size_allocate (GtkWidget *this,
@@ -83,7 +83,7 @@ static void
 clock_map_class_init (ClockMapClass *this_class)
 {
         GObjectClass *g_obj_class = G_OBJECT_CLASS (this_class);
-        GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (g_obj_class);
+        GtkWidgetClass *widget_class = CTK_WIDGET_CLASS (g_obj_class);
 
         g_obj_class->finalize = clock_map_finalize;
 
@@ -120,7 +120,7 @@ clock_map_init (ClockMap *this)
         int i;
         ClockMapPrivate *priv = clock_map_get_instance_private (this);
 
-        ctk_widget_set_has_window (GTK_WIDGET (this), FALSE);
+        ctk_widget_set_has_window (CTK_WIDGET (this), FALSE);
 
 	priv->last_refresh = 0;
 	priv->width = 0;
@@ -184,7 +184,7 @@ void
 clock_map_refresh (ClockMap *this)
 {
     ClockMapPrivate *priv = clock_map_get_instance_private (this);
-	GtkWidget *widget = GTK_WIDGET (this);
+	GtkWidget *widget = CTK_WIDGET (this);
 	GtkAllocation allocation;
 
 	ctk_widget_get_allocation (widget, &allocation);
@@ -227,7 +227,7 @@ clock_map_draw (GtkWidget *this, cairo_t *cr)
 	GdkRGBA color;
 
 	context = ctk_widget_get_style_context (this);
-	ctk_style_context_get_color (context, GTK_STATE_FLAG_ACTIVE, &color);
+	ctk_style_context_get_color (context, CTK_STATE_FLAG_ACTIVE, &color);
 
 	if (!priv->shadow_map_pixbuf) {
                 g_warning ("Needed to refresh the map in expose event.");
@@ -272,8 +272,8 @@ clock_map_size_allocate (GtkWidget *this, GtkAllocation *allocation)
 {
         ClockMapPrivate *priv = clock_map_get_instance_private (CLOCK_MAP(this));
 
-	if (GTK_WIDGET_CLASS (clock_map_parent_class)->size_allocate)
-		GTK_WIDGET_CLASS (clock_map_parent_class)->size_allocate (this, allocation);
+	if (CTK_WIDGET_CLASS (clock_map_parent_class)->size_allocate)
+		CTK_WIDGET_CLASS (clock_map_parent_class)->size_allocate (this, allocation);
 
 	if (priv->width != allocation->width ||
 	    priv->height != allocation->height)
@@ -587,7 +587,7 @@ clock_map_display (ClockMap *this)
 
         if (priv->width > 0 || priv->height > 0)
                 clock_map_render_shadow (this);
-	ctk_widget_queue_draw (GTK_WIDGET (this));
+	ctk_widget_queue_draw (CTK_WIDGET (this));
 
         time (&priv->last_refresh);
 }

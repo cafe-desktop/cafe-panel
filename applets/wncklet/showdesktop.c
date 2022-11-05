@@ -85,12 +85,12 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 	{
 		case CAFE_PANEL_APPLET_ORIENT_LEFT:
 		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
-			new_orient = GTK_ORIENTATION_VERTICAL;
+			new_orient = CTK_ORIENTATION_VERTICAL;
 			break;
 		case CAFE_PANEL_APPLET_ORIENT_UP:
 		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		default:
-			new_orient = GTK_ORIENTATION_HORIZONTAL;
+			new_orient = CTK_ORIENTATION_HORIZONTAL;
 			break;
 	}
 
@@ -106,25 +106,25 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 static void button_size_allocated(GtkWidget* button, GtkAllocation* allocation, ShowDesktopData* sdd)
 {
 	/*
-	if ((sdd->orient == GTK_ORIENTATION_HORIZONTAL) && (sdd->size == allocation->height))
+	if ((sdd->orient == CTK_ORIENTATION_HORIZONTAL) && (sdd->size == allocation->height))
 	{
 		return;
 	}
-	else if ((sdd->orient == GTK_ORIENTATION_VERTICAL) && (sdd->size == allocation->width))
+	else if ((sdd->orient == CTK_ORIENTATION_VERTICAL) && (sdd->size == allocation->width))
 	{
 		return;
 	}
 	*/
 
-	if (((sdd->orient == GTK_ORIENTATION_HORIZONTAL) && (sdd->size == allocation->height)) || ((sdd->orient == GTK_ORIENTATION_VERTICAL) && (sdd->size == allocation->width)))
+	if (((sdd->orient == CTK_ORIENTATION_HORIZONTAL) && (sdd->size == allocation->height)) || ((sdd->orient == CTK_ORIENTATION_VERTICAL) && (sdd->size == allocation->width)))
 		return;
 
 	switch (sdd->orient)
 	{
-		case GTK_ORIENTATION_HORIZONTAL:
+		case CTK_ORIENTATION_HORIZONTAL:
 			sdd->size = allocation->height;
 			break;
-		case GTK_ORIENTATION_VERTICAL:
+		case CTK_ORIENTATION_VERTICAL:
 			sdd->size = allocation->width;
 			break;
 	}
@@ -152,10 +152,10 @@ static void update_icon(ShowDesktopData* sdd)
 	ctk_style_context_get_padding (context, state, &padding);
 
 	switch (sdd->orient) {
-	case GTK_ORIENTATION_HORIZONTAL:
+	case CTK_ORIENTATION_HORIZONTAL:
 		thickness = padding.top + padding.bottom;
 		break;
-	case GTK_ORIENTATION_VERTICAL:
+	case CTK_ORIENTATION_VERTICAL:
 		thickness = padding.left + padding.right;
 		break;
 	}
@@ -189,7 +189,7 @@ static void update_icon(ShowDesktopData* sdd)
 			error = NULL;
 		}
 
-		ctk_image_set_from_icon_name (GTK_IMAGE (sdd->image), "image-missing", GTK_ICON_SIZE_SMALL_TOOLBAR);
+		ctk_image_set_from_icon_name (CTK_IMAGE (sdd->image), "image-missing", CTK_ICON_SIZE_SMALL_TOOLBAR);
 		return;
 	}
 
@@ -201,11 +201,11 @@ static void update_icon(ShowDesktopData* sdd)
 	/* Make it fit on the given panel */
 	switch (sdd->orient)
 	{
-		case GTK_ORIENTATION_HORIZONTAL:
+		case CTK_ORIENTATION_HORIZONTAL:
 			width = (icon_size / icon_scale * width) / height;
 			height = icon_size / icon_scale;
 			break;
-		case GTK_ORIENTATION_VERTICAL:
+		case CTK_ORIENTATION_VERTICAL:
 			height = (icon_size / icon_scale * height) / width;
 			width = icon_size / icon_scale;
 			break;
@@ -223,13 +223,13 @@ static void update_icon(ShowDesktopData* sdd)
 		cairo_scale (cr, (double) width / icon_size, (double) height / icon_size);
 		cairo_set_source_surface (cr, icon, 0, 0);
 		cairo_paint (cr);
-		ctk_image_set_from_surface (GTK_IMAGE(sdd->image), scaled);
+		ctk_image_set_from_surface (CTK_IMAGE(sdd->image), scaled);
 		cairo_destroy (cr);
 		cairo_surface_destroy (scaled);
 	}
 	else
 	{
-		ctk_image_set_from_surface (GTK_IMAGE (sdd->image), icon);
+		ctk_image_set_from_surface (CTK_IMAGE (sdd->image), icon);
 	}
 
 	cairo_surface_destroy (icon);
@@ -261,7 +261,7 @@ static void update_button_display(ShowDesktopData* sdd)
 {
 	const char* tip;
 
-	if (ctk_toggle_button_get_active(GTK_TOGGLE_BUTTON(sdd->button)))
+	if (ctk_toggle_button_get_active(CTK_TOGGLE_BUTTON(sdd->button)))
 	{
 		tip = _("Click here to restore hidden windows.");
 	}
@@ -278,13 +278,13 @@ static void update_button_state(ShowDesktopData* sdd)
 	if (sdd->showing_desktop)
 	{
 		g_signal_handlers_block_by_func(G_OBJECT(sdd->button), G_CALLBACK(button_toggled_callback), sdd);
-		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(sdd->button), TRUE);
+		ctk_toggle_button_set_active(CTK_TOGGLE_BUTTON(sdd->button), TRUE);
 		g_signal_handlers_unblock_by_func(G_OBJECT(sdd->button), G_CALLBACK(button_toggled_callback), sdd);
 	}
 	else
 	{
 		g_signal_handlers_block_by_func(G_OBJECT(sdd->button), G_CALLBACK(button_toggled_callback), sdd);
-		ctk_toggle_button_set_active(GTK_TOGGLE_BUTTON(sdd->button), FALSE);
+		ctk_toggle_button_set_active(CTK_TOGGLE_BUTTON(sdd->button), FALSE);
 		g_signal_handlers_unblock_by_func(G_OBJECT(sdd->button), G_CALLBACK(button_toggled_callback), sdd);
 	}
 
@@ -399,7 +399,7 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 
 	sdd = g_new0(ShowDesktopData, 1);
 
-	sdd->applet = GTK_WIDGET(applet);
+	sdd->applet = CTK_WIDGET(applet);
 
 	sdd->image = ctk_image_new();
 
@@ -407,12 +407,12 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 	{
 		case CAFE_PANEL_APPLET_ORIENT_LEFT:
 		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
-			sdd->orient = GTK_ORIENTATION_VERTICAL;
+			sdd->orient = CTK_ORIENTATION_VERTICAL;
 			break;
 		case CAFE_PANEL_APPLET_ORIENT_UP:
 		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		default:
-			sdd->orient = GTK_ORIENTATION_HORIZONTAL;
+			sdd->orient = CTK_ORIENTATION_HORIZONTAL;
 			break;
 	}
 
@@ -426,14 +426,14 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
     provider = ctk_css_provider_new ();
 	ctk_css_provider_load_from_data (provider,
 					 "#showdesktop-button {\n"
-                     "border-width: 0px; \n" /*a border here causes GTK warnings */
+                     "border-width: 0px; \n" /*a border here causes CTK warnings */
 					 " padding: 0px;\n"
 					 " margin: 0px; }",
 					 -1, NULL);
 
 	ctk_style_context_add_provider (ctk_widget_get_style_context (sdd->button),
-					GTK_STYLE_PROVIDER (provider),
-					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+					CTK_STYLE_PROVIDER (provider),
+					CTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 					g_object_unref (provider);
 
 	atk_obj = ctk_widget_get_accessible(sdd->button);
@@ -442,9 +442,9 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 
 	g_signal_connect(G_OBJECT(sdd->button), "toggled", G_CALLBACK(button_toggled_callback), sdd);
 
-	ctk_container_set_border_width(GTK_CONTAINER(sdd->button), 0);
-	ctk_container_add(GTK_CONTAINER(sdd->button), sdd->image);
-	ctk_container_add(GTK_CONTAINER(sdd->applet), sdd->button);
+	ctk_container_set_border_width(CTK_CONTAINER(sdd->button), 0);
+	ctk_container_add(CTK_CONTAINER(sdd->button), sdd->image);
+	ctk_container_add(CTK_CONTAINER(sdd->applet), sdd->button);
 
 	g_signal_connect (G_OBJECT(sdd->button), "size_allocate", G_CALLBACK(button_size_allocated), sdd);
 
@@ -454,7 +454,7 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 	   initial oriantation, and we get that during the _add call */
 	g_signal_connect(G_OBJECT (sdd->applet), "change_orient", G_CALLBACK (applet_change_orient), sdd);
 
-	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET (sdd->applet), GTK_WIDGET(sdd->applet));
+	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET (sdd->applet), CTK_WIDGET(sdd->applet));
 
 	action_group = ctk_action_group_new("ShowDesktop Applet Actions");
 	ctk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
@@ -466,7 +466,7 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 
 	g_signal_connect(G_OBJECT(sdd->applet), "destroy", G_CALLBACK(applet_destroyed), sdd);
 
-	ctk_drag_dest_set(GTK_WIDGET(sdd->button), 0, NULL, 0, 0);
+	ctk_drag_dest_set(CTK_WIDGET(sdd->button), 0, NULL, 0, 0);
 
 	g_signal_connect(G_OBJECT(sdd->button), "drag_motion", G_CALLBACK (button_drag_motion), sdd);
 	g_signal_connect(G_OBJECT(sdd->button), "drag_leave", G_CALLBACK (button_drag_leave), sdd);
@@ -495,7 +495,7 @@ static void display_about_dialog(GtkAction* action, ShowDesktopData* sdd)
 		NULL
 	};
 
-	ctk_show_about_dialog(GTK_WINDOW(sdd->applet),
+	ctk_show_about_dialog(CTK_WINDOW(sdd->applet),
 		"program-name", _("Show Desktop Button"),
 		"title", _("About Show Desktop Button"),
 		"authors", authors,
@@ -523,25 +523,25 @@ static void button_toggled_callback(GtkWidget* button, ShowDesktopData* sdd)
 
 		if (dialog)
 		{
-			ctk_window_present(GTK_WINDOW(dialog));
+			ctk_window_present(CTK_WINDOW(dialog));
 			return;
 		}
 
-		dialog = ctk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _("Your window manager does not support the show desktop button, or you are not running a window manager."));
+		dialog = ctk_message_dialog_new(NULL, CTK_DIALOG_MODAL, CTK_MESSAGE_ERROR, CTK_BUTTONS_CLOSE, _("Your window manager does not support the show desktop button, or you are not running a window manager."));
 
 		g_object_add_weak_pointer(G_OBJECT(dialog), (gpointer) &dialog);
 
 		g_signal_connect(G_OBJECT(dialog), "response", G_CALLBACK(ctk_widget_destroy), NULL);
 
-		ctk_window_set_resizable(GTK_WINDOW(dialog), FALSE);
-		ctk_window_set_screen(GTK_WINDOW(dialog), ctk_widget_get_screen(button));
+		ctk_window_set_resizable(CTK_WINDOW(dialog), FALSE);
+		ctk_window_set_screen(CTK_WINDOW(dialog), ctk_widget_get_screen(button));
 		ctk_widget_show(dialog);
 
 		return;
 	}
 
 	if (sdd->wnck_screen != NULL)
-		wnck_screen_toggle_showing_desktop(sdd->wnck_screen, ctk_toggle_button_get_active(GTK_TOGGLE_BUTTON(button)));
+		wnck_screen_toggle_showing_desktop(sdd->wnck_screen, ctk_toggle_button_get_active(CTK_TOGGLE_BUTTON(button)));
 
 	update_button_display (sdd);
 }

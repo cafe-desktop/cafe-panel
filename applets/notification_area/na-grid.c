@@ -64,7 +64,7 @@ enum
   PROP_ICON_SIZE
 };
 
-G_DEFINE_TYPE (NaGrid, na_grid, GTK_TYPE_GRID)
+G_DEFINE_TYPE (NaGrid, na_grid, CTK_TYPE_GRID)
 
 static gint
 compare_items (gconstpointer a,
@@ -101,7 +101,7 @@ sort_items (GtkWidget *item,
   gint col, row, left_attach, top_attach;
 
   /* row / col number depends on whether we are horizontal or vertical */
-  if (data->orientation == GTK_ORIENTATION_HORIZONTAL)
+  if (data->orientation == CTK_ORIENTATION_HORIZONTAL)
     {
       col = data->index / data->grid->rows;
       row = data->index % data->grid->rows;
@@ -113,7 +113,7 @@ sort_items (GtkWidget *item,
     }
 
   /* only update item position if it has changed from current */
-  ctk_container_child_get (GTK_CONTAINER (data->grid),
+  ctk_container_child_get (CTK_CONTAINER (data->grid),
                            item,
                            "left-attach", &left_attach,
                            "top-attach", &top_attach,
@@ -121,7 +121,7 @@ sort_items (GtkWidget *item,
 
   if (left_attach != col || top_attach != row)
     {
-      ctk_container_child_set (GTK_CONTAINER (data->grid),
+      ctk_container_child_set (CTK_CONTAINER (data->grid),
                                item,
                                "left-attach", col,
                                "top-attach", row,
@@ -139,14 +139,14 @@ refresh_grid (NaGrid *self)
   GtkAllocation allocation;
   gint rows, cols, length;
 
-  orientation = ctk_orientable_get_orientation (GTK_ORIENTABLE (self));
-  ctk_widget_get_allocation (GTK_WIDGET (self), &allocation);
+  orientation = ctk_orientable_get_orientation (CTK_ORIENTABLE (self));
+  ctk_widget_get_allocation (CTK_WIDGET (self), &allocation);
   length = g_slist_length (self->items);
 
-  if (orientation == GTK_ORIENTATION_HORIZONTAL)
+  if (orientation == CTK_ORIENTATION_HORIZONTAL)
     {
-      ctk_grid_set_row_homogeneous (GTK_GRID (self), TRUE);
-      ctk_grid_set_column_homogeneous (GTK_GRID (self), FALSE);
+      ctk_grid_set_row_homogeneous (CTK_GRID (self), TRUE);
+      ctk_grid_set_column_homogeneous (CTK_GRID (self), FALSE);
       rows = MAX (1, allocation.height / self->min_icon_size);
       cols = MAX (1, length / rows);
       if (length % rows)
@@ -154,8 +154,8 @@ refresh_grid (NaGrid *self)
     }
   else
     {
-      ctk_grid_set_row_homogeneous (GTK_GRID (self), FALSE);
-      ctk_grid_set_column_homogeneous (GTK_GRID (self), TRUE);
+      ctk_grid_set_row_homogeneous (CTK_GRID (self), FALSE);
+      ctk_grid_set_column_homogeneous (CTK_GRID (self), TRUE);
       cols = MAX (1, allocation.width / self->min_icon_size);
       rows = MAX (1, length / cols);
       if (length % cols)
@@ -169,7 +169,7 @@ refresh_grid (NaGrid *self)
       self->length = length;
 
       SortData data;
-      data.orientation = ctk_orientable_get_orientation (GTK_ORIENTABLE (self));
+      data.orientation = ctk_orientable_get_orientation (CTK_ORIENTABLE (self));
       data.index = 0;
       data.grid = self;
 
@@ -205,10 +205,10 @@ item_added_cb (NaHost *host,
 
   self->items = g_slist_prepend (self->items, item);
 
-  ctk_widget_set_hexpand (GTK_WIDGET (item), TRUE);
-  ctk_widget_set_vexpand (GTK_WIDGET (item), TRUE);
-  ctk_grid_attach (GTK_GRID (self),
-                   GTK_WIDGET (item),
+  ctk_widget_set_hexpand (CTK_WIDGET (item), TRUE);
+  ctk_widget_set_vexpand (CTK_WIDGET (item), TRUE);
+  ctk_grid_attach (CTK_GRID (self),
+                   CTK_WIDGET (item),
                    self->cols - 1,
                    self->rows - 1,
                    1, 1);
@@ -226,7 +226,7 @@ item_removed_cb (NaHost *host,
   g_return_if_fail (NA_IS_ITEM (item));
   g_return_if_fail (NA_IS_GRID (self));
 
-  ctk_container_remove (GTK_CONTAINER (self), GTK_WIDGET (item));
+  ctk_container_remove (CTK_CONTAINER (self), CTK_WIDGET (item));
   self->items = g_slist_remove (self->items, item);
   refresh_grid (self);
 }
@@ -245,8 +245,8 @@ na_grid_init (NaGrid *self)
   self->hosts = NULL;
   self->items = NULL;
 
-  ctk_grid_set_row_homogeneous (GTK_GRID (self), TRUE);
-  ctk_grid_set_column_homogeneous (GTK_GRID (self), TRUE);
+  ctk_grid_set_row_homogeneous (CTK_GRID (self), TRUE);
+  ctk_grid_set_column_homogeneous (CTK_GRID (self), TRUE);
 
 }
 
@@ -274,8 +274,8 @@ na_grid_style_updated (GtkWidget *widget)
   GtkStyleContext *context;
   GSList          *node;
 
-  if (GTK_WIDGET_CLASS (na_grid_parent_class)->style_updated)
-    GTK_WIDGET_CLASS (na_grid_parent_class)->style_updated (widget);
+  if (CTK_WIDGET_CLASS (na_grid_parent_class)->style_updated)
+    CTK_WIDGET_CLASS (na_grid_parent_class)->style_updated (widget);
 
   context = ctk_widget_get_style_context (widget);
 
@@ -293,7 +293,7 @@ na_grid_draw (GtkWidget *grid,
               cairo_t   *cr)
 {
   GList *child;
-  GList *children = ctk_container_get_children (GTK_CONTAINER (grid));
+  GList *children = ctk_container_get_children (CTK_CONTAINER (grid));
 
   for (child = children; child; child = child->next)
     {
@@ -302,7 +302,7 @@ na_grid_draw (GtkWidget *grid,
 	{
 	  if (ctk_widget_is_drawable (child->data) &&
 	      ctk_cairo_should_draw_window (cr, ctk_widget_get_window (child->data)))
-	    ctk_container_propagate_draw (GTK_CONTAINER (grid), child->data, cr);
+	    ctk_container_propagate_draw (CTK_CONTAINER (grid), child->data, cr);
 	}
     }
 
@@ -319,11 +319,11 @@ na_grid_realize (GtkWidget *widget)
   GtkOrientation orientation;
   NaHost *tray_host;
 
-  GTK_WIDGET_CLASS (na_grid_parent_class)->realize (widget);
+  CTK_WIDGET_CLASS (na_grid_parent_class)->realize (widget);
 
   /* Instantiate the hosts now we have a screen */
-  screen = ctk_widget_get_screen (GTK_WIDGET (self));
-  orientation = ctk_orientable_get_orientation (GTK_ORIENTABLE (self));
+  screen = ctk_widget_get_screen (CTK_WIDGET (self));
+  orientation = ctk_orientable_get_orientation (CTK_ORIENTABLE (self));
   tray_host = na_tray_new_for_screen (screen, orientation);
   g_object_bind_property (self, "orientation",
                           tray_host, "orientation",
@@ -346,14 +346,14 @@ na_grid_unrealize (GtkWidget *widget)
 
   g_clear_pointer (&self->items, g_slist_free);
 
-  GTK_WIDGET_CLASS (na_grid_parent_class)->unrealize (widget);
+  CTK_WIDGET_CLASS (na_grid_parent_class)->unrealize (widget);
 }
 
 static void
 na_grid_size_allocate (GtkWidget     *widget,
                        GtkAllocation *allocation)
 {
-  GTK_WIDGET_CLASS (na_grid_parent_class)->size_allocate (widget, allocation);
+  CTK_WIDGET_CLASS (na_grid_parent_class)->size_allocate (widget, allocation);
   refresh_grid (NA_GRID (widget));
 }
 
@@ -409,7 +409,7 @@ static void
 na_grid_class_init (NaGridClass *klass)
 {
   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
-  GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+  GtkWidgetClass *widget_class = CTK_WIDGET_CLASS (klass);
 
   gobject_class->get_property = na_grid_get_property;
   gobject_class->set_property = na_grid_set_property;

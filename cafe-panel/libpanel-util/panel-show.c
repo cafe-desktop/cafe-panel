@@ -115,7 +115,7 @@ static gboolean _panel_show_handle_error(const gchar* uri, GdkScreen* screen, GE
 
 		/* If it's not mounted, try to mount it ourselves */
 		handle->mount_op = ctk_mount_operation_new (NULL);
-		ctk_mount_operation_set_screen (GTK_MOUNT_OPERATION (handle->mount_op),
+		ctk_mount_operation_set_screen (CTK_MOUNT_OPERATION (handle->mount_op),
 						screen);
 		handle->screen = screen;
 

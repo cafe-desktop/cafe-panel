@@ -93,8 +93,8 @@ struct _PanelDesktopMenuItemPrivate {
 	guint        append_lock_logout : 1;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (PanelPlaceMenuItem, panel_place_menu_item, GTK_TYPE_IMAGE_MENU_ITEM)
-G_DEFINE_TYPE_WITH_PRIVATE (PanelDesktopMenuItem, panel_desktop_menu_item, GTK_TYPE_IMAGE_MENU_ITEM)
+G_DEFINE_TYPE_WITH_PRIVATE (PanelPlaceMenuItem, panel_place_menu_item, CTK_TYPE_IMAGE_MENU_ITEM)
+G_DEFINE_TYPE_WITH_PRIVATE (PanelDesktopMenuItem, panel_desktop_menu_item, CTK_TYPE_IMAGE_MENU_ITEM)
 
 static void activate_uri_on_screen(const char* uri, GdkScreen* screen)
 {
@@ -245,7 +245,7 @@ panel_menu_items_append_from_desktop (GtkWidget *menu,
 
 	panel_util_set_tooltip_text (item, comment);
 
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 	g_signal_connect_data (item, "activate",
 			       G_CALLBACK (panel_menu_item_activate_desktop_file),
 			       g_strdup (full_path),
@@ -293,7 +293,7 @@ panel_menu_items_append_place_item (const char *icon_name,
 
 	panel_util_set_tooltip_text (item, tooltip);
 
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 
 	user_data = g_strdup (uri);
 	g_signal_connect_data (item, "activate", callback, user_data,
@@ -466,11 +466,11 @@ panel_place_menu_item_append_ctk_bookmarks (GtkWidget *menu, guint max_items_or_
 					  NULL, PANEL_ICON_BOOKMARKS,
 					  _("Bookmarks"));
 
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 		ctk_widget_show (item);
 
 		add_menu = create_empty_menu ();
-		ctk_menu_item_set_submenu (GTK_MENU_ITEM (item), add_menu);
+		ctk_menu_item_set_submenu (CTK_MENU_ITEM (item), add_menu);
 	}
 
 	for (l = add_bookmarks; l; l = l->next) {
@@ -607,7 +607,7 @@ panel_menu_item_append_drive (GtkWidget *menu,
 
 	g_free (title);
 
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 
 	g_signal_connect_data (item, "activate",
 			       G_CALLBACK (panel_menu_item_rescan_drive),
@@ -675,7 +675,7 @@ panel_menu_item_mount_volume (GtkWidget *menuitem,
 	mount_data = g_slice_new (PanelVolumeMountData);
 	mount_data->screen = menuitem_to_screen (menuitem);
 	mount_data->mount_op = ctk_mount_operation_new (NULL);
-	ctk_mount_operation_set_screen (GTK_MOUNT_OPERATION (mount_data->mount_op),
+	ctk_mount_operation_set_screen (CTK_MOUNT_OPERATION (mount_data->mount_op),
 					mount_data->screen);
 
 	g_volume_mount (volume, G_MOUNT_MOUNT_NONE, mount_data->mount_op, NULL,
@@ -707,7 +707,7 @@ panel_menu_item_append_volume (GtkWidget *menu,
 
 	g_free (title);
 
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 
 	g_signal_connect_data (item, "activate",
 			       G_CALLBACK (panel_menu_item_mount_volume),
@@ -911,11 +911,11 @@ panel_place_menu_item_append_local_gio (PanelPlaceMenuItem *place_item,
 					  PANEL_ICON_REMOVABLE_MEDIA,
 					   _("Removable Media"));
 
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 		ctk_widget_show (item);
 
 		add_menu = create_empty_menu ();
-		ctk_menu_item_set_submenu (GTK_MENU_ITEM (item), add_menu);
+		ctk_menu_item_set_submenu (CTK_MENU_ITEM (item), add_menu);
 	}
 
 	for (sl = items; sl; sl = sl->next) {
@@ -998,11 +998,11 @@ panel_place_menu_item_append_remote_gio (PanelPlaceMenuItem *place_item,
 					  PANEL_ICON_NETWORK_SERVER,
 					  _("Network Places"));
 
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 		ctk_widget_show (item);
 
 		add_menu = create_empty_menu ();
-		ctk_menu_item_set_submenu (GTK_MENU_ITEM (item), add_menu);
+		ctk_menu_item_set_submenu (CTK_MENU_ITEM (item), add_menu);
 	}
 
 	for (sl = add_mounts; sl; sl = sl->next) {
@@ -1103,7 +1103,7 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 	    panel_is_program_in_path ("nemo-connect-server")) {
 		item = panel_menu_items_create_action_item (PANEL_ACTION_CONNECT_SERVER);
 		if (item != NULL)
-			ctk_menu_shell_append (GTK_MENU_SHELL (places_menu),
+			ctk_menu_shell_append (CTK_MENU_SHELL (places_menu),
 					       item);
 	}
 
@@ -1124,9 +1124,9 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 					    place_item->priv->recent_manager);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
 	GtkWidget *toplevel = ctk_widget_get_toplevel (places_menu);
-	GdkScreen *screen = ctk_widget_get_screen(GTK_WIDGET(toplevel));
+	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
-	ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 
 	return places_menu;
 }
@@ -1136,7 +1136,7 @@ panel_place_menu_item_recreate_menu (GtkWidget *widget)
 {
 	PanelPlaceMenuItem *place_item;
 
-	if (!GTK_IS_WIDGET (widget))
+	if (!CTK_IS_WIDGET (widget))
 		return;
 
 	place_item = PANEL_PLACE_MENU_ITEM (widget);
@@ -1144,9 +1144,9 @@ panel_place_menu_item_recreate_menu (GtkWidget *widget)
 	if (place_item->priv->menu) {
 		ctk_widget_destroy (place_item->priv->menu);
 		place_item->priv->menu = panel_place_menu_item_create_menu (place_item);
-		ctk_menu_item_set_submenu (GTK_MENU_ITEM (place_item),
+		ctk_menu_item_set_submenu (CTK_MENU_ITEM (place_item),
 					   place_item->priv->menu);
-		cafe_panel_applet_menu_set_recurse (GTK_MENU (place_item->priv->menu),
+		cafe_panel_applet_menu_set_recurse (CTK_MENU (place_item->priv->menu),
 					       "menu_panel",
 					       place_item->priv->panel);
 	}
@@ -1167,7 +1167,7 @@ panel_place_menu_item_ctk_bookmarks_changed (GFileMonitor *handle,
 					     GFileMonitorEvent event,
 					     gpointer      user_data)
 {
-	panel_place_menu_item_recreate_menu (GTK_WIDGET (user_data));
+	panel_place_menu_item_recreate_menu (CTK_WIDGET (user_data));
 }
 
 static void
@@ -1206,11 +1206,11 @@ panel_desktop_menu_item_append_menu (GtkWidget *menu,
 	parent = PANEL_DESKTOP_MENU_ITEM (data);
 
 	add_separator = FALSE;
-	children = ctk_container_get_children (GTK_CONTAINER (menu));
+	children = ctk_container_get_children (CTK_CONTAINER (menu));
 	last = g_list_last (children);
 
 	if (last != NULL)
-		add_separator = !GTK_IS_SEPARATOR (GTK_WIDGET (last->data));
+		add_separator = !CTK_IS_SEPARATOR (CTK_WIDGET (last->data));
 
 	g_list_free (children);
 
@@ -1248,9 +1248,9 @@ panel_desktop_menu_item_recreate_menu (PanelDesktopMenuItem *desktop_item)
 	if (desktop_item->priv->menu) {
 		ctk_widget_destroy (desktop_item->priv->menu);
 		desktop_item->priv->menu = panel_desktop_menu_item_create_menu (desktop_item);
-		ctk_menu_item_set_submenu (GTK_MENU_ITEM (desktop_item),
+		ctk_menu_item_set_submenu (CTK_MENU_ITEM (desktop_item),
 					   desktop_item->priv->menu);
-		cafe_panel_applet_menu_set_recurse (GTK_MENU (desktop_item->priv->menu),
+		cafe_panel_applet_menu_set_recurse (CTK_MENU (desktop_item->priv->menu),
 					       "menu_panel",
 					       desktop_item->priv->panel);
 	}
@@ -1486,14 +1486,14 @@ GtkWidget* panel_place_menu_item_new(gboolean use_image)
 		image = NULL;
 	}
 
-	setup_menuitem(GTK_WIDGET(menuitem), image ? panel_menu_icon_get_size() : GTK_ICON_SIZE_INVALID, image, _("Places"));
+	setup_menuitem(CTK_WIDGET(menuitem), image ? panel_menu_icon_get_size() : CTK_ICON_SIZE_INVALID, image, _("Places"));
 
 	menuitem->priv->use_image = use_image;
 
 	menuitem->priv->menu = panel_place_menu_item_create_menu(menuitem);
-	ctk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menuitem->priv->menu);
+	ctk_menu_item_set_submenu(CTK_MENU_ITEM(menuitem), menuitem->priv->menu);
 
-	return GTK_WIDGET(menuitem);
+	return CTK_WIDGET(menuitem);
 }
 
 GtkWidget *
@@ -1511,8 +1511,8 @@ panel_desktop_menu_item_new (gboolean use_image,
 	else
 		image = NULL;
 
-	setup_menuitem (GTK_WIDGET (menuitem),
-			image ? panel_menu_icon_get_size () : GTK_ICON_SIZE_INVALID,
+	setup_menuitem (CTK_WIDGET (menuitem),
+			image ? panel_menu_icon_get_size () : CTK_ICON_SIZE_INVALID,
 			image,
 			_("System"));
 
@@ -1524,10 +1524,10 @@ panel_desktop_menu_item_new (gboolean use_image,
 					   menuitem);
 
 	menuitem->priv->menu = panel_desktop_menu_item_create_menu (menuitem);
-	ctk_menu_item_set_submenu (GTK_MENU_ITEM (menuitem),
+	ctk_menu_item_set_submenu (CTK_MENU_ITEM (menuitem),
 				   menuitem->priv->menu);
 
-	return GTK_WIDGET (menuitem);
+	return CTK_WIDGET (menuitem);
 }
 
 void
@@ -1539,7 +1539,7 @@ panel_place_menu_item_set_panel (GtkWidget   *item,
 	place_item = PANEL_PLACE_MENU_ITEM (item);
 
 	place_item->priv->panel = panel;
-	cafe_panel_applet_menu_set_recurse (GTK_MENU (place_item->priv->menu),
+	cafe_panel_applet_menu_set_recurse (CTK_MENU (place_item->priv->menu),
 				       "menu_panel", panel);
 }
 
@@ -1552,7 +1552,7 @@ panel_desktop_menu_item_set_panel (GtkWidget   *item,
 	desktop_item = PANEL_DESKTOP_MENU_ITEM (item);
 
 	desktop_item->priv->panel = panel;
-	cafe_panel_applet_menu_set_recurse (GTK_MENU (desktop_item->priv->menu),
+	cafe_panel_applet_menu_set_recurse (CTK_MENU (desktop_item->priv->menu),
 				       "menu_panel", panel);
 }
 
@@ -1568,10 +1568,10 @@ panel_menu_items_append_lock_logout (GtkWidget *menu)
 	char       *tooltip;
 
 	separator_inserted = FALSE;
-	children = ctk_container_get_children (GTK_CONTAINER (menu));
+	children = ctk_container_get_children (CTK_CONTAINER (menu));
 	last = g_list_last (children);
 	if (last != NULL) {
-		separator_inserted = GTK_IS_SEPARATOR (GTK_WIDGET (last->data));
+		separator_inserted = CTK_IS_SEPARATOR (CTK_WIDGET (last->data));
 	}
 	g_list_free (children);
 
@@ -1587,7 +1587,7 @@ panel_menu_items_append_lock_logout (GtkWidget *menu)
 				separator_inserted = TRUE;
 			}
 
-			ctk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+			ctk_menu_shell_append(CTK_MENU_SHELL(menu), item);
 		}
 	}
 
@@ -1634,7 +1634,7 @@ panel_menu_items_append_lock_logout (GtkWidget *menu)
 			separator_inserted = TRUE;
 		}
 
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 	}
 
 	item = panel_menu_items_create_action_item (PANEL_ACTION_SHUTDOWN);
@@ -1642,7 +1642,7 @@ panel_menu_items_append_lock_logout (GtkWidget *menu)
 		if (!separator_inserted)
 			add_menu_separator (menu);
 
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 	}
 }
 

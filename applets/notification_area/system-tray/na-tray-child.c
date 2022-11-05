@@ -45,8 +45,8 @@ enum
 
 static void na_item_init (NaItemInterface *iface);
 
-G_DEFINE_TYPE_WITH_CODE (NaTrayChild, na_tray_child, GTK_TYPE_SOCKET,
-                         G_IMPLEMENT_INTERFACE (GTK_TYPE_ORIENTABLE, NULL)
+G_DEFINE_TYPE_WITH_CODE (NaTrayChild, na_tray_child, CTK_TYPE_SOCKET,
+                         G_IMPLEMENT_INTERFACE (CTK_TYPE_ORIENTABLE, NULL)
                          G_IMPLEMENT_INTERFACE (NA_TYPE_ITEM, na_item_init))
 
 static void
@@ -66,7 +66,7 @@ na_tray_child_realize (GtkWidget *widget)
   GdkVisual *visual = ctk_widget_get_visual (widget);
   GdkWindow *window;
 
-  GTK_WIDGET_CLASS (na_tray_child_parent_class)->realize (widget);
+  CTK_WIDGET_CLASS (na_tray_child_parent_class)->realize (widget);
 
   window = ctk_widget_get_window (widget);
 
@@ -99,7 +99,7 @@ na_tray_child_realize (GtkWidget *widget)
 
   gdk_window_set_composited (window, child->composited);
 
-  ctk_widget_set_app_paintable (GTK_WIDGET (child),
+  ctk_widget_set_app_paintable (CTK_WIDGET (child),
                                 child->parent_relative_bg || child->has_alpha);
 }
 
@@ -113,7 +113,7 @@ na_tray_child_style_set (GtkWidget *widget,
    */
 }
 
-#if !GTK_CHECK_VERSION (3, 23, 0)
+#if !CTK_CHECK_VERSION (3, 23, 0)
 static void
 na_tray_child_get_preferred_width (GtkWidget *widget,
                                    gint      *minimal_width,
@@ -121,7 +121,7 @@ na_tray_child_get_preferred_width (GtkWidget *widget,
 {
   gint scale;
   scale = ctk_widget_get_scale_factor (widget);
-  GTK_WIDGET_CLASS (na_tray_child_parent_class)->get_preferred_width (widget,
+  CTK_WIDGET_CLASS (na_tray_child_parent_class)->get_preferred_width (widget,
                                                                       minimal_width,
                                                                       natural_width);
 
@@ -142,7 +142,7 @@ na_tray_child_get_preferred_height (GtkWidget *widget,
 {
   gint scale;
   scale = ctk_widget_get_scale_factor (widget);
-  GTK_WIDGET_CLASS (na_tray_child_parent_class)->get_preferred_height (widget,
+  CTK_WIDGET_CLASS (na_tray_child_parent_class)->get_preferred_height (widget,
                                                                        minimal_height,
                                                                        natural_height);
 
@@ -207,7 +207,7 @@ na_tray_child_draw (GtkWidget *widget,
 /* Children with alpha channels have been set to be composited by calling
  * gdk_window_set_composited(). We need to paint these children ourselves.
  *
- * FIXME: is that still needed on GTK3?  Seems like it could be done in draw().
+ * FIXME: is that still needed on CTK3?  Seems like it could be done in draw().
  */
 static gboolean
 na_tray_child_draw_on_parent (NaItem    *item,
@@ -216,7 +216,7 @@ na_tray_child_draw_on_parent (NaItem    *item,
 {
   if (na_tray_child_has_alpha (NA_TRAY_CHILD (item)))
     {
-      GtkWidget    *widget = GTK_WIDGET (item);
+      GtkWidget    *widget = CTK_WIDGET (item);
       GtkAllocation parent_allocation = { 0 };
       GtkAllocation allocation;
 
@@ -253,7 +253,7 @@ na_tray_child_get_property (GObject    *object,
     {
       case PROP_ORIENTATION:
         /* whatever */
-        g_value_set_enum (value, GTK_ORIENTATION_HORIZONTAL);
+        g_value_set_enum (value, CTK_ORIENTATION_HORIZONTAL);
         break;
 
       default:
@@ -382,7 +382,7 @@ na_tray_child_class_init (NaTrayChildClass *klass)
 
   widget_class->style_set = na_tray_child_style_set;
   widget_class->realize = na_tray_child_realize;
-#if !GTK_CHECK_VERSION (3, 23, 0)
+#if !CTK_CHECK_VERSION (3, 23, 0)
   widget_class->get_preferred_width = na_tray_child_get_preferred_width;
   widget_class->get_preferred_height = na_tray_child_get_preferred_height;
 #endif
@@ -435,7 +435,7 @@ na_tray_child_new (GdkScreen *screen,
   child = g_object_new (NA_TYPE_TRAY_CHILD, NULL);
   child->icon_window = icon_window;
 
-  ctk_widget_set_visual (GTK_WIDGET (child), visual);
+  ctk_widget_set_visual (CTK_WIDGET (child), visual);
 
   /* We have alpha if the visual has something other than red, green,
    * and blue */
@@ -450,7 +450,7 @@ na_tray_child_new (GdkScreen *screen,
 
   child->composited = child->has_alpha;
 
-  return GTK_WIDGET (child);
+  return CTK_WIDGET (child);
 }
 
 char *
@@ -467,7 +467,7 @@ na_tray_child_get_title (NaTrayChild *child)
 
   g_return_val_if_fail (NA_IS_TRAY_CHILD (child), NULL);
 
-  display = ctk_widget_get_display (GTK_WIDGET (child));
+  display = ctk_widget_get_display (CTK_WIDGET (child));
 
   utf8_string = gdk_x11_get_xatom_by_name_for_display (display, "UTF8_STRING");
   atom = gdk_x11_get_xatom_by_name_for_display (display, "_NET_WM_NAME");
@@ -547,8 +547,8 @@ na_tray_child_set_composited (NaTrayChild *child,
     return;
 
   child->composited = composited;
-  if (ctk_widget_get_realized (GTK_WIDGET (child)))
-    gdk_window_set_composited (ctk_widget_get_window (GTK_WIDGET (child)),
+  if (ctk_widget_get_realized (CTK_WIDGET (child)))
+    gdk_window_set_composited (ctk_widget_get_window (CTK_WIDGET (child)),
                                composited);
 }
 
@@ -559,7 +559,7 @@ na_tray_child_set_composited (NaTrayChild *child,
 void
 na_tray_child_force_redraw (NaTrayChild *child)
 {
-  GtkWidget *widget = GTK_WIDGET (child);
+  GtkWidget *widget = CTK_WIDGET (child);
 
   if (ctk_widget_get_mapped (widget))
     {
@@ -650,7 +650,7 @@ na_tray_child_get_wm_class (NaTrayChild  *child,
 
   g_return_if_fail (NA_IS_TRAY_CHILD (child));
 
-  display = ctk_widget_get_display (GTK_WIDGET (child));
+  display = ctk_widget_get_display (CTK_WIDGET (child));
 
   _get_wmclass (GDK_DISPLAY_XDISPLAY (display),
                 child->icon_window,

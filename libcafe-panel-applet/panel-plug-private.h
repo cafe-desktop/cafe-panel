@@ -32,7 +32,7 @@
 G_BEGIN_DECLS
 
 /* G_DECLARE_FINAL_TYPE is available only since GLib 2.44,
- * but GTK+ 3.18 already requires 2.45.8, so we're safe.
+ * but CTK+ 3.18 already requires 2.45.8, so we're safe.
  */
 
 #define PANEL_TYPE_PLUG panel_plug_get_type ()

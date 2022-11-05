@@ -60,34 +60,34 @@ display_popup_window (GdkScreen *screen)
 	int            screen_width, screen_height;
 	GtkAllocation  allocation;
 
-	retval = ctk_window_new (GTK_WINDOW_POPUP);
+	retval = ctk_window_new (CTK_WINDOW_POPUP);
 	atk_object_set_role (ctk_widget_get_accessible (retval), ATK_ROLE_ALERT);
-	ctk_window_set_screen (GTK_WINDOW (retval), screen);
-	ctk_window_stick (GTK_WINDOW (retval));
+	ctk_window_set_screen (CTK_WINDOW (retval), screen);
+	ctk_window_stick (CTK_WINDOW (retval));
 	ctk_widget_add_events (retval, GDK_BUTTON_PRESS_MASK | GDK_KEY_PRESS_MASK);
 
 	frame = ctk_frame_new (NULL);
-	ctk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_ETCHED_IN);
-	ctk_container_add (GTK_CONTAINER (retval), frame);
+	ctk_frame_set_shadow_type (CTK_FRAME (frame), CTK_SHADOW_ETCHED_IN);
+	ctk_container_add (CTK_CONTAINER (retval), frame);
 	ctk_widget_show (frame);
 
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	ctk_container_set_border_width (GTK_CONTAINER (vbox), 8);
-	ctk_container_add (GTK_CONTAINER (frame), vbox);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
+	ctk_container_set_border_width (CTK_CONTAINER (vbox), 8);
+	ctk_container_add (CTK_CONTAINER (frame), vbox);
 	ctk_widget_show (vbox);
 
 	image = ctk_image_new_from_icon_name (PANEL_ICON_FORCE_QUIT,
-					      GTK_ICON_SIZE_DIALOG);
-	ctk_widget_set_halign (image, GTK_ALIGN_CENTER);
-	ctk_widget_set_valign (image, GTK_ALIGN_CENTER);
-	ctk_box_pack_start (GTK_BOX (vbox), image, TRUE, TRUE, 4);
+					      CTK_ICON_SIZE_DIALOG);
+	ctk_widget_set_halign (image, CTK_ALIGN_CENTER);
+	ctk_widget_set_valign (image, CTK_ALIGN_CENTER);
+	ctk_box_pack_start (CTK_BOX (vbox), image, TRUE, TRUE, 4);
 	ctk_widget_show (image);
 
 	label = ctk_label_new (_("Click on a window to force the application to quit. "
 				 "To cancel press <ESC>."));
-	ctk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-	ctk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_CENTER);
-	ctk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 4);
+	ctk_label_set_line_wrap (CTK_LABEL (label), TRUE);
+	ctk_label_set_justify (CTK_LABEL (label), CTK_JUSTIFY_CENTER);
+	ctk_box_pack_start (CTK_BOX (vbox), label, FALSE, FALSE, 4);
 	ctk_widget_show (label);
 
 	ctk_widget_realize (retval);
@@ -97,11 +97,11 @@ display_popup_window (GdkScreen *screen)
 
 	ctk_widget_get_allocation (retval, &allocation);
 
-	ctk_window_move (GTK_WINDOW (retval),
+	ctk_window_move (CTK_WINDOW (retval),
 			 (screen_width  - allocation.width) / 2,
 			 (screen_height - allocation.height) / 2);
 
-	ctk_widget_show (GTK_WIDGET (retval));
+	ctk_widget_show (CTK_WIDGET (retval));
 
 	return retval;
 }
@@ -114,7 +114,7 @@ remove_popup (GtkWidget *popup)
 	GdkSeat          *seat;
 
 	root = gdk_screen_get_root_window (
-			ctk_window_get_screen (GTK_WINDOW (popup)));
+			ctk_window_get_screen (CTK_WINDOW (popup)));
 	gdk_window_remove_filter (root, (GdkFilterFunc) popup_filter, popup);
 
 	ctk_widget_destroy (popup);
@@ -203,12 +203,12 @@ kill_window_response (GtkDialog *dialog,
 		      gint       response_id,
 		      gpointer   user_data)
 {
-	if (response_id == GTK_RESPONSE_ACCEPT) {
+	if (response_id == CTK_RESPONSE_ACCEPT) {
 		GdkDisplay *display;
 		Display *xdisplay;
 		Window window = (Window) user_data;
 
-		display = ctk_widget_get_display (GTK_WIDGET (dialog));
+		display = ctk_widget_get_display (CTK_WIDGET (dialog));
 		xdisplay = GDK_DISPLAY_XDISPLAY (display);
 
 		gdk_x11_display_error_trap_push (display);
@@ -217,7 +217,7 @@ kill_window_response (GtkDialog *dialog,
 		gdk_x11_display_error_trap_pop_ignored (display);
 	}
 
-	ctk_widget_destroy (GTK_WIDGET (dialog));
+	ctk_widget_destroy (CTK_WIDGET (dialog));
 }
 
 /* From marco */
@@ -227,27 +227,27 @@ kill_window_question (gpointer window)
 	GtkWidget *dialog;
 
 	dialog = ctk_message_dialog_new (NULL, 0,
-					 GTK_MESSAGE_WARNING,
-					 GTK_BUTTONS_NONE,
+					 CTK_MESSAGE_WARNING,
+					 CTK_BUTTONS_NONE,
 					 _("Force this application to exit?"));
 
-	ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+	ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 						  _("If you choose to force an application "
 						  "to exit, unsaved changes in any open documents "
 						  "in it might get lost."));
 
-	panel_dialog_add_button (GTK_DIALOG (dialog),
+	panel_dialog_add_button (CTK_DIALOG (dialog),
 				 _("_Cancel"), "process-stop",
-				 GTK_RESPONSE_CANCEL);
+				 CTK_RESPONSE_CANCEL);
 
-	ctk_dialog_add_button (GTK_DIALOG (dialog),
+	ctk_dialog_add_button (CTK_DIALOG (dialog),
 			       PANEL_STOCK_FORCE_QUIT,
-			       GTK_RESPONSE_ACCEPT);
+			       CTK_RESPONSE_ACCEPT);
 
-	ctk_dialog_set_default_response (GTK_DIALOG (dialog),
-					 GTK_RESPONSE_CANCEL);
-	ctk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
-	ctk_window_set_title (GTK_WINDOW (dialog), _("Force Quit"));
+	ctk_dialog_set_default_response (CTK_DIALOG (dialog),
+					 CTK_RESPONSE_CANCEL);
+	ctk_window_set_skip_taskbar_hint (CTK_WINDOW (dialog), FALSE);
+	ctk_window_set_title (CTK_WINDOW (dialog), _("Force Quit"));
 
 	g_signal_connect (dialog, "response",
 			  G_CALLBACK (kill_window_response), window);

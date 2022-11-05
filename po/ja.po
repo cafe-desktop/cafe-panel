@@ -2000,11 +2000,11 @@ msgstr "背景の種類"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:109
 msgid ""
 "Which type of background should be used for this panel. Possible values are "
-"\"none\" - the default GTK+ widget background will be used, \"color\" - the "
+"\"none\" - the default CTK+ widget background will be used, \"color\" - the "
 "color key will be used as background color or \"image\" - the image "
 "specified by the image key will be used as background."
 msgstr ""
-"このパネルに適用する背景の種類です。指定可能な値: \"none\" (デフォルトの GTK+ ウィジットの背景を使用する), \"color\" "
+"このパネルに適用する背景の種類です。指定可能な値: \"none\" (デフォルトの CTK+ ウィジットの背景を使用する), \"color\" "
 "(背景に指定した色を使用する), \"image\" (背景に指定した画像を使用する)"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:113

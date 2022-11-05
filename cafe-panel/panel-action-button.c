@@ -202,7 +202,7 @@ panel_action_lock_invoke_menu (PanelActionButton *button,
 	g_return_if_fail (PANEL_IS_ACTION_BUTTON (button));
 	g_return_if_fail (callback_name != NULL);
 
-	panel_lock_screen_action (ctk_widget_get_screen (GTK_WIDGET (button)),
+	panel_lock_screen_action (ctk_widget_get_screen (CTK_WIDGET (button)),
 				  callback_name);
 }
 
@@ -293,13 +293,13 @@ panel_action_force_quit (GtkWidget *widget)
 		return;
 	}
 #endif
-	flags = GTK_DIALOG_DESTROY_WITH_PARENT;
-	dialog = ctk_message_dialog_new (GTK_WINDOW (widget),
+	flags = CTK_DIALOG_DESTROY_WITH_PARENT;
+	dialog = ctk_message_dialog_new (CTK_WINDOW (widget),
 					 flags,
-					 GTK_MESSAGE_ERROR,
-					 GTK_BUTTONS_CLOSE,
+					 CTK_MESSAGE_ERROR,
+					 CTK_BUTTONS_CLOSE,
 					 "Force quit only available in X11");
-	ctk_dialog_run (GTK_DIALOG (dialog));
+	ctk_dialog_run (CTK_DIALOG (dialog));
 	ctk_widget_destroy (dialog);
 }
 
@@ -312,7 +312,7 @@ panel_action_connect_server (GtkWidget *widget)
 	char      *command;
 	GError    *error;
 
-	screen = ctk_widget_get_screen (GTK_WIDGET (widget));
+	screen = ctk_widget_get_screen (CTK_WIDGET (widget));
 	error = NULL;
 
 	if (panel_is_program_in_path ("caja-connect-server"))
@@ -603,14 +603,14 @@ panel_action_button_clicked (GtkButton *ctk_button)
 	if (panel_global_config_get_drawer_auto_close ()) {
 		PanelToplevel *toplevel;
 
-		toplevel = PANEL_WIDGET (ctk_widget_get_parent (GTK_WIDGET (button)))->toplevel;
+		toplevel = PANEL_WIDGET (ctk_widget_get_parent (CTK_WIDGET (button)))->toplevel;
 
 		if (panel_toplevel_get_is_attached (toplevel))
 			panel_toplevel_hide (toplevel, FALSE, -1);
 	}
 
 	if (actions [button->priv->type].invoke)
-		actions [button->priv->type].invoke (GTK_WIDGET (button));
+		actions [button->priv->type].invoke (CTK_WIDGET (button));
 }
 
 static void
@@ -676,9 +676,9 @@ panel_action_button_set_type (PanelActionButton     *button,
 	if (actions [type].icon_name != NULL)
 		button_widget_set_icon_name (BUTTON_WIDGET (button), actions [type].icon_name);
 
-	panel_util_set_tooltip_text (GTK_WIDGET (button),
+	panel_util_set_tooltip_text (CTK_WIDGET (button),
 				     _(actions [type].tooltip));
-	panel_a11y_set_atk_name_desc (GTK_WIDGET (button), _(actions [type].tooltip), NULL);
+	panel_a11y_set_atk_name_desc (CTK_WIDGET (button), _(actions [type].tooltip), NULL);
 
 	panel_action_button_update_sensitivity (button);
 }
@@ -738,12 +738,12 @@ panel_action_button_load (PanelActionButtonType  type,
 	button = g_object_new (PANEL_TYPE_ACTION_BUTTON, "action-type", type, NULL);
 
 
-	button->priv->info = cafe_panel_applet_register (GTK_WIDGET (button),
+	button->priv->info = cafe_panel_applet_register (CTK_WIDGET (button),
 						    NULL, NULL,
 						    panel, locked, position,
 						    exactpos, PANEL_OBJECT_ACTION, id);
 	if (!button->priv->info) {
-		ctk_widget_destroy (GTK_WIDGET (button));
+		ctk_widget_destroy (CTK_WIDGET (button));
 		return;
 	}
 
@@ -753,8 +753,8 @@ panel_action_button_load (PanelActionButtonType  type,
 				   _("_Help"),
 				   NULL);
 
-	panel_widget_set_applet_expandable (panel, GTK_WIDGET (button), FALSE, TRUE);
-	panel_widget_set_applet_size_constrained (panel, GTK_WIDGET (button), TRUE);
+	panel_widget_set_applet_expandable (panel, CTK_WIDGET (button), FALSE, TRUE);
+	panel_widget_set_applet_size_constrained (panel, CTK_WIDGET (button), TRUE);
 
 	if (actions [button->priv->type].setup_menu)
 		actions [button->priv->type].setup_menu (button);
@@ -828,7 +828,7 @@ panel_action_button_invoke_menu (PanelActionButton *button,
 		if (!actions [button->priv->type].help_index)
 			return;
 
-		screen = ctk_widget_get_screen (GTK_WIDGET (button));
+		screen = ctk_widget_get_screen (CTK_WIDGET (button));
 
 		panel_show_help (screen, "cafe-user-guide",
 				 actions [button->priv->type].help_index, NULL);
@@ -900,16 +900,16 @@ panel_action_button_set_dnd_enabled (PanelActionButton *button,
 			{ "application/x-cafe-panel-applet-internal", 0, 0 }
 		};
 
-		ctk_widget_set_has_window (GTK_WIDGET (button), TRUE);
-		ctk_drag_source_set (GTK_WIDGET (button), GDK_BUTTON1_MASK,
+		ctk_widget_set_has_window (CTK_WIDGET (button), TRUE);
+		ctk_drag_source_set (CTK_WIDGET (button), GDK_BUTTON1_MASK,
 				     dnd_targets, 1,
 				     GDK_ACTION_COPY | GDK_ACTION_MOVE);
 		if (actions [button->priv->type].icon_name != NULL)
-			ctk_drag_source_set_icon_name (GTK_WIDGET (button),
+			ctk_drag_source_set_icon_name (CTK_WIDGET (button),
 						       actions [button->priv->type].icon_name);
-		ctk_widget_set_has_window (GTK_WIDGET (button), FALSE);
+		ctk_widget_set_has_window (CTK_WIDGET (button), FALSE);
 	} else
-		ctk_drag_source_unset (GTK_WIDGET (button));
+		ctk_drag_source_unset (CTK_WIDGET (button));
 
 	button->priv->dnd_enabled = enabled;
 

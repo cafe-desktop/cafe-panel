@@ -15,7 +15,7 @@ AM_CPPFLAGS = \
 	-DCAFELOCALEDIR=\""$(datadir)/locale"\" \
 	-DPANELDATADIR=\""$(datadir)/cafe-panel"\" \
 	$(DISABLE_DEPRECATED_CFLAGS) \
-	$(GTK_LAYER_SHELL_CFLAGS)
+	$(CTK_LAYER_SHELL_CFLAGS)
 
 AM_CFLAGS = $(WARN_CFLAGS)
 
@@ -160,7 +160,7 @@ cafe_panel_LDADD = \
 	$(DCONF_LIBS) \
 	$(XRANDR_LIBS) \
 	$(X_LIBS) \
-	$(GTK_LAYER_SHELL_LIBS) \
+	$(CTK_LAYER_SHELL_LIBS) \
 	-lm
 
 if ENABLE_WAYLAND

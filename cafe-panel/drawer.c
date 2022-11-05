@@ -57,9 +57,9 @@ drawer_focus_panel_widget (Drawer           *drawer,
 
     panel_widget = panel_toplevel_get_panel_widget (drawer->toplevel);
 
-    ctk_window_present (GTK_WINDOW (drawer->toplevel));
-    ctk_container_set_focus_child (GTK_CONTAINER (panel_widget), NULL);
-    ctk_widget_child_focus (GTK_WIDGET (panel_widget), direction);
+    ctk_window_present (CTK_WINDOW (drawer->toplevel));
+    ctk_container_set_focus_child (CTK_CONTAINER (panel_widget), NULL);
+    ctk_widget_child_focus (CTK_WIDGET (panel_widget), direction);
 }
 
 static gboolean
@@ -78,9 +78,9 @@ key_press_drawer (GtkWidget   *widget,
     switch (event->keyval) {
     case GDK_KEY_Up:
     case GDK_KEY_KP_Up:
-        if (orient == GTK_ORIENTATION_HORIZONTAL) {
+        if (orient == CTK_ORIENTATION_HORIZONTAL) {
             if (!panel_toplevel_get_is_hidden (drawer->toplevel))
-                drawer_focus_panel_widget (drawer, GTK_DIR_TAB_BACKWARD);
+                drawer_focus_panel_widget (drawer, CTK_DIR_TAB_BACKWARD);
         } else {
             /* let default focus movement happen */
             retval = FALSE;
@@ -88,9 +88,9 @@ key_press_drawer (GtkWidget   *widget,
         break;
     case GDK_KEY_Left:
     case GDK_KEY_KP_Left:
-        if (orient == GTK_ORIENTATION_VERTICAL) {
+        if (orient == CTK_ORIENTATION_VERTICAL) {
             if (!panel_toplevel_get_is_hidden (drawer->toplevel))
-                drawer_focus_panel_widget (drawer, GTK_DIR_TAB_BACKWARD);
+                drawer_focus_panel_widget (drawer, CTK_DIR_TAB_BACKWARD);
         } else {
             /* let default focus movement happen */
             retval = FALSE;
@@ -98,9 +98,9 @@ key_press_drawer (GtkWidget   *widget,
         break;
     case GDK_KEY_Down:
     case GDK_KEY_KP_Down:
-        if (orient == GTK_ORIENTATION_HORIZONTAL) {
+        if (orient == CTK_ORIENTATION_HORIZONTAL) {
             if (!panel_toplevel_get_is_hidden (drawer->toplevel))
-                drawer_focus_panel_widget (drawer, GTK_DIR_TAB_FORWARD);
+                drawer_focus_panel_widget (drawer, CTK_DIR_TAB_FORWARD);
         } else {
             /* let default focus movement happen */
             retval = FALSE;
@@ -108,9 +108,9 @@ key_press_drawer (GtkWidget   *widget,
         break;
     case GDK_KEY_Right:
     case GDK_KEY_KP_Right:
-        if (orient == GTK_ORIENTATION_VERTICAL) {
+        if (orient == CTK_ORIENTATION_VERTICAL) {
             if (!panel_toplevel_get_is_hidden (drawer->toplevel))
-                drawer_focus_panel_widget (drawer, GTK_DIR_TAB_FORWARD);
+                drawer_focus_panel_widget (drawer, CTK_DIR_TAB_FORWARD);
         } else {
             /* let default focus movement happen */
             retval = FALSE;
@@ -144,7 +144,7 @@ key_press_drawer_widget (GtkWidget   *widget,
 
     panel_widget = panel_toplevel_get_panel_widget (drawer->toplevel);
 
-    ctk_window_present (GTK_WINDOW (panel_widget->toplevel));
+    ctk_window_present (CTK_WINDOW (panel_widget->toplevel));
 
     if ((event->state & ctk_accelerator_get_default_mod_mask ()) == GDK_SHIFT_MASK ||
         panel_toplevel_get_is_hidden (drawer->toplevel))
@@ -291,7 +291,7 @@ drawer_button_size_allocated (GtkWidget     *widget,
     if (!ctk_widget_get_realized (widget))
         return;
 
-    ctk_widget_queue_resize (GTK_WIDGET (drawer->toplevel));
+    ctk_widget_queue_resize (CTK_WIDGET (drawer->toplevel));
 
     g_object_set_data (G_OBJECT (widget), "allocated", GINT_TO_POINTER (TRUE));
 }
@@ -353,7 +353,7 @@ destroy_drawer (GtkWidget *widget,
                 Drawer    *drawer)
 {
     if (drawer->toplevel) {
-        ctk_widget_destroy (GTK_WIDGET (drawer->toplevel));
+        ctk_widget_destroy (CTK_WIDGET (drawer->toplevel));
         drawer->toplevel = NULL;
     }
 
@@ -368,7 +368,7 @@ drawer_deletion_response (GtkWidget   *dialog,
                           int          response,
                           Drawer      *drawer)
 {
-    if (response == GTK_RESPONSE_OK)
+    if (response == CTK_RESPONSE_OK)
         panel_profile_delete_object (drawer->info);
 
     ctk_widget_destroy (dialog);
@@ -463,7 +463,7 @@ create_drawer_applet (PanelToplevel    *toplevel,
 
     ctk_widget_show (drawer->button);
 
-    panel_toplevel_attach_to_widget (drawer->toplevel, parent_toplevel, GTK_WIDGET (drawer->button));
+    panel_toplevel_attach_to_widget (drawer->toplevel, parent_toplevel, CTK_WIDGET (drawer->button));
 
     return drawer;
 }
@@ -534,15 +534,15 @@ load_drawer_applet (char          *toplevel_id,
                                           PANEL_OBJECT_DRAWER, id);
 
     if (!drawer->info) {
-        ctk_widget_destroy (GTK_WIDGET (toplevel));
+        ctk_widget_destroy (CTK_WIDGET (toplevel));
         return;
     }
 
     g_signal_connect_after (drawer->button, "size_allocate", G_CALLBACK (drawer_button_size_allocated), drawer);
 
     panel_widget_add_forbidden (panel_toplevel_get_panel_widget (drawer->toplevel));
-    panel_widget_set_applet_expandable (panel_widget, GTK_WIDGET (drawer->button), FALSE, TRUE);
-    panel_widget_set_applet_size_constrained (panel_widget, GTK_WIDGET (drawer->button), TRUE);
+    panel_widget_set_applet_expandable (panel_widget, CTK_WIDGET (drawer->button), FALSE, TRUE);
+    panel_widget_set_applet_size_constrained (panel_widget, CTK_WIDGET (drawer->button), TRUE);
 
     cafe_panel_applet_add_callback (drawer->info,
                                "add",

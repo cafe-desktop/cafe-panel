@@ -103,7 +103,7 @@ static void
 checkbox_status (GtkCheckMenuItem *menuitem,
 		 AppletInfo       *info)
 {
-	checkbox_id = GTK_CHECK_MENU_ITEM (menuitem);
+	checkbox_id = CTK_CHECK_MENU_ITEM (menuitem);
 }
 
 static void
@@ -192,7 +192,7 @@ cafe_panel_applet_locked_change_notify (GSettings *settings,
 	AppletInfo  *info;
 	PanelWidget *panel_widget;
 
-	if (applet == NULL || !GTK_IS_WIDGET (applet))
+	if (applet == NULL || !CTK_IS_WIDGET (applet))
 		return;
 
 	info = (AppletInfo  *) g_object_get_data (G_OBJECT (applet),
@@ -235,7 +235,7 @@ applet_user_menu_get_screen (AppletUserMenu *menu)
 
 	panel_widget = cafe_panel_applet_get_panel_widget (menu->info);
 
-	return ctk_window_get_screen (GTK_WINDOW (panel_widget->toplevel));
+	return ctk_window_get_screen (CTK_WINDOW (panel_widget->toplevel));
 }
 
 static void
@@ -264,7 +264,7 @@ applet_callback_callback (GtkWidget      *widget,
 		if (strcmp (menu->name, "add") == 0) {
 			Drawer *drawer = menu->info->data;
 
-			panel_addto_present (GTK_MENU_ITEM (widget),
+			panel_addto_present (CTK_MENU_ITEM (widget),
 					     panel_toplevel_get_panel_widget (drawer->toplevel));
 		} else if (strcmp (menu->name, "properties") == 0) {
 			Drawer *drawer = menu->info->data;
@@ -400,7 +400,7 @@ setup_an_item (AppletUserMenu *menu,
 			  &menu->menuitem);
 
 	if(submenu)
-		ctk_menu_shell_append (GTK_MENU_SHELL (submenu), menu->menuitem);
+		ctk_menu_shell_append (CTK_MENU_SHELL (submenu), menu->menuitem);
 
 	/*if an item not a submenu*/
 	if (!is_submenu) {
@@ -417,7 +417,7 @@ setup_an_item (AppletUserMenu *menu,
 	}
 
 	if(menu->submenu) {
-		ctk_menu_item_set_submenu(GTK_MENU_ITEM(menu->menuitem),
+		ctk_menu_item_set_submenu(CTK_MENU_ITEM(menu->menuitem),
 					  menu->submenu);
 		g_signal_connect (G_OBJECT (menu->submenu), "destroy",
 				    G_CALLBACK (ctk_widget_destroyed),
@@ -505,7 +505,7 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 
 	menu = g_object_ref_sink (ctk_menu_new ());
 
-	ctk_menu_set_reserve_toggle_size (GTK_MENU (menu), FALSE);
+	ctk_menu_set_reserve_toggle_size (CTK_MENU (menu), FALSE);
 
 	/* connect the show & deactivate signal, so that we can "disallow" and
 	 * "re-allow" autohide when the menu is shown/deactivated.
@@ -541,7 +541,7 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 
 		if (added_anything) {
 			menuitem = ctk_separator_menu_item_new ();
-			ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+			ctk_menu_shell_append (CTK_MENU_SHELL (menu), menuitem);
 			ctk_widget_show (menuitem);
 		}
 
@@ -550,7 +550,7 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 		g_signal_connect (menuitem, "activate",
 				  G_CALLBACK (applet_remove_callback), info);
 		ctk_widget_show (menuitem);
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), menuitem);
 		ctk_widget_set_sensitive (menuitem, (!locked || lockable) && removable);
 
 		menuitem = panel_image_menu_item_new_from_icon (NULL, _("_Move"));
@@ -558,7 +558,7 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 		g_signal_connect (menuitem, "activate",
 				  G_CALLBACK (move_applet_callback), info);
 		ctk_widget_show (menuitem);
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), menuitem);
 		ctk_widget_set_sensitive (menuitem, !locked && movable);
 
 		g_assert (info->move_item == NULL);
@@ -568,12 +568,12 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 					   (gpointer *) &info->move_item);
 
 		menuitem = ctk_separator_menu_item_new ();
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), menuitem);
 		ctk_widget_show (menuitem);
 
 		menuitem = ctk_check_menu_item_new_with_mnemonic (_("Loc_k To Panel"));
 
-		ctk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (menuitem),
+		ctk_check_menu_item_set_active (CTK_CHECK_MENU_ITEM (menuitem),
 						locked);
 
 		g_signal_connect (menuitem, "map",
@@ -586,7 +586,7 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 
 		ctk_widget_show (menuitem);
 
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), menuitem);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), menuitem);
 		ctk_widget_set_sensitive (menuitem, lockable);
 
 		added_anything = TRUE;
@@ -600,12 +600,12 @@ cafe_panel_applet_create_menu (AppletInfo *info)
 /* Set up theme and transparency support */
 	GtkWidget *toplevel = ctk_widget_get_toplevel (menu);
 /* Fix any failures of compiz/other wm's to communicate with ctk for transparency */
-	GdkScreen *screen = ctk_widget_get_screen(GTK_WIDGET(toplevel));
+	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
-	ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 /* Set menu and it's toplevel window to follow panel theme */
 	GtkStyleContext *context;
-	context = ctk_widget_get_style_context (GTK_WIDGET(toplevel));
+	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
 
@@ -622,14 +622,14 @@ cafe_panel_applet_menu_set_recurse (GtkMenu     *menu,
 
 	g_object_set_data (G_OBJECT (menu), key, data);
 
-	children = ctk_container_get_children (GTK_CONTAINER (menu));
+	children = ctk_container_get_children (CTK_CONTAINER (menu));
 
 	for (l = children; l; l = l->next) {
-		GtkWidget *submenu = ctk_menu_item_get_submenu (GTK_MENU_ITEM (l->data));
+		GtkWidget *submenu = ctk_menu_item_get_submenu (CTK_MENU_ITEM (l->data));
 
 		if (submenu)
 			cafe_panel_applet_menu_set_recurse (
-				GTK_MENU (submenu), key, data);
+				CTK_MENU (submenu), key, data);
 	}
 
 	g_list_free (children);
@@ -651,17 +651,17 @@ applet_show_menu (AppletInfo     *info,
 	if (info->menu == NULL)
 		return;
 
-	cafe_panel_applet_menu_set_recurse (GTK_MENU (info->menu),
+	cafe_panel_applet_menu_set_recurse (CTK_MENU (info->menu),
 				       "menu_panel",
 				       panel_widget);
 
-	ctk_menu_set_screen (GTK_MENU (info->menu),
-			     ctk_window_get_screen (GTK_WINDOW (panel_widget->toplevel)));
+	ctk_menu_set_screen (CTK_MENU (info->menu),
+			     ctk_window_get_screen (CTK_WINDOW (panel_widget->toplevel)));
 
 	if (!ctk_widget_get_realized (info->menu))
 		ctk_widget_show (info->menu);
 
-	ctk_menu_popup_at_pointer (GTK_MENU (info->menu), NULL);
+	ctk_menu_popup_at_pointer (CTK_MENU (info->menu), NULL);
 }
 
 static gboolean
@@ -742,7 +742,7 @@ cafe_panel_applet_destroy (GtkWidget  *widget,
 							drawer->toplevel);
 			panel_widget->master_widget = NULL;
 
-			ctk_widget_destroy (GTK_WIDGET (drawer->toplevel));
+			ctk_widget_destroy (CTK_WIDGET (drawer->toplevel));
 			drawer->toplevel = NULL;
 		}
 	}
@@ -1060,7 +1060,7 @@ static const char* cafe_panel_applet_get_toplevel_id(AppletInfo* applet)
 	PanelWidget* panel_widget;
 
 	g_return_val_if_fail(applet != NULL, NULL);
-	g_return_val_if_fail(GTK_IS_WIDGET(applet->widget), NULL);
+	g_return_val_if_fail(CTK_IS_WIDGET(applet->widget), NULL);
 
 	panel_widget = cafe_panel_applet_get_panel_widget(applet);
 
@@ -1342,7 +1342,7 @@ cafe_panel_applet_register (GtkWidget       *applet,
 	if (type != PANEL_OBJECT_APPLET)
 		ctk_widget_grab_focus (applet);
 	else
-		ctk_widget_child_focus (applet, GTK_DIR_TAB_FORWARD);
+		ctk_widget_child_focus (applet, CTK_DIR_TAB_FORWARD);
 
 	return info;
 }

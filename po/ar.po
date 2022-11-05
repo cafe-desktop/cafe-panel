@@ -2043,11 +2043,11 @@ msgstr "نوع الخلفية"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:109
 msgid ""
 "Which type of background should be used for this panel. Possible values are "
-"\"none\" - the default GTK+ widget background will be used, \"color\" - the "
+"\"none\" - the default CTK+ widget background will be used, \"color\" - the "
 "color key will be used as background color or \"image\" - the image "
 "specified by the image key will be used as background."
 msgstr ""
-"أي نوع خلفية ستستخدم لهذه اللوحة. القيم الممكنة هي \"بلا\" - خلفية قطع GTK+ "
+"أي نوع خلفية ستستخدم لهذه اللوحة. القيم الممكنة هي \"بلا\" - خلفية قطع CTK+ "
 "الإفتراضيّة أو \"لون\" - سيستخدم مفتاح الألوان كلون الخلفيّة أو\"صورة\" - "
 "ستسخدم في هذه الحالة الصورة المحدّدة من قبل مفتاح الصور كخلفيّة."
 

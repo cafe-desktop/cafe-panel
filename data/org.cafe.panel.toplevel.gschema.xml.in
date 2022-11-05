@@ -106,7 +106,7 @@
     <key name="type" enum="org.cafe.panel.PanelBackgroundType">
       <default>'none'</default>
       <summary>Background type</summary>
-      <description>Which type of background should be used for this panel. Possible values are "none" - the default GTK+ widget background will be used, "color" - the color key will be used as background color or "image" - the image specified by the image key will be used as background.</description>
+      <description>Which type of background should be used for this panel. Possible values are "none" - the default CTK+ widget background will be used, "color" - the color key will be used as background color or "image" - the image specified by the image key will be used as background.</description>
     </key>
     <key name="color" type="s">
       <default>'#ffffff'</default>

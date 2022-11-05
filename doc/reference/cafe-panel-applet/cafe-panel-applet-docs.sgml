@@ -69,9 +69,9 @@ hello_applet_fill (CafePanelApplet *applet,
 		return FALSE;
 
         label = ctk_label_new ("Hello World");
-	ctk_container_add (GTK_CONTAINER (applet), label);
+	ctk_container_add (CTK_CONTAINER (applet), label);
 
-	ctk_widget_show_all (GTK_WIDGET (applet));
+	ctk_widget_show_all (CTK_WIDGET (applet));
 
         return TRUE;
 }

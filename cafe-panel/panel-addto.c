@@ -309,15 +309,15 @@ panel_addto_drag_begin_cb (GtkWidget      *widget,
 	GtkTreeIter   filter_iter;
 	gchar         *icon_name;
 
-	filter_model = ctk_tree_view_get_model (GTK_TREE_VIEW (widget));
+	filter_model = ctk_tree_view_get_model (CTK_TREE_VIEW (widget));
 
-	ctk_tree_view_get_cursor (GTK_TREE_VIEW (widget), &path, NULL);
+	ctk_tree_view_get_cursor (CTK_TREE_VIEW (widget), &path, NULL);
 	ctk_tree_model_get_iter (filter_model, &filter_iter, path);
 	ctk_tree_path_free (path);
-	ctk_tree_model_filter_convert_iter_to_child_iter (GTK_TREE_MODEL_FILTER (filter_model),
+	ctk_tree_model_filter_convert_iter_to_child_iter (CTK_TREE_MODEL_FILTER (filter_model),
 							  &iter, &filter_iter);
 
-	child_model = ctk_tree_model_filter_get_model (GTK_TREE_MODEL_FILTER (filter_model));
+	child_model = ctk_tree_model_filter_get_model (CTK_TREE_MODEL_FILTER (filter_model));
 	ctk_tree_model_get (child_model, &iter,
 	                    COLUMN_ICON_NAME, &icon_name,
 	                    -1);
@@ -334,7 +334,7 @@ panel_addto_setup_drag (GtkTreeView          *tree_view,
 	if (!text || panel_lockdown_get_locked_down ())
 		return;
 
-	ctk_tree_view_enable_model_drag_source (GTK_TREE_VIEW (tree_view),
+	ctk_tree_view_enable_model_drag_source (CTK_TREE_VIEW (tree_view),
 						GDK_BUTTON1_MASK|GDK_BUTTON2_MASK,
 						target, 1, GDK_ACTION_COPY);
 
@@ -535,10 +535,10 @@ panel_addto_make_applet_model (PanelAddtoDialog *dialog)
 	for (l = dialog->applet_list; l; l = l->next)
 		panel_addto_append_item (dialog, model, l->data);
 
-	dialog->applet_model = GTK_TREE_MODEL (model);
-	dialog->filter_applet_model = ctk_tree_model_filter_new (GTK_TREE_MODEL (dialog->applet_model),
+	dialog->applet_model = CTK_TREE_MODEL (model);
+	dialog->filter_applet_model = ctk_tree_model_filter_new (CTK_TREE_MODEL (dialog->applet_model),
 								 NULL);
-	ctk_tree_model_filter_set_visible_func (GTK_TREE_MODEL_FILTER (dialog->filter_applet_model),
+	ctk_tree_model_filter_set_visible_func (CTK_TREE_MODEL_FILTER (dialog->filter_applet_model),
 						panel_addto_filter_func,
 						dialog, NULL);
 }
@@ -766,9 +766,9 @@ static void panel_addto_make_application_model(PanelAddtoDialog* dialog)
 
 	g_object_unref(tree);
 
-	dialog->application_model = GTK_TREE_MODEL(store);
-	dialog->filter_application_model = ctk_tree_model_filter_new(GTK_TREE_MODEL(dialog->application_model), NULL);
-	ctk_tree_model_filter_set_visible_func(GTK_TREE_MODEL_FILTER(dialog->filter_application_model), panel_addto_filter_func, dialog, NULL);
+	dialog->application_model = CTK_TREE_MODEL(store);
+	dialog->filter_application_model = ctk_tree_model_filter_new(CTK_TREE_MODEL(dialog->application_model), NULL);
+	ctk_tree_model_filter_set_visible_func(CTK_TREE_MODEL_FILTER(dialog->filter_application_model), panel_addto_filter_func, dialog, NULL);
 }
 
 static void
@@ -836,21 +836,21 @@ panel_addto_dialog_response (GtkWidget *widget_dialog,
 	GtkTreeIter       filter_iter;
 
 	switch (response_id) {
-	case GTK_RESPONSE_HELP:
-		panel_show_help (ctk_window_get_screen (GTK_WINDOW (dialog->addto_dialog)),
+	case CTK_RESPONSE_HELP:
+		panel_show_help (ctk_window_get_screen (CTK_WINDOW (dialog->addto_dialog)),
 				 "cafe-user-guide", "gospanel-15", NULL);
 		break;
 
 	case PANEL_ADDTO_RESPONSE_ADD:
-		selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (dialog->tree_view));
+		selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (dialog->tree_view));
 		if (ctk_tree_selection_get_selected (selection, &filter_model,
 						     &filter_iter)) {
 			PanelAddtoItemInfo *data;
 
-			ctk_tree_model_filter_convert_iter_to_child_iter (GTK_TREE_MODEL_FILTER (filter_model),
+			ctk_tree_model_filter_convert_iter_to_child_iter (CTK_TREE_MODEL_FILTER (filter_model),
 									  &iter,
 									  &filter_iter);
-			child_model = ctk_tree_model_filter_get_model (GTK_TREE_MODEL_FILTER (filter_model));
+			child_model = ctk_tree_model_filter_get_model (CTK_TREE_MODEL_FILTER (filter_model));
 			ctk_tree_model_get (child_model, &iter,
 					    COLUMN_DATA, &data, -1);
 
@@ -866,7 +866,7 @@ panel_addto_dialog_response (GtkWidget *widget_dialog,
 		panel_addto_present_applets (dialog);
 		break;
 
-	case GTK_RESPONSE_CLOSE:
+	case CTK_RESPONSE_CLOSE:
 		ctk_widget_destroy (widget_dialog);
 		break;
 
@@ -890,18 +890,18 @@ panel_addto_present_applications (PanelAddtoDialog *dialog)
 {
 	if (dialog->filter_application_model == NULL)
 		panel_addto_make_application_model (dialog);
-	ctk_tree_view_set_model (GTK_TREE_VIEW (dialog->tree_view),
+	ctk_tree_view_set_model (CTK_TREE_VIEW (dialog->tree_view),
 				 dialog->filter_application_model);
-	ctk_window_set_focus (GTK_WINDOW (dialog->addto_dialog),
+	ctk_window_set_focus (CTK_WINDOW (dialog->addto_dialog),
 			      dialog->search_entry);
 	ctk_widget_set_sensitive (dialog->back_button, TRUE);
 
 	if (dialog->applet_search_text)
 		g_free (dialog->applet_search_text);
 
-	dialog->applet_search_text = g_strdup (ctk_entry_get_text (GTK_ENTRY (dialog->search_entry)));
+	dialog->applet_search_text = g_strdup (ctk_entry_get_text (CTK_ENTRY (dialog->search_entry)));
 	/* show everything */
-	ctk_entry_set_text (GTK_ENTRY (dialog->search_entry), "");
+	ctk_entry_set_text (CTK_ENTRY (dialog->search_entry), "");
 }
 
 static void
@@ -909,16 +909,16 @@ panel_addto_present_applets (PanelAddtoDialog *dialog)
 {
 	if (dialog->filter_applet_model == NULL)
 		panel_addto_make_applet_model (dialog);
-	ctk_tree_view_set_model (GTK_TREE_VIEW (dialog->tree_view),
+	ctk_tree_view_set_model (CTK_TREE_VIEW (dialog->tree_view),
 				 dialog->filter_applet_model);
-	ctk_window_set_focus (GTK_WINDOW (dialog->addto_dialog),
+	ctk_window_set_focus (CTK_WINDOW (dialog->addto_dialog),
 			      dialog->search_entry);
 	ctk_widget_set_sensitive (dialog->back_button, FALSE);
 
 	if (dialog->applet_search_text) {
-		ctk_entry_set_text (GTK_ENTRY (dialog->search_entry),
+		ctk_entry_set_text (CTK_ENTRY (dialog->search_entry),
 				    dialog->applet_search_text);
-		ctk_editable_set_position (GTK_EDITABLE (dialog->search_entry),
+		ctk_editable_set_position (CTK_EDITABLE (dialog->search_entry),
 					   -1);
 
 		g_free (dialog->applet_search_text);
@@ -1065,10 +1065,10 @@ panel_addto_name_change (PanelAddtoDialog *dialog,
 			label = g_strdup (_("Find an _item to add to the panel:"));
 	}
 
-	ctk_window_set_title (GTK_WINDOW (dialog->addto_dialog), title);
+	ctk_window_set_title (CTK_WINDOW (dialog->addto_dialog), title);
 	g_free (title);
 
-	ctk_label_set_text_with_mnemonic (GTK_LABEL (dialog->label), label);
+	ctk_label_set_text_with_mnemonic (CTK_LABEL (dialog->label), label);
 	g_free (label);
 }
 
@@ -1102,8 +1102,8 @@ panel_addto_filter_func (GtkTreeModel *model,
 
 	/* This is more a workaround than anything else: show all the root
 	 * items in a tree store */
-	if (GTK_IS_TREE_STORE (model) &&
-	    ctk_tree_store_iter_depth (GTK_TREE_STORE (model), iter) == 0)
+	if (CTK_IS_TREE_STORE (model) &&
+	    ctk_tree_store_iter_depth (CTK_TREE_STORE (model), iter) == 0)
 		return TRUE;
 
 	return (panel_g_utf8_strstrcase (data->name,
@@ -1121,7 +1121,7 @@ panel_addto_search_entry_changed (GtkWidget        *entry,
 	GtkTreeIter   iter;
 	GtkTreePath  *path;
 
-	new_text = g_strdup (ctk_entry_get_text (GTK_ENTRY (dialog->search_entry)));
+	new_text = g_strdup (ctk_entry_get_text (CTK_ENTRY (dialog->search_entry)));
 	g_strchomp (new_text);
 
 	if (dialog->search_text &&
@@ -1134,16 +1134,16 @@ panel_addto_search_entry_changed (GtkWidget        *entry,
 		g_free (dialog->search_text);
 	dialog->search_text = new_text;
 
-	model = ctk_tree_view_get_model (GTK_TREE_VIEW (dialog->tree_view));
-	ctk_tree_model_filter_refilter (GTK_TREE_MODEL_FILTER (model));
+	model = ctk_tree_view_get_model (CTK_TREE_VIEW (dialog->tree_view));
+	ctk_tree_model_filter_refilter (CTK_TREE_MODEL_FILTER (model));
 
 	path = ctk_tree_path_new_first ();
 	if (ctk_tree_model_get_iter (model, &iter, path)) {
 		GtkTreeSelection *selection;
 
-		ctk_tree_view_scroll_to_cell (GTK_TREE_VIEW (dialog->tree_view),
+		ctk_tree_view_scroll_to_cell (CTK_TREE_VIEW (dialog->tree_view),
 					      path, NULL, FALSE, 0, 0);
-		selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (dialog->tree_view));
+		selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (dialog->tree_view));
 		ctk_tree_selection_select_path (selection, path);
 	}
 	ctk_tree_path_free (path);
@@ -1153,7 +1153,7 @@ static void
 panel_addto_search_entry_activated (GtkWidget        *entry,
 				    PanelAddtoDialog *dialog)
 {
-	ctk_dialog_response (GTK_DIALOG (dialog->addto_dialog),
+	ctk_dialog_response (CTK_DIALOG (dialog->addto_dialog),
 			     PANEL_ADDTO_RESPONSE_ADD);
 }
 
@@ -1190,45 +1190,45 @@ panel_addto_selection_changed (GtkTreeSelection *selection,
 	if (!ctk_tree_selection_get_selected (selection,
 					      &filter_model,
 					      &filter_iter)) {
-		ctk_widget_set_sensitive (GTK_WIDGET (dialog->add_button),
+		ctk_widget_set_sensitive (CTK_WIDGET (dialog->add_button),
 					  FALSE);
 		return;
 	}
 
-	ctk_tree_model_filter_convert_iter_to_child_iter (GTK_TREE_MODEL_FILTER (filter_model),
+	ctk_tree_model_filter_convert_iter_to_child_iter (CTK_TREE_MODEL_FILTER (filter_model),
 							  &iter, &filter_iter);
-	child_model = ctk_tree_model_filter_get_model (GTK_TREE_MODEL_FILTER (filter_model));
+	child_model = ctk_tree_model_filter_get_model (CTK_TREE_MODEL_FILTER (filter_model));
 	ctk_tree_model_get (child_model, &iter, COLUMN_DATA, &data, -1);
 
 	if (!data) {
-		ctk_widget_set_sensitive (GTK_WIDGET (dialog->add_button),
+		ctk_widget_set_sensitive (CTK_WIDGET (dialog->add_button),
 					  FALSE);
 		return;
 	}
 
-	ctk_widget_set_sensitive (GTK_WIDGET (dialog->add_button), TRUE);
+	ctk_widget_set_sensitive (CTK_WIDGET (dialog->add_button), TRUE);
 
 	if (data->type == PANEL_ADDTO_LAUNCHER_MENU) {
-		ctk_button_set_image (GTK_BUTTON (dialog->add_button),
-				      ctk_image_new_from_icon_name ("go-next", GTK_ICON_SIZE_BUTTON));
+		ctk_button_set_image (CTK_BUTTON (dialog->add_button),
+				      ctk_image_new_from_icon_name ("go-next", CTK_ICON_SIZE_BUTTON));
 	} else {
-		ctk_button_set_image (GTK_BUTTON (dialog->add_button),
-				      ctk_image_new_from_icon_name ("list-add", GTK_ICON_SIZE_BUTTON));
+		ctk_button_set_image (CTK_BUTTON (dialog->add_button),
+				      ctk_image_new_from_icon_name ("list-add", CTK_ICON_SIZE_BUTTON));
 	}
 
 	/* only allow dragging applets if we can add applets */
 	if (panel_profile_id_lists_are_writable ()) {
 		switch (data->type) {
 		case PANEL_ADDTO_LAUNCHER:
-			panel_addto_setup_launcher_drag (GTK_TREE_VIEW (dialog->tree_view),
+			panel_addto_setup_launcher_drag (CTK_TREE_VIEW (dialog->tree_view),
 							 data->launcher_path);
 			break;
 		case PANEL_ADDTO_APPLET:
-			panel_addto_setup_applet_drag (GTK_TREE_VIEW (dialog->tree_view),
+			panel_addto_setup_applet_drag (CTK_TREE_VIEW (dialog->tree_view),
 						       data->iid);
 			break;
 		case PANEL_ADDTO_LAUNCHER_MENU:
-			ctk_tree_view_unset_rows_drag_source (GTK_TREE_VIEW (dialog->tree_view));
+			ctk_tree_view_unset_rows_drag_source (CTK_TREE_VIEW (dialog->tree_view));
 			break;
 		case PANEL_ADDTO_MENU:
 			/* build the iid for menus other than the main menu */
@@ -1239,12 +1239,12 @@ panel_addto_selection_changed (GtkTreeSelection *selection,
 			} else {
 				iid = g_strdup (data->iid);
 			}
-			panel_addto_setup_internal_applet_drag (GTK_TREE_VIEW (dialog->tree_view),
+			panel_addto_setup_internal_applet_drag (CTK_TREE_VIEW (dialog->tree_view),
 							        iid);
 			g_free (iid);
 			break;
 		default:
-			panel_addto_setup_internal_applet_drag (GTK_TREE_VIEW (dialog->tree_view),
+			panel_addto_setup_internal_applet_drag (CTK_TREE_VIEW (dialog->tree_view),
 							        data->iid);
 			break;
 		}
@@ -1257,7 +1257,7 @@ panel_addto_selection_activated (GtkTreeView       *view,
 				 GtkTreeViewColumn *column,
 				 PanelAddtoDialog  *dialog)
 {
-	ctk_dialog_response (GTK_DIALOG (dialog->addto_dialog),
+	ctk_dialog_response (CTK_DIALOG (dialog->addto_dialog),
 			     PANEL_ADDTO_RESPONSE_ADD);
 }
 
@@ -1306,49 +1306,49 @@ panel_addto_dialog_new (PanelWidget *panel_widget)
 
 	dialog->addto_dialog = ctk_dialog_new ();
 
-	panel_dialog_add_button (GTK_DIALOG (dialog->addto_dialog),
-				 _("_Help"), "help-browser", GTK_RESPONSE_HELP);
+	panel_dialog_add_button (CTK_DIALOG (dialog->addto_dialog),
+				 _("_Help"), "help-browser", CTK_RESPONSE_HELP);
 
-	dialog->back_button = panel_dialog_add_button (GTK_DIALOG (dialog->addto_dialog),
+	dialog->back_button = panel_dialog_add_button (CTK_DIALOG (dialog->addto_dialog),
 						       _("_Back"), "go-previous",
 						       PANEL_ADDTO_RESPONSE_BACK);
 
-	dialog->add_button = panel_dialog_add_button (GTK_DIALOG (dialog->addto_dialog),
+	dialog->add_button = panel_dialog_add_button (CTK_DIALOG (dialog->addto_dialog),
 						      _("_Add"), "list-add",
 						      PANEL_ADDTO_RESPONSE_ADD);
 
-	panel_dialog_add_button (GTK_DIALOG (dialog->addto_dialog),
+	panel_dialog_add_button (CTK_DIALOG (dialog->addto_dialog),
 				 _("_Close"), "window-close",
-				 GTK_RESPONSE_CLOSE);
+				 CTK_RESPONSE_CLOSE);
 
-	ctk_widget_set_sensitive (GTK_WIDGET (dialog->add_button), FALSE);
+	ctk_widget_set_sensitive (CTK_WIDGET (dialog->add_button), FALSE);
 
-	ctk_dialog_set_default_response (GTK_DIALOG (dialog->addto_dialog),
+	ctk_dialog_set_default_response (CTK_DIALOG (dialog->addto_dialog),
 					 PANEL_ADDTO_RESPONSE_ADD);
 
-	ctk_container_set_border_width (GTK_CONTAINER (dialog->addto_dialog), 5);
+	ctk_container_set_border_width (CTK_CONTAINER (dialog->addto_dialog), 5);
 
-	dialog_vbox = ctk_dialog_get_content_area (GTK_DIALOG (dialog->addto_dialog));
-	ctk_box_set_spacing (GTK_BOX (dialog_vbox), 12);
-	ctk_container_set_border_width (GTK_CONTAINER (dialog_vbox), 5);
+	dialog_vbox = ctk_dialog_get_content_area (CTK_DIALOG (dialog->addto_dialog));
+	ctk_box_set_spacing (CTK_BOX (dialog_vbox), 12);
+	ctk_container_set_border_width (CTK_CONTAINER (dialog_vbox), 5);
 
 	g_signal_connect (G_OBJECT (dialog->addto_dialog), "response",
 			  G_CALLBACK (panel_addto_dialog_response), dialog);
 	g_signal_connect (dialog->addto_dialog, "destroy",
 			  G_CALLBACK (panel_addto_dialog_destroy), dialog);
 
-	inner_vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	ctk_box_pack_start (GTK_BOX (dialog_vbox), inner_vbox, TRUE, TRUE, 0);
+	inner_vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
+	ctk_box_pack_start (CTK_BOX (dialog_vbox), inner_vbox, TRUE, TRUE, 0);
 
-	find_hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-	ctk_box_pack_start (GTK_BOX (inner_vbox), find_hbox, FALSE, FALSE, 0);
+	find_hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 6);
+	ctk_box_pack_start (CTK_BOX (inner_vbox), find_hbox, FALSE, FALSE, 0);
 
 	dialog->label = ctk_label_new_with_mnemonic ("");
-	ctk_label_set_xalign (GTK_LABEL (dialog->label), 0.0);
-	ctk_label_set_yalign (GTK_LABEL (dialog->label), 0.5);
-	ctk_label_set_use_markup (GTK_LABEL (dialog->label), TRUE);
+	ctk_label_set_xalign (CTK_LABEL (dialog->label), 0.0);
+	ctk_label_set_yalign (CTK_LABEL (dialog->label), 0.5);
+	ctk_label_set_use_markup (CTK_LABEL (dialog->label), TRUE);
 
-	ctk_box_pack_start (GTK_BOX (find_hbox), dialog->label,
+	ctk_box_pack_start (CTK_BOX (find_hbox), dialog->label,
 			    FALSE, FALSE, 0);
 
 	dialog->search_entry = ctk_entry_new ();
@@ -1357,32 +1357,32 @@ panel_addto_dialog_new (PanelWidget *panel_widget)
 	g_signal_connect (G_OBJECT (dialog->search_entry), "activate",
 			  G_CALLBACK (panel_addto_search_entry_activated), dialog);
 
-	ctk_box_pack_end (GTK_BOX (find_hbox), dialog->search_entry,
+	ctk_box_pack_end (CTK_BOX (find_hbox), dialog->search_entry,
 			  TRUE, TRUE, 0);
 
-	ctk_label_set_mnemonic_widget (GTK_LABEL (dialog->label),
+	ctk_label_set_mnemonic_widget (CTK_LABEL (dialog->label),
 				       dialog->search_entry);
 
 	sw = ctk_scrolled_window_new (NULL, NULL);
-	ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (sw),
-					GTK_POLICY_AUTOMATIC,
-					GTK_POLICY_AUTOMATIC);
-	ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (sw),
-					     GTK_SHADOW_IN);
-	ctk_box_pack_start (GTK_BOX (inner_vbox), sw, TRUE, TRUE, 0);
+	ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (sw),
+					CTK_POLICY_AUTOMATIC,
+					CTK_POLICY_AUTOMATIC);
+	ctk_scrolled_window_set_shadow_type (CTK_SCROLLED_WINDOW (sw),
+					     CTK_SHADOW_IN);
+	ctk_box_pack_start (CTK_BOX (inner_vbox), sw, TRUE, TRUE, 0);
 
 	dialog->tree_view = ctk_tree_view_new ();
-	ctk_tree_view_set_headers_visible (GTK_TREE_VIEW (dialog->tree_view),
+	ctk_tree_view_set_headers_visible (CTK_TREE_VIEW (dialog->tree_view),
 					   FALSE);
-	ctk_tree_view_expand_all (GTK_TREE_VIEW (dialog->tree_view));
+	ctk_tree_view_expand_all (CTK_TREE_VIEW (dialog->tree_view));
 
-	renderer = g_object_new (GTK_TYPE_CELL_RENDERER_PIXBUF,
+	renderer = g_object_new (CTK_TYPE_CELL_RENDERER_PIXBUF,
 				 "xpad", 4,
 				 "ypad", 4,
 				 "stock-size", panel_add_to_icon_get_size(),
 				 NULL);
 
-	ctk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (dialog->tree_view),
+	ctk_tree_view_insert_column_with_attributes (CTK_TREE_VIEW (dialog->tree_view),
 						     -1, NULL,
 						     renderer,
 						     "icon_name", COLUMN_ICON_NAME,
@@ -1390,7 +1390,7 @@ panel_addto_dialog_new (PanelWidget *panel_widget)
 						     NULL);
 	renderer = ctk_cell_renderer_text_new ();
 	g_object_set (renderer, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
-	ctk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (dialog->tree_view),
+	ctk_tree_view_insert_column_with_attributes (CTK_TREE_VIEW (dialog->tree_view),
 						     -1, NULL,
 						     renderer,
 						     "markup", COLUMN_TEXT,
@@ -1398,21 +1398,21 @@ panel_addto_dialog_new (PanelWidget *panel_widget)
 						     NULL);
 
 	//FIXME use the same search than the one for the search entry?
-	ctk_tree_view_set_search_column (GTK_TREE_VIEW (dialog->tree_view),
+	ctk_tree_view_set_search_column (CTK_TREE_VIEW (dialog->tree_view),
 					 COLUMN_SEARCH);
 
-	ctk_tree_view_set_row_separator_func (GTK_TREE_VIEW (dialog->tree_view),
+	ctk_tree_view_set_row_separator_func (CTK_TREE_VIEW (dialog->tree_view),
 					      panel_addto_separator_func,
 					      GINT_TO_POINTER (COLUMN_TEXT),
 					      NULL);
 
 
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (dialog->tree_view));
-	ctk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (dialog->tree_view));
+	ctk_tree_selection_set_mode (selection, CTK_SELECTION_SINGLE);
 
-	column = ctk_tree_view_get_column (GTK_TREE_VIEW (dialog->tree_view),
+	column = ctk_tree_view_get_column (CTK_TREE_VIEW (dialog->tree_view),
 					   COLUMN_TEXT);
-	ctk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_FIXED);
+	ctk_tree_view_column_set_sizing (column, CTK_TREE_VIEW_COLUMN_FIXED);
 
 	ctk_tree_selection_set_select_function (selection, panel_addto_selection_func, NULL, NULL);
 
@@ -1424,7 +1424,7 @@ panel_addto_dialog_new (PanelWidget *panel_widget)
 			  G_CALLBACK (panel_addto_selection_activated),
 			  dialog);
 
-	ctk_container_add (GTK_CONTAINER (sw), dialog->tree_view);
+	ctk_container_add (CTK_CONTAINER (sw), dialog->tree_view);
 
 	ctk_widget_show_all (dialog_vbox);
 
@@ -1462,9 +1462,9 @@ panel_addto_present (GtkMenuItem *item,
 	dialog = g_object_get_qdata (G_OBJECT (toplevel),
 				     panel_addto_dialog_quark);
 
-	screen = ctk_window_get_screen (GTK_WINDOW (toplevel));
-	monitor = gdk_display_get_monitor_at_window (ctk_widget_get_display (GTK_WIDGET (toplevel)),
-						     ctk_widget_get_window (GTK_WIDGET (toplevel)));
+	screen = ctk_window_get_screen (CTK_WINDOW (toplevel));
+	monitor = gdk_display_get_monitor_at_window (ctk_widget_get_display (CTK_WIDGET (toplevel)),
+						     ctk_widget_get_window (CTK_WIDGET (toplevel)));
 	gdk_monitor_get_geometry (monitor, &monitor_geom);
 	height = MIN (MAX_ADDTOPANEL_HEIGHT, 3 * (monitor_geom.height / 4));
 
@@ -1474,8 +1474,8 @@ panel_addto_present (GtkMenuItem *item,
 	}
 
 	dialog->insertion_position = pd ? pd->insertion_pos : -1;
-	ctk_window_set_screen (GTK_WINDOW (dialog->addto_dialog), screen);
-	ctk_window_set_default_size (GTK_WINDOW (dialog->addto_dialog),
+	ctk_window_set_screen (CTK_WINDOW (dialog->addto_dialog), screen);
+	ctk_window_set_default_size (CTK_WINDOW (dialog->addto_dialog),
 				     height * 8 / 7, height);
-	ctk_window_present (GTK_WINDOW (dialog->addto_dialog));
+	ctk_window_present (CTK_WINDOW (dialog->addto_dialog));
 }

@@ -679,7 +679,7 @@ panel_profile_toplevel_screen_changed (PanelToplevel *toplevel)
 	ToplevelLocationChange change = { NULL };
 
 	change.screen_changed = TRUE;
-	change.screen = ctk_window_get_screen (GTK_WINDOW (toplevel));
+	change.screen = ctk_window_get_screen (CTK_WINDOW (toplevel));
 
 	panel_profile_queue_toplevel_location_change (toplevel, &change);
 }
@@ -781,7 +781,7 @@ panel_profile_toplevel_change_notify (GSettings *settings,
 		screen = gdk_display_get_default_screen (gdk_display_get_default ());
 
 		if (screen)
-			ctk_window_set_screen (GTK_WINDOW (toplevel), screen);
+			ctk_window_set_screen (CTK_WINDOW (toplevel), screen);
 		else
 			/* Make sure to set the key back to an actual
 			 * available screen so it will get loaded on
@@ -920,7 +920,7 @@ panel_profile_find_empty_spot (GdkScreen *screen,
 
 	for (li = panel_toplevel_list_toplevels (); li != NULL; li = li->next) {
 		PanelToplevel *toplevel = li->data;
-		GdkScreen *toplevel_screen = ctk_window_get_screen (GTK_WINDOW (toplevel));
+		GdkScreen *toplevel_screen = ctk_window_get_screen (CTK_WINDOW (toplevel));
 		int toplevel_monitor = panel_toplevel_get_monitor (toplevel);
 
 		if (toplevel_screen != screen ||
@@ -1171,7 +1171,7 @@ panel_profile_load_and_show_toplevel (char *toplevel_id)
 	if (!toplevel)
 		return;
 
-	ctk_widget_show (GTK_WIDGET (toplevel));
+	ctk_widget_show (CTK_WIDGET (toplevel));
 
 	loading_queued_applets = FALSE;
 
@@ -1199,7 +1199,7 @@ panel_profile_load_and_show_toplevel_startup (const char *toplevel_id)
 	PanelToplevel *toplevel;
 	toplevel = panel_profile_load_toplevel (toplevel_id);
 	if (toplevel)
-		ctk_widget_show (GTK_WIDGET (toplevel));
+		ctk_widget_show (CTK_WIDGET (toplevel));
 }
 
 static void
@@ -1210,7 +1210,7 @@ panel_profile_destroy_toplevel (const char *id)
 	if (!(toplevel = panel_profile_get_toplevel_by_id (id)))
 		return;
 
-	ctk_widget_destroy (GTK_WIDGET (toplevel));
+	ctk_widget_destroy (CTK_WIDGET (toplevel));
 }
 
 char *

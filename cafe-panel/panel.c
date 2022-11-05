@@ -21,7 +21,7 @@
 #include <gdk/gdkkeysyms.h>
 
 #ifdef HAVE_X11
-#include <ctk/ctkx.h> /* for GTK_IS_SOCKET */
+#include <ctk/ctkx.h> /* for CTK_IS_SOCKET */
 #endif
 
 #include <libpanel-util/panel-glib.h>
@@ -91,8 +91,8 @@ orientation_change (AppletInfo  *info,
 
 		button_widget_set_orientation (BUTTON_WIDGET (info->widget), orientation);
 
-		ctk_widget_queue_resize (GTK_WIDGET (drawer->toplevel));
-		ctk_container_foreach (GTK_CONTAINER (panel_widget),
+		ctk_widget_queue_resize (CTK_WIDGET (drawer->toplevel));
+		ctk_container_foreach (CTK_CONTAINER (panel_widget),
 				       orient_change_foreach,
 				       panel_widget);
 		}
@@ -119,7 +119,7 @@ orient_change_foreach(GtkWidget *w, gpointer data)
 static void
 panel_orient_change (GtkWidget *widget, gpointer data)
 {
-	ctk_container_foreach(GTK_CONTAINER(widget),
+	ctk_container_foreach(CTK_CONTAINER(widget),
 			      orient_change_foreach,
 			      widget);
 }
@@ -149,7 +149,7 @@ size_change_foreach(GtkWidget *w, gpointer data)
 static void
 panel_size_change (GtkWidget *widget, gpointer data)
 {
-	ctk_container_foreach(GTK_CONTAINER(widget), size_change_foreach,
+	ctk_container_foreach(CTK_CONTAINER(widget), size_change_foreach,
 			      widget);
 }
 
@@ -187,7 +187,7 @@ back_change_foreach (GtkWidget   *widget,
 static void
 panel_back_change (GtkWidget *widget, gpointer data)
 {
-	ctk_container_foreach (GTK_CONTAINER (widget),
+	ctk_container_foreach (CTK_CONTAINER (widget),
 			       (GtkCallback) back_change_foreach,
 			       widget);
 
@@ -363,12 +363,12 @@ panel_popup_menu (PanelToplevel *toplevel,
 	if (!menu)
 		return FALSE;
 
-	ctk_menu_set_screen (GTK_MENU (menu),
-			     ctk_window_get_screen (GTK_WINDOW (toplevel)));
+	ctk_menu_set_screen (CTK_MENU (menu),
+			     ctk_window_get_screen (CTK_WINDOW (toplevel)));
 
-	ctk_window_set_attached_to (GTK_WINDOW (ctk_widget_get_toplevel (menu)),
-				    GTK_WIDGET (toplevel));
-	ctk_menu_popup_at_pointer (GTK_MENU (menu), NULL);
+	ctk_window_set_attached_to (CTK_WINDOW (ctk_widget_get_toplevel (menu)),
+				    CTK_WIDGET (toplevel));
+	ctk_menu_popup_at_pointer (CTK_MENU (menu), NULL);
 
 	return TRUE;
 }
@@ -402,7 +402,7 @@ panel_key_press_event (GtkWidget   *widget,
 	 *
 	 * Will always be false when not using X
 	 */
-	if (GTK_IS_SOCKET (ctk_window_get_focus (GTK_WINDOW (widget))) &&
+	if (CTK_IS_SOCKET (ctk_window_get_focus (CTK_WINDOW (widget))) &&
 	    event->keyval == GDK_KEY_F10 &&
 	    (event->state & ctk_accelerator_get_default_mod_mask ()) == GDK_CONTROL_MASK)
 		return ctk_bindings_activate (G_OBJECT (widget),
@@ -1215,7 +1215,7 @@ panel_setup (PanelToplevel *toplevel)
 
 	pd = g_new0 (PanelData,1);
 	pd->menu = NULL;
-	pd->panel = GTK_WIDGET (toplevel);
+	pd->panel = CTK_WIDGET (toplevel);
 	pd->insertion_pos = -1;
 	pd->deactivate_idle = 0;
 
@@ -1237,7 +1237,7 @@ panel_setup (PanelToplevel *toplevel)
 	g_signal_connect (toplevel, "drag_drop",
 			  G_CALLBACK (drag_drop_cb), NULL);
 
-	ctk_drag_dest_set (GTK_WIDGET (toplevel), 0, NULL, 0, 0);
+	ctk_drag_dest_set (CTK_WIDGET (toplevel), 0, NULL, 0, 0);
 
 	g_signal_connect (toplevel, "key-press-event",
 			  G_CALLBACK (panel_key_press_event), NULL);
@@ -1260,7 +1260,7 @@ panel_screen_from_panel_widget (PanelWidget *panel)
 	g_return_val_if_fail (PANEL_IS_WIDGET (panel), NULL);
 	g_return_val_if_fail (PANEL_IS_TOPLEVEL (panel->toplevel), NULL);
 
-	return ctk_window_get_screen (GTK_WINDOW (panel->toplevel));
+	return ctk_window_get_screen (CTK_WINDOW (panel->toplevel));
 }
 
 gboolean
@@ -1269,7 +1269,7 @@ panel_is_applet_right_stick (GtkWidget *applet)
 	GtkWidget   *parent;
 	PanelWidget *panel_widget;
 
-	g_return_val_if_fail (GTK_IS_WIDGET (applet), FALSE);
+	g_return_val_if_fail (CTK_IS_WIDGET (applet), FALSE);
 
 	parent = ctk_widget_get_parent (applet);
 
@@ -1307,7 +1307,7 @@ panel_deletion_response (GtkWidget     *dialog,
 			 int            response,
 			 PanelToplevel *toplevel)
 {
-	if (response == GTK_RESPONSE_OK) {
+	if (response == CTK_RESPONSE_OK) {
 		panel_push_window_busy (dialog);
 		panel_delete_without_query (toplevel);
 		panel_pop_window_busy (dialog);
@@ -1343,29 +1343,29 @@ panel_deletion_dialog (PanelToplevel *toplevel)
 	}
 
 	dialog = ctk_message_dialog_new (
-			GTK_WINDOW (toplevel),
-			GTK_DIALOG_MODAL,
-			GTK_MESSAGE_WARNING,
-			GTK_BUTTONS_NONE,
+			CTK_WINDOW (toplevel),
+			CTK_DIALOG_MODAL,
+			CTK_MESSAGE_WARNING,
+			CTK_BUTTONS_NONE,
 			"%s", text1);
 
-	ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+	ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 	                                          "%s", text2);
 
-	panel_dialog_add_button (GTK_DIALOG (dialog),
+	panel_dialog_add_button (CTK_DIALOG (dialog),
 				 _("_Cancel"), "process-stop",
-				 GTK_RESPONSE_CANCEL);
+				 CTK_RESPONSE_CANCEL);
 
-	panel_dialog_add_button (GTK_DIALOG (dialog),
+	panel_dialog_add_button (CTK_DIALOG (dialog),
 				 _("_Delete"), "edit-delete",
-				 GTK_RESPONSE_OK);
+				 CTK_RESPONSE_OK);
 
-	ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CANCEL);
+	ctk_dialog_set_default_response (CTK_DIALOG (dialog), CTK_RESPONSE_CANCEL);
 
-	ctk_window_set_screen (GTK_WINDOW (dialog),
-				ctk_window_get_screen (GTK_WINDOW (toplevel)));
+	ctk_window_set_screen (CTK_WINDOW (dialog),
+				ctk_window_get_screen (CTK_WINDOW (toplevel)));
 
-	ctk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
+	ctk_window_set_position (CTK_WINDOW (dialog), CTK_WIN_POS_CENTER);
 
 	 g_signal_connect (dialog, "destroy",
                            G_CALLBACK (panel_deletion_destroy_dialog),
@@ -1385,7 +1385,7 @@ panel_query_deletion (PanelToplevel *toplevel)
 	dialog = g_object_get_data (G_OBJECT (toplevel), "panel-delete-dialog");
 
 	if (dialog) {
-		ctk_window_present (GTK_WINDOW (dialog));
+		ctk_window_present (CTK_WINDOW (dialog));
 		return;
 	}
 

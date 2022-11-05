@@ -354,8 +354,8 @@ cafe_panel_applet_factory_get_applet_widget (const gchar *id,
 		return NULL;
 
 	object = g_hash_table_lookup (factory->applets, GUINT_TO_POINTER (uid));
-	if (!object || !GTK_IS_WIDGET (object))
+	if (!object || !CTK_IS_WIDGET (object))
 		return NULL;
 
-	return GTK_WIDGET (object);
+	return CTK_WIDGET (object);
 }

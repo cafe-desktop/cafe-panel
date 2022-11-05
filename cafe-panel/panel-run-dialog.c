@@ -150,7 +150,7 @@ _panel_run_get_recent_programs_list (PanelRunDialog *dialog)
 
 	g_strfreev (items);
 
-	return GTK_TREE_MODEL (list);
+	return CTK_TREE_MODEL (list);
 }
 
 static void
@@ -169,7 +169,7 @@ _panel_run_save_recent_programs_list (PanelRunDialog   *dialog,
 	if (history_max_size == 0)
 		g_settings_set_strv (dialog->settings, PANEL_RUN_HISTORY_KEY, NULL);
 	else {
-		model = ctk_combo_box_get_model (GTK_COMBO_BOX (entry));
+		model = ctk_combo_box_get_model (CTK_COMBO_BOX (entry));
 
 		/* reasonable upper bound for zero-terminated array with new command */
 		gchar *items[ctk_tree_model_iter_n_children (model, NULL) + 2];
@@ -269,19 +269,19 @@ panel_run_dialog_get_combo_text (PanelRunDialog *dialog)
 {
 	GtkWidget *entry;
 
-	entry = ctk_bin_get_child (GTK_BIN (dialog->combobox));
+	entry = ctk_bin_get_child (CTK_BIN (dialog->combobox));
 
-	return ctk_entry_get_text (GTK_ENTRY (entry));
+	return ctk_entry_get_text (CTK_ENTRY (entry));
 }
 
 static void
 panel_run_dialog_set_default_icon (PanelRunDialog *dialog, gboolean set_drag)
 {
-	ctk_image_set_from_icon_name (GTK_IMAGE (dialog->pixmap),
+	ctk_image_set_from_icon_name (CTK_IMAGE (dialog->pixmap),
 				      PANEL_ICON_RUN,
-				      GTK_ICON_SIZE_DIALOG);
+				      CTK_ICON_SIZE_DIALOG);
 
-	ctk_window_set_icon_name (GTK_WINDOW (dialog->run_dialog),
+	ctk_window_set_icon_name (CTK_WINDOW (dialog->run_dialog),
 				  PANEL_ICON_RUN);
 
 	if (set_drag)
@@ -304,10 +304,10 @@ panel_run_dialog_set_icon (PanelRunDialog *dialog,
 	if (icon) {
 		int          size;
 
-		ctk_icon_size_lookup (GTK_ICON_SIZE_DIALOG, &size, NULL);
+		ctk_icon_size_lookup (CTK_ICON_SIZE_DIALOG, &size, NULL);
 
 		GtkIconTheme *icon_theme = ctk_icon_theme_get_default ();
-		GtkIconInfo *icon_info = ctk_icon_theme_lookup_by_gicon (icon_theme, icon, size, GTK_ICON_LOOKUP_FORCE_SIZE);
+		GtkIconInfo *icon_info = ctk_icon_theme_lookup_by_gicon (icon_theme, icon, size, CTK_ICON_LOOKUP_FORCE_SIZE);
 		pixbuf = ctk_icon_info_load_icon (icon_info, NULL);
 		g_object_unref (icon_info);
 	}
@@ -318,11 +318,11 @@ panel_run_dialog_set_icon (PanelRunDialog *dialog,
 		/* Don't bother scaling the image if it's too small.
 		 * Scaled looks worse than a smaller image.
 		 */
-		ctk_image_set_from_pixbuf (GTK_IMAGE (dialog->pixmap), pixbuf);
+		ctk_image_set_from_pixbuf (CTK_IMAGE (dialog->pixmap), pixbuf);
 
 		//FIXME: it'd be better to set an icon of the correct size,
 		//(ditto for the drag icon?)
-		ctk_window_set_icon (GTK_WINDOW (dialog->run_dialog), pixbuf);
+		ctk_window_set_icon (CTK_WINDOW (dialog->run_dialog), pixbuf);
 
 		ctk_drag_source_set_icon_gicon (dialog->run_dialog, dialog->icon);
 		g_object_unref (pixbuf);
@@ -412,9 +412,9 @@ panel_run_dialog_launch_command (PanelRunDialog *dialog,
 	if (!command_is_executable (locale_command, &argc, &argv))
 		return FALSE;
 
-	screen = ctk_window_get_screen (GTK_WINDOW (dialog->run_dialog));
+	screen = ctk_window_get_screen (CTK_WINDOW (dialog->run_dialog));
 
-	if (ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->terminal_checkbox)))
+	if (ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (dialog->terminal_checkbox)))
 		cafe_desktop_prepend_terminal_to_vector (&argc, &argv);
 
 	display = gdk_screen_get_display (screen);
@@ -434,7 +434,7 @@ panel_run_dialog_launch_command (PanelRunDialog *dialog,
 
 		primary = g_markup_printf_escaped (_("Could not run command '%s'"),
 						   command);
-		panel_error_dialog (GTK_WINDOW (dialog->run_dialog), NULL,
+		panel_error_dialog (CTK_WINDOW (dialog->run_dialog), NULL,
 				    "cannot_spawn_command", TRUE,
 				    primary, error->message);
 		g_free (primary);
@@ -475,7 +475,7 @@ panel_run_dialog_execute (PanelRunDialog *dialog)
 
 		primary = g_strdup_printf (_("Could not convert '%s' from UTF-8"),
 					   command);
-		panel_error_dialog (GTK_WINDOW (dialog->run_dialog), NULL,
+		panel_error_dialog (CTK_WINDOW (dialog->run_dialog), NULL,
 				    "cannot_convert_command_from_utf8", TRUE,
 				    primary, error->message);
 		g_free (primary);
@@ -501,7 +501,7 @@ panel_run_dialog_execute (PanelRunDialog *dialog)
 		uri = g_file_get_uri (file);
 		g_object_unref (file);
 
-		screen = ctk_window_get_screen (GTK_WINDOW (dialog->run_dialog));
+		screen = ctk_window_get_screen (CTK_WINDOW (dialog->run_dialog));
 		result = panel_show_uri (screen, uri,
 					 ctk_get_current_event_time (), NULL);
 
@@ -511,7 +511,7 @@ panel_run_dialog_execute (PanelRunDialog *dialog)
 	if (result) {
 		/* only save working commands in history */
 		_panel_run_save_recent_programs_list
-			(dialog, GTK_COMBO_BOX (dialog->combobox), command);
+			(dialog, CTK_COMBO_BOX (dialog->combobox), command);
 
 		/* only close the dialog if we successfully showed or launched
 		 * something */
@@ -532,14 +532,14 @@ panel_run_dialog_response (PanelRunDialog *dialog,
 	dialog->completion_started = FALSE;
 
 	switch (response) {
-	case GTK_RESPONSE_OK:
+	case CTK_RESPONSE_OK:
 		panel_run_dialog_execute (dialog);
 		break;
-	case GTK_RESPONSE_CANCEL:
+	case CTK_RESPONSE_CANCEL:
 		ctk_widget_destroy (dialog->run_dialog);
 		break;
-	case GTK_RESPONSE_HELP:
-		panel_show_help (ctk_window_get_screen (GTK_WINDOW (run_dialog)),
+	case CTK_RESPONSE_HELP:
+		panel_show_help (ctk_window_get_screen (CTK_WINDOW (run_dialog)),
 				 "cafe-user-guide", "gospanel-23", NULL);
 		break;
 	default:
@@ -579,14 +579,14 @@ panel_run_dialog_append_file_utf8 (PanelRunDialog *dialog,
 		return;
 
 	quoted = quote_string (file);
-	entry = ctk_bin_get_child (GTK_BIN (dialog->combobox));
-	text = ctk_entry_get_text (GTK_ENTRY (entry));
+	entry = ctk_bin_get_child (CTK_BIN (dialog->combobox));
+	text = ctk_entry_get_text (CTK_ENTRY (entry));
 	if (text && text [0]) {
 		temp = g_strconcat (text, " ", quoted, NULL);
-		ctk_entry_set_text (GTK_ENTRY (entry), temp);
+		ctk_entry_set_text (CTK_ENTRY (entry), temp);
 		g_free (temp);
 	} else
-		ctk_entry_set_text (GTK_ENTRY (entry), quoted);
+		ctk_entry_set_text (CTK_ENTRY (entry), quoted);
 
 	g_free (quoted);
 }
@@ -664,7 +664,7 @@ panel_run_dialog_make_all_list_visible (GtkTreeModel *model,
 					GtkTreeIter  *iter,
 					gpointer      data)
 {
-	ctk_list_store_set (GTK_LIST_STORE (model), iter,
+	ctk_list_store_set (CTK_LIST_STORE (model), iter,
 			    COLUMN_VISIBLE, TRUE,
 			    -1);
 
@@ -682,7 +682,7 @@ panel_run_dialog_find_command_idle (PanelRunDialog *dialog)
 	char         *found_name;
 	gboolean      fuzzy;
 
-	model = GTK_TREE_MODEL (dialog->program_list_store);
+	model = CTK_TREE_MODEL (dialog->program_list_store);
 	path = ctk_tree_path_new_first ();
 
 	if (!path || !ctk_tree_model_get_iter (model, &iter, path)) {
@@ -747,9 +747,9 @@ panel_run_dialog_find_command_idle (PanelRunDialog *dialog)
 
         } while (ctk_tree_model_iter_next (model, &iter));
 
-	if (ctk_tree_model_get_iter (ctk_tree_view_get_model (GTK_TREE_VIEW (dialog->program_list)),
+	if (ctk_tree_model_get_iter (ctk_tree_view_get_model (CTK_TREE_VIEW (dialog->program_list)),
 				     &iter, path))
-		ctk_tree_view_scroll_to_cell (GTK_TREE_VIEW (dialog->program_list),
+		ctk_tree_view_scroll_to_cell (CTK_TREE_VIEW (dialog->program_list),
 					      path, NULL, FALSE, 0, 0);
 
 	ctk_tree_path_free (path);
@@ -938,15 +938,15 @@ panel_run_dialog_add_items_idle (PanelRunDialog *dialog)
 	}
 	g_slist_free_full (all_applications, cafemenu_tree_item_unref);
 
-	model_filter = ctk_tree_model_filter_new (GTK_TREE_MODEL (dialog->program_list_store),
+	model_filter = ctk_tree_model_filter_new (CTK_TREE_MODEL (dialog->program_list_store),
 						  NULL);
-	ctk_tree_model_filter_set_visible_column (GTK_TREE_MODEL_FILTER (model_filter),
+	ctk_tree_model_filter_set_visible_column (CTK_TREE_MODEL_FILTER (model_filter),
 						  COLUMN_VISIBLE);
 
-	ctk_tree_view_set_model (GTK_TREE_VIEW (dialog->program_list),
+	ctk_tree_view_set_model (CTK_TREE_VIEW (dialog->program_list),
 				 model_filter);
 	//FIXME use the same search than the fuzzy one?
-	ctk_tree_view_set_search_column (GTK_TREE_VIEW (dialog->program_list),
+	ctk_tree_view_set_search_column (CTK_TREE_VIEW (dialog->program_list),
 					 COLUMN_NAME);
 
 	renderer = ctk_cell_renderer_pixbuf_new ();
@@ -963,7 +963,7 @@ panel_run_dialog_add_items_idle (PanelRunDialog *dialog)
                                              "text", COLUMN_NAME,
                                              NULL);
 
-	ctk_tree_view_append_column (GTK_TREE_VIEW (dialog->program_list), column);
+	ctk_tree_view_append_column (CTK_TREE_VIEW (dialog->program_list), column);
 
 	dialog->add_items_idle_id = 0;
 	return G_SOURCE_REMOVE;
@@ -1027,11 +1027,11 @@ program_list_selection_changed (GtkTreeSelection *selection,
 					      &filter_iter))
 		return;
 
-	ctk_tree_model_filter_convert_iter_to_child_iter (GTK_TREE_MODEL_FILTER (filter_model),
+	ctk_tree_model_filter_convert_iter_to_child_iter (CTK_TREE_MODEL_FILTER (filter_model),
 							  &iter, &filter_iter);
 
 	path = NULL;
-	child_model = ctk_tree_model_filter_get_model (GTK_TREE_MODEL_FILTER (filter_model));
+	child_model = ctk_tree_model_filter_get_model (CTK_TREE_MODEL_FILTER (filter_model));
 	ctk_tree_model_get (child_model, &iter,
 			    COLUMN_PATH, &path,
 			    -1);
@@ -1060,15 +1060,15 @@ program_list_selection_changed (GtkTreeSelection *selection,
 	 * drag source is enabled, otherwise the drag icon can't be set by
 	 * panel_run_dialog_set_icon.
 	 */
-	entry = ctk_bin_get_child (GTK_BIN (dialog->combobox));
+	entry = ctk_bin_get_child (CTK_BIN (dialog->combobox));
 	temp = panel_key_file_get_string (key_file, "Exec");
 	if (temp) {
 		stripped = remove_parameters (temp);
-		ctk_entry_set_text (GTK_ENTRY (entry), stripped);
+		ctk_entry_set_text (CTK_ENTRY (entry), stripped);
 		g_free (stripped);
 	} else {
 		temp = panel_key_file_get_string (key_file, "URL");
-		ctk_entry_set_text (GTK_ENTRY (entry), sure_string (temp));
+		ctk_entry_set_text (CTK_ENTRY (entry), sure_string (temp));
 	}
 	g_free (temp);
 
@@ -1081,12 +1081,12 @@ program_list_selection_changed (GtkTreeSelection *selection,
 
 	temp = panel_key_file_get_locale_string (key_file, "Comment");
 	//FIXME: if sure_string () == "", we should display "Will run..." as in entry_changed()
-	ctk_label_set_text (GTK_LABEL (dialog->program_label),
+	ctk_label_set_text (CTK_LABEL (dialog->program_label),
 			    sure_string (temp));
 	g_free (temp);
 
 	terminal = panel_key_file_get_boolean (key_file, "Terminal", FALSE);
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->terminal_checkbox),
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (dialog->terminal_checkbox),
 				      terminal);
 
 	g_key_file_free (key_file);
@@ -1103,11 +1103,11 @@ program_list_selection_activated (GtkTreeView       *view,
 	GtkTreeSelection *selection;
 
 	/* update the entry with the info from the selection */
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (dialog->program_list));
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (dialog->program_list));
 	program_list_selection_changed (selection, dialog);
 
 	/* now launch the command */
-	ctk_dialog_response (GTK_DIALOG (dialog->run_dialog), GTK_RESPONSE_OK);
+	ctk_dialog_response (CTK_DIALOG (dialog->run_dialog), CTK_RESPONSE_OK);
 }
 
 
@@ -1117,10 +1117,10 @@ panel_run_dialog_setup_program_list (PanelRunDialog *dialog,
 {
 	GtkTreeSelection *selection;
 
-	dialog->program_list = PANEL_GTK_BUILDER_GET (gui, "program_list");
-	dialog->program_list_box = PANEL_GTK_BUILDER_GET (gui, "program_list_box");
-	dialog->program_label = PANEL_GTK_BUILDER_GET (gui, "program_label");
-	dialog->main_box = PANEL_GTK_BUILDER_GET (gui, "main_box");
+	dialog->program_list = PANEL_CTK_BUILDER_GET (gui, "program_list");
+	dialog->program_list_box = PANEL_CTK_BUILDER_GET (gui, "program_list_box");
+	dialog->program_label = PANEL_CTK_BUILDER_GET (gui, "program_label");
+	dialog->main_box = PANEL_CTK_BUILDER_GET (gui, "main_box");
 
 	ctk_widget_set_can_focus (dialog->program_label, FALSE);
 
@@ -1130,8 +1130,8 @@ panel_run_dialog_setup_program_list (PanelRunDialog *dialog,
 	g_object_ref (dialog->program_list_box);
 
 	if (panel_profile_get_enable_program_list ()) {
-		selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (dialog->program_list));
-		ctk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+		selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (dialog->program_list));
+		ctk_tree_selection_set_mode (selection, CTK_SELECTION_SINGLE);
 
 	        g_signal_connect (selection, "changed",
 				  G_CALLBACK (program_list_selection_changed),
@@ -1158,46 +1158,46 @@ panel_run_dialog_update_content (PanelRunDialog *dialog,
 
 		parent = ctk_widget_get_parent (dialog->list_expander);
 		if (parent)
-			ctk_container_remove (GTK_CONTAINER (parent),
+			ctk_container_remove (CTK_CONTAINER (parent),
 					      dialog->list_expander);
 
-		ctk_window_set_resizable (GTK_WINDOW (dialog->run_dialog), FALSE);
+		ctk_window_set_resizable (CTK_WINDOW (dialog->run_dialog), FALSE);
                 ctk_widget_grab_focus (dialog->combobox);
 
 	} else {
 
         /* the following two conditions occur, when the user clicks the expander in the dialog
          * if the list is closed and the user wants to see it */
-        if (show_list && ctk_expander_get_expanded (GTK_EXPANDER (dialog->list_expander))) {
+        if (show_list && ctk_expander_get_expanded (CTK_EXPANDER (dialog->list_expander))) {
 
             /* open the expander, this shows the list */
-            ctk_expander_set_expanded (GTK_EXPANDER (dialog->list_expander), TRUE);
+            ctk_expander_set_expanded (CTK_EXPANDER (dialog->list_expander), TRUE);
 
-            ctk_window_resize (GTK_WINDOW (dialog->run_dialog), 100, 300);
-            ctk_window_set_resizable (GTK_WINDOW (dialog->run_dialog), TRUE);
+            ctk_window_resize (CTK_WINDOW (dialog->run_dialog), 100, 300);
+            ctk_window_set_resizable (CTK_WINDOW (dialog->run_dialog), TRUE);
             ctk_widget_grab_focus (dialog->program_list);
 
         /* if the list is open and the user wants to close it */
-        } else if (!show_list && !ctk_expander_get_expanded (GTK_EXPANDER (dialog->list_expander))) {
+        } else if (!show_list && !ctk_expander_get_expanded (CTK_EXPANDER (dialog->list_expander))) {
 
             /* close the expander, this hides the list */
-            ctk_expander_set_expanded (GTK_EXPANDER (dialog->list_expander), FALSE);
+            ctk_expander_set_expanded (CTK_EXPANDER (dialog->list_expander), FALSE);
 
-            ctk_window_set_resizable (GTK_WINDOW (dialog->run_dialog), FALSE);
+            ctk_window_set_resizable (CTK_WINDOW (dialog->run_dialog), FALSE);
             ctk_widget_grab_focus (dialog->combobox);
         }
 
         /* the following two conditions occur, when the user changes the expander setting in GSettings */
-        if (show_list && !ctk_expander_get_expanded (GTK_EXPANDER (dialog->list_expander))) {
+        if (show_list && !ctk_expander_get_expanded (CTK_EXPANDER (dialog->list_expander))) {
 
             /* open the expander, this shows the list */
-            ctk_expander_set_expanded (GTK_EXPANDER (dialog->list_expander), TRUE);
+            ctk_expander_set_expanded (CTK_EXPANDER (dialog->list_expander), TRUE);
 
         /* if the list is open and the user wants to close it */
-        } else if (!show_list && ctk_expander_get_expanded (GTK_EXPANDER (dialog->list_expander))) {
+        } else if (!show_list && ctk_expander_get_expanded (CTK_EXPANDER (dialog->list_expander))) {
 
             /* close the expander, this hides the list */
-            ctk_expander_set_expanded (GTK_EXPANDER (dialog->list_expander), FALSE);
+            ctk_expander_set_expanded (CTK_EXPANDER (dialog->list_expander), FALSE);
         }
     }
 }
@@ -1222,10 +1222,10 @@ static void
 panel_run_dialog_setup_list_expander (PanelRunDialog *dialog,
 				      GtkBuilder     *gui)
 {
-	dialog->list_expander = PANEL_GTK_BUILDER_GET (gui, "list_expander");
+	dialog->list_expander = PANEL_CTK_BUILDER_GET (gui, "list_expander");
 
 	if (panel_profile_get_enable_program_list ()) {
-		ctk_expander_set_expanded (GTK_EXPANDER (dialog->list_expander),
+		ctk_expander_set_expanded (CTK_EXPANDER (dialog->list_expander),
 					   panel_profile_get_show_program_list ());
 
 		if ( ! panel_profile_is_writable_show_program_list ())
@@ -1249,8 +1249,8 @@ file_button_browse_response (GtkWidget      *chooser,
 {
 	char *file;
 
-	if (response == GTK_RESPONSE_OK) {
-		file = ctk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
+	if (response == CTK_RESPONSE_OK) {
+		file = ctk_file_chooser_get_filename (CTK_FILE_CHOOSER (chooser));
 		panel_run_dialog_append_file (dialog, file);
 		g_free (file);
 	}
@@ -1267,29 +1267,29 @@ file_button_clicked (GtkButton      *button,
 	GtkWidget *chooser;
 
 	chooser = panel_file_chooser_dialog_new (_("Choose a file to append to the command..."),
-						 GTK_WINDOW (dialog->run_dialog),
-						 GTK_FILE_CHOOSER_ACTION_OPEN,
-						 "process-stop", GTK_RESPONSE_CANCEL,
-						 "ctk-ok", GTK_RESPONSE_OK,
+						 CTK_WINDOW (dialog->run_dialog),
+						 CTK_FILE_CHOOSER_ACTION_OPEN,
+						 "process-stop", CTK_RESPONSE_CANCEL,
+						 "ctk-ok", CTK_RESPONSE_OK,
 						 NULL);
 
-	ctk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser),
+	ctk_file_chooser_set_current_folder (CTK_FILE_CHOOSER (chooser),
 					     g_get_home_dir ());
 
-	ctk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_OK);
-	ctk_window_set_destroy_with_parent (GTK_WINDOW (chooser), TRUE);
+	ctk_dialog_set_default_response (CTK_DIALOG (chooser), CTK_RESPONSE_OK);
+	ctk_window_set_destroy_with_parent (CTK_WINDOW (chooser), TRUE);
 
 	g_signal_connect (chooser, "response",
 			  G_CALLBACK (file_button_browse_response), dialog);
 
-	ctk_window_present (GTK_WINDOW (chooser));
+	ctk_window_present (CTK_WINDOW (chooser));
 }
 
 static void
 panel_run_dialog_setup_file_button (PanelRunDialog *dialog,
 				    GtkBuilder     *gui)
 {
-	dialog->file_button = PANEL_GTK_BUILDER_GET (gui, "file_button");
+	dialog->file_button = PANEL_CTK_BUILDER_GET (gui, "file_button");
 
         g_signal_connect (dialog->file_button, "clicked",
 			  G_CALLBACK (file_button_clicked),
@@ -1517,7 +1517,7 @@ entry_event (GtkEditable    *entry,
 	*/
 	dialog->use_program_list = FALSE;
 	if (panel_profile_get_enable_program_list ()) {
-		selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (dialog->program_list));
+		selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (dialog->program_list));
 		ctk_tree_selection_unselect_all (selection);
 	}
 
@@ -1531,7 +1531,7 @@ entry_event (GtkEditable    *entry,
 		if (dialog->completion_started &&
 		    pos != tmp &&
 		    pos != 1 &&
-		    tmp == strlen (ctk_entry_get_text (GTK_ENTRY (entry)))) {
+		    tmp == strlen (ctk_entry_get_text (CTK_ENTRY (entry)))) {
 	    		ctk_editable_select_region (entry, 0, 0);
 			ctk_editable_set_position (entry, -1);
 
@@ -1544,13 +1544,13 @@ entry_event (GtkEditable    *entry,
 		if (dialog->completion_started &&
 		    pos != tmp &&
 		    pos != 0 &&
-		    tmp == strlen (ctk_entry_get_text (GTK_ENTRY (entry)))) {
+		    tmp == strlen (ctk_entry_get_text (CTK_ENTRY (entry)))) {
 			temp = ctk_editable_get_chars (entry, 0, pos);
 			prefix = g_strconcat (temp, event->string, NULL);
 			g_free (temp);
 		} else if (pos == tmp &&
-			   tmp == strlen (ctk_entry_get_text (GTK_ENTRY (entry)))) {
-			prefix = g_strconcat (ctk_entry_get_text (GTK_ENTRY (entry)),
+			   tmp == strlen (ctk_entry_get_text (CTK_ENTRY (entry)))) {
+			prefix = g_strconcat (ctk_entry_get_text (CTK_ENTRY (entry)),
 					      event->string, NULL);
 		} else {
 			return FALSE;
@@ -1647,7 +1647,7 @@ combobox_changed (GtkComboBox    *combobox,
 		ctk_drag_source_unset (dialog->run_dialog);
 
 		if (panel_profile_get_enable_program_list ())
-			ctk_label_set_text (GTK_LABEL (dialog->program_label),
+			ctk_label_set_text (CTK_LABEL (dialog->program_label),
 					    _("Select an application to view its description."));
 
 		panel_run_dialog_set_default_icon (dialog, FALSE);
@@ -1661,14 +1661,14 @@ combobox_changed (GtkComboBox    *combobox,
 			GtkTreeIter  iter;
 			GtkTreePath *path;
 
-			ctk_tree_model_foreach (GTK_TREE_MODEL (dialog->program_list_store),
+			ctk_tree_model_foreach (CTK_TREE_MODEL (dialog->program_list_store),
 						panel_run_dialog_make_all_list_visible,
 						NULL);
 
 			path = ctk_tree_path_new_first ();
-			if (ctk_tree_model_get_iter (ctk_tree_view_get_model (GTK_TREE_VIEW (dialog->program_list)),
+			if (ctk_tree_model_get_iter (ctk_tree_view_get_model (CTK_TREE_VIEW (dialog->program_list)),
 						     &iter, path))
-				ctk_tree_view_scroll_to_cell (GTK_TREE_VIEW (dialog->program_list),
+				ctk_tree_view_scroll_to_cell (CTK_TREE_VIEW (dialog->program_list),
 							      path, NULL,
 							      FALSE, 0, 0);
 			ctk_tree_path_free (path);
@@ -1688,7 +1688,7 @@ combobox_changed (GtkComboBox    *combobox,
 	    !dialog->use_program_list) {
 		msg = g_strdup_printf (_("Will run command: '%s'"),
 				       start);
-		ctk_label_set_text (GTK_LABEL (dialog->program_label), msg);
+		ctk_label_set_text (CTK_LABEL (dialog->program_label), msg);
 		g_free (msg);
 	}
 
@@ -1757,15 +1757,15 @@ panel_run_dialog_setup_entry (PanelRunDialog *dialog,
 	int                    width_request;
 	GtkWidget             *entry;
 
-	dialog->combobox = PANEL_GTK_BUILDER_GET (gui, "comboboxentry");
+	dialog->combobox = PANEL_CTK_BUILDER_GET (gui, "comboboxentry");
 
-	entry = ctk_bin_get_child (GTK_BIN (dialog->combobox));
-	ctk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
+	entry = ctk_bin_get_child (CTK_BIN (dialog->combobox));
+	ctk_entry_set_activates_default (CTK_ENTRY (entry), TRUE);
 
-	ctk_combo_box_set_model (GTK_COMBO_BOX (dialog->combobox),
+	ctk_combo_box_set_model (CTK_COMBO_BOX (dialog->combobox),
 				 _panel_run_get_recent_programs_list (dialog));
 	ctk_combo_box_set_entry_text_column
-		(GTK_COMBO_BOX (dialog->combobox), 0);
+		(CTK_COMBO_BOX (dialog->combobox), 0);
 
         /* 1/4 the width of the first monitor should be a good value */
 	width_request = panel_multimonitor_width (0) / 4;
@@ -1783,7 +1783,7 @@ panel_run_dialog_setup_entry (PanelRunDialog *dialog,
 	ctk_drag_dest_unset (dialog->combobox);
 
 	ctk_drag_dest_set (dialog->combobox,
-			   GTK_DEST_DEFAULT_MOTION|GTK_DEST_DEFAULT_HIGHLIGHT,
+			   CTK_DEST_DEFAULT_MOTION|CTK_DEST_DEFAULT_HIGHLIGHT,
 			   NULL, 0,
 			   GDK_ACTION_COPY);
 	ctk_drag_dest_add_uri_targets (dialog->combobox);
@@ -1843,7 +1843,7 @@ panel_run_dialog_create_desktop_file (PanelRunDialog *dialog)
 					  dialog->item_name : text);
 
 	panel_key_file_set_boolean (key_file, "Terminal",
-				    ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->terminal_checkbox)));
+				    ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (dialog->terminal_checkbox)));
 
 	if (dialog->icon) {
 		gchar *icon_path = g_icon_to_string (dialog->icon);
@@ -1924,7 +1924,7 @@ static void
 panel_run_dialog_setup_pixmap (PanelRunDialog *dialog,
 			       GtkBuilder     *gui)
 {
-	dialog->pixmap = PANEL_GTK_BUILDER_GET (gui, "icon_pixmap");
+	dialog->pixmap = PANEL_CTK_BUILDER_GET (gui, "icon_pixmap");
 
 	g_signal_connect (dialog->pixmap, "style-updated",
 			  G_CALLBACK (panel_run_dialog_style_updated),
@@ -1976,7 +1976,7 @@ panel_run_dialog_new (GdkScreen  *screen,
 
 	dialog = g_new0 (PanelRunDialog, 1);
 
-	dialog->run_dialog = PANEL_GTK_BUILDER_GET (gui, "panel_run_dialog");
+	dialog->run_dialog = PANEL_CTK_BUILDER_GET (gui, "panel_run_dialog");
 
 	g_signal_connect_swapped (dialog->run_dialog, "response",
 				  G_CALLBACK (panel_run_dialog_response), dialog);
@@ -1984,8 +1984,8 @@ panel_run_dialog_new (GdkScreen  *screen,
 	g_signal_connect_swapped (dialog->run_dialog, "destroy",
 				  G_CALLBACK (panel_run_dialog_destroy), dialog);
 
-	dialog->run_button = PANEL_GTK_BUILDER_GET (gui, "run_button");
-	dialog->terminal_checkbox = PANEL_GTK_BUILDER_GET (gui, "terminal_checkbox");
+	dialog->run_button = PANEL_CTK_BUILDER_GET (gui, "run_button");
+	dialog->terminal_checkbox = PANEL_CTK_BUILDER_GET (gui, "terminal_checkbox");
 
 	dialog->settings = g_settings_new (PANEL_RUN_SCHEMA);
 
@@ -2005,10 +2005,10 @@ panel_run_dialog_new (GdkScreen  *screen,
 
 	ctk_widget_set_sensitive (dialog->run_button, FALSE);
 
-	ctk_dialog_set_default_response (GTK_DIALOG (dialog->run_dialog),
-					 GTK_RESPONSE_OK);
+	ctk_dialog_set_default_response (CTK_DIALOG (dialog->run_dialog),
+					 CTK_RESPONSE_OK);
 
-	ctk_window_set_screen (GTK_WINDOW (dialog->run_dialog), screen);
+	ctk_window_set_screen (CTK_WINDOW (dialog->run_dialog), screen);
 
 	ctk_widget_grab_focus (dialog->combobox);
 	ctk_widget_realize (dialog->run_dialog);
@@ -2050,8 +2050,8 @@ panel_run_dialog_present (GdkScreen *screen,
 		return;
 
 	if (static_dialog) {
-		ctk_window_set_screen (GTK_WINDOW (static_dialog->run_dialog), screen);
-		ctk_window_present_with_time (GTK_WINDOW (static_dialog->run_dialog),
+		ctk_window_set_screen (CTK_WINDOW (static_dialog->run_dialog), screen);
+		ctk_window_present_with_time (CTK_WINDOW (static_dialog->run_dialog),
 					      activate_time);
 		ctk_widget_grab_focus (static_dialog->combobox);
 		return;
@@ -2069,7 +2069,7 @@ panel_run_dialog_present (GdkScreen *screen,
 				  G_CALLBACK (panel_run_dialog_static_dialog_destroyed),
 				  static_dialog);
 
-	ctk_window_present_with_time (GTK_WINDOW (static_dialog->run_dialog),
+	ctk_window_present_with_time (CTK_WINDOW (static_dialog->run_dialog),
 				      activate_time);
 
 	g_object_unref (gui);

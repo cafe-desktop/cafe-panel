@@ -73,7 +73,7 @@
   * panel-toplevel: avoid deprecated 'ctk_css_provider_get_default'
   * panel-toplevel: fix applets placement on expanded vertical panel
   * panel-toplevel: fix coding style and spacing a bit
-  * Fix GTK Layer Shell include and CFLAGS
+  * Fix CTK Layer Shell include and CFLAGS
   * [clock-applet] Add scroll interface tabs with mouse wheel
   * Keep menu button popup from covering up menu on Wayland
   * Keep applet menus from covering up applets on Wayland
@@ -161,7 +161,7 @@
   * panel-action-protocol: Error if used when X11 is disabled
   * panel-force-quit: Error if used when X11 is disabled
   * panel-xutils: Error if used when X11 is disabled
-  * xstuff: include GTK and GDK X11 headers, so including files don't have to
+  * xstuff: include CTK and GDK X11 headers, so including files don't have to
   * xstuff: add is_using_x11 ()
   * xstuff: Error if X11 not enabled
   * Applets: only compile X11 applets when X11 is enabled
@@ -230,18 +230,18 @@
   * menu-bar: transfer focus correctly on alt-F1
   * panel: avoid a critical
   * panel-toplevel: fix memory leak in calculate_minimum_height
-  * Change GTK_CHECK_VERSION to match next ctk+ release
-  * applets: Guard against GTK scale-factor fixes on GtkSocket
+  * Change CTK_CHECK_VERSION to match next ctk+ release
+  * applets: Guard against CTK scale-factor fixes on GtkSocket
   * window-list: Skip setting size hints until WnckTasklist has items to show.
   * applets: Fix runtime error messages
   * cafe-panel-applet: setup_x_error_handler for in-process applets too
-  * GTK 3.23: fix applet size allocation
+  * CTK 3.23: fix applet size allocation
   * fish: avoid deprecated 'ctk_window_set_wmclass'
   * Tray: simplify force-redraw, use code that actually works
   * panel-actions: replace deprecated ctk_menu_popup
   * applet-context-menu: replace deprecated ctk_menu_popup
   * panel-context-menu: replace deprecated ctk_menu_popup
-  * GTK 3.23: don't cut tray icons too narrow in HiDPI mode
+  * CTK 3.23: don't cut tray icons too narrow in HiDPI mode
   * na-tray-child: remove na_tray_child_size_allocate
   * panel-menu-button: replace deprecated ctk_menu_popup
   * na-tray-child: replace deprecated gdk_error_trap_push/pop functions
@@ -326,9 +326,9 @@
   * Added gir for cafe_panel_applet_set_size_hints()
   * panel-stock-icons.c: Fix warnings in ~/.xsession-errors
   * Fix run dialog show-program-list enabling
-  * require GTK+ 3.22 and GLib 2.50
+  * require CTK+ 3.22 and GLib 2.50
   * panel-run-dialog: fix build warning about incompatible type
-  * remove unneeded nested GTK_CHECK_VERSION block
+  * remove unneeded nested CTK_CHECK_VERSION block
   * workspace-switcher: restore border width and spacing in prefs dialog
   * context menu: add separator before Reset Panel menu item
   * background: reword warning about unsupported background-image value
@@ -375,9 +375,9 @@
   * panel-toplevel: remove duplicate break statement
   * status-notifier: remove duplicate check found by cppcheck
   * status-notifier: hide cafe-polkit icon if passive
-  * Apply position fix on popup to GTK 3.20 and earlier
-  * GTK 3.22 status notifier: reposition menu when size changes
-  * GTK 3.22/status-notifer Fix menu position if size changed since last shown
+  * Apply position fix on popup to CTK 3.20 and earlier
+  * CTK 3.22 status notifier: reposition menu when size changes
+  * CTK 3.22/status-notifer Fix menu position if size changed since last shown
   * Stop panel collapse left on adding certain out-of-process applets
   * make file/folder launchers work again
   * panel-context-menu: Add confirmation dialog to panel reset option
@@ -401,7 +401,7 @@
   * libcafe-panel-applet: fix build warning
   * libcafe-panel-applet: fix introspection
   * libcafe-panel-applet: unown bus name and unregister dbus object
-  * libcafe-panel-applet GTK 3.14/3.16: fix custom bg w alpha
+  * libcafe-panel-applet CTK 3.14/3.16: fix custom bg w alpha
   * libcafe-panel-applet: include dummy variable in factory for certian applets
   * libcafe-panel-applet: fix bg rendering for in-process applets
   * libpanel-applet/panel-applet.h: Rename id to factory_id for factory
@@ -429,10 +429,10 @@
   * avoid deprecated gdk_screen_get_number
   * fix applet crashes on transparent user-set panel bg
   * system tray: fix hidden icons on image/transparent color BG
-  * Fix GTK theme image bg support on vertical panel
-  * Make panel image background in GTK theme work again
+  * Fix CTK theme image bg support on vertical panel
+  * Make panel image background in CTK theme work again
   * clock: fix hovering over timezone text, causes panel to scale beyond screen limit
-  * GTK 3.18+ fix transparent default panel bg
+  * CTK 3.18+ fix transparent default panel bg
 
 ### cafe-panel 1.19.1
 
@@ -458,7 +458,7 @@
 
   * Translations update
   * status-notifier: fix crash on unknown signal name
-  * use GTK+3 bookmarks location for Places menu
+  * use CTK+3 bookmarks location for Places menu
   * doc: remove some references to nonexistent stuff
   * fix build with gcc 4.9.2 (looks like it's in c89 mode by default)
   * Run dialog: Add option to reverse history view
@@ -491,14 +491,14 @@
     to make generating release announcements easier
   * Build: require libcafe-menu >= 1.10 and dconf >= 0.13.4
   * Build: require libcafeweather and libcafe-desktop >= 1.17
-  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
+  * Move to CTK+3 (require CTK+ >= 3.14), drop CTK+2 code and
     --with-ctk build option
   * Launchers: add desktop actions support for additional launch
     options
   * Menu applets: add support for Menulibre menu editor, and prefer
     it to Mozo if both are installed
   * Notification area: add StatusNotifier support
-  * Fix lots of GTK+ deprecations and runtime warnings
+  * Fix lots of CTK+ deprecations and runtime warnings
   * Don't spam accessible name changes when it is translated
   * Some code cleanups
   * Translations update
@@ -508,16 +508,16 @@
   * Clock applet: mark current day in the calendar
   * Clock applet: update tooltip only when new text is different
     (fixes some OpenGL issues in fullscreen apps)
-  * GTK+3: stop calendar window jumping when expanding/folding
+  * CTK+3: stop calendar window jumping when expanding/folding
     locations
-  * GTK+3: fix showing icon at mouse cursor on launcher drag-n-drop
-  * GTK+3: fix a heap of runtime warnings
+  * CTK+3: fix showing icon at mouse cursor on launcher drag-n-drop
+  * CTK+3: fix a heap of runtime warnings
 
 ### cafe-panel 1.16.0
 
   * Use GtkAboutDialog instead of CafeAboutDialog
-  * GTK+3: use GtkColorButton/GtkColorChooser in properties dialog
-  * GTK+3: fix a lot of deprecations
+  * CTK+3: use GtkColorButton/GtkColorChooser in properties dialog
+  * CTK+3: fix a lot of deprecations
   * Some more fixes and cleanups
   * Translations update
 
@@ -526,7 +526,7 @@
   * Some fixes for opensuse.layout
   * Some more fixes and cleanups
   * Translations update
-  * Make distcheck use currently selected GTK+ version
+  * Make distcheck use currently selected CTK+ version
 
 ### cafe-panel 1.14.1
 
@@ -546,10 +546,10 @@
   * Change default menubar icon size to 22px
   * Drop "Ubuntu hacks" (--enable-ubuntu build option) as Ubuntu
     dropped that stuff long ago
-  * GTK+3: add several style classes
-  * GTK+3: add several css names for 3.20
-  * GTK+3: fix rendering of custom backgrounds with 3.18 and newer
-  * GTK+3: fix a lot of deprecations
+  * CTK+3: add several style classes
+  * CTK+3: add several css names for 3.20
+  * CTK+3: fix rendering of custom backgrounds with 3.18 and newer
+  * CTK+3: fix a lot of deprecations
   * Some more fixes and cleanups
   * Translations update
   * Add Changelog generation
@@ -559,12 +559,12 @@
   * Drawer applet: fix occasional stretching of drawer's panel
     over the entire screen
   * Drawer applet: fix occasional crash on applet removing
-  * GTK+3: fix infinite loop with some themes
+  * CTK+3: fix infinite loop with some themes
   * Some more fixes
 
 ### cafe-panel 1.12.1
 
-  * GTK+3: fix background in some themes
+  * CTK+3: fix background in some themes
   * Some more fixes
 
 ### cafe-panel 1.12.0
@@ -574,16 +574,16 @@
   * Fix positions of locked applets on screen resolution change
   * Retrieve strings directly from gschema (requires intltool 0.50.1)
   * Switch to org.gnome.SessionManager (used by action buttons)
-  * GTK+3: add a style class for applets to follow panel-menu-bar
-  * Multiple GTK+3 fixes
+  * CTK+3: add a style class for applets to follow panel-menu-bar
+  * Multiple CTK+3 fixes
   * Some more fixes and cleanups
 
 ### cafe-panel 1.10.1
 
   * Fish and clock applets: help fixes
   * Drawer applet: fix opening after adding applets to it
-  * Force Quit applet: fix desktop freezing with GTK+3
-  * Some more GTK+3 fixes
+  * Force Quit applet: fix desktop freezing with CTK+3
+  * Some more CTK+3 fixes
   * Some code cleanup
   * Translations updates
 

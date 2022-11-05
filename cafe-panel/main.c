@@ -213,9 +213,9 @@ main (int argc, char **argv)
 	/*Load a css file from a GResource so the drag handle image can be loaded*/
 	screen = gdk_screen_get_default ();
 	css = ctk_css_provider_new ();
-	provider = GTK_STYLE_PROVIDER (css);
+	provider = CTK_STYLE_PROVIDER (css);
 	resource = "/org/cafe/panel/theme/cafe-panel.css";
-	priority = GTK_STYLE_PROVIDER_PRIORITY_FALLBACK;
+	priority = CTK_STYLE_PROVIDER_PRIORITY_FALLBACK;
 
 	g_signal_connect (provider, "parsing-error", G_CALLBACK (parsing_error_cb), NULL);
 
