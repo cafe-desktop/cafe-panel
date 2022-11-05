@@ -15,7 +15,7 @@ requires:
     - gir1.2-freedesktop
     - git
     - gobject-introspection
-    - ctk-doc-tools
+    - gtk-doc-tools
     - libatk1.0-dev
     - libcairo2-dev
     - libdconf-dev

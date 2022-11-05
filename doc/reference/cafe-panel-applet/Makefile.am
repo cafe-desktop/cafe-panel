@@ -9,7 +9,7 @@ DOC_MODULE=cafe-panel-applet
 DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.sgml
 
 # The directory containing the source code. Relative to $(srcdir).
-# ctk-doc will search all .c & .h files beneath here for inline comments
+# gtk-doc will search all .c & .h files beneath here for inline comments
 # documenting functions and macros.
 DOC_SOURCE_DIR=../../../libcafe-panel-applet
 
@@ -57,7 +57,7 @@ CTKDOC_LIBS =						\
 	$(PANEL_LIBS)					\
 	../../../libcafe-panel-applet/libcafe-panel-applet-4.la
 
-include $(top_srcdir)/ctk-doc.make
+include $(top_srcdir)/gtk-doc.make
 
 dist-hook-local:
 #	mkdir $(distdir)/TEXT;          \
