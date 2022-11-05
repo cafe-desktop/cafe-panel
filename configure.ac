@@ -381,6 +381,6 @@ echo "
         X11 support:                   ${have_x11}
         XRandr support:                ${have_randr}
         Build introspection support:   ${found_introspection}
-        Build gtk-doc documentation:   ${enable_ctk_doc}
+        Build gtk-doc documentation:   ${enable_gtk_doc}
 
 "
