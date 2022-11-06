@@ -282,7 +282,7 @@
   * na-tray: Convert to GResource
   * wncklet: Convert to GResource
   * panel: Convert to GResource
-  * clock: Use new CdkPixbuf API to load resources
+  * clock: Use new GdkPixbuf API to load resources
   * clock: Convert to GResource
   * fish: Convert to GResource
   * libpanel-applet: Add panel_applet_setup_menu_from_resource() API

@@ -57,7 +57,7 @@ typedef struct {
 	int size_end;
 	PanelOrientation orientation;
 	double opacity;
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 	guint timeout_id;
 } CompositedZoomData;
 
@@ -98,7 +98,7 @@ zoom_draw (CtkWidget *widget,
 
 		g_slice_free (CompositedZoomData, zoom);
 	} else {
-		CdkPixbuf *scaled;
+		GdkPixbuf *scaled;
 		int width, height;
 		int x = 0, y = 0;
 
@@ -151,7 +151,7 @@ zoom_draw (CtkWidget *widget,
 static void
 draw_zoom_animation_composited (CdkScreen *gscreen,
 				int x, int y, int w, int h,
-				CdkPixbuf *pixbuf,
+				GdkPixbuf *pixbuf,
 				PanelOrientation orientation)
 {
 	CtkWidget *win;
@@ -365,7 +365,7 @@ xstuff_zoom_anicafe (CtkWidget *widget,
 	gscreen = ctk_widget_get_screen (widget);
 
 	if (cdk_screen_is_composited (gscreen) && surface) {
-		CdkPixbuf *pixbuf = cdk_pixbuf_get_from_surface (surface,
+		GdkPixbuf *pixbuf = cdk_pixbuf_get_from_surface (surface,
 				0, 0,
 				cairo_image_surface_get_width (surface),
 				cairo_image_surface_get_height (surface));

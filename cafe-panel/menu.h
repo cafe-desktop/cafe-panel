@@ -58,7 +58,7 @@ CtkWidget *	panel_create_menu              (void);
 
 CtkWidget *	panel_image_menu_item_new      (void);
 
-CdkPixbuf *	panel_make_menu_icon (CtkIconTheme *icon_theme,
+GdkPixbuf *	panel_make_menu_icon (CtkIconTheme *icon_theme,
 				      const char   *icon,
 				      const char   *fallback,
 				      int           size,

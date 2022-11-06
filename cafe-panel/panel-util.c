@@ -337,7 +337,7 @@ panel_load_icon (CtkIconTheme  *icon_theme,
 		 int            desired_height,
 		 char         **error_msg)
 {
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 	cairo_surface_t *surface;
 	char      *file;
 	GError    *error;
@@ -711,12 +711,12 @@ panel_make_unique_desktop_uri (const char *dir,
 	return uri;
 }
 
-CdkPixbuf *
+GdkPixbuf *
 panel_util_cairo_rgbdata_to_pixbuf (unsigned char *data,
 				    int            width,
 				    int            height)
 {
-	CdkPixbuf     *retval;
+	GdkPixbuf     *retval;
 	unsigned char *dstptr;
 	unsigned char *srcptr;
 	int            align;

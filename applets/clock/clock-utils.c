@@ -127,7 +127,7 @@ clock_utils_display_help (CtkWidget  *widget,
 	}
 }
 
-CdkPixbuf *
+GdkPixbuf *
 clock_utils_pixbuf_from_svg_resource_at_size (const char *resource,
 	                                          int         width,
 	                                          int         height)
@@ -135,7 +135,7 @@ clock_utils_pixbuf_from_svg_resource_at_size (const char *resource,
 	GInputStream      *stream = NULL;
 	RsvgHandle        *handle = NULL;
 	RsvgDimensionData  svg_dimensions;
-	CdkPixbuf         *pixbuf = NULL;
+	GdkPixbuf         *pixbuf = NULL;
 	cairo_surface_t   *surface = NULL;
 	cairo_matrix_t     matrix;
 	cairo_t           *cr = NULL;

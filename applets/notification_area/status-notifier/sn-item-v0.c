@@ -260,7 +260,7 @@ update (SnItemV0 *v0)
 
       if (!surface)
         {
-          CdkPixbuf *pixbuf;
+          GdkPixbuf *pixbuf;
           /*try to find icons specified by path and filename*/
           pixbuf = cdk_pixbuf_new_from_file (v0->icon_name, NULL);
           if (pixbuf && icon_size > 1)

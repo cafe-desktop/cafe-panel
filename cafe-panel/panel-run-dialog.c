@@ -294,7 +294,7 @@ panel_run_dialog_set_icon (PanelRunDialog *dialog,
 			   GIcon          *icon,
 			   gboolean        force)
 {
-	CdkPixbuf *pixbuf = NULL;
+	GdkPixbuf *pixbuf = NULL;
 
 	if (!force && g_icon_equal(icon, dialog->icon))
 		return;

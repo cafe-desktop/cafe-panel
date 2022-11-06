@@ -72,7 +72,7 @@ struct _PanelBackgroundMonitor {
 	CdkAtom    cdkatom;
 
 	cairo_surface_t *surface;
-	CdkPixbuf *cdkpixbuf;
+	GdkPixbuf *cdkpixbuf;
 
 	int        width;
 	int        height;
@@ -238,12 +238,12 @@ panel_background_monitor_xevent_filter (CdkXEvent *xevent,
 	return CDK_FILTER_CONTINUE;
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 panel_background_monitor_tile_background (PanelBackgroundMonitor *monitor,
 					  int                     width,
 					  int                     height)
 {
-	CdkPixbuf *retval;
+	GdkPixbuf *retval;
 	int        tilewidth, tileheight;
 
 	retval = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, width, height);
@@ -347,7 +347,7 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 		return;
 
 	if ((monitor->width < rwidth || monitor->height < rheight)) {
-		CdkPixbuf *tiled;
+		GdkPixbuf *tiled;
 
 		tiled = panel_background_monitor_tile_background (
 						monitor, rwidth, rheight);
@@ -359,14 +359,14 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 	}
 }
 
-CdkPixbuf *
+GdkPixbuf *
 panel_background_monitor_get_region (PanelBackgroundMonitor *monitor,
 				     int                     x,
 				     int                     y,
 				     int                     width,
 				     int                     height)
 {
-	CdkPixbuf *pixbuf, *tmpbuf;
+	GdkPixbuf *pixbuf, *tmpbuf;
 	int        subwidth, subheight;
 	int        subx, suby;
 

@@ -45,7 +45,7 @@ panel_ctk_file_chooser_preview_update (CtkFileChooser *chooser,
 {
 	CtkWidget *preview;
 	char      *filename;
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 	gboolean   have_preview;
 
 	preview = CTK_WIDGET (data);

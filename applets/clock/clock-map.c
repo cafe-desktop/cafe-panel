@@ -40,16 +40,16 @@ typedef struct {
 
 	guint highlight_timeout_id;
 
-        CdkPixbuf *stock_map_pixbuf;
-        CdkPixbuf *location_marker_pixbuf[MARKER_NB];
+        GdkPixbuf *stock_map_pixbuf;
+        GdkPixbuf *location_marker_pixbuf[MARKER_NB];
 
-        CdkPixbuf *location_map_pixbuf;
+        GdkPixbuf *location_map_pixbuf;
 
         /* The shadow itself */
-        CdkPixbuf *shadow_pixbuf;
+        GdkPixbuf *shadow_pixbuf;
 
         /* The map with the shadow composited onto it */
-        CdkPixbuf *shadow_map_pixbuf;
+        GdkPixbuf *shadow_map_pixbuf;
 } ClockMapPrivate;
 
 G_DEFINE_TYPE_WITH_PRIVATE (ClockMap, clock_map, CTK_TYPE_WIDGET)
@@ -284,8 +284,8 @@ static void
 clock_map_mark (ClockMap *this, gfloat latitude, gfloat longitude, gint mark)
 {
         ClockMapPrivate *priv = clock_map_get_instance_private (this);
-        CdkPixbuf *marker = priv->location_marker_pixbuf[mark];
-        CdkPixbuf *partial = NULL;
+        GdkPixbuf *marker = priv->location_marker_pixbuf[mark];
+        GdkPixbuf *partial = NULL;
 
         int x, y;
         int width, height;
@@ -329,8 +329,8 @@ clock_map_mark (ClockMap *this, gfloat latitude, gfloat longitude, gint mark)
            the 180 degree longitude line */
         if (dest_x < 0) {
                 /* split into our two pixbufs for the left and right edges */
-                CdkPixbuf *lhs = NULL;
-                CdkPixbuf *rhs = NULL;
+                GdkPixbuf *lhs = NULL;
+                GdkPixbuf *rhs = NULL;
 
                 lhs = cdk_pixbuf_new_subpixbuf
                         (marker, -dest_x, 0, marker_width + dest_x, marker_height);
@@ -358,8 +358,8 @@ clock_map_mark (ClockMap *this, gfloat latitude, gfloat longitude, gint mark)
                 g_object_unref (rhs);
         } else if (dest_x + dest_width > width) {
                 /* split into our two pixbufs for the left and right edges */
-                CdkPixbuf *lhs = NULL;
-                CdkPixbuf *rhs = NULL;
+                GdkPixbuf *lhs = NULL;
+                GdkPixbuf *rhs = NULL;
 
                 lhs = cdk_pixbuf_new_subpixbuf
                         (marker, width - dest_x, 0, marker_width - width + dest_x, marker_height);
@@ -517,7 +517,7 @@ clock_map_is_sunlit (gdouble pos_lat, gdouble pos_long,
 }
 
 static void
-clock_map_render_shadow_pixbuf (CdkPixbuf *pixbuf)
+clock_map_render_shadow_pixbuf (GdkPixbuf *pixbuf)
 {
         int x, y;
         int height, width;

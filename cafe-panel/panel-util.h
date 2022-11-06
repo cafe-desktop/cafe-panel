@@ -50,7 +50,7 @@ char *panel_make_unique_desktop_path_from_name (const char *dir,
 char *panel_make_unique_desktop_uri (const char *dir,
 				     const char *source);
 
-CdkPixbuf *panel_util_cairo_rgbdata_to_pixbuf (unsigned char *data,
+GdkPixbuf *panel_util_cairo_rgbdata_to_pixbuf (unsigned char *data,
 					       int            width,
 					       int            height);
 

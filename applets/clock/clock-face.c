@@ -57,7 +57,7 @@ struct _ClockFacePrivate
     ClockFaceSize size;
     ClockFaceTimeOfDay timeofday;
     ClockLocation *location;
-    CdkPixbuf *face_pixbuf;
+    GdkPixbuf *face_pixbuf;
     CtkWidget *size_widget;
 };
 

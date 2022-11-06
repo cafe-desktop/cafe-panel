@@ -159,11 +159,11 @@ static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBac
 }
 
 #ifdef HAVE_WINDOW_PREVIEWS
-static CdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistData *tasklist)
+static GdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistData *tasklist)
 {
 	CdkWindow *window;
-	CdkPixbuf *screenshot;
-	CdkPixbuf *thumbnail;
+	GdkPixbuf *screenshot;
+	GdkPixbuf *thumbnail;
 	guchar *pixels;
 	double ratio;
 	int width, height;
@@ -214,7 +214,7 @@ static CdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistDat
 }
 
 #define PREVIEW_PADDING 5
-static void preview_window_reposition (TasklistData *tasklist, CdkPixbuf *thumbnail)
+static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbnail)
 {
 	CdkMonitor *monitor;
 	CdkRectangle monitor_geom;
@@ -256,7 +256,7 @@ static void preview_window_reposition (TasklistData *tasklist, CdkPixbuf *thumbn
 	ctk_window_move (CTK_WINDOW (tasklist->preview), x_pos, y_pos);
 }
 
-static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, CdkPixbuf *thumbnail)
+static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, GdkPixbuf *thumbnail)
 {
 	CtkStyleContext *context;
 
@@ -268,7 +268,7 @@ static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, CdkPixbuf *
 
 static gboolean applet_enter_notify_event (WnckTasklist *tl, GList *wnck_windows, TasklistData *tasklist)
 {
-	CdkPixbuf *thumbnail;
+	GdkPixbuf *thumbnail;
 	WnckWindow *wnck_window = NULL;
 	int n_windows;
 
@@ -600,10 +600,10 @@ static void applet_size_allocate(CtkWidget *widget, CtkAllocation *allocation, T
 		cafe_panel_applet_set_size_hints(CAFE_PANEL_APPLET(tasklist->applet), size_hints, len, 0);
 }
 
-static CdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flags, void* data)
+static GdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flags, void* data)
 {
 	TasklistData* tasklist;
-	CdkPixbuf* retval;
+	GdkPixbuf* retval;
 	char* icon_no_extension;
 	char* p;
 

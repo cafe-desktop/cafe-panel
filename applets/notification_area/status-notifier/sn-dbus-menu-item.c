@@ -19,13 +19,13 @@
 
 #include "sn-dbus-menu-item.h"
 
-static CdkPixbuf *
+static GdkPixbuf *
 pxibuf_new (GVariant *variant)
 {
   gsize length;
   const guchar *data;
   GInputStream *stream;
-  CdkPixbuf *pixbuf;
+  GdkPixbuf *pixbuf;
   GError *error;
 
   data = g_variant_get_fixed_array (variant, &length, sizeof (guchar));
@@ -44,7 +44,7 @@ pxibuf_new (GVariant *variant)
 
   if (error != NULL)
     {
-      g_warning ("Unable to build CdkPixbuf from icon data: %s", error->message);
+      g_warning ("Unable to build GdkPixbuf from icon data: %s", error->message);
       g_error_free (error);
     }
 
