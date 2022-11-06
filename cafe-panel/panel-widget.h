@@ -12,7 +12,7 @@
 
 
 #include <ctk/ctk.h>
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 #include "button-widget.h"
 #include "panel-types.h"
 #include "panel-background.h"
