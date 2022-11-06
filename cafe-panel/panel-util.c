@@ -354,7 +354,7 @@ panel_load_icon (CtkIconTheme  *icon_theme,
 	}
 
 	error = NULL;
-	pixbuf = cdk_pixbuf_new_from_file_at_scale (file,
+	pixbuf = gdk_pixbuf_new_from_file_at_scale (file,
 						   desired_width,
 						   desired_height,
 						   TRUE,
@@ -726,13 +726,13 @@ panel_util_cairo_rgbdata_to_pixbuf (unsigned char *data,
 	if (!data)
 		return NULL;
 
-	retval = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, width, height);
+	retval = gdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, width, height);
 	if (!retval)
 		return NULL;
 
-	dstptr = cdk_pixbuf_get_pixels (retval);
+	dstptr = gdk_pixbuf_get_pixels (retval);
 	srcptr = data;
-	align  = cdk_pixbuf_get_rowstride (retval) - (width * 3);
+	align  = gdk_pixbuf_get_rowstride (retval) - (width * 3);
 
 #if G_BYTE_ORDER == G_LITTLE_ENDIAN
 /* cairo == 00RRGGBB */

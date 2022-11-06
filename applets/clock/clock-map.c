@@ -134,7 +134,7 @@ clock_map_init (ClockMap *this)
                 char *resource;
 
                 resource = g_strconcat (CLOCK_RESOURCE_PATH "icons/", marker_files[i], NULL);
-                priv->location_marker_pixbuf[i] = cdk_pixbuf_new_from_resource (resource, NULL);
+                priv->location_marker_pixbuf[i] = gdk_pixbuf_new_from_resource (resource, NULL);
                 g_free (resource);
         }
 }
@@ -207,7 +207,7 @@ clock_map_refresh (ClockMap *this)
         }
 
         if (!priv->stock_map_pixbuf) {
-                priv->stock_map_pixbuf = cdk_pixbuf_new_from_resource_at_scale (CLOCK_RESOURCE_PATH "icons/clock-map.png",
+                priv->stock_map_pixbuf = gdk_pixbuf_new_from_resource_at_scale (CLOCK_RESOURCE_PATH "icons/clock-map.png",
                                                                                 priv->width, priv->height,
                                                                                 FALSE,
                                                                                 NULL);
@@ -234,8 +234,8 @@ clock_map_draw (CtkWidget *this, cairo_t *cr)
 		clock_map_refresh (CLOCK_MAP (this));
         }
 
-	width = cdk_pixbuf_get_width (priv->shadow_map_pixbuf);
-	height = cdk_pixbuf_get_height (priv->shadow_map_pixbuf);
+	width = gdk_pixbuf_get_width (priv->shadow_map_pixbuf);
+	height = gdk_pixbuf_get_height (priv->shadow_map_pixbuf);
 
 	cdk_cairo_set_source_pixbuf (cr, priv->shadow_map_pixbuf, 0, 0);
 	cairo_rectangle (cr, 0, 0, width, height);
@@ -292,14 +292,14 @@ clock_map_mark (ClockMap *this, gfloat latitude, gfloat longitude, gint mark)
         int marker_width, marker_height;
         int dest_x, dest_y, dest_width, dest_height;
 
-        width = cdk_pixbuf_get_width (priv->location_map_pixbuf);
-        height = cdk_pixbuf_get_height (priv->location_map_pixbuf);
+        width = gdk_pixbuf_get_width (priv->location_map_pixbuf);
+        height = gdk_pixbuf_get_height (priv->location_map_pixbuf);
 
         x = (width / 2.0 + (width / 2.0) * longitude / 180.0);
         y = (height / 2.0 - (height / 2.0) * latitude / 90.0);
 
-        marker_width = cdk_pixbuf_get_width (marker);
-        marker_height = cdk_pixbuf_get_height (marker);
+        marker_width = gdk_pixbuf_get_width (marker);
+        marker_height = gdk_pixbuf_get_height (marker);
 
         dest_x = x - marker_width / 2;
         dest_y = y - marker_height / 2;
@@ -309,16 +309,16 @@ clock_map_mark (ClockMap *this, gfloat latitude, gfloat longitude, gint mark)
         /* create a small partial pixbuf if the mark is too close to
            the north or south pole */
         if (dest_y < 0) {
-                partial = cdk_pixbuf_new_subpixbuf
+                partial = gdk_pixbuf_new_subpixbuf
                         (marker, 0, dest_y + marker_height,
                          marker_width, -dest_y);
 
                 dest_y = 0.0;
-                marker_height = cdk_pixbuf_get_height (partial);
+                marker_height = gdk_pixbuf_get_height (partial);
         } else if (dest_y + dest_height > height) {
-                partial = cdk_pixbuf_new_subpixbuf
+                partial = gdk_pixbuf_new_subpixbuf
                         (marker, 0, 0, marker_width, height - dest_y);
-                marker_height = cdk_pixbuf_get_height (partial);
+                marker_height = gdk_pixbuf_get_height (partial);
         }
 
         if (partial) {
@@ -332,25 +332,25 @@ clock_map_mark (ClockMap *this, gfloat latitude, gfloat longitude, gint mark)
                 GdkPixbuf *lhs = NULL;
                 GdkPixbuf *rhs = NULL;
 
-                lhs = cdk_pixbuf_new_subpixbuf
+                lhs = gdk_pixbuf_new_subpixbuf
                         (marker, -dest_x, 0, marker_width + dest_x, marker_height);
 
-                cdk_pixbuf_composite (lhs, priv->location_map_pixbuf,
+                gdk_pixbuf_composite (lhs, priv->location_map_pixbuf,
                                       0, dest_y,
-                                      cdk_pixbuf_get_width (lhs),
-                                      cdk_pixbuf_get_height (lhs),
+                                      gdk_pixbuf_get_width (lhs),
+                                      gdk_pixbuf_get_height (lhs),
                                       0, dest_y,
                                       1.0, 1.0, CDK_INTERP_NEAREST, 0xFF);
 
-                rhs = cdk_pixbuf_new_subpixbuf
+                rhs = gdk_pixbuf_new_subpixbuf
                         (marker, 0, 0, -dest_x, marker_height);
 
-                cdk_pixbuf_composite (rhs, priv->location_map_pixbuf,
-                                      width - cdk_pixbuf_get_width (rhs) - 1,
+                gdk_pixbuf_composite (rhs, priv->location_map_pixbuf,
+                                      width - gdk_pixbuf_get_width (rhs) - 1,
                                       dest_y,
-                                      cdk_pixbuf_get_width (rhs),
-                                      cdk_pixbuf_get_height (rhs),
-                                      width - cdk_pixbuf_get_width (rhs) - 1,
+                                      gdk_pixbuf_get_width (rhs),
+                                      gdk_pixbuf_get_height (rhs),
+                                      width - gdk_pixbuf_get_width (rhs) - 1,
                                       dest_y,
                                       1.0, 1.0, CDK_INTERP_NEAREST, 0xFF);
 
@@ -361,35 +361,35 @@ clock_map_mark (ClockMap *this, gfloat latitude, gfloat longitude, gint mark)
                 GdkPixbuf *lhs = NULL;
                 GdkPixbuf *rhs = NULL;
 
-                lhs = cdk_pixbuf_new_subpixbuf
+                lhs = gdk_pixbuf_new_subpixbuf
                         (marker, width - dest_x, 0, marker_width - width + dest_x, marker_height);
 
-                cdk_pixbuf_composite (lhs, priv->location_map_pixbuf,
+                gdk_pixbuf_composite (lhs, priv->location_map_pixbuf,
                                       0, dest_y,
-                                      cdk_pixbuf_get_width (lhs),
-                                      cdk_pixbuf_get_height (lhs),
+                                      gdk_pixbuf_get_width (lhs),
+                                      gdk_pixbuf_get_height (lhs),
                                       0, dest_y,
                                       1.0, 1.0, CDK_INTERP_NEAREST, 0xFF);
 
-                rhs = cdk_pixbuf_new_subpixbuf
+                rhs = gdk_pixbuf_new_subpixbuf
                         (marker, 0, 0, width - dest_x, marker_height);
 
-                cdk_pixbuf_composite (rhs, priv->location_map_pixbuf,
-                                      width - cdk_pixbuf_get_width (rhs) - 1,
+                gdk_pixbuf_composite (rhs, priv->location_map_pixbuf,
+                                      width - gdk_pixbuf_get_width (rhs) - 1,
                                       dest_y,
-                                      cdk_pixbuf_get_width (rhs),
-                                      cdk_pixbuf_get_height (rhs),
-                                      width - cdk_pixbuf_get_width (rhs) - 1,
+                                      gdk_pixbuf_get_width (rhs),
+                                      gdk_pixbuf_get_height (rhs),
+                                      width - gdk_pixbuf_get_width (rhs) - 1,
                                       dest_y,
                                       1.0, 1.0, CDK_INTERP_NEAREST, 0xFF);
 
                 g_object_unref (lhs);
                 g_object_unref (rhs);
         } else {
-                cdk_pixbuf_composite (marker, priv->location_map_pixbuf,
+                gdk_pixbuf_composite (marker, priv->location_map_pixbuf,
                                       dest_x, dest_y,
-                                      cdk_pixbuf_get_width (marker),
-                                      cdk_pixbuf_get_height (marker),
+                                      gdk_pixbuf_get_width (marker),
+                                      gdk_pixbuf_get_height (marker),
                                       dest_x, dest_y,
                                       1.0, 1.0, CDK_INTERP_NEAREST, 0xFF);
         }
@@ -437,7 +437,7 @@ clock_map_place_locations (ClockMap *this)
                 priv->location_map_pixbuf = NULL;
         }
 
-        priv->location_map_pixbuf = cdk_pixbuf_copy (priv->stock_map_pixbuf);
+        priv->location_map_pixbuf = gdk_pixbuf_copy (priv->stock_map_pixbuf);
 
 	locs = NULL;
 	g_signal_emit (this, signals[NEED_LOCATIONS], 0, &locs);
@@ -526,12 +526,12 @@ clock_map_render_shadow_pixbuf (GdkPixbuf *pixbuf)
         gdouble sun_lat, sun_lon;
         time_t now = time (NULL);
 
-        n_channels = cdk_pixbuf_get_n_channels (pixbuf);
-        rowstride = cdk_pixbuf_get_rowstride (pixbuf);
-        pixels = cdk_pixbuf_get_pixels (pixbuf);
+        n_channels = gdk_pixbuf_get_n_channels (pixbuf);
+        rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+        pixels = gdk_pixbuf_get_pixels (pixbuf);
 
-        width = cdk_pixbuf_get_width (pixbuf);
-        height = cdk_pixbuf_get_height (pixbuf);
+        width = gdk_pixbuf_get_width (pixbuf);
+        height = gdk_pixbuf_get_height (pixbuf);
 
         sun_position (now, &sun_lat, &sun_lon);
 
@@ -561,11 +561,11 @@ clock_map_render_shadow (ClockMap *this)
                 g_object_unref (priv->shadow_pixbuf);
         }
 
-        priv->shadow_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8,
+        priv->shadow_pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8,
                                               priv->width, priv->height);
 
         /* Initialize to all shadow */
-        cdk_pixbuf_fill (priv->shadow_pixbuf, 0x6d9ccdff);
+        gdk_pixbuf_fill (priv->shadow_pixbuf, 0x6d9ccdff);
 
         clock_map_render_shadow_pixbuf (priv->shadow_pixbuf);
 
@@ -573,9 +573,9 @@ clock_map_render_shadow (ClockMap *this)
                 g_object_unref (priv->shadow_map_pixbuf);
         }
 
-        priv->shadow_map_pixbuf = cdk_pixbuf_copy (priv->location_map_pixbuf);
+        priv->shadow_map_pixbuf = gdk_pixbuf_copy (priv->location_map_pixbuf);
 
-        cdk_pixbuf_composite (priv->shadow_pixbuf, priv->shadow_map_pixbuf,
+        gdk_pixbuf_composite (priv->shadow_pixbuf, priv->shadow_map_pixbuf,
                               0, 0, priv->width, priv->height,
                               0, 0, 1, 1, CDK_INTERP_NEAREST, 0x66);
 }

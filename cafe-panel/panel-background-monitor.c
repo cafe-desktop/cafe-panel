@@ -246,18 +246,18 @@ panel_background_monitor_tile_background (PanelBackgroundMonitor *monitor,
 	GdkPixbuf *retval;
 	int        tilewidth, tileheight;
 
-	retval = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, width, height);
+	retval = gdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, width, height);
 
-	tilewidth  = cdk_pixbuf_get_width (monitor->cdkpixbuf);
-	tileheight = cdk_pixbuf_get_height (monitor->cdkpixbuf);
+	tilewidth  = gdk_pixbuf_get_width (monitor->cdkpixbuf);
+	tileheight = gdk_pixbuf_get_height (monitor->cdkpixbuf);
 
 	if (tilewidth == 1 && tileheight == 1) {
 		guchar  *pixels;
 		int      n_channels;
 		guint32  pixel = 0;
 
-		n_channels = cdk_pixbuf_get_n_channels (monitor->cdkpixbuf);
-		pixels     = cdk_pixbuf_get_pixels (monitor->cdkpixbuf);
+		n_channels = gdk_pixbuf_get_n_channels (monitor->cdkpixbuf);
+		pixels     = gdk_pixbuf_get_pixels (monitor->cdkpixbuf);
 
 		if (pixels) {
 			if (n_channels == 4)
@@ -266,7 +266,7 @@ panel_background_monitor_tile_background (PanelBackgroundMonitor *monitor,
 				pixel = pixels [0] << 24 | pixels [1] << 16 | pixels [2] << 8;
 		}
 
-		cdk_pixbuf_fill (retval, pixel);
+		gdk_pixbuf_fill (retval, pixel);
 	} else {
 		unsigned char   *data;
 		cairo_t         *cr;
@@ -336,7 +336,7 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 	monitor->height = MIN (pheight, rheight);
 
 	g_assert (monitor->cdkpixbuf == NULL);
-	monitor->cdkpixbuf = cdk_pixbuf_get_from_surface (monitor->surface,
+	monitor->cdkpixbuf = gdk_pixbuf_get_from_surface (monitor->surface,
 													  0, 0,
 													  monitor->width, monitor->height);
 
@@ -391,16 +391,16 @@ panel_background_monitor_get_region (PanelBackgroundMonitor *monitor,
 	if ((subwidth <= 0) || (subheight <= 0) ||
 	    (monitor->width-x < 0) || (monitor->height-y < 0) )
 		/* region is completely offscreen */
-		return cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8,
+		return gdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8,
 				       width, height);
 
-	pixbuf = cdk_pixbuf_new_subpixbuf (
+	pixbuf = gdk_pixbuf_new_subpixbuf (
 			monitor->cdkpixbuf, subx, suby, subwidth, subheight);
 
 	if ((subwidth < width) || (subheight < height)) {
-		tmpbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8,
+		tmpbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8,
 					 width, height);
-		cdk_pixbuf_copy_area (pixbuf, 0, 0, subwidth, subheight,
+		gdk_pixbuf_copy_area (pixbuf, 0, 0, subwidth, subheight,
 				      tmpbuf, (x < 0) ? -x : 0, (y < 0) ? -y : 0);
 		g_object_unref (pixbuf);
 		pixbuf = tmpbuf;

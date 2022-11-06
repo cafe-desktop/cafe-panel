@@ -262,11 +262,11 @@ update (SnItemV0 *v0)
         {
           GdkPixbuf *pixbuf;
           /*try to find icons specified by path and filename*/
-          pixbuf = cdk_pixbuf_new_from_file (v0->icon_name, NULL);
+          pixbuf = gdk_pixbuf_new_from_file (v0->icon_name, NULL);
           if (pixbuf && icon_size > 1)
             {
               /*An icon specified by path and filename may be the wrong size for the tray */
-              pixbuf = cdk_pixbuf_scale_simple (pixbuf, icon_size-2, icon_size-2, CDK_INTERP_BILINEAR);
+              pixbuf = gdk_pixbuf_scale_simple (pixbuf, icon_size-2, icon_size-2, CDK_INTERP_BILINEAR);
               surface = cdk_cairo_surface_create_from_pixbuf (pixbuf, scale, NULL);
             }
           if (pixbuf)

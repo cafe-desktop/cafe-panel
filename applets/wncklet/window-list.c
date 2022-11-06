@@ -179,14 +179,14 @@ static GdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistDat
 	height = cdk_window_get_height (window) * scale;
 
 	/* Generate window screenshot for preview */
-	screenshot = cdk_pixbuf_get_from_window (window, 0, 0, width / scale, height / scale);
+	screenshot = gdk_pixbuf_get_from_window (window, 0, 0, width / scale, height / scale);
 	g_object_unref (window);
 
 	if (screenshot == NULL)
 		return NULL;
 
 	/* Determine whether the contents of the screenshot are empty */
-	pixels = cdk_pixbuf_get_pixels (screenshot);
+	pixels = gdk_pixbuf_get_pixels (screenshot);
 	if (!g_strcmp0 ((const char *)pixels, ""))
 	{
 		g_object_unref (screenshot);
@@ -207,7 +207,7 @@ static GdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistDat
 		width = height * ratio;
 	}
 
-	thumbnail = cdk_pixbuf_scale_simple (screenshot, width, height, CDK_INTERP_BILINEAR);
+	thumbnail = gdk_pixbuf_scale_simple (screenshot, width, height, CDK_INTERP_BILINEAR);
 	g_object_unref (screenshot);
 
 	return thumbnail;
@@ -221,8 +221,8 @@ static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbn
 	int x_pos, y_pos;
 	int width, height;
 
-	width = cdk_pixbuf_get_width (thumbnail);
-	height = cdk_pixbuf_get_height (thumbnail);
+	width = gdk_pixbuf_get_width (thumbnail);
+	height = gdk_pixbuf_get_height (thumbnail);
 
 	/* Resize window to fit thumbnail */
 	ctk_window_resize (CTK_WINDOW (tasklist->preview), width, height);
@@ -616,7 +616,7 @@ static GdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flag
 	{
 		if (g_file_test(icon, G_FILE_TEST_EXISTS))
 		{
-			return cdk_pixbuf_new_from_file_at_size(icon, size, size, NULL);
+			return gdk_pixbuf_new_from_file_at_size(icon, size, size, NULL);
 		}
 		else
 		{

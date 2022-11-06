@@ -441,8 +441,8 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 	if (!background->loaded_image)
 		return NULL;
 
-	orig_width  = cdk_pixbuf_get_width  (background->loaded_image);
-	orig_height = cdk_pixbuf_get_height (background->loaded_image);
+	orig_width  = gdk_pixbuf_get_width  (background->loaded_image);
+	orig_height = gdk_pixbuf_get_height (background->loaded_image);
 
 	panel_width  = background->region.width;
 	panel_height = background->region.height;
@@ -490,7 +490,7 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 		scaled = background->loaded_image;
 		g_object_ref (scaled);
 	} else {
-		scaled = cdk_pixbuf_scale_simple (
+		scaled = gdk_pixbuf_scale_simple (
 				background->loaded_image,
 				width, height,
 				CDK_INTERP_BILINEAR);
@@ -505,13 +505,13 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 			int     destrowstride;
 			int     srcrowstride;
 
-			retval = cdk_pixbuf_new (
+			retval = gdk_pixbuf_new (
 				CDK_COLORSPACE_RGB, FALSE, 8, height, width);
 
-			dest          = cdk_pixbuf_get_pixels (retval);
-			destrowstride = cdk_pixbuf_get_rowstride (retval);
-			src           = cdk_pixbuf_get_pixels (scaled);
-			srcrowstride  = cdk_pixbuf_get_rowstride (scaled);
+			dest          = gdk_pixbuf_get_pixels (retval);
+			destrowstride = gdk_pixbuf_get_rowstride (retval);
+			src           = gdk_pixbuf_get_pixels (scaled);
+			srcrowstride  = gdk_pixbuf_get_rowstride (scaled);
 
 			for (y = 0; y < height; y++)
 				for (x = 0; x < width; x++) {
@@ -530,13 +530,13 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 			int     destrowstride;
 			int     srcrowstride;
 
-			retval = cdk_pixbuf_new (
+			retval = gdk_pixbuf_new (
 				CDK_COLORSPACE_RGB, TRUE, 8, height, width);
 
-			dest          = (guint32 *) cdk_pixbuf_get_pixels (retval);
-			destrowstride =             cdk_pixbuf_get_rowstride (retval) / 4;
-			src           = (guint32 *) cdk_pixbuf_get_pixels (scaled);
-			srcrowstride  =             cdk_pixbuf_get_rowstride (scaled) / 4;
+			dest          = (guint32 *) gdk_pixbuf_get_pixels (retval);
+			destrowstride =             gdk_pixbuf_get_rowstride (retval) / 4;
+			src           = (guint32 *) gdk_pixbuf_get_pixels (scaled);
+			srcrowstride  =             gdk_pixbuf_get_rowstride (scaled) / 4;
 
 			for (y = 0; y < height; y++)
 				for (x = 0; x < width; x++)
@@ -599,7 +599,7 @@ panel_background_update_has_alpha (PanelBackground *background)
 
 	else if (background->type == PANEL_BACK_IMAGE &&
 		 background->loaded_image)
-		has_alpha = cdk_pixbuf_get_has_alpha (background->loaded_image);
+		has_alpha = gdk_pixbuf_get_has_alpha (background->loaded_image);
 
 	background->has_alpha = has_alpha;
 
@@ -622,7 +622,7 @@ load_background_file (PanelBackground *background)
 	//FIXME add a monitor on the file so that we reload the background
 	//when it changes
 	background->loaded_image =
-		cdk_pixbuf_new_from_file (background->image, &error);
+		gdk_pixbuf_new_from_file (background->image, &error);
 	if (!background->loaded_image) {
 		g_assert (error != NULL);
 		g_warning (G_STRLOC ": unable to open '%s': %s",

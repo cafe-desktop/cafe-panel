@@ -162,7 +162,7 @@ clock_utils_pixbuf_from_svg_resource_at_size (const char *resource,
 	rsvg_handle_render_cairo (handle, cr);
 	cairo_destroy (cr);
 
-	pixbuf = cdk_pixbuf_get_from_surface (surface, 0, 0, width, height);
+	pixbuf = gdk_pixbuf_get_from_surface (surface, 0, 0, width, height);
 	cairo_surface_destroy (surface);
 
 out:
