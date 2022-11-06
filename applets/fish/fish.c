@@ -365,7 +365,7 @@ static void chooser_preview_update(CtkFileChooser* file_chooser, gpointer data)
 	if (filename == NULL)
 		return;
 
-	pixbuf = cdk_pixbuf_new_from_file_at_size (filename, 128, 128, NULL);
+	pixbuf = gdk_pixbuf_new_from_file_at_size (filename, 128, 128, NULL);
 	have_preview = (pixbuf != NULL);
 	g_free (filename);
 
@@ -1318,7 +1318,7 @@ static gboolean load_fish_image(FishApplet* fish)
 
 	path = get_image_path (fish);
 
-	pixbuf = cdk_pixbuf_new_from_file (path, &error);
+	pixbuf = gdk_pixbuf_new_from_file (path, &error);
 	if (error) {
 		g_warning ("Cannot load '%s': %s", path, error->message);
 		g_error_free (error);
@@ -1375,8 +1375,8 @@ static void update_pixmap(FishApplet* fish)
 	     fish->orientation == CAFE_PANEL_APPLET_ORIENT_RIGHT))
 		rotate = TRUE;
 
-	pixbuf_width  = cdk_pixbuf_get_width  (fish->pixbuf);
-	pixbuf_height = cdk_pixbuf_get_height (fish->pixbuf);
+	pixbuf_width  = gdk_pixbuf_get_width  (fish->pixbuf);
+	pixbuf_height = gdk_pixbuf_get_height (fish->pixbuf);
 
 	prev_requisition = fish->requisition;
 

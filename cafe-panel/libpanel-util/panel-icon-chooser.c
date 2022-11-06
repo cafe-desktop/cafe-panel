@@ -257,7 +257,7 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 
 			ctk_icon_size_lookup (PANEL_ICON_CHOOSER_ICON_SIZE,
 					      &width, &height);
-			pixbuf = cdk_pixbuf_new_from_file_at_size (chooser->priv->icon,
+			pixbuf = gdk_pixbuf_new_from_file_at_size (chooser->priv->icon,
 								   width, height,
 								   NULL);
 

@@ -107,29 +107,29 @@ zoom_draw (CtkWidget *widget,
 		zoom->size += MAX ((zoom->size_end - zoom->size_start) / ZOOM_STEPS, 1);
 		zoom->opacity -= 1.0 / ((double) ZOOM_STEPS + 1);
 
-		scaled = cdk_pixbuf_scale_simple (zoom->pixbuf,
+		scaled = gdk_pixbuf_scale_simple (zoom->pixbuf,
 						  zoom->size, zoom->size,
 						  CDK_INTERP_BILINEAR);
 
 		switch (zoom->orientation) {
 		case PANEL_ORIENTATION_TOP:
-			x = (width - cdk_pixbuf_get_width (scaled)) / 2;
+			x = (width - gdk_pixbuf_get_width (scaled)) / 2;
 			y = 0;
 			break;
 
 		case PANEL_ORIENTATION_RIGHT:
-			x = width - cdk_pixbuf_get_width (scaled);
-			y = (height - cdk_pixbuf_get_height (scaled)) / 2;
+			x = width - gdk_pixbuf_get_width (scaled);
+			y = (height - gdk_pixbuf_get_height (scaled)) / 2;
 			break;
 
 		case PANEL_ORIENTATION_BOTTOM:
-			x = (width - cdk_pixbuf_get_width (scaled)) / 2;
-			y = height - cdk_pixbuf_get_height (scaled);
+			x = (width - gdk_pixbuf_get_width (scaled)) / 2;
+			y = height - gdk_pixbuf_get_height (scaled);
 			break;
 
 		case PANEL_ORIENTATION_LEFT:
 			x = 0;
-			y = (height - cdk_pixbuf_get_height (scaled)) / 2;
+			y = (height - gdk_pixbuf_get_height (scaled)) / 2;
 			break;
 		}
 
@@ -365,7 +365,7 @@ xstuff_zoom_anicafe (CtkWidget *widget,
 	gscreen = ctk_widget_get_screen (widget);
 
 	if (cdk_screen_is_composited (gscreen) && surface) {
-		GdkPixbuf *pixbuf = cdk_pixbuf_get_from_surface (surface,
+		GdkPixbuf *pixbuf = gdk_pixbuf_get_from_surface (surface,
 				0, 0,
 				cairo_image_surface_get_width (surface),
 				cairo_image_surface_get_height (surface));

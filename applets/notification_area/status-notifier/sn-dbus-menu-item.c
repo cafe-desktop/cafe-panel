@@ -39,7 +39,7 @@ pxibuf_new (GVariant *variant)
     return NULL;
 
   error = NULL;
-  pixbuf = cdk_pixbuf_new_from_stream (stream, NULL, &error);
+  pixbuf = gdk_pixbuf_new_from_stream (stream, NULL, &error);
   g_object_unref (stream);
 
   if (error != NULL)
