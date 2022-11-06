@@ -726,7 +726,7 @@ panel_util_cairo_rgbdata_to_pixbuf (unsigned char *data,
 	if (!data)
 		return NULL;
 
-	retval = gdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, width, height);
+	retval = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, width, height);
 	if (!retval)
 		return NULL;
 
