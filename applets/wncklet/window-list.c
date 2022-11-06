@@ -207,7 +207,7 @@ static GdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistDat
 		width = height * ratio;
 	}
 
-	thumbnail = gdk_pixbuf_scale_simple (screenshot, width, height, CDK_INTERP_BILINEAR);
+	thumbnail = gdk_pixbuf_scale_simple (screenshot, width, height, GDK_INTERP_BILINEAR);
 	g_object_unref (screenshot);
 
 	return thumbnail;
