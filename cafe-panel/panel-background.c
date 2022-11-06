@@ -506,7 +506,7 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 			int     srcrowstride;
 
 			retval = gdk_pixbuf_new (
-				CDK_COLORSPACE_RGB, FALSE, 8, height, width);
+				GDK_COLORSPACE_RGB, FALSE, 8, height, width);
 
 			dest          = gdk_pixbuf_get_pixels (retval);
 			destrowstride = gdk_pixbuf_get_rowstride (retval);
@@ -531,7 +531,7 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 			int     srcrowstride;
 
 			retval = gdk_pixbuf_new (
-				CDK_COLORSPACE_RGB, TRUE, 8, height, width);
+				GDK_COLORSPACE_RGB, TRUE, 8, height, width);
 
 			dest          = (guint32 *) gdk_pixbuf_get_pixels (retval);
 			destrowstride =             gdk_pixbuf_get_rowstride (retval) / 4;

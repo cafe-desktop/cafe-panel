@@ -561,7 +561,7 @@ clock_map_render_shadow (ClockMap *this)
                 g_object_unref (priv->shadow_pixbuf);
         }
 
-        priv->shadow_pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8,
+        priv->shadow_pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
                                               priv->width, priv->height);
 
         /* Initialize to all shadow */
