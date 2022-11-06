@@ -72,7 +72,7 @@ struct _PanelBackgroundMonitor {
 	CdkAtom    cdkatom;
 
 	cairo_surface_t *surface;
-	GdkPixbuf *cdkpixbuf;
+	GdkPixbuf *gdkpixbuf;
 
 	int        width;
 	int        height;
@@ -108,9 +108,9 @@ panel_background_monitor_finalize (GObject *object)
 		cairo_surface_destroy (monitor->surface);
 	monitor->surface= NULL;
 
-	if (monitor->cdkpixbuf)
-		g_object_unref (monitor->cdkpixbuf);
-	monitor->cdkpixbuf = NULL;
+	if (monitor->gdkpixbuf)
+		g_object_unref (monitor->gdkpixbuf);
+	monitor->gdkpixbuf = NULL;
 
 	G_OBJECT_CLASS (panel_background_monitor_parent_class)->finalize (object);
 }
@@ -144,7 +144,7 @@ panel_background_monitor_init (PanelBackgroundMonitor *monitor)
 	monitor->xatom   = cdk_x11_atom_to_xatom (monitor->cdkatom);
 
 	monitor->surface = NULL;
-	monitor->cdkpixbuf = NULL;
+	monitor->gdkpixbuf = NULL;
 
 	monitor->display_grabbed = FALSE;
 }
@@ -210,9 +210,9 @@ panel_background_monitor_changed (PanelBackgroundMonitor *monitor)
 		cairo_surface_destroy (monitor->surface);
 	monitor->surface = NULL;
 
-	if (monitor->cdkpixbuf)
-		g_object_unref (monitor->cdkpixbuf);
-	monitor->cdkpixbuf = NULL;
+	if (monitor->gdkpixbuf)
+		g_object_unref (monitor->gdkpixbuf);
+	monitor->gdkpixbuf = NULL;
 
 	g_signal_emit (monitor, signals [CHANGED], 0);
 }
@@ -248,16 +248,16 @@ panel_background_monitor_tile_background (PanelBackgroundMonitor *monitor,
 
 	retval = gdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, width, height);
 
-	tilewidth  = gdk_pixbuf_get_width (monitor->cdkpixbuf);
-	tileheight = gdk_pixbuf_get_height (monitor->cdkpixbuf);
+	tilewidth  = gdk_pixbuf_get_width (monitor->gdkpixbuf);
+	tileheight = gdk_pixbuf_get_height (monitor->gdkpixbuf);
 
 	if (tilewidth == 1 && tileheight == 1) {
 		guchar  *pixels;
 		int      n_channels;
 		guint32  pixel = 0;
 
-		n_channels = gdk_pixbuf_get_n_channels (monitor->cdkpixbuf);
-		pixels     = gdk_pixbuf_get_pixels (monitor->cdkpixbuf);
+		n_channels = gdk_pixbuf_get_n_channels (monitor->gdkpixbuf);
+		pixels     = gdk_pixbuf_get_pixels (monitor->gdkpixbuf);
 
 		if (pixels) {
 			if (n_channels == 4)
@@ -285,7 +285,7 @@ panel_background_monitor_tile_background (PanelBackgroundMonitor *monitor,
 		cairo_set_source_rgb (cr, 1, 1, 1);
 		cairo_paint (cr);
 
-		cdk_cairo_set_source_pixbuf (cr, monitor->cdkpixbuf, 0, 0);
+		cdk_cairo_set_source_pixbuf (cr, monitor->gdkpixbuf, 0, 0);
 		pattern = cairo_get_source (cr);
 		cairo_pattern_set_extend (pattern, CAIRO_EXTEND_REPEAT);
 		cairo_rectangle (cr, 0, 0, width, height);
@@ -335,15 +335,15 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 	monitor->width  = MIN (pwidth,  rwidth);
 	monitor->height = MIN (pheight, rheight);
 
-	g_assert (monitor->cdkpixbuf == NULL);
-	monitor->cdkpixbuf = gdk_pixbuf_get_from_surface (monitor->surface,
+	g_assert (monitor->gdkpixbuf == NULL);
+	monitor->gdkpixbuf = gdk_pixbuf_get_from_surface (monitor->surface,
 													  0, 0,
 													  monitor->width, monitor->height);
 
 	cdk_x11_display_ungrab (display);
 	monitor->display_grabbed = FALSE;
 
-	if (monitor->cdkpixbuf == NULL)
+	if (monitor->gdkpixbuf == NULL)
 		return;
 
 	if ((monitor->width < rwidth || monitor->height < rheight)) {
@@ -351,8 +351,8 @@ panel_background_monitor_setup_pixbuf (PanelBackgroundMonitor *monitor)
 
 		tiled = panel_background_monitor_tile_background (
 						monitor, rwidth, rheight);
-		g_object_unref (monitor->cdkpixbuf);
-		monitor->cdkpixbuf = tiled;
+		g_object_unref (monitor->gdkpixbuf);
+		monitor->gdkpixbuf = tiled;
 
 		monitor->width  = rwidth;
 		monitor->height = rheight;
@@ -373,10 +373,10 @@ panel_background_monitor_get_region (PanelBackgroundMonitor *monitor,
 	g_return_val_if_fail (monitor, NULL);
 	g_return_val_if_fail (CDK_IS_X11_WINDOW (monitor->cdkwindow), NULL);
 
-	if (!monitor->cdkpixbuf)
+	if (!monitor->gdkpixbuf)
 		panel_background_monitor_setup_pixbuf (monitor);
 
-	if (!monitor->cdkpixbuf)
+	if (!monitor->gdkpixbuf)
 		return NULL;
 
 	subwidth  = MIN (width,  monitor->width - x);
@@ -395,7 +395,7 @@ panel_background_monitor_get_region (PanelBackgroundMonitor *monitor,
 				       width, height);
 
 	pixbuf = gdk_pixbuf_new_subpixbuf (
-			monitor->cdkpixbuf, subx, suby, subwidth, subheight);
+			monitor->gdkpixbuf, subx, suby, subwidth, subheight);
 
 	if ((subwidth < width) || (subheight < height)) {
 		tmpbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8,
