@@ -252,7 +252,7 @@ _panel_icon_chooser_update (PanelIconChooser *chooser)
 
 		if (g_file_test (chooser->priv->icon, G_FILE_TEST_EXISTS)) {
 			/* we pass via a pixbuf to force the size we want */
-			CdkPixbuf *pixbuf;
+			GdkPixbuf *pixbuf;
 			int        width, height;
 
 			ctk_icon_size_lookup (PANEL_ICON_CHOOSER_ICON_SIZE,

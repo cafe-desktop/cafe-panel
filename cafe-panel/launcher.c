@@ -1182,7 +1182,7 @@ panel_launcher_set_dnd_enabled (Launcher *launcher,
 				     CDK_ACTION_COPY | CDK_ACTION_MOVE);
 		surface = button_widget_get_surface (BUTTON_WIDGET (launcher->button));
 		if (surface) {
-			CdkPixbuf *pixbuf;
+			GdkPixbuf *pixbuf;
 			pixbuf = cdk_pixbuf_get_from_surface (surface,
 							 0,
 							 0,

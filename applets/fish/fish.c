@@ -88,7 +88,7 @@ typedef struct {
 	int                current_frame;
 	gboolean           in_applet;
 
-	CdkPixbuf         *pixbuf;
+	GdkPixbuf         *pixbuf;
 
 	CtkWidget         *preferences_dialog;
 	CtkWidget         *name_entry;
@@ -356,7 +356,7 @@ static void chooser_preview_update(CtkFileChooser* file_chooser, gpointer data)
 {
 	CtkWidget *preview;
 	char      *filename;
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 	gboolean   have_preview;
 
 	preview = CTK_WIDGET (data);
@@ -1309,7 +1309,7 @@ static void setup_gsettings(FishApplet* fish)
 
 static gboolean load_fish_image(FishApplet* fish)
 {
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 	GError    *error = NULL;
 	char      *path = NULL;
 
