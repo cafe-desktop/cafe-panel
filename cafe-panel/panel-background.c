@@ -493,7 +493,7 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 		scaled = gdk_pixbuf_scale_simple (
 				background->loaded_image,
 				width, height,
-				CDK_INTERP_BILINEAR);
+				GDK_INTERP_BILINEAR);
 	}
 
 	if (background->rotate_image &&
