@@ -232,7 +232,7 @@
   * panel-toplevel: fix memory leak in calculate_minimum_height
   * Change CTK_CHECK_VERSION to match next ctk+ release
   * applets: Guard against CTK scale-factor fixes on CtkSocket
-  * window-list: Skip setting size hints until WnckTasklist has items to show.
+  * window-list: Skip setting size hints until VnckTasklist has items to show.
   * applets: Fix runtime error messages
   * cafe-panel-applet: setup_x_error_handler for in-process applets too
   * CTK 3.23: fix applet size allocation

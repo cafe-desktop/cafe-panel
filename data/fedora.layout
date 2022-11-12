@@ -61,21 +61,21 @@ locked=true
 
 [Object show-desktop]
 object-type=applet
-applet-iid=WnckletFactory::ShowDesktopApplet
+applet-iid=VnckletFactory::ShowDesktopApplet
 toplevel-id=bottom
 position=0
 locked=true
 
 [Object window-list]
 object-type=applet
-applet-iid=WnckletFactory::WindowListApplet
+applet-iid=VnckletFactory::WindowListApplet
 toplevel-id=bottom
 position=20
 locked=true
 
 [Object workspace-switcher]
 object-type=applet
-applet-iid=WnckletFactory::WorkspaceSwitcherApplet
+applet-iid=VnckletFactory::WorkspaceSwitcherApplet
 toplevel-id=bottom
 position=0
 panel-right-stick=true

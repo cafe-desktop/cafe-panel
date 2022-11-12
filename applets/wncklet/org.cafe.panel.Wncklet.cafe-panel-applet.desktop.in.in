@@ -1,5 +1,5 @@
 [Applet Factory]
-Id=WnckletFactory
+Id=VnckletFactory
 InProcess=@IN_PROCESS@
 Location=@LOCATION@
 Name=Window Navigation Applet Factory

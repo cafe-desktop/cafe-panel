@@ -38,7 +38,7 @@ extern "C" {
 
 void vncklet_display_help(CtkWidget* widget, const char* doc_id, const char* link_id, const char* icon_name);
 
-WnckScreen* vncklet_get_screen(CtkWidget* applet);
+VnckScreen* vncklet_get_screen(CtkWidget* applet);
 
 void vncklet_connect_while_alive(gpointer object, const char* signal, GCallback func, gpointer func_data, gpointer alive_object);
 

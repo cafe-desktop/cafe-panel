@@ -96,7 +96,7 @@ void vncklet_display_help(CtkWidget* widget, const char* doc_id, const char* lin
 	}
 }
 
-WnckScreen* vncklet_get_screen(CtkWidget* applet)
+VnckScreen* vncklet_get_screen(CtkWidget* applet)
 {
 	int screen_num;
 
@@ -142,7 +142,7 @@ static gboolean vncklet_factory(CafePanelApplet* applet, const char* iid, gpoint
 
 
 #ifdef VNCKLET_INPROCESS
-	CAFE_PANEL_APPLET_IN_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", vncklet_factory, NULL)
+	CAFE_PANEL_APPLET_IN_PROCESS_FACTORY("VnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", vncklet_factory, NULL)
 #else
-	CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", vncklet_factory, NULL)
+	CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY("VnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", vncklet_factory, NULL)
 #endif

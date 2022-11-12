@@ -58,7 +58,7 @@ typedef struct {
 
 	CtkWidget* pager;
 
-	WnckScreen* screen;
+	VnckScreen* screen;
 	PagerWM wm;
 
 	/* Properties: */
@@ -79,7 +79,7 @@ typedef struct {
 
 	CtkOrientation orientation;
 	int n_rows;				/* for vertical layout this is cols */
-	WnckPagerDisplayMode display_mode;
+	VnckPagerDisplayMode display_mode;
 	gboolean display_all;
 	gboolean wrap_workspaces;
 
@@ -176,7 +176,7 @@ static void update_properties_for_wm(PagerData* pager)
 	}
 }
 
-static void window_manager_changed(WnckScreen* screen, PagerData* pager)
+static void window_manager_changed(VnckScreen* screen, PagerData* pager)
 {
 	const char *wm_name;
 
@@ -278,7 +278,7 @@ static void applet_style_updated (CafePanelApplet *applet, CtkStyleContext *cont
 }
 
 /* Replacement for the default scroll handler that also cares about the wrapping property.
- * Alternative: Add behaviour to libvnck (to the WnckPager widget).
+ * Alternative: Add behaviour to libvnck (to the VnckPager widget).
  */
 static gboolean applet_scroll(CafePanelApplet* applet, CdkEventScroll* event, PagerData* pager)
 {
@@ -576,7 +576,7 @@ gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 
 	g_signal_connect(G_OBJECT(pager->pager), "destroy", G_CALLBACK(destroy_pager), pager);
 
-	/* overwrite default WnckPager widget scroll-event */
+	/* overwrite default VnckPager widget scroll-event */
 	g_signal_connect(G_OBJECT(pager->pager), "scroll-event", G_CALLBACK(applet_scroll), pager);
 
 	ctk_container_add(CTK_CONTAINER(pager->applet), pager->pager);
@@ -674,7 +674,7 @@ static void num_rows_value_changed(CtkSpinButton* button, PagerData* pager)
 static void update_workspaces_model(PagerData* pager)
 {
 	int nr_ws, i;
-	WnckWorkspace* workspace;
+	VnckWorkspace* workspace;
 	CtkTreeIter iter;
 
 	nr_ws = vnck_screen_get_workspace_count(pager->screen);
@@ -695,7 +695,7 @@ static void update_workspaces_model(PagerData* pager)
 	}
 }
 
-static void workspace_renamed(WnckWorkspace* space, PagerData* pager)
+static void workspace_renamed(VnckWorkspace* space, PagerData* pager)
 {
 	int i;
 	CtkTreeIter iter;
@@ -706,7 +706,7 @@ static void workspace_renamed(WnckWorkspace* space, PagerData* pager)
 		ctk_list_store_set(pager->workspaces_store, &iter, 0, vnck_workspace_get_name(space), -1);
 }
 
-static void workspace_created(WnckScreen* screen, WnckWorkspace* space, PagerData* pager)
+static void workspace_created(VnckScreen* screen, VnckWorkspace* space, PagerData* pager)
 {
 	g_return_if_fail(VNCK_IS_SCREEN(screen));
 
@@ -715,7 +715,7 @@ static void workspace_created(WnckScreen* screen, WnckWorkspace* space, PagerDat
 	vncklet_connect_while_alive(space, "name_changed", G_CALLBACK(workspace_renamed), pager, pager->properties_dialog);
 }
 
-static void workspace_destroyed(WnckScreen* screen, WnckWorkspace* space, PagerData* pager)
+static void workspace_destroyed(VnckScreen* screen, VnckWorkspace* space, PagerData* pager)
 {
 	g_return_if_fail(VNCK_IS_SCREEN(screen));
 	update_workspaces_model(pager);
@@ -738,7 +738,7 @@ static gboolean workspaces_tree_focused_out(CtkTreeView* treeview, CdkEventFocus
 static void workspace_name_edited(CtkCellRendererText* cell_renderer_text, const gchar* path, const gchar* new_text, PagerData* pager)
 {
 	const gint* indices;
-	WnckWorkspace* workspace;
+	VnckWorkspace* workspace;
 	CtkTreePath* p;
 
 	p = ctk_tree_path_new_from_string(path);

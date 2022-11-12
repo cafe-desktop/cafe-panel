@@ -1072,71 +1072,71 @@ msgstr ""
 "Als dit aanstaat is het mogelijk om bij het schuiven in de werkbladwisselaar"
 " van het eerste werkblad naar het laatste te gaan en vice versa."
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:6
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Window Navigation Applet Factory"
 msgstr "Fabriek voor vensternavigatieprogrammaatje"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:7
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for the window navigation related applets"
 msgstr ""
 "Fabriek voor de programmaatjes die gerelateerd zijn aan vensternavigatie"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:10
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
 #: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
 msgid "Window Selector"
 msgstr "Vensterkiezer"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:11
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:11
 msgid "Switch between open windows using a menu"
 msgstr "Wissel tussen open vensters door middel van een menu"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:13
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
 msgid "cafe-panel-window-menu"
 msgstr "cafe-panel-window-menu"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:23
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
 #: applets/vncklet/workspace-switcher.c:634
 msgid "Workspace Switcher"
 msgstr "Werkbladwisselaar"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:24
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:24
 msgid "Switch between workspaces"
 msgstr "Tussen werkbladen wisselen"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:26
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
 msgid "cafe-panel-workspace-switcher"
 msgstr "cafe-panel-workspace-switcher"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:36
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
 #: applets/vncklet/window-list.c:821
 msgid "Window List"
 msgstr "Vensterlijst"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:37
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "Wissel tussen open vensters door middel van knoppen"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:39
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
 msgid "cafe-panel-window-list"
 msgstr "cafe-panel-window-list"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:49
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
 msgstr "Bureaublad tonen"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:50
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "Verberg toepassingsvensters en toon het bureaublad"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:52
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
 msgid "user-desktop"
 msgstr "user-desktop"
 

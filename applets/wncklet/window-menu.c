@@ -178,7 +178,7 @@ static void window_menu_size_allocate(CafePanelApplet* applet, CtkAllocation* al
 static gboolean window_menu_key_press_event(CtkWidget* widget, CdkEventKey* event, WindowMenu* window_menu)
 {
 	CtkMenuShell* menu_shell;
-	WnckSelector* selector;
+	VnckSelector* selector;
 
 	switch (event->keyval)
 	{

@@ -1032,70 +1032,70 @@ msgstr ""
 "إذا ضبط كصحيح ، فإن مبدّل مساحات العمل سيسمح بالتّمرير ، مما يعني إمكانية "
 "التحويل من مساحة العمل الأولى إلى الأخيرة عند التمرير المعاكس."
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:6
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Window Navigation Applet Factory"
 msgstr "مصنع بريمج إبحار النّافذة"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:7
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for the window navigation related applets"
 msgstr "مصنع للبريمجات المتعلقة بإبحار النّوافذ"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:10
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
 #: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
 msgid "Window Selector"
 msgstr "منتقِ النوافذ"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:11
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:11
 msgid "Switch between open windows using a menu"
 msgstr "التّبديل بين النّوافذ المفتوحة باستخدام القائمة"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:13
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
 msgid "cafe-panel-window-menu"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:23
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
 #: applets/vncklet/workspace-switcher.c:634
 msgid "Workspace Switcher"
 msgstr "مُبدّل مساحات العمل"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:24
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:24
 msgid "Switch between workspaces"
 msgstr "يُبدّل بين مساحات العمل"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:26
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
 msgid "cafe-panel-workspace-switcher"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:36
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
 #: applets/vncklet/window-list.c:821
 msgid "Window List"
 msgstr "قائمة النّوافذ"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:37
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "التّبديل بين النّوافذ المفتوحة باستخدام الأزرار"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:39
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
 msgid "cafe-panel-window-list"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:49
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
 msgstr "أظهِر سطح المكتب"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:50
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "أخفِ نوافذ التّطبيقات ثمّ اعرض سطح المكتب"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:52
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
 msgid "user-desktop"
 msgstr ""
 

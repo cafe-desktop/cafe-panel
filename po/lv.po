@@ -1038,70 +1038,70 @@ msgstr ""
 "Kad patiess, tad darbvirsmas pārslēdzējs uz ritināšanas pārslēgsies no "
 "pēdējās uz pirmo darbvirsmu un no pirmās uz pēdējo darbvirsmu."
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:6
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Window Navigation Applet Factory"
 msgstr "Logu navigācijas sīklietotnes ražotne"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:7
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for the window navigation related applets"
 msgstr "Ražotne priekš logu navigācijas sīklietotnēm"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:10
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
 #: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
 msgid "Window Selector"
 msgstr "Logu selektors"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:11
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:11
 msgid "Switch between open windows using a menu"
 msgstr "Pārslēgties starp atvērtajiem logiem izmantojot izvēlni"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:13
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
 msgid "cafe-panel-window-menu"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:23
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
 #: applets/vncklet/workspace-switcher.c:634
 msgid "Workspace Switcher"
 msgstr "Darba vietu pārslēdzējs"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:24
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:24
 msgid "Switch between workspaces"
 msgstr "Pārslēgties starp darbvirsmām"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:26
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
 msgid "cafe-panel-workspace-switcher"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:36
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
 #: applets/vncklet/window-list.c:821
 msgid "Window List"
 msgstr "Logu saraksts"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:37
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "Pārslēgties starp atvērtajiem logiem izmantojot pogas"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:39
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
 msgid "cafe-panel-window-list"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:49
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
 msgstr "Parādīt Darbvirsmu"
 
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:50
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "Paslēpt lietotnes logus un rādīt darbvirsmu"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:52
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
 msgid "user-desktop"
 msgstr ""
 

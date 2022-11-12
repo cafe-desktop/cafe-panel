@@ -18,7 +18,7 @@ applets/notification_area/org.cafe.panel.applet.notification-area.gschema.xml.in
 applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in
 applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in
 applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in
-applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in
+applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in
 applets/vncklet/showdesktop.c
 applets/vncklet/window-list.c
 applets/vncklet/window-list.ui

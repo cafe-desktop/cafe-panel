@@ -909,46 +909,46 @@ msgid ""
 "switching from the first to the last workspace and vice versa via scrolling."
 msgstr ""
 
-#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:1
+#: ../applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.in.in.h:1
 msgid "Window Navigation Applet Factory"
 msgstr ""
 
-#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:2
+#: ../applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.in.in.h:2
 msgid "Factory for the window navigation related applets"
 msgstr ""
 
-#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:3
+#: ../applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.in.in.h:3
 #: ../applets/vncklet/window-menu.c:83 ../applets/vncklet/window-menu.c:229
 msgid "Window Selector"
 msgstr ""
 
-#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:4
+#: ../applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.in.in.h:4
 msgid "Switch between open windows using a menu"
 msgstr ""
 
-#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:5
+#: ../applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.in.in.h:5
 #: ../applets/vncklet/workspace-switcher.c:639
 msgid "Workspace Switcher"
 msgstr ""
 
-#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:6
+#: ../applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.in.in.h:6
 msgid "Switch between workspaces"
 msgstr ""
 
-#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:7
+#: ../applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.in.in.h:7
 #: ../applets/vncklet/window-list.c:566
 msgid "Window List"
 msgstr ""
 
-#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:8
+#: ../applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.in.in.h:8
 msgid "Switch between open windows using buttons"
 msgstr ""
 
-#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:9
+#: ../applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.in.in.h:9
 msgid "Show Desktop"
 msgstr ""
 
-#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:10
+#: ../applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.in.in.h:10
 msgid "Hide application windows and show the desktop"
 msgstr ""
 

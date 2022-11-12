@@ -48,7 +48,7 @@ typedef struct {
 	gint thumbnail_size;
 #endif
 	gboolean include_all_workspaces;
-	WnckTasklistGroupingType grouping;
+	VnckTasklistGroupingType grouping;
 	gboolean move_unminimized_windows;
 
 	CtkOrientation orientation;
@@ -159,7 +159,7 @@ static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBac
 }
 
 #ifdef HAVE_WINDOW_PREVIEWS
-static GdkPixbuf *preview_window_thumbnail (WnckWindow *vnck_window, TasklistData *tasklist)
+static GdkPixbuf *preview_window_thumbnail (VnckWindow *vnck_window, TasklistData *tasklist)
 {
 	CdkWindow *window;
 	GdkPixbuf *screenshot;
@@ -266,10 +266,10 @@ static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, GdkPixbuf *
 	return FALSE;
 }
 
-static gboolean applet_enter_notify_event (WnckTasklist *tl, GList *vnck_windows, TasklistData *tasklist)
+static gboolean applet_enter_notify_event (VnckTasklist *tl, GList *vnck_windows, TasklistData *tasklist)
 {
 	GdkPixbuf *thumbnail;
-	WnckWindow *vnck_window = NULL;
+	VnckWindow *vnck_window = NULL;
 	int n_windows;
 
 	if (tasklist->preview != NULL)
@@ -287,7 +287,7 @@ static gboolean applet_enter_notify_event (WnckTasklist *tl, GList *vnck_windows
 	{
 		GList* l = vnck_windows;
 		if (l != NULL)
-			vnck_window = (WnckWindow*)l->data;
+			vnck_window = (VnckWindow*)l->data;
 	}
 
 	if (vnck_window == NULL)
@@ -318,7 +318,7 @@ static gboolean applet_enter_notify_event (WnckTasklist *tl, GList *vnck_windows
 	return FALSE;
 }
 
-static gboolean applet_leave_notify_event (WnckTasklist *tl, GList *vnck_windows, TasklistData *tasklist)
+static gboolean applet_leave_notify_event (VnckTasklist *tl, GList *vnck_windows, TasklistData *tasklist)
 {
 	if (tasklist->preview != NULL)
 	{
@@ -469,7 +469,7 @@ static void thumbnail_size_changed(GSettings *settings, gchar* key, TasklistData
 }
 #endif
 
-static CtkWidget* get_grouping_button(TasklistData* tasklist, WnckTasklistGroupingType type)
+static CtkWidget* get_grouping_button(TasklistData* tasklist, VnckTasklistGroupingType type)
 {
 	switch (type)
 	{
@@ -488,7 +488,7 @@ static CtkWidget* get_grouping_button(TasklistData* tasklist, WnckTasklistGroupi
 
 static void group_windows_changed(GSettings* settings, gchar* key, TasklistData* tasklist)
 {
-	WnckTasklistGroupingType type;
+	VnckTasklistGroupingType type;
 	CtkWidget* button;
 
 	type = g_settings_get_enum (settings, key);
@@ -578,9 +578,9 @@ static void applet_size_allocate(CtkWidget *widget, CtkAllocation *allocation, T
 	g_assert(len % 2 == 0);
 
 #if !defined(VNCKLET_INPROCESS) && !CTK_CHECK_VERSION (3, 23, 0)
-	/* HACK: When loading the WnckTasklist initially, it reports size hints as though there were
+	/* HACK: When loading the VnckTasklist initially, it reports size hints as though there were
 	 * no elements in the Tasklist. This causes a rendering issue when built out-of-process in
-	 * HiDPI displays. We keep a flag to skip size hinting until WnckTasklist has something to
+	 * HiDPI displays. We keep a flag to skip size hinting until VnckTasklist has something to
 	 * show. */
 	if (!tasklist->needs_hints)
 	{
