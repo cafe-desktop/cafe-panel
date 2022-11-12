@@ -156,17 +156,17 @@ msgid "Failed to set the system time"
 msgstr "സിസ്റ്റത്തിലെ സമയം ക്രമികരിക്കുന്നതില്‍ പരാജയം"
 
 #: applets/clock/clock.c:1888 applets/fish/fish.c:1694
-#: applets/notification_area/main.c:292 applets/wncklet/window-list.c:357
-#: applets/wncklet/workspace-switcher.c:389
+#: applets/notification_area/main.c:292 applets/vncklet/window-list.c:357
+#: applets/vncklet/workspace-switcher.c:389
 msgid "_Preferences"
 msgstr "മുന്‍ഗണനകള്‍"
 
 #: applets/clock/clock.c:1891 applets/clock/clock.ui:293
 #: applets/fish/fish.c:1697 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:295 applets/wncklet/showdesktop.c:241
-#: applets/wncklet/window-list.c:365 applets/wncklet/window-list.ui:35
-#: applets/wncklet/window-menu.c:98 applets/wncklet/workspace-switcher.c:397
-#: applets/wncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
+#: applets/notification_area/main.c:295 applets/vncklet/showdesktop.c:241
+#: applets/vncklet/window-list.c:365 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:98 applets/vncklet/workspace-switcher.c:397
+#: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
 #: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
 #: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
 #: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
@@ -176,9 +176,9 @@ msgid "_Help"
 msgstr "_സഹായം"
 
 #: applets/clock/clock.c:1894 applets/fish/fish.c:1700
-#: applets/notification_area/main.c:298 applets/wncklet/showdesktop.c:249
-#: applets/wncklet/window-list.c:373 applets/wncklet/window-menu.c:106
-#: applets/wncklet/workspace-switcher.c:405
+#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:249
+#: applets/vncklet/window-list.c:373 applets/vncklet/window-menu.c:106
+#: applets/vncklet/workspace-switcher.c:405
 msgid "_About"
 msgstr "_സംബന്ധിച്ച്"
 
@@ -230,9 +230,9 @@ msgid ""
 msgstr ""
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
-#: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
-#: applets/wncklet/window-list.c:831 applets/wncklet/window-menu.c:88
-#: applets/wncklet/workspace-switcher.c:644
+#: applets/notification_area/main.c:286 applets/vncklet/showdesktop.c:508
+#: applets/vncklet/window-list.c:831 applets/vncklet/window-menu.c:88
+#: applets/vncklet/workspace-switcher.c:644
 #: cafe-panel/panel-context-menu.c:124
 msgid "translator-credits"
 msgstr ""
@@ -273,7 +273,7 @@ msgstr "സമയ ക്രമീ_കരണങ്ങള്‍"
 
 #: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
-#: applets/wncklet/window-list.ui:51 applets/wncklet/workspace-switcher.ui:62
+#: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
 #: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
@@ -477,14 +477,14 @@ msgid "Sunrise: %s / Sunset: %s"
 msgstr "സൂര്യോദയം: %s / സൂര്യാസ്തമയം: %s"
 
 #: applets/clock/clock-utils.c:94 applets/fish/fish.c:170
-#: applets/notification_area/main.c:238 applets/wncklet/wncklet.c:75
+#: applets/notification_area/main.c:238 applets/vncklet/vncklet.c:75
 #: cafe-panel/libpanel-util/panel-show.c:234
 #, c-format
 msgid "Could not display help document '%s'"
 msgstr "'%s' സഹായത്തിനുള്ള രേഖ പ്രദര്‍ശിപ്പിക്കുവാന്‍ സാധ്യമായില്ല"
 
 #: applets/clock/clock-utils.c:123 applets/fish/fish.c:196
-#: applets/notification_area/main.c:252 applets/wncklet/wncklet.c:92
+#: applets/notification_area/main.c:252 applets/vncklet/vncklet.c:92
 msgid "Error displaying help document"
 msgstr "സഹായത്തിനുളള രേഖ പ്രദര്‍ശിപ്പിക്കുന്നതില്‍ പിശകു്"
 
@@ -951,11 +951,11 @@ msgstr ""
 msgid "cafe-panel-notification-area"
 msgstr ""
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "എല്ലാ പണിയറകളിലെയും ജാലകങ്ങള്‍ കാണിയ്ക്കുക"
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
 "If true, the window list will show windows from all workspaces. Otherwise it"
 " will only display windows from the current workspace."
@@ -964,11 +964,11 @@ msgstr ""
 "കാണിക്കുന്നു. അല്ലെങ്കില്‍, നിലവിലുള്ള പണിയറയില്‍ നിന്നു മാത്രം ജാലകങ്ങള്‍ "
 "കാണിക്കുന്നു."
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
 msgid "When to group windows"
 msgstr "ജാലകങ്ങള്‍ എപ്പോള്‍ കൂട്ടമാക്കണം"
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:16
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:16
 msgid ""
 "Decides when to group windows from the same application on the window list. "
 "Possible values are \"never\", \"auto\" and \"always\"."
@@ -977,13 +977,13 @@ msgstr ""
 "ചെയ്യണമെന്നു് നിശ്ചയിക്കുന്നു. സാധ്യമായ മൂല്ല്യങ്ങള്‍: \"ഒരിക്കലുമില്ല\", "
 "\"ഓട്ടോ\" , \"എപ്പോഴും\"."
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
 msgid "Move windows to current workspace when unminimized"
 msgstr ""
 "ചെറുതാക്കുന്നതു് ഉപേക്ഷിക്കുമ്പോള്‍ നിലവിലുള്ള പണിയറയിലേക്ക് ജാലകങ്ങള്‍ "
 "നീക്കുക"
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:21
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:21
 msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
@@ -991,11 +991,11 @@ msgstr ""
 "true എങ്കില്‍, ഒരു ജാലകം ചെറുതാക്കുന്നതു് ഉപേക്ഷിച്ചാല്‍, അതു് നിലവിലുള്ള "
 "പണിയറയിലേക്ക് നീക്കുക. അല്ലെങ്കില്‍, ജാലകത്തിന്റെ പണിയറയിലേക്ക് നീങ്ങുക."
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
 msgid "Display workspace names"
 msgstr "പണിയറയുടെ പേരുകള്‍ കാണിയ്ക്കുക"
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:6
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:6
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
@@ -1006,11 +1006,11 @@ msgstr ""
 "നിരീക്ഷകന്‍ മെറ്റാസിറ്റി ആകുമ്പോള്‍ മാത്രമേ ഈ ക്രമീകരണം "
 "പ്രവര്‍ത്തിക്കുകയുള്ളൂ"
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"
 msgstr "എല്ലാ പണിയറകളും കാണിയ്ക്കുക"
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:11
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:11
 msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
@@ -1018,11 +1018,11 @@ msgstr ""
 "true എങ്കില്‍, സ്വിച്ചര്‍ എല്ലാ പണിയിടങ്ങളും കാണിക്കുന്നു. അല്ലെങ്കില്‍, "
 "നിലവിലുള്ള പണിയറ മാത്രമേ കാണിക്കൂ."
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
 msgstr "പണിയറ സ്വിച്ചറിലുളള വരികള്‍"
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
 "vertical layout) the workspace switcher shows the workspaces in. This key is"
@@ -1033,125 +1033,125 @@ msgstr ""
 "വ്യക്തമാക്കുന്നുdisplay_all_workspaces കീ true ആണെങ്കില്‍ മാത്രമേ ഈ "
 "കീയ്ക്കു് പ്രാധാന്യമുള്ളൂ."
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
 msgstr ""
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:21
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:21
 msgid ""
 "If true, the workspace switcher will allow wrap-around, which means "
 "switching from the first to the last workspace and vice versa via scrolling."
 msgstr ""
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:6
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Window Navigation Applet Factory"
 msgstr ""
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:7
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for the window navigation related applets"
 msgstr ""
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/wncklet/window-menu.c:76 applets/wncklet/window-menu.c:227
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:10
+#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
 msgid "Window Selector"
 msgstr "ജാലകം തിരഞ്ഞെടുക്കുന്ന സംവിധാനം"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:11
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:11
 msgid "Switch between open windows using a menu"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:13
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:13
 msgid "cafe-panel-window-menu"
 msgstr ""
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/wncklet/workspace-switcher.c:634
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:23
+#: applets/vncklet/workspace-switcher.c:634
 msgid "Workspace Switcher"
 msgstr "പണിയറ തിരഞ്ഞെടുക്കുക"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:24
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:24
 msgid "Switch between workspaces"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:26
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:26
 msgid "cafe-panel-workspace-switcher"
 msgstr ""
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/wncklet/window-list.c:821
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:36
+#: applets/vncklet/window-list.c:821
 msgid "Window List"
 msgstr "ജാലകത്തിന്റെ പട്ടിക"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:37
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:39
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:39
 msgid "cafe-panel-window-list"
 msgstr ""
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:49
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
 msgstr ""
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:50
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:52
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:52
 msgid "user-desktop"
 msgstr ""
 
-#: applets/wncklet/showdesktop.c:184
+#: applets/vncklet/showdesktop.c:184
 #, c-format
 msgid "Failed to load %s: %s\n"
 msgstr "%s തുറക്കുവാന്‍ കഴിഞ്ഞില്ല: %s\n"
 
-#: applets/wncklet/showdesktop.c:184
+#: applets/vncklet/showdesktop.c:184
 msgid "Icon not found"
 msgstr "പ്രതെരൂപം ലഭ്യമല്ല"
 
-#: applets/wncklet/showdesktop.c:265
+#: applets/vncklet/showdesktop.c:265
 msgid "Click here to restore hidden windows."
 msgstr "അദൃശ്യമായ ജാലകങ്ങള്‍ ലഭ്യമാക്കുന്നതിനായി ഇവിടെ ക്ലിക്ക് ചെയ്യുക"
 
-#: applets/wncklet/showdesktop.c:269
+#: applets/vncklet/showdesktop.c:269
 msgid "Click here to hide all windows and show the desktop."
 msgstr ""
 "എല്ലാ ജാലകങ്ങളും അദൃശ്യമാക്കി പണിയിടം കാണിക്കുന്നതിനായി ഇവിടെ ക്ലിക്ക് "
 "ചെയ്യുക."
 
-#: applets/wncklet/showdesktop.c:439 applets/wncklet/showdesktop.c:498
+#: applets/vncklet/showdesktop.c:439 applets/vncklet/showdesktop.c:498
 msgid "Show Desktop Button"
 msgstr "പണിയിടം കാണാനുള്ള ബട്ടണ്‍"
 
-#: applets/wncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:499
 msgid "About Show Desktop Button"
 msgstr ""
 
-#: applets/wncklet/showdesktop.c:501
+#: applets/vncklet/showdesktop.c:501
 msgid "This button lets you hide all windows and show the desktop."
 msgstr ""
 "എല്ലാ ജാലകങ്ങളും അദൃശ്യമാക്കി പണിയിടം കാണിക്കുന്നതിനായി ഈ ബട്ടണ്‍ "
 "ഉപയോഗിക്കുക."
 
-#: applets/wncklet/showdesktop.c:502 applets/wncklet/window-list.c:825
-#: applets/wncklet/workspace-switcher.c:638
+#: applets/vncklet/showdesktop.c:502 applets/vncklet/window-list.c:825
+#: applets/vncklet/workspace-switcher.c:638
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
-#: applets/wncklet/showdesktop.c:529
+#: applets/vncklet/showdesktop.c:529
 msgid ""
 "Your window manager does not support the show desktop button, or you are not"
 " running a window manager."
@@ -1160,15 +1160,15 @@ msgstr ""
 "പിന്തുണയ്ക്കുന്നില്ല, അല്ലെങ്കില്‍ നിങ്ങള്‍ ഒരു ജാലക നടത്തിപ്പുകാരന്‍ "
 "പ്രവര്‍ത്തിപ്പിയ്ക്കുന്നില്ല."
 
-#: applets/wncklet/window-list.c:349
+#: applets/vncklet/window-list.c:349
 msgid "_System Monitor"
 msgstr ""
 
-#: applets/wncklet/window-list.c:822
+#: applets/vncklet/window-list.c:822
 msgid "About Window List"
 msgstr ""
 
-#: applets/wncklet/window-list.c:824
+#: applets/vncklet/window-list.c:824
 msgid ""
 "The Window List shows a list of all windows in a set of buttons and lets you"
 " browse them."
@@ -1176,79 +1176,79 @@ msgstr ""
 "ജാലകങ്ങളുടെ പട്ടിക എല്ലാ ജാലകങ്ങളുടേയും പട്ടിക നിങ്ങള്‍ക്കു് "
 "തെരഞ്ഞെടുക്കാവുന്ന ഒരു കൂട്ടം ബട്ടണുകളായി കാണിയ്ക്കും."
 
-#: applets/wncklet/window-list.ui:18
+#: applets/vncklet/window-list.ui:18
 msgid "Window List Preferences"
 msgstr "ജാലക നാമാവലി മുന്‍ഗണനകള്‍"
 
-#: applets/wncklet/window-list.ui:92
+#: applets/vncklet/window-list.ui:92
 msgid "Window List Content"
 msgstr "ജാലക പട്ടികയുടെ ഉള്ളടക്കം"
 
-#: applets/wncklet/window-list.ui:118
+#: applets/vncklet/window-list.ui:118
 msgid "Sh_ow windows from current workspace"
 msgstr "നിലവിലുളള പണിയറയില്‍ നിന്നും ജാലകങ്ങള്‍ _കാണിയ്ക്കുക"
 
-#: applets/wncklet/window-list.ui:133
+#: applets/vncklet/window-list.ui:133
 msgid "Show windows from a_ll workspaces"
 msgstr "_എല്ലാ പണിയറകളിലെയും ജാലകങ്ങള്‍ കാണിയ്ക്കുക"
 
-#: applets/wncklet/window-list.ui:173
+#: applets/vncklet/window-list.ui:173
 msgid "Window Thumbnails"
 msgstr ""
 
-#: applets/wncklet/window-list.ui:199
+#: applets/vncklet/window-list.ui:199
 msgid "Show _thumbnails on hover"
 msgstr ""
 
-#: applets/wncklet/window-list.ui:214
+#: applets/vncklet/window-list.ui:214
 msgid "_Hide thumbnails on hover"
 msgstr ""
 
-#: applets/wncklet/window-list.ui:252
+#: applets/vncklet/window-list.ui:252
 msgid "Thumbnail width in pixels. Window aspect ratio will be maintained."
 msgstr ""
 
-#: applets/wncklet/window-list.ui:253
+#: applets/vncklet/window-list.ui:253
 msgid "Thumbnail width:"
 msgstr ""
 
-#: applets/wncklet/window-list.ui:267
+#: applets/vncklet/window-list.ui:267
 msgid "px"
 msgstr ""
 
-#: applets/wncklet/window-list.ui:305
+#: applets/vncklet/window-list.ui:305
 msgid "Window Grouping"
 msgstr "ജാലകങ്ങളുടെ കൂട്ടം"
 
-#: applets/wncklet/window-list.ui:331
+#: applets/vncklet/window-list.ui:331
 msgid "_Never group windows"
 msgstr "ജാലകങ്ങള്‍ _ഒരിക്കലും കൂട്ടമാക്കേണ്ട"
 
-#: applets/wncklet/window-list.ui:346
+#: applets/vncklet/window-list.ui:346
 msgid "Group windows when _space is limited"
 msgstr "_സ്ഥലം കുറവാകുമ്പോള്‍ ജാലകങ്ങള്‍ കൂട്ടമായി കാണിയ്ക്കുക"
 
-#: applets/wncklet/window-list.ui:362
+#: applets/vncklet/window-list.ui:362
 msgid "_Always group windows"
 msgstr "ജാലകങ്ങള്‍ _എപ്പോഴും കൂട്ടമാക്കുക"
 
-#: applets/wncklet/window-list.ui:402
+#: applets/vncklet/window-list.ui:402
 msgid "Restoring Minimized Windows"
 msgstr "ചെറുതാക്കിയ ജാലകങ്ങള്‍ വീണ്ടെടുക്കുന്നു"
 
-#: applets/wncklet/window-list.ui:428
+#: applets/vncklet/window-list.ui:428
 msgid "Restore to current _workspace"
 msgstr "സജീവ പണിയറ മാത്രം കാണിയ്ക്കുക"
 
-#: applets/wncklet/window-list.ui:443
+#: applets/vncklet/window-list.ui:443
 msgid "Restore to na_tive workspace"
 msgstr "സ്വതേയുള്ള പണിയറ തെരിച്ചുകൊണ്ടുവരിക"
 
-#: applets/wncklet/window-menu.c:77
+#: applets/vncklet/window-menu.c:77
 msgid "About Window Selector"
 msgstr ""
 
-#: applets/wncklet/window-menu.c:79
+#: applets/vncklet/window-menu.c:79
 msgid ""
 "The Window Selector shows a list of all windows in a menu and lets you "
 "browse them."
@@ -1256,7 +1256,7 @@ msgstr ""
 "മെനുവിലുള്ള ജാലകങ്ങളുടെ പട്ടിക ജാലകം തെരഞ്ഞെടുക്കുന്ന പ്രയോഗം "
 "ലഭ്യമാക്കുന്നു. നിങ്ങള്‍ക്കു് അവ തെരയുകയും ചെയ്യാം."
 
-#: applets/wncklet/window-menu.c:80
+#: applets/vncklet/window-menu.c:80
 msgid ""
 "Copyright © 2000 Helix Code, Inc.\n"
 "Copyright © 2001 Free Software Foundation, Inc.\n"
@@ -1265,22 +1265,22 @@ msgid ""
 "Copyright © 2012-2020 CAFE developers"
 msgstr ""
 
-#: applets/wncklet/workspace-switcher.c:240
-#: applets/wncklet/workspace-switcher.c:939
-#: applets/wncklet/workspace-switcher.ui:170
+#: applets/vncklet/workspace-switcher.c:240
+#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "വരികള്‍"
 
-#: applets/wncklet/workspace-switcher.c:240
-#: applets/wncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:240
+#: applets/vncklet/workspace-switcher.c:939
 msgid "columns"
 msgstr "നിരകള്‍"
 
-#: applets/wncklet/workspace-switcher.c:635
+#: applets/vncklet/workspace-switcher.c:635
 msgid "About Workspace Switcher"
 msgstr ""
 
-#: applets/wncklet/workspace-switcher.c:637
+#: applets/vncklet/workspace-switcher.c:637
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
@@ -1288,43 +1288,43 @@ msgstr ""
 "നിങ്ങളുടെ ജാലകങ്ങള്‍ കൈകാര്യം ചെയ്യുന്നതിനുള്ള പണിയറകളുടെ ഒരു ചെറിയ പതിപ്പു്"
 " പണിയറ സ്വിച്ചര്‍ കാണിക്കുന്നു."
 
-#: applets/wncklet/workspace-switcher.ui:32
+#: applets/vncklet/workspace-switcher.ui:32
 msgid "Workspace Switcher Preferences"
 msgstr "പണിയറയുടെ സ്വിച്ചറിന്റെ മുന്‍ഗണനകള്‍"
 
-#: applets/wncklet/workspace-switcher.ui:113
+#: applets/vncklet/workspace-switcher.ui:113
 msgid "Show _only the current workspace"
 msgstr "നിലവിലുളള പണിയറ _മാത്രം കാണിയ്ക്കുക"
 
-#: applets/wncklet/workspace-switcher.ui:134
+#: applets/vncklet/workspace-switcher.ui:134
 msgid "Show _all workspaces in:"
 msgstr "_എല്ലാ പണിയറകളും കാണിയ്ക്കുക:"
 
-#: applets/wncklet/workspace-switcher.ui:204
+#: applets/vncklet/workspace-switcher.ui:204
 msgid "Switcher"
 msgstr "സ്വിച്ചര്‍"
 
-#: applets/wncklet/workspace-switcher.ui:245
+#: applets/vncklet/workspace-switcher.ui:245
 msgid "Number of _workspaces:"
 msgstr "പണിയറകളുടെ എണ്ണം:"
 
-#: applets/wncklet/workspace-switcher.ui:282
+#: applets/vncklet/workspace-switcher.ui:282
 msgid "Workspace na_mes:"
 msgstr "പണിയറയുടെ _പേരുകള്‍:"
 
-#: applets/wncklet/workspace-switcher.ui:303
+#: applets/vncklet/workspace-switcher.ui:303
 msgid "Workspace Names"
 msgstr "പണിയറയുടെ പേരുകള്‍"
 
-#: applets/wncklet/workspace-switcher.ui:319
+#: applets/vncklet/workspace-switcher.ui:319
 msgid "Show workspace _names in switcher"
 msgstr "സ്വിച്ചറില്‍ പണിയിടത്തിന്റെ _പേരുകള്‍ കാണിയ്ക്കുക"
 
-#: applets/wncklet/workspace-switcher.ui:334
+#: applets/vncklet/workspace-switcher.ui:334
 msgid "Allow workspace _wrap around in switcher"
 msgstr ""
 
-#: applets/wncklet/workspace-switcher.ui:356
+#: applets/vncklet/workspace-switcher.ui:356
 msgid "Workspaces"
 msgstr "പണിയറകള്‍"
 

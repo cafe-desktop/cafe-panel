@@ -1,14 +1,14 @@
 ### cafe-panel 1.24.1
 
   * update translations
-  * wncklet: Hide window preview on non-visible windows
+  * vncklet: Hide window preview on non-visible windows
   * launcher: Fix memory leaks
   * launcher: Fix memory leak
   * panel-util: Fix memory leak
   * Fix creating several launchers at once
   * clock: Fix GError double free
   * clock: Properly free rsvg handles
-  * wncklet: Fix leaking cairo_t
+  * vncklet: Fix leaking cairo_t
   * panel-run-dialog: Fix leaking tree model strings
   * workspace-switcher: Fix leaking color string
   * panel-properties-dialog: Fix leaking string
@@ -126,8 +126,8 @@
   * Set compressed="true" for gresource text files
   * panel-toplevel: Clarify calculation precedence for '&' and '?'
   * button-widget: Clarify calculation precedence for '&' and '?'
-  * Determine libwnck version during configure
-  * Add version check for libwnck
+  * Determine libvnck version during configure
+  * Add version check for libvnck
   * window-list: Show window previews on hover
   * Fix panel applet keyboard focus trap
 
@@ -166,7 +166,7 @@
   * xstuff: Error if X11 not enabled
   * Applets: only compile X11 applets when X11 is enabled
   * Clock: Wayland support
-  * wncklet: Error if compiling without X11 support
+  * vncklet: Error if compiling without X11 support
   * Notification area: error if compiling without X11 support
   * applet.c: Remove unused cafe_panel_applet_position_menu ()
 
@@ -280,7 +280,7 @@
   * css: use parsing-error signal to warn on bad css file or image
   * css: Convert to GResource
   * na-tray: Convert to GResource
-  * wncklet: Convert to GResource
+  * vncklet: Convert to GResource
   * panel: Convert to GResource
   * clock: Use new GdkPixbuf API to load resources
   * clock: Convert to GResource
@@ -341,7 +341,7 @@
 ### cafe-panel 1.19.5
 
   * Translations update
-  * bump minimum required libwnck version to 3.4.6
+  * bump minimum required libvnck version to 3.4.6
   * status-notifier: don't crash if tooltip has wrong type
   * status-notifier: don't crash if menu layout has wrong type
   * Fix rendering of radio buttons in status notifier
@@ -367,7 +367,7 @@
   * panel-toplevel: Remove pointer boundary check in panel_toplevel_queue_auto_hide()
   * remove ancient gnome-panel leftovers
   * Keep the right icons on bottom still displaying right when the resolution change larger
-  * wncklet: disconnect signals by data on destroy
+  * vncklet: disconnect signals by data on destroy
   * clock: disconnect one more signal handler on destroy
   * panel-applet-frame-dbus-c: comment out newly unused variable
   * Clock: don't check variables that can never be < 0 for < 0
@@ -390,7 +390,7 @@
 ### cafe-panel 1.19.3
 
   * Translations update
-  * wncklet: stop segfaults, warnings on removing in-process switcher, window-list
+  * vncklet: stop segfaults, warnings on removing in-process switcher, window-list
   * fish: fix adding back after removal
   * Fish: stop all warnings on removing when built in-process
   * Clock: fix removal warnings when in-process applet removed
@@ -610,7 +610,7 @@
   * Added support for multiple layouts, stored in $(datadir)/cafe-panel/layouts
   * Added --layout parameter
   * Add hook to support run dialog and main menu opening with metacity
-  * Switch to libwnck
+  * Switch to libvnck
   * Use yelp-tools instead of cafe-doc-utils
 
 ### cafe-panel 1.6.0

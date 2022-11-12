@@ -1,5 +1,5 @@
 /*
- * libwnck based pager Apple.
+ * libvnck based pager Apple.
  * (C) 2001 Alexander Larsson
  *
  * Authors: Alexander Larsson

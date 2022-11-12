@@ -89,15 +89,15 @@ PKG_CHECK_MODULES(NOTIFICATION_AREA, ctk+-3.0 >= $CTK_REQUIRED cafe-desktop-2.0 
 AC_SUBST(NOTIFICATION_AREA_CFLAGS)
 AC_SUBST(NOTIFICATION_AREA_LIBS)
 
-# Check if we have a version of libwnck that allows for window previews
-PKG_CHECK_MODULES(WNCKLET, ctk+-3.0 >= $CTK_REQUIRED libwnck-3.0 >= $LIBWNCK_PREVIEWS_OPTIONAL cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=yes, [
-   PKG_CHECK_MODULES(WNCKLET, ctk+-3.0 >= $CTK_REQUIRED libwnck-3.0 >= $LIBWNCK_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=no)
+# Check if we have a version of libvnck that allows for window previews
+PKG_CHECK_MODULES(WNCKLET, ctk+-3.0 >= $CTK_REQUIRED libvnck-3.0 >= $LIBWNCK_PREVIEWS_OPTIONAL cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=yes, [
+   PKG_CHECK_MODULES(WNCKLET, ctk+-3.0 >= $CTK_REQUIRED libvnck-3.0 >= $LIBWNCK_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=no)
 ])
 AC_SUBST(WNCKLET_CFLAGS)
 AC_SUBST(WNCKLET_LIBS)
 AM_CONDITIONAL(HAVE_WINDOW_PREVIEWS, [test "x$have_window_previews" = "xyes"])
 if test "x$have_window_previews" = "xyes"; then
-   AC_DEFINE([HAVE_WINDOW_PREVIEWS], 1, [Defined when using a version of libwnck that provides window-list previews])
+   AC_DEFINE([HAVE_WINDOW_PREVIEWS], 1, [Defined when using a version of libvnck that provides window-list previews])
 fi
 
 AC_CHECK_HEADERS(langinfo.h)
@@ -117,7 +117,7 @@ PANEL_INPROCESS_ALL=
 PANEL_INPROCESS_APPLETS=
 AC_ARG_WITH(in-process-applets,
 	AC_HELP_STRING([--with-in-process-applets=APPLETS],
-		[comma-separated list of applets to compile in-process (possible values: none, clock, fish, notification-area, wncklet, all) @<:@default=none@:>@]),
+		[comma-separated list of applets to compile in-process (possible values: none, clock, fish, notification-area, vncklet, all) @<:@default=none@:>@]),
 	[for i in `echo $withval | tr , ' '`; do
 		if test $i = "none"; then
 			PANEL_INPROCESS_NONE=1
@@ -129,7 +129,7 @@ AC_ARG_WITH(in-process-applets,
 			PANEL_INPROCESS_APPLETS="$PANEL_INPROCESS_APPLETS $i"
 		else if test $i = "notification-area"; then
 			PANEL_INPROCESS_APPLETS="$PANEL_INPROCESS_APPLETS $i"
-		else if test $i = "wncklet"; then
+		else if test $i = "vncklet"; then
 			PANEL_INPROCESS_APPLETS="$PANEL_INPROCESS_APPLETS $i"
 		else
 			echo "applet $i not recognized, ignoring..."
@@ -138,7 +138,7 @@ AC_ARG_WITH(in-process-applets,
 	[])
 
 if test -n "$PANEL_INPROCESS_ALL"; then
-	PANEL_INPROCESS_APPLETS="clock fish notification-area wncklet"
+	PANEL_INPROCESS_APPLETS="clock fish notification-area vncklet"
 fi
 if test -n "$PANEL_INPROCESS_NONE"; then
 	PANEL_INPROCESS_APPLETS=""
@@ -156,10 +156,10 @@ for i in $PANEL_INPROCESS_APPLETS; do
 		NOTIFICATION_AREA_COMPILE_INPROCESS=1
 		AC_DEFINE([NOTIFICATION_AREA_INPROCESS], 1,
 		[Defined when compiling the notification-area applet in-process])
-	else if test $i = "wncklet"; then
+	else if test $i = "vncklet"; then
 		WNCKLET_COMPILE_INPROCESS=1
 		AC_DEFINE([WNCKLET_INPROCESS], 1,
-		[Defined when compiling the wncklet applet in-process])
+		[Defined when compiling the vncklet applet in-process])
 	fi; fi; fi; fi
 done
 if test "x$PANEL_INPROCESS_APPLETS" = "x"; then
@@ -331,10 +331,10 @@ applets/notification_area/org.cafe.panel.applet.notification-area.gschema.xml
 applets/notification_area/libstatus-notifier-watcher/Makefile
 applets/notification_area/status-notifier/Makefile
 applets/notification_area/system-tray/Makefile
-applets/wncklet/Makefile
-applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml
-applets/wncklet/org.cafe.panel.applet.window-list-previews.gschema.xml
-applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml
+applets/vncklet/Makefile
+applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml
+applets/vncklet/org.cafe.panel.applet.window-list-previews.gschema.xml
+applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml
 doc/Makefile
 doc/reference/Makefile
 doc/reference/cafe-panel-applet/Makefile

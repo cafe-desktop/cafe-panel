@@ -161,18 +161,18 @@ msgid "Failed to set the system time"
 msgstr ""
 
 #: ../applets/clock/clock.c:1850 ../applets/fish/fish.c:1692
-#: ../applets/wncklet/window-list.c:171
-#: ../applets/wncklet/workspace-switcher.c:389
+#: ../applets/vncklet/window-list.c:171
+#: ../applets/vncklet/workspace-switcher.c:389
 msgid "_Preferences"
 msgstr ""
 
 #: ../applets/clock/clock.c:1853 ../applets/clock/clock.ui.h:7
 #: ../applets/fish/fish.c:1695 ../applets/fish/fish.ui.h:2
 #: ../applets/notification_area/main.c:181
-#: ../applets/wncklet/showdesktop.c:237 ../applets/wncklet/window-list.c:179
-#: ../applets/wncklet/window-list.ui.h:2 ../applets/wncklet/window-menu.c:100
-#: ../applets/wncklet/workspace-switcher.c:397
-#: ../applets/wncklet/workspace-switcher.ui.h:2 ../cafe-panel/drawer.c:563
+#: ../applets/vncklet/showdesktop.c:237 ../applets/vncklet/window-list.c:179
+#: ../applets/vncklet/window-list.ui.h:2 ../applets/vncklet/window-menu.c:100
+#: ../applets/vncklet/workspace-switcher.c:397
+#: ../applets/vncklet/workspace-switcher.ui.h:2 ../cafe-panel/drawer.c:563
 #: ../cafe-panel/panel-action-button.c:737 ../cafe-panel/panel-addto.c:1241
 #: ../cafe-panel/panel-context-menu.c:317
 #: ../cafe-panel/panel-ditem-editor.c:653 ../cafe-panel/panel-menu-bar.c:370
@@ -184,9 +184,9 @@ msgstr "मदद (_H)"
 
 #: ../applets/clock/clock.c:1856 ../applets/fish/fish.c:1698
 #: ../applets/notification_area/main.c:184
-#: ../applets/wncklet/showdesktop.c:245 ../applets/wncklet/window-list.c:187
-#: ../applets/wncklet/window-menu.c:108
-#: ../applets/wncklet/workspace-switcher.c:405
+#: ../applets/vncklet/showdesktop.c:245 ../applets/vncklet/window-list.c:187
+#: ../applets/vncklet/window-menu.c:108
+#: ../applets/vncklet/workspace-switcher.c:405
 msgid "_About"
 msgstr "बारे मंज (_A)"
 
@@ -229,9 +229,9 @@ msgstr ""
 
 #: ../applets/clock/clock.c:3234 ../applets/fish/fish.c:566
 #: ../applets/notification_area/main.c:175
-#: ../applets/wncklet/showdesktop.c:508 ../applets/wncklet/window-list.c:573
-#: ../applets/wncklet/window-menu.c:90
-#: ../applets/wncklet/workspace-switcher.c:646
+#: ../applets/vncklet/showdesktop.c:508 ../applets/vncklet/window-list.c:573
+#: ../applets/vncklet/window-menu.c:90
+#: ../applets/vncklet/workspace-switcher.c:646
 #: ../cafe-panel/panel-context-menu.c:123
 msgid "translator-credits"
 msgstr "राकेश पंडित (rakesh.pandit@gmail.com)"
@@ -269,8 +269,8 @@ msgid "Time _Settings"
 msgstr ""
 
 #: ../applets/clock/clock.ui.h:9 ../applets/fish/fish.c:853
-#: ../applets/fish/fish.ui.h:3 ../applets/wncklet/window-list.ui.h:3
-#: ../applets/wncklet/workspace-switcher.ui.h:3
+#: ../applets/fish/fish.ui.h:3 ../applets/vncklet/window-list.ui.h:3
+#: ../applets/vncklet/workspace-switcher.ui.h:3
 #: ../cafe-panel/panel-addto.c:1252 ../cafe-panel/panel-ditem-editor.c:665
 #: ../cafe-panel/panel-properties-dialog.ui.h:3
 #: ../cafe-panel/panel-test-applets.ui.h:4
@@ -472,14 +472,14 @@ msgid "Sunrise: %s / Sunset: %s"
 msgstr ""
 
 #: ../applets/clock/clock-utils.c:94 ../applets/fish/fish.c:169
-#: ../applets/notification_area/main.c:126 ../applets/wncklet/wncklet.c:71
+#: ../applets/notification_area/main.c:126 ../applets/vncklet/vncklet.c:71
 #: ../cafe-panel/libpanel-util/panel-show.c:234
 #, c-format
 msgid "Could not display help document '%s'"
 msgstr ""
 
 #: ../applets/clock/clock-utils.c:123 ../applets/fish/fish.c:195
-#: ../applets/notification_area/main.c:140 ../applets/wncklet/wncklet.c:88
+#: ../applets/notification_area/main.c:140 ../applets/vncklet/vncklet.c:88
 msgid "Error displaying help document"
 msgstr ""
 
@@ -837,266 +837,266 @@ msgstr ""
 msgid "Area where notification icons appear"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:1
+#: ../applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:1
 msgid "Show windows from all workspaces"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:2
+#: ../applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:2
 msgid ""
 "If true, the window list will show windows from all workspaces. Otherwise it"
 " will only display windows from the current workspace."
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:3
+#: ../applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:3
 msgid "When to group windows"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:4
+#: ../applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:4
 msgid ""
 "Decides when to group windows from the same application on the window list. "
 "Possible values are \"never\", \"auto\" and \"always\"."
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:5
+#: ../applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:5
 msgid "Move windows to current workspace when unminimized"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:6
+#: ../applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in.h:6
 msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:1
+#: ../applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:1
 msgid "Display workspace names"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:2
+#: ../applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:2
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
 "This setting only works when the window manager is Marco."
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:3
+#: ../applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:3
 msgid "Display all workspaces"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:4
+#: ../applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:4
 msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:5
+#: ../applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:5
 msgid "Rows in workspace switcher"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:6
+#: ../applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:6
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
 "vertical layout) the workspace switcher shows the workspaces in. This key is"
 " only relevant if the display_all_workspaces key is true."
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:7
+#: ../applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:7
 msgid "Wrap around on scroll"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:8
+#: ../applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in.h:8
 msgid ""
 "If true, the workspace switcher will allow wrap-around, which means "
 "switching from the first to the last workspace and vice versa via scrolling."
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:1
+#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:1
 msgid "Window Navigation Applet Factory"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:2
+#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:2
 msgid "Factory for the window navigation related applets"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:3
-#: ../applets/wncklet/window-menu.c:83 ../applets/wncklet/window-menu.c:229
+#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:3
+#: ../applets/vncklet/window-menu.c:83 ../applets/vncklet/window-menu.c:229
 msgid "Window Selector"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:4
+#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:4
 msgid "Switch between open windows using a menu"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:5
-#: ../applets/wncklet/workspace-switcher.c:639
+#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:5
+#: ../applets/vncklet/workspace-switcher.c:639
 msgid "Workspace Switcher"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:6
+#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:6
 msgid "Switch between workspaces"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:7
-#: ../applets/wncklet/window-list.c:566
+#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:7
+#: ../applets/vncklet/window-list.c:566
 msgid "Window List"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:8
+#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:8
 msgid "Switch between open windows using buttons"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:9
+#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:9
 msgid "Show Desktop"
 msgstr ""
 
-#: ../applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:10
+#: ../applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.in.in.h:10
 msgid "Hide application windows and show the desktop"
 msgstr ""
 
-#: ../applets/wncklet/showdesktop.c:180
+#: ../applets/vncklet/showdesktop.c:180
 #, c-format
 msgid "Failed to load %s: %s\n"
 msgstr ""
 
-#: ../applets/wncklet/showdesktop.c:180
+#: ../applets/vncklet/showdesktop.c:180
 msgid "Icon not found"
 msgstr ""
 
-#: ../applets/wncklet/showdesktop.c:261
+#: ../applets/vncklet/showdesktop.c:261
 msgid "Click here to restore hidden windows."
 msgstr ""
 
-#: ../applets/wncklet/showdesktop.c:265
+#: ../applets/vncklet/showdesktop.c:265
 msgid "Click here to hide all windows and show the desktop."
 msgstr ""
 
-#: ../applets/wncklet/showdesktop.c:435 ../applets/wncklet/showdesktop.c:501
+#: ../applets/vncklet/showdesktop.c:435 ../applets/vncklet/showdesktop.c:501
 msgid "Show Desktop Button"
 msgstr ""
 
-#: ../applets/wncklet/showdesktop.c:503
+#: ../applets/vncklet/showdesktop.c:503
 msgid "This button lets you hide all windows and show the desktop."
 msgstr ""
 
-#: ../applets/wncklet/showdesktop.c:529
+#: ../applets/vncklet/showdesktop.c:529
 msgid ""
 "Your window manager does not support the show desktop button, or you are not"
 " running a window manager."
 msgstr ""
 
-#: ../applets/wncklet/window-list.c:163
+#: ../applets/vncklet/window-list.c:163
 msgid "_System Monitor"
 msgstr ""
 
-#: ../applets/wncklet/window-list.c:568
+#: ../applets/vncklet/window-list.c:568
 msgid ""
 "The Window List shows a list of all windows in a set of buttons and lets you"
 " browse them."
 msgstr ""
 
-#: ../applets/wncklet/window-list.ui.h:1
+#: ../applets/vncklet/window-list.ui.h:1
 msgid "Window List Preferences"
 msgstr ""
 
-#: ../applets/wncklet/window-list.ui.h:4
+#: ../applets/vncklet/window-list.ui.h:4
 msgid "Window List Content"
 msgstr ""
 
-#: ../applets/wncklet/window-list.ui.h:5
+#: ../applets/vncklet/window-list.ui.h:5
 msgid "Sh_ow windows from current workspace"
 msgstr ""
 
-#: ../applets/wncklet/window-list.ui.h:6
+#: ../applets/vncklet/window-list.ui.h:6
 msgid "Show windows from a_ll workspaces"
 msgstr ""
 
-#: ../applets/wncklet/window-list.ui.h:7
+#: ../applets/vncklet/window-list.ui.h:7
 msgid "Window Grouping"
 msgstr ""
 
-#: ../applets/wncklet/window-list.ui.h:8
+#: ../applets/vncklet/window-list.ui.h:8
 msgid "_Never group windows"
 msgstr ""
 
-#: ../applets/wncklet/window-list.ui.h:9
+#: ../applets/vncklet/window-list.ui.h:9
 msgid "Group windows when _space is limited"
 msgstr ""
 
-#: ../applets/wncklet/window-list.ui.h:10
+#: ../applets/vncklet/window-list.ui.h:10
 msgid "_Always group windows"
 msgstr ""
 
-#: ../applets/wncklet/window-list.ui.h:11
+#: ../applets/vncklet/window-list.ui.h:11
 msgid "Restoring Minimized Windows"
 msgstr ""
 
-#: ../applets/wncklet/window-list.ui.h:12
+#: ../applets/vncklet/window-list.ui.h:12
 msgid "Restore to current _workspace"
 msgstr ""
 
-#: ../applets/wncklet/window-list.ui.h:13
+#: ../applets/vncklet/window-list.ui.h:13
 msgid "Restore to na_tive workspace"
 msgstr ""
 
-#: ../applets/wncklet/window-menu.c:85
+#: ../applets/vncklet/window-menu.c:85
 msgid ""
 "The Window Selector shows a list of all windows in a menu and lets you "
 "browse them."
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.c:240
-#: ../applets/wncklet/workspace-switcher.c:941
-#: ../applets/wncklet/workspace-switcher.ui.h:6
+#: ../applets/vncklet/workspace-switcher.c:240
+#: ../applets/vncklet/workspace-switcher.c:941
+#: ../applets/vncklet/workspace-switcher.ui.h:6
 msgid "rows"
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.c:240
-#: ../applets/wncklet/workspace-switcher.c:941
+#: ../applets/vncklet/workspace-switcher.c:240
+#: ../applets/vncklet/workspace-switcher.c:941
 msgid "columns"
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.c:641
+#: ../applets/vncklet/workspace-switcher.c:641
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.ui.h:1
+#: ../applets/vncklet/workspace-switcher.ui.h:1
 msgid "Workspace Switcher Preferences"
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.ui.h:4
+#: ../applets/vncklet/workspace-switcher.ui.h:4
 msgid "Show _only the current workspace"
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.ui.h:5
+#: ../applets/vncklet/workspace-switcher.ui.h:5
 msgid "Show _all workspaces in:"
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.ui.h:7
+#: ../applets/vncklet/workspace-switcher.ui.h:7
 msgid "Switcher"
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.ui.h:8
+#: ../applets/vncklet/workspace-switcher.ui.h:8
 msgid "Number of _workspaces:"
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.ui.h:9
+#: ../applets/vncklet/workspace-switcher.ui.h:9
 msgid "Workspace na_mes:"
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.ui.h:10
+#: ../applets/vncklet/workspace-switcher.ui.h:10
 msgid "Workspace Names"
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.ui.h:11
+#: ../applets/vncklet/workspace-switcher.ui.h:11
 msgid "Show workspace _names in switcher"
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.ui.h:12
+#: ../applets/vncklet/workspace-switcher.ui.h:12
 msgid "Allow workspace _wrap around in switcher"
 msgstr ""
 
-#: ../applets/wncklet/workspace-switcher.ui.h:13
+#: ../applets/vncklet/workspace-switcher.ui.h:13
 msgid "Workspaces"
 msgstr ""
 

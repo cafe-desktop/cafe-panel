@@ -2,7 +2,7 @@ AM_CPPFLAGS =							\
 	$(LIBCAFE_PANEL_APPLET_CFLAGS)				\
 	$(WNCKLET_CFLAGS)					\
 	-I$(top_builddir)					\
-	-I$(top_builddir)/applets/wncklet			\
+	-I$(top_builddir)/applets/vncklet			\
 	-I$(top_srcdir)/libcafe-panel-applet				\
 	-I$(top_builddir)/libcafe-panel-applet			\
 	-DCAFELOCALEDIR=\""$(datadir)/locale"\"	\
@@ -11,8 +11,8 @@ AM_CPPFLAGS =							\
 AM_CFLAGS = $(WARN_CFLAGS)
 
 WNCKLET_SOURCES = \
-	wncklet.c \
-	wncklet.h \
+	vncklet.c \
+	vncklet.h \
 	window-menu.c \
 	window-menu.h \
 	window-list.c \
@@ -30,22 +30,22 @@ WNCKLET_LDADD =						\
 
 if WNCKLET_INPROCESS
 APPLET_IN_PROCESS = true
-APPLET_LOCATION   = $(pkglibdir)/libwnck-applet.so
+APPLET_LOCATION   = $(pkglibdir)/libvnck-applet.so
 
-wnck_appletlibdir = $(pkglibdir)
-wnck_appletlib_LTLIBRARIES = libwnck-applet.la
-libwnck_applet_la_SOURCES = $(WNCKLET_SOURCES)
-libwnck_applet_la_LIBADD = $(WNCKLET_LDADD)
-libwnck_applet_la_LDFLAGS = -module -avoid-version
-libwnck_applet_la_CFLAGS = $(AM_CFLAGS)
+vnck_appletlibdir = $(pkglibdir)
+vnck_appletlib_LTLIBRARIES = libvnck-applet.la
+libvnck_applet_la_SOURCES = $(WNCKLET_SOURCES)
+libvnck_applet_la_LIBADD = $(WNCKLET_LDADD)
+libvnck_applet_la_LDFLAGS = -module -avoid-version
+libvnck_applet_la_CFLAGS = $(AM_CFLAGS)
 else
 APPLET_IN_PROCESS = false
-APPLET_LOCATION   = $(libexecdir)/wnck-applet
+APPLET_LOCATION   = $(libexecdir)/vnck-applet
 
-libexec_PROGRAMS = wnck-applet
-wnck_applet_SOURCES = $(WNCKLET_SOURCES)
-wnck_applet_LDADD = $(WNCKLET_LDADD)
-wnck_applet_CFLAGS = $(AM_CFLAGS)
+libexec_PROGRAMS = vnck-applet
+vnck_applet_SOURCES = $(WNCKLET_SOURCES)
+vnck_applet_LDADD = $(WNCKLET_LDADD)
+vnck_applet_CFLAGS = $(AM_CFLAGS)
 endif
 
 appletdir       = $(datadir)/cafe-panel/applets
@@ -81,36 +81,36 @@ ui_FILES = \
 	workspace-switcher-menu.xml \
 	workspace-switcher.ui
 
-wncklet-resources.c: wncklet.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/wncklet.gresource.xml)
-	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name wncklet $<
+vncklet-resources.c: vncklet.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/vncklet.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name vncklet $<
 
-wncklet-resources.h: wncklet.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/wncklet.gresource.xml)
-	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name wncklet $<
+vncklet-resources.h: vncklet.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/vncklet.gresource.xml)
+	$(AM_V_GEN)$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name vncklet $<
 
 BUILT_SOURCES = 		\
-	wncklet-resources.c	\
-	wncklet-resources.h
+	vncklet-resources.c	\
+	vncklet-resources.h
 
 if HAVE_WINDOW_PREVIEWS
-wncklet_gschemas_in = \
+vncklet_gschemas_in = \
 	org.cafe.panel.applet.window-list.gschema.xml.in \
 	org.cafe.panel.applet.window-list-previews.gschema.xml.in \
 	org.cafe.panel.applet.workspace-switcher.gschema.xml.in
 else
-wncklet_gschemas_in = \
+vncklet_gschemas_in = \
 	org.cafe.panel.applet.window-list.gschema.xml.in \
 	org.cafe.panel.applet.workspace-switcher.gschema.xml.in
 endif
-gsettings_SCHEMAS = $(wncklet_gschemas_in:.xml.in=.xml)
+gsettings_SCHEMAS = $(vncklet_gschemas_in:.xml.in=.xml)
 
 @GSETTINGS_RULES@
 
 EXTRA_DIST = \
 	org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in \
 	$(service_in_files) \
-	$(wncklet_gschemas_in) \
+	$(vncklet_gschemas_in) \
 	$(ui_FILES) \
-	wncklet.gresource.xml
+	vncklet.gresource.xml
 
 CLEANFILES = $(BUILT_SOURCES) $(applet_DATA) $(applet_in_files) $(service_DATA) $(gsettings_SCHEMAS)
 

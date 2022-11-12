@@ -36,9 +36,9 @@
 #include <cdk/cdkkeysyms.h>
 
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
-#include <libwnck/libwnck.h>
+#include <libvnck/libvnck.h>
 
-#include "wncklet.h"
+#include "vncklet.h"
 #include "window-menu.h"
 
 #define WINDOW_MENU_ICON "cafe-panel-window-menu"
@@ -52,7 +52,7 @@ typedef struct {
 
 static void window_menu_help(CtkAction* action, WindowMenu* window_menu)
 {
-	wncklet_display_help(window_menu->applet, "cafe-user-guide", "panel-windowselector", WINDOW_MENU_ICON);
+	vncklet_display_help(window_menu->applet, "cafe-user-guide", "panel-windowselector", WINDOW_MENU_ICON);
 }
 
 static void window_menu_about(CtkAction* action, WindowMenu* window_menu)
@@ -240,7 +240,7 @@ gboolean window_menu_applet_fill(CafePanelApplet* applet)
 	                                            action_group);
 	g_object_unref(action_group);
 
-	window_menu->selector = wnck_selector_new();
+	window_menu->selector = vnck_selector_new();
 	ctk_container_add(CTK_CONTAINER(window_menu->applet), window_menu->selector);
 
 	cafe_panel_applet_set_background_widget(CAFE_PANEL_APPLET(window_menu->applet), CTK_WIDGET(window_menu->selector));

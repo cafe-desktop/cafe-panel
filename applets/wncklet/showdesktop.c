@@ -35,9 +35,9 @@
 #include <cdk/cdkx.h>
 
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
-#include <libwnck/libwnck.h>
+#include <libvnck/libvnck.h>
 
-#include "wncklet.h"
+#include "vncklet.h"
 #include "showdesktop.h"
 
 #include <string.h>
@@ -55,7 +55,7 @@ typedef struct {
 	CtkOrientation orient;
 	int size;
 
-	WnckScreen* wnck_screen;
+	WnckScreen* vnck_screen;
 
 	guint showing_desktop: 1;
 	guint button_activate;
@@ -299,10 +299,10 @@ static void applet_destroyed(CtkWidget* applet, ShowDesktopData* sdd)
 		sdd->button_activate = 0;
 	}
 
-	if (sdd->wnck_screen != NULL)
+	if (sdd->vnck_screen != NULL)
 	{
-		g_signal_handlers_disconnect_by_func(sdd->wnck_screen, show_desktop_changed_callback, sdd);
-		sdd->wnck_screen = NULL;
+		g_signal_handlers_disconnect_by_func(sdd->vnck_screen, show_desktop_changed_callback, sdd);
+		sdd->vnck_screen = NULL;
 	}
 
 	if (sdd->icon_theme != NULL)
@@ -361,24 +361,24 @@ static void show_desktop_applet_realized(CafePanelApplet* applet, gpointer data)
 
 	sdd = (ShowDesktopData*) data;
 
-	if (sdd->wnck_screen != NULL)
-		g_signal_handlers_disconnect_by_func(sdd->wnck_screen, show_desktop_changed_callback, sdd);
+	if (sdd->vnck_screen != NULL)
+		g_signal_handlers_disconnect_by_func(sdd->vnck_screen, show_desktop_changed_callback, sdd);
 
 	if (sdd->icon_theme != NULL)
 		g_signal_handlers_disconnect_by_func(sdd->icon_theme, theme_changed_callback, sdd);
 
 	screen = ctk_widget_get_screen(sdd->applet);
-	sdd->wnck_screen = wnck_screen_get(cdk_x11_screen_get_screen_number (screen));
+	sdd->vnck_screen = vnck_screen_get(cdk_x11_screen_get_screen_number (screen));
 
-	if (sdd->wnck_screen != NULL)
-		wncklet_connect_while_alive(sdd->wnck_screen, "showing_desktop_changed", G_CALLBACK(show_desktop_changed_callback), sdd, sdd->applet);
+	if (sdd->vnck_screen != NULL)
+		vncklet_connect_while_alive(sdd->vnck_screen, "showing_desktop_changed", G_CALLBACK(show_desktop_changed_callback), sdd, sdd->applet);
 	else
 		g_warning("Could not get WnckScreen!");
 
-	show_desktop_changed_callback(sdd->wnck_screen, sdd);
+	show_desktop_changed_callback(sdd->vnck_screen, sdd);
 
 	sdd->icon_theme = ctk_icon_theme_get_for_screen (screen);
-	wncklet_connect_while_alive(sdd->icon_theme, "changed", G_CALLBACK(theme_changed_callback), sdd, sdd->applet);
+	vncklet_connect_while_alive(sdd->icon_theme, "changed", G_CALLBACK(theme_changed_callback), sdd, sdd->applet);
 
 	update_icon (sdd);
 }
@@ -478,7 +478,7 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 
 static void display_help_dialog(CtkAction* action, ShowDesktopData* sdd)
 {
-	wncklet_display_help(sdd->applet, "cafe-user-guide", "gospanel-564", SHOW_DESKTOP_ICON);
+	vncklet_display_help(sdd->applet, "cafe-user-guide", "gospanel-564", SHOW_DESKTOP_ICON);
 }
 
 static void display_about_dialog(CtkAction* action, ShowDesktopData* sdd)
@@ -540,16 +540,16 @@ static void button_toggled_callback(CtkWidget* button, ShowDesktopData* sdd)
 		return;
 	}
 
-	if (sdd->wnck_screen != NULL)
-		wnck_screen_toggle_showing_desktop(sdd->wnck_screen, ctk_toggle_button_get_active(CTK_TOGGLE_BUTTON(button)));
+	if (sdd->vnck_screen != NULL)
+		vnck_screen_toggle_showing_desktop(sdd->vnck_screen, ctk_toggle_button_get_active(CTK_TOGGLE_BUTTON(button)));
 
 	update_button_display (sdd);
 }
 
 static void show_desktop_changed_callback(WnckScreen* screen, ShowDesktopData* sdd)
 {
-	if (sdd->wnck_screen != NULL)
-		sdd->showing_desktop = wnck_screen_get_showing_desktop(sdd->wnck_screen);
+	if (sdd->vnck_screen != NULL)
+		sdd->showing_desktop = vnck_screen_get_showing_desktop(sdd->vnck_screen);
 
 	update_button_state (sdd);
 }

@@ -1,4 +1,4 @@
-/* wncklet.c: A collection of window navigation applets
+/* vncklet.c: A collection of window navigation applets
  *
  * Copyright (C) 2003 Sun Microsystems, Inc.
  *
@@ -36,15 +36,15 @@
 #include <ctk/ctk.h>
 #include <cdk/cdkx.h>
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
-#include <libwnck/libwnck.h>
+#include <libvnck/libvnck.h>
 
-#include "wncklet.h"
+#include "vncklet.h"
 #include "window-menu.h"
 #include "workspace-switcher.h"
 #include "window-list.h"
 #include "showdesktop.h"
 
-void wncklet_display_help(CtkWidget* widget, const char* doc_id, const char* link_id, const char* icon_name)
+void vncklet_display_help(CtkWidget* widget, const char* doc_id, const char* link_id, const char* icon_name)
 {
 	GError* error = NULL;
 	char* uri;
@@ -96,19 +96,19 @@ void wncklet_display_help(CtkWidget* widget, const char* doc_id, const char* lin
 	}
 }
 
-WnckScreen* wncklet_get_screen(CtkWidget* applet)
+WnckScreen* vncklet_get_screen(CtkWidget* applet)
 {
 	int screen_num;
 
 	if (!ctk_widget_has_screen(applet))
-		return wnck_screen_get_default();
+		return vnck_screen_get_default();
 
 	screen_num = cdk_x11_screen_get_screen_number(ctk_widget_get_screen(applet));
 
-	return wnck_screen_get(screen_num);
+	return vnck_screen_get(screen_num);
 }
 
-void wncklet_connect_while_alive(gpointer object, const char* signal, GCallback func, gpointer func_data, gpointer alive_object)
+void vncklet_connect_while_alive(gpointer object, const char* signal, GCallback func, gpointer func_data, gpointer alive_object)
 {
 	GClosure* closure;
 
@@ -117,14 +117,14 @@ void wncklet_connect_while_alive(gpointer object, const char* signal, GCallback 
 	g_signal_connect_closure_by_id(object, g_signal_lookup(signal, G_OBJECT_TYPE(object)), 0, closure, FALSE);
 }
 
-static gboolean wncklet_factory(CafePanelApplet* applet, const char* iid, gpointer data)
+static gboolean vncklet_factory(CafePanelApplet* applet, const char* iid, gpointer data)
 {
 	gboolean retval = FALSE;
 	static gboolean type_registered = FALSE;
 
 	if (!type_registered)
 	{
-		wnck_set_client_type(WNCK_CLIENT_TYPE_PAGER);
+		vnck_set_client_type(WNCK_CLIENT_TYPE_PAGER);
 		type_registered = TRUE;
 	}
 
@@ -142,7 +142,7 @@ static gboolean wncklet_factory(CafePanelApplet* applet, const char* iid, gpoint
 
 
 #ifdef WNCKLET_INPROCESS
-	CAFE_PANEL_APPLET_IN_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", wncklet_factory, NULL)
+	CAFE_PANEL_APPLET_IN_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", vncklet_factory, NULL)
 #else
-	CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", wncklet_factory, NULL)
+	CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", vncklet_factory, NULL)
 #endif
