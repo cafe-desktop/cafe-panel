@@ -12,14 +12,14 @@ locked=true
 
 [Object show-desktop]
 object-type=applet
-applet-iid=WnckletFactory::ShowDesktopApplet
+applet-iid=VnckletFactory::ShowDesktopApplet
 toplevel-id=bottom
 position=1
 locked=true
 
 [Object window-list]
 object-type=applet
-applet-iid=WnckletFactory::WindowListApplet
+applet-iid=VnckletFactory::WindowListApplet
 toplevel-id=bottom
 position=20
 locked=true

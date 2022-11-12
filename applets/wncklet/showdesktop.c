@@ -55,7 +55,7 @@ typedef struct {
 	CtkOrientation orient;
 	int size;
 
-	WnckScreen* vnck_screen;
+	VnckScreen* vnck_screen;
 
 	guint showing_desktop: 1;
 	guint button_activate;
@@ -73,7 +73,7 @@ static void update_button_display(ShowDesktopData* sdd);
 static void theme_changed_callback(CtkIconTheme* icon_theme, ShowDesktopData* sdd);
 
 static void button_toggled_callback(CtkWidget* button, ShowDesktopData* sdd);
-static void show_desktop_changed_callback(WnckScreen* screen, ShowDesktopData* sdd);
+static void show_desktop_changed_callback(VnckScreen* screen, ShowDesktopData* sdd);
 
 /* this is when the panel orientation changes */
 
@@ -373,7 +373,7 @@ static void show_desktop_applet_realized(CafePanelApplet* applet, gpointer data)
 	if (sdd->vnck_screen != NULL)
 		vncklet_connect_while_alive(sdd->vnck_screen, "showing_desktop_changed", G_CALLBACK(show_desktop_changed_callback), sdd, sdd->applet);
 	else
-		g_warning("Could not get WnckScreen!");
+		g_warning("Could not get VnckScreen!");
 
 	show_desktop_changed_callback(sdd->vnck_screen, sdd);
 
@@ -546,7 +546,7 @@ static void button_toggled_callback(CtkWidget* button, ShowDesktopData* sdd)
 	update_button_display (sdd);
 }
 
-static void show_desktop_changed_callback(WnckScreen* screen, ShowDesktopData* sdd)
+static void show_desktop_changed_callback(VnckScreen* screen, ShowDesktopData* sdd)
 {
 	if (sdd->vnck_screen != NULL)
 		sdd->showing_desktop = vnck_screen_get_showing_desktop(sdd->vnck_screen);

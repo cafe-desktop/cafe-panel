@@ -49,7 +49,7 @@ vnck_applet_CFLAGS = $(AM_CFLAGS)
 endif
 
 appletdir       = $(datadir)/cafe-panel/applets
-applet_in_files = org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in
+applet_in_files = org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in
 applet_DATA     = $(applet_in_files:.cafe-panel-applet.desktop.in=.cafe-panel-applet)
 
 $(applet_in_files): $(applet_in_files).in Makefile
@@ -64,10 +64,10 @@ $(applet_DATA): $(applet_in_files)
 
 if !VNCKLET_INPROCESS
 servicedir       = $(datadir)/dbus-1/services
-service_in_files = org.cafe.panel.applet.WnckletFactory.service.in
+service_in_files = org.cafe.panel.applet.VnckletFactory.service.in
 service_DATA     = $(service_in_files:.service.in=.service)
 
-org.cafe.panel.applet.WnckletFactory.service: $(service_in_files)
+org.cafe.panel.applet.VnckletFactory.service: $(service_in_files)
 	$(AM_V_GEN)sed \
 		-e "s|\@LOCATION\@|$(APPLET_LOCATION)|" \
 		$< > $@
@@ -106,7 +106,7 @@ gsettings_SCHEMAS = $(vncklet_gschemas_in:.xml.in=.xml)
 @GSETTINGS_RULES@
 
 EXTRA_DIST = \
-	org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in \
+	org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in \
 	$(service_in_files) \
 	$(vncklet_gschemas_in) \
 	$(ui_FILES) \
