@@ -35,7 +35,7 @@
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
 #include <cdk/cdkx.h>
-#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#define VNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libvnck/libvnck.h>
 
 #include "vncklet.h"
@@ -124,7 +124,7 @@ static gboolean vncklet_factory(CafePanelApplet* applet, const char* iid, gpoint
 
 	if (!type_registered)
 	{
-		vnck_set_client_type(WNCK_CLIENT_TYPE_PAGER);
+		vnck_set_client_type(VNCK_CLIENT_TYPE_PAGER);
 		type_registered = TRUE;
 	}
 
@@ -141,7 +141,7 @@ static gboolean vncklet_factory(CafePanelApplet* applet, const char* iid, gpoint
 }
 
 
-#ifdef WNCKLET_INPROCESS
+#ifdef VNCKLET_INPROCESS
 	CAFE_PANEL_APPLET_IN_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", vncklet_factory, NULL)
 #else
 	CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY("WnckletFactory", PANEL_TYPE_APPLET, "WindowNavigationApplets", vncklet_factory, NULL)

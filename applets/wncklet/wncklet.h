@@ -21,8 +21,8 @@
  *
  */
 
-#ifndef __WNCKLET_H__
-#define __WNCKLET_H__
+#ifndef __VNCKLET_H__
+#define __VNCKLET_H__
 
 #include <libvnck/libvnck.h>
 
@@ -30,7 +30,7 @@
 #include <ctk/ctk.h>
 #include <cafe-panel-applet.h>
 
-#define WNCKLET_RESOURCE_PATH "/org/cafe/panel/applet/vncklet/"
+#define VNCKLET_RESOURCE_PATH "/org/cafe/panel/applet/vncklet/"
 
 #ifdef __cplusplus
 extern "C" {

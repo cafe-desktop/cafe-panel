@@ -34,7 +34,7 @@
 #include <ctk/ctk.h>
 #include <cdk/cdkx.h>
 
-#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#define VNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libvnck/libvnck.h>
 
 #include "vncklet.h"
@@ -460,7 +460,7 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 	ctk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
 	ctk_action_group_add_actions(action_group, show_desktop_menu_actions, G_N_ELEMENTS (show_desktop_menu_actions), sdd);
 	cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (sdd->applet),
-	                                            WNCKLET_RESOURCE_PATH "showdesktop-menu.xml",
+	                                            VNCKLET_RESOURCE_PATH "showdesktop-menu.xml",
 	                                            action_group);
 	g_object_unref(action_group);
 

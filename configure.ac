@@ -62,8 +62,8 @@ CAIRO_REQUIRED=1.0.0
 DCONF_REQUIRED=0.13.4
 LIBRSVG_REQUIRED=2.36.2
 CTK_REQUIRED=3.22.0
-LIBWNCK_REQUIRED=3.4.6
-LIBWNCK_PREVIEWS_OPTIONAL=3.32.0
+LIBVNCK_REQUIRED=3.4.6
+LIBVNCK_PREVIEWS_OPTIONAL=3.32.0
 WEATHER_REQUIRED=1.17.0
 
 dnl pkg-config dependency checks
@@ -90,11 +90,11 @@ AC_SUBST(NOTIFICATION_AREA_CFLAGS)
 AC_SUBST(NOTIFICATION_AREA_LIBS)
 
 # Check if we have a version of libvnck that allows for window previews
-PKG_CHECK_MODULES(WNCKLET, ctk+-3.0 >= $CTK_REQUIRED libvnck-3.0 >= $LIBWNCK_PREVIEWS_OPTIONAL cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=yes, [
-   PKG_CHECK_MODULES(WNCKLET, ctk+-3.0 >= $CTK_REQUIRED libvnck-3.0 >= $LIBWNCK_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=no)
+PKG_CHECK_MODULES(VNCKLET, ctk+-3.0 >= $CTK_REQUIRED libvnck-3.0 >= $LIBVNCK_PREVIEWS_OPTIONAL cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=yes, [
+   PKG_CHECK_MODULES(VNCKLET, ctk+-3.0 >= $CTK_REQUIRED libvnck-3.0 >= $LIBVNCK_REQUIRED cafe-desktop-2.0 >= $LIBCAFE_DESKTOP_REQUIRED, have_window_previews=no)
 ])
-AC_SUBST(WNCKLET_CFLAGS)
-AC_SUBST(WNCKLET_LIBS)
+AC_SUBST(VNCKLET_CFLAGS)
+AC_SUBST(VNCKLET_LIBS)
 AM_CONDITIONAL(HAVE_WINDOW_PREVIEWS, [test "x$have_window_previews" = "xyes"])
 if test "x$have_window_previews" = "xyes"; then
    AC_DEFINE([HAVE_WINDOW_PREVIEWS], 1, [Defined when using a version of libvnck that provides window-list previews])
@@ -157,8 +157,8 @@ for i in $PANEL_INPROCESS_APPLETS; do
 		AC_DEFINE([NOTIFICATION_AREA_INPROCESS], 1,
 		[Defined when compiling the notification-area applet in-process])
 	else if test $i = "vncklet"; then
-		WNCKLET_COMPILE_INPROCESS=1
-		AC_DEFINE([WNCKLET_INPROCESS], 1,
+		VNCKLET_COMPILE_INPROCESS=1
+		AC_DEFINE([VNCKLET_INPROCESS], 1,
 		[Defined when compiling the vncklet applet in-process])
 	fi; fi; fi; fi
 done
@@ -169,7 +169,7 @@ fi
 AM_CONDITIONAL(CLOCK_INPROCESS, test -n "$CLOCK_COMPILE_INPROCESS")
 AM_CONDITIONAL(FISH_INPROCESS, test -n "$FISH_COMPILE_INPROCESS")
 AM_CONDITIONAL(NOTIFICATION_AREA_INPROCESS, test -n "$NOTIFICATION_AREA_COMPILE_INPROCESS")
-AM_CONDITIONAL(WNCKLET_INPROCESS, test -n "$WNCKLET_COMPILE_INPROCESS")
+AM_CONDITIONAL(VNCKLET_INPROCESS, test -n "$VNCKLET_COMPILE_INPROCESS")
 
 dnl **************************************************************************
 dnl Check if struct dirent contains a d_type member, for run dialog
