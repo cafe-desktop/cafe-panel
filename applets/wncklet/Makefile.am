@@ -1,6 +1,6 @@
 AM_CPPFLAGS =							\
 	$(LIBCAFE_PANEL_APPLET_CFLAGS)				\
-	$(WNCKLET_CFLAGS)					\
+	$(VNCKLET_CFLAGS)					\
 	-I$(top_builddir)					\
 	-I$(top_builddir)/applets/vncklet			\
 	-I$(top_srcdir)/libcafe-panel-applet				\
@@ -10,7 +10,7 @@ AM_CPPFLAGS =							\
 
 AM_CFLAGS = $(WARN_CFLAGS)
 
-WNCKLET_SOURCES = \
+VNCKLET_SOURCES = \
 	vncklet.c \
 	vncklet.h \
 	window-menu.c \
@@ -23,19 +23,19 @@ WNCKLET_SOURCES = \
 	showdesktop.h \
 	$(BUILT_SOURCES)
 
-WNCKLET_LDADD =						\
+VNCKLET_LDADD =						\
 	../../libcafe-panel-applet/libcafe-panel-applet-4.la	\
-	$(WNCKLET_LIBS)					\
+	$(VNCKLET_LIBS)					\
 	$(LIBCAFE_PANEL_APPLET_LIBS)
 
-if WNCKLET_INPROCESS
+if VNCKLET_INPROCESS
 APPLET_IN_PROCESS = true
 APPLET_LOCATION   = $(pkglibdir)/libvnck-applet.so
 
 vnck_appletlibdir = $(pkglibdir)
 vnck_appletlib_LTLIBRARIES = libvnck-applet.la
-libvnck_applet_la_SOURCES = $(WNCKLET_SOURCES)
-libvnck_applet_la_LIBADD = $(WNCKLET_LDADD)
+libvnck_applet_la_SOURCES = $(VNCKLET_SOURCES)
+libvnck_applet_la_LIBADD = $(VNCKLET_LDADD)
 libvnck_applet_la_LDFLAGS = -module -avoid-version
 libvnck_applet_la_CFLAGS = $(AM_CFLAGS)
 else
@@ -43,8 +43,8 @@ APPLET_IN_PROCESS = false
 APPLET_LOCATION   = $(libexecdir)/vnck-applet
 
 libexec_PROGRAMS = vnck-applet
-vnck_applet_SOURCES = $(WNCKLET_SOURCES)
-vnck_applet_LDADD = $(WNCKLET_LDADD)
+vnck_applet_SOURCES = $(VNCKLET_SOURCES)
+vnck_applet_LDADD = $(VNCKLET_LDADD)
 vnck_applet_CFLAGS = $(AM_CFLAGS)
 endif
 
@@ -62,7 +62,7 @@ $(applet_in_files): $(applet_in_files).in Makefile
 $(applet_DATA): $(applet_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword= --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
 
-if !WNCKLET_INPROCESS
+if !VNCKLET_INPROCESS
 servicedir       = $(datadir)/dbus-1/services
 service_in_files = org.cafe.panel.applet.WnckletFactory.service.in
 service_DATA     = $(service_in_files:.service.in=.service)

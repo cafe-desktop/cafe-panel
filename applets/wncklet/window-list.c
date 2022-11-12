@@ -19,7 +19,7 @@
 
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
-#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#define VNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libvnck/libvnck.h>
 #include <gio/gio.h>
 #ifdef HAVE_WINDOW_PREVIEWS
@@ -53,7 +53,7 @@ typedef struct {
 
 	CtkOrientation orientation;
 	int size;
-#if !defined(WNCKLET_INPROCESS) && !CTK_CHECK_VERSION (3, 23, 0)
+#if !defined(VNCKLET_INPROCESS) && !CTK_CHECK_VERSION (3, 23, 0)
 	gboolean needs_hints;
 #endif
 
@@ -98,9 +98,9 @@ static void tasklist_update(TasklistData* tasklist)
 		ctk_widget_set_size_request(CTK_WIDGET(tasklist->tasklist), tasklist->size, -1);
 	}
 
-	vnck_tasklist_set_grouping(WNCK_TASKLIST(tasklist->tasklist), tasklist->grouping);
-	vnck_tasklist_set_include_all_workspaces(WNCK_TASKLIST(tasklist->tasklist), tasklist->include_all_workspaces);
-	vnck_tasklist_set_switch_workspace_on_unminimize(WNCK_TASKLIST(tasklist->tasklist), tasklist->move_unminimized_windows);
+	vnck_tasklist_set_grouping(VNCK_TASKLIST(tasklist->tasklist), tasklist->grouping);
+	vnck_tasklist_set_include_all_workspaces(VNCK_TASKLIST(tasklist->tasklist), tasklist->include_all_workspaces);
+	vnck_tasklist_set_switch_workspace_on_unminimize(VNCK_TASKLIST(tasklist->tasklist), tasklist->move_unminimized_windows);
 }
 
 static void response_cb(CtkWidget* widget, int id, TasklistData* tasklist)
@@ -141,7 +141,7 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 		return;
 
 	tasklist->orientation = new_orient;
-	vnck_tasklist_set_orientation (WNCK_TASKLIST (tasklist->tasklist), new_orient);
+	vnck_tasklist_set_orientation (VNCK_TASKLIST (tasklist->tasklist), new_orient);
 
 	tasklist_update(tasklist);
 }
@@ -153,7 +153,7 @@ static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBac
 		case PANEL_NO_BACKGROUND:
 		case PANEL_COLOR_BACKGROUND:
 		case PANEL_PIXMAP_BACKGROUND:
-			vnck_tasklist_set_button_relief(WNCK_TASKLIST(tasklist->tasklist), CTK_RELIEF_NONE);
+			vnck_tasklist_set_button_relief(VNCK_TASKLIST(tasklist->tasklist), CTK_RELIEF_NONE);
 			break;
 	}
 }
@@ -474,13 +474,13 @@ static CtkWidget* get_grouping_button(TasklistData* tasklist, WnckTasklistGroupi
 	switch (type)
 	{
 		default:
-		case WNCK_TASKLIST_NEVER_GROUP:
+		case VNCK_TASKLIST_NEVER_GROUP:
 			return tasklist->never_group_radio;
 			break;
-		case WNCK_TASKLIST_AUTO_GROUP:
+		case VNCK_TASKLIST_AUTO_GROUP:
 			return tasklist->auto_group_radio;
 			break;
-		case WNCK_TASKLIST_ALWAYS_GROUP:
+		case VNCK_TASKLIST_ALWAYS_GROUP:
 			return tasklist->always_group_radio;
 			break;
 	}
@@ -573,11 +573,11 @@ static void applet_size_allocate(CtkWidget *widget, CtkAllocation *allocation, T
 	int len;
 	const int* size_hints;
 
-	size_hints = vnck_tasklist_get_size_hint_list (WNCK_TASKLIST (tasklist->tasklist), &len);
+	size_hints = vnck_tasklist_get_size_hint_list (VNCK_TASKLIST (tasklist->tasklist), &len);
 
 	g_assert(len % 2 == 0);
 
-#if !defined(WNCKLET_INPROCESS) && !CTK_CHECK_VERSION (3, 23, 0)
+#if !defined(VNCKLET_INPROCESS) && !CTK_CHECK_VERSION (3, 23, 0)
 	/* HACK: When loading the WnckTasklist initially, it reports size hints as though there were
 	 * no elements in the Tasklist. This causes a rendering issue when built out-of-process in
 	 * HiDPI displays. We keep a flag to skip size hinting until WnckTasklist has something to
@@ -688,7 +688,7 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 
 	tasklist->size = cafe_panel_applet_get_size(applet);
 
-#if !defined(WNCKLET_INPROCESS) && !CTK_CHECK_VERSION (3, 23, 0)
+#if !defined(VNCKLET_INPROCESS) && !CTK_CHECK_VERSION (3, 23, 0)
 	tasklist->needs_hints = FALSE;
 #endif
 
@@ -707,9 +707,9 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 
 	tasklist->tasklist = vnck_tasklist_new();
 
-	vnck_tasklist_set_orientation (WNCK_TASKLIST (tasklist->tasklist), tasklist->orientation);
-	vnck_tasklist_set_middle_click_close (WNCK_TASKLIST (tasklist->tasklist), TRUE);
-	vnck_tasklist_set_icon_loader(WNCK_TASKLIST(tasklist->tasklist), icon_loader_func, tasklist, NULL);
+	vnck_tasklist_set_orientation (VNCK_TASKLIST (tasklist->tasklist), tasklist->orientation);
+	vnck_tasklist_set_middle_click_close (VNCK_TASKLIST (tasklist->tasklist), TRUE);
+	vnck_tasklist_set_icon_loader(VNCK_TASKLIST(tasklist->tasklist), icon_loader_func, tasklist, NULL);
 
 	g_signal_connect(G_OBJECT(tasklist->tasklist), "destroy", G_CALLBACK(destroy_tasklist), tasklist);
 #ifdef HAVE_WINDOW_PREVIEWS
@@ -760,7 +760,7 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 
 
 	cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (tasklist->applet),
-	                                            WNCKLET_RESOURCE_PATH "window-list-menu.xml",
+	                                            VNCKLET_RESOURCE_PATH "window-list-menu.xml",
 	                                            action_group);
 
 	if (cafe_panel_applet_get_locked_down(CAFE_PANEL_APPLET(tasklist->applet)))
@@ -980,7 +980,7 @@ static void display_properties_dialog(CtkAction* action, TasklistData* tasklist)
 
 		builder = ctk_builder_new();
 		ctk_builder_set_translation_domain(builder, GETTEXT_PACKAGE);
-		ctk_builder_add_from_resource (builder, WNCKLET_RESOURCE_PATH "window-list.ui", NULL);
+		ctk_builder_add_from_resource (builder, VNCKLET_RESOURCE_PATH "window-list.ui", NULL);
 
 		tasklist->properties_dialog = WID("tasklist_properties_dialog");
 

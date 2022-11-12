@@ -35,7 +35,7 @@
 #include <glib/gi18n.h>
 #include <cdk/cdkkeysyms.h>
 
-#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#define VNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libvnck/libvnck.h>
 
 #include "vncklet.h"
@@ -188,7 +188,7 @@ static gboolean window_menu_key_press_event(CtkWidget* widget, CdkEventKey* even
 		case CDK_KEY_Return:
 		case CDK_KEY_space:
 		case CDK_KEY_KP_Space:
-			selector = WNCK_SELECTOR(window_menu->selector);
+			selector = VNCK_SELECTOR(window_menu->selector);
 			/*
 			 * We need to call _ctk_menu_shell_activate() here as is done in
 			 * window_key_press_handler in ctkmenubar.c which pops up menu
@@ -236,7 +236,7 @@ gboolean window_menu_applet_fill(CafePanelApplet* applet)
 	ctk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
 	ctk_action_group_add_actions(action_group, window_menu_actions, G_N_ELEMENTS(window_menu_actions), window_menu);
 	cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (window_menu->applet),
-	                                            WNCKLET_RESOURCE_PATH "window-menu-menu.xml",
+	                                            VNCKLET_RESOURCE_PATH "window-menu-menu.xml",
 	                                            action_group);
 	g_object_unref(action_group);
 

@@ -21,7 +21,7 @@
 
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
-#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#define VNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libvnck/libvnck.h>
 #include <gio/gio.h>
 
@@ -93,18 +93,18 @@ static void destroy_pager(CtkWidget* widget, PagerData* pager);
 
 static void pager_update(PagerData* pager)
 {
-	vnck_pager_set_orientation(WNCK_PAGER(pager->pager), pager->orientation);
-	vnck_pager_set_n_rows(WNCK_PAGER(pager->pager), pager->n_rows);
-	vnck_pager_set_show_all(WNCK_PAGER(pager->pager), pager->display_all);
+	vnck_pager_set_orientation(VNCK_PAGER(pager->pager), pager->orientation);
+	vnck_pager_set_n_rows(VNCK_PAGER(pager->pager), pager->n_rows);
+	vnck_pager_set_show_all(VNCK_PAGER(pager->pager), pager->display_all);
 
 	if (pager->wm == PAGER_WM_MARCO)
-		vnck_pager_set_display_mode(WNCK_PAGER(pager->pager), pager->display_mode);
+		vnck_pager_set_display_mode(VNCK_PAGER(pager->pager), pager->display_mode);
 	else if (pager->wm == PAGER_WM_METACITY)
-		vnck_pager_set_display_mode(WNCK_PAGER(pager->pager), pager->display_mode);
+		vnck_pager_set_display_mode(VNCK_PAGER(pager->pager), pager->display_mode);
 	else if (pager->wm == PAGER_WM_I3)
-		vnck_pager_set_display_mode(WNCK_PAGER(pager->pager), pager->display_mode);
+		vnck_pager_set_display_mode(VNCK_PAGER(pager->pager), pager->display_mode);
 	else
-		vnck_pager_set_display_mode(WNCK_PAGER(pager->pager), WNCK_PAGER_DISPLAY_CONTENT);
+		vnck_pager_set_display_mode(VNCK_PAGER(pager->pager), VNCK_PAGER_DISPLAY_CONTENT);
 }
 
 static void update_properties_for_wm(PagerData* pager)
@@ -248,7 +248,7 @@ static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBac
         ctk_style_context_set_path (new_context, ctk_widget_get_path (CTK_WIDGET (pager->pager)));
         g_object_unref (new_context);
 
-        vnck_pager_set_shadow_type (WNCK_PAGER (pager->pager),
+        vnck_pager_set_shadow_type (VNCK_PAGER (pager->pager),
                 type == PANEL_NO_BACKGROUND ? CTK_SHADOW_NONE : CTK_SHADOW_IN);
 }
 
@@ -436,11 +436,11 @@ static void display_workspace_names_changed(GSettings* settings, gchar* key, Pag
 
 	if (value)
 	{
-		pager->display_mode = WNCK_PAGER_DISPLAY_NAME;
+		pager->display_mode = VNCK_PAGER_DISPLAY_NAME;
 	}
 	else
 	{
-		pager->display_mode = WNCK_PAGER_DISPLAY_CONTENT;
+		pager->display_mode = VNCK_PAGER_DISPLAY_CONTENT;
 	}
 
 	pager_update(pager);
@@ -541,11 +541,11 @@ gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 
 	if (display_names)
 	{
-		pager->display_mode = WNCK_PAGER_DISPLAY_NAME;
+		pager->display_mode = VNCK_PAGER_DISPLAY_NAME;
 	}
 	else
 	{
-		pager->display_mode = WNCK_PAGER_DISPLAY_CONTENT;
+		pager->display_mode = VNCK_PAGER_DISPLAY_CONTENT;
 	}
 
 	pager->display_all = g_settings_get_boolean(pager->settings, "display-all-workspaces");
@@ -566,7 +566,7 @@ gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 	pager->pager = vnck_pager_new();
 	pager->screen = NULL;
 	pager->wm = PAGER_WM_UNKNOWN;
-	vnck_pager_set_shadow_type(WNCK_PAGER(pager->pager), CTK_SHADOW_IN);
+	vnck_pager_set_shadow_type(VNCK_PAGER(pager->pager), CTK_SHADOW_IN);
 
 	CtkStyleContext *context;
 	context = ctk_widget_get_style_context (CTK_WIDGET (applet));
@@ -596,7 +596,7 @@ gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 	ctk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
 	ctk_action_group_add_actions(action_group, pager_menu_actions, G_N_ELEMENTS(pager_menu_actions), pager);
 	cafe_panel_applet_setup_menu_from_resource (CAFE_PANEL_APPLET (pager->applet),
-	                                            WNCKLET_RESOURCE_PATH "workspace-switcher-menu.xml",
+	                                            VNCKLET_RESOURCE_PATH "workspace-switcher-menu.xml",
 	                                            action_group);
 
 	if (cafe_panel_applet_get_locked_down(CAFE_PANEL_APPLET(pager->applet)))
@@ -708,7 +708,7 @@ static void workspace_renamed(WnckWorkspace* space, PagerData* pager)
 
 static void workspace_created(WnckScreen* screen, WnckWorkspace* space, PagerData* pager)
 {
-	g_return_if_fail(WNCK_IS_SCREEN(screen));
+	g_return_if_fail(VNCK_IS_SCREEN(screen));
 
 	update_workspaces_model(pager);
 
@@ -717,7 +717,7 @@ static void workspace_created(WnckScreen* screen, WnckWorkspace* space, PagerDat
 
 static void workspace_destroyed(WnckScreen* screen, WnckWorkspace* space, PagerData* pager)
 {
-	g_return_if_fail(WNCK_IS_SCREEN(screen));
+	g_return_if_fail(VNCK_IS_SCREEN(screen));
 	update_workspaces_model(pager);
 }
 
@@ -907,7 +907,7 @@ static void setup_dialog(CtkBuilder* builder, PagerData* pager)
 
 	g_signal_connect(G_OBJECT(pager->display_workspaces_toggle), "toggled", (GCallback) display_workspace_names_toggled, pager);
 
-	if (pager->display_mode == WNCK_PAGER_DISPLAY_NAME)
+	if (pager->display_mode == VNCK_PAGER_DISPLAY_NAME)
 	{
 		value = TRUE;
 	}
@@ -987,7 +987,7 @@ static void display_properties_dialog(CtkAction* action, PagerData* pager)
 
 		builder = ctk_builder_new();
 		ctk_builder_set_translation_domain(builder, GETTEXT_PACKAGE);
-		ctk_builder_add_from_resource (builder, WNCKLET_RESOURCE_PATH "workspace-switcher.ui", NULL);
+		ctk_builder_add_from_resource (builder, VNCKLET_RESOURCE_PATH "workspace-switcher.ui", NULL);
 
 		pager->properties_dialog = WID("pager_properties_dialog");
 
