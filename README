@@ -40,7 +40,7 @@ gobject-introspection
 libctk-3-dev
 libcafe-desktop-dev
 libcafe-menu-dev
-libwnck-3-dev
+libvnck-3-dev
 librsvg2-dev
 libcafeweather-dev
 

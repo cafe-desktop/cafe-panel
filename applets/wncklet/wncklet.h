@@ -1,4 +1,4 @@
-/* wncklet.h
+/* vncklet.h
  *
  * Copyright (C) 2003  Wipro Technologies
  *
@@ -24,23 +24,23 @@
 #ifndef __WNCKLET_H__
 #define __WNCKLET_H__
 
-#include <libwnck/libwnck.h>
+#include <libvnck/libvnck.h>
 
 #include <glib.h>
 #include <ctk/ctk.h>
 #include <cafe-panel-applet.h>
 
-#define WNCKLET_RESOURCE_PATH "/org/cafe/panel/applet/wncklet/"
+#define WNCKLET_RESOURCE_PATH "/org/cafe/panel/applet/vncklet/"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void wncklet_display_help(CtkWidget* widget, const char* doc_id, const char* link_id, const char* icon_name);
+void vncklet_display_help(CtkWidget* widget, const char* doc_id, const char* link_id, const char* icon_name);
 
-WnckScreen* wncklet_get_screen(CtkWidget* applet);
+WnckScreen* vncklet_get_screen(CtkWidget* applet);
 
-void wncklet_connect_while_alive(gpointer object, const char* signal, GCallback func, gpointer func_data, gpointer alive_object);
+void vncklet_connect_while_alive(gpointer object, const char* signal, GCallback func, gpointer func_data, gpointer alive_object);
 
 #ifdef __cplusplus
 }

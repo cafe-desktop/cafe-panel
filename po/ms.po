@@ -158,17 +158,17 @@ msgid "Failed to set the system time"
 msgstr "Gagal untuk menetapkan masa sistem"
 
 #: applets/clock/clock.c:1888 applets/fish/fish.c:1694
-#: applets/notification_area/main.c:292 applets/wncklet/window-list.c:357
-#: applets/wncklet/workspace-switcher.c:389
+#: applets/notification_area/main.c:292 applets/vncklet/window-list.c:357
+#: applets/vncklet/workspace-switcher.c:389
 msgid "_Preferences"
 msgstr "_Keutamaan"
 
 #: applets/clock/clock.c:1891 applets/clock/clock.ui:293
 #: applets/fish/fish.c:1697 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:295 applets/wncklet/showdesktop.c:241
-#: applets/wncklet/window-list.c:365 applets/wncklet/window-list.ui:35
-#: applets/wncklet/window-menu.c:98 applets/wncklet/workspace-switcher.c:397
-#: applets/wncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
+#: applets/notification_area/main.c:295 applets/vncklet/showdesktop.c:241
+#: applets/vncklet/window-list.c:365 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:98 applets/vncklet/workspace-switcher.c:397
+#: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
 #: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
 #: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
 #: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
@@ -178,9 +178,9 @@ msgid "_Help"
 msgstr "_Bantuan"
 
 #: applets/clock/clock.c:1894 applets/fish/fish.c:1700
-#: applets/notification_area/main.c:298 applets/wncklet/showdesktop.c:249
-#: applets/wncklet/window-list.c:373 applets/wncklet/window-menu.c:106
-#: applets/wncklet/workspace-switcher.c:405
+#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:249
+#: applets/vncklet/window-list.c:373 applets/vncklet/window-menu.c:106
+#: applets/vncklet/workspace-switcher.c:405
 msgid "_About"
 msgstr "Perih_al"
 
@@ -234,9 +234,9 @@ msgstr ""
 "Hak Cipta © 2012-2020 Pembangun CAFE"
 
 #: applets/clock/clock.c:3397 applets/fish/fish.c:567
-#: applets/notification_area/main.c:286 applets/wncklet/showdesktop.c:508
-#: applets/wncklet/window-list.c:831 applets/wncklet/window-menu.c:88
-#: applets/wncklet/workspace-switcher.c:644
+#: applets/notification_area/main.c:286 applets/vncklet/showdesktop.c:508
+#: applets/vncklet/window-list.c:831 applets/vncklet/window-menu.c:88
+#: applets/vncklet/workspace-switcher.c:644
 #: cafe-panel/panel-context-menu.c:124
 msgid "translator-credits"
 msgstr "Abuyop"
@@ -275,7 +275,7 @@ msgstr "Tetapan Ma_sa"
 
 #: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
-#: applets/wncklet/window-list.ui:51 applets/wncklet/workspace-switcher.ui:62
+#: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
 #: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
@@ -479,14 +479,14 @@ msgid "Sunrise: %s / Sunset: %s"
 msgstr "Matahari terbit: %s / Matahari terbenam: %s"
 
 #: applets/clock/clock-utils.c:94 applets/fish/fish.c:170
-#: applets/notification_area/main.c:238 applets/wncklet/wncklet.c:75
+#: applets/notification_area/main.c:238 applets/vncklet/vncklet.c:75
 #: cafe-panel/libpanel-util/panel-show.c:234
 #, c-format
 msgid "Could not display help document '%s'"
 msgstr "Tidak dapat paparkan dokumen bantuan '%s'"
 
 #: applets/clock/clock-utils.c:123 applets/fish/fish.c:196
-#: applets/notification_area/main.c:252 applets/wncklet/wncklet.c:92
+#: applets/notification_area/main.c:252 applets/vncklet/vncklet.c:92
 msgid "Error displaying help document"
 msgstr "Ralat memaparkan dokumen bantuan"
 
@@ -955,11 +955,11 @@ msgstr "Kawasan dimana ikon pemberitahuan muncul"
 msgid "cafe-panel-notification-area"
 msgstr "cafe-panel-notification-area"
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "Tunjuk tetingkap dari semua ruang kerja"
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
 "If true, the window list will show windows from all workspaces. Otherwise it"
 " will only display windows from the current workspace."
@@ -967,11 +967,11 @@ msgstr ""
 "Jika ia benar, senarai tetingkap akan memapar tetingkap dari semua "
 "ruangkerja. Sebaliknya ia akan memapar tetingkap dari ruang kerja semasa ."
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
 msgid "When to group windows"
 msgstr "Bila mengumpul tetingkap"
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:16
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:16
 msgid ""
 "Decides when to group windows from the same application on the window list. "
 "Possible values are \"never\", \"auto\" and \"always\"."
@@ -980,11 +980,11 @@ msgstr ""
 "tetingkap. Nilai yang sah adalah \"tidak sekali\", \"auto\" dan "
 "\"sentiasa\"."
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
 msgid "Move windows to current workspace when unminimized"
 msgstr "Alih tetingkap ke ruang kerja semasa bila nyahminimum"
 
-#: applets/wncklet/org.cafe.panel.applet.window-list.gschema.xml.in:21
+#: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:21
 msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
@@ -992,11 +992,11 @@ msgstr ""
 "Jika benar, bila nyahminimum tetingkap, membawanya ke ruang kerja semasa. "
 "Sebaliknya, bertukar ke ruang kerja bagi tetingkap."
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
 msgid "Display workspace names"
 msgstr "Papar nama ruang kerja"
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:6
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:6
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
@@ -1006,11 +1006,11 @@ msgstr ""
 "ruang kerja. Sebaliknya akan memapar tetingkap pada ruang kerja. Tetapan ini"
 " hanya berkesan bila pengurus tetingkap adalah Marco."
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"
 msgstr "Papar semua ruang kerja"
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:11
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:11
 msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
@@ -1018,11 +1018,11 @@ msgstr ""
 "Jika ia benar, penukar ruang kerja akan tunjukkan semua ruang kerja. "
 "Sebaliknya ia akan hanya tunjukkan ruang kerja semasa."
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
 msgstr "Baris dalam penukar ruang kerja"
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
 "vertical layout) the workspace switcher shows the workspaces in. This key is"
@@ -1033,11 +1033,11 @@ msgstr ""
 "kerja di dalamnya. Kunci ini berkaitan jika kunci display_all_workspaces "
 "adalah benar."
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
 msgstr "Lilit disekeliling bila menatal"
 
-#: applets/wncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:21
+#: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:21
 msgid ""
 "If true, the workspace switcher will allow wrap-around, which means "
 "switching from the first to the last workspace and vice versa via scrolling."
@@ -1046,105 +1046,105 @@ msgstr ""
 "penukaran dari ruang kerja pertama ke terakhir dan sebaliknya melalui "
 "penatalan."
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:6
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Window Navigation Applet Factory"
 msgstr "Kilang Aplet Navigasi Tetingkap"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:7
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:7
 msgid "Factory for the window navigation related applets"
 msgstr "Kilang untuk aplet berkaitan dengan navigasi tetingkap"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/wncklet/window-menu.c:76 applets/wncklet/window-menu.c:227
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:10
+#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
 msgid "Window Selector"
 msgstr "Pemilih Tetingkap"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:11
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:11
 msgid "Switch between open windows using a menu"
 msgstr "Tukar diantara tetingkap terbuka menggunakan menu"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:13
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:13
 msgid "cafe-panel-window-menu"
 msgstr "cafe-panel-window-menu"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/wncklet/workspace-switcher.c:634
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:23
+#: applets/vncklet/workspace-switcher.c:634
 msgid "Workspace Switcher"
 msgstr "Penukar Ruang Kerja"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:24
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:24
 msgid "Switch between workspaces"
 msgstr "Tukar diantara ruang kerja"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:26
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:26
 msgid "cafe-panel-workspace-switcher"
 msgstr "cafe-panel-workspace-switcher"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/wncklet/window-list.c:821
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:36
+#: applets/vncklet/window-list.c:821
 msgid "Window List"
 msgstr "Senarai Tetingkap"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:37
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "Tukar diantara tetingkap terbuka menggunakan butang"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:39
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:39
 msgid "cafe-panel-window-list"
 msgstr "cafe-panel-window-list"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:49
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
 msgstr "Tunjuk Desktop"
 
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:50
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "Sembunyi tetingkap aplikasi dan tunjuk dekstop"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/wncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:52
+#: applets/vncklet/org.cafe.panel.Wncklet.cafe-panel-applet.desktop.in.in:52
 msgid "user-desktop"
 msgstr "user-desktop"
 
-#: applets/wncklet/showdesktop.c:184
+#: applets/vncklet/showdesktop.c:184
 #, c-format
 msgid "Failed to load %s: %s\n"
 msgstr "Gagal memuatkan %s: %s\n"
 
-#: applets/wncklet/showdesktop.c:184
+#: applets/vncklet/showdesktop.c:184
 msgid "Icon not found"
 msgstr "Ikon tidak ditemui"
 
-#: applets/wncklet/showdesktop.c:265
+#: applets/vncklet/showdesktop.c:265
 msgid "Click here to restore hidden windows."
 msgstr "Klik disini untuk pulih tetingkap tersembunyi."
 
-#: applets/wncklet/showdesktop.c:269
+#: applets/vncklet/showdesktop.c:269
 msgid "Click here to hide all windows and show the desktop."
 msgstr "Klik disini untuk sembunyi semua tetingkap dan tunjuk desktop."
 
-#: applets/wncklet/showdesktop.c:439 applets/wncklet/showdesktop.c:498
+#: applets/vncklet/showdesktop.c:439 applets/vncklet/showdesktop.c:498
 msgid "Show Desktop Button"
 msgstr "Tunjuk Butang Desktop"
 
-#: applets/wncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:499
 msgid "About Show Desktop Button"
 msgstr "Perihal Butang Tunjuk Desktop"
 
-#: applets/wncklet/showdesktop.c:501
+#: applets/vncklet/showdesktop.c:501
 msgid "This button lets you hide all windows and show the desktop."
 msgstr ""
 "Butang ini membolehkan anda sembunyi semua tetingkap dan tunjuk desktop."
 
-#: applets/wncklet/showdesktop.c:502 applets/wncklet/window-list.c:825
-#: applets/wncklet/workspace-switcher.c:638
+#: applets/vncklet/showdesktop.c:502 applets/vncklet/window-list.c:825
+#: applets/vncklet/workspace-switcher.c:638
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
@@ -1154,7 +1154,7 @@ msgstr ""
 "Hak Cipta © 2011 Perberos\n"
 "Hak Cipta © 2012-2020 Pembangun CAFE"
 
-#: applets/wncklet/showdesktop.c:529
+#: applets/vncklet/showdesktop.c:529
 msgid ""
 "Your window manager does not support the show desktop button, or you are not"
 " running a window manager."
@@ -1162,15 +1162,15 @@ msgstr ""
 "Pengurus tetingkap anda tidak menyokong butang tunjuk desktop, atau anda "
 "tidak menjalankan pengurus tetingkap."
 
-#: applets/wncklet/window-list.c:349
+#: applets/vncklet/window-list.c:349
 msgid "_System Monitor"
 msgstr "Pemantau _Sistem"
 
-#: applets/wncklet/window-list.c:822
+#: applets/vncklet/window-list.c:822
 msgid "About Window List"
 msgstr "Perihal Senarai Tetingkap"
 
-#: applets/wncklet/window-list.c:824
+#: applets/vncklet/window-list.c:824
 msgid ""
 "The Window List shows a list of all windows in a set of buttons and lets you"
 " browse them."
@@ -1178,80 +1178,80 @@ msgstr ""
 "Senarai Tingkap menunjukkan senarai bagi semua tetingkap dalam set butang "
 "dan membenarkan anda layarinya."
 
-#: applets/wncklet/window-list.ui:18
+#: applets/vncklet/window-list.ui:18
 msgid "Window List Preferences"
 msgstr "Keutamaan Senarai Tetingkap"
 
-#: applets/wncklet/window-list.ui:92
+#: applets/vncklet/window-list.ui:92
 msgid "Window List Content"
 msgstr "Senarai Kandungan Tingkap"
 
-#: applets/wncklet/window-list.ui:118
+#: applets/vncklet/window-list.ui:118
 msgid "Sh_ow windows from current workspace"
 msgstr "_Tunjuk tetingkap dari ruang kerja semasa"
 
-#: applets/wncklet/window-list.ui:133
+#: applets/vncklet/window-list.ui:133
 msgid "Show windows from a_ll workspaces"
 msgstr "Tunjuk tetingkap dari _semua ruangkerja"
 
-#: applets/wncklet/window-list.ui:173
+#: applets/vncklet/window-list.ui:173
 msgid "Window Thumbnails"
 msgstr "Lakaran Kenit Tetingkap"
 
-#: applets/wncklet/window-list.ui:199
+#: applets/vncklet/window-list.ui:199
 msgid "Show _thumbnails on hover"
 msgstr "Tunjuk _lakaran kenit ketika penuding tetikus berada di atas"
 
-#: applets/wncklet/window-list.ui:214
+#: applets/vncklet/window-list.ui:214
 msgid "_Hide thumbnails on hover"
 msgstr "_Sembunyi lakaran kenit ketika penuding tetikus berada di atas"
 
-#: applets/wncklet/window-list.ui:252
+#: applets/vncklet/window-list.ui:252
 msgid "Thumbnail width in pixels. Window aspect ratio will be maintained."
 msgstr ""
 "Lebar lakaran kenit dalam piksel. Nisbah bidang tetingkap akan dikekalkan."
 
-#: applets/wncklet/window-list.ui:253
+#: applets/vncklet/window-list.ui:253
 msgid "Thumbnail width:"
 msgstr "Lebar lakaran kenit:"
 
-#: applets/wncklet/window-list.ui:267
+#: applets/vncklet/window-list.ui:267
 msgid "px"
 msgstr "px"
 
-#: applets/wncklet/window-list.ui:305
+#: applets/vncklet/window-list.ui:305
 msgid "Window Grouping"
 msgstr "Pengumpulan Tingkap"
 
-#: applets/wncklet/window-list.ui:331
+#: applets/vncklet/window-list.ui:331
 msgid "_Never group windows"
 msgstr "Ja_ngan kumpul tetingkap"
 
-#: applets/wncklet/window-list.ui:346
+#: applets/vncklet/window-list.ui:346
 msgid "Group windows when _space is limited"
 msgstr "Kumpulkan tetingkap bila _ruang terhad"
 
-#: applets/wncklet/window-list.ui:362
+#: applets/vncklet/window-list.ui:362
 msgid "_Always group windows"
 msgstr "Se_ntiasa kumpul tetingkap"
 
-#: applets/wncklet/window-list.ui:402
+#: applets/vncklet/window-list.ui:402
 msgid "Restoring Minimized Windows"
 msgstr "Memulihkan Tetingkap Diminimumkan"
 
-#: applets/wncklet/window-list.ui:428
+#: applets/vncklet/window-list.ui:428
 msgid "Restore to current _workspace"
 msgstr "Pulihkan ke _ruang kerja semasa"
 
-#: applets/wncklet/window-list.ui:443
+#: applets/vncklet/window-list.ui:443
 msgid "Restore to na_tive workspace"
 msgstr "Pulihkan ke ruang kerja _tabii"
 
-#: applets/wncklet/window-menu.c:77
+#: applets/vncklet/window-menu.c:77
 msgid "About Window Selector"
 msgstr "Perihal Pemilih Tetingkap"
 
-#: applets/wncklet/window-menu.c:79
+#: applets/vncklet/window-menu.c:79
 msgid ""
 "The Window Selector shows a list of all windows in a menu and lets you "
 "browse them."
@@ -1259,7 +1259,7 @@ msgstr ""
 "Pemilih Tetingkap memaparkan senarai semua tetingkap dan membolehkan anda "
 "semak imbas."
 
-#: applets/wncklet/window-menu.c:80
+#: applets/vncklet/window-menu.c:80
 msgid ""
 "Copyright © 2000 Helix Code, Inc.\n"
 "Copyright © 2001 Free Software Foundation, Inc.\n"
@@ -1273,22 +1273,22 @@ msgstr ""
 "Hak Cipta © 2011 Perberos\n"
 "Hak Cipta © 2012-2020 Pembangun CAFE"
 
-#: applets/wncklet/workspace-switcher.c:240
-#: applets/wncklet/workspace-switcher.c:939
-#: applets/wncklet/workspace-switcher.ui:170
+#: applets/vncklet/workspace-switcher.c:240
+#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "baris"
 
-#: applets/wncklet/workspace-switcher.c:240
-#: applets/wncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:240
+#: applets/vncklet/workspace-switcher.c:939
 msgid "columns"
 msgstr "lajur"
 
-#: applets/wncklet/workspace-switcher.c:635
+#: applets/vncklet/workspace-switcher.c:635
 msgid "About Workspace Switcher"
 msgstr "Perihal Penukar Ruang Kerja"
 
-#: applets/wncklet/workspace-switcher.c:637
+#: applets/vncklet/workspace-switcher.c:637
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
@@ -1296,43 +1296,43 @@ msgstr ""
 "Penukar Ruang Kerja menunjukkan versi kecil ruang kerja anda yang "
 "membolehkan anda mengurus tetingkap anda."
 
-#: applets/wncklet/workspace-switcher.ui:32
+#: applets/vncklet/workspace-switcher.ui:32
 msgid "Workspace Switcher Preferences"
 msgstr "Keutamaan Penukar Ruang Kerja"
 
-#: applets/wncklet/workspace-switcher.ui:113
+#: applets/vncklet/workspace-switcher.ui:113
 msgid "Show _only the current workspace"
 msgstr "_Hanya tunjuk ruang kerja semasa"
 
-#: applets/wncklet/workspace-switcher.ui:134
+#: applets/vncklet/workspace-switcher.ui:134
 msgid "Show _all workspaces in:"
 msgstr "Tunjuk _semua ruang kerja pada:"
 
-#: applets/wncklet/workspace-switcher.ui:204
+#: applets/vncklet/workspace-switcher.ui:204
 msgid "Switcher"
 msgstr "Penukar"
 
-#: applets/wncklet/workspace-switcher.ui:245
+#: applets/vncklet/workspace-switcher.ui:245
 msgid "Number of _workspaces:"
 msgstr "Bilangan _ruang kerja:"
 
-#: applets/wncklet/workspace-switcher.ui:282
+#: applets/vncklet/workspace-switcher.ui:282
 msgid "Workspace na_mes:"
 msgstr "Na_ma Ruang Kerja:"
 
-#: applets/wncklet/workspace-switcher.ui:303
+#: applets/vncklet/workspace-switcher.ui:303
 msgid "Workspace Names"
 msgstr "Nama Ruang Kerja"
 
-#: applets/wncklet/workspace-switcher.ui:319
+#: applets/vncklet/workspace-switcher.ui:319
 msgid "Show workspace _names in switcher"
 msgstr "Tunjuk _nama ruang kerja dalam penukar"
 
-#: applets/wncklet/workspace-switcher.ui:334
+#: applets/vncklet/workspace-switcher.ui:334
 msgid "Allow workspace _wrap around in switcher"
 msgstr "Benarkan ruang kerja di_lilit disekeliling penukar"
 
-#: applets/wncklet/workspace-switcher.ui:356
+#: applets/vncklet/workspace-switcher.ui:356
 msgid "Workspaces"
 msgstr "Ruang kerja"
 

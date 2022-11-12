@@ -571,7 +571,7 @@ na_tray_child_force_redraw (NaTrayChild *child)
     }
 }
 
-/* from libwnck/xutils.c, comes as LGPLv2+ */
+/* from libvnck/xutils.c, comes as LGPLv2+ */
 static char *
 latin1_to_utf8 (const char *latin1)
 {
@@ -590,7 +590,7 @@ latin1_to_utf8 (const char *latin1)
   return g_string_free (str, FALSE);
 }
 
-/* derived from libwnck/xutils.c, comes as LGPLv2+ */
+/* derived from libvnck/xutils.c, comes as LGPLv2+ */
 static void
 _get_wmclass (Display *xdisplay,
               Window   xwindow,

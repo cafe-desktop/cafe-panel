@@ -1,6 +1,6 @@
 /* -*- mode: C; c-file-style: "linux" -*- */
 /*
- * libwnck based tasklist applet.
+ * libvnck based tasklist applet.
  * (C) 2001 Red Hat, Inc
  * (C) 2001 Alexander Larsson
  *
@@ -20,7 +20,7 @@
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
-#include <libwnck/libwnck.h>
+#include <libvnck/libvnck.h>
 #include <gio/gio.h>
 #ifdef HAVE_WINDOW_PREVIEWS
 #include <cdk/cdkx.h>
@@ -29,7 +29,7 @@
 #define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-utils.h>
 
-#include "wncklet.h"
+#include "vncklet.h"
 #include "window-list.h"
 
 #define WINDOW_LIST_ICON "cafe-panel-window-list"
@@ -98,16 +98,16 @@ static void tasklist_update(TasklistData* tasklist)
 		ctk_widget_set_size_request(CTK_WIDGET(tasklist->tasklist), tasklist->size, -1);
 	}
 
-	wnck_tasklist_set_grouping(WNCK_TASKLIST(tasklist->tasklist), tasklist->grouping);
-	wnck_tasklist_set_include_all_workspaces(WNCK_TASKLIST(tasklist->tasklist), tasklist->include_all_workspaces);
-	wnck_tasklist_set_switch_workspace_on_unminimize(WNCK_TASKLIST(tasklist->tasklist), tasklist->move_unminimized_windows);
+	vnck_tasklist_set_grouping(WNCK_TASKLIST(tasklist->tasklist), tasklist->grouping);
+	vnck_tasklist_set_include_all_workspaces(WNCK_TASKLIST(tasklist->tasklist), tasklist->include_all_workspaces);
+	vnck_tasklist_set_switch_workspace_on_unminimize(WNCK_TASKLIST(tasklist->tasklist), tasklist->move_unminimized_windows);
 }
 
 static void response_cb(CtkWidget* widget, int id, TasklistData* tasklist)
 {
 	if (id == CTK_RESPONSE_HELP)
 	{
-		wncklet_display_help(widget, "cafe-user-guide", "windowlist-prefs", WINDOW_LIST_ICON);
+		vncklet_display_help(widget, "cafe-user-guide", "windowlist-prefs", WINDOW_LIST_ICON);
 	}
 	else
 	{
@@ -141,7 +141,7 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 		return;
 
 	tasklist->orientation = new_orient;
-	wnck_tasklist_set_orientation (WNCK_TASKLIST (tasklist->tasklist), new_orient);
+	vnck_tasklist_set_orientation (WNCK_TASKLIST (tasklist->tasklist), new_orient);
 
 	tasklist_update(tasklist);
 }
@@ -153,13 +153,13 @@ static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBac
 		case PANEL_NO_BACKGROUND:
 		case PANEL_COLOR_BACKGROUND:
 		case PANEL_PIXMAP_BACKGROUND:
-			wnck_tasklist_set_button_relief(WNCK_TASKLIST(tasklist->tasklist), CTK_RELIEF_NONE);
+			vnck_tasklist_set_button_relief(WNCK_TASKLIST(tasklist->tasklist), CTK_RELIEF_NONE);
 			break;
 	}
 }
 
 #ifdef HAVE_WINDOW_PREVIEWS
-static GdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistData *tasklist)
+static GdkPixbuf *preview_window_thumbnail (WnckWindow *vnck_window, TasklistData *tasklist)
 {
 	CdkWindow *window;
 	GdkPixbuf *screenshot;
@@ -169,7 +169,7 @@ static GdkPixbuf *preview_window_thumbnail (WnckWindow *wnck_window, TasklistDat
 	int width, height;
 	int scale;
 
-	window = cdk_x11_window_foreign_new_for_display (cdk_display_get_default (), wnck_window_get_xid (wnck_window));
+	window = cdk_x11_window_foreign_new_for_display (cdk_display_get_default (), vnck_window_get_xid (vnck_window));
 
 	if (window == NULL)
 		return NULL;
@@ -266,10 +266,10 @@ static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, GdkPixbuf *
 	return FALSE;
 }
 
-static gboolean applet_enter_notify_event (WnckTasklist *tl, GList *wnck_windows, TasklistData *tasklist)
+static gboolean applet_enter_notify_event (WnckTasklist *tl, GList *vnck_windows, TasklistData *tasklist)
 {
 	GdkPixbuf *thumbnail;
-	WnckWindow *wnck_window = NULL;
+	WnckWindow *vnck_window = NULL;
 	int n_windows;
 
 	if (tasklist->preview != NULL)
@@ -278,27 +278,27 @@ static gboolean applet_enter_notify_event (WnckTasklist *tl, GList *wnck_windows
 		tasklist->preview = NULL;
 	}
 
-	if (!tasklist->show_window_thumbnails || wnck_windows == NULL)
+	if (!tasklist->show_window_thumbnails || vnck_windows == NULL)
 		return FALSE;
 
-	n_windows = g_list_length (wnck_windows);
+	n_windows = g_list_length (vnck_windows);
 	/* TODO: Display a list of stacked thumbnails for grouped windows. */
 	if (n_windows == 1)
 	{
-		GList* l = wnck_windows;
+		GList* l = vnck_windows;
 		if (l != NULL)
-			wnck_window = (WnckWindow*)l->data;
+			vnck_window = (WnckWindow*)l->data;
 	}
 
-	if (wnck_window == NULL)
+	if (vnck_window == NULL)
 		return FALSE;
 
 	/* Do not show preview if window is not visible nor in current workspace */
-	if (!wnck_window_is_visible_on_workspace (wnck_window,
-						  wnck_screen_get_active_workspace (wnck_screen_get_default ())))
+	if (!vnck_window_is_visible_on_workspace (vnck_window,
+						  vnck_screen_get_active_workspace (vnck_screen_get_default ())))
 		return FALSE;
 
-	thumbnail = preview_window_thumbnail (wnck_window, tasklist);
+	thumbnail = preview_window_thumbnail (vnck_window, tasklist);
 
 	if (thumbnail == NULL)
 		return FALSE;
@@ -318,7 +318,7 @@ static gboolean applet_enter_notify_event (WnckTasklist *tl, GList *wnck_windows
 	return FALSE;
 }
 
-static gboolean applet_leave_notify_event (WnckTasklist *tl, GList *wnck_windows, TasklistData *tasklist)
+static gboolean applet_leave_notify_event (WnckTasklist *tl, GList *vnck_windows, TasklistData *tasklist)
 {
 	if (tasklist->preview != NULL)
 	{
@@ -573,7 +573,7 @@ static void applet_size_allocate(CtkWidget *widget, CtkAllocation *allocation, T
 	int len;
 	const int* size_hints;
 
-	size_hints = wnck_tasklist_get_size_hint_list (WNCK_TASKLIST (tasklist->tasklist), &len);
+	size_hints = vnck_tasklist_get_size_hint_list (WNCK_TASKLIST (tasklist->tasklist), &len);
 
 	g_assert(len % 2 == 0);
 
@@ -705,11 +705,11 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 			break;
 	}
 
-	tasklist->tasklist = wnck_tasklist_new();
+	tasklist->tasklist = vnck_tasklist_new();
 
-	wnck_tasklist_set_orientation (WNCK_TASKLIST (tasklist->tasklist), tasklist->orientation);
-	wnck_tasklist_set_middle_click_close (WNCK_TASKLIST (tasklist->tasklist), TRUE);
-	wnck_tasklist_set_icon_loader(WNCK_TASKLIST(tasklist->tasklist), icon_loader_func, tasklist, NULL);
+	vnck_tasklist_set_orientation (WNCK_TASKLIST (tasklist->tasklist), tasklist->orientation);
+	vnck_tasklist_set_middle_click_close (WNCK_TASKLIST (tasklist->tasklist), TRUE);
+	vnck_tasklist_set_icon_loader(WNCK_TASKLIST(tasklist->tasklist), icon_loader_func, tasklist, NULL);
 
 	g_signal_connect(G_OBJECT(tasklist->tasklist), "destroy", G_CALLBACK(destroy_tasklist), tasklist);
 #ifdef HAVE_WINDOW_PREVIEWS
@@ -804,7 +804,7 @@ static void call_system_monitor(CtkAction* action, TasklistData* tasklist)
 
 static void display_help_dialog(CtkAction* action, TasklistData* tasklist)
 {
-	wncklet_display_help(tasklist->applet, "cafe-user-guide", "windowlist", WINDOW_LIST_ICON);
+	vncklet_display_help(tasklist->applet, "cafe-user-guide", "windowlist", WINDOW_LIST_ICON);
 }
 
 static void display_about_dialog(CtkAction* action, TasklistData* tasklist)

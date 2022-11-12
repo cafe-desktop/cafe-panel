@@ -16,7 +16,7 @@ X-CAFE-Bugzilla-Bugzilla=CAFE
 X-CAFE-Bugzilla-Product=cafe-panel
 X-CAFE-Bugzilla-Component=window selector
 X-CAFE-Bugzilla-Version=@VERSION@
-X-CAFE-Bugzilla-OtherBinaries=wnck-applet
+X-CAFE-Bugzilla-OtherBinaries=vnck-applet
 
 [WorkspaceSwitcherApplet]
 Name=Workspace Switcher
@@ -29,7 +29,7 @@ X-CAFE-Bugzilla-Bugzilla=CAFE
 X-CAFE-Bugzilla-Product=cafe-panel
 X-CAFE-Bugzilla-Component=workspace switcher
 X-CAFE-Bugzilla-Version=@VERSION@
-X-CAFE-Bugzilla-OtherBinaries=wnck-applet
+X-CAFE-Bugzilla-OtherBinaries=vnck-applet
 
 [WindowListApplet]
 Name=Window List
@@ -42,7 +42,7 @@ X-CAFE-Bugzilla-Bugzilla=CAFE
 X-CAFE-Bugzilla-Product=cafe-panel
 X-CAFE-Bugzilla-Component=window list
 X-CAFE-Bugzilla-Version=@VERSION@
-X-CAFE-Bugzilla-OtherBinaries=wnck-applet
+X-CAFE-Bugzilla-OtherBinaries=vnck-applet
 
 [ShowDesktopApplet]
 Name=Show Desktop
@@ -55,4 +55,4 @@ X-CAFE-Bugzilla-Bugzilla=CAFE
 X-CAFE-Bugzilla-Product=cafe-panel
 X-CAFE-Bugzilla-Component=Show Desktop Button
 X-CAFE-Bugzilla-Version=@VERSION@
-X-CAFE-Bugzilla-OtherBinaries=wnck-applet
+X-CAFE-Bugzilla-OtherBinaries=vnck-applet
