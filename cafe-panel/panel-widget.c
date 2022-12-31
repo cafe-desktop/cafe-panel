@@ -2583,11 +2583,6 @@ panel_widget_reparent (PanelWidget *old_panel,
 	if (ctk_container_get_focus_child (CTK_CONTAINER (old_panel)) == applet)
 		focus_widget = ctk_window_get_focus (CTK_WINDOW (old_panel->toplevel));
 
-	/* Do not touch until CTK+4
-	 * or until we figure out how to properly
-	 * reimplement ctk_widget_reparent.
-	 * https://github.com/cafe-desktop/cafe-panel/issues/504
-	 */
 	ctk_widget_reparent (applet, CTK_WIDGET (new_panel));
 
 	if (info && info->type == PANEL_OBJECT_APPLET)
