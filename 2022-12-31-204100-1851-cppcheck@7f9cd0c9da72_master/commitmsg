@@ -1,0 +1,3 @@
+panel-widget: remove comment about 'ctk_widget_reparent'
+
+It isn't deprecated
