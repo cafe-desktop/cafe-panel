@@ -181,7 +181,6 @@ create_hig_frame (CalendarWindow *calwin,
                   GCallback   callback)
 {
         CtkWidget *vbox;
-        CtkWidget *label;
         CtkWidget *hbox;
         char      *bold_title;
         CtkWidget *expander;
@@ -211,6 +210,7 @@ create_hig_frame (CalendarWindow *calwin,
 	g_signal_connect (hbox, "add", G_CALLBACK (add_child), expander);
 
         if (button_label) {
+                CtkWidget *label;
                 CtkWidget *button_box;
                 CtkWidget *button;
                 gchar *text;
