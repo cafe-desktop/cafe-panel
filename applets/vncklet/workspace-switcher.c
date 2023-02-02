@@ -641,7 +641,8 @@ static void display_about_dialog(CtkAction* action, PagerData* pager)
 		"comments", _("The Workspace Switcher shows you a small version of your workspaces that lets you manage your windows."),
 		"copyright", _("Copyright \xc2\xa9 2002 Red Hat, Inc.\n"
                                "Copyright \xc2\xa9 2011 Perberos\n"
-                               "Copyright \xc2\xa9 2012-2020 CAFE developers"),
+                               "Copyright \xc2\xa9 2012-2020 MATE developers\n"
+                               "Copyright \xc2\xa9 2022-2023 Pablo Barciela"),
 		"documenters", documenters,
 		"icon-name", WORKSPACE_SWITCHER_ICON,
 		"logo-icon-name", WORKSPACE_SWITCHER_ICON,

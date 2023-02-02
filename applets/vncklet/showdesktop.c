@@ -502,7 +502,8 @@ static void display_about_dialog(CtkAction* action, ShowDesktopData* sdd)
 		"comments", _("This button lets you hide all windows and show the desktop."),
 		"copyright", _("Copyright \xc2\xa9 2002 Red Hat, Inc.\n"
 		               "Copyright \xc2\xa9 2011 Perberos\n"
-                               "Copyright \xc2\xa9 2012-2020 CAFE developers"),
+                               "Copyright \xc2\xa9 2012-2020 MATE developers\n"
+                               "Copyright \xc2\xa9 2022-2023 Pablo Barciela"),
 		"documenters", documenters,
 		"icon-name", SHOW_DESKTOP_ICON,
 		"logo-icon-name", SHOW_DESKTOP_ICON,
