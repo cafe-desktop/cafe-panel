@@ -2,24 +2,24 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="32"
    height="32"
    id="svg1325"
    sodipodi:version="0.32"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="gnome-panel-32x32.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="cafe-panel.svg"
    version="1.0"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <sodipodi:namedview
-     inkscape:window-height="581"
-     inkscape:window-width="1036"
+     inkscape:window-height="1003"
+     inkscape:window-width="1920"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -31,23 +31,24 @@
      borderlayer="true"
      inkscape:showpageshadow="false"
      inkscape:zoom="11.313708"
-     inkscape:cx="19.677233"
-     inkscape:cy="15.853963"
+     inkscape:cx="12.462758"
+     inkscape:cy="8.8830293"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="27"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-points="true"
      gridtolerance="10000"
      showborder="false"
-     inkscape:window-maximized="0">
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="0">
     <inkscape:grid
        id="GridFromPre046Settings"
        type="xygrid"
-       originx="0px"
-       originy="0px"
-       spacingx="0.5px"
-       spacingy="0.5px"
+       originx="0"
+       originy="0"
+       spacingx="0.5"
+       spacingy="0.5"
        color="#3f3fff"
        empcolor="#3f3fff"
        opacity="0.15"
@@ -86,7 +87,7 @@
        position="31.875"
        id="guide2260" />
     <inkscape:grid
-       id="GridFromPre046Settings"
+       id="grid6"
        type="xygrid"
        originx="0px"
        originy="0px"
@@ -184,26 +185,5 @@
        d="M 5,15.5 L 8,13 L 8,18 L 5,15.5 z "
        id="path2214"
        sodipodi:nodetypes="cccc" />
-    <g
-       id="layer1-8"
-       transform="matrix(1.2499327,0,0,1.2794713,10.948236,-2.3788982)"
-       stroke-miterlimit="4"
-       style="fill:#2e3436;fill-opacity:1;stroke-width:0;stroke-miterlimit:4">
-      <path
-         inkscape:connector-curvature="0"
-         id="path5070"
-         d="m 1.6415,10.204 6.7832,3.7866 -6.7832,3.7866 z"
-         style="fill:#2e3436;fill-opacity:1;fill-rule:evenodd" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path5067"
-         d="m 15.208,13.991 c 0,-3.658 -3.131,-6.6271 -6.7834,-6.6271 -2.109,0 -4.1361,1.0094 -5.348,2.5503 l 0.85177,0.47616 c 1.034,-1.2658 2.7359,-2.0798 4.4963,-2.0798 3.1115,-1e-7 5.8141,2.5683 5.8141,5.6799 0,3.1115 -2.7025,5.6799 -5.8141,5.6799 -1.7553,0 -3.5475,-0.92376 -4.5815,-2.183 l -0.84886,0.47427 c 1.2122,1.5345 3.3264,2.6554 5.4304,2.6554 3.6524,0 6.7832,-2.9686 6.7832,-6.6266 z"
-         style="fill:#2e3436;fill-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path5648"
-         d="m 12.301,13.99 c 0,-2.2361 -1.64,-3.7866 -3.8761,-3.7866 -1.1905,0 -2.0368,0.32699 -2.7782,1.1454 l 0.8789,0.49036 C 7.07789,11.29369 7.5906,11.15 8.4249,11.15 c 1.6896,0 2.9071,1.1392 2.9071,2.84 0,1.7008 -1.2175,2.84 -2.9071,2.84 -0.84982,0 -1.4491,-0.21841 -2.0039,-0.78193 l -0.86824,0.48468 c 0.74137,0.81851 1.6817,1.2439 2.8722,1.2439 2.2361,0 3.8761,-1.5505 3.8761,-3.7866 z"
-         style="fill:#2e3436;fill-opacity:1" />
-    </g>
   </g>
 </svg>

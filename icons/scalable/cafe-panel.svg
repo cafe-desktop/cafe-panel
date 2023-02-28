@@ -2,25 +2,25 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="48px"
    height="48px"
    id="svg1325"
    sodipodi:version="0.32"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="cafe-panel.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   version="1.1">
+   version="1.1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <sodipodi:namedview
-     inkscape:window-height="705"
-     inkscape:window-width="1366"
+     inkscape:window-height="1080"
+     inkscape:window-width="1920"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      guidetolerance="10.0"
@@ -32,12 +32,13 @@
      id="base"
      showgrid="false"
      inkscape:zoom="13.906433"
-     inkscape:cx="24"
-     inkscape:cy="28.976187"
+     inkscape:cx="14.022287"
+     inkscape:cy="20.70984"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     inkscape:pagecheckerboard="0" />
   <defs
      id="defs1327">
     <linearGradient
@@ -168,7 +169,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>Cafe Panel</dc:title>
         <dc:creator>
           <cc:Agent>
             <dc:title>Lapo Calamandrei</dc:title>
@@ -208,30 +208,31 @@
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     style="display:inline">
     <rect
-       style="opacity:1;fill:url(#linearGradient2268);fill-opacity:1;stroke:url(#linearGradient2258);stroke-width:0.99999952;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:url(#linearGradient2268);fill-opacity:1;stroke:url(#linearGradient2258);stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect1333"
        width="46"
        height="29"
        x="2.5"
        y="9.5" />
     <rect
-       style="opacity:0.4;fill:none;fill-opacity:1;stroke:url(#linearGradient1341);stroke-width:0.99999976;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:0.4;fill:none;fill-opacity:1;stroke:url(#linearGradient1341);stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect2210"
        width="45"
        height="27"
        x="3.5"
        y="10.5" />
     <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:url(#radialGradient2218);stroke-width:0.99999976;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:url(#radialGradient2218);stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect2216"
        width="45"
        height="27"
        x="3.5"
        y="10.5" />
     <rect
-       style="opacity:1;color:#000000;fill:#dce0d8;fill-opacity:1;fill-rule:nonzero;stroke:#888a85;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#dce0d8;fill-opacity:1;fill-rule:nonzero;stroke:#888a85;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none"
        id="rect1337"
        width="10"
        height="25"
@@ -240,7 +241,7 @@
        rx="1.625"
        ry="1.625" />
     <rect
-       style="opacity:0.59607843;color:#000000;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:0.596078;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none"
        id="rect2212"
        width="8"
        height="23"
@@ -250,29 +251,8 @@
        ry="0.5625" />
     <path
        style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 8,23.5 L 11,21 L 11,26 L 8,23.5 z "
+       d="M 8,23.5 11,21 v 5 z"
        id="path2214"
        sodipodi:nodetypes="cccc" />
-    <g
-       id="layer1-8"
-       transform="matrix(1.2660598,0,0,1.2959796,15.921763,5.687831)"
-       stroke-miterlimit="4"
-       style="fill:#2e3436;fill-opacity:1;stroke-width:0;stroke-miterlimit:4">
-      <path
-         inkscape:connector-curvature="0"
-         id="path5070"
-         d="m 1.6415,10.204 6.7832,3.7866 -6.7832,3.7866 z"
-         style="fill:#2e3436;fill-opacity:1;fill-rule:evenodd" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path5067"
-         d="m 15.208,13.991 c 0,-3.658 -3.131,-6.6271 -6.7834,-6.6271 -2.109,0 -4.1361,1.0094 -5.348,2.5503 l 0.85177,0.47616 c 1.034,-1.2658 2.7359,-2.0798 4.4963,-2.0798 3.1115,-1e-7 5.8141,2.5683 5.8141,5.6799 0,3.1115 -2.7025,5.6799 -5.8141,5.6799 -1.7553,0 -3.5475,-0.92376 -4.5815,-2.183 l -0.84886,0.47427 c 1.2122,1.5345 3.3264,2.6554 5.4304,2.6554 3.6524,0 6.7832,-2.9686 6.7832,-6.6266 z"
-         style="fill:#2e3436;fill-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path5648"
-         d="m 12.301,13.99 c 0,-2.2361 -1.64,-3.7866 -3.8761,-3.7866 -1.1905,0 -2.0368,0.32699 -2.7782,1.1454 l 0.8789,0.49036 C 7.07789,11.29369 7.5906,11.15 8.4249,11.15 c 1.6896,0 2.9071,1.1392 2.9071,2.84 0,1.7008 -1.2175,2.84 -2.9071,2.84 -0.84982,0 -1.4491,-0.21841 -2.0039,-0.78193 l -0.86824,0.48468 c 0.74137,0.81851 1.6817,1.2439 2.8722,1.2439 2.2361,0 3.8761,-1.5505 3.8761,-3.7866 z"
-         style="fill:#2e3436;fill-opacity:1" />
-    </g>
   </g>
 </svg>
