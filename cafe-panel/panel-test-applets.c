@@ -363,6 +363,8 @@ main (int argc, char **argv)
 		g_free (applets_dir);
 	}
 
+	g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+
 	if (cli_iid) {
 		load_applet_from_command_line ();
 		ctk_main ();
