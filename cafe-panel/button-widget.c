@@ -317,7 +317,7 @@ calc_arrow (PanelOrientation  orientation,
 	switch (orientation) {
 	case PANEL_ORIENTATION_TOP:
 		*x     = (button_width - (*size)) / 2;
-		*y     = button_height * .99 - (*size) / (3/2);	// 3/2 is the approxicafe ratio of CTK arrows
+		*y     = button_height * .99 - (*size) / (3/2);	// 3/2 is the approximate ratio of CTK arrows
 		*angle = G_PI;
 		retval = CTK_ARROW_DOWN;
 		break;
@@ -328,7 +328,7 @@ calc_arrow (PanelOrientation  orientation,
 		retval = CTK_ARROW_UP;
 		break;
 	case PANEL_ORIENTATION_LEFT:
-		*x     = button_width * .99 - (*size) / (3/2);	// 3/2 is the approxicafe ratio of CTK arrows
+		*x     = button_width * .99 - (*size) / (3/2);	// 3/2 is the approximate ratio of CTK arrows
 		*y     = (button_height - (*size)) / 2;
 		*angle = G_PI / 2;
 		retval = CTK_ARROW_RIGHT;
