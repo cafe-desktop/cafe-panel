@@ -865,10 +865,10 @@ panel_util_get_file_display_for_common_files (GFile *file)
 
 		g_object_unref (compare);
 
-		if (cafe_gsettings_schema_exists (CAJA_DESKTOP_SCHEMA)) {
-			baul_desktop_settings = g_settings_new (CAJA_DESKTOP_SCHEMA);
+		if (cafe_gsettings_schema_exists (BAUL_DESKTOP_SCHEMA)) {
+			baul_desktop_settings = g_settings_new (BAUL_DESKTOP_SCHEMA);
 			baul_home_icon_name = g_settings_get_string (baul_desktop_settings,
-														 CAJA_DESKTOP_HOME_ICON_NAME_KEY);
+														 BAUL_DESKTOP_HOME_ICON_NAME_KEY);
 			g_object_unref (baul_desktop_settings);
 		}
 		if (PANEL_GLIB_STR_EMPTY (baul_home_icon_name)) {

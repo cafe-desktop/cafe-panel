@@ -63,9 +63,9 @@ static inline gboolean desktop_is_home_dir(void)
 	gboolean retval = FALSE;
 	GSettings *settings;
 
-	if (cafe_gsettings_schema_exists (CAJA_PREFS_SCHEMA)) {
-		settings = g_settings_new (CAJA_PREFS_SCHEMA);
-		retval = g_settings_get_boolean (settings, CAJA_PREFS_DESKTOP_IS_HOME_DIR_KEY);
+	if (cafe_gsettings_schema_exists (BAUL_PREFS_SCHEMA)) {
+		settings = g_settings_new (BAUL_PREFS_SCHEMA);
+		retval = g_settings_get_boolean (settings, BAUL_PREFS_DESKTOP_IS_HOME_DIR_KEY);
 		g_object_unref (settings);
 	}
 

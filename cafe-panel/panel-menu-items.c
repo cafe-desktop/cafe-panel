@@ -1044,7 +1044,7 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 
 	if (!place_item->priv->baul_prefs_settings ||
 		!g_settings_get_boolean (place_item->priv->baul_prefs_settings,
-				     CAJA_PREFS_DESKTOP_IS_HOME_DIR_KEY)) {
+				     BAUL_PREFS_DESKTOP_IS_HOME_DIR_KEY)) {
 		file = g_file_new_for_path (g_get_user_special_dir (G_USER_DIRECTORY_DESKTOP));
 		uri = g_file_get_uri (file);
 		g_object_unref (file);
@@ -1068,7 +1068,7 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 
 	if (place_item->priv->baul_desktop_settings != NULL)
 		gsettings_name = g_settings_get_string (place_item->priv->baul_desktop_settings,
-								CAJA_DESKTOP_COMPUTER_ICON_NAME_KEY);
+								BAUL_DESKTOP_COMPUTER_ICON_NAME_KEY);
 
 	if (PANEL_GLIB_STR_EMPTY (gsettings_name)) {
 		g_free (gsettings_name);
@@ -1351,24 +1351,24 @@ panel_place_menu_item_init (PanelPlaceMenuItem *menuitem)
 
 	menuitem->priv = panel_place_menu_item_get_instance_private (menuitem);
 
-	if (cafe_gsettings_schema_exists (CAJA_DESKTOP_SCHEMA)) {
-		menuitem->priv->baul_desktop_settings = g_settings_new (CAJA_DESKTOP_SCHEMA);
+	if (cafe_gsettings_schema_exists (BAUL_DESKTOP_SCHEMA)) {
+		menuitem->priv->baul_desktop_settings = g_settings_new (BAUL_DESKTOP_SCHEMA);
 		g_signal_connect (menuitem->priv->baul_desktop_settings,
-				  "changed::" CAJA_DESKTOP_HOME_ICON_NAME_KEY,
+				  "changed::" BAUL_DESKTOP_HOME_ICON_NAME_KEY,
 				  G_CALLBACK (panel_place_menu_item_key_changed),
 				  G_OBJECT (menuitem));
 		g_signal_connect (menuitem->priv->baul_desktop_settings,
-				  "changed::" CAJA_DESKTOP_COMPUTER_ICON_NAME_KEY,
+				  "changed::" BAUL_DESKTOP_COMPUTER_ICON_NAME_KEY,
 				  G_CALLBACK (panel_place_menu_item_key_changed),
 				  G_OBJECT (menuitem));
 	}
 	else
 		menuitem->priv->baul_desktop_settings = NULL;
 
-	if (cafe_gsettings_schema_exists (CAJA_PREFS_SCHEMA)) {
-		menuitem->priv->baul_prefs_settings = g_settings_new (CAJA_PREFS_SCHEMA);
+	if (cafe_gsettings_schema_exists (BAUL_PREFS_SCHEMA)) {
+		menuitem->priv->baul_prefs_settings = g_settings_new (BAUL_PREFS_SCHEMA);
 		g_signal_connect (menuitem->priv->baul_prefs_settings,
-				  "changed::" CAJA_PREFS_DESKTOP_IS_HOME_DIR_KEY,
+				  "changed::" BAUL_PREFS_DESKTOP_IS_HOME_DIR_KEY,
 				  G_CALLBACK (panel_place_menu_item_key_changed),
 				  G_OBJECT (menuitem));
 	}
