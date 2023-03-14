@@ -84,16 +84,16 @@
 #define LOCKDOWN_DISABLE_LOCK_SCREEN_KEY      "disable-lock-screen"
 #define LOCKDOWN_DISABLE_LOG_OUT_KEY          "disable-log-out"
 
-#define MARCO_SCHEMA                          "org.cafe.Marco.general"
-#define MARCO_MOUSE_BUTTON_MODIFIER_KEY       "mouse-button-modifier"
+#define CROMA_SCHEMA                          "org.cafe.Marco.general"
+#define CROMA_MOUSE_BUTTON_MODIFIER_KEY       "mouse-button-modifier"
 
-#define MARCO_KEYBINDINGS_SCHEMA             "org.cafe.Marco.window-keybindings"
-#define MARCO_ACTIVATE_WINDOW_MENU_KEY       "activate-window-menu"
-#define MARCO_TOGGLE_MAXIMIZED_KEY           "toggle-maximized"
-#define MARCO_MAXIMIZE_KEY                   "maximize"
-#define MARCO_UNMAXIMIZE_KEY                 "unmaximize"
-#define MARCO_TOGGLE_SHADED_KEY              "toggle-shaded"
-#define MARCO_BEGIN_MOVE_KEY                 "begin-move"
-#define MARCO_BEGIN_RESIZE_KEY               "begin-resize"
+#define CROMA_KEYBINDINGS_SCHEMA             "org.cafe.Marco.window-keybindings"
+#define CROMA_ACTIVATE_WINDOW_MENU_KEY       "activate-window-menu"
+#define CROMA_TOGGLE_MAXIMIZED_KEY           "toggle-maximized"
+#define CROMA_MAXIMIZE_KEY                   "maximize"
+#define CROMA_UNMAXIMIZE_KEY                 "unmaximize"
+#define CROMA_TOGGLE_SHADED_KEY              "toggle-shaded"
+#define CROMA_BEGIN_MOVE_KEY                 "begin-move"
+#define CROMA_BEGIN_RESIZE_KEY               "begin-resize"
 
 #endif /* __PANEL_SCHEMAS_H__ */

@@ -53,13 +53,13 @@ static GSettings *croma_settings = NULL;
 static GSettings *croma_keybindings_settings = NULL;
 
 static PanelBinding bindings [] = {
-	{ MARCO_ACTIVATE_WINDOW_MENU_KEY, "popup-panel-menu", 0, 0 },
-	{ MARCO_TOGGLE_MAXIMIZED_KEY,     "toggle-expand",    0, 0 },
-	{ MARCO_MAXIMIZE_KEY,             "expand",           0, 0 },
-	{ MARCO_UNMAXIMIZE_KEY,           "unexpand",         0, 0 },
-	{ MARCO_TOGGLE_SHADED_KEY,        "toggle-hidden",    0, 0 },
-	{ MARCO_BEGIN_MOVE_KEY,           "begin-move",       0, 0 },
-	{ MARCO_BEGIN_RESIZE_KEY,         "begin-resize",     0, 0 },
+	{ CROMA_ACTIVATE_WINDOW_MENU_KEY, "popup-panel-menu", 0, 0 },
+	{ CROMA_TOGGLE_MAXIMIZED_KEY,     "toggle-expand",    0, 0 },
+	{ CROMA_MAXIMIZE_KEY,             "expand",           0, 0 },
+	{ CROMA_UNMAXIMIZE_KEY,           "unexpand",         0, 0 },
+	{ CROMA_TOGGLE_SHADED_KEY,        "toggle-hidden",    0, 0 },
+	{ CROMA_BEGIN_MOVE_KEY,           "begin-move",       0, 0 },
+	{ CROMA_BEGIN_RESIZE_KEY,         "begin-resize",     0, 0 },
 };
 
 static guint mouse_button_modifier_keymask = DEFAULT_MOUSE_MODIFIER;
@@ -196,13 +196,13 @@ panel_bindings_initialise (void)
 	if (initialised)
 		return;
 
-	if (!cafe_gsettings_schema_exists (MARCO_SCHEMA)) {
+	if (!cafe_gsettings_schema_exists (CROMA_SCHEMA)) {
 		initialised = TRUE;
 		return;
 	}
 
-	croma_settings = g_settings_new (MARCO_SCHEMA);
-	croma_keybindings_settings = g_settings_new (MARCO_KEYBINDINGS_SCHEMA);
+	croma_settings = g_settings_new (CROMA_SCHEMA);
+	croma_keybindings_settings = g_settings_new (CROMA_KEYBINDINGS_SCHEMA);
 
 	for (i = 0; i < G_N_ELEMENTS (bindings); i++) {
 		str = g_settings_get_string (croma_keybindings_settings, bindings [i].key);
@@ -214,11 +214,11 @@ panel_bindings_initialise (void)
 	/* mouse button modifier */
 
 	g_signal_connect (croma_settings,
-					  "changed::" MARCO_MOUSE_BUTTON_MODIFIER_KEY,
+					  "changed::" CROMA_MOUSE_BUTTON_MODIFIER_KEY,
 					  G_CALLBACK (panel_bindings_mouse_modifier_changed),
 					  NULL);
 
-	str = g_settings_get_string (croma_settings, MARCO_MOUSE_BUTTON_MODIFIER_KEY);
+	str = g_settings_get_string (croma_settings, CROMA_MOUSE_BUTTON_MODIFIER_KEY);
 	panel_bindings_mouse_modifier_set_from_string (str);
 	g_free (str);
 

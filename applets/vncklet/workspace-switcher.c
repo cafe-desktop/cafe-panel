@@ -38,15 +38,15 @@
 #define WORKSPACE_SWITCHER_SCHEMA "org.cafe.panel.applet.workspace-switcher"
 
 #define NEVER_SENSITIVE "never_sensitive"
-#define MARCO_GENERAL_SCHEMA "org.cafe.Marco.general"
+#define CROMA_GENERAL_SCHEMA "org.cafe.Marco.general"
 #define NUM_WORKSPACES "num-workspaces"
-#define MARCO_WORKSPACES_SCHEMA "org.cafe.Marco.workspace-names"
+#define CROMA_WORKSPACES_SCHEMA "org.cafe.Marco.workspace-names"
 #define WORKSPACE_NAME "name-1"
 
 #define WORKSPACE_SWITCHER_ICON "cafe-panel-workspace-switcher"
 
 typedef enum {
-	PAGER_WM_MARCO,
+	PAGER_WM_CROMA,
 	PAGER_WM_METACITY,
 	PAGER_WM_COMPIZ,
 	PAGER_WM_I3,
@@ -97,7 +97,7 @@ static void pager_update(PagerData* pager)
 	vnck_pager_set_n_rows(VNCK_PAGER(pager->pager), pager->n_rows);
 	vnck_pager_set_show_all(VNCK_PAGER(pager->pager), pager->display_all);
 
-	if (pager->wm == PAGER_WM_MARCO)
+	if (pager->wm == PAGER_WM_CROMA)
 		vnck_pager_set_display_mode(VNCK_PAGER(pager->pager), pager->display_mode);
 	else if (pager->wm == PAGER_WM_METACITY)
 		vnck_pager_set_display_mode(VNCK_PAGER(pager->pager), pager->display_mode);
@@ -111,7 +111,7 @@ static void update_properties_for_wm(PagerData* pager)
 {
 	switch (pager->wm)
 	{
-		case PAGER_WM_MARCO:
+		case PAGER_WM_CROMA:
 			if (pager->workspaces_frame)
 				ctk_widget_show(pager->workspaces_frame);
 			if (pager->workspace_names_label)
@@ -185,7 +185,7 @@ static void window_manager_changed(VnckScreen* screen, PagerData* pager)
 	if (!wm_name)
 		pager->wm = PAGER_WM_UNKNOWN;
 	else if (strcmp(wm_name, "Metacity (Marco)") == 0)
-		pager->wm = PAGER_WM_MARCO;
+		pager->wm = PAGER_WM_CROMA;
 	else if (strcmp(wm_name, "Metacity") == 0)
 		pager->wm = PAGER_WM_METACITY;
 	else if (strcmp(wm_name, "i3") == 0)
@@ -860,10 +860,10 @@ static void setup_dialog(CtkBuilder* builder, PagerData* pager)
 	GSettings *croma_general_settings = NULL;
 	GSettings *croma_workspaces_settings = NULL;
 
-	if (cafe_gsettings_schema_exists(MARCO_GENERAL_SCHEMA))
-		croma_general_settings = g_settings_new (MARCO_GENERAL_SCHEMA);
-	if (cafe_gsettings_schema_exists(MARCO_WORKSPACES_SCHEMA))
-		croma_workspaces_settings = g_settings_new (MARCO_WORKSPACES_SCHEMA);
+	if (cafe_gsettings_schema_exists(CROMA_GENERAL_SCHEMA))
+		croma_general_settings = g_settings_new (CROMA_GENERAL_SCHEMA);
+	if (cafe_gsettings_schema_exists(CROMA_WORKSPACES_SCHEMA))
+		croma_workspaces_settings = g_settings_new (CROMA_WORKSPACES_SCHEMA);
 
 	pager->workspaces_frame = WID("workspaces_frame");
 	pager->workspace_names_label = WID("workspace_names_label");
