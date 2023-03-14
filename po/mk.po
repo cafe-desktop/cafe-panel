@@ -983,11 +983,11 @@ msgstr "Прикажи имиња на работни простори"
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
-"This setting only works when the window manager is Marco."
+"This setting only works when the window manager is Croma."
 msgstr ""
 "Ако е точно, скокачот помеѓу работни простори ќе ги покажува имињата на "
 "просторите, во спротивно ќе ја прикажува содржината на просторот. Ова "
-"поставување работи само кога користите Marco."
+"поставување работи само кога користите Croma."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"

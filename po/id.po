@@ -1018,11 +1018,11 @@ msgstr "Menampilkan nama area kerja"
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
-"This setting only works when the window manager is Marco."
+"This setting only works when the window manager is Croma."
 msgstr ""
 "Jika bernilai benar (true), pengalih area kerja akan menampilkan nama dari "
 "masing-masing area kerja. Sebaliknya, akan menampilkan jendela pada area "
-"kerja tersebut. Pengaturan ini hanya berfungsi untuk manajer jendela Marco."
+"kerja tersebut. Pengaturan ini hanya berfungsi untuk manajer jendela Croma."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"

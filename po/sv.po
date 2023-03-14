@@ -1005,11 +1005,11 @@ msgstr "Visa namn på arbetsytor"
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
-"This setting only works when the window manager is Marco."
+"This setting only works when the window manager is Croma."
 msgstr ""
 "Om detta är sant kommer arbetsytorna i arbetsyteväxlaren att visa namnen på "
 "arbetsytorna. Annars kommer fönstren på arbetsytorna att visas. Denna "
-"inställning fungerar endast när fönsterhanteraren Marco används."
+"inställning fungerar endast när fönsterhanteraren Croma används."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"

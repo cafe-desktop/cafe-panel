@@ -1,4 +1,4 @@
-/* Marco fixed tooltip routine */
+/* Croma fixed tooltip routine */
 
 /*
  * Copyright (C) 2001 Havoc Pennington

@@ -988,11 +988,11 @@ msgstr "Hiện tên vùng làm việc"
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
-"This setting only works when the window manager is Marco."
+"This setting only works when the window manager is Croma."
 msgstr ""
 "Đúng thì các vùng làm việc trong bộ chuyển vùng làm việc sẽ hiển thị tên các"
 " vùng làm việc. Không thì hiển thị các cửa sổ trong vùng làm việc. Thiết lập"
-" này chỉ hoạt động được khi bộ quản lý cửa sổ là Marco."
+" này chỉ hoạt động được khi bộ quản lý cửa sổ là Croma."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"

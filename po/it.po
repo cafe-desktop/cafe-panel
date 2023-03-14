@@ -12,8 +12,8 @@
 # Martin Wimpress <code@flexion.org>, 2020
 # Giuseppe Pignataro <rogepix@gmail.com>, 2020
 # Enrico B. <enricobe@hotmail.com>, 2020
-# Marco Bartolucci <nap.84@live.it>, 2020
-# Marco Z. <minaz666@gmail.com>, 2020
+# Croma Bartolucci <nap.84@live.it>, 2020
+# Croma Z. <minaz666@gmail.com>, 2020
 # andrea pittaro <transifex@andreapittaro.it>, 2020
 # Alessandro Volturno <alelvb@inwind.it>, 2020
 # 
@@ -1019,11 +1019,11 @@ msgstr "Mostra i nomi degli spazi di lavoro"
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
-"This setting only works when the window manager is Marco."
+"This setting only works when the window manager is Croma."
 msgstr ""
 "Se impostata a VERO, i nomi degli spazi di lavoro compaiono nel selettore, "
 "in caso contrario sono mostrate le finestre presenti sugli spazi di lavoro. "
-"Questa impostazione funziona solo se il window manager è Marco."
+"Questa impostazione funziona solo se il window manager è Croma."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"

@@ -995,8 +995,8 @@ msgstr "显示工作区名称"
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
-"This setting only works when the window manager is Marco."
-msgstr "如果为 true，则在工作区切换器中显示工作区的名称，否则显示工作区中的窗口。此设置仅当使用 Marco 窗口管理器时才生效。"
+"This setting only works when the window manager is Croma."
+msgstr "如果为 true，则在工作区切换器中显示工作区的名称，否则显示工作区中的窗口。此设置仅当使用 Croma 窗口管理器时才生效。"
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"

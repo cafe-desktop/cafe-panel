@@ -84,10 +84,10 @@
 #define LOCKDOWN_DISABLE_LOCK_SCREEN_KEY      "disable-lock-screen"
 #define LOCKDOWN_DISABLE_LOG_OUT_KEY          "disable-log-out"
 
-#define CROMA_SCHEMA                          "org.cafe.Marco.general"
+#define CROMA_SCHEMA                          "org.cafe.Croma.general"
 #define CROMA_MOUSE_BUTTON_MODIFIER_KEY       "mouse-button-modifier"
 
-#define CROMA_KEYBINDINGS_SCHEMA             "org.cafe.Marco.window-keybindings"
+#define CROMA_KEYBINDINGS_SCHEMA             "org.cafe.Croma.window-keybindings"
 #define CROMA_ACTIVATE_WINDOW_MENU_KEY       "activate-window-menu"
 #define CROMA_TOGGLE_MAXIMIZED_KEY           "toggle-maximized"
 #define CROMA_MAXIMIZE_KEY                   "maximize"

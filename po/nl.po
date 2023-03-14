@@ -1027,11 +1027,11 @@ msgstr "Werkbladnamen weergeven"
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
-"This setting only works when the window manager is Marco."
+"This setting only works when the window manager is Croma."
 msgstr ""
 "Indien ingeschakeld zullen de werkbladen in de werkbladwisselaar de namen "
 "van de werkbladen tonen, anders tonen ze de vensters op het werkblad. Deze "
-"instelling werkt alleen bij het gebruik van Marco voor vensterbeheer."
+"instelling werkt alleen bij het gebruik van Croma voor vensterbeheer."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"

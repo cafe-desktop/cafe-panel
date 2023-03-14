@@ -993,11 +993,11 @@ msgstr "Shfaq emrat e hapësirave të punës"
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
-"This setting only works when the window manager is Marco."
+"This setting only works when the window manager is Croma."
 msgstr ""
 "Nëse true, hapësirat e punës në shkëmbyesin e hapësirave do të shfaqin emrat"
 " e hapësirave të punës. Në rast të kundërt do të shfaqen vetëm dritaret në "
-"hapësirën e punës. Ky rregullim funksionon vetëm kur përdoret Marco si "
+"hapësirën e punës. Ky rregullim funksionon vetëm kur përdoret Croma si "
 "manazhues i dritareve."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10

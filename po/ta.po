@@ -995,7 +995,7 @@ msgstr "வேலையிடங்களின் பெயர்களைக�
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
-"This setting only works when the window manager is Marco."
+"This setting only works when the window manager is Croma."
 msgstr ""
 "உண்மையெனில் பணியிடமாற்றி பணியிடங்களின் பெயரை காட்டும். இல்லையெனில் சாளரங்களை"
 " பணியிடத்தில் காட்டும். இது மெடாசிடியாக் சாளர மேலாளர் இருந்தால் மட்டுமே "

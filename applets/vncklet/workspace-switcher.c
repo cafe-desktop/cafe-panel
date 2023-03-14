@@ -38,9 +38,9 @@
 #define WORKSPACE_SWITCHER_SCHEMA "org.cafe.panel.applet.workspace-switcher"
 
 #define NEVER_SENSITIVE "never_sensitive"
-#define CROMA_GENERAL_SCHEMA "org.cafe.Marco.general"
+#define CROMA_GENERAL_SCHEMA "org.cafe.Croma.general"
 #define NUM_WORKSPACES "num-workspaces"
-#define CROMA_WORKSPACES_SCHEMA "org.cafe.Marco.workspace-names"
+#define CROMA_WORKSPACES_SCHEMA "org.cafe.Croma.workspace-names"
 #define WORKSPACE_NAME "name-1"
 
 #define WORKSPACE_SWITCHER_ICON "cafe-panel-workspace-switcher"
@@ -184,7 +184,7 @@ static void window_manager_changed(VnckScreen* screen, PagerData* pager)
 
 	if (!wm_name)
 		pager->wm = PAGER_WM_UNKNOWN;
-	else if (strcmp(wm_name, "Metacity (Marco)") == 0)
+	else if (strcmp(wm_name, "Metacity (Croma)") == 0)
 		pager->wm = PAGER_WM_CROMA;
 	else if (strcmp(wm_name, "Metacity") == 0)
 		pager->wm = PAGER_WM_METACITY;

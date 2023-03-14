@@ -999,7 +999,7 @@ msgstr "പണിയറയുടെ പേരുകള്‍ കാണിയ്�
 msgid ""
 "If true, the workspaces in the workspace switcher will display the names of "
 "the workspaces. Otherwise they will display the windows on the workspace. "
-"This setting only works when the window manager is Marco."
+"This setting only works when the window manager is Croma."
 msgstr ""
 "true എങ്കില്‍, പണിയിട സ്വിച്ചറിലുള്ള പണിയറകള്‍, പണിയറകളുടെ പേരു് "
 "കാണിക്കുന്നു. അല്ലെങ്കില്‍, പണിയറയില്‍ അവ ജാലകങ്ങള്‍ കാണിക്കുന്നു. ജാലക "
