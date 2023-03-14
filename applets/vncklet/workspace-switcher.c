@@ -857,13 +857,13 @@ static void setup_dialog(CtkBuilder* builder, PagerData* pager)
 	CtkTreeViewColumn* column;
 	CtkCellRenderer* cell;
 	int nr_ws, i;
-	GSettings *marco_general_settings = NULL;
-	GSettings *marco_workspaces_settings = NULL;
+	GSettings *croma_general_settings = NULL;
+	GSettings *croma_workspaces_settings = NULL;
 
 	if (cafe_gsettings_schema_exists(MARCO_GENERAL_SCHEMA))
-		marco_general_settings = g_settings_new (MARCO_GENERAL_SCHEMA);
+		croma_general_settings = g_settings_new (MARCO_GENERAL_SCHEMA);
 	if (cafe_gsettings_schema_exists(MARCO_WORKSPACES_SCHEMA))
-		marco_workspaces_settings = g_settings_new (MARCO_WORKSPACES_SCHEMA);
+		croma_workspaces_settings = g_settings_new (MARCO_WORKSPACES_SCHEMA);
 
 	pager->workspaces_frame = WID("workspaces_frame");
 	pager->workspace_names_label = WID("workspace_names_label");
@@ -884,15 +884,15 @@ static void setup_dialog(CtkBuilder* builder, PagerData* pager)
 	setup_sensitivity(pager, builder, "num_rows_spin", NULL, NULL, pager->settings, "num-rows" /* key */);
 
 	pager->num_workspaces_spin = WID("num_workspaces_spin");
-	setup_sensitivity(pager, builder, "num_workspaces_spin", NULL, NULL, marco_general_settings, NUM_WORKSPACES /* key */);
+	setup_sensitivity(pager, builder, "num_workspaces_spin", NULL, NULL, croma_general_settings, NUM_WORKSPACES /* key */);
 
 	pager->workspaces_tree = WID("workspaces_tree_view");
-	setup_sensitivity(pager, builder, "workspaces_tree_view", NULL, NULL, marco_workspaces_settings, WORKSPACE_NAME /* key */);
+	setup_sensitivity(pager, builder, "workspaces_tree_view", NULL, NULL, croma_workspaces_settings, WORKSPACE_NAME /* key */);
 
-	if (marco_general_settings != NULL)
-		g_object_unref (marco_general_settings);
-	if (marco_workspaces_settings != NULL)
-		g_object_unref (marco_workspaces_settings);
+	if (croma_general_settings != NULL)
+		g_object_unref (croma_general_settings);
+	if (croma_workspaces_settings != NULL)
+		g_object_unref (croma_workspaces_settings);
 
 
 	/* Wrap workspaces: */

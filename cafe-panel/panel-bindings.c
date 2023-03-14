@@ -49,8 +49,8 @@ typedef struct {
 } PanelBinding;
 
 static gboolean initialised = FALSE;
-static GSettings *marco_settings = NULL;
-static GSettings *marco_keybindings_settings = NULL;
+static GSettings *croma_settings = NULL;
+static GSettings *croma_keybindings_settings = NULL;
 
 static PanelBinding bindings [] = {
 	{ MARCO_ACTIVATE_WINDOW_MENU_KEY, "popup-panel-menu", 0, 0 },
@@ -151,7 +151,7 @@ panel_binding_watch (PanelBinding *binding,
 {
 	gchar *signal_name;
 	signal_name = g_strdup_printf ("changed::%s", key);
-	g_signal_connect (marco_keybindings_settings,
+	g_signal_connect (croma_keybindings_settings,
 					  signal_name,
 					  G_CALLBACK (panel_binding_changed),
 					  binding);
@@ -201,11 +201,11 @@ panel_bindings_initialise (void)
 		return;
 	}
 
-	marco_settings = g_settings_new (MARCO_SCHEMA);
-	marco_keybindings_settings = g_settings_new (MARCO_KEYBINDINGS_SCHEMA);
+	croma_settings = g_settings_new (MARCO_SCHEMA);
+	croma_keybindings_settings = g_settings_new (MARCO_KEYBINDINGS_SCHEMA);
 
 	for (i = 0; i < G_N_ELEMENTS (bindings); i++) {
-		str = g_settings_get_string (marco_keybindings_settings, bindings [i].key);
+		str = g_settings_get_string (croma_keybindings_settings, bindings [i].key);
 		panel_binding_set_from_string (&bindings [i], str);
 		panel_binding_watch (&bindings [i], bindings [i].key);
 		g_free (str);
@@ -213,12 +213,12 @@ panel_bindings_initialise (void)
 
 	/* mouse button modifier */
 
-	g_signal_connect (marco_settings,
+	g_signal_connect (croma_settings,
 					  "changed::" MARCO_MOUSE_BUTTON_MODIFIER_KEY,
 					  G_CALLBACK (panel_bindings_mouse_modifier_changed),
 					  NULL);
 
-	str = g_settings_get_string (marco_settings, MARCO_MOUSE_BUTTON_MODIFIER_KEY);
+	str = g_settings_get_string (croma_settings, MARCO_MOUSE_BUTTON_MODIFIER_KEY);
 	panel_bindings_mouse_modifier_set_from_string (str);
 	g_free (str);
 

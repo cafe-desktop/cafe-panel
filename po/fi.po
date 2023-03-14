@@ -999,7 +999,7 @@ msgid ""
 msgstr ""
 "Jos tosi, työtilanvaihtimessa näkyville työtiloille näytetään nimet. Muutoin"
 " työtilat näyttävät työtilassa olevat ikkunat. Tämä toimii vain, jos "
-"ikkunointiohjelmana on marco."
+"ikkunointiohjelmana on croma."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"

@@ -1013,7 +1013,7 @@ msgid ""
 "This setting only works when the window manager is Marco."
 msgstr ""
 "Ha be van állítva, a munkaterület-váltó megjeleníti a munkaterületek nevét, "
-"különben a tartalmukat jeleníti meg. Ez a beállítás csak a marco "
+"különben a tartalmukat jeleníti meg. Ez a beállítás csak a croma "
 "ablakkezelővel működik."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10

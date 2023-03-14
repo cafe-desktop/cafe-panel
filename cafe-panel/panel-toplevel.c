@@ -3432,7 +3432,7 @@ panel_toplevel_button_press_event (CtkWidget      *widget,
 	if (toplevel->priv->animating)
 		return FALSE;
 
-	/* Get the mouse-button modifier from marco so that only intentional
+	/* Get the mouse-button modifier from croma so that only intentional
 	 * moves are considered. We don't this for non-expanded panels since we
 	 * only have the handles that the user can grab. */
 	if ((toplevel->priv->expand || toplevel->priv->attached) &&

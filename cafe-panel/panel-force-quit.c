@@ -220,7 +220,7 @@ kill_window_response (CtkDialog *dialog,
 	ctk_widget_destroy (CTK_WIDGET (dialog));
 }
 
-/* From marco */
+/* From croma */
 static void
 kill_window_question (gpointer window)
 {
