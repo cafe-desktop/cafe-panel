@@ -2,7 +2,7 @@
 #define PANEL_ICON_NAMES_H
 
 #define PANEL_ICON_BOOKMARKS		"user-bookmarks"
-#define PANEL_ICON_BURNER		"caja-cd-burner"
+#define PANEL_ICON_BURNER		"baul-cd-burner"
 #define PANEL_ICON_COMPUTER		"computer"
 #define PANEL_ICON_DESKTOP		"user-desktop"
 #define PANEL_ICON_DRAWER		"cafe-panel-drawer"

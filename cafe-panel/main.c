@@ -203,7 +203,7 @@ main (int argc, char **argv)
 	}
 
 	/* Flush to make sure our struts are seen by everyone starting
-	 * immediate after (eg, the caja desktop). */
+	 * immediate after (eg, the baul desktop). */
 	cdk_display_flush (display);
 
 	/* Do this at the end, to be sure that we're really ready when

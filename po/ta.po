@@ -3225,7 +3225,7 @@ msgid "Home Folder"
 msgstr "இல்ல அடைவு"
 
 #. Translators: this is the same string as the one found in
-#. * caja
+#. * baul
 #: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr "கோப்பு முறைமை"

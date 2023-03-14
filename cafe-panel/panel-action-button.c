@@ -315,8 +315,8 @@ panel_action_connect_server (CtkWidget *widget)
 	screen = ctk_widget_get_screen (CTK_WIDGET (widget));
 	error = NULL;
 
-	if (panel_is_program_in_path ("caja-connect-server"))
-		command = g_strdup ("caja-connect-server");
+	if (panel_is_program_in_path ("baul-connect-server"))
+		command = g_strdup ("baul-connect-server");
 	else if (panel_is_program_in_path ("nautilus-connect-server"))
 		command = g_strdup ("nautilus-connect-server");
 	else
@@ -416,7 +416,7 @@ static PanelAction actions [] = {
 		PANEL_ICON_REMOTE, //FIXME icon
 		N_("Connect to Server..."),
 		N_("Connect to a remote computer or shared disk"),
-		"caja-server-connect",
+		"baul-server-connect",
 		"ACTION:connect-server:NEW",
 		panel_action_connect_server, NULL, NULL, NULL
 	},

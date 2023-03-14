@@ -3172,7 +3172,7 @@ msgid "Home Folder"
 msgstr "Гэр хавтас"
 
 #. Translators: this is the same string as the one found in
-#. * caja
+#. * baul
 #: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr "Файл Систем"

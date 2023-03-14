@@ -3309,7 +3309,7 @@ msgid "Home Folder"
 msgstr "Cartafol persoal"
 
 #. Translators: this is the same string as the one found in
-#. * caja
+#. * baul
 #: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr "Sistema de ficheiros"

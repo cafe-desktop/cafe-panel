@@ -2951,7 +2951,7 @@ msgid "Home Folder"
 msgstr ""
 
 #. Translators: this is the same string as the one found in
-#. * caja
+#. * baul
 #: cafe-panel/panel-util.c:888
 msgid "File System"
 msgstr ""

@@ -69,11 +69,11 @@
 
 /* external schemas */
 
-#define CAJA_DESKTOP_SCHEMA                   "org.cafe.caja.desktop"
+#define CAJA_DESKTOP_SCHEMA                   "org.cafe.baul.desktop"
 #define CAJA_DESKTOP_HOME_ICON_NAME_KEY       "home-icon-name"
 #define CAJA_DESKTOP_COMPUTER_ICON_NAME_KEY   "computer-icon-name"
 
-#define CAJA_PREFS_SCHEMA                     "org.cafe.caja.preferences"
+#define CAJA_PREFS_SCHEMA                     "org.cafe.baul.preferences"
 #define CAJA_PREFS_DESKTOP_IS_HOME_DIR_KEY    "desktop-is-home-dir"
 
 #define CAFE_SESSION_SCHEMA                   "org.cafe.session"

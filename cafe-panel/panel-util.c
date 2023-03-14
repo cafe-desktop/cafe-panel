@@ -860,22 +860,22 @@ panel_util_get_file_display_for_common_files (GFile *file)
 
 	compare = g_file_new_for_path (g_get_home_dir ());
 	if (g_file_equal (file, compare)) {
-		GSettings *caja_desktop_settings;
-		char *caja_home_icon_name = NULL;
+		GSettings *baul_desktop_settings;
+		char *baul_home_icon_name = NULL;
 
 		g_object_unref (compare);
 
 		if (cafe_gsettings_schema_exists (CAJA_DESKTOP_SCHEMA)) {
-			caja_desktop_settings = g_settings_new (CAJA_DESKTOP_SCHEMA);
-			caja_home_icon_name = g_settings_get_string (caja_desktop_settings,
+			baul_desktop_settings = g_settings_new (CAJA_DESKTOP_SCHEMA);
+			baul_home_icon_name = g_settings_get_string (baul_desktop_settings,
 														 CAJA_DESKTOP_HOME_ICON_NAME_KEY);
-			g_object_unref (caja_desktop_settings);
+			g_object_unref (baul_desktop_settings);
 		}
-		if (PANEL_GLIB_STR_EMPTY (caja_home_icon_name)) {
-			g_free (caja_home_icon_name);
+		if (PANEL_GLIB_STR_EMPTY (baul_home_icon_name)) {
+			g_free (baul_home_icon_name);
 			return g_strdup (_("Home Folder"));
 		} else {
-			return caja_home_icon_name;
+			return baul_home_icon_name;
 		}
 	}
 	g_object_unref (compare);
@@ -884,7 +884,7 @@ panel_util_get_file_display_for_common_files (GFile *file)
 	if (g_file_equal (file, compare)) {
 		g_object_unref (compare);
 		/* Translators: this is the same string as the one found in
-		 * caja */
+		 * baul */
 		return g_strdup (_("File System"));
 	}
 	g_object_unref (compare);
@@ -1032,8 +1032,8 @@ panel_util_get_icon_for_uri_known_folders (const char *uri)
 	return icon;
 }
 
-/* This is based on caja_compute_title_for_uri() and
- * caja_file_get_display_name_nocopy() */
+/* This is based on baul_compute_title_for_uri() and
+ * baul_file_get_display_name_nocopy() */
 char *
 panel_util_get_label_for_uri (const char *text_uri)
 {
@@ -1043,7 +1043,7 @@ panel_util_get_label_for_uri (const char *text_uri)
 	char  *root_display;
 
 	/* Here's what we do:
-	 *  + x-caja-search: URI
+	 *  + x-baul-search: URI
 	 *  + check if the URI is a mount
 	 *  + if file: URI:
 	 *   - check for known file: URI
@@ -1057,8 +1057,8 @@ panel_util_get_label_for_uri (const char *text_uri)
 
 	label = NULL;
 
-	//FIXME: see caja_query_to_readable_string() to have a nice name
-	if (g_str_has_prefix (text_uri, "x-caja-search:"))
+	//FIXME: see baul_query_to_readable_string() to have a nice name
+	if (g_str_has_prefix (text_uri, "x-baul-search:"))
 		return g_strdup (_("Search"));
 
 	file = g_file_new_for_uri (text_uri);
@@ -1131,7 +1131,7 @@ panel_util_get_icon_for_uri (const char *text_uri)
 
 	/* Here's what we do:
 	 *  + check for known file: URI
-	 *  + x-caja-search: URI
+	 *  + x-baul-search: URI
 	 *  + override burn: URI icon
 	 *  + check if the URI is a mount
 	 *  + override trash: URI icon for subfolders
@@ -1145,7 +1145,7 @@ panel_util_get_icon_for_uri (const char *text_uri)
 	if (icon)
 		return g_strdup (icon);
 
-	if (g_str_has_prefix (text_uri, "x-caja-search:"))
+	if (g_str_has_prefix (text_uri, "x-baul-search:"))
 		return g_strdup (PANEL_ICON_SAVED_SEARCH);
 	/* gvfs doesn't give us a nice icon, so overriding */
 	if (g_str_has_prefix (text_uri, "burn:"))

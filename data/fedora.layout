@@ -16,7 +16,7 @@ locked=true
 
 [Object file-browser]
 object-type=launcher
-launcher-location=/usr/share/applications/caja-browser.desktop
+launcher-location=/usr/share/applications/baul-browser.desktop
 toplevel-id=top
 position=10
 locked=true

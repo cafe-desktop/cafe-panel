@@ -532,7 +532,7 @@ msgstr ""
 "Moguće su sljedeće vrijednosti \"12-sata\", \"24-sata\", \"internet\", "
 "\"unix\" i \"prilagođeno\". Ako postavite \"internet\", sat će prikazivati "
 "vrijeme interneta. Sustav mjerenja vremena interneta dijeli vrijeme na 1000 "
-"\"otkucaja\". U ovom sustavu ne postoje vremenske zone, stoga je vrijeme "
+"\"otkubaul\". U ovom sustavu ne postoje vremenske zone, stoga je vrijeme "
 "jednako u čitavom svijetu. Ako postavite na \"unix\", sat će prikazivati "
 "vrijeme u sekundama od Epoha, odnosno od 1.1.1970. Ako odaberete "
 "\"prilagođeno\", sat će prikazivati vrijeme sukladno formatu određenom "
@@ -3224,7 +3224,7 @@ msgid "Home Folder"
 msgstr "Osobna mapa"
 
 #. Translators: this is the same string as the one found in
-#. * caja
+#. * baul
 #: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr "Datotečni sustav"

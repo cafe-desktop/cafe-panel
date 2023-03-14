@@ -508,7 +508,7 @@ msgstr ""
 "Ovaj ključ navodi oblik časa koji koristi programče sa časovnikom. "
 "Dozvoljene vrednosti su „12-hour“, „24-hour“, „internet“, „unix“ i „custom“."
 " Ukoliko je postavljeno na „internet“, sat će prikazivati Internet vreme. "
-"Sistem Internet vremena deli dan na 1.000 „otkucaja“. U ovom sistemu nema "
+"Sistem Internet vremena deli dan na 1.000 „otkubaul“. U ovom sistemu nema "
 "vremenskih zona, pa je vreme isto u celom svetu. Ukoliko je postavljeno na "
 "„unix“, sat će prikazivati proteklo vreme u sekundama od Epohe, tj. 1. "
 "januara 1970. Ako je postavljeno na „custom“, sat će prikazivati vreme u "
@@ -3238,7 +3238,7 @@ msgid "Home Folder"
 msgstr "Lična fascikla"
 
 #. Translators: this is the same string as the one found in
-#. * caja
+#. * baul
 #: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr "Sistem datoteka"

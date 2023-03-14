@@ -564,7 +564,7 @@ drop_uri (PanelWidget *panel,
 }
 
 static gboolean
-drop_caja_desktop_uri (PanelWidget *panel,
+drop_baul_desktop_uri (PanelWidget *panel,
 			   int          pos,
 			   const char  *uri)
 {
@@ -572,26 +572,26 @@ drop_caja_desktop_uri (PanelWidget *panel,
 	const char *id;
 	const char *basename;
 
-	if (g_ascii_strncasecmp (uri, "x-caja-desktop:///",
-				 strlen ("x-caja-desktop:///")) != 0)
+	if (g_ascii_strncasecmp (uri, "x-baul-desktop:///",
+				 strlen ("x-baul-desktop:///")) != 0)
 			return FALSE;
 
 	success = TRUE;
 	id = panel_profile_get_toplevel_id (panel->toplevel);
-	basename = uri + strlen ("x-caja-desktop:///");
+	basename = uri + strlen ("x-baul-desktop:///");
 
 	if (strncmp (basename, "trash", strlen ("trash")) == 0)
 		cafe_panel_applet_frame_create (panel->toplevel, pos,
 					   "OAFIID:CAFE_Panel_TrashApplet");
 	else if (strncmp (basename, "home", strlen ("home")) == 0)
 		panel_launcher_create_with_id (id, pos,
-					       "caja-home.desktop");
+					       "baul-home.desktop");
 	else if (strncmp (basename, "computer", strlen ("computer")) == 0)
 		panel_launcher_create_with_id (id, pos,
-					       "caja-computer.desktop");
+					       "baul-computer.desktop");
 	else if (strncmp (basename, "network", strlen ("network")) == 0)
 		panel_launcher_create_with_id (id, pos,
-					       "caja-scheme.desktop");
+					       "baul-scheme.desktop");
 	else
 		success = FALSE;
 
@@ -633,9 +633,9 @@ drop_urilist (PanelWidget *panel,
 			continue;
 		}
 
-		if (g_ascii_strncasecmp (uri, "x-caja-desktop:",
-					 strlen ("x-caja-desktop:")) == 0) {
-			success = drop_caja_desktop_uri (panel, pos, uri);
+		if (g_ascii_strncasecmp (uri, "x-baul-desktop:",
+					 strlen ("x-baul-desktop:")) == 0) {
+			success = drop_baul_desktop_uri (panel, pos, uri);
 			continue;
 		}
 

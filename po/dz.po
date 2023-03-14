@@ -3317,7 +3317,7 @@ msgid "Home Folder"
 msgstr "ཁྱིམ་གྱི་ སྣོད་འཛིན་ "
 
 #. Translators: this is the same string as the one found in
-#. * caja
+#. * baul
 #: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr "ཡིག་སྣོད་རིམ་ལུགས།"

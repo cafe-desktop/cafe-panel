@@ -139,13 +139,13 @@ static gboolean _panel_show_handle_error(const gchar* uri, CdkScreen* screen, GE
 	return FALSE;
 }
 
-static gboolean panel_show_caja_search_uri(CdkScreen* screen, const gchar* uri, guint32 timestamp, GError** error)
+static gboolean panel_show_baul_search_uri(CdkScreen* screen, const gchar* uri, guint32 timestamp, GError** error)
 {
 	char* desktopfile = NULL;
 	GDesktopAppInfo* appinfo = NULL;
 	gboolean ret;
 
-	desktopfile = panel_g_lookup_in_applications_dirs("caja-folder-handler.desktop");
+	desktopfile = panel_g_lookup_in_applications_dirs("baul-folder-handler.desktop");
 
 	if (desktopfile)
 	{
@@ -173,9 +173,9 @@ gboolean panel_show_uri(CdkScreen* screen, const gchar* uri, guint32 timestamp, 
 	g_return_val_if_fail(uri != NULL, FALSE);
 	g_return_val_if_fail(error == NULL || *error == NULL, FALSE);
 
-	if (g_str_has_prefix(uri, "x-caja-search:"))
+	if (g_str_has_prefix(uri, "x-baul-search:"))
 	{
-		return panel_show_caja_search_uri(screen, uri, timestamp, error);
+		return panel_show_baul_search_uri(screen, uri, timestamp, error);
 	}
 
 	ctk_show_uri_on_window (NULL, uri,timestamp, &local_error);

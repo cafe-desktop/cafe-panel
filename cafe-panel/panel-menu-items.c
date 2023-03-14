@@ -63,8 +63,8 @@ struct _PanelPlaceMenuItemPrivate {
 	CtkWidget   *menu;
 	PanelWidget *panel;
 
-	GSettings   *caja_desktop_settings;
-	GSettings   *caja_prefs_settings;
+	GSettings   *baul_desktop_settings;
+	GSettings   *baul_prefs_settings;
 	GSettings   *menubar_settings;
 
 	CtkRecentManager *recent_manager;
@@ -427,7 +427,7 @@ panel_place_menu_item_append_ctk_bookmarks (CtkWidget *menu, guint max_items_or_
 
 			keep = FALSE;
 
-			if (g_str_has_prefix (line, "x-caja-search:"))
+			if (g_str_has_prefix (line, "x-baul-search:"))
 				keep = TRUE;
 
 			if (!keep) {
@@ -520,7 +520,7 @@ panel_place_menu_item_append_ctk_bookmarks (CtkWidget *menu, guint max_items_or_
 
 		gicon = g_themed_icon_new_with_default_fallbacks (icon);
 
-		//FIXME: drag and drop will be broken for x-caja-search uris
+		//FIXME: drag and drop will be broken for x-baul-search uris
 		panel_menu_items_append_place_item (icon, gicon,
 						    label,
 						    tooltip,
@@ -761,7 +761,7 @@ typedef struct {
 	} u;
 } PanelGioItem;
 
-/* this is loosely based on update_places() from caja-places-sidebar.c */
+/* this is loosely based on update_places() from baul-places-sidebar.c */
 static void
 panel_place_menu_item_append_local_gio (PanelPlaceMenuItem *place_item,
 					CtkWidget          *menu)
@@ -942,7 +942,7 @@ panel_place_menu_item_append_local_gio (PanelPlaceMenuItem *place_item,
 	g_slist_free (items);
 }
 
-/* this is loosely based on update_places() from caja-places-sidebar.c */
+/* this is loosely based on update_places() from baul-places-sidebar.c */
 static void
 panel_place_menu_item_append_remote_gio (PanelPlaceMenuItem *place_item,
 					 CtkWidget          *menu)
@@ -1042,8 +1042,8 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 	g_free (name);
 	g_free (uri);
 
-	if (!place_item->priv->caja_prefs_settings ||
-		!g_settings_get_boolean (place_item->priv->caja_prefs_settings,
+	if (!place_item->priv->baul_prefs_settings ||
+		!g_settings_get_boolean (place_item->priv->baul_prefs_settings,
 				     CAJA_PREFS_DESKTOP_IS_HOME_DIR_KEY)) {
 		file = g_file_new_for_path (g_get_user_special_dir (G_USER_DIRECTORY_DESKTOP));
 		uri = g_file_get_uri (file);
@@ -1066,8 +1066,8 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 	panel_place_menu_item_append_ctk_bookmarks (places_menu, g_settings_get_uint (place_item->priv->menubar_settings, PANEL_MENU_BAR_MAX_ITEMS_OR_SUBMENU));
 	add_menu_separator (places_menu);
 
-	if (place_item->priv->caja_desktop_settings != NULL)
-		gsettings_name = g_settings_get_string (place_item->priv->caja_desktop_settings,
+	if (place_item->priv->baul_desktop_settings != NULL)
+		gsettings_name = g_settings_get_string (place_item->priv->baul_desktop_settings,
 								CAJA_DESKTOP_COMPUTER_ICON_NAME_KEY);
 
 	if (PANEL_GLIB_STR_EMPTY (gsettings_name)) {
@@ -1098,7 +1098,7 @@ panel_place_menu_item_create_menu (PanelPlaceMenuItem *place_item)
 			"network://");
 	panel_place_menu_item_append_remote_gio (place_item, places_menu);
 
-	if (panel_is_program_in_path ("caja-connect-server") ||
+	if (panel_is_program_in_path ("baul-connect-server") ||
 	    panel_is_program_in_path ("nautilus-connect-server") ||
 	    panel_is_program_in_path ("nemo-connect-server")) {
 		item = panel_menu_items_create_action_item (PANEL_ACTION_CONNECT_SERVER);
@@ -1261,13 +1261,13 @@ panel_place_menu_item_finalize (GObject *object)
 {
 	PanelPlaceMenuItem *menuitem = (PanelPlaceMenuItem *) object;
 
-	if (menuitem->priv->caja_desktop_settings) {
-		g_object_unref (menuitem->priv->caja_desktop_settings);
-		menuitem->priv->caja_desktop_settings = NULL;
+	if (menuitem->priv->baul_desktop_settings) {
+		g_object_unref (menuitem->priv->baul_desktop_settings);
+		menuitem->priv->baul_desktop_settings = NULL;
 	}
-	if (menuitem->priv->caja_prefs_settings) {
-		g_object_unref (menuitem->priv->caja_prefs_settings);
-		menuitem->priv->caja_prefs_settings = NULL;
+	if (menuitem->priv->baul_prefs_settings) {
+		g_object_unref (menuitem->priv->baul_prefs_settings);
+		menuitem->priv->baul_prefs_settings = NULL;
 	}
 
 	g_object_unref (menuitem->priv->menubar_settings);
@@ -1352,28 +1352,28 @@ panel_place_menu_item_init (PanelPlaceMenuItem *menuitem)
 	menuitem->priv = panel_place_menu_item_get_instance_private (menuitem);
 
 	if (cafe_gsettings_schema_exists (CAJA_DESKTOP_SCHEMA)) {
-		menuitem->priv->caja_desktop_settings = g_settings_new (CAJA_DESKTOP_SCHEMA);
-		g_signal_connect (menuitem->priv->caja_desktop_settings,
+		menuitem->priv->baul_desktop_settings = g_settings_new (CAJA_DESKTOP_SCHEMA);
+		g_signal_connect (menuitem->priv->baul_desktop_settings,
 				  "changed::" CAJA_DESKTOP_HOME_ICON_NAME_KEY,
 				  G_CALLBACK (panel_place_menu_item_key_changed),
 				  G_OBJECT (menuitem));
-		g_signal_connect (menuitem->priv->caja_desktop_settings,
+		g_signal_connect (menuitem->priv->baul_desktop_settings,
 				  "changed::" CAJA_DESKTOP_COMPUTER_ICON_NAME_KEY,
 				  G_CALLBACK (panel_place_menu_item_key_changed),
 				  G_OBJECT (menuitem));
 	}
 	else
-		menuitem->priv->caja_desktop_settings = NULL;
+		menuitem->priv->baul_desktop_settings = NULL;
 
 	if (cafe_gsettings_schema_exists (CAJA_PREFS_SCHEMA)) {
-		menuitem->priv->caja_prefs_settings = g_settings_new (CAJA_PREFS_SCHEMA);
-		g_signal_connect (menuitem->priv->caja_prefs_settings,
+		menuitem->priv->baul_prefs_settings = g_settings_new (CAJA_PREFS_SCHEMA);
+		g_signal_connect (menuitem->priv->baul_prefs_settings,
 				  "changed::" CAJA_PREFS_DESKTOP_IS_HOME_DIR_KEY,
 				  G_CALLBACK (panel_place_menu_item_key_changed),
 				  G_OBJECT (menuitem));
 	}
 	else
-		menuitem->priv->caja_prefs_settings = NULL;
+		menuitem->priv->baul_prefs_settings = NULL;
 
 	menuitem->priv->menubar_settings = g_settings_new (PANEL_MENU_BAR_SCHEMA);
 	g_signal_connect (menuitem->priv->menubar_settings,

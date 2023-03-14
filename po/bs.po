@@ -501,7 +501,7 @@ msgstr ""
 "Ova tipka određuje koji oblik sata koristi program za prikaz sata. Moguće su"
 " sljedeće vrijednosti \"12-sata\", \"24-sata\", \"internet\" i \"unix\". Ako"
 " postavite \"internet\", sat će prikazivati vrijeme interneta. Sistem "
-"mjerenja vremena interneta dijeli vrijeme na 1000 \"otkucaja\". U ovom "
+"mjerenja vremena interneta dijeli vrijeme na 1000 \"otkubaul\". U ovom "
 "sistemu ne postoje vremenske zone, stoga vrijeme je jednako u čitavom "
 "svijetu. Ako postavite na \"unix\", sat će prikazivati vrijeme u sekundama "
 "od Epoha, odnosno od 1.1.1970."
@@ -3162,7 +3162,7 @@ msgid "Home Folder"
 msgstr "Početni direktorij"
 
 #. Translators: this is the same string as the one found in
-#. * caja
+#. * baul
 #: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr ""

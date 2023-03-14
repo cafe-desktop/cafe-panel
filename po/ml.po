@@ -3294,7 +3294,7 @@ msgid "Home Folder"
 msgstr "ആസ്ഥാന അറ"
 
 #. Translators: this is the same string as the one found in
-#. * caja
+#. * baul
 #: cafe-panel/panel-util.c:887
 msgid "File System"
 msgstr "ഫയല്‍ സിസ്റ്റം"
