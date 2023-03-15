@@ -137,6 +137,9 @@ main (int argc, char **argv)
 		return 0;
 	}
 
+	g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+	g_object_set (ctk_settings_get_default (), "ctk-menu-images", TRUE, NULL);
+
 	/* open the run dialog and exit */
 	if (run_dialog == TRUE)
 	{
