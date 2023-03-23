@@ -1,21 +1,21 @@
-# 
+#
 # Translators:
 # mauron, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # Butterfly <gokhanlnx@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-01-12 18:05+0100\n"
+"POT-Creation-Date: 2023-03-23 18:48+0100\n"
 "PO-Revision-Date: 2020-02-15 14:34+0000\n"
 "Last-Translator: Butterfly <gokhanlnx@gmail.com>, 2020\n"
 "Language-Team: Turkish (https://www.transifex.com/cafe/teams/13566/tr/)\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -72,114 +72,6 @@ msgstr "CAFE Belgelendirme Projesi"
 msgid "GNOME Documentation Project"
 msgstr "GNOME Belgelendirme Projesi"
 
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:2
-msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
-"later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
-" of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or "
-"in the file COPYING-DOCS distributed with this manual."
-msgstr ""
-"Bu belgeyi kopyalama, dağıtma ve/veya değiştirme izni, değişmez bölümsüz, ön"
-" kapak metinsiz ve arka kapak metinsiz şekilde GNU Free Documentation "
-"License (GNU Özgür Belgeleme Lisansı, GFDL), sürüm 1.1 ya da Free Software "
-"Foundation tarafından yayınlanan daha yeni bir sürüm kapsamında verilmiştir."
-" GFDL'in bir kopyasını bu <ulink type=\"help\" "
-"url=\"help:fdl\">bağlantıda</ulink> ya da bu kılavuzla dağıtılan COPYING-"
-"DOCS dosyasında bulabilirsiniz."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:12 C/legal.xml:12
-msgid ""
-"This manual is part of a collection of CAFE manuals distributed under the "
-"GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in"
-" section 6 of the license."
-msgstr ""
-"Bu kılavuz, GFDL (GNU Özgür Belgelendirme Lisansı) kapsamında yayınlanan "
-"CAFE kılavuzları koleksiyonunun bir parçasıdır. Bu kılavuzu koleksiyondan "
-"ayrı bir biçimde dağıtmak istiyorsanız, lisansın 6. bölümünde açıklandığı "
-"gibi kılavuza lisansın bir kopyasını ilave ederek yapabilirsiniz."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:19 C/legal.xml:19
-msgid ""
-"Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any CAFE "
-"documentation, and the members of the CAFE Documentation Project are made "
-"aware of those trademarks, then the names are in capital letters or initial "
-"capital letters."
-msgstr ""
-"Firmalar tarafından ürün ve hizmetlerinin ayırt edilmeleri için "
-"kullandıkları isimlerin birçoğu tescilli marka olarak ayrılmıştır. Bu "
-"isimlerin CAFE belgelendirilmesinde yer alması ve CAFE Belgelendirme Projesi"
-" mensupları bu tescilli markalardan haberdar edildikleri durumda, isimlerin "
-"ilk harfi ya da tamamı büyük harflerle yazılır."
-
-#. (itstool) path: listitem/para
-#: C/index.docbook:35 C/legal.xml:35
-msgid ""
-"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
-"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
-"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
-"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
-"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
-"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
-"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
-"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
-"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
-"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
-"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr ""
-"BELGE OLDUĞU GİBİ, AÇIK VEYA ZIMNİ HİÇBİR TÜRLÜ GARANTİ OLMADAN SUNULMUŞTUR,"
-" Kİ BUNA SINIRLAMA OLMAKSIZIN BELGE VEYA BELGENİN DEĞİŞTİRİLMİŞ SÜRÜMLERİNİN"
-" BELLİ BİR AMACA UYGUN OLMALARI, KUSURDAN ARINMIŞ OLMALARI VEYA HAK "
-"İHLALİNDE BULUNMAMALARI GARANTİLERİ OLMAMASI DA DAHİLDİR. BELGE VE BELGENİN "
-"DEĞİŞTİRİLMİŞ SÜRÜMLERİNİN KALİTESİ, DOĞRULUĞU VE PERFORMANSINA İLİŞKİN TÜM "
-"RİSK SİZE AİTTİR. HERHANGİ BİR BELGE VEYA BELGENİN DEĞİŞTİRİLMİŞ SÜRÜMÜNÜN "
-"KUSURLU OLMASI HALİNDE, GEREKLİ SERVİS, ONARIM VE DÜZELTMENİN ÜCRETİNİ SİZ "
-"ÜSTLENİRSİNİZ (İLK YAZAR, HAZIRLAYAN VEYA HERHANGİ BİR KATILIMCI DEĞİL). BU "
-"GARANTİ REDDİ BU LİSANSIN TEMEL BİR PARÇASINI OLUŞTURMAKTADIR. HERHANGİ BİR "
-"BELGENİN VEYA BELGENİN DEĞİŞTİRİLMİŞ BİR SÜRÜMÜNÜN KULLANIMINA SADECE BU "
-"GARANTİ REDDİ ALTINDA İZİN VERİLMİŞTİR; VE"
-
-#. (itstool) path: listitem/para
-#: C/index.docbook:55 C/legal.xml:55
-msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING"
-" NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
-"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
-"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
-"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
-"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES"
-" OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE"
-" POSSIBILITY OF SUCH DAMAGES."
-msgstr ""
-"HİÇBİR KOŞULDA VE HİÇBİR YASAL TEORİDE, Kİ BU TAZMİNAT YÜKÜMLÜLÜĞÜ (İHMAK DE"
-" DAHİL), KONTRATO VEYA BAŞKA BİR ŞEKİLİ DE İÇERİR, BELGEYİ VE BELGENİN "
-"DEĞİŞTİRİLMİŞ SÜRÜMLERİNİ İLK YAZAN, YAZAR, HERHANGİ BİR KATKIDA BULUNAN, "
-"DAĞITAN VEYA BU TARAFLARIN HERHANGİ BİR TEDARİKÇİSİ HERHANGİ DOĞRUDAN, "
-"DOLAYLI, ÖZEL, ARIZİ  ZARARLARDAN HERHANGİ BİR KİŞİ SORUMLU DEĞİLDİR, Kİ "
-"BUNA BU TÜR KAYIPLAR HAKKINDA BU TARFAFIN BİLGİLENDİRİLMİŞ OLMASI GEREKSE "
-"BİLE SINIRLANMAMIŞ OLMAK ÜZERE ŞEREFİYE KAYBI, İŞ DURMASI, BİLGİSAYAR "
-"BOZULMASI VE YANLIŞ ÇALIŞMASI VEYA BELGENİN VE BELGENİN DEĞİŞTİRİLMİŞ "
-"SÜRÜMLERİNİN KULLANIMINDAN VEYA KULLANIMIYLA İLİŞKİLİ TÜM KAYIPLAR DAHİLDİR."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:28 C/legal.xml:28
-msgid ""
-"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
-"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<_:orderedlist-1/>"
-msgstr ""
-"BELGE VE BELGENİN DEĞİŞTİRİLMİŞ SÜRÜMLERİ GNU FREE DOCUMENTATION LICENSE "
-"(YANİ GNU ÖZGÜR BELGE LİSANSI) KAPSAMINDA, ŞU KONULARDA ANLAŞMAYLA "
-"SUNULMUŞTUR: <_:orderedlist-1/>"
-
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:62
 msgid ""
@@ -204,23 +96,23 @@ msgstr ""
 #: C/index.docbook:77
 msgid ""
 "<firstname>Sun</firstname> <surname>GNOME Documentation Team</surname> "
-"<affiliation> <orgname>Sun Microsystems</orgname> <_:address-1/> "
-"</affiliation>"
+"<affiliation> <orgname>Sun Microsystems</orgname> <_:address-1/> </"
+"affiliation>"
 msgstr ""
 "<firstname>Sun</firstname> <surname>GNOME Belgelendirme Projesi</surname> "
-"<affiliation> <orgname>Sun Microsystems</orgname> <_:address-1/> "
-"</affiliation>"
+"<affiliation> <orgname>Sun Microsystems</orgname> <_:address-1/> </"
+"affiliation>"
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:85
 msgid ""
 "<firstname>Telsa</firstname> <surname>Gwynne</surname> <affiliation> "
-"<orgname>GNOME Documentation Project</orgname> <address> "
-"<email>hobbit@aloss.ukuu.org.uk</email> </address> </affiliation>"
+"<orgname>GNOME Documentation Project</orgname> <address> <email>hobbit@aloss."
+"ukuu.org.uk</email> </address> </affiliation>"
 msgstr ""
 "<firstname>Telsa</firstname> <surname>Gwynne</surname> <affiliation> "
-"<orgname>GNOME Belgelendirme Projesi</orgname> <address> "
-"<email>hobbit@aloss.ukuu.org.uk</email> </address> </affiliation>"
+"<orgname>GNOME Belgelendirme Projesi</orgname> <address> <email>hobbit@aloss."
+"ukuu.org.uk</email> </address> </affiliation>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:115
@@ -230,11 +122,11 @@ msgstr "CAFE Belgelendirme Projesi"
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:111
 msgid ""
-"<revnumber>Fish Applet Manual V2.6</revnumber> <date>July 2015</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.6</revnumber> <date>July 2015</date> <_:"
+"revdescription-1/>"
 msgstr ""
-"<revnumber>Balık Uygulamacığı Kılavuzu V2.6</revnumber> <date>Temmuz "
-"2015</date> <_:revdescription-1/>"
+"<revnumber>Balık Uygulamacığı Kılavuzu V2.6</revnumber> <date>Temmuz 2015</"
+"date> <_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:123 C/index.docbook:131 C/index.docbook:139
@@ -245,47 +137,47 @@ msgstr "Sun GNOME Belgelendirme Takımı"
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:119
 msgid ""
-"<revnumber>Fish Applet Manual V2.5;</revnumber> <date>July 2015</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.5;</revnumber> <date>July 2015</date> <_:"
+"revdescription-1/>"
 msgstr ""
-"<revnumber>Balık Uygulamacığı Kılavuzu V2.5;</revnumber> <date>Temmuz "
-"2015</date> <_:revdescription-1/>"
+"<revnumber>Balık Uygulamacığı Kılavuzu V2.5;</revnumber> <date>Temmuz 2015</"
+"date> <_:revdescription-1/>"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:127
 msgid ""
-"<revnumber>Fish Applet Manual V2.4</revnumber> <date>July 2015</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.4</revnumber> <date>July 2015</date> <_:"
+"revdescription-1/>"
 msgstr ""
-"<revnumber>Balık Uygulamacığı Kılavuzu V2.4</revnumber> <date>Temmuz "
-"2015</date> <_:revdescription-1/>"
+"<revnumber>Balık Uygulamacığı Kılavuzu V2.4</revnumber> <date>Temmuz 2015</"
+"date> <_:revdescription-1/>"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:135
 msgid ""
-"<revnumber>Fish Applet Manual V2.2</revnumber> <date>January 2003</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.2</revnumber> <date>January 2003</date> <_:"
+"revdescription-1/>"
 msgstr ""
-"<revnumber>Balık Uygulamacığı Kılavuzu V2.2</revnumber> <date>Ocak "
-"2003</date> <_:revdescription-1/>"
+"<revnumber>Balık Uygulamacığı Kılavuzu V2.2</revnumber> <date>Ocak 2003</"
+"date> <_:revdescription-1/>"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:143
 msgid ""
-"<revnumber>Fish Applet Manual V2.1</revnumber> <date>August 2002</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.1</revnumber> <date>August 2002</date> <_:"
+"revdescription-1/>"
 msgstr ""
-"<revnumber>Balık Uygulamacığı Kılavuzu V2.1</revnumber> <date>Ağustos "
-"2002</date> <_:revdescription-1/>"
+"<revnumber>Balık Uygulamacığı Kılavuzu V2.1</revnumber> <date>Ağustos 2002</"
+"date> <_:revdescription-1/>"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:151
 msgid ""
-"<revnumber>Fish Applet Manual V2.0</revnumber> <date>May 2002</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.0</revnumber> <date>May 2002</date> <_:"
+"revdescription-1/>"
 msgstr ""
-"<revnumber>Balık Uygulamacığı Kılavuzu V2.0</revnumber> <date>Mayıs "
-"2002</date> <_:revdescription-1/>"
+"<revnumber>Balık Uygulamacığı Kılavuzu V2.0</revnumber> <date>Mayıs 2002</"
+"date> <_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:163
@@ -295,11 +187,11 @@ msgstr "Telsa Gwynne <email>hobbit@aloss.ukuu.org.uk</email>"
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:159
 msgid ""
-"<revnumber>Fish Applet Manual</revnumber> <date>2000</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual</revnumber> <date>2000</date> <_:"
+"revdescription-1/>"
 msgstr ""
-"<revnumber>Balık Uygulamacığı Kılavuzu</revnumber> <date>2000</date> "
-"<_:revdescription-1/>"
+"<revnumber>Balık Uygulamacığı Kılavuzu</revnumber> <date>2000</date> <_:"
+"revdescription-1/>"
 
 #. (itstool) path: articleinfo/releaseinfo
 #: C/index.docbook:169
@@ -315,8 +207,8 @@ msgstr "Geri bildirim"
 #: C/index.docbook:173
 msgid ""
 "To report a bug or make a suggestion regarding the Fish applet or this "
-"manual, follow the directions in the <ulink url=\"help:cafe-user-"
-"guide/feedback\" type=\"help\">CAFE Feedback Page</ulink>."
+"manual, follow the directions in the <ulink url=\"help:cafe-user-guide/"
+"feedback\" type=\"help\">CAFE Feedback Page</ulink>."
 msgstr ""
 "Bu kılavuz veya Balık uygulamacığı hakkında hata raporlamak veya öneride "
 "bulunmak için <ulink url=\"help:cafe-user-guide/feedback\" "
@@ -354,22 +246,19 @@ msgstr "Balık Uygulamacığı"
 #: C/index.docbook:196
 msgctxt "_"
 msgid ""
-"external ref='figures/fish_applet.png' "
-"md5='97c946f203eedce679f0ca29452fb437'"
+"external ref='figures/fish_applet.png' md5='97c946f203eedce679f0ca29452fb437'"
 msgstr ""
-"external ref='figures/fish_applet.png' "
-"md5='97c946f203eedce679f0ca29452fb437'"
+"external ref='figures/fish_applet.png' md5='97c946f203eedce679f0ca29452fb437'"
 
 #. (itstool) path: screenshot/mediaobject
 #: C/index.docbook:195
 msgid ""
-"<imageobject><imagedata fileref=\"figures/fish_applet.png\" format=\"PNG\"/>"
-" </imageobject> <textobject> <phrase>Shows Fish applet.</phrase> "
-"</textobject>"
+"<imageobject><imagedata fileref=\"figures/fish_applet.png\" format=\"PNG\"/> "
+"</imageobject> <textobject> <phrase>Shows Fish applet.</phrase> </textobject>"
 msgstr ""
-"<imageobject><imagedata fileref=\"figures/fish_applet.png\" format=\"PNG\"/>"
-" </imageobject> <textobject> <phrase>Balık Uygulamacığını Gösterir.</phrase>"
-" </textobject>"
+"<imageobject><imagedata fileref=\"figures/fish_applet.png\" format=\"PNG\"/> "
+"</imageobject> <textobject> <phrase>Balık Uygulamacığını Gösterir.</phrase> "
+"</textobject>"
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:205
@@ -384,8 +273,8 @@ msgstr ""
 "balık görüntüler. Balığın ismini ve panelde balığa tıklandığında "
 "çalıştırılacak komutu özelleştirebilirsiniz. Varsayılan değer olarak, balık "
 "tıklandığında çalıştırılan program, alıntılardan oluşan bir veritabanından "
-"genellikle rastgele komik mesaj görüntüleyen "
-"<application>Fortune</application> uygulamasıdır."
+"genellikle rastgele komik mesaj görüntüleyen <application>Fortune</"
+"application> uygulamasıdır."
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:210
@@ -446,8 +335,8 @@ msgstr ""
 "<guilabel>Balık Wanda</guilabel> diyaloğunu görüntülemek için uygulamacığın "
 "üzerine tıklayın. Diyalog tipik olarak bir fal kurabiyesi gösterir. "
 "Uygulamacığı, üzerine tıkladığınızda çalıştırılacak komutu belirmek için "
-"yapılandırabilirsiniz. Daha fazla bilgi için <xref linkend=\"fish-"
-"settings\"/> sayfasına bakın."
+"yapılandırabilirsiniz. Daha fazla bilgi için <xref linkend=\"fish-settings\"/"
+"> sayfasına bakın."
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:245
@@ -458,8 +347,8 @@ msgstr "Tercihler"
 #: C/index.docbook:246
 msgid ""
 "To configure <application>Fish</application>, right-click on the "
-"<application> Fish</application> applet, then choose "
-"<guimenu>Preferences</guimenu>."
+"<application> Fish</application> applet, then choose <guimenu>Preferences</"
+"guimenu>."
 msgstr ""
 "<application>Balık</application> uygulamacığını yapılandırmak için, "
 "<application>Balık</application> uygulamacığına sağ tıklayın ve "
@@ -483,14 +372,13 @@ msgstr "<guilabel>Tıklandığında çalıştırılacak komut</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:258
 msgid ""
-"By default, <application>Fish</application> runs the "
-"<literal>fortune</literal> command when you click on the applet. Use this "
-"text box to specify an alternative command to run."
+"By default, <application>Fish</application> runs the <literal>fortune</"
+"literal> command when you click on the applet. Use this text box to specify "
+"an alternative command to run."
 msgstr ""
 "Varsayılan değer olarak <application>Balık</application>, uygulamacığa "
 "tıkladığınızda <literal>fortune</literal> komutunu çalıştırır. "
-"Çalıştırılacak alternatif bur komut belirmek için bu metin kutusunu "
-"kullanın."
+"Çalıştırılacak alternatif bur komut belirmek için bu metin kutusunu kullanın."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:262
@@ -555,13 +443,120 @@ msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
-" of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
 "with this manual."
 msgstr ""
-"Bu belgeyi kopyalama, dağıtma ve/veya değiştirme izni, değişmez bölümsüz, ön"
-" kapak metinsiz ve arka kapak metinsiz şekilde GNU Free Documentation "
-"License (GNU Özgür Belgeleme Lisansı, GFDL), sürüm 1.1 ya da Free Software "
-"Foundation tarafından yayınlanan daha yeni bir sürüm kapsamında verilmiştir."
-" GFDL'in bir kopyasını bu <_:ulink-1/>  ya da bu kılavuzla dağıtılan "
-"COPYING-DOCS dosyasında bulabilirsiniz."
+"Bu belgeyi kopyalama, dağıtma ve/veya değiştirme izni, değişmez bölümsüz, ön "
+"kapak metinsiz ve arka kapak metinsiz şekilde GNU Free Documentation License "
+"(GNU Özgür Belgeleme Lisansı, GFDL), sürüm 1.1 ya da Free Software "
+"Foundation tarafından yayınlanan daha yeni bir sürüm kapsamında verilmiştir. "
+"GFDL'in bir kopyasını bu <_:ulink-1/>  ya da bu kılavuzla dağıtılan COPYING-"
+"DOCS dosyasında bulabilirsiniz."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:12
+msgid ""
+"This manual is part of a collection of CAFE manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+"Bu kılavuz, GFDL (GNU Özgür Belgelendirme Lisansı) kapsamında yayınlanan "
+"CAFE kılavuzları koleksiyonunun bir parçasıdır. Bu kılavuzu koleksiyondan "
+"ayrı bir biçimde dağıtmak istiyorsanız, lisansın 6. bölümünde açıklandığı "
+"gibi kılavuza lisansın bir kopyasını ilave ederek yapabilirsiniz."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:19
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Firmalar tarafından ürün ve hizmetlerinin ayırt edilmeleri için "
+"kullandıkları isimlerin birçoğu tescilli marka olarak ayrılmıştır. Bu "
+"isimlerin CAFE belgelendirilmesinde yer alması ve CAFE Belgelendirme Projesi "
+"mensupları bu tescilli markalardan haberdar edildikleri durumda, isimlerin "
+"ilk harfi ya da tamamı büyük harflerle yazılır."
+
+#. (itstool) path: listitem/para
+#: C/legal.xml:35
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"BELGE OLDUĞU GİBİ, AÇIK VEYA ZIMNİ HİÇBİR TÜRLÜ GARANTİ OLMADAN SUNULMUŞTUR, "
+"Kİ BUNA SINIRLAMA OLMAKSIZIN BELGE VEYA BELGENİN DEĞİŞTİRİLMİŞ SÜRÜMLERİNİN "
+"BELLİ BİR AMACA UYGUN OLMALARI, KUSURDAN ARINMIŞ OLMALARI VEYA HAK İHLALİNDE "
+"BULUNMAMALARI GARANTİLERİ OLMAMASI DA DAHİLDİR. BELGE VE BELGENİN "
+"DEĞİŞTİRİLMİŞ SÜRÜMLERİNİN KALİTESİ, DOĞRULUĞU VE PERFORMANSINA İLİŞKİN TÜM "
+"RİSK SİZE AİTTİR. HERHANGİ BİR BELGE VEYA BELGENİN DEĞİŞTİRİLMİŞ SÜRÜMÜNÜN "
+"KUSURLU OLMASI HALİNDE, GEREKLİ SERVİS, ONARIM VE DÜZELTMENİN ÜCRETİNİ SİZ "
+"ÜSTLENİRSİNİZ (İLK YAZAR, HAZIRLAYAN VEYA HERHANGİ BİR KATILIMCI DEĞİL). BU "
+"GARANTİ REDDİ BU LİSANSIN TEMEL BİR PARÇASINI OLUŞTURMAKTADIR. HERHANGİ BİR "
+"BELGENİN VEYA BELGENİN DEĞİŞTİRİLMİŞ BİR SÜRÜMÜNÜN KULLANIMINA SADECE BU "
+"GARANTİ REDDİ ALTINDA İZİN VERİLMİŞTİR; VE"
+
+#. (itstool) path: listitem/para
+#: C/legal.xml:55
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"HİÇBİR KOŞULDA VE HİÇBİR YASAL TEORİDE, Kİ BU TAZMİNAT YÜKÜMLÜLÜĞÜ (İHMAK DE "
+"DAHİL), KONTRATO VEYA BAŞKA BİR ŞEKİLİ DE İÇERİR, BELGEYİ VE BELGENİN "
+"DEĞİŞTİRİLMİŞ SÜRÜMLERİNİ İLK YAZAN, YAZAR, HERHANGİ BİR KATKIDA BULUNAN, "
+"DAĞITAN VEYA BU TARAFLARIN HERHANGİ BİR TEDARİKÇİSİ HERHANGİ DOĞRUDAN, "
+"DOLAYLI, ÖZEL, ARIZİ  ZARARLARDAN HERHANGİ BİR KİŞİ SORUMLU DEĞİLDİR, Kİ "
+"BUNA BU TÜR KAYIPLAR HAKKINDA BU TARFAFIN BİLGİLENDİRİLMİŞ OLMASI GEREKSE "
+"BİLE SINIRLANMAMIŞ OLMAK ÜZERE ŞEREFİYE KAYBI, İŞ DURMASI, BİLGİSAYAR "
+"BOZULMASI VE YANLIŞ ÇALIŞMASI VEYA BELGENİN VE BELGENİN DEĞİŞTİRİLMİŞ "
+"SÜRÜMLERİNİN KULLANIMINDAN VEYA KULLANIMIYLA İLİŞKİLİ TÜM KAYIPLAR DAHİLDİR."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:28
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<_:orderedlist-1/>"
+msgstr ""
+"BELGE VE BELGENİN DEĞİŞTİRİLMİŞ SÜRÜMLERİ GNU FREE DOCUMENTATION LICENSE "
+"(YANİ GNU ÖZGÜR BELGE LİSANSI) KAPSAMINDA, ŞU KONULARDA ANLAŞMAYLA "
+"SUNULMUŞTUR: <_:orderedlist-1/>"
+
+#~ msgid ""
+#~ "Permission is granted to copy, distribute and/or modify this document "
+#~ "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#~ "or any later version published by the Free Software Foundation with no "
+#~ "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#~ "can find a copy of the GFDL at this <ulink type=\"help\" url=\"help:"
+#~ "fdl\">link</ulink> or in the file COPYING-DOCS distributed with this "
+#~ "manual."
+#~ msgstr ""
+#~ "Bu belgeyi kopyalama, dağıtma ve/veya değiştirme izni, değişmez bölümsüz, "
+#~ "ön kapak metinsiz ve arka kapak metinsiz şekilde GNU Free Documentation "
+#~ "License (GNU Özgür Belgeleme Lisansı, GFDL), sürüm 1.1 ya da Free "
+#~ "Software Foundation tarafından yayınlanan daha yeni bir sürüm kapsamında "
+#~ "verilmiştir. GFDL'in bir kopyasını bu <ulink type=\"help\" url=\"help:"
+#~ "fdl\">bağlantıda</ulink> ya da bu kılavuzla dağıtılan COPYING-DOCS "
+#~ "dosyasında bulabilirsiniz."

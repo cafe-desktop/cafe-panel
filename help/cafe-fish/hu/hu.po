@@ -1,4 +1,4 @@
-# 
+#
 # Translators:
 # KAMI KAMI <kami911@gmail.com>, 2020
 # Rezső Páder <rezso@rezso.net>, 2020
@@ -10,18 +10,18 @@
 # Balázs Meskó <meskobalazs@mailbox.org>, 2020
 # Csaba Székely <szekelycsaba76@gmail.com>, 2020
 # Szabó Máté <cafeszabo2001@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-01-12 18:05+0100\n"
+"POT-Creation-Date: 2023-03-23 18:48+0100\n"
 "PO-Revision-Date: 2020-02-15 14:34+0000\n"
 "Last-Translator: Szabó Máté <cafeszabo2001@gmail.com>, 2020\n"
 "Language-Team: Hungarian (https://www.transifex.com/cafe/teams/13566/hu/)\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -76,117 +76,6 @@ msgstr "CAFE dokumentációs projekt"
 msgid "GNOME Documentation Project"
 msgstr "GNOME dokumentációs projekt"
 
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:2
-msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
-"later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
-" of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or "
-"in the file COPYING-DOCS distributed with this manual."
-msgstr ""
-"Jelen dokumentum szabadon másolható, terjeszthető és/vagy módosítható a GNU "
-"Free Documentation License (GFDL) 1.1-es verziója vagy a Free Software "
-"Foundation által kiadott ennél frissebb verziója alatt, a \"Nem "
-"változtatható szakaszok\", \"Címlapszövegek\" és a \"Hátlapszövegek\" "
-"kivételével. A GFDL leírása <ulink type=\"help\" url=\"help:fdl\">ezen az "
-"oldalon</ulink> érhető el, vagy a jelen dokumentációban található COPYING-"
-"DOCS fájlban."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:12 C/legal.xml:12
-msgid ""
-"This manual is part of a collection of CAFE manuals distributed under the "
-"GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in"
-" section 6 of the license."
-msgstr ""
-"Ez a kézikönyv része a GFDL alatt megjelenő CAFE dokumentációk "
-"gyűjteményének. A kézikönyv a gyűjteménytől függetlenül szabadon "
-"terjeszthető, a licenc másolatát mellékelve a 6. szakaszban leírtaknak "
-"megfelelően."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:19 C/legal.xml:19
-msgid ""
-"Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any CAFE "
-"documentation, and the members of the CAFE Documentation Project are made "
-"aware of those trademarks, then the names are in capital letters or initial "
-"capital letters."
-msgstr ""
-"A cégek különböző, védjegy alá tartozó elnevezéseket használnak termékeik és"
-" szolgáltatásuk megkülönböztetéséhez. Ahol ezek a nevek megjelennek "
-"bármelyik CAFE dokumentációban és a CAFE dokumentációs projekt tagjainak "
-"tudomásuk van a védjegyről, abban az esetben ezek az elnevezések teljes "
-"egészében vagy kezdőbetűik nagybetűsek."
-
-#. (itstool) path: listitem/para
-#: C/index.docbook:35 C/legal.xml:35
-msgid ""
-"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
-"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
-"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
-"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
-"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
-"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
-"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
-"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
-"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
-"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
-"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr ""
-"A DOKUMENTUM „JELEN ÁLLAPOTÁBAN” KERÜL KIADÁSRA MINDENFÉLE GARANCIAVÁLLALÁS "
-"NÉLKÜL, LEGYEN AZ KIFEJEZETT VAGY BELEÉRTETT, BELEÉRTVE, DE NEM "
-"KIZÁRÓLAGOSAN A FORGALOMBA HOZHATÓSÁGRA VAGY ALKALMAZHATÓSÁGRA, A JELEN "
-"DOKUMENTUMNAK VAGY ANNAK MÓDOSÍTOTT VERZIÓJÁNAK HIBAMENTESSÉGÉRE VONATKOZÓ "
-"GARANCIÁKAT. A DOKUMENTUM VAGY ANNAK MÓDOSÍTOTT VÁLTOZATÁNAK MINŐSÉGÉBŐL ÉS "
-"FELHASZNÁLHATÓSÁGÁBÓL FAKADÓ ÖSSZES KOCKÁZAT A FELHASZNÁLÓT TERHELI. HA A "
-"DOKUMENTUM BIZONYÍTOTTAN HIBÁS, A FELHASZNÁLÓNAK MAGÁNAK (NEM A DOKUMENTUM "
-"ÍRÓJÁNAK, KIADÓJÁNAK VAGY BÁRMELY KÖZREMŰKÖDŐNEK) KELL VÁLLALNIA A "
-"JAVÍTÁSHOZ SZÜKSÉGES MINDEN KÖLTSÉGET. A JELEN GARANCIAELUTASÍTÁS A JELEN "
-"LICENC LÉNYEGI RÉSZE. A LEFEDETT DOKUMENTUM VAGY ANNAK MÓDOSÍTOTT "
-"VERZIÓJÁNAK HASZNÁLATA CSAK A JELEN ELUTASÍTÁSSAL EGYÜTT ENGEDÉLYEZETT, ÉS"
-
-#. (itstool) path: listitem/para
-#: C/index.docbook:55 C/legal.xml:55
-msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING"
-" NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
-"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
-"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
-"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
-"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES"
-" OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE"
-" POSSIBILITY OF SUCH DAMAGES."
-msgstr ""
-"SEMMILYEN KÖRÜLMÉNYEK KÖZÖTT ÉS SEMMILYEN JOGI MEGFONTOLÁSBÓL, LEGYEN AZ "
-"MAGÁNJOGI VÉTKES CSELEKMÉNY (BELEÉRTVE A HANYAGSÁGOT), SZERZŐDÉS VAGY "
-"BÁRMELY MÁS DOLOG, NEM FELELŐS ÖN, A LEFEDETT KÓD ELSŐ FEJLESZTŐJE ÉS TÖBBI "
-"KÖZREMŰKÖDŐJE VAGY EZEK BÁRMELY SZÁLLÍTÓJA SEMMILYEN MÁS SZEMÉLY FELÉ "
-"SEMMILYEN FAJTA KÖZVETLEN, SPECIÁLIS, VÉLETLEN VAGY KÖVETKEZMÉNYES KÁRÉRT, "
-"BELEÉRTVE DE NEM KIZÁRÓLAG A HÍRNÉV ELVESZTÉSÉBŐL, MUNKA LEÁLLÁSÁBÓL, "
-"SZÁMÍTÓGÉP MEGHIBÁSODÁSÁBÓL VAGY HELYTELEN MŰKÖDÉSÉBŐL SZÁRMAZÓ, VAGY "
-"BÁRMELY EGYÉB KERESKEDELMI KÁROKAT ÉS VESZTESÉGEKET, MÉG AKKOR IS, HA AZ "
-"ILYEN FÉL INFORMÁLVA LETT AZ ILYEN KÁROK ELŐFORDULÁSÁNAK LEHETŐSÉGÉRŐL. A "
-"FELELŐSSÉG EZEN KORLÁTOZÁSA NEM ALKALMAZHATÓ ABBAN AZ ESETBEN, HA HALÁL VAGY"
-" SZEMÉLYI SÉRÜLÉS TÖRTÉNT A FÉL HANYAGSÁGÁBÓL KIFOLYÓLAG, OLYAN MÉRTÉKBEN, "
-"AMENNYIRE AZ ALKALMAZHATÓ TÖRVÉNYEK MEGTILTJÁK AZ ILYEN KORLÁTOZÁSOKAT."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:28 C/legal.xml:28
-msgid ""
-"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
-"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<_:orderedlist-1/>"
-msgstr ""
-"A DOKUMENTUM ÉS A DOKUMENTUM MÓDOSÍTOTT VERZIÓI A GNU FREE DOCUMENTATION "
-"LICENSE FELTÉTELEI SZERINT KERÜLNEK KÖZREADÁSRA, A TOVÁBBIAK ISMERETÉBEN: "
-"<_:orderedlist-1/>"
-
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:62
 msgid ""
@@ -206,16 +95,16 @@ msgstr ""
 #: C/index.docbook:77
 msgid ""
 "<firstname>Sun</firstname> <surname>GNOME Documentation Team</surname> "
-"<affiliation> <orgname>Sun Microsystems</orgname> <_:address-1/> "
-"</affiliation>"
+"<affiliation> <orgname>Sun Microsystems</orgname> <_:address-1/> </"
+"affiliation>"
 msgstr ""
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:85
 msgid ""
 "<firstname>Telsa</firstname> <surname>Gwynne</surname> <affiliation> "
-"<orgname>GNOME Documentation Project</orgname> <address> "
-"<email>hobbit@aloss.ukuu.org.uk</email> </address> </affiliation>"
+"<orgname>GNOME Documentation Project</orgname> <address> <email>hobbit@aloss."
+"ukuu.org.uk</email> </address> </affiliation>"
 msgstr ""
 
 #. (itstool) path: revdescription/para
@@ -226,8 +115,8 @@ msgstr "CAFE dokumentációs csapat"
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:111
 msgid ""
-"<revnumber>Fish Applet Manual V2.6</revnumber> <date>July 2015</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.6</revnumber> <date>July 2015</date> <_:"
+"revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revdescription/para
@@ -239,36 +128,36 @@ msgstr "Sun GNOME Dokumentációs csapat"
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:119
 msgid ""
-"<revnumber>Fish Applet Manual V2.5;</revnumber> <date>July 2015</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.5;</revnumber> <date>July 2015</date> <_:"
+"revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:127
 msgid ""
-"<revnumber>Fish Applet Manual V2.4</revnumber> <date>July 2015</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.4</revnumber> <date>July 2015</date> <_:"
+"revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:135
 msgid ""
-"<revnumber>Fish Applet Manual V2.2</revnumber> <date>January 2003</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.2</revnumber> <date>January 2003</date> <_:"
+"revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:143
 msgid ""
-"<revnumber>Fish Applet Manual V2.1</revnumber> <date>August 2002</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.1</revnumber> <date>August 2002</date> <_:"
+"revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:151
 msgid ""
-"<revnumber>Fish Applet Manual V2.0</revnumber> <date>May 2002</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.0</revnumber> <date>May 2002</date> <_:"
+"revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revdescription/para
@@ -279,8 +168,8 @@ msgstr ""
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:159
 msgid ""
-"<revnumber>Fish Applet Manual</revnumber> <date>2000</date> "
-"<_:revdescription-1/>"
+"<revnumber>Fish Applet Manual</revnumber> <date>2000</date> <_:"
+"revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: articleinfo/releaseinfo
@@ -297,8 +186,8 @@ msgstr "Visszajelzés"
 #: C/index.docbook:173
 msgid ""
 "To report a bug or make a suggestion regarding the Fish applet or this "
-"manual, follow the directions in the <ulink url=\"help:cafe-user-"
-"guide/feedback\" type=\"help\">CAFE Feedback Page</ulink>."
+"manual, follow the directions in the <ulink url=\"help:cafe-user-guide/"
+"feedback\" type=\"help\">CAFE Feedback Page</ulink>."
 msgstr ""
 
 #. (itstool) path: abstract/para
@@ -331,16 +220,14 @@ msgstr ""
 #: C/index.docbook:196
 msgctxt "_"
 msgid ""
-"external ref='figures/fish_applet.png' "
-"md5='97c946f203eedce679f0ca29452fb437'"
+"external ref='figures/fish_applet.png' md5='97c946f203eedce679f0ca29452fb437'"
 msgstr ""
 
 #. (itstool) path: screenshot/mediaobject
 #: C/index.docbook:195
 msgid ""
-"<imageobject><imagedata fileref=\"figures/fish_applet.png\" format=\"PNG\"/>"
-" </imageobject> <textobject> <phrase>Shows Fish applet.</phrase> "
-"</textobject>"
+"<imageobject><imagedata fileref=\"figures/fish_applet.png\" format=\"PNG\"/> "
+"</imageobject> <textobject> <phrase>Shows Fish applet.</phrase> </textobject>"
 msgstr ""
 
 #. (itstool) path: sect1/para
@@ -415,8 +302,8 @@ msgstr "Beállítások"
 #: C/index.docbook:246
 msgid ""
 "To configure <application>Fish</application>, right-click on the "
-"<application> Fish</application> applet, then choose "
-"<guimenu>Preferences</guimenu>."
+"<application> Fish</application> applet, then choose <guimenu>Preferences</"
+"guimenu>."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
@@ -437,9 +324,9 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/index.docbook:258
 msgid ""
-"By default, <application>Fish</application> runs the "
-"<literal>fortune</literal> command when you click on the applet. Use this "
-"text box to specify an alternative command to run."
+"By default, <application>Fish</application> runs the <literal>fortune</"
+"literal> command when you click on the applet. Use this text box to specify "
+"an alternative command to run."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
@@ -499,8 +386,8 @@ msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
-" of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
 "with this manual."
 msgstr ""
 "Jelen dokumentum szabadon másolható, terjeszthető és/vagy módosítható a GNU "
@@ -509,3 +396,113 @@ msgstr ""
 "változtatható szakaszok\", \"Címlapszövegek\" és a \"Hátlapszövegek\" "
 "kivételével. A GFDL leírása ezzel a <_:ulink-1/> érhető el, vagy a jelen "
 "dokumentációban található COPYING-DOCS fájlban."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:12
+msgid ""
+"This manual is part of a collection of CAFE manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+"Ez a kézikönyv része a GFDL alatt megjelenő CAFE dokumentációk "
+"gyűjteményének. A kézikönyv a gyűjteménytől függetlenül szabadon "
+"terjeszthető, a licenc másolatát mellékelve a 6. szakaszban leírtaknak "
+"megfelelően."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:19
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"A cégek különböző, védjegy alá tartozó elnevezéseket használnak termékeik és "
+"szolgáltatásuk megkülönböztetéséhez. Ahol ezek a nevek megjelennek bármelyik "
+"CAFE dokumentációban és a CAFE dokumentációs projekt tagjainak tudomásuk van "
+"a védjegyről, abban az esetben ezek az elnevezések teljes egészében vagy "
+"kezdőbetűik nagybetűsek."
+
+#. (itstool) path: listitem/para
+#: C/legal.xml:35
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"A DOKUMENTUM „JELEN ÁLLAPOTÁBAN” KERÜL KIADÁSRA MINDENFÉLE GARANCIAVÁLLALÁS "
+"NÉLKÜL, LEGYEN AZ KIFEJEZETT VAGY BELEÉRTETT, BELEÉRTVE, DE NEM "
+"KIZÁRÓLAGOSAN A FORGALOMBA HOZHATÓSÁGRA VAGY ALKALMAZHATÓSÁGRA, A JELEN "
+"DOKUMENTUMNAK VAGY ANNAK MÓDOSÍTOTT VERZIÓJÁNAK HIBAMENTESSÉGÉRE VONATKOZÓ "
+"GARANCIÁKAT. A DOKUMENTUM VAGY ANNAK MÓDOSÍTOTT VÁLTOZATÁNAK MINŐSÉGÉBŐL ÉS "
+"FELHASZNÁLHATÓSÁGÁBÓL FAKADÓ ÖSSZES KOCKÁZAT A FELHASZNÁLÓT TERHELI. HA A "
+"DOKUMENTUM BIZONYÍTOTTAN HIBÁS, A FELHASZNÁLÓNAK MAGÁNAK (NEM A DOKUMENTUM "
+"ÍRÓJÁNAK, KIADÓJÁNAK VAGY BÁRMELY KÖZREMŰKÖDŐNEK) KELL VÁLLALNIA A "
+"JAVÍTÁSHOZ SZÜKSÉGES MINDEN KÖLTSÉGET. A JELEN GARANCIAELUTASÍTÁS A JELEN "
+"LICENC LÉNYEGI RÉSZE. A LEFEDETT DOKUMENTUM VAGY ANNAK MÓDOSÍTOTT "
+"VERZIÓJÁNAK HASZNÁLATA CSAK A JELEN ELUTASÍTÁSSAL EGYÜTT ENGEDÉLYEZETT, ÉS"
+
+#. (itstool) path: listitem/para
+#: C/legal.xml:55
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"SEMMILYEN KÖRÜLMÉNYEK KÖZÖTT ÉS SEMMILYEN JOGI MEGFONTOLÁSBÓL, LEGYEN AZ "
+"MAGÁNJOGI VÉTKES CSELEKMÉNY (BELEÉRTVE A HANYAGSÁGOT), SZERZŐDÉS VAGY "
+"BÁRMELY MÁS DOLOG, NEM FELELŐS ÖN, A LEFEDETT KÓD ELSŐ FEJLESZTŐJE ÉS TÖBBI "
+"KÖZREMŰKÖDŐJE VAGY EZEK BÁRMELY SZÁLLÍTÓJA SEMMILYEN MÁS SZEMÉLY FELÉ "
+"SEMMILYEN FAJTA KÖZVETLEN, SPECIÁLIS, VÉLETLEN VAGY KÖVETKEZMÉNYES KÁRÉRT, "
+"BELEÉRTVE DE NEM KIZÁRÓLAG A HÍRNÉV ELVESZTÉSÉBŐL, MUNKA LEÁLLÁSÁBÓL, "
+"SZÁMÍTÓGÉP MEGHIBÁSODÁSÁBÓL VAGY HELYTELEN MŰKÖDÉSÉBŐL SZÁRMAZÓ, VAGY "
+"BÁRMELY EGYÉB KERESKEDELMI KÁROKAT ÉS VESZTESÉGEKET, MÉG AKKOR IS, HA AZ "
+"ILYEN FÉL INFORMÁLVA LETT AZ ILYEN KÁROK ELŐFORDULÁSÁNAK LEHETŐSÉGÉRŐL. A "
+"FELELŐSSÉG EZEN KORLÁTOZÁSA NEM ALKALMAZHATÓ ABBAN AZ ESETBEN, HA HALÁL VAGY "
+"SZEMÉLYI SÉRÜLÉS TÖRTÉNT A FÉL HANYAGSÁGÁBÓL KIFOLYÓLAG, OLYAN MÉRTÉKBEN, "
+"AMENNYIRE AZ ALKALMAZHATÓ TÖRVÉNYEK MEGTILTJÁK AZ ILYEN KORLÁTOZÁSOKAT."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:28
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<_:orderedlist-1/>"
+msgstr ""
+"A DOKUMENTUM ÉS A DOKUMENTUM MÓDOSÍTOTT VERZIÓI A GNU FREE DOCUMENTATION "
+"LICENSE FELTÉTELEI SZERINT KERÜLNEK KÖZREADÁSRA, A TOVÁBBIAK ISMERETÉBEN: <_:"
+"orderedlist-1/>"
+
+#~ msgid ""
+#~ "Permission is granted to copy, distribute and/or modify this document "
+#~ "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#~ "or any later version published by the Free Software Foundation with no "
+#~ "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#~ "can find a copy of the GFDL at this <ulink type=\"help\" url=\"help:"
+#~ "fdl\">link</ulink> or in the file COPYING-DOCS distributed with this "
+#~ "manual."
+#~ msgstr ""
+#~ "Jelen dokumentum szabadon másolható, terjeszthető és/vagy módosítható a "
+#~ "GNU Free Documentation License (GFDL) 1.1-es verziója vagy a Free "
+#~ "Software Foundation által kiadott ennél frissebb verziója alatt, a \"Nem "
+#~ "változtatható szakaszok\", \"Címlapszövegek\" és a \"Hátlapszövegek\" "
+#~ "kivételével. A GFDL leírása <ulink type=\"help\" url=\"help:fdl\">ezen az "
+#~ "oldalon</ulink> érhető el, vagy a jelen dokumentációban található COPYING-"
+#~ "DOCS fájlban."
