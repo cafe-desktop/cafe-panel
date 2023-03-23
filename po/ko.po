@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Alan Lee <bkrhlim@aol.com>, 2020
 # Wolfgang Ulbrich <cafe@raveit.de>, 2020
@@ -12,19 +12,19 @@
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.23.2\n"
+"Project-Id-Version: cafe-panel 1.25.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2020-01-12 18:05+0100\n"
+"POT-Creation-Date: 2023-03-23 18:48+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2020\n"
 "Language-Team: Korean (https://www.transifex.com/cafe/teams/13566/ko/)\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
@@ -49,7 +49,8 @@ msgstr "%p %l:%M:%S"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:504
+#.
+#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
 msgid "%l:%M %p"
 msgstr "%p %l:%M"
 
@@ -60,7 +61,7 @@ msgstr "%p %l:%M"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1604
+#: applets/clock/clock.c:454 applets/clock/clock.c:1603
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
@@ -74,9 +75,10 @@ msgstr "%H:%M:%S"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1610
-#: applets/clock/clock-location-tile.c:464
-#: applets/clock/clock-location-tile.c:511
+#.
+#: applets/clock/clock.c:454 applets/clock/clock.c:1609
+#: applets/clock/clock-location-tile.c:462
+#: applets/clock/clock-location-tile.c:509
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -118,7 +120,7 @@ msgstr "달력을 감추려면 누르십시오"
 msgid "Click to view month calendar"
 msgstr "달력을 보려면 누르십시오"
 
-#: applets/clock/clock.c:1442
+#: applets/clock/clock.c:1441
 msgid "Computer Clock"
 msgstr "컴퓨터 시계"
 
@@ -128,7 +130,7 @@ msgstr "컴퓨터 시계"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1589
+#: applets/clock/clock.c:1588
 msgid "%I:%M:%S %p"
 msgstr "%p %I:%M:%S"
 
@@ -138,108 +140,108 @@ msgstr "%p %I:%M:%S"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1597
+#: applets/clock/clock.c:1596
 msgid "%I:%M %p"
 msgstr "%p %I:%M"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1643
+#: applets/clock/clock.c:1642
 msgid "%A, %B %d %Y"
 msgstr "%Y년 %B %d일 %A"
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1673
 msgid "Set System Time..."
 msgstr "시스템 시간 설정..."
 
-#: applets/clock/clock.c:1675
+#: applets/clock/clock.c:1674
 msgid "Set System Time"
 msgstr "시스템 시간 설정"
 
-#: applets/clock/clock.c:1690
+#: applets/clock/clock.c:1689
 msgid "Failed to set the system time"
 msgstr "시스템 시간을 설정하는 데 실패했습니다"
 
-#: applets/clock/clock.c:1888 applets/fish/fish.c:1694
-#: applets/notification_area/main.c:292 applets/vncklet/window-list.c:357
-#: applets/vncklet/workspace-switcher.c:389
+#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
+#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
+#: applets/vncklet/workspace-switcher.c:393
 msgid "_Preferences"
 msgstr "기본 설정(_P)"
 
-#: applets/clock/clock.c:1891 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1697 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:295 applets/vncklet/showdesktop.c:241
-#: applets/vncklet/window-list.c:365 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:98 applets/vncklet/workspace-switcher.c:397
+#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
+#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
-#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
 #: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: applets/clock/clock.c:1894 applets/fish/fish.c:1700
-#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:249
-#: applets/vncklet/window-list.c:373 applets/vncklet/window-menu.c:106
-#: applets/vncklet/workspace-switcher.c:405
+#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
+#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
+#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
+#: applets/vncklet/workspace-switcher.c:409
 msgid "_About"
 msgstr "정보(_A)"
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1894
 msgid "Copy _Time"
 msgstr "시각 복사(_T)"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1897
 msgid "Copy _Date"
 msgstr "날짜 복사(_D)"
 
-#: applets/clock/clock.c:1903
+#: applets/clock/clock.c:1900
 msgid "Ad_just Date & Time"
 msgstr "날짜 및 시간 조정(_J)"
 
-#: applets/clock/clock.c:2899
+#: applets/clock/clock.c:2898
 msgid "Choose Location"
 msgstr "위치 선택"
 
-#: applets/clock/clock.c:2978
+#: applets/clock/clock.c:2977
 msgid "Edit Location"
 msgstr "위치 편집"
 
-#: applets/clock/clock.c:3105
+#: applets/clock/clock.c:3104
 msgid "City Name"
 msgstr "도시 이름"
 
-#: applets/clock/clock.c:3109
+#: applets/clock/clock.c:3108
 msgid "City Time Zone"
 msgstr "도시 시간대"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3388
 #: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "시계"
 
-#: applets/clock/clock.c:3390
+#: applets/clock/clock.c:3389
 msgid "About Clock"
 msgstr "시계 소개"
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3391
 msgid "The Clock displays the current time and date"
 msgstr "시계는 현재 시간과 날짜를 보여 줍니다"
 
-#: applets/clock/clock.c:3393
+#: applets/clock/clock.c:3392
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:567
-#: applets/notification_area/main.c:286 applets/vncklet/showdesktop.c:508
-#: applets/vncklet/window-list.c:831 applets/vncklet/window-menu.c:88
-#: applets/vncklet/workspace-switcher.c:644
-#: cafe-panel/panel-context-menu.c:124
+#: applets/clock/clock.c:3397 applets/fish/fish.c:568
+#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
+#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
+#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr ""
 "Elex https://launchpad.net/~mysticzizone\n"
@@ -247,17 +249,18 @@ msgstr ""
 "Yoo Duk Nam https://launchpad.net/~yoo2001818\n"
 "onlyeriko https://launchpad.net/~onlyeriko\n"
 "Seong-ho Cho <darkcircle.0426@gmail.com>\n"
-"CAFE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/>"
+"CAFE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/"
+">"
 
 #: applets/clock/clock.ui:31
 msgid "Time & Date"
 msgstr "시간 및 날짜"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-ctk.c:136
-#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
-#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
-#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
+#: cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "취소(_C)"
 
@@ -281,10 +284,10 @@ msgstr "시계 기본 설정"
 msgid "Time _Settings"
 msgstr "시간 설정(_S)"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -332,7 +335,7 @@ msgstr "온도 표시(_T)"
 msgid "General"
 msgstr "일반"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
 msgid "_Add"
 msgstr "추가(_A)"
 
@@ -385,17 +388,18 @@ msgid "South"
 msgstr "남"
 
 #: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
-#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
+#: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "확인(_O)"
 
-#. Languages that have a single word that translates as either "state" or
-#. "province" should use that instead of "region".
+#. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
 #: applets/clock/clock.ui:1012
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
 "the pop-up.</i></small>"
-msgstr "<small><i>도시, 지역 혹은 국가를 입력하고 팝업 창에서 맞는 항목을 고르십시오.</i></small>"
+msgstr ""
+"<small><i>도시, 지역 혹은 국가를 입력하고 팝업 창에서 맞는 항목을 고르십시오."
+"</i></small>"
 
 #: applets/clock/clock.ui:1057
 msgid "_Timezone:"
@@ -421,17 +425,16 @@ msgstr "위도(_A):"
 msgid "Failed to set the system timezone"
 msgstr "시스템 시간대를 설정하는 데 실패했습니다"
 
-#: applets/clock/clock-location-tile.c:231
+#: applets/clock/clock-location-tile.c:229
 msgid "<small>Set...</small>"
 msgstr "<small>설정...</small>"
 
-#: applets/clock/clock-location-tile.c:232
+#: applets/clock/clock-location-tile.c:230
 msgid "<small>Set</small>"
 msgstr "<small>설정</small>"
 
-#: applets/clock/clock-location-tile.c:308
-msgid ""
-"Set location as current location and use its timezone for this computer"
+#: applets/clock/clock-location-tile.c:306
+msgid "Set location as current location and use its timezone for this computer"
 msgstr "현재 위치를 설정하고 그 위치의 시간대를 이 컴퓨터의 시간대로 맞춥니다"
 
 #. Translators: This is a strftime format string.
@@ -440,7 +443,7 @@ msgstr "현재 위치를 설정하고 그 위치의 시간대를 이 컴퓨터�
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:441
+#: applets/clock/clock-location-tile.c:439
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l:%M <small>%p (%A)</small>"
 
@@ -449,7 +452,7 @@ msgstr "%l:%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:449
+#: applets/clock/clock-location-tile.c:447
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%H:%M <small>(%A)</small>"
 
@@ -457,27 +460,27 @@ msgstr "%H:%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:458
+#: applets/clock/clock-location-tile.c:456
 msgid "%l:%M <small>%p</small>"
 msgstr "%l:%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:600
+#: applets/clock/clock-location-tile.c:598
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:612
-#: applets/clock/clock-location-tile.c:621
+#: applets/clock/clock-location-tile.c:610
+#: applets/clock/clock-location-tile.c:619
 msgid "Unknown"
 msgstr "알 수 없음"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:614
+#: applets/clock/clock-location-tile.c:612
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s, 체감 %s"
 
-#: applets/clock/clock-location-tile.c:637
+#: applets/clock/clock-location-tile.c:635
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "일출: %s / 일몰: %s"
@@ -500,20 +503,22 @@ msgstr "시간 형식"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
-"This key specifies the hour format used by the clock applet. Possible values"
-" are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
-" to \"internet\", the clock will display Internet time. The Internet time "
-"system divides the day into 1000 \".beats\". There are no time zones in this"
-" system, so time is the same all over the world. If set to \"unix\", the "
+"This key specifies the hour format used by the clock applet. Possible values "
+"are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set "
+"to \"internet\", the clock will display Internet time. The Internet time "
+"system divides the day into 1000 \".beats\". There are no time zones in this "
+"system, so time is the same all over the world. If set to \"unix\", the "
 "clock will display time in seconds since Epoch, i.e. 1970-01-01. If set to "
-"\"custom\", the clock will display time according to the format specified in"
-" the custom_format key."
+"\"custom\", the clock will display time according to the format specified in "
+"the custom_format key."
 msgstr ""
-"이 키는 시계 애플릿이 사용할 시간 형식을 지정합니다. 가능한 값은 \"12-hour\", \"24-hour\", "
-"\"internet\", \"unix\" 그리고 \"custom\"입니다. \"internet\"으로 설정하면 시계는 인터넷 시각을 "
-"표시합니다. 인터넷 시각은 하루를 1000 \".beats\"로 표현합니다. 이 시스템에서는 시간대 구분이 없으므로, 세계 어디에나 "
-"시각은 동일합니다. \"unix\"로 설정하면 시계는 \"Epoch\"(1970년 1월 1일)로부터 몇 초가 지났는지를 표시합니다. "
-"\"custom\"이면 custom_format 키값에 따라 시각을 표시합니다."
+"이 키는 시계 애플릿이 사용할 시간 형식을 지정합니다. 가능한 값은 \"12-"
+"hour\", \"24-hour\", \"internet\", \"unix\" 그리고 \"custom\"입니다. "
+"\"internet\"으로 설정하면 시계는 인터넷 시각을 표시합니다. 인터넷 시각은 하루"
+"를 1000 \".beats\"로 표현합니다. 이 시스템에서는 시간대 구분이 없으므로, 세"
+"계 어디에나 시각은 동일합니다. \"unix\"로 설정하면 시계는 \"Epoch\"(1970년 1"
+"월 1일)로부터 몇 초가 지났는지를 표시합니다. \"custom\"이면 custom_format 키"
+"값에 따라 시각을 표시합니다."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:34
 msgid "Custom format of the clock"
@@ -526,8 +531,9 @@ msgid ""
 "strftime() to obtain a specific format. See the strftime() manual for more "
 "information."
 msgstr ""
-"이 키는 format 키를 \"custom\"으로 설정했을 때 시계 애플릿이 사용할 시각 형식입니다. strftime()에서 사용하는 "
-"형식으로 특정 형식을 지정할 수 있습니다. 좀 더 알고 싶으시면 strftime() 설명서를 참고하십시오."
+"이 키는 format 키를 \"custom\"으로 설정했을 때 시계 애플릿이 사용할 시각 형식"
+"입니다. strftime()에서 사용하는 형식으로 특정 형식을 지정할 수 있습니다. 좀 "
+"더 알고 싶으시면 strftime() 설명서를 참고하십시오."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:39
 msgid "Show time with seconds"
@@ -551,7 +557,8 @@ msgstr "설명에 날짜 표시"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:50
 msgid "If true, show date in a tooltip when the pointer is over the clock."
-msgstr "참이면, 마우스 포인터를 애플릿 위에 놓았을 때 설명에서 날짜를 표시합니다."
+msgstr ""
+"참이면, 마우스 포인터를 애플릿 위에 놓았을 때 설명에서 날짜를 표시합니다."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:54
 msgid "Show weather in clock"
@@ -621,12 +628,6 @@ msgstr "시계 애플릿용 팩토리"
 msgid "Get the current time and date"
 msgstr "현재 날짜와 시간을 가져옵니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-clock"
-msgstr ""
-
 #: applets/fish/fish.c:266
 #, c-format
 msgid ""
@@ -644,7 +645,7 @@ msgstr ""
 msgid "Images"
 msgstr "이미지"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:578 applets/fish/fish.c:684
+#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
 #, no-c-format
 msgid "%s the Fish"
 msgstr "물고기 %s"
@@ -656,8 +657,9 @@ msgid ""
 "time, and if loaded it also takes up precious panel space and memory. "
 "Anybody found using it should be promptly sent for a psychiatric evaluation."
 msgstr ""
-"%s(은)는 아무데도 쓸모가 없습니다.  디스크 공간과 컴파일 시간을 잡아먹을 뿐이고, 실행할 경우에는 소중한 패널의 공간과 메모리까지 "
-"차지합니다.  만약 누군가 이 애플릿을 쓰고 있다면, 그 사람은 빨리 정신 감정을 받으러 가야 할것입니다."
+"%s(은)는 아무데도 쓸모가 없습니다.  디스크 공간과 컴파일 시간을 잡아먹을 뿐이"
+"고, 실행할 경우에는 소중한 패널의 공간과 메모리까지 차지합니다.  만약 누군가 "
+"이 애플릿을 쓰고 있다면, 그 사람은 빨리 정신 감정을 받으러 가야 할것입니다."
 
 #: applets/fish/fish.c:552
 msgid "(with minor help from George)"
@@ -676,24 +678,25 @@ msgstr "물고기 소개"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/fish/fish.c:579
+#: applets/fish/fish.c:580
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "물고기 %s, 이 시대의 예언자"
 
-#: applets/fish/fish.c:645
+#: applets/fish/fish.c:646
 msgid "Unable to locate the command to execute"
 msgstr "실행할 명령어의 위치를 알 수 없습니다"
 
-#: applets/fish/fish.c:689
+#: applets/fish/fish.c:690
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "물고기 %s 말하길:"
 
-#: applets/fish/fish.c:752
+#: applets/fish/fish.c:753
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -704,16 +707,16 @@ msgstr ""
 "\n"
 "자세한 정보: %s"
 
-#: applets/fish/fish.c:849
+#: applets/fish/fish.c:850
 msgid "_Speak again"
 msgstr "다시 말하기(_S)"
 
-#: applets/fish/fish.c:930
+#: applets/fish/fish.c:931
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
 msgstr "설정하신 명령어가 동작하지 않아서 다음 명령을 대신 사용합니다: %s"
 
-#: applets/fish/fish.c:963
+#: applets/fish/fish.c:964
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -724,7 +727,7 @@ msgstr ""
 "\n"
 "자세한 정보: %s"
 
-#: applets/fish/fish.c:979
+#: applets/fish/fish.c:980
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -735,15 +738,15 @@ msgstr ""
 "\n"
 "자세한 정보: %s"
 
-#: applets/fish/fish.c:1551
+#: applets/fish/fish.c:1552
 msgid "The water needs changing"
 msgstr "어항 물 좀 갈아 주세요"
 
-#: applets/fish/fish.c:1553
+#: applets/fish/fish.c:1554
 msgid "Look at today's date!"
 msgstr "오늘 날짜를 확인하세요!"
 
-#: applets/fish/fish.c:1635
+#: applets/fish/fish.c:1636
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "물고기 %s, fortune teller"
@@ -805,7 +808,9 @@ msgstr "물고기의 이름"
 msgid ""
 "A fish without a name is a pretty dull fish. Bring your fish to life by "
 "naming him."
-msgstr "이름 없는 물고기는 아주 멍청한 물고기일 뿐입니다. 당신의 물고기에 이름을 지어 생명을 불어 넣으십시오."
+msgstr ""
+"이름 없는 물고기는 아주 멍청한 물고기일 뿐입니다. 당신의 물고기에 이름을 지"
+"어 생명을 불어 넣으십시오."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:10
 msgid "The fish's animation pixmap"
@@ -815,7 +820,9 @@ msgstr "물고기의 애니메이션 픽스맵"
 msgid ""
 "This key specifies the filename of the pixmap which will be used for the "
 "animation displayed in the fish applet relative to the pixmap directory."
-msgstr "이 키는 물고기 애플릿에서 보여 줄 애니메이션의 픽스맵 파일 이름을 지정합니다. 픽스맵 디렉터리에 대한 상대 경로입니다."
+msgstr ""
+"이 키는 물고기 애플릿에서 보여 줄 애니메이션의 픽스맵 파일 이름을 지정합니"
+"다. 픽스맵 디렉터리에 대한 상대 경로입니다."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:15
 msgid "Command to execute on click"
@@ -833,8 +840,8 @@ msgstr "물고기 애니메이션의 프레임 수"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
-"This key specifies the number of frames that will be displayed in the fish's"
-" animation."
+"This key specifies the number of frames that will be displayed in the fish's "
+"animation."
 msgstr "물고기 애니메이션에서 보여줄 프레임 수를 지정합니다."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
@@ -852,7 +859,8 @@ msgstr "세로 패널에서 회전"
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:31
 msgid ""
 "If true, the fish's animation will be displayed rotated on vertical panels."
-msgstr "참이면, 세로 패널에서 물고기 애니메이션도 세로 방향으로 회전해서 표시합니다."
+msgstr ""
+"참이면, 세로 패널에서 물고기 애니메이션도 세로 방향으로 회전해서 표시합니다."
 
 #: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Wanda Factory"
@@ -865,12 +873,6 @@ msgstr "멍청한 물고기가 왔어요!"
 #: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
 msgid "Display a swimming fish or another anicafed creature"
 msgstr "헤엄치는 물고기를 보여주거나 다른 애니메이션 개체를 표시합니다"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-fish"
-msgstr ""
 
 #: applets/notification_area/main.c:276
 #: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
@@ -886,10 +888,11 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/notification_area/main.c:485
+#: applets/notification_area/main.c:486
 msgid "Panel Notification Area"
 msgstr "패널 알림 영역"
 
@@ -930,21 +933,17 @@ msgstr "알림 영역 팩토리"
 msgid "Area where notification icons appear"
 msgstr "알림 아이콘을 나타낼 영역입니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-notification-area"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "모든 작업 공간에 창 표시"
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
-"If true, the window list will show windows from all workspaces. Otherwise it"
-" will only display windows from the current workspace."
-msgstr "참이면, 모든 작업 공간의 창을 창 표시줄에서 보이고. 거짓이면 현재 작업 공간에 있는 창만 보입니다."
+"If true, the window list will show windows from all workspaces. Otherwise it "
+"will only display windows from the current workspace."
+msgstr ""
+"참이면, 모든 작업 공간의 창을 창 표시줄에서 보이고. 거짓이면 현재 작업 공간"
+"에 있는 창만 보입니다."
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
 msgid "When to group windows"
@@ -955,8 +954,8 @@ msgid ""
 "Decides when to group windows from the same application on the window list. "
 "Possible values are \"never\", \"auto\" and \"always\"."
 msgstr ""
-"언제 같은 프로그램의 창을 창 표시줄에서 모을 것인지 결정합니다. 쓸 수 있는 값은 \"never\", \"auto\" 그리고 "
-"\"always\"입니다."
+"언제 같은 프로그램의 창을 창 표시줄에서 모을 것인지 결정합니다. 쓸 수 있는 값"
+"은 \"never\", \"auto\" 그리고 \"always\"입니다."
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
 msgid "Move windows to current workspace when unminimized"
@@ -967,7 +966,8 @@ msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
 msgstr ""
-"참이면, 창의 최소화를 해제할 때 현재 작업 공간으로 창을 불러 옵니다. 거짓이면 그 창의 작업 공간으로 작업 공간을 바꿉니다."
+"참이면, 창의 최소화를 해제할 때 현재 작업 공간으로 창을 불러 옵니다. 거짓이"
+"면 그 창의 작업 공간으로 작업 공간을 바꿉니다."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
 msgid "Display workspace names"
@@ -979,8 +979,9 @@ msgid ""
 "the workspaces. Otherwise they will display the windows on the workspace. "
 "This setting only works when the window manager is Croma."
 msgstr ""
-"참이면, 작업 공간 바꾸기 프로그램에 작업 공간의 이름을 표시합니다. 거짓이면 작업 공간에 들어 있는 창을 표시합니다. 이 설정은 창 "
-"관리자가 메타시티인 경우에만 동작합니다."
+"참이면, 작업 공간 바꾸기 프로그램에 작업 공간의 이름을 표시합니다. 거짓이면 "
+"작업 공간에 들어 있는 창을 표시합니다. 이 설정은 창 관리자가 메타시티인 경우"
+"에만 동작합니다."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"
@@ -990,7 +991,9 @@ msgstr "모든 작업 공간 보여 주기"
 msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
-msgstr "참이면, 작업 공간 바꾸기 프로그램에서 모든 작업 공간을 표시합니다. 거짓이면 현재 작업 공간만 표시합니다."
+msgstr ""
+"참이면, 작업 공간 바꾸기 프로그램에서 모든 작업 공간을 표시합니다. 거짓이면 "
+"현재 작업 공간만 표시합니다."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
@@ -999,11 +1002,12 @@ msgstr "작업 공간 바꾸기의 줄 개수"
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
-"vertical layout) the workspace switcher shows the workspaces in. This key is"
-" only relevant if the display_all_workspaces key is true."
+"vertical layout) the workspace switcher shows the workspaces in. This key is "
+"only relevant if the display_all_workspaces key is true."
 msgstr ""
-"이 키는 작업 공간 바꾸기 프로그램에서 작업 공간을 몇 줄(가로 방향일 경우) 혹은 몇 열(세로 방향일 경우)로 보여줄 지 지정합니다."
-"  이 키는 display_all_workspaces 키가 참일 경우에만 의미가 있습니다."
+"이 키는 작업 공간 바꾸기 프로그램에서 작업 공간을 몇 줄(가로 방향일 경우) 혹"
+"은 몇 열(세로 방향일 경우)로 보여줄 지 지정합니다.  이 키는 "
+"display_all_workspaces 키가 참일 경우에만 의미가 있습니다."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
@@ -1014,8 +1018,8 @@ msgid ""
 "If true, the workspace switcher will allow wrap-around, which means "
 "switching from the first to the last workspace and vice versa via scrolling."
 msgstr ""
-"참이면, 작업 공간 전환기에서 순환 전환을 허용하는데, 처음부터 끝까지 작업공간을 순방향 그리고 역방향으로 스크롤하여 전환한다는 "
-"의미입니다."
+"참이면, 작업 공간 전환기에서 순환 전환을 허용하는데, 처음부터 끝까지 작업공간"
+"을 순방향 그리고 역방향으로 스크롤하여 전환한다는 의미입니다."
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Window Navigation Applet Factory"
@@ -1026,7 +1030,7 @@ msgid "Factory for the window navigation related applets"
 msgstr "창 탐색 관련 애플릿용 팩토리"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
+#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
 msgid "Window Selector"
 msgstr "창 선택"
 
@@ -1034,14 +1038,8 @@ msgstr "창 선택"
 msgid "Switch between open windows using a menu"
 msgstr "메뉴를 사용하여 열어놓은 창을 전환합니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-window-menu"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:634
+#: applets/vncklet/workspace-switcher.c:638
 msgid "Workspace Switcher"
 msgstr "작업 공간 바꾸기 프로그램"
 
@@ -1049,26 +1047,14 @@ msgstr "작업 공간 바꾸기 프로그램"
 msgid "Switch between workspaces"
 msgstr "작업 공간 사이를 전환합니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
-msgid "cafe-panel-workspace-switcher"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:821
+#: applets/vncklet/window-list.c:826
 msgid "Window List"
 msgstr "창 목록"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "단추를 사용하여 열어놓은 창 사이를 전환합니다"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
-msgid "cafe-panel-window-list"
-msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
@@ -1077,12 +1063,6 @@ msgstr "데스크톱 보이기"
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "프로그램 창을 숨기고 데스크톱을 보여줍니다"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
-msgid "user-desktop"
-msgstr ""
 
 #: applets/vncklet/showdesktop.c:184
 #, c-format
@@ -1093,53 +1073,58 @@ msgstr "%s(을)를 읽어 들이는데 실패: %s\n"
 msgid "Icon not found"
 msgstr "아이콘을 찾을 수 없습니다"
 
-#: applets/vncklet/showdesktop.c:265
+#: applets/vncklet/showdesktop.c:266
 msgid "Click here to restore hidden windows."
 msgstr "누르면 숨긴 창을 되돌립니다."
 
-#: applets/vncklet/showdesktop.c:269
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to hide all windows and show the desktop."
 msgstr "누르면 모든 창을 숨기고 바탕 화면을 표시합니다."
 
-#: applets/vncklet/showdesktop.c:439 applets/vncklet/showdesktop.c:498
+#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
 msgid "Show Desktop Button"
 msgstr "바탕 화면 보여주기 단추"
 
-#: applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:500
 msgid "About Show Desktop Button"
 msgstr "바탕화면 보기 버튼 소개"
 
-#: applets/vncklet/showdesktop.c:501
+#: applets/vncklet/showdesktop.c:502
 msgid "This button lets you hide all windows and show the desktop."
 msgstr "이 단추를 누르면 모든 창을 숨기고 바탕 화면을 표시합니다."
 
-#: applets/vncklet/showdesktop.c:502 applets/vncklet/window-list.c:825
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
+#: applets/vncklet/workspace-switcher.c:642
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:529
+#: applets/vncklet/showdesktop.c:531
 msgid ""
-"Your window manager does not support the show desktop button, or you are not"
-" running a window manager."
-msgstr "창 관리자가 바탕 화면 보여주기 단추를 지원하지 않거나, 창 관리자를 실행하고 있지 않습니다."
+"Your window manager does not support the show desktop button, or you are not "
+"running a window manager."
+msgstr ""
+"창 관리자가 바탕 화면 보여주기 단추를 지원하지 않거나, 창 관리자를 실행하고 "
+"있지 않습니다."
 
-#: applets/vncklet/window-list.c:349
+#: applets/vncklet/window-list.c:354
 msgid "_System Monitor"
 msgstr "시스템 감시(_S)"
 
-#: applets/vncklet/window-list.c:822
+#: applets/vncklet/window-list.c:827
 msgid "About Window List"
 msgstr "창 목록 소개"
 
-#: applets/vncklet/window-list.c:824
+#: applets/vncklet/window-list.c:829
 msgid ""
-"The Window List shows a list of all windows in a set of buttons and lets you"
-" browse them."
-msgstr "창 목록은 모든 창의 목록을 단추 모음으로 표시합니다. 여기에서 창을 둘러볼 수 있습니다."
+"The Window List shows a list of all windows in a set of buttons and lets you "
+"browse them."
+msgstr ""
+"창 목록은 모든 창의 목록을 단추 모음으로 표시합니다. 여기에서 창을 둘러볼 수 "
+"있습니다."
 
 #: applets/vncklet/window-list.ui:18
 msgid "Window List Preferences"
@@ -1217,7 +1202,9 @@ msgstr "창 선택 소개"
 msgid ""
 "The Window Selector shows a list of all windows in a menu and lets you "
 "browse them."
-msgstr "창 선택 프로그램은 모든 창의 목록을 메뉴에 표시합니다. 여기에서 창 목록을 찾아 볼 수 있습니다."
+msgstr ""
+"창 선택 프로그램은 모든 창의 목록을 메뉴에 표시합니다. 여기에서 창 목록을 찾"
+"아 볼 수 있습니다."
 
 #: applets/vncklet/window-menu.c:80
 msgid ""
@@ -1225,29 +1212,32 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "행"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 msgid "columns"
 msgstr "열"
 
-#: applets/vncklet/workspace-switcher.c:635
+#: applets/vncklet/workspace-switcher.c:639
 msgid "About Workspace Switcher"
 msgstr "작업 공간 바꾸기 소개"
 
-#: applets/vncklet/workspace-switcher.c:637
+#: applets/vncklet/workspace-switcher.c:641
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
-msgstr "작업 공간 바꾸기는 작업 공간의 축소판을 표시합니다. 여기에서 창을 관리할 수 있습니다."
+msgstr ""
+"작업 공간 바꾸기는 작업 공간의 축소판을 표시합니다. 여기에서 창을 관리할 수 "
+"있습니다."
 
 #: applets/vncklet/workspace-switcher.ui:32
 msgid "Workspace Switcher Preferences"
@@ -1307,8 +1297,9 @@ msgid ""
 "dialog is made available. Whether or not the listing is expanded when the "
 "dialog is shown is controlled by the show_program_list key."
 msgstr ""
-"참이면 \"프로그램 실행\" 대화 상자의 \"알려진 프로그램\" 목록을 사용할 수 있습니다.  대화 상자가 나타날 때 목록을 확장할지 "
-"아닐지는 show_program_list 키로 조정할 수 있습니다."
+"참이면 \"프로그램 실행\" 대화 상자의 \"알려진 프로그램\" 목록을 사용할 수 있"
+"습니다.  대화 상자가 나타날 때 목록을 확장할지 아닐지는 show_program_list 키"
+"로 조정할 수 있습니다."
 
 #: data/org.cafe.panel.gschema.xml.in:15
 msgid "Expand program list in \"Run Application\" dialog"
@@ -1320,8 +1311,9 @@ msgid ""
 "dialog is expanded when the dialog is opened. This key is only relevant if "
 "the enable_program_list key is true."
 msgstr ""
-"참이면 \"프로그램 실행\" 대화 상자가 나타날 때 그 대화 상자의 \"알려진 프로그램\" 목록이 열립니다.  이 설정은 "
-"enable_program_list 키가 참일 경우에만 의미가 있습니다."
+"참이면 \"프로그램 실행\" 대화 상자가 나타날 때 그 대화 상자의 \"알려진 프로그"
+"램\" 목록이 열립니다.  이 설정은 enable_program_list 키가 참일 경우에만 의미"
+"가 있습니다."
 
 #: data/org.cafe.panel.gschema.xml.in:20
 msgid "Enable autocompletion in \"Run Application\" dialog"
@@ -1339,8 +1331,8 @@ msgstr "\"프로그램 실행\" 대화상자 기록"
 #: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
-"commands are sorted descendingly by recency (e.g., most recent command comes"
-" first)."
+"commands are sorted descendingly by recency (e.g., most recent command comes "
+"first)."
 msgstr ""
 "이것은 \"애플리케이션 실행\"대화 상자에서 사용되는 명령 목록입니다. \n"
 "명령은 최근 실행 순으로 정렬됩니다 (예 : 가장 최근 명령이 먼저 나오는 경우)."
@@ -1353,7 +1345,9 @@ msgstr "\"애플리케이션 실행\" 대화 상자 기록 크기 최대로"
 msgid ""
 "Controls the maximum size of the history of the \"Run Application\" dialog. "
 "A value of 0 will disable the history."
-msgstr "\"애플리케이션 실행\" 대화 상자 기록 크기 조절하기. 크기가 0 일 땐 기록 표시하지 않기."
+msgstr ""
+"\"애플리케이션 실행\" 대화 상자 기록 크기 조절하기. 크기가 0 일 땐 기록 표시"
+"하지 않기."
 
 #: data/org.cafe.panel.gschema.xml.in:35
 msgid "Reverse the history of the \"Run Application\" dialog"
@@ -1363,7 +1357,9 @@ msgstr "\"애플리케이션 실행\" 대화 상자 기록 역순으로 보기"
 msgid ""
 "Displays the history in reverse. Provides a consistent view for terminal "
 "users as the up key will select the most recent entry."
-msgstr "기록 역순으로 보기. 터미널 사용자에게 일정한 크기로 up 키를 통해 가장 최근 순으로 선택 나열합니다."
+msgstr ""
+"기록 역순으로 보기. 터미널 사용자에게 일정한 크기로 up 키를 통해 가장 최근 순"
+"으로 선택 나열합니다."
 
 #: data/org.cafe.panel.gschema.xml.in:40
 msgid "Panel ID list"
@@ -1374,8 +1370,8 @@ msgid ""
 "A list of panel IDs. Each ID identifies an individual toplevel panel. The "
 "settings for each of these panels are stored in /apps/panel/toplevels/$(id)."
 msgstr ""
-"패널 ID 목록. 각 ID는 각각의 최상위 패널을 가리킵니다. 이 설정은 /apps/panel/toplevels/$(id)에 들어 "
-"있습니다."
+"패널 ID 목록. 각 ID는 각각의 최상위 패널을 가리킵니다. 이 설정은 /apps/panel/"
+"toplevels/$(id)에 들어 있습니다."
 
 #: data/org.cafe.panel.gschema.xml.in:45
 msgid "Panel object ID list"
@@ -1383,12 +1379,13 @@ msgstr "패널 오브젝트 ID 목록"
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object "
-"(e.g. a launcher, action button or menu button/bar). The settings for each "
-"of these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object (e."
+"g. a launcher, action button or menu button/bar). The settings for each of "
+"these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
-"패널 오브젝트 ID 목록. 각 ID는 각각의 패널 오브젝트를 가리킵니다. 실행 아이콘, 액션 단추, 혹은 메뉴 단추/메뉴 모음이 이에 "
-"해당됩니다.  이 오브젝트의 설정은 /apps/panel/objects/$(id)에 들어 있습니다."
+"패널 오브젝트 ID 목록. 각 ID는 각각의 패널 오브젝트를 가리킵니다. 실행 아이"
+"콘, 액션 단추, 혹은 메뉴 단추/메뉴 모음이 이에 해당됩니다.  이 오브젝트의 설"
+"정은 /apps/panel/objects/$(id)에 들어 있습니다."
 
 #: data/org.cafe.panel.gschema.xml.in:50
 msgid "Enable tooltips"
@@ -1421,7 +1418,8 @@ msgstr "패널을 제거할 때 확인 질문"
 msgid ""
 "If true, a dialog is shown asking for confirmation if the user wants to "
 "remove a panel."
-msgstr "참이면, 패널을 제거하려고 할 때 확인 질문을 하는 대화 상자가 표시됩니다."
+msgstr ""
+"참이면, 패널을 제거하려고 할 때 확인 질문을 하는 대화 상자가 표시됩니다."
 
 #: data/org.cafe.panel.gschema.xml.in:69
 msgid "Highlight launchers on mouseover"
@@ -1439,11 +1437,11 @@ msgstr "패널 완전 고정"
 #: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
-"panel. Individual applets may need to be locked down separately however. The"
-" panel must be restarted for this to take effect."
+"panel. Individual applets may need to be locked down separately however. The "
+"panel must be restarted for this to take effect."
 msgstr ""
-"참이면, 패널의 설정을 아무 것도 바꿀 수 없게 됩니다. 하지만 각각의 애플릿은 별도로 고정해야 합니다. 이 설정을 적용하려면 패널을 "
-"다시 시작해야 합니다."
+"참이면, 패널의 설정을 아무 것도 바꿀 수 없게 됩니다. 하지만 각각의 애플릿은 "
+"별도로 고정해야 합니다. 이 설정을 적용하려면 패널을 다시 시작해야 합니다."
 
 #: data/org.cafe.panel.gschema.xml.in:79
 msgid "Applet IIDs to disable from loading"
@@ -1456,9 +1454,10 @@ msgid ""
 "disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
-"패널이 무시할 애플릿 IID의 목록. 여기에 쓰면 특정 애플릿을 읽어들이거나 메뉴에 나타나지 못하게 할 수 있습니다. 예를 들어 "
-"mini-commander 애플릿을 사용하지 않으려면 'OAFIID::CAFE_MiniCommanderApplet'을 이 목록에 추가하면"
-" 됩니다. 이 설정을 적용하려면 패널을 다시 시작해야 합니다."
+"패널이 무시할 애플릿 IID의 목록. 여기에 쓰면 특정 애플릿을 읽어들이거나 메뉴"
+"에 나타나지 못하게 할 수 있습니다. 예를 들어 mini-commander 애플릿을 사용하"
+"지 않으려면 'OAFIID::CAFE_MiniCommanderApplet'을 이 목록에 추가하면 됩니다. "
+"이 설정을 적용하려면 패널을 다시 시작해야 합니다."
 
 #: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
@@ -1468,7 +1467,9 @@ msgstr "강제종료 비활성화"
 msgid ""
 "If true, the panel will not allow a user to force an application to quit by "
 "removing access to the force quit button."
-msgstr "참이면, 강제로 끝내기 단추에 접근하지 못하게 해서 프로그램을 강제로 끝내지 못하게 합니다."
+msgstr ""
+"참이면, 강제로 끝내기 단추에 접근하지 못하게 해서 프로그램을 강제로 끝내지 못"
+"하게 합니다."
 
 #: data/org.cafe.panel.gschema.xml.in:89
 msgid "Enable SNI support"
@@ -1526,7 +1527,9 @@ msgstr "메뉴 막대 아이콘 크기"
 msgid ""
 "Set the size of an icon used in menu bar. The panel must be restarted for "
 "this to take effect."
-msgstr "메뉴 모음 막대에 사용하는 아이콘 크기를 지정합니다. 패널을 다시 시작해서 적용해야 합니다."
+msgstr ""
+"메뉴 모음 막대에 사용하는 아이콘 크기를 지정합니다. 패널을 다시 시작해서 적용"
+"해야 합니다."
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:45
 msgid "Menu items icon size"
@@ -1534,9 +1537,11 @@ msgstr "메뉴 항목 아이콘 크기"
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
-"Set the size of icons used in the menu. The panel must be restarted for this"
-" to take effect."
-msgstr "메뉴에 사용하는 항목들의 아이콘 크기를 지정합니다. 패널을 다시 시작해서 적용해야 합니다."
+"Set the size of icons used in the menu. The panel must be restarted for this "
+"to take effect."
+msgstr ""
+"메뉴에 사용하는 항목들의 아이콘 크기를 지정합니다. 패널을 다시 시작해서 적용"
+"해야 합니다."
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:50
 msgid "Threshold of menu items before submenu is created"
@@ -1572,7 +1577,9 @@ msgstr "패널에서 오브젝트의 위치"
 msgid ""
 "The position of this panel object. The position is specified by the number "
 "of pixels from the left (or top if vertical) panel edge."
-msgstr "이 패널 오브젝트의 위치. 이 위치는 패널의 왼쪽(세로인 경우 위쪽)에서부터 픽셀수로 지정됩니다."
+msgstr ""
+"이 패널 오브젝트의 위치. 이 위치는 패널의 왼쪽(세로인 경우 위쪽)에서부터 픽셀"
+"수로 지정됩니다."
 
 #: data/org.cafe.panel.object.gschema.xml.in:20
 msgid "Interpret position relative to bottom/right edge"
@@ -1580,9 +1587,11 @@ msgstr "위치를 아래쪽/오른쪽 끝에서부터 상대적인 값으로 해
 
 #: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
-"If true, the position of the object is interpreted relative to the right (or"
-" bottom if vertical) edge of the panel."
-msgstr "참이면 오브젝트의 위치를 패널의 오른쪽(세로인 경우 아래쪽) 가장자리부터 상대적인 값으로 해석합니다."
+"If true, the position of the object is interpreted relative to the right (or "
+"bottom if vertical) edge of the panel."
+msgstr ""
+"참이면 오브젝트의 위치를 패널의 오른쪽(세로인 경우 아래쪽) 가장자리부터 상대"
+"적인 값으로 해석합니다."
 
 #: data/org.cafe.panel.object.gschema.xml.in:25
 msgid "Lock the object to the panel"
@@ -1590,9 +1599,11 @@ msgstr "오브젝트를 패널에 고정"
 
 #: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
-"If true, the user may not move the applet without first unlocking the object"
-" using the \"Unlock\" menuitem."
-msgstr "참이면, \"고정 해제\" 메뉴 항목을 사용해 오브젝트의 고정 상태를 풀어야 애플릿을 옮길 수 있습니다."
+"If true, the user may not move the applet without first unlocking the object "
+"using the \"Unlock\" menuitem."
+msgstr ""
+"참이면, \"고정 해제\" 메뉴 항목을 사용해 오브젝트의 고정 상태를 풀어야 애플릿"
+"을 옮길 수 있습니다."
 
 #: data/org.cafe.panel.object.gschema.xml.in:30
 msgid "Applet IID"
@@ -1600,13 +1611,13 @@ msgstr "애플릿 IID"
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. "
-"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
-"applet\")."
+"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
+"ClockApplet\". This key is only relevant if the object_type key is "
+"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
 msgstr ""
-"\"ClockAppletFactory::ClockApplet\" 같은 애플릿의 구현체 ID입니다. 이 키는 object_type 키가 "
-"\"external-applet\"(또는 오래된 \"cafecomponent-applet\")일 경우에만 해당합니다"
+"\"ClockAppletFactory::ClockApplet\" 같은 애플릿의 구현체 ID입니다. 이 키는 "
+"object_type 키가 \"external-applet\"(또는 오래된 \"cafecomponent-applet\")일 "
+"경우에만 해당합니다"
 
 #: data/org.cafe.panel.object.gschema.xml.in:35
 msgid "Panel attached to drawer"
@@ -1616,7 +1627,9 @@ msgstr "서랍에 붙어 있는 패널"
 msgid ""
 "The identifier of the panel attached to this drawer. This key is only "
 "relevant if the object_type key is \"drawer-object\"."
-msgstr "이 서랍에 붙어 있는 패널의 ID. 이 키는 object_type 키가 \"drawer-object\"일 경우에만 의미가 있습니다."
+msgstr ""
+"이 서랍에 붙어 있는 패널의 ID. 이 키는 object_type 키가 \"drawer-object\"일 "
+"경우에만 의미가 있습니다."
 
 #: data/org.cafe.panel.object.gschema.xml.in:40
 msgid "Tooltip displayed for drawer or menu"
@@ -1625,11 +1638,10 @@ msgstr "서랍 혹은 메뉴에 표시할 설명"
 #: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
-"only relevant if the object_type key is \"drawer-object\" or \"menu-"
-"object\"."
+"only relevant if the object_type key is \"drawer-object\" or \"menu-object\"."
 msgstr ""
-"이 서랍 혹은 메뉴의 설명으로 보여줄 텍스트. 이 키는 object_type 키가 \"drawer-object\" 혹은 \"menu-"
-"object\"일 경우에만 의미가 있습니다."
+"이 서랍 혹은 메뉴의 설명으로 보여줄 텍스트. 이 키는 object_type 키가 "
+"\"drawer-object\" 혹은 \"menu-object\"일 경우에만 의미가 있습니다."
 
 #: data/org.cafe.panel.object.gschema.xml.in:45
 msgid "Use custom icon for object's button"
@@ -1641,8 +1653,9 @@ msgid ""
 "false, the custom_icon key is ignored. This key is only relevant if the "
 "object_type key is \"menu-object\" or \"drawer-object\"."
 msgstr ""
-"참이면, custom_icon 키를 이 단추의 사용자 설정 아이콘으로 사용합니다. 거짓이면, custom_icon 키를 무시합니다. 이 "
-"설정은 object_type 키가 \"menu-object\"이거나 \"drawer-object\"일 경우에만 의미가 있습니다."
+"참이면, custom_icon 키를 이 단추의 사용자 설정 아이콘으로 사용합니다. 거짓이"
+"면, custom_icon 키를 무시합니다. 이 설정은 object_type 키가 \"menu-object\"이"
+"거나 \"drawer-object\"일 경우에만 의미가 있습니다."
 
 #: data/org.cafe.panel.object.gschema.xml.in:50
 msgid "Icon used for object's button"
@@ -1654,8 +1667,9 @@ msgid ""
 "This key is only relevant if the object_type key is \"drawer-object\" or "
 "\"menu-object\" and the use_custom_icon key is true."
 msgstr ""
-"오브젝트의 단추에 아이콘으로 사용할 그림 파일의 위치. 이 키는 object_type 키가 \"drawer-object\"이거나 "
-"\"menu-object\"이고 use_custom_icon 키가 참일 경우에만 의미가 있습니다."
+"오브젝트의 단추에 아이콘으로 사용할 그림 파일의 위치. 이 키는 object_type 키"
+"가 \"drawer-object\"이거나 \"menu-object\"이고 use_custom_icon 키가 참일 경우"
+"에만 의미가 있습니다."
 
 #: data/org.cafe.panel.object.gschema.xml.in:55
 msgid "Use custom path for menu contents"
@@ -1667,8 +1681,9 @@ msgid ""
 "should be constructed. If false, the menu_path key is ignored. This key is "
 "only relevant if the object_type key is \"menu-object\"."
 msgstr ""
-"참이면, menu_path 키를 메뉴 내용 읽어들일 경로로 사용합니다. 거짓이면 menu_path 키를 무시합니다. 이 설정은 "
-"object_type 키가 \"menu-object\"일 경우에만 의미가 있습니다."
+"참이면, menu_path 키를 메뉴 내용 읽어들일 경로로 사용합니다. 거짓이면 "
+"menu_path 키를 무시합니다. 이 설정은 object_type 키가 \"menu-object\"일 경우"
+"에만 의미가 있습니다."
 
 #: data/org.cafe.panel.object.gschema.xml.in:60
 msgid "Menu content path"
@@ -1680,8 +1695,8 @@ msgid ""
 "relevant if the use_menu_path key is true and the object_type key is \"menu-"
 "object\"."
 msgstr ""
-"메뉴 내용을 만들 경로. 이 키는 use_menu_path 키가 참이고 object_type 키가 \"menu-object\"일 경우에만"
-" 의미가 있습니다."
+"메뉴 내용을 만들 경로. 이 키는 use_menu_path 키가 참이고 object_type 키가 "
+"\"menu-object\"일 경우에만 의미가 있습니다."
 
 #: data/org.cafe.panel.object.gschema.xml.in:65
 msgid "Draw arrow in menu button"
@@ -1691,7 +1706,9 @@ msgstr "메뉴 단추에 화살표 그리기"
 msgid ""
 "If true, an arrow is drawn over the menu button icon. If false, menu button "
 "has only the icon."
-msgstr "참이면, 메뉴 단추 아이콘 위에 화살표를 그립니다. 거짓이면, 메뉴 단추에 아이콘만 나타납니다."
+msgstr ""
+"참이면, 메뉴 단추 아이콘 위에 화살표를 그립니다. 거짓이면, 메뉴 단추에 아이콘"
+"만 나타납니다."
 
 #: data/org.cafe.panel.object.gschema.xml.in:70
 msgid "Launcher location"
@@ -1702,8 +1719,8 @@ msgid ""
 "The location of the .desktop file describing the launcher. This key is only "
 "relevant if the object_type key is \"launcher-object\"."
 msgstr ""
-"실행 아이콘에 대한 정보가 들어 있는 .desktop 파일의 위치. 이 키는 object_type 키가 \"launcher-"
-"object\"일 경우에만 의미가 있습니다."
+"실행 아이콘에 대한 정보가 들어 있는 .desktop 파일의 위치. 이 키는 "
+"object_type 키가 \"launcher-object\"일 경우에만 의미가 있습니다."
 
 #: data/org.cafe.panel.object.gschema.xml.in:75
 msgid "Action button type"
@@ -1715,8 +1732,9 @@ msgid ""
 "\"logout\", \"run\", \"search\" and \"screenshot\". This key is only "
 "relevant if the object_type key is \"action-applet\"."
 msgstr ""
-"이 단추의 액션 타입. 가능한 값은 \"lock\", \"logout\", \"run\", \"search\", 그리고 "
-"\"screenshot\"입니다. 이 키는 object_type 키가 \"action-applet\"일 경우에만 의미가 있습니다."
+"이 단추의 액션 타입. 가능한 값은 \"lock\", \"logout\", \"run\", \"search\", "
+"그리고 \"screenshot\"입니다. 이 키는 object_type 키가 \"action-applet\"일 경"
+"우에만 의미가 있습니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:5
 msgid "Name to identify panel"
@@ -1728,8 +1746,8 @@ msgid ""
 "main purpose is to serve as the panel's window title which is useful when "
 "navigating between panels."
 msgstr ""
-"패널을 구분할 때 사람이 알아 볼 수 있는 이름입니다. 주된 목적은 패널의 창 제목으로 사용하는 것입니다. 패널 사이를 왔다갔다할 때 창"
-" 제목이 쓰입니다."
+"패널을 구분할 때 사람이 알아 볼 수 있는 이름입니다. 주된 목적은 패널의 창 제"
+"목으로 사용하는 것입니다. 패널 사이를 왔다갔다할 때 창 제목이 쓰입니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:10
 msgid "X screen where the panel is displayed"
@@ -1739,7 +1757,9 @@ msgstr "패널을 표시할 X 화면"
 msgid ""
 "With a multi-screen setup, you may have panels on each individual screen. "
 "This key identifies the current screen the panel is displayed on."
-msgstr "여러 화면에서 사용하는 경우, 각각의 화면에 패널을 놓을 수 있습니다. 이 키는 패널이 보이는 현재 화면을 나타냅니다."
+msgstr ""
+"여러 화면에서 사용하는 경우, 각각의 화면에 패널을 놓을 수 있습니다. 이 키는 "
+"패널이 보이는 현재 화면을 나타냅니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:15
 msgid "Xinerama monitor where the panel is displayed"
@@ -1749,7 +1769,9 @@ msgstr "패널을 표시할 Xinerama 모니터"
 msgid ""
 "In a Xinerama setup, you may have panels on each individual monitor. This "
 "key identifies the current monitor the panel is displayed on."
-msgstr "Xinerama 설정에서, 각각의 모니터에 대해서 패널을 놓을 수 있습니다. 이 키는 패널을 보여줄 모니터를 지정합니다."
+msgstr ""
+"Xinerama 설정에서, 각각의 모니터에 대해서 패널을 놓을 수 있습니다. 이 키는 패"
+"널을 보여줄 모니터를 지정합니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:20
 msgid "Expand to occupy entire screen width"
@@ -1758,12 +1780,13 @@ msgstr "전체 화면 너비를 차지할 만큼 확대"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
-"vertical panel). In this mode the panel can only be placed at a screen edge."
-" If false, the panel will only be large enough to accommodate the applets, "
+"vertical panel). In this mode the panel can only be placed at a screen edge. "
+"If false, the panel will only be large enough to accommodate the applets, "
 "launchers and buttons on the panel."
 msgstr ""
-"참이면, 패널 너비가 전체 화면 너비만큼 차지합니다(세로 패널이면 패널 높이). 이 모드에서 패널은 화면 가장자리에만 놓을 수 있습니다."
-" 거짓이면, 패널은 그 안의 애플릿, 실행 아이콘, 단추를 집어 넣을 수 있을 만큼의 너비만 차지합니다."
+"참이면, 패널 너비가 전체 화면 너비만큼 차지합니다(세로 패널이면 패널 높이). "
+"이 모드에서 패널은 화면 가장자리에만 놓을 수 있습니다. 거짓이면, 패널은 그 안"
+"의 애플릿, 실행 아이콘, 단추를 집어 넣을 수 있을 만큼의 너비만 차지합니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:25
 msgid "Panel orientation"
@@ -1774,16 +1797,18 @@ msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
 "the panel is on. In un-expanded mode the difference between \"top\" and "
-"\"bottom\" is less important - both indicate that this is a horizontal panel"
-" - but still give a useful hint as to how some panel objects should behave. "
-"For example, on a \"top\" panel a menu button will pop up its menu below the"
-" panel, whereas on a \"bottom\" panel the menu will be popped up above the "
+"\"bottom\" is less important - both indicate that this is a horizontal panel "
+"- but still give a useful hint as to how some panel objects should behave. "
+"For example, on a \"top\" panel a menu button will pop up its menu below the "
+"panel, whereas on a \"bottom\" panel the menu will be popped up above the "
 "panel."
 msgstr ""
-"패널의 방향. 가능한 값은 \"top\", \"bottom\", \"left\", \"right\"입니다. 확장 모드에서 이 키는 패널이"
-" 놓인 화면 가장자리가 어디인지를 나타냅니다. 확장하지 않은 모드에서 \"top\"과 \"bottom\"의 차이점은 별로 중요하지 "
-"않습니다 - 둘 다 가로 방향 패널이지만 몇몇 패널 오브젝트의 동작 방식에 힌트를 줍니다. 예를 들어, \"top\" 패널에서 메뉴 "
-"단추를 누르면 패널의 아래 방향으로 메뉴가 나타나지만, \"bottom\" 패널에서는 패널의 위쪽 방향으로 메뉴가 나타납니다."
+"패널의 방향. 가능한 값은 \"top\", \"bottom\", \"left\", \"right\"입니다. 확"
+"장 모드에서 이 키는 패널이 놓인 화면 가장자리가 어디인지를 나타냅니다. 확장하"
+"지 않은 모드에서 \"top\"과 \"bottom\"의 차이점은 별로 중요하지 않습니다 - 둘 "
+"다 가로 방향 패널이지만 몇몇 패널 오브젝트의 동작 방식에 힌트를 줍니다. 예를 "
+"들어, \"top\" 패널에서 메뉴 단추를 누르면 패널의 아래 방향으로 메뉴가 나타나"
+"지만, \"bottom\" 패널에서는 패널의 위쪽 방향으로 메뉴가 나타납니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:30
 msgid "Panel size"
@@ -1796,8 +1821,9 @@ msgid ""
 "indicators. The maximum size is fixed at one quarter of the screen height "
 "(or width)."
 msgstr ""
-"패널의 높이(세로 패널의 경우 너비)입니다. 패널은 실행할 때 글꼴 크기와 그 외 표시 사항을 바탕으로 최소 크기를 결정합니다. 최대 "
-"크기는 화면 높이(혹은 너비)의 1/4입니다."
+"패널의 높이(세로 패널의 경우 너비)입니다. 패널은 실행할 때 글꼴 크기와 그 외 "
+"표시 사항을 바탕으로 최소 크기를 결정합니다. 최대 크기는 화면 높이(혹은 너비)"
+"의 1/4입니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:35
 msgid "X co-ordinate of panel"
@@ -1809,8 +1835,9 @@ msgid ""
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
 "at the screen edge specified by the orientation key."
 msgstr ""
-"가로축에서 패널의 위치. 이 키는 확장하지 않은 모드에서만 의미가 있습니다. 확장한 모드에서는 이 키를 무시하고 orientation "
-"키에서 지정한 화면 가장자리에 패널을 놓습니다."
+"가로축에서 패널의 위치. 이 키는 확장하지 않은 모드에서만 의미가 있습니다. 확"
+"장한 모드에서는 이 키를 무시하고 orientation 키에서 지정한 화면 가장자리에 패"
+"널을 놓습니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:40
 msgid "Y co-ordinate of panel"
@@ -1822,8 +1849,9 @@ msgid ""
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
 "at the screen edge specified by the orientation key."
 msgstr ""
-"세로축에서 패널의 위치. 이 키는 확장하지 않은 모드에서만 의미가 있습니다. 확장한 모드에서는 이 키를 무시하고 orientation "
-"키에서 지정한 화면 가장자리에 패널을 놓습니다."
+"세로축에서 패널의 위치. 이 키는 확장하지 않은 모드에서만 의미가 있습니다. 확"
+"장한 모드에서는 이 키를 무시하고 orientation 키에서 지정한 화면 가장자리에 패"
+"널을 놓습니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:45
 msgid "X co-ordinate of panel, starting from the right of the screen"
@@ -1838,9 +1866,10 @@ msgid ""
 "this key is ignored and the panel is placed at the screen edge specified by "
 "the orientation key."
 msgstr ""
-"화면 오른쪽에서 시작하는 가로축에서 패널의 위치. 값을 -1로 설정할 경우, 이 값은 무시하고 x 키의 값을 사용합니다. 값이 0보다 클"
-" 경우 x 키의 값을 무시합니다. 이 키는 확장하지 않은 모드에서만 의미가 있습니다. 확장한 모드에서는 이 키를 무시하고 "
-"orientation 키에서 지정한 화면 가장자리에 패널을 놓습니다."
+"화면 오른쪽에서 시작하는 가로축에서 패널의 위치. 값을 -1로 설정할 경우, 이 값"
+"은 무시하고 x 키의 값을 사용합니다. 값이 0보다 클 경우 x 키의 값을 무시합니"
+"다. 이 키는 확장하지 않은 모드에서만 의미가 있습니다. 확장한 모드에서는 이 키"
+"를 무시하고 orientation 키에서 지정한 화면 가장자리에 패널을 놓습니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:50
 msgid "Y co-ordinate of panel, starting from the bottom of the screen"
@@ -1855,9 +1884,10 @@ msgid ""
 "this key is ignored and the panel is placed at the screen edge specified by "
 "the orientation key."
 msgstr ""
-"화면 오른쪽에서 시작하는 세로축에서 패널의 위치. 값을 -1로 설정할 경우, 이 값은 무시하고 y 키의 값을 사용합니다. 값이 0보다 클"
-" 경우 y 키의 값을 무시합니다. 이 키는 확장하지 않은 모드에서만 의미가 있습니다. 확장한 모드에서는 이 키를 무시하고 "
-"orientation 키에서 지정한 화면 가장자리에 패널을 놓습니다."
+"화면 오른쪽에서 시작하는 세로축에서 패널의 위치. 값을 -1로 설정할 경우, 이 값"
+"은 무시하고 y 키의 값을 사용합니다. 값이 0보다 클 경우 y 키의 값을 무시합니"
+"다. 이 키는 확장하지 않은 모드에서만 의미가 있습니다. 확장한 모드에서는 이 키"
+"를 무시하고 orientation 키에서 지정한 화면 가장자리에 패널을 놓습니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:55
 msgid "Center panel on x-axis"
@@ -1870,8 +1900,9 @@ msgid ""
 "at that position - i.e. the panel will grow on both sides. If false, the x "
 "and x_right keys specify the location of the panel."
 msgstr ""
-"참이면, x 키 및 x_right 키를 무시하고 화면의 가로축의 정가운데에 패널을 놓습니다. 패널의 크기를 바꿔도 그 위치를 유지합니다."
-" 즉 패널이 양쪽 방향으로 늘어납니다. 거짓이면, x 키 및 x_right 키가 패널의 위치를 결정합니다."
+"참이면, x 키 및 x_right 키를 무시하고 화면의 가로축의 정가운데에 패널을 놓습"
+"니다. 패널의 크기를 바꿔도 그 위치를 유지합니다. 즉 패널이 양쪽 방향으로 늘어"
+"납니다. 거짓이면, x 키 및 x_right 키가 패널의 위치를 결정합니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:60
 msgid "Center panel on y-axis"
@@ -1884,8 +1915,9 @@ msgid ""
 "at that position - i.e. the panel will grow on both sides. If false, the y "
 "and y_bottom keys specify the location of the panel."
 msgstr ""
-"참이면, y 키 및 y_bottom 키를 무시하고 화면의 세로축의 정가운데에 패널을 놓습니다. 패널의 크기를 바꿔도 그 위치를 "
-"유지합니다. 즉 패널은 양쪽 방향으로 늘어납니다. 거짓이면, y 키 및 y_bottom 키가 패널의 위치를 결정합니다."
+"참이면, y 키 및 y_bottom 키를 무시하고 화면의 세로축의 정가운데에 패널을 놓습"
+"니다. 패널의 크기를 바꿔도 그 위치를 유지합니다. 즉 패널은 양쪽 방향으로 늘어"
+"납니다. 거짓이면, y 키 및 y_bottom 키가 패널의 위치를 결정합니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:65
 msgid "Automatically hide panel into corner"
@@ -1897,14 +1929,16 @@ msgid ""
 "the pointer leaves the panel area. Moving the pointer to that corner again "
 "will cause the panel to re-appear."
 msgstr ""
-"참이면, 마우스 포인터가 패널을 벗어났을 때, 자동으로 패널을 화면 구석으로 숨깁니다. 포인터를 그 구석으로 움직이면 패널이 다시 "
-"나타납니다."
+"참이면, 마우스 포인터가 패널을 벗어났을 때, 자동으로 패널을 화면 구석으로 숨"
+"깁니다. 포인터를 그 구석으로 움직이면 패널이 다시 나타납니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
 "If true, hiding and un-hiding of this panel will be anicafed rather than "
 "happening instantly."
-msgstr "참이면, 이 패널의 숨기기 및 숨기기 해제가 즉시 이루어지지 않고 애니메이션으로 이루어집니다."
+msgstr ""
+"참이면, 이 패널의 숨기기 및 숨기기 해제가 즉시 이루어지지 않고 애니메이션으"
+"로 이루어집니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:75
 msgid "Enable hide buttons"
@@ -1914,7 +1948,9 @@ msgstr "숨기기 단추 사용"
 msgid ""
 "If true, buttons will be placed on each side of the panel which may be used "
 "to move the panel to edge of the screen, leaving only a button showing."
-msgstr "참이면, 패널의 양쪽 끝에 단추가 만들어집니다. 그 단추를 누르면 패널이 가장자리로 들어가고 단추만 남습니다."
+msgstr ""
+"참이면, 패널의 양쪽 끝에 단추가 만들어집니다. 그 단추를 누르면 패널이 가장자"
+"리로 들어가고 단추만 남습니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:80
 msgid "Enable arrows on hide buttons"
@@ -1924,7 +1960,9 @@ msgstr "숨기기 단추 위에 화살표 사용"
 msgid ""
 "If true, arrows will be placed on the hide buttons. This key is only "
 "relevant if the enable_buttons key is true."
-msgstr "참이면, 숨기기 단추에 화살표를 그립니다. 이 키는 enable_buttons 키가 참일 때에만 의미가 있습니다."
+msgstr ""
+"참이면, 숨기기 단추에 화살표를 그립니다. 이 키는 enable_buttons 키가 참일 때"
+"에만 의미가 있습니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:85
 msgid "Panel autohide delay"
@@ -1936,8 +1974,9 @@ msgid ""
 "panel area before the panel is automatically hidden. This key is only "
 "relevant if the auto_hide key is true."
 msgstr ""
-"마우스 포인터가 패널 구역을 벗어나고, 패널이 자동으로 숨겨질 때까지의 지연 시간을 지정합니다(천분의 일초 단위). 이 키는 "
-"auto_hide 키가 참일 경우에만 의미가 있습니다."
+"마우스 포인터가 패널 구역을 벗어나고, 패널이 자동으로 숨겨질 때까지의 지연 시"
+"간을 지정합니다(천분의 일초 단위). 이 키는 auto_hide 키가 참일 경우에만 의미"
+"가 있습니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:90
 msgid "Panel autounhide delay"
@@ -1949,8 +1988,9 @@ msgid ""
 "panel area before the panel is automatically re-shown. This key is only "
 "relevant if the auto_hide key is true."
 msgstr ""
-"마우스가 포인터가 패널 구역에 들어오고, 패널이 자동으로 다시 나타날 때까지의 지연 시간을 지정합니다(천분의 일초 단위). 이 키는 "
-"auto_hide 키가 참일 경우에만 의미가 있습니다."
+"마우스가 포인터가 패널 구역에 들어오고, 패널이 자동으로 다시 나타날 때까지의 "
+"지연 시간을 지정합니다(천분의 일초 단위). 이 키는 auto_hide 키가 참일 경우에"
+"만 의미가 있습니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:95
 msgid "Visible pixels when hidden"
@@ -1959,10 +1999,10 @@ msgstr "숨겨졌을 때 보여줄 픽셀 수"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
-"hidden into a corner. This key is only relevant if the auto_hide key is "
-"true."
+"hidden into a corner. This key is only relevant if the auto_hide key is true."
 msgstr ""
-"패널이 자동으로 구석에 숨겨졌을 때 보여줄 픽셀 수를 지정합니다. 이 키는 auto_hide 키가 참일 경우에만 의미가 있습니다."
+"패널이 자동으로 구석에 숨겨졌을 때 보여줄 픽셀 수를 지정합니다. 이 키는 "
+"auto_hide 키가 참일 경우에만 의미가 있습니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:100
 msgid "Animation speed"
@@ -1974,8 +2014,9 @@ msgid ""
 "\"slow\", \"medium\" and \"fast\". This key is only relevant if the "
 "enable_animations key is true."
 msgstr ""
-"패널 애니메이션이 이루어지는 속도입니다. 가능한 값은 \"slow\", \"medium\" 그리고 \"fast\"입니다. 이 키는 "
-"enable_animation 키가 참일 경우에만 의미가 있습니다."
+"패널 애니메이션이 이루어지는 속도입니다. 가능한 값은 \"slow\", \"medium\" 그"
+"리고 \"fast\"입니다. 이 키는 enable_animation 키가 참일 경우에만 의미가 있습"
+"니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:108
 msgid "Background type"
@@ -1988,8 +2029,9 @@ msgid ""
 "color key will be used as background color or \"image\" - the image "
 "specified by the image key will be used as background."
 msgstr ""
-"이 패널에 사용할 배경 형식입니다. 가능한 값은 \"none\" - 사용할 기본 CTK+ 위젯 배경, \"color\" - 배경 색으로 "
-"사용할 색상 키, \"image\" - 배경으로 사용하는 이미지 키로 지정한 그림 입니다."
+"이 패널에 사용할 배경 형식입니다. 가능한 값은 \"none\" - 사용할 기본 CTK+ 위"
+"젯 배경, \"color\" - 배경 색으로 사용할 색상 키, \"image\" - 배경으로 사용하"
+"는 이미지 키로 지정한 그림 입니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:113
 msgid "Background color"
@@ -2006,11 +2048,11 @@ msgstr "배경색 불투명도"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
-"completely opaque (a value of less than 65535), the color will be composited"
-" onto the desktop background image."
+"completely opaque (a value of less than 65535), the color will be composited "
+"onto the desktop background image."
 msgstr ""
-"배경색 형식의 불투명도를 지정합니다. 색이 완전히 불투명한 경우가 아니면(65535보다 작은 값), 이 색은 데스크톱 배경 그림과 "
-"결합됩니다."
+"배경색 형식의 불투명도를 지정합니다. 색이 완전히 불투명한 경우가 아니면(65535"
+"보다 작은 값), 이 색은 데스크톱 배경 그림과 결합됩니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:123
 msgid "Background image"
@@ -2021,7 +2063,9 @@ msgid ""
 "Specifies the file to be used for the background image. If the image "
 "contains an alpha channel it will be composited onto the desktop background "
 "image."
-msgstr "배경 그림으로 사용할 파일을 지정합니다. 그림에 알파 채널이 들어 있으면 데스크톱 배경 그림과 결합됩니다."
+msgstr ""
+"배경 그림으로 사용할 파일을 지정합니다. 그림에 알파 채널이 들어 있으면 데스크"
+"톱 배경 그림과 결합됩니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:128
 msgid "Fit image to panel"
@@ -2031,7 +2075,9 @@ msgstr "패널에 맞게 그림 크기 맞추기"
 msgid ""
 "If true, the image will be scaled (retaining the aspect ratio of the image) "
 "to the panel height (if horizontal)."
-msgstr "참이면, 그림의 크기를 패널 높이(가로 방향의 패널인 경우)에 맞게 바꿉니다(그림의 가로 세로 비율 유지)."
+msgstr ""
+"참이면, 그림의 크기를 패널 높이(가로 방향의 패널인 경우)에 맞게 바꿉니다(그림"
+"의 가로 세로 비율 유지)."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:133
 msgid "Stretch image to panel"
@@ -2041,7 +2087,9 @@ msgstr "패널 크기에 맞게 그림 크기 늘리기"
 msgid ""
 "If true, the image will be scaled to the panel dimensions. The aspect ratio "
 "of the image will not be maintained."
-msgstr "참이면, 패널의 크기에 맞게 그림의 크기를 조절합니다. 그림의 가로세로 비율은 유지하지 않습니다."
+msgstr ""
+"참이면, 패널의 크기에 맞게 그림의 크기를 조절합니다. 그림의 가로세로 비율은 "
+"유지하지 않습니다."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:138
 msgid "Rotate image on vertical panels"
@@ -2117,7 +2165,7 @@ msgid "_Open"
 msgstr "열기(_O)"
 
 #: cafe-panel/libpanel-util/panel-error.c:76
-#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
+#: cafe-panel/panel-applet-frame.c:800 cafe-panel/panel-applet-frame.c:988
 msgid "Error"
 msgstr "오류"
 
@@ -2164,7 +2212,7 @@ msgid "Cannot find an empty spot"
 msgstr "비어 있는 위치가 없습니다"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1650
+#: cafe-panel/panel-toplevel.c:1643
 msgid "Drawer"
 msgstr "서랍"
 
@@ -2173,7 +2221,7 @@ msgid "_Add to Drawer..."
 msgstr "서랍에 추가(_A)..."
 
 #: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
-#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:247
 msgid "_Properties"
 msgstr "속성(_P)"
 
@@ -2190,7 +2238,7 @@ msgid "- Edit .desktop files"
 msgstr "- .desktop 파일을 편집합니다"
 
 #: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
 msgid "Create Launcher"
 msgstr "실행 아이콘 만들기"
 
@@ -2203,7 +2251,7 @@ msgstr "디렉터리 속성"
 msgid "Launcher Properties"
 msgstr "실행 아이콘 속성"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "패널"
 
@@ -2211,13 +2259,9 @@ msgstr "패널"
 msgid ""
 "Launch other applications and provide various utilities to manage windows, "
 "show the time, etc."
-msgstr "다른 프로그램을 실행합니다. 그리고 창 관리, 시각 표시 등 여러가지 유틸리티가 들어 있습니다."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cafe-panel/cafe-panel.desktop.in:7
-msgid "cafe-panel"
 msgstr ""
+"다른 프로그램을 실행합니다. 그리고 창 관리, 시각 표시 등 여러가지 유틸리티가 "
+"들어 있습니다."
 
 #: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
@@ -2249,7 +2293,7 @@ msgstr "실행(_L)"
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "%s 키를 설정하지 않았습니다.  실행 아이콘을 읽어들일 수 없습니다\n"
 
-#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "실행 아이콘을 저장할 수 없습니다"
@@ -2414,68 +2458,68 @@ msgstr ""
 msgid "Not compatible with Wayland"
 msgstr ""
 
-#: cafe-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1055
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "\"%s\"에 추가할 항목 찾기(_I):"
 
-#: cafe-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1059
 msgid "Add to Drawer"
 msgstr "서랍에 추가"
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Find an _item to add to the drawer:"
 msgstr "서랍에 추가할 항목 찾기(_I):"
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Add to Panel"
 msgstr "패널에 추가"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Find an _item to add to the panel:"
 msgstr "패널에 추가할 항목 찾기(_I):"
 
-#: cafe-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1313
 msgid "_Back"
 msgstr "뒤로(_B)"
 
-#: cafe-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:761
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "\"%s\" 애플릿이 갑자기 종료되었습니다."
 
-#: cafe-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:763
 msgid "Panel object has quit unexpectedly"
 msgstr "패널 오브젝트가 갑자기 끝났습니다"
 
-#: cafe-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:770
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
 msgstr "패널 오브젝트를 다시 읽어들이면, 원래대로 다시 패널에 붙습니다."
 
-#: cafe-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:777
 msgid "D_elete"
 msgstr "지우기(_E)"
 
-#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:778 cafe-panel/panel-applet-frame.c:783
 msgid "_Don't Reload"
 msgstr "읽어들이지 않기(_D)"
 
-#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:779 cafe-panel/panel-applet-frame.c:784
 msgid "_Reload"
 msgstr "다시 읽기(_R)"
 
-#: cafe-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:950
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "패널에서 '%s'(을)를 읽어들이는 데 문제가 발생했습니다."
 
-#: cafe-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:965
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "설정에서 이 애플릿을 삭제하시겠습니까?"
 
-#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "삭제(_D)"
 
@@ -2491,56 +2535,60 @@ msgstr "마테 패널"
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 CAFE developers"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:120
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
-msgstr "이 프로그램은 다른 프로그램을 실행하고, 각종 유용한 기능이 들어 있습니다."
+msgstr ""
+"이 프로그램은 다른 프로그램을 실행하고, 각종 유용한 기능이 들어 있습니다."
 
-#: cafe-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:124
 msgid "About the CAFE Panel"
 msgstr "마테 패널 정보"
 
-#: cafe-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:155
 msgid "Cannot delete this panel"
 msgstr "이 패널을 삭제할 수 없습니다"
 
-#: cafe-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:156
 msgid "You must always have at least one panel."
 msgstr "적어도 하나의 패널이 있어야 합니다."
 
-#: cafe-panel/panel-context-menu.c:199
-msgid "Reset this panel?"
-msgstr "이 패널을 초기화할까요?"
-
 #: cafe-panel/panel-context-menu.c:200
+msgid "Reset all panels?"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:201
 msgid ""
-"When a panel is reset, all \n"
+"When the panels are reset, all \n"
 "custom settings are lost."
 msgstr ""
-"패널을 초기화하면, 모든 \n"
-"사용자 설정이 사라집니다."
 
-#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
-msgid "_Reset Panel"
-msgstr "패널 초기화(_R)"
+#: cafe-panel/panel-context-menu.c:215
+msgid "_Reset Panels"
+msgstr ""
 
-#: cafe-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:237
 msgid "_Add to Panel…"
 msgstr "패널에 추가(_A)..."
 
-#: cafe-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:257
+msgid "_Reset All Panels"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:264
 msgid "_Delete This Panel"
 msgstr "이 패널 삭제(_D)"
 
-#: cafe-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:277
 msgid "_New Panel"
 msgstr "새 패널(_N)"
 
-#: cafe-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:326
 msgid "A_bout Panels"
 msgstr "패널 정보(_B)"
 
@@ -2619,7 +2667,9 @@ msgstr "도움말 문서를 표시할 수 없습니다"
 #: cafe-panel/panel-force-quit.c:86
 msgid ""
 "Click on a window to force the application to quit. To cancel press <ESC>."
-msgstr "강제로 끝내고 싶은 프로그램의 창을 누르십시오.  취소하려면 <Esc>를 누르십시오."
+msgstr ""
+"강제로 끝내고 싶은 프로그램의 창을 누르십시오.  취소하려면 <Esc>를 누르십시"
+"오."
 
 #: cafe-panel/panel-force-quit.c:232
 msgid "Force this application to exit?"
@@ -2629,7 +2679,9 @@ msgstr "이 프로그램을 강제로 끝내시겠습니까?"
 msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."
-msgstr "프로그램을 강제로 끝내면, 그 프로그램에서 연 문서에 저장하지 않은 내용이 있으면 잃어버릴 수 있습니다."
+msgstr ""
+"프로그램을 강제로 끝내면, 그 프로그램에서 연 문서에 저장하지 않은 내용이 있으"
+"면 잃어버릴 수 있습니다."
 
 #: cafe-panel/panel-menu-bar.c:97
 msgid "Browse and run installed applications"
@@ -2709,49 +2761,51 @@ msgstr "바탕화면"
 msgid "Open the contents of your desktop in a folder"
 msgstr "바탕 화면 폴더를 엽니다"
 
-#: cafe-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1075
 msgid "Computer"
 msgstr "컴퓨터"
 
-#: cafe-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1081
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
-msgstr "이 컴퓨터에서 접근할 수 있는 모든 로컬 및 원격 디스크와 폴더를 살펴봅니다"
+msgstr ""
+"이 컴퓨터에서 접근할 수 있는 모든 로컬 및 원격 디스크와 폴더를 살펴봅니다"
 
-#: cafe-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1094
 msgid "Network"
 msgstr "네트워크"
 
-#: cafe-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1095
 msgid "Browse bookmarked and local network locations"
 msgstr "저장된 네트워크와 로컬 네트워크를 살펴봅니다"
 
-#: cafe-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1489
 msgid "Places"
 msgstr "위치"
 
-#: cafe-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1517
 msgid "System"
 msgstr "시스템"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: cafe-panel/panel-menu-items.c:1600
+#.
+#: cafe-panel/panel-menu-items.c:1602
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1614
 #, c-format
 msgid "Log Out %s..."
 msgstr "%s 로그아웃..."
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1618
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr "다른 사용자로 로그인하려 %s의 세션을 로그아웃합니다"
@@ -2919,33 +2973,34 @@ msgstr "최근 문서 지우기..."
 msgid "Clear all items from the recent documents list"
 msgstr "최근 문서 목록의 모든 항목을 지우시겠습니까?"
 
-#: cafe-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:435
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "'%s' 명령을 실행할 수 없습니다"
 
-#: cafe-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:476
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "'%s'을(를) UTF-8에서 변환할 수 없습니다"
 
-#: cafe-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1269
 msgid "Choose a file to append to the command..."
 msgstr "명령어에 덧붙일 파일을 선택하십시오..."
 
-#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "설명을 볼 프로그램을 선택하십시오."
 
-#: cafe-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1689
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "다음 명령을 실행합니다: '%s'"
 
-#: cafe-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1722
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
-msgstr "실행 대화 상자에 지정된 URI 목록의 형식(%d)이나 길이(%d)가 틀렸습니다\n"
+msgstr ""
+"실행 대화 상자에 지정된 URI 목록의 형식(%d)이나 길이(%d)가 틀렸습니다\n"
 
 #: cafe-panel/panel-run-dialog.ui:23
 msgid "Run Application"
@@ -2959,7 +3014,8 @@ msgstr "실행(_R)"
 msgid ""
 "Click this button to run the selected application or the command in the "
 "command entry field."
-msgstr "선택한 프로그램이나 명령어 입력란의 명령어를 실행하려면 이 단추를 누르십시오."
+msgstr ""
+"선택한 프로그램이나 명령어 입력란의 명령어를 실행하려면 이 단추를 누르십시오."
 
 #: cafe-panel/panel-run-dialog.ui:125
 msgid "Command icon"
@@ -3086,19 +3142,19 @@ msgstr "설정 디렉터리(_P):"
 msgid "Hide Panel"
 msgstr "패널 숨기기"
 
-#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
 msgid "Top Panel"
 msgstr "위쪽 패널"
 
-#: cafe-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1651
 msgid "Bottom Panel"
 msgstr "아래쪽 패널"
 
-#: cafe-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1653
 msgid "Left Panel"
 msgstr "왼쪽 패널"
 
-#: cafe-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Right Panel"
 msgstr "오른쪽 패널"
 
@@ -3116,17 +3172,17 @@ msgstr "'%s'을(를) 실행할 수 없습니다"
 msgid "file"
 msgstr "파일"
 
-#: cafe-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:876
 msgid "Home Folder"
 msgstr "홈 폴더"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:888
 msgid "File System"
 msgstr "파일 시스템"
 
-#: cafe-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1062
 msgid "Search"
 msgstr "검색"
 
@@ -3134,7 +3190,8 @@ msgstr "검색"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: cafe-panel/panel-util.c:1106
+#.
+#: cafe-panel/panel-util.c:1108
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
@@ -3184,8 +3241,15 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
-msgid "cafe-gegl"
-msgstr ""
+#~ msgid "Reset this panel?"
+#~ msgstr "이 패널을 초기화할까요?"
+
+#~ msgid ""
+#~ "When a panel is reset, all \n"
+#~ "custom settings are lost."
+#~ msgstr ""
+#~ "패널을 초기화하면, 모든 \n"
+#~ "사용자 설정이 사라집니다."
+
+#~ msgid "_Reset Panel"
+#~ msgstr "패널 초기화(_R)"

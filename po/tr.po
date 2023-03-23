@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Emre FIRAT <emrefirat93@gmail.com>, 2020
 # Mehmet, 2020
@@ -15,19 +15,19 @@
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # Sabri Ünal <yakushabb@gmail.com>, 2020
 # Butterfly <gokhanlnx@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.23.2\n"
+"Project-Id-Version: cafe-panel 1.25.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2020-01-12 18:05+0100\n"
+"POT-Creation-Date: 2023-03-23 18:48+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Butterfly <gokhanlnx@gmail.com>, 2020\n"
 "Language-Team: Turkish (https://www.transifex.com/cafe/teams/13566/tr/)\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
@@ -52,7 +52,8 @@ msgstr "%l:%M:%S %p"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:504
+#.
+#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
 msgid "%l:%M %p"
 msgstr "%H:%M"
 
@@ -63,7 +64,7 @@ msgstr "%H:%M"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1604
+#: applets/clock/clock.c:454 applets/clock/clock.c:1603
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
@@ -77,9 +78,10 @@ msgstr "%H:%M:%S"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1610
-#: applets/clock/clock-location-tile.c:464
-#: applets/clock/clock-location-tile.c:511
+#.
+#: applets/clock/clock.c:454 applets/clock/clock.c:1609
+#: applets/clock/clock-location-tile.c:462
+#: applets/clock/clock-location-tile.c:509
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -121,7 +123,7 @@ msgstr "Ay takvimini gizlemek için tıklayın"
 msgid "Click to view month calendar"
 msgstr "Ay takvimini görüntülemek için tıklayın"
 
-#: applets/clock/clock.c:1442
+#: applets/clock/clock.c:1441
 msgid "Computer Clock"
 msgstr "Bilgisayar Saati"
 
@@ -131,7 +133,7 @@ msgstr "Bilgisayar Saati"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1589
+#: applets/clock/clock.c:1588
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -141,110 +143,108 @@ msgstr "%I:%M:%S %p"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1597
+#: applets/clock/clock.c:1596
 msgid "%I:%M %p"
 msgstr "%I:%M %p"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1643
+#: applets/clock/clock.c:1642
 msgid "%A, %B %d %Y"
 msgstr "%A, %d %B %Y"
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1673
 msgid "Set System Time..."
 msgstr "Sistem Zamanını Ayarla..."
 
-#: applets/clock/clock.c:1675
+#: applets/clock/clock.c:1674
 msgid "Set System Time"
 msgstr "Sistem Zamanını Ayarla"
 
-#: applets/clock/clock.c:1690
+#: applets/clock/clock.c:1689
 msgid "Failed to set the system time"
 msgstr "Sistem zamanı ayarlama başarısız oldu"
 
-#: applets/clock/clock.c:1888 applets/fish/fish.c:1694
-#: applets/notification_area/main.c:292 applets/vncklet/window-list.c:357
-#: applets/vncklet/workspace-switcher.c:389
+#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
+#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
+#: applets/vncklet/workspace-switcher.c:393
 msgid "_Preferences"
 msgstr "_Tercihler"
 
-#: applets/clock/clock.c:1891 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1697 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:295 applets/vncklet/showdesktop.c:241
-#: applets/vncklet/window-list.c:365 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:98 applets/vncklet/workspace-switcher.c:397
+#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
+#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
-#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
 #: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_Yardım"
 
-#: applets/clock/clock.c:1894 applets/fish/fish.c:1700
-#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:249
-#: applets/vncklet/window-list.c:373 applets/vncklet/window-menu.c:106
-#: applets/vncklet/workspace-switcher.c:405
+#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
+#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
+#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
+#: applets/vncklet/workspace-switcher.c:409
 msgid "_About"
 msgstr "_Hakkında"
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1894
 msgid "Copy _Time"
 msgstr "_Saati Kopyala"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1897
 msgid "Copy _Date"
 msgstr "_Tarihi Kopyala"
 
-#: applets/clock/clock.c:1903
+#: applets/clock/clock.c:1900
 msgid "Ad_just Date & Time"
 msgstr "Tarihi ve Zamanı _Ayarla"
 
-#: applets/clock/clock.c:2899
+#: applets/clock/clock.c:2898
 msgid "Choose Location"
 msgstr "Konum Seç"
 
-#: applets/clock/clock.c:2978
+#: applets/clock/clock.c:2977
 msgid "Edit Location"
 msgstr "Konumu Düzenle"
 
-#: applets/clock/clock.c:3105
+#: applets/clock/clock.c:3104
 msgid "City Name"
 msgstr "Şehir İsmi"
 
-#: applets/clock/clock.c:3109
+#: applets/clock/clock.c:3108
 msgid "City Time Zone"
 msgstr "Şehir Saat Dilimi"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3388
 #: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "Saat"
 
-#: applets/clock/clock.c:3390
+#: applets/clock/clock.c:3389
 msgid "About Clock"
 msgstr "Saat Hakkında"
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3391
 msgid "The Clock displays the current time and date"
 msgstr "Saat uygulamacığı şu anki zamanı ve tarihi gösterir"
 
-#: applets/clock/clock.c:3393
+#: applets/clock/clock.c:3392
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Telif Hakkı © 1998-2004 Free Software Foundation, Inc.\n"
-"Telif Hakkı © 2012-2020 CAFE geliştiricileri"
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:567
-#: applets/notification_area/main.c:286 applets/vncklet/showdesktop.c:508
-#: applets/vncklet/window-list.c:831 applets/vncklet/window-menu.c:88
-#: applets/vncklet/workspace-switcher.c:644
-#: cafe-panel/panel-context-menu.c:124
+#: applets/clock/clock.c:3397 applets/fish/fish.c:568
+#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
+#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
+#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr ""
 "GNOME projesine katkıda bulunanlar:\n"
@@ -263,10 +263,10 @@ msgid "Time & Date"
 msgstr "Zaman ve Tarih"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-ctk.c:136
-#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
-#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
-#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
+#: cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "_Vazgeç"
 
@@ -290,10 +290,10 @@ msgstr "Saat Tercihleri"
 msgid "Time _Settings"
 msgstr "Zaman _Ayarları"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -341,7 +341,7 @@ msgstr "Sıcaklığı _göster"
 msgid "General"
 msgstr "Genel"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
 msgid "_Add"
 msgstr "_Ekle"
 
@@ -394,12 +394,11 @@ msgid "South"
 msgstr "Güney"
 
 #: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
-#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
+#: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "_Tamam"
 
-#. Languages that have a single word that translates as either "state" or
-#. "province" should use that instead of "region".
+#. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
 #: applets/clock/clock.ui:1012
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
@@ -432,17 +431,16 @@ msgstr "_Enlem:"
 msgid "Failed to set the system timezone"
 msgstr "Sistem saat dilimi atanırken başarısız olundu"
 
-#: applets/clock/clock-location-tile.c:231
+#: applets/clock/clock-location-tile.c:229
 msgid "<small>Set...</small>"
 msgstr "<small>Ayarla...</small>"
 
-#: applets/clock/clock-location-tile.c:232
+#: applets/clock/clock-location-tile.c:230
 msgid "<small>Set</small>"
 msgstr "<small>Ayarla</small>"
 
-#: applets/clock/clock-location-tile.c:308
-msgid ""
-"Set location as current location and use its timezone for this computer"
+#: applets/clock/clock-location-tile.c:306
+msgid "Set location as current location and use its timezone for this computer"
 msgstr ""
 "Konumu mevcut konum olarak ata ve bu bilgisayar için onun zaman dilimini "
 "kullan"
@@ -453,7 +451,7 @@ msgstr ""
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:441
+#: applets/clock/clock-location-tile.c:439
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l:%M <small>%p (%A)</small>"
 
@@ -462,7 +460,7 @@ msgstr "%l:%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:449
+#: applets/clock/clock-location-tile.c:447
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%H:%M <small>(%A)</small>"
 
@@ -470,27 +468,27 @@ msgstr "%H:%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:458
+#: applets/clock/clock-location-tile.c:456
 msgid "%l:%M <small>%p</small>"
 msgstr "%l:%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:600
+#: applets/clock/clock-location-tile.c:598
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:612
-#: applets/clock/clock-location-tile.c:621
+#: applets/clock/clock-location-tile.c:610
+#: applets/clock/clock-location-tile.c:619
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:614
+#: applets/clock/clock-location-tile.c:612
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s, hissedilen %s"
 
-#: applets/clock/clock-location-tile.c:637
+#: applets/clock/clock-location-tile.c:635
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "Gün doğumu: %s / Gün batımı: %s"
@@ -513,14 +511,14 @@ msgstr "Saat biçimi"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
-"This key specifies the hour format used by the clock applet. Possible values"
-" are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
-" to \"internet\", the clock will display Internet time. The Internet time "
-"system divides the day into 1000 \".beats\". There are no time zones in this"
-" system, so time is the same all over the world. If set to \"unix\", the "
+"This key specifies the hour format used by the clock applet. Possible values "
+"are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set "
+"to \"internet\", the clock will display Internet time. The Internet time "
+"system divides the day into 1000 \".beats\". There are no time zones in this "
+"system, so time is the same all over the world. If set to \"unix\", the "
 "clock will display time in seconds since Epoch, i.e. 1970-01-01. If set to "
-"\"custom\", the clock will display time according to the format specified in"
-" the custom_format key."
+"\"custom\", the clock will display time according to the format specified in "
+"the custom_format key."
 msgstr ""
 "Bu anahtar saat uygulamacığı için kullanılacak saat biçimini belirtir. "
 "Geçerli değerler, \"12-hour\", \"24-hour\", \"internet\", \"unix\" ve "
@@ -542,8 +540,8 @@ msgid ""
 "strftime() to obtain a specific format. See the strftime() manual for more "
 "information."
 msgstr ""
-"Bu anahtar format anahtarı \"custom\"a ayarlı olduğunda saat uygulamacığında"
-" kullanılacak biçimi belirtir. strftime() tarafından algılanabilen çevrim "
+"Bu anahtar format anahtarı \"custom\"a ayarlı olduğunda saat uygulamacığında "
+"kullanılacak biçimi belirtir. strftime() tarafından algılanabilen çevrim "
 "belirteçlerini bir biçim belirtmek için kullanabilirsiniz. Daha fazla bilgi "
 "için strftime() kılavuzuna bakın."
 
@@ -640,12 +638,6 @@ msgstr "Saat uygulamacığı için üretici"
 msgid "Get the current time and date"
 msgstr "Şu anki zamanı ve tarihi al"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-clock"
-msgstr "cafe-panel-clock"
-
 #: applets/fish/fish.c:266
 #, c-format
 msgid ""
@@ -663,7 +655,7 @@ msgstr ""
 msgid "Images"
 msgstr "Resimler"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:578 applets/fish/fish.c:684
+#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
 #, no-c-format
 msgid "%s the Fish"
 msgstr "%s Balığı"
@@ -696,27 +688,25 @@ msgstr "Balık Hakkında"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Telif Hakkı © 1998-2002 Free Software Foundation, Inc.\n"
-"Telif Hakkı © 2002-2005 Vincent Untz\n"
-"Telif Hakkı © 2012-2020 CAFE geliştiricileri"
 
-#: applets/fish/fish.c:579
+#: applets/fish/fish.c:580
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "Çağdaş Kahin %s Balığı"
 
-#: applets/fish/fish.c:645
+#: applets/fish/fish.c:646
 msgid "Unable to locate the command to execute"
 msgstr "Çalıştırılacak komutun konumuna ulaşılamıyor"
 
-#: applets/fish/fish.c:689
+#: applets/fish/fish.c:690
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "%s Balığı Diyor ki:"
 
-#: applets/fish/fish.c:752
+#: applets/fish/fish.c:753
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -727,16 +717,16 @@ msgstr ""
 "\n"
 "Ayrıntılar: %s"
 
-#: applets/fish/fish.c:849
+#: applets/fish/fish.c:850
 msgid "_Speak again"
 msgstr "Tek_rar konuş"
 
-#: applets/fish/fish.c:930
+#: applets/fish/fish.c:931
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
 msgstr "Ayarlanmış komut çalışmadığı için '%s' ile değiştirilmiştir."
 
-#: applets/fish/fish.c:963
+#: applets/fish/fish.c:964
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -747,7 +737,7 @@ msgstr ""
 "\n"
 "Ayrıntılar: %s"
 
-#: applets/fish/fish.c:979
+#: applets/fish/fish.c:980
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -758,15 +748,15 @@ msgstr ""
 "\n"
 "Ayrıntılar: %s"
 
-#: applets/fish/fish.c:1551
+#: applets/fish/fish.c:1552
 msgid "The water needs changing"
 msgstr "Suyun değiştirilmesi lazım"
 
-#: applets/fish/fish.c:1553
+#: applets/fish/fish.c:1554
 msgid "Look at today's date!"
 msgstr "Bugünün tarihine bakın!"
 
-#: applets/fish/fish.c:1635
+#: applets/fish/fish.c:1636
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "Falcı %s Balığı"
@@ -829,8 +819,8 @@ msgid ""
 "A fish without a name is a pretty dull fish. Bring your fish to life by "
 "naming him."
 msgstr ""
-"Adsız bir balık, çok boş bir balıktır. Balığınıza bir isim takarak ona hayat"
-" verin."
+"Adsız bir balık, çok boş bir balıktır. Balığınıza bir isim takarak ona hayat "
+"verin."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:10
 msgid "The fish's animation pixmap"
@@ -860,11 +850,10 @@ msgstr "Canlandırmadaki çerçeve sayısı"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
-"This key specifies the number of frames that will be displayed in the fish's"
-" animation."
+"This key specifies the number of frames that will be displayed in the fish's "
+"animation."
 msgstr ""
-"Bu anahtar balığın canlandırılmasında kullanılacak çerçeve sayısını "
-"belirtir."
+"Bu anahtar balığın canlandırılmasında kullanılacak çerçeve sayısını belirtir."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
 msgid "Pause per frame"
@@ -872,8 +861,7 @@ msgstr "Çerçeve başına bekleme"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:26
 msgid "This key specifies the number of seconds each frame will be displayed."
-msgstr ""
-"Bu anahtar her çerçevenin kaç saniye boyunca gösterileceğini belirtir."
+msgstr "Bu anahtar her çerçevenin kaç saniye boyunca gösterileceğini belirtir."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:30
 msgid "Rotate on vertical panels"
@@ -896,12 +884,6 @@ msgstr "Nereden çıktı bu aptal balık şimdi"
 msgid "Display a swimming fish or another anicafed creature"
 msgstr "Yüzen bir balık veya diğer canlandırılmış yaratıklardan birini göster"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-fish"
-msgstr "cafe-panel-fish"
-
 #: applets/notification_area/main.c:276
 #: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Notification Area"
@@ -916,14 +898,11 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Telif Hakkı © 2002 Red Hat, Inc.\n"
-"Telif Hakkı © 2003-2006 Vincent Untz\n"
-"Telif Hakkı © 2011 Perberos\n"
-"Telif Hakkı © 2012-2020 CAFE geliştiricileri"
 
-#: applets/notification_area/main.c:485
+#: applets/notification_area/main.c:486
 msgid "Panel Notification Area"
 msgstr "Panel Uyarı Alanı"
 
@@ -964,20 +943,14 @@ msgstr "Uyarı alanı için üretici"
 msgid "Area where notification icons appear"
 msgstr "Uyarı simgelerinin belireceği alan"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-notification-area"
-msgstr "cafe-panel-notification-area"
-
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "Tüm çalışma yerlerinden pencereleri göster"
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
-"If true, the window list will show windows from all workspaces. Otherwise it"
-" will only display windows from the current workspace."
+"If true, the window list will show windows from all workspaces. Otherwise it "
+"will only display windows from the current workspace."
 msgstr ""
 "Eğer seçiliyse, pencere listesi bütün çalışma alanlarındaki pencereleri "
 "gösterecektir. Aksi halde sadece o an kullanılan çalışma alanındaki "
@@ -1004,8 +977,8 @@ msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
 msgstr ""
-"Eğer seçiliyse, pencereyi büyültdüğünüzde o anki çalışma alanına gelecektir."
-" Aksi halde, büyütülen pencerenin çalışma alanına geçilecektir."
+"Eğer seçiliyse, pencereyi büyültdüğünüzde o anki çalışma alanına gelecektir. "
+"Aksi halde, büyütülen pencerenin çalışma alanına geçilecektir."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
 msgid "Display workspace names"
@@ -1018,8 +991,8 @@ msgid ""
 "This setting only works when the window manager is Croma."
 msgstr ""
 "Eğer seçiliyse, çalışma alanı değiştiricisi bütün çalışma alanlarının "
-"isimlerini gösterir. Aksi halde, çalışma alanlarındaki pencereleri gösterir."
-" Bu özellik sadece pencere yöneticisi Croma olduğunda çalışır."
+"isimlerini gösterir. Aksi halde, çalışma alanlarındaki pencereleri gösterir. "
+"Bu özellik sadece pencere yöneticisi Croma olduğunda çalışır."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"
@@ -1040,12 +1013,12 @@ msgstr "Çalışma alanı değiştiricisindeki satır sayısı"
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
-"vertical layout) the workspace switcher shows the workspaces in. This key is"
-" only relevant if the display_all_workspaces key is true."
+"vertical layout) the workspace switcher shows the workspaces in. This key is "
+"only relevant if the display_all_workspaces key is true."
 msgstr ""
-"Bu anahtar çalışma alanı değiştiricisinin çalışma alanlarını kaç sıra (yatay"
-" düzen için), veya sütun (dikey düzen için) içinde göstereceğini belirtir. "
-"Bu anahtar sadece tüm çalışma alanları görüntüleniyorsa anlamlıdır."
+"Bu anahtar çalışma alanı değiştiricisinin çalışma alanlarını kaç sıra (yatay "
+"düzen için), veya sütun (dikey düzen için) içinde göstereceğini belirtir. Bu "
+"anahtar sadece tüm çalışma alanları görüntüleniyorsa anlamlıdır."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
@@ -1069,7 +1042,7 @@ msgid "Factory for the window navigation related applets"
 msgstr "Pencere seyiriyle ilgili uygulamacıklar için üretici"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
+#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
 msgid "Window Selector"
 msgstr "Pencere Seçici"
 
@@ -1077,14 +1050,8 @@ msgstr "Pencere Seçici"
 msgid "Switch between open windows using a menu"
 msgstr "Bir menü kullanarak açık pencereler arasında geçiş yap"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-window-menu"
-msgstr "cafe-panel-window-menu"
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:634
+#: applets/vncklet/workspace-switcher.c:638
 msgid "Workspace Switcher"
 msgstr "Çalışma Alanı Değiştirici"
 
@@ -1092,26 +1059,14 @@ msgstr "Çalışma Alanı Değiştirici"
 msgid "Switch between workspaces"
 msgstr "Çalışma alanları arasında geçiş yap"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
-msgid "cafe-panel-workspace-switcher"
-msgstr "cafe-panel-workspace-switcher"
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:821
+#: applets/vncklet/window-list.c:826
 msgid "Window List"
 msgstr "Pencere Listesi"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "Düğmeler kullanarak açık pencereler arasında geçiş yap"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
-msgid "cafe-panel-window-list"
-msgstr "cafe-panel-window-list"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
@@ -1120,12 +1075,6 @@ msgstr "Masaüstünü Göster"
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "Uygulama pencerelerini sakla ve masaüstünü göster"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
-msgid "user-desktop"
-msgstr "user-desktop"
 
 #: applets/vncklet/showdesktop.c:184
 #, c-format
@@ -1136,58 +1085,56 @@ msgstr "%s: %s yüklenirken hata oluştu\n"
 msgid "Icon not found"
 msgstr "Simge bulunamadı"
 
-#: applets/vncklet/showdesktop.c:265
+#: applets/vncklet/showdesktop.c:266
 msgid "Click here to restore hidden windows."
 msgstr "Gizli pencereleri görüntülemek için buraya tıklayın."
 
-#: applets/vncklet/showdesktop.c:269
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to hide all windows and show the desktop."
 msgstr ""
 "Bütün pencereleri gizleyip masaüstünü görüntülemek için buraya tıklayın."
 
-#: applets/vncklet/showdesktop.c:439 applets/vncklet/showdesktop.c:498
+#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
 msgid "Show Desktop Button"
 msgstr "Masaüstünü Gösterme Düğmesi"
 
-#: applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:500
 msgid "About Show Desktop Button"
 msgstr "Masaüstünü Göster Düğmesi Hakkında"
 
-#: applets/vncklet/showdesktop.c:501
+#: applets/vncklet/showdesktop.c:502
 msgid "This button lets you hide all windows and show the desktop."
 msgstr "Bu düğme bütün pencereleri gizleyip masaüstünü görmenizi sağlar."
 
-#: applets/vncklet/showdesktop.c:502 applets/vncklet/window-list.c:825
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
+#: applets/vncklet/workspace-switcher.c:642
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Telif Hakkı © 2002 Red Hat, Inc.\n"
-"Telif Hakkı © 2011 Perberos\n"
-"Telif Hakkı © 2012-2020 CAFE geliştiricileri"
 
-#: applets/vncklet/showdesktop.c:529
+#: applets/vncklet/showdesktop.c:531
 msgid ""
-"Your window manager does not support the show desktop button, or you are not"
-" running a window manager."
+"Your window manager does not support the show desktop button, or you are not "
+"running a window manager."
 msgstr ""
 "Pencere yöneticiniz masaüstünü gösterme düğmesini desteklemiyor, veya bir "
 "pencere yöneticisi çalıştırmıyorsunuz."
 
-#: applets/vncklet/window-list.c:349
+#: applets/vncklet/window-list.c:354
 msgid "_System Monitor"
 msgstr "_Sistem İzleyici"
 
-#: applets/vncklet/window-list.c:822
+#: applets/vncklet/window-list.c:827
 msgid "About Window List"
 msgstr "Pencere Listesi Hakkında"
 
-#: applets/vncklet/window-list.c:824
+#: applets/vncklet/window-list.c:829
 msgid ""
-"The Window List shows a list of all windows in a set of buttons and lets you"
-" browse them."
+"The Window List shows a list of all windows in a set of buttons and lets you "
+"browse them."
 msgstr ""
 "Pencere Listesi, bütün pencerelerin listesini düğmeler halinde gösterir ve "
 "onlara gözatmanızı sağlar."
@@ -1278,30 +1225,26 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Telif Hakkı © 2000 Helix Code, Inc.\n"
-"Telif Hakkı © 2001 Free Software Foundation, Inc.\n"
-"Telif Hakkı © 2003 Sun Microsystems, Inc.\n"
-"Telif Hakkı © 2011 Perberos\n"
-"Telif Hakkı © 2012-2020 CAFE geliştiricileri"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "satır"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 msgid "columns"
 msgstr "sütun"
 
-#: applets/vncklet/workspace-switcher.c:635
+#: applets/vncklet/workspace-switcher.c:639
 msgid "About Workspace Switcher"
 msgstr "Çalışma Alanı Değiştirici Hakkında"
 
-#: applets/vncklet/workspace-switcher.c:637
+#: applets/vncklet/workspace-switcher.c:641
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
@@ -1369,8 +1312,8 @@ msgid ""
 "dialog is made available. Whether or not the listing is expanded when the "
 "dialog is shown is controlled by the show_program_list key."
 msgstr ""
-"Eğer seçiliyse, \"Uygulama Çalıştır\" penceresindeki \"Bilinen Uygulamalar\""
-" listesi kullanılabilir olur. Listenin genişletilmiş olup "
+"Eğer seçiliyse, \"Uygulama Çalıştır\" penceresindeki \"Bilinen Uygulamalar\" "
+"listesi kullanılabilir olur. Listenin genişletilmiş olup "
 "olmamasıshow_program_list anahtarı ile kontrol edilir."
 
 #: data/org.cafe.panel.gschema.xml.in:15
@@ -1383,13 +1326,14 @@ msgid ""
 "dialog is expanded when the dialog is opened. This key is only relevant if "
 "the enable_program_list key is true."
 msgstr ""
-"Eğer seçiliyse, \"Uygulama Çalıştır\" penceresindeki \"Bilinen Uygulamalar\""
-" listesi, pencere açıldığında genişlemiş olarak başlar. Bu anahtar sadece "
+"Eğer seçiliyse, \"Uygulama Çalıştır\" penceresindeki \"Bilinen Uygulamalar\" "
+"listesi, pencere açıldığında genişlemiş olarak başlar. Bu anahtar sadece "
 "enable_program_list anahtarı seçili ise anlamlıdır."
 
 #: data/org.cafe.panel.gschema.xml.in:20
 msgid "Enable autocompletion in \"Run Application\" dialog"
-msgstr "\"Uygulama Çalıştır\" penceresinde kendiliğinden tamamlamayı etkinleştir"
+msgstr ""
+"\"Uygulama Çalıştır\" penceresinde kendiliğinden tamamlamayı etkinleştir"
 
 #: data/org.cafe.panel.gschema.xml.in:21
 msgid ""
@@ -1405,8 +1349,8 @@ msgstr "\"Uygulama Çalıştır\" diyaloğunun tarihçesi"
 #: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
-"commands are sorted descendingly by recency (e.g., most recent command comes"
-" first)."
+"commands are sorted descendingly by recency (e.g., most recent command comes "
+"first)."
 msgstr ""
 "Bu, \"Uygulama Çalıştır\" diyaloğunda kullanılan komutların listesidir. "
 "Komutlar yeniliğe göre aşağıya doğru sıralanır (yani son kullanılan komut "
@@ -1455,9 +1399,9 @@ msgstr "Panel nesnesi numara listesi"
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object "
-"(e.g. a launcher, action button or menu button/bar). The settings for each "
-"of these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object (e."
+"g. a launcher, action button or menu button/bar). The settings for each of "
+"these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
 "Panel nesnelerinin tanım numaraları listesi. Her numara başka bir panel "
 "nesnesi tanımlar (örn, bir çalıştırıcı, çekmece ya da menü düğmesi). Bu "
@@ -1518,12 +1462,12 @@ msgstr "Panelin tamamını kilitleme"
 #: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
-"panel. Individual applets may need to be locked down separately however. The"
-" panel must be restarted for this to take effect."
+"panel. Individual applets may need to be locked down separately however. The "
+"panel must be restarted for this to take effect."
 msgstr ""
 "Eğer seçiliyse, panel yapılandırmasındaki hiç bir değişikliğe izin "
-"vermeyecektir. Ancak uygulamacıklar ayrıca kilitlenme ihtiyacı duyabilirler."
-" Bunun etkili olabilmesi için panelin tekrar başlatılması gerekmektedir."
+"vermeyecektir. Ancak uygulamacıklar ayrıca kilitlenme ihtiyacı duyabilirler. "
+"Bunun etkili olabilmesi için panelin tekrar başlatılması gerekmektedir."
 
 #: data/org.cafe.panel.gschema.xml.in:79
 msgid "Applet IIDs to disable from loading"
@@ -1620,8 +1564,8 @@ msgstr "Menü unsurları ikon boyutu"
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
-"Set the size of icons used in the menu. The panel must be restarted for this"
-" to take effect."
+"Set the size of icons used in the menu. The panel must be restarted for this "
+"to take effect."
 msgstr ""
 "Menü kullanılan ikonların boyutunu ayarla. Bunun etkili olması için panelin "
 "tekrar başlatılması gerekir."
@@ -1635,8 +1579,8 @@ msgid ""
 "Maximum number of menu items (i.e. bookmarks) that are displayed without "
 "being put in a submenu."
 msgstr ""
-"Bir alt menüye konulmadan görüntülenen azami menü unsuru (mesela yer imleri)"
-" sayısı."
+"Bir alt menüye konulmadan görüntülenen azami menü unsuru (mesela yer imleri) "
+"sayısı."
 
 #: data/org.cafe.panel.object.gschema.xml.in:5
 msgid "Panel object type"
@@ -1672,8 +1616,8 @@ msgstr "Pozisyonu alt/sağ kenara göre uygula"
 
 #: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
-"If true, the position of the object is interpreted relative to the right (or"
-" bottom if vertical) edge of the panel."
+"If true, the position of the object is interpreted relative to the right (or "
+"bottom if vertical) edge of the panel."
 msgstr ""
 "Eğer seçiliyse, nesnenin pozisyonu panelin sağ (eğer dikeyse aşağıya göre) "
 "kenarına göre uygulanır."
@@ -1684,8 +1628,8 @@ msgstr "Nesneyi panele kilitle"
 
 #: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
-"If true, the user may not move the applet without first unlocking the object"
-" using the \"Unlock\" menuitem."
+"If true, the user may not move the applet without first unlocking the object "
+"using the \"Unlock\" menuitem."
 msgstr ""
 "Eğer seçiliyse, kullanıcı uygulamacığı \"Kilidi aç\" menü öğesini kullanıp "
 "nesnenin kilidini kaldırmadan taşıyamaz."
@@ -1696,13 +1640,12 @@ msgstr "Programcık IID"
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. "
-"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
-"applet\")."
+"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
+"ClockApplet\". This key is only relevant if the object_type key is "
+"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
 msgstr ""
-"Uygulamacığın uygulama kimliği - mesela \"ClockAppletFactory::ClockApplet\"."
-" Bu anahtar sadece object_type anahtarı \"external-applet\" iseyse (ya da "
+"Uygulamacığın uygulama kimliği - mesela \"ClockAppletFactory::ClockApplet\". "
+"Bu anahtar sadece object_type anahtarı \"external-applet\" iseyse (ya da "
 "esimiş \"cafecomponent-applet\" iseyse) uygundur."
 
 #: data/org.cafe.panel.object.gschema.xml.in:35
@@ -1724,8 +1667,7 @@ msgstr "Menü veya çekmece için gösterilecek balon"
 #: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
-"only relevant if the object_type key is \"drawer-object\" or \"menu-"
-"object\"."
+"only relevant if the object_type key is \"drawer-object\" or \"menu-object\"."
 msgstr ""
 "Bu menü veya çekmece için gösterilecek balondaki metin. Bu anahtar sadece "
 "object_type \"drawer-object\" veya \"menu-object\" ise anlamlıdır."
@@ -1859,8 +1801,8 @@ msgid ""
 "In a Xinerama setup, you may have panels on each individual monitor. This "
 "key identifies the current monitor the panel is displayed on."
 msgstr ""
-"Xinerama ayarında, her ekranda panel bulundurabilirsiniz. Bu anahtar panelin"
-" gösterileceği mevcut ekranı belirtir."
+"Xinerama ayarında, her ekranda panel bulundurabilirsiniz. Bu anahtar panelin "
+"gösterileceği mevcut ekranı belirtir."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:20
 msgid "Expand to occupy entire screen width"
@@ -1869,8 +1811,8 @@ msgstr "Tüm ekran genişliğini kaplaması için genişlet"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
-"vertical panel). In this mode the panel can only be placed at a screen edge."
-" If false, the panel will only be large enough to accommodate the applets, "
+"vertical panel). In this mode the panel can only be placed at a screen edge. "
+"If false, the panel will only be large enough to accommodate the applets, "
 "launchers and buttons on the panel."
 msgstr ""
 "Eğer seçiliyse, panel tüm ekran genişliğini (eğer dikey panelse "
@@ -1887,10 +1829,10 @@ msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
 "the panel is on. In un-expanded mode the difference between \"top\" and "
-"\"bottom\" is less important - both indicate that this is a horizontal panel"
-" - but still give a useful hint as to how some panel objects should behave. "
-"For example, on a \"top\" panel a menu button will pop up its menu below the"
-" panel, whereas on a \"bottom\" panel the menu will be popped up above the "
+"\"bottom\" is less important - both indicate that this is a horizontal panel "
+"- but still give a useful hint as to how some panel objects should behave. "
+"For example, on a \"top\" panel a menu button will pop up its menu below the "
+"panel, whereas on a \"bottom\" panel the menu will be popped up above the "
 "panel."
 msgstr ""
 "Panelin konumu. Geçerli değerler \"top\", \"bottom\", \"left \", \"right\" "
@@ -1961,8 +1903,8 @@ msgstr ""
 "Panelin x ekseni üzerindeki ekranın sağından başlayarak ki konumu. Eğer -1 "
 "olarak atanmışsa değer yok sayılır ve x anahtarı kullanılır. Eğer 0 "
 "değerinden büyükse o zaman x anahtarı yok sayılır. Bu anahtar sadece panel "
-"kenarı kaplayan kipte değilken anlamlıdır. Kenarı kaplayan kipte, bu anahtar"
-" yoksayılır ve panel orientation anahtarının belirtildiği şekilde kenara "
+"kenarı kaplayan kipte değilken anlamlıdır. Kenarı kaplayan kipte, bu anahtar "
+"yoksayılır ve panel orientation anahtarının belirtildiği şekilde kenara "
 "yerleştirilir."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:50
@@ -2027,8 +1969,8 @@ msgid ""
 "the pointer leaves the panel area. Moving the pointer to that corner again "
 "will cause the panel to re-appear."
 msgstr ""
-"Eğer seçiliyse; panel kendiliğinden, imleç panel alanını terk ettikten sonra"
-" ekranın köşesine gizlenecek. İmlecin köşeye tekrar getirilmesi panelin "
+"Eğer seçiliyse; panel kendiliğinden, imleç panel alanını terk ettikten sonra "
+"ekranın köşesine gizlenecek. İmlecin köşeye tekrar getirilmesi panelin "
 "görünmesini sağlayacak."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:71
@@ -2060,8 +2002,8 @@ msgid ""
 "If true, arrows will be placed on the hide buttons. This key is only "
 "relevant if the enable_buttons key is true."
 msgstr ""
-"Eğer seçiliyse, gizleme düğmelerine oklar yerleştirilecek. Bu anahtar sadece"
-" enable_buttons anahtarı seçiliyse anlamlıdır."
+"Eğer seçiliyse, gizleme düğmelerine oklar yerleştirilecek. Bu anahtar sadece "
+"enable_buttons anahtarı seçiliyse anlamlıdır."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:85
 msgid "Panel autohide delay"
@@ -2098,8 +2040,7 @@ msgstr "Gizliyken görünecek benekler"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
-"hidden into a corner. This key is only relevant if the auto_hide key is "
-"true."
+"hidden into a corner. This key is only relevant if the auto_hide key is true."
 msgstr ""
 "Panel köşede kendiliğinden gizlendiğinde kaç beneğin görünür olacağını "
 "belirtir. Bu anahtar sadece auto_hide anahtarı seçiliyse anlamlıdır."
@@ -2114,8 +2055,8 @@ msgid ""
 "\"slow\", \"medium\" and \"fast\". This key is only relevant if the "
 "enable_animations key is true."
 msgstr ""
-"Panel canlandırmalarının hangi hızda yapılacağını belirtir. Geçerli değerler"
-" \"slow\", \"medium\" ve \"fast\"dır. Bu anahtar sadece enable_animations "
+"Panel canlandırmalarının hangi hızda yapılacağını belirtir. Geçerli değerler "
+"\"slow\", \"medium\" ve \"fast\"dır. Bu anahtar sadece enable_animations "
 "anahtarı seçiliyse anlamlıdır."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:108
@@ -2149,12 +2090,12 @@ msgstr "Arkaplan rengi matlığı"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
-"completely opaque (a value of less than 65535), the color will be composited"
-" onto the desktop background image."
+"completely opaque (a value of less than 65535), the color will be composited "
+"onto the desktop background image."
 msgstr ""
 "Arkaplan renginin saydamlığının biçimini belirtir. Eğer renk tamamıyla salt "
-"renk değil ise (65535'den küçük bir değer), renk masaüstü arkaplan resmi ile"
-" karıştırılır."
+"renk değil ise (65535'den küçük bir değer), renk masaüstü arkaplan resmi ile "
+"karıştırılır."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:123
 msgid "Background image"
@@ -2268,7 +2209,7 @@ msgid "_Open"
 msgstr "_Aç"
 
 #: cafe-panel/libpanel-util/panel-error.c:76
-#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
+#: cafe-panel/panel-applet-frame.c:800 cafe-panel/panel-applet-frame.c:988
 msgid "Error"
 msgstr "Hata"
 
@@ -2315,7 +2256,7 @@ msgid "Cannot find an empty spot"
 msgstr "Boş bir yuva bulunamıyor"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1650
+#: cafe-panel/panel-toplevel.c:1643
 msgid "Drawer"
 msgstr "Çekmece"
 
@@ -2324,7 +2265,7 @@ msgid "_Add to Drawer..."
 msgstr "Çekmeceye _Ekle..."
 
 #: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
-#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:247
 msgid "_Properties"
 msgstr "_Özellikler"
 
@@ -2341,7 +2282,7 @@ msgid "- Edit .desktop files"
 msgstr "- .desktop dosyalarını düzenle"
 
 #: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
 msgid "Create Launcher"
 msgstr "Başlatıcı Oluştur"
 
@@ -2354,7 +2295,7 @@ msgstr "Dizin Özellikleri"
 msgid "Launcher Properties"
 msgstr "Başlatıcı Özellikleri"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "Panel"
 
@@ -2365,12 +2306,6 @@ msgid ""
 msgstr ""
 "Diğer uygulamaları başlatır ve pencereleri yönetmek, zamanı göstermek vb. "
 "gibi amaçlar için çeşitli araçlar sağlar."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cafe-panel/cafe-panel.desktop.in:7
-msgid "cafe-panel"
-msgstr "cafe-panel"
 
 #: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
@@ -2402,7 +2337,7 @@ msgstr "Baş_lat"
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "Anahtar %s tanımlanmamış, başlatıcı yüklenemiyor\n"
 
-#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Başlatıcı kaydedilemedi"
@@ -2486,8 +2421,7 @@ msgstr "Dosya Ara..."
 #: cafe-panel/panel-action-button.c:399
 msgid "Locate documents and folders on this computer by name or content"
 msgstr ""
-"Bu bilgisayardaki belgeleri ve dizinleri ismi ya da içeriği ile "
-"konumlandırın"
+"Bu bilgisayardaki belgeleri ve dizinleri ismi ya da içeriği ile konumlandırın"
 
 #: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
 msgid "Force Quit"
@@ -2569,41 +2503,41 @@ msgstr "X11 ile uyumlu değil"
 msgid "Not compatible with Wayland"
 msgstr "Wayland ile uyumlu değil"
 
-#: cafe-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1055
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "\"%s\" içine eklemek için bir öğe _bul:"
 
-#: cafe-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1059
 msgid "Add to Drawer"
 msgstr "Çekmeceye Ekle"
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Find an _item to add to the drawer:"
 msgstr "Çekmeceye eklemek için bir öğe _bul:"
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Add to Panel"
 msgstr "Panele Ekle"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Find an _item to add to the panel:"
 msgstr "Panele eklemek için bir öğe _bul:"
 
-#: cafe-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1313
 msgid "_Back"
 msgstr "_Geri"
 
-#: cafe-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:761
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "\"%s\" beklenmedik bir şekilde kapandı"
 
-#: cafe-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:763
 msgid "Panel object has quit unexpectedly"
 msgstr "Panel nesnesi beklenmedik bir şekilde kapandı"
 
-#: cafe-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:770
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
@@ -2611,28 +2545,28 @@ msgstr ""
 "Eğer bir panel nesnesini yeniden yüklerseniz, o nesne kendiliğinden panele "
 "tekrar eklenecektir."
 
-#: cafe-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:777
 msgid "D_elete"
 msgstr "S_il"
 
-#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:778 cafe-panel/panel-applet-frame.c:783
 msgid "_Don't Reload"
 msgstr "Tekrar Yükle_me"
 
-#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:779 cafe-panel/panel-applet-frame.c:784
 msgid "_Reload"
 msgstr "_Yeniden Yükle"
 
-#: cafe-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:950
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "\"%s\" yüklenirken panelde bir sorunla karşılaşıldı."
 
-#: cafe-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:965
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Bu uygulamacığı ayarlarınızdan silmek istiyor musunuz?"
 
-#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "_Sil"
 
@@ -2648,13 +2582,11 @@ msgstr "CAFE Paneli"
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 CAFE developers"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Telif Hakkı © 1997-2003 Free Software Foundation, Inc.\n"
-"Telif Hakkı © 2004 Vincent Untz\n"
-"Telif Hakkı © 2011-2020 CAFE geliştiricileri"
 
-#: cafe-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:120
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
@@ -2662,47 +2594,49 @@ msgstr ""
 "Bu uygulama başka uygulamalara ulaşmak ve kullanışlı araçlar sağlamakla "
 "sorumludur."
 
-#: cafe-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:124
 msgid "About the CAFE Panel"
 msgstr "CAFE Paneli Hakkında"
 
-#: cafe-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:155
 msgid "Cannot delete this panel"
 msgstr "Bu panel silinemedi"
 
-#: cafe-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:156
 msgid "You must always have at least one panel."
 msgstr "Her zaman en az bir paneliniz olması gerekiyor."
 
-#: cafe-panel/panel-context-menu.c:199
-msgid "Reset this panel?"
-msgstr "Bu panel sıfırlansın mı?"
-
 #: cafe-panel/panel-context-menu.c:200
+msgid "Reset all panels?"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:201
 msgid ""
-"When a panel is reset, all \n"
+"When the panels are reset, all \n"
 "custom settings are lost."
 msgstr ""
-"Bir panel sıfırlanınca, tüm\n"
-"özel ayarlar kaybolacaktır."
 
-#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
-msgid "_Reset Panel"
-msgstr "Paneli _Sıfırla"
+#: cafe-panel/panel-context-menu.c:215
+msgid "_Reset Panels"
+msgstr ""
 
-#: cafe-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:237
 msgid "_Add to Panel…"
 msgstr "Panele _Ekle…"
 
-#: cafe-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:257
+msgid "_Reset All Panels"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:264
 msgid "_Delete This Panel"
 msgstr "Bu Paneli _Sil"
 
-#: cafe-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:277
 msgid "_New Panel"
 msgstr "_Yeni Panel"
 
-#: cafe-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:326
 msgid "A_bout Panels"
 msgstr "Paneller _Hakkında"
 
@@ -2876,51 +2810,52 @@ msgstr "Masaüstü"
 msgid "Open the contents of your desktop in a folder"
 msgstr "Masaüstünüzün içeriklerini bir dizinde aç"
 
-#: cafe-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1075
 msgid "Computer"
 msgstr "Bilgisayar"
 
-#: cafe-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1081
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
 msgstr ""
 "Bu bilgisayardan erişilebilen tüm yerel ve uzaktaki disklere ve klasörlere "
 "göz atın"
 
-#: cafe-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1094
 msgid "Network"
 msgstr "Ağ"
 
-#: cafe-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1095
 msgid "Browse bookmarked and local network locations"
 msgstr "Yerimlerine ve yerel ağ konumlarına göz atın"
 
-#: cafe-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1489
 msgid "Places"
 msgstr "Yerler"
 
-#: cafe-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1517
 msgid "System"
 msgstr "Sistem"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: cafe-panel/panel-menu-items.c:1600
+#.
+#: cafe-panel/panel-menu-items.c:1602
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1614
 #, c-format
 msgid "Log Out %s..."
 msgstr "Çıkış %s..."
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1618
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr ""
@@ -3069,7 +3004,8 @@ msgid ""
 "• All items from the Places → Recent Documents menu item.\n"
 "• All items from the recent documents list in all applications."
 msgstr ""
-"Eğer Son Kullanılan Belgeler listesini temizlerseniz, aşağıdakiler de temizlenir:\n"
+"Eğer Son Kullanılan Belgeler listesini temizlerseniz, aşağıdakiler de "
+"temizlenir:\n"
 "\n"
 "• Yerler → Son Kullanılan Belgeler menüsündeki tüm öğeler.\n"
 "• Tüm uygulamalardaki son kullanılan belgeler listeleri."
@@ -3090,30 +3026,30 @@ msgstr "Son Kullanılan Belgeleri Temizle..."
 msgid "Clear all items from the recent documents list"
 msgstr "Son kullanılan belgeler listesini temizle"
 
-#: cafe-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:435
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "'%s' komutu çalıştırılamadı"
 
-#: cafe-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:476
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "'%s' UTF-8'den çevirilemedi"
 
-#: cafe-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1269
 msgid "Choose a file to append to the command..."
 msgstr "Komuta eklenecek bir dosya seçin..."
 
-#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Açıklamasını görüntülemek için bir uygulama seçin."
 
-#: cafe-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1689
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "çalıştıracak komut: '%s'"
 
-#: cafe-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1722
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
@@ -3263,19 +3199,19 @@ msgstr "_Tercih yolu:"
 msgid "Hide Panel"
 msgstr "Paneli Gizle"
 
-#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
 msgid "Top Panel"
 msgstr "Üst Panel"
 
-#: cafe-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1651
 msgid "Bottom Panel"
 msgstr "Alt Panel"
 
-#: cafe-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1653
 msgid "Left Panel"
 msgstr "Sol Panel"
 
-#: cafe-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Right Panel"
 msgstr "Sağ Panel"
 
@@ -3293,17 +3229,17 @@ msgstr "'%s' çalıştırılamadı"
 msgid "file"
 msgstr "dosya"
 
-#: cafe-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:876
 msgid "Home Folder"
 msgstr "Ev Klasörü"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:888
 msgid "File System"
 msgstr "Dosya Sistemi"
 
-#: cafe-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1062
 msgid "Search"
 msgstr "Ara"
 
@@ -3311,7 +3247,8 @@ msgstr "Ara"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: cafe-panel/panel-util.c:1106
+#.
+#: cafe-panel/panel-util.c:1108
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
@@ -3361,8 +3298,100 @@ msgstr "DBus Testi Uygulamacığı"
 msgid "A simple applet for testing the CAFE panel"
 msgstr "CAFE panel testi için basit bir uygulamacık"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
-msgid "cafe-gegl"
-msgstr "cafe-gegl"
+#~ msgid ""
+#~ "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Telif Hakkı © 1998-2004 Free Software Foundation, Inc.\n"
+#~ "Telif Hakkı © 2012-2020 CAFE geliştiricileri"
+
+#~ msgid "cafe-panel-clock"
+#~ msgstr "cafe-panel-clock"
+
+#~ msgid ""
+#~ "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2002-2005 Vincent Untz\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Telif Hakkı © 1998-2002 Free Software Foundation, Inc.\n"
+#~ "Telif Hakkı © 2002-2005 Vincent Untz\n"
+#~ "Telif Hakkı © 2012-2020 CAFE geliştiricileri"
+
+#~ msgid "cafe-panel-fish"
+#~ msgstr "cafe-panel-fish"
+
+#~ msgid ""
+#~ "Copyright © 2002 Red Hat, Inc.\n"
+#~ "Copyright © 2003-2006 Vincent Untz\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Telif Hakkı © 2002 Red Hat, Inc.\n"
+#~ "Telif Hakkı © 2003-2006 Vincent Untz\n"
+#~ "Telif Hakkı © 2011 Perberos\n"
+#~ "Telif Hakkı © 2012-2020 CAFE geliştiricileri"
+
+#~ msgid "cafe-panel-notification-area"
+#~ msgstr "cafe-panel-notification-area"
+
+#~ msgid "cafe-panel-window-menu"
+#~ msgstr "cafe-panel-window-menu"
+
+#~ msgid "cafe-panel-workspace-switcher"
+#~ msgstr "cafe-panel-workspace-switcher"
+
+#~ msgid "cafe-panel-window-list"
+#~ msgstr "cafe-panel-window-list"
+
+#~ msgid "user-desktop"
+#~ msgstr "user-desktop"
+
+#~ msgid ""
+#~ "Copyright © 2002 Red Hat, Inc.\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Telif Hakkı © 2002 Red Hat, Inc.\n"
+#~ "Telif Hakkı © 2011 Perberos\n"
+#~ "Telif Hakkı © 2012-2020 CAFE geliştiricileri"
+
+#~ msgid ""
+#~ "Copyright © 2000 Helix Code, Inc.\n"
+#~ "Copyright © 2001 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2003 Sun Microsystems, Inc.\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Telif Hakkı © 2000 Helix Code, Inc.\n"
+#~ "Telif Hakkı © 2001 Free Software Foundation, Inc.\n"
+#~ "Telif Hakkı © 2003 Sun Microsystems, Inc.\n"
+#~ "Telif Hakkı © 2011 Perberos\n"
+#~ "Telif Hakkı © 2012-2020 CAFE geliştiricileri"
+
+#~ msgid "cafe-panel"
+#~ msgstr "cafe-panel"
+
+#~ msgid ""
+#~ "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2004 Vincent Untz\n"
+#~ "Copyright © 2011-2020 CAFE developers"
+#~ msgstr ""
+#~ "Telif Hakkı © 1997-2003 Free Software Foundation, Inc.\n"
+#~ "Telif Hakkı © 2004 Vincent Untz\n"
+#~ "Telif Hakkı © 2011-2020 CAFE geliştiricileri"
+
+#~ msgid "Reset this panel?"
+#~ msgstr "Bu panel sıfırlansın mı?"
+
+#~ msgid ""
+#~ "When a panel is reset, all \n"
+#~ "custom settings are lost."
+#~ msgstr ""
+#~ "Bir panel sıfırlanınca, tüm\n"
+#~ "özel ayarlar kaybolacaktır."
+
+#~ msgid "_Reset Panel"
+#~ msgstr "Paneli _Sıfırla"
+
+#~ msgid "cafe-gegl"
+#~ msgstr "cafe-gegl"

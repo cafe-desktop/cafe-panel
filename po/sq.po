@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # Ardit Dani <ardit.dani@gmail.com>, 2020
@@ -10,19 +10,19 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Alban <nofbname@gmail.com>, 2020
 # Indrit Bashkimi <indrit.bashkimi@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.23.2\n"
+"Project-Id-Version: cafe-panel 1.25.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2020-01-12 18:05+0100\n"
+"POT-Creation-Date: 2023-03-23 18:48+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>, 2020\n"
 "Language-Team: Albanian (https://www.transifex.com/cafe/teams/13566/sq/)\n"
+"Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sq\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
@@ -47,7 +47,8 @@ msgstr "%l.%M.%S %p"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:504
+#.
+#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
 msgid "%l:%M %p"
 msgstr "%k.%M"
 
@@ -58,7 +59,7 @@ msgstr "%k.%M"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1604
+#: applets/clock/clock.c:454 applets/clock/clock.c:1603
 msgid "%H:%M:%S"
 msgstr "%k.%M.%S"
 
@@ -72,9 +73,10 @@ msgstr "%k.%M.%S"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1610
-#: applets/clock/clock-location-tile.c:464
-#: applets/clock/clock-location-tile.c:511
+#.
+#: applets/clock/clock.c:454 applets/clock/clock.c:1609
+#: applets/clock/clock-location-tile.c:462
+#: applets/clock/clock-location-tile.c:509
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -116,7 +118,7 @@ msgstr "Klik për të fshehur kalendarin e muajit"
 msgid "Click to view month calendar"
 msgstr "Klik për të shfaqur kalendarin e muajit"
 
-#: applets/clock/clock.c:1442
+#: applets/clock/clock.c:1441
 msgid "Computer Clock"
 msgstr "Ora e kompjuterit"
 
@@ -126,7 +128,7 @@ msgstr "Ora e kompjuterit"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1589
+#: applets/clock/clock.c:1588
 msgid "%I:%M:%S %p"
 msgstr "%l.%M.%S %p"
 
@@ -136,108 +138,108 @@ msgstr "%l.%M.%S %p"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1597
+#: applets/clock/clock.c:1596
 msgid "%I:%M %p"
 msgstr "%l.%M %p"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1643
+#: applets/clock/clock.c:1642
 msgid "%A, %B %d %Y"
 msgstr "%A, %-d %B %Y"
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1673
 msgid "Set System Time..."
 msgstr "Cakto orën e sistemit..."
 
-#: applets/clock/clock.c:1675
+#: applets/clock/clock.c:1674
 msgid "Set System Time"
 msgstr "Cakton orën e sistemit"
 
-#: applets/clock/clock.c:1690
+#: applets/clock/clock.c:1689
 msgid "Failed to set the system time"
 msgstr "Përcaktimi i orës së sistemit dështoi"
 
-#: applets/clock/clock.c:1888 applets/fish/fish.c:1694
-#: applets/notification_area/main.c:292 applets/vncklet/window-list.c:357
-#: applets/vncklet/workspace-switcher.c:389
+#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
+#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
+#: applets/vncklet/workspace-switcher.c:393
 msgid "_Preferences"
 msgstr "_Preferenca"
 
-#: applets/clock/clock.c:1891 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1697 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:295 applets/vncklet/showdesktop.c:241
-#: applets/vncklet/window-list.c:365 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:98 applets/vncklet/workspace-switcher.c:397
+#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
+#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
-#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
 #: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_Ndihmë"
 
-#: applets/clock/clock.c:1894 applets/fish/fish.c:1700
-#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:249
-#: applets/vncklet/window-list.c:373 applets/vncklet/window-menu.c:106
-#: applets/vncklet/workspace-switcher.c:405
+#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
+#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
+#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
+#: applets/vncklet/workspace-switcher.c:409
 msgid "_About"
 msgstr "_Rreth"
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1894
 msgid "Copy _Time"
 msgstr "Kopjo _orën"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1897
 msgid "Copy _Date"
 msgstr "Kopjo _datën"
 
-#: applets/clock/clock.c:1903
+#: applets/clock/clock.c:1900
 msgid "Ad_just Date & Time"
 msgstr "Rre_gullo datën dhe orën"
 
-#: applets/clock/clock.c:2899
+#: applets/clock/clock.c:2898
 msgid "Choose Location"
 msgstr "Zgjidhni Vendodhjen"
 
-#: applets/clock/clock.c:2978
+#: applets/clock/clock.c:2977
 msgid "Edit Location"
 msgstr "Ndrysho Vendodhjen"
 
-#: applets/clock/clock.c:3105
+#: applets/clock/clock.c:3104
 msgid "City Name"
 msgstr "Emri i qytetit"
 
-#: applets/clock/clock.c:3109
+#: applets/clock/clock.c:3108
 msgid "City Time Zone"
 msgstr "Zona orare e qytetit"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3388
 #: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "Ora"
 
-#: applets/clock/clock.c:3390
+#: applets/clock/clock.c:3389
 msgid "About Clock"
 msgstr ""
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3391
 msgid "The Clock displays the current time and date"
 msgstr "Ora tregon orën dhe datën e tanishme"
 
-#: applets/clock/clock.c:3393
+#: applets/clock/clock.c:3392
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:567
-#: applets/notification_area/main.c:286 applets/vncklet/showdesktop.c:508
-#: applets/vncklet/window-list.c:831 applets/vncklet/window-menu.c:88
-#: applets/vncklet/workspace-switcher.c:644
-#: cafe-panel/panel-context-menu.c:124
+#: applets/clock/clock.c:3397 applets/fish/fish.c:568
+#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
+#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
+#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr ""
 "Elian Myftiu <elian@alblinux.net>\n"
@@ -249,10 +251,10 @@ msgid "Time & Date"
 msgstr "Ora & Data"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-ctk.c:136
-#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
-#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
-#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
+#: cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "_Anulo"
 
@@ -276,10 +278,10 @@ msgstr "Preferimet e Orës"
 msgid "Time _Settings"
 msgstr "Rre_gullimet e orës"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -327,7 +329,7 @@ msgstr "Shfaq _temperaturën"
 msgid "General"
 msgstr "Të përgjithshme"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
 msgid "_Add"
 msgstr "_Shto"
 
@@ -380,12 +382,11 @@ msgid "South"
 msgstr "Jug"
 
 #: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
-#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
+#: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr ""
 
-#. Languages that have a single word that translates as either "state" or
-#. "province" should use that instead of "region".
+#. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
 #: applets/clock/clock.ui:1012
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
@@ -416,17 +417,16 @@ msgstr "Gjerësi:"
 msgid "Failed to set the system timezone"
 msgstr "Përcaktimi i zonës orare të sistemit dështoi"
 
-#: applets/clock/clock-location-tile.c:231
+#: applets/clock/clock-location-tile.c:229
 msgid "<small>Set...</small>"
 msgstr "<small>Përcakto...</small>"
 
-#: applets/clock/clock-location-tile.c:232
+#: applets/clock/clock-location-tile.c:230
 msgid "<small>Set</small>"
 msgstr "<small>Përcakto</small>"
 
-#: applets/clock/clock-location-tile.c:308
-msgid ""
-"Set location as current location and use its timezone for this computer"
+#: applets/clock/clock-location-tile.c:306
+msgid "Set location as current location and use its timezone for this computer"
 msgstr ""
 "Përcakton vendndodhjen si vendndodhja e tanishme dhe përdor zonën e saj "
 "orare për këtë kompjutër"
@@ -437,7 +437,7 @@ msgstr ""
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:441
+#: applets/clock/clock-location-tile.c:439
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l.%M <small>%p (%A)</small>"
 
@@ -446,7 +446,7 @@ msgstr "%l.%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:449
+#: applets/clock/clock-location-tile.c:447
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%k.%M <small>(%A)</small>"
 
@@ -454,27 +454,27 @@ msgstr "%k.%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:458
+#: applets/clock/clock-location-tile.c:456
 msgid "%l:%M <small>%p</small>"
 msgstr "%l.%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:600
+#: applets/clock/clock-location-tile.c:598
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:612
-#: applets/clock/clock-location-tile.c:621
+#: applets/clock/clock-location-tile.c:610
+#: applets/clock/clock-location-tile.c:619
 msgid "Unknown"
 msgstr "Panjohur"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:614
+#: applets/clock/clock-location-tile.c:612
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s, kuptuar si %s"
 
-#: applets/clock/clock-location-tile.c:637
+#: applets/clock/clock-location-tile.c:635
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "Dielli lind: %s / Perëndon: %s"
@@ -497,19 +497,19 @@ msgstr "Formati orës"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
-"This key specifies the hour format used by the clock applet. Possible values"
-" are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
-" to \"internet\", the clock will display Internet time. The Internet time "
-"system divides the day into 1000 \".beats\". There are no time zones in this"
-" system, so time is the same all over the world. If set to \"unix\", the "
+"This key specifies the hour format used by the clock applet. Possible values "
+"are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set "
+"to \"internet\", the clock will display Internet time. The Internet time "
+"system divides the day into 1000 \".beats\". There are no time zones in this "
+"system, so time is the same all over the world. If set to \"unix\", the "
 "clock will display time in seconds since Epoch, i.e. 1970-01-01. If set to "
-"\"custom\", the clock will display time according to the format specified in"
-" the custom_format key."
+"\"custom\", the clock will display time according to the format specified in "
+"the custom_format key."
 msgstr ""
 "Ky kyç përcakton formatin e orës, përdorur nga programi i orës.Vlera të "
 "mundshme janë \"12-hour\", \"24-hour\", \"internet\", \"unix\" dhe "
-"\"custom\". Nëse zgjidhet \"internet\", ora do shfaqë orën e Internetit. Ora"
-" e Internetit ndan ditën në 1000 \"rrahje\". Nuk ekzistojnë zona orare në "
+"\"custom\". Nëse zgjidhet \"internet\", ora do shfaqë orën e Internetit. Ora "
+"e Internetit ndan ditën në 1000 \"rrahje\". Nuk ekzistojnë zona orare në "
 "këtë sistem, pra ora është e njëjtë në të gjithë botën. Nëse zgjidhet "
 "\"unix\", ora do shfaqë orën në sekonda qysh prej Epokës, d.m.th. "
 "1970-01-01. Nëse zgjidhet \"custom\", ora do shfaqë kohën sipas formatit të "
@@ -527,9 +527,9 @@ msgid ""
 "information."
 msgstr ""
 "Ky kyç përcakton formatin e përdorur nga mini-programi i orës kur kyçi i "
-"formatit është caktuar në \"custom\". Mund të përdoren përcaktues konvertimi"
-" të kuptueshëm nga strftime() për të marrë formatin e duhur. Për "
-"informacione më të hollësishme, mund të konsultohet manuali i strftime()."
+"formatit është caktuar në \"custom\". Mund të përdoren përcaktues konvertimi "
+"të kuptueshëm nga strftime() për të marrë formatin e duhur. Për informacione "
+"më të hollësishme, mund të konsultohet manuali i strftime()."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:39
 msgid "Show time with seconds"
@@ -624,12 +624,6 @@ msgstr ""
 msgid "Get the current time and date"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-clock"
-msgstr ""
-
 #: applets/fish/fish.c:266
 #, c-format
 msgid ""
@@ -648,7 +642,7 @@ msgstr ""
 msgid "Images"
 msgstr "Figura"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:578 applets/fish/fish.c:684
+#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
 #, no-c-format
 msgid "%s the Fish"
 msgstr "%s - peshku"
@@ -682,24 +676,25 @@ msgstr ""
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/fish/fish.c:579
+#: applets/fish/fish.c:580
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "Peshku %s, një orakull i kohrave moderne"
 
-#: applets/fish/fish.c:645
+#: applets/fish/fish.c:646
 msgid "Unable to locate the command to execute"
 msgstr "E pamundur gjetja komandës që duhet ekzekutuar"
 
-#: applets/fish/fish.c:689
+#: applets/fish/fish.c:690
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "Peshku %s thotë:"
 
-#: applets/fish/fish.c:752
+#: applets/fish/fish.c:753
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -710,16 +705,16 @@ msgstr ""
 "\n"
 "Më hollësisht:%s"
 
-#: applets/fish/fish.c:849
+#: applets/fish/fish.c:850
 msgid "_Speak again"
 msgstr "_Fol sërish"
 
-#: applets/fish/fish.c:930
+#: applets/fish/fish.c:931
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
 msgstr "Komanda e konfiguruar nuk punon dhe u zëvendësua me: %s"
 
-#: applets/fish/fish.c:963
+#: applets/fish/fish.c:964
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -730,7 +725,7 @@ msgstr ""
 "\n"
 "Detaje:%s"
 
-#: applets/fish/fish.c:979
+#: applets/fish/fish.c:980
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -741,15 +736,15 @@ msgstr ""
 "\n"
 "Më hollësisht:%s"
 
-#: applets/fish/fish.c:1551
+#: applets/fish/fish.c:1552
 msgid "The water needs changing"
 msgstr "Duhet ndërruar uji"
 
-#: applets/fish/fish.c:1553
+#: applets/fish/fish.c:1554
 msgid "Look at today's date!"
 msgstr "Shiko datën e sotme!"
 
-#: applets/fish/fish.c:1635
+#: applets/fish/fish.c:1636
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "Peshku %s, fat-ndjellësi"
@@ -844,8 +839,8 @@ msgstr "Pamje në animimin e peshkut"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
-"This key specifies the number of frames that will be displayed in the fish's"
-" animation."
+"This key specifies the number of frames that will be displayed in the fish's "
+"animation."
 msgstr "Ky pulsant përcakton numrin e pamjeve në animimin e peshkut."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
@@ -878,12 +873,6 @@ msgstr ""
 msgid "Display a swimming fish or another anicafed creature"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-fish"
-msgstr ""
-
 #: applets/notification_area/main.c:276
 #: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Notification Area"
@@ -898,10 +887,11 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/notification_area/main.c:485
+#: applets/notification_area/main.c:486
 msgid "Panel Notification Area"
 msgstr "Zona Njoftuese e Panelit"
 
@@ -942,20 +932,14 @@ msgstr ""
 msgid "Area where notification icons appear"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-notification-area"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "Trego dritaret nga të gjitha hapësirave të punës"
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
-"If true, the window list will show windows from all workspaces. Otherwise it"
-" will only display windows from the current workspace."
+"If true, the window list will show windows from all workspaces. Otherwise it "
+"will only display windows from the current workspace."
 msgstr ""
 "Nëse kjo është e vërtetë,atëhere lista e dritareve do shfaqë dritaret "
 "ekzistuese në të gjitha hapësirat e punës, përndryshe do shfaqë vetëm "
@@ -995,8 +979,8 @@ msgid ""
 "the workspaces. Otherwise they will display the windows on the workspace. "
 "This setting only works when the window manager is Croma."
 msgstr ""
-"Nëse true, hapësirat e punës në shkëmbyesin e hapësirave do të shfaqin emrat"
-" e hapësirave të punës. Në rast të kundërt do të shfaqen vetëm dritaret në "
+"Nëse true, hapësirat e punës në shkëmbyesin e hapësirave do të shfaqin emrat "
+"e hapësirave të punës. Në rast të kundërt do të shfaqen vetëm dritaret në "
 "hapësirën e punës. Ky rregullim funksionon vetëm kur përdoret Croma si "
 "manazhues i dritareve."
 
@@ -1019,8 +1003,8 @@ msgstr "Rreshta tek zgjedhësi i hapësirës së punës"
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
-"vertical layout) the workspace switcher shows the workspaces in. This key is"
-" only relevant if the display_all_workspaces key is true."
+"vertical layout) the workspace switcher shows the workspaces in. This key is "
+"only relevant if the display_all_workspaces key is true."
 msgstr ""
 "Kjo vlerë tregon numrin e rreshtave (për panelët horizontalë) apo të "
 "kollonave (për panelët vertikalë) që janë të shfaqur tek zgjedhësi. Ky kyç "
@@ -1046,7 +1030,7 @@ msgid "Factory for the window navigation related applets"
 msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
+#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
 msgid "Window Selector"
 msgstr "Zgjedhësi i dritares"
 
@@ -1054,14 +1038,8 @@ msgstr "Zgjedhësi i dritares"
 msgid "Switch between open windows using a menu"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-window-menu"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:634
+#: applets/vncklet/workspace-switcher.c:638
 msgid "Workspace Switcher"
 msgstr "Zgjedhësi i hapësirës së punës"
 
@@ -1069,25 +1047,13 @@ msgstr "Zgjedhësi i hapësirës së punës"
 msgid "Switch between workspaces"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
-msgid "cafe-panel-workspace-switcher"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:821
+#: applets/vncklet/window-list.c:826
 msgid "Window List"
 msgstr "Lista e dritareve"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
-msgid "cafe-panel-window-list"
 msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
@@ -1096,12 +1062,6 @@ msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
-msgid "user-desktop"
 msgstr ""
 
 #: applets/vncklet/showdesktop.c:184
@@ -1113,59 +1073,60 @@ msgstr "Ngarkimi i %s dështoi: %s\n"
 msgid "Icon not found"
 msgstr "Ikona nuk u gjet"
 
-#: applets/vncklet/showdesktop.c:265
+#: applets/vncklet/showdesktop.c:266
 msgid "Click here to restore hidden windows."
 msgstr "Kliko këtu për të rivendosur dritaret e fshehura."
 
-#: applets/vncklet/showdesktop.c:269
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to hide all windows and show the desktop."
 msgstr ""
 "Kliko këtu për të fshehur të gjitha dritaret dhe për të shfaqur hapësirën e "
 "punës."
 
-#: applets/vncklet/showdesktop.c:439 applets/vncklet/showdesktop.c:498
+#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
 msgid "Show Desktop Button"
 msgstr "Shfaq Butonin e Hapësirës së Punës"
 
-#: applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:500
 msgid "About Show Desktop Button"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:501
+#: applets/vncklet/showdesktop.c:502
 msgid "This button lets you hide all windows and show the desktop."
 msgstr "Ky buton fsheh të gjtha dritaret dhe shfaq hapësirën e punës."
 
-#: applets/vncklet/showdesktop.c:502 applets/vncklet/window-list.c:825
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
+#: applets/vncklet/workspace-switcher.c:642
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:529
+#: applets/vncklet/showdesktop.c:531
 msgid ""
-"Your window manager does not support the show desktop button, or you are not"
-" running a window manager."
+"Your window manager does not support the show desktop button, or you are not "
+"running a window manager."
 msgstr ""
 "Organizuesi juaj i dritareve nuk suporton butonin \"Shfaq Hapësirën e "
 "Punës\", ose nuk keni një organizues dritaresh në funksion."
 
-#: applets/vncklet/window-list.c:349
+#: applets/vncklet/window-list.c:354
 msgid "_System Monitor"
 msgstr ""
 
-#: applets/vncklet/window-list.c:822
+#: applets/vncklet/window-list.c:827
 msgid "About Window List"
 msgstr ""
 
-#: applets/vncklet/window-list.c:824
+#: applets/vncklet/window-list.c:829
 msgid ""
-"The Window List shows a list of all windows in a set of buttons and lets you"
-" browse them."
+"The Window List shows a list of all windows in a set of buttons and lets you "
+"browse them."
 msgstr ""
-"Lista e dritareve shfaq listën e gjitha dritareve në një set butonash dhe ju"
-" lejon t'i zgjidhni."
+"Lista e dritareve shfaq listën e gjitha dritareve në një set butonash dhe ju "
+"lejon t'i zgjidhni."
 
 #: applets/vncklet/window-list.ui:18
 msgid "Window List Preferences"
@@ -1253,31 +1214,32 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "rreshta"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 msgid "columns"
 msgstr "kollona"
 
-#: applets/vncklet/workspace-switcher.c:635
+#: applets/vncklet/workspace-switcher.c:639
 msgid "About Workspace Switcher"
 msgstr ""
 
-#: applets/vncklet/workspace-switcher.c:637
+#: applets/vncklet/workspace-switcher.c:641
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
 msgstr ""
-"Ndryshuesi i Hapësirave të Punës tregon një miniaturë të hapësirave të punës"
-" dhe bën të mundur zotërimin e dritareve."
+"Ndryshuesi i Hapësirave të Punës tregon një miniaturë të hapësirave të punës "
+"dhe bën të mundur zotërimin e dritareve."
 
 #: applets/vncklet/workspace-switcher.ui:32
 msgid "Workspace Switcher Preferences"
@@ -1373,8 +1335,8 @@ msgstr ""
 #: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
-"commands are sorted descendingly by recency (e.g., most recent command comes"
-" first)."
+"commands are sorted descendingly by recency (e.g., most recent command comes "
+"first)."
 msgstr ""
 
 #: data/org.cafe.panel.gschema.xml.in:30
@@ -1416,9 +1378,9 @@ msgstr "Lista e ID të elementëve të panelit"
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object "
-"(e.g. a launcher, action button or menu button/bar). The settings for each "
-"of these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object (e."
+"g. a launcher, action button or menu button/bar). The settings for each of "
+"these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
 "Një listë e ID të elementëve të panelit. Çdo ID identifikon një element të "
 "vetëm të panelit (për shembull një ikonë nisjeje, një pulsant veprimi apo "
@@ -1480,11 +1442,11 @@ msgstr "Kyçje e plotë e panelit"
 #: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
-"panel. Individual applets may need to be locked down separately however. The"
-" panel must be restarted for this to take effect."
+"panel. Individual applets may need to be locked down separately however. The "
+"panel must be restarted for this to take effect."
 msgstr ""
-"Nëse true, paneli nuk do të lejojë ndonjë ndryshim të konfigurimit. Programe"
-" të caktuar ndoshta duhen kyçur veçazi. Që të ketë efekt, duhet rinisur "
+"Nëse true, paneli nuk do të lejojë ndonjë ndryshim të konfigurimit. Programe "
+"të caktuar ndoshta duhen kyçur veçazi. Që të ketë efekt, duhet rinisur "
 "paneli."
 
 #: data/org.cafe.panel.gschema.xml.in:79
@@ -1579,8 +1541,8 @@ msgstr ""
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
-"Set the size of icons used in the menu. The panel must be restarted for this"
-" to take effect."
+"Set the size of icons used in the menu. The panel must be restarted for this "
+"to take effect."
 msgstr ""
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:50
@@ -1618,8 +1580,8 @@ msgid ""
 "The position of this panel object. The position is specified by the number "
 "of pixels from the left (or top if vertical) panel edge."
 msgstr ""
-"Vendosja e këtij objekti në panel. Pozicioni specifikohet nga numri i pikëve"
-" nga korniza e majtë (apo superiore nëse vertikal) e panelit."
+"Vendosja e këtij objekti në panel. Pozicioni specifikohet nga numri i pikëve "
+"nga korniza e majtë (apo superiore nëse vertikal) e panelit."
 
 #: data/org.cafe.panel.object.gschema.xml.in:20
 msgid "Interpret position relative to bottom/right edge"
@@ -1627,8 +1589,8 @@ msgstr "Konsideron pozicionin relativ me kornizën e poshtme/djathtas"
 
 #: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
-"If true, the position of the object is interpreted relative to the right (or"
-" bottom if vertical) edge of the panel."
+"If true, the position of the object is interpreted relative to the right (or "
+"bottom if vertical) edge of the panel."
 msgstr ""
 "Nëse true, pozicioni i elementit konsiderohet relativ me kornizën e djathtë "
 "(ose të poshtme për panelët vertikalë) të panelit."
@@ -1639,8 +1601,8 @@ msgstr "Blloko elementin në panel"
 
 #: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
-"If true, the user may not move the applet without first unlocking the object"
-" using the \"Unlock\" menuitem."
+"If true, the user may not move the applet without first unlocking the object "
+"using the \"Unlock\" menuitem."
 msgstr ""
 "Nëse true, përdoruesi nuk mund të lëvizë applet-in nëse më parë nuk ka "
 "zbllokuar objektin duke përdorur zërin e menusë \"Zblloko\"."
@@ -1651,10 +1613,9 @@ msgstr ""
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. "
-"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
-"applet\")."
+"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
+"ClockApplet\". This key is only relevant if the object_type key is "
+"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
 msgstr ""
 
 #: data/org.cafe.panel.object.gschema.xml.in:35
@@ -1676,8 +1637,7 @@ msgstr "Propozimi që do të shfaqet për sirtarin apo menunë"
 #: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
-"only relevant if the object_type key is \"drawer-object\" or \"menu-"
-"object\"."
+"only relevant if the object_type key is \"drawer-object\" or \"menu-object\"."
 msgstr ""
 "Teksti që duhet shfaqur si propozim për këtë sirtar apo menu. Ky rregullim "
 "ka vlerë vetëm nëse kyçi tip_objekti është \"objekt-sirtar\" apo \"objekt-"
@@ -1785,8 +1745,8 @@ msgid ""
 "main purpose is to serve as the panel's window title which is useful when "
 "navigating between panels."
 msgstr ""
-"Emër i lexueshëm për të identifikuar një panel. Qëllimi kryesor i këtij kyçi"
-" është përdorimi si titull i dritares së panelit, duke lehtësuar lundrimin "
+"Emër i lexueshëm për të identifikuar një panel. Qëllimi kryesor i këtij kyçi "
+"është përdorimi si titull i dritares së panelit, duke lehtësuar lundrimin "
 "midis panelëve."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:10
@@ -1810,8 +1770,8 @@ msgid ""
 "In a Xinerama setup, you may have panels on each individual monitor. This "
 "key identifies the current monitor the panel is displayed on."
 msgstr ""
-"Në një rregullim Xinerama është e mundur prania e panelëve tek çdo monitor i"
-" vetëm. Ky kyç identifikon monitorin aktual ku shfaqet paneli."
+"Në një rregullim Xinerama është e mundur prania e panelëve tek çdo monitor i "
+"vetëm. Ky kyç identifikon monitorin aktual ku shfaqet paneli."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:20
 msgid "Expand to occupy entire screen width"
@@ -1820,8 +1780,8 @@ msgstr "Shpalos që të zërë krejt gjërësinë e ekranit"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
-"vertical panel). In this mode the panel can only be placed at a screen edge."
-" If false, the panel will only be large enough to accommodate the applets, "
+"vertical panel). In this mode the panel can only be placed at a screen edge. "
+"If false, the panel will only be large enough to accommodate the applets, "
 "launchers and buttons on the panel."
 msgstr ""
 "Nëse true, paneli do të zërë komplet gjërësinë e ekranit (lartësinë nëse "
@@ -1839,20 +1799,20 @@ msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
 "the panel is on. In un-expanded mode the difference between \"top\" and "
-"\"bottom\" is less important - both indicate that this is a horizontal panel"
-" - but still give a useful hint as to how some panel objects should behave. "
-"For example, on a \"top\" panel a menu button will pop up its menu below the"
-" panel, whereas on a \"bottom\" panel the menu will be popped up above the "
+"\"bottom\" is less important - both indicate that this is a horizontal panel "
+"- but still give a useful hint as to how some panel objects should behave. "
+"For example, on a \"top\" panel a menu button will pop up its menu below the "
+"panel, whereas on a \"bottom\" panel the menu will be popped up above the "
 "panel."
 msgstr ""
-"Orientimi i panelit. Vlerat e lejuara janë \"top\", \"bottom\", \"left\" dhe"
-" \"right\". Në modalitetin i shpalosur ky kyç specifikon se tek cili bord i "
+"Orientimi i panelit. Vlerat e lejuara janë \"top\", \"bottom\", \"left\" dhe "
+"\"right\". Në modalitetin i shpalosur ky kyç specifikon se tek cili bord i "
 "ekranit ndodhet paneli. Në modalitetin jo-i shpalosur, diferenca midis "
 "\"top\" dhe \"bottom\" është më pak e dukshme. Megjithëse që të dy "
 "specifikojnë që kemi të bëjmë me një panel horizontal, ka mundësi të kemi "
 "një sjellje të ndryshme nga ana e elementëve të panelit: për shembull një "
-"pulsant menu i vendosur tek një panel \"top\" do të përpiqet të hapë menu-në"
-" në drejtimin poshtë, ndërsa në drejtimin lart për një panel \"bottom\"."
+"pulsant menu i vendosur tek një panel \"top\" do të përpiqet të hapë menu-në "
+"në drejtimin poshtë, ndërsa në drejtimin lart për një panel \"bottom\"."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:30
 msgid "Panel size"
@@ -1866,9 +1826,9 @@ msgid ""
 "(or width)."
 msgstr ""
 "Lartësia (gjerësia për panelët vertikalë) e panelit. Përmasa minimum e "
-"panelit do të përcaktohet gjatë ekzekutimit, duke u mështetur tek madhësia e"
-" llojit të gërmave dhe faktorëve të tjerë. Përmasa maksimim sidoqoftë është "
-"e fiksuar në një të katërtën e lartësisë (apo gjërësisë) së ekranit."
+"panelit do të përcaktohet gjatë ekzekutimit, duke u mështetur tek madhësia e "
+"llojit të gërmave dhe faktorëve të tjerë. Përmasa maksimim sidoqoftë është e "
+"fiksuar në një të katërtën e lartësisë (apo gjërësisë) së ekranit."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:35
 msgid "X co-ordinate of panel"
@@ -1881,9 +1841,8 @@ msgid ""
 "at the screen edge specified by the orientation key."
 msgstr ""
 "Pozicioni i panelit gjatë aksit x. Ky kyç ka kuptim vetëm në modalitetin jo "
-"i shpalosur. Në modalitetin i shpalosur, përkundrazi, ky kyç shpërfillet dhe"
-" paneli pozicionohet në bordin e ekranit specifikuar nga kyçi "
-"\"orientation\"."
+"i shpalosur. Në modalitetin i shpalosur, përkundrazi, ky kyç shpërfillet dhe "
+"paneli pozicionohet në bordin e ekranit specifikuar nga kyçi \"orientation\"."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:40
 msgid "Y co-ordinate of panel"
@@ -1896,9 +1855,8 @@ msgid ""
 "at the screen edge specified by the orientation key."
 msgstr ""
 "Pozicioni i panelit gjatë aksit y. Ky kyç ka kuptim vetëm në modalitetin jo "
-"i shpalosur. Në modalitetin i shpalosur, përkundrazi, ky kyç shpërfillet dhe"
-" paneli pozicionohet në bordin e ekranit specifikuar nga kyçi "
-"\"orientation\"."
+"i shpalosur. Në modalitetin i shpalosur, përkundrazi, ky kyç shpërfillet dhe "
+"paneli pozicionohet në bordin e ekranit specifikuar nga kyçi \"orientation\"."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:45
 msgid "X co-ordinate of panel, starting from the right of the screen"
@@ -1935,10 +1893,10 @@ msgid ""
 msgstr ""
 "Pozicioni i panelit gjatë aksit y, duke u nisur nga fundi i ekranit. Nëse "
 "vendosur në -1, vlera do të shpërfillet dhe do të përdoret vlera e kyçit y. "
-"Nëse vlera është më e madhe se 0, atëhere vlera e kyçit y do të shpërfillet."
-" Ky kyç ka kuptim vetëm në modalitetin jo i shpalosur. Në modalitetin i "
-"shpalosur, përkundrazi, ky kyç shpërfillet dhe paneli pozicionohet në bordin"
-" e ekranit specifikuar nga kyçi \"orientation\"."
+"Nëse vlera është më e madhe se 0, atëhere vlera e kyçit y do të shpërfillet. "
+"Ky kyç ka kuptim vetëm në modalitetin jo i shpalosur. Në modalitetin i "
+"shpalosur, përkundrazi, ky kyç shpërfillet dhe paneli pozicionohet në bordin "
+"e ekranit specifikuar nga kyçi \"orientation\"."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:55
 msgid "Center panel on x-axis"
@@ -1952,9 +1910,9 @@ msgid ""
 "and x_right keys specify the location of the panel."
 msgstr ""
 "Nëse true, kyçet x dhe x_right do të shpërfillen dhe paneli do të vendoset "
-"në qendër të aksit x të ekranit. Nëse ridimensionohet, paneli do të vazhdojë"
-" të qëndrojë në të njëjtin pozicion - p.sh. do të zgjerohet në të dy krahët."
-" Nëse false, kyçet x dhe x_right do të përcaktojnë pozicionin e panelit."
+"në qendër të aksit x të ekranit. Nëse ridimensionohet, paneli do të vazhdojë "
+"të qëndrojë në të njëjtin pozicion - p.sh. do të zgjerohet në të dy krahët. "
+"Nëse false, kyçet x dhe x_right do të përcaktojnë pozicionin e panelit."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:60
 msgid "Center panel on y-axis"
@@ -1968,9 +1926,9 @@ msgid ""
 "and y_bottom keys specify the location of the panel."
 msgstr ""
 "Nëse true, kyçet y dhe y_bottom do të shpërfillen dhe paneli do të vendoset "
-"në qendër të aksit y të ekranit. Nëse ridimensionohet, paneli do të vazhdojë"
-" të qëndrojë në të njëjtin pozicion - p.sh. do të zgjerohet në të dy krahët."
-" Nëse false, kyçet y dhe y_bottom do të përcaktojnë pozicionin e panelit."
+"në qendër të aksit y të ekranit. Nëse ridimensionohet, paneli do të vazhdojë "
+"të qëndrojë në të njëjtin pozicion - p.sh. do të zgjerohet në të dy krahët. "
+"Nëse false, kyçet y dhe y_bottom do të përcaktojnë pozicionin e panelit."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:65
 msgid "Automatically hide panel into corner"
@@ -1982,9 +1940,9 @@ msgid ""
 "the pointer leaves the panel area. Moving the pointer to that corner again "
 "will cause the panel to re-appear."
 msgstr ""
-"Nëse true, paneli bëhet i padukshëm automatikisht në një kënd të ekranit kur"
-" treguesi i mouse braktis sipërfaqen e panelit. Duke çuar përsëri kursorin "
-"në këtë kënd, paneli do të ri-shfaqet."
+"Nëse true, paneli bëhet i padukshëm automatikisht në një kënd të ekranit kur "
+"treguesi i mouse braktis sipërfaqen e panelit. Duke çuar përsëri kursorin në "
+"këtë kënd, paneli do të ri-shfaqet."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
@@ -2004,8 +1962,8 @@ msgid ""
 "to move the panel to edge of the screen, leaving only a button showing."
 msgstr ""
 "Nëse true, vendosen pulsantë në të dyja anët e panelit. Këta pulsantë mund "
-"të përdoren për të lëvizur panelin në bordin e ekranit, duke lënë të dukshëm"
-" vetëm një pulsant."
+"të përdoren për të lëvizur panelin në bordin e ekranit, duke lënë të dukshëm "
+"vetëm një pulsant."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:80
 msgid "Enable arrows on hide buttons"
@@ -2054,8 +2012,7 @@ msgstr "Pikët e dukshme kur është i fshehur"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
-"hidden into a corner. This key is only relevant if the auto_hide key is "
-"true."
+"hidden into a corner. This key is only relevant if the auto_hide key is true."
 msgstr ""
 "Përcakton numrin e pikave të dukshme kur paneli bëhet automatikisht i "
 "padukshëm në një kënd. Ky kyç ka kuptim vetëm nëse kyçi auto_hide është i "
@@ -2102,8 +2059,8 @@ msgstr "Tejdukshmëria e ngjyrës së sfondit"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
-"completely opaque (a value of less than 65535), the color will be composited"
-" onto the desktop background image."
+"completely opaque (a value of less than 65535), the color will be composited "
+"onto the desktop background image."
 msgstr ""
 "Përcakton tejdukshmërinë e formatit të ngjyrës së sfondit. Nëse ngjyra nuk "
 "është krejtësisht opake (pra një vlerë më e vogël se 65535), ajo ngjyrë do "
@@ -2223,7 +2180,7 @@ msgid "_Open"
 msgstr "_Hap"
 
 #: cafe-panel/libpanel-util/panel-error.c:76
-#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
+#: cafe-panel/panel-applet-frame.c:800 cafe-panel/panel-applet-frame.c:988
 msgid "Error"
 msgstr "Gabim"
 
@@ -2271,7 +2228,7 @@ msgid "Cannot find an empty spot"
 msgstr "Nuk gjej dot një vend bosh"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1650
+#: cafe-panel/panel-toplevel.c:1643
 msgid "Drawer"
 msgstr "Sirtari"
 
@@ -2280,7 +2237,7 @@ msgid "_Add to Drawer..."
 msgstr "_Shto në sirtar..."
 
 #: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
-#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:247
 msgid "_Properties"
 msgstr "_Pronësitë"
 
@@ -2297,7 +2254,7 @@ msgid "- Edit .desktop files"
 msgstr "- Ndrysho file-t .desktop"
 
 #: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
 msgid "Create Launcher"
 msgstr "Krijo lëshues"
 
@@ -2310,7 +2267,7 @@ msgstr "Pronësitë e directory"
 msgid "Launcher Properties"
 msgstr "Pronësitë e lëshuesit"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "Panel"
 
@@ -2319,14 +2276,8 @@ msgid ""
 "Launch other applications and provide various utilities to manage windows, "
 "show the time, etc."
 msgstr ""
-"Lëshon aplikativë të tjerë dhe vë në dispozicion instrumentë të ndryshëm për"
-" të manazhuar dritaret, shfaqur kohën, etj."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cafe-panel/cafe-panel.desktop.in:7
-msgid "cafe-panel"
-msgstr ""
+"Lëshon aplikativë të tjerë dhe vë në dispozicion instrumentë të ndryshëm për "
+"të manazhuar dritaret, shfaqur kohën, etj."
 
 #: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
@@ -2360,7 +2311,7 @@ msgstr "_Nis"
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "Çelësi %s nuk është caktuar, i pamundur ngarkimi i lëshuesit\n"
 
-#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Nuk munda të ruaj lëshuesin"
@@ -2527,69 +2478,69 @@ msgstr ""
 msgid "Not compatible with Wayland"
 msgstr ""
 
-#: cafe-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1055
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "Zgj_idh një element për t'a shtuar tek \"%s\":"
 
-#: cafe-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1059
 msgid "Add to Drawer"
 msgstr "Shto në sirtar"
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Find an _item to add to the drawer:"
 msgstr "Zgj_idh një element për t'a shtuar në sirtar:"
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Add to Panel"
 msgstr "Shto në panel"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Find an _item to add to the panel:"
 msgstr "Zgj_idh një element për t'a shtuar në panel:"
 
-#: cafe-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1313
 msgid "_Back"
 msgstr "_Mbrapa"
 
-#: cafe-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:761
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "\"%s\" përfundoi në menyrë të papritur"
 
-#: cafe-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:763
 msgid "Panel object has quit unexpectedly"
 msgstr "Objekti i panelit u mbyll në menyrë të papritur"
 
-#: cafe-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:770
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
 msgstr ""
 "Nëse ringarkon një objekt paneli, do t'i shtohet automatikisht panelit."
 
-#: cafe-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:777
 msgid "D_elete"
 msgstr ""
 
-#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:778 cafe-panel/panel-applet-frame.c:783
 msgid "_Don't Reload"
 msgstr "_Mos ringarko"
 
-#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:779 cafe-panel/panel-applet-frame.c:784
 msgid "_Reload"
 msgstr "_Ringarko"
 
-#: cafe-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:950
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "Paneli ndeshi në një problem gjatë ngarkimit të \"%s\"."
 
-#: cafe-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:965
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Dëshiron të heqësh këtë program nga konfigurimi juaj?"
 
-#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "_Fshi"
 
@@ -2605,10 +2556,11 @@ msgstr "Paneli i CAFE"
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 CAFE developers"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:120
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
@@ -2616,45 +2568,49 @@ msgstr ""
 "Ky program është përgjegjës për lëshimin e aplikativëve dhe vë në "
 "dispozicion instrumentë të dobishëm."
 
-#: cafe-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:124
 msgid "About the CAFE Panel"
 msgstr "Informacione mbi Panelin e CAFE"
 
-#: cafe-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:155
 msgid "Cannot delete this panel"
 msgstr "E pamundur heqja e këtij paneli"
 
-#: cafe-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:156
 msgid "You must always have at least one panel."
 msgstr "Duhet të kesh të paktën një panel."
 
-#: cafe-panel/panel-context-menu.c:199
-msgid "Reset this panel?"
+#: cafe-panel/panel-context-menu.c:200
+msgid "Reset all panels?"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:200
+#: cafe-panel/panel-context-menu.c:201
 msgid ""
-"When a panel is reset, all \n"
+"When the panels are reset, all \n"
 "custom settings are lost."
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
-msgid "_Reset Panel"
+#: cafe-panel/panel-context-menu.c:215
+msgid "_Reset Panels"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:237
 msgid "_Add to Panel…"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:257
+msgid "_Reset All Panels"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:264
 msgid "_Delete This Panel"
 msgstr "_Hiqe këtë panel"
 
-#: cafe-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:277
 msgid "_New Panel"
 msgstr "_Panel i ri"
 
-#: cafe-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:326
 msgid "A_bout Panels"
 msgstr "I_nformacione mbi panelët"
 
@@ -2758,8 +2714,7 @@ msgstr "Hyrje në dokumentë, kartela dhe rezerva në rrjet"
 #: cafe-panel/panel-menu-bar.c:99
 msgid "Change desktop appearance and behavior, get help, or log out"
 msgstr ""
-"Ndrysho pamjen dhe sjelljen e hapësirës së punës, merr ndihmë, ose dil "
-"jashtë"
+"Ndrysho pamjen dhe sjelljen e hapësirës së punës, merr ndihmë, ose dil jashtë"
 
 #: cafe-panel/panel-menu-bar.c:166
 msgid "Applications"
@@ -2827,51 +2782,52 @@ msgstr "Desktopi"
 msgid "Open the contents of your desktop in a folder"
 msgstr "Hap përmbajtjen e hapësirës së punës në një kartelë"
 
-#: cafe-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1075
 msgid "Computer"
 msgstr "Kompjuteri"
 
-#: cafe-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1081
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
 msgstr ""
 "Shfleton të gjithë disqet dhe kartelat lokale dhe në distancë të arritshme "
 "nga ky kompjutër"
 
-#: cafe-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1094
 msgid "Network"
 msgstr "Rrjeti"
 
-#: cafe-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1095
 msgid "Browse bookmarked and local network locations"
 msgstr "Shfleton pozicionet e rrjetit lokal dhe në libërshënues"
 
-#: cafe-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1489
 msgid "Places"
 msgstr "Rezerva"
 
-#: cafe-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1517
 msgid "System"
 msgstr "Sistemi"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: cafe-panel/panel-menu-items.c:1600
+#.
+#: cafe-panel/panel-menu-items.c:1602
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1614
 #, c-format
 msgid "Log Out %s..."
 msgstr "Përfundo seancën e %s..."
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1618
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr "Përfundon seancën e «%s» për t'u futur si një përdorues tjetër"
@@ -3022,7 +2978,8 @@ msgstr ""
 "Nëse pastron listën e dokumentëve të fundit, do të fshini gjithashtu:\n"
 "\n"
 "• Të gjithë elementët nga menuja Vendndodhje → Dokumentet e fundit.\n"
-"• Të gjithë elementët nga lista e dokumentëve të fundit e të gjithë programeve."
+"• Të gjithë elementët nga lista e dokumentëve të fundit e të gjithë "
+"programeve."
 
 #: cafe-panel/panel-recent.c:164
 msgid "Clear Recent Documents"
@@ -3040,30 +2997,30 @@ msgstr ""
 msgid "Clear all items from the recent documents list"
 msgstr "Pastro të gjithë elementët nga lista e dokumentëve të fundit"
 
-#: cafe-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:435
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "I pamundur ekzekutimi i komandës '%s'"
 
-#: cafe-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:476
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "I pamundur konvertimi i '%s' nga UTF-8"
 
-#: cafe-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1269
 msgid "Choose a file to append to the command..."
 msgstr "Zgjidh një file për t'ja shtuar komandës..."
 
-#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Zgjidh një aplikativ për të lexuar përshkrimin e tij."
 
-#: cafe-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1689
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "Do të ekzekutojë komandën: '%s'"
 
-#: cafe-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1722
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
@@ -3216,19 +3173,19 @@ msgstr ""
 msgid "Hide Panel"
 msgstr "Fshih panelin"
 
-#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
 msgid "Top Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1651
 msgid "Bottom Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1653
 msgid "Left Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Right Panel"
 msgstr ""
 
@@ -3246,17 +3203,17 @@ msgstr "I pamundur ekzekutimi i '%s'"
 msgid "file"
 msgstr "file"
 
-#: cafe-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:876
 msgid "Home Folder"
 msgstr "Kartela personale"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:888
 msgid "File System"
 msgstr "File i sistemit"
 
-#: cafe-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1062
 msgid "Search"
 msgstr "Kërko"
 
@@ -3264,7 +3221,8 @@ msgstr "Kërko"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: cafe-panel/panel-util.c:1106
+#.
+#: cafe-panel/panel-util.c:1108
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
@@ -3312,10 +3270,4 @@ msgstr ""
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
 msgid "A simple applet for testing the CAFE panel"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
-msgid "cafe-gegl"
 msgstr ""

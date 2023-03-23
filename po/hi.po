@@ -2,24 +2,24 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2020
 # Sadgamaya <g.raghavan.g@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.23.2\n"
+"Project-Id-Version: cafe-panel 1.25.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2020-01-12 18:05+0100\n"
+"POT-Creation-Date: 2023-03-23 18:48+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Hindi (https://www.transifex.com/cafe/teams/13566/hi/)\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
@@ -44,7 +44,8 @@ msgstr "%l:%M:%S %p"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:504
+#.
+#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -55,7 +56,7 @@ msgstr "%l:%M %p"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1604
+#: applets/clock/clock.c:454 applets/clock/clock.c:1603
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
@@ -69,9 +70,10 @@ msgstr "%H:%M:%S"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1610
-#: applets/clock/clock-location-tile.c:464
-#: applets/clock/clock-location-tile.c:511
+#.
+#: applets/clock/clock.c:454 applets/clock/clock.c:1609
+#: applets/clock/clock-location-tile.c:462
+#: applets/clock/clock-location-tile.c:509
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -113,7 +115,7 @@ msgstr "माह पंचांग छिपाने के लिये क�
 msgid "Click to view month calendar"
 msgstr "माह पंचांग देखने के लिये क्लिक करें"
 
-#: applets/clock/clock.c:1442
+#: applets/clock/clock.c:1441
 msgid "Computer Clock"
 msgstr "कम्प्यूटर घड़ी"
 
@@ -123,7 +125,7 @@ msgstr "कम्प्यूटर घड़ी"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1589
+#: applets/clock/clock.c:1588
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -133,108 +135,108 @@ msgstr "%I:%M:%S %p"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1597
+#: applets/clock/clock.c:1596
 msgid "%I:%M %p"
 msgstr "%I:%M %p"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1643
+#: applets/clock/clock.c:1642
 msgid "%A, %B %d %Y"
 msgstr "%A, %B %d %Y"
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1673
 msgid "Set System Time..."
 msgstr "तंत्र समय सेट करें"
 
-#: applets/clock/clock.c:1675
+#: applets/clock/clock.c:1674
 msgid "Set System Time"
 msgstr "तंत्र समय सेट करें"
 
-#: applets/clock/clock.c:1690
+#: applets/clock/clock.c:1689
 msgid "Failed to set the system time"
 msgstr "तंत्र समय सेट करने में विफल"
 
-#: applets/clock/clock.c:1888 applets/fish/fish.c:1694
-#: applets/notification_area/main.c:292 applets/vncklet/window-list.c:357
-#: applets/vncklet/workspace-switcher.c:389
+#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
+#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
+#: applets/vncklet/workspace-switcher.c:393
 msgid "_Preferences"
 msgstr "वरीयताएँ (_P)"
 
-#: applets/clock/clock.c:1891 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1697 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:295 applets/vncklet/showdesktop.c:241
-#: applets/vncklet/window-list.c:365 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:98 applets/vncklet/workspace-switcher.c:397
+#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
+#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
-#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
 #: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "मदद (_H)"
 
-#: applets/clock/clock.c:1894 applets/fish/fish.c:1700
-#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:249
-#: applets/vncklet/window-list.c:373 applets/vncklet/window-menu.c:106
-#: applets/vncklet/workspace-switcher.c:405
+#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
+#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
+#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
+#: applets/vncklet/workspace-switcher.c:409
 msgid "_About"
 msgstr "परिचय (_A)"
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1894
 msgid "Copy _Time"
 msgstr "समय नक़ल करें ( _T)"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1897
 msgid "Copy _Date"
 msgstr "तिथि नक़ल करें ( _D)"
 
-#: applets/clock/clock.c:1903
+#: applets/clock/clock.c:1900
 msgid "Ad_just Date & Time"
 msgstr "तिथि व समय समंजित करें (_j)"
 
-#: applets/clock/clock.c:2899
+#: applets/clock/clock.c:2898
 msgid "Choose Location"
 msgstr "स्थान चुनें"
 
-#: applets/clock/clock.c:2978
+#: applets/clock/clock.c:2977
 msgid "Edit Location"
 msgstr "अवस्थिति संपादित करें"
 
-#: applets/clock/clock.c:3105
+#: applets/clock/clock.c:3104
 msgid "City Name"
 msgstr "शहर नाम"
 
-#: applets/clock/clock.c:3109
+#: applets/clock/clock.c:3108
 msgid "City Time Zone"
 msgstr "शहर समय क्षेत्र"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3388
 #: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "घड़ी"
 
-#: applets/clock/clock.c:3390
+#: applets/clock/clock.c:3389
 msgid "About Clock"
 msgstr ""
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3391
 msgid "The Clock displays the current time and date"
 msgstr "घड़ी वर्तमान समय और तिथि दर्शाती है"
 
-#: applets/clock/clock.c:3393
+#: applets/clock/clock.c:3392
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:567
-#: applets/notification_area/main.c:286 applets/vncklet/showdesktop.c:508
-#: applets/vncklet/window-list.c:831 applets/vncklet/window-menu.c:88
-#: applets/vncklet/workspace-switcher.c:644
-#: cafe-panel/panel-context-menu.c:124
+#: applets/clock/clock.c:3397 applets/fish/fish.c:568
+#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
+#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
+#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr ""
 "राजेश रंजन (rajeshkajha@yahoo.com)\n"
@@ -247,10 +249,10 @@ msgid "Time & Date"
 msgstr "समय व दिनांक"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-ctk.c:136
-#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
-#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
-#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
+#: cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "रद्द करें (_C)"
 
@@ -274,10 +276,10 @@ msgstr "घड़ी वरीयताएँ"
 msgid "Time _Settings"
 msgstr "समय जमावट (_S)"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -325,7 +327,7 @@ msgstr "तापमान दिखाएं (_t)"
 msgid "General"
 msgstr "सामान्य"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
 msgid "_Add"
 msgstr "जोड़ें (_A)"
 
@@ -378,19 +380,18 @@ msgid "South"
 msgstr "दक्षिण"
 
 #: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
-#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
+#: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr ""
 
-#. Languages that have a single word that translates as either "state" or
-#. "province" should use that instead of "region".
+#. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
 #: applets/clock/clock.ui:1012
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
 "the pop-up.</i></small>"
 msgstr ""
-"<small><i>एक शहर, क्षेत्र, या देश का नाम टाइप करें और पॉप-अप से मिलान "
-"चुनें.</i></small>"
+"<small><i>एक शहर, क्षेत्र, या देश का नाम टाइप करें और पॉप-अप से मिलान चुनें.</i></"
+"small>"
 
 #: applets/clock/clock.ui:1057
 msgid "_Timezone:"
@@ -416,20 +417,18 @@ msgstr "अक्षांश (_a):"
 msgid "Failed to set the system timezone"
 msgstr "तंत्र समय क्षेत्र सेट करने में विफल"
 
-#: applets/clock/clock-location-tile.c:231
+#: applets/clock/clock-location-tile.c:229
 msgid "<small>Set...</small>"
 msgstr "<small>सेट...</small>"
 
-#: applets/clock/clock-location-tile.c:232
+#: applets/clock/clock-location-tile.c:230
 msgid "<small>Set</small>"
 msgstr "<small>सेट</small>"
 
-#: applets/clock/clock-location-tile.c:308
-msgid ""
-"Set location as current location and use its timezone for this computer"
+#: applets/clock/clock-location-tile.c:306
+msgid "Set location as current location and use its timezone for this computer"
 msgstr ""
-"स्थान को मौजूदा स्थान के रूप में सेट करें और इस कंप्यूटर के लिए इसके "
-"समयक्षेत्र का प्रयोग करें"
+"स्थान को मौजूदा स्थान के रूप में सेट करें और इस कंप्यूटर के लिए इसके समयक्षेत्र का प्रयोग करें"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format
@@ -437,7 +436,7 @@ msgstr ""
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:441
+#: applets/clock/clock-location-tile.c:439
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l:%M <small>%p (%A)</small>"
 
@@ -446,7 +445,7 @@ msgstr "%l:%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:449
+#: applets/clock/clock-location-tile.c:447
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%H:%M <small>(%A)</small>"
 
@@ -454,27 +453,27 @@ msgstr "%H:%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:458
+#: applets/clock/clock-location-tile.c:456
 msgid "%l:%M <small>%p</small>"
 msgstr "%l:%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:600
+#: applets/clock/clock-location-tile.c:598
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:612
-#: applets/clock/clock-location-tile.c:621
+#: applets/clock/clock-location-tile.c:610
+#: applets/clock/clock-location-tile.c:619
 msgid "Unknown"
 msgstr "अज्ञात"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:614
+#: applets/clock/clock-location-tile.c:612
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s, %s तरह फील करता है"
 
-#: applets/clock/clock-location-tile.c:637
+#: applets/clock/clock-location-tile.c:635
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "सूर्योदय: %s / सूर्यास्त: %s"
@@ -497,23 +496,22 @@ msgstr "घंटा फ़ॉर्मेट"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
-"This key specifies the hour format used by the clock applet. Possible values"
-" are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
-" to \"internet\", the clock will display Internet time. The Internet time "
-"system divides the day into 1000 \".beats\". There are no time zones in this"
-" system, so time is the same all over the world. If set to \"unix\", the "
+"This key specifies the hour format used by the clock applet. Possible values "
+"are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set "
+"to \"internet\", the clock will display Internet time. The Internet time "
+"system divides the day into 1000 \".beats\". There are no time zones in this "
+"system, so time is the same all over the world. If set to \"unix\", the "
 "clock will display time in seconds since Epoch, i.e. 1970-01-01. If set to "
-"\"custom\", the clock will display time according to the format specified in"
-" the custom_format key."
+"\"custom\", the clock will display time according to the format specified in "
+"the custom_format key."
 msgstr ""
-"यह कुंजी घंटा प्रारूप को दिखाता है क्लॉक प्रारूप के द्वारा निर्दिष्ट. "
-"संभावित मान हैं \"12-hour\", \"24-hour\", \"internet\", \"unix\" और "
-"\"custom\". अगर \"internet\" पर सेट किया जाता है, क्लाक इंटरनेट समय "
-"दिखायेगा. इंटरनेट समय दिन को 1000 \".beats\" में बांटता है. इस तंत्र में कोई"
-" समय क्षेत्र नहीं होता, इसलिये दुनिया भर में समय एक जैसा होता है. अगर "
-"\"unix\" पर सेट किया जाता है, घड़ी समय को सेकेंड में दिखाती है Epoch से, "
-"यानी. 1970-01-01. अगर \"custom\" पर सेट किया जाता है, घड़ी custom_format "
-"कुंजी प्रारूप में निर्दिष्ट के अनुसार समय दिखाती है."
+"यह कुंजी घंटा प्रारूप को दिखाता है क्लॉक प्रारूप के द्वारा निर्दिष्ट. संभावित मान हैं \"12-"
+"hour\", \"24-hour\", \"internet\", \"unix\" और \"custom\". अगर \"internet\" "
+"पर सेट किया जाता है, क्लाक इंटरनेट समय दिखायेगा. इंटरनेट समय दिन को 1000 \".beats\" "
+"में बांटता है. इस तंत्र में कोई समय क्षेत्र नहीं होता, इसलिये दुनिया भर में समय एक जैसा होता "
+"है. अगर \"unix\" पर सेट किया जाता है, घड़ी समय को सेकेंड में दिखाती है Epoch से, यानी. "
+"1970-01-01. अगर \"custom\" पर सेट किया जाता है, घड़ी custom_format कुंजी प्रारूप में "
+"निर्दिष्ट के अनुसार समय दिखाती है."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:34
 msgid "Custom format of the clock"
@@ -526,10 +524,10 @@ msgid ""
 "strftime() to obtain a specific format. See the strftime() manual for more "
 "information."
 msgstr ""
-"यह कुंजी क्लॉक एप्पलेट के द्वारा प्रयुक्त को निर्दिष्ट करती है जब संरूप कुजी"
-" को \"custom\" पर सेट किया जाता है. आप रूपांतरण निर्दिष्टकर्ता का प्रयोग कर "
-"सकते हैं strftime() के द्वारा समझा गया विशिष्ट प्रारूप पाने के लिये. "
-"strftime() निर्देश पुस्तिका को अधिक सूचना के लिए देखें."
+"यह कुंजी क्लॉक एप्पलेट के द्वारा प्रयुक्त को निर्दिष्ट करती है जब संरूप कुजी को \"custom\" "
+"पर सेट किया जाता है. आप रूपांतरण निर्दिष्टकर्ता का प्रयोग कर सकते हैं strftime() के "
+"द्वारा समझा गया विशिष्ट प्रारूप पाने के लिये. strftime() निर्देश पुस्तिका को अधिक सूचना "
+"के लिए देखें."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:39
 msgid "Show time with seconds"
@@ -553,8 +551,7 @@ msgstr "उपकरण-युक्ति में तिथि दर्श�
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:50
 msgid "If true, show date in a tooltip when the pointer is over the clock."
-msgstr ""
-"अगर सत्य है, तो जब माउस घड़ी के ऊपर हो तो उपकरण-युक्ति में तिथि दर्शाता है"
+msgstr "अगर सत्य है, तो जब माउस घड़ी के ऊपर हो तो उपकरण-युक्ति में तिथि दर्शाता है"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:54
 msgid "Show weather in clock"
@@ -624,12 +621,6 @@ msgstr ""
 msgid "Get the current time and date"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-clock"
-msgstr ""
-
 #: applets/fish/fish.c:266
 #, c-format
 msgid ""
@@ -647,7 +638,7 @@ msgstr ""
 msgid "Images"
 msgstr "बिंब"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:578 applets/fish/fish.c:684
+#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
 #, no-c-format
 msgid "%s the Fish"
 msgstr "%s मछली"
@@ -659,10 +650,10 @@ msgid ""
 "time, and if loaded it also takes up precious panel space and memory. "
 "Anybody found using it should be promptly sent for a psychiatric evaluation."
 msgstr ""
-"जो भी हो, %s का कोई उपयोग नहीं. यह सिर्फ आपके डिस्क की जगह घेरता है और "
-"कम्पाइलेशन समय खाता है, और यदि लोड होता है तो कीमती पटल जगह और मेमोरी घेरता "
-"है. यदि कोई इसे उपयोग करता हुआ पाया जाता है, तो उसे तत्काल ही उसके मानसिक "
-"परीक्षण हेतु भेजा जाना चाहिए."
+"जो भी हो, %s का कोई उपयोग नहीं. यह सिर्फ आपके डिस्क की जगह घेरता है और कम्पाइलेशन "
+"समय खाता है, और यदि लोड होता है तो कीमती पटल जगह और मेमोरी घेरता है. यदि कोई इसे "
+"उपयोग करता हुआ पाया जाता है, तो उसे तत्काल ही उसके मानसिक परीक्षण हेतु भेजा जाना "
+"चाहिए."
 
 #: applets/fish/fish.c:552
 msgid "(with minor help from George)"
@@ -681,24 +672,25 @@ msgstr ""
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/fish/fish.c:579
+#: applets/fish/fish.c:580
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "%s गनोम मछली, एक समकालीन देववाणी"
 
-#: applets/fish/fish.c:645
+#: applets/fish/fish.c:646
 msgid "Unable to locate the command to execute"
 msgstr "चलाए जाने वाले कमांड को निर्धारित करने में असफल"
 
-#: applets/fish/fish.c:689
+#: applets/fish/fish.c:690
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "%s मछली कहती है:"
 
-#: applets/fish/fish.c:752
+#: applets/fish/fish.c:753
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -709,16 +701,16 @@ msgstr ""
 "\n"
 "विवरण: %s"
 
-#: applets/fish/fish.c:849
+#: applets/fish/fish.c:850
 msgid "_Speak again"
 msgstr "फिर बोलें (_S)"
 
-#: applets/fish/fish.c:930
+#: applets/fish/fish.c:931
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
 msgstr "विन्यस्त कमांड काम नहीं करता है और इसके द्वारा विस्थापित है: %s"
 
-#: applets/fish/fish.c:963
+#: applets/fish/fish.c:964
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -729,7 +721,7 @@ msgstr ""
 "\n"
 "विवरण: %s"
 
-#: applets/fish/fish.c:979
+#: applets/fish/fish.c:980
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -740,15 +732,15 @@ msgstr ""
 "\n"
 "विवरण: %s"
 
-#: applets/fish/fish.c:1551
+#: applets/fish/fish.c:1552
 msgid "The water needs changing"
 msgstr "पानी बदलना जरूरी है"
 
-#: applets/fish/fish.c:1553
+#: applets/fish/fish.c:1554
 msgid "Look at today's date!"
 msgstr "आज के दिनांक को देखें"
 
-#: applets/fish/fish.c:1635
+#: applets/fish/fish.c:1636
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "भविष्य बताने वाली, %s मछली"
@@ -811,8 +803,7 @@ msgid ""
 "A fish without a name is a pretty dull fish. Bring your fish to life by "
 "naming him."
 msgstr ""
-"बिना नाम वाली मछली तो बहुत सुस्त होगी. इसका कोई प्यारा सा नाम देकर इसमें "
-"जीवन भरें."
+"बिना नाम वाली मछली तो बहुत सुस्त होगी. इसका कोई प्यारा सा नाम देकर इसमें जीवन भरें."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:10
 msgid "The fish's animation pixmap"
@@ -823,8 +814,8 @@ msgid ""
 "This key specifies the filename of the pixmap which will be used for the "
 "animation displayed in the fish applet relative to the pixmap directory."
 msgstr ""
-"यह कुंजी pixmap के फाइलनाम को निर्दिष्ट करती है जो कि फिश एप्पलेट में "
-"प्रदर्शित एनीमेशन के लिये प्रयोग किया जायेगा pixmap निर्देशिका के सापेक्ष."
+"यह कुंजी pixmap के फाइलनाम को निर्दिष्ट करती है जो कि फिश एप्पलेट में प्रदर्शित एनीमेशन के "
+"लिये प्रयोग किया जायेगा pixmap निर्देशिका के सापेक्ष."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:15
 msgid "Command to execute on click"
@@ -835,8 +826,7 @@ msgid ""
 "This key specifies the command that will be tried to execute when the fish "
 "is clicked."
 msgstr ""
-"यह कुंजी निर्दिष्ट करती है कि कौन सा कमांड चलाना है, जब मछली को क्लिक किया "
-"जाए."
+"यह कुंजी निर्दिष्ट करती है कि कौन सा कमांड चलाना है, जब मछली को क्लिक किया जाए."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:20
 msgid "Frames in fish's animation"
@@ -844,11 +834,10 @@ msgstr "मछली एनीमेशन में फ्रेम्स"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
-"This key specifies the number of frames that will be displayed in the fish's"
-" animation."
+"This key specifies the number of frames that will be displayed in the fish's "
+"animation."
 msgstr ""
-"यह कुंजी निर्दिष्ट करती है कि मछली के एनीमेशन हेतु कितने फ्रेम की संख्या "
-"प्रदर्शित होगी."
+"यह कुंजी निर्दिष्ट करती है कि मछली के एनीमेशन हेतु कितने फ्रेम की संख्या प्रदर्शित होगी."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
 msgid "Pause per frame"
@@ -856,8 +845,7 @@ msgstr "प्रति फ्रेम में रुकें"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:26
 msgid "This key specifies the number of seconds each frame will be displayed."
-msgstr ""
-"यह कुंजी निर्दिष्ट करती है कि प्रत्येक फ्रेम कितने सेकण्ड्स तक प्रदर्शित हो."
+msgstr "यह कुंजी निर्दिष्ट करती है कि प्रत्येक फ्रेम कितने सेकण्ड्स तक प्रदर्शित हो."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:30
 msgid "Rotate on vertical panels"
@@ -880,12 +868,6 @@ msgstr ""
 msgid "Display a swimming fish or another anicafed creature"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-fish"
-msgstr ""
-
 #: applets/notification_area/main.c:276
 #: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Notification Area"
@@ -900,10 +882,11 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/notification_area/main.c:485
+#: applets/notification_area/main.c:486
 msgid "Panel Notification Area"
 msgstr "पटल नोटिफिकेशन क्षेत्र"
 
@@ -944,23 +927,17 @@ msgstr ""
 msgid "Area where notification icons appear"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-notification-area"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "सभी कार्यस्थान से विंडोज़ दिखाएँ"
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
-"If true, the window list will show windows from all workspaces. Otherwise it"
-" will only display windows from the current workspace."
+"If true, the window list will show windows from all workspaces. Otherwise it "
+"will only display windows from the current workspace."
 msgstr ""
-"यदि सत्य है, तो विंडो सूची सभी कार्यस्थान से विंडोज़ दिखाएगा. अन्यथा यह "
-"वर्तमान कार्यस्थान से विंडो दिखाएगा."
+"यदि सत्य है, तो विंडो सूची सभी कार्यस्थान से विंडोज़ दिखाएगा. अन्यथा यह वर्तमान "
+"कार्यस्थान से विंडो दिखाएगा."
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
 msgid "When to group windows"
@@ -971,8 +948,8 @@ msgid ""
 "Decides when to group windows from the same application on the window list. "
 "Possible values are \"never\", \"auto\" and \"always\"."
 msgstr ""
-"तय करता है कि विंडो को कब समूह बद्ध करें विंडो सूची के एक ही प्रकार के "
-"अनुप्रयोगों में से. सही मूल्य हैं \"कभी नहीं\", \"स्वचालित\" तथा \"हमेशा\"."
+"तय करता है कि विंडो को कब समूह बद्ध करें विंडो सूची के एक ही प्रकार के अनुप्रयोगों में से. "
+"सही मूल्य हैं \"कभी नहीं\", \"स्वचालित\" तथा \"हमेशा\"."
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
 msgid "Move windows to current workspace when unminimized"
@@ -983,8 +960,8 @@ msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
 msgstr ""
-"यदि सत्य है, तो विंडो बड़ा करने पर वर्तमान कार्यस्थान पर खिसकाएगा, अन्यथा "
-"विंडो के कार्यस्थान को स्विच करेगा."
+"यदि सत्य है, तो विंडो बड़ा करने पर वर्तमान कार्यस्थान पर खिसकाएगा, अन्यथा विंडो के "
+"कार्यस्थान को स्विच करेगा."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
 msgid "Display workspace names"
@@ -996,9 +973,8 @@ msgid ""
 "the workspaces. Otherwise they will display the windows on the workspace. "
 "This setting only works when the window manager is Croma."
 msgstr ""
-"यदि यह सत्य है तो कार्यस्थान स्विचर  कार्यस्थान के नामों को दिखाएगा. अन्यथा "
-"ये कार्यस्थान पर विंडोज़ को दर्शाएगा. यह सेटिंग सिर्फ तभी कार्य करता है जब "
-"विंडो प्रबंधक मेटासिटी है."
+"यदि यह सत्य है तो कार्यस्थान स्विचर  कार्यस्थान के नामों को दिखाएगा. अन्यथा ये कार्यस्थान "
+"पर विंडोज़ को दर्शाएगा. यह सेटिंग सिर्फ तभी कार्य करता है जब विंडो प्रबंधक मेटासिटी है."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"
@@ -1009,8 +985,8 @@ msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
 msgstr ""
-"यदि यह सत्य है तो कार्यस्थान स्विचर सभी कार्यस्थान दिखाएगा अन्यथा यह सिर्फ "
-"वर्तमान कार्यस्थान दर्शाएगा."
+"यदि यह सत्य है तो कार्यस्थान स्विचर सभी कार्यस्थान दिखाएगा अन्यथा यह सिर्फ वर्तमान "
+"कार्यस्थान दर्शाएगा."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
@@ -1019,13 +995,12 @@ msgstr "कार्यस्थान स्विचर मे पंक्त
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
-"vertical layout) the workspace switcher shows the workspaces in. This key is"
-" only relevant if the display_all_workspaces key is true."
+"vertical layout) the workspace switcher shows the workspaces in. This key is "
+"only relevant if the display_all_workspaces key is true."
 msgstr ""
-"जब सभी कार्यस्थान दिखाया जाए तो यह तय करता है कि कितनी आड़ी पंक्ति (क्षैतिज "
-"अभिन्यास हेतु) या खड़ी (लंबवत अभिन्यास हेतु) पंक्ति कार्यस्थान में "
-"कार्यस्थान स्विचर दिखाए. यह कुंजी सिर्फ तभी सम्बद्ध होगी यदि "
-"सभी-कार्यस्थान-दिखाएँ कुंजी सत्य होगी."
+"जब सभी कार्यस्थान दिखाया जाए तो यह तय करता है कि कितनी आड़ी पंक्ति (क्षैतिज अभिन्यास "
+"हेतु) या खड़ी (लंबवत अभिन्यास हेतु) पंक्ति कार्यस्थान में कार्यस्थान स्विचर दिखाए. यह कुंजी "
+"सिर्फ तभी सम्बद्ध होगी यदि सभी-कार्यस्थान-दिखाएँ कुंजी सत्य होगी."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
@@ -1046,7 +1021,7 @@ msgid "Factory for the window navigation related applets"
 msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
+#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
 msgid "Window Selector"
 msgstr "विंडो चयनक"
 
@@ -1054,14 +1029,8 @@ msgstr "विंडो चयनक"
 msgid "Switch between open windows using a menu"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-window-menu"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:634
+#: applets/vncklet/workspace-switcher.c:638
 msgid "Workspace Switcher"
 msgstr "कार्यस्थान सविचर"
 
@@ -1069,25 +1038,13 @@ msgstr "कार्यस्थान सविचर"
 msgid "Switch between workspaces"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
-msgid "cafe-panel-workspace-switcher"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:821
+#: applets/vncklet/window-list.c:826
 msgid "Window List"
 msgstr "विंडो सूची"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
-msgid "cafe-panel-window-list"
 msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
@@ -1096,12 +1053,6 @@ msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
-msgid "user-desktop"
 msgstr ""
 
 #: applets/vncklet/showdesktop.c:184
@@ -1113,57 +1064,57 @@ msgstr " %s लोड करने में असफल: %s\n"
 msgid "Icon not found"
 msgstr "प्रतीक नहीं मिली"
 
-#: applets/vncklet/showdesktop.c:265
+#: applets/vncklet/showdesktop.c:266
 msgid "Click here to restore hidden windows."
 msgstr "छुपे विंडोज़ पुनर्स्थापित करने हेतु यहां क्लिक करें."
 
-#: applets/vncklet/showdesktop.c:269
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to hide all windows and show the desktop."
 msgstr "विंडोज़ को छुपाने और डेस्कटॉप दिखाने हेतु यहां क्लिक करें."
 
-#: applets/vncklet/showdesktop.c:439 applets/vncklet/showdesktop.c:498
+#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
 msgid "Show Desktop Button"
 msgstr "डेस्कटॉप दिखाने वाला बटन"
 
-#: applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:500
 msgid "About Show Desktop Button"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:501
+#: applets/vncklet/showdesktop.c:502
 msgid "This button lets you hide all windows and show the desktop."
 msgstr "यह बटन सभी विंडोज़ को छुपाने और डेस्कटॉप दिखाने देता है"
 
-#: applets/vncklet/showdesktop.c:502 applets/vncklet/window-list.c:825
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
+#: applets/vncklet/workspace-switcher.c:642
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:529
+#: applets/vncklet/showdesktop.c:531
 msgid ""
-"Your window manager does not support the show desktop button, or you are not"
-" running a window manager."
+"Your window manager does not support the show desktop button, or you are not "
+"running a window manager."
 msgstr ""
-"आपका विंडो प्रबंधक डेस्कटॉप बटन दिखायें को समर्थन नहीं करता है, या आप एक "
-"विंडो प्रबंधक नहीं चला रहे है."
+"आपका विंडो प्रबंधक डेस्कटॉप बटन दिखायें को समर्थन नहीं करता है, या आप एक विंडो प्रबंधक "
+"नहीं चला रहे है."
 
-#: applets/vncklet/window-list.c:349
+#: applets/vncklet/window-list.c:354
 msgid "_System Monitor"
 msgstr ""
 
-#: applets/vncklet/window-list.c:822
+#: applets/vncklet/window-list.c:827
 msgid "About Window List"
 msgstr ""
 
-#: applets/vncklet/window-list.c:824
+#: applets/vncklet/window-list.c:829
 msgid ""
-"The Window List shows a list of all windows in a set of buttons and lets you"
-" browse them."
+"The Window List shows a list of all windows in a set of buttons and lets you "
+"browse them."
 msgstr ""
-"विंडो सूची सभी विंडोज़ की सूची बटन के सेट में दिखाता है तथा उसमें आपको "
-"ब्राउज़ करने देता है."
+"विंडो सूची सभी विंडोज़ की सूची बटन के सेट में दिखाता है तथा उसमें आपको ब्राउज़ करने देता है."
 
 #: applets/vncklet/window-list.ui:18
 msgid "Window List Preferences"
@@ -1241,9 +1192,7 @@ msgstr ""
 msgid ""
 "The Window Selector shows a list of all windows in a menu and lets you "
 "browse them."
-msgstr ""
-"विंडो चयनक सभी विंडोज़ की सूची मेनू में दिखाता है तथा उसमें ब्राउज़ करने "
-"देता है."
+msgstr "विंडो चयनक सभी विंडोज़ की सूची मेनू में दिखाता है तथा उसमें ब्राउज़ करने देता है."
 
 #: applets/vncklet/window-menu.c:80
 msgid ""
@@ -1251,31 +1200,32 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "पंक्तियाँ"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 msgid "columns"
 msgstr "स्तम्भ"
 
-#: applets/vncklet/workspace-switcher.c:635
+#: applets/vncklet/workspace-switcher.c:639
 msgid "About Workspace Switcher"
 msgstr ""
 
-#: applets/vncklet/workspace-switcher.c:637
+#: applets/vncklet/workspace-switcher.c:641
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
 msgstr ""
-"कार्यस्थान स्विचर आपको आपके कार्यस्थान का छोटा स्वरूप दिखाता है ताकि आप अपने"
-" विंडोज़ का प्रबन्धन कर सकें."
+"कार्यस्थान स्विचर आपको आपके कार्यस्थान का छोटा स्वरूप दिखाता है ताकि आप अपने विंडोज़ का "
+"प्रबन्धन कर सकें."
 
 #: applets/vncklet/workspace-switcher.ui:32
 msgid "Workspace Switcher Preferences"
@@ -1335,9 +1285,9 @@ msgid ""
 "dialog is made available. Whether or not the listing is expanded when the "
 "dialog is shown is controlled by the show_program_list key."
 msgstr ""
-"अगर सही है, \"Known Applications\" \"Run Application\" में सूचीकरण संवाद "
-"उपलब्ध किया जाता है. क्या जब सूचीकरण विस्तारित किया जाता है जब संवाद को "
-"show_program_list कंजी के द्वारा नियंत्रित किया जाता है."
+"अगर सही है, \"Known Applications\" \"Run Application\" में सूचीकरण संवाद उपलब्ध "
+"किया जाता है. क्या जब सूचीकरण विस्तारित किया जाता है जब संवाद को show_program_list "
+"कंजी के द्वारा नियंत्रित किया जाता है."
 
 #: data/org.cafe.panel.gschema.xml.in:15
 msgid "Expand program list in \"Run Application\" dialog"
@@ -1349,9 +1299,9 @@ msgid ""
 "dialog is expanded when the dialog is opened. This key is only relevant if "
 "the enable_program_list key is true."
 msgstr ""
-"अगर सही है, \"Known Applications\" \"Run Application\" में सूचीकरण संवाद "
-"विस्तारित किया जाता है जब संवाद खुलता है. यह कुंजी सिर्फ तभी संदर्भ में हैं "
-"अगर enable_program_list key सही है."
+"अगर सही है, \"Known Applications\" \"Run Application\" में सूचीकरण संवाद विस्तारित "
+"किया जाता है जब संवाद खुलता है. यह कुंजी सिर्फ तभी संदर्भ में हैं अगर enable_program_list "
+"key सही है."
 
 #: data/org.cafe.panel.gschema.xml.in:20
 msgid "Enable autocompletion in \"Run Application\" dialog"
@@ -1360,9 +1310,7 @@ msgstr "\"अनुप्रयोग चलाएँ\" संवाद मे�
 #: data/org.cafe.panel.gschema.xml.in:21
 msgid ""
 "If true, autocompletion in the \"Run Application\" dialog is made available."
-msgstr ""
-"अगर सही है, \"Run Application\" संवाद में स्वतः पूर्ण को उपलब्ध किया जा रहा "
-"है."
+msgstr "अगर सही है, \"Run Application\" संवाद में स्वतः पूर्ण को उपलब्ध किया जा रहा है."
 
 #: data/org.cafe.panel.gschema.xml.in:25
 msgid "History for \"Run Application\" dialog"
@@ -1371,8 +1319,8 @@ msgstr ""
 #: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
-"commands are sorted descendingly by recency (e.g., most recent command comes"
-" first)."
+"commands are sorted descendingly by recency (e.g., most recent command comes "
+"first)."
 msgstr ""
 
 #: data/org.cafe.panel.gschema.xml.in:30
@@ -1404,8 +1352,8 @@ msgid ""
 "A list of panel IDs. Each ID identifies an individual toplevel panel. The "
 "settings for each of these panels are stored in /apps/panel/toplevels/$(id)."
 msgstr ""
-"पैनल IDs की सूची. हर ID एक निजी टॉपलेबल पैनल को पहचानती है. इनमें से हर पैनल"
-" में जमावट /apps/panel/toplevels/$(id) में जमा होती है."
+"पैनल IDs की सूची. हर ID एक निजी टॉपलेबल पैनल को पहचानती है. इनमें से हर पैनल में जमावट /"
+"apps/panel/toplevels/$(id) में जमा होती है."
 
 #: data/org.cafe.panel.gschema.xml.in:45
 msgid "Panel object ID list"
@@ -1413,13 +1361,13 @@ msgstr "फ़लक वस्तु आईडी सूची"
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object "
-"(e.g. a launcher, action button or menu button/bar). The settings for each "
-"of these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object (e."
+"g. a launcher, action button or menu button/bar). The settings for each of "
+"these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
-"पैनल वस्तु IDs की सूची. हर ID एक निजी टॉपलेबल पैनल को पहचानती है (उदा. एक "
-"launcher, action button या menu button/bar). इनमें से हर पैनल में जमावट "
-"/apps/panel/objects/$(id) में जमा होती है."
+"पैनल वस्तु IDs की सूची. हर ID एक निजी टॉपलेबल पैनल को पहचानती है (उदा. एक launcher, "
+"action button या menu button/bar). इनमें से हर पैनल में जमावट /apps/panel/objects/"
+"$(id) में जमा होती है."
 
 #: data/org.cafe.panel.gschema.xml.in:50
 msgid "Enable tooltips"
@@ -1443,8 +1391,7 @@ msgid ""
 "If true, a drawer will automatically be closed when the user clicks a "
 "launcher in it."
 msgstr ""
-"अगर सही है, ड्रॉउर स्वतः बंद कर दिया जायेगा जब उपयोक्ता एक प्रक्षेपक इसमें "
-"क्लिक करता है"
+"अगर सही है, ड्रॉउर स्वतः बंद कर दिया जायेगा जब उपयोक्ता एक प्रक्षेपक इसमें क्लिक करता है"
 
 #: data/org.cafe.panel.gschema.xml.in:64
 msgid "Confirm panel removal"
@@ -1455,8 +1402,8 @@ msgid ""
 "If true, a dialog is shown asking for confirmation if the user wants to "
 "remove a panel."
 msgstr ""
-"अगर सही है, संवाद को दिखाया जाता है संपुष्टि के लिये पूछते हुये अगर उपयोक्ता"
-" पैनल को हटाना चाहता है."
+"अगर सही है, संवाद को दिखाया जाता है संपुष्टि के लिये पूछते हुये अगर उपयोक्ता पैनल को हटाना "
+"चाहता है."
 
 #: data/org.cafe.panel.gschema.xml.in:69
 msgid "Highlight launchers on mouseover"
@@ -1474,12 +1421,12 @@ msgstr "संपूर्ण फ़लक तालाबन्द"
 #: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
-"panel. Individual applets may need to be locked down separately however. The"
-" panel must be restarted for this to take effect."
+"panel. Individual applets may need to be locked down separately however. The "
+"panel must be restarted for this to take effect."
 msgstr ""
-"अगर सही है, पैनल पैनल के विन्यास में किसी प्रकार का बदलाव का अनुमति नहीं "
-"देगा. निजी एप्प्लेट को अलग से लॉक करने की जरूरत है. पैनल को फिर से शुरू करने"
-" की जरूरत है इसे प्रभावी होने के लिये"
+"अगर सही है, पैनल पैनल के विन्यास में किसी प्रकार का बदलाव का अनुमति नहीं देगा. निजी "
+"एप्प्लेट को अलग से लॉक करने की जरूरत है. पैनल को फिर से शुरू करने की जरूरत है इसे प्रभावी "
+"होने के लिये"
 
 #: data/org.cafe.panel.gschema.xml.in:79
 msgid "Applet IIDs to disable from loading"
@@ -1492,11 +1439,10 @@ msgid ""
 "disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
-"एप्प्लेट IIDs की सूची जो पैनल अनदेखा करेगा. इस तरीके से आप कुछ एप्पलेट "
-"निष्क्रिय कर सकते हैं मेनू में लोड या दिखाने के क्रम में. उदाहरण के लिये "
-"मिनी कमांडर एप्प्लेट के निष्क्रिय करने के लिये "
-"'OAFIID:CAFE_MiniCommanderApplet' को सूची में जोड़ें. पैनल को जरूर फिर आरंभ "
-"होना चाहिये इसे प्रभाव में आने के लिये."
+"एप्प्लेट IIDs की सूची जो पैनल अनदेखा करेगा. इस तरीके से आप कुछ एप्पलेट निष्क्रिय कर सकते हैं "
+"मेनू में लोड या दिखाने के क्रम में. उदाहरण के लिये मिनी कमांडर एप्प्लेट के निष्क्रिय करने के लिये "
+"'OAFIID:CAFE_MiniCommanderApplet' को सूची में जोड़ें. पैनल को जरूर फिर आरंभ होना "
+"चाहिये इसे प्रभाव में आने के लिये."
 
 #: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
@@ -1507,8 +1453,8 @@ msgid ""
 "If true, the panel will not allow a user to force an application to quit by "
 "removing access to the force quit button."
 msgstr ""
-"अगर सही है, पैनल उपयोक्ता को अनुमति नहीं देगा अनुप्रयोग छोड़ने के लिये जबरन "
-"छोड़े बटन में अभिगम को हटाये बिना"
+"अगर सही है, पैनल उपयोक्ता को अनुमति नहीं देगा अनुप्रयोग छोड़ने के लिये जबरन छोड़े बटन में "
+"अभिगम को हटाये बिना"
 
 #: data/org.cafe.panel.gschema.xml.in:89
 msgid "Enable SNI support"
@@ -1574,8 +1520,8 @@ msgstr ""
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
-"Set the size of icons used in the menu. The panel must be restarted for this"
-" to take effect."
+"Set the size of icons used in the menu. The panel must be restarted for this "
+"to take effect."
 msgstr ""
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:50
@@ -1613,8 +1559,8 @@ msgid ""
 "The position of this panel object. The position is specified by the number "
 "of pixels from the left (or top if vertical) panel edge."
 msgstr ""
-"इस पैनल वस्तु की स्थिति. स्थिति को पिक्सेल के द्वारा निर्दिष्ट किया जाता है "
-"बायें से (या शीर्ष पर अगर लंबबत है) पैनल किनारा."
+"इस पैनल वस्तु की स्थिति. स्थिति को पिक्सेल के द्वारा निर्दिष्ट किया जाता है बायें से (या "
+"शीर्ष पर अगर लंबबत है) पैनल किनारा."
 
 #: data/org.cafe.panel.object.gschema.xml.in:20
 msgid "Interpret position relative to bottom/right edge"
@@ -1622,11 +1568,11 @@ msgstr "तल/दायाँ किनारा के सापेक्ष �
 
 #: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
-"If true, the position of the object is interpreted relative to the right (or"
-" bottom if vertical) edge of the panel."
+"If true, the position of the object is interpreted relative to the right (or "
+"bottom if vertical) edge of the panel."
 msgstr ""
-"अगर सही है, वस्तु की स्थिति को पैनल के दायें किनारे के सापेक्ष (या तल अगर "
-"लंबवत है) विश्लेषित किया जाता है."
+"अगर सही है, वस्तु की स्थिति को पैनल के दायें किनारे के सापेक्ष (या तल अगर लंबवत है) "
+"विश्लेषित किया जाता है."
 
 #: data/org.cafe.panel.object.gschema.xml.in:25
 msgid "Lock the object to the panel"
@@ -1634,11 +1580,11 @@ msgstr "वस्तु को फ़लक में तालाबन्द �
 
 #: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
-"If true, the user may not move the applet without first unlocking the object"
-" using the \"Unlock\" menuitem."
+"If true, the user may not move the applet without first unlocking the object "
+"using the \"Unlock\" menuitem."
 msgstr ""
-"अगर सही है, उपयोक्ता एप्प्लेट को खिसका नहीं सकता है बिना पहले वस्तु को अनलॉक"
-" किये \"Unlock\" मेनू मद का प्रयोग किये."
+"अगर सही है, उपयोक्ता एप्प्लेट को खिसका नहीं सकता है बिना पहले वस्तु को अनलॉक किये "
+"\"Unlock\" मेनू मद का प्रयोग किये."
 
 #: data/org.cafe.panel.object.gschema.xml.in:30
 msgid "Applet IID"
@@ -1646,10 +1592,9 @@ msgstr ""
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. "
-"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
-"applet\")."
+"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
+"ClockApplet\". This key is only relevant if the object_type key is "
+"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
 msgstr ""
 
 #: data/org.cafe.panel.object.gschema.xml.in:35
@@ -1661,8 +1606,8 @@ msgid ""
 "The identifier of the panel attached to this drawer. This key is only "
 "relevant if the object_type key is \"drawer-object\"."
 msgstr ""
-"इस ड्राउर से संलग्न पैनल का पहचानकर्ता. यह कुंजी सिर्फ तभी संदर्भित है अगर "
-"object_type कुंजी \"drawer-object\" है."
+"इस ड्राउर से संलग्न पैनल का पहचानकर्ता. यह कुंजी सिर्फ तभी संदर्भित है अगर object_type "
+"कुंजी \"drawer-object\" है."
 
 #: data/org.cafe.panel.object.gschema.xml.in:40
 msgid "Tooltip displayed for drawer or menu"
@@ -1671,11 +1616,10 @@ msgstr "ड्रॉअर या मेनू हेतु प्रदर्�
 #: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
-"only relevant if the object_type key is \"drawer-object\" or \"menu-"
-"object\"."
+"only relevant if the object_type key is \"drawer-object\" or \"menu-object\"."
 msgstr ""
-"इस ड्राउर या इस मेनू के लिये दिखाने के लिये पाठ. यह कुंजी तभी संदर्भित है "
-"अगर object_type कुंजी \"drawer-object\" या \"menu-object\" है."
+"इस ड्राउर या इस मेनू के लिये दिखाने के लिये पाठ. यह कुंजी तभी संदर्भित है अगर object_type "
+"कुंजी \"drawer-object\" या \"menu-object\" है."
 
 #: data/org.cafe.panel.object.gschema.xml.in:45
 msgid "Use custom icon for object's button"
@@ -1687,9 +1631,9 @@ msgid ""
 "false, the custom_icon key is ignored. This key is only relevant if the "
 "object_type key is \"menu-object\" or \"drawer-object\"."
 msgstr ""
-"अगर सही है, custom_icon कुंजी बटन के लिये कस्टम चिह्न के रूप में प्रयुक्त "
-"होगा. अगर गलत है , custom_icon कुंजी अनदेखा किया जाता है. यह कुंजी तभी "
-"संदर्भित है अगर object_type कुंजी \"menu-object\" या \"drawer-object\" है."
+"अगर सही है, custom_icon कुंजी बटन के लिये कस्टम चिह्न के रूप में प्रयुक्त होगा. अगर गलत "
+"है , custom_icon कुंजी अनदेखा किया जाता है. यह कुंजी तभी संदर्भित है अगर object_type "
+"कुंजी \"menu-object\" या \"drawer-object\" है."
 
 #: data/org.cafe.panel.object.gschema.xml.in:50
 msgid "Icon used for object's button"
@@ -1701,9 +1645,9 @@ msgid ""
 "This key is only relevant if the object_type key is \"drawer-object\" or "
 "\"menu-object\" and the use_custom_icon key is true."
 msgstr ""
-"वस्तु बटन के लिये प्रतीक के रूप में प्रयुक्त विंब फाइल की अवस्थिति. यह कुंजी"
-" सिर्फ तभी संदर्भित है अगर object_type कुंजी \"drawer-object\" या \"menu-"
-"object\" औऱ use_custom_icon कुंजी सही है."
+"वस्तु बटन के लिये प्रतीक के रूप में प्रयुक्त विंब फाइल की अवस्थिति. यह कुंजी सिर्फ तभी संदर्भित "
+"है अगर object_type कुंजी \"drawer-object\" या \"menu-object\" औऱ "
+"use_custom_icon कुंजी सही है."
 
 #: data/org.cafe.panel.object.gschema.xml.in:55
 msgid "Use custom path for menu contents"
@@ -1715,10 +1659,9 @@ msgid ""
 "should be constructed. If false, the menu_path key is ignored. This key is "
 "only relevant if the object_type key is \"menu-object\"."
 msgstr ""
-"अगर सही है, menu_path कुंजी को एख पथ के रूप में प्रयोग किया जाता है जिससे "
-"मेनू सामग्री को बनाया जाता है. अगर गलत है, menu_path कुंजी को अनदेखा किया "
-"जाता है. यह कुंजी तबी संदर्भ रखती है अगर object_type कुंजी \"menu-object\" "
-"है."
+"अगर सही है, menu_path कुंजी को एख पथ के रूप में प्रयोग किया जाता है जिससे मेनू सामग्री को "
+"बनाया जाता है. अगर गलत है, menu_path कुंजी को अनदेखा किया जाता है. यह कुंजी तबी संदर्भ "
+"रखती है अगर object_type कुंजी \"menu-object\" है."
 
 #: data/org.cafe.panel.object.gschema.xml.in:60
 msgid "Menu content path"
@@ -1730,8 +1673,8 @@ msgid ""
 "relevant if the use_menu_path key is true and the object_type key is \"menu-"
 "object\"."
 msgstr ""
-"पथ जहां से मेनू सामग्री की रचना की जाती है. यह कुंजी सिर्फ तभी संदर्भित है "
-"अगर use_menu_path कुंजी सही है और object_type कुंजी \"menu-object\" है."
+"पथ जहां से मेनू सामग्री की रचना की जाती है. यह कुंजी सिर्फ तभी संदर्भित है अगर "
+"use_menu_path कुंजी सही है और object_type कुंजी \"menu-object\" है."
 
 #: data/org.cafe.panel.object.gschema.xml.in:65
 msgid "Draw arrow in menu button"
@@ -1752,8 +1695,8 @@ msgid ""
 "The location of the .desktop file describing the launcher. This key is only "
 "relevant if the object_type key is \"launcher-object\"."
 msgstr ""
-"लांचर को बताता .desktop फाइल की अवस्थिति. यह कुंजी सिर्फ तभी संदर्भित है अगर"
-" object_type कुंजी \"launcher-object\" है."
+"लांचर को बताता .desktop फाइल की अवस्थिति. यह कुंजी सिर्फ तभी संदर्भित है अगर "
+"object_type कुंजी \"launcher-object\" है."
 
 #: data/org.cafe.panel.object.gschema.xml.in:75
 msgid "Action button type"
@@ -1765,9 +1708,9 @@ msgid ""
 "\"logout\", \"run\", \"search\" and \"screenshot\". This key is only "
 "relevant if the object_type key is \"action-applet\"."
 msgstr ""
-"क्रिया प्रकार जो यह बटन दिखाता है. संभावित मान हैं \"lock\", \"logout\", "
-"\"run\", \"search\" और \"screenshot\". यह कुंजी तभी संदर्भ में है अगर "
-"object_type कुंजी \"action-applet\" है."
+"क्रिया प्रकार जो यह बटन दिखाता है. संभावित मान हैं \"lock\", \"logout\", \"run\", "
+"\"search\" और \"screenshot\". यह कुंजी तभी संदर्भ में है अगर object_type कुंजी "
+"\"action-applet\" है."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:5
 msgid "Name to identify panel"
@@ -1779,9 +1722,9 @@ msgid ""
 "main purpose is to serve as the panel's window title which is useful when "
 "navigating between panels."
 msgstr ""
-"यह मानव के पढ़ने योग्य नाम है जो पैनल को पहचानने के लिये आप प्रयोग कर सकते "
-"हैं. इसका मुख्य उद्देश्य पैनल के विंडो शीर्षक में परिसेवित करना है जो कि "
-"उपयोगी है जब पैनल के बीच संचरण किया जा रहा हो."
+"यह मानव के पढ़ने योग्य नाम है जो पैनल को पहचानने के लिये आप प्रयोग कर सकते हैं. इसका मुख्य "
+"उद्देश्य पैनल के विंडो शीर्षक में परिसेवित करना है जो कि उपयोगी है जब पैनल के बीच संचरण "
+"किया जा रहा हो."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:10
 msgid "X screen where the panel is displayed"
@@ -1792,8 +1735,8 @@ msgid ""
 "With a multi-screen setup, you may have panels on each individual screen. "
 "This key identifies the current screen the panel is displayed on."
 msgstr ""
-"बहुल स्क्रीन सेटअप के साथ, आपके पास हर निजी स्क्रीन पर पैनल हो सकता है. यह "
-"कुंजी मौजूदा स्क्रीन को पहचानती है जिसपर पैनल दिखाया गया है."
+"बहुल स्क्रीन सेटअप के साथ, आपके पास हर निजी स्क्रीन पर पैनल हो सकता है. यह कुंजी मौजूदा "
+"स्क्रीन को पहचानती है जिसपर पैनल दिखाया गया है."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:15
 msgid "Xinerama monitor where the panel is displayed"
@@ -1804,8 +1747,8 @@ msgid ""
 "In a Xinerama setup, you may have panels on each individual monitor. This "
 "key identifies the current monitor the panel is displayed on."
 msgstr ""
-"Xinerama सेटअप में, आपके पास हर निजी मॉनीटर पर पैनल हो सकता है. यह कुंजी "
-"मौजूदा मॉनीटर पहचानती है जिसपर पैनल दिखाया गया है."
+"Xinerama सेटअप में, आपके पास हर निजी मॉनीटर पर पैनल हो सकता है. यह कुंजी मौजूदा "
+"मॉनीटर पहचानती है जिसपर पैनल दिखाया गया है."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:20
 msgid "Expand to occupy entire screen width"
@@ -1814,13 +1757,13 @@ msgstr "संपूर्ण स्क्रीन चौड़ाई घेर
 #: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
-"vertical panel). In this mode the panel can only be placed at a screen edge."
-" If false, the panel will only be large enough to accommodate the applets, "
+"vertical panel). In this mode the panel can only be placed at a screen edge. "
+"If false, the panel will only be large enough to accommodate the applets, "
 "launchers and buttons on the panel."
 msgstr ""
-"अगर सही है, पैनल पूरे स्क्रीन चौड़ाई को भर देगा (ऊंचाई अगर यह लंवबत पैनल "
-"है). इस मोड में पैनल को स्क्रीन किनारे पर रखा जा सकता है. अगर गलत है, पैनल "
-"सिर्फ उतना बड़ा होगा ताकि एप्प्लेट, लांचर औऱ पैनल पर के तल को समा सके, ."
+"अगर सही है, पैनल पूरे स्क्रीन चौड़ाई को भर देगा (ऊंचाई अगर यह लंवबत पैनल है). इस मोड में "
+"पैनल को स्क्रीन किनारे पर रखा जा सकता है. अगर गलत है, पैनल सिर्फ उतना बड़ा होगा ताकि "
+"एप्प्लेट, लांचर औऱ पैनल पर के तल को समा सके, ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:25
 msgid "Panel orientation"
@@ -1831,19 +1774,18 @@ msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
 "the panel is on. In un-expanded mode the difference between \"top\" and "
-"\"bottom\" is less important - both indicate that this is a horizontal panel"
-" - but still give a useful hint as to how some panel objects should behave. "
-"For example, on a \"top\" panel a menu button will pop up its menu below the"
-" panel, whereas on a \"bottom\" panel the menu will be popped up above the "
+"\"bottom\" is less important - both indicate that this is a horizontal panel "
+"- but still give a useful hint as to how some panel objects should behave. "
+"For example, on a \"top\" panel a menu button will pop up its menu below the "
+"panel, whereas on a \"bottom\" panel the menu will be popped up above the "
 "panel."
 msgstr ""
-"पैनल का अभिमुखीकरण. संभावित मान हैं \"top\", \"bottom\", \"left\", "
-"\"right\". विस्तारित मोड में कुंजी निर्दिष्ट करती है कि कौन से स्क्रीन "
-"किनारे पर पैनल ऑन है. गैर विस्तारित मोड में \"top\" और \"bottom\" के बीच "
-"अंतर कम महत्वपूर्ण है - दोनों बताती है कि यह क्षैतिज पैनल है - लेकिन अभी भी "
-"उपयोगी संकेत देता है कि कैसे पैनल वस्तु को आचरण करना चाहिये. उदाहरण के लिये,"
-" \"top\" पैनल पर एक मेनू बटन इसके मेनू को पैनल के नीचे पॉप अप करता है , जबकि"
-" \"bottom\" पैनल पर मेनू को पैनल के ऊपर पॉपअप किया जायेगा."
+"पैनल का अभिमुखीकरण. संभावित मान हैं \"top\", \"bottom\", \"left\", \"right\". "
+"विस्तारित मोड में कुंजी निर्दिष्ट करती है कि कौन से स्क्रीन किनारे पर पैनल ऑन है. गैर "
+"विस्तारित मोड में \"top\" और \"bottom\" के बीच अंतर कम महत्वपूर्ण है - दोनों बताती है "
+"कि यह क्षैतिज पैनल है - लेकिन अभी भी उपयोगी संकेत देता है कि कैसे पैनल वस्तु को आचरण करना "
+"चाहिये. उदाहरण के लिये, \"top\" पैनल पर एक मेनू बटन इसके मेनू को पैनल के नीचे पॉप अप "
+"करता है , जबकि \"bottom\" पैनल पर मेनू को पैनल के ऊपर पॉपअप किया जायेगा."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:30
 msgid "Panel size"
@@ -1856,9 +1798,9 @@ msgid ""
 "indicators. The maximum size is fixed at one quarter of the screen height "
 "(or width)."
 msgstr ""
-"पैनल की ऊंचाई (लंबवत पटल के लिए चौड़ाई). पैनल को कार्यसमय पर एक न्यूनतम आकार"
-" निर्धारित करेगा फंट आकार पर आधारित और अन्य संकेतक पर. स्क्रीन ऊंचाई के एक "
-"चौथाई पर अधिकतम आकार फिक्स किया जाता है (या चौड़ाई)."
+"पैनल की ऊंचाई (लंबवत पटल के लिए चौड़ाई). पैनल को कार्यसमय पर एक न्यूनतम आकार निर्धारित "
+"करेगा फंट आकार पर आधारित और अन्य संकेतक पर. स्क्रीन ऊंचाई के एक चौथाई पर अधिकतम आकार "
+"फिक्स किया जाता है (या चौड़ाई)."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:35
 msgid "X co-ordinate of panel"
@@ -1870,9 +1812,9 @@ msgid ""
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
 "at the screen edge specified by the orientation key."
 msgstr ""
-"x-axis के साथ पैनल की अवस्थिति. यह कुंजी गैर विस्तारित मोड में संदर्भ रखती "
-"है. विस्तारित मोड में यह कुंजी अनदेखा किया जाता हैऔर पैनल को स्क्रीन किनारे "
-"पर रखा जाता है अभिमुखन कुंजी के द्वारा."
+"x-axis के साथ पैनल की अवस्थिति. यह कुंजी गैर विस्तारित मोड में संदर्भ रखती है. विस्तारित "
+"मोड में यह कुंजी अनदेखा किया जाता हैऔर पैनल को स्क्रीन किनारे पर रखा जाता है अभिमुखन कुंजी "
+"के द्वारा."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:40
 msgid "Y co-ordinate of panel"
@@ -1884,9 +1826,9 @@ msgid ""
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
 "at the screen edge specified by the orientation key."
 msgstr ""
-"y-axis के साथ पैनल की अवस्थिति. यह कुंजी गैर विस्तारित मोड में संदर्भ रखती "
-"है. विस्तारित मोड में यह कुंजी अनदेखा किया जाता हैऔर पैनल को स्क्रीन किनारे "
-"पर रखा जाता है अभिमुखन कुंजी के द्वारा."
+"y-axis के साथ पैनल की अवस्थिति. यह कुंजी गैर विस्तारित मोड में संदर्भ रखती है. विस्तारित "
+"मोड में यह कुंजी अनदेखा किया जाता हैऔर पैनल को स्क्रीन किनारे पर रखा जाता है अभिमुखन कुंजी "
+"के द्वारा."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:45
 msgid "X co-ordinate of panel, starting from the right of the screen"
@@ -1901,11 +1843,11 @@ msgid ""
 "this key is ignored and the panel is placed at the screen edge specified by "
 "the orientation key."
 msgstr ""
-"x-अक्ष के साथ पैनल की अवस्थिति स्क्रीन के दाहिने से आरंभ. यदि -1 पर सेट किया"
-" जाता है, मान अनदेखा किया जाता है और x कुंजी का मान प्रयोग किया जाता है. यदि"
-" मान 0 से अधिक है तब x कुंजी का मान अनदेखा किया जाता है. कुंजी गैर विस्तारित"
-" मोड में सिर्फ संदर्भ रखती है. विस्तारित मोड में यह कुंजी अनदेखा किया जाता "
-"है और पैनल को स्क्रीन किनारे पर रखा जाता है अभिमुखन कुंजी के द्वारा."
+"x-अक्ष के साथ पैनल की अवस्थिति स्क्रीन के दाहिने से आरंभ. यदि -1 पर सेट किया जाता है, "
+"मान अनदेखा किया जाता है और x कुंजी का मान प्रयोग किया जाता है. यदि मान 0 से अधिक है "
+"तब x कुंजी का मान अनदेखा किया जाता है. कुंजी गैर विस्तारित मोड में सिर्फ संदर्भ रखती है. "
+"विस्तारित मोड में यह कुंजी अनदेखा किया जाता है और पैनल को स्क्रीन किनारे पर रखा जाता है "
+"अभिमुखन कुंजी के द्वारा."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:50
 msgid "Y co-ordinate of panel, starting from the bottom of the screen"
@@ -1920,11 +1862,11 @@ msgid ""
 "this key is ignored and the panel is placed at the screen edge specified by "
 "the orientation key."
 msgstr ""
-"y-axis के साथ पैनल की अवस्थिति स्क्रीन के नीचे से आरंभ. यदि -1 पर सेट किया "
-"जाता है, मान अनदेखा किया जाता है और y कुंजी का मान प्रयोग किया जाता है. यदि "
-"मान 0 से अधिक है तब y कुंजी का मान अनदेखा किया जाता है. कुंजी गैर विस्तारित "
-"मोड में सिर्फ संदर्भ रखती है. विस्तारित मोड में यह कुंजी अनदेखा किया जाता है"
-" और पैनल को स्क्रीन किनारे पर रखा जाता है अभिमुखन कुंजी के द्वारा."
+"y-axis के साथ पैनल की अवस्थिति स्क्रीन के नीचे से आरंभ. यदि -1 पर सेट किया जाता है, मान "
+"अनदेखा किया जाता है और y कुंजी का मान प्रयोग किया जाता है. यदि मान 0 से अधिक है तब y "
+"कुंजी का मान अनदेखा किया जाता है. कुंजी गैर विस्तारित मोड में सिर्फ संदर्भ रखती है. "
+"विस्तारित मोड में यह कुंजी अनदेखा किया जाता है और पैनल को स्क्रीन किनारे पर रखा जाता है "
+"अभिमुखन कुंजी के द्वारा."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:55
 msgid "Center panel on x-axis"
@@ -1937,10 +1879,9 @@ msgid ""
 "at that position - i.e. the panel will grow on both sides. If false, the x "
 "and x_right keys specify the location of the panel."
 msgstr ""
-"अगर सही है, x कुंजी और x_right कुंजी अनदेखा किया जाता है और पैनल को x-अक्ष "
-"पर स्क्रीन के रखा जाता है. अगर पैनल को फिर आकार दिया जाता है तो यह पोजीशन पर"
-" रहेगा- यानी. पैनल दोनों ओर बढेगा. अगर गलत है, x कुंजी और x_right कुंजी पैनल"
-" की अवस्थिति को दिखाता है ."
+"अगर सही है, x कुंजी और x_right कुंजी अनदेखा किया जाता है और पैनल को x-अक्ष पर स्क्रीन के "
+"रखा जाता है. अगर पैनल को फिर आकार दिया जाता है तो यह पोजीशन पर रहेगा- यानी. पैनल "
+"दोनों ओर बढेगा. अगर गलत है, x कुंजी और x_right कुंजी पैनल की अवस्थिति को दिखाता है ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:60
 msgid "Center panel on y-axis"
@@ -1953,10 +1894,10 @@ msgid ""
 "at that position - i.e. the panel will grow on both sides. If false, the y "
 "and y_bottom keys specify the location of the panel."
 msgstr ""
-"अगर सही है, y कुंजी और y_bottom कुंजी अनदेखा किया जाता है और पैनल को y-अक्ष "
-"पर स्क्रीन के रखा जाता है. अगर पैनल को फिर आकार दिया जाता है तो यह पोजीशन पर"
-" रहेगा- यानी. पैनल दोनों ओर बढेगा. अगर गलत है, y कुंजी और y_bottom कुंजी "
-"पैनल की अवस्थिति को दिखाता है ."
+"अगर सही है, y कुंजी और y_bottom कुंजी अनदेखा किया जाता है और पैनल को y-अक्ष पर स्क्रीन "
+"के रखा जाता है. अगर पैनल को फिर आकार दिया जाता है तो यह पोजीशन पर रहेगा- यानी. "
+"पैनल दोनों ओर बढेगा. अगर गलत है, y कुंजी और y_bottom कुंजी पैनल की अवस्थिति को दिखाता "
+"है ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:65
 msgid "Automatically hide panel into corner"
@@ -1968,17 +1909,16 @@ msgid ""
 "the pointer leaves the panel area. Moving the pointer to that corner again "
 "will cause the panel to re-appear."
 msgstr ""
-"अगर सही है, पैनल स्क्रीन के कोने में स्वतः छुप जायेगा जब संकेतक पैनल क्षेत्र"
-" को छोड़ता है. कोने में संकेतक को फिर से ले जाना पैनल के फिर से आने का कारण "
-"बनेगा."
+"अगर सही है, पैनल स्क्रीन के कोने में स्वतः छुप जायेगा जब संकेतक पैनल क्षेत्र को छोड़ता है. कोने "
+"में संकेतक को फिर से ले जाना पैनल के फिर से आने का कारण बनेगा."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
 "If true, hiding and un-hiding of this panel will be anicafed rather than "
 "happening instantly."
 msgstr ""
-"यदि सत्य है, फ़लक को छुपाया जाना और दिखाया जाना एनीमेट किया जाएगा बजाए इसके "
-"कि ऐसा तत्क्षण हो."
+"यदि सत्य है, फ़लक को छुपाया जाना और दिखाया जाना एनीमेट किया जाएगा बजाए इसके कि ऐसा "
+"तत्क्षण हो."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:75
 msgid "Enable hide buttons"
@@ -1989,8 +1929,8 @@ msgid ""
 "If true, buttons will be placed on each side of the panel which may be used "
 "to move the panel to edge of the screen, leaving only a button showing."
 msgstr ""
-"अगर सही है, पैनल के हर साइड में बटन रखा जायेगा जो पैनल को स्क्रीन के किनारे "
-"खिसकाने के लिये प्रयोग किया जायेगा, सिर्फ एक बटन को दिखाते हुये."
+"अगर सही है, पैनल के हर साइड में बटन रखा जायेगा जो पैनल को स्क्रीन के किनारे खिसकाने के "
+"लिये प्रयोग किया जायेगा, सिर्फ एक बटन को दिखाते हुये."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:80
 msgid "Enable arrows on hide buttons"
@@ -2014,9 +1954,8 @@ msgid ""
 "panel area before the panel is automatically hidden. This key is only "
 "relevant if the auto_hide key is true."
 msgstr ""
-"संकेतक के पैनल को छोड़ने के बाद मिलीसेकेंड की संख्या निर्दिष्ट करता हैइससे "
-"पहले कि पैनल स्वतः छुप जाता है. यह कुंजी तभी संदर्भ रखती है अगर auto_hide "
-"कुंजी सही है."
+"संकेतक के पैनल को छोड़ने के बाद मिलीसेकेंड की संख्या निर्दिष्ट करता हैइससे पहले कि पैनल स्वतः "
+"छुप जाता है. यह कुंजी तभी संदर्भ रखती है अगर auto_hide कुंजी सही है."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:90
 msgid "Panel autounhide delay"
@@ -2028,9 +1967,8 @@ msgid ""
 "panel area before the panel is automatically re-shown. This key is only "
 "relevant if the auto_hide key is true."
 msgstr ""
-"संकेतक के पैनल में पहुंचने के बाद मिलीसेकेंड की संख्या निर्दिष्ट करता हैइससे"
-" पहले कि पैनल स्वतः दिख जाता है. यह कुंजी तभी संदर्भ रखती है अगर auto_hide "
-"कुंजी सही है."
+"संकेतक के पैनल में पहुंचने के बाद मिलीसेकेंड की संख्या निर्दिष्ट करता हैइससे पहले कि पैनल स्वतः "
+"दिख जाता है. यह कुंजी तभी संदर्भ रखती है अगर auto_hide कुंजी सही है."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:95
 msgid "Visible pixels when hidden"
@@ -2039,11 +1977,10 @@ msgstr "जब छुपा हो तो दृष्टिमय पिक्�
 #: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
-"hidden into a corner. This key is only relevant if the auto_hide key is "
-"true."
+"hidden into a corner. This key is only relevant if the auto_hide key is true."
 msgstr ""
-"दृश्यान पिक्सेल की संख्या निर्दिष्ट करता है जब पैनल स्वतः कोने में छुपाया "
-"जाता है. यह तभी संदर्भ रखती है अगर auto_hide कुंजी सत्य है."
+"दृश्यान पिक्सेल की संख्या निर्दिष्ट करता है जब पैनल स्वतः कोने में छुपाया जाता है. यह तभी "
+"संदर्भ रखती है अगर auto_hide कुंजी सत्य है."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:100
 msgid "Animation speed"
@@ -2085,12 +2022,11 @@ msgstr "पृष्ठभूमि रंग अपारदर्शिता"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
-"completely opaque (a value of less than 65535), the color will be composited"
-" onto the desktop background image."
+"completely opaque (a value of less than 65535), the color will be composited "
+"onto the desktop background image."
 msgstr ""
-"पृष्ठभूमि रंग प्रारूप की अदृश्यता को निर्दिष्ट करता है. अगर रंग पूरी तरह से "
-"अपारदर्शी नहीं है (65535 से कम मान), रंग को डेस्कटॉप पृष्ठभूमि विंब पर रखा "
-"जायेगा."
+"पृष्ठभूमि रंग प्रारूप की अदृश्यता को निर्दिष्ट करता है. अगर रंग पूरी तरह से अपारदर्शी नहीं है "
+"(65535 से कम मान), रंग को डेस्कटॉप पृष्ठभूमि विंब पर रखा जायेगा."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:123
 msgid "Background image"
@@ -2102,8 +2038,8 @@ msgid ""
 "contains an alpha channel it will be composited onto the desktop background "
 "image."
 msgstr ""
-"पृष्ठभूमि विंब के लिये प्रयुक्त फाइल को निर्दिष्ट करता है. अगर विंब एक अल्फा"
-" चैनल रखता है इसे डेस्कटॉप पृष्ठभूमि विंब पर रखा जायेगा."
+"पृष्ठभूमि विंब के लिये प्रयुक्त फाइल को निर्दिष्ट करता है. अगर विंब एक अल्फा चैनल रखता है इसे "
+"डेस्कटॉप पृष्ठभूमि विंब पर रखा जायेगा."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:128
 msgid "Fit image to panel"
@@ -2114,8 +2050,8 @@ msgid ""
 "If true, the image will be scaled (retaining the aspect ratio of the image) "
 "to the panel height (if horizontal)."
 msgstr ""
-"अगर सही है, विंव को स्केल किया जायेगा (छवि का पहलू अनुपान बनाए रख रहा है) "
-"पैनल ऊंचाई में (अगर क्षैतिज है)."
+"अगर सही है, विंव को स्केल किया जायेगा (छवि का पहलू अनुपान बनाए रख रहा है) पैनल ऊंचाई में "
+"(अगर क्षैतिज है)."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:133
 msgid "Stretch image to panel"
@@ -2126,8 +2062,7 @@ msgid ""
 "If true, the image will be scaled to the panel dimensions. The aspect ratio "
 "of the image will not be maintained."
 msgstr ""
-"अगर सही है, पैनल आयाम में विंब को स्केल किया जायेगा. विंब का पहलू अनुपात का "
-"रखरखाव होगा"
+"अगर सही है, पैनल आयाम में विंब को स्केल किया जायेगा. विंब का पहलू अनुपात का रखरखाव होगा"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:138
 msgid "Rotate image on vertical panels"
@@ -2203,7 +2138,7 @@ msgid "_Open"
 msgstr "खोलें (_O)"
 
 #: cafe-panel/libpanel-util/panel-error.c:76
-#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
+#: cafe-panel/panel-applet-frame.c:800 cafe-panel/panel-applet-frame.c:988
 msgid "Error"
 msgstr "त्रुटि"
 
@@ -2250,7 +2185,7 @@ msgid "Cannot find an empty spot"
 msgstr "खाली स्थान ढूंढ नहीं सकता"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1650
+#: cafe-panel/panel-toplevel.c:1643
 msgid "Drawer"
 msgstr "दराज़"
 
@@ -2259,7 +2194,7 @@ msgid "_Add to Drawer..."
 msgstr "दराज में जोडें...(_A)"
 
 #: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
-#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:247
 msgid "_Properties"
 msgstr "गुण (_P)"
 
@@ -2276,7 +2211,7 @@ msgid "- Edit .desktop files"
 msgstr "- .desktop फाइल संपादित करें"
 
 #: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
 msgid "Create Launcher"
 msgstr "लांचर बनाएँ"
 
@@ -2289,7 +2224,7 @@ msgstr "निर्देशिका गुण"
 msgid "Launcher Properties"
 msgstr "लांचर गुण"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "पटल"
 
@@ -2298,14 +2233,7 @@ msgid ""
 "Launch other applications and provide various utilities to manage windows, "
 "show the time, etc."
 msgstr ""
-"अन्य अनुप्रयोग लॉन्च करें और विंडो प्रबंधित करने, समय दिखाने आदि के लिए "
-"विविध उपयोगिता दें."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cafe-panel/cafe-panel.desktop.in:7
-msgid "cafe-panel"
-msgstr ""
+"अन्य अनुप्रयोग लॉन्च करें और विंडो प्रबंधित करने, समय दिखाने आदि के लिए विविध उपयोगिता दें."
 
 #: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
@@ -2337,7 +2265,7 @@ msgstr "लांच (_L)"
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "कुंजी %s नियत नहीं है, अतः लांचर लोड नहीं कर सकता\n"
 
-#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "लांचर सहेज नहीं सका"
@@ -2502,68 +2430,68 @@ msgstr ""
 msgid "Not compatible with Wayland"
 msgstr ""
 
-#: cafe-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1055
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "एक मद \"%s\" में जोड़ने के लिये चुनें (_i):"
 
-#: cafe-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1059
 msgid "Add to Drawer"
 msgstr "दराज में जोडें"
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Find an _item to add to the drawer:"
 msgstr "ड्राउर में जोड़ने के लिये एक मद चुनें (_i):"
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Add to Panel"
 msgstr "पटल में जोडें"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Find an _item to add to the panel:"
 msgstr "पैनल से जोड़ने के लिये एक मद चुनें (_i):"
 
-#: cafe-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1313
 msgid "_Back"
 msgstr "पीछे (_B)"
 
-#: cafe-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:761
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "\"%s\" अप्रत्याशित रूप से छोड़ दिया"
 
-#: cafe-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:763
 msgid "Panel object has quit unexpectedly"
 msgstr "पटल वस्तु स्वतः छोड़ दिया"
 
-#: cafe-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:770
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
 msgstr "अगर आप पटल वस्तु फिर लोड करते हैं तो यह पैनल में स्वतः जोड़ा जायेगा."
 
-#: cafe-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:777
 msgid "D_elete"
 msgstr ""
 
-#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:778 cafe-panel/panel-applet-frame.c:783
 msgid "_Don't Reload"
 msgstr "फिर लोड न करें (_D)"
 
-#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:779 cafe-panel/panel-applet-frame.c:784
 msgid "_Reload"
 msgstr "पुनः लोड करें (_R)"
 
-#: cafe-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:950
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "\"%s\" को लोड करते हुए फ़लक को समस्या आई."
 
-#: cafe-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:965
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "क्या आप अपने विन्यास से इस एप्लेट को मिटाना चाहते हैं?"
 
-#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "मिटाएँ (_D)"
 
@@ -2579,56 +2507,60 @@ msgstr "गनोम पटल"
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 CAFE developers"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:120
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
 msgstr ""
-"यह प्रोग्राम अन्य अनुप्रयोगों को लांच करने और उपयोगी उपयोगिता देने के लिए "
-"जिम्मेदार है."
+"यह प्रोग्राम अन्य अनुप्रयोगों को लांच करने और उपयोगी उपयोगिता देने के लिए जिम्मेदार है."
 
-#: cafe-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:124
 msgid "About the CAFE Panel"
 msgstr "गनोम पटल का परिचय"
 
-#: cafe-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:155
 msgid "Cannot delete this panel"
 msgstr "यह पटल नहीं मिटा सकता"
 
-#: cafe-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:156
 msgid "You must always have at least one panel."
 msgstr "आपके पास कम से कम एक पैनल जरूर होना चाहिये."
 
-#: cafe-panel/panel-context-menu.c:199
-msgid "Reset this panel?"
+#: cafe-panel/panel-context-menu.c:200
+msgid "Reset all panels?"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:200
+#: cafe-panel/panel-context-menu.c:201
 msgid ""
-"When a panel is reset, all \n"
+"When the panels are reset, all \n"
 "custom settings are lost."
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
-msgid "_Reset Panel"
+#: cafe-panel/panel-context-menu.c:215
+msgid "_Reset Panels"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:237
 msgid "_Add to Panel…"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:257
+msgid "_Reset All Panels"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:264
 msgid "_Delete This Panel"
 msgstr "यह पटल मिटाएँ (_D)"
 
-#: cafe-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:277
 msgid "_New Panel"
 msgstr "नया पटल (_N)"
 
-#: cafe-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:326
 msgid "A_bout Panels"
 msgstr "पटल का परिचय (_A)"
 
@@ -2708,8 +2640,7 @@ msgstr "मदद दस्तावेज़ नहीं दिखा सक�
 msgid ""
 "Click on a window to force the application to quit. To cancel press <ESC>."
 msgstr ""
-"जिस अनुप्रयोग को जबर्दस्ती बन्द करना है, उस विंडो में क्लिक करें . रद्द करने"
-" हेतु दबाएँ <ESC>."
+"जिस अनुप्रयोग को जबर्दस्ती बन्द करना है, उस विंडो में क्लिक करें . रद्द करने हेतु दबाएँ <ESC>."
 
 #: cafe-panel/panel-force-quit.c:232
 msgid "Force this application to exit?"
@@ -2720,8 +2651,8 @@ msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."
 msgstr ""
-"इस अनुप्रयोग को जबर्दस्ती बाहर करने के लिए चुनते हैं तो कोई भी बिना सहेजे "
-"बदलाव खुले दस्तावेज़ में नष्ट हो सकते हैं."
+"इस अनुप्रयोग को जबर्दस्ती बाहर करने के लिए चुनते हैं तो कोई भी बिना सहेजे बदलाव खुले "
+"दस्तावेज़ में नष्ट हो सकते हैं."
 
 #: cafe-panel/panel-menu-bar.c:97
 msgid "Browse and run installed applications"
@@ -2801,49 +2732,50 @@ msgstr "डेस्कटॉप"
 msgid "Open the contents of your desktop in a folder"
 msgstr "अपने डेस्कटॉप की सामग्री को निर्देशिका की तरह खोलें"
 
-#: cafe-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1075
 msgid "Computer"
 msgstr "कम्प्यूटर"
 
-#: cafe-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1081
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
 msgstr "इस कंप्यूटर से पहुंच योग्य सभी स्थानीय डिस्क व फोल्डर ब्रॉउज करें"
 
-#: cafe-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1094
 msgid "Network"
 msgstr "संजाल"
 
-#: cafe-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1095
 msgid "Browse bookmarked and local network locations"
 msgstr "पुस्तकचिह्न व स्थानीय संजाल अवस्थिति ब्रॉउज करें"
 
-#: cafe-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1489
 msgid "Places"
 msgstr "स्थान"
 
-#: cafe-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1517
 msgid "System"
 msgstr "तंत्र"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: cafe-panel/panel-menu-items.c:1600
+#.
+#: cafe-panel/panel-menu-items.c:1602
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1614
 #, c-format
 msgid "Log Out %s..."
 msgstr "लॉग आउट %s..."
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1618
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr "अन्य उपयोगकर्ता के रूप में लॉगइन करने हेतु इस %s सत्र से लॉग आउट करें"
@@ -3011,30 +2943,30 @@ msgstr "हालिया दस्तावेज़ साफ करें...
 msgid "Clear all items from the recent documents list"
 msgstr "हाल ही में प्रयुक्त दस्तावेज़ से सभी मद साफ करें"
 
-#: cafe-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:435
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "'%s' कमांड चला नहीं सका"
 
-#: cafe-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:476
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "'%s' को यूटीएफ़-8 से परिवर्तित नहीं कर सका"
 
-#: cafe-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1269
 msgid "Choose a file to append to the command..."
 msgstr "कमांड में जोड़ने हेतु फ़ाइल का चयन करें..."
 
-#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "अनुप्रयोग का विवरण देखने हेतु उसे चुनें"
 
-#: cafe-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1689
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "इस कमांड को चलाएगा: '%s'"
 
-#: cafe-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1722
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr "URI सूची run संवाद पर छोड़ा गलत प्रारूप (%d) या लंवाई (%d) रखता था\n"
@@ -3052,8 +2984,7 @@ msgid ""
 "Click this button to run the selected application or the command in the "
 "command entry field."
 msgstr ""
-"इस बटन को चयनित अनुप्रयोग चलाने के लिये क्लिक करें या समादेश को समादेश "
-"प्रविष्टि क्षेत्र में."
+"इस बटन को चयनित अनुप्रयोग चलाने के लिये क्लिक करें या समादेश को समादेश प्रविष्टि क्षेत्र में."
 
 #: cafe-panel/panel-run-dialog.ui:125
 msgid "Command icon"
@@ -3079,9 +3010,7 @@ msgstr "फ़ाइल के साथ चलाएँ (_f)..."
 msgid ""
 "Click this button to browse for a file whose name to append to the command "
 "string."
-msgstr ""
-"एक फाइल ब्रॉउज करने के लिये क्लिक करें जिसका नाम समादेश स्ट्रिंग में जोड़ा "
-"जाना है."
+msgstr "एक फाइल ब्रॉउज करने के लिये क्लिक करें जिसका नाम समादेश स्ट्रिंग में जोड़ा जाना है."
 
 #: cafe-panel/panel-run-dialog.ui:256
 msgid "List of known applications"
@@ -3114,8 +3043,7 @@ msgstr ""
 
 #: cafe-panel/panel-test-applets.c:41
 msgid "Specify the initial size of the applet (xx-small, medium, large etc.)"
-msgstr ""
-"एप्लेट का आरंभिक आकार निर्दिष्ट करता है (xx-छोटा, मध्यम, बड़ा इत्यादि.)"
+msgstr "एप्लेट का आरंभिक आकार निर्दिष्ट करता है (xx-छोटा, मध्यम, बड़ा इत्यादि.)"
 
 #: cafe-panel/panel-test-applets.c:42
 msgid ""
@@ -3183,19 +3111,19 @@ msgstr ""
 msgid "Hide Panel"
 msgstr "पटल छुपाएँ"
 
-#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
 msgid "Top Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1651
 msgid "Bottom Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1653
 msgid "Left Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Right Panel"
 msgstr ""
 
@@ -3213,17 +3141,17 @@ msgstr "'%s' को चला नहीं सका"
 msgid "file"
 msgstr "फाइल"
 
-#: cafe-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:876
 msgid "Home Folder"
 msgstr "घर फोल्डर"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:888
 msgid "File System"
 msgstr "फ़ाइल सिस्टम"
 
-#: cafe-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1062
 msgid "Search"
 msgstr "खोजें"
 
@@ -3231,7 +3159,8 @@ msgstr "खोजें"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: cafe-panel/panel-util.c:1106
+#.
+#: cafe-panel/panel-util.c:1108
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
@@ -3279,10 +3208,4 @@ msgstr ""
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
 msgid "A simple applet for testing the CAFE panel"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
-msgid "cafe-gegl"
 msgstr ""

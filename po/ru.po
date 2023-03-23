@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # AlexL <loginov.alex.valer@gmail.com>, 2020
 # theirix <theirix@gmail.com>, 2020
@@ -23,20 +23,22 @@
 # Olesya Gerasimenko <gammaray@basealt.ru>, 2020
 # Aleksey Kabanov <ak099@mail.ru>, 2020
 # Anna Vyalkova <cybertailor@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.23.2\n"
+"Project-Id-Version: cafe-panel 1.25.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2020-01-12 18:05+0100\n"
+"POT-Creation-Date: 2023-03-23 18:48+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Anna Vyalkova <cybertailor@gmail.com>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/cafe/teams/13566/ru/)\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
 msgid "Locations"
@@ -60,7 +62,8 @@ msgstr "%l:%M:%S %p"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:504
+#.
+#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
 msgid "%l:%M %p"
 msgstr "%H:%M"
 
@@ -71,7 +74,7 @@ msgstr "%H:%M"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1604
+#: applets/clock/clock.c:454 applets/clock/clock.c:1603
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
@@ -85,9 +88,10 @@ msgstr "%H:%M:%S"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1610
-#: applets/clock/clock-location-tile.c:464
-#: applets/clock/clock-location-tile.c:511
+#.
+#: applets/clock/clock.c:454 applets/clock/clock.c:1609
+#: applets/clock/clock-location-tile.c:462
+#: applets/clock/clock-location-tile.c:509
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -129,7 +133,7 @@ msgstr "Нажмите, чтобы скрыть календарь на меся
 msgid "Click to view month calendar"
 msgstr "Нажмите, чтобы просмотреть календарь на месяц"
 
-#: applets/clock/clock.c:1442
+#: applets/clock/clock.c:1441
 msgid "Computer Clock"
 msgstr "Компьютерные часы"
 
@@ -139,7 +143,7 @@ msgstr "Компьютерные часы"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1589
+#: applets/clock/clock.c:1588
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -149,110 +153,108 @@ msgstr "%I:%M:%S %p"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1597
+#: applets/clock/clock.c:1596
 msgid "%I:%M %p"
 msgstr "%I:%M %p"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1643
+#: applets/clock/clock.c:1642
 msgid "%A, %B %d %Y"
 msgstr "%A, %d %B %Y"
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1673
 msgid "Set System Time..."
 msgstr "Установить системное время…"
 
-#: applets/clock/clock.c:1675
+#: applets/clock/clock.c:1674
 msgid "Set System Time"
 msgstr "Установить системное время"
 
-#: applets/clock/clock.c:1690
+#: applets/clock/clock.c:1689
 msgid "Failed to set the system time"
 msgstr "Не удалось настроить системное время"
 
-#: applets/clock/clock.c:1888 applets/fish/fish.c:1694
-#: applets/notification_area/main.c:292 applets/vncklet/window-list.c:357
-#: applets/vncklet/workspace-switcher.c:389
+#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
+#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
+#: applets/vncklet/workspace-switcher.c:393
 msgid "_Preferences"
 msgstr "Н_астройка"
 
-#: applets/clock/clock.c:1891 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1697 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:295 applets/vncklet/showdesktop.c:241
-#: applets/vncklet/window-list.c:365 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:98 applets/vncklet/workspace-switcher.c:397
+#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
+#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
-#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
 #: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_Справка"
 
-#: applets/clock/clock.c:1894 applets/fish/fish.c:1700
-#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:249
-#: applets/vncklet/window-list.c:373 applets/vncklet/window-menu.c:106
-#: applets/vncklet/workspace-switcher.c:405
+#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
+#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
+#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
+#: applets/vncklet/workspace-switcher.c:409
 msgid "_About"
 msgstr "_О программе"
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1894
 msgid "Copy _Time"
 msgstr "Скопировать _время"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1897
 msgid "Copy _Date"
 msgstr "Скопировать _дату"
 
-#: applets/clock/clock.c:1903
+#: applets/clock/clock.c:1900
 msgid "Ad_just Date & Time"
 msgstr "_Установить дату и время"
 
-#: applets/clock/clock.c:2899
+#: applets/clock/clock.c:2898
 msgid "Choose Location"
 msgstr "Выбор местоположения"
 
-#: applets/clock/clock.c:2978
+#: applets/clock/clock.c:2977
 msgid "Edit Location"
 msgstr "Изменение местоположения"
 
-#: applets/clock/clock.c:3105
+#: applets/clock/clock.c:3104
 msgid "City Name"
 msgstr "Название города"
 
-#: applets/clock/clock.c:3109
+#: applets/clock/clock.c:3108
 msgid "City Time Zone"
 msgstr "Часовой пояс города"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3388
 #: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "Часы"
 
-#: applets/clock/clock.c:3390
+#: applets/clock/clock.c:3389
 msgid "About Clock"
 msgstr "О Часах"
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3391
 msgid "The Clock displays the current time and date"
 msgstr "Отображает текущие время и дату"
 
-#: applets/clock/clock.c:3393
+#: applets/clock/clock.c:3392
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 CAFE developers"
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:567
-#: applets/notification_area/main.c:286 applets/vncklet/showdesktop.c:508
-#: applets/vncklet/window-list.c:831 applets/vncklet/window-menu.c:88
-#: applets/vncklet/workspace-switcher.c:644
-#: cafe-panel/panel-context-menu.c:124
+#: applets/clock/clock.c:3397 applets/fish/fish.c:568
+#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
+#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
+#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr ""
 "Александр Сапрыкин <xelfium@gmail.com>\n"
@@ -293,10 +295,10 @@ msgid "Time & Date"
 msgstr "Дата и время"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-ctk.c:136
-#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
-#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
-#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
+#: cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "О_тмена"
 
@@ -320,10 +322,10 @@ msgstr "Параметры апплета часов"
 msgid "Time _Settings"
 msgstr "_Параметры времени"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -371,7 +373,7 @@ msgstr "Показывать _температуру"
 msgid "General"
 msgstr "Общие"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
 msgid "_Add"
 msgstr "Д_обавить"
 
@@ -424,12 +426,11 @@ msgid "South"
 msgstr "Южный"
 
 #: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
-#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
+#: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "_OK"
 
-#. Languages that have a single word that translates as either "state" or
-#. "province" should use that instead of "region".
+#. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
 #: applets/clock/clock.ui:1012
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
@@ -462,17 +463,16 @@ msgstr "Ш_ирота:"
 msgid "Failed to set the system timezone"
 msgstr "Не удалось изменить системный часовой пояс"
 
-#: applets/clock/clock-location-tile.c:231
+#: applets/clock/clock-location-tile.c:229
 msgid "<small>Set...</small>"
 msgstr "<small>Установить…</small>"
 
-#: applets/clock/clock-location-tile.c:232
+#: applets/clock/clock-location-tile.c:230
 msgid "<small>Set</small>"
 msgstr "<small>Установить</small>"
 
-#: applets/clock/clock-location-tile.c:308
-msgid ""
-"Set location as current location and use its timezone for this computer"
+#: applets/clock/clock-location-tile.c:306
+msgid "Set location as current location and use its timezone for this computer"
 msgstr "Сделать местность текущей и использовать этот часовой пояс"
 
 #. Translators: This is a strftime format string.
@@ -481,7 +481,7 @@ msgstr "Сделать местность текущей и использова
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:441
+#: applets/clock/clock-location-tile.c:439
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l:%M <small>%p (%A)</small>"
 
@@ -490,7 +490,7 @@ msgstr "%l:%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:449
+#: applets/clock/clock-location-tile.c:447
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%H:%M <small>(%A)</small>"
 
@@ -498,27 +498,27 @@ msgstr "%H:%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:458
+#: applets/clock/clock-location-tile.c:456
 msgid "%l:%M <small>%p</small>"
 msgstr "%l:%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:600
+#: applets/clock/clock-location-tile.c:598
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:612
-#: applets/clock/clock-location-tile.c:621
+#: applets/clock/clock-location-tile.c:610
+#: applets/clock/clock-location-tile.c:619
 msgid "Unknown"
 msgstr "Неизвестная"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:614
+#: applets/clock/clock-location-tile.c:612
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s, ощущается как %s"
 
-#: applets/clock/clock-location-tile.c:637
+#: applets/clock/clock-location-tile.c:635
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "Восход: %s / Заход: %s"
@@ -541,23 +541,23 @@ msgstr "Формат часов"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
-"This key specifies the hour format used by the clock applet. Possible values"
-" are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
-" to \"internet\", the clock will display Internet time. The Internet time "
-"system divides the day into 1000 \".beats\". There are no time zones in this"
-" system, so time is the same all over the world. If set to \"unix\", the "
+"This key specifies the hour format used by the clock applet. Possible values "
+"are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set "
+"to \"internet\", the clock will display Internet time. The Internet time "
+"system divides the day into 1000 \".beats\". There are no time zones in this "
+"system, so time is the same all over the world. If set to \"unix\", the "
 "clock will display time in seconds since Epoch, i.e. 1970-01-01. If set to "
-"\"custom\", the clock will display time according to the format specified in"
-" the custom_format key."
+"\"custom\", the clock will display time according to the format specified in "
+"the custom_format key."
 msgstr ""
 "Этот ключ определяет формат часов, используемый апплетом часов. Возможные "
 "значения: «12-hour», «24-hour», «internet», «unix» и «custom». Если этот "
 "ключ установлен в значение «internet», часы будут отображать время "
 "Интернета. В этой системе день делится на 1000 «ударов» (beats). Часовые "
-"пояса в этой системе отсутствуют, так что время одинаково во всём мире. Если"
-" ключ установлен в значение «unix», часы будут отображать время в секундах с"
-" начала «эпохи», то есть 1 января 1970 года. Если ключ установлен в значение"
-" «custom», часы будут отображать время в соответствии с форматом, "
+"пояса в этой системе отсутствуют, так что время одинаково во всём мире. Если "
+"ключ установлен в значение «unix», часы будут отображать время в секундах с "
+"начала «эпохи», то есть 1 января 1970 года. Если ключ установлен в значение "
+"«custom», часы будут отображать время в соответствии с форматом, "
 "определённым ключом «custom_format»."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:34
@@ -571,8 +571,8 @@ msgid ""
 "strftime() to obtain a specific format. See the strftime() manual for more "
 "information."
 msgstr ""
-"Этот ключ определяет формат, используемый апплетом часов, когда ключ формата"
-" установлен в значение «custom». Можно использовать последовательности, "
+"Этот ключ определяет формат, используемый апплетом часов, когда ключ формата "
+"установлен в значение «custom». Можно использовать последовательности, "
 "понимаемые функцией strftime(), для достижения желаемого формата. Для "
 "получения дополнительной информации смотрите руководство по функции "
 "strftime()."
@@ -592,8 +592,7 @@ msgstr "Показывать дату в апплете часов"
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:45
 msgid "If true, display date in the clock, in addition to time."
 msgstr ""
-"Если этот ключ установлен, в апплете показывается не только время, но и "
-"дата."
+"Если этот ключ установлен, в апплете показывается не только время, но и дата."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:49
 msgid "Show date in tooltip"
@@ -675,12 +674,6 @@ msgstr "Фабрика для апплета часов"
 msgid "Get the current time and date"
 msgstr "Показывает текущие время и дату"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-clock"
-msgstr "cafe-panel-clock"
-
 #: applets/fish/fish.c:266
 #, c-format
 msgid ""
@@ -691,14 +684,15 @@ msgid ""
 msgstr ""
 "Внимание: Похоже, эта команда делает что-то полезное.\n"
 "Поскольку это бесполезный апплет, наверное, лучше этого не делать.\n"
-"Мы настоятельно рекомендуем вам избегать использования существа %s для чего-либо,\n"
+"Мы настоятельно рекомендуем вам избегать использования существа %s для чего-"
+"либо,\n"
 "что может сделать этот апплет полезным."
 
 #: applets/fish/fish.c:428
 msgid "Images"
 msgstr "Изображения"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:578 applets/fish/fish.c:684
+#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
 #, no-c-format
 msgid "%s the Fish"
 msgstr "Рыбка по имени %s"
@@ -732,27 +726,25 @@ msgstr "О Рыбке"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Copyright © 1998-2002 Free Software Foundation, Inc.\n"
-"Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 CAFE developers"
 
-#: applets/fish/fish.c:579
+#: applets/fish/fish.c:580
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "«Рыбка по имени %s», современный оракул"
 
-#: applets/fish/fish.c:645
+#: applets/fish/fish.c:646
 msgid "Unable to locate the command to execute"
 msgstr "Не удалось найти программу, которую нужно выполнить"
 
-#: applets/fish/fish.c:689
+#: applets/fish/fish.c:690
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "Рыбка по имени %s говорит:"
 
-#: applets/fish/fish.c:752
+#: applets/fish/fish.c:753
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -763,16 +755,16 @@ msgstr ""
 "\n"
 "Подробности: %s"
 
-#: applets/fish/fish.c:849
+#: applets/fish/fish.c:850
 msgid "_Speak again"
 msgstr "_Произнести снова"
 
-#: applets/fish/fish.c:930
+#: applets/fish/fish.c:931
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
 msgstr "Настроенная команда не работает и была заменена на: %s"
 
-#: applets/fish/fish.c:963
+#: applets/fish/fish.c:964
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -783,7 +775,7 @@ msgstr ""
 "\n"
 "Подробности: %s"
 
-#: applets/fish/fish.c:979
+#: applets/fish/fish.c:980
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -794,15 +786,15 @@ msgstr ""
 "\n"
 "Подробности: %s"
 
-#: applets/fish/fish.c:1551
+#: applets/fish/fish.c:1552
 msgid "The water needs changing"
 msgstr "Воду пора менять"
 
-#: applets/fish/fish.c:1553
+#: applets/fish/fish.c:1554
 msgid "Look at today's date!"
 msgstr "Посмотри на сегодняшнее число!"
 
-#: applets/fish/fish.c:1635
+#: applets/fish/fish.c:1636
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "Рыбка по имени %s, гадалка"
@@ -875,8 +867,8 @@ msgid ""
 "This key specifies the filename of the pixmap which will be used for the "
 "animation displayed in the fish applet relative to the pixmap directory."
 msgstr ""
-"Этот ключ определяет имя файла изображения, которое будет использоваться для"
-" отображения анимации апплета рыбки, относительно каталога изображений "
+"Этот ключ определяет имя файла изображения, которое будет использоваться для "
+"отображения анимации апплета рыбки, относительно каталога изображений "
 "(pixmap)."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:15
@@ -895,8 +887,8 @@ msgstr "Число кадров в анимации рыбки"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
-"This key specifies the number of frames that will be displayed in the fish's"
-" animation."
+"This key specifies the number of frames that will be displayed in the fish's "
+"animation."
 msgstr "Этот ключ определяет число кадров, используемых в анимации рыбки."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
@@ -932,12 +924,6 @@ msgstr "Откуда эта глупая рыба пришла"
 msgid "Display a swimming fish or another anicafed creature"
 msgstr "Показывает плавающую рыбку, которая по щелчку выдаёт цитату"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-fish"
-msgstr "cafe-panel-fish"
-
 #: applets/notification_area/main.c:276
 #: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Notification Area"
@@ -952,14 +938,11 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Copyright © 2002 Red Hat, Inc.\n"
-"Copyright © 2003-2006 Vincent Untz\n"
-"Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
 
-#: applets/notification_area/main.c:485
+#: applets/notification_area/main.c:486
 msgid "Panel Notification Area"
 msgstr "Область уведомления панели"
 
@@ -1000,23 +983,17 @@ msgstr "Фабрика для области уведомления"
 msgid "Area where notification icons appear"
 msgstr "Область, где появляются значки уведомлений"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-notification-area"
-msgstr "cafe-panel-notification-area"
-
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "Показывать окна со всех рабочих мест"
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
-"If true, the window list will show windows from all workspaces. Otherwise it"
-" will only display windows from the current workspace."
+"If true, the window list will show windows from all workspaces. Otherwise it "
+"will only display windows from the current workspace."
 msgstr ""
-"Если этот ключ установлен, список окон будет отображать окна со всех рабочих"
-" мест, а не только с текущего."
+"Если этот ключ установлен, список окон будет отображать окна со всех рабочих "
+"мест, а не только с текущего."
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
 msgid "When to group windows"
@@ -1065,8 +1042,8 @@ msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
 msgstr ""
-"Если этот ключ установлен, переключатель будет показывать все рабочие места."
-" Иначе будет показано только текущее."
+"Если этот ключ установлен, переключатель будет показывать все рабочие места. "
+"Иначе будет показано только текущее."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
@@ -1075,8 +1052,8 @@ msgstr "Строк в переключателе"
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
-"vertical layout) the workspace switcher shows the workspaces in. This key is"
-" only relevant if the display_all_workspaces key is true."
+"vertical layout) the workspace switcher shows the workspaces in. This key is "
+"only relevant if the display_all_workspaces key is true."
 msgstr ""
 "Этот ключ определяет, во сколько рядов (при горизонтальном размещении) или "
 "столбцов (при вертикальном размещении) переключатель будет показывать "
@@ -1105,7 +1082,7 @@ msgid "Factory for the window navigation related applets"
 msgstr "Фабрика для связанных с навигацией окон апплетов"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
+#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
 msgid "Window Selector"
 msgstr "Переключатель окон"
 
@@ -1113,14 +1090,8 @@ msgstr "Переключатель окон"
 msgid "Switch between open windows using a menu"
 msgstr "Кнопка переключения между открытыми окнами"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-window-menu"
-msgstr "cafe-panel-window-menu"
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:634
+#: applets/vncklet/workspace-switcher.c:638
 msgid "Workspace Switcher"
 msgstr "Переключатель рабочих мест"
 
@@ -1128,26 +1099,14 @@ msgstr "Переключатель рабочих мест"
 msgid "Switch between workspaces"
 msgstr "Переключаться между рабочими местами"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
-msgid "cafe-panel-workspace-switcher"
-msgstr "cafe-panel-workspace-switcher"
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:821
+#: applets/vncklet/window-list.c:826
 msgid "Window List"
 msgstr "Список окон"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "Область, где размещаются кнопки открытых окон"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
-msgid "cafe-panel-window-list"
-msgstr "cafe-panel-window-list"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
@@ -1156,12 +1115,6 @@ msgstr "Показать рабочий стол"
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "Скрыть окна приложений и показать рабочий стол"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
-msgid "user-desktop"
-msgstr "user-desktop"
 
 #: applets/vncklet/showdesktop.c:184
 #, c-format
@@ -1172,60 +1125,58 @@ msgstr "Не удалось загрузить «%s»: %s\n"
 msgid "Icon not found"
 msgstr "Не удалось найти значок"
 
-#: applets/vncklet/showdesktop.c:265
+#: applets/vncklet/showdesktop.c:266
 msgid "Click here to restore hidden windows."
 msgstr "Щёлкните здесь, чтобы восстановить свёрнутые окна."
 
-#: applets/vncklet/showdesktop.c:269
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to hide all windows and show the desktop."
 msgstr "Щёлкните здесь, чтобы свернуть все окна и расчистить рабочий стол."
 
-#: applets/vncklet/showdesktop.c:439 applets/vncklet/showdesktop.c:498
+#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
 msgid "Show Desktop Button"
 msgstr "Кнопка расчистки рабочего стола"
 
-#: applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:500
 msgid "About Show Desktop Button"
 msgstr "О кнопке расчистки рабочего стола"
 
-#: applets/vncklet/showdesktop.c:501
+#: applets/vncklet/showdesktop.c:502
 msgid "This button lets you hide all windows and show the desktop."
 msgstr "Эта кнопка позволяет скрыть все окна и расчистить рабочий стол."
 
-#: applets/vncklet/showdesktop.c:502 applets/vncklet/window-list.c:825
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
+#: applets/vncklet/workspace-switcher.c:642
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Copyright © 2002 Red Hat, Inc.\n"
-"Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
 
-#: applets/vncklet/showdesktop.c:529
+#: applets/vncklet/showdesktop.c:531
 msgid ""
-"Your window manager does not support the show desktop button, or you are not"
-" running a window manager."
+"Your window manager does not support the show desktop button, or you are not "
+"running a window manager."
 msgstr ""
 "Либо менеджер окон не поддерживает кнопку расчистки рабочего стола, либо "
 "менеджер окон не запущен вовсе."
 
-#: applets/vncklet/window-list.c:349
+#: applets/vncklet/window-list.c:354
 msgid "_System Monitor"
 msgstr "С_истемный монитор"
 
-#: applets/vncklet/window-list.c:822
+#: applets/vncklet/window-list.c:827
 msgid "About Window List"
 msgstr "О списке окон"
 
-#: applets/vncklet/window-list.c:824
+#: applets/vncklet/window-list.c:829
 msgid ""
-"The Window List shows a list of all windows in a set of buttons and lets you"
-" browse them."
+"The Window List shows a list of all windows in a set of buttons and lets you "
+"browse them."
 msgstr ""
-"Показывает список всех окон как набор кнопок и позволяет переключаться между"
-" ними."
+"Показывает список всех окон как набор кнопок и позволяет переключаться между "
+"ними."
 
 #: applets/vncklet/window-list.ui:18
 msgid "Window List Preferences"
@@ -1304,8 +1255,7 @@ msgid ""
 "The Window Selector shows a list of all windows in a menu and lets you "
 "browse them."
 msgstr ""
-"Отображает список всех окон в виде меню и позволяет переключаться между "
-"ними."
+"Отображает список всех окон в виде меню и позволяет переключаться между ними."
 
 #: applets/vncklet/window-menu.c:80
 msgid ""
@@ -1313,36 +1263,32 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Copyright © 2000 Helix Code, Inc.\n"
-"Copyright © 2001 Free Software Foundation, Inc.\n"
-"Copyright © 2003 Sun Microsystems, Inc.\n"
-"Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "строк"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 msgid "columns"
 msgstr "столбцов"
 
-#: applets/vncklet/workspace-switcher.c:635
+#: applets/vncklet/workspace-switcher.c:639
 msgid "About Workspace Switcher"
 msgstr "О переключателе рабочих мест"
 
-#: applets/vncklet/workspace-switcher.c:637
+#: applets/vncklet/workspace-switcher.c:641
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
 msgstr ""
-"Переключатель рабочих мест показывает в уменьшенном виде ваши рабочие места,"
-" позволяя управлять окнами."
+"Переключатель рабочих мест показывает в уменьшенном виде ваши рабочие места, "
+"позволяя управлять окнами."
 
 #: applets/vncklet/workspace-switcher.ui:32
 msgid "Workspace Switcher Preferences"
@@ -1405,8 +1351,8 @@ msgid ""
 "dialog is shown is controlled by the show_program_list key."
 msgstr ""
 "Если этот ключ установлен, то в диалоге «Выполнить программу» становится "
-"доступным список «Известные приложения». Будет ли он развёрнут по умолчанию,"
-" зависит от ключа show_program_list."
+"доступным список «Известные приложения». Будет ли он развёрнут по умолчанию, "
+"зависит от ключа show_program_list."
 
 #: data/org.cafe.panel.gschema.xml.in:15
 msgid "Expand program list in \"Run Application\" dialog"
@@ -1440,8 +1386,8 @@ msgstr "История для диалога «Выполнить програм
 #: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
-"commands are sorted descendingly by recency (e.g., most recent command comes"
-" first)."
+"commands are sorted descendingly by recency (e.g., most recent command comes "
+"first)."
 msgstr ""
 "Это список команд, используемых в диалоговом окне «Запустить программу». "
 "Команды отсортированы по убыванию по времени запуска (т.е. самая последняя "
@@ -1491,13 +1437,13 @@ msgstr "Список идентификаторов объектов панел�
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object "
-"(e.g. a launcher, action button or menu button/bar). The settings for each "
-"of these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object (e."
+"g. a launcher, action button or menu button/bar). The settings for each of "
+"these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
 "Список идентификаторов объектов панели. Каждый идентификатор обозначает "
-"отдельный объект панели (например, кнопку запуска, кнопку команды или меню)."
-" Параметры каждого из этих объектов хранятся в /apps/panel/objects/$(id)."
+"отдельный объект панели (например, кнопку запуска, кнопку команды или меню). "
+"Параметры каждого из этих объектов хранятся в /apps/panel/objects/$(id)."
 
 #: data/org.cafe.panel.gschema.xml.in:50
 msgid "Enable tooltips"
@@ -1546,8 +1492,8 @@ msgstr "Подсвечивать кнопки запуска при наведе
 msgid ""
 "If true, a launcher is highlighted when the user moves the pointer over it."
 msgstr ""
-"Если этот ключ установлен, кнопка запуска будет подсвечиваться при наведении"
-" на неё указателя."
+"Если этот ключ установлен, кнопка запуска будет подсвечиваться при наведении "
+"на неё указателя."
 
 #: data/org.cafe.panel.gschema.xml.in:74
 msgid "Complete panel lockdown"
@@ -1556,11 +1502,11 @@ msgstr "Полная блокировка панели"
 #: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
-"panel. Individual applets may need to be locked down separately however. The"
-" panel must be restarted for this to take effect."
+"panel. Individual applets may need to be locked down separately however. The "
+"panel must be restarted for this to take effect."
 msgstr ""
-"Если этот ключ установлен, панель не будет позволять производить изменения в"
-" своих настройках. Однако отдельные апплеты могут потребовать отдельной "
+"Если этот ключ установлен, панель не будет позволять производить изменения в "
+"своих настройках. Однако отдельные апплеты могут потребовать отдельной "
 "блокировки. Чтобы этот ключ вступил в силу, панель необходимо перезапустить."
 
 #: data/org.cafe.panel.gschema.xml.in:79
@@ -1575,9 +1521,9 @@ msgid ""
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
 "Список идентификаторов апплетов (IID), которые панель будет игнорировать. "
-"Таким образом можно запретить загрузку некоторых апплетов или их отображение"
-" в меню. Например, чтобы запретить апплет командной строки, добавьте к этому"
-" списку строку «OAFIID:CAFE_MiniCommanderApplet». Чтобы изменения в списке "
+"Таким образом можно запретить загрузку некоторых апплетов или их отображение "
+"в меню. Например, чтобы запретить апплет командной строки, добавьте к этому "
+"списку строку «OAFIID:CAFE_MiniCommanderApplet». Чтобы изменения в списке "
 "вступили в силу, панель нужно перезапустить."
 
 #: data/org.cafe.panel.gschema.xml.in:84
@@ -1589,8 +1535,8 @@ msgid ""
 "If true, the panel will not allow a user to force an application to quit by "
 "removing access to the force quit button."
 msgstr ""
-"Если этот ключ установлен, панель не будет позволять принудительно завершать"
-" приложение. Соответствующая кнопка будет недоступна."
+"Если этот ключ установлен, панель не будет позволять принудительно завершать "
+"приложение. Соответствующая кнопка будет недоступна."
 
 #: data/org.cafe.panel.gschema.xml.in:89
 msgid "Enable SNI support"
@@ -1658,11 +1604,11 @@ msgstr "Размер значков пунктов меню"
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
-"Set the size of icons used in the menu. The panel must be restarted for this"
-" to take effect."
+"Set the size of icons used in the menu. The panel must be restarted for this "
+"to take effect."
 msgstr ""
-"Устанавливает размер значков в меню. Чтобы изменения вступили в силу, панель"
-" надо перезапустить."
+"Устанавливает размер значков в меню. Чтобы изменения вступили в силу, панель "
+"надо перезапустить."
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:50
 msgid "Threshold of menu items before submenu is created"
@@ -1710,8 +1656,8 @@ msgstr "Интерпретировать позицию относительно
 
 #: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
-"If true, the position of the object is interpreted relative to the right (or"
-" bottom if vertical) edge of the panel."
+"If true, the position of the object is interpreted relative to the right (or "
+"bottom if vertical) edge of the panel."
 msgstr ""
 "Если этот ключ установлен, то позиция объекта интерпретируется относительно "
 "правого (или нижнего для вертикальных панелей) края панели."
@@ -1722,8 +1668,8 @@ msgstr "Закрепить объект на панели"
 
 #: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
-"If true, the user may not move the applet without first unlocking the object"
-" using the \"Unlock\" menuitem."
+"If true, the user may not move the applet without first unlocking the object "
+"using the \"Unlock\" menuitem."
 msgstr ""
 "Если этот ключ установлен, то пользователь не может перемещать апплет, не "
 "отдав перед этим команду «Разблокировать»."
@@ -1734,15 +1680,14 @@ msgstr "Идентификатор апплета (IID)"
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. "
-"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
-"applet\")."
+"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
+"ClockApplet\". This key is only relevant if the object_type key is "
+"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
 msgstr ""
-"Идентификатор реализации апплета, например, "
-"«ClockAppletFactory::ClockApplet». Этот ключ имеет смысл только в том "
-"случае, если ключ object_type содержит «external-applet» (или устаревший "
-"«cafecomponent-applet»)."
+"Идентификатор реализации апплета, например, «ClockAppletFactory::"
+"ClockApplet». Этот ключ имеет смысл только в том случае, если ключ "
+"object_type содержит «external-applet» (или устаревший «cafecomponent-"
+"applet»)."
 
 #: data/org.cafe.panel.object.gschema.xml.in:35
 msgid "Panel attached to drawer"
@@ -1763,8 +1708,7 @@ msgstr "Всплывающая подсказка для ящика или ме�
 #: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
-"only relevant if the object_type key is \"drawer-object\" or \"menu-"
-"object\"."
+"only relevant if the object_type key is \"drawer-object\" or \"menu-object\"."
 msgstr ""
 "Текст, используемый в качестве подсказки для данного ящика. Этот параметр "
 "имеет смысл только в том случае, если ключ object_type имеет значение "
@@ -1780,8 +1724,8 @@ msgid ""
 "false, the custom_icon key is ignored. This key is only relevant if the "
 "object_type key is \"menu-object\" or \"drawer-object\"."
 msgstr ""
-"Если этот ключ установлен, то значение из ключа custom_icon используется как"
-" пользовательский значок для кнопки. Если не установлен, то значение ключа "
+"Если этот ключ установлен, то значение из ключа custom_icon используется как "
+"пользовательский значок для кнопки. Если не установлен, то значение ключа "
 "custom_icon будет проигнорировано. Этот параметр имеет смысл, только если "
 "ключ object_type содержит значение «menu-object» или «drawer-object»."
 
@@ -1902,8 +1846,7 @@ msgid ""
 "key identifies the current monitor the panel is displayed on."
 msgstr ""
 "При использовании системы Xinerama можно иметь разные панели на разных "
-"мониторах. Этот ключ определяет текущий монитор, на котором находится "
-"панель."
+"мониторах. Этот ключ определяет текущий монитор, на котором находится панель."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:20
 msgid "Expand to occupy entire screen width"
@@ -1912,8 +1855,8 @@ msgstr "Расширять панель до ширины экрана"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
-"vertical panel). In this mode the panel can only be placed at a screen edge."
-" If false, the panel will only be large enough to accommodate the applets, "
+"vertical panel). In this mode the panel can only be placed at a screen edge. "
+"If false, the panel will only be large enough to accommodate the applets, "
 "launchers and buttons on the panel."
 msgstr ""
 "Если этот ключ установлен, то панель будет занимать всю ширину экрана (или "
@@ -1931,16 +1874,16 @@ msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
 "the panel is on. In un-expanded mode the difference between \"top\" and "
-"\"bottom\" is less important - both indicate that this is a horizontal panel"
-" - but still give a useful hint as to how some panel objects should behave. "
-"For example, on a \"top\" panel a menu button will pop up its menu below the"
-" panel, whereas on a \"bottom\" panel the menu will be popped up above the "
+"\"bottom\" is less important - both indicate that this is a horizontal panel "
+"- but still give a useful hint as to how some panel objects should behave. "
+"For example, on a \"top\" panel a menu button will pop up its menu below the "
+"panel, whereas on a \"bottom\" panel the menu will be popped up above the "
 "panel."
 msgstr ""
 "Ориентация панели. Возможные значения: «top», «bottom», «left», «right». В "
 "режиме расширения значение определяет, у какой стороны экрана расположена "
-"панель. Если расширение до размеров экрана не используется, то разница между"
-" «top» и «bottom» менее важна — оба значения определяют, что это "
+"панель. Если расширение до размеров экрана не используется, то разница между "
+"«top» и «bottom» менее важна — оба значения определяют, что это "
 "горизонтальная панель, но всё же определяет некоторые аспекты поведения "
 "объектов на панели. Например, при значении «top» выпадающее меню у кнопки "
 "меню будет ориентировано вниз, тогда как при «bottom» — вверх."
@@ -2097,8 +2040,8 @@ msgid ""
 "to move the panel to edge of the screen, leaving only a button showing."
 msgstr ""
 "Если этот ключ установлен, то на панели будут кнопки скрытия/раскрытия. Они "
-"используются для «вывода» панели за пределы экрана, так что остаётся видимой"
-" только кнопка, позволяющая «развернуть» панель обратно."
+"используются для «вывода» панели за пределы экрана, так что остаётся видимой "
+"только кнопка, позволяющая «развернуть» панель обратно."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:80
 msgid "Enable arrows on hide buttons"
@@ -2110,8 +2053,8 @@ msgid ""
 "relevant if the enable_buttons key is true."
 msgstr ""
 "Если этот ключ установлен, то на кнопки скрытия/раскрытия будут нанесены "
-"стрелки. Этот параметр имеет смысл только в том случае, если установлен ключ"
-" enable_buttons."
+"стрелки. Этот параметр имеет смысл только в том случае, если установлен ключ "
+"enable_buttons."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:85
 msgid "Panel autohide delay"
@@ -2137,8 +2080,8 @@ msgid ""
 "panel area before the panel is automatically re-shown. This key is only "
 "relevant if the auto_hide key is true."
 msgstr ""
-"Указывает задержку в миллисекундах между появлением указателя мыши в области"
-" панели и автоматическим раскрытием этой панели. Имеет смысл только в том "
+"Указывает задержку в миллисекундах между появлением указателя мыши в области "
+"панели и автоматическим раскрытием этой панели. Имеет смысл только в том "
 "случае, если установлен ключ auto_hide."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:95
@@ -2148,8 +2091,7 @@ msgstr "Количество отображаемых пикселей скры�
 #: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
-"hidden into a corner. This key is only relevant if the auto_hide key is "
-"true."
+"hidden into a corner. This key is only relevant if the auto_hide key is true."
 msgstr ""
 "Указывает количество пикселей, видимых, когда панель автоматически "
 "скрывается за границу экрана. Этот ключ имеет смысл только в том случае, "
@@ -2182,8 +2124,8 @@ msgid ""
 msgstr ""
 "Какой тип фона использовать для панели. Допустимые значения: «none» - будет "
 "использован общесистемный фон элементов CTK+, «color» - фон будет залит "
-"цветом, указанным в соответствующем ключе, и «image» - в качестве фона будет"
-" использовано указанное в соответствующем ключе изображение."
+"цветом, указанным в соответствующем ключе, и «image» - в качестве фона будет "
+"использовано указанное в соответствующем ключе изображение."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:113
 msgid "Background color"
@@ -2200,11 +2142,11 @@ msgstr "Степень непрозрачности фонового цвета"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
-"completely opaque (a value of less than 65535), the color will be composited"
-" onto the desktop background image."
+"completely opaque (a value of less than 65535), the color will be composited "
+"onto the desktop background image."
 msgstr ""
-"Определяет степень непрозрачности фонового цвета. Если цвет хотя бы частично"
-" прозрачен (то есть значение этого ключа меньше, чем 65535), то цвет будет "
+"Определяет степень непрозрачности фонового цвета. Если цвет хотя бы частично "
+"прозрачен (то есть значение этого ключа меньше, чем 65535), то цвет будет "
 "совмещён с изображением фона рабочего стола."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:123
@@ -2323,7 +2265,7 @@ msgid "_Open"
 msgstr "_Открыть"
 
 #: cafe-panel/libpanel-util/panel-error.c:76
-#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
+#: cafe-panel/panel-applet-frame.c:800 cafe-panel/panel-applet-frame.c:988
 msgid "Error"
 msgstr "Ошибка"
 
@@ -2370,7 +2312,7 @@ msgid "Cannot find an empty spot"
 msgstr "Не удалось найти свободное место"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1650
+#: cafe-panel/panel-toplevel.c:1643
 msgid "Drawer"
 msgstr "Ящик"
 
@@ -2379,7 +2321,7 @@ msgid "_Add to Drawer..."
 msgstr "_Добавить в ящик…"
 
 #: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
-#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:247
 msgid "_Properties"
 msgstr "_Свойства"
 
@@ -2396,7 +2338,7 @@ msgid "- Edit .desktop files"
 msgstr "— редактирование файлов .desktop"
 
 #: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
 msgid "Create Launcher"
 msgstr "Создать кнопку запуска"
 
@@ -2409,7 +2351,7 @@ msgstr "Свойства каталога"
 msgid "Launcher Properties"
 msgstr "Свойства кнопки запуска"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "Панель"
 
@@ -2420,12 +2362,6 @@ msgid ""
 msgstr ""
 "Служит для запуска других приложений из меню и отображения вспомогательных "
 "апплетов, например, апплета времени или апплета управления окнами."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cafe-panel/cafe-panel.desktop.in:7
-msgid "cafe-panel"
-msgstr "cafe-panel"
 
 #: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
@@ -2457,7 +2393,7 @@ msgstr "_Запустить"
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "Ключ %s не установлен, невозможно загрузить кнопку запуска\n"
 
-#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Не удалось сохранить кнопку запуска"
@@ -2541,8 +2477,7 @@ msgstr "Искать файлы..."
 
 #: cafe-panel/panel-action-button.c:399
 msgid "Locate documents and folders on this computer by name or content"
-msgstr ""
-"Искать документы и папки на этом компьютере по имени или по содержанию"
+msgstr "Искать документы и папки на этом компьютере по имени или по содержанию"
 
 #: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
 msgid "Force Quit"
@@ -2624,70 +2559,70 @@ msgstr "Несовместимо с X11"
 msgid "Not compatible with Wayland"
 msgstr "Несовместимо с Wayland"
 
-#: cafe-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1055
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "Найти _элемент для добавления к «%s»:"
 
-#: cafe-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1059
 msgid "Add to Drawer"
 msgstr "Добавить в ящик"
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Find an _item to add to the drawer:"
 msgstr "Найти _элемент для добавления в ящик:"
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Add to Panel"
 msgstr "Добавить на панель"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Find an _item to add to the panel:"
 msgstr "Найти _элемент, чтобы добавить на панель:"
 
-#: cafe-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1313
 msgid "_Back"
 msgstr "На_зад"
 
-#: cafe-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:761
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "Работа «%s» неожиданно завершилась"
 
-#: cafe-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:763
 msgid "Panel object has quit unexpectedly"
 msgstr "Объект панели неожиданно завершил работу"
 
-#: cafe-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:770
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
 msgstr ""
-"Если вы перезагрузите объект панели, он будет автоматически добавлен обратно"
-" на панель."
+"Если вы перезагрузите объект панели, он будет автоматически добавлен обратно "
+"на панель."
 
-#: cafe-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:777
 msgid "D_elete"
 msgstr "_Удалить"
 
-#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:778 cafe-panel/panel-applet-frame.c:783
 msgid "_Don't Reload"
 msgstr "_Не перезагружать"
 
-#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:779 cafe-panel/panel-applet-frame.c:784
 msgid "_Reload"
 msgstr "_Обновить"
 
-#: cafe-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:950
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "Возникла проблема при загрузке апплета «%s»."
 
-#: cafe-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:965
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Удалить апплет из текущей конфигурации?"
 
-#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "_Удалить"
 
@@ -2703,13 +2638,11 @@ msgstr "Панель среды CAFE"
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 CAFE developers"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Copyright © 1997-2003 Free Software Foundation, Inc.\n"
-"Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 CAFE developers"
 
-#: cafe-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:120
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
@@ -2717,45 +2650,49 @@ msgstr ""
 "Эта программа отвечает за запуск других приложений, а также предоставляет "
 "разные полезные инструменты."
 
-#: cafe-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:124
 msgid "About the CAFE Panel"
 msgstr "О панели среды CAFE"
 
-#: cafe-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:155
 msgid "Cannot delete this panel"
 msgstr "Не удалось удалить эту панель"
 
-#: cafe-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:156
 msgid "You must always have at least one panel."
 msgstr "У вас всегда должна быть хотя бы одна панель."
 
-#: cafe-panel/panel-context-menu.c:199
-msgid "Reset this panel?"
-msgstr "Сбросить эту панель?"
-
 #: cafe-panel/panel-context-menu.c:200
+msgid "Reset all panels?"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:201
 msgid ""
-"When a panel is reset, all \n"
+"When the panels are reset, all \n"
 "custom settings are lost."
-msgstr "При сбросе панели все пользовательские настройки теряются."
+msgstr ""
 
-#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
-msgid "_Reset Panel"
-msgstr "_Сброс Панели"
+#: cafe-panel/panel-context-menu.c:215
+msgid "_Reset Panels"
+msgstr ""
 
-#: cafe-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:237
 msgid "_Add to Panel…"
 msgstr "_Добавить на панель…"
 
-#: cafe-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:257
+msgid "_Reset All Panels"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:264
 msgid "_Delete This Panel"
 msgstr "_Удалить эту панель"
 
-#: cafe-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:277
 msgid "_New Panel"
 msgstr "Со_здать панель"
 
-#: cafe-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:326
 msgid "A_bout Panels"
 msgstr "_О панелях"
 
@@ -2929,51 +2866,52 @@ msgstr "Рабочий стол"
 msgid "Open the contents of your desktop in a folder"
 msgstr "Открыть рабочий стол как папку"
 
-#: cafe-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1075
 msgid "Computer"
 msgstr "Компьютер"
 
-#: cafe-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1081
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
 msgstr ""
 "Просмотреть все локальные и удалённые диски и папки, доступные с этого "
 "компьютера"
 
-#: cafe-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1094
 msgid "Network"
 msgstr "Сеть"
 
-#: cafe-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1095
 msgid "Browse bookmarked and local network locations"
 msgstr "Просмотреть закладки и локальные сетевые адреса"
 
-#: cafe-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1489
 msgid "Places"
 msgstr "Точки входа"
 
-#: cafe-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1517
 msgid "System"
 msgstr "Система"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: cafe-panel/panel-menu-items.c:1600
+#.
+#: cafe-panel/panel-menu-items.c:1602
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1614
 #, c-format
 msgid "Log Out %s..."
 msgstr "Завершить сеанс пользователя %s…"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1618
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr ""
@@ -3124,7 +3062,8 @@ msgid ""
 msgstr ""
 "При очистке списка недавно использовавшихся документов будут очищены:\n"
 "• Все элементы меню Переход → Недавние документы.\n"
-"• Все элементы из списка недавно использовавшихся документов во всех приложениях."
+"• Все элементы из списка недавно использовавшихся документов во всех "
+"приложениях."
 
 #: cafe-panel/panel-recent.c:164
 msgid "Clear Recent Documents"
@@ -3142,30 +3081,30 @@ msgstr "Очистить недавно использовавшиеся док�
 msgid "Clear all items from the recent documents list"
 msgstr "Очистить все элементы списка недавно использовавшихся документов?"
 
-#: cafe-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:435
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "Не удалось выполнить команду «%s»"
 
-#: cafe-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:476
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "Не удалось преобразовать «%s» из UTF-8"
 
-#: cafe-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1269
 msgid "Choose a file to append to the command..."
 msgstr "Выбрать файл для присоединения к команде…"
 
-#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Выделите приложение, чтобы увидеть его описание."
 
-#: cafe-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1689
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "Будет выполнена команда: «%s»"
 
-#: cafe-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1722
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
@@ -3249,8 +3188,7 @@ msgstr ""
 
 #: cafe-panel/panel-test-applets.c:41
 msgid "Specify the initial size of the applet (xx-small, medium, large etc.)"
-msgstr ""
-"Указать начальный размер апплета (xx-small, medium, large и так далее)"
+msgstr "Указать начальный размер апплета (xx-small, medium, large и так далее)"
 
 #: cafe-panel/panel-test-applets.c:42
 msgid ""
@@ -3318,19 +3256,19 @@ msgstr "Путь _параметров:"
 msgid "Hide Panel"
 msgstr "Скрыть панель"
 
-#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
 msgid "Top Panel"
 msgstr "Верхняя панель"
 
-#: cafe-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1651
 msgid "Bottom Panel"
 msgstr "Нижняя панель"
 
-#: cafe-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1653
 msgid "Left Panel"
 msgstr "Левая панель"
 
-#: cafe-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Right Panel"
 msgstr "Правая панель"
 
@@ -3348,17 +3286,17 @@ msgstr "Не удалось выполнить «%s»"
 msgid "file"
 msgstr "файл"
 
-#: cafe-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:876
 msgid "Home Folder"
 msgstr "Домашний каталог"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:888
 msgid "File System"
 msgstr "Файловая система"
 
-#: cafe-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1062
 msgid "Search"
 msgstr "Поиск"
 
@@ -3366,7 +3304,8 @@ msgstr "Поиск"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: cafe-panel/panel-util.c:1106
+#.
+#: cafe-panel/panel-util.c:1108
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
@@ -3416,8 +3355,98 @@ msgstr "Демонстрационный апплет DBus"
 msgid "A simple applet for testing the CAFE panel"
 msgstr "Простой апплет для проверки панели CAFE"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
-msgid "cafe-gegl"
-msgstr "cafe-gegl"
+#~ msgid ""
+#~ "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+
+#~ msgid "cafe-panel-clock"
+#~ msgstr "cafe-panel-clock"
+
+#~ msgid ""
+#~ "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2002-2005 Vincent Untz\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2002-2005 Vincent Untz\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+
+#~ msgid "cafe-panel-fish"
+#~ msgstr "cafe-panel-fish"
+
+#~ msgid ""
+#~ "Copyright © 2002 Red Hat, Inc.\n"
+#~ "Copyright © 2003-2006 Vincent Untz\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Copyright © 2002 Red Hat, Inc.\n"
+#~ "Copyright © 2003-2006 Vincent Untz\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+
+#~ msgid "cafe-panel-notification-area"
+#~ msgstr "cafe-panel-notification-area"
+
+#~ msgid "cafe-panel-window-menu"
+#~ msgstr "cafe-panel-window-menu"
+
+#~ msgid "cafe-panel-workspace-switcher"
+#~ msgstr "cafe-panel-workspace-switcher"
+
+#~ msgid "cafe-panel-window-list"
+#~ msgstr "cafe-panel-window-list"
+
+#~ msgid "user-desktop"
+#~ msgstr "user-desktop"
+
+#~ msgid ""
+#~ "Copyright © 2002 Red Hat, Inc.\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Copyright © 2002 Red Hat, Inc.\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+
+#~ msgid ""
+#~ "Copyright © 2000 Helix Code, Inc.\n"
+#~ "Copyright © 2001 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2003 Sun Microsystems, Inc.\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Copyright © 2000 Helix Code, Inc.\n"
+#~ "Copyright © 2001 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2003 Sun Microsystems, Inc.\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+
+#~ msgid "cafe-panel"
+#~ msgstr "cafe-panel"
+
+#~ msgid ""
+#~ "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2004 Vincent Untz\n"
+#~ "Copyright © 2011-2020 CAFE developers"
+#~ msgstr ""
+#~ "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2004 Vincent Untz\n"
+#~ "Copyright © 2011-2020 CAFE developers"
+
+#~ msgid "Reset this panel?"
+#~ msgstr "Сбросить эту панель?"
+
+#~ msgid ""
+#~ "When a panel is reset, all \n"
+#~ "custom settings are lost."
+#~ msgstr "При сбросе панели все пользовательские настройки теряются."
+
+#~ msgid "_Reset Panel"
+#~ msgstr "_Сброс Панели"
+
+#~ msgid "cafe-gegl"
+#~ msgstr "cafe-gegl"

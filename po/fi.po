@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Mikko Harhanen <gitti@mikkoharhanen.fi>, 2020
 # Wolfgang Ulbrich <cafe@raveit.de>, 2020
@@ -14,19 +14,19 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Ammuu5, 2020
 # Kimmo Kujansuu <mrkujansuu@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.23.2\n"
+"Project-Id-Version: cafe-panel 1.25.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2020-01-12 18:05+0100\n"
+"POT-Creation-Date: 2023-03-23 18:48+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>, 2020\n"
 "Language-Team: Finnish (https://www.transifex.com/cafe/teams/13566/fi/)\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
@@ -51,7 +51,8 @@ msgstr "%I.%M.%S %p"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:504
+#.
+#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
 msgid "%l:%M %p"
 msgstr "%l.%M %p"
 
@@ -62,7 +63,7 @@ msgstr "%l.%M %p"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1604
+#: applets/clock/clock.c:454 applets/clock/clock.c:1603
 msgid "%H:%M:%S"
 msgstr "%H.%M.%S"
 
@@ -76,9 +77,10 @@ msgstr "%H.%M.%S"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1610
-#: applets/clock/clock-location-tile.c:464
-#: applets/clock/clock-location-tile.c:511
+#.
+#: applets/clock/clock.c:454 applets/clock/clock.c:1609
+#: applets/clock/clock-location-tile.c:462
+#: applets/clock/clock-location-tile.c:509
 msgid "%H:%M"
 msgstr "%H.%M"
 
@@ -120,7 +122,7 @@ msgstr "Piilota kuukauden kalenteri napsauttamalla tästä"
 msgid "Click to view month calendar"
 msgstr "Näytä kuukauden kalenteri napsauttamalla tästä"
 
-#: applets/clock/clock.c:1442
+#: applets/clock/clock.c:1441
 msgid "Computer Clock"
 msgstr "Tietokoneen kello"
 
@@ -130,7 +132,7 @@ msgstr "Tietokoneen kello"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1589
+#: applets/clock/clock.c:1588
 msgid "%I:%M:%S %p"
 msgstr "%I.%M.%S %p"
 
@@ -140,108 +142,108 @@ msgstr "%I.%M.%S %p"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1597
+#: applets/clock/clock.c:1596
 msgid "%I:%M %p"
 msgstr "%I.%M %p"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1643
+#: applets/clock/clock.c:1642
 msgid "%A, %B %d %Y"
 msgstr "%A %e. %Bta %Y"
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1673
 msgid "Set System Time..."
 msgstr "Aseta tietokoneen aika…"
 
-#: applets/clock/clock.c:1675
+#: applets/clock/clock.c:1674
 msgid "Set System Time"
 msgstr "Aseta tietokoneen aika"
 
-#: applets/clock/clock.c:1690
+#: applets/clock/clock.c:1689
 msgid "Failed to set the system time"
 msgstr "Tietokoneen aikaa ei voi asettaa"
 
-#: applets/clock/clock.c:1888 applets/fish/fish.c:1694
-#: applets/notification_area/main.c:292 applets/vncklet/window-list.c:357
-#: applets/vncklet/workspace-switcher.c:389
+#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
+#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
+#: applets/vncklet/workspace-switcher.c:393
 msgid "_Preferences"
 msgstr "_Asetukset"
 
-#: applets/clock/clock.c:1891 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1697 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:295 applets/vncklet/showdesktop.c:241
-#: applets/vncklet/window-list.c:365 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:98 applets/vncklet/workspace-switcher.c:397
+#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
+#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
-#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
 #: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_Ohje"
 
-#: applets/clock/clock.c:1894 applets/fish/fish.c:1700
-#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:249
-#: applets/vncklet/window-list.c:373 applets/vncklet/window-menu.c:106
-#: applets/vncklet/workspace-switcher.c:405
+#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
+#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
+#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
+#: applets/vncklet/workspace-switcher.c:409
 msgid "_About"
 msgstr "_Tietoja"
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1894
 msgid "Copy _Time"
 msgstr "Kopioi _aika"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1897
 msgid "Copy _Date"
 msgstr "Kopioi _päiväys"
 
-#: applets/clock/clock.c:1903
+#: applets/clock/clock.c:1900
 msgid "Ad_just Date & Time"
 msgstr "_Aseta päiväys ja aika"
 
-#: applets/clock/clock.c:2899
+#: applets/clock/clock.c:2898
 msgid "Choose Location"
 msgstr "Valitse sijainti"
 
-#: applets/clock/clock.c:2978
+#: applets/clock/clock.c:2977
 msgid "Edit Location"
 msgstr "Muokkaa sijaintia"
 
-#: applets/clock/clock.c:3105
+#: applets/clock/clock.c:3104
 msgid "City Name"
 msgstr "Kaupungin nimi"
 
-#: applets/clock/clock.c:3109
+#: applets/clock/clock.c:3108
 msgid "City Time Zone"
 msgstr "Kaupungin aikavyöhyke"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3388
 #: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "Kello"
 
-#: applets/clock/clock.c:3390
+#: applets/clock/clock.c:3389
 msgid "About Clock"
 msgstr "Tietoja kellosta"
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3391
 msgid "The Clock displays the current time and date"
 msgstr "Kello näyttää nykyisen ajan ja päiväyksen"
 
-#: applets/clock/clock.c:3393
+#: applets/clock/clock.c:3392
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:567
-#: applets/notification_area/main.c:286 applets/vncklet/showdesktop.c:508
-#: applets/vncklet/window-list.c:831 applets/vncklet/window-menu.c:88
-#: applets/vncklet/workspace-switcher.c:644
-#: cafe-panel/panel-context-menu.c:124
+#: applets/clock/clock.c:3397 applets/fish/fish.c:568
+#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
+#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
+#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr ""
 "Tommi Vainikainen, 2005\n"
@@ -255,10 +257,10 @@ msgid "Time & Date"
 msgstr "Päiväys ja aika"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-ctk.c:136
-#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
-#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
-#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
+#: cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "_Peru"
 
@@ -282,10 +284,10 @@ msgstr "Kellon asetukset"
 msgid "Time _Settings"
 msgstr "Aika-a_setukset"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -333,7 +335,7 @@ msgstr "_Näytä lämpötila"
 msgid "General"
 msgstr "Yleiset"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
 msgid "_Add"
 msgstr "_Lisää"
 
@@ -386,12 +388,11 @@ msgid "South"
 msgstr "Eteläinen"
 
 #: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
-#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
+#: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "_OK"
 
-#. Languages that have a single word that translates as either "state" or
-#. "province" should use that instead of "region".
+#. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
 #: applets/clock/clock.ui:1012
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
@@ -424,17 +425,16 @@ msgstr "_Leveyspiiri:"
 msgid "Failed to set the system timezone"
 msgstr "Järjestelmän aikavyöhykettä ei voi asettaa"
 
-#: applets/clock/clock-location-tile.c:231
+#: applets/clock/clock-location-tile.c:229
 msgid "<small>Set...</small>"
 msgstr "<small>Aseta…</small>"
 
-#: applets/clock/clock-location-tile.c:232
+#: applets/clock/clock-location-tile.c:230
 msgid "<small>Set</small>"
 msgstr "<small>Aseta</small>"
 
-#: applets/clock/clock-location-tile.c:308
-msgid ""
-"Set location as current location and use its timezone for this computer"
+#: applets/clock/clock-location-tile.c:306
+msgid "Set location as current location and use its timezone for this computer"
 msgstr ""
 "Aseta sijainti nykyiseksi sijainniksi ja käytä sitä tietokoneen "
 "aikavyöhykkeenä"
@@ -445,7 +445,7 @@ msgstr ""
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:441
+#: applets/clock/clock-location-tile.c:439
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l.%M <small>%p (%A)</small>"
 
@@ -454,7 +454,7 @@ msgstr "%l.%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:449
+#: applets/clock/clock-location-tile.c:447
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%H.%M <small>(%A)</small>"
 
@@ -462,27 +462,27 @@ msgstr "%H.%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:458
+#: applets/clock/clock-location-tile.c:456
 msgid "%l:%M <small>%p</small>"
 msgstr "%l.%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:600
+#: applets/clock/clock-location-tile.c:598
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:612
-#: applets/clock/clock-location-tile.c:621
+#: applets/clock/clock-location-tile.c:610
+#: applets/clock/clock-location-tile.c:619
 msgid "Unknown"
 msgstr "Tuntematon"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:614
+#: applets/clock/clock-location-tile.c:612
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s, tuntuu %s"
 
-#: applets/clock/clock-location-tile.c:637
+#: applets/clock/clock-location-tile.c:635
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "Aurinko nousee: %s / laskee: %s"
@@ -505,14 +505,14 @@ msgstr "Tuntimuoto"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
-"This key specifies the hour format used by the clock applet. Possible values"
-" are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
-" to \"internet\", the clock will display Internet time. The Internet time "
-"system divides the day into 1000 \".beats\". There are no time zones in this"
-" system, so time is the same all over the world. If set to \"unix\", the "
+"This key specifies the hour format used by the clock applet. Possible values "
+"are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set "
+"to \"internet\", the clock will display Internet time. The Internet time "
+"system divides the day into 1000 \".beats\". There are no time zones in this "
+"system, so time is the same all over the world. If set to \"unix\", the "
 "clock will display time in seconds since Epoch, i.e. 1970-01-01. If set to "
-"\"custom\", the clock will display time according to the format specified in"
-" the custom_format key."
+"\"custom\", the clock will display time according to the format specified in "
+"the custom_format key."
 msgstr ""
 "Tämä avain määrittelee kellosovelman näyttämän ajan muodon. Mahdollisia "
 "arvoja ovat ”12-hour” (12-tuntinen), ”24-hour” (24-tuntinen), ”internet”, "
@@ -520,8 +520,8 @@ msgstr ""
 "”Internet-aikaa”, jossa päivä on jaettu tuhanteen ”.sykäykseen”. "
 "Aikavyöhykkeitä tässä järjestelmässä ei ole, joten aika on sama kaikkialla. "
 "Jos arvo on ”unix”, kello laskee sekunteja alkukohdasta (1.1.1970) alkaen. "
-"Jos arvo on ”custom”, kello näyttää ajan käyttäjän avaimessa ”custom_format”"
-" määrittelemässä muodossa."
+"Jos arvo on ”custom”, kello näyttää ajan käyttäjän avaimessa ”custom_format” "
+"määrittelemässä muodossa."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:34
 msgid "Custom format of the clock"
@@ -535,8 +535,8 @@ msgid ""
 "information."
 msgstr ""
 "Tämä avain määrittelee kellosovelman näyttämän ajan muodon, kun avaimen "
-"”format” arvo on ”custom”. Voit käyttää kaikkia strftime()-kutsun ymmärtämiä"
-" aikamääreitä. Lue strftime-ohjesivulta lisätietoja."
+"”format” arvo on ”custom”. Voit käyttää kaikkia strftime()-kutsun ymmärtämiä "
+"aikamääreitä. Lue strftime-ohjesivulta lisätietoja."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:39
 msgid "Show time with seconds"
@@ -630,12 +630,6 @@ msgstr "Tehdas kellosovelmalle"
 msgid "Get the current time and date"
 msgstr "Hanki nykyinen aika ja päivämäärä"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-clock"
-msgstr ""
-
 #: applets/fish/fish.c:266
 #, c-format
 msgid ""
@@ -653,7 +647,7 @@ msgstr ""
 msgid "Images"
 msgstr "Kuvat"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:578 applets/fish/fish.c:684
+#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
 #, no-c-format
 msgid "%s the Fish"
 msgstr "%s-kala"
@@ -687,24 +681,25 @@ msgstr "Tietoja Fish"
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/fish/fish.c:579
+#: applets/fish/fish.c:580
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "%s-kala, nykyaikainen oraakkeli"
 
-#: applets/fish/fish.c:645
+#: applets/fish/fish.c:646
 msgid "Unable to locate the command to execute"
 msgstr "Suoritettavan komennon paikannus epäonnistui"
 
-#: applets/fish/fish.c:689
+#: applets/fish/fish.c:690
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "%s-kala sanoo:"
 
-#: applets/fish/fish.c:752
+#: applets/fish/fish.c:753
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -715,16 +710,16 @@ msgstr ""
 "\n"
 "Lisätiedot: %s"
 
-#: applets/fish/fish.c:849
+#: applets/fish/fish.c:850
 msgid "_Speak again"
 msgstr "_Sano uudestaan"
 
-#: applets/fish/fish.c:930
+#: applets/fish/fish.c:931
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
 msgstr "Asetettu komento ei toimi, joten se on korjattu komennolla: %s"
 
-#: applets/fish/fish.c:963
+#: applets/fish/fish.c:964
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -735,7 +730,7 @@ msgstr ""
 "\n"
 "Lisätiedot: %s"
 
-#: applets/fish/fish.c:979
+#: applets/fish/fish.c:980
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -746,15 +741,15 @@ msgstr ""
 "\n"
 "Lisätiedot: %s"
 
-#: applets/fish/fish.c:1551
+#: applets/fish/fish.c:1552
 msgid "The water needs changing"
 msgstr "Vesi kaipaisi vaihtamista"
 
-#: applets/fish/fish.c:1553
+#: applets/fish/fish.c:1554
 msgid "Look at today's date!"
 msgstr "Katso päiväystä!"
 
-#: applets/fish/fish.c:1635
+#: applets/fish/fish.c:1636
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "%s-kala, ennustaja"
@@ -846,8 +841,8 @@ msgstr "Kalan animaation ruutujen määrä"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
-"This key specifies the number of frames that will be displayed in the fish's"
-" animation."
+"This key specifies the number of frames that will be displayed in the fish's "
+"animation."
 msgstr "Kalan animaation ruutujen määrä."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
@@ -880,12 +875,6 @@ msgstr "Sieltä Mistä Tuo Tyhmä Kala Tuli"
 msgid "Display a swimming fish or another anicafed creature"
 msgstr "Näytä uiva kala tai jokin muu animoitu olento"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-fish"
-msgstr ""
-
 #: applets/notification_area/main.c:276
 #: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Notification Area"
@@ -900,10 +889,11 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/notification_area/main.c:485
+#: applets/notification_area/main.c:486
 msgid "Panel Notification Area"
 msgstr "Paneelin ilmoitusalue"
 
@@ -944,20 +934,14 @@ msgstr "Tuotannon ilmoitusalueelle"
 msgid "Area where notification icons appear"
 msgstr "Alue, jossa ilmoitusten kuvakkeet näkyvät"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-notification-area"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "Näytä kaikkien työtilojen ikkunat"
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
-"If true, the window list will show windows from all workspaces. Otherwise it"
-" will only display windows from the current workspace."
+"If true, the window list will show windows from all workspaces. Otherwise it "
+"will only display windows from the current workspace."
 msgstr ""
 "Jos tosi, niin kaikkien työtilojen ikkunat näkyvät ikkunaluettelossa, "
 "muulloin vain nykyisen työtilan ikkunat näkyvät."
@@ -972,8 +956,8 @@ msgid ""
 "Possible values are \"never\", \"auto\" and \"always\"."
 msgstr ""
 "Määrittelee, milloin saman sovelluksen ikkunat ryhmittyvät "
-"ikkunaluettelossa. Käypiä arvoja ovat ”never” (ei koskaan), ”auto” "
-"(automaattisesti) ja ”always” (aina)."
+"ikkunaluettelossa. Käypiä arvoja ovat ”never” (ei koskaan), "
+"”auto” (automaattisesti) ja ”always” (aina)."
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
 msgid "Move windows to current workspace when unminimized"
@@ -997,8 +981,8 @@ msgid ""
 "the workspaces. Otherwise they will display the windows on the workspace. "
 "This setting only works when the window manager is Croma."
 msgstr ""
-"Jos tosi, työtilanvaihtimessa näkyville työtiloille näytetään nimet. Muutoin"
-" työtilat näyttävät työtilassa olevat ikkunat. Tämä toimii vain, jos "
+"Jos tosi, työtilanvaihtimessa näkyville työtiloille näytetään nimet. Muutoin "
+"työtilat näyttävät työtilassa olevat ikkunat. Tämä toimii vain, jos "
 "ikkunointiohjelmana on croma."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
@@ -1010,8 +994,8 @@ msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
 msgstr ""
-"Jos tämä on tosi, kaikki työtilat näkyvät työtilanvaihtimessa. Muulloin vain"
-" nykyinen työtila näkyy."
+"Jos tämä on tosi, kaikki työtilat näkyvät työtilanvaihtimessa. Muulloin vain "
+"nykyinen työtila näkyy."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
@@ -1020,12 +1004,12 @@ msgstr "Rivejä työtilanvaihtimessa"
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
-"vertical layout) the workspace switcher shows the workspaces in. This key is"
-" only relevant if the display_all_workspaces key is true."
+"vertical layout) the workspace switcher shows the workspaces in. This key is "
+"only relevant if the display_all_workspaces key is true."
 msgstr ""
 "Kun kaikki työtilat näkyvät, tämä määrittää kuinka monessa rivissä (vaaka-"
-"asettelu) tai sarakkeessa (pystyasettelu) ne ovat työtilanvaihtimessa. Tällä"
-" on merkitystä vain jos avaimen ”display_all_workspaces” arvo on tosi."
+"asettelu) tai sarakkeessa (pystyasettelu) ne ovat työtilanvaihtimessa. Tällä "
+"on merkitystä vain jos avaimen ”display_all_workspaces” arvo on tosi."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
@@ -1048,7 +1032,7 @@ msgid "Factory for the window navigation related applets"
 msgstr "Tehdas selausikkunoihin liittyville sovelmille"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
+#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
 msgid "Window Selector"
 msgstr "Ikkunanvalitsin"
 
@@ -1056,14 +1040,8 @@ msgstr "Ikkunanvalitsin"
 msgid "Switch between open windows using a menu"
 msgstr "Vaihda avointen ikkunoiden välillä käyttäen valikkoa"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-window-menu"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:634
+#: applets/vncklet/workspace-switcher.c:638
 msgid "Workspace Switcher"
 msgstr "Työtilanvaihtaja"
 
@@ -1071,26 +1049,14 @@ msgstr "Työtilanvaihtaja"
 msgid "Switch between workspaces"
 msgstr "Vaihda työtilojen välillä"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
-msgid "cafe-panel-workspace-switcher"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:821
+#: applets/vncklet/window-list.c:826
 msgid "Window List"
 msgstr "Ikkunaluettelo"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "Vaihda avoimia ikkunoita painikkeiden avulla"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
-msgid "cafe-panel-window-list"
-msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
@@ -1099,12 +1065,6 @@ msgstr "Näytä työpöytä"
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "Piilota sovellusikkunat ja näytä työpöytä"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
-msgid "user-desktop"
-msgstr ""
 
 #: applets/vncklet/showdesktop.c:184
 #, c-format
@@ -1115,52 +1075,53 @@ msgstr "Tiedoston ”%s” lataus epäonnistui: %s\n"
 msgid "Icon not found"
 msgstr "Kuvaketta ei löydy"
 
-#: applets/vncklet/showdesktop.c:265
+#: applets/vncklet/showdesktop.c:266
 msgid "Click here to restore hidden windows."
 msgstr "Palauta piilotetut ikkunat napsauttamalla tätä"
 
-#: applets/vncklet/showdesktop.c:269
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to hide all windows and show the desktop."
 msgstr "Piilota kaikki ikkunat ja näytä työpöytä napsauttamalla tätä."
 
-#: applets/vncklet/showdesktop.c:439 applets/vncklet/showdesktop.c:498
+#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
 msgid "Show Desktop Button"
 msgstr "Näytä työpöytä -painike"
 
-#: applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:500
 msgid "About Show Desktop Button"
 msgstr "Näytä työpöytä -painikeen tiedot"
 
-#: applets/vncklet/showdesktop.c:501
+#: applets/vncklet/showdesktop.c:502
 msgid "This button lets you hide all windows and show the desktop."
 msgstr "Tämä painike piilottaa kaikki ikkunat ja näyttää työpöydän."
 
-#: applets/vncklet/showdesktop.c:502 applets/vncklet/window-list.c:825
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
+#: applets/vncklet/workspace-switcher.c:642
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:529
+#: applets/vncklet/showdesktop.c:531
 msgid ""
-"Your window manager does not support the show desktop button, or you are not"
-" running a window manager."
+"Your window manager does not support the show desktop button, or you are not "
+"running a window manager."
 msgstr "Ikkunointiohjelma ei tue työpöytäpainiketta tai se ei ole käynnissä."
 
-#: applets/vncklet/window-list.c:349
+#: applets/vncklet/window-list.c:354
 msgid "_System Monitor"
 msgstr "Järjestelmän _valvonta"
 
-#: applets/vncklet/window-list.c:822
+#: applets/vncklet/window-list.c:827
 msgid "About Window List"
 msgstr "Tietoja ikkunaluettelosta"
 
-#: applets/vncklet/window-list.c:824
+#: applets/vncklet/window-list.c:829
 msgid ""
-"The Window List shows a list of all windows in a set of buttons and lets you"
-" browse them."
+"The Window List shows a list of all windows in a set of buttons and lets you "
+"browse them."
 msgstr ""
 "Ikkunaluettelo näyttää kaikki ikkunat joukkona painikkeita joiden avulla "
 "ikkunoita voi vaihtaa."
@@ -1250,25 +1211,26 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "riviä"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 msgid "columns"
 msgstr "saraketta"
 
-#: applets/vncklet/workspace-switcher.c:635
+#: applets/vncklet/workspace-switcher.c:639
 msgid "About Workspace Switcher"
 msgstr "Tietoja työtilan vaihtajasta"
 
-#: applets/vncklet/workspace-switcher.c:637
+#: applets/vncklet/workspace-switcher.c:641
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
@@ -1370,11 +1332,11 @@ msgstr "Historia \"ajetut ohjelmat\" -valintaikkunassa"
 #: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
-"commands are sorted descendingly by recency (e.g., most recent command comes"
-" first)."
+"commands are sorted descendingly by recency (e.g., most recent command comes "
+"first)."
 msgstr ""
-"Tämä on komentojen luettelo, joita käytetään \"ajetut ohjelmat\" "
-"-valintaikkunassa. Komennot lajitellaan laskevasti (viimeisin komento tulee "
+"Tämä on komentojen luettelo, joita käytetään \"ajetut ohjelmat\" -"
+"valintaikkunassa. Komennot lajitellaan laskevasti (viimeisin komento tulee "
 "ensin)."
 
 #: data/org.cafe.panel.gschema.xml.in:30
@@ -1410,8 +1372,8 @@ msgid ""
 "A list of panel IDs. Each ID identifies an individual toplevel panel. The "
 "settings for each of these panels are stored in /apps/panel/toplevels/$(id)."
 msgstr ""
-"Luettelo paneelien ID:istä. Jokainen ID kuvaa yksittäistä ylätason paneelia."
-" Näiden paneelien asetukset ovat sijainnissa /apps/panel/toplevels/$(id)."
+"Luettelo paneelien ID:istä. Jokainen ID kuvaa yksittäistä ylätason paneelia. "
+"Näiden paneelien asetukset ovat sijainnissa /apps/panel/toplevels/$(id)."
 
 #: data/org.cafe.panel.gschema.xml.in:45
 msgid "Panel object ID list"
@@ -1419,14 +1381,14 @@ msgstr "Paneeliesineiden ID-luettelo"
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object "
-"(e.g. a launcher, action button or menu button/bar). The settings for each "
-"of these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object (e."
+"g. a launcher, action button or menu button/bar). The settings for each of "
+"these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
 "Luettelo paneeliesineiden ID:istä. Jokainen ID kuvaa yksittäistä "
-"paneeliesinettä (esim. käynnistin, toimintopainike, valikkopainike tai "
-"-palkki). Näiden paneeliesineiden asetukset ovat sijainnissa "
-"/apps/panel/objects/$(id)."
+"paneeliesinettä (esim. käynnistin, toimintopainike, valikkopainike tai -"
+"palkki). Näiden paneeliesineiden asetukset ovat sijainnissa /apps/panel/"
+"objects/$(id)."
 
 #: data/org.cafe.panel.gschema.xml.in:50
 msgid "Enable tooltips"
@@ -1462,8 +1424,7 @@ msgid ""
 "If true, a dialog is shown asking for confirmation if the user wants to "
 "remove a panel."
 msgstr ""
-"Jos tosi, ikkuna avautuu ja kysyy varmistusta, kun käyttäjä poistaa "
-"paneelin."
+"Jos tosi, ikkuna avautuu ja kysyy varmistusta, kun käyttäjä poistaa paneelin."
 
 #: data/org.cafe.panel.gschema.xml.in:69
 msgid "Highlight launchers on mouseover"
@@ -1481,8 +1442,8 @@ msgstr "Täydellinen paneelin lukinta"
 #: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
-"panel. Individual applets may need to be locked down separately however. The"
-" panel must be restarted for this to take effect."
+"panel. Individual applets may need to be locked down separately however. The "
+"panel must be restarted for this to take effect."
 msgstr ""
 "Jos tosi, paneeli ei salli muutoksia paneelin asetuksiin. Yksittäiset "
 "sovelmat kuitenkin täytynee lukita erikseen. Paneeli täytyy käynnistää "
@@ -1501,9 +1462,9 @@ msgid ""
 msgstr ""
 "Luettelo sovelmien IID:istä, jotka paneeli jättää huomiotta. Tällä tavoin "
 "voit estää tiettyjen sovelmien latautumisen tai valikoissa näkymisen. Jos "
-"esimerkiksi haluat poistaa sovelman ”mini-commander” käytöstä, lisää "
-"”OAFIID:CAFE_MiniCommanderApplet” tähän luetteloon. Paneeli täytyy "
-"käynnistää uudelleen, jotta tämä tulee voimaan."
+"esimerkiksi haluat poistaa sovelman ”mini-commander” käytöstä, lisää ”OAFIID:"
+"CAFE_MiniCommanderApplet” tähän luetteloon. Paneeli täytyy käynnistää "
+"uudelleen, jotta tämä tulee voimaan."
 
 #: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
@@ -1583,8 +1544,8 @@ msgstr "Valikon kuvakkeiden koko"
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
-"Set the size of icons used in the menu. The panel must be restarted for this"
-" to take effect."
+"Set the size of icons used in the menu. The panel must be restarted for this "
+"to take effect."
 msgstr ""
 "Määritä valikossa käytettyjen kuvakkeiden koko. Paneeli on käynnistettävä "
 "uudelleen, jotta tämä tulee voimaan."
@@ -1598,8 +1559,8 @@ msgid ""
 "Maximum number of menu items (i.e. bookmarks) that are displayed without "
 "being put in a submenu."
 msgstr ""
-"Valikkon kohteiden (eli kirjanmerkkien) enimmäismäärä, joka näytetään ilman,"
-" että se otetaan käyttöön alivalikossa."
+"Valikkon kohteiden (eli kirjanmerkkien) enimmäismäärä, joka näytetään ilman, "
+"että se otetaan käyttöön alivalikossa."
 
 #: data/org.cafe.panel.object.gschema.xml.in:5
 msgid "Panel object type"
@@ -1635,8 +1596,8 @@ msgstr "Tulkitse sijainti suhteessa oikeaan reunaan tai alareunaan"
 
 #: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
-"If true, the position of the object is interpreted relative to the right (or"
-" bottom if vertical) edge of the panel."
+"If true, the position of the object is interpreted relative to the right (or "
+"bottom if vertical) edge of the panel."
 msgstr ""
 "Jos tosi, paneeliesineen sijainti tulkitaan annetuksi suhteessa paneelin "
 "oikeaan reunaan (tai alareunaan pystypaneeleissa)."
@@ -1647,8 +1608,8 @@ msgstr "Lukitse esine paneeliin"
 
 #: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
-"If true, the user may not move the applet without first unlocking the object"
-" using the \"Unlock\" menuitem."
+"If true, the user may not move the applet without first unlocking the object "
+"using the \"Unlock\" menuitem."
 msgstr ""
 "Jos tosi, käyttäjä ei voi siirtää sovelmaa avaamatta esineen lukitusta "
 "valitsemalla valikosta ”Avaa lukitus”."
@@ -1659,14 +1620,13 @@ msgstr "Sovelman IID"
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. "
-"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
-"applet\")."
+"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
+"ClockApplet\". This key is only relevant if the object_type key is "
+"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
 msgstr ""
 "Sovelluksen tunnus - esim. \"ClockAppletFactory::ClockApplet\". Tämä avain "
-"on merkityksellinen vain, jos object_type -avain on \"external-applet\" (tai"
-" vanhentunut \"cafecomponent-applet\")."
+"on merkityksellinen vain, jos object_type -avain on \"external-applet\" (tai "
+"vanhentunut \"cafecomponent-applet\")."
 
 #: data/org.cafe.panel.object.gschema.xml.in:35
 msgid "Panel attached to drawer"
@@ -1687,8 +1647,7 @@ msgstr "Laatikon tai valikon vinkki"
 #: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
-"only relevant if the object_type key is \"drawer-object\" or \"menu-"
-"object\"."
+"only relevant if the object_type key is \"drawer-object\" or \"menu-object\"."
 msgstr ""
 "Tämän laatikon tai valikon vinkissä näkyvä teksti. Tällä on merkitystä vain "
 "jos avaimen ”object_type” arvo on ”drawer-object” tai ”menu-object”."
@@ -1704,8 +1663,8 @@ msgid ""
 "object_type key is \"menu-object\" or \"drawer-object\"."
 msgstr ""
 "Jos tosi, avain ”custom_icon” määrittelee painikkeen mukautetun kuvakkeen. "
-"Jos epätosi, avain ”custom_icon” jää huomiotta. Tällä on merkitystä vain jos"
-" avaimen ”object_type” arvo on ”menu-object” tai ”drawer-object”."
+"Jos epätosi, avain ”custom_icon” jää huomiotta. Tällä on merkitystä vain jos "
+"avaimen ”object_type” arvo on ”menu-object” tai ”drawer-object”."
 
 #: data/org.cafe.panel.object.gschema.xml.in:50
 msgid "Icon used for object's button"
@@ -1781,10 +1740,10 @@ msgid ""
 "\"logout\", \"run\", \"search\" and \"screenshot\". This key is only "
 "relevant if the object_type key is \"action-applet\"."
 msgstr ""
-"Toimintotyyppi, jota tämä painike vastaa. Mahdollisia arvoja ovat ”lock” "
-"(lukitse), ”logout” (kirjaudu ulos), ”search” (etsi) ja ”screenshot” (ota "
-"kuvakaappaus). Tällä on merkitystä vain jos avaimen ”object_type” arvo on "
-"”action-applet”."
+"Toimintotyyppi, jota tämä painike vastaa. Mahdollisia arvoja ovat "
+"”lock” (lukitse), ”logout” (kirjaudu ulos), ”search” (etsi) ja "
+"”screenshot” (ota kuvakaappaus). Tällä on merkitystä vain jos avaimen "
+"”object_type” arvo on ”action-applet”."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:5
 msgid "Name to identify panel"
@@ -1830,8 +1789,8 @@ msgstr "Laajenna viemään koko ruudun leveys"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
-"vertical panel). In this mode the panel can only be placed at a screen edge."
-" If false, the panel will only be large enough to accommodate the applets, "
+"vertical panel). In this mode the panel can only be placed at a screen edge. "
+"If false, the panel will only be large enough to accommodate the applets, "
 "launchers and buttons on the panel."
 msgstr ""
 "Jos tosi, paneeli on koko ruudun leveyden kokoinen (tai korkeuden, jos "
@@ -1848,17 +1807,17 @@ msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
 "the panel is on. In un-expanded mode the difference between \"top\" and "
-"\"bottom\" is less important - both indicate that this is a horizontal panel"
-" - but still give a useful hint as to how some panel objects should behave. "
-"For example, on a \"top\" panel a menu button will pop up its menu below the"
-" panel, whereas on a \"bottom\" panel the menu will be popped up above the "
+"\"bottom\" is less important - both indicate that this is a horizontal panel "
+"- but still give a useful hint as to how some panel objects should behave. "
+"For example, on a \"top\" panel a menu button will pop up its menu below the "
+"panel, whereas on a \"bottom\" panel the menu will be popped up above the "
 "panel."
 msgstr ""
-"Paneelin suunta. Mahdollisia arvoja ovat ”top” (yläreuna), ”bottom” "
-"(alareuna), ”left” (vasen reuna) ja ”right” (oikea reuna). Laajennetussa "
-"tilassa tämä määrittelee millä ruudun reunalla paneeli on. "
-"Laajentamattomassa tilassa ero arvojen ”top” ja ”bottom” välillä on vähemmän"
-" tärkeä, molemmat tarkoittavat, että paneeli on vaakasuuntainen, mutta "
+"Paneelin suunta. Mahdollisia arvoja ovat ”top” (yläreuna), "
+"”bottom” (alareuna), ”left” (vasen reuna) ja ”right” (oikea reuna). "
+"Laajennetussa tilassa tämä määrittelee millä ruudun reunalla paneeli on. "
+"Laajentamattomassa tilassa ero arvojen ”top” ja ”bottom” välillä on vähemmän "
+"tärkeä, molemmat tarkoittavat, että paneeli on vaakasuuntainen, mutta "
 "antavat silti vihjeen eräille paneeliesineille miten niiden pitäisi toimia. "
 "Esimerkiksi yläpaneelissa valikkopainike avaa valikon paneelin alle, kun "
 "taas alapaneelissa valikko avautuu paneelin ylle."
@@ -1889,8 +1848,8 @@ msgid ""
 "at the screen edge specified by the orientation key."
 msgstr ""
 "Paneelin sijainti x-akselilla. Tällä on merkitystä vain laajentamattomassa "
-"tilassa. Laajennetussa tilassa tämä avain jää huomiotta ja paneeli sijoittuu"
-" ruudun reunalle ”orientation”-avaimen (suunta) mukaisesti."
+"tilassa. Laajennetussa tilassa tämä avain jää huomiotta ja paneeli sijoittuu "
+"ruudun reunalle ”orientation”-avaimen (suunta) mukaisesti."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:40
 msgid "Y co-ordinate of panel"
@@ -1903,8 +1862,8 @@ msgid ""
 "at the screen edge specified by the orientation key."
 msgstr ""
 "Paneelin sijainti y-akselilla. Tällä on merkitystä vain laajentamattomassa "
-"tilassa. Laajennetussa tilassa tämä avain jää huomiotta ja paneeli sijoittuu"
-" ruudun reunalle ”orientation”-avaimen (suunta) mukaisesti."
+"tilassa. Laajennetussa tilassa tämä avain jää huomiotta ja paneeli sijoittuu "
+"ruudun reunalle ”orientation”-avaimen (suunta) mukaisesti."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:45
 msgid "X co-ordinate of panel, starting from the right of the screen"
@@ -1942,8 +1901,8 @@ msgstr ""
 "Paneelin sijainti y-akselilla, alkaen näytön alalaidasta. Jos arvo on -1, "
 "arvoa ei käytetä ja käytetään arvoa avaimesta y. Jos arvo on suurempi kuin "
 "0, jätetään avaimen y arvo huomioimatta. Tällä arvolla on merkitystä vain "
-"laajentamattomassa tilassa. Laajennetussa tilassa tätä avainta ei huomioida,"
-" ja paneeli asetetaan orientation-avaimen määräämän sijainnin mukaisesti "
+"laajentamattomassa tilassa. Laajennetussa tilassa tätä avainta ei huomioida, "
+"ja paneeli asetetaan orientation-avaimen määräämän sijainnin mukaisesti "
 "näytön reunalle."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:55
@@ -1958,9 +1917,9 @@ msgid ""
 "and x_right keys specify the location of the panel."
 msgstr ""
 "Jos tosi, x- ja y-avaimet jätetään huomioimatta, ja paneeli sijoitetaan "
-"näytön x-akselilla keskelle. Jos paneelin kokoa muutetaan, se säilyy samassa"
-" paikassa, eli se kasvaa molemmilta sivuilta. Jos arvo on epätosi, x- ja "
-"y-avaimet määrittävät paneelin sijainnin."
+"näytön x-akselilla keskelle. Jos paneelin kokoa muutetaan, se säilyy samassa "
+"paikassa, eli se kasvaa molemmilta sivuilta. Jos arvo on epätosi, x- ja y-"
+"avaimet määrittävät paneelin sijainnin."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:60
 msgid "Center panel on y-axis"
@@ -1974,9 +1933,9 @@ msgid ""
 "and y_bottom keys specify the location of the panel."
 msgstr ""
 "Jos tosi, x- ja y-avaimet jätetään huomioimatta, ja paneeli sijoitetaan "
-"näytön y-akselilla keskelle. Jos paneelin kokoa muutetaan, se säilyy samassa"
-" paikassa, eli se kasvaa molemmilta sivuilta. Jos arvo on epätosi, x- ja "
-"y-avaimet määrittävät paneelin sijainnin."
+"näytön y-akselilla keskelle. Jos paneelin kokoa muutetaan, se säilyy samassa "
+"paikassa, eli se kasvaa molemmilta sivuilta. Jos arvo on epätosi, x- ja y-"
+"avaimet määrittävät paneelin sijainnin."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:65
 msgid "Automatically hide panel into corner"
@@ -2058,8 +2017,7 @@ msgstr "Piilossa olevasta paneelista näkyvien kuvapisteiden määrä"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
-"hidden into a corner. This key is only relevant if the auto_hide key is "
-"true."
+"hidden into a corner. This key is only relevant if the auto_hide key is true."
 msgstr ""
 "Määrittelee paneelista näkyvien kuvapisteiden määrän, kun se on piilottanut "
 "itsensä nurkkaan. Tällä on merkitystä vain jos avaimen ”auto_hide” arvo on "
@@ -2075,9 +2033,9 @@ msgid ""
 "\"slow\", \"medium\" and \"fast\". This key is only relevant if the "
 "enable_animations key is true."
 msgstr ""
-"Nopeus, jolla paneelianimaatiot näkyvät. Mahdollisia arvoja ovat ”slow” "
-"(hidas), ”medium” (keskinopea) ja ”fast” (nopea). Tällä on merkitystä vain "
-"jos avaimen ”enable_animations” arvo on tosi."
+"Nopeus, jolla paneelianimaatiot näkyvät. Mahdollisia arvoja ovat "
+"”slow” (hidas), ”medium” (keskinopea) ja ”fast” (nopea). Tällä on merkitystä "
+"vain jos avaimen ”enable_animations” arvo on tosi."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:108
 msgid "Background type"
@@ -2109,8 +2067,8 @@ msgstr "Taustavärin peittävyys"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
-"completely opaque (a value of less than 65535), the color will be composited"
-" onto the desktop background image."
+"completely opaque (a value of less than 65535), the color will be composited "
+"onto the desktop background image."
 msgstr ""
 "Määrittelee taustavärimuodon peittävyyden. Jos väri ei ole täysin peittävä "
 "(arvo on pienempi kuin 65535), väri piirtyy työpöydän taustakuvan päälle."
@@ -2227,7 +2185,7 @@ msgid "_Open"
 msgstr "_Avaa"
 
 #: cafe-panel/libpanel-util/panel-error.c:76
-#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
+#: cafe-panel/panel-applet-frame.c:800 cafe-panel/panel-applet-frame.c:988
 msgid "Error"
 msgstr "Virhe"
 
@@ -2274,7 +2232,7 @@ msgid "Cannot find an empty spot"
 msgstr "Tyhjää paikkaa ei löydy"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1650
+#: cafe-panel/panel-toplevel.c:1643
 msgid "Drawer"
 msgstr "Vetolaatikko"
 
@@ -2283,7 +2241,7 @@ msgid "_Add to Drawer..."
 msgstr "_Lisää laatikkoon…"
 
 #: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
-#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:247
 msgid "_Properties"
 msgstr "_Ominaisuudet"
 
@@ -2300,7 +2258,7 @@ msgid "- Edit .desktop files"
 msgstr "- Muokkaa .desktop-tiedostoja"
 
 #: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
 msgid "Create Launcher"
 msgstr "Luo käynnistin"
 
@@ -2313,7 +2271,7 @@ msgstr "Kansion ominaisuudet"
 msgid "Launcher Properties"
 msgstr "Käynnistimen ominaisuudet"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "Paneeli"
 
@@ -2323,12 +2281,6 @@ msgid ""
 "show the time, etc."
 msgstr ""
 "Käynnistä muita ohjelmia, hallitse ikkunoita eri tavoilla, näytä aika jne."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cafe-panel/cafe-panel.desktop.in:7
-msgid "cafe-panel"
-msgstr ""
 
 #: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
@@ -2360,7 +2312,7 @@ msgstr "_Käynnistä"
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "Avainta %s ei ole asetettu, joten käynnistintä ei voi ladata\n"
 
-#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Käynnistintä ei voi tallentaa"
@@ -2427,8 +2379,7 @@ msgstr "Kirjaudu ulos…"
 
 #: cafe-panel/panel-action-button.c:379
 msgid "Log out of this session to log in as a different user"
-msgstr ""
-"Kirjaudu ulos tästä istunnosta toisena käyttäjänä kirjautumista varten"
+msgstr "Kirjaudu ulos tästä istunnosta toisena käyttäjänä kirjautumista varten"
 
 #: cafe-panel/panel-action-button.c:388
 msgid "Run Application..."
@@ -2527,70 +2478,69 @@ msgstr "Ei yhteensopiva X11 kanssa"
 msgid "Not compatible with Wayland"
 msgstr "Ei yhteensopiva Waylandin kanssa"
 
-#: cafe-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1055
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "Etsi kohtaan ”%s” lisättävä _esine:"
 
-#: cafe-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1059
 msgid "Add to Drawer"
 msgstr "Lisää laatikkoon"
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Find an _item to add to the drawer:"
 msgstr "Valitse laatikkoon lisättävä _esine:"
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Add to Panel"
 msgstr "Lisää paneeliin"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Find an _item to add to the panel:"
 msgstr "Valitse paneeliin lisättävä _esine:"
 
-#: cafe-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1313
 msgid "_Back"
 msgstr "_Takaisin"
 
-#: cafe-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:761
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "”%s” sulkeutui odottamatta"
 
-#: cafe-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:763
 msgid "Panel object has quit unexpectedly"
 msgstr "Paneelin esine on sulkeutunut odottamatta"
 
-#: cafe-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:770
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
 msgstr ""
-"Jos lataat esineen uudelleen, se ilmestyy automaattisesti takaisin "
-"paneeliin."
+"Jos lataat esineen uudelleen, se ilmestyy automaattisesti takaisin paneeliin."
 
-#: cafe-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:777
 msgid "D_elete"
 msgstr "P_oista"
 
-#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:778 cafe-panel/panel-applet-frame.c:783
 msgid "_Don't Reload"
 msgstr "_Älä lataa uudelleen"
 
-#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:779 cafe-panel/panel-applet-frame.c:784
 msgid "_Reload"
 msgstr "_Lataa uudestaan"
 
-#: cafe-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:950
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "Paneelilla oli ongelmia sovelman ”%s” lataamisessa."
 
-#: cafe-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:965
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Haluatko poistaa sovelman työpöydältäsi?"
 
-#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "_Poista"
 
@@ -2606,57 +2556,60 @@ msgstr "CAFEn paneeli"
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 CAFE developers"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:120
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
 msgstr ""
 "Tämä ohjelma käynnistää muita ohjelmia ja tarjoaa hyödyllisiä apuohjelmia."
 
-#: cafe-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:124
 msgid "About the CAFE Panel"
 msgstr "Tietoja CAFEn paneelista"
 
-#: cafe-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:155
 msgid "Cannot delete this panel"
 msgstr "Tätä paneelia ei voi poistaa"
 
-#: cafe-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:156
 msgid "You must always have at least one panel."
 msgstr "Vähintään yksi paneeli on aina oltava määritelty."
 
-#: cafe-panel/panel-context-menu.c:199
-msgid "Reset this panel?"
-msgstr "Palauta tämä paneeli?"
-
 #: cafe-panel/panel-context-menu.c:200
+msgid "Reset all panels?"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:201
 msgid ""
-"When a panel is reset, all \n"
+"When the panels are reset, all \n"
 "custom settings are lost."
 msgstr ""
-"Kun paneeli nollataan, kaikki\n"
-"mukautetut asetukset menetetään."
 
-#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
-msgid "_Reset Panel"
-msgstr "_Palauta paneeli"
+#: cafe-panel/panel-context-menu.c:215
+msgid "_Reset Panels"
+msgstr ""
 
-#: cafe-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:237
 msgid "_Add to Panel…"
 msgstr "_Lisää paneeli..."
 
-#: cafe-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:257
+msgid "_Reset All Panels"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:264
 msgid "_Delete This Panel"
 msgstr "_Poista tämä paneeli"
 
-#: cafe-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:277
 msgid "_New Panel"
 msgstr "_Uusi paneeli"
 
-#: cafe-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:326
 msgid "A_bout Panels"
 msgstr "_Tietoja paneeleista"
 
@@ -2828,49 +2781,50 @@ msgstr "Työpöytä"
 msgid "Open the contents of your desktop in a folder"
 msgstr "Avaa työpöydän sisältö kansiona"
 
-#: cafe-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1075
 msgid "Computer"
 msgstr "Tietokone"
 
-#: cafe-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1081
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
 msgstr "Selaa käytettävissä olevia paikallis- ja etäkansioita"
 
-#: cafe-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1094
 msgid "Network"
 msgstr "Verkko"
 
-#: cafe-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1095
 msgid "Browse bookmarked and local network locations"
 msgstr "Selaa kirjanmerkittyjä ja paikallisia verkkosijainteja"
 
-#: cafe-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1489
 msgid "Places"
 msgstr "Sijainnit"
 
-#: cafe-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1517
 msgid "System"
 msgstr "Järjestelmä"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: cafe-panel/panel-menu-items.c:1600
+#.
+#: cafe-panel/panel-menu-items.c:1602
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1614
 #, c-format
 msgid "Log Out %s..."
 msgstr "Kirjaa ulos käyttäjä %s…"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1618
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr ""
@@ -3039,30 +2993,30 @@ msgstr "Unohda viimeisimmät asiakirjat…"
 msgid "Clear all items from the recent documents list"
 msgstr "Unohdetaanko viimeisimmät asiakirjat?"
 
-#: cafe-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:435
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "Komentoa ”%s” ei voi suorittaa"
 
-#: cafe-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:476
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "Tekstiä ”%s” ei voi muuntaa UTF-8:sta"
 
-#: cafe-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1269
 msgid "Choose a file to append to the command..."
 msgstr "Valitse komennon perään liitettävä tiedosto…"
 
-#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Katsele sovelluksen kuvausta valitsemalla se."
 
-#: cafe-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1689
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "Suorittaa komennon ”%s”"
 
-#: cafe-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1722
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
@@ -3212,19 +3166,19 @@ msgstr "_Asetusten polku:"
 msgid "Hide Panel"
 msgstr "Piilota paneeli"
 
-#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
 msgid "Top Panel"
 msgstr "Yläpaneeli"
 
-#: cafe-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1651
 msgid "Bottom Panel"
 msgstr "Alapaneeli"
 
-#: cafe-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1653
 msgid "Left Panel"
 msgstr "Vasen paneeli"
 
-#: cafe-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Right Panel"
 msgstr "Oikea paneeli"
 
@@ -3242,17 +3196,17 @@ msgstr "Komennon ”%s” suorittaminen epäonnistui"
 msgid "file"
 msgstr "tiedosto"
 
-#: cafe-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:876
 msgid "Home Folder"
 msgstr "Kotikansio"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:888
 msgid "File System"
 msgstr "Tiedostojärjestelmä"
 
-#: cafe-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1062
 msgid "Search"
 msgstr "Etsi"
 
@@ -3260,7 +3214,8 @@ msgstr "Etsi"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: cafe-panel/panel-util.c:1106
+#.
+#: cafe-panel/panel-util.c:1108
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
@@ -3310,8 +3265,15 @@ msgstr "Testaa DBus-sovelma"
 msgid "A simple applet for testing the CAFE panel"
 msgstr "Yksinkertainen sovelma CAFE-paneelin testaamiseen"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
-msgid "cafe-gegl"
-msgstr ""
+#~ msgid "Reset this panel?"
+#~ msgstr "Palauta tämä paneeli?"
+
+#~ msgid ""
+#~ "When a panel is reset, all \n"
+#~ "custom settings are lost."
+#~ msgstr ""
+#~ "Kun paneeli nollataan, kaikki\n"
+#~ "mukautetut asetukset menetetään."
+
+#~ msgid "_Reset Panel"
+#~ msgstr "_Palauta paneeli"

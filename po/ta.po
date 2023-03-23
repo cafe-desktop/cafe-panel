@@ -2,26 +2,26 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Kamala Kannan, 2020
 # Mooglie <mooglietech@gmail.com>, 2020
 # Maurious Paul Vincent <paulmaurious@gmail.com>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.23.2\n"
+"Project-Id-Version: cafe-panel 1.25.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2020-01-12 18:05+0100\n"
+"POT-Creation-Date: 2023-03-23 18:48+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Tamil (https://www.transifex.com/cafe/teams/13566/ta/)\n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ta\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
@@ -46,7 +46,8 @@ msgstr "%l:%M:%S %p"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:504
+#.
+#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -57,7 +58,7 @@ msgstr "%l:%M %p"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1604
+#: applets/clock/clock.c:454 applets/clock/clock.c:1603
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
@@ -71,9 +72,10 @@ msgstr "%H:%M:%S"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1610
-#: applets/clock/clock-location-tile.c:464
-#: applets/clock/clock-location-tile.c:511
+#.
+#: applets/clock/clock.c:454 applets/clock/clock.c:1609
+#: applets/clock/clock-location-tile.c:462
+#: applets/clock/clock-location-tile.c:509
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -115,7 +117,7 @@ msgstr "மாத நாட்காட்டியை மறைக்க சொ
 msgid "Click to view month calendar"
 msgstr "மாத நாட்காட்டியை பார்க்க சொடுக்கவும்"
 
-#: applets/clock/clock.c:1442
+#: applets/clock/clock.c:1441
 msgid "Computer Clock"
 msgstr "கணிப்பொறி கடிகாரம்"
 
@@ -125,7 +127,7 @@ msgstr "கணிப்பொறி கடிகாரம்"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1589
+#: applets/clock/clock.c:1588
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -135,108 +137,108 @@ msgstr "%I:%M:%S %p"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1597
+#: applets/clock/clock.c:1596
 msgid "%I:%M %p"
 msgstr "%I:%M %p"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1643
+#: applets/clock/clock.c:1642
 msgid "%A, %B %d %Y"
 msgstr "%A, %B %d %Y"
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1673
 msgid "Set System Time..."
 msgstr "கணினி நேரத்தை அமை..."
 
-#: applets/clock/clock.c:1675
+#: applets/clock/clock.c:1674
 msgid "Set System Time"
 msgstr "கணினி நேரத்தை அமை"
 
-#: applets/clock/clock.c:1690
+#: applets/clock/clock.c:1689
 msgid "Failed to set the system time"
 msgstr "கணினி நேரத்தை அமைத்தல் தோல்வியடைந்தது"
 
-#: applets/clock/clock.c:1888 applets/fish/fish.c:1694
-#: applets/notification_area/main.c:292 applets/vncklet/window-list.c:357
-#: applets/vncklet/workspace-switcher.c:389
+#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
+#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
+#: applets/vncklet/workspace-switcher.c:393
 msgid "_Preferences"
 msgstr "விருப்ப தேர்வுகள் "
 
-#: applets/clock/clock.c:1891 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1697 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:295 applets/vncklet/showdesktop.c:241
-#: applets/vncklet/window-list.c:365 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:98 applets/vncklet/workspace-switcher.c:397
+#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
+#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
-#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
 #: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_உதவி"
 
-#: applets/clock/clock.c:1894 applets/fish/fish.c:1700
-#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:249
-#: applets/vncklet/window-list.c:373 applets/vncklet/window-menu.c:106
-#: applets/vncklet/workspace-switcher.c:405
+#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
+#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
+#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
+#: applets/vncklet/workspace-switcher.c:409
 msgid "_About"
 msgstr "பற்றி "
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1894
 msgid "Copy _Time"
 msgstr "(_T) நேரத்தை நகலெடு"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1897
 msgid "Copy _Date"
 msgstr "(_D) தேதியை நகலெடு"
 
-#: applets/clock/clock.c:1903
+#: applets/clock/clock.c:1900
 msgid "Ad_just Date & Time"
 msgstr "தேதி & நேரத்தை சேர் (_j)"
 
-#: applets/clock/clock.c:2899
+#: applets/clock/clock.c:2898
 msgid "Choose Location"
 msgstr "இடத்தை தேர்ந்தெடு"
 
-#: applets/clock/clock.c:2978
+#: applets/clock/clock.c:2977
 msgid "Edit Location"
 msgstr "இடத்தை திருத்து"
 
-#: applets/clock/clock.c:3105
+#: applets/clock/clock.c:3104
 msgid "City Name"
 msgstr "மாநகரத்தின் பெயர்"
 
-#: applets/clock/clock.c:3109
+#: applets/clock/clock.c:3108
 msgid "City Time Zone"
 msgstr "மாநகர நேர மண்டலம்"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3388
 #: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "கடிகாரம்"
 
-#: applets/clock/clock.c:3390
+#: applets/clock/clock.c:3389
 msgid "About Clock"
 msgstr ""
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3391
 msgid "The Clock displays the current time and date"
 msgstr "கடிகாரம் தற்போதைய நேரத்தையும் தேதியையும் காட்டும்"
 
-#: applets/clock/clock.c:3393
+#: applets/clock/clock.c:3392
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:567
-#: applets/notification_area/main.c:286 applets/vncklet/showdesktop.c:508
-#: applets/vncklet/window-list.c:831 applets/vncklet/window-menu.c:88
-#: applets/vncklet/workspace-switcher.c:644
-#: cafe-panel/panel-context-menu.c:124
+#: applets/clock/clock.c:3397 applets/fish/fish.c:568
+#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
+#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
+#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -248,10 +250,10 @@ msgid "Time & Date"
 msgstr " நேரம் மற்றும் தேதி "
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-ctk.c:136
-#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
-#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
-#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
+#: cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "ரத்து (_C)"
 
@@ -275,10 +277,10 @@ msgstr "கடிகாரம் விருப்பங்கள்"
 msgid "Time _Settings"
 msgstr "(_S) நேர அமைப்புகள்"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -326,7 +328,7 @@ msgstr "(_t) வெப்ப அளவை காட்டுக"
 msgid "General"
 msgstr "பொது"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
 msgid "_Add"
 msgstr "சேர்த்தல் (_A)"
 
@@ -379,12 +381,11 @@ msgid "South"
 msgstr "தெற்கு"
 
 #: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
-#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
+#: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr ""
 
-#. Languages that have a single word that translates as either "state" or
-#. "province" should use that instead of "region".
+#. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
 #: applets/clock/clock.ui:1012
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
@@ -417,19 +418,17 @@ msgstr "அட்ச ரேகை (_a):"
 msgid "Failed to set the system timezone"
 msgstr "கணினி நேரமண்டலத்தின் பெயர் ஐ அமைக்க தவறியது."
 
-#: applets/clock/clock-location-tile.c:231
+#: applets/clock/clock-location-tile.c:229
 msgid "<small>Set...</small>"
 msgstr "<small>அமை...</small>"
 
-#: applets/clock/clock-location-tile.c:232
+#: applets/clock/clock-location-tile.c:230
 msgid "<small>Set</small>"
 msgstr "<small>அமை</small>"
 
-#: applets/clock/clock-location-tile.c:308
-msgid ""
-"Set location as current location and use its timezone for this computer"
-msgstr ""
-"இடத்தை இப்போதைய இடமாக அமைத்து அதன் நேர மண்டலத்தை இந்த கணினிக்கு பயன்படுத்துக"
+#: applets/clock/clock-location-tile.c:306
+msgid "Set location as current location and use its timezone for this computer"
+msgstr "இடத்தை இப்போதைய இடமாக அமைத்து அதன் நேர மண்டலத்தை இந்த கணினிக்கு பயன்படுத்துக"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format
@@ -437,7 +436,7 @@ msgstr ""
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:441
+#: applets/clock/clock-location-tile.c:439
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l:%M <small>%p (%A)</small>"
 
@@ -446,7 +445,7 @@ msgstr "%l:%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:449
+#: applets/clock/clock-location-tile.c:447
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%H:%M <small>(%A)</small>"
 
@@ -454,27 +453,27 @@ msgstr "%H:%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:458
+#: applets/clock/clock-location-tile.c:456
 msgid "%l:%M <small>%p</small>"
 msgstr "%l:%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:600
+#: applets/clock/clock-location-tile.c:598
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:612
-#: applets/clock/clock-location-tile.c:621
+#: applets/clock/clock-location-tile.c:610
+#: applets/clock/clock-location-tile.c:619
 msgid "Unknown"
 msgstr "தெரியாத"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:614
+#: applets/clock/clock-location-tile.c:612
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s, %sஐ போல உணர்கிறது"
 
-#: applets/clock/clock-location-tile.c:637
+#: applets/clock/clock-location-tile.c:635
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "சூரிய உதயம்: %s / சூரிய அஸ்தமனம்: %s"
@@ -497,22 +496,21 @@ msgstr "மணி வடிவமைப்பு"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
-"This key specifies the hour format used by the clock applet. Possible values"
-" are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
-" to \"internet\", the clock will display Internet time. The Internet time "
-"system divides the day into 1000 \".beats\". There are no time zones in this"
-" system, so time is the same all over the world. If set to \"unix\", the "
+"This key specifies the hour format used by the clock applet. Possible values "
+"are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set "
+"to \"internet\", the clock will display Internet time. The Internet time "
+"system divides the day into 1000 \".beats\". There are no time zones in this "
+"system, so time is the same all over the world. If set to \"unix\", the "
 "clock will display time in seconds since Epoch, i.e. 1970-01-01. If set to "
-"\"custom\", the clock will display time according to the format specified in"
-" the custom_format key."
+"\"custom\", the clock will display time according to the format specified in "
+"the custom_format key."
 msgstr ""
-"இந்த விசை கடிகார குறுநிரல் மணை அமைப்பை குறிப்பிடும். மதிப்புகள் \"12-மணி\", "
-"\"24-மணி\", \"இணையம்\", \"யூனிக்ஸ்\" மற்றும் \"தனிப்பயன்\". \"இணையம்\" என "
-"அமைத்தால், இணைய நேரத்தை காட்டும். இணைய நேரம் நேரத்தை 1000 பகுதிகளாக "
-"பிரிக்கும் \".beats\". கணினியில் நேரம் இடம் குறிப்பிடப்படவில்லையென்றால் "
-"உலகம் முழுமைக்கும் பொதுவான நேரத்தை காட்டும். \"யூனிக்ஸ்\" என அமைத்தால் "
-"கடிகாரம் நெடிகளில் சேரத்தை காட்டும் அதாவது 1970-01-01. \"தனிப்பயன்\" என "
-"அமைத்தால் நீங்கள் குறிப்பிட்ட அமைப்பில் நேரம் காட்டப்படும்."
+"இந்த விசை கடிகார குறுநிரல் மணை அமைப்பை குறிப்பிடும். மதிப்புகள் \"12-மணி\", \"24-"
+"மணி\", \"இணையம்\", \"யூனிக்ஸ்\" மற்றும் \"தனிப்பயன்\". \"இணையம்\" என அமைத்தால், இணைய "
+"நேரத்தை காட்டும். இணைய நேரம் நேரத்தை 1000 பகுதிகளாக பிரிக்கும் \".beats\". கணினியில் "
+"நேரம் இடம் குறிப்பிடப்படவில்லையென்றால் உலகம் முழுமைக்கும் பொதுவான நேரத்தை காட்டும். "
+"\"யூனிக்ஸ்\" என அமைத்தால் கடிகாரம் நெடிகளில் சேரத்தை காட்டும் அதாவது 1970-01-01. "
+"\"தனிப்பயன்\" என அமைத்தால் நீங்கள் குறிப்பிட்ட அமைப்பில் நேரம் காட்டப்படும்."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:34
 msgid "Custom format of the clock"
@@ -525,10 +523,9 @@ msgid ""
 "strftime() to obtain a specific format. See the strftime() manual for more "
 "information."
 msgstr ""
-"வடிவமைப்பு விசை \"தனிப்பயன்\" என்று அமைக்கப்படும் போது கடிகார குறுநிரல் இந்த"
-" விசையை பயன்படுத்தும் குறிப்பிட்ட அமைப்பை பெற்றுக்கொள்ள strftime() ஆல் "
-"புரிந்துகொள்ளக்கூடிய மாற்று குறிப்புகளை தரவும். மேலும் அதிக விவரங்களுக்கு "
-"strftime() கையேட்டை பார்க்கவும்."
+"வடிவமைப்பு விசை \"தனிப்பயன்\" என்று அமைக்கப்படும் போது கடிகார குறுநிரல் இந்த விசையை "
+"பயன்படுத்தும் குறிப்பிட்ட அமைப்பை பெற்றுக்கொள்ள strftime() ஆல் புரிந்துகொள்ளக்கூடிய மாற்று "
+"குறிப்புகளை தரவும். மேலும் அதிக விவரங்களுக்கு strftime() கையேட்டை பார்க்கவும்."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:39
 msgid "Show time with seconds"
@@ -553,8 +550,7 @@ msgstr "தேதியை கருவி-உதவியில் காண்
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:50
 msgid "If true, show date in a tooltip when the pointer is over the clock."
 msgstr ""
-"உண்மையெனில், சுட்டியை கடிகாத்திற்கு அருகில் கொண்டு செல்லும்போது தேதி "
-"குறிப்பை காட்டு"
+"உண்மையெனில், சுட்டியை கடிகாத்திற்கு அருகில் கொண்டு செல்லும்போது தேதி குறிப்பை காட்டு"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:54
 msgid "Show weather in clock"
@@ -624,12 +620,6 @@ msgstr ""
 msgid "Get the current time and date"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-clock"
-msgstr ""
-
 #: applets/fish/fish.c:266
 #, c-format
 msgid ""
@@ -638,14 +628,15 @@ msgid ""
 "We strongly advise you against using %s for anything\n"
 "which would make the applet \"practical\" or useful."
 msgstr ""
-"எச்சரிக்கை இந்த கட்டளை பயனுள்ளதாக தெரிகிறதுின்றஇந்த பயனற்ற குறுநிரல், இதை செய்யவேண்டாம் என சொல்லும் இல%s பயன்படுத்துவதை பற்றி நாங்கள் தவறாக அறிவுரை கூறிவிட்டோம்\n"
+"எச்சரிக்கை இந்த கட்டளை பயனுள்ளதாக தெரிகிறதுின்றஇந்த பயனற்ற குறுநிரல், இதை செய்யவேண்டாம் "
+"என சொல்லும் இல%s பயன்படுத்துவதை பற்றி நாங்கள் தவறாக அறிவுரை கூறிவிட்டோம்\n"
 "குறும்பயனை \"சரியான\" முறையில் பயன்படுத்த இது உதவும். வேண்டாம்."
 
 #: applets/fish/fish.c:428
 msgid "Images"
 msgstr "படங்கள்"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:578 applets/fish/fish.c:684
+#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
 #, no-c-format
 msgid "%s the Fish"
 msgstr "மீன் %s"
@@ -657,10 +648,9 @@ msgid ""
 "time, and if loaded it also takes up precious panel space and memory. "
 "Anybody found using it should be promptly sent for a psychiatric evaluation."
 msgstr ""
-"%s ஆல் இது வரை ஏதும் இல்லை. இது வட்டின் இடத்தையும், தொகுக்கும் நேரத்தையும் "
-"வீணாக்கும். ஏற்றினால் பலக இடத்தையும் நினைவகத்தையும் வீணாக்கும். இதை யாராவது "
-"பயன்படுத்தினால் அவர்களை மனநிலை பரிசோதிக்கும் நிபுணரிடம் அழைத்துச்செல்ல "
-"வேண்டும்."
+"%s ஆல் இது வரை ஏதும் இல்லை. இது வட்டின் இடத்தையும், தொகுக்கும் நேரத்தையும் வீணாக்கும். "
+"ஏற்றினால் பலக இடத்தையும் நினைவகத்தையும் வீணாக்கும். இதை யாராவது பயன்படுத்தினால் அவர்களை "
+"மனநிலை பரிசோதிக்கும் நிபுணரிடம் அழைத்துச்செல்ல வேண்டும்."
 
 #: applets/fish/fish.c:552
 msgid "(with minor help from George)"
@@ -679,24 +669,25 @@ msgstr ""
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/fish/fish.c:579
+#: applets/fish/fish.c:580
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "%s மீன் , சமகாலத்திய அறிவுரை"
 
-#: applets/fish/fish.c:645
+#: applets/fish/fish.c:646
 msgid "Unable to locate the command to execute"
 msgstr "செயல்படுத்த வேண்டிய கட்டளையை கண்டுபிடிக்க முடியவில்லை"
 
-#: applets/fish/fish.c:689
+#: applets/fish/fish.c:690
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "%s மீன் சொல்வது:"
 
-#: applets/fish/fish.c:752
+#: applets/fish/fish.c:753
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -707,17 +698,16 @@ msgstr ""
 "\n"
 "விவரங்கள்: %s"
 
-#: applets/fish/fish.c:849
+#: applets/fish/fish.c:850
 msgid "_Speak again"
 msgstr "மறுபடியும் பேசவும் _S"
 
-#: applets/fish/fish.c:930
+#: applets/fish/fish.c:931
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
-msgstr ""
-"வடிவமைத்த கட்டளை சரியாக வேலை செய்யவில்லை. அது %s ஆல் மீட்டமைக்கப்பட்டது."
+msgstr "வடிவமைத்த கட்டளை சரியாக வேலை செய்யவில்லை. அது %s ஆல் மீட்டமைக்கப்பட்டது."
 
-#: applets/fish/fish.c:963
+#: applets/fish/fish.c:964
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -728,7 +718,7 @@ msgstr ""
 "\n"
 "விவரங்கள்: %s"
 
-#: applets/fish/fish.c:979
+#: applets/fish/fish.c:980
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -739,15 +729,15 @@ msgstr ""
 "\n"
 "விவரங்கள்: %s"
 
-#: applets/fish/fish.c:1551
+#: applets/fish/fish.c:1552
 msgid "The water needs changing"
 msgstr "தண்ணீரை மாற்ற வேண்டும்!"
 
-#: applets/fish/fish.c:1553
+#: applets/fish/fish.c:1554
 msgid "Look at today's date!"
 msgstr "இன்றைய தேதியைப்பாருங்கள்!"
 
-#: applets/fish/fish.c:1635
+#: applets/fish/fish.c:1636
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "%s எதிர் காலத்தை கணித்து சொல்பவர்"
@@ -820,8 +810,8 @@ msgid ""
 "This key specifies the filename of the pixmap which will be used for the "
 "animation displayed in the fish applet relative to the pixmap directory."
 msgstr ""
-"இந்த விசை மீன் குறுநிரல் பிக்ஸ்மேப் அடைவில் உள்ள இயக்க சித்திரத்தின் "
-"கோப்பின் பெயரை குறிப்பிட பயன்படும்."
+"இந்த விசை மீன் குறுநிரல் பிக்ஸ்மேப் அடைவில் உள்ள இயக்க சித்திரத்தின் கோப்பின் பெயரை "
+"குறிப்பிட பயன்படும்."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:15
 msgid "Command to execute on click"
@@ -831,8 +821,7 @@ msgstr "க்ளிக் செய்யும் போது செயல்
 msgid ""
 "This key specifies the command that will be tried to execute when the fish "
 "is clicked."
-msgstr ""
-"இந்த விசை மீனை க்ளிக் செய்தபிறகு நிகழ்த்த வேண்டிய கட்டளையை குறிப்பிடும்"
+msgstr "இந்த விசை மீனை க்ளிக் செய்தபிறகு நிகழ்த்த வேண்டிய கட்டளையை குறிப்பிடும்"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:20
 msgid "Frames in fish's animation"
@@ -840,11 +829,9 @@ msgstr "மீன் இயக்க சித்திரத்தில் உ
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
-"This key specifies the number of frames that will be displayed in the fish's"
-" animation."
-msgstr ""
-"இந்த விசை மீன் இயக்க சித்திரத்தில் உள்ள சட்டங்களின் எண்ணிக்கையை குறிப்பிட "
-"பயன்படும்."
+"This key specifies the number of frames that will be displayed in the fish's "
+"animation."
+msgstr "இந்த விசை மீன் இயக்க சித்திரத்தில் உள்ள சட்டங்களின் எண்ணிக்கையை குறிப்பிட பயன்படும்."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
 msgid "Pause per frame"
@@ -852,9 +839,7 @@ msgstr "ஒவ்வொறு சட்டத்திலும் நிறு�
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:26
 msgid "This key specifies the number of seconds each frame will be displayed."
-msgstr ""
-"இந்த விசை ஒவ்வொரு சட்டமும் எவ்வளவு நேரம் காட்டப்பட வேண்டும் என்பதை "
-"குறிப்பிடும்"
+msgstr "இந்த விசை ஒவ்வொரு சட்டமும் எவ்வளவு நேரம் காட்டப்பட வேண்டும் என்பதை குறிப்பிடும்"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:30
 msgid "Rotate on vertical panels"
@@ -863,9 +848,7 @@ msgstr "செங்குத்தான பலகத்தில் சுழ�
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:31
 msgid ""
 "If true, the fish's animation will be displayed rotated on vertical panels."
-msgstr ""
-"உண்மையெனில், மீன் இயக்க சித்திரம் செங்குத்து பலகத்தில் சுழற்றப்படுவதை "
-"காட்டும்"
+msgstr "உண்மையெனில், மீன் இயக்க சித்திரம் செங்குத்து பலகத்தில் சுழற்றப்படுவதை காட்டும்"
 
 #: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Wanda Factory"
@@ -877,12 +860,6 @@ msgstr ""
 
 #: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
 msgid "Display a swimming fish or another anicafed creature"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-fish"
 msgstr ""
 
 #: applets/notification_area/main.c:276
@@ -899,10 +876,11 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/notification_area/main.c:485
+#: applets/notification_area/main.c:486
 msgid "Panel Notification Area"
 msgstr "பலகை அறிவிப்பு இடம்"
 
@@ -943,23 +921,17 @@ msgstr ""
 msgid "Area where notification icons appear"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-notification-area"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "எல்லா  பணியிடத்திலுள்ள விண்டோவை  காண்பி "
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
-"If true, the window list will show windows from all workspaces. Otherwise it"
-" will only display windows from the current workspace."
+"If true, the window list will show windows from all workspaces. Otherwise it "
+"will only display windows from the current workspace."
 msgstr ""
-"உண்மையெனில் சாளர பட்டியல் எல்லா பணியிடங்களையும் காட்டும், அல்லது இது "
-"சாளரத்தின் தற்போதைய பணியிடத்தை மட்டும் காட்டும்."
+"உண்மையெனில் சாளர பட்டியல் எல்லா பணியிடங்களையும் காட்டும், அல்லது இது சாளரத்தின் தற்போதைய "
+"பணியிடத்தை மட்டும் காட்டும்."
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
 msgid "When to group windows"
@@ -970,22 +942,20 @@ msgid ""
 "Decides when to group windows from the same application on the window list. "
 "Possible values are \"never\", \"auto\" and \"always\"."
 msgstr ""
-"சாளரங்களை ஒரே பயன்பாட்டின் குழுக்களாக எப்போது ஆக்குவது என்பதை "
-"தீர்மானிக்கும். மதிப்புகள் \"எப்போதுமில்லை\", \"தானாக\" மற்றும் "
-"\"எப்போதும்\""
+"சாளரங்களை ஒரே பயன்பாட்டின் குழுக்களாக எப்போது ஆக்குவது என்பதை தீர்மானிக்கும். மதிப்புகள் "
+"\"எப்போதுமில்லை\", \"தானாக\" மற்றும் \"எப்போதும்\""
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
 msgid "Move windows to current workspace when unminimized"
-msgstr ""
-"மறைந்த சாளரங்களை காண்பிக்கும்போது தற்போதைய வேலையிடத்திட்கு நக்ர்த்தவும்"
+msgstr "மறைந்த சாளரங்களை காண்பிக்கும்போது தற்போதைய வேலையிடத்திட்கு நக்ர்த்தவும்"
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:21
 msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
 msgstr ""
-"உண்மையெனில், சாளரத்தை பெரிதாக்கும் போது தற்போதைய பணியிடத்திற்கு நகர்த்து. "
-"அல்லது பணி இடத்தை வேறு சாளரத்திற்கு கொண்டு செல்."
+"உண்மையெனில், சாளரத்தை பெரிதாக்கும் போது தற்போதைய பணியிடத்திற்கு நகர்த்து. அல்லது பணி "
+"இடத்தை வேறு சாளரத்திற்கு கொண்டு செல்."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
 msgid "Display workspace names"
@@ -997,9 +967,8 @@ msgid ""
 "the workspaces. Otherwise they will display the windows on the workspace. "
 "This setting only works when the window manager is Croma."
 msgstr ""
-"உண்மையெனில் பணியிடமாற்றி பணியிடங்களின் பெயரை காட்டும். இல்லையெனில் சாளரங்களை"
-" பணியிடத்தில் காட்டும். இது மெடாசிடியாக் சாளர மேலாளர் இருந்தால் மட்டுமே "
-"செல்லுபடியாகும்."
+"உண்மையெனில் பணியிடமாற்றி பணியிடங்களின் பெயரை காட்டும். இல்லையெனில் சாளரங்களை "
+"பணியிடத்தில் காட்டும். இது மெடாசிடியாக் சாளர மேலாளர் இருந்தால் மட்டுமே செல்லுபடியாகும்."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"
@@ -1010,8 +979,8 @@ msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
 msgstr ""
-"உண்மையெனில், பணியிடமாற்றி அனைத்து பணியிடங்களையும் காட்டும், இல்லையெனில் "
-"தற்போதைய பணியிடத்தை மட்டும் காட்டும்."
+"உண்மையெனில், பணியிடமாற்றி அனைத்து பணியிடங்களையும் காட்டும், இல்லையெனில் தற்போதைய "
+"பணியிடத்தை மட்டும் காட்டும்."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
@@ -1020,13 +989,12 @@ msgstr "வேலையிடம் மாற்றியில் வரிச�
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
-"vertical layout) the workspace switcher shows the workspaces in. This key is"
-" only relevant if the display_all_workspaces key is true."
+"vertical layout) the workspace switcher shows the workspaces in. This key is "
+"only relevant if the display_all_workspaces key is true."
 msgstr ""
 "இந்த விசை எத்தனை வரிசை(கிடைமட்டம்) அல்லது நெடுவரிசை (செங்குத்து) வரிகள் "
-"பணியிடமாற்றியால் பணியிடத்தில் காட்ட முடியும் என்பதை காட்டும். "
-"display_all_workspaces  என்பதை உண்மை என அமைத்தால் இந்த தகவல்கள் "
-"காட்டப்படும்."
+"பணியிடமாற்றியால் பணியிடத்தில் காட்ட முடியும் என்பதை காட்டும். display_all_workspaces  "
+"என்பதை உண்மை என அமைத்தால் இந்த தகவல்கள் காட்டப்படும்."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
@@ -1047,7 +1015,7 @@ msgid "Factory for the window navigation related applets"
 msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
+#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
 msgid "Window Selector"
 msgstr "சாளர தேர்வி"
 
@@ -1055,14 +1023,8 @@ msgstr "சாளர தேர்வி"
 msgid "Switch between open windows using a menu"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-window-menu"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:634
+#: applets/vncklet/workspace-switcher.c:638
 msgid "Workspace Switcher"
 msgstr "வேலையிட மாற்றி"
 
@@ -1070,25 +1032,13 @@ msgstr "வேலையிட மாற்றி"
 msgid "Switch between workspaces"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
-msgid "cafe-panel-workspace-switcher"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:821
+#: applets/vncklet/window-list.c:826
 msgid "Window List"
 msgstr "சாளர பட்டியல்"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
-msgid "cafe-panel-window-list"
 msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
@@ -1097,12 +1047,6 @@ msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
-msgid "user-desktop"
 msgstr ""
 
 #: applets/vncklet/showdesktop.c:184
@@ -1114,57 +1058,58 @@ msgstr "%s ஏற்ற முடியவில்லை: %s\n"
 msgid "Icon not found"
 msgstr "உருவம் காணபடவில்லை"
 
-#: applets/vncklet/showdesktop.c:265
+#: applets/vncklet/showdesktop.c:266
 msgid "Click here to restore hidden windows."
 msgstr "மாறைந்திருக்கும் சாளரங்களை மீட்க இங்கு அமுத்துக"
 
-#: applets/vncklet/showdesktop.c:269
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to hide all windows and show the desktop."
 msgstr "அனைத்து சாளரங்களை மறைத்து கணிமேசையை காட்ட இங்கு அமுத்துக"
 
-#: applets/vncklet/showdesktop.c:439 applets/vncklet/showdesktop.c:498
+#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
 msgid "Show Desktop Button"
 msgstr "கணிமேசை பொத்தான் காட்டுக"
 
-#: applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:500
 msgid "About Show Desktop Button"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:501
+#: applets/vncklet/showdesktop.c:502
 msgid "This button lets you hide all windows and show the desktop."
 msgstr "இந்த பொத்தான் எல்லா சாளரங்களையும் மறைத்து மேசைகளை காட்டும்"
 
-#: applets/vncklet/showdesktop.c:502 applets/vncklet/window-list.c:825
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
+#: applets/vncklet/workspace-switcher.c:642
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:529
+#: applets/vncklet/showdesktop.c:531
 msgid ""
-"Your window manager does not support the show desktop button, or you are not"
-" running a window manager."
+"Your window manager does not support the show desktop button, or you are not "
+"running a window manager."
 msgstr ""
-"உங்கள் சாளர மேலாளர் மேல்மேசையை காட்டு ஆதரவை பயன்படுத்தவில்லை, அல்லது நீங்கள்"
-" சாளர மேலாளரை இயக்க வில்லை"
+"உங்கள் சாளர மேலாளர் மேல்மேசையை காட்டு ஆதரவை பயன்படுத்தவில்லை, அல்லது நீங்கள் சாளர "
+"மேலாளரை இயக்க வில்லை"
 
-#: applets/vncklet/window-list.c:349
+#: applets/vncklet/window-list.c:354
 msgid "_System Monitor"
 msgstr ""
 
-#: applets/vncklet/window-list.c:822
+#: applets/vncklet/window-list.c:827
 msgid "About Window List"
 msgstr ""
 
-#: applets/vncklet/window-list.c:824
+#: applets/vncklet/window-list.c:829
 msgid ""
-"The Window List shows a list of all windows in a set of buttons and lets you"
-" browse them."
+"The Window List shows a list of all windows in a set of buttons and lets you "
+"browse them."
 msgstr ""
-"சாளர பட்டியல் ஒரு அமைப்பு பொத்தான்களில் எல்லா சாளரங்களின் பட்டியலையும் "
-"காட்டும். மேலும் எல்லா சாளரங்களையும் உலாவ உங்களை அனுமதிக்கும்"
+"சாளர பட்டியல் ஒரு அமைப்பு பொத்தான்களில் எல்லா சாளரங்களின் பட்டியலையும் காட்டும். மேலும் "
+"எல்லா சாளரங்களையும் உலாவ உங்களை அனுமதிக்கும்"
 
 #: applets/vncklet/window-list.ui:18
 msgid "Window List Preferences"
@@ -1243,8 +1188,8 @@ msgid ""
 "The Window Selector shows a list of all windows in a menu and lets you "
 "browse them."
 msgstr ""
-"சாளர தேர்வாளர் தேர்வு செய்யப்பட்ட சாளரங்களின் பட்டியலை காட்டுவதோடு அவைகளில் "
-"உலாவ உங்களை அனுமதிக்கும்."
+"சாளர தேர்வாளர் தேர்வு செய்யப்பட்ட சாளரங்களின் பட்டியலை காட்டுவதோடு அவைகளில் உலாவ உங்களை "
+"அனுமதிக்கும்."
 
 #: applets/vncklet/window-menu.c:80
 msgid ""
@@ -1252,31 +1197,31 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "வரிசைகள்"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 msgid "columns"
 msgstr "நெடு வரிசைகள்"
 
-#: applets/vncklet/workspace-switcher.c:635
+#: applets/vncklet/workspace-switcher.c:639
 msgid "About Workspace Switcher"
 msgstr ""
 
-#: applets/vncklet/workspace-switcher.c:637
+#: applets/vncklet/workspace-switcher.c:641
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
 msgstr ""
-"பணியிட மாற்றி உங்கள் பணியிடத்தில் நீங்கள் கையாளும் சாளரத்தின் சிறிய பதிப்பை "
-"காட்டும்."
+"பணியிட மாற்றி உங்கள் பணியிடத்தில் நீங்கள் கையாளும் சாளரத்தின் சிறிய பதிப்பை காட்டும்."
 
 #: applets/vncklet/workspace-switcher.ui:32
 msgid "Workspace Switcher Preferences"
@@ -1336,9 +1281,8 @@ msgid ""
 "dialog is made available. Whether or not the listing is expanded when the "
 "dialog is shown is controlled by the show_program_list key."
 msgstr ""
-"உண்மையெனில் \"தெரிந்த பயன்பாடு\" பட்டியலில் \"பயன்பாட்டை இயக்கு\" விரிந்து "
-"உரையால் பெட்டி திறக்கப்படும். show_program_list கட்டுப்பாட்டை பொருத்து "
-"விரியும்"
+"உண்மையெனில் \"தெரிந்த பயன்பாடு\" பட்டியலில் \"பயன்பாட்டை இயக்கு\" விரிந்து உரையால் "
+"பெட்டி திறக்கப்படும். show_program_list கட்டுப்பாட்டை பொருத்து விரியும்"
 
 #: data/org.cafe.panel.gschema.xml.in:15
 msgid "Expand program list in \"Run Application\" dialog"
@@ -1350,21 +1294,18 @@ msgid ""
 "dialog is expanded when the dialog is opened. This key is only relevant if "
 "the enable_program_list key is true."
 msgstr ""
-"உண்மையெனில் \"தெரிந்த பயன்பாடு\" பட்டியலில் \"பயன்பாட்டை இயக்கு\" விரிந்து "
-"உரையால் பெட்டி திறக்கப்படும். enable_program_list உண்மையாக இருந்தால் மட்டுமே"
-" இந்து செயல்படும்"
+"உண்மையெனில் \"தெரிந்த பயன்பாடு\" பட்டியலில் \"பயன்பாட்டை இயக்கு\" விரிந்து உரையால் "
+"பெட்டி திறக்கப்படும். enable_program_list உண்மையாக இருந்தால் மட்டுமே இந்து செயல்படும்"
 
 #: data/org.cafe.panel.gschema.xml.in:20
 msgid "Enable autocompletion in \"Run Application\" dialog"
-msgstr ""
-" \"பயன்பாட்டை இயக்கு\" உரையாடலில் தானியங்கி பூர்த்தி செயலை இயலுமைப்படுத்துக."
+msgstr " \"பயன்பாட்டை இயக்கு\" உரையாடலில் தானியங்கி பூர்த்தி செயலை இயலுமைப்படுத்துக."
 
 #: data/org.cafe.panel.gschema.xml.in:21
 msgid ""
 "If true, autocompletion in the \"Run Application\" dialog is made available."
 msgstr ""
-"உண்மையானால் தானியங்கி பூர்த்தி \"Run Application\"  உரையாடலில் "
-"இயலுமைப்படுத்தப்படும்."
+"உண்மையானால் தானியங்கி பூர்த்தி \"Run Application\"  உரையாடலில் இயலுமைப்படுத்தப்படும்."
 
 #: data/org.cafe.panel.gschema.xml.in:25
 msgid "History for \"Run Application\" dialog"
@@ -1373,8 +1314,8 @@ msgstr ""
 #: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
-"commands are sorted descendingly by recency (e.g., most recent command comes"
-" first)."
+"commands are sorted descendingly by recency (e.g., most recent command comes "
+"first)."
 msgstr ""
 
 #: data/org.cafe.panel.gschema.xml.in:30
@@ -1406,8 +1347,8 @@ msgid ""
 "A list of panel IDs. Each ID identifies an individual toplevel panel. The "
 "settings for each of these panels are stored in /apps/panel/toplevels/$(id)."
 msgstr ""
-"பலக அடையாள பட்டியல். ஒவ்வொரு அடையாள எண்ணும் தனி மேல்மட்ட பலகத்தை குறிக்கும்."
-" இதன் அமைப்பு /apps/panel/toplevels/$(id) அடைவில் சேமிக்கப்பட்டிருக்கும்."
+"பலக அடையாள பட்டியல். ஒவ்வொரு அடையாள எண்ணும் தனி மேல்மட்ட பலகத்தை குறிக்கும். இதன் "
+"அமைப்பு /apps/panel/toplevels/$(id) அடைவில் சேமிக்கப்பட்டிருக்கும்."
 
 #: data/org.cafe.panel.gschema.xml.in:45
 msgid "Panel object ID list"
@@ -1415,13 +1356,13 @@ msgstr "பலகை பொருள் ID பட்டியல்"
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object "
-"(e.g. a launcher, action button or menu button/bar). The settings for each "
-"of these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object (e."
+"g. a launcher, action button or menu button/bar). The settings for each of "
+"these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
-"பலக பொருள் அடையாள பட்டியல். ஒவ்வொரு அடையாள எண்ணும் தனி பலக பொருளை  "
-"குறிக்கும். உதாரணம்: ஒரு துவக்கி, செயல் பொத்தான், பட்டியல் பொத்தான்/பலகை. "
-"இவற்றின் அமைப்பு //apps/panel/objects/$(id) அடைவில் சேமிக்கப்பட்டிருக்கும்."
+"பலக பொருள் அடையாள பட்டியல். ஒவ்வொரு அடையாள எண்ணும் தனி பலக பொருளை  குறிக்கும். "
+"உதாரணம்: ஒரு துவக்கி, செயல் பொத்தான், பட்டியல் பொத்தான்/பலகை. இவற்றின் அமைப்பு //apps/"
+"panel/objects/$(id) அடைவில் சேமிக்கப்பட்டிருக்கும்."
 
 #: data/org.cafe.panel.gschema.xml.in:50
 msgid "Enable tooltips"
@@ -1463,9 +1404,7 @@ msgstr "சுட்டி மேலிருக்கும்போது த�
 #: data/org.cafe.panel.gschema.xml.in:70
 msgid ""
 "If true, a launcher is highlighted when the user moves the pointer over it."
-msgstr ""
-"உண்மையெனில், பயனீட்டாளர் அம்புக்குறியை நகர்த்தும் போது "
-"தனிப்படுத்திக்காட்டப்படும்"
+msgstr "உண்மையெனில், பயனீட்டாளர் அம்புக்குறியை நகர்த்தும் போது தனிப்படுத்திக்காட்டப்படும்"
 
 #: data/org.cafe.panel.gschema.xml.in:74
 msgid "Complete panel lockdown"
@@ -1474,12 +1413,11 @@ msgstr "பலகம் முழுமையாக பூட்டபட்ட�
 #: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
-"panel. Individual applets may need to be locked down separately however. The"
-" panel must be restarted for this to take effect."
+"panel. Individual applets may need to be locked down separately however. The "
+"panel must be restarted for this to take effect."
 msgstr ""
-"உண்மையெனில் பலக அமைப்பில் மாற்றங்களை அனுமதிக்காது. தனிப்பட்ட குறுநிரல்கள் "
-"தனியாக பூட்டப்படவேண்டும். விளைவை உறுதி செய்ய பலகத்தை மீண்டும் துவக்க "
-"வேண்டும்"
+"உண்மையெனில் பலக அமைப்பில் மாற்றங்களை அனுமதிக்காது. தனிப்பட்ட குறுநிரல்கள் தனியாக "
+"பூட்டப்படவேண்டும். விளைவை உறுதி செய்ய பலகத்தை மீண்டும் துவக்க வேண்டும்"
 
 #: data/org.cafe.panel.gschema.xml.in:79
 msgid "Applet IIDs to disable from loading"
@@ -1492,10 +1430,10 @@ msgid ""
 "disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
-"பலகம் தவிர்க்கும் IIDக்களின் பட்டியல். இந்த முறையில் மெனுவில் பல ஆப்லட்டுகள்"
-" காட்டப்படுவதையும் ஏற்றப்படுவதையும் தவிர்க்கலாம், உதாரணம் mini-commander "
-"குறுநிரலை செயலிழக்கச்செய்ய  'OAFIID:CAFE_MiniCommanderApplet' ஐ பட்டியலில் "
-"சேர்த்து, பலகத்தை மீண்டும் துவக்கவும்."
+"பலகம் தவிர்க்கும் IIDக்களின் பட்டியல். இந்த முறையில் மெனுவில் பல ஆப்லட்டுகள் "
+"காட்டப்படுவதையும் ஏற்றப்படுவதையும் தவிர்க்கலாம், உதாரணம் mini-commander குறுநிரலை "
+"செயலிழக்கச்செய்ய  'OAFIID:CAFE_MiniCommanderApplet' ஐ பட்டியலில் சேர்த்து, பலகத்தை "
+"மீண்டும் துவக்கவும்."
 
 #: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
@@ -1506,8 +1444,8 @@ msgid ""
 "If true, the panel will not allow a user to force an application to quit by "
 "removing access to the force quit button."
 msgstr ""
-"உண்மையெனில், பலகம் பயனீட்டாளர் பயன்பாட்டிலிருந்து வெளியேறாமல் வெளியேறச்செய் "
-"பட்டனை செயலிழக்கச்செய்யும்."
+"உண்மையெனில், பலகம் பயனீட்டாளர் பயன்பாட்டிலிருந்து வெளியேறாமல் வெளியேறச்செய் பட்டனை "
+"செயலிழக்கச்செய்யும்."
 
 #: data/org.cafe.panel.gschema.xml.in:89
 msgid "Enable SNI support"
@@ -1573,8 +1511,8 @@ msgstr ""
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
-"Set the size of icons used in the menu. The panel must be restarted for this"
-" to take effect."
+"Set the size of icons used in the menu. The panel must be restarted for this "
+"to take effect."
 msgstr ""
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:50
@@ -1612,8 +1550,8 @@ msgid ""
 "The position of this panel object. The position is specified by the number "
 "of pixels from the left (or top if vertical) panel edge."
 msgstr ""
-"இந்த பலக பொருளின் நிலை. நிலை இடமிருந்து பிக்செல்லின் எண்ணிக்கையை "
-"குறிக்கும்(மேல் செங்குத்து)"
+"இந்த பலக பொருளின் நிலை. நிலை இடமிருந்து பிக்செல்லின் எண்ணிக்கையை குறிக்கும்(மேல் "
+"செங்குத்து)"
 
 #: data/org.cafe.panel.object.gschema.xml.in:20
 msgid "Interpret position relative to bottom/right edge"
@@ -1621,11 +1559,11 @@ msgstr "நிலையை கீழ்/வலது மூலையோடு �
 
 #: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
-"If true, the position of the object is interpreted relative to the right (or"
-" bottom if vertical) edge of the panel."
+"If true, the position of the object is interpreted relative to the right (or "
+"bottom if vertical) edge of the panel."
 msgstr ""
-"உண்மையெனில், பொருளின் நிலை பலகத்தின் இடது பக்க (அல்லது கீழ் செங்குத்து) "
-"மூலையோடு தொடர்புடையதாக கொள்ளப்படும்."
+"உண்மையெனில், பொருளின் நிலை பலகத்தின் இடது பக்க (அல்லது கீழ் செங்குத்து) மூலையோடு "
+"தொடர்புடையதாக கொள்ளப்படும்."
 
 #: data/org.cafe.panel.object.gschema.xml.in:25
 msgid "Lock the object to the panel"
@@ -1633,11 +1571,11 @@ msgstr "பொருளை பலகையில் ஒட்டுக"
 
 #: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
-"If true, the user may not move the applet without first unlocking the object"
-" using the \"Unlock\" menuitem."
+"If true, the user may not move the applet without first unlocking the object "
+"using the \"Unlock\" menuitem."
 msgstr ""
-"உண்மையெனில், பயனீட்டாளர் பலகத்தின் பூட்டை \"பூட்டை திற\" தேர்வை பயன்படுத்தி "
-"திறந்த பின்பு குறுநிரல்டை நகர்த்த முடியும்."
+"உண்மையெனில், பயனீட்டாளர் பலகத்தின் பூட்டை \"பூட்டை திற\" தேர்வை பயன்படுத்தி திறந்த பின்பு "
+"குறுநிரல்டை நகர்த்த முடியும்."
 
 #: data/org.cafe.panel.object.gschema.xml.in:30
 msgid "Applet IID"
@@ -1645,10 +1583,9 @@ msgstr "குறும்பயன் IID "
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. "
-"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
-"applet\")."
+"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
+"ClockApplet\". This key is only relevant if the object_type key is "
+"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
 msgstr ""
 
 #: data/org.cafe.panel.object.gschema.xml.in:35
@@ -1660,8 +1597,8 @@ msgid ""
 "The identifier of the panel attached to this drawer. This key is only "
 "relevant if the object_type key is \"drawer-object\"."
 msgstr ""
-"பலகத்தின் இந்த அடையாளம் பெறுநரோடு பொருத்தப்பட்டிருக்கும். இந்த விசை பொருள் "
-"வகை \"பெறுநர் பொருள்\" என இருந்தால் மட்டுமே செயல்படும்."
+"பலகத்தின் இந்த அடையாளம் பெறுநரோடு பொருத்தப்பட்டிருக்கும். இந்த விசை பொருள் வகை \"பெறுநர் "
+"பொருள்\" என இருந்தால் மட்டுமே செயல்படும்."
 
 #: data/org.cafe.panel.object.gschema.xml.in:40
 msgid "Tooltip displayed for drawer or menu"
@@ -1670,11 +1607,10 @@ msgstr "இழுப்பறைக்கோ பட்டிக்கோ கர�
 #: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
-"only relevant if the object_type key is \"drawer-object\" or \"menu-"
-"object\"."
+"only relevant if the object_type key is \"drawer-object\" or \"menu-object\"."
 msgstr ""
-"இந்த இழுப்பு அல்லது மெனுவில் காட்டப்பட வேண்டிய உரை. object_type  விசை "
-"\"drawer-object\" அல்லது \"menu-object\" குறித்தால் மட்டுமே பயன்படும்."
+"இந்த இழுப்பு அல்லது மெனுவில் காட்டப்பட வேண்டிய உரை. object_type  விசை \"drawer-"
+"object\" அல்லது \"menu-object\" குறித்தால் மட்டுமே பயன்படும்."
 
 #: data/org.cafe.panel.object.gschema.xml.in:45
 msgid "Use custom icon for object's button"
@@ -1686,9 +1622,9 @@ msgid ""
 "false, the custom_icon key is ignored. This key is only relevant if the "
 "object_type key is \"menu-object\" or \"drawer-object\"."
 msgstr ""
-"உண்மையெனில், தனி_சின்ன விசை தனி சின்னத்திற்கான பட்டனாக பயன்படுத்தப்படும். "
-"பொய் எனில், தனி_சின்னம் தவிர்க்கப்படும். இந்த விசை பொருள்வகை விசை "
-"\"மெனு_பொருள்\" அல்லது \"பெறுநர் பொருளாக\" இருந்தால் மட்டுமே செயல்படும்."
+"உண்மையெனில், தனி_சின்ன விசை தனி சின்னத்திற்கான பட்டனாக பயன்படுத்தப்படும். பொய் எனில், "
+"தனி_சின்னம் தவிர்க்கப்படும். இந்த விசை பொருள்வகை விசை \"மெனு_பொருள்\" அல்லது \"பெறுநர் "
+"பொருளாக\" இருந்தால் மட்டுமே செயல்படும்."
 
 #: data/org.cafe.panel.object.gschema.xml.in:50
 msgid "Icon used for object's button"
@@ -1700,9 +1636,9 @@ msgid ""
 "This key is only relevant if the object_type key is \"drawer-object\" or "
 "\"menu-object\" and the use_custom_icon key is true."
 msgstr ""
-"இந்த பொருளுக்கான பட்டனாக தேர்வு செய்யப்பட்ட பிம்பம் உள்ள இடம். இந்த விசை "
-"பொருள்_வகை \"பெறுநர்-பொருள்\" அல்லது \"மெனு-பொருள்\" மற்றும் use_custom_icon"
-" விசை உண்மை யோடு தொடர்புடையது"
+"இந்த பொருளுக்கான பட்டனாக தேர்வு செய்யப்பட்ட பிம்பம் உள்ள இடம். இந்த விசை பொருள்_வகை "
+"\"பெறுநர்-பொருள்\" அல்லது \"மெனு-பொருள்\" மற்றும் use_custom_icon விசை உண்மை யோடு "
+"தொடர்புடையது"
 
 #: data/org.cafe.panel.object.gschema.xml.in:55
 msgid "Use custom path for menu contents"
@@ -1714,9 +1650,9 @@ msgid ""
 "should be constructed. If false, the menu_path key is ignored. This key is "
 "only relevant if the object_type key is \"menu-object\"."
 msgstr ""
-"உண்மையெனில் மெனு_பாதை விசை மெனு உள்ளடகத்திற்கான பாதையாக பயன்படுத்தப்படும். "
-"பொய் எனில் மெனு_பாதை தவிர்க்கப்படும். இந்த விசை பொருள் வகை \"மெனு_பொருளாக\" "
-"இருந்தால் மட்டுமே பயன்படும்"
+"உண்மையெனில் மெனு_பாதை விசை மெனு உள்ளடகத்திற்கான பாதையாக பயன்படுத்தப்படும். பொய் எனில் "
+"மெனு_பாதை தவிர்க்கப்படும். இந்த விசை பொருள் வகை \"மெனு_பொருளாக\" இருந்தால் மட்டுமே "
+"பயன்படும்"
 
 #: data/org.cafe.panel.object.gschema.xml.in:60
 msgid "Menu content path"
@@ -1728,8 +1664,8 @@ msgid ""
 "relevant if the use_menu_path key is true and the object_type key is \"menu-"
 "object\"."
 msgstr ""
-"மெனு உள்ளடக்கங்கள் உருவாக்க பயன்பட்ட பாதை. use_menu_path மற்றும் object_type"
-" விசைகள் \"menu-object\" விசையோடு தொடர்புடையது"
+"மெனு உள்ளடக்கங்கள் உருவாக்க பயன்பட்ட பாதை. use_menu_path மற்றும் object_type விசைகள் "
+"\"menu-object\" விசையோடு தொடர்புடையது"
 
 #: data/org.cafe.panel.object.gschema.xml.in:65
 msgid "Draw arrow in menu button"
@@ -1750,8 +1686,8 @@ msgid ""
 "The location of the .desktop file describing the launcher. This key is only "
 "relevant if the object_type key is \"launcher-object\"."
 msgstr ""
-".desktop கோப்பு இருக்குமிடம் துவக்கியை விளக்கும். இந்த விசை பொருள்வகை "
-"\"துவக்கி-பொருள்\" ளோடு தொடர்புடையது"
+".desktop கோப்பு இருக்குமிடம் துவக்கியை விளக்கும். இந்த விசை பொருள்வகை \"துவக்கி-"
+"பொருள்\" ளோடு தொடர்புடையது"
 
 #: data/org.cafe.panel.object.gschema.xml.in:75
 msgid "Action button type"
@@ -1763,9 +1699,9 @@ msgid ""
 "\"logout\", \"run\", \"search\" and \"screenshot\". This key is only "
 "relevant if the object_type key is \"action-applet\"."
 msgstr ""
-"இந்த பட்டன் குறிப்பிடும் செயல்பாட்டு வகை. மதிப்புகள் \"பூட்டப்படது\", "
-"\"வெளிச்செல்\", \"தேடு\" மற்றும் \"திரைக்காப்பு\" ஆகியவையாக இருக்கும். இந்த "
-"விசை பொருள்வகை \"செயல்-குறுநிரல்\" என இருக்கும் போது மட்டுமே செயல்படும்."
+"இந்த பட்டன் குறிப்பிடும் செயல்பாட்டு வகை. மதிப்புகள் \"பூட்டப்படது\", \"வெளிச்செல்\", "
+"\"தேடு\" மற்றும் \"திரைக்காப்பு\" ஆகியவையாக இருக்கும். இந்த விசை பொருள்வகை \"செயல்-"
+"குறுநிரல்\" என இருக்கும் போது மட்டுமே செயல்படும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:5
 msgid "Name to identify panel"
@@ -1777,8 +1713,8 @@ msgid ""
 "main purpose is to serve as the panel's window title which is useful when "
 "navigating between panels."
 msgstr ""
-"இந்து படிக்ககூடிய பெரை பலகத்தின் பெயரை குறிக்க பயன்படுத்தலாம்.இதன் முக்கிய "
-"குறிக்கோள் பலகத்தின் பெயருக்கு ஏற்ப அதை பயன்படுத்துவதே "
+"இந்து படிக்ககூடிய பெரை பலகத்தின் பெயரை குறிக்க பயன்படுத்தலாம்.இதன் முக்கிய குறிக்கோள் "
+"பலகத்தின் பெயருக்கு ஏற்ப அதை பயன்படுத்துவதே "
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:10
 msgid "X screen where the panel is displayed"
@@ -1789,8 +1725,8 @@ msgid ""
 "With a multi-screen setup, you may have panels on each individual screen. "
 "This key identifies the current screen the panel is displayed on."
 msgstr ""
-"பல-திரை அமைப்புகளோடு, ஒவ்வொரு திரையிலும் பலகத்தை வைத்துக்கொள்ள முடியும். "
-"இந்த விசை பலகம் தற்போது காட்ட வேண்டிய விசையை குறிக்கும்."
+"பல-திரை அமைப்புகளோடு, ஒவ்வொரு திரையிலும் பலகத்தை வைத்துக்கொள்ள முடியும். இந்த விசை "
+"பலகம் தற்போது காட்ட வேண்டிய விசையை குறிக்கும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:15
 msgid "Xinerama monitor where the panel is displayed"
@@ -1801,8 +1737,8 @@ msgid ""
 "In a Xinerama setup, you may have panels on each individual monitor. This "
 "key identifies the current monitor the panel is displayed on."
 msgstr ""
-"ஸ்னிரமா நிறுவலில், ஒவ்வொரு திரையிலும் பலகம் இருக்கும். இந்த விசை தற்போது "
-"திரையில் காட்டப்படும் பலகத்தை குறிக்கும்."
+"ஸ்னிரமா நிறுவலில், ஒவ்வொரு திரையிலும் பலகம் இருக்கும். இந்த விசை தற்போது திரையில் "
+"காட்டப்படும் பலகத்தை குறிக்கும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:20
 msgid "Expand to occupy entire screen width"
@@ -1811,14 +1747,13 @@ msgstr "திரை அகலத்திட்கு பொருந்து�
 #: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
-"vertical panel). In this mode the panel can only be placed at a screen edge."
-" If false, the panel will only be large enough to accommodate the applets, "
+"vertical panel). In this mode the panel can only be placed at a screen edge. "
+"If false, the panel will only be large enough to accommodate the applets, "
 "launchers and buttons on the panel."
 msgstr ""
-"உண்மையெனில், பலகம் திரை அகலத்தை முழுமையாக ஆக்ரமிக்கும்(செங்குத்து பகலமெனில் "
-"உயரம்).இந்த பாங்கில் பலகம் திரையின் மூலையில் வைக்கப்படும்.பொய்யெனில் "
-"பலகத்தால் குறுநிரல், துவக்கி மற்றும் பட்டனுக்கு்கு மட்டுமே இடமளிக்க "
-"முடியும்."
+"உண்மையெனில், பலகம் திரை அகலத்தை முழுமையாக ஆக்ரமிக்கும்(செங்குத்து பகலமெனில் உயரம்).இந்த "
+"பாங்கில் பலகம் திரையின் மூலையில் வைக்கப்படும்.பொய்யெனில் பலகத்தால் குறுநிரல், துவக்கி "
+"மற்றும் பட்டனுக்கு்கு மட்டுமே இடமளிக்க முடியும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:25
 msgid "Panel orientation"
@@ -1829,18 +1764,17 @@ msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
 "the panel is on. In un-expanded mode the difference between \"top\" and "
-"\"bottom\" is less important - both indicate that this is a horizontal panel"
-" - but still give a useful hint as to how some panel objects should behave. "
-"For example, on a \"top\" panel a menu button will pop up its menu below the"
-" panel, whereas on a \"bottom\" panel the menu will be popped up above the "
+"\"bottom\" is less important - both indicate that this is a horizontal panel "
+"- but still give a useful hint as to how some panel objects should behave. "
+"For example, on a \"top\" panel a menu button will pop up its menu below the "
+"panel, whereas on a \"bottom\" panel the menu will be popped up above the "
 "panel."
 msgstr ""
-"பலகத்தின் அமைப்பு. மதிப்புகள் \"மேல்\",\"கீழ்\",\"இடது\" மற்றும் "
-"\"வலது\".விரிவாக்க  பாங்கில் எந்த திரை ஓர பலகம் செயல்பாட்டில் உள்ளது என்பதை "
-"காட்டும். விரிக்காத பாங்கு கிடைமட்ட பாங்கை குறிப்பதால் \"மேல்\" மற்றும் "
-"\"கீழ்\" முக்கியமில்லை - ஆனால் இது பலக பொருள்கள் எவ்வாறு நடந்துகொள்ளும் "
-"என்பதை காட்டும். உதாரணம் \"மேல்\" பலகம் மெனு பட்டன் அதன் மெனுவை பலகத்தின் "
-"கீழே காட்டும் ஆனால் \"கீழ்\" பலகம் மெனு பலகத்தின் மேலே காட்டப்படும்,"
+"பலகத்தின் அமைப்பு. மதிப்புகள் \"மேல்\",\"கீழ்\",\"இடது\" மற்றும் \"வலது\".விரிவாக்க  "
+"பாங்கில் எந்த திரை ஓர பலகம் செயல்பாட்டில் உள்ளது என்பதை காட்டும். விரிக்காத பாங்கு "
+"கிடைமட்ட பாங்கை குறிப்பதால் \"மேல்\" மற்றும் \"கீழ்\" முக்கியமில்லை - ஆனால் இது பலக "
+"பொருள்கள் எவ்வாறு நடந்துகொள்ளும் என்பதை காட்டும். உதாரணம் \"மேல்\" பலகம் மெனு பட்டன் அதன் "
+"மெனுவை பலகத்தின் கீழே காட்டும் ஆனால் \"கீழ்\" பலகம் மெனு பலகத்தின் மேலே காட்டப்படும்,"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:30
 msgid "Panel size"
@@ -1853,9 +1787,9 @@ msgid ""
 "indicators. The maximum size is fixed at one quarter of the screen height "
 "(or width)."
 msgstr ""
-"பலகத்தின் உயரம்(செங்குத்து பலகத்தின் அகலம்). பலகம் இயக்கத்திலிருக்கும் போது "
-"எழுத்துரு அளவு மற்றும் மற்ற காட்டிகள் பற்றிய விவரங்களை கண்டறியும். அதிக பட்ச"
-" அளவு திரையின் உயரத்தின் கால் பகுதியாக இருக்கும்(அல்லது அகலம்)"
+"பலகத்தின் உயரம்(செங்குத்து பலகத்தின் அகலம்). பலகம் இயக்கத்திலிருக்கும் போது எழுத்துரு அளவு "
+"மற்றும் மற்ற காட்டிகள் பற்றிய விவரங்களை கண்டறியும். அதிக பட்ச அளவு திரையின் உயரத்தின் கால் "
+"பகுதியாக இருக்கும்(அல்லது அகலம்)"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:35
 msgid "X co-ordinate of panel"
@@ -1867,9 +1801,8 @@ msgid ""
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
 "at the screen edge specified by the orientation key."
 msgstr ""
-"x-அச்சில் பலகம் இருக்குமிடம். இது இயக்க பாங்கோடு தொடர்புடையது. விரிவாக்க "
-"பாங்கில் இந்த விசை தவிர்க்கப்படும் மற்றும் பகலம் திரையில் ஓரத்தில் திசை "
-"விசையை பொருத்து வைக்கப்படும்"
+"x-அச்சில் பலகம் இருக்குமிடம். இது இயக்க பாங்கோடு தொடர்புடையது. விரிவாக்க பாங்கில் இந்த "
+"விசை தவிர்க்கப்படும் மற்றும் பகலம் திரையில் ஓரத்தில் திசை விசையை பொருத்து வைக்கப்படும்"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:40
 msgid "Y co-ordinate of panel"
@@ -1881,9 +1814,8 @@ msgid ""
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
 "at the screen edge specified by the orientation key."
 msgstr ""
-"y-அச்சில் பலகம் இருக்குமிடம். இது இயக்க பாங்கோடு தொடர்புடையது. விரிவாக்க "
-"பாங்கில் இந்த விசை தவிர்க்கப்படும் மற்றும் பகலம் திரையில் ஓரத்தில் திசை "
-"விசையை பொருத்து வைக்கப்படும்"
+"y-அச்சில் பலகம் இருக்குமிடம். இது இயக்க பாங்கோடு தொடர்புடையது. விரிவாக்க பாங்கில் இந்த "
+"விசை தவிர்க்கப்படும் மற்றும் பகலம் திரையில் ஓரத்தில் திசை விசையை பொருத்து வைக்கப்படும்"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:45
 msgid "X co-ordinate of panel, starting from the right of the screen"
@@ -1898,11 +1830,10 @@ msgid ""
 "this key is ignored and the panel is placed at the screen edge specified by "
 "the orientation key."
 msgstr ""
-"திரையின் வலது பக்கம் துவங்கி x-அச்சில் பலகம் இருக்குமிடம். மதிப்பை -1 என "
-"அமைத்தால் அது உதாசீனப்படுத்தப்பட்டு x விசை பயன்படுத்தப்படும். மதிப்பு 0 க்கு"
-" மேல் இருந்தால் x விசை மதிப்பு உதாசீனப்படுத்தப்படும்.  இது இயக்க பாங்கோடு "
-"தொடர்புடையது. விரிவாக்க பாங்கில் இந்த விசை தவிர்க்கப்படும் மற்றும் பலகம் "
-"திரையில் ஓரத்தில் திசை விசையை பொருத்து வைக்கப்படும்"
+"திரையின் வலது பக்கம் துவங்கி x-அச்சில் பலகம் இருக்குமிடம். மதிப்பை -1 என அமைத்தால் அது "
+"உதாசீனப்படுத்தப்பட்டு x விசை பயன்படுத்தப்படும். மதிப்பு 0 க்கு மேல் இருந்தால் x விசை "
+"மதிப்பு உதாசீனப்படுத்தப்படும்.  இது இயக்க பாங்கோடு தொடர்புடையது. விரிவாக்க பாங்கில் இந்த "
+"விசை தவிர்க்கப்படும் மற்றும் பலகம் திரையில் ஓரத்தில் திசை விசையை பொருத்து வைக்கப்படும்"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:50
 msgid "Y co-ordinate of panel, starting from the bottom of the screen"
@@ -1917,11 +1848,10 @@ msgid ""
 "this key is ignored and the panel is placed at the screen edge specified by "
 "the orientation key."
 msgstr ""
-"திரையின் வலது பக்கம் துவங்கி y-அச்சில் பலகம் இருக்குமிடம். மதிப்பை -1 என "
-"அமைத்தால் அது உதாசீனப்படுத்தப்பட்டு y விசை பயன்படுத்தப்படும். மதிப்பு 0 க்கு"
-" மேல் இருந்தால் y விசை மதிப்பு உதாசீனப்படுத்தப்படும்.  இது இயக்க பாங்கோடு "
-"தொடர்புடையது. விரிவாக்க பாங்கில் இந்த விசை தவிர்க்கப்படும் மற்றும் பலகம் "
-"திரையில் ஓரத்தில் திசை விசையை பொருத்து வைக்கப்படும்"
+"திரையின் வலது பக்கம் துவங்கி y-அச்சில் பலகம் இருக்குமிடம். மதிப்பை -1 என அமைத்தால் அது "
+"உதாசீனப்படுத்தப்பட்டு y விசை பயன்படுத்தப்படும். மதிப்பு 0 க்கு மேல் இருந்தால் y விசை "
+"மதிப்பு உதாசீனப்படுத்தப்படும்.  இது இயக்க பாங்கோடு தொடர்புடையது. விரிவாக்க பாங்கில் இந்த "
+"விசை தவிர்க்கப்படும் மற்றும் பலகம் திரையில் ஓரத்தில் திசை விசையை பொருத்து வைக்கப்படும்"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:55
 msgid "Center panel on x-axis"
@@ -1934,10 +1864,10 @@ msgid ""
 "at that position - i.e. the panel will grow on both sides. If false, the x "
 "and x_right keys specify the location of the panel."
 msgstr ""
-"உண்மையெனில் x விசை மற்றும் x வலது விசை தவிர்க்கப்பட்டு பலகம் x-அச்சின் "
-"திரையின் மையத்தில் வைக்கப்படும். பலகத்தின் அளவை மாற்றினால் அது அதே நிலையில் "
-"நிற்கும். அதாவது பலகம் எல்லா திசைகளிலும் விரியும். பொய்யெனில் x விசை மற்றும்"
-" x வலது விசை பலகத்தின் இடத்தை குறிப்பிடும்"
+"உண்மையெனில் x விசை மற்றும் x வலது விசை தவிர்க்கப்பட்டு பலகம் x-அச்சின் திரையின் மையத்தில் "
+"வைக்கப்படும். பலகத்தின் அளவை மாற்றினால் அது அதே நிலையில் நிற்கும். அதாவது பலகம் எல்லா "
+"திசைகளிலும் விரியும். பொய்யெனில் x விசை மற்றும் x வலது விசை பலகத்தின் இடத்தை "
+"குறிப்பிடும்"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:60
 msgid "Center panel on y-axis"
@@ -1950,10 +1880,9 @@ msgid ""
 "at that position - i.e. the panel will grow on both sides. If false, the y "
 "and y_bottom keys specify the location of the panel."
 msgstr ""
-"உண்மையெனில் y மற்றும் yகீழ்விசைகள் தவிர்க்கப்பட்டு பலகம் y-அச்சின் திரையின் "
-"மையத்தில் வைக்கப்படும். பலகத்தின் அளவை மாற்றினால் அது அதே நிலையில் நிற்கும்."
-" அதாவது பலகம் எல்லா திசைகளிலும் விரியும். பொய்யெனில் y மற்றும் yகீழ்விசைகள் "
-"பலகத்தின் இடத்தை குறிப்பிடும்"
+"உண்மையெனில் y மற்றும் yகீழ்விசைகள் தவிர்க்கப்பட்டு பலகம் y-அச்சின் திரையின் மையத்தில் "
+"வைக்கப்படும். பலகத்தின் அளவை மாற்றினால் அது அதே நிலையில் நிற்கும். அதாவது பலகம் எல்லா "
+"திசைகளிலும் விரியும். பொய்யெனில் y மற்றும் yகீழ்விசைகள் பலகத்தின் இடத்தை குறிப்பிடும்"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:65
 msgid "Automatically hide panel into corner"
@@ -1965,17 +1894,17 @@ msgid ""
 "the pointer leaves the panel area. Moving the pointer to that corner again "
 "will cause the panel to re-appear."
 msgstr ""
-"உண்மையெனில்  அம்புக்குறியை விடுவிக்கும் போது பலகம் தானாக மறைக்கப்பட்டு "
-"திரையின் ஓரத்திற்கு சென்றுவிரும். அம்புக்குறியை திரையின் ஓரத்திற்கு கொண்டு "
-"சென்றால் பலகம் மீண்டும் தெரியும்."
+"உண்மையெனில்  அம்புக்குறியை விடுவிக்கும் போது பலகம் தானாக மறைக்கப்பட்டு திரையின் "
+"ஓரத்திற்கு சென்றுவிரும். அம்புக்குறியை திரையின் ஓரத்திற்கு கொண்டு சென்றால் பலகம் மீண்டும் "
+"தெரியும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
 "If true, hiding and un-hiding of this panel will be anicafed rather than "
 "happening instantly."
 msgstr ""
-"உண்மையெனில், மறைத்தல் மற்றும் காட்டல் ஆகியவை அப்போது காட்டபடுவதற்கு பதிலாக "
-"இயக்க சித்திரமாக காட்டப்படும்."
+"உண்மையெனில், மறைத்தல் மற்றும் காட்டல் ஆகியவை அப்போது காட்டபடுவதற்கு பதிலாக இயக்க "
+"சித்திரமாக காட்டப்படும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:75
 msgid "Enable hide buttons"
@@ -1986,8 +1915,8 @@ msgid ""
 "If true, buttons will be placed on each side of the panel which may be used "
 "to move the panel to edge of the screen, leaving only a button showing."
 msgstr ""
-"உண்மையெனில், பட்டன் பலகத்தின் ஒவ்வொரு ஓரத்திலும் வைக்கப்படும் இதலால் பகலத்தை"
-" திரையின் ஓரத்திற்கு நகர்த்த முடியும்."
+"உண்மையெனில், பட்டன் பலகத்தின் ஒவ்வொரு ஓரத்திலும் வைக்கப்படும் இதலால் பகலத்தை திரையின் "
+"ஓரத்திற்கு நகர்த்த முடியும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:80
 msgid "Enable arrows on hide buttons"
@@ -1998,8 +1927,8 @@ msgid ""
 "If true, arrows will be placed on the hide buttons. This key is only "
 "relevant if the enable_buttons key is true."
 msgstr ""
-"உண்மையெனில், அம்புக்குறி பட்டனில் மேல் வைக்கப்படும். இந்த வைசை பட்டனை "
-"செயல்படுத்து விசையோடு தொடர்புடையது."
+"உண்மையெனில், அம்புக்குறி பட்டனில் மேல் வைக்கப்படும். இந்த வைசை பட்டனை செயல்படுத்து "
+"விசையோடு தொடர்புடையது."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:85
 msgid "Panel autohide delay"
@@ -2011,9 +1940,9 @@ msgid ""
 "panel area before the panel is automatically hidden. This key is only "
 "relevant if the auto_hide key is true."
 msgstr ""
-"பலகம் தானாக மறுபடி காட்டப்படும் போது அம்புக்குறி பலக பகுதியிலிருந்து "
-"வெளியேறிய பின் உள்ள மில்லிசெகண்டை குறிப்பிடும். இந்த விசை தானாக_மறை விசை "
-"செயலில் இருக்கும் போது செயல்படும்."
+"பலகம் தானாக மறுபடி காட்டப்படும் போது அம்புக்குறி பலக பகுதியிலிருந்து வெளியேறிய பின் "
+"உள்ள மில்லிசெகண்டை குறிப்பிடும். இந்த விசை தானாக_மறை விசை செயலில் இருக்கும் போது "
+"செயல்படும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:90
 msgid "Panel autounhide delay"
@@ -2025,9 +1954,8 @@ msgid ""
 "panel area before the panel is automatically re-shown. This key is only "
 "relevant if the auto_hide key is true."
 msgstr ""
-"பலகம் தானாக மறுபடி காட்டப்படும் போது அம்புக்குறி பலக பகுதிக்குள் நுழைந்த "
-"பின்னும் உள்ள மில்லிசெகண்டை குறிப்பிடும். இந்த விசை தானாக_மறை விசை செயலில் "
-"இருக்கும் போது செயல்படும்."
+"பலகம் தானாக மறுபடி காட்டப்படும் போது அம்புக்குறி பலக பகுதிக்குள் நுழைந்த பின்னும் உள்ள "
+"மில்லிசெகண்டை குறிப்பிடும். இந்த விசை தானாக_மறை விசை செயலில் இருக்கும் போது செயல்படும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:95
 msgid "Visible pixels when hidden"
@@ -2036,11 +1964,10 @@ msgstr "தெரியக்கூடிய பிக்செல்கள் �
 #: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
-"hidden into a corner. This key is only relevant if the auto_hide key is "
-"true."
+"hidden into a corner. This key is only relevant if the auto_hide key is true."
 msgstr ""
-"பலகம் தானாக ஓரத்தில் மறைந்த பின் உள்ள பிக்செல்லின் எண்ணிக்கையை குறிக்கும். "
-"இந்த விசை தானாக_மறை விசையோடு தொடர்புடையது."
+"பலகம் தானாக ஓரத்தில் மறைந்த பின் உள்ள பிக்செல்லின் எண்ணிக்கையை குறிக்கும். இந்த விசை "
+"தானாக_மறை விசையோடு தொடர்புடையது."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:100
 msgid "Animation speed"
@@ -2052,9 +1979,8 @@ msgid ""
 "\"slow\", \"medium\" and \"fast\". This key is only relevant if the "
 "enable_animations key is true."
 msgstr ""
-"பலக உயிர்சித்திரம் நிகழ வேண்டிய வேகம். மதிப்புகள் \"மெதுவாக\", "
-"\"நடுநிலையாக\", மற்றும் \"வேகமாக\". உயிர்சித்திரத்தை செயல்படுத்து விசை "
-"உண்மையெனில் இந்த விசை செயல்படும்."
+"பலக உயிர்சித்திரம் நிகழ வேண்டிய வேகம். மதிப்புகள் \"மெதுவாக\", \"நடுநிலையாக\", "
+"மற்றும் \"வேகமாக\". உயிர்சித்திரத்தை செயல்படுத்து விசை உண்மையெனில் இந்த விசை செயல்படும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:108
 msgid "Background type"
@@ -2083,12 +2009,12 @@ msgstr "பின்னணி வண்ணத்தின் ஒளி-புக
 #: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
-"completely opaque (a value of less than 65535), the color will be composited"
-" onto the desktop background image."
+"completely opaque (a value of less than 65535), the color will be composited "
+"onto the desktop background image."
 msgstr ""
 "பின்னனி வண்ணத்தின் ஒலி புகும் தன்மையை காட்டும்.நிறம் ஒலிபுகுதன்மை இல்லாமல் "
-"இருந்தால்(மதிப்பு 65535 ஐ விட குறைவாக இருந்தால்), வண்ணம் மேல்மேசையில் "
-"பின்னனி வண்ணத்தோடு இணைந்து காட்டப்படும்."
+"இருந்தால்(மதிப்பு 65535 ஐ விட குறைவாக இருந்தால்), வண்ணம் மேல்மேசையில் பின்னனி வண்ணத்தோடு "
+"இணைந்து காட்டப்படும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:123
 msgid "Background image"
@@ -2100,8 +2026,8 @@ msgid ""
 "contains an alpha channel it will be composited onto the desktop background "
 "image."
 msgstr ""
-"பின்னனியாக பயன்படுத்த வேண்டிய பிம்பத்தை குறிப்பிடும். பிம்பத்தில் ஆல்பா அது "
-"மேல் மேசையில் கூட்டாக தெரியும்"
+"பின்னனியாக பயன்படுத்த வேண்டிய பிம்பத்தை குறிப்பிடும். பிம்பத்தில் ஆல்பா அது மேல் மேசையில் "
+"கூட்டாக தெரியும்"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:128
 msgid "Fit image to panel"
@@ -2112,8 +2038,8 @@ msgid ""
 "If true, the image will be scaled (retaining the aspect ratio of the image) "
 "to the panel height (if horizontal)."
 msgstr ""
-"உண்மையெனில், பிம்பம் பகத்தில் உயரத்திற்கேற்ப.(விகிதத்தை நினைவில் கொண்டு "
-"செயல்படும்) அளவு மாற்றம் செய்யப்படும்."
+"உண்மையெனில், பிம்பம் பகத்தில் உயரத்திற்கேற்ப.(விகிதத்தை நினைவில் கொண்டு செயல்படும்) அளவு "
+"மாற்றம் செய்யப்படும்."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:133
 msgid "Stretch image to panel"
@@ -2124,8 +2050,8 @@ msgid ""
 "If true, the image will be scaled to the panel dimensions. The aspect ratio "
 "of the image will not be maintained."
 msgstr ""
-"உண்மையெனில், பலகத்தின் அளவுக்கேற்ப பிம்பம் அளவுமாற்றம் செய்யப்படும். "
-"விகிதத்தை நினைவில் கொள்ளாது"
+"உண்மையெனில், பலகத்தின் அளவுக்கேற்ப பிம்பம் அளவுமாற்றம் செய்யப்படும். விகிதத்தை நினைவில் "
+"கொள்ளாது"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:138
 msgid "Rotate image on vertical panels"
@@ -2135,8 +2061,7 @@ msgstr "செங்குத்தான-பலகத்தில் பிம�
 msgid ""
 "If true, the background image will be rotated when the panel is oriented "
 "vertically."
-msgstr ""
-"உண்மையெனில், பலகத்தை செங்குத்தாக சுழற்றும் போது பின்னனி பிம்பமும் சுழலும்"
+msgstr "உண்மையெனில், பலகத்தை செங்குத்தாக சுழற்றும் போது பின்னனி பிம்பமும் சுழலும்"
 
 #: cafe-panel/libegg/eggdesktopfile.c:168
 msgid "File is not a valid .desktop file"
@@ -2202,7 +2127,7 @@ msgid "_Open"
 msgstr "(_O)திற"
 
 #: cafe-panel/libpanel-util/panel-error.c:76
-#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
+#: cafe-panel/panel-applet-frame.c:800 cafe-panel/panel-applet-frame.c:988
 msgid "Error"
 msgstr "பிழை"
 
@@ -2249,7 +2174,7 @@ msgid "Cannot find an empty spot"
 msgstr "காலியான ஓரிடம் இல்லை"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1650
+#: cafe-panel/panel-toplevel.c:1643
 msgid "Drawer"
 msgstr "இழுப்பறை"
 
@@ -2258,7 +2183,7 @@ msgid "_Add to Drawer..."
 msgstr "(_A) இழுப்பறையில் சேர்க்கவும்..."
 
 #: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
-#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:247
 msgid "_Properties"
 msgstr "(_P)பண்புகள்"
 
@@ -2275,7 +2200,7 @@ msgid "- Edit .desktop files"
 msgstr "- .desktop கோப்புகளை திருத்தவும்"
 
 #: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
 msgid "Create Launcher"
 msgstr "தொடங்கர் உருவாக்குக"
 
@@ -2288,7 +2213,7 @@ msgstr "அடைவின் பண்புகள்"
 msgid "Launcher Properties"
 msgstr "தொடங்கர் பண்புகள்"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "பலகம்"
 
@@ -2297,14 +2222,7 @@ msgid ""
 "Launch other applications and provide various utilities to manage windows, "
 "show the time, etc."
 msgstr ""
-"மற்ற நிரல்களை துவக்கவும், சாளரங்களை மேலாள,நேரத்தை காட்ட போன்ற பல பயன்பாடுகளை"
-" தரவும்."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cafe-panel/cafe-panel.desktop.in:7
-msgid "cafe-panel"
-msgstr ""
+"மற்ற நிரல்களை துவக்கவும், சாளரங்களை மேலாள,நேரத்தை காட்ட போன்ற பல பயன்பாடுகளை தரவும்."
 
 #: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
@@ -2336,7 +2254,7 @@ msgstr "துவக்கவும் _L "
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "%s விசை அமைக்கப்படவில்லை, தொடங்கரை ஏற்ற முடியவில்லை\n"
 
-#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "தொடங்கரை சேமிக்க முடியவில்லை"
@@ -2411,8 +2329,7 @@ msgstr "செயல்பாடு இயக்குக..."
 
 #: cafe-panel/panel-action-button.c:389
 msgid "Run an application by typing a command or choosing from a list"
-msgstr ""
-"கட்டளையை உள்ளிட்டு அல்லது பட்டியலிலிருந்து தேர்ந்தெடுத்து செயல்பாடை இயக்குக"
+msgstr "கட்டளையை உள்ளிட்டு அல்லது பட்டியலிலிருந்து தேர்ந்தெடுத்து செயல்பாடை இயக்குக"
 
 #: cafe-panel/panel-action-button.c:398
 msgid "Search for Files..."
@@ -2421,8 +2338,7 @@ msgstr "கோப்புகளை தேடவும்..."
 #: cafe-panel/panel-action-button.c:399
 msgid "Locate documents and folders on this computer by name or content"
 msgstr ""
-"இந்த கணினியில் உள்ள ஆவணங்கள் அல்லது அடைவுகளை பெயராலோ உள்ளடக்கத்தாலோ "
-"கண்டுபிடிக்கவும்"
+"இந்த கணினியில் உள்ள ஆவணங்கள் அல்லது அடைவுகளை பெயராலோ உள்ளடக்கத்தாலோ கண்டுபிடிக்கவும்"
 
 #: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
 msgid "Force Quit"
@@ -2504,70 +2420,68 @@ msgstr ""
 msgid "Not compatible with Wayland"
 msgstr ""
 
-#: cafe-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1055
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "(_i) \"%s\" இல் சேர்ப்பதற்கான ஒரு உருப்படியை கண்டு பிடிக்கவும்:"
 
-#: cafe-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1059
 msgid "Add to Drawer"
 msgstr "இழுப்பறையில் சேர்க்கவும்..."
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Find an _item to add to the drawer:"
 msgstr "(_i) இழுப்பறையில் சேர்ப்பதற்கான ஒரு உருப்படியை கண்டு பிடிக்கவும்:"
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Add to Panel"
 msgstr "பலகைப் பாளத்தோடு சேர்க்கவும்"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Find an _item to add to the panel:"
 msgstr "பலகத்தில் சேர்ப்பதற்கான ஒரு உருப்படியை கண்டு பிடிக்கவும்:"
 
-#: cafe-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1313
 msgid "_Back"
 msgstr "(_B)பின்"
 
-#: cafe-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:761
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "\"%s\" எதிர்பாராது வெளியேறியது"
 
-#: cafe-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:763
 msgid "Panel object has quit unexpectedly"
 msgstr "பலகப் பொருள் எதிர்பாராதவிதமாக வெளியேறியது"
 
-#: cafe-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:770
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
-msgstr ""
-"நீங்கள் ஒரு பலக பொருளை மீள் ஏற்றம் செய்தால் அது பலகத்தில் தானியங்கியாக "
-"சேர்க்கப்படும்."
+msgstr "நீங்கள் ஒரு பலக பொருளை மீள் ஏற்றம் செய்தால் அது பலகத்தில் தானியங்கியாக சேர்க்கப்படும்."
 
-#: cafe-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:777
 msgid "D_elete"
 msgstr ""
 
-#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:778 cafe-panel/panel-applet-frame.c:783
 msgid "_Don't Reload"
 msgstr "(_D) மீண்டும் ஏற்ற வேண்டாம்"
 
-#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:779 cafe-panel/panel-applet-frame.c:784
 msgid "_Reload"
 msgstr "மீண்டும் ஏற்று (_R)"
 
-#: cafe-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:950
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "பலகையில் \"%s\" ஏற்றும்போது ஒரு பிழை நடைபெற்றது."
 
-#: cafe-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:965
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "உங்கள் வடிவமைப்பிலிருந்து இந்த குறுநிரலை நீக்க விருப்பமா?"
 
-#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "(_D)நீக்கவும்"
 
@@ -2583,54 +2497,59 @@ msgstr "கனோம் பலகm"
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 CAFE developers"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:120
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
 msgstr "இந்த நிரல் மற்ற நிரல்களை துவக்கவும் சிறு பயன்பாடுகளை தரவும் பயன்படும்"
 
-#: cafe-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:124
 msgid "About the CAFE Panel"
 msgstr "க்னோம் பலகம் பற்றி"
 
-#: cafe-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:155
 msgid "Cannot delete this panel"
 msgstr "இந்த பலகத்தை நீக்க இயலாது"
 
-#: cafe-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:156
 msgid "You must always have at least one panel."
 msgstr "நீங்கள் எப்போதும் ஒரு பலகமாவது பெற்றிருக்க வேண்டும்."
 
-#: cafe-panel/panel-context-menu.c:199
-msgid "Reset this panel?"
+#: cafe-panel/panel-context-menu.c:200
+msgid "Reset all panels?"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:200
+#: cafe-panel/panel-context-menu.c:201
 msgid ""
-"When a panel is reset, all \n"
+"When the panels are reset, all \n"
 "custom settings are lost."
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
-msgid "_Reset Panel"
+#: cafe-panel/panel-context-menu.c:215
+msgid "_Reset Panels"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:237
 msgid "_Add to Panel…"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:257
+msgid "_Reset All Panels"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:264
 msgid "_Delete This Panel"
 msgstr "(_D) இந்த பலகையை அழிக்கவும்"
 
-#: cafe-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:277
 msgid "_New Panel"
 msgstr "(_N) புதிய பலகை"
 
-#: cafe-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:326
 msgid "A_bout Panels"
 msgstr "(_b) பலகம் பற்றி"
 
@@ -2710,8 +2629,7 @@ msgstr "உதவி ஆவணத்தை காட்ட இயலவில்
 msgid ""
 "Click on a window to force the application to quit. To cancel press <ESC>."
 msgstr ""
-"பயன்பாட்டை வௌதயேறு வலியுறுத்தத சாளரத்தின் மேல் சொடுக்கு. விடுபட <ESC> "
-"அழுத்தவும்"
+"பயன்பாட்டை வௌதயேறு வலியுறுத்தத சாளரத்தின் மேல் சொடுக்கு. விடுபட <ESC> அழுத்தவும்"
 
 #: cafe-panel/panel-force-quit.c:232
 msgid "Force this application to exit?"
@@ -2722,8 +2640,8 @@ msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."
 msgstr ""
-"ஒரு பயன்பாட்டை விட்டு வெளியேறினால், திறக்கப்பட்ட ஆவணங்களில் சேமிக்கப்படாத "
-"மாற்றங்களை இழக்க நேரும்"
+"ஒரு பயன்பாட்டை விட்டு வெளியேறினால், திறக்கப்பட்ட ஆவணங்களில் சேமிக்கப்படாத மாற்றங்களை இழக்க "
+"நேரும்"
 
 #: cafe-panel/panel-menu-bar.c:97
 msgid "Browse and run installed applications"
@@ -2803,50 +2721,50 @@ msgstr "பணிமேடை"
 msgid "Open the contents of your desktop in a folder"
 msgstr "உங்கள் மேல்மேசை உள்ளடக்கத்தை ஒரு அடைவில் திறக்கவும்"
 
-#: cafe-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1075
 msgid "Computer"
 msgstr "கணிணி"
 
-#: cafe-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1081
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
-msgstr ""
-"இந்த கணினியிலிருந்து எல்லா உள்ளமை/தொலை வட்டுகள் மற்றும் அடைவுகளை அணுக உலாவு."
+msgstr "இந்த கணினியிலிருந்து எல்லா உள்ளமை/தொலை வட்டுகள் மற்றும் அடைவுகளை அணுக உலாவு."
 
-#: cafe-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1094
 msgid "Network"
 msgstr "பிணையம்"
 
-#: cafe-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1095
 msgid "Browse bookmarked and local network locations"
 msgstr "புத்தக குறிப்பு செய்த மற்றும் உள்ளமை இடங்களை உலாவுக"
 
-#: cafe-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1489
 msgid "Places"
 msgstr "இடங்கள்"
 
-#: cafe-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1517
 msgid "System"
 msgstr "அமைப்பு"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: cafe-panel/panel-menu-items.c:1600
+#.
+#: cafe-panel/panel-menu-items.c:1602
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1614
 #, c-format
 msgid "Log Out %s..."
 msgstr "வெளியேறு %s..."
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1618
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr "வேறு பயனீட்டாளராக உள்ளே நுழைய இந்த அமர்விலிருந்து %s ஐ வெளியேற்றவும்"
@@ -3013,39 +2931,37 @@ msgstr "சமீபத்தில் ஆவணங்களை சுத்த�
 
 #: cafe-panel/panel-recent.c:240
 msgid "Clear all items from the recent documents list"
-msgstr ""
-"சமீபத்தில் ஆவணங்கள் பட்டியலிலிருந்து எல்லா உருப்படிகளையும் சுத்தப்படுத்த "
-"வேண்டுமா?"
+msgstr "சமீபத்தில் ஆவணங்கள் பட்டியலிலிருந்து எல்லா உருப்படிகளையும் சுத்தப்படுத்த வேண்டுமா?"
 
-#: cafe-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:435
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "'%s' கட்டளை இயக்க முடியவில்லை"
 
-#: cafe-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:476
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "UTF-8 இலிருந்து '%s' ஐ மாற்ற முடியவில்லை"
 
-#: cafe-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1269
 msgid "Choose a file to append to the command..."
 msgstr "கட்டளையுடன் சேர்ப்பதற்கு கேப்பு ஒன்று தெரிவுசெய்க..."
 
-#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "செயல்பாட்டின் விவரங்களை பார்க்க அதனை தெரிவு செய்யவும்"
 
-#: cafe-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1689
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "இயக்கும் கட்டளை: '%s'"
 
-#: cafe-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1722
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
-"இயக்குக கட்டளை உரையாடல் போது விடப்பட்ட யுஆர்ஐ பட்டியல் தவறான முறையில் (%d) "
-"அல்லது நீளத்தில் (%d) இருந்தது.\n"
+"இயக்குக கட்டளை உரையாடல் போது விடப்பட்ட யுஆர்ஐ பட்டியல் தவறான முறையில் (%d) அல்லது "
+"நீளத்தில் (%d) இருந்தது.\n"
 
 #: cafe-panel/panel-run-dialog.ui:23
 msgid "Run Application"
@@ -3059,8 +2975,7 @@ msgstr "_செயல்படுத்துக"
 msgid ""
 "Click this button to run the selected application or the command in the "
 "command entry field."
-msgstr ""
-"தேர்வு செய்த செயற்பாடு அல்லது கட்டளையை இயக்குவதற்கு இந்த பொத்தானை அமுத்துக. "
+msgstr "தேர்வு செய்த செயற்பாடு அல்லது கட்டளையை இயக்குவதற்கு இந்த பொத்தானை அமுத்துக. "
 
 #: cafe-panel/panel-run-dialog.ui:125
 msgid "Command icon"
@@ -3086,9 +3001,7 @@ msgstr "இக்கோப்பைக் கொண்டு _செயல்ப
 msgid ""
 "Click this button to browse for a file whose name to append to the command "
 "string."
-msgstr ""
-"கட்டளை சரத்துடன் சேர்க்க வேண்டிய கோப்பின் பெயரை பார்க்க இந்த பட்டனை க்ளிக் "
-"செய்யவும்"
+msgstr "கட்டளை சரத்துடன் சேர்க்க வேண்டிய கோப்பின் பெயரை பார்க்க இந்த பட்டனை க்ளிக் செய்யவும்"
 
 #: cafe-panel/panel-run-dialog.ui:256
 msgid "List of known applications"
@@ -3121,8 +3034,7 @@ msgstr ""
 
 #: cafe-panel/panel-test-applets.c:41
 msgid "Specify the initial size of the applet (xx-small, medium, large etc.)"
-msgstr ""
-"குறுநிரல்டின் துவக்க அளவை குறிப்பிடவும்(xx-சிறிய, நடுநிலையான, பெரிய இன்னபிற)"
+msgstr "குறுநிரல்டின் துவக்க அளவை குறிப்பிடவும்(xx-சிறிய, நடுநிலையான, பெரிய இன்னபிற)"
 
 #: cafe-panel/panel-test-applets.c:42
 msgid ""
@@ -3190,19 +3102,19 @@ msgstr ""
 msgid "Hide Panel"
 msgstr "பலகையை மறைக்கவும்"
 
-#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
 msgid "Top Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1651
 msgid "Bottom Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1653
 msgid "Left Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Right Panel"
 msgstr ""
 
@@ -3220,17 +3132,17 @@ msgstr "'%s' செயல்படுத்த முடியவில்லை
 msgid "file"
 msgstr "கோப்பு"
 
-#: cafe-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:876
 msgid "Home Folder"
 msgstr "இல்ல அடைவு"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:888
 msgid "File System"
 msgstr "கோப்பு முறைமை"
 
-#: cafe-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1062
 msgid "Search"
 msgstr "தேடுக"
 
@@ -3238,7 +3150,8 @@ msgstr "தேடுக"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: cafe-panel/panel-util.c:1106
+#.
+#: cafe-panel/panel-util.c:1108
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
@@ -3286,10 +3199,4 @@ msgstr ""
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
 msgid "A simple applet for testing the CAFE panel"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
-msgid "cafe-gegl"
 msgstr ""

@@ -2,25 +2,25 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Yogesh K S <yogesh@karnatakaeducation.org.in>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # karthik holla <karthikholla87@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.23.2\n"
+"Project-Id-Version: cafe-panel 1.25.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2020-01-12 18:05+0100\n"
+"POT-Creation-Date: 2023-03-23 18:48+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: karthik holla <karthikholla87@gmail.com>, 2020\n"
 "Language-Team: Kannada (https://www.transifex.com/cafe/teams/13566/kn/)\n"
+"Language: kn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: kn\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
@@ -45,7 +45,8 @@ msgstr "%l:%M:%S %p"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:504
+#.
+#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -56,7 +57,7 @@ msgstr "%l:%M %p"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1604
+#: applets/clock/clock.c:454 applets/clock/clock.c:1603
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
@@ -70,9 +71,10 @@ msgstr "%H:%M:%S"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1610
-#: applets/clock/clock-location-tile.c:464
-#: applets/clock/clock-location-tile.c:511
+#.
+#: applets/clock/clock.c:454 applets/clock/clock.c:1609
+#: applets/clock/clock-location-tile.c:462
+#: applets/clock/clock-location-tile.c:509
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -114,7 +116,7 @@ msgstr "ತಿಂಗಳ ಕ್ಯಾಲೆಂಡರನ್ನು ಅಡಗಿಸ�
 msgid "Click to view month calendar"
 msgstr "ತಿಂಗಳ ಕ್ಯಾಲೆಂಡರನ್ನು ನೋಡಲು ಇಲ್ಲಿ ಕ್ಲಿಕ್ಕಿಸಿ"
 
-#: applets/clock/clock.c:1442
+#: applets/clock/clock.c:1441
 msgid "Computer Clock"
 msgstr "ಗಣಕದ ಗಡಿಯಾರ"
 
@@ -124,7 +126,7 @@ msgstr "ಗಣಕದ ಗಡಿಯಾರ"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1589
+#: applets/clock/clock.c:1588
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -134,108 +136,108 @@ msgstr "%I:%M:%S %p"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1597
+#: applets/clock/clock.c:1596
 msgid "%I:%M %p"
 msgstr "%I:%M %p"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1643
+#: applets/clock/clock.c:1642
 msgid "%A, %B %d %Y"
 msgstr "%A, %B %d %Y"
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1673
 msgid "Set System Time..."
 msgstr "ಗಣಕದ ಸಮಯವನ್ನು ಹೊಂದಿಸಿ..."
 
-#: applets/clock/clock.c:1675
+#: applets/clock/clock.c:1674
 msgid "Set System Time"
 msgstr "ಗಣಕದ ಸಮಯವನ್ನು ಹೊಂದಿಸಿ"
 
-#: applets/clock/clock.c:1690
+#: applets/clock/clock.c:1689
 msgid "Failed to set the system time"
 msgstr "ಗಣಕದ ಸಮಯವನ್ನು ಹೊಂದಿಸಲು ವಿಫಲವಾಗಿದೆ"
 
-#: applets/clock/clock.c:1888 applets/fish/fish.c:1694
-#: applets/notification_area/main.c:292 applets/vncklet/window-list.c:357
-#: applets/vncklet/workspace-switcher.c:389
+#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
+#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
+#: applets/vncklet/workspace-switcher.c:393
 msgid "_Preferences"
 msgstr "ಆದ್ಯತೆಗಳು(_P)"
 
-#: applets/clock/clock.c:1891 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1697 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:295 applets/vncklet/showdesktop.c:241
-#: applets/vncklet/window-list.c:365 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:98 applets/vncklet/workspace-switcher.c:397
+#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
+#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
-#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
 #: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "ನೆರವು(_H)"
 
-#: applets/clock/clock.c:1894 applets/fish/fish.c:1700
-#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:249
-#: applets/vncklet/window-list.c:373 applets/vncklet/window-menu.c:106
-#: applets/vncklet/workspace-switcher.c:405
+#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
+#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
+#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
+#: applets/vncklet/workspace-switcher.c:409
 msgid "_About"
 msgstr "ಇದರ ಬಗ್ಗೆ(_A)"
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1894
 msgid "Copy _Time"
 msgstr "ಸಮಯವನ್ನು ಕಾಪಿ ಮಾಡು(_T)"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1897
 msgid "Copy _Date"
 msgstr "ದಿನಾಂಕವನ್ನು ಕಾಪಿ ಮಾಡು(_D)"
 
-#: applets/clock/clock.c:1903
+#: applets/clock/clock.c:1900
 msgid "Ad_just Date & Time"
 msgstr "ದಿನಾಂಕ ಹಾಗು ಸಮಯವನ್ನು ಹೊಂದಿಸು(_j)"
 
-#: applets/clock/clock.c:2899
+#: applets/clock/clock.c:2898
 msgid "Choose Location"
 msgstr "ಸ್ಥಳವನ್ನು ಆರಿಸಿ"
 
-#: applets/clock/clock.c:2978
+#: applets/clock/clock.c:2977
 msgid "Edit Location"
 msgstr "ಸ್ಥಳವನ್ನು ಸಂಪಾದಿಸಿ"
 
-#: applets/clock/clock.c:3105
+#: applets/clock/clock.c:3104
 msgid "City Name"
 msgstr "ಊರಿನ ಹೆಸರು"
 
-#: applets/clock/clock.c:3109
+#: applets/clock/clock.c:3108
 msgid "City Time Zone"
 msgstr "ಊರಿನ ಕಾಲವಲಯ"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3388
 #: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "ಗಡಿಯಾರ"
 
-#: applets/clock/clock.c:3390
+#: applets/clock/clock.c:3389
 msgid "About Clock"
 msgstr ""
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3391
 msgid "The Clock displays the current time and date"
 msgstr "ಗಡಿಯಾರವು ಪ್ರಸ್ತುತ ಸಮಯ ಹಾಗು ದಿನಾಂಕವನ್ನು ತೋರಿಸುತ್ತದೆ"
 
-#: applets/clock/clock.c:3393
+#: applets/clock/clock.c:3392
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:567
-#: applets/notification_area/main.c:286 applets/vncklet/showdesktop.c:508
-#: applets/vncklet/window-list.c:831 applets/vncklet/window-menu.c:88
-#: applets/vncklet/workspace-switcher.c:644
-#: cafe-panel/panel-context-menu.c:124
+#: applets/clock/clock.c:3397 applets/fish/fish.c:568
+#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
+#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
+#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr ""
 "ಶಂಕರ್ ಪ್ರಸಾದ್ <svenkate@redhat.com>,ಕಾರ್ತಿಕ ಹೊಳ್ಳ <karthikholla87@gmail.com>"
@@ -245,10 +247,10 @@ msgid "Time & Date"
 msgstr "ದಿನಾಂಕ ಹಾಗು ಸಮಯ"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-ctk.c:136
-#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
-#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
-#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
+#: cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "ರದ್ದು ಮಾಡಲಾಗಿದೆ(_C)"
 
@@ -272,10 +274,10 @@ msgstr "ಗಡಿಯಾರ ಆದ್ಯತೆಗಳು"
 msgid "Time _Settings"
 msgstr "ಸಮಯದ ಸಿದ್ಧತೆಗಳು(_S)"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -323,7 +325,7 @@ msgstr "ಉಷ್ಣತೆಯನ್ನು ತೋರಿಸು(_t)"
 msgid "General"
 msgstr "ಸಾಮಾನ್ಯ"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
 msgid "_Add"
 msgstr "ಸೇರಿಸು(_A)"
 
@@ -376,12 +378,11 @@ msgid "South"
 msgstr "ದಕ್ಷಿಣ"
 
 #: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
-#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
+#: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr ""
 
-#. Languages that have a single word that translates as either "state" or
-#. "province" should use that instead of "region".
+#. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
 #: applets/clock/clock.ui:1012
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
@@ -414,19 +415,17 @@ msgstr "ಅಕ್ಷಾಂಶ(_a):"
 msgid "Failed to set the system timezone"
 msgstr "ಗಣಕದ ಕಾಲವಲಯವನ್ನು ಹೊಂದಿಸಲು ವಿಫಲಗೊಂಡಿದೆ"
 
-#: applets/clock/clock-location-tile.c:231
+#: applets/clock/clock-location-tile.c:229
 msgid "<small>Set...</small>"
 msgstr "<small>ಹೊಂದಿಸು...</small>"
 
-#: applets/clock/clock-location-tile.c:232
+#: applets/clock/clock-location-tile.c:230
 msgid "<small>Set</small>"
 msgstr "<small>ಹೊಂದಿಸು</small>"
 
-#: applets/clock/clock-location-tile.c:308
-msgid ""
-"Set location as current location and use its timezone for this computer"
-msgstr ""
-"ಈಗಿನ ಸ್ಥಳವನ್ನು ಗಣಕ ಸ್ಥಳವೆಂದು ಹಾಗು ಅದರ ಕಾಲವಲಯವನ್ನು ಈ ಗಣಕದ ಸಮಯವೆಂದು ಹೊಂದಿಸಿ"
+#: applets/clock/clock-location-tile.c:306
+msgid "Set location as current location and use its timezone for this computer"
+msgstr "ಈಗಿನ ಸ್ಥಳವನ್ನು ಗಣಕ ಸ್ಥಳವೆಂದು ಹಾಗು ಅದರ ಕಾಲವಲಯವನ್ನು ಈ ಗಣಕದ ಸಮಯವೆಂದು ಹೊಂದಿಸಿ"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format
@@ -434,7 +433,7 @@ msgstr ""
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:441
+#: applets/clock/clock-location-tile.c:439
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l:%M <small>%p (%A)</small>"
 
@@ -443,7 +442,7 @@ msgstr "%l:%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:449
+#: applets/clock/clock-location-tile.c:447
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%H:%M <small>(%A)</small>"
 
@@ -451,27 +450,27 @@ msgstr "%H:%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:458
+#: applets/clock/clock-location-tile.c:456
 msgid "%l:%M <small>%p</small>"
 msgstr "%l:%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:600
+#: applets/clock/clock-location-tile.c:598
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:612
-#: applets/clock/clock-location-tile.c:621
+#: applets/clock/clock-location-tile.c:610
+#: applets/clock/clock-location-tile.c:619
 msgid "Unknown"
 msgstr "ತಿಳಿಯದ"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:614
+#: applets/clock/clock-location-tile.c:612
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s, %s ಎಂದೆನಿಸುತ್ತದೆ"
 
-#: applets/clock/clock-location-tile.c:637
+#: applets/clock/clock-location-tile.c:635
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "ಸೂರ್ಯೋದಯ: %s / ಸೂರ್ಯಾಸ್ತ: %s"
@@ -494,25 +493,24 @@ msgstr "ಗಂಟೆಯ ಮಾದರಿ"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
-"This key specifies the hour format used by the clock applet. Possible values"
-" are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
-" to \"internet\", the clock will display Internet time. The Internet time "
-"system divides the day into 1000 \".beats\". There are no time zones in this"
-" system, so time is the same all over the world. If set to \"unix\", the "
+"This key specifies the hour format used by the clock applet. Possible values "
+"are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set "
+"to \"internet\", the clock will display Internet time. The Internet time "
+"system divides the day into 1000 \".beats\". There are no time zones in this "
+"system, so time is the same all over the world. If set to \"unix\", the "
 "clock will display time in seconds since Epoch, i.e. 1970-01-01. If set to "
-"\"custom\", the clock will display time according to the format specified in"
-" the custom_format key."
+"\"custom\", the clock will display time according to the format specified in "
+"the custom_format key."
 msgstr ""
-"ಈ ಕೀಲಿಯು ಗಡಿಯಾರದ ಆಪ್ಲೆಟ್‌ ಬಳಸಬೇಕಿರುವ ಗಂಟೆಗಳ ಶೈಲಿಯನ್ನು ಸೂಚಿಸುತ್ತದೆ. "
-"ಸಾಧ್ಯವಿರುವ ಮೌಲ್ಯಗಳೆಂದರೆ \"೧೨-ಗಂಟೆ\", \"೨೪-ಗಂಟೆ\", \"ಅಂತರ್ಜಾಲ\", "
-"\"ಯುನಿಕ್ಸ್‍\" ಹಾಗು \"ನನ್ನಿಚ್ಛೆಯ\". \"ಅಂತರ್ಜಾಲ\"ವನ್ನು ಆಯ್ಕೆ ಮಾಡಿದಲ್ಲಿ, "
-"ಗಡಿಯಾರವು ಅಂತರ್ಜಾಲದ ಸಮಯವನ್ನು ತೋರಿಸುತ್ತದೆ. ಅಂತರ್ಜಾಲದ ಸಮಯದ ವ್ಯವಸ್ಥೆಯು ಒಂದು "
-"ದಿನವನ್ನು ೧೦೦೦ \".ಬೀಟ್‌ಗಳಾಗಿ\" ವಿಂಗಡಿಸುತ್ತದೆ. ಈ ವ್ಯವಸ್ಥೆಯಲ್ಲಿ ಯಾವುದೆ ರೀತಿಯ "
-"ಕಾಲವಲಯಗಳಿರುವುದಿಲ್ಲ, ಆದ್ದರಿಂದ ಪ್ರಪಂಚದ ಯಾವ ಮೂಲೆಯಲ್ಲಿ ನೋಡಿದರೂ ಸಮಯವು ಒಂದೇ "
-"ಆಗಿರುತ್ತದೆ. \"ಯುನಿಕ್ಸ್‍\" ಎಂದು ಸೂಚಿಸದಲ್ಲಿ, ಗಡಿಯಾರವು ಯುನಿಕ್ಸ್‍ ಯುಗದ ಆರಂಭ "
-"ಅಂದರೆ ೧೯೭೦-೦೧-೦೧ ದಿಂದ ಪ್ರಾರಂಭಗೊಂಡು ಸಮಯವನ್ನು ಸೆಕೆಂಡುಗಳಲ್ಲಿ ತೋರಿಸುತ್ತದೆ.  "
-"\"ನನ್ನಿಚ್ಛೆಯ\" ಎಂದು ಸೂಚಿಸದಲ್ಲಿ, ಗಡಿಯಾರವು ನನ್ನಿಚ್ಛೆಯ ಶೈಲಿಯ ಕೀಲಿಯು ಸೂಚಿಸಿದ "
-"ಶೈಲಿಯಲ್ಲಿ ಸಮಯವನ್ನು ತೋರಿಸುತ್ತದೆ."
+"ಈ ಕೀಲಿಯು ಗಡಿಯಾರದ ಆಪ್ಲೆಟ್‌ ಬಳಸಬೇಕಿರುವ ಗಂಟೆಗಳ ಶೈಲಿಯನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಸಾಧ್ಯವಿರುವ "
+"ಮೌಲ್ಯಗಳೆಂದರೆ \"೧೨-ಗಂಟೆ\", \"೨೪-ಗಂಟೆ\", \"ಅಂತರ್ಜಾಲ\", \"ಯುನಿಕ್ಸ್‍\" ಹಾಗು "
+"\"ನನ್ನಿಚ್ಛೆಯ\". \"ಅಂತರ್ಜಾಲ\"ವನ್ನು ಆಯ್ಕೆ ಮಾಡಿದಲ್ಲಿ, ಗಡಿಯಾರವು ಅಂತರ್ಜಾಲದ ಸಮಯವನ್ನು "
+"ತೋರಿಸುತ್ತದೆ. ಅಂತರ್ಜಾಲದ ಸಮಯದ ವ್ಯವಸ್ಥೆಯು ಒಂದು ದಿನವನ್ನು ೧೦೦೦ \".ಬೀಟ್‌ಗಳಾಗಿ\" "
+"ವಿಂಗಡಿಸುತ್ತದೆ. ಈ ವ್ಯವಸ್ಥೆಯಲ್ಲಿ ಯಾವುದೆ ರೀತಿಯ ಕಾಲವಲಯಗಳಿರುವುದಿಲ್ಲ, ಆದ್ದರಿಂದ ಪ್ರಪಂಚದ "
+"ಯಾವ ಮೂಲೆಯಲ್ಲಿ ನೋಡಿದರೂ ಸಮಯವು ಒಂದೇ ಆಗಿರುತ್ತದೆ. \"ಯುನಿಕ್ಸ್‍\" ಎಂದು ಸೂಚಿಸದಲ್ಲಿ, "
+"ಗಡಿಯಾರವು ಯುನಿಕ್ಸ್‍ ಯುಗದ ಆರಂಭ ಅಂದರೆ ೧೯೭೦-೦೧-೦೧ ದಿಂದ ಪ್ರಾರಂಭಗೊಂಡು ಸಮಯವನ್ನು "
+"ಸೆಕೆಂಡುಗಳಲ್ಲಿ ತೋರಿಸುತ್ತದೆ.  \"ನನ್ನಿಚ್ಛೆಯ\" ಎಂದು ಸೂಚಿಸದಲ್ಲಿ, ಗಡಿಯಾರವು ನನ್ನಿಚ್ಛೆಯ "
+"ಶೈಲಿಯ ಕೀಲಿಯು ಸೂಚಿಸಿದ ಶೈಲಿಯಲ್ಲಿ ಸಮಯವನ್ನು ತೋರಿಸುತ್ತದೆ."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:34
 msgid "Custom format of the clock"
@@ -525,8 +523,8 @@ msgid ""
 "strftime() to obtain a specific format. See the strftime() manual for more "
 "information."
 msgstr ""
-"ಶೈಲಿಯನ್ನು ಕೀಲಿಯನ್ನು \"ನನ್ನಿಚ್ಛೆಯ\" ಎಂದು ಸೂಚಿಸಿದಾಗ ಗಡಿಯಾರದ ಆಪ್ಲೆಟ್ ಬಳಸಬೇಕಿರುವ"
-" ಶೈಲಿಯನ್ನು ಈ ಕೀಲಿಯು ಸೂಚಿಸುತ್ತದೆ. ಒಂದು ನಿಗದಿತ ಶೈಲಿಯನ್ನು ಪಡೆದುಕೊಳ್ಳಲು ನೀವು "
+"ಶೈಲಿಯನ್ನು ಕೀಲಿಯನ್ನು \"ನನ್ನಿಚ್ಛೆಯ\" ಎಂದು ಸೂಚಿಸಿದಾಗ ಗಡಿಯಾರದ ಆಪ್ಲೆಟ್ ಬಳಸಬೇಕಿರುವ "
+"ಶೈಲಿಯನ್ನು ಈ ಕೀಲಿಯು ಸೂಚಿಸುತ್ತದೆ. ಒಂದು ನಿಗದಿತ ಶೈಲಿಯನ್ನು ಪಡೆದುಕೊಳ್ಳಲು ನೀವು "
 "strftime() ನಿಂದ ಅರ್ಥ ಮಾಡಿಕೊಳ್ಳಬಲ್ಲಂತಹ ಸಂವಾದ ಸೂಚಕವನ್ನು ಬಳಸಬಹುದು. ಹೆಚ್ಚಿನ "
 "ಮಾಹಿತಿಗಾಗಿ strftime() ಕೈಪಿಡಿಯನ್ನು ನೋಡಿ."
 
@@ -553,8 +551,7 @@ msgstr "ಸಲಹೆಉಪಕರಣದಲ್ಲಿ ದಿನಾಂಕವನ್�
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:50
 msgid "If true, show date in a tooltip when the pointer is over the clock."
 msgstr ""
-"ನಿಜವೆಂದಾದಲ್ಲಿ, ಸೂಚಕವು ಗಡಿಯಾರದ ಮೇಲೆ ಇದ್ದಾಗ ಒಂದು ಸಲಹೆಸೂಚಕವು ದಿನಾಂಕವನ್ನು "
-"ತೋರಿಸು."
+"ನಿಜವೆಂದಾದಲ್ಲಿ, ಸೂಚಕವು ಗಡಿಯಾರದ ಮೇಲೆ ಇದ್ದಾಗ ಒಂದು ಸಲಹೆಸೂಚಕವು ದಿನಾಂಕವನ್ನು ತೋರಿಸು."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:54
 msgid "Show weather in clock"
@@ -624,12 +621,6 @@ msgstr ""
 msgid "Get the current time and date"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-clock"
-msgstr ""
-
 #: applets/fish/fish.c:266
 #, c-format
 msgid ""
@@ -647,7 +638,7 @@ msgstr ""
 msgid "Images"
 msgstr "ಚಿತ್ರಗಳು"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:578 applets/fish/fish.c:684
+#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
 #, no-c-format
 msgid "%s the Fish"
 msgstr "%s ಮೀನು"
@@ -659,10 +650,10 @@ msgid ""
 "time, and if loaded it also takes up precious panel space and memory. "
 "Anybody found using it should be promptly sent for a psychiatric evaluation."
 msgstr ""
-"ಏನೇ ಆಗಲಿ %s ಇಂದ ಯಾವುದೆ ಪ್ರಯೋಜನವಿಲ್ಲ. ಅದು ಕೇವಲ ಡಿಸ್ಕಿನ ಜಾಗ ಹಾಗು ಸಂಕಲಿಸುವ "
-"ಸಮಯವನ್ನು ವ್ಯರ್ಥಗೊಳಿಸುತ್ತದೆ, ಅಲ್ಲದೆ ಲೋಡ್ ಮಾಡಿದಲ್ಲಿ ಫಲಕದ ಉಪಯುಕ್ತ ಸ್ಥಳ ಹಾಗು "
-"ಮೆಮೊರಿಯನ್ನು ಬಳಸಿಕೊಳ್ಳುತ್ತದೆ. ಇದನ್ನು ಯಾರೆ ಬಳಸಿದ್ದು ಕಂಡು ಬಂದಲ್ಲಿ ಅವರನ್ನು "
-"ನೇರವಾಗಿ ಮಾನಸಿಕ ಸ್ಥಿತಿಯ ಪರಿಶೀಲನೆಗೆ ಕಳುಹಿಸಲಾಗುವುದು."
+"ಏನೇ ಆಗಲಿ %s ಇಂದ ಯಾವುದೆ ಪ್ರಯೋಜನವಿಲ್ಲ. ಅದು ಕೇವಲ ಡಿಸ್ಕಿನ ಜಾಗ ಹಾಗು ಸಂಕಲಿಸುವ ಸಮಯವನ್ನು "
+"ವ್ಯರ್ಥಗೊಳಿಸುತ್ತದೆ, ಅಲ್ಲದೆ ಲೋಡ್ ಮಾಡಿದಲ್ಲಿ ಫಲಕದ ಉಪಯುಕ್ತ ಸ್ಥಳ ಹಾಗು ಮೆಮೊರಿಯನ್ನು "
+"ಬಳಸಿಕೊಳ್ಳುತ್ತದೆ. ಇದನ್ನು ಯಾರೆ ಬಳಸಿದ್ದು ಕಂಡು ಬಂದಲ್ಲಿ ಅವರನ್ನು ನೇರವಾಗಿ ಮಾನಸಿಕ ಸ್ಥಿತಿಯ "
+"ಪರಿಶೀಲನೆಗೆ ಕಳುಹಿಸಲಾಗುವುದು."
 
 #: applets/fish/fish.c:552
 msgid "(with minor help from George)"
@@ -681,24 +672,25 @@ msgstr ""
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/fish/fish.c:579
+#: applets/fish/fish.c:580
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "%s ಮೀನು, ಒಬ್ಬ ಸಮಕಾಲೀನ ಭವಿಷ್ಯಗಾರ"
 
-#: applets/fish/fish.c:645
+#: applets/fish/fish.c:646
 msgid "Unable to locate the command to execute"
 msgstr "ಕಾರ್ಯಗತಗೊಳಿಸಬೇಕಿರುವ ಆಜ್ಞೆಯನ್ನು ಪತ್ತೆ ಮಾಡಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
 
-#: applets/fish/fish.c:689
+#: applets/fish/fish.c:690
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "%s ಮೀನು ಹೀಗೆ ಹೇಳುತ್ತದೆ:"
 
-#: applets/fish/fish.c:752
+#: applets/fish/fish.c:753
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -709,17 +701,16 @@ msgstr ""
 "\n"
 "ವಿವರ: %s"
 
-#: applets/fish/fish.c:849
+#: applets/fish/fish.c:850
 msgid "_Speak again"
 msgstr "ಪುನಃ ಹೇಳು(_S)"
 
-#: applets/fish/fish.c:930
+#: applets/fish/fish.c:931
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
-msgstr ""
-"ಸಂರಚಿಸಲಾದ ಆಜ್ಞೆಯು ಕೆಲಸ ಮಾಡುತ್ತಿಲ್ಲ ಹಾಗು ಅದು ಇದರಿಂದ ಬದಲಾಯಿಸಲ್ಪಟ್ಟಿದೆ: %s"
+msgstr "ಸಂರಚಿಸಲಾದ ಆಜ್ಞೆಯು ಕೆಲಸ ಮಾಡುತ್ತಿಲ್ಲ ಹಾಗು ಅದು ಇದರಿಂದ ಬದಲಾಯಿಸಲ್ಪಟ್ಟಿದೆ: %s"
 
-#: applets/fish/fish.c:963
+#: applets/fish/fish.c:964
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -730,7 +721,7 @@ msgstr ""
 "\n"
 "ವಿವರಗಳು: %s"
 
-#: applets/fish/fish.c:979
+#: applets/fish/fish.c:980
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -741,15 +732,15 @@ msgstr ""
 "\n"
 "ವಿವರಗಳು: %s"
 
-#: applets/fish/fish.c:1551
+#: applets/fish/fish.c:1552
 msgid "The water needs changing"
 msgstr "ನೀರಿನ ಬದಲಾವಣೆ ಅಗತ್ಯವಿದೆ"
 
-#: applets/fish/fish.c:1553
+#: applets/fish/fish.c:1554
 msgid "Look at today's date!"
 msgstr "ಇಂದಿನ ದಿನಾಂಕವನ್ನು ನೋಡಿ!"
 
-#: applets/fish/fish.c:1635
+#: applets/fish/fish.c:1636
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "%s ಎಂಬ ಮೀನು, ಭವಿಷ್ಯವನ್ನು ಹೇಳುತ್ತದೆ"
@@ -812,8 +803,8 @@ msgid ""
 "A fish without a name is a pretty dull fish. Bring your fish to life by "
 "naming him."
 msgstr ""
-"ಒಂದು ಮೀನಿಗೆ ಹೆಸರಲ್ಲಿದಿದ್ದರೆ ಅದು ಪೇಲವವೆನಿಸುತ್ತದೆ. ನಿಮ್ಮ ಮೀನಿಗೊಂದು ಹೆಸರಿಡುವ "
-"ಮೂಲಕ ಅದನ್ನು ಜೀವಂತಗೊಳಿಸಿ."
+"ಒಂದು ಮೀನಿಗೆ ಹೆಸರಲ್ಲಿದಿದ್ದರೆ ಅದು ಪೇಲವವೆನಿಸುತ್ತದೆ. ನಿಮ್ಮ ಮೀನಿಗೊಂದು ಹೆಸರಿಡುವ ಮೂಲಕ "
+"ಅದನ್ನು ಜೀವಂತಗೊಳಿಸಿ."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:10
 msgid "The fish's animation pixmap"
@@ -824,8 +815,8 @@ msgid ""
 "This key specifies the filename of the pixmap which will be used for the "
 "animation displayed in the fish applet relative to the pixmap directory."
 msgstr ""
-"ಈ ಕೀಲಿಯು ಪಿಕ್ಸ್‍ಮ್ಯಾಪ್ ಕೋಶಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಮೀನಿನ ಆಪ್ಲೆಟ್ಟಿನಲ್ಲಿ ಬಳಸಲಾಗುವ "
-"ಪಿಕ್ಸ್‍ಮ್ಯಾಪ್ ಕಡತದ ಹೆಸರನ್ನು ಸೂಚಿಸುತ್ತದೆ."
+"ಈ ಕೀಲಿಯು ಪಿಕ್ಸ್‍ಮ್ಯಾಪ್ ಕೋಶಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಮೀನಿನ ಆಪ್ಲೆಟ್ಟಿನಲ್ಲಿ ಬಳಸಲಾಗುವ ಪಿಕ್ಸ್‍ಮ್ಯಾಪ್ ಕಡತದ "
+"ಹೆಸರನ್ನು ಸೂಚಿಸುತ್ತದೆ."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:15
 msgid "Command to execute on click"
@@ -836,8 +827,8 @@ msgid ""
 "This key specifies the command that will be tried to execute when the fish "
 "is clicked."
 msgstr ""
-"ಮೀನಿನ ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಿದಾಗ ಕಾರ್ಯಗತಗೊಳಿಸಲು ಪ್ರಯತ್ನಿಸಬೇಕಿರುವ ಆಜ್ಞೆಯನ್ನು ಈ ಕೀಲಿಯು"
-" ಸೂಚಿಸುತ್ತದೆ."
+"ಮೀನಿನ ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಿದಾಗ ಕಾರ್ಯಗತಗೊಳಿಸಲು ಪ್ರಯತ್ನಿಸಬೇಕಿರುವ ಆಜ್ಞೆಯನ್ನು ಈ ಕೀಲಿಯು "
+"ಸೂಚಿಸುತ್ತದೆ."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:20
 msgid "Frames in fish's animation"
@@ -845,11 +836,10 @@ msgstr "ಮೀನಿನ ಸಜೀವನದಲ್ಲಿನ(ಎನಿಮೇಶನ�
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
-"This key specifies the number of frames that will be displayed in the fish's"
-" animation."
+"This key specifies the number of frames that will be displayed in the fish's "
+"animation."
 msgstr ""
-"ಮೀನಿನ ಸಜೀವನದಲ್ಲಿ(ಎನಿಮೇಶನ್‌) ತೋರಿಸಲಾಗುವ ಚೌಕಟ್ಟುಗಳ ಸಂಖ್ಯೆಗಳನ್ನು ಈ ಕೀಲಿಯು "
-"ಸೂಚಿಸುತ್ತದೆ."
+"ಮೀನಿನ ಸಜೀವನದಲ್ಲಿ(ಎನಿಮೇಶನ್‌) ತೋರಿಸಲಾಗುವ ಚೌಕಟ್ಟುಗಳ ಸಂಖ್ಯೆಗಳನ್ನು ಈ ಕೀಲಿಯು ಸೂಚಿಸುತ್ತದೆ."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:25
 msgid "Pause per frame"
@@ -857,8 +847,7 @@ msgstr "ಪ್ರತಿ ಚೌಕಟ್ಟಿನಲ್ಲಿನ ಸ್ಥಗಿ�
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:26
 msgid "This key specifies the number of seconds each frame will be displayed."
-msgstr ""
-"ಪ್ರತಿ ಚೌಕಟ್ಟುಗಳು ತೋರಿಸಲ್ಪಡುವ ಸೆಕೆಂಡುಗಳ ಸಂಖ್ಯೆಯನ್ನು ಈ ಕೀಲಿಯು ಸೂಚಿಸುತ್ತದೆ."
+msgstr "ಪ್ರತಿ ಚೌಕಟ್ಟುಗಳು ತೋರಿಸಲ್ಪಡುವ ಸೆಕೆಂಡುಗಳ ಸಂಖ್ಯೆಯನ್ನು ಈ ಕೀಲಿಯು ಸೂಚಿಸುತ್ತದೆ."
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:30
 msgid "Rotate on vertical panels"
@@ -868,8 +857,7 @@ msgstr "ಲಂಬ ಫಲಕಗಳಲ್ಲಿ ತಿರುಗಿಸಿ"
 msgid ""
 "If true, the fish's animation will be displayed rotated on vertical panels."
 msgstr ""
-"ನಿಜವಾದಲ್ಲಿ, ಮೀನಿನ ಸಜೀವನವುಎನಿಮೇಶನ್) ಲಂಬ ಫಲಕಗಳಲ್ಲಿ ತಿರುಗುತ್ತಿರುವಂತೆ "
-"ಕಾಣಿಸುತ್ತದೆ."
+"ನಿಜವಾದಲ್ಲಿ, ಮೀನಿನ ಸಜೀವನವುಎನಿಮೇಶನ್) ಲಂಬ ಫಲಕಗಳಲ್ಲಿ ತಿರುಗುತ್ತಿರುವಂತೆ ಕಾಣಿಸುತ್ತದೆ."
 
 #: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Wanda Factory"
@@ -881,12 +869,6 @@ msgstr ""
 
 #: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
 msgid "Display a swimming fish or another anicafed creature"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-fish"
 msgstr ""
 
 #: applets/notification_area/main.c:276
@@ -903,10 +885,11 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/notification_area/main.c:485
+#: applets/notification_area/main.c:486
 msgid "Panel Notification Area"
 msgstr "ಫಲಕದಲ್ಲಿನ ಸೂಚನಾ ಸ್ಥಳ"
 
@@ -947,23 +930,17 @@ msgstr ""
 msgid "Area where notification icons appear"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-notification-area"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "ಎಲ್ಲಾ ಕಾರ್ಯಕ್ಷೇತ್ರಗಳಲ್ಲಿನ ವಿಂಡೋಗಳನ್ನು ತೋರಿಸು"
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
-"If true, the window list will show windows from all workspaces. Otherwise it"
-" will only display windows from the current workspace."
+"If true, the window list will show windows from all workspaces. Otherwise it "
+"will only display windows from the current workspace."
 msgstr ""
-"ನಿಜವಾದಲ್ಲಿ, ವಿಂಡೋ ಪಟ್ಟಿಯು ಎಲ್ಲಾ ಕಾರ್ಯ ಕ್ಷೇತ್ರಗಳಿಂದ ವಿಂಡೋಗಳನ್ನು ತೋರಿಸುತ್ತದೆ. "
-"ಇಲ್ಲದೆ ಹೋದಲ್ಲಿ ಕೇವಲ ಈಗಿನ ಕಾರ್ಯಕ್ಷೇತ್ರದ ವಿಂಡೋಗಳನ್ನು ಮಾತ್ರವೆ ತೋರಿಸಲಾಗುತ್ತದೆ."
+"ನಿಜವಾದಲ್ಲಿ, ವಿಂಡೋ ಪಟ್ಟಿಯು ಎಲ್ಲಾ ಕಾರ್ಯ ಕ್ಷೇತ್ರಗಳಿಂದ ವಿಂಡೋಗಳನ್ನು ತೋರಿಸುತ್ತದೆ. ಇಲ್ಲದೆ "
+"ಹೋದಲ್ಲಿ ಕೇವಲ ಈಗಿನ ಕಾರ್ಯಕ್ಷೇತ್ರದ ವಿಂಡೋಗಳನ್ನು ಮಾತ್ರವೆ ತೋರಿಸಲಾಗುತ್ತದೆ."
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:15
 msgid "When to group windows"
@@ -974,24 +951,21 @@ msgid ""
 "Decides when to group windows from the same application on the window list. "
 "Possible values are \"never\", \"auto\" and \"always\"."
 msgstr ""
-"ವಿಂಡೋ ಪಟ್ಟಿಯಲ್ಲಿನ ಅನ್ವಯಗಳ ವಿಂಡೋಗಳನ್ನು ಯಾವಾಗ ಗುಂಪುಗೂಡಿಸಬೇಕು ಎಂದು "
-"ನಿರ್ಧರಿಸುತ್ತದೆ. ಸಾಧ್ಯವಿರುವ ಮೌಲ್ಯಗಳು \"ಎಂದಿಗೂ ಬೇಡ\", \"ತಾನಾಗಿಯೆ\" ಹಾಗು "
-"\"ಯಾವಾಗಲೂ\" ಆಗಿರುತ್ತವೆ."
+"ವಿಂಡೋ ಪಟ್ಟಿಯಲ್ಲಿನ ಅನ್ವಯಗಳ ವಿಂಡೋಗಳನ್ನು ಯಾವಾಗ ಗುಂಪುಗೂಡಿಸಬೇಕು ಎಂದು ನಿರ್ಧರಿಸುತ್ತದೆ. "
+"ಸಾಧ್ಯವಿರುವ ಮೌಲ್ಯಗಳು \"ಎಂದಿಗೂ ಬೇಡ\", \"ತಾನಾಗಿಯೆ\" ಹಾಗು \"ಯಾವಾಗಲೂ\" ಆಗಿರುತ್ತವೆ."
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:20
 msgid "Move windows to current workspace when unminimized"
 msgstr ""
-"ಚಿಕ್ಕದಾಗಿಸಲಾದ ಒಂದು ವಿಂಡೋವನ್ನು ಹಿಗ್ಗಿಸುವಾಗ, ಅದನ್ನು ಈಗಿನ ಕಾರ್ಯಕ್ಷೇತ್ರಕ್ಕೆ "
-"ವರ್ಗಾಯಿಸು"
+"ಚಿಕ್ಕದಾಗಿಸಲಾದ ಒಂದು ವಿಂಡೋವನ್ನು ಹಿಗ್ಗಿಸುವಾಗ, ಅದನ್ನು ಈಗಿನ ಕಾರ್ಯಕ್ಷೇತ್ರಕ್ಕೆ ವರ್ಗಾಯಿಸು"
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:21
 msgid ""
 "If true, then when unminimizing a window, move it to the current workspace. "
 "Otherwise, switch to the workspace of the window."
 msgstr ""
-"ನಿಜವಾದಲ್ಲಿ, ಚಿಕ್ಕದಾಗಿಸಲಾದ ಒಂದು ವಿಂಡೋವನ್ನು ಹಿಗ್ಗಿಸುವಾಗ, ಅದನ್ನು ಈಗಿನ "
-"ಕಾರ್ಯಕ್ಷೇತ್ರಕ್ಕೆ ವರ್ಗಾಯಿಸಲಾಗುವುದು. ಇಲ್ಲದೆ ಹೋದಲ್ಲಿ ವಿಂಡೋವಿನ ಕಾರ್ಯಕ್ಷೇತ್ರಕ್ಕೆ "
-"ಬದಲಾಯಿಸಿ."
+"ನಿಜವಾದಲ್ಲಿ, ಚಿಕ್ಕದಾಗಿಸಲಾದ ಒಂದು ವಿಂಡೋವನ್ನು ಹಿಗ್ಗಿಸುವಾಗ, ಅದನ್ನು ಈಗಿನ ಕಾರ್ಯಕ್ಷೇತ್ರಕ್ಕೆ "
+"ವರ್ಗಾಯಿಸಲಾಗುವುದು. ಇಲ್ಲದೆ ಹೋದಲ್ಲಿ ವಿಂಡೋವಿನ ಕಾರ್ಯಕ್ಷೇತ್ರಕ್ಕೆ ಬದಲಾಯಿಸಿ."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:5
 msgid "Display workspace names"
@@ -1003,10 +977,9 @@ msgid ""
 "the workspaces. Otherwise they will display the windows on the workspace. "
 "This setting only works when the window manager is Croma."
 msgstr ""
-"ನಿಜವಾದಲ್ಲಿ, ಕಾರ್ಯಕ್ಷೇತ್ರ ಬದಲಾವಣೆಗಾರನಲ್ಲಿನ ಕಾರ್ಯಕ್ಷೇತ್ರಗಳು ತಮ್ಮ ಹೆಸರುಗಳನ್ನು "
-"ತೋರಿಸುತ್ತವೆ. ಇಲ್ಲದೆ ಹೋದಲ್ಲಿ, ಅವು ಕಾರ್ಯಕ್ಷೇತ್ರದ ವಿಂಡೋಗಳನ್ನು ಮಾತ್ರವೆ "
-"ತೋರಿಸುತ್ತವೆ. ಮೆಟಾಸಿಟಿಯು ವಿಂಡೋ ವ್ಯವಸ್ಥಾಪಕವಾಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಈ ಸಿದ್ಧತೆಯು ಕೆಲಸ "
-"ಮಾಡುತ್ತದೆ."
+"ನಿಜವಾದಲ್ಲಿ, ಕಾರ್ಯಕ್ಷೇತ್ರ ಬದಲಾವಣೆಗಾರನಲ್ಲಿನ ಕಾರ್ಯಕ್ಷೇತ್ರಗಳು ತಮ್ಮ ಹೆಸರುಗಳನ್ನು ತೋರಿಸುತ್ತವೆ. "
+"ಇಲ್ಲದೆ ಹೋದಲ್ಲಿ, ಅವು ಕಾರ್ಯಕ್ಷೇತ್ರದ ವಿಂಡೋಗಳನ್ನು ಮಾತ್ರವೆ ತೋರಿಸುತ್ತವೆ. ಮೆಟಾಸಿಟಿಯು ವಿಂಡೋ "
+"ವ್ಯವಸ್ಥಾಪಕವಾಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಈ ಸಿದ್ಧತೆಯು ಕೆಲಸ ಮಾಡುತ್ತದೆ."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:10
 msgid "Display all workspaces"
@@ -1017,8 +990,8 @@ msgid ""
 "If true, the workspace switcher will show all workspaces. Otherwise it will "
 "only show the current workspace."
 msgstr ""
-"ನಿಜವಾದಲ್ಲಿ, ಕಾರ್ಯಕ್ಷೇತ್ರ ಬದಲಾವಣೆಗಾರ ಎಲ್ಲಾ ಕಾರ್ಯಕ್ಷೇತ್ರಗಳನ್ನು ತೋರಿಸುತ್ತದೆ. "
-"ಇಲ್ಲದೆ ಹೋದಲ್ಲಿ ಅದು ಕೇವಲ ಸದ್ಯದ ಕಾರ್ಯಕ್ಷೇತ್ರವನ್ನು ಮಾತ್ರವೇ ತೋರಿಸುತ್ತದೆ."
+"ನಿಜವಾದಲ್ಲಿ, ಕಾರ್ಯಕ್ಷೇತ್ರ ಬದಲಾವಣೆಗಾರ ಎಲ್ಲಾ ಕಾರ್ಯಕ್ಷೇತ್ರಗಳನ್ನು ತೋರಿಸುತ್ತದೆ. ಇಲ್ಲದೆ ಹೋದಲ್ಲಿ "
+"ಅದು ಕೇವಲ ಸದ್ಯದ ಕಾರ್ಯಕ್ಷೇತ್ರವನ್ನು ಮಾತ್ರವೇ ತೋರಿಸುತ್ತದೆ."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:15
 msgid "Rows in workspace switcher"
@@ -1027,12 +1000,12 @@ msgstr "ಕಾರ್ಯಕ್ಷೇತ್ರ ಬದಲಾವಣೆಗಾರನ�
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
-"vertical layout) the workspace switcher shows the workspaces in. This key is"
-" only relevant if the display_all_workspaces key is true."
+"vertical layout) the workspace switcher shows the workspaces in. This key is "
+"only relevant if the display_all_workspaces key is true."
 msgstr ""
-"ಕಾರ್ಯಕ್ಷೇತ್ರ ಬದಲಾವಣೆಗಾರನು ಕಾರ್ಯಕ್ಷೇತ್ರದಲ್ಲಿ ತೋರಿಸಬೇಕಿರುವ ಸಾಲುಗಳು (ಅಡ್ಡ "
-"ವಿನ್ಯಾಸಕ್ಕಾಗಿ) ಹಾಗು ಕಾಲಂಗಳನ್ನು(ಲಂಬ ವಿನ್ಯಾಸಕ್ಕಾಗಿ)ಈ ಕೀಲಿಯು ಸೂಚಿಸುತ್ತದೆ. ಎಲ್ಲಾ"
-" ಕಾರ್ಯಕ್ಷೇತ್ರಗಳನ್ನು ತೋರಿಸು ಕೀಲಿಯು true ಆಗಿದ್ದಲ್ಲಿ ಈ ಕೀಲಿಯು ಸೂಕ್ತವೆನಿಸುತ್ತದೆ."
+"ಕಾರ್ಯಕ್ಷೇತ್ರ ಬದಲಾವಣೆಗಾರನು ಕಾರ್ಯಕ್ಷೇತ್ರದಲ್ಲಿ ತೋರಿಸಬೇಕಿರುವ ಸಾಲುಗಳು (ಅಡ್ಡ ವಿನ್ಯಾಸಕ್ಕಾಗಿ) "
+"ಹಾಗು ಕಾಲಂಗಳನ್ನು(ಲಂಬ ವಿನ್ಯಾಸಕ್ಕಾಗಿ)ಈ ಕೀಲಿಯು ಸೂಚಿಸುತ್ತದೆ. ಎಲ್ಲಾ ಕಾರ್ಯಕ್ಷೇತ್ರಗಳನ್ನು "
+"ತೋರಿಸು ಕೀಲಿಯು true ಆಗಿದ್ದಲ್ಲಿ ಈ ಕೀಲಿಯು ಸೂಕ್ತವೆನಿಸುತ್ತದೆ."
 
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:20
 msgid "Wrap around on scroll"
@@ -1053,7 +1026,7 @@ msgid "Factory for the window navigation related applets"
 msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
+#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
 msgid "Window Selector"
 msgstr "ವಿಂಡೋ ಆಯ್ಕೆಗಾರ"
 
@@ -1061,14 +1034,8 @@ msgstr "ವಿಂಡೋ ಆಯ್ಕೆಗಾರ"
 msgid "Switch between open windows using a menu"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-window-menu"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:634
+#: applets/vncklet/workspace-switcher.c:638
 msgid "Workspace Switcher"
 msgstr "ಕಾರ್ಯಸ್ಥಳ ಬದಲಾಯಿಸುವವ"
 
@@ -1076,25 +1043,13 @@ msgstr "ಕಾರ್ಯಸ್ಥಳ ಬದಲಾಯಿಸುವವ"
 msgid "Switch between workspaces"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
-msgid "cafe-panel-workspace-switcher"
-msgstr ""
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:821
+#: applets/vncklet/window-list.c:826
 msgid "Window List"
 msgstr "ವಿಂಡೊ ಪಟ್ಟಿ"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
-msgid "cafe-panel-window-list"
 msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
@@ -1103,12 +1058,6 @@ msgstr ""
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
-msgid "user-desktop"
 msgstr ""
 
 #: applets/vncklet/showdesktop.c:184
@@ -1120,59 +1069,60 @@ msgstr "%s ಅನ್ನು ಲೋಡ್ ಮಾಡುವಲ್ಲಿ ವಿಫಲ
 msgid "Icon not found"
 msgstr "ಚಿಹ್ನೆಯು ಕಂಡು ಬಂದಿಲ್ಲ"
 
-#: applets/vncklet/showdesktop.c:265
+#: applets/vncklet/showdesktop.c:266
 msgid "Click here to restore hidden windows."
 msgstr "ಅಡಗಿಸಲಾದ ವಿಂಡೋಗಳನ್ನು ಮರಳಿ ಬೆಳಕಿಗೆ ತರಲು ಕ್ಲಿಕ್ಕಿಸಿ."
 
-#: applets/vncklet/showdesktop.c:269
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to hide all windows and show the desktop."
 msgstr "ಎಲ್ಲಾ ವಿಂಡೋಗಳನ್ನು ಅಡಗಿಸಲು ಹಾಗು ಗಣಕತೆರೆಯನ್ನು ತೋರಿಸಲು ಇಲ್ಲಿ ಕ್ಲಿಕ್ಕಿಸಿ."
 
-#: applets/vncklet/showdesktop.c:439 applets/vncklet/showdesktop.c:498
+#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
 msgid "Show Desktop Button"
 msgstr "ಗಣಕತೆರೆ ಗುಂಡಿಯನ್ನು ತೋರಿಸು"
 
-#: applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:500
 msgid "About Show Desktop Button"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:501
+#: applets/vncklet/showdesktop.c:502
 msgid "This button lets you hide all windows and show the desktop."
 msgstr ""
 "ಈ ಗುಂಡಿಯು ಎಲ್ಲಾ ವಿಂಡೋಗಳನ್ನು ಅಡಗಿಸಲು ಹಾಗು ಗಣಕತೆರೆಯನ್ನು ತೋರಿಸಲು ನಿಮಗೆ ಅನುವು "
 "ಮಾಡಿಕೊಡುತ್ತದೆ."
 
-#: applets/vncklet/showdesktop.c:502 applets/vncklet/window-list.c:825
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
+#: applets/vncklet/workspace-switcher.c:642
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:529
+#: applets/vncklet/showdesktop.c:531
 msgid ""
-"Your window manager does not support the show desktop button, or you are not"
-" running a window manager."
+"Your window manager does not support the show desktop button, or you are not "
+"running a window manager."
 msgstr ""
-"ನಿಮ್ಮ ವಿಂಡೋ ವ್ಯವಸ್ಥಾಪಕವು ಗಣಕತೆರೆಯನ್ನು ತೋರಿಸು ಗುಂಡಿಯನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ, ಅಥವ"
-" ನೀವು ವಿಂಡೋ ವ್ಯವಸ್ಥಾಪಕನನ್ನು ಚಲಾಯಿಸುತ್ತಿಲ್ಲ."
+"ನಿಮ್ಮ ವಿಂಡೋ ವ್ಯವಸ್ಥಾಪಕವು ಗಣಕತೆರೆಯನ್ನು ತೋರಿಸು ಗುಂಡಿಯನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ, ಅಥವ ನೀವು "
+"ವಿಂಡೋ ವ್ಯವಸ್ಥಾಪಕನನ್ನು ಚಲಾಯಿಸುತ್ತಿಲ್ಲ."
 
-#: applets/vncklet/window-list.c:349
+#: applets/vncklet/window-list.c:354
 msgid "_System Monitor"
 msgstr ""
 
-#: applets/vncklet/window-list.c:822
+#: applets/vncklet/window-list.c:827
 msgid "About Window List"
 msgstr ""
 
-#: applets/vncklet/window-list.c:824
+#: applets/vncklet/window-list.c:829
 msgid ""
-"The Window List shows a list of all windows in a set of buttons and lets you"
-" browse them."
+"The Window List shows a list of all windows in a set of buttons and lets you "
+"browse them."
 msgstr ""
-"ವಿಂಡೋ ಪಟ್ಟಿಯು ಎಲ್ಲಾ ವಿಂಡೋಗಳನ್ನು ಗುಂಡಿಗಳ ರೂಪದಲ್ಲಿ ತೋರಿಸುತ್ತದೆ ಹಾಗು ಅವನ್ನು "
-"ವೀಕ್ಷಿಸಲು ನಿಮಗೆ ಅನುವು ಮಾಡಿಕೊಡುತ್ತದೆ."
+"ವಿಂಡೋ ಪಟ್ಟಿಯು ಎಲ್ಲಾ ವಿಂಡೋಗಳನ್ನು ಗುಂಡಿಗಳ ರೂಪದಲ್ಲಿ ತೋರಿಸುತ್ತದೆ ಹಾಗು ಅವನ್ನು ವೀಕ್ಷಿಸಲು "
+"ನಿಮಗೆ ಅನುವು ಮಾಡಿಕೊಡುತ್ತದೆ."
 
 #: applets/vncklet/window-list.ui:18
 msgid "Window List Preferences"
@@ -1251,8 +1201,8 @@ msgid ""
 "The Window Selector shows a list of all windows in a menu and lets you "
 "browse them."
 msgstr ""
-"ವಿಂಡೋ ಆಯ್ಕೆಗಾರವು ಎಲ್ಲಾ ವಿಂಡೋಗಳನ್ನು ಒಂದು ಮೆನುವಿನ ರೂಪದಲ್ಲಿ ತೋರಿಸುತ್ತದೆ ಹಾಗು "
-"ಅವನ್ನು ವೀಕ್ಷಿಸಲು ನಿಮಗೆ ಅನುವು ಮಾಡಿಕೊಡುತ್ತದೆ."
+"ವಿಂಡೋ ಆಯ್ಕೆಗಾರವು ಎಲ್ಲಾ ವಿಂಡೋಗಳನ್ನು ಒಂದು ಮೆನುವಿನ ರೂಪದಲ್ಲಿ ತೋರಿಸುತ್ತದೆ ಹಾಗು ಅವನ್ನು "
+"ವೀಕ್ಷಿಸಲು ನಿಮಗೆ ಅನುವು ಮಾಡಿಕೊಡುತ್ತದೆ."
 
 #: applets/vncklet/window-menu.c:80
 msgid ""
@@ -1260,31 +1210,32 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "ಅಡ್ಡಸಾಲುಗಳು"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 msgid "columns"
 msgstr "ಲಂಬಸಾಲುಗಳು"
 
-#: applets/vncklet/workspace-switcher.c:635
+#: applets/vncklet/workspace-switcher.c:639
 msgid "About Workspace Switcher"
 msgstr ""
 
-#: applets/vncklet/workspace-switcher.c:637
+#: applets/vncklet/workspace-switcher.c:641
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
 msgstr ""
-"ಕಾಯಕ್ಷೇತ್ರದ ಬದಲಾವಣೆಗಾರವು ನಿಮ್ಮ ಕಾರ್ಯಕ್ಷೇತ್ರಗಳ ಒಂದು ಸಣ್ಣ ಚಿತ್ರವನ್ನು "
-"ತೋರಿಸುತ್ತದೆ, ಇದರಿಂದ ನೀವು ನಿಮ್ಮ ವಿಂಡೋಗಳನ್ನು ವ್ಯವಸ್ಥಾಪಿಸಬಹುದಾಗಿದೆ."
+"ಕಾಯಕ್ಷೇತ್ರದ ಬದಲಾವಣೆಗಾರವು ನಿಮ್ಮ ಕಾರ್ಯಕ್ಷೇತ್ರಗಳ ಒಂದು ಸಣ್ಣ ಚಿತ್ರವನ್ನು ತೋರಿಸುತ್ತದೆ, ಇದರಿಂದ "
+"ನೀವು ನಿಮ್ಮ ವಿಂಡೋಗಳನ್ನು ವ್ಯವಸ್ಥಾಪಿಸಬಹುದಾಗಿದೆ."
 
 #: applets/vncklet/workspace-switcher.ui:32
 msgid "Workspace Switcher Preferences"
@@ -1344,9 +1295,9 @@ msgid ""
 "dialog is made available. Whether or not the listing is expanded when the "
 "dialog is shown is controlled by the show_program_list key."
 msgstr ""
-"ನಿಜವಾದಲ್ಲಿ, \"ಅನ್ವಯವನ್ನು ಚಲಾಯಿಸು\"ಸಂವಾದದಲ್ಲಿರುವ \"ಗೊತ್ತಿರುವ ಅನ್ವಯಗಳು\" "
-"ಸಂವಾದವು ಲಭ್ಯವಿರುತ್ತದೆ. ಸಂವಾದವನ್ನು ತೋರಿಸಿದಾಗ ಪಟ್ಟಿಯನ್ನು ವಿಸ್ತರಿಸಲಾಗುವುದೆ "
-"ಎನ್ನುವುದನ್ನು enable_program_list ಕೀಲಿಯಿಂದ ನಿಯಂತ್ರಿಸಲ್ಪಡುತ್ತದೆ."
+"ನಿಜವಾದಲ್ಲಿ, \"ಅನ್ವಯವನ್ನು ಚಲಾಯಿಸು\"ಸಂವಾದದಲ್ಲಿರುವ \"ಗೊತ್ತಿರುವ ಅನ್ವಯಗಳು\" ಸಂವಾದವು "
+"ಲಭ್ಯವಿರುತ್ತದೆ. ಸಂವಾದವನ್ನು ತೋರಿಸಿದಾಗ ಪಟ್ಟಿಯನ್ನು ವಿಸ್ತರಿಸಲಾಗುವುದೆ ಎನ್ನುವುದನ್ನು "
+"enable_program_list ಕೀಲಿಯಿಂದ ನಿಯಂತ್ರಿಸಲ್ಪಡುತ್ತದೆ."
 
 #: data/org.cafe.panel.gschema.xml.in:15
 msgid "Expand program list in \"Run Application\" dialog"
@@ -1358,9 +1309,9 @@ msgid ""
 "dialog is expanded when the dialog is opened. This key is only relevant if "
 "the enable_program_list key is true."
 msgstr ""
-"ನಿಜವಾದಲ್ಲಿ, ಸಂವಾದವನ್ನು ತೆರೆದಾಗ \"ಅನ್ವಯವನ್ನು ಚಲಾಯಿಸು\"ಸಂವಾದದಲ್ಲಿರುವ "
-"\"ಗೊತ್ತಿರುವ ಅನ್ವಯಗಳು\" ವಿಸ್ತರಿಸಲ್ಪಡುತ್ತದೆ. enable_program_list ಕೀಲಿಯು true "
-"ಆದಲ್ಲಿ ಮಾತ್ರ ಇದು ಸೂಕ್ತವೆನಿಸುತ್ತದೆ."
+"ನಿಜವಾದಲ್ಲಿ, ಸಂವಾದವನ್ನು ತೆರೆದಾಗ \"ಅನ್ವಯವನ್ನು ಚಲಾಯಿಸು\"ಸಂವಾದದಲ್ಲಿರುವ \"ಗೊತ್ತಿರುವ "
+"ಅನ್ವಯಗಳು\" ವಿಸ್ತರಿಸಲ್ಪಡುತ್ತದೆ. enable_program_list ಕೀಲಿಯು true ಆದಲ್ಲಿ ಮಾತ್ರ ಇದು "
+"ಸೂಕ್ತವೆನಿಸುತ್ತದೆ."
 
 #: data/org.cafe.panel.gschema.xml.in:20
 msgid "Enable autocompletion in \"Run Application\" dialog"
@@ -1370,8 +1321,7 @@ msgstr "\"ಅನ್ವಯವನ್ನು ಚಲಾಯಿಸು\" ಸಂವಾದ
 msgid ""
 "If true, autocompletion in the \"Run Application\" dialog is made available."
 msgstr ""
-"ನಿಜವಾದಲ್ಲಿ, \"ಅನ್ವಯವನ್ನು ಚಲಾಯಿಸು\" ಸಂವಾದದಲ್ಲಿ ಸ್ವಯಂಪೂರ್ಣಗೊಳಿಕೆಯು "
-"ಲಭ್ಯವಿರುತ್ತದೆ."
+"ನಿಜವಾದಲ್ಲಿ, \"ಅನ್ವಯವನ್ನು ಚಲಾಯಿಸು\" ಸಂವಾದದಲ್ಲಿ ಸ್ವಯಂಪೂರ್ಣಗೊಳಿಕೆಯು ಲಭ್ಯವಿರುತ್ತದೆ."
 
 #: data/org.cafe.panel.gschema.xml.in:25
 msgid "History for \"Run Application\" dialog"
@@ -1380,8 +1330,8 @@ msgstr ""
 #: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
-"commands are sorted descendingly by recency (e.g., most recent command comes"
-" first)."
+"commands are sorted descendingly by recency (e.g., most recent command comes "
+"first)."
 msgstr ""
 
 #: data/org.cafe.panel.gschema.xml.in:30
@@ -1414,8 +1364,8 @@ msgid ""
 "settings for each of these panels are stored in /apps/panel/toplevels/$(id)."
 msgstr ""
 "ಫಲಕ IDಗಳ ಒಂದು ಪಟ್ಟಿ. ಪ್ರತಿಯೊಂದು ID ಯು ಒಂದು ಪ್ರತ್ಯೇಕ ಮೇಲ್ಮಟ್ಟದ ಫಲಕವನ್ನು "
-"ಗುರುತಿಸುತ್ತದೆ. ಈ ಪ್ರತಿಯೊಂದು ಫಲಕಗಳಿಗಾಗಿನ ಸಿದ್ಧತೆಗಳನ್ನು "
-"/apps/panel/toplevels/$(id) ನಲ್ಲಿ ಶೇಖರಿಸಿಡಲಾಗಿರುತ್ತದೆ."
+"ಗುರುತಿಸುತ್ತದೆ. ಈ ಪ್ರತಿಯೊಂದು ಫಲಕಗಳಿಗಾಗಿನ ಸಿದ್ಧತೆಗಳನ್ನು /apps/panel/toplevels/"
+"$(id) ನಲ್ಲಿ ಶೇಖರಿಸಿಡಲಾಗಿರುತ್ತದೆ."
 
 #: data/org.cafe.panel.gschema.xml.in:45
 msgid "Panel object ID list"
@@ -1423,14 +1373,13 @@ msgstr "ಫಲಕದ ವಸ್ತು ಐಡಿ ಪಟ್ಟಿ"
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object "
-"(e.g. a launcher, action button or menu button/bar). The settings for each "
-"of these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object (e."
+"g. a launcher, action button or menu button/bar). The settings for each of "
+"these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
 "ಫಲಕ ವಸ್ತುವಿನ IDಗಳ ಒಂದು ಪಟ್ಟಿ. ಪ್ರತಿಯೊಂದು ID ಯು ಒಂದು ಪ್ರತ್ಯೇಕ ಫಲಕ ವಸ್ತುವನ್ನು "
-"ಗುರುತಿಸುತ್ತದೆ (ಉದಾ, ಆರಂಭಗಾರ, ಕ್ರಿಯೆ ಗುಂಡಿ ಅಥವ ಮೆನು ಗುಂಡಿ/ಪಟ್ಟಿ). ಈ "
-"ಪ್ರತಿಯೊಂದು ಫಲಕಗಳಿಗಾಗಿನ ಸಿದ್ಧತೆಗಳನ್ನು /apps/panel/objects/$(id) ನಲ್ಲಿ "
-"ಶೇಖರಿಸಿಡಲಾಗಿರುತ್ತದೆ."
+"ಗುರುತಿಸುತ್ತದೆ (ಉದಾ, ಆರಂಭಗಾರ, ಕ್ರಿಯೆ ಗುಂಡಿ ಅಥವ ಮೆನು ಗುಂಡಿ/ಪಟ್ಟಿ). ಈ ಪ್ರತಿಯೊಂದು "
+"ಫಲಕಗಳಿಗಾಗಿನ ಸಿದ್ಧತೆಗಳನ್ನು /apps/panel/objects/$(id) ನಲ್ಲಿ ಶೇಖರಿಸಿಡಲಾಗಿರುತ್ತದೆ."
 
 #: data/org.cafe.panel.gschema.xml.in:50
 msgid "Enable tooltips"
@@ -1454,8 +1403,8 @@ msgid ""
 "If true, a drawer will automatically be closed when the user clicks a "
 "launcher in it."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಬಳಕೆದಾರನು ಡ್ರಾಯರಿನ ಮೇಲೆ ಒಂದು ಆರಂಭಕವನ್ನು ಕ್ಲಿಕ್ಕಿಸಿದಾಗ "
-"ಡ್ರಾಯರ್ ತಾನಾಗಿಯೆ ಮುಚ್ಚಲ್ಪಡುತ್ತದೆ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಬಳಕೆದಾರನು ಡ್ರಾಯರಿನ ಮೇಲೆ ಒಂದು ಆರಂಭಕವನ್ನು ಕ್ಲಿಕ್ಕಿಸಿದಾಗ ಡ್ರಾಯರ್ "
+"ತಾನಾಗಿಯೆ ಮುಚ್ಚಲ್ಪಡುತ್ತದೆ."
 
 #: data/org.cafe.panel.gschema.xml.in:64
 msgid "Confirm panel removal"
@@ -1477,8 +1426,8 @@ msgstr "ಮೌಸನ್ನು ಕೊಂಡೊಯ್ದಾಗ ಆರಂಭಕಗ�
 msgid ""
 "If true, a launcher is highlighted when the user moves the pointer over it."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಬಳಕೆದಾರನು ತೆರೆಸೂಚಕವನ್ನು ಒಂದು ಆರಂಭಕದ ಮೇಲೆ ಕೊಂಡೊಯ್ದಾಗ ಅದು "
-"ಹೈಲೈಟ್ ಮಾಡಲ್ಪಡುತ್ತದೆ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಬಳಕೆದಾರನು ತೆರೆಸೂಚಕವನ್ನು ಒಂದು ಆರಂಭಕದ ಮೇಲೆ ಕೊಂಡೊಯ್ದಾಗ ಅದು ಹೈಲೈಟ್ "
+"ಮಾಡಲ್ಪಡುತ್ತದೆ."
 
 #: data/org.cafe.panel.gschema.xml.in:74
 msgid "Complete panel lockdown"
@@ -1487,12 +1436,12 @@ msgstr "ಸಂಪೂರ್ಣ ಫಲಕ ಲಾಕ್ ಮಾಡುವಿಕೆ"
 #: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
-"panel. Individual applets may need to be locked down separately however. The"
-" panel must be restarted for this to take effect."
+"panel. Individual applets may need to be locked down separately however. The "
+"panel must be restarted for this to take effect."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಫಲಕದ ಸಂರಚನೆಯನ್ನು ಬದಲಾಯಿಸಲು ಫಲಕವು ಅನುವು ಮಾಡಿಕೊಡುವುದಿಲ್ಲ. ಆದರೆ"
-" ಪ್ರತಿಯೊಂದು ಆಪ್ಲೆಟ್‌ಗಳನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ಲಾಕ್ ಮಾಡಬೇಕಾಗುತ್ತದೆ. ಇದು "
-"ಕಾರ್ಯರೂಪಕ್ಕೆ ಬರಲು ಫಲಕವನ್ನು ಮರಳಿ ಆರಂಭಿಸಬೇಕಾಗುತ್ತದೆ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಫಲಕದ ಸಂರಚನೆಯನ್ನು ಬದಲಾಯಿಸಲು ಫಲಕವು ಅನುವು ಮಾಡಿಕೊಡುವುದಿಲ್ಲ. ಆದರೆ "
+"ಪ್ರತಿಯೊಂದು ಆಪ್ಲೆಟ್‌ಗಳನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ಲಾಕ್ ಮಾಡಬೇಕಾಗುತ್ತದೆ. ಇದು ಕಾರ್ಯರೂಪಕ್ಕೆ ಬರಲು "
+"ಫಲಕವನ್ನು ಮರಳಿ ಆರಂಭಿಸಬೇಕಾಗುತ್ತದೆ."
 
 #: data/org.cafe.panel.gschema.xml.in:79
 msgid "Applet IIDs to disable from loading"
@@ -1505,11 +1454,10 @@ msgid ""
 "disable the mini-commander applet add 'OAFIID:CAFE_MiniCommanderApplet' to "
 "this list. The panel must be restarted for this to take effect."
 msgstr ""
-"ಫಲಕವು ಉಪೇಕ್ಷಿಸುವ ಆಪ್ಲೆಟ್‌ IIDಗಳ ಒಂದು ಪಟ್ಟಿ. ಈ ಮೂಲಕ ಕೆಲವು ನಿಗದಿತ "
-"ಆಪ್ಲೆಟ್‌ಗಳನ್ನು ಲೋಡ್‌ ಆಗುವುದನ್ನು ಅಥವ ಮೆನುವಿನಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುವುದನ್ನು "
-"ತಡೆಯಬಹುದು. ಉದಾಹರಣೆಗೆ ಮಿನಿ-ಕಮಾಂಡರ್ ಆಪ್ಲೆಟ್ ಅನ್ನು ಅಶಕ್ತಗೊಳಿಸಲು ಪಟ್ಟಿಗೆ "
-"'OAFIID:CAFE_MiniCommanderApplet' ಅನ್ನು ಸೇರಿಸಬೇಕು. ಇದು ಕಾರ್ಯರೂಪಕ್ಕೆ ಬರಲು "
-"ಫಲಕವನ್ನು ಮರಳಿ ಆರಂಭಿಸಬೇಕಾಗುತ್ತದೆ."
+"ಫಲಕವು ಉಪೇಕ್ಷಿಸುವ ಆಪ್ಲೆಟ್‌ IIDಗಳ ಒಂದು ಪಟ್ಟಿ. ಈ ಮೂಲಕ ಕೆಲವು ನಿಗದಿತ ಆಪ್ಲೆಟ್‌ಗಳನ್ನು ಲೋಡ್‌ "
+"ಆಗುವುದನ್ನು ಅಥವ ಮೆನುವಿನಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುವುದನ್ನು ತಡೆಯಬಹುದು. ಉದಾಹರಣೆಗೆ ಮಿನಿ-ಕಮಾಂಡರ್ "
+"ಆಪ್ಲೆಟ್ ಅನ್ನು ಅಶಕ್ತಗೊಳಿಸಲು ಪಟ್ಟಿಗೆ 'OAFIID:CAFE_MiniCommanderApplet' ಅನ್ನು "
+"ಸೇರಿಸಬೇಕು. ಇದು ಕಾರ್ಯರೂಪಕ್ಕೆ ಬರಲು ಫಲಕವನ್ನು ಮರಳಿ ಆರಂಭಿಸಬೇಕಾಗುತ್ತದೆ."
 
 #: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
@@ -1520,8 +1468,8 @@ msgid ""
 "If true, the panel will not allow a user to force an application to quit by "
 "removing access to the force quit button."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಒತ್ತಾಯಪೂರ್ವಕವಾಗಿ ಮುಚ್ಚುವ ಗುಂಡಿಯ ನಿಲುಕಣೆಯನ್ನು ತೆಗೆದು ಹಾಕುವ "
-"ಮೂಲಕ ಬಳಕೆದಾರನು ಒಂದು ಅನ್ವಯವನ್ನು ಒತ್ತಾಯಪೂರ್ವಕವಾಗಿ ಮುಚ್ಚದಂತೆ ತಡೆಯುತ್ತದೆ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಒತ್ತಾಯಪೂರ್ವಕವಾಗಿ ಮುಚ್ಚುವ ಗುಂಡಿಯ ನಿಲುಕಣೆಯನ್ನು ತೆಗೆದು ಹಾಕುವ ಮೂಲಕ "
+"ಬಳಕೆದಾರನು ಒಂದು ಅನ್ವಯವನ್ನು ಒತ್ತಾಯಪೂರ್ವಕವಾಗಿ ಮುಚ್ಚದಂತೆ ತಡೆಯುತ್ತದೆ."
 
 #: data/org.cafe.panel.gschema.xml.in:89
 msgid "Enable SNI support"
@@ -1587,8 +1535,8 @@ msgstr ""
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
-"Set the size of icons used in the menu. The panel must be restarted for this"
-" to take effect."
+"Set the size of icons used in the menu. The panel must be restarted for this "
+"to take effect."
 msgstr ""
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:50
@@ -1635,11 +1583,11 @@ msgstr "ಕೆಳಗಿನ/ಬಲ ಅಂಚಿಗೆ ಅನುಗುಣವಾದ
 
 #: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
-"If true, the position of the object is interpreted relative to the right (or"
-" bottom if vertical) edge of the panel."
+"If true, the position of the object is interpreted relative to the right (or "
+"bottom if vertical) edge of the panel."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ವಸ್ತುವಿನ ಸ್ಥಾನವನ್ನು ಫಲಕದ ಬಲ (ಅಥವ ಲಂಬವಾಗಿದ್ದಲ್ಲಿ ಕೆಳಗಿನ) "
-"ತುದಿಗೆ ಅನುಗುಣವಾಗಿ ವಿವರಿಸಲಾಗುತ್ತದೆ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ವಸ್ತುವಿನ ಸ್ಥಾನವನ್ನು ಫಲಕದ ಬಲ (ಅಥವ ಲಂಬವಾಗಿದ್ದಲ್ಲಿ ಕೆಳಗಿನ) ತುದಿಗೆ "
+"ಅನುಗುಣವಾಗಿ ವಿವರಿಸಲಾಗುತ್ತದೆ."
 
 #: data/org.cafe.panel.object.gschema.xml.in:25
 msgid "Lock the object to the panel"
@@ -1647,11 +1595,11 @@ msgstr "ವಸ್ತುಗಳನ್ನು ಫಲಕಕ್ಕೆ ಲಾಕ್ ಮ
 
 #: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
-"If true, the user may not move the applet without first unlocking the object"
-" using the \"Unlock\" menuitem."
+"If true, the user may not move the applet without first unlocking the object "
+"using the \"Unlock\" menuitem."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, \"ಅನ್‌ಲಾಕ್ ಮಾಡು\" ಮೆನು ಅಂಶವನ್ನು ಬಳಸಿಕೊಂಡು ವಸ್ತುವನ್ನು "
-"ಅನ್‌ಲಾಕ್ ಮಾಡದೆ ಆಪ್ಲೆಟ್ ಅನ್ನು ಬಳಕೆದಾರರು ಸ್ಥಳಾಂತರಿಸಲು ಸಾಧ್ಯವಿರುವುದಿಲ್ಲ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, \"ಅನ್‌ಲಾಕ್ ಮಾಡು\" ಮೆನು ಅಂಶವನ್ನು ಬಳಸಿಕೊಂಡು ವಸ್ತುವನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡದೆ "
+"ಆಪ್ಲೆಟ್ ಅನ್ನು ಬಳಕೆದಾರರು ಸ್ಥಳಾಂತರಿಸಲು ಸಾಧ್ಯವಿರುವುದಿಲ್ಲ."
 
 #: data/org.cafe.panel.object.gschema.xml.in:30
 msgid "Applet IID"
@@ -1659,10 +1607,9 @@ msgstr ""
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. "
-"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
-"applet\")."
+"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
+"ClockApplet\". This key is only relevant if the object_type key is "
+"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
 msgstr ""
 
 #: data/org.cafe.panel.object.gschema.xml.in:35
@@ -1684,8 +1631,7 @@ msgstr "ಡ್ರಾಯರ್ ಅಥವ ಮೆನುಗಾಗಿ ತೋರಿಸ
 #: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
-"only relevant if the object_type key is \"drawer-object\" or \"menu-"
-"object\"."
+"only relevant if the object_type key is \"drawer-object\" or \"menu-object\"."
 msgstr ""
 "ಈ ಡ್ರಾಯರಿಗಾಗಿ ಅಥವ ಈ ಮೆನುಗಾಗಿನ ಸಲಹೆಉಪಕರಣಕ್ಕಾಗಿ ತೋರಿಸಲಾಗುವ ಪಠ್ಯ. object_type "
 "ಕೀಲಿಯು \"drawer-object\" ಅಥವ \"menu-object\" ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಈ ಕೀಲಿಯು "
@@ -1701,10 +1647,9 @@ msgid ""
 "false, the custom_icon key is ignored. This key is only relevant if the "
 "object_type key is \"menu-object\" or \"drawer-object\"."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಗುಂಡಿಗಾಗಿನ ಇಚ್ಛೆಯ ಚಿಹ್ನೆಯಾಗಿ custom_icon ಕೀಲಿಯನ್ನು "
-"ಬಳಸಲಾಗುತ್ತದೆ. ನಿಜವಾಗಿರದೆ ಇದ್ದಲ್ಲಿ, custom_icon ಆಲಕ್ಷಿಸಲಾಗುತ್ತದೆ. object_type"
-" ಕೀಲಿಯು \"menu-object\" ಅಥವ \"drawer-object\" ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರವೆ ಇದು "
-"ಸೂಕ್ತವೆನಿಸುತ್ತದೆ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಗುಂಡಿಗಾಗಿನ ಇಚ್ಛೆಯ ಚಿಹ್ನೆಯಾಗಿ custom_icon ಕೀಲಿಯನ್ನು ಬಳಸಲಾಗುತ್ತದೆ. "
+"ನಿಜವಾಗಿರದೆ ಇದ್ದಲ್ಲಿ, custom_icon ಆಲಕ್ಷಿಸಲಾಗುತ್ತದೆ. object_type ಕೀಲಿಯು \"menu-"
+"object\" ಅಥವ \"drawer-object\" ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರವೆ ಇದು ಸೂಕ್ತವೆನಿಸುತ್ತದೆ."
 
 #: data/org.cafe.panel.object.gschema.xml.in:50
 msgid "Icon used for object's button"
@@ -1732,8 +1677,7 @@ msgid ""
 msgstr ""
 "ನಿಜವಾಗಿದ್ದಲ್ಲಿ, menu_path ಕೀಲಿಯನ್ನು ಮೆನು ವಿಷಯಗಳನ್ನು ರಚಿಸಬೇಕಿರುವ ಮಾರ್ಗವಾಗಿ "
 "ಬಳಸಲ್ಪಡುತ್ತದೆ. ನಿಜವಾಗಿರದೆ ಇದ್ದಲ್ಲಿ, menu_path ಕೀಲಿಯನ್ನು ಕಡೆಗಣಿಸಲಾಗುತ್ತದೆ. "
-"object_type ಕೀಲಿಯು \"menu-object\" ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರವೆ ಈ ಕೀಲಿಯು "
-"ಸೂಕ್ತವೆನಿಸುತ್ತದೆ."
+"object_type ಕೀಲಿಯು \"menu-object\" ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರವೆ ಈ ಕೀಲಿಯು ಸೂಕ್ತವೆನಿಸುತ್ತದೆ."
 
 #: data/org.cafe.panel.object.gschema.xml.in:60
 msgid "Menu content path"
@@ -1745,9 +1689,8 @@ msgid ""
 "relevant if the use_menu_path key is true and the object_type key is \"menu-"
 "object\"."
 msgstr ""
-"ಮೆನು ಅಂಶಗಳನ್ನು ರಚಿಸಲು ಬಳಸಲಾಗುವ ಮಾರ್ಗ. use_menu_path ಕೀಲಿಯು true ಆಗಿದ್ದಲ್ಲಿ "
-"ಹಾಗು object_type ಕೀಲಿಯು \"menu-object\" ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಈ ಕೀಲಿಯು "
-"ಸೂಕ್ತವಾಗಿರುತ್ತದೆ."
+"ಮೆನು ಅಂಶಗಳನ್ನು ರಚಿಸಲು ಬಳಸಲಾಗುವ ಮಾರ್ಗ. use_menu_path ಕೀಲಿಯು true ಆಗಿದ್ದಲ್ಲಿ ಹಾಗು "
+"object_type ಕೀಲಿಯು \"menu-object\" ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಈ ಕೀಲಿಯು ಸೂಕ್ತವಾಗಿರುತ್ತದೆ."
 
 #: data/org.cafe.panel.object.gschema.xml.in:65
 msgid "Draw arrow in menu button"
@@ -1783,8 +1726,8 @@ msgid ""
 msgstr ""
 "ಈ ಗುಂಡಿಯು ಪ್ರತಿನಿಧಿಸುವ ಕ್ರಿಯೆಯ ಬಗೆ. ಸಾಧ್ಯವಿರುವ ಮೌಲ್ಯಗಳೆಂದರೆ \"lock\"(ಲಾಕ್), "
 "\"logout\"(ನಿರ್ಗಮಿಸು), \"run\"(ಚಲಾಯಿಸು), \"search\"(ಹುಡುಕು) ಹಾಗು "
-"\"screenshot\"(ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌) ಆಗಿರುತ್ತವೆ. object_type ಕೀಲಿಯು \"action-"
-"applet\" ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಈ ಕೀಲಿಯು ಸೂಕ್ತವಾಗಿರುತ್ತದೆ."
+"\"screenshot\"(ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌) ಆಗಿರುತ್ತವೆ. object_type ಕೀಲಿಯು \"action-applet\" "
+"ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಈ ಕೀಲಿಯು ಸೂಕ್ತವಾಗಿರುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:5
 msgid "Name to identify panel"
@@ -1796,9 +1739,9 @@ msgid ""
 "main purpose is to serve as the panel's window title which is useful when "
 "navigating between panels."
 msgstr ""
-"ಇದು ಮನುಷ್ಯರು ಓದಬಹುದಾದ ಹೆಸರಾಗಿದ್ದು, ಫಲಕಗಳನ್ನು ಗುರುತಿಸಲು ಇದು ಬಳಸಲ್ಪಡುತ್ತದೆ. "
-"ಇದರ ಮುಖ್ಯ ಉದ್ದೇಶವು ಫಲಕದ ಮುಖ್ಯ ವಿಂಡೋದ ಶೀರ್ಷಿಕೆಯಾಗಿದ್ದು ಫಲಕಗಳ ನಡುವೆ ನ್ಯಾವಿಗೇಟ್"
-" ಮಾಡುವಾಗ ಸಹಕಾರಿಯಾಗುತ್ತದೆ."
+"ಇದು ಮನುಷ್ಯರು ಓದಬಹುದಾದ ಹೆಸರಾಗಿದ್ದು, ಫಲಕಗಳನ್ನು ಗುರುತಿಸಲು ಇದು ಬಳಸಲ್ಪಡುತ್ತದೆ. ಇದರ "
+"ಮುಖ್ಯ ಉದ್ದೇಶವು ಫಲಕದ ಮುಖ್ಯ ವಿಂಡೋದ ಶೀರ್ಷಿಕೆಯಾಗಿದ್ದು ಫಲಕಗಳ ನಡುವೆ ನ್ಯಾವಿಗೇಟ್ ಮಾಡುವಾಗ "
+"ಸಹಕಾರಿಯಾಗುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:10
 msgid "X screen where the panel is displayed"
@@ -1822,8 +1765,8 @@ msgid ""
 "In a Xinerama setup, you may have panels on each individual monitor. This "
 "key identifies the current monitor the panel is displayed on."
 msgstr ""
-"ಒಂದು Xinerama ಸಿದ್ಧತೆಯಲ್ಲಿ, ಪ್ರತಿಯೊಂದು ತೆರೆಗಳಿಗೂ ಪ್ರತ್ಯೇಕ ಫಲಕಗಳನ್ನು ನೀವು "
-"ಬಳಸಬಹುದು. ಈ ಕೀಲಿಯು ಫಲಕವನ್ನು ತೋರಿಸಲಾಗುತ್ತಿರುವ ಪ್ರಸಕ್ತ ತೆರೆಯನ್ನು ಸೂಚಿಸುತ್ತದೆ."
+"ಒಂದು Xinerama ಸಿದ್ಧತೆಯಲ್ಲಿ, ಪ್ರತಿಯೊಂದು ತೆರೆಗಳಿಗೂ ಪ್ರತ್ಯೇಕ ಫಲಕಗಳನ್ನು ನೀವು ಬಳಸಬಹುದು. "
+"ಈ ಕೀಲಿಯು ಫಲಕವನ್ನು ತೋರಿಸಲಾಗುತ್ತಿರುವ ಪ್ರಸಕ್ತ ತೆರೆಯನ್ನು ಸೂಚಿಸುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:20
 msgid "Expand to occupy entire screen width"
@@ -1832,15 +1775,14 @@ msgstr "ತೆರೆಯ ಸಂಪೂರ್ಣ ಗಾತ್ರಕ್ಕೆ ಹೊ
 #: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
-"vertical panel). In this mode the panel can only be placed at a screen edge."
-" If false, the panel will only be large enough to accommodate the applets, "
+"vertical panel). In this mode the panel can only be placed at a screen edge. "
+"If false, the panel will only be large enough to accommodate the applets, "
 "launchers and buttons on the panel."
 msgstr ""
 "ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಫಲಕವು ಸಂಪೂರ್ಣ ತೆರೆಯ ಅಗಲವನ್ನು (ಇದು ಲಂಬ ಫಲಕವಾಗಿದ್ದರೆ "
-"ಎತ್ತರವಾಗಿರುತ್ತದೆ) ಆಕ್ರಮಿಸುತ್ತದೆ. ಈ ಕ್ರಮದಲ್ಲಿ ಫಲಕವನ್ನು ಕೇವಲ ತೆರೆಯ ಅಂಚಿನಲ್ಲಿ "
-"ಮಾತ್ರವೆ ಇರಿಸಬಹುದಾಗಿದೆ. ನಿಜವಾಗಿರದೆ ಇದ್ದಲ್ಲಿ, ಫಲಕಕ್ಕೆ ಆಪ್ಲೆಟ್‌ಗಳನ್ನು, "
-"ಆರಂಭಕಗಳನ್ನು ಹಾಗು ಗುಂಡಿಗಳನ್ನು ಸೇರಿಸಿಕೊಳ್ಳುವಷ್ಟು ಮಾತ್ರವೆ ಫಲಕವು "
-"ದೊಡ್ಡದಾಗಿರುತ್ತದೆ."
+"ಎತ್ತರವಾಗಿರುತ್ತದೆ) ಆಕ್ರಮಿಸುತ್ತದೆ. ಈ ಕ್ರಮದಲ್ಲಿ ಫಲಕವನ್ನು ಕೇವಲ ತೆರೆಯ ಅಂಚಿನಲ್ಲಿ ಮಾತ್ರವೆ "
+"ಇರಿಸಬಹುದಾಗಿದೆ. ನಿಜವಾಗಿರದೆ ಇದ್ದಲ್ಲಿ, ಫಲಕಕ್ಕೆ ಆಪ್ಲೆಟ್‌ಗಳನ್ನು, ಆರಂಭಕಗಳನ್ನು ಹಾಗು "
+"ಗುಂಡಿಗಳನ್ನು ಸೇರಿಸಿಕೊಳ್ಳುವಷ್ಟು ಮಾತ್ರವೆ ಫಲಕವು ದೊಡ್ಡದಾಗಿರುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:25
 msgid "Panel orientation"
@@ -1851,20 +1793,20 @@ msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
 "the panel is on. In un-expanded mode the difference between \"top\" and "
-"\"bottom\" is less important - both indicate that this is a horizontal panel"
-" - but still give a useful hint as to how some panel objects should behave. "
-"For example, on a \"top\" panel a menu button will pop up its menu below the"
-" panel, whereas on a \"bottom\" panel the menu will be popped up above the "
+"\"bottom\" is less important - both indicate that this is a horizontal panel "
+"- but still give a useful hint as to how some panel objects should behave. "
+"For example, on a \"top\" panel a menu button will pop up its menu below the "
+"panel, whereas on a \"bottom\" panel the menu will be popped up above the "
 "panel."
 msgstr ""
 "ಫಲಕದ ವಾಲಿಕೆಯನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಸಾಧ್ಯವಿರುವ ಇದರ ಮೌಲ್ಯಗಳು \"ಮೇಲೆ\", \"ಕೆಳಗೆ\", "
-"\"ಎಡ\", \"ಬಲ\" ಆಗಿರುತ್ತದೆ. ಹಿಗ್ಗಿಸಲಾದ ಕ್ರಮದಲ್ಲಿ ಕೀಲಿಯು ತೆರೆಯ ಯಾವ ಬದಿಯು ಫಲಕವು"
-" ಇದೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸದೆ ಇರುವ ವಿಧಾನದಲ್ಲಿ \"ಮೇಲಿನ\" ಹಾಗು \"ಕೆಳಗಿನ\" "
-"ನಡುವೆ ವ್ಯತ್ಯಾಸವು ಅಷ್ಟೊಂದು ಪ್ರಮುಖವಾಗುವುದಿಲ್ಲ- ಎರಡೂ ಸಹ ಇದು ಒಂದು ಅಡ್ಡವಾದ ಫಲಕ "
-"ಎಂದು ಸೂಚಿಸಲ್ಪಡುತ್ತದೆ - ಆದರೂ ಸಹ ಕೆಲವು ಫಲಕದ ವಸ್ತುಗಳು ಹೇಗೆ ವರ್ತಿಸಬೇಕೆಂದು ಎನ್ನುವ"
-" ಉಪಯುಕ್ತ ಮಾಹಿತಿಯನ್ನು ಇದು ಒದಗಿಸುತ್ತದೆ. ಉದಾಹರಣೆಗೆ, \"ಮೇಲಿನ\" ಒಂದು ಫಲಕದಲ್ಲಿ "
-"ಒಂದು ಮೆನು ಗುಂಡಿಯು ಆದರ ಮೆನು ಅಂಶಗಳನ್ನು ಕೆಳಕ್ಕೆ ಪುಟಿಯುವಂತೆ ಮಾಡುತ್ತದೆ ಆದರೆ "
-"\"ಕೆಳಗಿನ\" ಫಲಕದಲ್ಲಿನ ಮೆನುವಿನ ಅಂಶಗಳು ಫಲಕದಿಂದ ಮೇಲಕ್ಕೆ ಪುಟಿಯಲ್ಪಡುತ್ತವೆ."
+"\"ಎಡ\", \"ಬಲ\" ಆಗಿರುತ್ತದೆ. ಹಿಗ್ಗಿಸಲಾದ ಕ್ರಮದಲ್ಲಿ ಕೀಲಿಯು ತೆರೆಯ ಯಾವ ಬದಿಯು ಫಲಕವು ಇದೆ "
+"ಎಂದು ಸೂಚಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸದೆ ಇರುವ ವಿಧಾನದಲ್ಲಿ \"ಮೇಲಿನ\" ಹಾಗು \"ಕೆಳಗಿನ\" ನಡುವೆ "
+"ವ್ಯತ್ಯಾಸವು ಅಷ್ಟೊಂದು ಪ್ರಮುಖವಾಗುವುದಿಲ್ಲ- ಎರಡೂ ಸಹ ಇದು ಒಂದು ಅಡ್ಡವಾದ ಫಲಕ ಎಂದು "
+"ಸೂಚಿಸಲ್ಪಡುತ್ತದೆ - ಆದರೂ ಸಹ ಕೆಲವು ಫಲಕದ ವಸ್ತುಗಳು ಹೇಗೆ ವರ್ತಿಸಬೇಕೆಂದು ಎನ್ನುವ ಉಪಯುಕ್ತ "
+"ಮಾಹಿತಿಯನ್ನು ಇದು ಒದಗಿಸುತ್ತದೆ. ಉದಾಹರಣೆಗೆ, \"ಮೇಲಿನ\" ಒಂದು ಫಲಕದಲ್ಲಿ ಒಂದು ಮೆನು "
+"ಗುಂಡಿಯು ಆದರ ಮೆನು ಅಂಶಗಳನ್ನು ಕೆಳಕ್ಕೆ ಪುಟಿಯುವಂತೆ ಮಾಡುತ್ತದೆ ಆದರೆ \"ಕೆಳಗಿನ\" "
+"ಫಲಕದಲ್ಲಿನ ಮೆನುವಿನ ಅಂಶಗಳು ಫಲಕದಿಂದ ಮೇಲಕ್ಕೆ ಪುಟಿಯಲ್ಪಡುತ್ತವೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:30
 msgid "Panel size"
@@ -1877,10 +1819,9 @@ msgid ""
 "indicators. The maximum size is fixed at one quarter of the screen height "
 "(or width)."
 msgstr ""
-"ಫಲಕದ ಎತ್ತರವನ್ನು(ಅಡ್ಡ ಫಲಕಕ್ಕೆ ಅಗಲವನ್ನು) ಸೂಚಿಸುತ್ತದೆ. ಅಕ್ಷರಶೈಲಿಯ ಗಾತ್ರ ಹಾಗು "
-"ಇತರೆ ಸೂಚಕಗಳ ಆಧಾರದ ಮೇರೆಗೆ ಚಲಾವಣಾ ಸಮಯದಲ್ಲಿ ಫಲಕದ ಗರಿಷ್ಟ ಗಾತ್ರವು "
-"ನಿರ್ಧರಿಸಲ್ಪಡುತ್ತದೆ. ಗರಿಷ್ಟ ಗಾತ್ರವು ತೆರೆಯ ಎತ್ತರದ(ಅಥವ ಅಗಲದ) ಕಾಲುಭಾಗವೆಂದು "
-"ನಿಗದಿಸಲಾಗಿರುತ್ತದೆ."
+"ಫಲಕದ ಎತ್ತರವನ್ನು(ಅಡ್ಡ ಫಲಕಕ್ಕೆ ಅಗಲವನ್ನು) ಸೂಚಿಸುತ್ತದೆ. ಅಕ್ಷರಶೈಲಿಯ ಗಾತ್ರ ಹಾಗು ಇತರೆ "
+"ಸೂಚಕಗಳ ಆಧಾರದ ಮೇರೆಗೆ ಚಲಾವಣಾ ಸಮಯದಲ್ಲಿ ಫಲಕದ ಗರಿಷ್ಟ ಗಾತ್ರವು ನಿರ್ಧರಿಸಲ್ಪಡುತ್ತದೆ. ಗರಿಷ್ಟ "
+"ಗಾತ್ರವು ತೆರೆಯ ಎತ್ತರದ(ಅಥವ ಅಗಲದ) ಕಾಲುಭಾಗವೆಂದು ನಿಗದಿಸಲಾಗಿರುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:35
 msgid "X co-ordinate of panel"
@@ -1892,9 +1833,9 @@ msgid ""
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
 "at the screen edge specified by the orientation key."
 msgstr ""
-"x-ಅಕ್ಷಾಂಶದಲ್ಲಿ ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸದೆ ಇರುವ ಕ್ರಮದಲ್ಲಿ ಮಾತ್ರ "
-"ಇದು ಸೂಕ್ತವೆನಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸಲಾದ ಕ್ರಮದಲ್ಲಿ ಈ ಕೀಲಿಯನ್ನು ಬಿಟ್ಟು ಬಿಡಲಾಗುತ್ತದೆ "
-"ಹಾಗು ಫಲಕವು ವಾಲಿಕೆಯ ಕೀಲಿಯಿಂದ ಸೂಚಿತಗೊಂಡ ತೆರೆಯ ಅಂಚಿನಲ್ಲಿ ಇರಿಸಲ್ಪಡುತ್ತದೆ."
+"x-ಅಕ್ಷಾಂಶದಲ್ಲಿ ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸದೆ ಇರುವ ಕ್ರಮದಲ್ಲಿ ಮಾತ್ರ ಇದು "
+"ಸೂಕ್ತವೆನಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸಲಾದ ಕ್ರಮದಲ್ಲಿ ಈ ಕೀಲಿಯನ್ನು ಬಿಟ್ಟು ಬಿಡಲಾಗುತ್ತದೆ ಹಾಗು ಫಲಕವು "
+"ವಾಲಿಕೆಯ ಕೀಲಿಯಿಂದ ಸೂಚಿತಗೊಂಡ ತೆರೆಯ ಅಂಚಿನಲ್ಲಿ ಇರಿಸಲ್ಪಡುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:40
 msgid "Y co-ordinate of panel"
@@ -1906,9 +1847,9 @@ msgid ""
 "expanded mode. In expanded mode this key is ignored and the panel is placed "
 "at the screen edge specified by the orientation key."
 msgstr ""
-"y-ಅಕ್ಷಾಂಶದಲ್ಲಿ ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸದೆ ಇರುವ ಕ್ರಮದಲ್ಲಿ ಮಾತ್ರ "
-"ಇದು ಸೂಕ್ತವೆನಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸಲಾದ ಕ್ರಮದಲ್ಲಿ ಈ ಕೀಲಿಯನ್ನು ಬಿಟ್ಟು ಬಿಡಲಾಗುತ್ತದೆ "
-"ಹಾಗು ಫಲಕವು ವಾಲಿಕೆಯ ಕೀಲಿಯಿಂದ ಸೂಚಿತಗೊಂಡ ತೆರೆಯ ಅಂಚಿನಲ್ಲಿ ಇರಿಸಲ್ಪಡುತ್ತದೆ."
+"y-ಅಕ್ಷಾಂಶದಲ್ಲಿ ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸದೆ ಇರುವ ಕ್ರಮದಲ್ಲಿ ಮಾತ್ರ ಇದು "
+"ಸೂಕ್ತವೆನಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸಲಾದ ಕ್ರಮದಲ್ಲಿ ಈ ಕೀಲಿಯನ್ನು ಬಿಟ್ಟು ಬಿಡಲಾಗುತ್ತದೆ ಹಾಗು ಫಲಕವು "
+"ವಾಲಿಕೆಯ ಕೀಲಿಯಿಂದ ಸೂಚಿತಗೊಂಡ ತೆರೆಯ ಅಂಚಿನಲ್ಲಿ ಇರಿಸಲ್ಪಡುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:45
 msgid "X co-ordinate of panel, starting from the right of the screen"
@@ -1923,12 +1864,11 @@ msgid ""
 "this key is ignored and the panel is placed at the screen edge specified by "
 "the orientation key."
 msgstr ""
-"x-ಅಕ್ಷಾಂಶದಲ್ಲಿ ತೆರೆಯ ಬಲಭಾಗದಿಂದ ಆರಂಭಗೊಳ್ಳುವ ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತದೆ. -1 "
-"ಕ್ಕೆ ಹೊಂದಿಸಿದಲ್ಲಿ, ಆ ಮೌಲ್ಯವನ್ನು ಬಿಟ್ಟು ಬಿಡಲಾಗುತ್ತದೆ ಹಾಗು x ಮೌಲ್ಯವು "
-"ಬಳಸಲ್ಪಡುತ್ತದೆ. ಎಲ್ಲಿಯಾದರೂ ಮೌಲ್ಯವು 0 ಗಿಂತ ಹೆಚ್ಚಿದ್ದಲ್ಲಿ x ಕೀಲಿಯನ್ನು "
-"ಬಿಡಲಾಗುತ್ತದೆ. ಈ ಕೀಲಿಯು ಹಿಗ್ಗಿಸದೆ ಇರುವ ವಿಧಾನದಲ್ಲಿ ಮಾತ್ರ ಸೂಕ್ತವೆನಿಸುತ್ತದೆ. "
-"ಹಿಗ್ಗಿಸಿದ ಕ್ರಮದಲ್ಲಿ ಮಾತ್ರ ಇದನ್ನು ಬಿಟ್ಟಬಿಡಲಾಗುತ್ತದೆ ಹಾಗು ಫಲಕವು ವಾಲಿಕೆಯ "
-"ಕೀಲಿಯಿಂದ ಸೂಚಿತಗೊಂಡ ತೆರೆಯ ಅಂಚಿನಲ್ಲಿ ಇರಿಸಲ್ಪಡುತ್ತದೆ."
+"x-ಅಕ್ಷಾಂಶದಲ್ಲಿ ತೆರೆಯ ಬಲಭಾಗದಿಂದ ಆರಂಭಗೊಳ್ಳುವ ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತದೆ. -1 ಕ್ಕೆ "
+"ಹೊಂದಿಸಿದಲ್ಲಿ, ಆ ಮೌಲ್ಯವನ್ನು ಬಿಟ್ಟು ಬಿಡಲಾಗುತ್ತದೆ ಹಾಗು x ಮೌಲ್ಯವು ಬಳಸಲ್ಪಡುತ್ತದೆ. ಎಲ್ಲಿಯಾದರೂ "
+"ಮೌಲ್ಯವು 0 ಗಿಂತ ಹೆಚ್ಚಿದ್ದಲ್ಲಿ x ಕೀಲಿಯನ್ನು ಬಿಡಲಾಗುತ್ತದೆ. ಈ ಕೀಲಿಯು ಹಿಗ್ಗಿಸದೆ ಇರುವ "
+"ವಿಧಾನದಲ್ಲಿ ಮಾತ್ರ ಸೂಕ್ತವೆನಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸಿದ ಕ್ರಮದಲ್ಲಿ ಮಾತ್ರ ಇದನ್ನು ಬಿಟ್ಟಬಿಡಲಾಗುತ್ತದೆ "
+"ಹಾಗು ಫಲಕವು ವಾಲಿಕೆಯ ಕೀಲಿಯಿಂದ ಸೂಚಿತಗೊಂಡ ತೆರೆಯ ಅಂಚಿನಲ್ಲಿ ಇರಿಸಲ್ಪಡುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:50
 msgid "Y co-ordinate of panel, starting from the bottom of the screen"
@@ -1943,12 +1883,11 @@ msgid ""
 "this key is ignored and the panel is placed at the screen edge specified by "
 "the orientation key."
 msgstr ""
-"y-ಅಕ್ಷಾಂಶದಲ್ಲಿ ತೆರೆಯ ಕೆಳಭಾಗದಿಂದ ಆರಂಭಗೊಳ್ಳುವ ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತದೆ. -1 "
-"ಕ್ಕೆ ಹೊಂದಿಸಿದಲ್ಲಿ, ಆ ಮೌಲ್ಯವನ್ನು ಬಿಟ್ಟು ಬಿಡಲಾಗುತ್ತದೆ ಹಾಗು y ಮೌಲ್ಯವು "
-"ಬಳಸಲ್ಪಡುತ್ತದೆ. ಎಲ್ಲಿಯಾದರೂ ಮೌಲ್ಯವು 0 ಗಿಂತ ಹೆಚ್ಚಿದ್ದಲ್ಲಿ y ಕೀಲಿಯನ್ನು "
-"ಬಿಡಲಾಗುತ್ತದೆ. ಈ ಕೀಲಿಯು ಹಿಗ್ಗಿಸದೆ ಇರುವ ವಿಧಾನದಲ್ಲಿ ಮಾತ್ರ ಸೂಕ್ತವೆನಿಸುತ್ತದೆ. "
-"ಹಿಗ್ಗಿಸಿದ ಕ್ರಮದಲ್ಲಿ ಮಾತ್ರ ಇದನ್ನು ಬಿಟ್ಟಬಿಡಲಾಗುತ್ತದೆ ಹಾಗು ಫಲಕವು ವಾಲಿಕೆಯ "
-"ಕೀಲಿಯಿಂದ ಸೂಚಿತಗೊಂಡ ತೆರೆಯ ಅಂಚಿನಲ್ಲಿ ಇರಿಸಲ್ಪಡುತ್ತದೆ."
+"y-ಅಕ್ಷಾಂಶದಲ್ಲಿ ತೆರೆಯ ಕೆಳಭಾಗದಿಂದ ಆರಂಭಗೊಳ್ಳುವ ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತದೆ. -1 ಕ್ಕೆ "
+"ಹೊಂದಿಸಿದಲ್ಲಿ, ಆ ಮೌಲ್ಯವನ್ನು ಬಿಟ್ಟು ಬಿಡಲಾಗುತ್ತದೆ ಹಾಗು y ಮೌಲ್ಯವು ಬಳಸಲ್ಪಡುತ್ತದೆ. ಎಲ್ಲಿಯಾದರೂ "
+"ಮೌಲ್ಯವು 0 ಗಿಂತ ಹೆಚ್ಚಿದ್ದಲ್ಲಿ y ಕೀಲಿಯನ್ನು ಬಿಡಲಾಗುತ್ತದೆ. ಈ ಕೀಲಿಯು ಹಿಗ್ಗಿಸದೆ ಇರುವ "
+"ವಿಧಾನದಲ್ಲಿ ಮಾತ್ರ ಸೂಕ್ತವೆನಿಸುತ್ತದೆ. ಹಿಗ್ಗಿಸಿದ ಕ್ರಮದಲ್ಲಿ ಮಾತ್ರ ಇದನ್ನು ಬಿಟ್ಟಬಿಡಲಾಗುತ್ತದೆ "
+"ಹಾಗು ಫಲಕವು ವಾಲಿಕೆಯ ಕೀಲಿಯಿಂದ ಸೂಚಿತಗೊಂಡ ತೆರೆಯ ಅಂಚಿನಲ್ಲಿ ಇರಿಸಲ್ಪಡುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:55
 msgid "Center panel on x-axis"
@@ -1961,10 +1900,10 @@ msgid ""
 "at that position - i.e. the panel will grow on both sides. If false, the x "
 "and x_right keys specify the location of the panel."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, x ಹಾಗು x_bottom ಕೀಲಿಗಳನ್ನು ಉಪೇಕ್ಷಿಸಲಾಗುವುದು ಹಾಗು ಫಲಕವನ್ನು "
-"ತೆರೆಯ x-ಅಕ್ಷದ ನಡುಮಧ್ಯದಲ್ಲಿ ಇರಿಸಲಾಗುವುದು. ಫಲಕದ ಗಾತ್ರವನ್ನು ಬದಲಾಯಿಸಿದಲ್ಲಿ ಅದು "
-"ಅದೆ ಸ್ಥಳದಲ್ಲಿ ಇರುತ್ತದೆ ಅಂದರೆ ಫಲಕವು ಎರಡೂ ಬದಿಯಲ್ಲಿ ಗಾತ್ರ ಬದಲಾವಣೆಗೊಳ್ಳುತ್ತದೆ. "
-"false ಆಗಿದ್ದಲ್ಲಿ, x ಹಾಗು x_bottom ಕೀಲಿಗಳು ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತವೆ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, x ಹಾಗು x_bottom ಕೀಲಿಗಳನ್ನು ಉಪೇಕ್ಷಿಸಲಾಗುವುದು ಹಾಗು ಫಲಕವನ್ನು ತೆರೆಯ x-"
+"ಅಕ್ಷದ ನಡುಮಧ್ಯದಲ್ಲಿ ಇರಿಸಲಾಗುವುದು. ಫಲಕದ ಗಾತ್ರವನ್ನು ಬದಲಾಯಿಸಿದಲ್ಲಿ ಅದು ಅದೆ ಸ್ಥಳದಲ್ಲಿ "
+"ಇರುತ್ತದೆ ಅಂದರೆ ಫಲಕವು ಎರಡೂ ಬದಿಯಲ್ಲಿ ಗಾತ್ರ ಬದಲಾವಣೆಗೊಳ್ಳುತ್ತದೆ. false ಆಗಿದ್ದಲ್ಲಿ, x "
+"ಹಾಗು x_bottom ಕೀಲಿಗಳು ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತವೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:60
 msgid "Center panel on y-axis"
@@ -1977,10 +1916,10 @@ msgid ""
 "at that position - i.e. the panel will grow on both sides. If false, the y "
 "and y_bottom keys specify the location of the panel."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, y ಹಾಗು y_bottom ಕೀಲಿಗಳನ್ನು ಉಪೇಕ್ಷಿಸಲಾಗುವುದು ಹಾಗು ಫಲಕವನ್ನು "
-"ತೆರೆಯ y-ಅಕ್ಷದ ನಡುಮಧ್ಯದಲ್ಲಿ ಇರಿಸಲಾಗುವುದು. ಫಲಕದ ಗಾತ್ರವನ್ನು ಬದಲಾಯಿಸಿದಲ್ಲಿ ಅದು "
-"ಅದೆ ಸ್ಥಳದಲ್ಲಿ ಇರುತ್ತದೆ ಅಂದರೆ ಫಲಕವು ಎರಡೂ ಬದಿಯಲ್ಲಿ ಗಾತ್ರ ಬದಲಾವಣೆಗೊಳ್ಳುತ್ತದೆ. "
-"false ಆಗಿದ್ದಲ್ಲಿ, y ಹಾಗು y_bottom ಕೀಲಿಗಳು ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತವೆ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, y ಹಾಗು y_bottom ಕೀಲಿಗಳನ್ನು ಉಪೇಕ್ಷಿಸಲಾಗುವುದು ಹಾಗು ಫಲಕವನ್ನು ತೆರೆಯ y-"
+"ಅಕ್ಷದ ನಡುಮಧ್ಯದಲ್ಲಿ ಇರಿಸಲಾಗುವುದು. ಫಲಕದ ಗಾತ್ರವನ್ನು ಬದಲಾಯಿಸಿದಲ್ಲಿ ಅದು ಅದೆ ಸ್ಥಳದಲ್ಲಿ "
+"ಇರುತ್ತದೆ ಅಂದರೆ ಫಲಕವು ಎರಡೂ ಬದಿಯಲ್ಲಿ ಗಾತ್ರ ಬದಲಾವಣೆಗೊಳ್ಳುತ್ತದೆ. false ಆಗಿದ್ದಲ್ಲಿ, y "
+"ಹಾಗು y_bottom ಕೀಲಿಗಳು ಫಲಕದ ಸ್ಥಾನವನ್ನು ಸೂಚಿಸುತ್ತವೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:65
 msgid "Automatically hide panel into corner"
@@ -1992,17 +1931,16 @@ msgid ""
 "the pointer leaves the panel area. Moving the pointer to that corner again "
 "will cause the panel to re-appear."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಸೂಚಕವು ಫಲಕದ ಸ್ಥಳದಿಂದ ಹೊರ ತೆರಳಿದಾಗ ಫಲಕವು ತಾನಾಗಿಯೆ ಒಂದು "
-"ಮೂಲೆಯಲ್ಲಿ ಅಡಗಿಸಲ್ಪಡುತ್ತದೆ. ಸೂಚಕವನ್ನು ಆ ಮೂಲೆಗೆ ಕೊಂಡುಹೋದಾಗ ಫಲಕ ಮರಳಿ "
-"ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತದೆ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಸೂಚಕವು ಫಲಕದ ಸ್ಥಳದಿಂದ ಹೊರ ತೆರಳಿದಾಗ ಫಲಕವು ತಾನಾಗಿಯೆ ಒಂದು ಮೂಲೆಯಲ್ಲಿ "
+"ಅಡಗಿಸಲ್ಪಡುತ್ತದೆ. ಸೂಚಕವನ್ನು ಆ ಮೂಲೆಗೆ ಕೊಂಡುಹೋದಾಗ ಫಲಕ ಮರಳಿ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
 "If true, hiding and un-hiding of this panel will be anicafed rather than "
 "happening instantly."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಈ ಫಲಕವನ್ನು ಅಡಗಿಸುವುದು ಹಾಗು ಕಾಣಿಸುವುದನ್ನು ತಕ್ಷಣ ಮಾಡುವ ಬದಲು "
-"ಎನಿಮೇಟ್ ಮಾಡಲಾಗುತ್ತದೆ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಈ ಫಲಕವನ್ನು ಅಡಗಿಸುವುದು ಹಾಗು ಕಾಣಿಸುವುದನ್ನು ತಕ್ಷಣ ಮಾಡುವ ಬದಲು ಎನಿಮೇಟ್ "
+"ಮಾಡಲಾಗುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:75
 msgid "Enable hide buttons"
@@ -2013,9 +1951,8 @@ msgid ""
 "If true, buttons will be placed on each side of the panel which may be used "
 "to move the panel to edge of the screen, leaving only a button showing."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಗುಂಡಿಗಳನ್ನು ಫಲಕದ ಎರಡೂ ಬದಿಯಲ್ಲಿ ಇರಿಸಲಾಗುವುದು ಹಾಗು ಇದನ್ನು "
-"ಬಳಸಿಕೊಂಡು ಕೇವಲ ಗುಂಡಿಯ ಮಾತ್ರವೆ ಕಾಣಿಸುತ್ತಿರುವಂತೆ ಫಲಕವನ್ನು ತೆರೆಯ ಅಂಚಿಗೆ "
-"ಎಳೆದೊಯ್ಯಬಹುದು."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಗುಂಡಿಗಳನ್ನು ಫಲಕದ ಎರಡೂ ಬದಿಯಲ್ಲಿ ಇರಿಸಲಾಗುವುದು ಹಾಗು ಇದನ್ನು ಬಳಸಿಕೊಂಡು "
+"ಕೇವಲ ಗುಂಡಿಯ ಮಾತ್ರವೆ ಕಾಣಿಸುತ್ತಿರುವಂತೆ ಫಲಕವನ್ನು ತೆರೆಯ ಅಂಚಿಗೆ ಎಳೆದೊಯ್ಯಬಹುದು."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:80
 msgid "Enable arrows on hide buttons"
@@ -2041,8 +1978,8 @@ msgid ""
 "relevant if the auto_hide key is true."
 msgstr ""
 "ಫಲಕವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಡಗಿಸುವ ಮೊದಲು ಸೂಚಕವು ಫಲಕದ ಕ್ಷೇತ್ರದಿಂದ ಹೊರಬಂದ ನಂತರ "
-"ಉಂಟಾಗುವ ಮಿಲಿ ಸೆಕೆಂಡುಗಳ ವಿಳಂಬವನ್ನು ಸೂಚಿಸುತ್ತದೆ. auto_hide ಕೀಲಿಯು true "
-"ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಈ ಕೀಲಿಯು ಸೂಕ್ತವಾಗಿರುತ್ತದೆ."
+"ಉಂಟಾಗುವ ಮಿಲಿ ಸೆಕೆಂಡುಗಳ ವಿಳಂಬವನ್ನು ಸೂಚಿಸುತ್ತದೆ. auto_hide ಕೀಲಿಯು true ಆಗಿದ್ದಲ್ಲಿ "
+"ಮಾತ್ರ ಈ ಕೀಲಿಯು ಸೂಕ್ತವಾಗಿರುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:90
 msgid "Panel autounhide delay"
@@ -2054,9 +1991,9 @@ msgid ""
 "panel area before the panel is automatically re-shown. This key is only "
 "relevant if the auto_hide key is true."
 msgstr ""
-"ಫಲಕವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮರಳಿ ತೋರಿಸುವ ಮೊದಲು ಸೂಚಕವು ಫಲಕದ ಕ್ಷೇತ್ರದಿಂದ ಹೊರಬಂದ "
-"ನಂತರ ಉಂಟಾಗುವ ಮಿಲಿ ಸೆಕೆಂಡುಗಳ ವಿಳಂಬವನ್ನು ಸೂಚಿಸುತ್ತದೆ. auto_hide ಕೀಲಿಯು true "
-"ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಈ ಕೀಲಿಯು ಸೂಕ್ತವಾಗಿರುತ್ತದೆ."
+"ಫಲಕವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮರಳಿ ತೋರಿಸುವ ಮೊದಲು ಸೂಚಕವು ಫಲಕದ ಕ್ಷೇತ್ರದಿಂದ ಹೊರಬಂದ ನಂತರ "
+"ಉಂಟಾಗುವ ಮಿಲಿ ಸೆಕೆಂಡುಗಳ ವಿಳಂಬವನ್ನು ಸೂಚಿಸುತ್ತದೆ. auto_hide ಕೀಲಿಯು true ಆಗಿದ್ದಲ್ಲಿ "
+"ಮಾತ್ರ ಈ ಕೀಲಿಯು ಸೂಕ್ತವಾಗಿರುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:95
 msgid "Visible pixels when hidden"
@@ -2065,12 +2002,10 @@ msgstr "ಅಡಗಿಸಿದಾಗ ಕಾಣಿಸುವ ಪಿಕ್ಸೆಲ�
 #: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
-"hidden into a corner. This key is only relevant if the auto_hide key is "
-"true."
+"hidden into a corner. This key is only relevant if the auto_hide key is true."
 msgstr ""
-"ಫಲಕವನ್ನು ಒಂದು ಮೂಲೆಗೆ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಡಗಿಸಿದಾಗ ಕಾಣುವ ಪಿಕ್ಸೆಲ್‌ಗಳ ಸಂಖ್ಯೆಗಳನ್ನು"
-" ಸೂಚಿಸಲಾಗುತ್ತದೆ. auto_hide ಕೀಲಿಯು true ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಈ ಕೀಲಿಯು "
-"ಸೂಕ್ತವಾಗಿರುತ್ತದೆ."
+"ಫಲಕವನ್ನು ಒಂದು ಮೂಲೆಗೆ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಡಗಿಸಿದಾಗ ಕಾಣುವ ಪಿಕ್ಸೆಲ್‌ಗಳ ಸಂಖ್ಯೆಗಳನ್ನು "
+"ಸೂಚಿಸಲಾಗುತ್ತದೆ. auto_hide ಕೀಲಿಯು true ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಈ ಕೀಲಿಯು ಸೂಕ್ತವಾಗಿರುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:100
 msgid "Animation speed"
@@ -2082,9 +2017,9 @@ msgid ""
 "\"slow\", \"medium\" and \"fast\". This key is only relevant if the "
 "enable_animations key is true."
 msgstr ""
-"ಫಲಕದ ಅನಿಮೇಶನ್‌ಗಳು ಜರುಗಬೇಕಿರುವ ವೇಗ. ಸಾಧ್ಯವಿರುವ ಇದರ ಮೌಲ್ಯಗಳು \"ನಿಧಾನ\", "
-"\"ಮಧ್ಯಮ\" ಹಾಗು \"ವೇಗ\" ಆಗಿರುತ್ತವೆ. ಅನಿಮೇಶನ್ ಅನ್ನು ಶಕ್ತಗೊಳಿಸು ಕೀಲಿಯು true "
-"ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರವೆ ಇದು ಸೂಕ್ತವೆನಿಸುತ್ತದೆ."
+"ಫಲಕದ ಅನಿಮೇಶನ್‌ಗಳು ಜರುಗಬೇಕಿರುವ ವೇಗ. ಸಾಧ್ಯವಿರುವ ಇದರ ಮೌಲ್ಯಗಳು \"ನಿಧಾನ\", \"ಮಧ್ಯಮ\" "
+"ಹಾಗು \"ವೇಗ\" ಆಗಿರುತ್ತವೆ. ಅನಿಮೇಶನ್ ಅನ್ನು ಶಕ್ತಗೊಳಿಸು ಕೀಲಿಯು true ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರವೆ "
+"ಇದು ಸೂಕ್ತವೆನಿಸುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:108
 msgid "Background type"
@@ -2113,8 +2048,8 @@ msgstr "ಹಿನ್ನಲೆಯ ಬಣ್ಣದ ಅಪಾರದರ್ಶಕತ�
 #: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
-"completely opaque (a value of less than 65535), the color will be composited"
-" onto the desktop background image."
+"completely opaque (a value of less than 65535), the color will be composited "
+"onto the desktop background image."
 msgstr ""
 "ಹಿನ್ನಲೆಯ ಬಣ್ಣದ ವಿನ್ಯಾಸದ ಅಪಾರದರ್ಶಕತೆಯನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಬಣ್ಣವು ಸಂಪೂರ್ಣವಾಗಿ "
 "ಅಪಾರದರ್ಶಕವಾಗಿಲ್ಲದೆ ಹೋದಲ್ಲಿ (65535 ಕ್ಕಿಂತ ಒಂದು ಕಡಿಮೆ ಮೌಲ್ಯ), ಬಣ್ಣವು ಹಿನ್ನಲೆ "
@@ -2130,8 +2065,8 @@ msgid ""
 "contains an alpha channel it will be composited onto the desktop background "
 "image."
 msgstr ""
-"ಹಿನ್ನಲೆಯ ಚಿತ್ರವನ್ನಾಗಿ ಬಳಸಲಾಗುವ ಕಡತವನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಚಿತ್ರವು ಒಂದು ಅಲ್ಫಾ "
-"ಚಾನಲ್ ಅನ್ನು ಹೊಂದಿದ್ದಲ್ಲಿ, ಅದನ್ನು ಹಿನ್ನಲೆ ಚಿತ್ರದೊಂದಿಗೆ ಮಿಶ್ರ ಮಾಡಲಾಗುತ್ತದೆ."
+"ಹಿನ್ನಲೆಯ ಚಿತ್ರವನ್ನಾಗಿ ಬಳಸಲಾಗುವ ಕಡತವನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಚಿತ್ರವು ಒಂದು ಅಲ್ಫಾ ಚಾನಲ್ ಅನ್ನು "
+"ಹೊಂದಿದ್ದಲ್ಲಿ, ಅದನ್ನು ಹಿನ್ನಲೆ ಚಿತ್ರದೊಂದಿಗೆ ಮಿಶ್ರ ಮಾಡಲಾಗುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:128
 msgid "Fit image to panel"
@@ -2142,8 +2077,8 @@ msgid ""
 "If true, the image will be scaled (retaining the aspect ratio of the image) "
 "to the panel height (if horizontal)."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಚಿತ್ರದ ಗಾತ್ರವನ್ನು (ಚಿತ್ರದ ಆಕಾರ ಅನುಪಾತವನ್ನು ಹಾಗೆಯೆ "
-"ಉಳಿಸಿಕೊಂಡು) ಫಲಕದ ಎತ್ತರಕ್ಕೆ (ಅಡ್ಡಲಾಗಿದ್ದರೆ) ಸರಿಹೊಂದುವಂತೆ ಬದಲಾಯಿಸಲಾಗುತ್ತದೆ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಚಿತ್ರದ ಗಾತ್ರವನ್ನು (ಚಿತ್ರದ ಆಕಾರ ಅನುಪಾತವನ್ನು ಹಾಗೆಯೆ ಉಳಿಸಿಕೊಂಡು) ಫಲಕದ "
+"ಎತ್ತರಕ್ಕೆ (ಅಡ್ಡಲಾಗಿದ್ದರೆ) ಸರಿಹೊಂದುವಂತೆ ಬದಲಾಯಿಸಲಾಗುತ್ತದೆ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:133
 msgid "Stretch image to panel"
@@ -2154,8 +2089,8 @@ msgid ""
 "If true, the image will be scaled to the panel dimensions. The aspect ratio "
 "of the image will not be maintained."
 msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಚಿತ್ರದ ಗಾತ್ರವನ್ನು ಫಲಕದ ಆಕಾರಕ್ಕೆ ಅನುಗುಣವಾಗಿ ಬದಲಾಯಿಸಲಾಗುತ್ತದೆ."
-" ಚಿತ್ರದ ಆಕಾರ ಅನುಪಾತವನ್ನು ಉಳಿಸಿಕೊಳ್ಳುವುದಿಲ್ಲ."
+"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಚಿತ್ರದ ಗಾತ್ರವನ್ನು ಫಲಕದ ಆಕಾರಕ್ಕೆ ಅನುಗುಣವಾಗಿ ಬದಲಾಯಿಸಲಾಗುತ್ತದೆ. ಚಿತ್ರದ "
+"ಆಕಾರ ಅನುಪಾತವನ್ನು ಉಳಿಸಿಕೊಳ್ಳುವುದಿಲ್ಲ."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:138
 msgid "Rotate image on vertical panels"
@@ -2165,9 +2100,7 @@ msgstr "ಚಿತ್ರಗಳನ್ನು ಲಂಬ ಫಲಕಗಳಲ್ಲಿ 
 msgid ""
 "If true, the background image will be rotated when the panel is oriented "
 "vertically."
-msgstr ""
-"ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಫಲಕವನ್ನು ಲಂಬವಾಗಿ ಇರಿಸಿದಾಗ ಹಿನ್ನಲೆಯ ಚಿತ್ರವು "
-"ತಿರುಗಿಸಲ್ಪಡುತ್ತದೆ."
+msgstr "ನಿಜವಾಗಿದ್ದಲ್ಲಿ, ಫಲಕವನ್ನು ಲಂಬವಾಗಿ ಇರಿಸಿದಾಗ ಹಿನ್ನಲೆಯ ಚಿತ್ರವು ತಿರುಗಿಸಲ್ಪಡುತ್ತದೆ."
 
 #: cafe-panel/libegg/eggdesktopfile.c:168
 msgid "File is not a valid .desktop file"
@@ -2233,7 +2166,7 @@ msgid "_Open"
 msgstr "ತೆರೆ(_O)"
 
 #: cafe-panel/libpanel-util/panel-error.c:76
-#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
+#: cafe-panel/panel-applet-frame.c:800 cafe-panel/panel-applet-frame.c:988
 msgid "Error"
 msgstr "ದೋಷ"
 
@@ -2280,7 +2213,7 @@ msgid "Cannot find an empty spot"
 msgstr "ಒಂದು ಖಾಲಿ ಸ್ಥಳವು ಕಂಡುಬಂದಿಲ್ಲ"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1650
+#: cafe-panel/panel-toplevel.c:1643
 msgid "Drawer"
 msgstr "ಡ್ರಾಯರ್"
 
@@ -2289,7 +2222,7 @@ msgid "_Add to Drawer..."
 msgstr "ಡ್ರಾಯರಿಗೆ ಸೇರಿಸು(_A)..."
 
 #: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
-#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:247
 msgid "_Properties"
 msgstr "ಗುಣಲಕ್ಷಣಗಳು(_P)"
 
@@ -2306,7 +2239,7 @@ msgid "- Edit .desktop files"
 msgstr "- .desktop ಕಡತಗಳನ್ನು ಸಂಪಾದಿಸು"
 
 #: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
 msgid "Create Launcher"
 msgstr "ಆರಂಭಕವನ್ನು ನಿರ್ಮಿಸಿ"
 
@@ -2319,7 +2252,7 @@ msgstr "ಕೋಶದ ಗುಣಲಕ್ಷಣಗಳು"
 msgid "Launcher Properties"
 msgstr "ಆರಂಭಕದ ಗುಣಲಕ್ಷಣಗಳು"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "ಫಲಕ"
 
@@ -2330,12 +2263,6 @@ msgid ""
 msgstr ""
 "ಇತರೆ ಅನ್ವಯಗಳನ್ನು ಆರಂಭಿಸು ಹಾಗು ವಿಂಡೋಗಳನ್ನು ನಿರ್ವಹಣೆ, ಸಮಯವನ್ನು ತೋರಿಕೆ ಮೊದಲಾದ "
 "ಸವಲತ್ತುಗಳನ್ನು ಒದಗಿಸು."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cafe-panel/cafe-panel.desktop.in:7
-msgid "cafe-panel"
-msgstr ""
 
 #: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
@@ -2365,10 +2292,9 @@ msgstr "ಆರಂಭಿಸು(_L)"
 #: cafe-panel/launcher.c:910
 #, c-format
 msgid "Key %s is not set, cannot load launcher\n"
-msgstr ""
-"ಕೀಲಿ %s ಅನ್ನು ಹೊಂದಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ, ಆರಂಭಕವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ\n"
+msgstr "ಕೀಲಿ %s ಅನ್ನು ಹೊಂದಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ, ಆರಂಭಕವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ\n"
 
-#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "ಆರಂಭಕವನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
@@ -2444,8 +2370,7 @@ msgstr "ಅನ್ವಯವನ್ನು ಚಲಾಯಿಸು..."
 #: cafe-panel/panel-action-button.c:389
 msgid "Run an application by typing a command or choosing from a list"
 msgstr ""
-"ಒಂದು ಆಜ್ಞೆಯನ್ನು ಟೈಪಿಸುವ ಮೂಲಕ ಅಥವ ಪಟ್ಟಿಯಿಂದ ಆರಿಸುವ ಮೂಲಕ ಒಂದು ಅನ್ವಯವನ್ನು "
-"ಚಲಾಯಿಸಿ"
+"ಒಂದು ಆಜ್ಞೆಯನ್ನು ಟೈಪಿಸುವ ಮೂಲಕ ಅಥವ ಪಟ್ಟಿಯಿಂದ ಆರಿಸುವ ಮೂಲಕ ಒಂದು ಅನ್ವಯವನ್ನು ಚಲಾಯಿಸಿ"
 
 #: cafe-panel/panel-action-button.c:398
 msgid "Search for Files..."
@@ -2454,8 +2379,8 @@ msgstr "ಕಡತಗಳಿಗಾಗಿ ಹುಡುಕು..."
 #: cafe-panel/panel-action-button.c:399
 msgid "Locate documents and folders on this computer by name or content"
 msgstr ""
-"ಹೆಸರು ಅಥವ ವಿಷಯಗಳ ಆಧಾರದ ಮೇಲೆ ಈ ಗಣಕ ಯಂತ್ರದಲ್ಲಿನ ದಸ್ತಾವೇಜುಗಳನ್ನು ಮತ್ತು "
-"ಕಡತಕೋಶಗಳನ್ನು ಹುಡುಕಿ"
+"ಹೆಸರು ಅಥವ ವಿಷಯಗಳ ಆಧಾರದ ಮೇಲೆ ಈ ಗಣಕ ಯಂತ್ರದಲ್ಲಿನ ದಸ್ತಾವೇಜುಗಳನ್ನು ಮತ್ತು ಕಡತಕೋಶಗಳನ್ನು "
+"ಹುಡುಕಿ"
 
 #: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
 msgid "Force Quit"
@@ -2537,70 +2462,70 @@ msgstr ""
 msgid "Not compatible with Wayland"
 msgstr ""
 
-#: cafe-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1055
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "\"%s\" ಗೆ ಸೇರಿಸಲು ಒಂದು ಅಂಶವನ್ನು ಪತ್ತೆ ಮಾಡು(_i):"
 
-#: cafe-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1059
 msgid "Add to Drawer"
 msgstr "ಡ್ರಾಯರಿಗೆ ಸೇರಿಸು"
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Find an _item to add to the drawer:"
 msgstr "ಡ್ರಾಯರಿಗೆ ಸೇರಿಸಲು ಒಂದು ಅಂಶವನ್ನು ಪತ್ತೆ ಮಾಡು(_i):"
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Add to Panel"
 msgstr "ಫಲಕಕ್ಕೆ ಸೇರಿಸು"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Find an _item to add to the panel:"
 msgstr "ಫಲಕಕ್ಕೆ ಸೇರಿಸಲು ಒಂದು ಅಂಶವನ್ನು ಪತ್ತೆ ಮಾಡು(_i):"
 
-#: cafe-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1313
 msgid "_Back"
 msgstr "ಹಿಂದೆ(_B)"
 
-#: cafe-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:761
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "\"%s\" ವು ಅನಿರೀಕ್ಷಿತವಾಗಿ ನಿರ್ಗಮಿಸಿತು"
 
-#: cafe-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:763
 msgid "Panel object has quit unexpectedly"
 msgstr "ಫಲಕದಲ್ಲಿನ ವಸ್ತುವು ಅನಿರೀಕ್ಷಿತವಾಗಿ ನಿರ್ಗಮಿಸಿದೆ"
 
-#: cafe-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:770
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
 msgstr ""
-"ಒಂದು ಫಲಕದ ವಸ್ತುವನ್ನು ನೀವು ಮತ್ತೊಮ್ಮೆ ಲೋಡ್ ಮಾಡಿದಲ್ಲಿ, ಅದು ತಾನಾಗಿಯೆ ಫಲಕಕ್ಕೆ "
-"ಮರಳಿ ಸೇರಿಸಲ್ಪಡುತ್ತದೆ."
+"ಒಂದು ಫಲಕದ ವಸ್ತುವನ್ನು ನೀವು ಮತ್ತೊಮ್ಮೆ ಲೋಡ್ ಮಾಡಿದಲ್ಲಿ, ಅದು ತಾನಾಗಿಯೆ ಫಲಕಕ್ಕೆ ಮರಳಿ "
+"ಸೇರಿಸಲ್ಪಡುತ್ತದೆ."
 
-#: cafe-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:777
 msgid "D_elete"
 msgstr ""
 
-#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:778 cafe-panel/panel-applet-frame.c:783
 msgid "_Don't Reload"
 msgstr "ಪುನಃ ಲೋಡ್ ಮಾಡಬೇಡ(_D)"
 
-#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:779 cafe-panel/panel-applet-frame.c:784
 msgid "_Reload"
 msgstr "ಪುನಃ ಲೋಡ್ ಮಾಡು(_R)"
 
-#: cafe-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:950
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "\"%s\" ಅನ್ನು ಫಲಕಕ್ಕೆ ಲೋಡ್ ಮಾಡುವಾಗ ಒಂದು ದೋಷ ಎದುರಾಗಿದೆ."
 
-#: cafe-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:965
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "ನಿಮ್ಮ ಸಂರಚನೆಯಿಂದ ಆಪ್ಲೆಟ್ ಅನ್ನು ನೀವು ಅಳಿಸಿ ಹಾಕಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "ಅಳಿಸು (_D)"
 
@@ -2616,10 +2541,11 @@ msgstr "CAFE ಫಲಕ"
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 CAFE developers"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:120
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
@@ -2627,45 +2553,49 @@ msgstr ""
 "ಬೇರೆ ಅನ್ವಯಗಳನ್ನು ಆರಂಭಿಸಲು ಹಾಗು ಉಪಯುಕ್ತ ಸವಲತ್ತುಗಳನ್ನು ಒದಗಿಸಲು ಈ ಪ್ರೊಗ್ರಾಂ "
 "ಕಾರಣವಾಗುತ್ತದೆ."
 
-#: cafe-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:124
 msgid "About the CAFE Panel"
 msgstr "CAFE ಫಲಕದ ಬಗ್ಗೆ"
 
-#: cafe-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:155
 msgid "Cannot delete this panel"
 msgstr "ಈ ಫಲಕವನ್ನು ಅಳಿಸಲಾಗಿಲ್ಲ"
 
-#: cafe-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:156
 msgid "You must always have at least one panel."
 msgstr "ನಿಮ್ಮಲ್ಲಿ ಯಾವಾಗಲೂ ಕನಿಷ್ಟ ಒಂದು ಫಲಕ ಇರಲೆ ಬೇಕು."
 
-#: cafe-panel/panel-context-menu.c:199
-msgid "Reset this panel?"
+#: cafe-panel/panel-context-menu.c:200
+msgid "Reset all panels?"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:200
+#: cafe-panel/panel-context-menu.c:201
 msgid ""
-"When a panel is reset, all \n"
+"When the panels are reset, all \n"
 "custom settings are lost."
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
-msgid "_Reset Panel"
+#: cafe-panel/panel-context-menu.c:215
+msgid "_Reset Panels"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:237
 msgid "_Add to Panel…"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:257
+msgid "_Reset All Panels"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:264
 msgid "_Delete This Panel"
 msgstr "ಈ ಫಲಕವನ್ನು ಅಳಿಸಿಹಾಕು(_D)"
 
-#: cafe-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:277
 msgid "_New Panel"
 msgstr "ಹೊಸ ಫಲಕ(_N)"
 
-#: cafe-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:326
 msgid "A_bout Panels"
 msgstr "ಫಲಕಗಳ ಬಗೆಗೆ(_b)"
 
@@ -2745,8 +2675,8 @@ msgstr "ನೆರವಿನ ದಸ್ತಾವೇಜನ್ನು ತೋರಿಸ�
 msgid ""
 "Click on a window to force the application to quit. To cancel press <ESC>."
 msgstr ""
-"ಒಂದು ಅನ್ವಯವನ್ನು ಒತ್ತಾಯಪೂರ್ವಕವಾಗಿ ಮುಚ್ಚಲು ಅದರ ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಿ. ರದ್ದು ಮಾಡಲು "
-"<ESC> ಅನ್ನು ಒತ್ತಿ."
+"ಒಂದು ಅನ್ವಯವನ್ನು ಒತ್ತಾಯಪೂರ್ವಕವಾಗಿ ಮುಚ್ಚಲು ಅದರ ಮೇಲೆ ಕ್ಲಿಕ್ಕಿಸಿ. ರದ್ದು ಮಾಡಲು <ESC> ಅನ್ನು "
+"ಒತ್ತಿ."
 
 #: cafe-panel/panel-force-quit.c:232
 msgid "Force this application to exit?"
@@ -2839,51 +2769,52 @@ msgstr "ಗಣಕತೆರೆ"
 msgid "Open the contents of your desktop in a folder"
 msgstr "ನಿಮ್ಮ ಗಣಕತೆರೆಯಲ್ಲಿರುವವುಗಳನ್ನು ಒಂದು ಕಡತಕೋಶದಲ್ಲಿ ತೆರೆ"
 
-#: cafe-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1075
 msgid "Computer"
 msgstr "ಗಣಕ"
 
-#: cafe-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1081
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
 msgstr ""
 "ಈ ಗಣಕಿದಿಂದ ನಿಲುಕಿಸಿಕೊಳ್ಳಬಹುದಾದಂತಹ ಸ್ಥಳೀಯ ಹಾಗು ದೂರಸ್ಥ ಡಿಸ್ಕುಗಳನ್ನು ಮತ್ತು "
 "ಕಡತಕೋಶಗಳನ್ನು ವೀಕ್ಷಿಸು"
 
-#: cafe-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1094
 msgid "Network"
 msgstr "ಜಾಲಬಂಧ"
 
-#: cafe-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1095
 msgid "Browse bookmarked and local network locations"
 msgstr "ಬುಕ್‍ಮಾರ್ಕ್ ಮಾಡಲಾದ ಹಾಗು ಸ್ಥಳೀಯ ಜಾಲಬಂಧ ಸ್ಥಳಗಳನ್ನು ವೀಕ್ಷಿಸು"
 
-#: cafe-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1489
 msgid "Places"
 msgstr "ಸ್ಥಳಗಳು"
 
-#: cafe-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1517
 msgid "System"
 msgstr "ವ್ಯವಸ್ಥೆ"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: cafe-panel/panel-menu-items.c:1600
+#.
+#: cafe-panel/panel-menu-items.c:1602
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1614
 #, c-format
 msgid "Log Out %s..."
 msgstr "%s ಇಂದ ನಿರ್ಗಮಿಸು..."
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1618
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr "ಬೇರೊಬ್ಬ ಬಳಕೆದಾರನಾಗಿ ಪ್ರವೇಶಿಸಲು ಈ ಅಧಿವೇಶನದ %s ಇಂದ ನಿರ್ಗಮಿಸು"
@@ -3031,7 +2962,8 @@ msgid ""
 "• All items from the Places → Recent Documents menu item.\n"
 "• All items from the recent documents list in all applications."
 msgstr ""
-"ನೀವು ಇತ್ತೀಚಿನ ದಸ್ತಾವೇಜುಗಳ ಪಟ್ಟಿಯನ್ನು ತೆರವುಗೊಳಸಿದಲ್ಲಿ, ನೀವು ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಅಳಿಸಿ ಹಾಕಿದಂತಾಗುತ್ತದೆ:\n"
+"ನೀವು ಇತ್ತೀಚಿನ ದಸ್ತಾವೇಜುಗಳ ಪಟ್ಟಿಯನ್ನು ತೆರವುಗೊಳಸಿದಲ್ಲಿ, ನೀವು ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಅಳಿಸಿ "
+"ಹಾಕಿದಂತಾಗುತ್ತದೆ:\n"
 "• ಸ್ಥಳಗಳು → ಇತ್ತೀಚಿನ ದಸ್ತಾವೇಜುಗಳು ಮೆನು ಅಂಶದಲ್ಲಿರುವ ಎಲ್ಲಾ ಅಂಶಗಳು.\n"
 "• ಎಲ್ಲಾ ಅನ್ವಯಗಳಲ್ಲಿರುವ ಇತ್ತೀಚಿನ ದಸ್ತಾವೇಜುಗಳ ಪಟ್ಟಿಯಲ್ಲಿನ ಎಲ್ಲಾ ಅಂಶಗಳು."
 
@@ -3051,35 +2983,35 @@ msgstr "ಇತ್ತಿಚಿನ ದಸ್ತಾವೇಜುಗಳನ್ನು �
 msgid "Clear all items from the recent documents list"
 msgstr "ಇತ್ತೀಚಿನ ದಸ್ತಾವೇಜುಗಳ ಪಟ್ಟಿಯಿಂದ ಎಲ್ಲವನ್ನೂ ಅಳಿಸಿ ಹಾಕು"
 
-#: cafe-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:435
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "ಆಜ್ಞೆ '%s' ಅನ್ನು ಚಲಾಯಿಸಲಾಗಿಲ್ಲ"
 
-#: cafe-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:476
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "'%s' ಅನ್ನು UTF-8 ರಿಂದ ಮಾರ್ಪಡಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
 
-#: cafe-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1269
 msgid "Choose a file to append to the command..."
 msgstr "ಆಜ್ಞೆಗೆ ಸೇರಿಸಲು ಒಂದು ಕಡತವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ..."
 
-#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "ಒಂದು ಅನ್ವಯದ ವಿವರಣೆಯನ್ನು ನೋಡಲು ಅದನ್ನು ಆಯ್ಕೆ ಮಾಡಿ."
 
-#: cafe-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1689
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "ಈ ಆಜ್ಞೆಯನ್ನು ಚಲಾಯಿಸಲಾಗುವುದು : '%s'"
 
-#: cafe-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1722
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
-"ಚಲಾಯಿಸುವ ಸಂವಾದದಲ್ಲಿ ಬೀಳಿಸಲಾದ URI ಪಟ್ಟಿಯು ಸರಿಯಲ್ಲದ ವಿನ್ಯಾಸ (%d) ಅಥವ ಉದ್ದವನ್ನು"
-" (%d) ಹೊಂದಿದೆ\n"
+"ಚಲಾಯಿಸುವ ಸಂವಾದದಲ್ಲಿ ಬೀಳಿಸಲಾದ URI ಪಟ್ಟಿಯು ಸರಿಯಲ್ಲದ ವಿನ್ಯಾಸ (%d) ಅಥವ ಉದ್ದವನ್ನು (%d) "
+"ಹೊಂದಿದೆ\n"
 
 #: cafe-panel/panel-run-dialog.ui:23
 msgid "Run Application"
@@ -3094,8 +3026,8 @@ msgid ""
 "Click this button to run the selected application or the command in the "
 "command entry field."
 msgstr ""
-"ಆಯ್ಕೆ ಮಾಡಲಾದ ಅನ್ವಯವನ್ನು ಅಥವ ಆಜ್ಞೆಯನ್ನು ಆಜ್ಞೆಯ ನಮೂದಿನ ಜಾಗದಲ್ಲಿ ಚಲಾಯಿಸಲು ಈ "
-"ಗುಂಡಿಯನ್ನು ಒತ್ತಿ."
+"ಆಯ್ಕೆ ಮಾಡಲಾದ ಅನ್ವಯವನ್ನು ಅಥವ ಆಜ್ಞೆಯನ್ನು ಆಜ್ಞೆಯ ನಮೂದಿನ ಜಾಗದಲ್ಲಿ ಚಲಾಯಿಸಲು ಈ ಗುಂಡಿಯನ್ನು "
+"ಒತ್ತಿ."
 
 #: cafe-panel/panel-run-dialog.ui:125
 msgid "Command icon"
@@ -3122,8 +3054,7 @@ msgid ""
 "Click this button to browse for a file whose name to append to the command "
 "string."
 msgstr ""
-"ಆಜ್ಞೆ ವಾಕ್ಯಕ್ಕೆ ಸೇರಿಸಬೇಕಿರಬೇಕಿರುವ ಕಡತದ ಹೆಸರಿಗಾಗಿ ಹುಡುಕಲು ಈ ಗುಂಡಿಯನ್ನು "
-"ಕ್ಲಿಕ್ಕಿಸಿ."
+"ಆಜ್ಞೆ ವಾಕ್ಯಕ್ಕೆ ಸೇರಿಸಬೇಕಿರಬೇಕಿರುವ ಕಡತದ ಹೆಸರಿಗಾಗಿ ಹುಡುಕಲು ಈ ಗುಂಡಿಯನ್ನು ಕ್ಲಿಕ್ಕಿಸಿ."
 
 #: cafe-panel/panel-run-dialog.ui:256
 msgid "List of known applications"
@@ -3156,8 +3087,7 @@ msgstr ""
 
 #: cafe-panel/panel-test-applets.c:41
 msgid "Specify the initial size of the applet (xx-small, medium, large etc.)"
-msgstr ""
-"ಅನ್ವಯದ ಆರಂಭಿಕ ಗಾತ್ರವನ್ನು ಸೂಚಿಸಿ (xx-ಚಿಕ್ಕದಾದ, ಮಧ್ಯಮ, ದೊಡ್ಡದಾದ ಇತ್ಯಾದಿ)"
+msgstr "ಅನ್ವಯದ ಆರಂಭಿಕ ಗಾತ್ರವನ್ನು ಸೂಚಿಸಿ (xx-ಚಿಕ್ಕದಾದ, ಮಧ್ಯಮ, ದೊಡ್ಡದಾದ ಇತ್ಯಾದಿ)"
 
 #: cafe-panel/panel-test-applets.c:42
 msgid ""
@@ -3225,19 +3155,19 @@ msgstr ""
 msgid "Hide Panel"
 msgstr "ಫಲಕವನ್ನು ಅಡಗಿಸು"
 
-#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
 msgid "Top Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1651
 msgid "Bottom Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1653
 msgid "Left Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Right Panel"
 msgstr ""
 
@@ -3255,17 +3185,17 @@ msgstr "'%s' ಅನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಲಾಗಿಲ
 msgid "file"
 msgstr "ಕಡತ"
 
-#: cafe-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:876
 msgid "Home Folder"
 msgstr "ನೆಲೆ (Home) ಕಡತಕೋಶ"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:888
 msgid "File System"
 msgstr "ಕಡತ ವ್ಯವಸ್ಥೆ"
 
-#: cafe-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1062
 msgid "Search"
 msgstr "ಹುಡುಕು"
 
@@ -3273,7 +3203,8 @@ msgstr "ಹುಡುಕು"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: cafe-panel/panel-util.c:1106
+#.
+#: cafe-panel/panel-util.c:1108
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
@@ -3321,10 +3252,4 @@ msgstr ""
 
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
 msgid "A simple applet for testing the CAFE panel"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
-msgid "cafe-gegl"
 msgstr ""

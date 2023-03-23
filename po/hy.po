@@ -2,26 +2,26 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-panel package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Aram Palyan <ararat.info@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Davit Mayilyan <davit.mayilyan@protonmail.ch>, 2020
 # Siranush <ss.m.95@mail.ru>, 2020
 # Avag Sayan <avo777772012@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.23.2\n"
+"Project-Id-Version: cafe-panel 1.25.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2020-01-12 18:05+0100\n"
+"POT-Creation-Date: 2023-03-23 18:48+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Avag Sayan <avo777772012@gmail.com>, 2020\n"
 "Language-Team: Armenian (https://www.transifex.com/cafe/teams/13566/hy/)\n"
+"Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hy\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
@@ -46,7 +46,8 @@ msgstr "%l:%M:%S %p"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:504
+#.
+#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -57,7 +58,7 @@ msgstr "%l:%M %p"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1604
+#: applets/clock/clock.c:454 applets/clock/clock.c:1603
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
@@ -71,9 +72,10 @@ msgstr "%H:%M:%S"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1610
-#: applets/clock/clock-location-tile.c:464
-#: applets/clock/clock-location-tile.c:511
+#.
+#: applets/clock/clock.c:454 applets/clock/clock.c:1609
+#: applets/clock/clock-location-tile.c:462
+#: applets/clock/clock-location-tile.c:509
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -115,7 +117,7 @@ msgstr "Կտտացրեք ամսվա օրացույցը փակելու համար
 msgid "Click to view month calendar"
 msgstr "Կտտացրեք ամսվա օրացույցը տեսնելու համար"
 
-#: applets/clock/clock.c:1442
+#: applets/clock/clock.c:1441
 msgid "Computer Clock"
 msgstr "Համակարգչային ժամացույց"
 
@@ -125,7 +127,7 @@ msgstr "Համակարգչային ժամացույց"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1589
+#: applets/clock/clock.c:1588
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -135,110 +137,108 @@ msgstr "%I:%M:%S %p"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1597
+#: applets/clock/clock.c:1596
 msgid "%I:%M %p"
 msgstr "%I:%M %p"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1643
+#: applets/clock/clock.c:1642
 msgid "%A, %B %d %Y"
 msgstr "%A, %B %d %Y"
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1673
 msgid "Set System Time..."
 msgstr "Կարգավորել համակարգի ժամը…"
 
-#: applets/clock/clock.c:1675
+#: applets/clock/clock.c:1674
 msgid "Set System Time"
 msgstr "Կարգավորել համակարգի ժամը"
 
-#: applets/clock/clock.c:1690
+#: applets/clock/clock.c:1689
 msgid "Failed to set the system time"
 msgstr "Համակարգի ժամի կարգավորումը ձախողված է"
 
-#: applets/clock/clock.c:1888 applets/fish/fish.c:1694
-#: applets/notification_area/main.c:292 applets/vncklet/window-list.c:357
-#: applets/vncklet/workspace-switcher.c:389
+#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
+#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
+#: applets/vncklet/workspace-switcher.c:393
 msgid "_Preferences"
 msgstr "_Նախընտրանքներ"
 
-#: applets/clock/clock.c:1891 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1697 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:295 applets/vncklet/showdesktop.c:241
-#: applets/vncklet/window-list.c:365 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:98 applets/vncklet/workspace-switcher.c:397
+#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
+#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1308
-#: cafe-panel/panel-context-menu.c:318 cafe-panel/panel-ditem-editor.c:648
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
 #: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_Օգնություն"
 
-#: applets/clock/clock.c:1894 applets/fish/fish.c:1700
-#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:249
-#: applets/vncklet/window-list.c:373 applets/vncklet/window-menu.c:106
-#: applets/vncklet/workspace-switcher.c:405
+#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
+#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
+#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
+#: applets/vncklet/workspace-switcher.c:409
 msgid "_About"
 msgstr "_Մասին"
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1894
 msgid "Copy _Time"
 msgstr "Պատճենել _ժամը"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1897
 msgid "Copy _Date"
 msgstr "Պատճենել _ամսաթիվը"
 
-#: applets/clock/clock.c:1903
+#: applets/clock/clock.c:1900
 msgid "Ad_just Date & Time"
 msgstr "Ուղ_ղել ամսաթիվը և ժամը"
 
-#: applets/clock/clock.c:2899
+#: applets/clock/clock.c:2898
 msgid "Choose Location"
 msgstr "Ընտրել տեղակայությունը"
 
-#: applets/clock/clock.c:2978
+#: applets/clock/clock.c:2977
 msgid "Edit Location"
 msgstr "Խմբագրել տեղակայությունը"
 
-#: applets/clock/clock.c:3105
+#: applets/clock/clock.c:3104
 msgid "City Name"
 msgstr "Քաղաքի անունը"
 
-#: applets/clock/clock.c:3109
+#: applets/clock/clock.c:3108
 msgid "City Time Zone"
 msgstr "Քաղաքի ժամային գոտի"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3388
 #: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Clock"
 msgstr "Ժամացույց"
 
-#: applets/clock/clock.c:3390
+#: applets/clock/clock.c:3389
 msgid "About Clock"
 msgstr "Ժամացույցի մասին"
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3391
 msgid "The Clock displays the current time and date"
 msgstr "Ժամացույցը ցույց է տալիս ընթացիկ ժամը և օրը"
 
-#: applets/clock/clock.c:3393
+#: applets/clock/clock.c:3392
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Հեղինակային իրավունք © 1998-2004 Անվճար Ծրագրային Ապահովման Հիմնադրամի, Inc.\n"
-"Հեղինակային իրավունք © 2012-2020 Cafe ծրագրավորողներ"
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:567
-#: applets/notification_area/main.c:286 applets/vncklet/showdesktop.c:508
-#: applets/vncklet/window-list.c:831 applets/vncklet/window-menu.c:88
-#: applets/vncklet/workspace-switcher.c:644
-#: cafe-panel/panel-context-menu.c:124
+#: applets/clock/clock.c:3397 applets/fish/fish.c:568
+#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
+#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
+#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr "թարգմանչի կրեդիտներ"
 
@@ -247,10 +247,10 @@ msgid "Time & Date"
 msgstr "Ժամ և օր"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:923
-#: cafe-panel/libpanel-util/panel-ctk.c:136
-#: cafe-panel/panel-context-menu.c:213 cafe-panel/panel-ditem-editor.c:664
-#: cafe-panel/panel-force-quit.c:240 cafe-panel/panel-recent.c:154
-#: cafe-panel/panel-run-dialog.ui:55 cafe-panel/panel.c:1356
+#: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
+#: cafe-panel/panel.c:1356
 msgid "_Cancel"
 msgstr "_Չեղարկել "
 
@@ -274,10 +274,10 @@ msgstr "Ժամացույցի նախընտրություններ"
 msgid "Time _Settings"
 msgstr "Ժամանկի_պարամետրեր"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:853 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1319 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -325,7 +325,7 @@ msgstr "Ցույց տալ _ջերմաստիճանը"
 msgid "General"
 msgstr "Ընդհանուր"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1315
+#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
 msgid "_Add"
 msgstr "_Ավելացնել"
 
@@ -378,12 +378,11 @@ msgid "South"
 msgstr "Հարավ"
 
 #: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
-#: cafe-panel/panel-applet-frame.c:960 cafe-panel/panel-ditem-editor.c:668
+#: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "_Լավ"
 
-#. Languages that have a single word that translates as either "state" or
-#. "province" should use that instead of "region".
+#. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
 #: applets/clock/clock.ui:1012
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
@@ -416,20 +415,19 @@ msgstr "Լ_այնություն՝"
 msgid "Failed to set the system timezone"
 msgstr "Համակարգի ժամային գոտու կարգավորումը ձախողված է"
 
-#: applets/clock/clock-location-tile.c:231
+#: applets/clock/clock-location-tile.c:229
 msgid "<small>Set...</small>"
 msgstr "<small>Կարգավորում...</small>"
 
-#: applets/clock/clock-location-tile.c:232
+#: applets/clock/clock-location-tile.c:230
 msgid "<small>Set</small>"
 msgstr "<small>Կարգավորում</small>"
 
-#: applets/clock/clock-location-tile.c:308
-msgid ""
-"Set location as current location and use its timezone for this computer"
+#: applets/clock/clock-location-tile.c:306
+msgid "Set location as current location and use its timezone for this computer"
 msgstr ""
-"Կարգավորել տեղակայությունը որպես ընթացիկ, և օգտագործել դրա ժամային գոտին այս"
-" համակարգչի համար"
+"Կարգավորել տեղակայությունը որպես ընթացիկ, և օգտագործել դրա ժամային գոտին այս "
+"համակարգչի համար"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format
@@ -437,7 +435,7 @@ msgstr ""
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:441
+#: applets/clock/clock-location-tile.c:439
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l:%M <small>%p (%A)</small>"
 
@@ -446,7 +444,7 @@ msgstr "%l:%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:449
+#: applets/clock/clock-location-tile.c:447
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%H:%M <small>(%A)</small>"
 
@@ -454,27 +452,27 @@ msgstr "%H:%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:458
+#: applets/clock/clock-location-tile.c:456
 msgid "%l:%M <small>%p</small>"
 msgstr "%l:%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:600
+#: applets/clock/clock-location-tile.c:598
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:612
-#: applets/clock/clock-location-tile.c:621
+#: applets/clock/clock-location-tile.c:610
+#: applets/clock/clock-location-tile.c:619
 msgid "Unknown"
 msgstr "Անհայտ"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:614
+#: applets/clock/clock-location-tile.c:612
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s,–ը ինչպես %s"
 
-#: applets/clock/clock-location-tile.c:637
+#: applets/clock/clock-location-tile.c:635
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "Արևածագ. %s / Մայրամուտ. %s"
@@ -497,23 +495,23 @@ msgstr "Ժամի ձևաչափ"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:30
 msgid ""
-"This key specifies the hour format used by the clock applet. Possible values"
-" are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set"
-" to \"internet\", the clock will display Internet time. The Internet time "
-"system divides the day into 1000 \".beats\". There are no time zones in this"
-" system, so time is the same all over the world. If set to \"unix\", the "
+"This key specifies the hour format used by the clock applet. Possible values "
+"are \"12-hour\", \"24-hour\", \"internet\", \"unix\" and \"custom\". If set "
+"to \"internet\", the clock will display Internet time. The Internet time "
+"system divides the day into 1000 \".beats\". There are no time zones in this "
+"system, so time is the same all over the world. If set to \"unix\", the "
 "clock will display time in seconds since Epoch, i.e. 1970-01-01. If set to "
-"\"custom\", the clock will display time according to the format specified in"
-" the custom_format key."
+"\"custom\", the clock will display time according to the format specified in "
+"the custom_format key."
 msgstr ""
 "Այս ստեղնը նշում  է ժամացույց ապլետի օգտագործած ժամի ձևաչափը։ Հնարավոր "
 "արժեքներն են՝ \"12-hour\",\"24-hour\",\"internet\",\"unix\"և\"custom\"։ Եթե "
 "ընտրված է \"ինտերնետ\"–ը, ժամացույցը կցուցադրի ինտերնետ ժամանակը։ Ինտերնետի "
-"ժամային գոտին օրը բաժանում է 1000 \".beats\"–ի։ Այս համակագում բացակայում են"
-" ժամային գոտիները, այնպես որ ժամանակը ամբողջ աշխարհում նույնն է։ Եթե ընտրված"
-" է \"unix\"-ը, ապա ժամացույցը ցույց կտա ժամերը վայրկյաններով դարաշրջանից՝ "
-"այն է՝ 1970-01-01–ից սկսած։ Եթե ընտրված է \"custom\" տարբերակը, ապա "
-"ժամացույցը ժամերը ցույց կտա ըստ custom_format ստեղնում նշված ձևաչափի։"
+"ժամային գոտին օրը բաժանում է 1000 \".beats\"–ի։ Այս համակագում բացակայում են "
+"ժամային գոտիները, այնպես որ ժամանակը ամբողջ աշխարհում նույնն է։ Եթե ընտրված "
+"է \"unix\"-ը, ապա ժամացույցը ցույց կտա ժամերը վայրկյաններով դարաշրջանից՝ այն "
+"է՝ 1970-01-01–ից սկսած։ Եթե ընտրված է \"custom\" տարբերակը, ապա ժամացույցը "
+"ժամերը ցույց կտա ըստ custom_format ստեղնում նշված ձևաչափի։"
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:34
 msgid "Custom format of the clock"
@@ -526,10 +524,10 @@ msgid ""
 "strftime() to obtain a specific format. See the strftime() manual for more "
 "information."
 msgstr ""
-"Այս ստեղնը նշում է ժամացույցի ապլետի ձևաչափը, երբ ձևաչափի ստեղնը կարգավորված"
-" է \"custom\"-ում։ Դուք կարող եք օգտագործել strftime()-ով հասկացված "
-"փոխարկման հատկորոշիչները յուրահատուկ ձևաչափ ստանալու համար։ Նայեք strftime()"
-" manual-ը ավելի շատ տեղեկատվության համար։ "
+"Այս ստեղնը նշում է ժամացույցի ապլետի ձևաչափը, երբ ձևաչափի ստեղնը կարգավորված "
+"է \"custom\"-ում։ Դուք կարող եք օգտագործել strftime()-ով հասկացված փոխարկման "
+"հատկորոշիչները յուրահատուկ ձևաչափ ստանալու համար։ Նայեք strftime() manual-ը "
+"ավելի շատ տեղեկատվության համար։ "
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:39
 msgid "Show time with seconds"
@@ -625,12 +623,6 @@ msgstr "ժամացույց ապլետի գործարան"
 msgid "Get the current time and date"
 msgstr "Ստանալ ընթացիկ ժամանակը և ամսաթիվը"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-clock"
-msgstr "cafe-panel-clock"
-
 #: applets/fish/fish.c:266
 #, c-format
 msgid ""
@@ -648,7 +640,7 @@ msgstr ""
 msgid "Images"
 msgstr "Նկարներ"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:578 applets/fish/fish.c:684
+#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
 #, no-c-format
 msgid "%s the Fish"
 msgstr "%s Ձկնիկը"
@@ -681,27 +673,25 @@ msgstr ""
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Հեղինակային իրավունք © 1998-2002 Անվճար Ծրագրային Ապահովման Հիմնադրամի, Inc.\n"
-"Հեղինակային իրավունք © 2002-2005 Վինսենթ Ունց\n"
-"Հեղինակային իրավունք © 2012-2020 Cafe ծրագրավորողներ"
 
-#: applets/fish/fish.c:579
+#: applets/fish/fish.c:580
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "%s Ձկնիկը, ժամանակակից մարգարե"
 
-#: applets/fish/fish.c:645
+#: applets/fish/fish.c:646
 msgid "Unable to locate the command to execute"
 msgstr "Անհնար է գտնել հրահանգը գործարկելու համար"
 
-#: applets/fish/fish.c:689
+#: applets/fish/fish.c:690
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "%s Չկնիկն ասում է՝ "
 
-#: applets/fish/fish.c:752
+#: applets/fish/fish.c:753
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -712,16 +702,16 @@ msgstr ""
 "\n"
 "Մանրամասներ՝ %s"
 
-#: applets/fish/fish.c:849
+#: applets/fish/fish.c:850
 msgid "_Speak again"
 msgstr "_Նորից խոսեք"
 
-#: applets/fish/fish.c:930
+#: applets/fish/fish.c:931
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
 msgstr "Տվյալ կոնֆիգուրացիա ունեցող հրահանգը չի աշխատում և փոխարինվել է %s–ով"
 
-#: applets/fish/fish.c:963
+#: applets/fish/fish.c:964
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -732,7 +722,7 @@ msgstr ""
 "\n"
 "Մանրամասներ՝ %s "
 
-#: applets/fish/fish.c:979
+#: applets/fish/fish.c:980
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -743,15 +733,15 @@ msgstr ""
 "\n"
 "Մանրամասներ՝ %s "
 
-#: applets/fish/fish.c:1551
+#: applets/fish/fish.c:1552
 msgid "The water needs changing"
 msgstr "Ջուրը անհրաժեշտ է փոխել"
 
-#: applets/fish/fish.c:1553
+#: applets/fish/fish.c:1554
 msgid "Look at today's date!"
 msgstr "Նայել այսօրվա ամսաթիվը։"
 
-#: applets/fish/fish.c:1635
+#: applets/fish/fish.c:1636
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "%s Ձկնիկը՝ ապագայի գուշակը,"
@@ -847,8 +837,8 @@ msgstr "Կադրեր ձկնիկի անիմացիայում"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:21
 msgid ""
-"This key specifies the number of frames that will be displayed in the fish's"
-" animation."
+"This key specifies the number of frames that will be displayed in the fish's "
+"animation."
 msgstr ""
 "Այս ստեղնը բնորոշում է կադրերի թիվը, որոնք պետք է ցույց տրվեն ձկնիկի "
 "անիմացիայում։"
@@ -860,8 +850,7 @@ msgstr "Դադարեցում կադրում"
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:26
 msgid "This key specifies the number of seconds each frame will be displayed."
 msgstr ""
-"Այս ստեղնը նշում է յուրաքանչյուր կադրի ցուցադրման տևողությունը "
-"վայրկյաններով։"
+"Այս ստեղնը նշում է յուրաքանչյուր կադրի ցուցադրման տևողությունը վայրկյաններով։"
 
 #: applets/fish/org.cafe.panel.applet.fish.gschema.xml.in:30
 msgid "Rotate on vertical panels"
@@ -886,12 +875,6 @@ msgstr "Որտեղից, որ հայտնվեց այս հիմար ձկնիկը"
 msgid "Display a swimming fish or another anicafed creature"
 msgstr "Ցուցադրել լողացող ձուկ կամ այլ անիմացիոն արարած"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-fish"
-msgstr "cafe-panel-fish"
-
 #: applets/notification_area/main.c:276
 #: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Notification Area"
@@ -906,14 +889,11 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Հեղինակային իրավունք © 2002 Red Hat, Inc.\n"
-"Հեղինակային իրավունք © 2003-2006 Վինսենթ Ունց\n"
-"Հեղինակային իրավունք © 2011 Պերբերոս\n"
-"Հեղինակային իրավունք © 2012-2020 Cafe ծրագրավորողներ"
 
-#: applets/notification_area/main.c:485
+#: applets/notification_area/main.c:486
 msgid "Panel Notification Area"
 msgstr "Վահանակի ծանուցման տարածք"
 
@@ -954,20 +934,14 @@ msgstr "Ծանուցման տարածքի համար գործարան"
 msgid "Area where notification icons appear"
 msgstr "Տարածքը, որտեղ հայտնվում են ծանուցման պատկերակները "
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-notification-area"
-msgstr "cafe-panel-notification-are"
-
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:10
 msgid "Show windows from all workspaces"
 msgstr "Ցույց տալ բոլոր աշխատասեղանների պատուհանները"
 
 #: applets/vncklet/org.cafe.panel.applet.window-list.gschema.xml.in:11
 msgid ""
-"If true, the window list will show windows from all workspaces. Otherwise it"
-" will only display windows from the current workspace."
+"If true, the window list will show windows from all workspaces. Otherwise it "
+"will only display windows from the current workspace."
 msgstr ""
 "Եթե ճիշտ է, ապա պատուհանների ցանկը ցույց կտա բոլոր աշխատասեղանների "
 "պատուհաններ։ Հակառակ դեպքում ցույց կտա միայն ընթացիկ աշխատասեղանի "
@@ -1031,8 +1005,8 @@ msgstr "Տողեր աշխատասեղանի փոխարկչում"
 #: applets/vncklet/org.cafe.panel.applet.workspace-switcher.gschema.xml.in:16
 msgid ""
 "This key specifies how many rows (for horizontal layout) or columns (for "
-"vertical layout) the workspace switcher shows the workspaces in. This key is"
-" only relevant if the display_all_workspaces key is true."
+"vertical layout) the workspace switcher shows the workspaces in. This key is "
+"only relevant if the display_all_workspaces key is true."
 msgstr ""
 "Այս ստեղնը նշում է, թե քանի տող  (հորիզոնական դիրքով) կամ սյուն (ուղղահայաց "
 "դիրքով)  է աշխատասեղանի փոխարկիչը ցույց տալիս աշխասեղաններում։ Այս ստեղնը "
@@ -1048,8 +1022,8 @@ msgid ""
 "switching from the first to the last workspace and vice versa via scrolling."
 msgstr ""
 "Եթե ճիշտ է, աշխատատիրույթի փոխարկիչը պետք է թույլ տա պատել շուրջ, ինչը "
-"նշանակում է, որ անցումը առաջինից վերջին աշխատանքային տարածք և հակառակը կլինի"
-" պտտման միջոցով։"
+"նշանակում է, որ անցումը առաջինից վերջին աշխատանքային տարածք և հակառակը կլինի "
+"պտտման միջոցով։"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Window Navigation Applet Factory"
@@ -1060,7 +1034,7 @@ msgid "Factory for the window navigation related applets"
 msgstr "Պատուհանի նավիգացիայի հետ կապված ապլետի համար գործարան"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:227
+#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
 msgid "Window Selector"
 msgstr "Պատուհանների ընտրում"
 
@@ -1068,14 +1042,8 @@ msgstr "Պատուհանների ընտրում"
 msgid "Switch between open windows using a menu"
 msgstr "Անցնել բաց պատուհանների միջև, օգտագործելով մենյուն"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:13
-msgid "cafe-panel-window-menu"
-msgstr "cafe-panel-window-menu"
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:634
+#: applets/vncklet/workspace-switcher.c:638
 msgid "Workspace Switcher"
 msgstr "Աշխատասեղանի փոխարկիչ"
 
@@ -1083,26 +1051,14 @@ msgstr "Աշխատասեղանի փոխարկիչ"
 msgid "Switch between workspaces"
 msgstr "Աշխատատիրույթների միջև անջատի"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:26
-msgid "cafe-panel-workspace-switcher"
-msgstr "cafe-panel-workspace-switcher"
-
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:821
+#: applets/vncklet/window-list.c:826
 msgid "Window List"
 msgstr "Պատուհանի ցանկ"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
 msgid "Switch between open windows using buttons"
 msgstr "Անցնել բաց պատուհանների միջև, օգտագործելով կոճակները"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:39
-msgid "cafe-panel-window-list"
-msgstr "cafe-panel-window-list"
 
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Show Desktop"
@@ -1111,12 +1067,6 @@ msgstr "Ցույց տալ աշխատանքային սեղանը"
 #: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
 msgid "Hide application windows and show the desktop"
 msgstr "Թաքցնել դիմումի պատուհանները եւ ցույց տալ աշխատանքային սեղանը"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:52
-msgid "user-desktop"
-msgstr "user-desktop"
 
 #: applets/vncklet/showdesktop.c:184
 #, c-format
@@ -1127,61 +1077,58 @@ msgstr "%s: %s բեռնելու խափանում\n"
 msgid "Icon not found"
 msgstr "Պատկերանիշը գտնված չէ"
 
-#: applets/vncklet/showdesktop.c:265
+#: applets/vncklet/showdesktop.c:266
 msgid "Click here to restore hidden windows."
 msgstr "Կտտացրեք այստեղ թաքնված պատուհանները վերականգնելու համար։"
 
-#: applets/vncklet/showdesktop.c:269
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to hide all windows and show the desktop."
 msgstr ""
 "Կտտացրեք այստեղ բոլոր պատուհանները թաքցնելու և աշխաըասեղանը ցույց տալու "
 "համար։"
 
-#: applets/vncklet/showdesktop.c:439 applets/vncklet/showdesktop.c:498
+#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
 msgid "Show Desktop Button"
 msgstr "Ցույց տալ աշխատասեղանի կոճակը"
 
-#: applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:500
 msgid "About Show Desktop Button"
 msgstr "Ցույց տալ աշխատասեղանի կոճակի վերաբերյալ"
 
-#: applets/vncklet/showdesktop.c:501
+#: applets/vncklet/showdesktop.c:502
 msgid "This button lets you hide all windows and show the desktop."
 msgstr ""
-"Այս կոճակը Ձեզ թույլ կտա թաքցնել բոլոր պատուհանները և ցույց տալ "
-"աշխաըասեղանը։"
+"Այս կոճակը Ձեզ թույլ կտա թաքցնել բոլոր պատուհանները և ցույց տալ աշխաըասեղանը։"
 
-#: applets/vncklet/showdesktop.c:502 applets/vncklet/window-list.c:825
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
+#: applets/vncklet/workspace-switcher.c:642
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Հեղինակային իրավունք © 2002 Red Hat, Inc.\n"
-"Հեղինակային իրավունք © 2011 Պերբերոս\n"
-"Հեղինակային իրավունք © 2012-2020 Cafe ծրագրավորողներ"
 
-#: applets/vncklet/showdesktop.c:529
+#: applets/vncklet/showdesktop.c:531
 msgid ""
-"Your window manager does not support the show desktop button, or you are not"
-" running a window manager."
+"Your window manager does not support the show desktop button, or you are not "
+"running a window manager."
 msgstr ""
 "Ձեր պատուհանների կառավարիչը չունի աշխաըասեղան ցույց տվող կոճակ, կամ դուք "
 "պատուհանի կառավարչին չեք ակտիվացրել։"
 
-#: applets/vncklet/window-list.c:349
+#: applets/vncklet/window-list.c:354
 msgid "_System Monitor"
 msgstr "_Համակարգի Մոնիտոր"
 
-#: applets/vncklet/window-list.c:822
+#: applets/vncklet/window-list.c:827
 msgid "About Window List"
 msgstr "Պատուհանի ցանկի մասին"
 
-#: applets/vncklet/window-list.c:824
+#: applets/vncklet/window-list.c:829
 msgid ""
-"The Window List shows a list of all windows in a set of buttons and lets you"
-" browse them."
+"The Window List shows a list of all windows in a set of buttons and lets you "
+"browse them."
 msgstr ""
 "Պատուհանների ցուցակը ցույց է տալիս բոլոր պատուհանների ցուցակը՝ իրենց "
 "ստեղներով և հնարավորություն է ընձեռում զննել որևէ մեկը։"
@@ -1272,30 +1219,26 @@ msgid ""
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 CAFE developers"
+"Copyright © 2012-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
-"Հեղինակային իրավունք © 2000 «Հելիքս Կոդ», Inc. \n"
-"Հեղինակային իրավունք © 2001 Անվճար Ծրագրային Ապահովման Հիմնադրամ, Inc.\n"
-"Հեղինակային իրավունք © 2003 Sun Microsystems, Inc\n"
-"Հեղինակային իրավունք © 2011 Պերբերոս\n"
-"Հեղինակային իրավունք © 2012-2020 Cafe ծրագրավորողներ"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "տողեր"
 
 #: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:939
+#: applets/vncklet/workspace-switcher.c:944
 msgid "columns"
 msgstr "սյուներ"
 
-#: applets/vncklet/workspace-switcher.c:635
+#: applets/vncklet/workspace-switcher.c:639
 msgid "About Workspace Switcher"
 msgstr "«Աշխատասեղանի փոխարկիչ»-ի մասին"
 
-#: applets/vncklet/workspace-switcher.c:637
+#: applets/vncklet/workspace-switcher.c:641
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
@@ -1364,8 +1307,8 @@ msgid ""
 "dialog is shown is controlled by the show_program_list key."
 msgstr ""
 "Եթե ճիշտ է, ապա \"Known Applications\" ցանկը \"Run Application\" դիալոգում "
-"կիրառելի է։ Ցանկը  ընդլայնվում է, երբ դիալոգը ցույց է տրվում և վերահսկվում է"
-" show_program_list ստեղնով։"
+"կիրառելի է։ Ցանկը  ընդլայնվում է, երբ դիալոգը ցույց է տրվում և վերահսկվում է "
+"show_program_list ստեղնով։"
 
 #: data/org.cafe.panel.gschema.xml.in:15
 msgid "Expand program list in \"Run Application\" dialog"
@@ -1398,8 +1341,8 @@ msgstr "\"Գործարկել Դիմումը\" երկխոսության համա�
 #: data/org.cafe.panel.gschema.xml.in:26
 msgid ""
 "This is the list of commands used in \"Run Application\" dialog. The "
-"commands are sorted descendingly by recency (e.g., most recent command comes"
-" first)."
+"commands are sorted descendingly by recency (e.g., most recent command comes "
+"first)."
 msgstr ""
 
 #: data/org.cafe.panel.gschema.xml.in:30
@@ -1432,8 +1375,8 @@ msgid ""
 "settings for each of these panels are stored in /apps/panel/toplevels/$(id)."
 msgstr ""
 "Վահանակի ID–ների ցուցակ։ Յուրաքանչյուր ID սահմանում է անհատական բարձր կարգի "
-"վահանակ։ Այս ապլետներից յուրաքանչյուրի պարամետրերը  պահվում են  "
-"/apps/panel/toplevels/$(id)–ում։"
+"վահանակ։ Այս ապլետներից յուրաքանչյուրի պարամետրերը  պահվում են  /apps/panel/"
+"toplevels/$(id)–ում։"
 
 #: data/org.cafe.panel.gschema.xml.in:45
 msgid "Panel object ID list"
@@ -1441,14 +1384,14 @@ msgstr "Վահանակի տարրի ID ցանկ"
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object "
-"(e.g. a launcher, action button or menu button/bar). The settings for each "
-"of these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object (e."
+"g. a launcher, action button or menu button/bar). The settings for each of "
+"these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
 "Վահանակի օբյեկտների ID–ների ցուցակ։ Յուրաքանչյուր ID սահմանում է անհատական "
-"վահանակի օբյեկտ (օրինակ՝ գործարկիչ,  գործողության ստեղն, մենյուի կոճակ/տող)։"
-" Այս օբյեկտներից յուրաքանչյուրի պարամետրերը  պահվում են "
-"apps/panel/objects/$(id)–ում։"
+"վահանակի օբյեկտ (օրինակ՝ գործարկիչ,  գործողության ստեղն, մենյուի կոճակ/տող)։ "
+"Այս օբյեկտներից յուրաքանչյուրի պարամետրերը  պահվում են apps/panel/objects/"
+"$(id)–ում։"
 
 #: data/org.cafe.panel.gschema.xml.in:50
 msgid "Enable tooltips"
@@ -1473,8 +1416,8 @@ msgid ""
 "If true, a drawer will automatically be closed when the user clicks a "
 "launcher in it."
 msgstr ""
-"եթե ճիշտ է, ապա դարակը ավտոմատ կերպով փակվում է, երբ օգտագործողը կտտացնում է"
-" նրա գործարկչի վրա։"
+"եթե ճիշտ է, ապա դարակը ավտոմատ կերպով փակվում է, երբ օգտագործողը կտտացնում է "
+"նրա գործարկչի վրա։"
 
 #: data/org.cafe.panel.gschema.xml.in:64
 msgid "Confirm panel removal"
@@ -1485,8 +1428,8 @@ msgid ""
 "If true, a dialog is shown asking for confirmation if the user wants to "
 "remove a panel."
 msgstr ""
-"Եթե ճիշտ է, ապա երևում է դիալոգը, որը հարց է տալիս հաստատման վերաբերյալ, եթե"
-" օգտագործողը ցանկանում է հեռացնել վահանակը։"
+"Եթե ճիշտ է, ապա երևում է դիալոգը, որը հարց է տալիս հաստատման վերաբերյալ, եթե "
+"օգտագործողը ցանկանում է հեռացնել վահանակը։"
 
 #: data/org.cafe.panel.gschema.xml.in:69
 msgid "Highlight launchers on mouseover"
@@ -1506,8 +1449,8 @@ msgstr "Վահանակի ամբողջական արգելափակում"
 #: data/org.cafe.panel.gschema.xml.in:75
 msgid ""
 "If true, the panel will not allow any changes to the configuration of the "
-"panel. Individual applets may need to be locked down separately however. The"
-" panel must be restarted for this to take effect."
+"panel. Individual applets may need to be locked down separately however. The "
+"panel must be restarted for this to take effect."
 msgstr ""
 "Եթե ճիշտ է, ապա վահանակը թույլ չի տա որևէ փոփոխություններ վահանակի "
 "կոնֆիգուրացիաներում։ Անհատական ապլետները հնարավոր է առանձին–առանձին "
@@ -1526,9 +1469,9 @@ msgid ""
 msgstr ""
 "Ապլետի IID ցանկ, որը վահանակը անտեսելու է։ Այս կերպ դուք կարող եք անջատել "
 "որոշ ապլետներ և չբեռնել կամ ցույց չտալ ցանկի մեջ։ Օրինակ՝ անջատելու համար "
-"Մինի–հրահանգ ապլետը պետք է այս ցուցակին  "
-"ավելացնել'OAFIID:CAFE_MiniCommanderApplet'։ Վահանակը պետք է վերագործարկել "
-"այս արդյունքը ստանալու համար։"
+"Մինի–հրահանգ ապլետը պետք է այս ցուցակին  ավելացնել'OAFIID:"
+"CAFE_MiniCommanderApplet'։ Վահանակը պետք է վերագործարկել այս արդյունքը "
+"ստանալու համար։"
 
 #: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
@@ -1606,8 +1549,8 @@ msgstr ""
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:46
 msgid ""
-"Set the size of icons used in the menu. The panel must be restarted for this"
-" to take effect."
+"Set the size of icons used in the menu. The panel must be restarted for this "
+"to take effect."
 msgstr ""
 
 #: data/org.cafe.panel.menubar.gschema.xml.in:50
@@ -1634,8 +1577,7 @@ msgstr "Վերին մակարդակի վահանակ պարունակող օբյ
 
 #: data/org.cafe.panel.object.gschema.xml.in:11
 msgid "The identifier of the toplevel panel which contains this object."
-msgstr ""
-"Վերին մակարդակի վահանակի իդենտիֆիկատոր, որը պարունակում է այս օբյեկտը։"
+msgstr "Վերին մակարդակի վահանակի իդենտիֆիկատոր, որը պարունակում է այս օբյեկտը։"
 
 #: data/org.cafe.panel.object.gschema.xml.in:15
 msgid "Object's position on the panel"
@@ -1655,8 +1597,8 @@ msgstr "Մեկնաբանել դիրքը ըստ ներքևի և աջ մասերի
 
 #: data/org.cafe.panel.object.gschema.xml.in:21
 msgid ""
-"If true, the position of the object is interpreted relative to the right (or"
-" bottom if vertical) edge of the panel."
+"If true, the position of the object is interpreted relative to the right (or "
+"bottom if vertical) edge of the panel."
 msgstr ""
 "Եթե ճիշտ է, ապա տարրի դիրքը մեկնաբանվում է վահանակի աջ ծայրի (կամ ներքևի, "
 "եթե ուղղահայաց է) համեմատ"
@@ -1667,8 +1609,8 @@ msgstr "Օբյեկտն արգելափակել վահանակին"
 
 #: data/org.cafe.panel.object.gschema.xml.in:26
 msgid ""
-"If true, the user may not move the applet without first unlocking the object"
-" using the \"Unlock\" menuitem."
+"If true, the user may not move the applet without first unlocking the object "
+"using the \"Unlock\" menuitem."
 msgstr ""
 "Եթե ճիշտ է, ապա օգտագործողը չի կարող է շարժել ապլետը առանց օբյեկտը "
 "արգելափակումից դուրս բերելու՝ օգտագործելով \"Unlock\" մենյույի կետը։"
@@ -1679,10 +1621,9 @@ msgstr "Ապլետ IID"
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. "
-"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
-"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
-"applet\")."
+"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
+"ClockApplet\". This key is only relevant if the object_type key is "
+"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
 msgstr ""
 "Ապլետի իրականացման ID֊օրինակ \"ClockAppletFactory::ClockApplet\"։ Այս "
 "բանալին տեղին է միայն այն դեպքում, եթե object_type բանալին \"external-"
@@ -1707,8 +1648,7 @@ msgstr "Դարակի կամ մենյուի համար ցույց տրվող հո
 #: data/org.cafe.panel.object.gschema.xml.in:41
 msgid ""
 "The text to display in a tooltip for this drawer or this menu. This key is "
-"only relevant if the object_type key is \"drawer-object\" or \"menu-"
-"object\"."
+"only relevant if the object_type key is \"drawer-object\" or \"menu-object\"."
 msgstr "Հուշման մեջ ցույց տրվող տեքստը այս դարակի կամ մենյուի համար։"
 
 #: data/org.cafe.panel.object.gschema.xml.in:45
@@ -1721,9 +1661,9 @@ msgid ""
 "false, the custom_icon key is ignored. This key is only relevant if the "
 "object_type key is \"menu-object\" or \"drawer-object\"."
 msgstr ""
-"Եթե ճիշտ է, ապա custom_icon ստեղնն օգտագործվում է որպես սովորական պատկերանիշ"
-" կոճակի համար։ եթե սխալ է, custom_icon ստեղնն անտեսվում է։ Այս ստեղնը տեղին "
-"է միայն, երբ object_type ստեղնը  \"menu-object\" կամ \"drawer-object\" է։"
+"Եթե ճիշտ է, ապա custom_icon ստեղնն օգտագործվում է որպես սովորական պատկերանիշ "
+"կոճակի համար։ եթե սխալ է, custom_icon ստեղնն անտեսվում է։ Այս ստեղնը տեղին է "
+"միայն, երբ object_type ստեղնը  \"menu-object\" կամ \"drawer-object\" է։"
 
 #: data/org.cafe.panel.object.gschema.xml.in:50
 msgid "Icon used for object's button"
@@ -1775,8 +1715,8 @@ msgid ""
 "If true, an arrow is drawn over the menu button icon. If false, menu button "
 "has only the icon."
 msgstr ""
-"եթե ճիշտ է, ապա սլաքը քաշել ընտրացանկի կոճակի պատկերանշանի շուրք; Եթե սխալ է"
-" ընտրացանկի կոճակը ունի միայն պատկերանշան։"
+"եթե ճիշտ է, ապա սլաքը քաշել ընտրացանկի կոճակի պատկերանշանի շուրք; Եթե սխալ է "
+"ընտրացանկի կոճակը ունի միայն պատկերանշան։"
 
 #: data/org.cafe.panel.object.gschema.xml.in:70
 msgid "Launcher location"
@@ -1828,8 +1768,8 @@ msgid ""
 "This key identifies the current screen the panel is displayed on."
 msgstr ""
 "Բազմէկրան կարգավորվածքով դուք կարող եք ունենալ վահանակներ յուրաքանչյուր "
-"առանձին էկրանում։ Այս ստեղնը նույնացնում է ընթացիկ էկրանը, որի վրա պատկերված"
-" է վահանակը։"
+"առանձին էկրանում։ Այս ստեղնը նույնացնում է ընթացիկ էկրանը, որի վրա պատկերված "
+"է վահանակը։"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:15
 msgid "Xinerama monitor where the panel is displayed"
@@ -1851,8 +1791,8 @@ msgstr "Ընդլայնել ամբողջ էկրանի լայնությունը գ
 #: data/org.cafe.panel.toplevel.gschema.xml.in:21
 msgid ""
 "If true, the panel will occupy the entire screen width (height if this is a "
-"vertical panel). In this mode the panel can only be placed at a screen edge."
-" If false, the panel will only be large enough to accommodate the applets, "
+"vertical panel). In this mode the panel can only be placed at a screen edge. "
+"If false, the panel will only be large enough to accommodate the applets, "
 "launchers and buttons on the panel."
 msgstr ""
 "Եթե ճիշտ է, ապա վահանակը կզբաղեցնի էկրանի ամբողջ լայնությունը "
@@ -1870,20 +1810,20 @@ msgid ""
 "The orientation of the panel. Possible values are \"top\", \"bottom\", "
 "\"left\", \"right\". In expanded mode the key specifies which screen edge "
 "the panel is on. In un-expanded mode the difference between \"top\" and "
-"\"bottom\" is less important - both indicate that this is a horizontal panel"
-" - but still give a useful hint as to how some panel objects should behave. "
-"For example, on a \"top\" panel a menu button will pop up its menu below the"
-" panel, whereas on a \"bottom\" panel the menu will be popped up above the "
+"\"bottom\" is less important - both indicate that this is a horizontal panel "
+"- but still give a useful hint as to how some panel objects should behave. "
+"For example, on a \"top\" panel a menu button will pop up its menu below the "
+"panel, whereas on a \"bottom\" panel the menu will be popped up above the "
 "panel."
 msgstr ""
-"Վահանակի կողմնորոշումը։ Հնարավոր արժեքներն են \"top\", \"bottom\", \"left\","
-" \"right\"։ Ընդլայնված ռեժիմում ստեղնը նշում է, թե  էկրանի որ ծայրին է "
+"Վահանակի կողմնորոշումը։ Հնարավոր արժեքներն են \"top\", \"bottom\", \"left\", "
+"\"right\"։ Ընդլայնված ռեժիմում ստեղնը նշում է, թե  էկրանի որ ծայրին է "
 "գտնվում վահանակը։ Ոչ ընդլայնված ռեժիմում \"top\" և \"bottom\" –ի միջև "
 "տարբերությունը պակաս կարևոր է, երկուսն էլ ցույց են տալիս որ սա հորիզոնական "
-"վահանակ է, սակայն տալիս են օգտակար հուշում այն մասին թե ինչպիսին պետք է լինի"
-" վահանակի մի քանի տարրերի վարքագիծը։ Օրինակ, \"top\" վահանակում ցանկ ստեղնը "
-"էկրան կբերի իր ցանկը վահանակի ներքևում, մինչդեռ  \"bottom\" վահանակում ցանկը"
-" էկրանին կհայտնվի վահանակի վերևում։"
+"վահանակ է, սակայն տալիս են օգտակար հուշում այն մասին թե ինչպիսին պետք է լինի "
+"վահանակի մի քանի տարրերի վարքագիծը։ Օրինակ, \"top\" վահանակում ցանկ ստեղնը "
+"էկրան կբերի իր ցանկը վահանակի ներքևում, մինչդեռ  \"bottom\" վահանակում ցանկը "
+"էկրանին կհայտնվի վահանակի վերևում։"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:30
 msgid "Panel size"
@@ -1912,8 +1852,8 @@ msgid ""
 "at the screen edge specified by the orientation key."
 msgstr ""
 "Վահանակի տեղը x առանցքի երկայնքով։ Այս ստեղնը միայն տեղին է ոչ ընդլայնված "
-"ռեժիմում։ Ընդլայնված ռեժիմում այս ստեղն անտեսվում է և վահանակը տեղակայվում է"
-" էկրանի ծայրին՝ նշված կողմնորոշիչ ստեղնով։"
+"ռեժիմում։ Ընդլայնված ռեժիմում այս ստեղն անտեսվում է և վահանակը տեղակայվում է "
+"էկրանի ծայրին՝ նշված կողմնորոշիչ ստեղնով։"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:40
 msgid "Y co-ordinate of panel"
@@ -1943,8 +1883,8 @@ msgid ""
 "the orientation key."
 msgstr ""
 "Վահանակի տեղը x առանցքի երկայնքով՝ սկսած էկրանի աջ կողմից։ Եթե դրված է 1, "
-"արժեքը բաց է թողնվում և x ստեղնի արժեքն է գործածվում։ Եթե արժեքը 0–ից մեծ է,"
-" ապա x ստեղնի արժեքը բաց է թողնվում։ Այս ստեղնը միայն տեղին է ոչ ընդլայնված "
+"արժեքը բաց է թողնվում և x ստեղնի արժեքն է գործածվում։ Եթե արժեքը 0–ից մեծ է, "
+"ապա x ստեղնի արժեքը բաց է թողնվում։ Այս ստեղնը միայն տեղին է ոչ ընդլայնված "
 "ռեժիմում։ Ընդլայնված ռեժիմում այս ստեղնը բաց է թողնվում և վահանակը "
 "տեղակայվում է էկրանի ծայրին՝ նշված կողմնորոշիչ ստեղնով։"
 
@@ -1980,8 +1920,8 @@ msgid ""
 msgstr ""
 "Եթե ճիշտ է, x և x_right ստեղները անտեսվում են, և վահանակը տեղակայվում է "
 "էկրանի x առանցքի կենտրոնում։ Եթե վահանակի չափերը փոփոխվում են, այն կմնա "
-"նույն դիրքում, այն է՝ վահանակը կմեծանա երկու կողմից։ Եթե սխալ է, x և x_right"
-" ստեղները նշում են վահանակի տեղը։"
+"նույն դիրքում, այն է՝ վահանակը կմեծանա երկու կողմից։ Եթե սխալ է, x և x_right "
+"ստեղները նշում են վահանակի տեղը։"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:60
 msgid "Center panel on y-axis"
@@ -2018,8 +1958,8 @@ msgid ""
 "If true, hiding and un-hiding of this panel will be anicafed rather than "
 "happening instantly."
 msgstr ""
-"Եթե ճիշտ է, ապա այս վահանակի թաքցնելը և տեսանելի դարձնելը կլինեն անիմացված և"
-" ոչ արագ կատարվող։"
+"Եթե ճիշտ է, ապա այս վահանակի թաքցնելը և տեսանելի դարձնելը կլինեն անիմացված և "
+"ոչ արագ կատարվող։"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:75
 msgid "Enable hide buttons"
@@ -2031,8 +1971,8 @@ msgid ""
 "to move the panel to edge of the screen, leaving only a button showing."
 msgstr ""
 "Եթե ճիշտ է, ապա ստեղները պետք է տեղակայվեն վահանակի յուրաքանչյուր կողմում, "
-"որոնք կարող են օգտագործվել վահանակը էկրանի ծայրը տեղափոխելու համար, թողնելով"
-" միայն ստեղնը։"
+"որոնք կարող են օգտագործվել վահանակը էկրանի ծայրը տեղափոխելու համար, թողնելով "
+"միայն ստեղնը։"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:80
 msgid "Enable arrows on hide buttons"
@@ -2057,8 +1997,8 @@ msgid ""
 "relevant if the auto_hide key is true."
 msgstr ""
 "Նշում  է միլիվայրկյանների ուշացման թիվը այն բանից հետո, երբ սլաքը մտնում է "
-"վահանակի տիրույթ, նախքան վահանակը ավտոմատ կերպով փակվում է։ Այս ստեղնը տեղին"
-" է միայն եթե auto_hide ստեղնը ճիշտ է։"
+"վահանակի տիրույթ, նախքան վահանակը ավտոմատ կերպով փակվում է։ Այս ստեղնը տեղին "
+"է միայն եթե auto_hide ստեղնը ճիշտ է։"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:90
 msgid "Panel autounhide delay"
@@ -2081,8 +2021,7 @@ msgstr "Տեսանելի պիքսելներ թաքնված ժամանակ"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:96
 msgid ""
 "Specifies the number of pixels visible when the panel is automatically "
-"hidden into a corner. This key is only relevant if the auto_hide key is "
-"true."
+"hidden into a corner. This key is only relevant if the auto_hide key is true."
 msgstr ""
 "Նշում  է պիքսելների թիվը, որոնք տեսանելի են, երբ վահանակը ավտոմատ կերպով "
 "թաքնվում է անկյունում։ Այս ստեղնը տեղին է միայն, եթե auto_hide ստեղնը ճիշտ "
@@ -2098,8 +2037,8 @@ msgid ""
 "\"slow\", \"medium\" and \"fast\". This key is only relevant if the "
 "enable_animations key is true."
 msgstr ""
-"Արագությունը, որով պետք է կատարվեն վահանակի անիմացիաները։ Հնարավոր արժեքներն"
-" են \"slow\", \"medium\" and \"fast\"։ Այս ստեղնը տեղին է միայն եթե "
+"Արագությունը, որով պետք է կատարվեն վահանակի անիմացիաները։ Հնարավոր արժեքներն "
+"են \"slow\", \"medium\" and \"fast\"։ Այս ստեղնը տեղին է միայն եթե "
 "enable_animations ստեղնը ճիշտ է։"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:108
@@ -2133,11 +2072,11 @@ msgstr "Ֆոնի գույնի անթափանցությունը"
 #: data/org.cafe.panel.toplevel.gschema.xml.in:119
 msgid ""
 "Specifies the opacity of the background color format. If the color is not "
-"completely opaque (a value of less than 65535), the color will be composited"
-" onto the desktop background image."
+"completely opaque (a value of less than 65535), the color will be composited "
+"onto the desktop background image."
 msgstr ""
-"Նշում  է ֆոնի գույնի անթափանց ֆորմատը։ Եթե գույնը ամբողջովին անթափանց չէ ( "
-"65535–ի պակաս արժեքի դեպքում) գույնը կտեղակայվի աշխատանքային էկրանի ֆոնի "
+"Նշում  է ֆոնի գույնի անթափանց ֆորմատը։ Եթե գույնը ամբողջովին անթափանց չէ "
+"( 65535–ի պակաս արժեքի դեպքում) գույնը կտեղակայվի աշխատանքային էկրանի ֆոնի "
 "կոմպոզիցիայի մեջ։"
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:123
@@ -2255,7 +2194,7 @@ msgid "_Open"
 msgstr "_Բացել"
 
 #: cafe-panel/libpanel-util/panel-error.c:76
-#: cafe-panel/panel-applet-frame.c:798 cafe-panel/panel-applet-frame.c:986
+#: cafe-panel/panel-applet-frame.c:800 cafe-panel/panel-applet-frame.c:988
 msgid "Error"
 msgstr "Սխալ"
 
@@ -2302,7 +2241,7 @@ msgid "Cannot find an empty spot"
 msgstr "Չի հաջողվել դատարկ տեղ գտնել"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1650
+#: cafe-panel/panel-toplevel.c:1643
 msgid "Drawer"
 msgstr "Դարակ"
 
@@ -2311,7 +2250,7 @@ msgid "_Add to Drawer..."
 msgstr "_Ավելացնել դարակում..."
 
 #: cafe-panel/drawer.c:556 cafe-panel/launcher.c:602
-#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:246
+#: cafe-panel/panel-action-button.c:194 cafe-panel/panel-context-menu.c:247
 msgid "_Properties"
 msgstr "_Հատկություններ"
 
@@ -2328,7 +2267,7 @@ msgid "- Edit .desktop files"
 msgstr "- Խմբագրել ։աշխատանքային սեղանի ֆայլեր"
 
 #: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:973
+#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
 msgid "Create Launcher"
 msgstr "Ստեղծել գործարկիչ"
 
@@ -2341,7 +2280,7 @@ msgstr "Պանակի հատկություններ"
 msgid "Launcher Properties"
 msgstr "Գործարկչի հատկություններ"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:158
+#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "Վահանակ"
 
@@ -2352,12 +2291,6 @@ msgid ""
 msgstr ""
 "Windows–ը կառավարելու համար գործարկել այլ ծրագրեր և ապահովել տարբեր օժանդակ "
 "ծրագրերով. ցույց տալ ժամը և այլն։"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: cafe-panel/cafe-panel.desktop.in:7
-msgid "cafe-panel"
-msgstr "cafe-panel"
 
 #: cafe-panel/launcher.c:120
 msgid "Could not show this URL"
@@ -2389,7 +2322,7 @@ msgstr "_Գործարկել"
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "Ստեղն  %s–ը կարգավորված չէ, հնարավոր չէ բեռնել գործարկիչը\n"
 
-#: cafe-panel/launcher.c:1042 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Անհնար է գործարկիչը պահել"
@@ -2554,69 +2487,69 @@ msgstr ""
 msgid "Not compatible with Wayland"
 msgstr ""
 
-#: cafe-panel/panel-addto.c:1053
+#: cafe-panel/panel-addto.c:1055
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "Գտնել _միավոր \"%s\"–ին ավելացնելու համար."
 
-#: cafe-panel/panel-addto.c:1057
+#: cafe-panel/panel-addto.c:1059
 msgid "Add to Drawer"
 msgstr "Ավելացնել դարակում"
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Find an _item to add to the drawer:"
 msgstr "Գտնել _տարր դարակում ավելացնելու համար."
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Add to Panel"
 msgstr "Ավելացնել վահանակին"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Find an _item to add to the panel:"
 msgstr "Գտնել _միավոր վահանակի վրա ավելացնելու համար․"
 
-#: cafe-panel/panel-addto.c:1311
+#: cafe-panel/panel-addto.c:1313
 msgid "_Back"
 msgstr "_Հետ"
 
-#: cafe-panel/panel-applet-frame.c:759
+#: cafe-panel/panel-applet-frame.c:761
 #, c-format
 msgid "\"%s\" has quit unexpectedly"
 msgstr "\"%s\"–ը անսպասելի ընդհատվեց"
 
-#: cafe-panel/panel-applet-frame.c:761
+#: cafe-panel/panel-applet-frame.c:763
 msgid "Panel object has quit unexpectedly"
 msgstr "Վահանակի միավորը անսպասելի ընդհատվեց"
 
-#: cafe-panel/panel-applet-frame.c:768
+#: cafe-panel/panel-applet-frame.c:770
 msgid ""
 "If you reload a panel object, it will automatically be added back to the "
 "panel."
 msgstr ""
 "Եթե վերբեռնեք վահանակի օբյեկտը, այն ավտոմատ կերպով կավելացվի վահանակին։"
 
-#: cafe-panel/panel-applet-frame.c:775
+#: cafe-panel/panel-applet-frame.c:777
 msgid "D_elete"
 msgstr "Ջ_նջել"
 
-#: cafe-panel/panel-applet-frame.c:776 cafe-panel/panel-applet-frame.c:781
+#: cafe-panel/panel-applet-frame.c:778 cafe-panel/panel-applet-frame.c:783
 msgid "_Don't Reload"
 msgstr "_Չվերաբեռնել"
 
-#: cafe-panel/panel-applet-frame.c:777 cafe-panel/panel-applet-frame.c:782
+#: cafe-panel/panel-applet-frame.c:779 cafe-panel/panel-applet-frame.c:784
 msgid "_Reload"
 msgstr "_Վերբեռնում"
 
-#: cafe-panel/panel-applet-frame.c:948
+#: cafe-panel/panel-applet-frame.c:950
 #, c-format
 msgid "The panel encountered a problem while loading \"%s\"."
 msgstr "Բեռնման ժամանակ վահանակը բարդությունների հանդիպեց \"%s\"։"
 
-#: cafe-panel/panel-applet-frame.c:963
+#: cafe-panel/panel-applet-frame.c:965
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Ցանկանու՞մ եք հեռացնել ապլետը ձեր կոնֆիգուրացիայից։"
 
-#: cafe-panel/panel-applet-frame.c:970 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
 msgid "_Delete"
 msgstr "_Հեռացնել"
 
@@ -2632,10 +2565,11 @@ msgstr "Գնոմ վահանակ"
 msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
-"Copyright © 2011-2020 CAFE developers"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2022-2023 Pablo Barciela"
 msgstr ""
 
-#: cafe-panel/panel-context-menu.c:119
+#: cafe-panel/panel-context-menu.c:120
 msgid ""
 "This program is responsible for launching other applications and provides "
 "useful utilities."
@@ -2643,48 +2577,49 @@ msgstr ""
 "Ծրագիրը պատասխանատու է այլ ծրագրերի գործարկման համար և ապահովում է օգտակար "
 "օժանդակ ծրագրերով։"
 
-#: cafe-panel/panel-context-menu.c:123
+#: cafe-panel/panel-context-menu.c:124
 msgid "About the CAFE Panel"
 msgstr "Գնոմ վահանակի մասին"
 
-#: cafe-panel/panel-context-menu.c:154
+#: cafe-panel/panel-context-menu.c:155
 msgid "Cannot delete this panel"
 msgstr "Հնարավոր չէ հեռացնել այս վահանակը"
 
-#: cafe-panel/panel-context-menu.c:155
+#: cafe-panel/panel-context-menu.c:156
 msgid "You must always have at least one panel."
 msgstr "Դուք միշտ ամենաքիչը մեկ վահանակ պետք է ունենաք։"
 
-#: cafe-panel/panel-context-menu.c:199
-msgid "Reset this panel?"
-msgstr "Վերագրանցե՞լ այս վահանակը։"
-
 #: cafe-panel/panel-context-menu.c:200
+msgid "Reset all panels?"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:201
 msgid ""
-"When a panel is reset, all \n"
+"When the panels are reset, all \n"
 "custom settings are lost."
 msgstr ""
-"Երբ վահանակը վերագրանցվում է,\n"
-"բոլոր անհատական կարգավորումները\n"
-"կորչում են:"
 
-#: cafe-panel/panel-context-menu.c:214 cafe-panel/panel-context-menu.c:256
-msgid "_Reset Panel"
-msgstr "_Վերագրանցել վահանակը"
+#: cafe-panel/panel-context-menu.c:215
+msgid "_Reset Panels"
+msgstr ""
 
-#: cafe-panel/panel-context-menu.c:236
+#: cafe-panel/panel-context-menu.c:237
 msgid "_Add to Panel…"
 msgstr "_Ավելացնել վահանակին…"
 
-#: cafe-panel/panel-context-menu.c:263
+#: cafe-panel/panel-context-menu.c:257
+msgid "_Reset All Panels"
+msgstr ""
+
+#: cafe-panel/panel-context-menu.c:264
 msgid "_Delete This Panel"
 msgstr "_Հեռացնել այս վահանակը"
 
-#: cafe-panel/panel-context-menu.c:276
+#: cafe-panel/panel-context-menu.c:277
 msgid "_New Panel"
 msgstr "_Նոր վահանակ"
 
-#: cafe-panel/panel-context-menu.c:325
+#: cafe-panel/panel-context-menu.c:326
 msgid "A_bout Panels"
 msgstr "Վահանակների մա_սին"
 
@@ -2776,8 +2711,8 @@ msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."
 msgstr ""
-"Եթե ծրագիրը փակեք, ցանկացած  չպահված փոփոխություն բաց փաստաթղթերում հնարավոր"
-" է,որ կորչի։"
+"Եթե ծրագիրը փակեք, ցանկացած  չպահված փոփոխություն բաց փաստաթղթերում հնարավոր "
+"է,որ կորչի։"
 
 #: cafe-panel/panel-menu-bar.c:97
 msgid "Browse and run installed applications"
@@ -2858,51 +2793,52 @@ msgstr "Աշխատանքային սեղան"
 msgid "Open the contents of your desktop in a folder"
 msgstr "Բացել աշխատասեղանի պարունակությունը պանակի մեջ"
 
-#: cafe-panel/panel-menu-items.c:1074
+#: cafe-panel/panel-menu-items.c:1075
 msgid "Computer"
 msgstr "Համակարգիչ"
 
-#: cafe-panel/panel-menu-items.c:1079
+#: cafe-panel/panel-menu-items.c:1081
 msgid ""
 "Browse all local and remote disks and folders accessible from this computer"
 msgstr ""
 "Թերթել բոլոր տեղական և հեռավոր սկավառակները և թղթապանակները, որոնք հասանելի "
 "են այս համակարգչում"
 
-#: cafe-panel/panel-menu-items.c:1092
+#: cafe-panel/panel-menu-items.c:1094
 msgid "Network"
 msgstr "Ցանց"
 
-#: cafe-panel/panel-menu-items.c:1093
+#: cafe-panel/panel-menu-items.c:1095
 msgid "Browse bookmarked and local network locations"
 msgstr "Փնտրել էջանշված և տեղական ցանցային վայրերը"
 
-#: cafe-panel/panel-menu-items.c:1487
+#: cafe-panel/panel-menu-items.c:1489
 msgid "Places"
 msgstr "Տեղեր"
 
-#: cafe-panel/panel-menu-items.c:1515
+#: cafe-panel/panel-menu-items.c:1517
 msgid "System"
 msgstr "Համակարգ"
 
 #. Translators: translate "1" (msgctxt: "panel:showusername") to anything
 #. * but "1" if "Log Out %s" doesn't make any sense in your
 #. * language (where %s is a username).
-#: cafe-panel/panel-menu-items.c:1600
+#.
+#: cafe-panel/panel-menu-items.c:1602
 msgctxt "panel:showusername"
 msgid "1"
 msgstr "1"
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1612
+#: cafe-panel/panel-menu-items.c:1614
 #, c-format
 msgid "Log Out %s..."
 msgstr "Ելք %s..."
 
 #. Translators: this string is used ONLY if you translated
 #. * "1" (msgctxt: "panel:showusername") to "1"
-#: cafe-panel/panel-menu-items.c:1616
+#: cafe-panel/panel-menu-items.c:1618
 #, c-format
 msgid "Log out %s of this session to log in as a different user"
 msgstr "Դուրս գալ %s սեսիայից մեկ այլ օգտագործողով մուտք գործելու համար"
@@ -3070,30 +3006,30 @@ msgstr "Մաքրել վերջին փաստաթղթերը․․․"
 msgid "Clear all items from the recent documents list"
 msgstr "Մաքրել բոլոր փաստաթղթերը վերջին փաստաթղթերի ցանկից"
 
-#: cafe-panel/panel-run-dialog.c:423
+#: cafe-panel/panel-run-dialog.c:435
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "Անհնար է '%s' հրահանգը գործարկել "
 
-#: cafe-panel/panel-run-dialog.c:464
+#: cafe-panel/panel-run-dialog.c:476
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "Չի հաջողվել '%s–ը UTF-8–ից փոխակերպել"
 
-#: cafe-panel/panel-run-dialog.c:1257
+#: cafe-panel/panel-run-dialog.c:1269
 msgid "Choose a file to append to the command..."
 msgstr "Ընտրել ֆայլը հրահանգին ավելացնելու համար…"
 
-#: cafe-panel/panel-run-dialog.c:1639 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Ընտրել ծրագիրը նկարագրությունը տեսնելու համար։"
 
-#: cafe-panel/panel-run-dialog.c:1677
+#: cafe-panel/panel-run-dialog.c:1689
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "Հրահանգը կկատարվի. '%s'"
 
-#: cafe-panel/panel-run-dialog.c:1710
+#: cafe-panel/panel-run-dialog.c:1722
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
@@ -3243,19 +3179,19 @@ msgstr "_Պարամետրերի Ուղի։"
 msgid "Hide Panel"
 msgstr "Վահանակը թաքցնել"
 
-#: cafe-panel/panel-toplevel.c:1656 cafe-panel/panel-toplevel.c:1666
+#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
 msgid "Top Panel"
 msgstr "Վերին վահանակ"
 
-#: cafe-panel/panel-toplevel.c:1658
+#: cafe-panel/panel-toplevel.c:1651
 msgid "Bottom Panel"
 msgstr "Ներքևի վահանակ"
 
-#: cafe-panel/panel-toplevel.c:1660
+#: cafe-panel/panel-toplevel.c:1653
 msgid "Left Panel"
 msgstr "Ձախ վահանակ"
 
-#: cafe-panel/panel-toplevel.c:1662
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Right Panel"
 msgstr "Աջ վահանակ"
 
@@ -3273,17 +3209,17 @@ msgstr "Չի հաջողվել %s'–ը կատարել "
 msgid "file"
 msgstr "ֆայլ"
 
-#: cafe-panel/panel-util.c:875
+#: cafe-panel/panel-util.c:876
 msgid "Home Folder"
 msgstr "Տուն Թղթապանակ"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:887
+#: cafe-panel/panel-util.c:888
 msgid "File System"
 msgstr "Ֆայլին Համակարգ"
 
-#: cafe-panel/panel-util.c:1060
+#: cafe-panel/panel-util.c:1062
 msgid "Search"
 msgstr "Որոնել"
 
@@ -3291,7 +3227,8 @@ msgstr "Որոնել"
 #. * method, and the second string is a path. For
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
-#: cafe-panel/panel-util.c:1106
+#.
+#: cafe-panel/panel-util.c:1108
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
@@ -3341,8 +3278,91 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:12
-msgid "cafe-gegl"
-msgstr ""
+#~ msgid ""
+#~ "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Հեղինակային իրավունք © 1998-2004 Անվճար Ծրագրային Ապահովման Հիմնադրամի, "
+#~ "Inc.\n"
+#~ "Հեղինակային իրավունք © 2012-2020 Cafe ծրագրավորողներ"
+
+#~ msgid "cafe-panel-clock"
+#~ msgstr "cafe-panel-clock"
+
+#~ msgid ""
+#~ "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2002-2005 Vincent Untz\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Հեղինակային իրավունք © 1998-2002 Անվճար Ծրագրային Ապահովման Հիմնադրամի, "
+#~ "Inc.\n"
+#~ "Հեղինակային իրավունք © 2002-2005 Վինսենթ Ունց\n"
+#~ "Հեղինակային իրավունք © 2012-2020 Cafe ծրագրավորողներ"
+
+#~ msgid "cafe-panel-fish"
+#~ msgstr "cafe-panel-fish"
+
+#~ msgid ""
+#~ "Copyright © 2002 Red Hat, Inc.\n"
+#~ "Copyright © 2003-2006 Vincent Untz\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Հեղինակային իրավունք © 2002 Red Hat, Inc.\n"
+#~ "Հեղինակային իրավունք © 2003-2006 Վինսենթ Ունց\n"
+#~ "Հեղինակային իրավունք © 2011 Պերբերոս\n"
+#~ "Հեղինակային իրավունք © 2012-2020 Cafe ծրագրավորողներ"
+
+#~ msgid "cafe-panel-notification-area"
+#~ msgstr "cafe-panel-notification-are"
+
+#~ msgid "cafe-panel-window-menu"
+#~ msgstr "cafe-panel-window-menu"
+
+#~ msgid "cafe-panel-workspace-switcher"
+#~ msgstr "cafe-panel-workspace-switcher"
+
+#~ msgid "cafe-panel-window-list"
+#~ msgstr "cafe-panel-window-list"
+
+#~ msgid "user-desktop"
+#~ msgstr "user-desktop"
+
+#~ msgid ""
+#~ "Copyright © 2002 Red Hat, Inc.\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Հեղինակային իրավունք © 2002 Red Hat, Inc.\n"
+#~ "Հեղինակային իրավունք © 2011 Պերբերոս\n"
+#~ "Հեղինակային իրավունք © 2012-2020 Cafe ծրագրավորողներ"
+
+#~ msgid ""
+#~ "Copyright © 2000 Helix Code, Inc.\n"
+#~ "Copyright © 2001 Free Software Foundation, Inc.\n"
+#~ "Copyright © 2003 Sun Microsystems, Inc.\n"
+#~ "Copyright © 2011 Perberos\n"
+#~ "Copyright © 2012-2020 CAFE developers"
+#~ msgstr ""
+#~ "Հեղինակային իրավունք © 2000 «Հելիքս Կոդ», Inc. \n"
+#~ "Հեղինակային իրավունք © 2001 Անվճար Ծրագրային Ապահովման Հիմնադրամ, Inc.\n"
+#~ "Հեղինակային իրավունք © 2003 Sun Microsystems, Inc\n"
+#~ "Հեղինակային իրավունք © 2011 Պերբերոս\n"
+#~ "Հեղինակային իրավունք © 2012-2020 Cafe ծրագրավորողներ"
+
+#~ msgid "cafe-panel"
+#~ msgstr "cafe-panel"
+
+#~ msgid "Reset this panel?"
+#~ msgstr "Վերագրանցե՞լ այս վահանակը։"
+
+#~ msgid ""
+#~ "When a panel is reset, all \n"
+#~ "custom settings are lost."
+#~ msgstr ""
+#~ "Երբ վահանակը վերագրանցվում է,\n"
+#~ "բոլոր անհատական կարգավորումները\n"
+#~ "կորչում են:"
+
+#~ msgid "_Reset Panel"
+#~ msgstr "_Վերագրանցել վահանակը"
