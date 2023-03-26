@@ -1,4 +1,4 @@
-AC_INIT([cafe-panel], [1.24.1], [https://github.com/cafe-desktop/cafe-panel/issues],
+AC_INIT([cafe-panel], [1.25.0], [https://github.com/cafe-desktop/cafe-panel/issues],
     [cafe-panel], [http://www.cafe-desktop.org])
 AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-xz tar-ustar -Wno-portability check-news])
