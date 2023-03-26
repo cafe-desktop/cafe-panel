@@ -3265,15 +3265,5 @@ msgstr "Testaa DBus-sovelma"
 msgid "A simple applet for testing the CAFE panel"
 msgstr "Yksinkertainen sovelma CAFE-paneelin testaamiseen"
 
-#~ msgid "Reset this panel?"
-#~ msgstr "Palauta tämä paneeli?"
 
-#~ msgid ""
-#~ "When a panel is reset, all \n"
-#~ "custom settings are lost."
-#~ msgstr ""
-#~ "Kun paneeli nollataan, kaikki\n"
-#~ "mukautetut asetukset menetetään."
 
-#~ msgid "_Reset Panel"
-#~ msgstr "_Palauta paneeli"

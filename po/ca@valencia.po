@@ -3330,15 +3330,5 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#~ msgid "Reset this panel?"
-#~ msgstr "Voleu restablir aquest quadre?"
 
-#~ msgid ""
-#~ "When a panel is reset, all \n"
-#~ "custom settings are lost."
-#~ msgstr ""
-#~ "Quan es reinicialitza un tauler, tots \n"
-#~ "els paràmetres personalitzats es perden."
 
-#~ msgid "_Reset Panel"
-#~ msgstr "_Reinicialitza el quadre"

@@ -3392,15 +3392,5 @@ msgstr "Test DBus Applet"
 msgid "A simple applet for testing the CAFE panel"
 msgstr "Ein einfaches Applet, um CAFE-Panel zu testen"
 
-#~ msgid "Reset this panel?"
-#~ msgstr "Diese Leiste zurücksetzen"
 
-#~ msgid ""
-#~ "When a panel is reset, all \n"
-#~ "custom settings are lost."
-#~ msgstr ""
-#~ "Wenn eine Leiste zurückgesetzt wird,\n"
-#~ "gehen alle eigenen Einstellungen verloren."
 
-#~ msgid "_Reset Panel"
-#~ msgstr "_Leiste zurücksetzen"

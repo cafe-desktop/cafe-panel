@@ -3116,23 +3116,9 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#~ msgid "cafe-panel-clock"
-#~ msgstr "cafe-panel-clock"
 
-#~ msgid "cafe-panel-fish"
-#~ msgstr "cafe-panel-fish"
 
-#~ msgid "cafe-panel-notification-area"
-#~ msgstr "cafe-panel-notification-area"
 
-#~ msgid "cafe-panel-window-menu"
-#~ msgstr "cafe-panel-window-menu"
 
-#~ msgid "cafe-panel-workspace-switcher"
-#~ msgstr "cafe-panel-workspace-switcher"
 
-#~ msgid "cafe-panel-window-list"
-#~ msgstr "cafe-panel-window-list"
 
-#~ msgid "user-desktop"
-#~ msgstr "user-desktop"

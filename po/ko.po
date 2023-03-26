@@ -3241,15 +3241,5 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#~ msgid "Reset this panel?"
-#~ msgstr "이 패널을 초기화할까요?"
 
-#~ msgid ""
-#~ "When a panel is reset, all \n"
-#~ "custom settings are lost."
-#~ msgstr ""
-#~ "패널을 초기화하면, 모든 \n"
-#~ "사용자 설정이 사라집니다."
 
-#~ msgid "_Reset Panel"
-#~ msgstr "패널 초기화(_R)"

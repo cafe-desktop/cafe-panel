@@ -3078,8 +3078,4 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#~ msgid "Reset this panel?"
-#~ msgstr "ይህን ክፍል እንደ ነበረ ልመልሰው? "
 
-#~ msgid "_Reset Panel"
-#~ msgstr "ክፍል _እንደ ነበር መመለሻ"

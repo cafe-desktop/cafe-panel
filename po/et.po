@@ -3270,12 +3270,4 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#~ msgid "Reset this panel?"
-#~ msgstr "Kas lähtestada see paneel?"
 
-#~ msgid ""
-#~ "When a panel is reset, all \n"
-#~ "custom settings are lost."
-#~ msgstr ""
-#~ "Paneeli lähtestamisega lähevad\n"
-#~ "kõik kohandatud sätted kaotsi."

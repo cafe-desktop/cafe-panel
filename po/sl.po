@@ -3263,22 +3263,6 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#~ msgid ""
-#~ "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Avtorske pravice © 1998-2004 Free Software Foundation, Inc.\n"
-#~ "Avtorske pravice © 2012-2020 razvijalci CAFE"
 
-#~ msgid "Reset this panel?"
-#~ msgstr "Ponastavi ta pult?"
 
-#~ msgid ""
-#~ "When a panel is reset, all \n"
-#~ "custom settings are lost."
-#~ msgstr ""
-#~ "Z ponastavitvijo pulta, so vse \n"
-#~ "nastavitve po meri izgubljene. "
 
-#~ msgid "_Reset Panel"
-#~ msgstr "_Ponastavi pult"

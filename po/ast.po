@@ -3305,15 +3305,5 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#~ msgid "Reset this panel?"
-#~ msgstr "¿Restablecer esti panel?"
 
-#~ msgid ""
-#~ "When a panel is reset, all \n"
-#~ "custom settings are lost."
-#~ msgstr ""
-#~ "Cuando se restablez un panel, piérdese \n"
-#~ "tola configuración personalizada."
 
-#~ msgid "_Reset Panel"
-#~ msgstr "_Restablecer Panel"

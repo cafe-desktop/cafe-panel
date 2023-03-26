@@ -3315,15 +3315,5 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#~ msgid "Reset this panel?"
-#~ msgstr "Нулиране на този панел?"
 
-#~ msgid ""
-#~ "When a panel is reset, all \n"
-#~ "custom settings are lost."
-#~ msgstr ""
-#~ "Когато един панел бъде нулиран, всички \n"
-#~ "персонализирани настройки се губят."
 
-#~ msgid "_Reset Panel"
-#~ msgstr "_Нулиране на панела"

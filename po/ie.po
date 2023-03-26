@@ -3041,8 +3041,4 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#~ msgid "Reset this panel?"
-#~ msgstr "Esque reverter ti-ci panel?"
 
-#~ msgid "_Reset Panel"
-#~ msgstr "_Reverter li panel"

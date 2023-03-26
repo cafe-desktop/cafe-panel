@@ -3369,22 +3369,6 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
 
-#~ msgid ""
-#~ "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2012-2020 CAFE developers"
 
-#~ msgid "Reset this panel?"
-#~ msgstr "Επαναφορά πλαισίου;"
 
-#~ msgid ""
-#~ "When a panel is reset, all \n"
-#~ "custom settings are lost."
-#~ msgstr ""
-#~ "Όταν επαναφέρεται ένας πίνακας, όλα\n"
-#~ "οι προσαρμοσμένες ρυθμίσεις χάνονται."
 
-#~ msgid "_Reset Panel"
-#~ msgstr "_Πίνακας Επαναφοράς"

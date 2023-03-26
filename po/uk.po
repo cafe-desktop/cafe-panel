@@ -3285,65 +3285,17 @@ msgstr ""
 msgid "A simple applet for testing the CAFE panel"
 msgstr "Простий аплет для тестування панелі CAFE"
 
-#~ msgid ""
-#~ "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Авторське право © 1998-2004 Фундація вільного програмного забезпечення.\n"
-#~ "Авторське право © 2012-2020 Розробники CAFE"
 
-#~ msgid "cafe-panel-clock"
-#~ msgstr "cafe-panel-clock"
 
-#~ msgid ""
-#~ "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2002-2005 Vincent Untz\n"
-#~ "Copyright © 2012-2020 CAFE developers"
-#~ msgstr ""
-#~ "Авторське право © 1998-2002 Фундація вільного програмного забезпечення.\n"
-#~ "Авторське право © 2002-2005 Вінсент Унц\n"
-#~ "Авторське право © 2012-2020 Розробники CAFE"
 
-#~ msgid "cafe-panel-fish"
-#~ msgstr "cafe-panel-fish"
 
-#~ msgid "cafe-panel-notification-area"
-#~ msgstr "cafe-panel-notification-area"
 
-#~ msgid "cafe-panel-window-menu"
-#~ msgstr "cafe-panel-window-menu"
 
-#~ msgid "cafe-panel-workspace-switcher"
-#~ msgstr "cafe-panel-workspace-switcher"
 
-#~ msgid "cafe-panel-window-list"
-#~ msgstr "cafe-panel-window-list"
 
-#~ msgid "user-desktop"
-#~ msgstr "user-desktop"
 
-#~ msgid "cafe-panel"
-#~ msgstr "cafe-panel"
 
-#~ msgid ""
-#~ "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
-#~ "Copyright © 2004 Vincent Untz\n"
-#~ "Copyright © 2011-2020 CAFE developers"
-#~ msgstr ""
-#~ "Авторське право © 1997-2003 Фундація вільного програмного забезпечення.\n"
-#~ "Авторське право © 2004 Вінсент Унц\n"
-#~ "Авторське право © 2011-2020 Розробники CAFE"
 
-#~ msgid "Reset this panel?"
-#~ msgstr "Скинути цю панель?"
 
-#~ msgid ""
-#~ "When a panel is reset, all \n"
-#~ "custom settings are lost."
-#~ msgstr "При скиданні панелі усі користувацькі налаштування втрачаються."
 
-#~ msgid "_Reset Panel"
-#~ msgstr "_Скинути панель"
 
-#~ msgid "cafe-gegl"
-#~ msgstr "cafe-gegl"
