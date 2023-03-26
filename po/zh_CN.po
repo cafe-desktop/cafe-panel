@@ -3180,21 +3180,3 @@ msgstr "测试 DBus 小程序"
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
 msgid "A simple applet for testing the CAFE panel"
 msgstr "一个测试 CAFE 面板的简单小程序"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

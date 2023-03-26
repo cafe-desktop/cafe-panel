@@ -3267,21 +3267,3 @@ msgstr "Test DBus-panelprogrammet"
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
 msgid "A simple applet for testing the CAFE panel"
 msgstr "Et simpelt panelprogram til at teste CAFE-panelet"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

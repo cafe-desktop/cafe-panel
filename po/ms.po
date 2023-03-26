@@ -3281,21 +3281,3 @@ msgstr "Aplet DBUS Uji"
 #: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
 msgid "A simple applet for testing the CAFE panel"
 msgstr "Aplet ringkas untuk menguji panel CAFE"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
