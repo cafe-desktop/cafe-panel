@@ -487,6 +487,8 @@ na_tray_applet_init (NaTrayApplet *applet)
 
   cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (applet),
                           CAFE_PANEL_APPLET_HAS_HANDLE|CAFE_PANEL_APPLET_EXPAND_MINOR);
+
+  g_object_set (ctk_settings_get_default (), "ctk-menu-images", TRUE, NULL);
 }
 
 static gboolean
