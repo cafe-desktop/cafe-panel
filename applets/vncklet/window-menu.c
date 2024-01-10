@@ -82,7 +82,7 @@ static void window_menu_about(CtkAction* action, WindowMenu* window_menu)
 		               "Copyright \xc2\xa9 2003 Sun Microsystems, Inc.\n"
 		               "Copyright \xc2\xa9 2011 Perberos\n"
 		               "Copyright \xc2\xa9 2012-2020 MATE developers\n"
-		               "Copyright \xc2\xa9 2022-2023 Pablo Barciela"),
+		               "Copyright \xc2\xa9 2022-2024 Pablo Barciela"),
 		"documenters", documenters,
 		"icon-name", WINDOW_MENU_ICON,
 		"logo-icon-name", WINDOW_MENU_ICON,
