@@ -25,7 +25,7 @@ requires:
     - libpango1.0-dev
     - librsvg2-dev
     - libsm-dev
-    - libsoup2.4-dev
+    - libsoup-3.0-dev
     - libx11-dev
     - libxau-dev
     - libxrandr-dev
