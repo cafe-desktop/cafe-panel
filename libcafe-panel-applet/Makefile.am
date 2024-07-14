@@ -95,7 +95,7 @@ appletdir       = $(datadir)/cafe-panel/applets
 applet_in_files = org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in
 noinst_DATA     = $(applet_in_files:.cafe-panel-applet.desktop.in=.cafe-panel-applet)
 $(noinst_DATA): $(applet_in_files)
-	$(AM_V_GEN) $(MSGFMT) --desktop --keyword Name --keyword Description --template $< -d $(top_srcdir)/po -o $@
+	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
 
 EXTRA_DIST =						\
 	org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in	\
