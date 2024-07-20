@@ -79,6 +79,7 @@
 #define KEY_SHOW_DATE                "show-date"
 #define KEY_SHOW_WEATHER        "show-weather"
 #define KEY_SHOW_TEMPERATURE        "show-temperature"
+#define KEY_SHOW_HUMIDITY        "show-humidity"
 #define KEY_CUSTOM_FORMAT        "custom-format"
 #define KEY_SHOW_WEEK                "show-week-numbers"
 #define KEY_CITIES                "cities"
@@ -107,6 +108,7 @@ struct _ClockData {
 
         CtkWidget *panel_weather_icon;
         CtkWidget *panel_temperature_label;
+        CtkWidget *panel_humidity_label;
 
         CtkWidget *props;
         CtkWidget *calendar_popup;
@@ -150,6 +152,7 @@ struct _ClockData {
         gboolean     showweek;
         gboolean     show_weather;
         gboolean     show_temperature;
+        gboolean     show_humidity;
 
         TempUnit     temperature_unit;
         SpeedUnit    speed_unit;
@@ -1417,7 +1420,7 @@ create_clock_widget (ClockData *cd)
 
         /* Weather orientable box */
         cd->weather_obox = g_object_new (clock_box_get_type (), NULL);
-        ctk_box_set_spacing (CTK_BOX (cd->weather_obox), 2); /* spacing between weather icon and temperature */
+        ctk_box_set_spacing (CTK_BOX (cd->weather_obox), 10); /* spacing between weather icon, temperature and humidity */
         ctk_box_pack_start (CTK_BOX (cd->main_obox), cd->weather_obox, FALSE, FALSE, 0);
         ctk_widget_set_has_tooltip (cd->weather_obox, TRUE);
         g_signal_connect (cd->weather_obox, "query-tooltip",
@@ -1429,6 +1432,9 @@ create_clock_widget (ClockData *cd)
 
         cd->panel_temperature_label = ctk_label_new (NULL);
         ctk_box_pack_start (CTK_BOX (cd->weather_obox), cd->panel_temperature_label, FALSE, FALSE, 0);
+
+        cd->panel_humidity_label = ctk_label_new (NULL);
+        ctk_box_pack_start (CTK_BOX (cd->weather_obox), cd->panel_humidity_label, FALSE, FALSE, 0);
 
         /* Main label for time display */
         cd->clockw = create_main_clock_label (cd);
@@ -1483,6 +1489,7 @@ update_orient (ClockData *cd)
                 unfix_size (cd);
                 ctk_label_set_angle (CTK_LABEL (cd->clockw), new_angle);
                 ctk_label_set_angle (CTK_LABEL (cd->panel_temperature_label), new_angle);
+                ctk_label_set_angle (CTK_LABEL (cd->panel_humidity_label), new_angle);
         }
 }
 
@@ -1957,7 +1964,12 @@ update_panel_weather (ClockData *cd)
         else
                 ctk_widget_hide (cd->panel_temperature_label);
 
-        if ((cd->show_weather || cd->show_temperature) &&
+        if (cd->show_humidity)
+                ctk_widget_show (cd->panel_humidity_label);
+        else
+                ctk_widget_hide (cd->panel_humidity_label);
+
+        if ((cd->show_weather || cd->show_temperature || cd->show_humidity) &&
             g_list_length (cd->locations) > 0)
                 ctk_widget_show (cd->weather_obox);
         else
@@ -1999,6 +2011,14 @@ show_temperature_changed (GSettings    *settings,
                           ClockData    *cd)
 {
         update_weather_bool_value_and_toggle_from_gsettings (cd, key, &cd->show_temperature, "temperature_check");
+}
+
+static void
+show_humidity_changed (GSettings    *settings,
+                       gchar        *key,
+                       ClockData    *cd)
+{
+        update_weather_bool_value_and_toggle_from_gsettings (cd, key, &cd->show_humidity, "humidity_check");
 }
 
 static void
@@ -2047,6 +2067,7 @@ location_weather_updated_cb (ClockLocation *location,
 {
         ClockData *cd = data;
         const gchar *temp;
+        const gchar *humi;
         CtkIconTheme *theme;
         cairo_surface_t *surface;
         gint icon_size, icon_scale;
@@ -2084,9 +2105,11 @@ location_weather_updated_cb (ClockLocation *location,
                                                                           NULL);
 
         temp = weather_info_get_temp_summary (info);
+        humi = weather_info_get_humidity (info);
 
         ctk_image_set_from_surface (CTK_IMAGE (cd->panel_weather_icon), surface);
         ctk_label_set_text (CTK_LABEL (cd->panel_temperature_label), temp);
+        ctk_label_set_text (CTK_LABEL (cd->panel_humidity_label), humi);
 
         cairo_surface_destroy (surface);
 }
@@ -2122,6 +2145,9 @@ locations_changed (ClockData *cd)
                                                    NULL);
                 if (cd->panel_temperature_label)
                         ctk_label_set_text (CTK_LABEL (cd->panel_temperature_label),
+                                            "");
+                if (cd->panel_humidity_label)
+                        ctk_label_set_text (CTK_LABEL (cd->panel_humidity_label),
                                             "");
         } else {
                 if (cd->weather_obox)
@@ -2401,6 +2427,7 @@ setup_gsettings (ClockData *cd)
         g_signal_connect (cd->settings, "changed::" KEY_SHOW_DATE, G_CALLBACK (show_date_changed), cd);
         g_signal_connect (cd->settings, "changed::" KEY_SHOW_WEATHER, G_CALLBACK (show_weather_changed), cd);
         g_signal_connect (cd->settings, "changed::" KEY_SHOW_TEMPERATURE, G_CALLBACK (show_temperature_changed), cd);
+        g_signal_connect (cd->settings, "changed::" KEY_SHOW_HUMIDITY, G_CALLBACK (show_humidity_changed), cd);
         g_signal_connect (cd->settings, "changed::" KEY_CUSTOM_FORMAT, G_CALLBACK (custom_format_changed), cd);
         g_signal_connect (cd->settings, "changed::" KEY_SHOW_WEEK, G_CALLBACK (show_week_changed), cd);
         g_signal_connect (cd->settings, "changed::" KEY_CITIES, G_CALLBACK (cities_changed), cd);
@@ -2447,6 +2474,7 @@ load_gsettings (ClockData *cd)
         cd->showdate = g_settings_get_boolean (cd->settings, KEY_SHOW_DATE);
         cd->show_weather = g_settings_get_boolean (cd->settings, KEY_SHOW_WEATHER);
         cd->show_temperature = g_settings_get_boolean (cd->settings, KEY_SHOW_TEMPERATURE);
+        cd->show_humidity = g_settings_get_boolean (cd->settings, KEY_SHOW_HUMIDITY);
         cd->showweek = g_settings_get_boolean (cd->settings, KEY_SHOW_WEEK);
         cd->timeformat = NULL;
 
@@ -3095,6 +3123,11 @@ fill_prefs_window (ClockData *cd)
         /* Set the "Show temperature" checkbox */
         widget = _clock_get_widget (cd, "temperature_check");
         g_settings_bind (cd->settings, KEY_SHOW_TEMPERATURE, widget, "active",
+                         G_SETTINGS_BIND_DEFAULT);
+
+        /* Set the "Show humidity" checkbox */
+        widget = _clock_get_widget (cd, "humidity_check");
+        g_settings_bind (cd->settings, KEY_SHOW_HUMIDITY, widget, "active",
                          G_SETTINGS_BIND_DEFAULT);
 
         /* Fill the Cities list */

@@ -59,6 +59,11 @@
       <summary>Show temperature in clock</summary>
       <description>If true, show the temperature next to the weather icon.</description>
     </key>
+    <key name="show-humidity" type="b">
+      <default>true</default>
+      <summary>Show humidity in clock</summary>
+      <description>If true, show the humidity next to the temperature.</description>
+    </key>
     <key name="show-week-numbers" type="b">
       <default>true</default>
       <summary>Show week numbers in calendar</summary>
