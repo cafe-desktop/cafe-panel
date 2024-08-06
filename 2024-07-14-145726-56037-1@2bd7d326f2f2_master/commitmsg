@@ -1,0 +1,4 @@
+libcafe-panel-applet,Makefile: Fix build with gettext 0.22
+
+based in mate-panel commit:
+https://github.com/mate-desktop/mate-panel/commit/5a7f770082568453f3a5f271a274156f08352101
