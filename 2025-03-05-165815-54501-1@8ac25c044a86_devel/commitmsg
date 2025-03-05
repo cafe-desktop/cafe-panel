@@ -1,0 +1,4 @@
+panel-toplevel: avoid deprecated GTimeVal
+
+based in mate-panel commit:
+https://github.com/mate-desktop/mate-panel/commit/8b82deee8eaeb549e6a10af75b7ac2bebfd5d582
