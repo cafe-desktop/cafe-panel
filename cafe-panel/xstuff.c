@@ -346,8 +346,6 @@ xstuff_zoom_anicafe (CtkWidget *widget,
 	CdkScreen *gscreen;
 	CdkRectangle rect, dest;
 	CtkAllocation allocation;
-	CdkMonitor *monitor;
-	CdkDisplay *display;
 
 	if (opt_rect)
 		rect = *opt_rect;
@@ -375,6 +373,9 @@ xstuff_zoom_anicafe (CtkWidget *widget,
 				pixbuf, orientation);
 		g_object_unref (pixbuf);
 	} else {
+		CdkMonitor *monitor;
+		CdkDisplay *display;
+
 		display = cdk_screen_get_display (gscreen);
 		monitor = cdk_display_get_monitor_at_window (display,
 							     ctk_widget_get_window (widget));

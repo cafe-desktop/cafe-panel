@@ -449,7 +449,6 @@ panel_addto_append_item (PanelAddtoDialog *dialog,
 			 CtkListStore *model,
 			 PanelAddtoItemInfo *applet)
 {
-	char *text;
 	CtkTreeIter iter;
 
 	if (applet == NULL) {
@@ -462,6 +461,8 @@ panel_addto_append_item (PanelAddtoDialog *dialog,
 				    COLUMN_ENABLED, TRUE,
 				    -1);
 	} else {
+		char *text;
+
 		ctk_list_store_append (model, &iter);
 
 		text = panel_addto_make_text (applet->name,
@@ -678,10 +679,11 @@ panel_addto_populate_application_model (CtkTreeStore *store,
 {
 	PanelAddtoAppList *data;
 	CtkTreeIter        iter;
-	char              *text;
 	GSList            *app;
 
 	for (app = app_list; app != NULL; app = app->next) {
+		char *text;
+
 		data = app->data;
 		ctk_tree_store_append (store, &iter, parent);
 
@@ -831,7 +833,6 @@ panel_addto_dialog_response (CtkWidget *widget_dialog,
 {
 	CtkTreeSelection *selection;
 	CtkTreeModel     *filter_model;
-	CtkTreeModel     *child_model;
 	CtkTreeIter       iter;
 	CtkTreeIter       filter_iter;
 
@@ -845,6 +846,7 @@ panel_addto_dialog_response (CtkWidget *widget_dialog,
 		selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (dialog->tree_view));
 		if (ctk_tree_selection_get_selected (selection, &filter_model,
 						     &filter_iter)) {
+			CtkTreeModel       *child_model;
 			PanelAddtoItemInfo *data;
 
 			ctk_tree_model_filter_convert_iter_to_child_iter (CTK_TREE_MODEL_FILTER (filter_model),
@@ -1185,7 +1187,6 @@ panel_addto_selection_changed (CtkTreeSelection *selection,
 	CtkTreeIter         iter;
 	CtkTreeIter         filter_iter;
 	PanelAddtoItemInfo *data;
-	char               *iid;
 
 	if (!ctk_tree_selection_get_selected (selection,
 					      &filter_model,
@@ -1232,6 +1233,8 @@ panel_addto_selection_changed (CtkTreeSelection *selection,
 			break;
 		case PANEL_ADDTO_MENU:
 			/* build the iid for menus other than the main menu */
+			char *iid;
+
 			if (data->iid == NULL) {
 				iid = g_strdup_printf ("MENU:%s/%s",
 						       data->menu_filename,

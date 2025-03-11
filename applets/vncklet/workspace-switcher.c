@@ -674,14 +674,18 @@ static void num_rows_value_changed(CtkSpinButton* button, PagerData* pager)
 
 static void update_workspaces_model(PagerData* pager)
 {
-	int nr_ws, i;
-	VnckWorkspace* workspace;
-	CtkTreeIter iter;
+	int nr_ws;
 
 	nr_ws = vnck_screen_get_workspace_count(pager->screen);
 
 	if (pager->properties_dialog)
 	{
+		int            i;
+		CtkTreeIter    iter;
+		VnckWorkspace *workspace;
+
+		workspace = NULL;
+
 		if (nr_ws != ctk_spin_button_get_value_as_int(CTK_SPIN_BUTTON(pager->num_workspaces_spin)))
 			ctk_spin_button_set_value(CTK_SPIN_BUTTON(pager->num_workspaces_spin), nr_ws);
 

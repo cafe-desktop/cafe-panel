@@ -1019,10 +1019,11 @@ panel_widget_switch_move (PanelWidget *panel,
 				ctk_widget_queue_resize (CTK_WIDGET (panel));
 		}
 	} else {
-		AppletData *nad;
-
 		if (list->next) {
+			AppletData *nad;
+
 			nad = list->next->data;
+
 			if (nad->expand_major)
 				ctk_widget_queue_resize (CTK_WIDGET (panel));
 		}
@@ -1122,7 +1123,6 @@ panel_widget_push_move (PanelWidget *panel,
 			AppletData  *ad,
 			int          moveby)
 {
-	AppletData *pad;
 	int finalpos;
 	GList *list;
 
@@ -1143,7 +1143,10 @@ panel_widget_push_move (PanelWidget *panel,
 				break;
 
                 if (list->prev) {
+			AppletData *pad;
+
 			pad = list->prev->data;
+
 			if (pad->expand_major)
 				ctk_widget_queue_resize (CTK_WIDGET (panel));
 		}
@@ -1485,12 +1488,13 @@ panel_widget_size_allocate(CtkWidget *widget, CtkAllocation *allocation)
 		    list!=NULL;
 		    list = g_list_previous(list)) {
 			AppletData *ad = list->data;
-			int cells;
 
 			if (ad->constrained + ad->min_cells > i)
 				ad->constrained = MAX (i - ad->min_cells, 0);
 
 			if (ad->expand_major) {
+				int cells;
+
 				cells = (i - ad->constrained) - 1;
 
 				if (ad->size_hints)
@@ -2126,7 +2130,6 @@ static int
 move_timeout_handler(gpointer data)
 {
 	PanelWidget   *panel = data;
-	CdkDevice      *device;
 
 	g_return_val_if_fail(PANEL_IS_WIDGET(data),FALSE);
 
@@ -2141,8 +2144,10 @@ move_timeout_handler(gpointer data)
 	if(panel->currently_dragged_applet && repeat_if_outside) {
 		CtkWidget     *widget;
 		CtkAllocation  allocation;
+		CdkDevice     *device;
 		int            x,y;
 		int            w,h;
+
 
 		widget = panel->currently_dragged_applet->applet;
 

@@ -76,6 +76,8 @@ panel_cleanup_unregister (PanelCleanFunc func,
 	GSList *l, *next;
 	PanelClean *clean;
 
+	clean = NULL;
+
 	g_return_if_fail (func != NULL);
 
 	if (!cleaner)

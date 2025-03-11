@@ -78,6 +78,8 @@ clock_location_find_and_ref (GList       *locations,
         GList *l;
         ClockLocationPrivate *priv;
 
+        priv = NULL;
+
         for (l = locations; l != NULL; l = l->next) {
                 priv = clock_location_get_instance_private (l->data);
 

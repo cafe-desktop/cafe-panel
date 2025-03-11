@@ -56,10 +56,12 @@ cafe_panel_applet_info_new (const gchar  *iid,
 
 	/* CafeComponent compatibility */
 	if (old_ids != NULL) {
-		int i, len;
+		int len;
 
 		len = g_strv_length ((gchar **) old_ids);
 		if (len > 0) {
+			int i;
+
 			info->old_ids = g_new0 (gchar *, len + 1);
 			for (i = 0; i < len; i++)
 				info->old_ids[i] = g_strdup (old_ids[i]);

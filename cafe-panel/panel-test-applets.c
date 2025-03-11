@@ -268,7 +268,7 @@ setup_options (void)
 	char                *prefs_path = NULL;
 	char                *unique_key = NULL;
 	gboolean             unique_key_found = FALSE;
-	gchar              **dconf_paths;
+	gchar              **dconf_paths = NULL;
 	CtkListStore        *model;
 	CtkTreeIter          iter;
 	CtkCellRenderer     *renderer;
@@ -335,7 +335,6 @@ int
 main (int argc, char **argv)
 {
 	CtkBuilder *builder;
-	char       *applets_dir;
 	GError     *error;
 
 	bindtextdomain (GETTEXT_PACKAGE, CAFELOCALEDIR);
@@ -358,6 +357,8 @@ main (int argc, char **argv)
 	panel_modules_ensure_loaded ();
 
 	if (g_file_test ("../libcafe-panel-applet", G_FILE_TEST_IS_DIR)) {
+		char *applets_dir;
+
 		applets_dir = g_strdup_printf ("%s:../libcafe-panel-applet", CAFE_PANEL_APPLETS_DIR);
 		g_setenv ("CAFE_PANEL_APPLETS_DIR", applets_dir, FALSE);
 		g_free (applets_dir);

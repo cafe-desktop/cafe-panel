@@ -34,9 +34,10 @@ static void
 panel_modules_ensure_extension_points_registered (void)
 {
 	static gboolean registered_extensions = FALSE;
-	GIOExtensionPoint *ep;
 
 	if (!registered_extensions) {
+		GIOExtensionPoint *ep;
+
 		registered_extensions = TRUE;
 
 		ep = g_io_extension_point_register (CAFE_PANEL_APPLETS_MANAGER_EXTENSION_POINT_NAME);
@@ -48,12 +49,13 @@ void
 panel_modules_ensure_loaded (void)
 {
 	static gboolean loaded_dirs = FALSE;
-	const char *module_path;
 
 	panel_modules_ensure_extension_points_registered ();
 
 	if (!loaded_dirs) {
-		GList *modules;
+		const char *module_path;
+		GList      *modules;
+
 		loaded_dirs = TRUE;
 
 		/* We load the modules explicitly instead of using scan_all

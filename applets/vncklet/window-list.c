@@ -782,11 +782,12 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 
 static void call_system_monitor(CtkAction* action, TasklistData* tasklist)
 {
-	char *programpath;
 	int i;
 
 	for (i = 0; i < G_N_ELEMENTS(system_monitors); i += 1)
 	{
+		char *programpath;
+
 		programpath = g_find_program_in_path(system_monitors[i]);
 
 		if (programpath != NULL)

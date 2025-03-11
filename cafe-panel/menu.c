@@ -61,9 +61,10 @@ static gboolean panel_menu_key_press_handler (CtkWidget   *widget,
 static inline gboolean desktop_is_home_dir(void)
 {
 	gboolean retval = FALSE;
-	GSettings *settings;
 
 	if (cafe_gsettings_schema_exists (BAUL_PREFS_SCHEMA)) {
+		GSettings *settings;
+
 		settings = g_settings_new (BAUL_PREFS_SCHEMA);
 		retval = g_settings_get_boolean (settings, BAUL_PREFS_DESKTOP_IS_HOME_DIR_KEY);
 		g_object_unref (settings);
@@ -855,9 +856,7 @@ setup_internal_applet_drag (CtkWidget             *menuitem,
 static void
 submenu_to_display (CtkWidget *menu)
 {
-	CafeMenuTree           *tree;
 	CafeMenuTreeDirectory  *directory;
-	const char          *menu_path;
 	void               (*append_callback) (CtkWidget *, gpointer);
 	gpointer             append_data;
 
@@ -869,6 +868,9 @@ submenu_to_display (CtkWidget *menu)
 	directory = g_object_get_data (G_OBJECT (menu),
 				       "panel-menu-tree-directory");
 	if (!directory) {
+		CafeMenuTree *tree;
+		const char   *menu_path;
+
 		menu_path = g_object_get_data (G_OBJECT (menu),
 					       "panel-menu-tree-path");
 		if (!menu_path)

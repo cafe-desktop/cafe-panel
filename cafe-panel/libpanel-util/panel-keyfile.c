@@ -344,7 +344,6 @@ panel_key_file_ensure_C_key (GKeyFile   *keyfile,
 			     const char *key)
 {
 	char *C_value;
-	char *buffer;
 
 	/* Make sure we set the "C" locale strings to the terms we set here.
 	 * This is so that if the user logs into another locale they get their
@@ -352,6 +351,8 @@ panel_key_file_ensure_C_key (GKeyFile   *keyfile,
 	 * however, but the user created this entry herself so it's OK */
 	C_value = panel_key_file_get_string (keyfile, key);
 	if (C_value == NULL || C_value [0] == '\0') {
+		char *buffer;
+
 		buffer = panel_key_file_get_locale_string (keyfile, key);
 		if (buffer) {
 			panel_key_file_set_string (keyfile, key, buffer);

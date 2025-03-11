@@ -158,7 +158,6 @@ _panel_run_save_recent_programs_list (PanelRunDialog   *dialog,
 				      CtkComboBox      *entry,
 				      char             *lastcommand)
 {
-	CtkTreeModel *model;
 	CtkTreeIter   iter;
 	guint         history_max_size;
 	gboolean      history_reverse;
@@ -169,6 +168,8 @@ _panel_run_save_recent_programs_list (PanelRunDialog   *dialog,
 	if (history_max_size == 0)
 		g_settings_set_strv (dialog->settings, PANEL_RUN_HISTORY_KEY, NULL);
 	else {
+		CtkTreeModel *model;
+
 		model = ctk_combo_box_get_model (CTK_COMBO_BOX (entry));
 
 		/* reasonable upper bound for zero-terminated array with new command */
@@ -571,7 +572,7 @@ panel_run_dialog_append_file_utf8 (PanelRunDialog *dialog,
 				   const char     *file)
 {
 	const char *text;
-	char       *quoted, *temp;
+	char       *quoted;
 	CtkWidget  *entry;
 
 	/* Don't allow filenames beginning with '-' */
@@ -582,6 +583,8 @@ panel_run_dialog_append_file_utf8 (PanelRunDialog *dialog,
 	entry = ctk_bin_get_child (CTK_BIN (dialog->combobox));
 	text = ctk_entry_get_text (CTK_ENTRY (entry));
 	if (text && text [0]) {
+		char *temp;
+
 		temp = g_strconcat (text, " ", quoted, NULL);
 		ctk_entry_set_text (CTK_ENTRY (entry), temp);
 		g_free (temp);
@@ -1017,7 +1020,7 @@ program_list_selection_changed (CtkTreeSelection *selection,
 	CtkTreeIter   iter;
 	CtkTreeIter   filter_iter;
 	char         *temp;
-	char         *path, *stripped;
+	char         *path;
 	gboolean      terminal;
 	GKeyFile     *key_file;
 	CtkWidget    *entry;
@@ -1063,6 +1066,8 @@ program_list_selection_changed (CtkTreeSelection *selection,
 	entry = ctk_bin_get_child (CTK_BIN (dialog->combobox));
 	temp = panel_key_file_get_string (key_file, "Exec");
 	if (temp) {
+		char *stripped;
+
 		stripped = remove_parameters (temp);
 		ctk_entry_set_text (CTK_ENTRY (entry), stripped);
 		g_free (stripped);
@@ -1115,8 +1120,6 @@ static void
 panel_run_dialog_setup_program_list (PanelRunDialog *dialog,
 				     CtkBuilder     *gui)
 {
-	CtkTreeSelection *selection;
-
 	dialog->program_list = PANEL_CTK_BUILDER_GET (gui, "program_list");
 	dialog->program_list_box = PANEL_CTK_BUILDER_GET (gui, "program_list_box");
 	dialog->program_label = PANEL_CTK_BUILDER_GET (gui, "program_label");
@@ -1130,6 +1133,8 @@ panel_run_dialog_setup_program_list (PanelRunDialog *dialog,
 	g_object_ref (dialog->program_list_box);
 
 	if (panel_profile_get_enable_program_list ()) {
+		CtkTreeSelection *selection;
+
 		selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (dialog->program_list));
 		ctk_tree_selection_set_mode (selection, CTK_SELECTION_SINGLE);
 
@@ -1247,9 +1252,9 @@ file_button_browse_response (CtkWidget      *chooser,
 			     gint            response,
 			     PanelRunDialog *dialog)
 {
-	char *file;
-
 	if (response == CTK_RESPONSE_OK) {
+		char *file;
+
 		file = ctk_file_chooser_get_filename (CTK_FILE_CHOOSER (chooser));
 		panel_run_dialog_append_file (dialog, file);
 		g_free (file);
@@ -1369,6 +1374,7 @@ fill_possible_executables (void)
 		char       *filename;
 		GDir       *dir;
 
+		filename = NULL;
 		dir = g_dir_open (pathv [i], 0, NULL);
 
 		if (!dir)
@@ -1502,11 +1508,8 @@ entry_event (CtkEditable    *entry,
 	     CdkEventKey    *event,
 	     PanelRunDialog *dialog)
 {
-	CtkTreeSelection *selection;
 	char             *prefix;
-	char             *nospace_prefix;
 	char             *nprefix;
-	char             *temp;
 	int               pos, tmp;
 
 	if (event->type != CDK_KEY_PRESS)
@@ -1517,6 +1520,8 @@ entry_event (CtkEditable    *entry,
 	*/
 	dialog->use_program_list = FALSE;
 	if (panel_profile_get_enable_program_list ()) {
+		CtkTreeSelection *selection;
+
 		selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (dialog->program_list));
 		ctk_tree_selection_unselect_all (selection);
 	}
@@ -1538,6 +1543,8 @@ entry_event (CtkEditable    *entry,
 			return TRUE;
 		}
 	} else if (event->length > 0) {
+		char *nospace_prefix;
+		char *temp;
 
 		ctk_editable_get_selection_bounds (entry, &pos, &tmp);
 
@@ -1619,7 +1626,6 @@ combobox_changed (CtkComboBox    *combobox,
 {
 	char *text;
 	char *start;
-	char *msg;
 
 	text = g_strdup (panel_run_dialog_get_combo_text (dialog));
 
@@ -1686,6 +1692,8 @@ combobox_changed (CtkComboBox    *combobox,
 
 	if (panel_profile_get_enable_program_list () &&
 	    !dialog->use_program_list) {
+		char *msg;
+
 		msg = g_strdup_printf (_("Will run command: '%s'"),
 				       start);
 		ctk_label_set_text (CTK_LABEL (dialog->program_label), msg);

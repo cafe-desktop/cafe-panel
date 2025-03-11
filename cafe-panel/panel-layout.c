@@ -139,10 +139,7 @@ panel_layout_append_group_helper (GKeyFile                  *keyfile,
     char       *path = NULL;
     GSettings  *settings = NULL;
     char      **keyfile_keys = NULL;
-    char       *value_str;
-    int         value_int;
-    gboolean    value_boolean;
-    int         i, j;
+    int         i;
     GError     *error = NULL;
     gchar     **existing_ids;
     gboolean    existing_id = FALSE;
@@ -209,6 +206,7 @@ panel_layout_append_group_helper (GKeyFile                  *keyfile,
 
         /* validate/add keys from the keyfile */
         for (i = 0; keyfile_keys[i] != NULL; i++) {
+            int j;
             gboolean found = FALSE;
 
             for (j = 0; j < key_definitions_len; j++) {
@@ -228,9 +226,9 @@ panel_layout_append_group_helper (GKeyFile                  *keyfile,
 
             switch (key_definitions[j].type) {
                 case G_TYPE_STRING:
-                    value_str = g_key_file_get_string (keyfile,
-                                                       group, keyfile_keys[i],
-                                                       NULL);
+                    char *value_str = g_key_file_get_string (keyfile,
+                                                             group, keyfile_keys[i],
+                                                             NULL);
                     if (value_str)
                         g_settings_set_string (settings,
                                                key_definitions[j].name,
@@ -239,18 +237,18 @@ panel_layout_append_group_helper (GKeyFile                  *keyfile,
                     break;
 
                 case G_TYPE_INT:
-                    value_int = g_key_file_get_integer (keyfile,
-                                                        group, keyfile_keys[i],
-                                                        NULL);
+                    int value_int = g_key_file_get_integer (keyfile,
+                                                            group, keyfile_keys[i],
+                                                            NULL);
                     g_settings_set_int (settings,
                                         key_definitions[j].name,
                                         value_int);
                     break;
 
                 case G_TYPE_BOOLEAN:
-                    value_boolean = g_key_file_get_boolean (keyfile,
-                                                            group, keyfile_keys[i],
-                                                            NULL);
+                    gboolean value_boolean = g_key_file_get_boolean (keyfile,
+                                                                     group, keyfile_keys[i],
+                                                                     NULL);
                     g_settings_set_boolean (settings,
                                             key_definitions[j].name,
                                             value_boolean);

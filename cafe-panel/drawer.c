@@ -727,9 +727,8 @@ panel_drawer_set_dnd_enabled (Drawer   *drawer,
 void
 drawer_query_deletion (Drawer *drawer)
 {
-    CtkWidget *dialog;
-
      if (drawer->toplevel) {
+        CtkWidget   *dialog;
         PanelWidget *panel_widget;
 
         panel_widget = panel_toplevel_get_panel_widget (drawer->toplevel);

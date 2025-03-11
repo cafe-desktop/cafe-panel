@@ -663,13 +663,13 @@ static char *
 panel_launcher_find_writable_uri (const char *launcher_location,
 				  const char *source)
 {
-	char *path;
-	char *uri;
-
 	if (!launcher_location)
 		return panel_make_unique_desktop_uri (NULL, source);
 
 	if (!strchr (launcher_location, G_DIR_SEPARATOR)) {
+		char *path;
+		char *uri;
+
 		path = panel_make_full_path (NULL, launcher_location);
 		uri = g_filename_to_uri (path, NULL, NULL);
 		g_free (path);
@@ -704,13 +704,14 @@ launcher_command_changed (PanelDItemEditor *dialog,
 			  const char       *command,
 			  Launcher         *launcher)
 {
-	char     *exec;
-	char     *old_exec;
 	GKeyFile *revert_key_file;
 
 	revert_key_file = panel_ditem_editor_get_revert_key_file (dialog);
 
 	if (revert_key_file) {
+		char *exec;
+		char *old_exec;
+
 		exec = panel_key_file_get_string (launcher->key_file, "Exec");
 		old_exec = panel_key_file_get_string (revert_key_file, "Exec");
 
@@ -1167,9 +1168,9 @@ void
 panel_launcher_set_dnd_enabled (Launcher *launcher,
 				gboolean  dnd_enabled)
 {
-	cairo_surface_t *surface;
-
 	if (dnd_enabled) {
+		cairo_surface_t *surface;
+
 		static CtkTargetEntry dnd_targets[] = {
 			{ "application/x-panel-icon-internal", 0, TARGET_ICON_INTERNAL },
 			{ "text/uri-list", 0, TARGET_URI_LIST }
@@ -1180,6 +1181,7 @@ panel_launcher_set_dnd_enabled (Launcher *launcher,
 				     CDK_BUTTON1_MASK,
 				     dnd_targets, 2,
 				     CDK_ACTION_COPY | CDK_ACTION_MOVE);
+
 		surface = button_widget_get_surface (BUTTON_WIDGET (launcher->button));
 		if (surface) {
 			GdkPixbuf *pixbuf;

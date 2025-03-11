@@ -833,6 +833,7 @@ panel_util_get_file_display_name_if_mount (GFile *file)
 	GList          *mounts, *l;
 	char           *ret;
 
+	compare = NULL;
 	ret = NULL;
 
 	/* compare with all mounts */
@@ -860,15 +861,16 @@ panel_util_get_file_display_for_common_files (GFile *file)
 
 	compare = g_file_new_for_path (g_get_home_dir ());
 	if (g_file_equal (file, compare)) {
-		GSettings *baul_desktop_settings;
 		char *baul_home_icon_name = NULL;
 
 		g_object_unref (compare);
 
 		if (cafe_gsettings_schema_exists (BAUL_DESKTOP_SCHEMA)) {
+			GSettings *baul_desktop_settings;
+
 			baul_desktop_settings = g_settings_new (BAUL_DESKTOP_SCHEMA);
 			baul_home_icon_name = g_settings_get_string (baul_desktop_settings,
-														 BAUL_DESKTOP_HOME_ICON_NAME_KEY);
+								     BAUL_DESKTOP_HOME_ICON_NAME_KEY);
 			g_object_unref (baul_desktop_settings);
 		}
 		if (PANEL_GLIB_STR_EMPTY (baul_home_icon_name)) {
@@ -951,6 +953,7 @@ panel_util_get_file_icon_name_if_mount (GFile *file)
 	GList          *mounts, *l;
 	char           *ret;
 
+	compare = NULL;
 	ret = NULL;
 
 	/* compare with all mounts */
