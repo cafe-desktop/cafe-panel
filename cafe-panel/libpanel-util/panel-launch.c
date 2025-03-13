@@ -76,9 +76,9 @@ _panel_launch_handle_error (const gchar  *name,
 }
 
 static void
-dummy_child_watch (GPid     pid,
-		   gint     status,
-		   gpointer user_data)
+dummy_child_watch (GPid     pid G_GNUC_UNUSED,
+		   gint     status G_GNUC_UNUSED,
+		   gpointer user_data G_GNUC_UNUSED)
 {
 	/* Nothing, this is just to ensure we don't double fork
 	* and break pkexec:
@@ -87,9 +87,9 @@ dummy_child_watch (GPid     pid,
 }
 
 static void
-gather_pid_callback (GDesktopAppInfo   *gapp,
+gather_pid_callback (GDesktopAppInfo   *gapp G_GNUC_UNUSED,
 		     GPid               pid,
-		     gpointer           data)
+		     gpointer           data G_GNUC_UNUSED)
 {
 	g_child_watch_add (pid, dummy_child_watch, NULL);
 }
