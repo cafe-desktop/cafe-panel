@@ -238,7 +238,7 @@ panel_widget_reset_saved_focus (PanelWidget *panel)
 static void
 remove_tab_bindings (CtkBindingSet    *binding_set,
 		     CdkModifierType   modifiers,
-		     gboolean          next)
+		     gboolean          next G_GNUC_UNUSED)
 {
 	ctk_binding_entry_remove (binding_set, CDK_KEY_Tab, modifiers);
 	ctk_binding_entry_remove (binding_set, CDK_KEY_KP_Tab, modifiers);
@@ -1793,7 +1793,7 @@ void
 panel_widget_applet_drag_start (PanelWidget *panel,
 				CtkWidget   *applet,
 				int          drag_off,
-				guint32      time_)
+				guint32      time_ G_GNUC_UNUSED)
 {
 	CdkWindow *window;
 
@@ -2226,7 +2226,7 @@ panel_widget_applet_button_press_event (CtkWidget      *widget,
 
 static gboolean
 panel_widget_applet_button_release_event (CtkWidget      *widget,
-					  CdkEventButton *event)
+					  CdkEventButton *event G_GNUC_UNUSED)
 {
 	CtkWidget   *parent;
 	PanelWidget *panel;
@@ -2346,7 +2346,8 @@ bind_applet_events(CtkWidget *widget, gpointer data)
 }
 
 static void
-panel_widget_applet_destroy (CtkWidget *applet, gpointer data)
+panel_widget_applet_destroy (CtkWidget *applet,
+			     gpointer   data G_GNUC_UNUSED)
 {
 	AppletData *ad;
 	CtkWidget  *parent;
@@ -2897,7 +2898,7 @@ panel_widget_set_applet_size_hints (PanelWidget *panel,
 }
 
 void
-panel_widget_set_applet_locked (PanelWidget *panel,
+panel_widget_set_applet_locked (PanelWidget *panel G_GNUC_UNUSED,
 				CtkWidget   *applet,
 				gboolean     locked)
 {
@@ -2911,7 +2912,7 @@ panel_widget_set_applet_locked (PanelWidget *panel,
 }
 
 gboolean
-panel_widget_get_applet_locked (PanelWidget *panel,
+panel_widget_get_applet_locked (PanelWidget *panel G_GNUC_UNUSED,
 				CtkWidget   *applet)
 {
 	AppletData *ad;
@@ -2924,7 +2925,7 @@ panel_widget_get_applet_locked (PanelWidget *panel,
 }
 
 gboolean
-panel_widget_toggle_applet_locked (PanelWidget *panel,
+panel_widget_toggle_applet_locked (PanelWidget *panel G_GNUC_UNUSED,
 				   CtkWidget   *applet)
 {
 	AppletData *ad;
