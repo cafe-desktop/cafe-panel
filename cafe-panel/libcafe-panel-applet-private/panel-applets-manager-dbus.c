@@ -268,9 +268,9 @@ cafe_panel_applets_manager_get_applets_dirs (void)
 }
 
 static void
-applets_directory_changed (GFileMonitor     *monitor,
+applets_directory_changed (GFileMonitor     *monitor G_GNUC_UNUSED,
 			   GFile            *file,
-			   GFile            *other_file,
+			   GFile            *other_file G_GNUC_UNUSED,
 			   GFileMonitorEvent event_type,
 			   gpointer          user_data)
 {
@@ -624,9 +624,9 @@ cafe_panel_applets_manager_dbus_get_applet_info_from_old_id (CafePanelAppletsMan
 }
 
 static gboolean
-cafe_panel_applets_manager_dbus_load_applet (CafePanelAppletsManager         *manager,
-					const gchar                 *iid,
-					CafePanelAppletFrameActivating  *frame_act)
+cafe_panel_applets_manager_dbus_load_applet (CafePanelAppletsManager        *manager G_GNUC_UNUSED,
+					     const gchar                    *iid,
+					     CafePanelAppletFrameActivating *frame_act)
 {
 	return cafe_panel_applet_frame_dbus_load (iid, frame_act);
 }
