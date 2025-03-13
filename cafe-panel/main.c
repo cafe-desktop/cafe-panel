@@ -62,10 +62,10 @@ static const GOptionEntry options[] = {
 };
 
 static void
-parsing_error_cb (CtkCssProvider *provider,
-                  CtkCssSection  *section,
-                  GError         *error,
-                  gpointer        user_data)
+parsing_error_cb (CtkCssProvider *provider G_GNUC_UNUSED,
+		  CtkCssSection  *section G_GNUC_UNUSED,
+		  GError         *error,
+		  gpointer        user_data G_GNUC_UNUSED)
 {
     g_warning ("Can't parse cafe-panel's CSS custom description: %s\n", error->message);
 }
