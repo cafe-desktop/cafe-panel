@@ -113,9 +113,9 @@ panel_global_config_set_entry (GSettings *settings, gchar *key)
 }
 
 static void
-panel_global_config_notify (GSettings   *settings,
-							gchar       *key,
-							gpointer     user_data)
+panel_global_config_notify (GSettings *settings,
+			    gchar     *key,
+			    gpointer   user_data G_GNUC_UNUSED)
 {
         panel_global_config_set_entry (settings, key);
 }
