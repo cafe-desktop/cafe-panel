@@ -386,9 +386,9 @@ set_environment (gpointer display)
 }
 
 static void
-dummy_child_watch (GPid         pid,
-		   		   gint         status,
-		  		   gpointer user_data)
+dummy_child_watch (GPid     pid G_GNUC_UNUSED,
+		   gint     status G_GNUC_UNUSED,
+		   gpointer user_data G_GNUC_UNUSED)
 {
 	/* Nothing, this is just to ensure we don't double fork
 	 * and break pkexec:
@@ -663,9 +663,9 @@ fuzzy_command_match (const char *cmd1,
 
 static gboolean
 panel_run_dialog_make_all_list_visible (CtkTreeModel *model,
-					CtkTreePath  *path,
+					CtkTreePath  *path G_GNUC_UNUSED,
 					CtkTreeIter  *iter,
-					gpointer      data)
+					gpointer      data G_GNUC_UNUSED)
 {
 	ctk_list_store_set (CTK_LIST_STORE (model), iter,
 			    COLUMN_VISIBLE, TRUE,
@@ -1100,9 +1100,9 @@ program_list_selection_changed (CtkTreeSelection *selection,
 }
 
 static void
-program_list_selection_activated (CtkTreeView       *view,
-				  CtkTreePath       *path,
-				  CtkTreeViewColumn *column,
+program_list_selection_activated (CtkTreeView       *view G_GNUC_UNUSED,
+				  CtkTreePath       *path G_GNUC_UNUSED,
+				  CtkTreeViewColumn *column G_GNUC_UNUSED,
 				  PanelRunDialog    *dialog)
 {
 	CtkTreeSelection *selection;
@@ -1217,8 +1217,8 @@ panel_run_dialog_content_notify (GSettings      *settings,
 
 static void
 list_expander_toggled (CtkExpander    *expander,
-		       GParamSpec     *pspec,
-		       PanelRunDialog *dialog)
+		       GParamSpec     *pspec G_GNUC_UNUSED,
+		       PanelRunDialog *dialog G_GNUC_UNUSED)
 {
 	panel_profile_set_show_program_list (ctk_expander_get_expanded (expander));
 }
@@ -1266,7 +1266,7 @@ file_button_browse_response (CtkWidget      *chooser,
 }
 
 static void
-file_button_clicked (CtkButton      *button,
+file_button_clicked (CtkButton      *button G_GNUC_UNUSED,
 		     PanelRunDialog *dialog)
 {
 	CtkWidget *chooser;
@@ -1305,7 +1305,7 @@ static GList *
 fill_files_from (const char *dirname,
 		 const char *dirprefix,
 		 char        prefix,
-		 GList      *existing_items)
+		 GList      *existing_items G_GNUC_UNUSED)
 {
 	GList         *list;
 	DIR           *dir;
@@ -1621,7 +1621,7 @@ entry_event (CtkEditable    *entry,
 }
 
 static void
-combobox_changed (CtkComboBox    *combobox,
+combobox_changed (CtkComboBox    *combobox G_GNUC_UNUSED,
 		  PanelRunDialog *dialog)
 {
 	char *text;
@@ -1713,12 +1713,12 @@ combobox_changed (CtkComboBox    *combobox,
 }
 
 static void
-entry_drag_data_received (CtkEditable      *entry,
+entry_drag_data_received (CtkEditable      *entry G_GNUC_UNUSED,
 			  CdkDragContext   *context,
-			  gint              x,
-			  gint              y,
+			  gint              x G_GNUC_UNUSED,
+			  gint              y G_GNUC_UNUSED,
 			  CtkSelectionData *selection_data,
-			  guint             info,
+			  guint             info G_GNUC_UNUSED,
 			  guint32           time,
 			  PanelRunDialog   *dialog)
 {
@@ -1879,12 +1879,12 @@ panel_run_dialog_create_desktop_file (PanelRunDialog *dialog)
 }
 
 static void
-pixmap_drag_data_get (CtkWidget          *run_dialog,
-	  	      CdkDragContext     *context,
-		      CtkSelectionData   *selection_data,
-		      guint               info,
-		      guint               time,
-		      PanelRunDialog     *dialog)
+pixmap_drag_data_get (CtkWidget        *run_dialog G_GNUC_UNUSED,
+	  	      CdkDragContext   *context G_GNUC_UNUSED,
+		      CtkSelectionData *selection_data,
+		      guint             info G_GNUC_UNUSED,
+		      guint             time G_GNUC_UNUSED,
+		      PanelRunDialog   *dialog)
 {
 	char *uri;
 
@@ -1902,7 +1902,7 @@ pixmap_drag_data_get (CtkWidget          *run_dialog,
 }
 
 static void
-panel_run_dialog_style_updated (CtkWidget *widget,
+panel_run_dialog_style_updated (CtkWidget      *widget G_GNUC_UNUSED,
 				PanelRunDialog *dialog)
 {
   if (dialog->icon) {
@@ -1915,8 +1915,8 @@ panel_run_dialog_style_updated (CtkWidget *widget,
 }
 
 static void
-panel_run_dialog_screen_changed (CtkWidget      *widget,
-				 CdkScreen      *prev_screen,
+panel_run_dialog_screen_changed (CtkWidget      *widget G_GNUC_UNUSED,
+				 CdkScreen      *prev_screen G_GNUC_UNUSED,
 				 PanelRunDialog *dialog)
 {
   if (dialog->icon) {
@@ -1948,9 +1948,9 @@ panel_run_dialog_setup_pixmap (PanelRunDialog *dialog,
 
 /* this runs after entry_event() */
 static gboolean
-key_press_event (CtkWidget    *run_dialog,
-				CdkEventKey    *event,
-				PanelRunDialog *dialog)
+key_press_event (CtkWidget      *run_dialog G_GNUC_UNUSED,
+		 CdkEventKey    *event,
+		 PanelRunDialog *dialog)
 {
 
 	/* allow only key presses */
@@ -2042,7 +2042,7 @@ panel_run_dialog_disconnect_pixmap (PanelRunDialog *dialog)
 }
 
 static void
-panel_run_dialog_static_dialog_destroyed (PanelRunDialog *dialog)
+panel_run_dialog_static_dialog_destroyed (PanelRunDialog *dialog G_GNUC_UNUSED)
 {
 	/* just reset the static dialog to NULL for next time */
 	static_dialog = NULL;
