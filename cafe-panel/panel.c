@@ -117,7 +117,8 @@ orient_change_foreach(CtkWidget *w, gpointer data)
 
 
 static void
-panel_orient_change (CtkWidget *widget, gpointer data)
+panel_orient_change (CtkWidget *widget,
+		     gpointer   data G_GNUC_UNUSED)
 {
 	ctk_container_foreach(CTK_CONTAINER(widget),
 			      orient_change_foreach,
@@ -147,7 +148,8 @@ size_change_foreach(CtkWidget *w, gpointer data)
 
 
 static void
-panel_size_change (CtkWidget *widget, gpointer data)
+panel_size_change (CtkWidget *widget,
+		   gpointer   data G_GNUC_UNUSED)
 {
 	ctk_container_foreach(CTK_CONTAINER(widget), size_change_foreach,
 			      widget);
@@ -185,7 +187,8 @@ back_change_foreach (CtkWidget   *widget,
 }
 
 static void
-panel_back_change (CtkWidget *widget, gpointer data)
+panel_back_change (CtkWidget *widget,
+		   gpointer   data G_GNUC_UNUSED)
 {
 	ctk_container_foreach (CTK_CONTAINER (widget),
 			       (CtkCallback) back_change_foreach,
@@ -198,7 +201,9 @@ panel_back_change (CtkWidget *widget, gpointer data)
 }
 
 static void
-cafe_panel_applet_added(CtkWidget *widget, CtkWidget *applet, gpointer data)
+cafe_panel_applet_added (CtkWidget *widget,
+			 CtkWidget *applet,
+			 gpointer   data G_GNUC_UNUSED)
 {
 	AppletInfo    *info;
 
@@ -210,7 +215,9 @@ cafe_panel_applet_added(CtkWidget *widget, CtkWidget *applet, gpointer data)
 }
 
 static void
-cafe_panel_applet_removed(CtkWidget *widget, CtkWidget *applet, gpointer data)
+cafe_panel_applet_removed (CtkWidget *widget,
+			   CtkWidget *applet,
+			   gpointer   data G_GNUC_UNUSED)
 {
 	PanelToplevel *toplevel;
 	AppletInfo    *info;
@@ -238,7 +245,7 @@ deactivate_idle (gpointer data)
 }
 
 static void
-context_menu_deactivate (CtkWidget *w,
+context_menu_deactivate (CtkWidget *w G_GNUC_UNUSED,
 			 PanelData *pd)
 {
 	if (pd->deactivate_idle == 0)
@@ -248,7 +255,7 @@ context_menu_deactivate (CtkWidget *w,
 }
 
 static void
-context_menu_show (CtkWidget *w,
+context_menu_show (CtkWidget *w G_GNUC_UNUSED,
 		   PanelData *pd)
 {
 	panel_toplevel_push_autohide_disabler (PANEL_TOPLEVEL (pd->panel));
@@ -290,7 +297,9 @@ panel_destroy (PanelToplevel *toplevel,
 }
 
 static void
-cafe_panel_applet_move(PanelWidget *panel, CtkWidget *widget, gpointer data)
+cafe_panel_applet_move (PanelWidget *panel G_GNUC_UNUSED,
+			CtkWidget   *widget,
+			gpointer     data G_GNUC_UNUSED)
 {
 	AppletInfo *info;
 
@@ -339,8 +348,8 @@ make_popup_panel_menu (PanelWidget *panel_widget)
 
 static gboolean
 panel_popup_menu (PanelToplevel *toplevel,
-		  guint          button,
-		  guint32        activate_time)
+		  guint          button G_GNUC_UNUSED,
+		  guint32        activate_time G_GNUC_UNUSED)
 {
 	PanelWidget *panel_widget;
 	CtkWidget   *menu;
@@ -1007,11 +1016,11 @@ panel_check_drop_forbidden (PanelWidget    *panel,
 }
 
 static gboolean
-drag_motion_cb (CtkWidget	   *widget,
-		CdkDragContext     *context,
-		gint                x,
-		gint                y,
-		guint               time)
+drag_motion_cb (CtkWidget      *widget,
+		CdkDragContext *context,
+		gint            x G_GNUC_UNUSED,
+		gint            y G_GNUC_UNUSED,
+		guint           time)
 {
 	PanelToplevel *toplevel;
 	PanelWidget   *panel_widget;
@@ -1036,12 +1045,12 @@ drag_motion_cb (CtkWidget	   *widget,
 }
 
 static gboolean
-drag_drop_cb (CtkWidget	        *widget,
-	      CdkDragContext    *context,
-	      gint               x,
-	      gint               y,
-	      guint              time,
-	      Launcher          *launcher)
+drag_drop_cb (CtkWidget	     *widget,
+	      CdkDragContext *context,
+	      gint            x G_GNUC_UNUSED,
+	      gint            y G_GNUC_UNUSED,
+	      guint           time,
+	      Launcher       *launcher G_GNUC_UNUSED)
 {
 	CdkAtom ret_atom = NULL;
 
@@ -1054,10 +1063,10 @@ drag_drop_cb (CtkWidget	        *widget,
 }
 
 static void
-drag_leave_cb (CtkWidget	*widget,
-	       CdkDragContext   *context,
-	       guint             time,
-	       Launcher         *launcher)
+drag_leave_cb (CtkWidget      *widget,
+	       CdkDragContext *context G_GNUC_UNUSED,
+	       guint           time G_GNUC_UNUSED,
+	       Launcher       *launcher G_GNUC_UNUSED)
 {
 	PanelToplevel *toplevel;
 
@@ -1139,10 +1148,10 @@ panel_receive_dnd_data (PanelWidget      *panel,
 }
 
 static void
-drag_data_recieved_cb (CtkWidget	*widget,
+drag_data_recieved_cb (CtkWidget        *widget,
 		       CdkDragContext   *context,
-		       gint              x,
-		       gint              y,
+		       gint              x G_GNUC_UNUSED,
+		       gint              y G_GNUC_UNUSED,
 		       CtkSelectionData *selection_data,
 		       guint             info,
 		       guint             time)
@@ -1317,7 +1326,7 @@ panel_deletion_response (CtkWidget     *dialog,
 }
 
 static void
-panel_deletion_destroy_dialog (CtkWidget *widget,
+panel_deletion_destroy_dialog (CtkWidget     *widget G_GNUC_UNUSED,
 			       PanelToplevel *toplevel)
 {
 	panel_toplevel_pop_autohide_disabler (toplevel);
