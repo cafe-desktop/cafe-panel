@@ -52,7 +52,7 @@ show_uri (const char *uri, const char *mime_type, CdkScreen *screen,
 
 static void
 recent_documents_activate_cb (CtkRecentChooser *chooser,
-			      gpointer          data)
+			      gpointer          data G_GNUC_UNUSED)
 {
 	CtkRecentInfo *recent_info;
 	const char    *uri;
