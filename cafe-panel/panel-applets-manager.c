@@ -33,12 +33,12 @@
 G_DEFINE_ABSTRACT_TYPE (CafePanelAppletsManager, cafe_panel_applets_manager, G_TYPE_OBJECT)
 
 static void
-cafe_panel_applets_manager_init (CafePanelAppletsManager *manager)
+cafe_panel_applets_manager_init (CafePanelAppletsManager *manager G_GNUC_UNUSED)
 {
 }
 
 static void
-cafe_panel_applets_manager_class_init (CafePanelAppletsManagerClass *class)
+cafe_panel_applets_manager_class_init (CafePanelAppletsManagerClass *class G_GNUC_UNUSED)
 {
 }
 
@@ -47,7 +47,7 @@ cafe_panel_applets_manager_class_init (CafePanelAppletsManagerClass *class)
 static GSList *cafe_panel_applets_managers = NULL;
 
 static void
-_cafe_panel_applets_manager_cleanup (gpointer data)
+_cafe_panel_applets_manager_cleanup (gpointer data G_GNUC_UNUSED)
 {
 	g_slist_foreach (cafe_panel_applets_managers, (GFunc) g_object_unref, NULL);
 	g_slist_free (cafe_panel_applets_managers);
