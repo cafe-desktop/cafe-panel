@@ -209,7 +209,7 @@ panel_action_lock_invoke_menu (PanelActionButton *button,
 /* Log Out
  */
 static void
-panel_action_logout (CtkWidget *widget)
+panel_action_logout (CtkWidget *widget G_GNUC_UNUSED)
 {
 	PanelSessionManager *manager;
 	gboolean             prompt = TRUE;
@@ -235,7 +235,7 @@ panel_action_logout (CtkWidget *widget)
 }
 
 static void
-panel_action_shutdown (CtkWidget *widget)
+panel_action_shutdown (CtkWidget *widget G_GNUC_UNUSED)
 {
 	PanelSessionManager *manager;
 
@@ -564,11 +564,11 @@ panel_action_button_set_property (GObject      *object,
 }
 
 static void
-panel_action_button_drag_data_get (CtkWidget          *widget,
-				   CdkDragContext     *context,
-				   CtkSelectionData   *selection_data,
-				   guint               info,
-				   guint               time)
+panel_action_button_drag_data_get (CtkWidget        *widget,
+				   CdkDragContext   *context G_GNUC_UNUSED,
+				   CtkSelectionData *selection_data,
+				   guint             info G_GNUC_UNUSED,
+				   guint             time G_GNUC_UNUSED)
 {
 	PanelActionButton *button;
 	char              *drag_data;
