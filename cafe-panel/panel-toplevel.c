@@ -544,7 +544,8 @@ static void panel_toplevel_begin_grab_op(PanelToplevel* toplevel, PanelGrabOpTyp
 	g_object_unref (cursor);
 }
 
-static void panel_toplevel_end_grab_op (PanelToplevel* toplevel, guint32 time_)
+static void panel_toplevel_end_grab_op (PanelToplevel *toplevel,
+					guint32        time_ G_GNUC_UNUSED)
 {
 	CtkWidget *widget;
 	CdkDisplay *display;
@@ -565,7 +566,8 @@ static void panel_toplevel_end_grab_op (PanelToplevel* toplevel, guint32 time_)
 	cdk_seat_ungrab (seat);
 }
 
-static void panel_toplevel_cancel_grab_op(PanelToplevel* toplevel, guint32 time_)
+static void panel_toplevel_cancel_grab_op (PanelToplevel *toplevel,
+					   guint32        time_ G_GNUC_UNUSED)
 {
 	panel_toplevel_set_orientation (toplevel, toplevel->priv->orig_orientation);
 	panel_toplevel_set_monitor (toplevel, toplevel->priv->orig_monitor);
@@ -1125,7 +1127,9 @@ static gboolean panel_toplevel_get_autohide_disabled(PanelToplevel* toplevel)
 	return toplevel->priv->n_autohide_disablers > 0 ? TRUE : FALSE;
 }
 
-static gboolean panel_toplevel_hide_button_event(PanelToplevel* toplevel, CdkEventButton* event, CtkButton* button)
+static gboolean panel_toplevel_hide_button_event (PanelToplevel  *toplevel,
+						  CdkEventButton *event,
+						  CtkButton      *button G_GNUC_UNUSED)
 {
 	if (event->button == 1)
 		return FALSE;
@@ -2590,7 +2594,7 @@ panel_toplevel_update_attach_orientation (PanelToplevel *toplevel)
 
 static void
 panel_toplevel_attach_widget_parent_set (PanelToplevel *toplevel,
-					 CtkWidget     *previous_parent,
+					 CtkWidget     *previous_parent G_GNUC_UNUSED,
 					 CtkWidget     *attach_widget)
 {
 	CtkWidget *panel_widget;
@@ -2628,7 +2632,7 @@ panel_toplevel_attach_toplevel_unhiding (PanelToplevel *toplevel)
 }
 
 static void
-panel_toplevel_reverse_arrow (PanelToplevel *toplevel,
+panel_toplevel_reverse_arrow (PanelToplevel *toplevel G_GNUC_UNUSED,
 			      CtkWidget     *button)
 {
 	CtkArrowType arrow_type;
@@ -3489,8 +3493,8 @@ panel_toplevel_button_release_event (CtkWidget      *widget,
 }
 
 static gboolean
-panel_toplevel_configure_event (CtkWidget	  *widget,
-				CdkEventConfigure *event)
+panel_toplevel_configure_event (CtkWidget         *widget,
+				CdkEventConfigure *event G_GNUC_UNUSED)
 {
 	PanelToplevel *toplevel;
 
@@ -4717,8 +4721,8 @@ panel_toplevel_setup_widgets (PanelToplevel *toplevel)
 }
 
 static void
-background_changed (PanelBackground *background,
-                    PanelToplevel   *toplevel)
+background_changed (PanelBackground *background G_GNUC_UNUSED,
+		    PanelToplevel   *toplevel)
 {
 	panel_toplevel_update_edges (toplevel);
 	panel_widget_emit_background_changed (toplevel->priv->panel_widget);
