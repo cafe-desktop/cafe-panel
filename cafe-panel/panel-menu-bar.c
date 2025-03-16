@@ -72,7 +72,8 @@ G_DEFINE_TYPE_WITH_PRIVATE (PanelMenuBar, panel_menu_bar, CTK_TYPE_MENU_BAR)
 
 static void panel_menu_bar_update_text_gravity(PanelMenuBar* menubar);
 
-static gboolean panel_menu_bar_reinit_tooltip(CtkWidget* widget, PanelMenuBar* menubar)
+static gboolean panel_menu_bar_reinit_tooltip (CtkWidget    *widget G_GNUC_UNUSED,
+					       PanelMenuBar *menubar)
 {
 	g_object_set(menubar->priv->applications_item, "has-tooltip", TRUE, NULL);
 	g_object_set(menubar->priv->places_item, "has-tooltip", TRUE, NULL);
@@ -108,7 +109,9 @@ static void panel_menu_bar_setup_tooltip(PanelMenuBar* menubar)
 	g_signal_connect(CTK_MENU_SHELL (menubar), "deactivate", G_CALLBACK (panel_menu_bar_reinit_tooltip), menubar);
 }
 
-static void panel_menu_bar_update_visibility (GSettings* settings, gchar* key, PanelMenuBar* menubar)
+static void panel_menu_bar_update_visibility (GSettings    *settings,
+					      gchar        *key G_GNUC_UNUSED,
+					      PanelMenuBar *menubar)
 {
 	CtkWidget* image;
 	gchar *str;
@@ -221,7 +224,8 @@ static void panel_menu_bar_set_property(GObject* object, guint prop_id, const GV
 	}
 }
 
-static void panel_menu_bar_parent_set(CtkWidget* widget, CtkWidget* previous_parent)
+static void panel_menu_bar_parent_set (CtkWidget *widget,
+				       CtkWidget *previous_parent G_GNUC_UNUSED)
 {
 	PanelMenuBar* menubar = PANEL_MENU_BAR(widget);
 	CtkWidget* parent;
@@ -403,7 +407,8 @@ void panel_menu_bar_invoke_menu(PanelMenuBar* menubar, const char* callback_name
 	}
 }
 
-void panel_menu_bar_popup_menu(PanelMenuBar* menubar, guint32 activate_time)
+void panel_menu_bar_popup_menu (PanelMenuBar *menubar,
+				guint32       activate_time G_GNUC_UNUSED)
 {
 	CtkMenu* menu;
 	CtkMenuShell* menu_shell;
