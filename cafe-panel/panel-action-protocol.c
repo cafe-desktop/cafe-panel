@@ -119,7 +119,7 @@ panel_action_protocol_kill_dialog (CdkScreen *screen,
 static CdkFilterReturn
 panel_action_protocol_filter (CdkXEvent *cdk_xevent,
 			      CdkEvent  *event,
-			      gpointer   data)
+			      gpointer   data G_GNUC_UNUSED)
 {
 	CdkWindow *window;
 	CdkScreen *screen;
