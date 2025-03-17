@@ -121,17 +121,17 @@ panel_layout_filename ()
 }
 
 static gboolean
-panel_layout_append_group_helper (GKeyFile                  *keyfile,
-                                  const char                *group,
-                                  int                        set_screen_to,
-                                  const char                *group_prefix,
-                                  char                      *id_list_key,
-                                  const char                *schema,
-                                  const char                *path_prefix,
-                                  const char                *default_prefix,
-                                  PanelLayoutKeyDefinition  *key_definitions,
-                                  int                        key_definitions_len,
-                                  const char                *type_for_error_message)
+panel_layout_append_group_helper (GKeyFile                 *keyfile,
+				  const char               *group,
+				  int                       set_screen_to,
+				  const char               *group_prefix,
+				  char                     *id_list_key,
+				  const char               *schema,
+				  const char               *path_prefix,
+				  const char               *default_prefix G_GNUC_UNUSED,
+				  PanelLayoutKeyDefinition *key_definitions,
+				  int                       key_definitions_len,
+				  const char               *type_for_error_message G_GNUC_UNUSED)
 {
     gboolean    retval = FALSE;
     const char *id;
@@ -288,9 +288,9 @@ panel_layout_append_group_helper (GKeyFile                  *keyfile,
 }
 
 static void
-panel_layout_apply_minimal_default (int          set_screen_to,
-                                    const char  *schema,
-                                    const char  *path_prefix)
+panel_layout_apply_minimal_default (int         set_screen_to G_GNUC_UNUSED,
+				    const char *schema,
+				    const char *path_prefix)
 {
     const char *unique_id = "bottom";
     char       *path = NULL;
