@@ -156,8 +156,8 @@ expand_collapse_child (CtkWidget *child,
 
 static void
 expand_collapse (CtkWidget  *expander,
-		 GParamSpec *pspec,
-                 gpointer    data)
+		 GParamSpec *pspec G_GNUC_UNUSED,
+		 gpointer    data)
 {
 	CtkWidget *box = data;
 
@@ -166,9 +166,9 @@ expand_collapse (CtkWidget  *expander,
 			       expander);
 }
 
-static void add_child (CtkContainer *container,
-                       CtkWidget    *child,
-                       CtkExpander  *expander)
+static void add_child (CtkContainer *container G_GNUC_UNUSED,
+		       CtkWidget    *child,
+		       CtkExpander  *expander)
 {
 	expand_collapse_child (child, expander);
 }
