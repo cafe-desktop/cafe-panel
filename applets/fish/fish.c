@@ -311,14 +311,17 @@ static void rotate_value_changed(CtkToggleButton* toggle, FishApplet* fish)
 			ctk_toggle_button_get_active (toggle));
 }
 
-static gboolean delete_event(CtkWidget* widget, FishApplet* fish)
+static gboolean delete_event(CtkWidget  *widget,
+			     FishApplet *fish G_GNUC_UNUSED)
 {
 	ctk_widget_hide (widget);
 
 	return TRUE;
 }
 
-static void handle_response(CtkWidget* widget, int id, FishApplet* fish)
+static void handle_response (CtkWidget  *widget G_GNUC_UNUSED,
+			     int         id,
+			     FishApplet *fish)
 {
 	if (id == CTK_RESPONSE_HELP) {
 		show_help (fish, "fish-settings");
@@ -378,7 +381,8 @@ static void chooser_preview_update(CtkFileChooser* file_chooser, gpointer data)
 						    have_preview);
 }
 
-static void display_preferences_dialog(CtkAction* action, FishApplet* fish)
+static void display_preferences_dialog (CtkAction  *action G_GNUC_UNUSED,
+					FishApplet *fish)
 {
 	CtkBuilder    *builder;
 	CtkWidget     *button;
@@ -525,12 +529,14 @@ static void display_preferences_dialog(CtkAction* action, FishApplet* fish)
 	g_object_unref (builder);
 }
 
-static void display_help_dialog(CtkAction* action, FishApplet* fish)
+static void display_help_dialog (CtkAction  *action G_GNUC_UNUSED,
+				 FishApplet *fish)
 {
 	show_help(fish, NULL);
 }
 
-static void display_about_dialog(CtkAction* action, FishApplet* fish)
+static void display_about_dialog (CtkAction  *action G_GNUC_UNUSED,
+				  FishApplet *fish)
 {
 	const char* author_format = _("%s the Fish");
 	const char* about_format = _("%s has no use what-so-ever. "
@@ -659,7 +665,9 @@ static inline void fish_close_channel(FishApplet* fish)
 	fish->io_channel = NULL;
 }
 
-static void handle_fortune_response(CtkWidget* widget, int id, FishApplet* fish)
+static void handle_fortune_response (CtkWidget  *widget G_GNUC_UNUSED,
+				     int         id,
+				     FishApplet *fish)
 {
 	if (id == FISH_RESPONSE_SPEAK)
 		display_fortune_dialog (fish);
@@ -1474,7 +1482,9 @@ static void update_pixmap(FishApplet* fish)
 	cairo_destroy (cr);
 }
 
-static gboolean fish_applet_draw(CtkWidget* widget, cairo_t *cr, FishApplet* fish)
+static gboolean fish_applet_draw (CtkWidget  *widget G_GNUC_UNUSED,
+				  cairo_t    *cr,
+				  FishApplet *fish)
 {
 	int width, height;
 	int src_x, src_y;
@@ -1506,7 +1516,9 @@ static gboolean fish_applet_draw(CtkWidget* widget, cairo_t *cr, FishApplet* fis
         return FALSE;
 }
 
-static void fish_applet_size_allocate(CtkWidget* widget, CtkAllocation* allocation, FishApplet* fish)
+static void fish_applet_size_allocate (CtkWidget     *widget G_GNUC_UNUSED,
+				       CtkAllocation *allocation,
+				       FishApplet    *fish)
 {
 	if (allocation->width  == fish->prev_allocation.width &&
 	    allocation->height == fish->prev_allocation.height)
@@ -1516,13 +1528,15 @@ static void fish_applet_size_allocate(CtkWidget* widget, CtkAllocation* allocati
 	g_idle_add (update_pixmap_in_idle, fish);
 }
 
-static void fish_applet_realize(CtkWidget* widget, FishApplet* fish)
+static void fish_applet_realize (CtkWidget  *widget G_GNUC_UNUSED,
+				 FishApplet *fish)
 {
 	if (!fish->surface)
 		update_pixmap (fish);
 }
 
-static void fish_applet_unrealize(CtkWidget* widget, FishApplet* fish)
+static void fish_applet_unrealize (CtkWidget  *widget G_GNUC_UNUSED,
+				   FishApplet *fish)
 {
 	if (fish->surface)
 		cairo_surface_destroy (fish->surface);
@@ -1564,7 +1578,9 @@ static void change_water(FishApplet* fish)
 			  G_CALLBACK (ctk_widget_destroy), NULL);
 }
 
-static gboolean handle_keypress(CtkWidget* widget, CdkEventKey* event, FishApplet* fish)
+static gboolean handle_keypress (CtkWidget   *widget G_GNUC_UNUSED,
+				 CdkEventKey *event,
+				 FishApplet  *fish)
 {
 	switch (event->keyval) {
 	case CDK_KEY_space:
@@ -1764,7 +1780,9 @@ static gboolean fish_applet_fill(FishApplet* fish)
 	return TRUE;
 }
 
-static gboolean fishy_factory(CafePanelApplet* applet, const char* iid, gpointer data)
+static gboolean fishy_factory (CafePanelApplet *applet,
+			       const char      *iid,
+			       gpointer         data G_GNUC_UNUSED)
 {
 	gboolean retval = FALSE;
 
@@ -1838,7 +1856,8 @@ static void fish_applet_dispose (GObject *object)
 	G_OBJECT_CLASS (parent_class)->dispose (object);
 }
 
-static void fish_applet_instance_init(FishApplet* fish, FishAppletClass* klass)
+static void fish_applet_instance_init (FishApplet      *fish,
+				       FishAppletClass *klass G_GNUC_UNUSED)
 {
 	fish->name     = NULL;
 	fish->image    = NULL;
