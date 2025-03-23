@@ -258,11 +258,11 @@ system_timezone_finalize (GObject *obj)
 }
 
 static void
-system_timezone_monitor_changed (GFileMonitor *handle,
-                                 GFile *file,
-                                 GFile *other_file,
-                                 GFileMonitorEvent event,
-                                 gpointer user_data)
+system_timezone_monitor_changed (GFileMonitor     *handle G_GNUC_UNUSED,
+				 GFile            *file G_GNUC_UNUSED,
+				 GFile            *other_file G_GNUC_UNUSED,
+				 GFileMonitorEvent event,
+				 gpointer          user_data)
 {
         SystemTimezonePrivate *priv;
         priv = system_timezone_get_instance_private (user_data);
@@ -723,10 +723,10 @@ recursive_compare (struct stat  *localtime_stat,
 
 static gboolean
 files_are_identical_inode (struct stat *a_stat,
-                           struct stat *b_stat,
-                           const char  *a_content,
-                           gsize        a_content_len,
-                           const char  *b_filename)
+			   struct stat *b_stat,
+			   const char  *a_content G_GNUC_UNUSED,
+			   gsize        a_content_len G_GNUC_UNUSED,
+			   const char  *b_filename G_GNUC_UNUSED)
 {
         return (a_stat->st_ino == b_stat->st_ino);
 }
