@@ -587,6 +587,10 @@ clock_map_display (ClockMap *this)
 
         if (priv->width > 0 || priv->height > 0)
                 clock_map_render_shadow (this);
+                
+        /* Ensure that the width-to-height ratio remains constant when resizing the image clock-map.png 2:1 */
+        ctk_widget_set_size_request (CTK_WIDGET (this), priv->width, priv->width / 2);
+        
 	ctk_widget_queue_draw (CTK_WIDGET (this));
 
         time (&priv->last_refresh);
