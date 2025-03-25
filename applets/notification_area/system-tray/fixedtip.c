@@ -49,8 +49,8 @@ G_DEFINE_TYPE_WITH_PRIVATE (NaFixedTip, na_fixed_tip, CTK_TYPE_WINDOW)
 
 static gboolean
 button_press_handler (CtkWidget      *fixedtip,
-                      CdkEventButton *event,
-                      gpointer        data)
+		      CdkEventButton *event,
+		      gpointer        data G_GNUC_UNUSED)
 {
   if (event->button == 1 && event->type == CDK_BUTTON_PRESS)
     g_signal_emit (fixedtip, fixedtip_signals[CLICKED], 0);
@@ -190,17 +190,17 @@ na_fixed_tip_position (NaFixedTip *fixedtip)
 }
 
 static void
-na_fixed_tip_parent_size_allocated (CtkWidget     *parent,
-                                    CtkAllocation *allocation,
-                                    NaFixedTip    *fixedtip)
+na_fixed_tip_parent_size_allocated (CtkWidget     *parent G_GNUC_UNUSED,
+				    CtkAllocation *allocation G_GNUC_UNUSED,
+				    NaFixedTip    *fixedtip)
 {
   na_fixed_tip_position (fixedtip);
 }
 
 static void
-na_fixed_tip_parent_screen_changed (CtkWidget  *parent,
-                                    CdkScreen  *new_screen,
-                                    NaFixedTip *fixedtip)
+na_fixed_tip_parent_screen_changed (CtkWidget  *parent G_GNUC_UNUSED,
+				    CdkScreen  *new_screen G_GNUC_UNUSED,
+				    NaFixedTip *fixedtip)
 {
   na_fixed_tip_position (fixedtip);
 }
