@@ -103,7 +103,9 @@ static void tasklist_update(TasklistData* tasklist)
 	vnck_tasklist_set_switch_workspace_on_unminimize(VNCK_TASKLIST(tasklist->tasklist), tasklist->move_unminimized_windows);
 }
 
-static void response_cb(CtkWidget* widget, int id, TasklistData* tasklist)
+static void response_cb (CtkWidget    *widget,
+			 int           id,
+			 TasklistData *tasklist G_GNUC_UNUSED)
 {
 	if (id == CTK_RESPONSE_HELP)
 	{
@@ -115,12 +117,15 @@ static void response_cb(CtkWidget* widget, int id, TasklistData* tasklist)
 	}
 }
 
-static void applet_realized(CafePanelApplet* applet, TasklistData* tasklist)
+static void applet_realized (CafePanelApplet *applet G_GNUC_UNUSED,
+			     TasklistData    *tasklist)
 {
 	tasklist->icon_theme = ctk_icon_theme_get_for_screen(ctk_widget_get_screen(tasklist->applet));
 }
 
-static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient orient, TasklistData* tasklist)
+static void applet_change_orient (CafePanelApplet      *applet G_GNUC_UNUSED,
+				  CafePanelAppletOrient orient,
+				  TasklistData         *tasklist)
 {
 	CtkOrientation new_orient;
 
@@ -146,7 +151,11 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 	tasklist_update(tasklist);
 }
 
-static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBackgroundType type, CdkColor* color, cairo_pattern_t* pattern, TasklistData* tasklist)
+static void applet_change_background (CafePanelApplet              *applet G_GNUC_UNUSED,
+				      CafePanelAppletBackgroundType type,
+				      CdkColor                     *color G_GNUC_UNUSED,
+				      cairo_pattern_t              *pattern G_GNUC_UNUSED,
+				      TasklistData                 *tasklist)
 {
 	switch (type)
 	{
@@ -266,7 +275,9 @@ static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, GdkPixbuf *
 	return FALSE;
 }
 
-static gboolean applet_enter_notify_event (VnckTasklist *tl, GList *vnck_windows, TasklistData *tasklist)
+static gboolean applet_enter_notify_event (VnckTasklist *tl G_GNUC_UNUSED,
+					   GList        *vnck_windows,
+					   TasklistData *tasklist)
 {
 	GdkPixbuf *thumbnail;
 	VnckWindow *vnck_window = NULL;
@@ -318,7 +329,9 @@ static gboolean applet_enter_notify_event (VnckTasklist *tl, GList *vnck_windows
 	return FALSE;
 }
 
-static gboolean applet_leave_notify_event (VnckTasklist *tl, GList *vnck_windows, TasklistData *tasklist)
+static gboolean applet_leave_notify_event (VnckTasklist *tl G_GNUC_UNUSED,
+					   GList        *vnck_windows G_GNUC_UNUSED,
+					   TasklistData *tasklist)
 {
 	if (tasklist->preview != NULL)
 	{
@@ -330,7 +343,9 @@ static gboolean applet_leave_notify_event (VnckTasklist *tl, GList *vnck_windows
 }
 #endif
 
-static void applet_change_pixel_size(CafePanelApplet* applet, gint size, TasklistData* tasklist)
+static void applet_change_pixel_size (CafePanelApplet *applet G_GNUC_UNUSED,
+				      gint             size,
+				      TasklistData    *tasklist)
 {
 	if (tasklist->size == size)
 		return;
@@ -568,7 +583,9 @@ static void setup_gsettings(TasklistData* tasklist)
 					  tasklist);
 }
 
-static void applet_size_allocate(CtkWidget *widget, CtkAllocation *allocation, TasklistData *tasklist)
+static void applet_size_allocate (CtkWidget     *widget G_GNUC_UNUSED,
+				  CtkAllocation *allocation G_GNUC_UNUSED,
+				  TasklistData  *tasklist)
 {
 	int len;
 	const int* size_hints;
@@ -780,7 +797,8 @@ gboolean window_list_applet_fill(CafePanelApplet* applet)
 	return TRUE;
 }
 
-static void call_system_monitor(CtkAction* action, TasklistData* tasklist)
+static void call_system_monitor (CtkAction    *action G_GNUC_UNUSED,
+				 TasklistData *tasklist)
 {
 	int i;
 
@@ -803,12 +821,14 @@ static void call_system_monitor(CtkAction* action, TasklistData* tasklist)
 }
 
 
-static void display_help_dialog(CtkAction* action, TasklistData* tasklist)
+static void display_help_dialog(CtkAction    *action G_GNUC_UNUSED,
+				TasklistData *tasklist)
 {
 	vncklet_display_help(tasklist->applet, "cafe-user-guide", "windowlist", WINDOW_LIST_ICON);
 }
 
-static void display_about_dialog(CtkAction* action, TasklistData* tasklist)
+static void display_about_dialog (CtkAction    *action G_GNUC_UNUSED,
+				  TasklistData *tasklist)
 {
 	static const gchar* authors[] = {
 		"Perberos <perberos@gmail.com>",
@@ -974,7 +994,8 @@ static void setup_dialog(CtkBuilder* builder, TasklistData* tasklist)
 	g_signal_connect(tasklist->properties_dialog, "response", G_CALLBACK(response_cb), tasklist);
 }
 
-static void display_properties_dialog(CtkAction* action, TasklistData* tasklist)
+static void display_properties_dialog (CtkAction    *action G_GNUC_UNUSED,
+				       TasklistData *tasklist)
 {
 	if (tasklist->properties_dialog == NULL)
 	{
@@ -1000,7 +1021,8 @@ static void display_properties_dialog(CtkAction* action, TasklistData* tasklist)
 	ctk_window_present(CTK_WINDOW(tasklist->properties_dialog));
 }
 
-static void destroy_tasklist(CtkWidget* widget, TasklistData* tasklist)
+static void destroy_tasklist (CtkWidget    *widget G_GNUC_UNUSED,
+			      TasklistData *tasklist)
 {
 	g_signal_handlers_disconnect_by_data (G_OBJECT (tasklist->applet), tasklist);
 

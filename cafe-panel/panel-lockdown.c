@@ -1,4 +1,3 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
 /*
  * Copyright (C) 2004 Sun Microsystems, Inc.
  *
@@ -302,11 +301,11 @@ panel_lockdown_notify_find (GSList    *closures,
 
 static void
 marshal_user_data (GClosure     *closure,
-                   GValue       *return_value,
-                   guint         n_param_values,
-                   const GValue *param_values,
-                   gpointer      invocation_hint,
-                   gpointer      marshal_data)
+		   GValue       *return_value G_GNUC_UNUSED,
+		   guint         n_param_values,
+		   const GValue *param_values G_GNUC_UNUSED,
+		   gpointer      invocation_hint G_GNUC_UNUSED,
+		   gpointer      marshal_data G_GNUC_UNUSED)
 {
         GCClosure *cclosure = (GCClosure*) closure;
 

@@ -362,7 +362,7 @@ panel_multimonitor_compress_overlapping_monitors (int           *num_monitors_in
 }
 
 static gboolean
-panel_multimonitor_reinit_idle (gpointer data)
+panel_multimonitor_reinit_idle (gpointer data G_GNUC_UNUSED)
 {
 	panel_multimonitor_reinit ();
 	reinit_id = 0;
@@ -371,8 +371,8 @@ panel_multimonitor_reinit_idle (gpointer data)
 }
 
 static void
-panel_multimonitor_handle_screen_changed (CdkScreen *screen,
-					  gpointer    user_data)
+panel_multimonitor_handle_screen_changed (CdkScreen *screen G_GNUC_UNUSED,
+					  gpointer   user_data G_GNUC_UNUSED)
 {
 	if (reinit_id)
 		return;
@@ -381,9 +381,9 @@ panel_multimonitor_handle_screen_changed (CdkScreen *screen,
 }
 
 static void
-panel_multimonitor_handle_monitor_changed (CdkDisplay *display,
-					   CdkMonitor *monitor,
-					   gpointer    user_data)
+panel_multimonitor_handle_monitor_changed (CdkDisplay *display G_GNUC_UNUSED,
+					   CdkMonitor *monitor G_GNUC_UNUSED,
+					   gpointer    user_data G_GNUC_UNUSED)
 {
 	if (reinit_id)
 		return;
@@ -392,8 +392,8 @@ panel_multimonitor_handle_monitor_changed (CdkDisplay *display,
 }
 
 static void
-panel_multimonitor_handle_monitor_invalidate (CdkMonitor *monitor,
-					      gpointer    user_data)
+panel_multimonitor_handle_monitor_invalidate (CdkMonitor *monitor G_GNUC_UNUSED,
+					      gpointer    user_data G_GNUC_UNUSED)
 {
 	if (reinit_id)
 		return;

@@ -215,7 +215,7 @@ add_app_to_panel (CtkWidget      *item,
 
 
 static void
-add_app_to_desktop (CtkWidget      *item,
+add_app_to_desktop (CtkWidget         *item G_GNUC_UNUSED,
 		    CafeMenuTreeEntry *entry)
 {
 	char       *source_uri;
@@ -440,8 +440,8 @@ grab_widget (CtkWidget *widget)
 }
 
 static void
-restore_grabs (CtkWidget *menu,
-               CtkWidget *item)
+restore_grabs (CtkWidget *menu G_GNUC_UNUSED,
+	       CtkWidget *item)
 {
 	CtkWidget *parent = ctk_widget_get_parent (item);
 
@@ -580,7 +580,7 @@ show_item_menu (CtkWidget      *item,
 }
 
 gboolean
-menu_dummy_button_press_event (CtkWidget      *menuitem,
+menu_dummy_button_press_event (CtkWidget      *menuitem G_GNUC_UNUSED,
 			       CdkEventButton *event)
 {
 	if (event->button == 3)
@@ -600,7 +600,8 @@ menuitem_button_press_event (CtkWidget      *menuitem,
 }
 
 static void
-drag_begin_menu_cb (CtkWidget *widget, CdkDragContext     *context)
+drag_begin_menu_cb (CtkWidget      *widget,
+		    CdkDragContext *context G_GNUC_UNUSED)
 {
 	/* FIXME: workaround for a possible ctk+ bug
 	 *    See bugs #92085(ctk+) and #91184(panel) for details.
@@ -613,7 +614,8 @@ drag_begin_menu_cb (CtkWidget *widget, CdkDragContext     *context)
  * CTK+ menuing code in some manner.
  */
 static void
-drag_end_menu_cb (CtkWidget *widget, CdkDragContext     *context)
+drag_end_menu_cb (CtkWidget      *widget,
+		  CdkDragContext *context G_GNUC_UNUSED)
 {
   CtkWidget *xgrab_shell;
   CtkWidget *parent;
@@ -656,12 +658,12 @@ drag_end_menu_cb (CtkWidget *widget, CdkDragContext     *context)
 }
 
 static void
-drag_data_get_menu_cb (CtkWidget        *widget,
-		       CdkDragContext   *context,
-		       CtkSelectionData *selection_data,
-		       guint             info,
-		       guint             time,
-		       CafeMenuTreeEntry   *entry)
+drag_data_get_menu_cb (CtkWidget         *widget G_GNUC_UNUSED,
+		       CdkDragContext    *context G_GNUC_UNUSED,
+		       CtkSelectionData  *selection_data,
+		       guint              info G_GNUC_UNUSED,
+		       guint              time G_GNUC_UNUSED,
+		       CafeMenuTreeEntry *entry)
 {
 	const char *path;
 	char       *uri;
@@ -781,9 +783,12 @@ setup_menuitem (CtkWidget   *menuitem,
 }
 
 static void
-drag_data_get_string_cb (CtkWidget *widget, CdkDragContext     *context,
-			 CtkSelectionData   *selection_data, guint info,
-			 guint time, const char *string)
+drag_data_get_string_cb (CtkWidget        *widget G_GNUC_UNUSED,
+			 CdkDragContext   *context G_GNUC_UNUSED,
+			 CtkSelectionData *selection_data,
+			 guint             info G_GNUC_UNUSED,
+			 guint             time G_GNUC_UNUSED,
+			 const char       *string)
 {
 	ctk_selection_data_set (selection_data,
 				ctk_selection_data_get_target (selection_data), 8, (guchar *)string,

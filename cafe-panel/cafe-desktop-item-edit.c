@@ -30,7 +30,8 @@ static GOptionEntry options[] = {
 };
 
 static void
-dialog_destroyed (CtkWidget *dialog, gpointer data)
+dialog_destroyed (CtkWidget *dialog G_GNUC_UNUSED,
+		  gpointer   data G_GNUC_UNUSED)
 {
 	dialogs --;
 
@@ -55,7 +56,7 @@ validate_for_filename (char *file)
 
 static char *
 find_uri_on_save (PanelDItemEditor *dialog,
-		  gpointer          data)
+		  gpointer          data G_GNUC_UNUSED)
 {
 	GKeyFile *keyfile;
 	char     *name;
@@ -85,7 +86,7 @@ static void
 error_reported (CtkWidget  *dialog,
 		const char *primary,
 		const char *secondary,
-		gpointer    data)
+		gpointer    data G_GNUC_UNUSED)
 {
 	panel_error_dialog (CTK_WINDOW (dialog), NULL,
 			    "error_editing_launcher", TRUE,

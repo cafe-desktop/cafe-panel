@@ -145,7 +145,8 @@ panel_properties_dialog_orientation_changed (PanelPropertiesDialog *dialog,
 }
 
 static void
-panel_properties_dialog_setup_orientation_combo_sensitivty (PanelPropertiesDialog *dialog, CtkToggleButton *n)
+panel_properties_dialog_setup_orientation_combo_sensitivty (PanelPropertiesDialog *dialog,
+							    CtkToggleButton       *n G_GNUC_UNUSED)
 {
 	gboolean expand;
 	expand = panel_profile_get_toplevel_expand (dialog->toplevel);
@@ -251,7 +252,7 @@ panel_properties_dialog_setup_size_spin (PanelPropertiesDialog *dialog,
 }
 
 static void
-panel_properties_dialog_icon_changed (PanelIconChooser      *chooser,
+panel_properties_dialog_icon_changed (PanelIconChooser      *chooser G_GNUC_UNUSED,
 				      const char            *icon,
 				      PanelPropertiesDialog *dialog)
 {

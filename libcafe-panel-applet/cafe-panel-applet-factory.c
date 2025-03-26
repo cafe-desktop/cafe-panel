@@ -246,9 +246,9 @@ cafe_panel_applet_factory_get_applet (CafePanelAppletFactory    *factory,
 
 static void
 method_call_cb (GDBusConnection       *connection,
-		const gchar           *sender,
-		const gchar           *object_path,
-		const gchar           *interface_name,
+		const gchar           *sender G_GNUC_UNUSED,
+		const gchar           *object_path G_GNUC_UNUSED,
+		const gchar           *interface_name G_GNUC_UNUSED,
 		const gchar           *method_name,
 		GVariant              *parameters,
 		GDBusMethodInvocation *invocation,
@@ -285,9 +285,9 @@ static const GDBusInterfaceVTable interface_vtable = {
 static GDBusNodeInfo *introspection_data = NULL;
 
 static void
-on_bus_acquired (GDBusConnection    *connection,
-		  const gchar        *name,
-		  CafePanelAppletFactory *factory)
+on_bus_acquired (GDBusConnection        *connection,
+		 const gchar            *name G_GNUC_UNUSED,
+		 CafePanelAppletFactory *factory)
 {
 	gchar  *object_path;
 	GError *error = NULL;
@@ -311,8 +311,8 @@ on_bus_acquired (GDBusConnection    *connection,
 }
 
 static void
-on_name_lost (GDBusConnection    *connection,
-	      const gchar        *name,
+on_name_lost (GDBusConnection        *connection G_GNUC_UNUSED,
+	      const gchar            *name G_GNUC_UNUSED,
 	      CafePanelAppletFactory *factory)
 {
 	g_object_unref (factory);

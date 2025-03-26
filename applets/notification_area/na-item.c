@@ -25,9 +25,9 @@ G_DEFINE_INTERFACE_WITH_CODE (NaItem, na_item, CTK_TYPE_WIDGET,
                                                                  CTK_TYPE_ORIENTABLE);)
 
 static gboolean
-na_item_draw_on_parent_default (NaItem     *item,
-                                CtkWidget  *parent,
-                                cairo_t    *parent_cr)
+na_item_draw_on_parent_default (NaItem    *item G_GNUC_UNUSED,
+				CtkWidget *parent G_GNUC_UNUSED,
+				cairo_t   *parent_cr G_GNUC_UNUSED)
 {
   return FALSE;
 }

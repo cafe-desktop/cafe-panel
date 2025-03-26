@@ -219,7 +219,7 @@ panel_background_monitor_changed (PanelBackgroundMonitor *monitor)
 
 static CdkFilterReturn
 panel_background_monitor_xevent_filter (CdkXEvent *xevent,
-					CdkEvent  *event,
+					CdkEvent  *event G_GNUC_UNUSED,
 					gpointer   data)
 {
 	PanelBackgroundMonitor *monitor;

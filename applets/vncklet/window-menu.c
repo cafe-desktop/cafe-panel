@@ -50,12 +50,14 @@ typedef struct {
 	CafePanelAppletOrient orient;
 } WindowMenu;
 
-static void window_menu_help(CtkAction* action, WindowMenu* window_menu)
+static void window_menu_help (CtkAction  *action G_GNUC_UNUSED,
+			      WindowMenu *window_menu)
 {
 	vncklet_display_help(window_menu->applet, "cafe-user-guide", "panel-windowselector", WINDOW_MENU_ICON);
 }
 
-static void window_menu_about(CtkAction* action, WindowMenu* window_menu)
+static void window_menu_about (CtkAction  *action G_GNUC_UNUSED,
+			       WindowMenu *window_menu)
 {
 	static const char* authors[] = {
 		"Perberos <perberos@gmail.com>",
@@ -111,7 +113,8 @@ static const CtkActionEntry window_menu_actions[] = {
 	}
 };
 
-static void window_menu_destroy(CtkWidget* widget, WindowMenu* window_menu)
+static void window_menu_destroy (CtkWidget  *widget G_GNUC_UNUSED,
+				 WindowMenu *window_menu)
 {
 	g_free(window_menu);
 }
@@ -176,7 +179,9 @@ static void window_menu_size_allocate(CafePanelApplet* applet, CtkAllocation* al
 	window_menu->orient = orient;
 }
 
-static gboolean window_menu_key_press_event(CtkWidget* widget, CdkEventKey* event, WindowMenu* window_menu)
+static gboolean window_menu_key_press_event (CtkWidget   *widget G_GNUC_UNUSED,
+					     CdkEventKey *event,
+					     WindowMenu  *window_menu)
 {
 	CtkMenuShell* menu_shell;
 	VnckSelector* selector;
@@ -208,7 +213,9 @@ static gboolean window_menu_key_press_event(CtkWidget* widget, CdkEventKey* even
 	return FALSE;
 }
 
-static gboolean filter_button_press(CtkWidget* widget, CdkEventButton* event, gpointer data)
+static gboolean filter_button_press (CtkWidget      *widget,
+				     CdkEventButton *event,
+				     gpointer        data G_GNUC_UNUSED)
 {
 	if (event->button != 1)
 		g_signal_stop_emission_by_name(widget, "button_press_event");

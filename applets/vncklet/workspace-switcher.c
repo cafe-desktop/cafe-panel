@@ -207,13 +207,16 @@ static void applet_realized(CafePanelApplet* applet, PagerData* pager)
 	vncklet_connect_while_alive(pager->screen, "window_manager_changed", G_CALLBACK(window_manager_changed), pager, pager->applet);
 }
 
-static void applet_unrealized(CafePanelApplet* applet, PagerData* pager)
+static void applet_unrealized (CafePanelApplet *applet G_GNUC_UNUSED,
+			       PagerData       *pager)
 {
 	pager->screen = NULL;
 	pager->wm = PAGER_WM_UNKNOWN;
 }
 
-static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient orient, PagerData* pager)
+static void applet_change_orient (CafePanelApplet      *applet G_GNUC_UNUSED,
+				  CafePanelAppletOrient orient,
+				  PagerData            *pager)
 {
 	CtkOrientation new_orient;
 
@@ -240,7 +243,11 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 		ctk_label_set_text(CTK_LABEL(pager->label_row_col), pager->orientation == CTK_ORIENTATION_HORIZONTAL ? _("rows") : _("columns"));
 }
 
-static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBackgroundType type, CdkColor* color, cairo_pattern_t *pattern, PagerData* pager)
+static void applet_change_background (CafePanelApplet              *applet G_GNUC_UNUSED,
+				      CafePanelAppletBackgroundType type,
+				      CdkColor                     *color G_GNUC_UNUSED,
+				      cairo_pattern_t              *pattern G_GNUC_UNUSED,
+				      PagerData                    *pager)
 {
         CtkStyleContext *new_context;
         ctk_widget_reset_style (CTK_WIDGET (pager->pager));
@@ -252,7 +259,8 @@ static void applet_change_background(CafePanelApplet* applet, CafePanelAppletBac
                 type == PANEL_NO_BACKGROUND ? CTK_SHADOW_NONE : CTK_SHADOW_IN);
 }
 
-static void applet_style_updated (CafePanelApplet *applet, CtkStyleContext *context)
+static void applet_style_updated (CafePanelApplet *applet G_GNUC_UNUSED,
+				  CtkStyleContext *context)
 {
 	CtkCssProvider *provider;
 	CdkRGBA color;
@@ -613,12 +621,14 @@ gboolean workspace_switcher_applet_fill(CafePanelApplet* applet)
 }
 
 
-static void display_help_dialog(CtkAction* action, PagerData* pager)
+static void display_help_dialog (CtkAction *action G_GNUC_UNUSED,
+				 PagerData *pager)
 {
 	vncklet_display_help(pager->applet, "cafe-user-guide", "overview-workspaces", WORKSPACE_SWITCHER_ICON);
 }
 
-static void display_about_dialog(CtkAction* action, PagerData* pager)
+static void display_about_dialog (CtkAction *action G_GNUC_UNUSED,
+				  PagerData *pager)
 {
 	static const gchar* authors[] = {
 		"Perberos <perberos@gmail.com>",
@@ -720,18 +730,23 @@ static void workspace_created(VnckScreen* screen, VnckWorkspace* space, PagerDat
 	vncklet_connect_while_alive(space, "name_changed", G_CALLBACK(workspace_renamed), pager, pager->properties_dialog);
 }
 
-static void workspace_destroyed(VnckScreen* screen, VnckWorkspace* space, PagerData* pager)
+static void workspace_destroyed (VnckScreen    *screen,
+				 VnckWorkspace *space G_GNUC_UNUSED,
+				 PagerData     *pager)
 {
 	g_return_if_fail(VNCK_IS_SCREEN(screen));
 	update_workspaces_model(pager);
 }
 
-static void num_workspaces_value_changed(CtkSpinButton* button, PagerData* pager)
+static void num_workspaces_value_changed (CtkSpinButton *button G_GNUC_UNUSED,
+					  PagerData     *pager)
 {
 	vnck_screen_change_workspace_count(pager->screen, ctk_spin_button_get_value_as_int(CTK_SPIN_BUTTON(pager->num_workspaces_spin)));
 }
 
-static gboolean workspaces_tree_focused_out(CtkTreeView* treeview, CdkEventFocus* event, PagerData* pager)
+static gboolean workspaces_tree_focused_out (CtkTreeView   *treeview,
+					     CdkEventFocus *event G_GNUC_UNUSED,
+					     PagerData     *pager G_GNUC_UNUSED)
 {
 	CtkTreeSelection* selection;
 
@@ -740,7 +755,10 @@ static gboolean workspaces_tree_focused_out(CtkTreeView* treeview, CdkEventFocus
 	return TRUE;
 }
 
-static void workspace_name_edited(CtkCellRendererText* cell_renderer_text, const gchar* path, const gchar* new_text, PagerData* pager)
+static void workspace_name_edited (CtkCellRendererText *cell_renderer_text G_GNUC_UNUSED,
+				   const gchar         *path,
+				   const gchar         *new_text,
+				   PagerData           *pager)
 {
 	const gint* indices;
 	VnckWorkspace* workspace;
@@ -766,7 +784,8 @@ static void workspace_name_edited(CtkCellRendererText* cell_renderer_text, const
 	ctk_tree_path_free(p);
 }
 
-static void properties_dialog_destroyed(CtkWidget* widget, PagerData* pager)
+static void properties_dialog_destroyed (CtkWidget *widget G_GNUC_UNUSED,
+					 PagerData *pager)
 {
 	pager->properties_dialog = NULL;
 	pager->workspaces_frame = NULL;
@@ -783,13 +802,16 @@ static void properties_dialog_destroyed(CtkWidget* widget, PagerData* pager)
 	pager->workspaces_store = NULL;
 }
 
-static gboolean delete_event(CtkWidget* widget, gpointer data)
+static gboolean delete_event (CtkWidget *widget,
+			      gpointer   data G_GNUC_UNUSED)
 {
 	ctk_widget_destroy(widget);
 	return TRUE;
 }
 
-static void response_cb(CtkWidget* widget, int id, PagerData* pager)
+static void response_cb (CtkWidget *widget,
+			 int        id,
+			 PagerData *pager G_GNUC_UNUSED)
 {
 	if (id == CTK_RESPONSE_HELP)
 		vncklet_display_help(widget, "cafe-user-guide", "overview-workspaces", WORKSPACE_SWITCHER_ICON);
@@ -797,7 +819,8 @@ static void response_cb(CtkWidget* widget, int id, PagerData* pager)
 		ctk_widget_destroy(widget);
 }
 
-static void close_dialog(CtkWidget* button, gpointer data)
+static void close_dialog (CtkWidget *button G_GNUC_UNUSED,
+			  gpointer   data)
 {
 	PagerData* pager = data;
 	CtkTreeViewColumn* col;
@@ -824,7 +847,13 @@ static void close_dialog(CtkWidget* button, gpointer data)
 #define WID(s) CTK_WIDGET(ctk_builder_get_object(builder, s))
 
 static void
-setup_sensitivity(PagerData* pager, CtkBuilder* builder, const char* wid1, const char* wid2, const char* wid3, GSettings* settings, const char* key)
+setup_sensitivity (PagerData  *pager G_GNUC_UNUSED,
+		   CtkBuilder *builder,
+		   const char *wid1,
+		   const char *wid2,
+		   const char *wid3,
+		   GSettings  *settings,
+		   const char *key)
 {
 	CtkWidget* w;
 
@@ -984,7 +1013,8 @@ static void setup_dialog(CtkBuilder* builder, PagerData* pager)
 	update_properties_for_wm(pager);
 }
 
-static void display_properties_dialog(CtkAction* action, PagerData* pager)
+static void display_properties_dialog (CtkAction *action G_GNUC_UNUSED,
+				       PagerData *pager)
 {
 	if (pager->properties_dialog == NULL)
 	{
@@ -1008,7 +1038,8 @@ static void display_properties_dialog(CtkAction* action, PagerData* pager)
 	ctk_window_present(CTK_WINDOW(pager->properties_dialog));
 }
 
-static void destroy_pager(CtkWidget* widget, PagerData* pager)
+static void destroy_pager (CtkWidget *widget G_GNUC_UNUSED,
+			   PagerData *pager)
 {
 	g_signal_handlers_disconnect_by_data (pager->settings, pager);
 

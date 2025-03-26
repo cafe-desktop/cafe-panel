@@ -104,8 +104,8 @@ na_tray_child_realize (CtkWidget *widget)
 }
 
 static void
-na_tray_child_style_set (CtkWidget *widget,
-                         CtkStyle  *previous_style)
+na_tray_child_style_set (CtkWidget *widget G_GNUC_UNUSED,
+			 CtkStyle  *previous_style G_GNUC_UNUSED)
 {
   /* The default handler resets the background according to the new style.
    * We either use a transparent background or a parent-relative background
@@ -264,9 +264,9 @@ na_tray_child_get_property (GObject    *object,
 
 static void
 na_tray_child_set_property (GObject      *object,
-                            guint         property_id,
-                            const GValue *value,
-                            GParamSpec   *pspec)
+			    guint         property_id,
+			    const GValue *value G_GNUC_UNUSED,
+			    GParamSpec   *pspec)
 {
   switch (property_id)
     {

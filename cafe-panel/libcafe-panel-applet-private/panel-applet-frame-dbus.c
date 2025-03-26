@@ -154,11 +154,11 @@ cafe_panel_applet_frame_dbus_init_properties (CafePanelAppletFrame *frame)
 
 static void
 cafe_panel_applet_frame_dbus_sync_menu_state (CafePanelAppletFrame *frame,
-					 gboolean          movable,
-					 gboolean          removable,
-					 gboolean          lockable,
-					 gboolean          locked,
-					 gboolean          locked_down)
+					      gboolean              movable G_GNUC_UNUSED,
+					      gboolean              removable G_GNUC_UNUSED,
+					      gboolean              lockable,
+					      gboolean              locked,
+					      gboolean              locked_down)
 {
 	CafePanelAppletFrameDBus *dbus_frame = CAFE_PANEL_APPLET_FRAME_DBUS (frame);
 
@@ -264,19 +264,19 @@ cafe_panel_applet_frame_dbus_change_background (CafePanelAppletFrame    *frame,
 }
 
 static void
-cafe_panel_applet_frame_dbus_flags_changed (CafePanelAppletContainer *container,
-				       const gchar          *prop_name,
-				       GVariant             *value,
-				       CafePanelAppletFrame     *frame)
+cafe_panel_applet_frame_dbus_flags_changed (CafePanelAppletContainer *container G_GNUC_UNUSED,
+					    const gchar              *prop_name G_GNUC_UNUSED,
+					    GVariant                 *value,
+					    CafePanelAppletFrame     *frame)
 {
 	cafe_panel_applet_frame_dbus_update_flags (frame, value);
 }
 
 static void
-cafe_panel_applet_frame_dbus_size_hints_changed (CafePanelAppletContainer *container,
-					    const gchar          *prop_name,
-					    GVariant             *value,
-					    CafePanelAppletFrame     *frame)
+cafe_panel_applet_frame_dbus_size_hints_changed (CafePanelAppletContainer *container G_GNUC_UNUSED,
+						 const gchar              *prop_name G_GNUC_UNUSED,
+						 GVariant                 *value,
+						 CafePanelAppletFrame     *frame)
 {
 	const gint *sz;
 	gint       *size_hints = NULL;
@@ -292,30 +292,30 @@ cafe_panel_applet_frame_dbus_size_hints_changed (CafePanelAppletContainer *conta
 }
 
 static void
-cafe_panel_applet_frame_dbus_applet_broken (CafePanelAppletContainer *container,
-				       CafePanelAppletFrame     *frame)
+cafe_panel_applet_frame_dbus_applet_broken (CafePanelAppletContainer *container G_GNUC_UNUSED,
+					    CafePanelAppletFrame     *frame)
 {
 	_cafe_panel_applet_frame_applet_broken (frame);
 }
 
 static void
-cafe_panel_applet_frame_dbus_applet_remove (CafePanelAppletContainer *container,
-				       CafePanelAppletFrame     *frame)
+cafe_panel_applet_frame_dbus_applet_remove (CafePanelAppletContainer *container G_GNUC_UNUSED,
+					    CafePanelAppletFrame     *frame)
 {
 	_cafe_panel_applet_frame_applet_remove (frame);
 }
 
 static void
-cafe_panel_applet_frame_dbus_applet_move (CafePanelAppletContainer *container,
-				     CafePanelAppletFrame     *frame)
+cafe_panel_applet_frame_dbus_applet_move (CafePanelAppletContainer *container G_GNUC_UNUSED,
+					  CafePanelAppletFrame     *frame)
 {
 	_cafe_panel_applet_frame_applet_move (frame);
 }
 
 static void
-cafe_panel_applet_frame_dbus_applet_lock (CafePanelAppletContainer *container,
-				     gboolean              locked,
-				     CafePanelAppletFrame     *frame)
+cafe_panel_applet_frame_dbus_applet_lock (CafePanelAppletContainer *container G_GNUC_UNUSED,
+					  gboolean                  locked,
+					  CafePanelAppletFrame     *frame)
 {
 	_cafe_panel_applet_frame_applet_lock (frame, locked);
 }

@@ -62,9 +62,9 @@ get_bus_proxy (void)
 typedef  void (*CanDoFunc) (gint value);
 
 static void
-notify_can_do (GObject *source_object,
-               GAsyncResult *res,
-               gpointer user_data)
+notify_can_do (GObject      *source_object G_GNUC_UNUSED,
+	       GAsyncResult *res,
+	       gpointer      user_data)
 {
 	GDBusProxy *proxy;
 	GVariant   *variant;
@@ -177,9 +177,9 @@ free_data (gpointer d)
 }
 
 static void
-set_time_notify (GObject *source_object,
-                 GAsyncResult *res,
-                 gpointer user_data)
+set_time_notify (GObject      *source_object G_GNUC_UNUSED,
+		 GAsyncResult *res,
+		 gpointer      user_data)
 {
 	SetTimeCallbackData *data  = user_data;
 	GError              *error = NULL;

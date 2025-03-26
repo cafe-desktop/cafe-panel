@@ -121,14 +121,14 @@ activate_path (CtkWidget  *menuitem,
 
 static void
 activate_home_uri (CtkWidget *menuitem,
-		   gpointer   data)
+		   gpointer   data G_GNUC_UNUSED)
 {
 	activate_path (menuitem, g_get_home_dir ());
 }
 
 static void
 activate_desktop_uri (CtkWidget *menuitem,
-		      gpointer   data)
+		      gpointer   data G_GNUC_UNUSED)
 {
 	activate_path (menuitem,
 		       g_get_user_special_dir (G_USER_DIRECTORY_DESKTOP));
@@ -1153,42 +1153,42 @@ panel_place_menu_item_recreate_menu (CtkWidget *widget)
 }
 
 static void
-panel_place_menu_item_key_changed (GSettings   *settings,
-				   gchar       *key,
-				   CtkWidget   *place_item)
+panel_place_menu_item_key_changed (GSettings *settings G_GNUC_UNUSED,
+				   gchar     *key G_GNUC_UNUSED,
+				   CtkWidget *place_item)
 {
 	panel_place_menu_item_recreate_menu (place_item);
 }
 
 static void
-panel_place_menu_item_ctk_bookmarks_changed (GFileMonitor *handle,
-					     GFile        *file,
-					     GFile        *other_file,
-					     GFileMonitorEvent event,
+panel_place_menu_item_ctk_bookmarks_changed (GFileMonitor *handle G_GNUC_UNUSED,
+					     GFile        *file G_GNUC_UNUSED,
+					     GFile        *other_file G_GNUC_UNUSED,
+					     GFileMonitorEvent event G_GNUC_UNUSED,
 					     gpointer      user_data)
 {
 	panel_place_menu_item_recreate_menu (CTK_WIDGET (user_data));
 }
 
 static void
-panel_place_menu_item_drives_changed (GVolumeMonitor *monitor,
-				      GDrive         *drive,
+panel_place_menu_item_drives_changed (GVolumeMonitor *monitor G_GNUC_UNUSED,
+				      GDrive         *drive G_GNUC_UNUSED,
 				      CtkWidget      *place_menu)
 {
 	panel_place_menu_item_recreate_menu (place_menu);
 }
 
 static void
-panel_place_menu_item_volumes_changed (GVolumeMonitor *monitor,
-				       GVolume        *volume,
+panel_place_menu_item_volumes_changed (GVolumeMonitor *monitor G_GNUC_UNUSED,
+				       GVolume        *volume G_GNUC_UNUSED,
 				       CtkWidget      *place_menu)
 {
 	panel_place_menu_item_recreate_menu (place_menu);
 }
 
 static void
-panel_place_menu_item_mounts_changed (GVolumeMonitor *monitor,
-				      GMount         *mount,
+panel_place_menu_item_mounts_changed (GVolumeMonitor *monitor G_GNUC_UNUSED,
+				      GMount         *mount G_GNUC_UNUSED,
 				      CtkWidget      *place_menu)
 {
 	panel_place_menu_item_recreate_menu (place_menu);

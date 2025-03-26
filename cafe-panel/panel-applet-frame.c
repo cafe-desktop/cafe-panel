@@ -649,9 +649,9 @@ _cafe_panel_applet_frame_update_size_hints (CafePanelAppletFrame *frame,
 }
 
 char *
-_cafe_panel_applet_frame_get_background_string (CafePanelAppletFrame    *frame,
-					   PanelWidget         *panel,
-					   PanelBackgroundType  type)
+_cafe_panel_applet_frame_get_background_string (CafePanelAppletFrame *frame,
+						PanelWidget          *panel,
+						PanelBackgroundType   type G_GNUC_UNUSED)
 {
 	CtkAllocation allocation;
 	int x;
@@ -896,7 +896,7 @@ cafe_panel_applet_frame_activating_get_locked (CafePanelAppletFrameActivating *f
 }
 
 gboolean
-cafe_panel_applet_frame_activating_get_locked_down (CafePanelAppletFrameActivating *frame_act)
+cafe_panel_applet_frame_activating_get_locked_down (CafePanelAppletFrameActivating *frame_act G_GNUC_UNUSED)
 {
 	return panel_lockdown_get_locked_down ();
 }

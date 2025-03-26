@@ -210,10 +210,10 @@ update_layout (SnDBusMenu *menu,
 }
 
 static void
-items_properties_updated_cb (SnDBusMenuGen *proxy,
-                             GVariant      *updated_props,
-                             GVariant      *removed_props,
-                             SnDBusMenu    *menu)
+items_properties_updated_cb (SnDBusMenuGen *proxy G_GNUC_UNUSED,
+			     GVariant      *updated_props,
+			     GVariant      *removed_props,
+			     SnDBusMenu    *menu)
 {
   GVariantIter iter;
   guint id;
@@ -244,26 +244,26 @@ items_properties_updated_cb (SnDBusMenuGen *proxy,
 }
 
 static void
-layout_updated_cb (SnDBusMenuGen *proxy,
-                   guint          revision,
-                   gint           parent,
-                   SnDBusMenu    *menu)
+layout_updated_cb (SnDBusMenuGen *proxy G_GNUC_UNUSED,
+		   guint          revision G_GNUC_UNUSED,
+		   gint           parent,
+		   SnDBusMenu    *menu)
 {
   update_layout (menu, parent);
 }
 
 static void
-item_activation_requested_cb (SnDBusMenuGen *proxy,
-                              gint           id,
-                              guint          timestamp,
-                              SnDBusMenu    *menu)
+item_activation_requested_cb (SnDBusMenuGen *proxy G_GNUC_UNUSED,
+			      gint           id,
+			      guint          timestamp,
+			      SnDBusMenu    *menu G_GNUC_UNUSED)
 {
   g_debug ("activation requested: id - %d, timestamp - %d", id, timestamp);
 }
 
 static void
-map_cb (CtkWidget  *widget,
-        SnDBusMenu *menu)
+map_cb (CtkWidget  *widget G_GNUC_UNUSED,
+	SnDBusMenu *menu)
 {
   gboolean need_update;
 
@@ -282,8 +282,8 @@ map_cb (CtkWidget  *widget,
 }
 
 static void
-unmap_cb (CtkWidget  *widget,
-          SnDBusMenu *menu)
+unmap_cb (CtkWidget  *widget G_GNUC_UNUSED,
+	  SnDBusMenu *menu)
 {
   sn_dbus_menu_gen_call_event_sync (menu->proxy, 0, "closed",
                                     g_variant_new ("v", g_variant_new_int32 (0)),
@@ -292,9 +292,9 @@ unmap_cb (CtkWidget  *widget,
 }
 
 static void
-proxy_ready_cb (GObject      *source_object,
-                GAsyncResult *res,
-                gpointer      user_data)
+proxy_ready_cb (GObject      *source_object G_GNUC_UNUSED,
+		GAsyncResult *res,
+		gpointer      user_data)
 {
   SnDBusMenuGen *proxy;
   GError *error;
@@ -336,9 +336,9 @@ proxy_ready_cb (GObject      *source_object,
 
 static void
 name_appeared_cb (GDBusConnection *connection,
-                  const gchar     *name,
-                  const gchar     *name_owner,
-                  gpointer         user_data)
+		  const gchar     *name G_GNUC_UNUSED,
+		  const gchar     *name_owner G_GNUC_UNUSED,
+		  gpointer         user_data)
 {
   SnDBusMenu *menu;
 
@@ -350,9 +350,9 @@ name_appeared_cb (GDBusConnection *connection,
 }
 
 static void
-name_vanished_cb (GDBusConnection *connection,
-                  const gchar     *name,
-                  gpointer         user_data)
+name_vanished_cb (GDBusConnection *connection G_GNUC_UNUSED,
+		  const gchar     *name G_GNUC_UNUSED,
+		  gpointer         user_data)
 {
   SnDBusMenu *menu;
 

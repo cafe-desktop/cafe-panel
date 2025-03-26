@@ -563,9 +563,9 @@ sn_tooltip_free (SnTooltip *tooltip)
 
 static GVariant *
 get_property (GObject      *source_object,
-              GAsyncResult *res,
-              gpointer      user_data,
-              gboolean     *cancelled)
+	      GAsyncResult *res,
+	      gpointer      user_data G_GNUC_UNUSED,
+	      gboolean     *cancelled)
 {
   GVariant *variant;
   GError *error;
@@ -872,10 +872,10 @@ new_icon_theme_path_cb (SnItemV0 *v0,
 }
 
 static void
-g_properties_changed_cb (GDBusProxy *proxy,
-                         GVariant   *changed_properties,
-                         GStrv       invalidated_properties,
-                         SnItemV0   *v0)
+g_properties_changed_cb (GDBusProxy *proxy G_GNUC_UNUSED,
+			 GVariant   *changed_properties,
+			 GStrv       invalidated_properties G_GNUC_UNUSED,
+			 SnItemV0   *v0 G_GNUC_UNUSED)
 {
   gchar *debug;
 
@@ -885,11 +885,11 @@ g_properties_changed_cb (GDBusProxy *proxy,
 }
 
 static void
-g_signal_cb (GDBusProxy *proxy,
-             gchar      *sender_name,
-             gchar      *signal_name,
-             GVariant   *parameters,
-             SnItemV0   *v0)
+g_signal_cb (GDBusProxy *proxy G_GNUC_UNUSED,
+	     gchar      *sender_name G_GNUC_UNUSED,
+	     gchar      *signal_name,
+	     GVariant   *parameters,
+	     SnItemV0   *v0)
 {
   if (g_strcmp0 (signal_name, "NewTitle") == 0)
     new_title_cb (v0);
@@ -1021,9 +1021,9 @@ get_all_cb (GObject      *source_object,
 }
 
 static void
-proxy_ready_cb (GObject      *source_object,
-                GAsyncResult *res,
-                gpointer      user_data)
+proxy_ready_cb (GObject      *source_object G_GNUC_UNUSED,
+		GAsyncResult *res,
+		gpointer      user_data)
 {
   SnItemV0 *v0;
   SnItemV0Gen *proxy;
@@ -1155,9 +1155,9 @@ sn_item_v0_get_menu (SnItem *item)
 }
 
 static void
-context_menu_cb (GObject      *source_object,
-                 GAsyncResult *res,
-                 gpointer      user_data)
+context_menu_cb (GObject      *source_object G_GNUC_UNUSED,
+		 GAsyncResult *res,
+		 gpointer      user_data)
 {
   SnItemV0 *v0;
 
@@ -1180,9 +1180,9 @@ sn_item_v0_context_menu (SnItem *item,
 }
 
 static void
-activate_cb (GObject      *source_object,
-             GAsyncResult *res,
-             gpointer      user_data)
+activate_cb (GObject      *source_object G_GNUC_UNUSED,
+	     GAsyncResult *res,
+	     gpointer      user_data)
 {
   SnItemV0 *v0;
 
@@ -1205,9 +1205,9 @@ sn_item_v0_activate (SnItem *item,
 }
 
 static void
-secondary_activate_cb (GObject      *source_object,
-                       GAsyncResult *res,
-                       gpointer      user_data)
+secondary_activate_cb (GObject      *source_object G_GNUC_UNUSED,
+		       GAsyncResult *res,
+gpointer      user_data)
 {
   SnItemV0 *v0;
 
@@ -1230,9 +1230,9 @@ sn_item_v0_secondary_activate (SnItem *item,
 }
 
 static void
-scroll_cb (GObject      *source_object,
-           GAsyncResult *res,
-           gpointer      user_data)
+scroll_cb (GObject      *source_object G_GNUC_UNUSED,
+	   GAsyncResult *res,
+	   gpointer      user_data)
 {
   SnItemV0 *v0;
 

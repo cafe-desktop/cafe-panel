@@ -298,11 +298,11 @@ cafe_panel_applet_container_plug_removed (CafePanelAppletContainer *container)
 #endif // HAVE_X11
 
 static void
-cafe_panel_applet_container_child_signal (GDBusProxy           *proxy,
-				     gchar                *sender_name,
-				     gchar                *signal_name,
-				     GVariant             *parameters,
-				     CafePanelAppletContainer *container)
+cafe_panel_applet_container_child_signal (GDBusProxy               *proxy G_GNUC_UNUSED,
+					  gchar                    *sender_name G_GNUC_UNUSED,
+					  gchar                    *signal_name,
+					  GVariant                 *parameters G_GNUC_UNUSED,
+					  CafePanelAppletContainer *container)
 {
 	if (g_strcmp0 (signal_name, "Move") == 0) {
 		g_signal_emit (container, signals[APPLET_MOVE], 0);
@@ -316,12 +316,12 @@ cafe_panel_applet_container_child_signal (GDBusProxy           *proxy,
 }
 
 static void
-on_property_changed (GDBusConnection      *connection,
-		     const gchar          *sender_name,
-		     const gchar          *object_path,
-		     const gchar          *interface_name,
-		     const gchar          *signal_name,
-		     GVariant             *parameters,
+on_property_changed (GDBusConnection          *connection G_GNUC_UNUSED,
+		     const gchar              *sender_name G_GNUC_UNUSED,
+		     const gchar              *object_path G_GNUC_UNUSED,
+		     const gchar              *interface_name G_GNUC_UNUSED,
+		     const gchar              *signal_name G_GNUC_UNUSED,
+		     GVariant                 *parameters,
 		     CafePanelAppletContainer *container)
 {
 	GVariant    *props;
@@ -348,7 +348,7 @@ on_property_changed (GDBusConnection      *connection,
 }
 
 static void
-on_proxy_appeared (GObject      *source_object,
+on_proxy_appeared (GObject      *source_object G_GNUC_UNUSED,
 		   GAsyncResult *res,
 		   gpointer      user_data)
 {
@@ -465,7 +465,7 @@ applet_factory_data_free (AppletFactoryData *data)
 
 static void
 on_factory_appeared (GDBusConnection   *connection,
-		     const gchar       *name,
+		     const gchar       *name G_GNUC_UNUSED,
 		     const gchar       *name_owner,
 		     AppletFactoryData *data)
 {
@@ -577,9 +577,9 @@ cafe_panel_applet_container_add (CafePanelAppletContainer *container,
 }
 
 gboolean
-cafe_panel_applet_container_add_finish (CafePanelAppletContainer *container,
-				   GAsyncResult         *result,
-				   GError              **error)
+cafe_panel_applet_container_add_finish (CafePanelAppletContainer *container G_GNUC_UNUSED,
+					GAsyncResult             *result,
+					GError                  **error)
 {
 	GSimpleAsyncResult *simple = G_SIMPLE_ASYNC_RESULT (result);
 
@@ -675,9 +675,9 @@ cafe_panel_applet_container_child_set (CafePanelAppletContainer *container,
 }
 
 gboolean
-cafe_panel_applet_container_child_set_finish (CafePanelAppletContainer *container,
-					 GAsyncResult         *result,
-					 GError              **error)
+cafe_panel_applet_container_child_set_finish (CafePanelAppletContainer *container G_GNUC_UNUSED,
+					      GAsyncResult             *result,
+					      GError                  **error)
 {
 	GSimpleAsyncResult *simple = G_SIMPLE_ASYNC_RESULT (result);
 
@@ -776,9 +776,9 @@ cafe_panel_applet_container_child_get (CafePanelAppletContainer *container,
 }
 
 GVariant *
-cafe_panel_applet_container_child_get_finish (CafePanelAppletContainer *container,
-					 GAsyncResult         *result,
-					 GError              **error)
+cafe_panel_applet_container_child_get_finish (CafePanelAppletContainer *container G_GNUC_UNUSED,
+					      GAsyncResult             *result,
+					      GError                  **error)
 {
 	GSimpleAsyncResult *simple = G_SIMPLE_ASYNC_RESULT (result);
 
@@ -845,9 +845,9 @@ cafe_panel_applet_container_child_popup_menu (CafePanelAppletContainer *containe
 }
 
 gboolean
-cafe_panel_applet_container_child_popup_menu_finish (CafePanelAppletContainer *container,
-						GAsyncResult         *result,
-						GError              **error)
+cafe_panel_applet_container_child_popup_menu_finish (CafePanelAppletContainer *container G_GNUC_UNUSED,
+						     GAsyncResult             *result,
+						     GError                  **error)
 {
 	GSimpleAsyncResult *simple = G_SIMPLE_ASYNC_RESULT (result);
 
