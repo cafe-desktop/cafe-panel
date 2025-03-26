@@ -117,7 +117,9 @@ void vncklet_connect_while_alive(gpointer object, const char* signal, GCallback 
 	g_signal_connect_closure_by_id(object, g_signal_lookup(signal, G_OBJECT_TYPE(object)), 0, closure, FALSE);
 }
 
-static gboolean vncklet_factory(CafePanelApplet* applet, const char* iid, gpointer data)
+static gboolean vncklet_factory (CafePanelApplet *applet,
+				 const char      *iid,
+				 gpointer         data G_GNUC_UNUSED)
 {
 	gboolean retval = FALSE;
 	static gboolean type_registered = FALSE;
