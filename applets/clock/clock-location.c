@@ -162,9 +162,9 @@ clock_location_class_init (ClockLocationClass *this_class)
 }
 
 static void
-network_changed (GNetworkMonitor *monitor,
-                 gboolean         available,
-                 ClockLocation   *loc)
+network_changed (GNetworkMonitor *monitor G_GNUC_UNUSED,
+		 gboolean         available,
+		 ClockLocation   *loc)
 {
         ClockLocationPrivate *priv = clock_location_get_instance_private (loc);
 
@@ -660,7 +660,8 @@ set_weather_update_timeout (ClockLocation *loc)
 }
 
 static void
-weather_info_updated (WeatherInfo *info, gpointer data)
+weather_info_updated (WeatherInfo *info G_GNUC_UNUSED,
+		      gpointer     data)
 {
         ClockLocation *loc = data;
         ClockLocationPrivate *priv = clock_location_get_instance_private (loc);

@@ -101,13 +101,13 @@ cafe_panel_applet_toggle_locked (AppletInfo *info)
 
 static void
 checkbox_status (CtkCheckMenuItem *menuitem,
-		 AppletInfo       *info)
+		 AppletInfo       *info G_GNUC_UNUSED)
 {
 	checkbox_id = CTK_CHECK_MENU_ITEM (menuitem);
 }
 
 static void
-cafe_panel_applet_lock (CtkMenuItem *menuitem,
+cafe_panel_applet_lock (CtkMenuItem *menuitem G_GNUC_UNUSED,
 			AppletInfo  *info)
 {
 	gboolean locked;
@@ -121,7 +121,8 @@ cafe_panel_applet_lock (CtkMenuItem *menuitem,
 }
 
 static void
-move_applet_callback (CtkWidget *widget, AppletInfo *info)
+move_applet_callback (CtkWidget  *widget G_GNUC_UNUSED,
+		      AppletInfo *info)
 {
 	CtkWidget   *parent;
 	PanelWidget *panel;
@@ -218,7 +219,7 @@ cafe_panel_applet_locked_change_notify (GSettings *settings,
 }
 
 static void
-applet_remove_callback (CtkWidget  *widget,
+applet_remove_callback (CtkWidget  *widget G_GNUC_UNUSED,
 			AppletInfo *info)
 {
 
@@ -302,7 +303,7 @@ applet_callback_callback (CtkWidget      *widget,
 }
 
 static void
-applet_menu_show (CtkWidget *w,
+applet_menu_show (CtkWidget  *w G_GNUC_UNUSED,
 		  AppletInfo *info)
 {
 	PanelWidget *panel_widget;
@@ -314,7 +315,7 @@ applet_menu_show (CtkWidget *w,
 
 
 static void
-applet_menu_deactivate (CtkWidget *w,
+applet_menu_deactivate (CtkWidget  *w G_GNUC_UNUSED,
 			AppletInfo *info)
 {
 	PanelWidget *panel_widget;
@@ -637,7 +638,7 @@ cafe_panel_applet_menu_set_recurse (CtkMenu     *menu,
 
 static void
 applet_show_menu (AppletInfo     *info,
-		  CdkEventButton *event)
+		  CdkEventButton *event G_GNUC_UNUSED)
 {
 	PanelWidget *panel_widget;
 
@@ -665,7 +666,7 @@ applet_show_menu (AppletInfo     *info,
 }
 
 static gboolean
-applet_do_popup_menu (CtkWidget      *widget,
+applet_do_popup_menu (CtkWidget      *widget G_GNUC_UNUSED,
 		      CdkEventButton *event,
 		      AppletInfo     *info)
 {
@@ -821,7 +822,7 @@ cafe_panel_applet_on_load_queue (const char *id)
 
 /* This doesn't do anything if the initial unhide already happened */
 static gboolean
-cafe_panel_applet_queue_initial_unhide_toplevels (gpointer user_data)
+cafe_panel_applet_queue_initial_unhide_toplevels (gpointer user_data G_GNUC_UNUSED)
 {
 	GSList *l;
 
@@ -861,7 +862,7 @@ cafe_panel_applet_stop_loading (const char *id)
 }
 
 static gboolean
-cafe_panel_applet_load_idle_handler (gpointer dummy)
+cafe_panel_applet_load_idle_handler (gpointer dummy G_GNUC_UNUSED)
 {
 	PanelObjectType    applet_type;
 	CafePanelAppletToLoad *applet = NULL;
@@ -1073,7 +1074,7 @@ static const char* cafe_panel_applet_get_toplevel_id(AppletInfo* applet)
 }
 
 static gboolean
-cafe_panel_applet_position_save_timeout (gpointer dummy)
+cafe_panel_applet_position_save_timeout (gpointer dummy G_GNUC_UNUSED)
 {
 	GSList *l;
 
@@ -1093,8 +1094,8 @@ cafe_panel_applet_position_save_timeout (gpointer dummy)
 
 void
 cafe_panel_applet_save_position (AppletInfo *applet_info,
-			    const char *id,
-			    gboolean    immediate)
+				 const char *id G_GNUC_UNUSED,
+				 gboolean    immediate)
 {
 	PanelWidget       *panel_widget;
 	const char        *toplevel_id;

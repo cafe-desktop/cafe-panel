@@ -42,13 +42,13 @@
 static GDBusConnection *dbus_connection = NULL;
 
 static void
-panel_shell_on_name_lost (GDBusConnection *connection,
-			  const gchar     *sender_name,
-			  const gchar     *object_path,
-			  const gchar     *interface_name,
-			  const gchar     *signal_name,
-			  GVariant        *parameters,
-			  gpointer         user_data)
+panel_shell_on_name_lost (GDBusConnection *connection G_GNUC_UNUSED,
+			  const gchar     *sender_name G_GNUC_UNUSED,
+			  const gchar     *object_path G_GNUC_UNUSED,
+			  const gchar     *interface_name G_GNUC_UNUSED,
+			  const gchar     *signal_name G_GNUC_UNUSED,
+			  GVariant        *parameters G_GNUC_UNUSED,
+			  gpointer         user_data G_GNUC_UNUSED)
 {
 	/* We lost our DBus name, and there is something replacing us.
 	 * Tell the SM not to restart us automatically, then exit. */
@@ -59,7 +59,7 @@ panel_shell_on_name_lost (GDBusConnection *connection,
 }
 
 static void
-panel_shell_cleanup (gpointer data)
+panel_shell_cleanup (gpointer data G_GNUC_UNUSED)
 {
 	if (dbus_connection != NULL) {
 		g_object_unref (dbus_connection);

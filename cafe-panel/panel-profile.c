@@ -1456,7 +1456,8 @@ panel_profile_delete_removed_ids (PanelGSettingsKeyType    type,
 }
 
 static gboolean
-load_default_layout_idle (gpointer unused) {
+load_default_layout_idle (gpointer unused G_GNUC_UNUSED)
+{
 	if (g_slist_length (panel_toplevel_list_toplevels ()) != 0) {
 		/* some toplevels are not destroyed yet, waiting */
 		return TRUE;
@@ -1469,8 +1470,8 @@ load_default_layout_idle (gpointer unused) {
 
 static void
 panel_profile_toplevel_id_list_notify (GSettings *settings,
-									   gchar *key,
-									   gpointer   user_data)
+				       gchar     *key,
+				       gpointer   user_data G_GNUC_UNUSED)
 {
 	GSList     *l, *existing_toplevels;
 	GSList     *toplevel_ids;
@@ -1554,8 +1555,8 @@ panel_profile_object_id_list_update (gchar **objects)
 
 static void
 panel_profile_object_id_list_notify (GSettings *settings,
-									 gchar *key,
-									 gpointer data)
+				     gchar     *key,
+				     gpointer   data G_GNUC_UNUSED)
 {
 	gchar **objects;
 	objects = g_settings_get_strv (settings, key);

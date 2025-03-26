@@ -40,8 +40,8 @@
 
 
 static void
-drawer_click (CtkWidget *widget,
-              Drawer    *drawer)
+drawer_click (CtkWidget *widget G_GNUC_UNUSED,
+	      Drawer    *drawer)
 {
     if (!panel_toplevel_get_is_hidden (drawer->toplevel))
         panel_toplevel_hide (drawer->toplevel, FALSE, -1);
@@ -63,9 +63,9 @@ drawer_focus_panel_widget (Drawer           *drawer,
 }
 
 static gboolean
-key_press_drawer (CtkWidget   *widget,
-                  CdkEventKey *event,
-                  Drawer      *drawer)
+key_press_drawer (CtkWidget   *widget G_GNUC_UNUSED,
+		  CdkEventKey *event,
+		  Drawer      *drawer)
 {
     gboolean retval = TRUE;
     CtkOrientation orient;
@@ -133,9 +133,9 @@ key_press_drawer (CtkWidget   *widget,
  * to the drawer icon without closing the drawer when focus is in the drawer.
  */
 static gboolean
-key_press_drawer_widget (CtkWidget   *widget,
-                         CdkEventKey *event,
-                         Drawer      *drawer)
+key_press_drawer_widget (CtkWidget   *widget G_GNUC_UNUSED,
+			 CdkEventKey *event,
+			 Drawer      *drawer)
 {
     PanelWidget *panel_widget;
 
@@ -158,12 +158,12 @@ key_press_drawer_widget (CtkWidget   *widget,
     /* drag and drop handlers */
 
 static void
-drag_data_get_cb (CtkWidget          *widget,
-                  CdkDragContext     *context,
-                  CtkSelectionData   *selection_data,
-                  guint               info,
-                  guint               time,
-                  Drawer             *drawer)
+drag_data_get_cb (CtkWidget        *widget,
+		  CdkDragContext   *context G_GNUC_UNUSED,
+		  CtkSelectionData *selection_data,
+		  guint             info G_GNUC_UNUSED,
+		  guint             time G_GNUC_UNUSED,
+		  Drawer           *drawer G_GNUC_UNUSED)
 {
     char *foo;
 
@@ -175,12 +175,12 @@ drag_data_get_cb (CtkWidget          *widget,
 }
 
 static gboolean
-drag_motion_cb (CtkWidget          *widget,
-                CdkDragContext     *context,
-                int                 x,
-                int                 y,
-                guint               time_,
-                Drawer             *drawer)
+drag_motion_cb (CtkWidget      *widget,
+		CdkDragContext *context,
+		int             x G_GNUC_UNUSED,
+		int             y G_GNUC_UNUSED,
+		guint           time_,
+		Drawer         *drawer)
 {
     PanelWidget *panel_widget;
     guint        info = 0;
@@ -210,11 +210,11 @@ drag_motion_cb (CtkWidget          *widget,
 
 static gboolean
 drag_drop_cb (CtkWidget      *widget,
-              CdkDragContext *context,
-              int             x,
-              int             y,
-              guint           time_,
-              Drawer         *drawer)
+	      CdkDragContext *context,
+	      int             x G_GNUC_UNUSED,
+	      int             y G_GNUC_UNUSED,
+	      guint           time_,
+	      Drawer         *drawer G_GNUC_UNUSED)
 {
     CdkAtom atom = NULL;
 
@@ -228,13 +228,13 @@ drag_drop_cb (CtkWidget      *widget,
 
 static void
 drag_data_received_cb (CtkWidget          *widget,
-                       CdkDragContext     *context,
-                       gint                x,
-                       gint                y,
-                       CtkSelectionData   *selection_data,
-                       guint               info,
-                       guint               time_,
-                       Drawer             *drawer)
+		       CdkDragContext     *context,
+		       gint                x G_GNUC_UNUSED,
+		       gint                y G_GNUC_UNUSED,
+		       CtkSelectionData   *selection_data,
+		       guint               info,
+		       guint               time_,
+		       Drawer             *drawer)
 {
     PanelWidget *panel_widget;
 
@@ -272,9 +272,9 @@ queue_drawer_close_for_drag (Drawer *drawer)
 
 static void
 drag_leave_cb (CtkWidget      *widget,
-               CdkDragContext *context,
-               guint           time_,
-               Drawer         *drawer)
+	       CdkDragContext *context G_GNUC_UNUSED,
+	       guint           time_ G_GNUC_UNUSED,
+	       Drawer         *drawer)
 {
     queue_drawer_close_for_drag (drawer);
 
@@ -285,8 +285,8 @@ drag_leave_cb (CtkWidget      *widget,
 
 static void
 drawer_button_size_allocated (CtkWidget     *widget,
-                              CtkAllocation *alloc,
-                              Drawer        *drawer)
+			      CtkAllocation *alloc G_GNUC_UNUSED,
+			      Drawer        *drawer)
 {
     if (!ctk_widget_get_realized (widget))
         return;
@@ -306,8 +306,8 @@ drawer_changes_enabled (void)
 
 static void
 panel_drawer_custom_icon_changed (GSettings *settings,
-                                  gchar     *key,
-                                  Drawer    *drawer)
+				  gchar     *key G_GNUC_UNUSED,
+				  Drawer    *drawer)
 {
     g_return_if_fail (drawer != NULL);
     g_return_if_fail (drawer->button != NULL);
@@ -337,8 +337,8 @@ panel_drawer_tooltip_changed (GSettings *settings,
     /* destroy handlers */
 
 static void
-toplevel_destroyed (CtkWidget *widget,
-                    Drawer    *drawer)
+toplevel_destroyed (CtkWidget *widget G_GNUC_UNUSED,
+		    Drawer    *drawer)
 {
     drawer->toplevel = NULL;
 
@@ -349,8 +349,8 @@ toplevel_destroyed (CtkWidget *widget,
 }
 
 static void
-destroy_drawer (CtkWidget *widget,
-                Drawer    *drawer)
+destroy_drawer (CtkWidget *widget G_GNUC_UNUSED,
+		Drawer    *drawer)
 {
     if (drawer->toplevel) {
         ctk_widget_destroy (CTK_WIDGET (drawer->toplevel));
@@ -377,8 +377,8 @@ drawer_deletion_response (CtkWidget   *dialog,
 /* end event handlers */
 
 static PanelToplevel *
-create_drawer_toplevel (const char *drawer_id,
-                        GSettings  *settings)
+create_drawer_toplevel (const char *drawer_id G_GNUC_UNUSED,
+			GSettings  *settings)
 {
     PanelToplevel *toplevel;
     char          *toplevel_id;

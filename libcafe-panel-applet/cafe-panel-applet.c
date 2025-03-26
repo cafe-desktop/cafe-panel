@@ -623,8 +623,8 @@ cafe_panel_applet_menu_update_actions (CafePanelApplet *applet)
 }
 
 static void
-cafe_panel_applet_menu_cmd_remove (CtkAction   *action,
-			      CafePanelApplet *applet)
+cafe_panel_applet_menu_cmd_remove (CtkAction       *action G_GNUC_UNUSED,
+				   CafePanelApplet *applet)
 {
 	GError *error = NULL;
 
@@ -645,8 +645,8 @@ cafe_panel_applet_menu_cmd_remove (CtkAction   *action,
 }
 
 static void
-cafe_panel_applet_menu_cmd_move (CtkAction   *action,
-			    CafePanelApplet *applet)
+cafe_panel_applet_menu_cmd_move (CtkAction       *action G_GNUC_UNUSED,
+				 CafePanelApplet *applet)
 {
 	GError *error = NULL;
 
@@ -1066,7 +1066,7 @@ cafe_panel_applet_get_preferred_height (CtkWidget *widget,
 }
 
 static CtkSizeRequestMode
-cafe_panel_applet_get_request_mode (CtkWidget *widget)
+cafe_panel_applet_get_request_mode (CtkWidget *widget G_GNUC_UNUSED)
 {
 	/*Do not use CTK_SIZE_REQUEST_HEIGHT_FOR_WIDTH
 	 *or CTK_SIZE_REQUEST_WIDTH_FOR_HEIGHT
@@ -2060,9 +2060,9 @@ CtkWidget* cafe_panel_applet_new(void)
 }
 
 static CdkEvent *
-button_press_event_new (CafePanelApplet *applet,
-                        guint        button,
-                        guint        time)
+button_press_event_new (CafePanelApplet *applet G_GNUC_UNUSED,
+			guint            button,
+			guint            time)
 {
   CdkDisplay *display;
   CdkSeat *seat;
@@ -2084,10 +2084,10 @@ button_press_event_new (CafePanelApplet *applet,
 }
 
 static void
-method_call_cb (GDBusConnection       *connection,
-		const gchar           *sender,
-		const gchar           *object_path,
-		const gchar           *interface_name,
+method_call_cb (GDBusConnection       *connection G_GNUC_UNUSED,
+		const gchar           *sender G_GNUC_UNUSED,
+		const gchar           *object_path G_GNUC_UNUSED,
+		const gchar           *interface_name G_GNUC_UNUSED,
 		const gchar           *method_name,
 		GVariant              *parameters,
 		GDBusMethodInvocation *invocation,
@@ -2111,12 +2111,12 @@ method_call_cb (GDBusConnection       *connection,
 }
 
 static GVariant *
-get_property_cb (GDBusConnection *connection,
-		 const gchar     *sender,
-		 const gchar     *object_path,
-		 const gchar     *interface_name,
+get_property_cb (GDBusConnection *connection G_GNUC_UNUSED,
+		 const gchar     *sender G_GNUC_UNUSED,
+		 const gchar     *object_path G_GNUC_UNUSED,
+		 const gchar     *interface_name G_GNUC_UNUSED,
 		 const gchar     *property_name,
-		 GError         **error,
+		 GError         **error G_GNUC_UNUSED,
 		 gpointer         user_data)
 {
 	CafePanelApplet *applet = CAFE_PANEL_APPLET (user_data);
@@ -2154,13 +2154,13 @@ get_property_cb (GDBusConnection *connection,
 }
 
 static gboolean
-set_property_cb (GDBusConnection *connection,
-		 const gchar     *sender,
-		 const gchar     *object_path,
-		 const gchar     *interface_name,
+set_property_cb (GDBusConnection *connection G_GNUC_UNUSED,
+		 const gchar     *sender G_GNUC_UNUSED,
+		 const gchar     *object_path G_GNUC_UNUSED,
+		 const gchar     *interface_name G_GNUC_UNUSED,
 		 const gchar     *property_name,
 		 GVariant        *value,
-		 GError         **error,
+		 GError         **error G_GNUC_UNUSED,
 		 gpointer         user_data)
 {
 	CafePanelApplet *applet = CAFE_PANEL_APPLET (user_data);
@@ -2243,7 +2243,8 @@ cafe_panel_applet_register_object (CafePanelApplet *applet)
 	}
 }
 
-static void cafe_panel_applet_factory_main_finalized(gpointer data, GObject* object)
+static void cafe_panel_applet_factory_main_finalized (gpointer data G_GNUC_UNUSED,
+						      GObject *object G_GNUC_UNUSED)
 {
 	ctk_main_quit();
 
@@ -2367,14 +2368,14 @@ _cafe_panel_applet_factory_main_internal (const gchar               *factory_id,
  * Returns: 0 on success, 1 if there is an error.
  */
 int
-cafe_panel_applet_factory_main (const gchar               *factory_id,
-               gboolean                   out_process, /*Dummy to support applets w issues with this */
-			   GType                      applet_type,
-			   CafePanelAppletFactoryCallback callback,
-			   gpointer                   user_data)
+cafe_panel_applet_factory_main (const gchar                   *factory_id,
+				gboolean                       out_process G_GNUC_UNUSED, /*Dummy to support applets w issues with this */
+				GType                          applet_type,
+				CafePanelAppletFactoryCallback callback,
+				gpointer                       user_data)
 {
 	return _cafe_panel_applet_factory_main_internal (factory_id, TRUE, applet_type,
-						    callback, user_data);
+							 callback, user_data);
 }
 
 /**
@@ -2409,8 +2410,8 @@ cafe_panel_applet_factory_setup_in_process (const gchar               *factory_i
  **/
 
 void
-cafe_panel_applet_set_background_widget (CafePanelApplet *applet,
-				    CtkWidget   *widget)
+cafe_panel_applet_set_background_widget (CafePanelApplet *applet G_GNUC_UNUSED,
+					 CtkWidget       *widget G_GNUC_UNUSED)
 {
 }
 

@@ -161,9 +161,9 @@ clock_location_tile_finalize (GObject *g_obj)
 }
 
 static gboolean
-press_on_tile      (CtkWidget             *widget,
-                    CdkEventButton        *event,
-                    ClockLocationTile *tile)
+press_on_tile      (CtkWidget         *widget G_GNUC_UNUSED,
+		    CdkEventButton    *event G_GNUC_UNUSED,
+		    ClockLocationTile *tile)
 {
         g_signal_emit (tile, signals[TILE_PRESSED], 0);
 
@@ -171,7 +171,8 @@ press_on_tile      (CtkWidget             *widget,
 }
 
 static void
-make_current_cb (gpointer data, GError *error)
+make_current_cb (gpointer data G_GNUC_UNUSED,
+		 GError  *error)
 {
         CtkWidget *dialog;
 
@@ -189,7 +190,8 @@ make_current_cb (gpointer data, GError *error)
 }
 
 static void
-make_current (CtkWidget *widget, ClockLocationTile *tile)
+make_current (CtkWidget         *widget G_GNUC_UNUSED,
+	      ClockLocationTile *tile)
 {
         ClockLocationTilePrivate *priv = clock_location_tile_get_instance_private (tile);
 
@@ -198,9 +200,9 @@ make_current (CtkWidget *widget, ClockLocationTile *tile)
 }
 
 static gboolean
-enter_or_leave_tile (CtkWidget             *widget,
-                     CdkEventCrossing      *event,
-                     ClockLocationTile *tile)
+enter_or_leave_tile (CtkWidget         *widget G_GNUC_UNUSED,
+		     CdkEventCrossing  *event,
+		     ClockLocationTile *tile)
 {
         ClockLocationTilePrivate *priv = clock_location_tile_get_instance_private (tile);
 
@@ -653,12 +655,12 @@ weather_info_setup_tooltip (WeatherInfo *info, ClockLocation *location, CtkToolt
 }
 
 static gboolean
-weather_tooltip (CtkWidget  *widget,
-                 gint        x,
-                 gint        y,
-                 gboolean    keyboard_mode,
-                 CtkTooltip *tooltip,
-                 gpointer    data)
+weather_tooltip (CtkWidget  *widget G_GNUC_UNUSED,
+		 gint        x G_GNUC_UNUSED,
+		 gint        y G_GNUC_UNUSED,
+		 gboolean    keyboard_mode G_GNUC_UNUSED,
+		 CtkTooltip *tooltip,
+		 gpointer    data)
 {
         ClockLocationTile *tile;
         ClockLocationTilePrivate *priv;
@@ -680,7 +682,9 @@ weather_tooltip (CtkWidget  *widget,
 }
 
 static void
-update_weather_icon (ClockLocation *loc, WeatherInfo *info, gpointer data)
+update_weather_icon (ClockLocation *loc G_GNUC_UNUSED,
+		     WeatherInfo   *info,
+		     gpointer       data)
 {
         ClockLocationTile *tile;
         ClockLocationTilePrivate *priv;

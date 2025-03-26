@@ -46,7 +46,8 @@ typedef struct
 } TrayData;
 
 static void
-do_add (CtkWidget *child, guint *n_children)
+do_add (CtkWidget *child G_GNUC_UNUSED,
+	guint     *n_children)
 {
   *n_children += 1;
 }
@@ -67,7 +68,9 @@ update_child_count (TrayData *data)
 }
 
 static void
-tray_added_cb (CtkContainer *box, CtkWidget *icon, TrayData *data)
+tray_added_cb (CtkContainer *box G_GNUC_UNUSED,
+	       CtkWidget    *icon,
+	       TrayData     *data)
 {
   g_print ("[Screen %u tray %p] Child %p added to tray: \"%s\"\n",
 	   data->screen_num, data->traybox, icon, "XXX");//na_tray_child_get_title (icon));
@@ -76,7 +79,9 @@ tray_added_cb (CtkContainer *box, CtkWidget *icon, TrayData *data)
 }
 
 static void
-tray_removed_cb (CtkContainer *box, CtkWidget *icon, TrayData *data)
+tray_removed_cb (CtkContainer *box G_GNUC_UNUSED,
+		 CtkWidget    *icon,
+		 TrayData     *data)
 {
   g_print ("[Screen %u tray %p] Child %p removed from tray\n",
 	   data->screen_num, data->traybox, icon);
@@ -95,8 +100,8 @@ static void orientation_changed_cb (CtkComboBox *combo, TrayData *data)
 }
 
 static void
-maybe_quit (gpointer data,
-	    GObject *zombie)
+maybe_quit (gpointer data G_GNUC_UNUSED,
+	    GObject *zombie G_GNUC_UNUSED)
 {
   if (--n_windows == 0) {
     ctk_main_quit ();
@@ -118,7 +123,8 @@ warning_dialog_response_cb (CtkWidget *dialog,
 }
 
 static void
-add_tray_cb (CtkWidget *button, TrayData *data)
+add_tray_cb (CtkWidget *button G_GNUC_UNUSED,
+	     TrayData  *data)
 {
   create_tray_on_screen (data->screen, TRUE);
 }

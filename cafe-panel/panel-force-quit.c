@@ -280,7 +280,7 @@ handle_button_press_event (CtkWidget *popup,
 
 static CdkFilterReturn
 popup_filter (CdkXEvent *cdk_xevent,
-	      CdkEvent  *event,
+	      CdkEvent  *event G_GNUC_UNUSED,
 	      CtkWidget *popup)
 {
 	XEvent *xevent = (XEvent *) cdk_xevent;
@@ -320,16 +320,16 @@ popup_filter (CdkXEvent *cdk_xevent,
 }
 
 static void
-prepare_root_window (CdkSeat   *seat,
-                     CdkWindow *window,
-                     gpointer   user_data)
+prepare_root_window (CdkSeat   *seat G_GNUC_UNUSED,
+		     CdkWindow *window,
+		     gpointer   user_data G_GNUC_UNUSED)
 {
 	cdk_window_show_unraised (window);
 }
 
 void
 panel_force_quit (CdkScreen *screen,
-		  guint      time)
+		  guint      time G_GNUC_UNUSED)
 {
 	CdkGrabStatus  status;
 	CdkCursor     *cross;

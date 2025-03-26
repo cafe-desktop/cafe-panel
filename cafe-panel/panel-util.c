@@ -1185,10 +1185,10 @@ panel_util_get_icon_for_uri (const char *text_uri)
 }
 
 static gboolean
-panel_util_query_tooltip_cb (CtkWidget  *widget,
-			     gint        x,
-			     gint        y,
-			     gboolean    keyboard_tip,
+panel_util_query_tooltip_cb (CtkWidget  *widget G_GNUC_UNUSED,
+			     gint        x G_GNUC_UNUSED,
+			     gint        y G_GNUC_UNUSED,
+			     gboolean    keyboard_tip G_GNUC_UNUSED,
 			     CtkTooltip *tooltip,
 			     const char *text)
 {

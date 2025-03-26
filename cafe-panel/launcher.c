@@ -171,10 +171,10 @@ launcher_launch (Launcher  *launcher,
 static void
 drag_data_received_cb (CtkWidget        *widget,
 		       CdkDragContext   *context,
-		       gint              x,
-		       gint              y,
+		       gint              x G_GNUC_UNUSED,
+		       gint              y G_GNUC_UNUSED,
 		       CtkSelectionData *selection_data,
-		       guint             info,
+		       guint             info G_GNUC_UNUSED,
 		       guint             time,
 		       Launcher         *launcher)
 {
@@ -224,7 +224,7 @@ drag_data_received_cb (CtkWidget        *widget,
 }
 
 static void
-destroy_launcher (CtkWidget *widget,
+destroy_launcher (CtkWidget *widget G_GNUC_UNUSED,
 		  Launcher  *launcher)
 {
 	launcher_properties_destroy (launcher);
@@ -315,22 +315,22 @@ is_this_drop_ok (CtkWidget      *widget,
 }
 
 static void
-drag_leave_cb(CtkWidget	       *widget,
-	      CdkDragContext   *context,
-	      guint             time,
-	      Launcher *launcher)
+drag_leave_cb(CtkWidget	     *widget,
+	      CdkDragContext *context G_GNUC_UNUSED,
+	      guint           time G_GNUC_UNUSED,
+	      Launcher       *launcher G_GNUC_UNUSED)
 {
-	button_widget_set_dnd_highlight(BUTTON_WIDGET(widget), FALSE);
+	button_widget_set_dnd_highlight (BUTTON_WIDGET (widget), FALSE);
 }
 
 
 static gboolean
-drag_motion_cb(CtkWidget *widget,
+drag_motion_cb(CtkWidget      *widget,
 	       CdkDragContext *context,
-	       gint x,
-	       gint y,
-	       guint time,
-	       Launcher *launcher)
+	       gint            x G_GNUC_UNUSED,
+	       gint            y G_GNUC_UNUSED,
+	       guint           time,
+	       Launcher       *launcher G_GNUC_UNUSED)
 {
 	if ( ! is_this_drop_ok (widget, context))
 		return FALSE;
@@ -343,12 +343,12 @@ drag_motion_cb(CtkWidget *widget,
 }
 
 static gboolean
-drag_drop_cb (CtkWidget	        *widget,
-	      CdkDragContext    *context,
-	      gint               x,
-	      gint               y,
-	      guint              time,
-	      Launcher          *launcher)
+drag_drop_cb (CtkWidget	     *widget,
+	      CdkDragContext *context,
+	      gint            x G_GNUC_UNUSED,
+	      gint            y G_GNUC_UNUSED,
+	      guint           time,
+	      Launcher       *launcher G_GNUC_UNUSED)
 {
 	static CdkAtom text_uri_list = NULL;
 
@@ -370,11 +370,11 @@ enum {
 
 
 static void
-drag_data_get_cb (CtkWidget        *widget,
-		  CdkDragContext   *context,
+drag_data_get_cb (CtkWidget        *widget G_GNUC_UNUSED,
+		  CdkDragContext   *context G_GNUC_UNUSED,
 		  CtkSelectionData *selection_data,
 		  guint             info,
-		  guint             time,
+		  guint             time G_GNUC_UNUSED,
 		  Launcher         *launcher)
 {
 	char *location;
@@ -692,7 +692,7 @@ panel_launcher_find_writable_uri (const char *launcher_location,
 }
 
 static void
-launcher_changed (PanelDItemEditor *dialog,
+launcher_changed (PanelDItemEditor *dialog G_GNUC_UNUSED,
 		  Launcher         *launcher)
 {
 	/* Setup the button look */
@@ -701,7 +701,7 @@ launcher_changed (PanelDItemEditor *dialog,
 
 static void
 launcher_command_changed (PanelDItemEditor *dialog,
-			  const char       *command,
+			  const char       *command G_GNUC_UNUSED,
 			  Launcher         *launcher)
 {
 	GKeyFile *revert_key_file;
@@ -795,7 +795,7 @@ static void
 launcher_error_reported (CtkWidget  *dialog,
 			 const char *primary,
 			 const char *secondary,
-			 gpointer    data)
+			 gpointer    data G_GNUC_UNUSED)
 {
 	panel_error_dialog (CTK_WINDOW (dialog), NULL,
 			    "error_editing_launcher", TRUE,
@@ -938,7 +938,7 @@ launcher_load_from_gsettings (PanelWidget *panel_widget,
 
 static void
 launcher_new_saved (CtkWidget *dialog,
-		    gpointer   data)
+		    gpointer   data G_GNUC_UNUSED)
 {
 	PanelWidget *panel;
 	int          pos;
@@ -963,7 +963,7 @@ void
 ask_about_launcher (const char  *file,
 		    PanelWidget *panel,
 		    int          pos,
-		    gboolean     exactpos)
+		    gboolean     exactpos G_GNUC_UNUSED)
 {
 	CtkWidget *dialog;
 	GKeyFile  *key_file;

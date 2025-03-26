@@ -285,11 +285,11 @@ panel_addto_make_text (const char *name,
 }
 
 static void
-panel_addto_drag_data_get_cb (CtkWidget        *widget,
-			      CdkDragContext   *context,
+panel_addto_drag_data_get_cb (CtkWidget        *widget G_GNUC_UNUSED,
+			      CdkDragContext   *context G_GNUC_UNUSED,
 			      CtkSelectionData *selection_data,
-			      guint             info,
-			      guint             time,
+			      guint             info G_GNUC_UNUSED,
+			      guint             time G_GNUC_UNUSED,
 			      const char       *string)
 {
 	ctk_selection_data_set (selection_data,
@@ -300,7 +300,7 @@ panel_addto_drag_data_get_cb (CtkWidget        *widget,
 static void
 panel_addto_drag_begin_cb (CtkWidget      *widget,
 			   CdkDragContext *context,
-			   gpointer        data)
+			   gpointer        data G_GNUC_UNUSED)
 {
 	CtkTreeModel *filter_model;
 	CtkTreeModel *child_model;
@@ -445,8 +445,8 @@ panel_addto_query_applets (GSList *list)
 }
 
 static void
-panel_addto_append_item (PanelAddtoDialog *dialog,
-			 CtkListStore *model,
+panel_addto_append_item (PanelAddtoDialog   *dialog G_GNUC_UNUSED,
+			 CtkListStore       *model,
 			 PanelAddtoItemInfo *applet)
 {
 	CtkTreeIter iter;
@@ -582,9 +582,9 @@ panel_addto_prepend_directory (GSList             **parent_list,
 }
 
 static void
-panel_addto_prepend_entry (GSList         **parent_list,
+panel_addto_prepend_entry (GSList            **parent_list,
 			   CafeMenuTreeEntry  *entry,
-			   const char      *filename)
+			   const char         *filename G_GNUC_UNUSED)
 {
 	PanelAddtoAppList *data;
 	GDesktopAppInfo    *ginfo;
@@ -878,7 +878,7 @@ panel_addto_dialog_response (CtkWidget *widget_dialog,
 }
 
 static void
-panel_addto_dialog_destroy (CtkWidget *widget_dialog,
+panel_addto_dialog_destroy (CtkWidget        *widget_dialog G_GNUC_UNUSED,
 			    PanelAddtoDialog *dialog)
 {
 	panel_toplevel_pop_autohide_disabler (PANEL_TOPLEVEL (dialog->panel_widget->toplevel));
@@ -1115,7 +1115,7 @@ panel_addto_filter_func (CtkTreeModel *model,
 }
 
 static void
-panel_addto_search_entry_changed (CtkWidget        *entry,
+panel_addto_search_entry_changed (CtkWidget        *entry G_GNUC_UNUSED,
 				  PanelAddtoDialog *dialog)
 {
 	CtkTreeModel *model;
@@ -1152,7 +1152,7 @@ panel_addto_search_entry_changed (CtkWidget        *entry,
 }
 
 static void
-panel_addto_search_entry_activated (CtkWidget        *entry,
+panel_addto_search_entry_activated (CtkWidget        *entry G_GNUC_UNUSED,
 				    PanelAddtoDialog *dialog)
 {
 	ctk_dialog_response (CTK_DIALOG (dialog->addto_dialog),
@@ -1160,11 +1160,11 @@ panel_addto_search_entry_activated (CtkWidget        *entry,
 }
 
 static gboolean
-panel_addto_selection_func (CtkTreeSelection  *selection,
-			    CtkTreeModel      *model,
-			    CtkTreePath       *path,
-			    gboolean           path_currently_selected,
-			    gpointer           data)
+panel_addto_selection_func (CtkTreeSelection *selection G_GNUC_UNUSED,
+			    CtkTreeModel     *model,
+			    CtkTreePath      *path,
+			    gboolean          path_currently_selected G_GNUC_UNUSED,
+			    gpointer          data G_GNUC_UNUSED)
 {
 	CtkTreeIter         iter;
 	gboolean            enabled;
@@ -1255,9 +1255,9 @@ panel_addto_selection_changed (CtkTreeSelection *selection,
 }
 
 static void
-panel_addto_selection_activated (CtkTreeView       *view,
-				 CtkTreePath       *path,
-				 CtkTreeViewColumn *column,
+panel_addto_selection_activated (CtkTreeView       *view G_GNUC_UNUSED,
+				 CtkTreePath       *path G_GNUC_UNUSED,
+				 CtkTreeViewColumn *column G_GNUC_UNUSED,
 				 PanelAddtoDialog  *dialog)
 {
 	ctk_dialog_response (CTK_DIALOG (dialog->addto_dialog),
@@ -1444,7 +1444,7 @@ panel_addto_dialog_new (PanelWidget *panel_widget)
 #define MAX_ADDTOPANEL_HEIGHT 490
 
 void
-panel_addto_present (CtkMenuItem *item,
+panel_addto_present (CtkMenuItem *item G_GNUC_UNUSED,
 		     PanelWidget *panel_widget)
 {
 	PanelAddtoDialog *dialog;

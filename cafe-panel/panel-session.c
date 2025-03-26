@@ -36,8 +36,8 @@
 static gboolean do_not_restart = FALSE;
 
 static void
-panel_session_handle_quit (EggSMClient *client,
-			   gpointer     data)
+panel_session_handle_quit (EggSMClient *client G_GNUC_UNUSED,
+			   gpointer     data G_GNUC_UNUSED)
 {
 	panel_shell_quit ();
 }

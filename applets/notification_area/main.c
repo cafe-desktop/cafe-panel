@@ -153,18 +153,18 @@ na_preferences_dialog_min_icon_size_changed (NaTrayApplet  *applet,
 }
 
 static gboolean
-na_preferences_dialog_hide_event (CtkWidget    *widget,
-                                  CdkEvent     *event,
-                                  NaTrayApplet *applet)
+na_preferences_dialog_hide_event (CtkWidget    *widget G_GNUC_UNUSED,
+				  CdkEvent     *event G_GNUC_UNUSED,
+				  NaTrayApplet *applet)
 {
   ctk_widget_hide (applet->priv->dialog->preferences_dialog);
   return TRUE;
 }
 
 static void
-na_preferences_dialog_response (NaTrayApplet *applet,
-                                int           response,
-                                CtkWidget    *preferences_dialog)
+na_preferences_dialog_response (NaTrayApplet *applet G_GNUC_UNUSED,
+				int           response,
+				CtkWidget    *preferences_dialog)
 {
   switch (response)
     {
@@ -206,8 +206,8 @@ ensure_prefs_window_is_created (NaTrayApplet *applet)
 }
 
 static void
-properties_dialog (CtkAction    *action,
-                   NaTrayApplet *applet)
+properties_dialog (CtkAction    *action G_GNUC_UNUSED,
+		   NaTrayApplet *applet)
 {
   ensure_prefs_window_is_created (applet);
 
@@ -216,7 +216,8 @@ properties_dialog (CtkAction    *action,
   ctk_window_present (CTK_WINDOW (applet->priv->dialog->preferences_dialog));
 }
 
-static void help_cb(CtkAction* action, NaTrayApplet* applet)
+static void help_cb(CtkAction    *action G_GNUC_UNUSED,
+		    NaTrayApplet *applet)
 {
 	GError* error = NULL;
 	char* uri;
@@ -255,7 +256,8 @@ static void help_cb(CtkAction* action, NaTrayApplet* applet)
 	}
 }
 
-static void about_cb(CtkAction* action, NaTrayApplet* applet)
+static void about_cb (CtkAction    *action G_GNUC_UNUSED,
+		      NaTrayApplet *applet G_GNUC_UNUSED)
 {
 	const gchar* authors[] = {
 		"Havoc Pennington <hp@redhat.com>",
@@ -493,8 +495,8 @@ na_tray_applet_init (NaTrayApplet *applet)
 
 static gboolean
 applet_factory (CafePanelApplet *applet,
-                const gchar *iid,
-                gpointer     user_data)
+		const gchar     *iid,
+		gpointer         user_data G_GNUC_UNUSED)
 {
   if (!(strcmp (iid, "NotificationArea") == 0 ||
         strcmp (iid, "SystemTrayApplet") == 0))

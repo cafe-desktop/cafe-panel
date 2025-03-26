@@ -5,7 +5,7 @@
 
 static void
 test_applet_on_do (CtkAction *action,
-		   gpointer   user_data)
+		   gpointer   user_data G_GNUC_UNUSED)
 {
         g_message ("%s called\n", ctk_action_get_name (action));
 }
@@ -44,19 +44,19 @@ static GType test_applet_get_type (void) G_GNUC_CONST;
 G_DEFINE_TYPE (TestApplet, test_applet, PANEL_TYPE_APPLET);
 
 static void
-test_applet_init (TestApplet *applet)
+test_applet_init (TestApplet *applet G_GNUC_UNUSED)
 {
 }
 
 static void
-test_applet_class_init (TestAppletClass *klass)
+test_applet_class_init (TestAppletClass *klass G_GNUC_UNUSED)
 {
 }
 
 static void
-test_applet_handle_orient_change (TestApplet       *applet,
-				  CafePanelAppletOrient orient,
-				  gpointer          dummy)
+test_applet_handle_orient_change (TestApplet           *applet,
+				  CafePanelAppletOrient orient G_GNUC_UNUSED,
+				  gpointer              dummy G_GNUC_UNUSED)
 {
         gchar *text;
 
@@ -72,7 +72,7 @@ test_applet_handle_orient_change (TestApplet       *applet,
 static void
 test_applet_handle_size_change (TestApplet *applet,
 				gint        size,
-				gpointer    dummy)
+				gpointer    dummy G_GNUC_UNUSED)
 {
 	switch (size) {
 	case 12:
@@ -110,11 +110,11 @@ test_applet_handle_size_change (TestApplet *applet,
 }
 
 static void
-test_applet_handle_background_change (TestApplet                *applet,
-				      CafePanelAppletBackgroundType  type,
-				      CdkColor                  *color,
-				      cairo_pattern_t           *pattern,
-				      gpointer                   dummy)
+test_applet_handle_background_change (TestApplet                   *applet,
+				      CafePanelAppletBackgroundType type,
+				      CdkColor                     *color,
+				      cairo_pattern_t              *pattern,
+				      gpointer                      dummy G_GNUC_UNUSED)
 {
 	CdkWindow *window = ctk_widget_get_window (applet->label);
 
@@ -192,7 +192,7 @@ test_applet_fill (TestApplet *applet)
 static gboolean
 test_applet_factory (TestApplet  *applet,
 		     const gchar *iid,
-		     gpointer     data)
+		     gpointer     data G_GNUC_UNUSED)
 {
 	gboolean retval = FALSE;
 

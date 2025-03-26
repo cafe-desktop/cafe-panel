@@ -163,7 +163,7 @@ panel_separator_size_allocate (CtkWidget     *widget,
 
 static void
 panel_separator_parent_set (CtkWidget *widget,
-			   CtkWidget *previous_parent)
+			    CtkWidget *previous_parent G_GNUC_UNUSED)
 {
 	PanelSeparator *separator;
 	CtkWidget      *parent;

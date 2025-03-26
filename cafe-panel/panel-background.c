@@ -199,13 +199,14 @@ free_composited_resources (PanelBackground *background)
 
 #ifdef HAVE_X11
 
-static void _panel_background_transparency(CdkScreen* screen,PanelBackground* background)
+static void _panel_background_transparency (CdkScreen       *screen G_GNUC_UNUSED,
+					    PanelBackground *background)
 {
 	panel_background_composite(background);
 }
 
 static void
-background_changed (PanelBackgroundMonitor *monitor,
+background_changed (PanelBackgroundMonitor *monitor G_GNUC_UNUSED,
 		    PanelBackground        *background)
 {
 	GdkPixbuf *tmp;

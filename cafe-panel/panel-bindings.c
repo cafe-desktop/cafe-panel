@@ -179,8 +179,8 @@ panel_bindings_mouse_modifier_set_from_string (const char *str)
 
 static void
 panel_bindings_mouse_modifier_changed (GSettings *settings,
-									   gchar *key,
-									   gpointer user_data)
+				       gchar     *key,
+				       gpointer   user_data G_GNUC_UNUSED)
 {
 	gchar *value = g_settings_get_string (settings, key);
 	panel_bindings_mouse_modifier_set_from_string (value);

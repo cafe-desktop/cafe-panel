@@ -99,9 +99,9 @@ gf_watch_free (gpointer data)
 }
 
 static void
-name_vanished_cb (GDBusConnection *connection,
-                  const char      *name,
-                  gpointer         user_data)
+name_vanished_cb (GDBusConnection *connection G_GNUC_UNUSED,
+		  const char      *name G_GNUC_UNUSED,
+		  gpointer         user_data)
 {
   GfWatch *watch;
   GfSnWatcherV0 *v0;
@@ -330,8 +330,8 @@ gf_sn_watcher_v0_gen_init (GfSnWatcherV0GenIface *iface)
 
 static void
 bus_acquired_cb (GDBusConnection *connection,
-                 const gchar     *name,
-                 gpointer         user_data)
+		 const gchar     *name G_GNUC_UNUSED,
+		 gpointer         user_data)
 {
   GfSnWatcherV0 *v0;
   GDBusInterfaceSkeleton *skeleton;

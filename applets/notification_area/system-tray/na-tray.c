@@ -114,9 +114,9 @@ get_tray (TraysScreen *trays_screen)
 }
 
 static void
-tray_added (NaTrayManager *manager,
-            NaTrayChild   *icon,
-            TraysScreen   *trays_screen)
+tray_added (NaTrayManager *manager G_GNUC_UNUSED,
+	    NaTrayChild   *icon,
+	    TraysScreen   *trays_screen)
 {
   NaTray *tray;
   NaTrayPrivate *priv;
@@ -138,9 +138,9 @@ tray_added (NaTrayManager *manager,
 }
 
 static void
-tray_removed (NaTrayManager *manager,
-              NaTrayChild   *icon,
-              TraysScreen   *trays_screen)
+tray_removed (NaTrayManager *manager G_GNUC_UNUSED,
+	      NaTrayChild   *icon,
+	      TraysScreen   *trays_screen)
 {
   NaTray *tray;
 
@@ -159,7 +159,7 @@ tray_removed (NaTrayManager *manager,
 
 static void
 icon_tip_buffer_free (gpointer data,
-                      gpointer userdata)
+		      gpointer userdata G_GNUC_UNUSED)
 {
   IconTipBuffer *buffer;
 
@@ -213,8 +213,8 @@ icon_tip_buffer_compare (gconstpointer a,
 }
 
 static void
-icon_tip_show_next_clicked (CtkWidget *widget,
-                            gpointer   data)
+icon_tip_show_next_clicked (CtkWidget *widget G_GNUC_UNUSED,
+			    gpointer   data)
 {
   icon_tip_show_next ((IconTip *) data);
 }
@@ -274,12 +274,12 @@ icon_tip_show_next (IconTip *icontip)
 }
 
 static void
-message_sent (NaTrayManager *manager,
-              CtkWidget     *icon,
-              const char    *text,
-              glong          id,
-              glong          timeout,
-              TraysScreen   *trays_screen)
+message_sent (NaTrayManager *manager G_GNUC_UNUSED,
+	      CtkWidget     *icon,
+	      const char    *text,
+	      glong          id,
+	      glong          timeout,
+	      TraysScreen   *trays_screen)
 {
   IconTip       *icontip;
   IconTipBuffer  find_buffer;
@@ -337,10 +337,10 @@ message_sent (NaTrayManager *manager,
 }
 
 static void
-message_cancelled (NaTrayManager *manager,
-                   CtkWidget     *icon,
-                   glong          id,
-                   TraysScreen   *trays_screen)
+message_cancelled (NaTrayManager *manager G_GNUC_UNUSED,
+		   CtkWidget     *icon,
+		   glong          id,
+		   TraysScreen   *trays_screen)
 {
   IconTip       *icontip;
   IconTipBuffer  find_buffer;
@@ -371,9 +371,9 @@ message_cancelled (NaTrayManager *manager,
 }
 
 static void
-update_orientation_for_messages (gpointer key,
-                                 gpointer value,
-                                 gpointer data)
+update_orientation_for_messages (gpointer key G_GNUC_UNUSED,
+				 gpointer value,
+				 gpointer data)
 {
   NaTray *tray;
   IconTip    *icontip;

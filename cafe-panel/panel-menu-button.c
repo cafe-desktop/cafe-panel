@@ -347,10 +347,10 @@ panel_menu_button_parent_set (CtkWidget *widget,
 
 static void
 panel_menu_button_drag_data_get (CtkWidget        *widget,
-				 CdkDragContext   *context,
+				 CdkDragContext   *context G_GNUC_UNUSED,
 				 CtkSelectionData *selection_data,
-				 guint             info,
-				 guint             time)
+				 guint             info G_GNUC_UNUSED,
+				 guint             time G_GNUC_UNUSED)
 {
 	char            *drag_data;
 
@@ -437,8 +437,8 @@ panel_menu_button_recreate_menu (PanelMenuButton *button)
 
 void
 panel_menu_button_popup_menu (PanelMenuButton *button,
-			      guint            n_button,
-			      guint32          activate_time)
+			      guint            n_button G_GNUC_UNUSED,
+			      guint32          activate_time G_GNUC_UNUSED)
 {
 	CdkScreen *screen;
 

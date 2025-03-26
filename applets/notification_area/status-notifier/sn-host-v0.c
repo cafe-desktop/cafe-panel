@@ -64,12 +64,12 @@ G_DEFINE_TYPE_WITH_CODE (SnHostV0, sn_host_v0, SN_TYPE_HOST_V0_GEN_SKELETON,
                          G_IMPLEMENT_INTERFACE (NA_TYPE_HOST, na_host_init))
 
 static void
-sn_host_v0_gen_init (SnHostV0GenIface *iface)
+sn_host_v0_gen_init (SnHostV0GenIface *iface G_GNUC_UNUSED)
 {
 }
 
 static void
-na_host_init (NaHostInterface *iface)
+na_host_init (NaHostInterface *iface G_GNUC_UNUSED)
 {
 }
 
@@ -138,17 +138,17 @@ add_registered_item (SnHostV0    *v0,
 }
 
 static void
-item_registered_cb (SnWatcherV0Gen *watcher,
-                    const gchar    *service,
-                    SnHostV0       *v0)
+item_registered_cb (SnWatcherV0Gen *watcher G_GNUC_UNUSED,
+		    const gchar    *service,
+		    SnHostV0       *v0)
 {
   add_registered_item (v0, service);
 }
 
 static void
-item_unregistered_cb (SnWatcherV0Gen *watcher,
-                      const gchar    *service,
-                      SnHostV0       *v0)
+item_unregistered_cb (SnWatcherV0Gen *watcher G_GNUC_UNUSED,
+		      const gchar    *service,
+		      SnHostV0       *v0)
 {
   GSList *l;
 
@@ -232,9 +232,9 @@ register_host_cb (GObject      *source_object,
 }
 
 static void
-proxy_ready_cb (GObject      *source_object,
-                GAsyncResult *res,
-                gpointer      user_data)
+proxy_ready_cb (GObject      *source_object G_GNUC_UNUSED,
+		GAsyncResult *res,
+		gpointer      user_data)
 {
   GError *error;
   SnWatcherV0Gen *watcher;
@@ -266,9 +266,9 @@ proxy_ready_cb (GObject      *source_object,
 
 static void
 name_appeared_cb (GDBusConnection *connection,
-                  const gchar     *name,
-                  const gchar     *name_owner,
-                  gpointer         user_data)
+		  const gchar     *name G_GNUC_UNUSED,
+		  const gchar     *name_owner G_GNUC_UNUSED,
+		  gpointer         user_data)
 {
   SnHostV0 *v0;
 
@@ -290,9 +290,9 @@ emit_item_removed_signal (gpointer data,
 }
 
 static void
-name_vanished_cb (GDBusConnection *connection,
-                  const gchar     *name,
-                  gpointer         user_data)
+name_vanished_cb (GDBusConnection *connection G_GNUC_UNUSED,
+		  const gchar     *name G_GNUC_UNUSED,
+		  gpointer         user_data)
 {
   SnHostV0 *v0;
 
@@ -313,8 +313,8 @@ name_vanished_cb (GDBusConnection *connection,
 
 static void
 bus_acquired_cb (GDBusConnection *connection,
-                 const gchar     *name,
-                 gpointer         user_data)
+		 const gchar     *name G_GNUC_UNUSED,
+		 gpointer         user_data)
 {
   SnHostV0 *v0;
   GDBusInterfaceSkeleton *skeleton;

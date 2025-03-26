@@ -105,7 +105,7 @@ get_combo_applet_id (CtkWidget *combo_box)
 }
 
 static void
-applet_broken_cb (CtkWidget *container,
+applet_broken_cb (CtkWidget *container G_GNUC_UNUSED,
 		  CtkWidget *window)
 {
 	ctk_widget_destroy (window);
@@ -208,8 +208,8 @@ load_applet_from_command_line (void)
 }
 
 G_GNUC_UNUSED void
-on_execute_button_clicked (CtkButton *button,
-			   gpointer   dummy)
+on_execute_button_clicked (CtkButton *button G_GNUC_UNUSED,
+			   gpointer   dummy G_GNUC_UNUSED)
 {
 	char *title;
 

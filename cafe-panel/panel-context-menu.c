@@ -52,7 +52,7 @@
 
 static void
 panel_context_menu_show_help (CtkWidget *w,
-			      gpointer data)
+			      gpointer   data G_GNUC_UNUSED)
 {
 	panel_show_help (ctk_widget_get_screen (w),
 			 "cafe-user-guide", "gospanel-1", NULL);
