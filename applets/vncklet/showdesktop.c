@@ -77,7 +77,9 @@ static void show_desktop_changed_callback(VnckScreen* screen, ShowDesktopData* s
 
 /* this is when the panel orientation changes */
 
-static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient orient, ShowDesktopData* sdd)
+static void applet_change_orient (CafePanelApplet      *applet G_GNUC_UNUSED,
+				  CafePanelAppletOrient orient,
+				  ShowDesktopData      *sdd)
 {
 	CtkOrientation new_orient;
 
@@ -103,7 +105,9 @@ static void applet_change_orient(CafePanelApplet* applet, CafePanelAppletOrient 
 }
 
 /* this is when the panel size changes */
-static void button_size_allocated(CtkWidget* button, CtkAllocation* allocation, ShowDesktopData* sdd)
+static void button_size_allocated (CtkWidget       *button G_GNUC_UNUSED,
+				   CtkAllocation   *allocation,
+				   ShowDesktopData *sdd)
 {
 	/*
 	if ((sdd->orient == CTK_ORIENTATION_HORIZONTAL) && (sdd->size == allocation->height))
@@ -291,7 +295,8 @@ static void update_button_state(ShowDesktopData* sdd)
 	update_button_display (sdd);
 }
 
-static void applet_destroyed(CtkWidget* applet, ShowDesktopData* sdd)
+static void applet_destroyed (CtkWidget       *applet G_GNUC_UNUSED,
+			      ShowDesktopData *sdd)
 {
 	if (sdd->button_activate != 0)
 	{
@@ -335,7 +340,10 @@ static gboolean button_motion_timeout(gpointer data)
 	return FALSE;
 }
 
-static void button_drag_leave(CtkWidget* widget, CdkDragContext* context, guint time, ShowDesktopData* sdd)
+static void button_drag_leave (CtkWidget       *widget G_GNUC_UNUSED,
+			       CdkDragContext  *context G_GNUC_UNUSED,
+			       guint            time G_GNUC_UNUSED,
+			       ShowDesktopData *sdd)
 {
 	if (sdd->button_activate != 0)
 	{
@@ -344,7 +352,12 @@ static void button_drag_leave(CtkWidget* widget, CdkDragContext* context, guint 
 	}
 }
 
-static gboolean button_drag_motion(CtkWidget* widget, CdkDragContext* context, gint x, gint y, guint time, ShowDesktopData* sdd)
+static gboolean button_drag_motion (CtkWidget       *widget G_GNUC_UNUSED,
+				    CdkDragContext  *context,
+				    gint             x G_GNUC_UNUSED,
+				    gint             y G_GNUC_UNUSED,
+				    guint            time,
+				    ShowDesktopData *sdd)
 {
 	if (sdd->button_activate == 0)
 		sdd->button_activate = g_timeout_add_seconds (TIMEOUT_ACTIVATE_SECONDS, button_motion_timeout, sdd);
@@ -354,7 +367,8 @@ static gboolean button_drag_motion(CtkWidget* widget, CdkDragContext* context, g
 	return TRUE;
 }
 
-static void show_desktop_applet_realized(CafePanelApplet* applet, gpointer data)
+static void show_desktop_applet_realized (CafePanelApplet *applet G_GNUC_UNUSED,
+					  gpointer         data)
 {
 	ShowDesktopData* sdd;
 	CdkScreen* screen;
@@ -383,7 +397,8 @@ static void show_desktop_applet_realized(CafePanelApplet* applet, gpointer data)
 	update_icon (sdd);
 }
 
-static void theme_changed_callback(CtkIconTheme* icon_theme, ShowDesktopData* sdd)
+static void theme_changed_callback (CtkIconTheme    *icon_theme G_GNUC_UNUSED,
+				    ShowDesktopData *sdd)
 {
 	update_icon (sdd);
 }
@@ -476,12 +491,14 @@ gboolean show_desktop_applet_fill(CafePanelApplet* applet)
 	return TRUE;
 }
 
-static void display_help_dialog(CtkAction* action, ShowDesktopData* sdd)
+static void display_help_dialog (CtkAction       *action G_GNUC_UNUSED,
+				 ShowDesktopData *sdd)
 {
 	vncklet_display_help(sdd->applet, "cafe-user-guide", "gospanel-564", SHOW_DESKTOP_ICON);
 }
 
-static void display_about_dialog(CtkAction* action, ShowDesktopData* sdd)
+static void display_about_dialog (CtkAction       *action G_GNUC_UNUSED,
+				  ShowDesktopData *sdd)
 {
 	static const gchar* authors[] = {
 		"Perberos <perberos@gmail.com>",
@@ -547,7 +564,8 @@ static void button_toggled_callback(CtkWidget* button, ShowDesktopData* sdd)
 	update_button_display (sdd);
 }
 
-static void show_desktop_changed_callback(VnckScreen* screen, ShowDesktopData* sdd)
+static void show_desktop_changed_callback (VnckScreen      *screen G_GNUC_UNUSED,
+					   ShowDesktopData *sdd)
 {
 	if (sdd->vnck_screen != NULL)
 		sdd->showing_desktop = vnck_screen_get_showing_desktop(sdd->vnck_screen);
