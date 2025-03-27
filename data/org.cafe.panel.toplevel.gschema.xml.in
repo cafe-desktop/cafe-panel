@@ -68,7 +68,7 @@
     <key name="enable-animations" type="b">
       <default>true</default>
       <summary>Enable animations</summary>
-      <description>If true, hiding and un-hiding of this panel will be anicafed rather than happening instantly.</description>
+      <description>If true, hiding and un-hiding of this panel will be animated rather than happening instantly.</description>
     </key>
     <key name="enable-buttons" type="b">
       <default>false</default>

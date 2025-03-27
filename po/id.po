@@ -882,7 +882,7 @@ msgid "From Whence That Stupid Fish Came"
 msgstr "From Whence That Stupid Fish Came"
 
 #: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
-msgid "Display a swimming fish or another anicafed creature"
+msgid "Display a swimming fish or another animated creature"
 msgstr "Menampilkan ikan yang berenang atau hewan lain."
 
 #: applets/notification_area/main.c:276
@@ -1979,7 +1979,7 @@ msgstr ""
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
-"If true, hiding and un-hiding of this panel will be anicafed rather than "
+"If true, hiding and un-hiding of this panel will be animated rather than "
 "happening instantly."
 msgstr ""
 "Apabila bernilai benar (true), maka panel akan disembunyikan/ditampilkan "

@@ -7,7 +7,7 @@ Description=From Whence That Stupid Fish Came
 
 [FishApplet]
 Name=Fish
-Description=Display a swimming fish or another anicafed creature
+Description=Display a swimming fish or another animated creature
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=cafe-panel-fish
 CafeComponentId=OAFIID:CAFE_FishApplet;

@@ -883,7 +883,7 @@ msgid "From Whence That Stupid Fish Came"
 msgstr "そこからあのバカな魚がやってきた"
 
 #: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
-msgid "Display a swimming fish or another anicafed creature"
+msgid "Display a swimming fish or another animated creature"
 msgstr "泳ぐ魚や動くクリーチャーを表示します"
 
 #: applets/notification_area/main.c:276
@@ -1962,7 +1962,7 @@ msgstr ""
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
-"If true, hiding and un-hiding of this panel will be anicafed rather than "
+"If true, hiding and un-hiding of this panel will be animated rather than "
 "happening instantly."
 msgstr ""
 "TRUE にすると、このパネルの隠すボタンと戻すボタンの動作にアニメーションの効果"

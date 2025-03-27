@@ -859,7 +859,7 @@ msgid "From Whence That Stupid Fish Came"
 msgstr "From Whence That Stupid Fish Came"
 
 #: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
-msgid "Display a swimming fish or another anicafed creature"
+msgid "Display a swimming fish or another animated creature"
 msgstr "पोहणारा मासा किंवा आणखी काही सजीव प्राणी दाखवा"
 
 #: applets/notification_area/main.c:276
@@ -1911,7 +1911,7 @@ msgstr ""
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
-"If true, hiding and un-hiding of this panel will be anicafed rather than "
+"If true, hiding and un-hiding of this panel will be animated rather than "
 "happening instantly."
 msgstr ""
 "खरे असल्यावर, हे पटल लपविल्यास किंवा न लपविल्यास त्वरीत न दर्शविता चित्रचेतनीकरण "

@@ -872,7 +872,7 @@ msgid "From Whence That Stupid Fish Came"
 msgstr "Որտեղից, որ հայտնվեց այս հիմար ձկնիկը"
 
 #: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
-msgid "Display a swimming fish or another anicafed creature"
+msgid "Display a swimming fish or another animated creature"
 msgstr "Ցուցադրել լողացող ձուկ կամ այլ անիմացիոն արարած"
 
 #: applets/notification_area/main.c:276
@@ -1955,7 +1955,7 @@ msgstr ""
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
-"If true, hiding and un-hiding of this panel will be anicafed rather than "
+"If true, hiding and un-hiding of this panel will be animated rather than "
 "happening instantly."
 msgstr ""
 "Եթե ճիշտ է, ապա այս վահանակի թաքցնելը և տեսանելի դարձնելը կլինեն անիմացված և "

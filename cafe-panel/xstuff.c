@@ -338,7 +338,7 @@ draw_zoom_animation (CdkScreen *gscreen,
 #undef FRAMES
 
 void
-xstuff_zoom_anicafe (CtkWidget *widget,
+xstuff_zoom_animate (CtkWidget *widget,
 		     cairo_surface_t *surface,
 		     PanelOrientation orientation,
 		     CdkRectangle *opt_rect)

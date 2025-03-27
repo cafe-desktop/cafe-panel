@@ -149,7 +149,7 @@ msgstr ""
 
 #. (itstool) path: abstract/para
 #: C/index.docbook:179
-msgid "The Fish applet displays an anicafed image in the panel and gives you your fortune when clicked."
+msgid "The Fish applet displays an animated image in the panel and gives you your fortune when clicked."
 msgstr ""
 
 #. (itstool) path: article/indexterm
@@ -184,7 +184,7 @@ msgstr ""
 
 #. (itstool) path: sect1/para
 #: C/index.docbook:205
-msgid "The <application>Fish</application> applet displays an anicafed fish in the panel. You can customize the fish's name and the program that is run when the fish is clicked in the panel. By default, the program that is run when the fish is clicked is <application>Fortune</application>, which displays a usually comical random message from a database of quotations."
+msgid "The <application>Fish</application> applet displays an animated fish in the panel. You can customize the fish's name and the program that is run when the fish is clicked in the panel. By default, the program that is run when the fish is clicked is <application>Fortune</application>, which displays a usually comical random message from a database of quotations."
 msgstr ""
 
 #. (itstool) path: sect1/para

@@ -801,7 +801,7 @@ panel_profile_toplevel_change_notify (GSettings *settings,
 	else UPDATE_CENTERED ("x-centered", x, x_right)
 	else UPDATE_CENTERED ("y-centered", y, y_bottom)
 	else UPDATE_BOOL ("auto-hide", auto_hide)
-	else UPDATE_BOOL ("enable-animations", anicafe)
+	else UPDATE_BOOL ("enable-animations", animate)
 	else UPDATE_BOOL ("enable-buttons", enable_buttons)
 	else UPDATE_BOOL ("enable-arrows", enable_arrows)
 	else UPDATE_INT ("hide-delay", hide_delay)
@@ -1115,7 +1115,7 @@ panel_profile_load_toplevel (const char *toplevel_id)
 	GET_ENUM ("orientation", orientation);
 	GET_INT ("size", size);
 	GET_BOOL ("auto-hide", auto_hide);
-	GET_BOOL ("enable-animations", anicafe);
+	GET_BOOL ("enable-animations", animate);
 	GET_BOOL ("enable-buttons", enable_buttons);
 	GET_BOOL ("enable-arrows", enable_arrows);
 	GET_INT ("hide-delay", hide_delay);

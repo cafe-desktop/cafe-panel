@@ -871,7 +871,7 @@ msgid "From Whence That Stupid Fish Came"
 msgstr "멍청한 물고기가 왔어요!"
 
 #: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
-msgid "Display a swimming fish or another anicafed creature"
+msgid "Display a swimming fish or another animated creature"
 msgstr "헤엄치는 물고기를 보여주거나 다른 애니메이션 개체를 표시합니다"
 
 #: applets/notification_area/main.c:276
@@ -1934,7 +1934,7 @@ msgstr ""
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:71
 msgid ""
-"If true, hiding and un-hiding of this panel will be anicafed rather than "
+"If true, hiding and un-hiding of this panel will be animated rather than "
 "happening instantly."
 msgstr ""
 "참이면, 이 패널의 숨기기 및 숨기기 해제가 즉시 이루어지지 않고 애니메이션으"

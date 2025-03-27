@@ -188,7 +188,7 @@ drag_data_received_cb (CtkWidget        *widget,
 	if (is_using_x11 () && panel_global_config_get_enable_animations ()) {
 		cairo_surface_t *surface;
 		surface = button_widget_get_surface (BUTTON_WIDGET (widget));
-		xstuff_zoom_anicafe (widget,
+		xstuff_zoom_animate (widget,
 				     surface,
 				     button_widget_get_orientation (BUTTON_WIDGET (widget)),
 				     NULL);
@@ -409,7 +409,7 @@ clicked_cb (Launcher  *launcher,
 	if (is_using_x11 () && panel_global_config_get_enable_animations ()) {
 		cairo_surface_t *surface;
 		surface = button_widget_get_surface (BUTTON_WIDGET (widget));
-		xstuff_zoom_anicafe (widget,
+		xstuff_zoom_animate (widget,
 				     surface,
 				     button_widget_get_orientation (BUTTON_WIDGET (widget)),
 				     NULL);
