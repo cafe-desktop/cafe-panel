@@ -239,7 +239,7 @@ enum {
 	PROP_HIDE_DELAY,
 	PROP_UNHIDE_DELAY,
 	PROP_AUTOHIDE_SIZE,
-	PROP_ANICAFE,
+	PROP_ANIMATE,
 	PROP_ANIMATION_SPEED,
 	PROP_BUTTONS_ENABLED,
 	PROP_ARROWS_ENABLED
@@ -4156,7 +4156,7 @@ panel_toplevel_set_property (GObject      *object,
 	case PROP_AUTOHIDE_SIZE:
 		panel_toplevel_set_auto_hide_size (toplevel, g_value_get_int (value));
 		break;
-	case PROP_ANICAFE:
+	case PROP_ANIMATE:
 		panel_toplevel_set_animate (toplevel, g_value_get_boolean (value));
 		break;
 	case PROP_ANIMATION_SPEED:
@@ -4235,7 +4235,7 @@ panel_toplevel_get_property (GObject    *object,
 	case PROP_AUTOHIDE_SIZE:
 		g_value_set_int (value, toplevel->priv->auto_hide_size);
 		break;
-	case PROP_ANICAFE:
+	case PROP_ANIMATE:
 		g_value_set_boolean (value, toplevel->priv->animate);
 		break;
 	case PROP_ANIMATION_SPEED:
@@ -4518,7 +4518,7 @@ panel_toplevel_class_init (PanelToplevelClass *klass)
 
 	g_object_class_install_property (
 		gobject_class,
-		PROP_ANICAFE,
+		PROP_ANIMATE,
 		g_param_spec_boolean (
 			"animate",
 			"Anicafe",
