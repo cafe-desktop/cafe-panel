@@ -4521,7 +4521,7 @@ panel_toplevel_class_init (PanelToplevelClass *klass)
 		PROP_ANIMATE,
 		g_param_spec_boolean (
 			"animate",
-			"Anicafe",
+			"Animate",
 			"Enable hiding/showing animations",
 			TRUE,
 			G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
