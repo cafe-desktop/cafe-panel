@@ -22,9 +22,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.25.0\n"
+"Project-Id-Version: cafe-panel 2.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2023-03-23 18:48+0100\n"
+"POT-Creation-Date: 2025-04-02 20:46+0200\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Lucas Lommer <drom@kdyne.net>, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/cafe/teams/13566/cs/)\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
 "<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
+#: applets/clock/calendar-window.c:257 applets/clock/clock.ui:704
 msgid "Locations"
 msgstr "Umístění"
 
@@ -50,7 +50,7 @@ msgstr "Kalendář"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449
+#: applets/clock/clock.c:452
 msgid "%l:%M:%S %p"
 msgstr "%H:%M:%S"
 
@@ -58,7 +58,7 @@ msgstr "%H:%M:%S"
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
 #.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
+#: applets/clock/clock.c:452 applets/clock/clock-location-tile.c:504
 msgid "%l:%M %p"
 msgstr "%H:%M"
 
@@ -69,7 +69,7 @@ msgstr "%H:%M"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1603
+#: applets/clock/clock.c:457 applets/clock/clock.c:1614
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
@@ -84,9 +84,9 @@ msgstr "%H:%M:%S"
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
 #.
-#: applets/clock/clock.c:454 applets/clock/clock.c:1609
-#: applets/clock/clock-location-tile.c:462
-#: applets/clock/clock-location-tile.c:509
+#: applets/clock/clock.c:457 applets/clock/clock.c:1620
+#: applets/clock/clock-location-tile.c:464
+#: applets/clock/clock-location-tile.c:511
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -95,11 +95,12 @@ msgstr "%H:%M"
 #. * the day of the month as a decimal number is a single digit,
 #. * it should begin with a 0 in your locale (e.g. "May 01"
 #. * instead of "May  1").
-#: applets/clock/clock.c:465
+#: applets/clock/clock.c:468
+#, fuzzy, c-format
 msgid "%a %b %e"
 msgstr "%a, %e. %B"
 
-#: applets/clock/clock.c:472
+#: applets/clock/clock.c:475
 #, c-format
 msgid ""
 "%1$s\n"
@@ -108,7 +109,7 @@ msgstr ""
 "%1$s\n"
 "%2$s"
 
-#: applets/clock/clock.c:480
+#: applets/clock/clock.c:483
 #, c-format
 msgid "%1$s, %2$s"
 msgstr "%1$s, %2$s"
@@ -116,19 +117,19 @@ msgstr "%1$s, %2$s"
 #. Translators: This is a strftime format string.
 #. * It is used to display a date. Please leave "%%s" as it is:
 #. * it will be used to insert the timezone name later.
-#: applets/clock/clock.c:663
+#: applets/clock/clock.c:666
 msgid "%A %B %d (%%s)"
 msgstr "%A, %e. %B (%%s)"
 
-#: applets/clock/clock.c:689
+#: applets/clock/clock.c:692
 msgid "Click to hide month calendar"
 msgstr "Kliknutím se skryje měsíční kalendář"
 
-#: applets/clock/clock.c:691
+#: applets/clock/clock.c:694
 msgid "Click to view month calendar"
 msgstr "Kliknutím se zobrazí měsíční kalendář"
 
-#: applets/clock/clock.c:1441
+#: applets/clock/clock.c:1451
 msgid "Computer Clock"
 msgstr "Počítačové hodiny"
 
@@ -138,7 +139,7 @@ msgstr "Počítačové hodiny"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1588
+#: applets/clock/clock.c:1599
 msgid "%I:%M:%S %p"
 msgstr "%H:%M:%S"
 
@@ -148,108 +149,108 @@ msgstr "%H:%M:%S"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1596
+#: applets/clock/clock.c:1607
 msgid "%I:%M %p"
 msgstr "%H:%M"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1642
+#: applets/clock/clock.c:1653
 msgid "%A, %B %d %Y"
 msgstr "%A, %e. %B %Y"
 
-#: applets/clock/clock.c:1673
+#: applets/clock/clock.c:1684
 msgid "Set System Time..."
 msgstr "Nastavit systémový čas..."
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1685
 msgid "Set System Time"
 msgstr "Nastavit systémový čas"
 
-#: applets/clock/clock.c:1689
+#: applets/clock/clock.c:1700
 msgid "Failed to set the system time"
 msgstr "Nezdařilo se nastavení systémového času"
 
-#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
-#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
-#: applets/vncklet/workspace-switcher.c:393
+#: applets/clock/clock.c:1901 applets/fish/fish.c:1713
+#: applets/notification_area/main.c:295 applets/vncklet/window-list.c:377
+#: applets/vncklet/workspace-switcher.c:401
 msgid "_Preferences"
 msgstr "_Předvolby"
 
-#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
-#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
+#: applets/clock/clock.c:1904 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1716 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:246
+#: applets/vncklet/window-list.c:385 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:101 applets/vncklet/workspace-switcher.c:409
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1313
 #: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
-#: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
+#: cafe-panel/panel-menu-bar.c:355 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
-#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
-#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
-#: applets/vncklet/workspace-switcher.c:409
+#: applets/clock/clock.c:1907 applets/fish/fish.c:1719
+#: applets/notification_area/main.c:301 applets/vncklet/showdesktop.c:254
+#: applets/vncklet/window-list.c:393 applets/vncklet/window-menu.c:109
+#: applets/vncklet/workspace-switcher.c:417
 msgid "_About"
 msgstr "O _aplikaci"
 
-#: applets/clock/clock.c:1894
+#: applets/clock/clock.c:1910
 msgid "Copy _Time"
 msgstr "Kopírova_t čas"
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1913
 msgid "Copy _Date"
 msgstr "Kopírovat _datum"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1916
 msgid "Ad_just Date & Time"
 msgstr "_Upravit datum a čas"
 
-#: applets/clock/clock.c:2898
+#: applets/clock/clock.c:2954
 msgid "Choose Location"
 msgstr "Vybrat umístění"
 
-#: applets/clock/clock.c:2977
+#: applets/clock/clock.c:3036
 msgid "Edit Location"
 msgstr "Upravit umístění"
 
-#: applets/clock/clock.c:3104
+#: applets/clock/clock.c:3169
 msgid "City Name"
 msgstr "Název města"
 
-#: applets/clock/clock.c:3108
+#: applets/clock/clock.c:3173
 msgid "City Time Zone"
 msgstr "Časové pásmo města"
 
-#: applets/clock/clock.c:3388
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
+#: applets/clock/clock.c:3456
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Clock"
 msgstr "Hodiny"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3457
 msgid "About Clock"
 msgstr "O appletu Hodiny"
 
-#: applets/clock/clock.c:3391
+#: applets/clock/clock.c:3459
 msgid "The Clock displays the current time and date"
 msgstr "Hodiny zobrazují aktuální datum a čas"
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3460
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:568
-#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
-#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
-#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
+#: applets/clock/clock.c:3465 applets/fish/fish.c:575
+#: applets/notification_area/main.c:289 applets/vncklet/showdesktop.c:527
+#: applets/vncklet/window-list.c:858 applets/vncklet/window-menu.c:91
+#: applets/vncklet/workspace-switcher.c:659 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr ""
 "Stanislav Brabec <utx@penguin.cz>\n"
@@ -269,11 +270,11 @@ msgstr ""
 msgid "Time & Date"
 msgstr "Čas a datum"
 
-#: applets/clock/clock.ui:46 applets/clock/clock.ui:923
+#: applets/clock/clock.ui:46 applets/clock/clock.ui:938
 #: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
 #: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
 #: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
-#: cafe-panel/panel.c:1356
+#: cafe-panel/panel.c:1365
 msgid "_Cancel"
 msgstr "_Zrušit"
 
@@ -297,10 +298,10 @@ msgstr "Předvolby hodin"
 msgid "Time _Settings"
 msgstr "Nas_tavení času"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:864 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1324 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -343,70 +344,74 @@ msgstr "Z_obrazit počasí"
 msgid "Show _temperature"
 msgstr "Zo_brazit teplotu"
 
-#: applets/clock/clock.ui:568 applets/fish/fish.ui:102
+#: applets/clock/clock.ui:548
+msgid "Show h_umidity"
+msgstr ""
+
+#: applets/clock/clock.ui:583 applets/fish/fish.ui:102
 #: cafe-panel/panel-properties-dialog.ui:384
 msgid "General"
 msgstr "Všeobecné"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
+#: applets/clock/clock.ui:635 cafe-panel/panel-addto.c:1320
 msgid "_Add"
 msgstr "Při_dat"
 
-#: applets/clock/clock.ui:636
+#: applets/clock/clock.ui:651
 msgid "_Edit"
 msgstr "_Upravit"
 
-#: applets/clock/clock.ui:652
+#: applets/clock/clock.ui:667
 msgid "_Remove"
 msgstr "Odeb_rat"
 
-#: applets/clock/clock.ui:713
+#: applets/clock/clock.ui:728
 msgid "Display"
 msgstr "Zobrazit"
 
-#: applets/clock/clock.ui:749
+#: applets/clock/clock.ui:764
 msgid "_Visibility unit:"
 msgstr "Jednotka _viditelnosti:"
 
-#: applets/clock/clock.ui:771
+#: applets/clock/clock.ui:786
 msgid "_Pressure unit:"
 msgstr "Jednotka t_laku:"
 
-#: applets/clock/clock.ui:805
+#: applets/clock/clock.ui:820
 msgid "_Wind speed unit:"
 msgstr "Jednotka _rychlosti větru:"
 
-#: applets/clock/clock.ui:819
+#: applets/clock/clock.ui:834
 msgid "_Temperature unit:"
 msgstr "Jednotka _teploty:"
 
-#: applets/clock/clock.ui:854
+#: applets/clock/clock.ui:869
 msgid "Weather"
 msgstr "Počasí"
 
-#: applets/clock/clock.ui:886
+#: applets/clock/clock.ui:901
 msgid "East"
 msgstr "Východ"
 
-#: applets/clock/clock.ui:889
+#: applets/clock/clock.ui:904
 msgid "West"
 msgstr "Západ"
 
-#: applets/clock/clock.ui:900
+#: applets/clock/clock.ui:915
 msgid "North"
 msgstr "Sever"
 
-#: applets/clock/clock.ui:903
+#: applets/clock/clock.ui:918
 msgid "South"
 msgstr "Jih"
 
-#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
+#: applets/clock/clock.ui:954 cafe-panel/libpanel-util/panel-ctk.c:140
 #: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "_OK"
 
 #. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
-#: applets/clock/clock.ui:1012
+#: applets/clock/clock.ui:1027
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
 "the pop-up.</i></small>"
@@ -414,39 +419,39 @@ msgstr ""
 "<small><i>Napište název města, regionu nebo země, a poté vyberte ze seznamu "
 "odpovídající položku.</i></small>"
 
-#: applets/clock/clock.ui:1057
+#: applets/clock/clock.ui:1072
 msgid "_Timezone:"
 msgstr "Č_asové pásmo:"
 
-#: applets/clock/clock.ui:1070
+#: applets/clock/clock.ui:1085
 msgid "_Location Name:"
 msgstr "Náz_ev umístění:"
 
-#: applets/clock/clock.ui:1114 applets/clock/clock.ui:1128
+#: applets/clock/clock.ui:1129 applets/clock/clock.ui:1143
 msgid "<i>(optional)</i>"
 msgstr "<i>(volitelné)</i>"
 
-#: applets/clock/clock.ui:1171
+#: applets/clock/clock.ui:1186
 msgid "L_ongitude:"
 msgstr "Z_eměpisná délka:"
 
-#: applets/clock/clock.ui:1192
+#: applets/clock/clock.ui:1207
 msgid "L_atitude:"
 msgstr "Zeměpisná šířk_a:"
 
-#: applets/clock/clock-location-tile.c:183
+#: applets/clock/clock-location-tile.c:184
 msgid "Failed to set the system timezone"
 msgstr "Nezdařilo se nastavení systémového časového pásma"
 
-#: applets/clock/clock-location-tile.c:229
+#: applets/clock/clock-location-tile.c:231
 msgid "<small>Set...</small>"
 msgstr "<small>Nastavit...</small>"
 
-#: applets/clock/clock-location-tile.c:230
+#: applets/clock/clock-location-tile.c:232
 msgid "<small>Set</small>"
 msgstr "<small>Nastavit</small>"
 
-#: applets/clock/clock-location-tile.c:306
+#: applets/clock/clock-location-tile.c:308
 msgid "Set location as current location and use its timezone for this computer"
 msgstr ""
 "Nastavit umístění pro tento počítač jako aktuální a použít odpovídající "
@@ -458,7 +463,7 @@ msgstr ""
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:439
+#: applets/clock/clock-location-tile.c:441
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l:%M <small>%p (%A)</small>"
 
@@ -467,7 +472,7 @@ msgstr "%l:%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:447
+#: applets/clock/clock-location-tile.c:449
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%H:%M <small>(%A)</small>"
 
@@ -475,40 +480,40 @@ msgstr "%H:%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:456
+#: applets/clock/clock-location-tile.c:458
 msgid "%l:%M <small>%p</small>"
 msgstr "%l:%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:598
+#: applets/clock/clock-location-tile.c:600
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:610
-#: applets/clock/clock-location-tile.c:619
+#: applets/clock/clock-location-tile.c:612
+#: applets/clock/clock-location-tile.c:621
 msgid "Unknown"
 msgstr "Neznámo"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:612
+#: applets/clock/clock-location-tile.c:614
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s, pocitově %s"
 
-#: applets/clock/clock-location-tile.c:635
+#: applets/clock/clock-location-tile.c:637
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "Východ Slunce: %s / západ Slunce: %s"
 
 #: applets/clock/clock-utils.c:94 applets/fish/fish.c:170
-#: applets/notification_area/main.c:238 applets/vncklet/vncklet.c:75
+#: applets/notification_area/main.c:239 applets/vncklet/vncklet.c:75
 #: cafe-panel/libpanel-util/panel-show.c:234
 #, c-format
 msgid "Could not display help document '%s'"
 msgstr "Nelze zobrazit dokument nápovědy \"%s\""
 
 #: applets/clock/clock-utils.c:123 applets/fish/fish.c:196
-#: applets/notification_area/main.c:252 applets/vncklet/vncklet.c:92
+#: applets/notification_area/main.c:253 applets/vncklet/vncklet.c:92
 msgid "Error displaying help document"
 msgstr "Chyba při zobrazování dokumentu nápovědy"
 
@@ -594,58 +599,66 @@ msgid "If true, show the temperature next to the weather icon."
 msgstr "Je-li \"true\", zobrazovat teplotu vedle ikony počasí."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:64
+msgid "Show humidity in clock"
+msgstr ""
+
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:65
+msgid "If true, show the humidity next to the temperature."
+msgstr ""
+
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:69
 msgid "Show week numbers in calendar"
 msgstr "Zobrazovat v kalendáři čísla týdnů"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:65
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:70
 msgid "If true, show week numbers in the calendar."
 msgstr "Je-li \"true\", zobrazovat v kalendáři čísla týdnů."
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:69
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:74
 msgid "Expand list of locations"
 msgstr "Rozbalit seznam umístění"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:70
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:75
 msgid "If true, expand the list of locations in the calendar window."
 msgstr "Je-li \"true\", rozbalovat v okně kalendáře seznam umístění."
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:74
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:79
 msgid "List of locations"
 msgstr "Seznam umístění"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:75
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:80
 msgid "A list of locations to display in the calendar window."
 msgstr "Seznam umístění, který se má zobrazovat v okně kalendáře."
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:79
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:84
 msgid "Temperature unit"
 msgstr "Jednotky teploty"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:80
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:85
 msgid "The unit to use when showing temperatures."
 msgstr "Jednotka, která se má použít při zobrazování teplot."
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:84
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:89
 msgid "Speed unit"
 msgstr "Jednotky rychlosti"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:85
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:90
 msgid "The unit to use when showing wind speed."
 msgstr "Jednotka, která se má použít při zobrazování rychlosti větru."
 
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:6
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Clock Applet Factory"
 msgstr "Generátor appletu hodin"
 
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:7
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Factory for clock applet"
 msgstr "Generátor appletu hodin"
 
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:11
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Get the current time and date"
 msgstr "Získat stávající čas a datum"
 
-#: applets/fish/fish.c:266
+#: applets/fish/fish.c:265
 #, c-format
 msgid ""
 "Warning:  The command appears to be something actually useful.\n"
@@ -658,16 +671,16 @@ msgstr ""
 "Doporučuje se nepoužívat %s k ničemu, co by\n"
 "mohlo tento applet učinit \"praktickým\" či užitečným."
 
-#: applets/fish/fish.c:428
+#: applets/fish/fish.c:433
 msgid "Images"
 msgstr "Obrázky"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
+#: applets/fish/fish.c:541 applets/fish/fish.c:586 applets/fish/fish.c:694
 #, no-c-format
 msgid "%s the Fish"
 msgstr "Ryba %s"
 
-#: applets/fish/fish.c:535
+#: applets/fish/fish.c:542
 #, c-format
 msgid ""
 "%s has no use what-so-ever. It only takes up disk space and compilation "
@@ -679,42 +692,42 @@ msgstr ""
 "někdo tento applet používá, nechť se neprodleně dostaví k psychiatrickému "
 "vyšetření."
 
-#: applets/fish/fish.c:552
+#: applets/fish/fish.c:559
 msgid "(with minor help from George)"
 msgstr "(s malou nápomocí Jirky [George])"
 
-#: applets/fish/fish.c:558
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:10
+#: applets/fish/fish.c:565
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Fish"
 msgstr "Ryba"
 
-#: applets/fish/fish.c:559
+#: applets/fish/fish.c:566
 msgid "About Fish"
 msgstr "O appletu Ryba"
 
-#: applets/fish/fish.c:562
+#: applets/fish/fish.c:569
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/fish/fish.c:580
+#: applets/fish/fish.c:587
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "Ryba %s, soudobá věštkyně"
 
-#: applets/fish/fish.c:646
+#: applets/fish/fish.c:653
 msgid "Unable to locate the command to execute"
 msgstr "Nelze nalézt program, který se má spustit"
 
-#: applets/fish/fish.c:690
+#: applets/fish/fish.c:699
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "Ryba %s říká:"
 
-#: applets/fish/fish.c:753
+#: applets/fish/fish.c:761
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -725,16 +738,16 @@ msgstr ""
 "\n"
 "Podrobnosti: %s"
 
-#: applets/fish/fish.c:850
+#: applets/fish/fish.c:860
 msgid "_Speak again"
 msgstr "Pro_mluvit znovu"
 
-#: applets/fish/fish.c:931
+#: applets/fish/fish.c:941
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
 msgstr "Nastavený příkaz nefunguje a byl nahrazen: %s"
 
-#: applets/fish/fish.c:964
+#: applets/fish/fish.c:974
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -745,7 +758,7 @@ msgstr ""
 "\n"
 "Podrobnosti: %s"
 
-#: applets/fish/fish.c:980
+#: applets/fish/fish.c:990
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -756,15 +769,15 @@ msgstr ""
 "\n"
 "Podrobnosti: %s"
 
-#: applets/fish/fish.c:1552
+#: applets/fish/fish.c:1568
 msgid "The water needs changing"
 msgstr "Je potřeba vyměnit vodu"
 
-#: applets/fish/fish.c:1554
+#: applets/fish/fish.c:1570
 msgid "Look at today's date!"
 msgstr "Mrkněte na dnešní datum!"
 
-#: applets/fish/fish.c:1636
+#: applets/fish/fish.c:1654
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "Ryba %s, věštkyně"
@@ -881,37 +894,37 @@ msgid ""
 msgstr ""
 "Je-li \"true\", bude animace ryby na svislých panelech zobrazena s otočením."
 
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Wanda Factory"
 msgstr "Generátor appletu Wanda"
 
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:7
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
 msgid "From Whence That Stupid Fish Came"
 msgstr "Odkud se sakra vzala ta blbá ryba"
 
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Display a swimming fish or another animated creature"
 msgstr "Zobrazit plovoucí rybu nebo jinou animovanou věc"
 
-#: applets/notification_area/main.c:276
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
+#: applets/notification_area/main.c:278
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Notification Area"
 msgstr "Oznamovací oblast"
 
-#: applets/notification_area/main.c:277
+#: applets/notification_area/main.c:279
 msgid "About Notification Area"
 msgstr "O appletu Oznamovací oblast"
 
-#: applets/notification_area/main.c:280
+#: applets/notification_area/main.c:282
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/notification_area/main.c:486
+#: applets/notification_area/main.c:488
 msgid "Panel Notification Area"
 msgstr "Oznamovací oblast na panelu"
 
@@ -940,15 +953,15 @@ msgstr "Minimální velikost ikony"
 msgid "The minimum size an icon can have."
 msgstr "Minimální velikost kterou může ikona mít"
 
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:6
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Notification Area Factory"
 msgstr "Generátor oznamovací oblasti"
 
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:7
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Factory for notification area"
 msgstr "Generátor oznamovací oblasti"
 
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:11
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Area where notification icons appear"
 msgstr "Oblast zobrazování notifikací"
 
@@ -1041,89 +1054,89 @@ msgstr ""
 "Pokud pravda, přepínač ploch povolí přechod mezi první a poslední obrazovkou "
 "a naopak."
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:6
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:5
 msgid "Window Navigation Applet Factory"
 msgstr "Generátor appletu Window navigace"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:7
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Factory for the window navigation related applets"
 msgstr "Továrna pro navigační aplety"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:9
+#: applets/vncklet/window-menu.c:78 applets/vncklet/window-menu.c:235
 msgid "Window Selector"
 msgstr "Výběr oken"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:11
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
 msgid "Switch between open windows using a menu"
 msgstr "Přepínat mezi okny pomocí menu"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:22
+#: applets/vncklet/workspace-switcher.c:648
 msgid "Workspace Switcher"
 msgstr "Přepínač pracovních ploch"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:24
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
 msgid "Switch between workspaces"
 msgstr "Přepínat mezi pracovními plochami"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:826
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:35
+#: applets/vncklet/window-list.c:847
 msgid "Window List"
 msgstr "Seznam oken"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
 msgid "Switch between open windows using buttons"
 msgstr "Přepínat mezi otevřenými okny užitím tlačítek"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:48
 msgid "Show Desktop"
 msgstr "Zobrazit plochu"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Hide application windows and show the desktop"
 msgstr "Skrýt okno aplikace a zobrazit plochu"
 
-#: applets/vncklet/showdesktop.c:184
+#: applets/vncklet/showdesktop.c:188
 #, c-format
 msgid "Failed to load %s: %s\n"
 msgstr "Nelze načíst %s: %s\n"
 
-#: applets/vncklet/showdesktop.c:184
+#: applets/vncklet/showdesktop.c:188
 msgid "Icon not found"
 msgstr "Ikona nenalezena"
 
-#: applets/vncklet/showdesktop.c:266
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to restore hidden windows."
 msgstr "Skrytá okna obnovíte kliknutím zde."
 
-#: applets/vncklet/showdesktop.c:270
+#: applets/vncklet/showdesktop.c:274
 msgid "Click here to hide all windows and show the desktop."
 msgstr "Kliknutím zde skryjete všechna okna a zobrazíte pracovní plochu."
 
-#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:455 applets/vncklet/showdesktop.c:516
 msgid "Show Desktop Button"
 msgstr "Tlačítko Zobrazit pracovní plochu"
 
-#: applets/vncklet/showdesktop.c:500
+#: applets/vncklet/showdesktop.c:517
 msgid "About Show Desktop Button"
 msgstr "O tlačítku Zobrazit pracovní plochu"
 
-#: applets/vncklet/showdesktop.c:502
+#: applets/vncklet/showdesktop.c:519
 msgid "This button lets you hide all windows and show the desktop."
 msgstr ""
 "Toto tlačítko vám umožňuje skrýt všechna okna a zobrazit pracovní plochu."
 
-#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
-#: applets/vncklet/workspace-switcher.c:642
+#: applets/vncklet/showdesktop.c:520 applets/vncklet/window-list.c:851
+#: applets/vncklet/workspace-switcher.c:652
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:531
+#: applets/vncklet/showdesktop.c:548
 msgid ""
 "Your window manager does not support the show desktop button, or you are not "
 "running a window manager."
@@ -1131,15 +1144,15 @@ msgstr ""
 "Váš správce oken nepodporuje tlačítko \"Zobrazit pracovní plochu\", nebo "
 "správce oken neběží."
 
-#: applets/vncklet/window-list.c:354
+#: applets/vncklet/window-list.c:369
 msgid "_System Monitor"
 msgstr "_Sledování systému"
 
-#: applets/vncklet/window-list.c:827
+#: applets/vncklet/window-list.c:848
 msgid "About Window List"
 msgstr "O appletu Seznam oken"
 
-#: applets/vncklet/window-list.c:829
+#: applets/vncklet/window-list.c:850
 msgid ""
 "The Window List shows a list of all windows in a set of buttons and lets you "
 "browse them."
@@ -1215,43 +1228,43 @@ msgstr "O_bnovovat na aktuální pracovní plochu"
 msgid "Restore to na_tive workspace"
 msgstr "Obnovovat na _původní pracovní plochu"
 
-#: applets/vncklet/window-menu.c:77
+#: applets/vncklet/window-menu.c:79
 msgid "About Window Selector"
 msgstr "O appletu Výběr oken"
 
-#: applets/vncklet/window-menu.c:79
+#: applets/vncklet/window-menu.c:81
 msgid ""
 "The Window Selector shows a list of all windows in a menu and lets you "
 "browse them."
 msgstr ""
 "Výběr oken zobrazuje seznam všech oken v nabídce a umožňuje vám je procházet."
 
-#: applets/vncklet/window-menu.c:80
+#: applets/vncklet/window-menu.c:82
 msgid ""
 "Copyright © 2000 Helix Code, Inc.\n"
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:944
+#: applets/vncklet/workspace-switcher.c:243
+#: applets/vncklet/workspace-switcher.c:977
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "řádky"
 
-#: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:944
+#: applets/vncklet/workspace-switcher.c:243
+#: applets/vncklet/workspace-switcher.c:977
 msgid "columns"
 msgstr "sloupce"
 
-#: applets/vncklet/workspace-switcher.c:639
+#: applets/vncklet/workspace-switcher.c:649
 msgid "About Workspace Switcher"
 msgstr "O appletu Přepínač pracovních ploch"
 
-#: applets/vncklet/workspace-switcher.c:641
+#: applets/vncklet/workspace-switcher.c:651
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
@@ -1404,9 +1417,9 @@ msgstr "Seznam ID objektů panelu"
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object (e."
-"g. a launcher, action button or menu button/bar). The settings for each of "
-"these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object "
+"(e.g. a launcher, action button or menu button/bar). The settings for each "
+"of these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
 "Seznam ID objektů panelu. Každé ID identifikuje jeden objekt panelu (např. "
 "spouštěč, tlačítko akce nebo nabídku tlačítka/panelu). Nastavení každého "
@@ -1486,9 +1499,9 @@ msgid ""
 msgstr ""
 "Seznam IID appletů, které bude panel ignorovat. Takto je možné zakázat "
 "načítání některých appletů, nebo jejich zobrazování v nabídce. Například "
-"applet \"mini-commander\" zakážete přidáním \"OAFIID:"
-"CAFE_MiniCommanderApplet\" do tohoto seznamu. Aby mělo takové nastavení "
-"vliv, musí být panel restartován."
+"applet \"mini-commander\" zakážete přidáním "
+"\"OAFIID:CAFE_MiniCommanderApplet\" do tohoto seznamu. Aby mělo takové "
+"nastavení vliv, musí být panel restartován."
 
 #: data/org.cafe.panel.gschema.xml.in:84
 msgid "Disable Force Quit"
@@ -1644,9 +1657,10 @@ msgstr "IID appletu"
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
-"ClockApplet\". This key is only relevant if the object_type key is "
-"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
+"The implementation ID of the applet - e.g. "
+"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
+"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
+"applet\")."
 msgstr ""
 "ID implementace appletu - např. \"ClockAppletFactory::ClockApplet\". Tento "
 "klíč má vliv, jen pokud klíč object_type je \"external-applet\" (nebo "
@@ -2155,25 +2169,25 @@ msgstr "Soubor není platným souborem .desktop"
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Nerozpoznaná verze „%s“ souboru pracovní plochy"
 
-#: cafe-panel/libegg/eggdesktopfile.c:963
+#: cafe-panel/libegg/eggdesktopfile.c:967
 #, c-format
 msgid "Starting %s"
 msgstr "Spouští se %s"
 
-#: cafe-panel/libegg/eggdesktopfile.c:1105
+#: cafe-panel/libegg/eggdesktopfile.c:1109
 msgid "Application does not accept documents on command line"
 msgstr "Aplikace nepřijímá dokumenty z příkazové řádky"
 
-#: cafe-panel/libegg/eggdesktopfile.c:1173
+#: cafe-panel/libegg/eggdesktopfile.c:1177
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Nerozpoznaná volba spuštění: %d"
 
-#: cafe-panel/libegg/eggdesktopfile.c:1390
+#: cafe-panel/libegg/eggdesktopfile.c:1394
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Nelze předat URI dokumentu položce .desktop „Type=Link“"
 
-#: cafe-panel/libegg/eggdesktopfile.c:1411
+#: cafe-panel/libegg/eggdesktopfile.c:1415
 msgid "Not a launchable item"
 msgstr "Nespustitelná položka"
 
@@ -2236,28 +2250,28 @@ msgstr "Nelze otevřít umístění \"%s\""
 msgid "No application to handle search folders is installed."
 msgstr "Není nainstalována žádná aplikace určená k obsluze složek hledání."
 
-#: cafe-panel/applet.c:468
+#: cafe-panel/applet.c:469
 msgid "???"
 msgstr "???"
 
-#: cafe-panel/applet.c:548 libcafe-panel-applet/cafe-panel-applet.c:139
+#: cafe-panel/applet.c:549 libcafe-panel-applet/cafe-panel-applet.c:139
 msgid "_Remove From Panel"
 msgstr "_Odstranit z panelu"
 
-#: cafe-panel/applet.c:556 libcafe-panel-applet/cafe-panel-applet.c:142
+#: cafe-panel/applet.c:557 libcafe-panel-applet/cafe-panel-applet.c:142
 msgid "_Move"
 msgstr "_Přesunout"
 
-#: cafe-panel/applet.c:574 libcafe-panel-applet/cafe-panel-applet.c:148
+#: cafe-panel/applet.c:575 libcafe-panel-applet/cafe-panel-applet.c:148
 msgid "Loc_k To Panel"
 msgstr "Zam_knout v panelu"
 
-#: cafe-panel/applet.c:1313
+#: cafe-panel/applet.c:1314
 msgid "Cannot find an empty spot"
 msgstr "Nelze nalézt volné místo"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1643
+#: cafe-panel/panel-toplevel.c:1647
 msgid "Drawer"
 msgstr "Zásuvka"
 
@@ -2278,29 +2292,29 @@ msgstr "Vytvořit nový soubor v daném adresáři"
 msgid "[FILE...]"
 msgstr "[SOUBOR…]"
 
-#: cafe-panel/cafe-desktop-item-edit.c:106
+#: cafe-panel/cafe-desktop-item-edit.c:107
 msgid "- Edit .desktop files"
 msgstr "- Upravit soubory. desktop"
 
-#: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
+#: cafe-panel/cafe-desktop-item-edit.c:145
+#: cafe-panel/cafe-desktop-item-edit.c:199 cafe-panel/launcher.c:975
 msgid "Create Launcher"
 msgstr "Vytvořit spouštěč"
 
-#: cafe-panel/cafe-desktop-item-edit.c:169
-#: cafe-panel/cafe-desktop-item-edit.c:192
+#: cafe-panel/cafe-desktop-item-edit.c:170
+#: cafe-panel/cafe-desktop-item-edit.c:193
 msgid "Directory Properties"
 msgstr "Vlastnosti adresáře"
 
-#: cafe-panel/cafe-desktop-item-edit.c:175 cafe-panel/launcher.c:817
+#: cafe-panel/cafe-desktop-item-edit.c:176 cafe-panel/launcher.c:818
 msgid "Launcher Properties"
 msgstr "Vlastnosti spouštěče"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
+#: cafe-panel/cafe-panel.desktop.in:3 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "Panel"
 
-#: cafe-panel/cafe-panel.desktop.in:5
+#: cafe-panel/cafe-panel.desktop.in:4
 msgid ""
 "Launch other applications and provide various utilities to manage windows, "
 "show the time, etc."
@@ -2333,12 +2347,12 @@ msgstr "Nelze otevřít soubor desktop %s pro spouštěč na panelu %s%s\n"
 msgid "_Launch"
 msgstr "_Spustit"
 
-#: cafe-panel/launcher.c:910
+#: cafe-panel/launcher.c:911
 #, c-format
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "Klíč %s není nastaven, nelze načíst spouštěč\n"
 
-#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1044 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Nelze uložit spouštěč"
@@ -2359,23 +2373,23 @@ msgstr "Otevřít dialog \"Spustit\""
 msgid "Set the default panel layout"
 msgstr "Výchozí uspořádání panelu"
 
-#: cafe-panel/menu.c:502
+#: cafe-panel/menu.c:503
 msgid "Add this launcher to _panel"
 msgstr "Přidat tento spouštěč na pan_el"
 
-#: cafe-panel/menu.c:509
+#: cafe-panel/menu.c:510
 msgid "Add this launcher to _desktop"
 msgstr "Přidat tento spouštěč na p_racovní plochu"
 
-#: cafe-panel/menu.c:521
+#: cafe-panel/menu.c:522
 msgid "_Entire menu"
 msgstr "_Celá nabídka"
 
-#: cafe-panel/menu.c:526
+#: cafe-panel/menu.c:527
 msgid "Add this as _drawer to panel"
 msgstr "Přidat jako _zásuvku na panel"
 
-#: cafe-panel/menu.c:533
+#: cafe-panel/menu.c:534
 msgid "Add this as _menu to panel"
 msgstr "Přidat jako _nabídku na panel"
 
@@ -2504,28 +2518,28 @@ msgstr "Není kompatibilní s X11"
 msgid "Not compatible with Wayland"
 msgstr "Není kompatibilní s Waylandem"
 
-#: cafe-panel/panel-addto.c:1055
+#: cafe-panel/panel-addto.c:1057
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "Vy_hledat položku, kterou přidat do \"%s\":"
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Add to Drawer"
 msgstr "Přidat do zásuvky"
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Find an _item to add to the drawer:"
 msgstr "Vy_hledat položku, kterou přidat do zásuvky:"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Add to Panel"
 msgstr "Přidat na panel"
 
-#: cafe-panel/panel-addto.c:1065
+#: cafe-panel/panel-addto.c:1067
 msgid "Find an _item to add to the panel:"
 msgstr "Vy_hledat položku, kterou přidat na panel:"
 
-#: cafe-panel/panel-addto.c:1313
+#: cafe-panel/panel-addto.c:1316
 msgid "_Back"
 msgstr "_Zpět"
 
@@ -2565,7 +2579,7 @@ msgstr "V panelu došlo k problému při načítání \"%s\"."
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Chcete tento applet odstranit ze svého nastavení?"
 
-#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1369
 msgid "_Delete"
 msgstr "_Smazat"
 
@@ -2582,7 +2596,7 @@ msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
 "Copyright © 2011-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:120
@@ -2729,25 +2743,25 @@ msgstr ""
 "Vynutíte-li ukončení aplikace, neuložené změny ve všech otevřených "
 "dokumentech mohou být ztraceny."
 
-#: cafe-panel/panel-menu-bar.c:97
+#: cafe-panel/panel-menu-bar.c:98
 msgid "Browse and run installed applications"
 msgstr "Umožňuje procházet a spouštět nainstalované aplikace"
 
-#: cafe-panel/panel-menu-bar.c:98
+#: cafe-panel/panel-menu-bar.c:99
 msgid "Access documents, folders and network places"
 msgstr "Umožňuje přistupovat k dokumentům, složkám a místům v síti"
 
-#: cafe-panel/panel-menu-bar.c:99
+#: cafe-panel/panel-menu-bar.c:100
 msgid "Change desktop appearance and behavior, get help, or log out"
 msgstr ""
 "Změní vzhled a chování prostředí pracovní plochy, poskytne nápovědu, nebo se "
 "odhlásí"
 
-#: cafe-panel/panel-menu-bar.c:166
+#: cafe-panel/panel-menu-bar.c:169
 msgid "Applications"
 msgstr "Aplikace"
 
-#: cafe-panel/panel-menu-bar.c:356 cafe-panel/panel-menu-button.c:706
+#: cafe-panel/panel-menu-bar.c:360 cafe-panel/panel-menu-button.c:706
 msgid "_Edit Menus"
 msgstr "_Upravit nabídky"
 
@@ -2760,7 +2774,7 @@ msgid "Bookmarks"
 msgstr "Záložky"
 
 #. Translators: %s is a URI
-#: cafe-panel/panel-menu-items.c:490 cafe-panel/panel.c:553
+#: cafe-panel/panel-menu-items.c:490 cafe-panel/panel.c:562
 #, c-format
 msgid "Open '%s'"
 msgstr "Otevřít „%s“"
@@ -2880,7 +2894,7 @@ msgctxt "Orientation"
 msgid "Right"
 msgstr "Doprava"
 
-#: cafe-panel/panel-properties-dialog.c:818
+#: cafe-panel/panel-properties-dialog.c:819
 msgid "Drawer Properties"
 msgstr "Vlastnosti zásuvky"
 
@@ -3023,30 +3037,30 @@ msgstr "Vymazat nedávné dokumenty..."
 msgid "Clear all items from the recent documents list"
 msgstr "Vymaže všechny položky ze seznamu nedávných dokumentů"
 
-#: cafe-panel/panel-run-dialog.c:435
+#: cafe-panel/panel-run-dialog.c:436
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "Nelze spustit příkaz \"%s\""
 
-#: cafe-panel/panel-run-dialog.c:476
+#: cafe-panel/panel-run-dialog.c:477
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "Nelze převést \"%s\" z UTF-8"
 
-#: cafe-panel/panel-run-dialog.c:1269
+#: cafe-panel/panel-run-dialog.c:1274
 msgid "Choose a file to append to the command..."
 msgstr "Vybrat soubor, který připojit k příkazu..."
 
-#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1657 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Vyberte aplikaci k zobrazení jejího popisu."
 
-#: cafe-panel/panel-run-dialog.c:1689
+#: cafe-panel/panel-run-dialog.c:1697
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "Bude spuštěn příkaz: \"%s\""
 
-#: cafe-panel/panel-run-dialog.c:1722
+#: cafe-panel/panel-run-dialog.c:1730
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
@@ -3193,23 +3207,23 @@ msgstr "App_let:"
 msgid "_Prefs Path:"
 msgstr "_Umístění nastavení:"
 
-#: cafe-panel/panel-toplevel.c:1209
+#: cafe-panel/panel-toplevel.c:1213
 msgid "Hide Panel"
 msgstr "Skrýt panel"
 
-#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
+#: cafe-panel/panel-toplevel.c:1653 cafe-panel/panel-toplevel.c:1663
 msgid "Top Panel"
 msgstr "Horní panel"
 
-#: cafe-panel/panel-toplevel.c:1651
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Bottom Panel"
 msgstr "Spodní panel"
 
-#: cafe-panel/panel-toplevel.c:1653
+#: cafe-panel/panel-toplevel.c:1657
 msgid "Left Panel"
 msgstr "Levý panel"
 
-#: cafe-panel/panel-toplevel.c:1655
+#: cafe-panel/panel-toplevel.c:1659
 msgid "Right Panel"
 msgstr "Pravý panel"
 
@@ -3227,17 +3241,17 @@ msgstr "Nelze spustit \"%s\""
 msgid "file"
 msgstr "soubor"
 
-#: cafe-panel/panel-util.c:876
+#: cafe-panel/panel-util.c:878
 msgid "Home Folder"
 msgstr "Domovská složka"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:888
+#: cafe-panel/panel-util.c:890
 msgid "File System"
 msgstr "Souborový systém"
 
-#: cafe-panel/panel-util.c:1062
+#: cafe-panel/panel-util.c:1065
 msgid "Search"
 msgstr "Hledat"
 
@@ -3246,21 +3260,21 @@ msgstr "Hledat"
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
 #.
-#: cafe-panel/panel-util.c:1108
+#: cafe-panel/panel-util.c:1111
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: cafe-panel/panel.c:486
+#: cafe-panel/panel.c:495
 #, c-format
 msgid "Open URL: %s"
 msgstr "Otevřít URL: %s"
 
-#: cafe-panel/panel.c:1336
+#: cafe-panel/panel.c:1345
 msgid "Delete this drawer?"
 msgstr "Odstranit tuto zásuvku?"
 
-#: cafe-panel/panel.c:1337
+#: cafe-panel/panel.c:1346
 msgid ""
 "When a drawer is deleted, the drawer and its\n"
 "settings are lost."
@@ -3268,11 +3282,11 @@ msgstr ""
 "Když je odstraněna zásuvka, je ona a její\n"
 "nastavení ztraceno."
 
-#: cafe-panel/panel.c:1340
+#: cafe-panel/panel.c:1349
 msgid "Delete this panel?"
 msgstr "Odstranit tento panel?"
 
-#: cafe-panel/panel.c:1341
+#: cafe-panel/panel.c:1350
 msgid ""
 "When a panel is deleted, the panel and its\n"
 "settings are lost."
@@ -3280,18 +3294,18 @@ msgstr ""
 "Když je panel odstraněn, je on a jeho\n"
 "nastavení ztraceno."
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:5
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:4
 msgid "Test DBus Applet Factory"
 msgstr "Generátor testovacího appletu DBus"
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:6
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:5
 msgid "Factory for Test DBus Applet"
 msgstr "Generátor pro aplet testování DBus"
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:9
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:8
 msgid "Test DBus Applet"
 msgstr "Aplet testování DBus"
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:9
 msgid "A simple applet for testing the CAFE panel"
 msgstr "Jednoduchý aplet pro testování panelu CAFE"

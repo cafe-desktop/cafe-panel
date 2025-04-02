@@ -11,9 +11,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.25.0\n"
+"Project-Id-Version: cafe-panel 2.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2023-03-23 18:48+0100\n"
+"POT-Creation-Date: 2025-04-02 20:46+0200\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: ballpen, 2020\n"
 "Language-Team: Kyrgyz (https://www.transifex.com/cafe/teams/13566/ky/)\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
+#: applets/clock/calendar-window.c:257 applets/clock/clock.ui:704
 msgid "Locations"
 msgstr "Жайгашкан жерлер"
 
@@ -38,7 +38,7 @@ msgstr "Жылнаама"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449
+#: applets/clock/clock.c:452
 msgid "%l:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
@@ -46,7 +46,7 @@ msgstr "%l:%M:%S %p"
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
 #.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
+#: applets/clock/clock.c:452 applets/clock/clock-location-tile.c:504
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -57,7 +57,7 @@ msgstr "%l:%M %p"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1603
+#: applets/clock/clock.c:457 applets/clock/clock.c:1614
 msgid "%H:%M:%S"
 msgstr "%k:%M:%S"
 
@@ -72,9 +72,9 @@ msgstr "%k:%M:%S"
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
 #.
-#: applets/clock/clock.c:454 applets/clock/clock.c:1609
-#: applets/clock/clock-location-tile.c:462
-#: applets/clock/clock-location-tile.c:509
+#: applets/clock/clock.c:457 applets/clock/clock.c:1620
+#: applets/clock/clock-location-tile.c:464
+#: applets/clock/clock-location-tile.c:511
 msgid "%H:%M"
 msgstr "%k:%M"
 
@@ -83,11 +83,12 @@ msgstr "%k:%M"
 #. * the day of the month as a decimal number is a single digit,
 #. * it should begin with a 0 in your locale (e.g. "May 01"
 #. * instead of "May  1").
-#: applets/clock/clock.c:465
+#: applets/clock/clock.c:468
+#, fuzzy, c-format
 msgid "%a %b %e"
 msgstr "%a, %e %b"
 
-#: applets/clock/clock.c:472
+#: applets/clock/clock.c:475
 #, c-format
 msgid ""
 "%1$s\n"
@@ -96,7 +97,7 @@ msgstr ""
 "%1$s\n"
 "%2$s"
 
-#: applets/clock/clock.c:480
+#: applets/clock/clock.c:483
 #, c-format
 msgid "%1$s, %2$s"
 msgstr "%1$s, %2$s"
@@ -104,19 +105,19 @@ msgstr "%1$s, %2$s"
 #. Translators: This is a strftime format string.
 #. * It is used to display a date. Please leave "%%s" as it is:
 #. * it will be used to insert the timezone name later.
-#: applets/clock/clock.c:663
+#: applets/clock/clock.c:666
 msgid "%A %B %d (%%s)"
 msgstr "%A %B айынын %e, %A (%%s)"
 
-#: applets/clock/clock.c:689
+#: applets/clock/clock.c:692
 msgid "Click to hide month calendar"
 msgstr "Ай жылнаамасын жашыруу үчүн, басыңыз"
 
-#: applets/clock/clock.c:691
+#: applets/clock/clock.c:694
 msgid "Click to view month calendar"
 msgstr "Ай жылнаамасын көрүү үчүн, басыңыз"
 
-#: applets/clock/clock.c:1441
+#: applets/clock/clock.c:1451
 msgid "Computer Clock"
 msgstr "Компьютердик саат"
 
@@ -126,7 +127,7 @@ msgstr "Компьютердик саат"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1588
+#: applets/clock/clock.c:1599
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -136,108 +137,108 @@ msgstr "%I:%M:%S %p"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1596
+#: applets/clock/clock.c:1607
 msgid "%I:%M %p"
 msgstr "%I:%M %p"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1642
+#: applets/clock/clock.c:1653
 msgid "%A, %B %d %Y"
 msgstr "%Y-ж. %B айынын %e, %a"
 
-#: applets/clock/clock.c:1673
+#: applets/clock/clock.c:1684
 msgid "Set System Time..."
 msgstr "Системалык убакытын орнотуу..."
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1685
 msgid "Set System Time"
 msgstr "Системалык убакытын орнотуу"
 
-#: applets/clock/clock.c:1689
+#: applets/clock/clock.c:1700
 msgid "Failed to set the system time"
 msgstr "Системалык убакытты ырастоо оңунан чыккан жок"
 
-#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
-#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
-#: applets/vncklet/workspace-switcher.c:393
+#: applets/clock/clock.c:1901 applets/fish/fish.c:1713
+#: applets/notification_area/main.c:295 applets/vncklet/window-list.c:377
+#: applets/vncklet/workspace-switcher.c:401
 msgid "_Preferences"
 msgstr "_Ырастоолор"
 
-#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
-#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
+#: applets/clock/clock.c:1904 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1716 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:246
+#: applets/vncklet/window-list.c:385 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:101 applets/vncklet/workspace-switcher.c:409
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1313
 #: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
-#: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
+#: cafe-panel/panel-menu-bar.c:355 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "_Жардам"
 
-#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
-#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
-#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
-#: applets/vncklet/workspace-switcher.c:409
+#: applets/clock/clock.c:1907 applets/fish/fish.c:1719
+#: applets/notification_area/main.c:301 applets/vncklet/showdesktop.c:254
+#: applets/vncklet/window-list.c:393 applets/vncklet/window-menu.c:109
+#: applets/vncklet/workspace-switcher.c:417
 msgid "_About"
 msgstr "Программа _жөнүндө"
 
-#: applets/clock/clock.c:1894
+#: applets/clock/clock.c:1910
 msgid "Copy _Time"
 msgstr "_Убакытты көчүрүү"
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1913
 msgid "Copy _Date"
 msgstr "_Датаны көчүрүү"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1916
 msgid "Ad_just Date & Time"
 msgstr "_Дата жана убакытты орнотуу"
 
-#: applets/clock/clock.c:2898
+#: applets/clock/clock.c:2954
 msgid "Choose Location"
 msgstr "Жайгашкан жерин тандоо"
 
-#: applets/clock/clock.c:2977
+#: applets/clock/clock.c:3036
 msgid "Edit Location"
 msgstr "Жайгашкан жерин оңдоо"
 
-#: applets/clock/clock.c:3104
+#: applets/clock/clock.c:3169
 msgid "City Name"
 msgstr "Шаар аты"
 
-#: applets/clock/clock.c:3108
+#: applets/clock/clock.c:3173
 msgid "City Time Zone"
 msgstr "Шаардын саат алкагы"
 
-#: applets/clock/clock.c:3388
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
+#: applets/clock/clock.c:3456
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Clock"
 msgstr "Саат"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3457
 msgid "About Clock"
 msgstr ""
 
-#: applets/clock/clock.c:3391
+#: applets/clock/clock.c:3459
 msgid "The Clock displays the current time and date"
 msgstr "Саат кезектеги убакыт жана датаны көрсөтөт"
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3460
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:568
-#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
-#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
-#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
+#: applets/clock/clock.c:3465 applets/fish/fish.c:575
+#: applets/notification_area/main.c:289 applets/vncklet/showdesktop.c:527
+#: applets/vncklet/window-list.c:858 applets/vncklet/window-menu.c:91
+#: applets/vncklet/workspace-switcher.c:659 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr "Жумалиев Чыңгыз <translatorky@lavabit.com>"
 
@@ -245,11 +246,11 @@ msgstr "Жумалиев Чыңгыз <translatorky@lavabit.com>"
 msgid "Time & Date"
 msgstr "Дата жана убакыт"
 
-#: applets/clock/clock.ui:46 applets/clock/clock.ui:923
+#: applets/clock/clock.ui:46 applets/clock/clock.ui:938
 #: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
 #: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
 #: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
-#: cafe-panel/panel.c:1356
+#: cafe-panel/panel.c:1365
 msgid "_Cancel"
 msgstr "_Жокко чыгаруу"
 
@@ -273,10 +274,10 @@ msgstr "Саат ырастоолору"
 msgid "Time _Settings"
 msgstr "Убакыт _ырастоолору"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:864 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1324 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -319,108 +320,112 @@ msgstr "_Аба ырайын көрсөтүү"
 msgid "Show _temperature"
 msgstr "_Температураны көрсөтүү"
 
-#: applets/clock/clock.ui:568 applets/fish/fish.ui:102
+#: applets/clock/clock.ui:548
+msgid "Show h_umidity"
+msgstr ""
+
+#: applets/clock/clock.ui:583 applets/fish/fish.ui:102
 #: cafe-panel/panel-properties-dialog.ui:384
 msgid "General"
 msgstr "Жалпы"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
+#: applets/clock/clock.ui:635 cafe-panel/panel-addto.c:1320
 msgid "_Add"
 msgstr "_Кошуу"
 
-#: applets/clock/clock.ui:636
+#: applets/clock/clock.ui:651
 msgid "_Edit"
 msgstr "_Оңдоо"
 
-#: applets/clock/clock.ui:652
+#: applets/clock/clock.ui:667
 msgid "_Remove"
 msgstr "Ө_чүрүү"
 
-#: applets/clock/clock.ui:713
+#: applets/clock/clock.ui:728
 msgid "Display"
 msgstr "Көрсөтүү"
 
-#: applets/clock/clock.ui:749
+#: applets/clock/clock.ui:764
 msgid "_Visibility unit:"
 msgstr "_Көрүнүү бирдиги:"
 
-#: applets/clock/clock.ui:771
+#: applets/clock/clock.ui:786
 msgid "_Pressure unit:"
 msgstr "_Басыш бирдиги:"
 
-#: applets/clock/clock.ui:805
+#: applets/clock/clock.ui:820
 msgid "_Wind speed unit:"
 msgstr "_Шамал ылдамдыгынын бирдиги:"
 
-#: applets/clock/clock.ui:819
+#: applets/clock/clock.ui:834
 msgid "_Temperature unit:"
 msgstr "_Температура бирдиги:"
 
-#: applets/clock/clock.ui:854
+#: applets/clock/clock.ui:869
 msgid "Weather"
 msgstr "Аба ырайы"
 
-#: applets/clock/clock.ui:886
+#: applets/clock/clock.ui:901
 msgid "East"
 msgstr "Чыгыш"
 
-#: applets/clock/clock.ui:889
+#: applets/clock/clock.ui:904
 msgid "West"
 msgstr "Батыш"
 
-#: applets/clock/clock.ui:900
+#: applets/clock/clock.ui:915
 msgid "North"
 msgstr "Түндүк"
 
-#: applets/clock/clock.ui:903
+#: applets/clock/clock.ui:918
 msgid "South"
 msgstr "Түштүк"
 
-#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
+#: applets/clock/clock.ui:954 cafe-panel/libpanel-util/panel-ctk.c:140
 #: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr ""
 
 #. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
-#: applets/clock/clock.ui:1012
+#: applets/clock/clock.ui:1027
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
 "the pop-up.</i></small>"
 msgstr ""
 
-#: applets/clock/clock.ui:1057
+#: applets/clock/clock.ui:1072
 msgid "_Timezone:"
 msgstr "_Саат алкагы:"
 
-#: applets/clock/clock.ui:1070
+#: applets/clock/clock.ui:1085
 msgid "_Location Name:"
 msgstr "_Жердин аты:"
 
-#: applets/clock/clock.ui:1114 applets/clock/clock.ui:1128
+#: applets/clock/clock.ui:1129 applets/clock/clock.ui:1143
 msgid "<i>(optional)</i>"
 msgstr "<i>(милдеттүү эмес)</i>"
 
-#: applets/clock/clock.ui:1171
+#: applets/clock/clock.ui:1186
 msgid "L_ongitude:"
 msgstr "_Узундугу:"
 
-#: applets/clock/clock.ui:1192
+#: applets/clock/clock.ui:1207
 msgid "L_atitude:"
 msgstr "_Кеңдиги:"
 
-#: applets/clock/clock-location-tile.c:183
+#: applets/clock/clock-location-tile.c:184
 msgid "Failed to set the system timezone"
 msgstr "Системалык саат алкагын өзгөртүү оңунан чыккан жок"
 
-#: applets/clock/clock-location-tile.c:229
+#: applets/clock/clock-location-tile.c:231
 msgid "<small>Set...</small>"
 msgstr "<small>Орнотуу...</small>"
 
-#: applets/clock/clock-location-tile.c:230
+#: applets/clock/clock-location-tile.c:232
 msgid "<small>Set</small>"
 msgstr "<small>Орнотуу</small>"
 
-#: applets/clock/clock-location-tile.c:306
+#: applets/clock/clock-location-tile.c:308
 msgid "Set location as current location and use its timezone for this computer"
 msgstr ""
 
@@ -430,7 +435,7 @@ msgstr ""
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:439
+#: applets/clock/clock-location-tile.c:441
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l:%M <small>%p (%A)</small>"
 
@@ -439,7 +444,7 @@ msgstr "%l:%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:447
+#: applets/clock/clock-location-tile.c:449
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%H:%M <small>(%A)</small>"
 
@@ -447,40 +452,40 @@ msgstr "%H:%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:456
+#: applets/clock/clock-location-tile.c:458
 msgid "%l:%M <small>%p</small>"
 msgstr "%l:%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:598
+#: applets/clock/clock-location-tile.c:600
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:610
-#: applets/clock/clock-location-tile.c:619
+#: applets/clock/clock-location-tile.c:612
+#: applets/clock/clock-location-tile.c:621
 msgid "Unknown"
 msgstr "Белгисиз"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:612
+#: applets/clock/clock-location-tile.c:614
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s, %s болуп сезилет"
 
-#: applets/clock/clock-location-tile.c:635
+#: applets/clock/clock-location-tile.c:637
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "Чыгуу: %s / Батуу: %s"
 
 #: applets/clock/clock-utils.c:94 applets/fish/fish.c:170
-#: applets/notification_area/main.c:238 applets/vncklet/vncklet.c:75
+#: applets/notification_area/main.c:239 applets/vncklet/vncklet.c:75
 #: cafe-panel/libpanel-util/panel-show.c:234
 #, c-format
 msgid "Could not display help document '%s'"
 msgstr "«%s» жардам иш кагазын көрсөтүү оңунан чыккан жок"
 
 #: applets/clock/clock-utils.c:123 applets/fish/fish.c:196
-#: applets/notification_area/main.c:252 applets/vncklet/vncklet.c:92
+#: applets/notification_area/main.c:253 applets/vncklet/vncklet.c:92
 msgid "Error displaying help document"
 msgstr "Жардам иш кагазын көрсөтүү учурундагы катасы"
 
@@ -564,58 +569,66 @@ msgid "If true, show the temperature next to the weather icon."
 msgstr ""
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:64
+msgid "Show humidity in clock"
+msgstr ""
+
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:65
+msgid "If true, show the humidity next to the temperature."
+msgstr ""
+
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:69
 msgid "Show week numbers in calendar"
 msgstr "Жума номерлерин жылнаамадан көрсөтүү"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:65
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:70
 msgid "If true, show week numbers in the calendar."
 msgstr "Эгер бул орнотулса, календарда жуманын катар номуру көрсөтүлөт"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:69
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:74
 msgid "Expand list of locations"
 msgstr "Жайгашкан жерлеринин тизмесин ачуу"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:70
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:75
 msgid "If true, expand the list of locations in the calendar window."
 msgstr ""
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:74
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:79
 msgid "List of locations"
 msgstr "Жайгашкан жерлердин тизмеси"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:75
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:80
 msgid "A list of locations to display in the calendar window."
 msgstr ""
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:79
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:84
 msgid "Temperature unit"
 msgstr "Температура бирдиги"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:80
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:85
 msgid "The unit to use when showing temperatures."
 msgstr "Температуралар үчүн колдонулуучу ченөө бирдиги."
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:84
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:89
 msgid "Speed unit"
 msgstr "Ылдамдык бирдиги"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:85
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:90
 msgid "The unit to use when showing wind speed."
 msgstr "Шамал ылдамдыгы үчүн колдонулуучу ченөө бирдиги."
 
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:6
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Clock Applet Factory"
 msgstr "Саат апплетинин фабрикасы"
 
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:7
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Factory for clock applet"
 msgstr "Саат апплетинин фабрикасы"
 
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:11
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Get the current time and date"
 msgstr ""
 
-#: applets/fish/fish.c:266
+#: applets/fish/fish.c:265
 #, c-format
 msgid ""
 "Warning:  The command appears to be something actually useful.\n"
@@ -628,16 +641,16 @@ msgstr ""
 "Биз \"%s аттуу балыкты\" колдонуудан баш тартууңузду сунуштайбыз,\n"
 "себеби ал бул апплетти \"практикалык\" же пайдалуу кылат."
 
-#: applets/fish/fish.c:428
+#: applets/fish/fish.c:433
 msgid "Images"
 msgstr "Сүрөттөр"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
+#: applets/fish/fish.c:541 applets/fish/fish.c:586 applets/fish/fish.c:694
 #, no-c-format
 msgid "%s the Fish"
 msgstr "%s балык"
 
-#: applets/fish/fish.c:535
+#: applets/fish/fish.c:542
 #, c-format
 msgid ""
 "%s has no use what-so-ever. It only takes up disk space and compilation "
@@ -645,42 +658,42 @@ msgid ""
 "Anybody found using it should be promptly sent for a psychiatric evaluation."
 msgstr ""
 
-#: applets/fish/fish.c:552
+#: applets/fish/fish.c:559
 msgid "(with minor help from George)"
 msgstr "(Джорждун кичинекей жардамы менен)"
 
-#: applets/fish/fish.c:558
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:10
+#: applets/fish/fish.c:565
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Fish"
 msgstr "Балык"
 
-#: applets/fish/fish.c:559
+#: applets/fish/fish.c:566
 msgid "About Fish"
 msgstr ""
 
-#: applets/fish/fish.c:562
+#: applets/fish/fish.c:569
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/fish/fish.c:580
+#: applets/fish/fish.c:587
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "\"%s аттуу балык\", учурдун оракулу"
 
-#: applets/fish/fish.c:646
+#: applets/fish/fish.c:653
 msgid "Unable to locate the command to execute"
 msgstr "Иштетүү үчүн команда табылбады"
 
-#: applets/fish/fish.c:690
+#: applets/fish/fish.c:699
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "%s балыктын айтуусу:"
 
-#: applets/fish/fish.c:753
+#: applets/fish/fish.c:761
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -691,16 +704,16 @@ msgstr ""
 "\n"
 "Кеңири маалымат: %s"
 
-#: applets/fish/fish.c:850
+#: applets/fish/fish.c:860
 msgid "_Speak again"
 msgstr "_Дагы угуу"
 
-#: applets/fish/fish.c:931
+#: applets/fish/fish.c:941
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
 msgstr "Ырасталган команда иштебейт, бул менен алмаштырылды: %s"
 
-#: applets/fish/fish.c:964
+#: applets/fish/fish.c:974
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -711,7 +724,7 @@ msgstr ""
 "\n"
 "Кеңири маалымат: %s"
 
-#: applets/fish/fish.c:980
+#: applets/fish/fish.c:990
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -722,15 +735,15 @@ msgstr ""
 "\n"
 "Кеңири маалымат: %s"
 
-#: applets/fish/fish.c:1552
+#: applets/fish/fish.c:1568
 msgid "The water needs changing"
 msgstr "Сууну алмаштыруу керек"
 
-#: applets/fish/fish.c:1554
+#: applets/fish/fish.c:1570
 msgid "Look at today's date!"
 msgstr "Бүгүнкү күндү караңыз!"
 
-#: applets/fish/fish.c:1636
+#: applets/fish/fish.c:1654
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "Төлгөчү %s балык"
@@ -847,37 +860,37 @@ msgstr ""
 "Эгер бул орнотулса, вертикалдык панелдерде анимация буралган түрдө "
 "чагылдырылат."
 
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Wanda Factory"
 msgstr "Ванда фабрикасы"
 
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:7
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
 msgid "From Whence That Stupid Fish Came"
 msgstr "Бул акылсыз балык кайдан келген"
 
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Display a swimming fish or another animated creature"
 msgstr ""
 
-#: applets/notification_area/main.c:276
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
+#: applets/notification_area/main.c:278
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Notification Area"
 msgstr "Кабарландыруу жери"
 
-#: applets/notification_area/main.c:277
+#: applets/notification_area/main.c:279
 msgid "About Notification Area"
 msgstr ""
 
-#: applets/notification_area/main.c:280
+#: applets/notification_area/main.c:282
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/notification_area/main.c:486
+#: applets/notification_area/main.c:488
 msgid "Panel Notification Area"
 msgstr "Панелдин кабарландыруу жери"
 
@@ -906,15 +919,15 @@ msgstr ""
 msgid "The minimum size an icon can have."
 msgstr ""
 
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:6
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Notification Area Factory"
 msgstr "Кабарландыруу жеринин фабрикасы"
 
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:7
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Factory for notification area"
 msgstr "Кабарландыруу жеринин фабрикасы"
 
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:11
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Area where notification icons appear"
 msgstr ""
 
@@ -1001,90 +1014,90 @@ msgid ""
 "switching from the first to the last workspace and vice versa via scrolling."
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:6
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:5
 msgid "Window Navigation Applet Factory"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:7
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Factory for the window navigation related applets"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:9
+#: applets/vncklet/window-menu.c:78 applets/vncklet/window-menu.c:235
 msgid "Window Selector"
 msgstr "Терезе тандагычы"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:11
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
 msgid "Switch between open windows using a menu"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:22
+#: applets/vncklet/workspace-switcher.c:648
 msgid "Workspace Switcher"
 msgstr "Иштөө жерлердин өткөргүчү"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:24
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
 msgid "Switch between workspaces"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:826
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:35
+#: applets/vncklet/window-list.c:847
 msgid "Window List"
 msgstr "Терезе тизмеси"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
 msgid "Switch between open windows using buttons"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:48
 msgid "Show Desktop"
 msgstr "Иш столун көрсөтүү"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Hide application windows and show the desktop"
 msgstr "Тиркемелердин терезелерин жашырып иш столун көрсөтүү"
 
-#: applets/vncklet/showdesktop.c:184
+#: applets/vncklet/showdesktop.c:188
 #, c-format
 msgid "Failed to load %s: %s\n"
 msgstr "\"%s\" жүктөлбөдү: %s\n"
 
-#: applets/vncklet/showdesktop.c:184
+#: applets/vncklet/showdesktop.c:188
 msgid "Icon not found"
 msgstr "Белгини табуу оңунан чыккан жок"
 
-#: applets/vncklet/showdesktop.c:266
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to restore hidden windows."
 msgstr "Жашырылган терезелерди калыбына келтирүү үчүн, бул жерди басыңыз"
 
-#: applets/vncklet/showdesktop.c:270
+#: applets/vncklet/showdesktop.c:274
 msgid "Click here to hide all windows and show the desktop."
 msgstr "Бардык терезелерди жашырып иш столун көрсөтүү үчүн, бул жерди басыңыз"
 
-#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:455 applets/vncklet/showdesktop.c:516
 msgid "Show Desktop Button"
 msgstr "Иш столун көрсөтүүчү кнопка"
 
-#: applets/vncklet/showdesktop.c:500
+#: applets/vncklet/showdesktop.c:517
 msgid "About Show Desktop Button"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:502
+#: applets/vncklet/showdesktop.c:519
 msgid "This button lets you hide all windows and show the desktop."
 msgstr ""
 "Бул баскыч бардык терезелерди жашыруу менен иш столун тазалоого мүмкүндүк "
 "берет"
 
-#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
-#: applets/vncklet/workspace-switcher.c:642
+#: applets/vncklet/showdesktop.c:520 applets/vncklet/window-list.c:851
+#: applets/vncklet/workspace-switcher.c:652
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:531
+#: applets/vncklet/showdesktop.c:548
 msgid ""
 "Your window manager does not support the show desktop button, or you are not "
 "running a window manager."
@@ -1092,15 +1105,15 @@ msgstr ""
 "Терезе менеджери иш столун тазалоо функционалдуулугун колдобойт, же болбосо "
 "терезе менеджери такыр иштетилген эмес."
 
-#: applets/vncklet/window-list.c:354
+#: applets/vncklet/window-list.c:369
 msgid "_System Monitor"
 msgstr "_Системалык монитор"
 
-#: applets/vncklet/window-list.c:827
+#: applets/vncklet/window-list.c:848
 msgid "About Window List"
 msgstr ""
 
-#: applets/vncklet/window-list.c:829
+#: applets/vncklet/window-list.c:850
 msgid ""
 "The Window List shows a list of all windows in a set of buttons and lets you "
 "browse them."
@@ -1176,11 +1189,11 @@ msgstr "Кезектеги _иш ордуна калыбына келтирүү"
 msgid "Restore to na_tive workspace"
 msgstr "Баштапкы _иш ордуна калыбына келтирүү"
 
-#: applets/vncklet/window-menu.c:77
+#: applets/vncklet/window-menu.c:79
 msgid "About Window Selector"
 msgstr ""
 
-#: applets/vncklet/window-menu.c:79
+#: applets/vncklet/window-menu.c:81
 msgid ""
 "The Window Selector shows a list of all windows in a menu and lets you "
 "browse them."
@@ -1188,32 +1201,32 @@ msgstr ""
 "Бардык терезелер тизмесин меню түрүндө чагылдырып, алардын ортосунда "
 "алмашууларды ишке ашырат."
 
-#: applets/vncklet/window-menu.c:80
+#: applets/vncklet/window-menu.c:82
 msgid ""
 "Copyright © 2000 Helix Code, Inc.\n"
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:944
+#: applets/vncklet/workspace-switcher.c:243
+#: applets/vncklet/workspace-switcher.c:977
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "сап"
 
-#: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:944
+#: applets/vncklet/workspace-switcher.c:243
+#: applets/vncklet/workspace-switcher.c:977
 msgid "columns"
 msgstr "тилке"
 
-#: applets/vncklet/workspace-switcher.c:639
+#: applets/vncklet/workspace-switcher.c:649
 msgid "About Workspace Switcher"
 msgstr ""
 
-#: applets/vncklet/workspace-switcher.c:641
+#: applets/vncklet/workspace-switcher.c:651
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
@@ -1358,9 +1371,9 @@ msgstr "Список идентификаторов объектов панел�
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object (e."
-"g. a launcher, action button or menu button/bar). The settings for each of "
-"these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object "
+"(e.g. a launcher, action button or menu button/bar). The settings for each "
+"of these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
 "Список идентификаторов (ID) объектов панели.  Каждый идентификатор "
 "идентифицирует отдельный объект панели (например, кнопку запуска, кнопку "
@@ -1596,9 +1609,10 @@ msgstr ""
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
-"ClockApplet\". This key is only relevant if the object_type key is "
-"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
+"The implementation ID of the applet - e.g. "
+"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
+"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
+"applet\")."
 msgstr ""
 
 #: data/org.cafe.panel.object.gschema.xml.in:35
@@ -2089,25 +2103,25 @@ msgstr "Файл туура эмес .desktop файлы"
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "desktop файлынын версиясы белгисиз «%s»"
 
-#: cafe-panel/libegg/eggdesktopfile.c:963
+#: cafe-panel/libegg/eggdesktopfile.c:967
 #, c-format
 msgid "Starting %s"
 msgstr "%s жүргүзүлүүдө"
 
-#: cafe-panel/libegg/eggdesktopfile.c:1105
+#: cafe-panel/libegg/eggdesktopfile.c:1109
 msgid "Application does not accept documents on command line"
 msgstr "Тиркеме командалык саптан иш кагаздарды кабыл албайт"
 
-#: cafe-panel/libegg/eggdesktopfile.c:1173
+#: cafe-panel/libegg/eggdesktopfile.c:1177
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Белгисиз жүргүзүү параметри: %d"
 
-#: cafe-panel/libegg/eggdesktopfile.c:1390
+#: cafe-panel/libegg/eggdesktopfile.c:1394
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
 
-#: cafe-panel/libegg/eggdesktopfile.c:1411
+#: cafe-panel/libegg/eggdesktopfile.c:1415
 msgid "Not a launchable item"
 msgstr "Жүргүзүлбөгөн объект"
 
@@ -2170,28 +2184,28 @@ msgstr "«%s» дарегин ачуу оңунан чыккан жок"
 msgid "No application to handle search folders is installed."
 msgstr ""
 
-#: cafe-panel/applet.c:468
+#: cafe-panel/applet.c:469
 msgid "???"
 msgstr "аты жок"
 
-#: cafe-panel/applet.c:548 libcafe-panel-applet/cafe-panel-applet.c:139
+#: cafe-panel/applet.c:549 libcafe-panel-applet/cafe-panel-applet.c:139
 msgid "_Remove From Panel"
 msgstr "Панелден ө_чүрүү"
 
-#: cafe-panel/applet.c:556 libcafe-panel-applet/cafe-panel-applet.c:142
+#: cafe-panel/applet.c:557 libcafe-panel-applet/cafe-panel-applet.c:142
 msgid "_Move"
 msgstr "_Ташуу"
 
-#: cafe-panel/applet.c:574 libcafe-panel-applet/cafe-panel-applet.c:148
+#: cafe-panel/applet.c:575 libcafe-panel-applet/cafe-panel-applet.c:148
 msgid "Loc_k To Panel"
 msgstr "Панелге _кадоо"
 
-#: cafe-panel/applet.c:1313
+#: cafe-panel/applet.c:1314
 msgid "Cannot find an empty spot"
 msgstr "Бош орун табуу оңунан чыккан жок"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1643
+#: cafe-panel/panel-toplevel.c:1647
 msgid "Drawer"
 msgstr "Суурма"
 
@@ -2212,29 +2226,29 @@ msgstr "Берилген каталогдо жаңы файл түзүү"
 msgid "[FILE...]"
 msgstr "[ФАЙЛ…]"
 
-#: cafe-panel/cafe-desktop-item-edit.c:106
+#: cafe-panel/cafe-desktop-item-edit.c:107
 msgid "- Edit .desktop files"
 msgstr ""
 
-#: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
+#: cafe-panel/cafe-desktop-item-edit.c:145
+#: cafe-panel/cafe-desktop-item-edit.c:199 cafe-panel/launcher.c:975
 msgid "Create Launcher"
 msgstr "Жүргүзүү кнопкасын жаратуу"
 
-#: cafe-panel/cafe-desktop-item-edit.c:169
-#: cafe-panel/cafe-desktop-item-edit.c:192
+#: cafe-panel/cafe-desktop-item-edit.c:170
+#: cafe-panel/cafe-desktop-item-edit.c:193
 msgid "Directory Properties"
 msgstr "Каталогдун касиеттери"
 
-#: cafe-panel/cafe-desktop-item-edit.c:175 cafe-panel/launcher.c:817
+#: cafe-panel/cafe-desktop-item-edit.c:176 cafe-panel/launcher.c:818
 msgid "Launcher Properties"
 msgstr "Жүргүзүү кнопкасынын касиеттери"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
+#: cafe-panel/cafe-panel.desktop.in:3 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "Панель"
 
-#: cafe-panel/cafe-panel.desktop.in:5
+#: cafe-panel/cafe-panel.desktop.in:4
 msgid ""
 "Launch other applications and provide various utilities to manage windows, "
 "show the time, etc."
@@ -2266,12 +2280,12 @@ msgstr "%2$s%3$s панелди иштетүү баскычы үчүн \"%1$s\" 
 msgid "_Launch"
 msgstr "_Жүргүзүү"
 
-#: cafe-panel/launcher.c:910
+#: cafe-panel/launcher.c:911
 #, c-format
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr ""
 
-#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1044 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Жүргүзүү кнопкасын сактоо оңунан чыккан жок"
@@ -2292,23 +2306,23 @@ msgstr "Жүргүзүү диалогун аткаруу"
 msgid "Set the default panel layout"
 msgstr ""
 
-#: cafe-panel/menu.c:502
+#: cafe-panel/menu.c:503
 msgid "Add this launcher to _panel"
 msgstr "Бул жүргүзүү кнопкасын _панелге кошуу"
 
-#: cafe-panel/menu.c:509
+#: cafe-panel/menu.c:510
 msgid "Add this launcher to _desktop"
 msgstr "Бул жүргүзүү кнопкасын _иш столуна кошуу"
 
-#: cafe-panel/menu.c:521
+#: cafe-panel/menu.c:522
 msgid "_Entire menu"
 msgstr "_Бүтүн меню"
 
-#: cafe-panel/menu.c:526
+#: cafe-panel/menu.c:527
 msgid "Add this as _drawer to panel"
 msgstr "_Суурма кылып панелге кошуу"
 
-#: cafe-panel/menu.c:533
+#: cafe-panel/menu.c:534
 msgid "Add this as _menu to panel"
 msgstr "Муну _меню кылып панелге кошуу"
 
@@ -2437,28 +2451,28 @@ msgstr ""
 msgid "Not compatible with Wayland"
 msgstr ""
 
-#: cafe-panel/panel-addto.c:1055
+#: cafe-panel/panel-addto.c:1057
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr ""
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Add to Drawer"
 msgstr "Суурмага кошуу"
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Find an _item to add to the drawer:"
 msgstr "Суурмага кошуу үчүн э_лементти табуу:"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Add to Panel"
 msgstr "Панелге кошуу"
 
-#: cafe-panel/panel-addto.c:1065
+#: cafe-panel/panel-addto.c:1067
 msgid "Find an _item to add to the panel:"
 msgstr "Панелге кошуу үчүн э_лементти табуу:"
 
-#: cafe-panel/panel-addto.c:1313
+#: cafe-panel/panel-addto.c:1316
 msgid "_Back"
 msgstr "_Артка"
 
@@ -2500,7 +2514,7 @@ msgstr "\"%s\" апплетин жүктөөдө проблема байкалд
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Апплетти учурдагы конфигурациядан жоготуу?"
 
-#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1369
 msgid "_Delete"
 msgstr "Ө_чүрүү"
 
@@ -2517,7 +2531,7 @@ msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
 "Copyright © 2011-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:120
@@ -2661,24 +2675,24 @@ msgid ""
 "documents in it might get lost."
 msgstr ""
 
-#: cafe-panel/panel-menu-bar.c:97
+#: cafe-panel/panel-menu-bar.c:98
 msgid "Browse and run installed applications"
 msgstr "Орнотулган тиркемелерди көрүү жана жүргүзүү"
 
-#: cafe-panel/panel-menu-bar.c:98
+#: cafe-panel/panel-menu-bar.c:99
 msgid "Access documents, folders and network places"
 msgstr "Иш кагаздарга, папкаларга жана тармак ресурстарына кайрылуу"
 
-#: cafe-panel/panel-menu-bar.c:99
+#: cafe-panel/panel-menu-bar.c:100
 msgid "Change desktop appearance and behavior, get help, or log out"
 msgstr ""
 "Иш столунун сырткы көрүнүшүн жана кылыгын өзгөртүү, жардам алуу же чыгуу"
 
-#: cafe-panel/panel-menu-bar.c:166
+#: cafe-panel/panel-menu-bar.c:169
 msgid "Applications"
 msgstr "Тиркемелер"
 
-#: cafe-panel/panel-menu-bar.c:356 cafe-panel/panel-menu-button.c:706
+#: cafe-panel/panel-menu-bar.c:360 cafe-panel/panel-menu-button.c:706
 msgid "_Edit Menus"
 msgstr "Менюларды _оңдоо"
 
@@ -2691,7 +2705,7 @@ msgid "Bookmarks"
 msgstr "Чөп каттар"
 
 #. Translators: %s is a URI
-#: cafe-panel/panel-menu-items.c:490 cafe-panel/panel.c:553
+#: cafe-panel/panel-menu-items.c:490 cafe-panel/panel.c:562
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' иш кагазын ачуу"
@@ -2808,7 +2822,7 @@ msgctxt "Orientation"
 msgid "Right"
 msgstr "Оңго буруу"
 
-#: cafe-panel/panel-properties-dialog.c:818
+#: cafe-panel/panel-properties-dialog.c:819
 msgid "Drawer Properties"
 msgstr "Суурманын касиеттери"
 
@@ -2948,30 +2962,30 @@ msgstr "Соңку иш кагаздарды тазалоо..."
 msgid "Clear all items from the recent documents list"
 msgstr "Соңку иш кагаздар тизмесинен бардык элементтерди тазалоо"
 
-#: cafe-panel/panel-run-dialog.c:435
+#: cafe-panel/panel-run-dialog.c:436
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "«%s» командасын аткаруу оңунан чыккан жок"
 
-#: cafe-panel/panel-run-dialog.c:476
+#: cafe-panel/panel-run-dialog.c:477
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr ""
 
-#: cafe-panel/panel-run-dialog.c:1269
+#: cafe-panel/panel-run-dialog.c:1274
 msgid "Choose a file to append to the command..."
 msgstr "Командага туташтыруу үчүн файл тандоо..."
 
-#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1657 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Баянын көрүү үчүн иштеме тандоо."
 
-#: cafe-panel/panel-run-dialog.c:1689
+#: cafe-panel/panel-run-dialog.c:1697
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "Жүргүзүлүүчү командасы: «%s»"
 
-#: cafe-panel/panel-run-dialog.c:1722
+#: cafe-panel/panel-run-dialog.c:1730
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
@@ -3117,23 +3131,23 @@ msgstr "_Апплети:"
 msgid "_Prefs Path:"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1209
+#: cafe-panel/panel-toplevel.c:1213
 msgid "Hide Panel"
 msgstr "Панелди жашыруу"
 
-#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
+#: cafe-panel/panel-toplevel.c:1653 cafe-panel/panel-toplevel.c:1663
 msgid "Top Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1651
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Bottom Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1653
+#: cafe-panel/panel-toplevel.c:1657
 msgid "Left Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1655
+#: cafe-panel/panel-toplevel.c:1659
 msgid "Right Panel"
 msgstr ""
 
@@ -3151,17 +3165,17 @@ msgstr ""
 msgid "file"
 msgstr "файл"
 
-#: cafe-panel/panel-util.c:876
+#: cafe-panel/panel-util.c:878
 msgid "Home Folder"
 msgstr "Үй папкасы"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:888
+#: cafe-panel/panel-util.c:890
 msgid "File System"
 msgstr "Файл системасы"
 
-#: cafe-panel/panel-util.c:1062
+#: cafe-panel/panel-util.c:1065
 msgid "Search"
 msgstr "Табуу"
 
@@ -3170,21 +3184,21 @@ msgstr "Табуу"
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
 #.
-#: cafe-panel/panel-util.c:1108
+#: cafe-panel/panel-util.c:1111
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: cafe-panel/panel.c:486
+#: cafe-panel/panel.c:495
 #, c-format
 msgid "Open URL: %s"
 msgstr "URL'ди ачуу: %s"
 
-#: cafe-panel/panel.c:1336
+#: cafe-panel/panel.c:1345
 msgid "Delete this drawer?"
 msgstr "Бул суурманы өчүрөсүзбү?"
 
-#: cafe-panel/panel.c:1337
+#: cafe-panel/panel.c:1346
 msgid ""
 "When a drawer is deleted, the drawer and its\n"
 "settings are lost."
@@ -3192,11 +3206,11 @@ msgstr ""
 "Үкөктү жоготууда, бул үкөк жана анын\n"
 "бардык параметрлери жоготулат."
 
-#: cafe-panel/panel.c:1340
+#: cafe-panel/panel.c:1349
 msgid "Delete this panel?"
 msgstr "Бул панелди өчүрөсүзбү?"
 
-#: cafe-panel/panel.c:1341
+#: cafe-panel/panel.c:1350
 msgid ""
 "When a panel is deleted, the panel and its\n"
 "settings are lost."
@@ -3204,18 +3218,18 @@ msgstr ""
 "Бул панелди жоготкон учурда, бул панель жана анын\n"
 " бардык параметрлери жоголот."
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:5
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:4
 msgid "Test DBus Applet Factory"
 msgstr ""
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:6
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:5
 msgid "Factory for Test DBus Applet"
 msgstr ""
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:9
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:8
 msgid "Test DBus Applet"
 msgstr ""
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:9
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""

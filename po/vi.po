@@ -13,9 +13,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 1.25.0\n"
+"Project-Id-Version: cafe-panel 2.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2023-03-23 18:48+0100\n"
+"POT-Creation-Date: 2025-04-02 20:46+0200\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Horazone Detex <thmmt2017d@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/cafe/teams/13566/vi/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: applets/clock/calendar-window.c:257 applets/clock/clock.ui:689
+#: applets/clock/calendar-window.c:257 applets/clock/clock.ui:704
 msgid "Locations"
 msgstr "Địa điểm"
 
@@ -40,7 +40,7 @@ msgstr "Lịch"
 #. Translators: This is a strftime format string.
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
-#: applets/clock/clock.c:449
+#: applets/clock/clock.c:452
 msgid "%l:%M:%S %p"
 msgstr "%l:%M:%S %p"
 
@@ -48,7 +48,7 @@ msgstr "%l:%M:%S %p"
 #. * It is used to display the time in 12-hours format (eg, like
 #. * in the US: 8:10 am). The %p expands to am/pm.
 #.
-#: applets/clock/clock.c:449 applets/clock/clock-location-tile.c:502
+#: applets/clock/clock.c:452 applets/clock/clock-location-tile.c:504
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
@@ -59,7 +59,7 @@ msgstr "%l:%M %p"
 #. * string.
 #. * It is used to display the time in 24-hours
 #. * format (eg, like in France: 20:10).
-#: applets/clock/clock.c:454 applets/clock/clock.c:1603
+#: applets/clock/clock.c:457 applets/clock/clock.c:1614
 msgid "%H:%M:%S"
 msgstr "%H:%M:%S"
 
@@ -74,9 +74,9 @@ msgstr "%H:%M:%S"
 #. * It is used to display the time in 24-hours format (eg, like
 #. * in France: 20:10).
 #.
-#: applets/clock/clock.c:454 applets/clock/clock.c:1609
-#: applets/clock/clock-location-tile.c:462
-#: applets/clock/clock-location-tile.c:509
+#: applets/clock/clock.c:457 applets/clock/clock.c:1620
+#: applets/clock/clock-location-tile.c:464
+#: applets/clock/clock-location-tile.c:511
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -85,11 +85,12 @@ msgstr "%H:%M"
 #. * the day of the month as a decimal number is a single digit,
 #. * it should begin with a 0 in your locale (e.g. "May 01"
 #. * instead of "May  1").
-#: applets/clock/clock.c:465
+#: applets/clock/clock.c:468
+#, fuzzy, c-format
 msgid "%a %b %e"
 msgstr "%a %d %b"
 
-#: applets/clock/clock.c:472
+#: applets/clock/clock.c:475
 #, c-format
 msgid ""
 "%1$s\n"
@@ -98,7 +99,7 @@ msgstr ""
 "%2$s\n"
 "%1$s"
 
-#: applets/clock/clock.c:480
+#: applets/clock/clock.c:483
 #, c-format
 msgid "%1$s, %2$s"
 msgstr "%2$s, %1$s"
@@ -106,19 +107,19 @@ msgstr "%2$s, %1$s"
 #. Translators: This is a strftime format string.
 #. * It is used to display a date. Please leave "%%s" as it is:
 #. * it will be used to insert the timezone name later.
-#: applets/clock/clock.c:663
+#: applets/clock/clock.c:666
 msgid "%A %B %d (%%s)"
 msgstr "%A, %d %B (%%s)"
 
-#: applets/clock/clock.c:689
+#: applets/clock/clock.c:692
 msgid "Click to hide month calendar"
 msgstr "Nhấn để ẩn lịch tháng"
 
-#: applets/clock/clock.c:691
+#: applets/clock/clock.c:694
 msgid "Click to view month calendar"
 msgstr "Nhắp để xem lịch tháng"
 
-#: applets/clock/clock.c:1441
+#: applets/clock/clock.c:1451
 msgid "Computer Clock"
 msgstr "Đồng hồ máy tính"
 
@@ -128,7 +129,7 @@ msgstr "Đồng hồ máy tính"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1588
+#: applets/clock/clock.c:1599
 msgid "%I:%M:%S %p"
 msgstr "%I:%M:%S %p"
 
@@ -138,108 +139,108 @@ msgstr "%I:%M:%S %p"
 #. * format with a leading 0 if needed (eg, like
 #. * in the US: 08:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock.c:1596
+#: applets/clock/clock.c:1607
 msgid "%I:%M %p"
 msgstr "%I:%M %p"
 
 #. Translators: This is a strftime format string.
 #. * It is used to display a date in the full format (so that people can
 #. * copy and paste it elsewhere).
-#: applets/clock/clock.c:1642
+#: applets/clock/clock.c:1653
 msgid "%A, %B %d %Y"
 msgstr "%A, %d %B %Y"
 
-#: applets/clock/clock.c:1673
+#: applets/clock/clock.c:1684
 msgid "Set System Time..."
 msgstr "Đặt giờ hệ thống..."
 
-#: applets/clock/clock.c:1674
+#: applets/clock/clock.c:1685
 msgid "Set System Time"
 msgstr "Đặt giờ hệ thống"
 
-#: applets/clock/clock.c:1689
+#: applets/clock/clock.c:1700
 msgid "Failed to set the system time"
 msgstr "Lỗi đặt giờ hệ thống"
 
-#: applets/clock/clock.c:1885 applets/fish/fish.c:1695
-#: applets/notification_area/main.c:293 applets/vncklet/window-list.c:362
-#: applets/vncklet/workspace-switcher.c:393
+#: applets/clock/clock.c:1901 applets/fish/fish.c:1713
+#: applets/notification_area/main.c:295 applets/vncklet/window-list.c:377
+#: applets/vncklet/workspace-switcher.c:401
 msgid "_Preferences"
 msgstr "_Tùy thích"
 
-#: applets/clock/clock.c:1888 applets/clock/clock.ui:293
-#: applets/fish/fish.c:1698 applets/fish/fish.ui:46
-#: applets/notification_area/main.c:296 applets/vncklet/showdesktop.c:242
-#: applets/vncklet/window-list.c:370 applets/vncklet/window-list.ui:35
-#: applets/vncklet/window-menu.c:99 applets/vncklet/workspace-switcher.c:401
+#: applets/clock/clock.c:1904 applets/clock/clock.ui:293
+#: applets/fish/fish.c:1716 applets/fish/fish.ui:46
+#: applets/notification_area/main.c:298 applets/vncklet/showdesktop.c:246
+#: applets/vncklet/window-list.c:385 applets/vncklet/window-list.ui:35
+#: applets/vncklet/window-menu.c:101 applets/vncklet/workspace-switcher.c:409
 #: applets/vncklet/workspace-switcher.ui:46 cafe-panel/drawer.c:562
-#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1310
+#: cafe-panel/panel-action-button.c:753 cafe-panel/panel-addto.c:1313
 #: cafe-panel/panel-context-menu.c:319 cafe-panel/panel-ditem-editor.c:648
-#: cafe-panel/panel-menu-bar.c:351 cafe-panel/panel-menu-button.c:700
+#: cafe-panel/panel-menu-bar.c:355 cafe-panel/panel-menu-button.c:700
 #: cafe-panel/panel-properties-dialog.ui:78
 #: cafe-panel/panel-properties-dialog.ui:724 cafe-panel/panel-run-dialog.ui:39
 msgid "_Help"
 msgstr "Trợ _giúp"
 
-#: applets/clock/clock.c:1891 applets/fish/fish.c:1701
-#: applets/notification_area/main.c:299 applets/vncklet/showdesktop.c:250
-#: applets/vncklet/window-list.c:378 applets/vncklet/window-menu.c:107
-#: applets/vncklet/workspace-switcher.c:409
+#: applets/clock/clock.c:1907 applets/fish/fish.c:1719
+#: applets/notification_area/main.c:301 applets/vncklet/showdesktop.c:254
+#: applets/vncklet/window-list.c:393 applets/vncklet/window-menu.c:109
+#: applets/vncklet/workspace-switcher.c:417
 msgid "_About"
 msgstr "_Giới thiệu"
 
-#: applets/clock/clock.c:1894
+#: applets/clock/clock.c:1910
 msgid "Copy _Time"
 msgstr "Chép _giờ"
 
-#: applets/clock/clock.c:1897
+#: applets/clock/clock.c:1913
 msgid "Copy _Date"
 msgstr "Chép ngà_y"
 
-#: applets/clock/clock.c:1900
+#: applets/clock/clock.c:1916
 msgid "Ad_just Date & Time"
 msgstr "_Chỉnh Ngày và Giờ"
 
-#: applets/clock/clock.c:2898
+#: applets/clock/clock.c:2954
 msgid "Choose Location"
 msgstr "Chọn địa điểm"
 
-#: applets/clock/clock.c:2977
+#: applets/clock/clock.c:3036
 msgid "Edit Location"
 msgstr "Chỉnh sửa địa điểm"
 
-#: applets/clock/clock.c:3104
+#: applets/clock/clock.c:3169
 msgid "City Name"
 msgstr "Tên thành phố"
 
-#: applets/clock/clock.c:3108
+#: applets/clock/clock.c:3173
 msgid "City Time Zone"
 msgstr "Múi giờ thành phố"
 
-#: applets/clock/clock.c:3388
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
+#: applets/clock/clock.c:3456
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Clock"
 msgstr "Đồng hồ"
 
-#: applets/clock/clock.c:3389
+#: applets/clock/clock.c:3457
 msgid "About Clock"
 msgstr ""
 
-#: applets/clock/clock.c:3391
+#: applets/clock/clock.c:3459
 msgid "The Clock displays the current time and date"
 msgstr "Đồng hồ hiển thị thời gian và ngày hiện thời"
 
-#: applets/clock/clock.c:3392
+#: applets/clock/clock.c:3460
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/clock/clock.c:3397 applets/fish/fish.c:568
-#: applets/notification_area/main.c:287 applets/vncklet/showdesktop.c:510
-#: applets/vncklet/window-list.c:837 applets/vncklet/window-menu.c:89
-#: applets/vncklet/workspace-switcher.c:649 cafe-panel/panel-context-menu.c:125
+#: applets/clock/clock.c:3465 applets/fish/fish.c:575
+#: applets/notification_area/main.c:289 applets/vncklet/showdesktop.c:527
+#: applets/vncklet/window-list.c:858 applets/vncklet/window-menu.c:91
+#: applets/vncklet/workspace-switcher.c:659 cafe-panel/panel-context-menu.c:125
 msgid "translator-credits"
 msgstr "giới thiệu-nhóm dịch"
 
@@ -247,11 +248,11 @@ msgstr "giới thiệu-nhóm dịch"
 msgid "Time & Date"
 msgstr "Thời gian & Ngày tháng"
 
-#: applets/clock/clock.ui:46 applets/clock/clock.ui:923
+#: applets/clock/clock.ui:46 applets/clock/clock.ui:938
 #: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
 #: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
 #: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
-#: cafe-panel/panel.c:1356
+#: cafe-panel/panel.c:1365
 msgid "_Cancel"
 msgstr "Th_ôi"
 
@@ -275,10 +276,10 @@ msgstr "Tùy thích đồng hồ"
 msgid "Time _Settings"
 msgstr "T_hiết lập thời gian"
 
-#: applets/clock/clock.ui:324 applets/fish/fish.c:854 applets/fish/fish.ui:62
+#: applets/clock/clock.ui:324 applets/fish/fish.c:864 applets/fish/fish.ui:62
 #: applets/notification_area/notification-area-preferences-dialog.ui:65
 #: applets/vncklet/window-list.ui:51 applets/vncklet/workspace-switcher.ui:62
-#: cafe-panel/panel-addto.c:1321 cafe-panel/panel-ditem-editor.c:660
+#: cafe-panel/panel-addto.c:1324 cafe-panel/panel-ditem-editor.c:660
 #: cafe-panel/panel-properties-dialog.ui:94
 #: cafe-panel/panel-properties-dialog.ui:740
 #: cafe-panel/panel-test-applets.ui:52
@@ -321,70 +322,74 @@ msgstr "Hiện _thời tiết"
 msgid "Show _temperature"
 msgstr "Hiện _nhiệt độ"
 
-#: applets/clock/clock.ui:568 applets/fish/fish.ui:102
+#: applets/clock/clock.ui:548
+msgid "Show h_umidity"
+msgstr ""
+
+#: applets/clock/clock.ui:583 applets/fish/fish.ui:102
 #: cafe-panel/panel-properties-dialog.ui:384
 msgid "General"
 msgstr "Chung"
 
-#: applets/clock/clock.ui:620 cafe-panel/panel-addto.c:1317
+#: applets/clock/clock.ui:635 cafe-panel/panel-addto.c:1320
 msgid "_Add"
 msgstr "Thê_m"
 
-#: applets/clock/clock.ui:636
+#: applets/clock/clock.ui:651
 msgid "_Edit"
 msgstr "_Sửa"
 
-#: applets/clock/clock.ui:652
+#: applets/clock/clock.ui:667
 msgid "_Remove"
 msgstr "_Bỏ..."
 
-#: applets/clock/clock.ui:713
+#: applets/clock/clock.ui:728
 msgid "Display"
 msgstr "Hiển thị"
 
-#: applets/clock/clock.ui:749
+#: applets/clock/clock.ui:764
 msgid "_Visibility unit:"
 msgstr "Đơn _vị tầm nhìn:"
 
-#: applets/clock/clock.ui:771
+#: applets/clock/clock.ui:786
 msgid "_Pressure unit:"
 msgstr "Đơn vị á_p suất:"
 
-#: applets/clock/clock.ui:805
+#: applets/clock/clock.ui:820
 msgid "_Wind speed unit:"
 msgstr "Đơn vị tốc độ _gió :"
 
-#: applets/clock/clock.ui:819
+#: applets/clock/clock.ui:834
 msgid "_Temperature unit:"
 msgstr "Đơn vị nhiệ_t độ :"
 
-#: applets/clock/clock.ui:854
+#: applets/clock/clock.ui:869
 msgid "Weather"
 msgstr "Thời tiết"
 
-#: applets/clock/clock.ui:886
+#: applets/clock/clock.ui:901
 msgid "East"
 msgstr "Phía Đông"
 
-#: applets/clock/clock.ui:889
+#: applets/clock/clock.ui:904
 msgid "West"
 msgstr "Phía Tây"
 
-#: applets/clock/clock.ui:900
+#: applets/clock/clock.ui:915
 msgid "North"
 msgstr "Phía Bắc"
 
-#: applets/clock/clock.ui:903
+#: applets/clock/clock.ui:918
 msgid "South"
 msgstr "Phía Nam"
 
-#: applets/clock/clock.ui:939 cafe-panel/libpanel-util/panel-ctk.c:140
+#: applets/clock/clock.ui:954 cafe-panel/libpanel-util/panel-ctk.c:140
 #: cafe-panel/panel-applet-frame.c:962 cafe-panel/panel-ditem-editor.c:668
 msgid "_OK"
 msgstr "_OK"
 
 #. Languages that have a single word that translates as either "state" or "province" should use that instead of "region".
-#: applets/clock/clock.ui:1012
+#: applets/clock/clock.ui:1027
 msgid ""
 "<small><i>Type a city, region, or country name and then select a match from "
 "the pop-up.</i></small>"
@@ -392,39 +397,39 @@ msgstr ""
 "<small><i>Gõ một thành phố, miền hay tên quốc gia, sau đó chọn một mục tương "
 "ứng trong trình đơn tự mở.</i></small>"
 
-#: applets/clock/clock.ui:1057
+#: applets/clock/clock.ui:1072
 msgid "_Timezone:"
 msgstr "_Múi giờ:"
 
-#: applets/clock/clock.ui:1070
+#: applets/clock/clock.ui:1085
 msgid "_Location Name:"
 msgstr "_Tên địa điểm:"
 
-#: applets/clock/clock.ui:1114 applets/clock/clock.ui:1128
+#: applets/clock/clock.ui:1129 applets/clock/clock.ui:1143
 msgid "<i>(optional)</i>"
 msgstr "<i>(tuỳ chọn)</i>"
 
-#: applets/clock/clock.ui:1171
+#: applets/clock/clock.ui:1186
 msgid "L_ongitude:"
 msgstr "V_ĩ độ:"
 
-#: applets/clock/clock.ui:1192
+#: applets/clock/clock.ui:1207
 msgid "L_atitude:"
 msgstr "K_inh độ:"
 
-#: applets/clock/clock-location-tile.c:183
+#: applets/clock/clock-location-tile.c:184
 msgid "Failed to set the system timezone"
 msgstr "Lỗi đặt múi giờ hệ thống"
 
-#: applets/clock/clock-location-tile.c:229
+#: applets/clock/clock-location-tile.c:231
 msgid "<small>Set...</small>"
 msgstr "<small>Đặt...</small>"
 
-#: applets/clock/clock-location-tile.c:230
+#: applets/clock/clock-location-tile.c:232
 msgid "<small>Set</small>"
 msgstr "<small>Đặt</small>"
 
-#: applets/clock/clock-location-tile.c:306
+#: applets/clock/clock-location-tile.c:308
 msgid "Set location as current location and use its timezone for this computer"
 msgstr "Đặt làm vị trí hiện thời và dùng làm múi giờ hiện thời cho máy này"
 
@@ -434,7 +439,7 @@ msgstr "Đặt làm vị trí hiện thời và dùng làm múi giờ hiện th�
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:439
+#: applets/clock/clock-location-tile.c:441
 msgid "%l:%M <small>%p (%A)</small>"
 msgstr "%l:%M <small>%p (%A)</small>"
 
@@ -443,7 +448,7 @@ msgstr "%l:%M <small>%p (%A)</small>"
 #. * (eg, like in France: 20:10), when the local
 #. * weekday differs from the weekday at the location
 #. * (the %A expands to the weekday).
-#: applets/clock/clock-location-tile.c:447
+#: applets/clock/clock-location-tile.c:449
 msgid "%H:%M <small>(%A)</small>"
 msgstr "%H:%M <small>(%A)</small>"
 
@@ -451,40 +456,40 @@ msgstr "%H:%M <small>(%A)</small>"
 #. * It is used to display the time in 12-hours format
 #. * (eg, like in the US: 8:10 am). The %p expands to
 #. * am/pm.
-#: applets/clock/clock-location-tile.c:456
+#: applets/clock/clock-location-tile.c:458
 msgid "%l:%M <small>%p</small>"
 msgstr "%l:%M <small>%p</small>"
 
-#: applets/clock/clock-location-tile.c:598
+#: applets/clock/clock-location-tile.c:600
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: applets/clock/clock-location-tile.c:610
-#: applets/clock/clock-location-tile.c:619
+#: applets/clock/clock-location-tile.c:612
+#: applets/clock/clock-location-tile.c:621
 msgid "Unknown"
 msgstr "Không rõ"
 
 #. Translators: The two strings are temperatures.
-#: applets/clock/clock-location-tile.c:612
+#: applets/clock/clock-location-tile.c:614
 #, c-format
 msgid "%s, feels like %s"
 msgstr "%s, cảm giác như %s"
 
-#: applets/clock/clock-location-tile.c:635
+#: applets/clock/clock-location-tile.c:637
 #, c-format
 msgid "Sunrise: %s / Sunset: %s"
 msgstr "Bình minh: %s / Hoàng hôn: %s"
 
 #: applets/clock/clock-utils.c:94 applets/fish/fish.c:170
-#: applets/notification_area/main.c:238 applets/vncklet/vncklet.c:75
+#: applets/notification_area/main.c:239 applets/vncklet/vncklet.c:75
 #: cafe-panel/libpanel-util/panel-show.c:234
 #, c-format
 msgid "Could not display help document '%s'"
 msgstr "Không thể hiển thị tài liệu trợ giúp « %s »"
 
 #: applets/clock/clock-utils.c:123 applets/fish/fish.c:196
-#: applets/notification_area/main.c:252 applets/vncklet/vncklet.c:92
+#: applets/notification_area/main.c:253 applets/vncklet/vncklet.c:92
 msgid "Error displaying help document"
 msgstr "Gặp lỗi khi hiển thị tài liệu trợ giúp"
 
@@ -568,58 +573,66 @@ msgid "If true, show the temperature next to the weather icon."
 msgstr "Nếu đúng, hiển thị nhiệt độ kế bên biểu tượng thời tiết."
 
 #: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:64
+msgid "Show humidity in clock"
+msgstr ""
+
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:65
+msgid "If true, show the humidity next to the temperature."
+msgstr ""
+
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:69
 msgid "Show week numbers in calendar"
 msgstr "Hiện số tuần trong lịch"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:65
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:70
 msgid "If true, show week numbers in the calendar."
 msgstr "Nếu đúng, hiển thị số tuần trong lịch."
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:69
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:74
 msgid "Expand list of locations"
 msgstr "Bung danh sách địa điểm"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:70
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:75
 msgid "If true, expand the list of locations in the calendar window."
 msgstr "Nếu đúng, bung danh sách địa điểm trong cửa sổ lịch."
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:74
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:79
 msgid "List of locations"
 msgstr "Danh sách địa điểm"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:75
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:80
 msgid "A list of locations to display in the calendar window."
 msgstr "Danh sách địa điểm hiển thị trong cửa sổ lịch."
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:79
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:84
 msgid "Temperature unit"
 msgstr "Đơn vị nhiệt độ"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:80
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:85
 msgid "The unit to use when showing temperatures."
 msgstr "Đơn vị dùng để hiện nhiệt độ."
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:84
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:89
 msgid "Speed unit"
 msgstr "Đơn vị tốc độ"
 
-#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:85
+#: applets/clock/org.cafe.panel.applet.clock.gschema.xml.in:90
 msgid "The unit to use when showing wind speed."
 msgstr "Đơn vị dùng để hiện tốc độ gió."
 
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:6
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Clock Applet Factory"
 msgstr ""
 
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:7
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Factory for clock applet"
 msgstr ""
 
-#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:11
+#: applets/clock/org.cafe.panel.ClockApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Get the current time and date"
 msgstr ""
 
-#: applets/fish/fish.c:266
+#: applets/fish/fish.c:265
 #, c-format
 msgid ""
 "Warning:  The command appears to be something actually useful.\n"
@@ -632,16 +645,16 @@ msgstr ""
 "Rất khuyên bạn không nên dùng %s cho bất kỳ cái gì mà tạo\n"
 "tiểu dụng « thực hành » hay hữu ích."
 
-#: applets/fish/fish.c:428
+#: applets/fish/fish.c:433
 msgid "Images"
 msgstr "Hình ảnh"
 
-#: applets/fish/fish.c:534 applets/fish/fish.c:579 applets/fish/fish.c:685
+#: applets/fish/fish.c:541 applets/fish/fish.c:586 applets/fish/fish.c:694
 #, no-c-format
 msgid "%s the Fish"
 msgstr "%s con cá"
 
-#: applets/fish/fish.c:535
+#: applets/fish/fish.c:542
 #, c-format
 msgid ""
 "%s has no use what-so-ever. It only takes up disk space and compilation "
@@ -652,42 +665,42 @@ msgstr ""
 "dịch, và nếu được tải, nó cũng chiếm chỗ trên Bảng điều khiển và bộ nhớ. "
 "Khuyên bạn không dùng nó bằng bất cứ trường hợp nào."
 
-#: applets/fish/fish.c:552
+#: applets/fish/fish.c:559
 msgid "(with minor help from George)"
 msgstr "(với một tí trợ giúp nhỏ George)"
 
-#: applets/fish/fish.c:558
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:10
+#: applets/fish/fish.c:565
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Fish"
 msgstr "Cá"
 
-#: applets/fish/fish.c:559
+#: applets/fish/fish.c:566
 msgid "About Fish"
 msgstr ""
 
-#: applets/fish/fish.c:562
+#: applets/fish/fish.c:569
 msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/fish/fish.c:580
+#: applets/fish/fish.c:587
 #, c-format
 msgid "%s the Fish, a contemporary oracle"
 msgstr "Cá %s, diễn viên nổi tiếng trong phím"
 
-#: applets/fish/fish.c:646
+#: applets/fish/fish.c:653
 msgid "Unable to locate the command to execute"
 msgstr "Không thể định vị trí lệnh cần thực hiện"
 
-#: applets/fish/fish.c:690
+#: applets/fish/fish.c:699
 #, no-c-format
 msgid "%s the Fish Says:"
 msgstr "Cá %s phán rằng:"
 
-#: applets/fish/fish.c:753
+#: applets/fish/fish.c:761
 #, c-format
 msgid ""
 "Unable to read output from command\n"
@@ -698,16 +711,16 @@ msgstr ""
 "\n"
 "Chi tiết: %s"
 
-#: applets/fish/fish.c:850
+#: applets/fish/fish.c:860
 msgid "_Speak again"
 msgstr "_Nói lại"
 
-#: applets/fish/fish.c:931
+#: applets/fish/fish.c:941
 #, c-format
 msgid "The configured command is not working and has been replaced by: %s"
 msgstr "Lệnh được cấu hình không hoạt động và đã được thay thế bằng: %s"
 
-#: applets/fish/fish.c:964
+#: applets/fish/fish.c:974
 #, c-format
 msgid ""
 "Unable to execute '%s'\n"
@@ -718,7 +731,7 @@ msgstr ""
 "\n"
 "Chi tiết: %s"
 
-#: applets/fish/fish.c:980
+#: applets/fish/fish.c:990
 #, c-format
 msgid ""
 "Unable to read from '%s'\n"
@@ -729,15 +742,15 @@ msgstr ""
 "\n"
 "Chi tiết: %s"
 
-#: applets/fish/fish.c:1552
+#: applets/fish/fish.c:1568
 msgid "The water needs changing"
 msgstr "Cần đổi nước"
 
-#: applets/fish/fish.c:1554
+#: applets/fish/fish.c:1570
 msgid "Look at today's date!"
 msgstr "Xem ngày của hôm nay!"
 
-#: applets/fish/fish.c:1636
+#: applets/fish/fish.c:1654
 #, c-format
 msgid "%s the Fish, the fortune teller"
 msgstr "Cá %s sẽ nói nhiều chuyện lạ"
@@ -856,37 +869,37 @@ msgstr ""
 "Nếu đúng, hoạt cảnh cá sẽ được xoay khi hiển thị ngang trên Bảng điều khiển "
 "dọc."
 
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Wanda Factory"
 msgstr ""
 
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:7
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:6
 msgid "From Whence That Stupid Fish Came"
 msgstr ""
 
-#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:11
+#: applets/fish/org.cafe.panel.FishApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Display a swimming fish or another animated creature"
 msgstr ""
 
-#: applets/notification_area/main.c:276
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
+#: applets/notification_area/main.c:278
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Notification Area"
 msgstr "Vùng thông báo"
 
-#: applets/notification_area/main.c:277
+#: applets/notification_area/main.c:279
 msgid "About Notification Area"
 msgstr ""
 
-#: applets/notification_area/main.c:280
+#: applets/notification_area/main.c:282
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/notification_area/main.c:486
+#: applets/notification_area/main.c:488
 msgid "Panel Notification Area"
 msgstr "Vùng thông báo trên Bảng điều khiển"
 
@@ -915,15 +928,15 @@ msgstr ""
 msgid "The minimum size an icon can have."
 msgstr ""
 
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:6
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Notification Area Factory"
 msgstr ""
 
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:7
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:6
 msgid "Factory for notification area"
 msgstr ""
 
-#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:11
+#: applets/notification_area/org.cafe.panel.NotificationAreaApplet.cafe-panel-applet.desktop.in.in:10
 msgid "Area where notification icons appear"
 msgstr ""
 
@@ -1015,88 +1028,88 @@ msgid ""
 "switching from the first to the last workspace and vice versa via scrolling."
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:6
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:5
 msgid "Window Navigation Applet Factory"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:7
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:6
 msgid "Factory for the window navigation related applets"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
-#: applets/vncklet/window-menu.c:76 applets/vncklet/window-menu.c:228
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:9
+#: applets/vncklet/window-menu.c:78 applets/vncklet/window-menu.c:235
 msgid "Window Selector"
 msgstr "Bộ chọn cửa sổ"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:11
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:10
 msgid "Switch between open windows using a menu"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
-#: applets/vncklet/workspace-switcher.c:638
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:22
+#: applets/vncklet/workspace-switcher.c:648
 msgid "Workspace Switcher"
 msgstr "Bộ chuyển Vùng làm việc"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:24
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:23
 msgid "Switch between workspaces"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
-#: applets/vncklet/window-list.c:826
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:35
+#: applets/vncklet/window-list.c:847
 msgid "Window List"
 msgstr "Danh sách cửa sổ"
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:37
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:36
 msgid "Switch between open windows using buttons"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:48
 msgid "Show Desktop"
 msgstr ""
 
-#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:50
+#: applets/vncklet/org.cafe.panel.Vncklet.cafe-panel-applet.desktop.in.in:49
 msgid "Hide application windows and show the desktop"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:184
+#: applets/vncklet/showdesktop.c:188
 #, c-format
 msgid "Failed to load %s: %s\n"
 msgstr "Không tải được %s: %s\n"
 
-#: applets/vncklet/showdesktop.c:184
+#: applets/vncklet/showdesktop.c:188
 msgid "Icon not found"
 msgstr "Không tìm thấy biểu tượng"
 
-#: applets/vncklet/showdesktop.c:266
+#: applets/vncklet/showdesktop.c:270
 msgid "Click here to restore hidden windows."
 msgstr "Nhấn vào đây để khôi phục các cửa sổ ẩn."
 
-#: applets/vncklet/showdesktop.c:270
+#: applets/vncklet/showdesktop.c:274
 msgid "Click here to hide all windows and show the desktop."
 msgstr "Nhấn vào đây để ẩn mọi cửa sổ và hiển thị màn hình nền."
 
-#: applets/vncklet/showdesktop.c:440 applets/vncklet/showdesktop.c:499
+#: applets/vncklet/showdesktop.c:455 applets/vncklet/showdesktop.c:516
 msgid "Show Desktop Button"
 msgstr "Hiện nút màn hình nền"
 
-#: applets/vncklet/showdesktop.c:500
+#: applets/vncklet/showdesktop.c:517
 msgid "About Show Desktop Button"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:502
+#: applets/vncklet/showdesktop.c:519
 msgid "This button lets you hide all windows and show the desktop."
 msgstr "Nút này cho phép bạn ẩn mọi cửa sổ và hiển thị màn hình nền."
 
-#: applets/vncklet/showdesktop.c:503 applets/vncklet/window-list.c:830
-#: applets/vncklet/workspace-switcher.c:642
+#: applets/vncklet/showdesktop.c:520 applets/vncklet/window-list.c:851
+#: applets/vncklet/workspace-switcher.c:652
 msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/showdesktop.c:531
+#: applets/vncklet/showdesktop.c:548
 msgid ""
 "Your window manager does not support the show desktop button, or you are not "
 "running a window manager."
@@ -1104,15 +1117,15 @@ msgstr ""
 "Trình quản lý cửa sổ của bạn không hỗ trợ nút hiển thị màn hình nền, hoặc "
 "bạn chưa chạy trình quản lý cửa sổ."
 
-#: applets/vncklet/window-list.c:354
+#: applets/vncklet/window-list.c:369
 msgid "_System Monitor"
 msgstr ""
 
-#: applets/vncklet/window-list.c:827
+#: applets/vncklet/window-list.c:848
 msgid "About Window List"
 msgstr ""
 
-#: applets/vncklet/window-list.c:829
+#: applets/vncklet/window-list.c:850
 msgid ""
 "The Window List shows a list of all windows in a set of buttons and lets you "
 "browse them."
@@ -1188,11 +1201,11 @@ msgstr "Phục hồi _vùng làm việc hiện thời"
 msgid "Restore to na_tive workspace"
 msgstr "Phục hồi vùng làm việc _nguyên thủy"
 
-#: applets/vncklet/window-menu.c:77
+#: applets/vncklet/window-menu.c:79
 msgid "About Window Selector"
 msgstr ""
 
-#: applets/vncklet/window-menu.c:79
+#: applets/vncklet/window-menu.c:81
 msgid ""
 "The Window Selector shows a list of all windows in a menu and lets you "
 "browse them."
@@ -1200,32 +1213,32 @@ msgstr ""
 "Bộ chọn cửa sổ hiển thị danh sách tất cả các cửa sổ trong một trình đơn, và "
 "cho phép bạn duyệt qua chúng."
 
-#: applets/vncklet/window-menu.c:80
+#: applets/vncklet/window-menu.c:82
 msgid ""
 "Copyright © 2000 Helix Code, Inc.\n"
 "Copyright © 2001 Free Software Foundation, Inc.\n"
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:944
+#: applets/vncklet/workspace-switcher.c:243
+#: applets/vncklet/workspace-switcher.c:977
 #: applets/vncklet/workspace-switcher.ui:170
 msgid "rows"
 msgstr "hàng"
 
-#: applets/vncklet/workspace-switcher.c:240
-#: applets/vncklet/workspace-switcher.c:944
+#: applets/vncklet/workspace-switcher.c:243
+#: applets/vncklet/workspace-switcher.c:977
 msgid "columns"
 msgstr "cột"
 
-#: applets/vncklet/workspace-switcher.c:639
+#: applets/vncklet/workspace-switcher.c:649
 msgid "About Workspace Switcher"
 msgstr ""
 
-#: applets/vncklet/workspace-switcher.c:641
+#: applets/vncklet/workspace-switcher.c:651
 msgid ""
 "The Workspace Switcher shows you a small version of your workspaces that "
 "lets you manage your windows."
@@ -1370,9 +1383,9 @@ msgstr "Danh sách ID đối tượng Bảng"
 
 #: data/org.cafe.panel.gschema.xml.in:46
 msgid ""
-"A list of panel object IDs. Each ID identifies an individual panel object (e."
-"g. a launcher, action button or menu button/bar). The settings for each of "
-"these objects are stored in /apps/panel/objects/$(id)."
+"A list of panel object IDs. Each ID identifies an individual panel object "
+"(e.g. a launcher, action button or menu button/bar). The settings for each "
+"of these objects are stored in /apps/panel/objects/$(id)."
 msgstr ""
 "Danh sách ID (thông tin nhận biết) Đối tượng Bảng điều khiển. Mỗi ID xác "
 "định một Đối tượng Bảng điều khiển đơn lẻ (v.d. Bộ khởi động nút hành động, "
@@ -1606,9 +1619,10 @@ msgstr ""
 
 #: data/org.cafe.panel.object.gschema.xml.in:31
 msgid ""
-"The implementation ID of the applet - e.g. \"ClockAppletFactory::"
-"ClockApplet\". This key is only relevant if the object_type key is "
-"\"external-applet\" (or the deprecated \"cafecomponent-applet\")."
+"The implementation ID of the applet - e.g. "
+"\"ClockAppletFactory::ClockApplet\". This key is only relevant if the "
+"object_type key is \"external-applet\" (or the deprecated \"cafecomponent-"
+"applet\")."
 msgstr ""
 
 #: data/org.cafe.panel.object.gschema.xml.in:35
@@ -1663,9 +1677,9 @@ msgid ""
 "\"menu-object\" and the use_custom_icon key is true."
 msgstr ""
 "Vị trí của tập tin ảnh được dùng làm biểu tượng cho nút đối tượng. Khoá này "
-"chỉ cần thiết nếu khoá « object_type » (kiểu đôi tượng) là « drawer-object "
-"» (đốí tượng ngăn kéo) hoặc « menu-object » (đối tượng trình đơn) và khoá « "
-"use_custom_icon » (dùng biểu tượng tự chọn) là đúng."
+"chỉ cần thiết nếu khoá « object_type » (kiểu đôi tượng) là « drawer-object » "
+"(đốí tượng ngăn kéo) hoặc « menu-object » (đối tượng trình đơn) và khoá "
+"« use_custom_icon » (dùng biểu tượng tự chọn) là đúng."
 
 #: data/org.cafe.panel.object.gschema.xml.in:55
 msgid "Use custom path for menu contents"
@@ -1679,8 +1693,8 @@ msgid ""
 msgstr ""
 "Nếu đúng, khoá « menu_path » (đường dẫn trình đơn) thì được dùng làm đường "
 "dẫn để xây dựng trình đơn. Nếu sai, khoá « menu_path » bị bỏ qua. Khoá này "
-"chỉ cần thiết nếu khoá « object_type » (kiểu đốí tượng là « menu-object "
-"» (đối tượng trình đơn)."
+"chỉ cần thiết nếu khoá « object_type » (kiểu đốí tượng là « menu-object » "
+"(đối tượng trình đơn)."
 
 #: data/org.cafe.panel.object.gschema.xml.in:60
 msgid "Menu content path"
@@ -1693,8 +1707,8 @@ msgid ""
 "object\"."
 msgstr ""
 "Đường dẫn để xây dựng nội dung trình đơn từ đó. Khoá này chỉ cần thiết nếu "
-"khoá « use_menu_path » (dùng đường dẫn trình đơn) là đúng và khoá « "
-"object_type » (kiểu đối tượng) là « menu-path » (đường dẫn trình đơn)."
+"khoá « use_menu_path » (dùng đường dẫn trình đơn) là đúng và khoá "
+"« object_type » (kiểu đối tượng) là « menu-path » (đường dẫn trình đơn)."
 
 #: data/org.cafe.panel.object.gschema.xml.in:65
 msgid "Draw arrow in menu button"
@@ -1716,8 +1730,8 @@ msgid ""
 "relevant if the object_type key is \"launcher-object\"."
 msgstr ""
 "Vị trí tập tin « .desktop » (màn hình nền) mô tả Bộ khởi chạy. Khoá này chỉ "
-"cần thiết nếu khoá « object_type » (kiểu đôi tượng) là « launcher-object "
-"» (đối tượng khởi chạy)."
+"cần thiết nếu khoá « object_type » (kiểu đôi tượng) là « launcher-object » "
+"(đối tượng khởi chạy)."
 
 #: data/org.cafe.panel.object.gschema.xml.in:75
 msgid "Action button type"
@@ -1729,10 +1743,10 @@ msgid ""
 "\"logout\", \"run\", \"search\" and \"screenshot\". This key is only "
 "relevant if the object_type key is \"action-applet\"."
 msgstr ""
-"Kiểu hành độn cua nút này. Giá trị có thể là « lock » (khoá), « logout "
-"» (đăng xuất), « run » (chạy), « search » (tìm kiếm), và « screenshot "
-"» (chụp hình). Khoá này chỉ cần thiết nếu khoá « object_type » (kiểu đối "
-"tượng) là « action-applet » (tiểu dụng hành động)."
+"Kiểu hành độn cua nút này. Giá trị có thể là « lock » (khoá), « logout » "
+"(đăng xuất), « run » (chạy), « search » (tìm kiếm), và « screenshot » (chụp "
+"hình). Khoá này chỉ cần thiết nếu khoá « object_type » (kiểu đối tượng) là "
+"« action-applet » (tiểu dụng hành động)."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:5
 msgid "Name to identify panel"
@@ -1803,14 +1817,14 @@ msgid ""
 "panel, whereas on a \"bottom\" panel the menu will be popped up above the "
 "panel."
 msgstr ""
-"Hướng của Bản điều khiển. Giá trị có thể là \"top\" (đỉnh), "
-"\"bottom\" (đáy), \"left\" (trái), \"right\" (phải). Trong chế độ bung, khoá "
-"này xác định Bản điều khiển nằm trên cạnh nào. Trong chế độ không bung, sự "
-"khác biệt giữa \"top\" và \"bottom\" không quan trọng lắm - cả hai đều chỉ "
-"đến Bản điều khiển ngang - nhưng vẫn là gợi ý hữu dụng cho cách hoạt động "
-"của một số Đối tượng Bản điều khiển. Ví dụ, trên Bản điều khiển \"top\" các "
-"nút trình đơn sẽ hiện bên dưới, trong khi Bản điều khiển \"bottom\" thì "
-"trình đơn hiện ngược lên trên."
+"Hướng của Bản điều khiển. Giá trị có thể là \"top\" (đỉnh), \"bottom\" "
+"(đáy), \"left\" (trái), \"right\" (phải). Trong chế độ bung, khoá này xác "
+"định Bản điều khiển nằm trên cạnh nào. Trong chế độ không bung, sự khác biệt "
+"giữa \"top\" và \"bottom\" không quan trọng lắm - cả hai đều chỉ đến Bản "
+"điều khiển ngang - nhưng vẫn là gợi ý hữu dụng cho cách hoạt động của một số "
+"Đối tượng Bản điều khiển. Ví dụ, trên Bản điều khiển \"top\" các nút trình "
+"đơn sẽ hiện bên dưới, trong khi Bản điều khiển \"bottom\" thì trình đơn hiện "
+"ngược lên trên."
 
 #: data/org.cafe.panel.toplevel.gschema.xml.in:30
 msgid "Panel size"
@@ -2115,25 +2129,25 @@ msgstr "Tập tin không phải là dạng tập tin .desktop hợp lệ"
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Không nhận ra tập tin màn hình nền phiên bản '%s'"
 
-#: cafe-panel/libegg/eggdesktopfile.c:963
+#: cafe-panel/libegg/eggdesktopfile.c:967
 #, c-format
 msgid "Starting %s"
 msgstr "Đang khởi chạy %s"
 
-#: cafe-panel/libegg/eggdesktopfile.c:1105
+#: cafe-panel/libegg/eggdesktopfile.c:1109
 msgid "Application does not accept documents on command line"
 msgstr "Ứng dụng không chấp nhận tài liệu thông qua dòng lệnh"
 
-#: cafe-panel/libegg/eggdesktopfile.c:1173
+#: cafe-panel/libegg/eggdesktopfile.c:1177
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Không nhận ra tùy chọn khởi chạy: %d"
 
-#: cafe-panel/libegg/eggdesktopfile.c:1390
+#: cafe-panel/libegg/eggdesktopfile.c:1394
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Không thể chuyển URI của tài liệu cho mục desktop 'Type=Link'"
 
-#: cafe-panel/libegg/eggdesktopfile.c:1411
+#: cafe-panel/libegg/eggdesktopfile.c:1415
 msgid "Not a launchable item"
 msgstr "Không phải mục có thể khởi chạy"
 
@@ -2196,28 +2210,28 @@ msgstr "Không thể mở địa chỉ « %s »"
 msgid "No application to handle search folders is installed."
 msgstr "Không có ứng dụng nào được cài đặt để xử lý tìm kiếm thư mục."
 
-#: cafe-panel/applet.c:468
+#: cafe-panel/applet.c:469
 msgid "???"
 msgstr "???"
 
-#: cafe-panel/applet.c:548 libcafe-panel-applet/cafe-panel-applet.c:139
+#: cafe-panel/applet.c:549 libcafe-panel-applet/cafe-panel-applet.c:139
 msgid "_Remove From Panel"
 msgstr "_Gỡ bỏ khỏi Bảng"
 
-#: cafe-panel/applet.c:556 libcafe-panel-applet/cafe-panel-applet.c:142
+#: cafe-panel/applet.c:557 libcafe-panel-applet/cafe-panel-applet.c:142
 msgid "_Move"
 msgstr "_Di chuyển"
 
-#: cafe-panel/applet.c:574 libcafe-panel-applet/cafe-panel-applet.c:148
+#: cafe-panel/applet.c:575 libcafe-panel-applet/cafe-panel-applet.c:148
 msgid "Loc_k To Panel"
 msgstr "_Khoá vào Bảng"
 
-#: cafe-panel/applet.c:1313
+#: cafe-panel/applet.c:1314
 msgid "Cannot find an empty spot"
 msgstr "Không tìm thấy chỗ trống nào"
 
 #: cafe-panel/drawer.c:443 cafe-panel/panel-addto.c:189
-#: cafe-panel/panel-toplevel.c:1643
+#: cafe-panel/panel-toplevel.c:1647
 msgid "Drawer"
 msgstr "Ngăn kéo"
 
@@ -2238,29 +2252,29 @@ msgstr "Tạo tập tin mới trong thư mục đã cho"
 msgid "[FILE...]"
 msgstr "[TẬP TIN...]"
 
-#: cafe-panel/cafe-desktop-item-edit.c:106
+#: cafe-panel/cafe-desktop-item-edit.c:107
 msgid "- Edit .desktop files"
 msgstr "• Hiệu chỉnh tập tin kiểu « .desktop »"
 
-#: cafe-panel/cafe-desktop-item-edit.c:144
-#: cafe-panel/cafe-desktop-item-edit.c:198 cafe-panel/launcher.c:974
+#: cafe-panel/cafe-desktop-item-edit.c:145
+#: cafe-panel/cafe-desktop-item-edit.c:199 cafe-panel/launcher.c:975
 msgid "Create Launcher"
 msgstr "Tạo bộ khởi chạy"
 
-#: cafe-panel/cafe-desktop-item-edit.c:169
-#: cafe-panel/cafe-desktop-item-edit.c:192
+#: cafe-panel/cafe-desktop-item-edit.c:170
+#: cafe-panel/cafe-desktop-item-edit.c:193
 msgid "Directory Properties"
 msgstr "Thuộc tính của thư mục"
 
-#: cafe-panel/cafe-desktop-item-edit.c:175 cafe-panel/launcher.c:817
+#: cafe-panel/cafe-desktop-item-edit.c:176 cafe-panel/launcher.c:818
 msgid "Launcher Properties"
 msgstr "Thuộc tính của bộ khởi chạy"
 
-#: cafe-panel/cafe-panel.desktop.in:4 cafe-panel/main.c:161
+#: cafe-panel/cafe-panel.desktop.in:3 cafe-panel/main.c:161
 msgid "Panel"
 msgstr "Bảng"
 
-#: cafe-panel/cafe-panel.desktop.in:5
+#: cafe-panel/cafe-panel.desktop.in:4
 msgid ""
 "Launch other applications and provide various utilities to manage windows, "
 "show the time, etc."
@@ -2295,12 +2309,12 @@ msgstr ""
 msgid "_Launch"
 msgstr "_Khởi chạy"
 
-#: cafe-panel/launcher.c:910
+#: cafe-panel/launcher.c:911
 #, c-format
 msgid "Key %s is not set, cannot load launcher\n"
 msgstr "Chưa đặt khoá %s nên không thể tải bộ khởi chạy\n"
 
-#: cafe-panel/launcher.c:1043 cafe-panel/panel-ditem-editor.c:1326
+#: cafe-panel/launcher.c:1044 cafe-panel/panel-ditem-editor.c:1326
 #: cafe-panel/panel-ditem-editor.c:1360 cafe-panel/panel-ditem-editor.c:1391
 msgid "Could not save launcher"
 msgstr "Không thể lưu bộ khởi chạy"
@@ -2321,23 +2335,23 @@ msgstr ""
 msgid "Set the default panel layout"
 msgstr ""
 
-#: cafe-panel/menu.c:502
+#: cafe-panel/menu.c:503
 msgid "Add this launcher to _panel"
 msgstr "Thêm bộ khởi chạy này vào _Bảng"
 
-#: cafe-panel/menu.c:509
+#: cafe-panel/menu.c:510
 msgid "Add this launcher to _desktop"
 msgstr "Thêm bộ khởi chạ_y này vào màn hình nền"
 
-#: cafe-panel/menu.c:521
+#: cafe-panel/menu.c:522
 msgid "_Entire menu"
 msgstr "T_oàn bộ trình đơn"
 
-#: cafe-panel/menu.c:526
+#: cafe-panel/menu.c:527
 msgid "Add this as _drawer to panel"
 msgstr "Thêm cái này _dạng ngăn kéo vào Bảng"
 
-#: cafe-panel/menu.c:533
+#: cafe-panel/menu.c:534
 msgid "Add this as _menu to panel"
 msgstr "Thê_m cái này dạng trình đơn vào Bảng"
 
@@ -2466,28 +2480,28 @@ msgstr ""
 msgid "Not compatible with Wayland"
 msgstr ""
 
-#: cafe-panel/panel-addto.c:1055
+#: cafe-panel/panel-addto.c:1057
 #, c-format
 msgid "Find an _item to add to \"%s\":"
 msgstr "Tìm một _mục để thêm vào « %s »:"
 
-#: cafe-panel/panel-addto.c:1059
+#: cafe-panel/panel-addto.c:1061
 msgid "Add to Drawer"
 msgstr "Thêm vào ngăn kéo"
 
-#: cafe-panel/panel-addto.c:1061
+#: cafe-panel/panel-addto.c:1063
 msgid "Find an _item to add to the drawer:"
 msgstr "Tìm một _mục để thêm vào ngăn kéo :"
 
-#: cafe-panel/panel-addto.c:1063
+#: cafe-panel/panel-addto.c:1065
 msgid "Add to Panel"
 msgstr "Thêm vào Bảng"
 
-#: cafe-panel/panel-addto.c:1065
+#: cafe-panel/panel-addto.c:1067
 msgid "Find an _item to add to the panel:"
 msgstr "Tìm một _mục để thêm vào bảng:"
 
-#: cafe-panel/panel-addto.c:1313
+#: cafe-panel/panel-addto.c:1316
 msgid "_Back"
 msgstr "_Lùi"
 
@@ -2529,7 +2543,7 @@ msgstr "Bảng điều khiển gặp lỗi khi tải « %s »."
 msgid "Do you want to delete the applet from your configuration?"
 msgstr "Bạn có muốn xoá bỏ tiểu dụng khỏi cấu hình của bạn không?"
 
-#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1360
+#: cafe-panel/panel-applet-frame.c:972 cafe-panel/panel.c:1369
 msgid "_Delete"
 msgstr "_Xóa bỏ"
 
@@ -2546,7 +2560,7 @@ msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
 "Copyright © 2011-2020 MATE developers\n"
-"Copyright © 2022-2023 Pablo Barciela"
+"Copyright © 2022-2025 Pablo Barciela"
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:120
@@ -2690,23 +2704,23 @@ msgid ""
 "documents in it might get lost."
 msgstr ""
 
-#: cafe-panel/panel-menu-bar.c:97
+#: cafe-panel/panel-menu-bar.c:98
 msgid "Browse and run installed applications"
 msgstr "Duyệt và chạy các ứng dụng đã cài đặt"
 
-#: cafe-panel/panel-menu-bar.c:98
+#: cafe-panel/panel-menu-bar.c:99
 msgid "Access documents, folders and network places"
 msgstr "Truy cập tài liệu, thư mục và địa chỉ mạng"
 
-#: cafe-panel/panel-menu-bar.c:99
+#: cafe-panel/panel-menu-bar.c:100
 msgid "Change desktop appearance and behavior, get help, or log out"
 msgstr "Thay đổi diện mạo và hành vi môi trường, được trợ giúp hoặc đăng xuất"
 
-#: cafe-panel/panel-menu-bar.c:166
+#: cafe-panel/panel-menu-bar.c:169
 msgid "Applications"
 msgstr "Ứng dụng"
 
-#: cafe-panel/panel-menu-bar.c:356 cafe-panel/panel-menu-button.c:706
+#: cafe-panel/panel-menu-bar.c:360 cafe-panel/panel-menu-button.c:706
 msgid "_Edit Menus"
 msgstr "_Sửa trình đơn"
 
@@ -2719,7 +2733,7 @@ msgid "Bookmarks"
 msgstr "Liên kết lưu"
 
 #. Translators: %s is a URI
-#: cafe-panel/panel-menu-items.c:490 cafe-panel/panel.c:553
+#: cafe-panel/panel-menu-items.c:490 cafe-panel/panel.c:562
 #, c-format
 msgid "Open '%s'"
 msgstr "Mở '%s'"
@@ -2839,7 +2853,7 @@ msgctxt "Orientation"
 msgid "Right"
 msgstr "Phải"
 
-#: cafe-panel/panel-properties-dialog.c:818
+#: cafe-panel/panel-properties-dialog.c:819
 msgid "Drawer Properties"
 msgstr "Thuộc tính ngăn kéo"
 
@@ -2982,30 +2996,30 @@ msgstr ""
 msgid "Clear all items from the recent documents list"
 msgstr "Xoá mọi mục từ danh sách tài liệu gần đây"
 
-#: cafe-panel/panel-run-dialog.c:435
+#: cafe-panel/panel-run-dialog.c:436
 #, c-format
 msgid "Could not run command '%s'"
 msgstr "Không thể chạy lệnh « %s »"
 
-#: cafe-panel/panel-run-dialog.c:476
+#: cafe-panel/panel-run-dialog.c:477
 #, c-format
 msgid "Could not convert '%s' from UTF-8"
 msgstr "Không thể chuyển đổi « %s » từ UTF-8"
 
-#: cafe-panel/panel-run-dialog.c:1269
+#: cafe-panel/panel-run-dialog.c:1274
 msgid "Choose a file to append to the command..."
 msgstr "Chọn tập tin để nối vào lệnh..."
 
-#: cafe-panel/panel-run-dialog.c:1651 cafe-panel/panel-run-dialog.ui:272
+#: cafe-panel/panel-run-dialog.c:1657 cafe-panel/panel-run-dialog.ui:272
 msgid "Select an application to view its description."
 msgstr "Chọn ứng dụng để xem mô tả của nó."
 
-#: cafe-panel/panel-run-dialog.c:1689
+#: cafe-panel/panel-run-dialog.c:1697
 #, c-format
 msgid "Will run command: '%s'"
 msgstr "Sẽ chạy lệnh: « %s »"
 
-#: cafe-panel/panel-run-dialog.c:1722
+#: cafe-panel/panel-run-dialog.c:1730
 #, c-format
 msgid "URI list dropped on run dialog had wrong format (%d) or length (%d)\n"
 msgstr ""
@@ -3149,23 +3163,23 @@ msgstr "_Tiểu dụng:"
 msgid "_Prefs Path:"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1209
+#: cafe-panel/panel-toplevel.c:1213
 msgid "Hide Panel"
 msgstr "Ẩn Bảng"
 
-#: cafe-panel/panel-toplevel.c:1649 cafe-panel/panel-toplevel.c:1659
+#: cafe-panel/panel-toplevel.c:1653 cafe-panel/panel-toplevel.c:1663
 msgid "Top Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1651
+#: cafe-panel/panel-toplevel.c:1655
 msgid "Bottom Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1653
+#: cafe-panel/panel-toplevel.c:1657
 msgid "Left Panel"
 msgstr ""
 
-#: cafe-panel/panel-toplevel.c:1655
+#: cafe-panel/panel-toplevel.c:1659
 msgid "Right Panel"
 msgstr ""
 
@@ -3183,17 +3197,17 @@ msgstr "Không thể thực hiện « %s »"
 msgid "file"
 msgstr "tập tin"
 
-#: cafe-panel/panel-util.c:876
+#: cafe-panel/panel-util.c:878
 msgid "Home Folder"
 msgstr "Thư mục chính"
 
 #. Translators: this is the same string as the one found in
 #. * baul
-#: cafe-panel/panel-util.c:888
+#: cafe-panel/panel-util.c:890
 msgid "File System"
 msgstr "Hệ thống tập tin"
 
-#: cafe-panel/panel-util.c:1062
+#: cafe-panel/panel-util.c:1065
 msgid "Search"
 msgstr "Tìm kiếm"
 
@@ -3202,21 +3216,21 @@ msgstr "Tìm kiếm"
 #. * example, "Trash: some-directory". It means that the
 #. * directory called "some-directory" is in the trash.
 #.
-#: cafe-panel/panel-util.c:1108
+#: cafe-panel/panel-util.c:1111
 #, c-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: cafe-panel/panel.c:486
+#: cafe-panel/panel.c:495
 #, c-format
 msgid "Open URL: %s"
 msgstr "Mở URL: %s"
 
-#: cafe-panel/panel.c:1336
+#: cafe-panel/panel.c:1345
 msgid "Delete this drawer?"
 msgstr "Xoá bỏ ngăn kéo này chứ?"
 
-#: cafe-panel/panel.c:1337
+#: cafe-panel/panel.c:1346
 msgid ""
 "When a drawer is deleted, the drawer and its\n"
 "settings are lost."
@@ -3224,11 +3238,11 @@ msgstr ""
 "Khi một ngăn kéo bị xoá bỏ, ngăn kéo và\n"
 "những thiết lập của nó cũng bị mất."
 
-#: cafe-panel/panel.c:1340
+#: cafe-panel/panel.c:1349
 msgid "Delete this panel?"
 msgstr "Xoá bỏ Bảng điều khiển này chứ?"
 
-#: cafe-panel/panel.c:1341
+#: cafe-panel/panel.c:1350
 msgid ""
 "When a panel is deleted, the panel and its\n"
 "settings are lost."
@@ -3236,18 +3250,18 @@ msgstr ""
 "Khi một bảng điều khiển bị xoá bỏ, bảng điều khiển và\n"
 "những thiết lập của nó cũng bị mất."
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:5
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:4
 msgid "Test DBus Applet Factory"
 msgstr ""
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:6
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:5
 msgid "Factory for Test DBus Applet"
 msgstr ""
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:9
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:8
 msgid "Test DBus Applet"
 msgstr ""
 
-#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:10
+#: libcafe-panel-applet/org.cafe.panel.TestApplet.cafe-panel-applet.desktop.in:9
 msgid "A simple applet for testing the CAFE panel"
 msgstr ""
