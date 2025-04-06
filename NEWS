@@ -1,3 +1,15 @@
+### cafe-panel 2.0.0
+
+  * ci: some improvements
+  * notification_area: show icons in menus
+  * libcafe-panel-applet,Makefile: Fix build with gettext 0.22
+  * clock: add humidity in panel
+  * panel-toplevel: avoid deprecated GTimeVal
+  * reduce the scope of some variables
+  * clock-map: Ensure that the width-to-height ratio remains constant
+  * add G_GNUC_UNUSED in unused parameters
+  * update translations
+
 ### cafe-panel 1.25.0
 
   * initial release: mate-panel 1.24.1 fork
