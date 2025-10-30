@@ -132,7 +132,7 @@ wm_state_set (Display *xdisplay,
 	CdkDisplay *display;
 	gulong  nitems;
 	gulong  bytes_after;
-	gulong *prop;
+	gulong *prop = NULL;
 	Atom    ret_type = None;
 	int     ret_format;
 	int     result;
@@ -150,7 +150,8 @@ wm_state_set (Display *xdisplay,
 	if (result != Success)
 		return FALSE;
 
-	XFree (prop);
+	if (prop != NULL)
+		XFree (prop);
 
 	if (ret_type != wm_state_atom)
 		return FALSE;
