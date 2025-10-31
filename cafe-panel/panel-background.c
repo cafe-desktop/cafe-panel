@@ -112,14 +112,13 @@ panel_background_prepare (PanelBackground *background)
 			* scaled pattern is used */
 			cairo_matrix_t m;
 			cairo_surface_t *surface;
-			double width, height;
 
 			surface = NULL;
-			width = 1.0;
-			height = 1.0;
 			cairo_pattern_get_surface(background->default_pattern, &surface);
 			/* catch invalid images (e.g. -ctk-gradient) before scaling and rendering */
 			if (surface != NULL ){
+				double width, height;
+
 				cairo_surface_reference(surface);
 				width = cairo_image_surface_get_width (surface);
 				height = cairo_image_surface_get_height (surface);
