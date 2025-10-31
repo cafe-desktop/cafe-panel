@@ -118,7 +118,6 @@ panel_xdg_icon_name_from_icon_path (const char *path,
 
 			theme_dir = g_file_get_child (parent, theme_name);
 
-			current = FALSE;
 			if (g_file_has_prefix (file, theme_dir)) {
 				/* it's the current one */
 				current = TRUE;
