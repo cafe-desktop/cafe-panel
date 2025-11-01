@@ -26,9 +26,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 2.0.0\n"
+"Project-Id-Version: cafe-panel 2.0.1\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2025-04-02 20:46+0200\n"
+"POT-Creation-Date: 2025-11-01 11:43+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Anna Vyalkova <cybertailor@gmail.com>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/cafe/teams/13566/ru/)\n"
@@ -297,7 +297,7 @@ msgstr "Дата и время"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:938
 #: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
-#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:241
 #: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
 #: cafe-panel/panel.c:1365
 msgid "_Cancel"
@@ -2493,7 +2493,7 @@ msgstr "Искать файлы..."
 msgid "Locate documents and folders on this computer by name or content"
 msgstr "Искать документы и папки на этом компьютере по имени или по содержанию"
 
-#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
+#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:251
 msgid "Force Quit"
 msgstr "Принудительное завершение"
 
@@ -2789,11 +2789,11 @@ msgstr ""
 "Щёлкните на окне приложения, которые хотите принудительно завершить. Чтобы "
 "отменить, нажмите клавишу Esc."
 
-#: cafe-panel/panel-force-quit.c:232
+#: cafe-panel/panel-force-quit.c:233
 msgid "Force this application to exit?"
 msgstr "Завершить работу этого приложения принудительно?"
 
-#: cafe-panel/panel-force-quit.c:235
+#: cafe-panel/panel-force-quit.c:236
 msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."

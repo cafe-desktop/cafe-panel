@@ -22,9 +22,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 2.0.0\n"
+"Project-Id-Version: cafe-panel 2.0.1\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2025-04-02 20:46+0200\n"
+"POT-Creation-Date: 2025-11-01 11:43+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/cafe/teams/13566/sv/)\n"
@@ -259,7 +259,7 @@ msgstr "Tid och datum"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:938
 #: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
-#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:241
 #: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
 #: cafe-panel/panel.c:1365
 msgid "_Cancel"
@@ -2450,7 +2450,7 @@ msgid "Locate documents and folders on this computer by name or content"
 msgstr ""
 "Lokalisera dokument och mappar på denna dator efter namn eller innehåll"
 
-#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
+#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:251
 msgid "Force Quit"
 msgstr "Tvinga avslut"
 
@@ -2746,11 +2746,11 @@ msgstr ""
 "Klicka på ett fönster för att tvinga programmet att avsluta. För att avbryta "
 "trycker du <ESC>."
 
-#: cafe-panel/panel-force-quit.c:232
+#: cafe-panel/panel-force-quit.c:233
 msgid "Force this application to exit?"
 msgstr "Tvinga programmet att avsluta?"
 
-#: cafe-panel/panel-force-quit.c:235
+#: cafe-panel/panel-force-quit.c:236
 msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."

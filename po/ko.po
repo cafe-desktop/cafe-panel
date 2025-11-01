@@ -15,9 +15,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 2.0.0\n"
+"Project-Id-Version: cafe-panel 2.0.1\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2025-04-02 20:46+0200\n"
+"POT-Creation-Date: 2025-11-01 11:43+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2020\n"
 "Language-Team: Korean (https://www.transifex.com/cafe/teams/13566/ko/)\n"
@@ -259,7 +259,7 @@ msgstr "시간 및 날짜"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:938
 #: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
-#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:241
 #: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
 #: cafe-panel/panel.c:1365
 msgid "_Cancel"
@@ -2392,7 +2392,7 @@ msgstr "파일 검색..."
 msgid "Locate documents and folders on this computer by name or content"
 msgstr "이 컴퓨터의 문서나 폴더를 이름이나 내용으로 찾습니다"
 
-#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
+#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:251
 msgid "Force Quit"
 msgstr "강제종료"
 
@@ -2685,11 +2685,11 @@ msgstr ""
 "강제로 끝내고 싶은 프로그램의 창을 누르십시오.  취소하려면 <Esc>를 누르십시"
 "오."
 
-#: cafe-panel/panel-force-quit.c:232
+#: cafe-panel/panel-force-quit.c:233
 msgid "Force this application to exit?"
 msgstr "이 프로그램을 강제로 끝내시겠습니까?"
 
-#: cafe-panel/panel-force-quit.c:235
+#: cafe-panel/panel-force-quit.c:236
 msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."

@@ -9,9 +9,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 2.0.0\n"
+"Project-Id-Version: cafe-panel 2.0.1\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2025-04-02 20:46+0200\n"
+"POT-Creation-Date: 2025-11-01 11:43+0100\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Malayalam (https://www.transifex.com/cafe/teams/13566/ml/)\n"
@@ -248,7 +248,7 @@ msgstr "സമയവും തിയ്യതിയും"
 
 #: applets/clock/clock.ui:46 applets/clock/clock.ui:938
 #: cafe-panel/libpanel-util/panel-ctk.c:136 cafe-panel/panel-context-menu.c:214
-#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:240
+#: cafe-panel/panel-ditem-editor.c:664 cafe-panel/panel-force-quit.c:241
 #: cafe-panel/panel-recent.c:154 cafe-panel/panel-run-dialog.ui:55
 #: cafe-panel/panel.c:1365
 msgid "_Cancel"
@@ -2373,7 +2373,7 @@ msgid "Locate documents and folders on this computer by name or content"
 msgstr ""
 "പേരു് അല്ലെങ്കില്‍ ഉള്ളടക്കമനുസരിച്ചു് ഈ കമ്പ്യൂട്ടറില്‍ വിവരണങ്ങള്‍ അല്ലെങ്കില്‍ ഫോള്‍ഡറുകള്‍ കണ്ടുപിടിക്കുക"
 
-#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:250
+#: cafe-panel/panel-action-button.c:407 cafe-panel/panel-force-quit.c:251
 msgid "Force Quit"
 msgstr "നിര്‍ബന്ധ പൂര്‍വ്വം പുറത്ത് കടക്കുക"
 
@@ -2666,11 +2666,11 @@ msgstr ""
 "പ്രയോഗം നിര്‍ബന്ധമായി നിര്‍ത്തുന്നതിനായി ജാലകത്തില്‍ ക്ലിക്ക് ചെയ്യുക. റദ്ദാക്കിന്നതിനായി <ESC> "
 "അമര്‍ത്തുക."
 
-#: cafe-panel/panel-force-quit.c:232
+#: cafe-panel/panel-force-quit.c:233
 msgid "Force this application to exit?"
 msgstr "ഈ പ്രയോഗത്തില്‍ നിന്നും പുറത്ത് പോകുന്നതിനായി നിര്‍ബന്ധിക്കണമോ?"
 
-#: cafe-panel/panel-force-quit.c:235
+#: cafe-panel/panel-force-quit.c:236
 msgid ""
 "If you choose to force an application to exit, unsaved changes in any open "
 "documents in it might get lost."
