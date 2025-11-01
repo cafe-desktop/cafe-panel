@@ -1,3 +1,12 @@
+### cafe-panel 2.0.1
+
+  * ci: add debian stable build
+  * panel-force-quit: variable initialized
+  * panel-background: remove unused assignments
+  * panel-xdg: avoid variable reassigned
+  * update translations
+
+
 ### cafe-panel 2.0.0
 
   * ci: some improvements
@@ -9,6 +18,7 @@
   * clock-map: Ensure that the width-to-height ratio remains constant
   * add G_GNUC_UNUSED in unused parameters
   * update translations
+
 
 ### cafe-panel 1.25.0
 
