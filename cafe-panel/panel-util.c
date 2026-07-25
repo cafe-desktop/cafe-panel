@@ -27,7 +27,7 @@
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 #include <gio/gio.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 #include <cdk/cdkx.h>
 
 #define CAFE_DESKTOP_USE_UNSTABLE_API
@@ -354,7 +354,7 @@ panel_load_icon (CtkIconTheme  *icon_theme,
 	}
 
 	error = NULL;
-	pixbuf = gdk_pixbuf_new_from_file_at_scale (file,
+	pixbuf = cdk_pixbuf_new_from_file_at_scale (file,
 						   desired_width,
 						   desired_height,
 						   TRUE,
@@ -726,13 +726,13 @@ panel_util_cairo_rgbdata_to_pixbuf (unsigned char *data,
 	if (!data)
 		return NULL;
 
-	retval = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, width, height);
+	retval = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, width, height);
 	if (!retval)
 		return NULL;
 
-	dstptr = gdk_pixbuf_get_pixels (retval);
+	dstptr = cdk_pixbuf_get_pixels (retval);
 	srcptr = data;
-	align  = gdk_pixbuf_get_rowstride (retval) - (width * 3);
+	align  = cdk_pixbuf_get_rowstride (retval) - (width * 3);
 
 #if G_BYTE_ORDER == G_LITTLE_ENDIAN
 /* cairo == 00RRGGBB */

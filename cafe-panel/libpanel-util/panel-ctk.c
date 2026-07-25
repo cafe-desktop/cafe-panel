@@ -54,7 +54,7 @@ panel_ctk_file_chooser_preview_update (CtkFileChooser *chooser,
 	if (filename == NULL)
 		return;
 
-	pixbuf = gdk_pixbuf_new_from_file_at_size (filename, 128, 128, NULL);
+	pixbuf = cdk_pixbuf_new_from_file_at_size (filename, 128, 128, NULL);
 	have_preview = (pixbuf != NULL);
 	g_free (filename);
 
