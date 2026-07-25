@@ -208,7 +208,7 @@ static void
 background_changed (PanelBackgroundMonitor *monitor G_GNUC_UNUSED,
 		    PanelBackground        *background)
 {
-	GdkPixbuf *tmp;
+	CdkPixbuf *tmp;
 
 	g_return_if_fail (CDK_IS_X11_DISPLAY (cdk_display_get_default ()));
 
@@ -227,10 +227,10 @@ background_changed (PanelBackgroundMonitor *monitor G_GNUC_UNUSED,
 	panel_background_composite (background);
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 get_desktop_pixbuf (PanelBackground *background)
 {
-	GdkPixbuf *desktop;
+	CdkPixbuf *desktop;
 
 	g_return_val_if_fail (CDK_IS_X11_DISPLAY (cdk_display_get_default ()), NULL);
 
@@ -428,11 +428,11 @@ free_transformed_resources (PanelBackground *background)
 	background->transformed_image = NULL;
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 get_scaled_and_rotated_pixbuf (PanelBackground *background)
 {
-	GdkPixbuf *scaled;
-	GdkPixbuf *retval;
+	CdkPixbuf *scaled;
+	CdkPixbuf *retval;
 	int        orig_width, orig_height;
 	int        panel_width, panel_height;
 	int        width, height;

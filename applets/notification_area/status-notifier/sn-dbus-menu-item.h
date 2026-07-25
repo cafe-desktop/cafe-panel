@@ -35,7 +35,7 @@ typedef struct
   gchar       *disposition;
   gboolean     enabled;
   gchar       *icon_name;
-  GdkPixbuf   *icon_data;
+  CdkPixbuf   *icon_data;
   gchar       *label;
   SnShortcut **shortcuts;
   gchar       *toggle_type;

@@ -52,16 +52,16 @@ struct _PanelBackground {
 	CdkRGBA                 color;
 
 	char                   *image;
-	GdkPixbuf              *loaded_image;
+	CdkPixbuf              *loaded_image;
 
 	CtkOrientation          orientation;
 	CdkRectangle            region;
-	GdkPixbuf              *transformed_image;
+	CdkPixbuf              *transformed_image;
 	cairo_pattern_t        *composited_pattern;
 
 #ifdef HAVE_X11
 	PanelBackgroundMonitor *monitor;
-	GdkPixbuf              *desktop;
+	CdkPixbuf              *desktop;
 	gulong                  monitor_signal;
 #endif // HAVE_X11
 

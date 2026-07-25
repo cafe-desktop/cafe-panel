@@ -168,11 +168,11 @@ static void applet_change_background (CafePanelApplet              *applet G_GNU
 }
 
 #ifdef HAVE_WINDOW_PREVIEWS
-static GdkPixbuf *preview_window_thumbnail (VnckWindow *vnck_window, TasklistData *tasklist)
+static CdkPixbuf *preview_window_thumbnail (VnckWindow *vnck_window, TasklistData *tasklist)
 {
 	CdkWindow *window;
-	GdkPixbuf *screenshot;
-	GdkPixbuf *thumbnail;
+	CdkPixbuf *screenshot;
+	CdkPixbuf *thumbnail;
 	guchar *pixels;
 	double ratio;
 	int width, height;
@@ -223,7 +223,7 @@ static GdkPixbuf *preview_window_thumbnail (VnckWindow *vnck_window, TasklistDat
 }
 
 #define PREVIEW_PADDING 5
-static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbnail)
+static void preview_window_reposition (TasklistData *tasklist, CdkPixbuf *thumbnail)
 {
 	CdkMonitor *monitor;
 	CdkRectangle monitor_geom;
@@ -265,7 +265,7 @@ static void preview_window_reposition (TasklistData *tasklist, GdkPixbuf *thumbn
 	ctk_window_move (CTK_WINDOW (tasklist->preview), x_pos, y_pos);
 }
 
-static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, GdkPixbuf *thumbnail)
+static gboolean preview_window_draw (CtkWidget *widget, cairo_t *cr, CdkPixbuf *thumbnail)
 {
 	CtkStyleContext *context;
 
@@ -279,7 +279,7 @@ static gboolean applet_enter_notify_event (VnckTasklist *tl G_GNUC_UNUSED,
 					   GList        *vnck_windows,
 					   TasklistData *tasklist)
 {
-	GdkPixbuf *thumbnail;
+	CdkPixbuf *thumbnail;
 	VnckWindow *vnck_window = NULL;
 	int n_windows;
 
@@ -617,10 +617,10 @@ static void applet_size_allocate (CtkWidget     *widget G_GNUC_UNUSED,
 		cafe_panel_applet_set_size_hints(CAFE_PANEL_APPLET(tasklist->applet), size_hints, len, 0);
 }
 
-static GdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flags, void* data)
+static CdkPixbuf* icon_loader_func(const char* icon, int size, unsigned int flags, void* data)
 {
 	TasklistData* tasklist;
-	GdkPixbuf* retval;
+	CdkPixbuf* retval;
 	char* icon_no_extension;
 	char* p;
 

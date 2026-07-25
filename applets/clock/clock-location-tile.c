@@ -575,7 +575,7 @@ void
 weather_info_setup_tooltip (WeatherInfo *info, ClockLocation *location, CtkTooltip *tooltip,
                             ClockFormat clock_format)
 {
-        GdkPixbuf *pixbuf = NULL;
+        CdkPixbuf *pixbuf = NULL;
         CtkIconTheme *theme = NULL;
         const gchar *conditions, *wind;
         gchar *temp, *apparent;
