@@ -246,7 +246,7 @@ panel_background_monitor_tile_background (PanelBackgroundMonitor *monitor,
 	GdkPixbuf *retval;
 	int        tilewidth, tileheight;
 
-	retval = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, width, height);
+	retval = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, width, height);
 
 	tilewidth  = cdk_pixbuf_get_width (monitor->cdkpixbuf);
 	tileheight = cdk_pixbuf_get_height (monitor->cdkpixbuf);
@@ -391,14 +391,14 @@ panel_background_monitor_get_region (PanelBackgroundMonitor *monitor,
 	if ((subwidth <= 0) || (subheight <= 0) ||
 	    (monitor->width-x < 0) || (monitor->height-y < 0) )
 		/* region is completely offscreen */
-		return cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8,
+		return cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8,
 				       width, height);
 
 	pixbuf = cdk_pixbuf_new_subpixbuf (
 			monitor->cdkpixbuf, subx, suby, subwidth, subheight);
 
 	if ((subwidth < width) || (subheight < height)) {
-		tmpbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8,
+		tmpbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8,
 					 width, height);
 		cdk_pixbuf_copy_area (pixbuf, 0, 0, subwidth, subheight,
 				      tmpbuf, (x < 0) ? -x : 0, (y < 0) ? -y : 0);

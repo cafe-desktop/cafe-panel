@@ -109,7 +109,7 @@ zoom_draw (CtkWidget *widget,
 
 		scaled = cdk_pixbuf_scale_simple (zoom->pixbuf,
 						  zoom->size, zoom->size,
-						  GDK_INTERP_BILINEAR);
+						  CDK_INTERP_BILINEAR);
 
 		switch (zoom->orientation) {
 		case PANEL_ORIENTATION_TOP:

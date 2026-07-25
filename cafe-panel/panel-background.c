@@ -493,7 +493,7 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 		scaled = cdk_pixbuf_scale_simple (
 				background->loaded_image,
 				width, height,
-				GDK_INTERP_BILINEAR);
+				CDK_INTERP_BILINEAR);
 	}
 
 	if (background->rotate_image &&
@@ -506,7 +506,7 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 			int     srcrowstride;
 
 			retval = cdk_pixbuf_new (
-				GDK_COLORSPACE_RGB, FALSE, 8, height, width);
+				CDK_COLORSPACE_RGB, FALSE, 8, height, width);
 
 			dest          = cdk_pixbuf_get_pixels (retval);
 			destrowstride = cdk_pixbuf_get_rowstride (retval);
@@ -531,7 +531,7 @@ get_scaled_and_rotated_pixbuf (PanelBackground *background)
 			int     srcrowstride;
 
 			retval = cdk_pixbuf_new (
-				GDK_COLORSPACE_RGB, TRUE, 8, height, width);
+				CDK_COLORSPACE_RGB, TRUE, 8, height, width);
 
 			dest          = (guint32 *) cdk_pixbuf_get_pixels (retval);
 			destrowstride =             cdk_pixbuf_get_rowstride (retval) / 4;
