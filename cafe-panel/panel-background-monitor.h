@@ -59,7 +59,7 @@ gboolean                cdk_window_check_composited_wm          (CdkWindow* wind
 
 GType                   panel_background_monitor_get_type       (void);
 PanelBackgroundMonitor *panel_background_monitor_get_for_screen (CdkScreen *screen);
-GdkPixbuf              *panel_background_monitor_get_region     (PanelBackgroundMonitor *monitor,
+CdkPixbuf              *panel_background_monitor_get_region     (PanelBackgroundMonitor *monitor,
 								 int                     x,
 								 int                     y,
 								 int                     width,
