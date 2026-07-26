@@ -8,7 +8,7 @@ before_scripts:
   - ./debrepo-install
 
 build_scripts:
-  - ./build-debs https://github.com/cafe-desktop/debian-packages devel cafe-panel
+  - ./testrepo
 
 after_scripts:
   - if [ -f "gen-index" ]; then ./gen-index -l 20 -i https://raw.githubusercontent.com/${OWNER_NAME}/${REPO_NAME}/master/icons/16x16/${REPO_NAME}.png; fi
