@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-03-23 18:48+0100\n"
+"POT-Creation-Date: 2026-07-26 11:57+0200\n"
 "PO-Revision-Date: 2020-02-15 14:33+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/cafe/teams/13566/pt/)\n"
@@ -28,23 +28,23 @@ msgid "translator-credits"
 msgstr "Hugo Carvalho <hugokarvalho@gmail.com>, 2018"
 
 #. (itstool) path: articleinfo/title
-#: C/index.docbook:23
+#: C/index.docbook:22
 msgid "Clock Manual"
 msgstr "Manual do Relógio"
 
 #. (itstool) path: articleinfo/copyright
-#: C/index.docbook:24
+#: C/index.docbook:23
 msgid "<year>2015-2020</year> <holder>CAFE Documentation Project</holder>"
 msgstr ""
 "<year>2015-2020</year> <holder>Projecto de Documentação do CAFE</holder>"
 
 #. (itstool) path: articleinfo/copyright
-#: C/index.docbook:28
+#: C/index.docbook:27
 msgid "<year>2009</year> <year>2010</year> <holder>Paul Cutler</holder>"
 msgstr "<year>2009</year> <year>2010</year> <holder>Paul Cutler</holder>"
 
 #. (itstool) path: articleinfo/copyright
-#: C/index.docbook:33
+#: C/index.docbook:32
 msgid ""
 "<year>2002</year> <year>2003</year> <year>2004</year> <holder>Sun "
 "Microsystems</holder>"
@@ -53,27 +53,27 @@ msgstr ""
 "Microsystems</holder>"
 
 #. (itstool) path: articleinfo/copyright
-#: C/index.docbook:39
+#: C/index.docbook:38
 msgid "<year>2000</year> <holder>Dan Mueth</holder>"
 msgstr "<year>2000</year> <holder>Dan Mueth</holder>"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: revdescription/para
-#: C/index.docbook:55 C/index.docbook:120
+#: C/index.docbook:54 C/index.docbook:119
 msgid "CAFE Documentation Project"
 msgstr "Projeto de Documentação do CAFE"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: revdescription/para
-#: C/index.docbook:58 C/index.docbook:128 C/index.docbook:136
-#: C/index.docbook:144 C/index.docbook:152 C/index.docbook:160
-#: C/index.docbook:168 C/index.docbook:176 C/index.docbook:184
-#: C/index.docbook:193
+#: C/index.docbook:57 C/index.docbook:127 C/index.docbook:135
+#: C/index.docbook:143 C/index.docbook:151 C/index.docbook:159
+#: C/index.docbook:167 C/index.docbook:175 C/index.docbook:183
+#: C/index.docbook:192
 msgid "GNOME Documentation Project"
 msgstr "Projecto de Documentação do GNOME"
 
 #. (itstool) path: authorgroup/author
-#: C/index.docbook:67
+#: C/index.docbook:66
 msgid ""
 "<firstname>CAFE Documentation Project</firstname> <surname/> "
 "<affiliation><orgname>CAFE Desktop</orgname></affiliation>"
@@ -82,7 +82,7 @@ msgstr ""
 "<affiliation><orgname>CAFE Desktop</orgname></affiliation>"
 
 #. (itstool) path: authorgroup/author
-#: C/index.docbook:72
+#: C/index.docbook:71
 msgid ""
 "<firstname>Paul </firstname> <surname> Cutler</surname> <affiliation> "
 "<orgname>GNOME Documentation Project</orgname> <address> "
@@ -93,7 +93,7 @@ msgstr ""
 "<email>pcutler@gnome.org</email> </address> </affiliation>"
 
 #. (itstool) path: authorgroup/author
-#: C/index.docbook:80
+#: C/index.docbook:79
 msgid ""
 "<firstname>Sun </firstname> <surname>Microsystems</surname> <affiliation> "
 "<orgname>GNOME Documentation Project</orgname> <_:address-1/> </affiliation>"
@@ -103,7 +103,7 @@ msgstr ""
 "affiliation>"
 
 #. (itstool) path: authorgroup/author
-#: C/index.docbook:88
+#: C/index.docbook:87
 msgid ""
 "<firstname>Dan </firstname> <surname> Mueth</surname> <affiliation> "
 "<orgname>GNOME Documentation Project</orgname> <address> <email>d-"
@@ -114,50 +114,50 @@ msgstr ""
 "mueth@uchicago.edu</email> </address> </affiliation>"
 
 #. (itstool) path: revdescription/para
-#: C/index.docbook:119
+#: C/index.docbook:118
 msgid "CAFE Documentation Team"
 msgstr "Equipa de Documentação do CAFE"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:115
+#: C/index.docbook:114
 msgid ""
-"<revnumber>Clock Applet Manual V2.8</revnumber> <date>July 2015</date> <_:"
-"revdescription-1/>"
+"<revnumber>Clock Applet Manual V2.8</revnumber> <date>July 2015</date> "
+"<_:revdescription-1/>"
 msgstr ""
 "<revnumber>Manual da Mini-Aplicação Relógio V2.8</revnumber> <date>Julho de "
 "2015</date> <_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
-#: C/index.docbook:127 C/index.docbook:135
+#: C/index.docbook:126 C/index.docbook:134
 msgid "Paul Cutler"
 msgstr "Paul Cutler"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:123
+#: C/index.docbook:122
 msgid ""
-"<revnumber>Clock Applet Manual V2.7;</revnumber> <date>July 2015</date> <_:"
-"revdescription-1/>"
+"<revnumber>Clock Applet Manual V2.7;</revnumber> <date>July 2015</date> "
+"<_:revdescription-1/>"
 msgstr ""
 "<revnumber>Manual da Mini-Aplicação Relógio V2.7;</revnumber> <date>Julho de "
 "2015</date> <_:revdescription-1/>"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:131
+#: C/index.docbook:130
 msgid ""
-"<revnumber>Clock Applet Manual V2.6</revnumber> <date>July 2015</date> <_:"
-"revdescription-1/>"
+"<revnumber>Clock Applet Manual V2.6</revnumber> <date>July 2015</date> "
+"<_:revdescription-1/>"
 msgstr ""
 "<revnumber>Manual da Mini-Aplicação Relógio V2.6</revnumber> <date>Julho de "
 "2015</date> <_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
-#: C/index.docbook:143 C/index.docbook:151 C/index.docbook:159
-#: C/index.docbook:167 C/index.docbook:175 C/index.docbook:183
+#: C/index.docbook:142 C/index.docbook:150 C/index.docbook:158
+#: C/index.docbook:166 C/index.docbook:174 C/index.docbook:182
 msgid "Sun Microsystems"
 msgstr "Sun Microsystems"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:139
+#: C/index.docbook:138
 msgid ""
 "<revnumber>Clock Applet Manual V2.5</revnumber> <date>February 2004</date> "
 "<_:revdescription-1/>"
@@ -166,7 +166,7 @@ msgstr ""
 "de 2004</date> <_:revdescription-1/>"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:147
+#: C/index.docbook:146
 msgid ""
 "<revnumber>Clock Applet Manual V2.4</revnumber> <date>September 2003</date> "
 "<_:revdescription-1/>"
@@ -175,67 +175,67 @@ msgstr ""
 "de 2003</date> <_:revdescription-1/>"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:155
+#: C/index.docbook:154
 msgid ""
-"<revnumber>Clock Applet Manual V2.3</revnumber> <date>January 2003</date> <_:"
-"revdescription-1/>"
+"<revnumber>Clock Applet Manual V2.3</revnumber> <date>January 2003</date> "
+"<_:revdescription-1/>"
 msgstr ""
 "<revnumber>Manual da Mini-Aplicação Relógio V2.3</revnumber> <date>Janeiro "
 "de 2003</date> <_:revdescription-1/>"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:163
+#: C/index.docbook:162
 msgid ""
-"<revnumber>Clock Applet Manual V2.2</revnumber> <date>August 2002</date> <_:"
-"revdescription-1/>"
+"<revnumber>Clock Applet Manual V2.2</revnumber> <date>August 2002</date> "
+"<_:revdescription-1/>"
 msgstr ""
 "<revnumber>Manual da Mini-Aplicação Relógio V2.2</revnumber> <date>Agosto de "
 "2002</date> <_:revdescription-1/>"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:171
+#: C/index.docbook:170
 msgid ""
-"<revnumber>Clock Applet Manual V2.1</revnumber> <date>June 2002</date> <_:"
-"revdescription-1/>"
+"<revnumber>Clock Applet Manual V2.1</revnumber> <date>June 2002</date> "
+"<_:revdescription-1/>"
 msgstr ""
 "<revnumber>Manual da Mini-Aplicação Relógio V2.1</revnumber> <date>Junho de "
 "2002</date> <_:revdescription-1/>"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:179
+#: C/index.docbook:178
 msgid ""
-"<revnumber>Clock Applet Manual V2.0</revnumber> <date>March 2002</date> <_:"
-"revdescription-1/>"
+"<revnumber>Clock Applet Manual V2.0</revnumber> <date>March 2002</date> "
+"<_:revdescription-1/>"
 msgstr ""
 "<revnumber>Manual da Mini-Aplicação Relógio V2.0</revnumber> <date>Março de "
 "2002</date> <_:revdescription-1/>"
 
 #. (itstool) path: revdescription/para
-#: C/index.docbook:191
+#: C/index.docbook:190
 msgid "Dan Mueth <email>d-mueth@uchicago.edu</email>"
 msgstr "Dan Mueth <email>d-mueth@uchicago.edu</email>"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:187
+#: C/index.docbook:186
 msgid ""
-"<revnumber>Clock Applet Manual</revnumber> <date>April 2000</date> <_:"
-"revdescription-1/>"
+"<revnumber>Clock Applet Manual</revnumber> <date>April 2000</date> "
+"<_:revdescription-1/>"
 msgstr ""
 "<revnumber>Manual da Mini-Aplicação Relógio</revnumber> <date>Abril de 2000</"
 "date> <_:revdescription-1/>"
 
 #. (itstool) path: articleinfo/releaseinfo
-#: C/index.docbook:197
+#: C/index.docbook:196
 msgid "This manual describes version 1.10.1 of the Clock applet."
 msgstr "Este manual descreve a versão 1.10.1 da mini-aplicação Relógio."
 
 #. (itstool) path: legalnotice/title
-#: C/index.docbook:200
+#: C/index.docbook:199
 msgid "Feedback"
 msgstr "Opinião"
 
 #. (itstool) path: legalnotice/para
-#: C/index.docbook:201
+#: C/index.docbook:200
 msgid ""
 "To report a bug or make a suggestion regarding the Clock applet or this "
 "manual, follow the directions in the <ulink url=\"help:cafe-user-guide/"
@@ -247,7 +247,7 @@ msgstr ""
 
 #. (itstool) path: abstract/para
 #. (itstool) path: sect1/para
-#: C/index.docbook:205 C/index.docbook:233
+#: C/index.docbook:204 C/index.docbook:232
 msgid ""
 "The <application>Clock</application> applet displays the date and time, and "
 "when clicked, displays a calendar. The <application>Clock</application> can "
@@ -259,17 +259,17 @@ msgstr ""
 "ou 24 horas."
 
 #. (itstool) path: article/indexterm
-#: C/index.docbook:208
+#: C/index.docbook:207
 msgid "<primary>Clock</primary>"
 msgstr "<primary>Relógio</primary>"
 
 #. (itstool) path: sect1/title
-#: C/index.docbook:216
+#: C/index.docbook:215
 msgid "Introduction"
 msgstr "Introdução"
 
 #. (itstool) path: figure/title
-#: C/index.docbook:220
+#: C/index.docbook:219
 msgid "Clock Applet"
 msgstr "Mini-Aplicação Relógio"
 
@@ -278,7 +278,7 @@ msgstr "Mini-Aplicação Relógio"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:224
+#: C/index.docbook:223
 msgctxt "_"
 msgid ""
 "external ref='figures/clock_applet.png' "
@@ -288,7 +288,7 @@ msgstr ""
 "md5='2a84bd039efeba783468a1e8f0df950c'"
 
 #. (itstool) path: screenshot/mediaobject
-#: C/index.docbook:222
+#: C/index.docbook:221
 msgid ""
 "<imageobject><imagedata fileref=\"figures/clock_applet.png\" format=\"PNG\"/"
 "> </imageobject> <textobject> <phrase>Shows Clock applet.</phrase> </"
@@ -299,27 +299,27 @@ msgstr ""
 "phrase> </textobject>"
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:240
+#: C/index.docbook:239
 msgid "To Add Clock to a Panel"
 msgstr "Para Adicionar o Relógio a um Painel"
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:241
+#: C/index.docbook:240
 msgid "Perform the following steps:"
 msgstr "Realize os seguintes passos:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:244
+#: C/index.docbook:243
 msgid "Right-click on the panel."
 msgstr "Clique com o botão direito do rato no painel."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:249
+#: C/index.docbook:248
 msgid "Choose <guimenuitem>Add to Panel</guimenuitem>."
 msgstr "Escolha <guimenuitem>Adicionar ao Painel</guimenuitem>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:254
+#: C/index.docbook:253
 msgid ""
 "Scroll down the list of items in the <guilabel>Add to Panel</guilabel> "
 "dialog, then select <guilabel>Clock</guilabel>."
@@ -328,22 +328,22 @@ msgstr ""
 "guilabel> e então selecione <guilabel>Relógio</guilabel>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:259
+#: C/index.docbook:258
 msgid "Click <guibutton>Add</guibutton>."
 msgstr "Clique em <guibutton>Adicionar</guibutton>."
 
 #. (itstool) path: sect1/title
-#: C/index.docbook:269
+#: C/index.docbook:268
 msgid "Usage"
 msgstr "Utilização"
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:272
+#: C/index.docbook:271
 msgid "To Show the Calendar"
 msgstr "Para Mostrar o Calendário"
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:273
+#: C/index.docbook:272
 msgid ""
 "Click on the applet to open a small calendar showing the current month. To "
 "close the calendar, click again on the part of the applet that is in the "
@@ -354,7 +354,7 @@ msgstr ""
 "que está no painel."
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:275
+#: C/index.docbook:274
 msgid ""
 "You can change the month shown in the calendar by clicking the arrows to "
 "each side of the month and year text."
@@ -363,7 +363,7 @@ msgstr ""
 "do texto do mês e ano."
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:277
+#: C/index.docbook:276
 msgid ""
 "Double-click a day in the calendar to launch the <application>Evolution</"
 "application> groupware application."
@@ -372,12 +372,12 @@ msgstr ""
 "<application>Evolution</application>."
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:281
+#: C/index.docbook:280
 msgid "To Insert the Date or Time Into an Application"
 msgstr "Para Inserir a Data e a Hora numa Aplicação"
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:282
+#: C/index.docbook:281
 msgid ""
 "The <application>Clock</application> applet takes the time from the system "
 "clock."
@@ -386,7 +386,7 @@ msgstr ""
 "do sistema."
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:284
+#: C/index.docbook:283
 msgid ""
 "To insert the date or time from the <application>Clock</application> applet "
 "into an application, perform the following steps:"
@@ -395,36 +395,36 @@ msgstr ""
 "application> numa aplicação, realize os seguintes passos:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:288
+#: C/index.docbook:287
 msgid "Right-click on the <application>Clock</application> applet."
 msgstr ""
 "Clique com o botão direito do rato na mini-aplicação <application>Relógio</"
 "application>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:292
+#: C/index.docbook:291
 msgid "Choose one of the following menu items from the applet popup menu:"
 msgstr "Escolha um dos seguintes itens do menu que aparece da mini-aplicação:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:297
+#: C/index.docbook:296
 msgid "<guimenuitem>Copy Time</guimenuitem>"
 msgstr "<guimenuitem>Copiar a Hora</guimenuitem>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:302
+#: C/index.docbook:301
 msgid "<guimenuitem>Copy Date</guimenuitem>"
 msgstr "<guimenuitem>Copiar a Data</guimenuitem>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:309
+#: C/index.docbook:308
 msgid ""
 "Point to the location in your application where you want to insert the item."
 msgstr ""
 "Posicione o cursor na localização da aplicação onde quer inserir o item."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:314
+#: C/index.docbook:313
 msgid ""
 "Choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Paste</guimenuitem> </"
 "menuchoice> or middle-click to insert the item."
@@ -434,12 +434,12 @@ msgstr ""
 "inserir o item."
 
 #. (itstool) path: sect1/title
-#: C/index.docbook:326
+#: C/index.docbook:325
 msgid "Clock Preferences"
 msgstr "Preferências de Relógio"
 
 #. (itstool) path: sect1/para
-#: C/index.docbook:327
+#: C/index.docbook:326
 msgid ""
 "To configure the <application>Clock</application>, right-click on the "
 "applet, then choose <guimenuitem>Preferences</guimenuitem>. You will be "
@@ -454,32 +454,32 @@ msgstr ""
 "<guimenuitem>Metereologia</guimenuitem>."
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:332
+#: C/index.docbook:331
 msgid "General Preferences"
 msgstr "Preferências Gerais"
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:335
+#: C/index.docbook:334
 msgid "<guilabel>Clock Format</guilabel>"
 msgstr "<guilabel>Formato do Relógio</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:337
+#: C/index.docbook:336
 msgid "Select one of the following options:"
 msgstr "Selecione uma das seguintes opções:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:340
+#: C/index.docbook:339
 msgid "<guilabel>12 hour</guilabel>"
 msgstr "<guilabel>12 horas</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:341
+#: C/index.docbook:340
 msgid "Display the time in the a.m./p.m. format."
 msgstr "Mostra o tempo no formato a.m./p.m."
 
 #. (itstool) path: note/para
-#: C/index.docbook:342
+#: C/index.docbook:341
 msgid ""
 "This option is not shown if your session language does not use the 12 hour "
 "clock."
@@ -488,53 +488,53 @@ msgstr ""
 "horas."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:346
+#: C/index.docbook:345
 msgid "<guilabel>24 hour</guilabel>"
 msgstr "<guilabel>24 horas</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:347
+#: C/index.docbook:346
 msgid "Display the time in the 00.00 to 24.00 format."
 msgstr "Mostra o tempo no formato 00.00 a 24.00."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:353
+#: C/index.docbook:352
 msgid "<guilabel>Show the date</guilabel>"
 msgstr "<guilabel>Mostrar a data</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:355
+#: C/index.docbook:354
 msgid "Select this option to display the date in the applet."
 msgstr "Selecione esta opção para mostrar a data na mini-aplicação."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:359
+#: C/index.docbook:358
 msgid "<guilabel>Show seconds</guilabel>"
 msgstr "<guilabel>Mostrar segundos</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:361
+#: C/index.docbook:360
 msgid "Select this option to display seconds in the applet."
 msgstr "Selecione esta opção para mostrar os segundos na mini-aplicação."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:365
+#: C/index.docbook:364
 msgid "<guilabel>Show week numbers in calendar</guilabel>"
 msgstr "<guilabel>Mostrar os números das semanas no calendário</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:367
+#: C/index.docbook:366
 msgid "Select this option to display week numbers in the calendar."
 msgstr ""
 "Selecione esta opção para mostrar os números das semanas no calendário."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:371
+#: C/index.docbook:370
 msgid "<guilabel>Show the weather</guilabel>"
 msgstr "<guilabel>Mostrar a meteorologia</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:373
+#: C/index.docbook:372
 msgid ""
 "Select this option to display the the current weather forecast at your "
 "location. The weather will be displayed as an icon for sunny, cloudy, rain "
@@ -545,27 +545,27 @@ msgstr ""
 "nublado, chuva ou mais."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:378
+#: C/index.docbook:377
 msgid "<guilabel>Show temperature</guilabel>"
 msgstr "<guilabel>Mostrar temperatura</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:380
+#: C/index.docbook:379
 msgid "Select this option to display the temperature at your location."
 msgstr "Selecione esta opção para mostrar a temperatura no seu local."
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:389
+#: C/index.docbook:388
 msgid "Location Preferences"
 msgstr "Preferências de Localização"
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:393
+#: C/index.docbook:392
 msgid "<guilabel>Locations</guilabel>"
 msgstr "<guilabel>Localizações</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:395
+#: C/index.docbook:394
 msgid ""
 "You can add one or more locations and their local time to be displayed in "
 "the Clock. To add a location:"
@@ -574,12 +574,12 @@ msgstr ""
 "mostrados no Relógio. Para adicionar uma localização:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:399
+#: C/index.docbook:398
 msgid "Press <guilabel>Add</guilabel>"
 msgstr "Prima <guilabel>Adicionar</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:402
+#: C/index.docbook:401
 msgid ""
 "Type the city, region or country name and as you type a list of options will "
 "appear in a drop down box. Select a match from the pop-up and the "
@@ -592,17 +592,17 @@ msgstr ""
 "guilabel> serão automaticamente escolhidos."
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:416
+#: C/index.docbook:415
 msgid "Weather Preferences"
 msgstr "Preferências de Meteorologia"
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:420
+#: C/index.docbook:419
 msgid "<guilabel>Weather</guilabel>"
 msgstr "<guilabel>Meteorologia</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:422
+#: C/index.docbook:421
 msgid ""
 "You can display the Temperature unit in one of the following options from "
 "the drop down box:"
@@ -611,33 +611,33 @@ msgstr ""
 "lista suspensa:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:426
+#: C/index.docbook:425
 msgid "<guilabel>F</guilabel> (Fahrenheit)"
 msgstr "<guilabel>F</guilabel> (Fahrenheit)"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:429
+#: C/index.docbook:428
 msgid "<guilabel>C</guilabel> (Celsius)"
 msgstr "<guilabel>C</guilabel> (Celsius)"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:432
+#: C/index.docbook:431
 msgid "<guilabel>K</guilabel> (Kelvin)"
 msgstr "<guilabel>K</guilabel> (Kelvin)"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:435 C/index.docbook:462
+#: C/index.docbook:434 C/index.docbook:461
 msgid "<guilabel>Default</guilabel> The default display for your region."
 msgstr ""
 "<guilabel>Predefinição</guilabel> O mostrador predefinido para a sua região."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:441
+#: C/index.docbook:440
 msgid "<guilabel>Wind speed unit</guilabel>"
 msgstr "<guilabel>Unidade de velocidade do vento</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:443
+#: C/index.docbook:442
 msgid ""
 "You can display the Speed unit in one of the following options from the drop "
 "down box:"
@@ -646,37 +646,37 @@ msgstr ""
 "lista suspensa:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:447
+#: C/index.docbook:446
 msgid "<guilabel>Beaufort scale</guilabel>"
 msgstr "<guilabel>Escala Beaufort</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:450
+#: C/index.docbook:449
 msgid "<guilabel>Knots</guilabel>"
 msgstr "<guilabel>Nós</guilabel>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:453
+#: C/index.docbook:452
 msgid "<guilabel>mph</guilabel> (miles per hour)"
 msgstr "<guilabel>mp/h</guilabel> (milhas por hora)"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:456
+#: C/index.docbook:455
 msgid "<guilabel>km/h</guilabel> (kilometers per hour)"
 msgstr "<guilabel>km/h</guilabel> (quilómetros por hora)"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:459
+#: C/index.docbook:458
 msgid "<guilabel>m/s</guilabel> (meters per second)"
 msgstr "<guilabel>m/s</guilabel> (metros por segundo)"
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:472
+#: C/index.docbook:471
 msgid "To Adjust the System Date or Time"
 msgstr "Para Ajustar a Data do Sistema e a Hora"
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:473
+#: C/index.docbook:472
 msgid ""
 "To adjust the system date or time that the <application>Clock</application> "
 "applet displays, perform the following steps:"
@@ -685,7 +685,7 @@ msgstr ""
 "<application>Relógio</application> mostra, realize os seguintes passos:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:476
+#: C/index.docbook:475
 msgid ""
 "Press the <guibutton>Time Settings</guibutton> button in the Preferences "
 "dialog."
@@ -694,7 +694,7 @@ msgstr ""
 "Preferências."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:480
+#: C/index.docbook:479
 msgid ""
 "Use the <guilabel>Date &amp; Time</guilabel> dialog to adjust the date and "
 "time."
@@ -702,7 +702,7 @@ msgstr ""
 "Use a janela <guilabel>Data e Hora</guilabel> para ajustar a data e a hora."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:484
+#: C/index.docbook:483
 msgid ""
 "Press the <guibutton>Set System Time</guibutton> button, then the "
 "<application>cafe-polkit</application> dialog prompts for the administration "
