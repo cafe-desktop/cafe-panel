@@ -569,7 +569,7 @@ static void display_about_dialog (CtkAction  *action G_GNUC_UNUSED,
 		"copyright", _("Copyright \xc2\xa9 1998-2002 Free Software Foundation, Inc.\n"
 		               "Copyright \xc2\xa9 2002-2005 Vincent Untz\n"
 		               "Copyright \xc2\xa9 2012-2020 MATE developers\n"
-		               "Copyright \xc2\xa9 2022-2025 Pablo Barciela"),
+		               "Copyright \xc2\xa9 2022-2026 Pablo Barciela"),
 		"documenters", documenters,
 		"logo-icon-name", FISH_ICON,
 		"translator-credits", _("translator-credits"),

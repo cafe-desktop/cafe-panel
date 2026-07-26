@@ -851,7 +851,7 @@ static void display_about_dialog (CtkAction    *action G_GNUC_UNUSED,
 		"copyright", _("Copyright \xc2\xa9 2002 Red Hat, Inc.\n"
 		               "Copyright \xc2\xa9 2011 Perberos\n"
 		               "Copyright \xc2\xa9 2012-2020 MATE developers\n"
-		               "Copyright \xc2\xa9 2022-2025 Pablo Barciela"),
+		               "Copyright \xc2\xa9 2022-2026 Pablo Barciela"),
 		"documenters", documenters,
 		"icon-name", WINDOW_LIST_ICON,
 		"logo-icon-name", WINDOW_LIST_ICON,

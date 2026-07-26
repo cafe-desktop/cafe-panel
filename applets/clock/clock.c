@@ -3459,7 +3459,7 @@ static void display_about_dialog (CtkAction* action G_GNUC_UNUSED,
                 "comments", _("The Clock displays the current time and date"),
                 "copyright", _("Copyright \xc2\xa9 1998-2004 Free Software Foundation, Inc.\n"
                                "Copyright \xc2\xa9 2012-2020 MATE developers\n"
-                               "Copyright \xc2\xa9 2022-2025 Pablo Barciela"),
+                               "Copyright \xc2\xa9 2022-2026 Pablo Barciela"),
                 "documenters", documenters,
                 "logo-icon-name", CLOCK_ICON,
                 "translator-credits", _("translator-credits"),

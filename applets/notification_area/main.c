@@ -283,7 +283,7 @@ static void about_cb (CtkAction    *action G_GNUC_UNUSED,
 		               "Copyright \xc2\xa9 2003-2006 Vincent Untz\n"
 		               "Copyright \xc2\xa9 2011 Perberos\n"
 		               "Copyright \xc2\xa9 2012-2020 MATE developers\n"
-		               "Copyright \xc2\xa9 2022-2025 Pablo Barciela"),
+		               "Copyright \xc2\xa9 2022-2026 Pablo Barciela"),
 		"documenters", documenters,
 		"logo-icon-name", NOTIFICATION_AREA_ICON,
 		"translator-credits", _("translator-credits"),
