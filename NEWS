@@ -1,3 +1,10 @@
+### cafe-panel 2.1.0
+
+  * port from GdkPixbuf to CdkPixbuf
+  * help: Use XInclude for legal.xml to fix duplicated strings in .pot files
+  * update translations
+
+
 ### cafe-panel 2.0.1
 
   * ci: add debian stable build
