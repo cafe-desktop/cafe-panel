@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-03-23 18:48+0100\n"
+"POT-Creation-Date: 2026-07-26 11:57+0200\n"
 "PO-Revision-Date: 2020-02-15 14:34+0000\n"
 "Last-Translator: Michael Hartmann, 2020\n"
 "Language-Team: German (https://www.transifex.com/cafe/teams/13566/de/)\n"
@@ -35,53 +35,53 @@ msgstr ""
 "Marcel Artz"
 
 #. (itstool) path: articleinfo/title
-#: C/index.docbook:24
+#: C/index.docbook:23
 msgid "Fish Manual"
 msgstr ""
 
 #. (itstool) path: articleinfo/copyright
-#: C/index.docbook:25
+#: C/index.docbook:24
 msgid "<year>2015-2020</year> <holder>CAFE Documentation Project</holder>"
 msgstr "<year>2015-2020</year> <holder>CAFE Dokumentations Projekt</holder>"
 
 #. (itstool) path: articleinfo/copyright
-#: C/index.docbook:29
+#: C/index.docbook:28
 msgid "<year>2009</year> <holder>Paul Cutler</holder>"
 msgstr "<year>2009</year> <holder>Paul Cutler</holder>"
 
 #. (itstool) path: articleinfo/copyright
-#: C/index.docbook:33
+#: C/index.docbook:32
 msgid "<year>2002</year> <year>2003</year> <holder>Sun Microsystems</holder>"
 msgstr ""
 
 #. (itstool) path: articleinfo/copyright
-#: C/index.docbook:38
+#: C/index.docbook:37
 msgid "<year>2000</year> <holder>Telsa Gwynne</holder>"
 msgstr ""
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: revdescription/para
-#: C/index.docbook:52 C/index.docbook:116
+#: C/index.docbook:51 C/index.docbook:115
 msgid "CAFE Documentation Project"
 msgstr "CAFE-Dokumentationsprojekt"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: revdescription/para
-#: C/index.docbook:55 C/index.docbook:124 C/index.docbook:132
-#: C/index.docbook:140 C/index.docbook:148 C/index.docbook:156
-#: C/index.docbook:165
+#: C/index.docbook:54 C/index.docbook:123 C/index.docbook:131
+#: C/index.docbook:139 C/index.docbook:147 C/index.docbook:155
+#: C/index.docbook:164
 msgid "GNOME Documentation Project"
 msgstr "GNOME-Dokumentationsprojekt"
 
 #. (itstool) path: authorgroup/author
-#: C/index.docbook:62
+#: C/index.docbook:61
 msgid ""
 "<firstname>CAFE Documentation Project</firstname> <surname/> <affiliation> "
 "<orgname>CAFE Documentation Project</orgname> </affiliation>"
 msgstr ""
 
 #. (itstool) path: authorgroup/author
-#: C/index.docbook:69
+#: C/index.docbook:68
 msgid ""
 "<firstname>Paul</firstname> <surname>Cutler</surname> <affiliation> "
 "<orgname>GNOME Documentation Project</orgname> <address> "
@@ -89,7 +89,7 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: authorgroup/author
-#: C/index.docbook:77
+#: C/index.docbook:76
 msgid ""
 "<firstname>Sun</firstname> <surname>GNOME Documentation Team</surname> "
 "<affiliation> <orgname>Sun Microsystems</orgname> <_:address-1/> </"
@@ -97,90 +97,90 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: authorgroup/author
-#: C/index.docbook:85
+#: C/index.docbook:84
 msgid ""
 "<firstname>Telsa</firstname> <surname>Gwynne</surname> <affiliation> "
-"<orgname>GNOME Documentation Project</orgname> <address> <email>hobbit@aloss."
-"ukuu.org.uk</email> </address> </affiliation>"
+"<orgname>GNOME Documentation Project</orgname> <address> "
+"<email>hobbit@aloss.ukuu.org.uk</email> </address> </affiliation>"
 msgstr ""
 
 #. (itstool) path: revdescription/para
-#: C/index.docbook:115
+#: C/index.docbook:114
 msgid "CAFE Documentation Team"
 msgstr "CAFE-Dokumentationsteam"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:111
+#: C/index.docbook:110
 msgid ""
-"<revnumber>Fish Applet Manual V2.6</revnumber> <date>July 2015</date> <_:"
-"revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.6</revnumber> <date>July 2015</date> "
+"<_:revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revdescription/para
-#: C/index.docbook:123 C/index.docbook:131 C/index.docbook:139
-#: C/index.docbook:147 C/index.docbook:155
+#: C/index.docbook:122 C/index.docbook:130 C/index.docbook:138
+#: C/index.docbook:146 C/index.docbook:154
 msgid "Sun GNOME Documentation Team"
 msgstr "Sun GNOME Dokumentationsteam"
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:119
+#: C/index.docbook:118
 msgid ""
-"<revnumber>Fish Applet Manual V2.5;</revnumber> <date>July 2015</date> <_:"
-"revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.5;</revnumber> <date>July 2015</date> "
+"<_:revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:127
+#: C/index.docbook:126
 msgid ""
-"<revnumber>Fish Applet Manual V2.4</revnumber> <date>July 2015</date> <_:"
-"revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.4</revnumber> <date>July 2015</date> "
+"<_:revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:135
+#: C/index.docbook:134
 msgid ""
-"<revnumber>Fish Applet Manual V2.2</revnumber> <date>January 2003</date> <_:"
-"revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.2</revnumber> <date>January 2003</date> "
+"<_:revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:143
+#: C/index.docbook:142
 msgid ""
-"<revnumber>Fish Applet Manual V2.1</revnumber> <date>August 2002</date> <_:"
-"revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.1</revnumber> <date>August 2002</date> "
+"<_:revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:151
+#: C/index.docbook:150
 msgid ""
-"<revnumber>Fish Applet Manual V2.0</revnumber> <date>May 2002</date> <_:"
-"revdescription-1/>"
+"<revnumber>Fish Applet Manual V2.0</revnumber> <date>May 2002</date> "
+"<_:revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revdescription/para
-#: C/index.docbook:163
+#: C/index.docbook:162
 msgid "Telsa Gwynne <email>hobbit@aloss.ukuu.org.uk</email>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
-#: C/index.docbook:159
+#: C/index.docbook:158
 msgid ""
-"<revnumber>Fish Applet Manual</revnumber> <date>2000</date> <_:"
-"revdescription-1/>"
+"<revnumber>Fish Applet Manual</revnumber> <date>2000</date> "
+"<_:revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: articleinfo/releaseinfo
-#: C/index.docbook:169
+#: C/index.docbook:168
 msgid "This manual describes version 1.10.1 of Fish."
 msgstr ""
 
 #. (itstool) path: legalnotice/title
-#: C/index.docbook:172
+#: C/index.docbook:171
 msgid "Feedback"
 msgstr "Rückmeldungen"
 
 #. (itstool) path: legalnotice/para
-#: C/index.docbook:173
+#: C/index.docbook:172
 msgid ""
 "To report a bug or make a suggestion regarding the Fish applet or this "
 "manual, follow the directions in the <ulink url=\"help:cafe-user-guide/"
@@ -188,24 +188,24 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: abstract/para
-#: C/index.docbook:179
+#: C/index.docbook:178
 msgid ""
 "The Fish applet displays an animated image in the panel and gives you your "
 "fortune when clicked."
 msgstr ""
 
 #. (itstool) path: article/indexterm
-#: C/index.docbook:183
+#: C/index.docbook:182
 msgid "<primary>Fish</primary>"
 msgstr ""
 
 #. (itstool) path: sect1/title
-#: C/index.docbook:190
+#: C/index.docbook:189
 msgid "Introduction"
 msgstr "Einführung"
 
 #. (itstool) path: figure/title
-#: C/index.docbook:193
+#: C/index.docbook:192
 msgid "Fish Applet"
 msgstr ""
 
@@ -214,21 +214,21 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:196
+#: C/index.docbook:195
 msgctxt "_"
 msgid ""
 "external ref='figures/fish_applet.png' md5='97c946f203eedce679f0ca29452fb437'"
 msgstr ""
 
 #. (itstool) path: screenshot/mediaobject
-#: C/index.docbook:195
+#: C/index.docbook:194
 msgid ""
 "<imageobject><imagedata fileref=\"figures/fish_applet.png\" format=\"PNG\"/> "
 "</imageobject> <textobject> <phrase>Shows Fish applet.</phrase> </textobject>"
 msgstr ""
 
 #. (itstool) path: sect1/para
-#: C/index.docbook:205
+#: C/index.docbook:204
 msgid ""
 "The <application>Fish</application> applet displays an animated fish in the "
 "panel. You can customize the fish's name and the program that is run when "
@@ -238,51 +238,51 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: sect1/para
-#: C/index.docbook:210
+#: C/index.docbook:209
 msgid ""
 "You can customize the image shown and the command that is run when it is "
 "clicked."
 msgstr ""
 
 #. (itstool) path: sect2/title
-#: C/index.docbook:212
+#: C/index.docbook:211
 msgid "To Add Fish to a Panel"
 msgstr ""
 
 #. (itstool) path: sect2/para
-#: C/index.docbook:213
+#: C/index.docbook:212
 msgid "Perform the following steps:"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:216
+#: C/index.docbook:215
 msgid "Right-click on the panel."
 msgstr "Rechtsklicken Sie auf die Leiste."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:221
+#: C/index.docbook:220
 msgid "Choose <guimenuitem>Add to Panel</guimenuitem>."
 msgstr "Wählen Sie <guimenuitem>Zur Leiste hinzufügen</guimenuitem>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:226
+#: C/index.docbook:225
 msgid ""
 "Scroll down the list of items in the <guilabel>Add to Panel</guilabel> "
 "dialog, then select <guilabel>Fish</guilabel>."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:231
+#: C/index.docbook:230
 msgid "Click <guibutton>Add</guibutton>."
 msgstr "Klicken Sie auf <guibutton>Hinzufügen</guibutton>."
 
 #. (itstool) path: sect1/title
-#: C/index.docbook:239
+#: C/index.docbook:238
 msgid "Usage"
 msgstr "Verwendung"
 
 #. (itstool) path: sect1/para
-#: C/index.docbook:240
+#: C/index.docbook:239
 msgid ""
 "Click on the applet to display the <guilabel>Wanda the Fish</guilabel> "
 "dialog. The dialog typically displays a fortune cookie. You can configure "
@@ -291,12 +291,12 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: sect1/title
-#: C/index.docbook:245
+#: C/index.docbook:244
 msgid "Preferences"
 msgstr "Einstellungen"
 
 #. (itstool) path: sect1/para
-#: C/index.docbook:246
+#: C/index.docbook:245
 msgid ""
 "To configure <application>Fish</application>, right-click on the "
 "<application> Fish</application> applet, then choose <guimenu>Preferences</"
@@ -304,22 +304,22 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:250
+#: C/index.docbook:249
 msgid "<guilabel>Name of fish</guilabel>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:252
+#: C/index.docbook:251
 msgid "Use this text box to specify the name of the fish."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:256
+#: C/index.docbook:255
 msgid "<guilabel>Command to run when clicked</guilabel>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:258
+#: C/index.docbook:257
 msgid ""
 "By default, <application>Fish</application> runs the <literal>fortune</"
 "literal> command when you click on the applet. Use this text box to specify "
@@ -327,46 +327,46 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:262
+#: C/index.docbook:261
 msgid "<guilabel>File</guilabel>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:264
+#: C/index.docbook:263
 msgid ""
 "Use this field to select the image to display in the applet. You can select "
 "an image that is supplied with the applet or a personal image."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:268
+#: C/index.docbook:267
 msgid "<guilabel>Total frames in animation</guilabel>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:270
+#: C/index.docbook:269
 msgid "Use this spin box to specify the number of frames in the animation."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:274
+#: C/index.docbook:273
 msgid "<guilabel>Pause per frame</guilabel>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:276
+#: C/index.docbook:275
 msgid ""
 "Use this spin box to specify the pause in seconds between each frame in the "
 "animation."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:280
+#: C/index.docbook:279
 msgid "<guilabel>Rotate on vertical panels</guilabel>"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:282
+#: C/index.docbook:281
 msgid ""
 "Select this option to rotate the applet image when you add the applet to a "
 "vertical panel."
@@ -475,8 +475,8 @@ msgstr ""
 "DOKUMENTS ODER EIN LIEFERANT EINER DIESER PARTEIEN VON EINER PERSON FÜR "
 "DIREKTE, INDIREKTE, BESONDERE, ZUFÄLLIGE ODER ALS FOLGE AUFGETRETENE SCHÄDEN "
 "IRGENDEINER ART, EINSCHLIESSLICH, ABER NICHT BESCHRÄNKT AUF, SCHÄDEN DURCH "
-"GESCHÄFTSWERTVERLUSTE, ARBEITSAUSFÄLLE, COMPUTERAUSFÄLLE ODER -"
-"FUNKTIONSSTÖRUNGEN ODER JEGLICHE ANDERE SCHÄDEN ODER VERLUSTE, DIE DURCH "
+"GESCHÄFTSWERTVERLUSTE, ARBEITSAUSFÄLLE, COMPUTERAUSFÄLLE ODER "
+"-FUNKTIONSSTÖRUNGEN ODER JEGLICHE ANDERE SCHÄDEN ODER VERLUSTE, DIE DURCH "
 "ODER IM ZUSAMMENHANG MIT DER VERWENDUNG DES DOKUMENTS ODER EINER "
 "MODIFIZIERTEN VERSION DES DOKUMENTS ENTSTANDEN SIND, SELBST WENN DIESE "
 "PARTEI ÜBER MÖGLICHE SCHÄDEN INFORMIERT WORDEN SEIN SOLLTE, HAFTBAR GEMACHT "
