@@ -13,9 +13,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-panel 2.0.1\n"
+"Project-Id-Version: cafe-panel 2.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/cafe-desktop/cafe-panel/issues\n"
-"POT-Creation-Date: 2025-11-01 11:43+0100\n"
+"POT-Creation-Date: 2026-07-26 11:48+0200\n"
 "PO-Revision-Date: 2020-02-15 14:32+0000\n"
 "Last-Translator: Horazone Detex <thmmt2017d@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/cafe/teams/13566/vi/)\n"
@@ -234,7 +234,7 @@ msgstr "Đồng hồ hiển thị thời gian và ngày hiện thời"
 msgid ""
 "Copyright © 1998-2004 Free Software Foundation, Inc.\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2025 Pablo Barciela"
+"Copyright © 2022-2026 Pablo Barciela"
 msgstr ""
 
 #: applets/clock/clock.c:3465 applets/fish/fish.c:575
@@ -683,7 +683,7 @@ msgid ""
 "Copyright © 1998-2002 Free Software Foundation, Inc.\n"
 "Copyright © 2002-2005 Vincent Untz\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2025 Pablo Barciela"
+"Copyright © 2022-2026 Pablo Barciela"
 msgstr ""
 
 #: applets/fish/fish.c:587
@@ -896,7 +896,7 @@ msgid ""
 "Copyright © 2003-2006 Vincent Untz\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2025 Pablo Barciela"
+"Copyright © 2022-2026 Pablo Barciela"
 msgstr ""
 
 #: applets/notification_area/main.c:488
@@ -1106,7 +1106,7 @@ msgid ""
 "Copyright © 2002 Red Hat, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2025 Pablo Barciela"
+"Copyright © 2022-2026 Pablo Barciela"
 msgstr ""
 
 #: applets/vncklet/showdesktop.c:548
@@ -1220,7 +1220,7 @@ msgid ""
 "Copyright © 2003 Sun Microsystems, Inc.\n"
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers\n"
-"Copyright © 2022-2025 Pablo Barciela"
+"Copyright © 2022-2026 Pablo Barciela"
 msgstr ""
 
 #: applets/vncklet/workspace-switcher.c:243
@@ -2560,7 +2560,7 @@ msgid ""
 "Copyright © 1997-2003 Free Software Foundation, Inc.\n"
 "Copyright © 2004 Vincent Untz\n"
 "Copyright © 2011-2020 MATE developers\n"
-"Copyright © 2022-2025 Pablo Barciela"
+"Copyright © 2022-2026 Pablo Barciela"
 msgstr ""
 
 #: cafe-panel/panel-context-menu.c:120
