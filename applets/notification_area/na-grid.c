@@ -318,6 +318,7 @@ na_grid_realize (CtkWidget *widget)
   CdkScreen *screen;
   CtkOrientation orientation;
   NaHost *tray_host;
+  GSettings *settings = g_settings_new ("org.cafe.panel");
 
   CTK_WIDGET_CLASS (na_grid_parent_class)->realize (widget);
 
@@ -330,7 +331,11 @@ na_grid_realize (CtkWidget *widget)
                           G_BINDING_DEFAULT);
 
   add_host (self, tray_host);
-  add_host (self, sn_host_v0_new ());
+
+  if (g_settings_get_boolean (settings, "enable-sni-support"))
+    add_host (self, sn_host_v0_new ());
+
+  g_object_unref (settings);
 }
 
 static void
