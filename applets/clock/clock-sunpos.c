@@ -169,29 +169,3 @@ sun_position (time_t unix_time, gdouble *lat, gdouble *lon)
   *lat = dec;
   *lon = ra;
 }
-
-
-#if 0
-int
-main (int argc, char *argv[])
-{
-  gint i;
-  gint now;
-  GTimeVal timeval;
-  gdouble lat, lon;
-
-  ctk_init (&argc, &argv);
-
-  g_get_current_time (&timeval);
-  now = timeval.tv_sec;
-
-  for (i = 0; i < now; i += 15 * 60)
-    {
-      sun_position (i, &lat, &lon);
-      g_print ("%d: %f %f\n", lat, lon);
-    }
-
-  return 0;
-}
-
-#endif
