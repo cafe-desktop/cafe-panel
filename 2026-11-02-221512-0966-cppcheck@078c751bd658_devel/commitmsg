@@ -1,0 +1,6 @@
+clock-sunpos: Use gint64 to track UNIX timestamps
+
+to make it work after the year 2038
+
+based in mate-panel commit:
+https://github.com/mate-desktop/mate-panel/commit/d09730a3e817960fcb0375195c2c8cd67dd21cbb

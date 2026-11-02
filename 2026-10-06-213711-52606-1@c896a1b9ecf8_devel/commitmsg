@@ -1,0 +1,4 @@
+na-grid: Fix duplicate tray icons
+
+based in mate-panel commit:
+https://github.com/mate-desktop/mate-panel/commit/f25d859347d32c363fb1e0a15266d66b06022b6c
